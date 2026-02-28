@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SealMetrics — Decision Infrastructure for Data-Driven Teams</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    /* Background layers */
+    --bg: #0A0A10;
+    --bg-card: #0F1018;
+    --bg-card-20: rgba(15,16,24,0.2);
+    --bg-card-30: rgba(15,16,24,0.3);
+    --bg-card-50: rgba(15,16,24,0.5);
+    --bg-elevated: #141520;
+    --bg-secondary: #1A1A26;
+
+    /* Primary — Neon Green */
+    --primary: #00FF7F;
+    --primary-90: rgba(0,255,127,0.9);
+    --primary-50: rgba(0,255,127,0.5);
+    --primary-20: rgba(0,255,127,0.2);
+    --primary-10: rgba(0,255,127,0.1);
+    --primary-05: rgba(0,255,127,0.05);
+    --primary-02: rgba(0,255,127,0.02);
+    --primary-dark: #052E1C;
+
+    /* Text */
+    --text: #E8E8E8;
+    --text-secondary: #999999;
+    --text-tertiary: #737373;
+    --text-dim: #4A4A56;
+
+    /* Borders */
+    --border: #262833;
+    --border-60: rgba(38,40,51,0.6);
+    --border-40: rgba(38,40,51,0.4);
+    --border-30: rgba(38,40,51,0.3);
+
+    /* Functional */
+    --red: #E06060;
+    --red-dim: rgba(224,96,96,0.1);
+    --amber: #D4A040;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on;
+  }
+
+  /* =============================================
+     GLOBAL: Grid pattern + Grain overlay
+     ============================================= */
+  .grain-section {
+    position: relative;
+  }
+  .grain-section::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none; z-index: 1;
+  }
+  .grid-bg {
+    position: relative;
+  }
+  .grid-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, var(--border-30) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border-30) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* =============================================
+     TYPOGRAPHY
+     ============================================= */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+  .headline-hero {
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  .headline-section {
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .subheadline {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .label-xs {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-tertiary);
+  }
+  .label-green {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-50) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* =============================================
+     LAYOUT
+     ============================================= */
+  .container-narrow {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .container-wide {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  /* =============================================
+     NAVIGATION
+     ============================================= */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(10,10,16,0.95);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--border-30);
+    height: 64px;
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 0 32px; height: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-weight: 500; font-size: 16px; color: var(--text);
+    letter-spacing: -0.01em;
+    opacity: 0.9;
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-tertiary);
+    font-size: 13px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* Buttons */
+  .btn-enterprise {
+    background: var(--primary); color: var(--primary-dark);
+    padding: 9px 20px; border-radius: 4px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; border: none; cursor: pointer;
+    letter-spacing: -0.01em;
+    box-shadow: 0 0 30px -5px var(--primary-20);
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .btn-enterprise:hover {
+    background: var(--primary-90);
+    box-shadow: 0 0 40px -5px var(--primary-50);
+  }
+  .btn-enterprise-outline {
+    background: transparent; color: var(--text);
+    padding: 9px 20px; border-radius: 4px;
+    font-size: 13px; font-weight: 500;
+    text-decoration: none; letter-spacing: -0.01em;
+    border: 1px solid var(--border-60);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-enterprise-outline:hover {
+    border-color: var(--primary-50);
+    background: var(--primary-05);
+  }
+  .btn-enterprise-ghost {
+    color: var(--text-tertiary); font-size: 13px; font-weight: 500;
+    text-decoration: none; padding: 9px 16px;
+    transition: color 0.2s;
+  }
+  .btn-enterprise-ghost:hover { color: var(--text); }
+  .btn-link {
+    color: var(--primary); font-size: 13px; font-weight: 500;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+    transition: gap 0.2s;
+  }
+  .btn-link:hover { gap: 8px; text-decoration: underline; text-underline-offset: 4px; }
+
+  /* =============================================
+     HERO
+     ============================================= */
+  .hero {
+    padding: 160px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 600px;
+    background: radial-gradient(ellipse, var(--primary-05) 0%, transparent 60%);
+    pointer-events: none;
+    filter: blur(60px);
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero h1 { margin-bottom: 24px; }
+  .hero .subheadline {
+    max-width: 560px; margin: 0 auto 40px;
+  }
+  .hero-ctas {
+    display: flex; gap: 12px; justify-content: center;
+    margin-bottom: 56px;
+  }
+  .hero-ctas .btn-enterprise { padding: 12px 28px; font-size: 14px; }
+  .hero-ctas .btn-enterprise-outline { padding: 12px 28px; font-size: 14px; }
+
+  /* Stats strip */
+  .hero-stats {
+    display: flex; justify-content: center; gap: 1px;
+    margin-bottom: 72px;
+    max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .hs-item {
+    flex: 1; padding: 20px 16px;
+    text-align: center;
+    background: var(--bg-card-20);
+    border: 1px solid var(--border-30);
+  }
+  .hs-item:first-child { border-radius: 4px 0 0 4px; }
+  .hs-item:last-child { border-radius: 0 4px 4px 0; }
+  .hs-item + .hs-item { border-left: none; }
+  .hs-value {
+    font-size: 18px; font-weight: 600;
+    color: var(--primary); line-height: 1;
+    margin-bottom: 6px; letter-spacing: -0.02em;
+  }
+  .hs-label {
+    font-size: 10px; color: var(--text-dim);
+    font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* Product preview */
+  .hero-product {
+    max-width: 1000px; margin: 0 auto;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .hero-product::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--bg), transparent);
+    pointer-events: none; z-index: 3;
+  }
+  .hp-glow {
+    position: absolute; inset: -40px;
+    background: linear-gradient(to top, var(--primary-10), var(--primary-02), transparent);
+    filter: blur(40px); opacity: 0.6;
+    pointer-events: none; z-index: 0;
+  }
+  .hp-inner { position: relative; z-index: 1; }
+  .hp-topbar {
+    height: 36px; background: var(--bg);
+    border-bottom: 1px solid var(--border-30);
+    display: flex; align-items: center; padding: 0 12px; gap: 6px;
+  }
+  .hp-dot { width: 8px; height: 8px; border-radius: 50%; opacity: 0.4; }
+  .hp-dot.r { background: #ff5f56; }
+  .hp-dot.y { background: #ffbd2e; }
+  .hp-dot.g { background: #27c93f; }
+  .hp-body { display: flex; min-height: 360px; background: var(--bg); }
+  .hp-sidebar {
+    width: 170px; background: var(--bg-card-30);
+    border-right: 1px solid var(--border-30);
+    padding: 12px 8px;
+  }
+  .hp-nav { padding: 7px 12px; border-radius: 3px; font-size: 12px; color: var(--text-dim); margin-bottom: 1px; font-weight: 400; }
+  .hp-nav.active { background: var(--bg-card-50); color: var(--text-secondary); font-weight: 500; }
+  .hp-main { flex: 1; padding: 20px; }
+  .hp-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .hp-card {
+    background: var(--bg-card-30); border: 1px solid var(--border-30);
+    border-radius: 4px; padding: 14px;
+  }
+  .hp-card-label { font-size: 10px; color: var(--text-dim); margin-bottom: 5px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hp-card-value { font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: -0.02em; }
+  .hp-card-value.green { color: var(--primary); }
+  .hp-card-delta { font-size: 10px; margin-top: 3px; color: var(--primary); font-weight: 400; opacity: 0.7; }
+  .hp-chart {
+    background: var(--bg-card-30); border: 1px solid var(--border-30);
+    border-radius: 4px; padding: 16px;
+  }
+  .hp-chart-header { display: flex; justify-content: space-between; margin-bottom: 12px; }
+  .hp-chart-title { font-size: 11px; font-weight: 500; color: var(--text-tertiary); }
+  .hp-chart-period { font-size: 10px; color: var(--text-dim); }
+  .chart-area { display: flex; align-items: flex-end; gap: 2px; height: 130px; }
+  .chart-bar {
+    flex: 1; border-radius: 2px 2px 0 0; min-height: 3px;
+    background: var(--primary); opacity: 0.35;
+    transition: opacity 0.2s;
+  }
+  .chart-bar:hover { opacity: 0.7; }
+
+  /* =============================================
+     LOGOS
+     ============================================= */
+  .logos {
+    padding: 48px 0;
+    border-top: 1px solid var(--border-30);
+    border-bottom: 1px solid var(--border-30);
+    text-align: center;
+  }
+  .logos-row {
+    display: flex; gap: 56px; justify-content: center;
+    align-items: center; flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .logos-row span {
+    font-size: 15px; font-weight: 600; color: var(--text);
+    opacity: 0.12; letter-spacing: -0.01em;
+  }
+
+  /* =============================================
+     PROBLEM SECTION
+     ============================================= */
+  .problem { position: relative; }
+  .problem-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 48px;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .problem-card {
+    padding: 40px 32px;
+    border-right: 1px solid var(--border-30);
+    background: var(--bg-card-20);
+    transition: background 0.3s;
+  }
+  .problem-card:last-child { border-right: none; }
+  .problem-card:hover { background: var(--bg-card-50); }
+  .pc-value {
+    font-size: 42px; font-weight: 600;
+    line-height: 1; margin-bottom: 14px;
+    letter-spacing: -0.03em;
+  }
+  .pc-value.v-green { color: var(--primary); }
+  .pc-value.v-amber { color: var(--amber); }
+  .pc-value.v-red { color: var(--red); }
+  .problem-card h3 {
+    font-size: 15px; font-weight: 500; margin-bottom: 8px;
+    color: var(--text);
+  }
+  .problem-card p {
+    font-size: 13px; color: var(--text-tertiary);
+    line-height: 1.65;
+  }
+
+  /* Schematic divider */
+  .divider-schematic {
+    height: 1px; margin: 0;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+  }
+
+  /* =============================================
+     FEATURES — Two column
+     ============================================= */
+  .features .section-padding { padding-bottom: 0; }
+  .feature-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: center;
+    padding: 64px 0;
+    border-top: 1px solid var(--border-30);
+  }
+  .feature-row.reverse .ft-content { order: 2; }
+  .feature-row.reverse .ft-visual { order: 1; }
+  .ft-content h3 {
+    font-size: 24px; font-weight: 500;
+    line-height: 1.3; margin-bottom: 14px;
+    letter-spacing: -0.015em;
+  }
+  .ft-content p {
+    font-size: 15px; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .ft-list { list-style: none; margin-bottom: 20px; }
+  .ft-list li {
+    font-size: 13px; color: var(--text-tertiary);
+    padding: 6px 0; display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--border-30);
+  }
+  .ft-list li::before {
+    content: ''; width: 4px; height: 4px;
+    background: var(--primary); border-radius: 50%; flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* Feature visual */
+  .ft-visual {
+    background: var(--bg-card-20);
+    border: 1px solid var(--border-40);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .fv-header {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-30);
+    font-size: 10px; color: var(--text-dim);
+    font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .fv-body { padding: 24px 20px; }
+  .fv-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .fv-bar-row:last-child { margin-bottom: 0; }
+  .fv-label { width: 80px; font-size: 11px; color: var(--text-dim); text-align: right; flex-shrink: 0; }
+  .fv-bar { height: 20px; border-radius: 2px; background: var(--primary); opacity: 0.5; }
+  .fv-bar.gray { background: var(--border); opacity: 0.6; }
+  .fv-val { font-size: 11px; flex-shrink: 0; width: 40px; font-weight: 500; }
+  .fv-val.good { color: var(--primary); }
+  .fv-val.bad { color: var(--red); }
+
+  /* Revenue rows */
+  .rev-row {
+    display: grid; grid-template-columns: 90px 1fr auto; gap: 12px;
+    align-items: center; padding: 10px 0;
+    border-bottom: 1px solid var(--border-30);
+  }
+  .rev-row:last-child { border-bottom: none; }
+  .rev-source { font-size: 11px; color: var(--text-tertiary); }
+  .rev-bar { height: 16px; border-radius: 2px; background: var(--primary); opacity: 0.4; }
+  .rev-val { font-size: 11px; color: var(--primary); font-weight: 500; text-align: right; opacity: 0.8; }
+
+  /* Alert cards */
+  .alert-card {
+    border-radius: 4px; padding: 14px 16px; margin-bottom: 10px;
+    border: 1px solid;
+  }
+  .alert-card:last-child { margin-bottom: 0; }
+  .alert-card.danger { background: var(--red-dim); border-color: rgba(224,96,96,0.12); }
+  .alert-card.info { background: var(--primary-05); border-color: var(--primary-10); }
+  .alert-tag { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .alert-tag.red { color: var(--red); }
+  .alert-tag.green { color: var(--primary); }
+  .alert-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .alert-meta { font-size: 10px; color: var(--text-dim); margin-top: 4px; }
+
+  /* =============================================
+     COMPARISON TABLE
+     ============================================= */
+  .comparison {
+    border-top: 1px solid var(--border-30);
+  }
+  .comparison table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    margin-top: 48px;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .comparison th {
+    padding: 14px 24px; text-align: left;
+    font-size: 10px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--text-dim);
+    background: var(--bg-card-30);
+    border-bottom: 1px solid var(--border-30);
+  }
+  .comparison th:last-child { color: var(--primary); opacity: 0.6; }
+  .comparison td {
+    padding: 14px 24px; font-size: 13px;
+    border-bottom: 1px solid var(--border-30);
+    color: var(--text-tertiary);
+  }
+  .comparison tr:last-child td { border-bottom: none; }
+  .comparison td:first-child { color: var(--text-secondary); font-weight: 500; }
+  .c-yes { color: var(--primary); font-weight: 500; opacity: 0.8; }
+  .c-no { color: var(--red); font-weight: 400; opacity: 0.6; }
+
+  /* =============================================
+     CASE STUDY
+     ============================================= */
+  .case-study {
+    border-top: 1px solid var(--border-30);
+  }
+  .cs-card {
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    overflow: hidden; margin-top: 40px;
+  }
+  .cs-content {
+    padding: 48px; background: var(--bg-card-20);
+  }
+  .cs-content h3 {
+    font-size: 22px; font-weight: 500;
+    line-height: 1.35; margin-bottom: 14px;
+  }
+  .cs-content > p {
+    font-size: 14px; color: var(--text-tertiary);
+    line-height: 1.7; margin-bottom: 32px;
+  }
+  .cs-metrics {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; margin-bottom: 28px;
+  }
+  .csm-value {
+    font-size: 24px; font-weight: 600;
+    color: var(--primary); line-height: 1; margin-bottom: 4px;
+    letter-spacing: -0.02em; opacity: 0.85;
+  }
+  .csm-label { font-size: 10px; color: var(--text-dim); font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; }
+  .cs-data {
+    background: var(--bg-card-30);
+    padding: 40px; display: flex; align-items: center;
+    border-left: 1px solid var(--border-30);
+  }
+  .cs-table { width: 100%; }
+  .cs-table-header {
+    display: grid; grid-template-columns: 1fr 64px 64px;
+    gap: 12px; padding: 0 0 12px;
+    border-bottom: 1px solid var(--border-30);
+    font-size: 9px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--text-dim);
+  }
+  .cs-table-header span:nth-child(2),
+  .cs-table-header span:nth-child(3) { text-align: right; }
+  .cs-row {
+    display: grid; grid-template-columns: 1fr 64px 64px;
+    gap: 12px; padding: 11px 0;
+    border-bottom: 1px solid var(--border-30);
+    align-items: center;
+  }
+  .cs-row:last-child { border-bottom: none; }
+  .cs-row-label { font-size: 12px; color: var(--text-tertiary); }
+  .cs-before { font-size: 11px; color: var(--red); text-decoration: line-through; opacity: 0.5; text-align: right; }
+  .cs-after { font-size: 11px; color: var(--primary); font-weight: 500; text-align: right; opacity: 0.8; }
+
+  /* =============================================
+     TESTIMONIALS
+     ============================================= */
+  .testimonials {
+    border-top: 1px solid var(--border-30);
+  }
+  .t-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 48px;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .t-card {
+    padding: 32px;
+    background: var(--bg-card-20);
+    border-right: 1px solid var(--border-30);
+    display: flex; flex-direction: column;
+    transition: background 0.3s;
+  }
+  .t-card:last-child { border-right: none; }
+  .t-card:hover { background: var(--bg-card-50); }
+  .t-quote {
+    font-size: 14px; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 28px; flex: 1;
+    font-style: italic; font-weight: 300;
+  }
+  .t-author { display: flex; align-items: center; gap: 10px; }
+  .t-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--bg-card-50);
+    border: 1px solid var(--border-30);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-dim); font-weight: 500; font-size: 10px;
+  }
+  .t-name { font-size: 12px; font-weight: 500; color: var(--text); }
+  .t-role { font-size: 10px; color: var(--text-dim); }
+  .t-result { font-size: 9px; color: var(--primary); font-weight: 500; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.7; }
+
+  /* =============================================
+     COMPLIANCE
+     ============================================= */
+  .compliance {
+    border-top: 1px solid var(--border-30);
+  }
+  .badge-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    margin-top: 48px;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .badge-card {
+    padding: 28px; background: var(--bg-card-20);
+    border-right: 1px solid var(--border-30);
+    transition: background 0.3s;
+  }
+  .badge-card:last-child { border-right: none; }
+  .badge-card:hover { background: var(--bg-card-50); }
+  .badge-icon {
+    font-size: 18px; margin-bottom: 14px;
+    width: 36px; height: 36px;
+    background: var(--primary-05);
+    border: 1px solid var(--primary-10);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .badge-card h4 { font-size: 13px; font-weight: 500; margin-bottom: 5px; }
+  .badge-card p { font-size: 11px; color: var(--text-dim); line-height: 1.55; }
+
+  /* =============================================
+     INTEGRATIONS
+     ============================================= */
+  .integrations {
+    padding: 64px 0;
+    border-top: 1px solid var(--border-30);
+    text-align: center;
+  }
+  .int-grid {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    justify-content: center; margin-top: 36px;
+    max-width: 760px; margin-left: auto; margin-right: auto;
+  }
+  .int-item {
+    background: var(--bg-card-20);
+    border: 1px solid var(--border-30);
+    border-radius: 3px; padding: 8px 18px;
+    font-size: 11px; font-weight: 400;
+    color: var(--text-dim);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .int-item:hover {
+    border-color: var(--primary-20);
+    color: var(--text-secondary);
+  }
+
+  /* =============================================
+     PRICING
+     ============================================= */
+  .pricing {
+    border-top: 1px solid var(--border-30);
+  }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 48px;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .pr-card {
+    padding: 36px; background: var(--bg-card-20);
+    border-right: 1px solid var(--border-30);
+    transition: background 0.3s;
+  }
+  .pr-card:last-child { border-right: none; }
+  .pr-card:hover { background: var(--bg-card-50); }
+  .pr-card.featured {
+    background: var(--bg-card-50);
+    border-top: 2px solid var(--primary);
+    margin-top: -1px;
+    position: relative;
+  }
+  .pr-card.featured::before {
+    content: 'Recommended';
+    position: absolute; top: 12px; right: 16px;
+    font-size: 9px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--primary); opacity: 0.6;
+  }
+  .pr-name { font-size: 18px; font-weight: 500; margin-bottom: 3px; letter-spacing: -0.01em; }
+  .pr-desc { font-size: 12px; color: var(--text-dim); margin-bottom: 20px; }
+  .pr-price {
+    font-size: 36px; font-weight: 600; color: var(--text);
+    letter-spacing: -0.03em; margin-bottom: 2px;
+  }
+  .pr-price span { font-size: 14px; font-weight: 400; color: var(--text-dim); letter-spacing: 0; }
+  .pr-period { font-size: 11px; color: var(--text-dim); margin-bottom: 24px; }
+  .pr-features { list-style: none; margin-bottom: 24px; }
+  .pr-features li {
+    padding: 7px 0; font-size: 12px; color: var(--text-tertiary);
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--border-30);
+  }
+  .pr-features li::before {
+    content: ''; width: 3px; height: 3px;
+    background: var(--primary); border-radius: 50%;
+    flex-shrink: 0; opacity: 0.5;
+  }
+  .pr-btn {
+    width: 100%; padding: 10px;
+    border-radius: 4px; font-size: 12px; font-weight: 500;
+    cursor: pointer; transition: all 0.2s;
+    letter-spacing: -0.01em;
+  }
+  .pr-btn.primary {
+    background: var(--primary); color: var(--primary-dark); border: none;
+    box-shadow: 0 0 20px -5px var(--primary-20);
+  }
+  .pr-btn.primary:hover { box-shadow: 0 0 30px -5px var(--primary-50); }
+  .pr-btn.secondary {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border-60);
+  }
+  .pr-btn.secondary:hover { border-color: var(--primary-50); }
+
+  /* =============================================
+     RESOURCES
+     ============================================= */
+  .resources {
+    border-top: 1px solid var(--border-30);
+  }
+  .res-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    margin-top: 48px;
+    border: 1px solid var(--border-30);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .res-card {
+    background: var(--bg-card-20);
+    border-right: 1px solid var(--border-30);
+    transition: background 0.2s;
+  }
+  .res-card:last-child { border-right: none; }
+  .res-card:hover { background: var(--bg-card-50); }
+  .res-img {
+    height: 140px; border-bottom: 1px solid var(--border-30);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-dim); font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.1em; font-weight: 500;
+  }
+  .res-body { padding: 20px; }
+  .res-tag { font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 6px; opacity: 0.6; }
+  .res-title { font-size: 14px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .res-desc { font-size: 11px; color: var(--text-dim); line-height: 1.55; }
+
+  /* =============================================
+     FINAL CTA
+     ============================================= */
+  .final-cta {
+    padding: 120px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-30);
+    background: var(--bg-card-50);
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta .glow {
+    position: absolute; bottom: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 500px; height: 300px;
+    background: radial-gradient(ellipse, var(--primary-05) 0%, transparent 60%);
+    filter: blur(60px); pointer-events: none;
+  }
+  .final-cta h2 {
+    font-size: 32px; font-weight: 500;
+    line-height: 1.25; letter-spacing: -0.015em;
+    margin-bottom: 16px; position: relative; z-index: 1;
+  }
+  .final-cta p {
+    font-size: 15px; color: var(--text-tertiary);
+    max-width: 440px; margin: 0 auto 32px;
+    line-height: 1.65; position: relative; z-index: 1;
+  }
+  .final-cta .btn-enterprise { position: relative; z-index: 1; padding: 12px 28px; font-size: 14px; }
+
+  /* =============================================
+     FOOTER
+     ============================================= */
+  footer {
+    border-top: 1px solid var(--border-40);
+    padding: 56px 0 24px;
+  }
+  .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .footer-logo {
+    text-align: center; padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-30);
+    margin-bottom: 48px;
+  }
+  .footer-logo span {
+    font-size: 14px; font-weight: 500; color: var(--text);
+    opacity: 0.3;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 48px; margin-bottom: 48px;
+  }
+  .footer-col h4 {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--text-dim); opacity: 0.5;
+    margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block; font-size: 13px;
+    color: var(--text-tertiary); opacity: 0.7;
+    text-decoration: none; margin-bottom: 8px;
+    transition: color 0.2s, opacity 0.2s;
+  }
+  .footer-col a:hover { color: var(--text); opacity: 1; }
+  .footer-bottom {
+    border-top: 1px solid var(--border-30);
+    padding-top: 20px;
+    display: flex; justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-size: 11px; color: var(--text-dim); opacity: 0.35;
+  }
+  .footer-badges { display: flex; gap: 6px; }
+  .footer-badge {
+    font-size: 9px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-dim); opacity: 0.4;
+  }
+  .footer-badge + .footer-badge::before {
+    content: ''; display: inline-block;
+    width: 1px; height: 10px;
+    background: var(--border); margin-right: 6px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">SealMetrics</div>
+    <div class="nav-links">
+      <a href="#">Product</a>
+      <a href="#">Pricing</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Resources</a>
+      <a href="#">Docs</a>
+      <a href="#">Company</a>
+      <a href="#" class="btn-enterprise-ghost">Log in</a>
+      <a href="#" class="btn-enterprise">Book a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero grain-section grid-bg">
+  <div class="hero-glow"></div>
+  <div class="hero-content container-wide">
+    <div class="label-green" style="margin-bottom: 32px;">Cookieless Analytics Infrastructure</div>
+    <h1 class="headline-hero">Most analytics only show a fraction of <span class="text-gradient">what's actually happening.</span></h1>
+    <p class="subheadline">In European markets, cookie rejection renders up to 87% of visitor data invisible. SealMetrics provides complete visibility — without cookies, consent mechanisms, or compliance risk.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-enterprise">Book a Demo</a>
+      <a href="#" class="btn-enterprise-outline">How it works &rarr;</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs-item"><div class="hs-value">100%</div><div class="hs-label">Data Capture</div></div>
+      <div class="hs-item"><div class="hs-value">0</div><div class="hs-label">Cookies</div></div>
+      <div class="hs-item"><div class="hs-value">GDPR</div><div class="hs-label">By Design</div></div>
+      <div class="hs-item"><div class="hs-value">2 min</div><div class="hs-label">Setup</div></div>
+    </div>
+    <div class="hero-product">
+      <div class="hp-glow"></div>
+      <div class="hp-inner">
+        <div class="hp-topbar"><div class="hp-dot r"></div><div class="hp-dot y"></div><div class="hp-dot g"></div></div>
+        <div class="hp-body">
+          <div class="hp-sidebar">
+            <div class="hp-nav active">Overview</div><div class="hp-nav">Sources</div><div class="hp-nav">Pages</div>
+            <div class="hp-nav">Conversions</div><div class="hp-nav">Devices</div><div class="hp-nav">Geography</div>
+            <div class="hp-nav">Funnel</div><div class="hp-nav">LENS AI</div>
+          </div>
+          <div class="hp-main">
+            <div class="hp-metrics">
+              <div class="hp-card"><div class="hp-card-label">Entrances</div><div class="hp-card-value">24,812</div><div class="hp-card-delta">+12.4%</div></div>
+              <div class="hp-card"><div class="hp-card-label">Conversions</div><div class="hp-card-value green">1,247</div><div class="hp-card-delta">+8.2%</div></div>
+              <div class="hp-card"><div class="hp-card-label">Revenue</div><div class="hp-card-value">€89.4K</div><div class="hp-card-delta">+15.1%</div></div>
+              <div class="hp-card"><div class="hp-card-label">Data Capture</div><div class="hp-card-value green">100%</div><div class="hp-card-delta" style="opacity: 0.3;">Always</div></div>
+            </div>
+            <div class="hp-chart">
+              <div class="hp-chart-header"><span class="hp-chart-title">Traffic — Last 30 days</span><span class="hp-chart-period">Feb 1 – Feb 28, 2026</span></div>
+              <div class="chart-area">
+                <div class="chart-bar" style="height:35%;"></div><div class="chart-bar" style="height:48%;"></div><div class="chart-bar" style="height:42%;"></div><div class="chart-bar" style="height:65%;"></div><div class="chart-bar" style="height:58%;"></div><div class="chart-bar" style="height:52%;"></div><div class="chart-bar" style="height:74%;"></div><div class="chart-bar" style="height:85%;"></div><div class="chart-bar" style="height:78%;"></div><div class="chart-bar" style="height:68%;"></div><div class="chart-bar" style="height:62%;"></div><div class="chart-bar" style="height:82%;"></div><div class="chart-bar" style="height:90%;"></div><div class="chart-bar" style="height:75%;"></div><div class="chart-bar" style="height:70%;"></div><div class="chart-bar" style="height:85%;"></div><div class="chart-bar" style="height:92%;"></div><div class="chart-bar" style="height:80%;"></div><div class="chart-bar" style="height:76%;"></div><div class="chart-bar" style="height:88%;"></div><div class="chart-bar" style="height:65%;"></div><div class="chart-bar" style="height:80%;"></div><div class="chart-bar" style="height:86%;"></div><div class="chart-bar" style="height:72%;"></div><div class="chart-bar" style="height:82%;"></div><div class="chart-bar" style="height:95%;"></div><div class="chart-bar" style="height:88%;"></div><div class="chart-bar" style="height:80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos"><div class="container-wide">
+  <div class="label-xs" style="text-align: center;">Trusted by marketing and ecommerce leaders at</div>
+  <div class="logos-row"><span>Desigual</span><span>MediaMarkt</span><span>Mango</span><span>Tous</span><span>Freshly Cosmetics</span><span>Scalpers</span></div>
+</div></section>
+
+<!-- PROBLEM -->
+<section class="problem section-padding"><div class="container-wide">
+  <div class="label-green">The Problem</div>
+  <h2 class="headline-section" style="max-width: 600px; margin-bottom: 12px;">The growing gap between your analytics and <span class="text-gradient">reality.</span></h2>
+  <p class="subheadline" style="max-width: 520px;">Every quarter, the distance between what your tools report and what your business actually experiences widens.</p>
+  <div class="problem-grid">
+    <div class="problem-card"><div class="pc-value v-green">87%</div><h3>EU traffic invisible</h3><p>Cookie rejection means your analytics capture a fraction of real visitor behavior. Campaign performance and ROAS — calculated on incomplete data.</p></div>
+    <div class="problem-card"><div class="pc-value v-amber">4%</div><h3>Revenue at GDPR risk</h3><p>Of global annual turnover — the maximum GDPR fine. GA4's US data transfers create ongoing compliance liability.</p></div>
+    <div class="problem-card"><div class="pc-value v-red">30h</div><h3>Monthly reconciliation</h3><p>When every tool shows different numbers, senior marketing time goes to spreadsheets and debates — not strategy.</p></div>
+  </div>
+</div></section>
+
+<!-- FEATURES -->
+<section class="features"><div class="container-wide">
+  <div class="section-padding" style="padding-bottom: 0;">
+    <div class="label-green">Product</div>
+    <h2 class="headline-section" style="max-width: 540px; margin-bottom: 12px;">Built for the data your decisions depend on.</h2>
+    <p class="subheadline" style="max-width: 480px;">Complete, trustworthy analytics — without compromising privacy or compliance.</p>
+  </div>
+
+  <div class="feature-row">
+    <div class="ft-content">
+      <div class="label-green">Data Capture</div>
+      <h3>See every visitor. Not just the ones who click "Accept."</h3>
+      <p>SealMetrics captures 100% of traffic without cookies or consent banners. First-party tracking that bypasses ad blockers while remaining fully privacy-compliant.</p>
+      <ul class="ft-list">
+        <li>First-party tracker bypasses ad blockers</li>
+        <li>No sampling, no statistical modeling</li>
+        <li>Real visitor counts, not estimates</li>
+        <li>Live from minute one — 2-minute setup</li>
+      </ul>
+      <a href="#" class="btn-link">Learn more &rarr;</a>
+    </div>
+    <div class="ft-visual">
+      <div class="fv-header">Traffic capture comparison</div>
+      <div class="fv-body">
+        <div class="fv-bar-row"><div class="fv-label">GA4</div><div class="fv-bar gray" style="width: 35%;"></div><div class="fv-val bad">~35%</div></div>
+        <div class="fv-bar-row"><div class="fv-label">SealMetrics</div><div class="fv-bar" style="width: 100%;"></div><div class="fv-val good">100%</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="ft-content">
+      <div class="label-green">Revenue Intelligence</div>
+      <h3>Know which channels actually drive your revenue.</h3>
+      <p>Privacy-compliant attribution based on complete data. See the real ROI of every marketing channel — based on 100% of traffic, not the 35% that survived cookie consent.</p>
+      <ul class="ft-list">
+        <li>Last-click attribution with complete data</li>
+        <li>Channel-level ROAS that matches actual sales</li>
+        <li>Campaign performance with full UTM support</li>
+        <li>Revenue attribution by source, medium, and campaign</li>
+      </ul>
+      <a href="#" class="btn-link">Explore attribution &rarr;</a>
+    </div>
+    <div class="ft-visual">
+      <div class="fv-header">Revenue by channel — Last 30 days</div>
+      <div class="fv-body" style="padding: 16px 20px;">
+        <div class="rev-row"><span class="rev-source">Google Ads</span><div class="rev-bar" style="width: 75%;"></div><span class="rev-val">€42.1K</span></div>
+        <div class="rev-row"><span class="rev-source">Organic</span><div class="rev-bar" style="width: 52%;"></div><span class="rev-val">€28.7K</span></div>
+        <div class="rev-row"><span class="rev-source">Meta Ads</span><div class="rev-bar" style="width: 28%;"></div><span class="rev-val">€12.4K</span></div>
+        <div class="rev-row"><span class="rev-source">Email</span><div class="rev-bar" style="width: 18%;"></div><span class="rev-val">€8.9K</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="ft-content">
+      <div class="label-green">AI-Powered Insights</div>
+      <h3>LENS AI detects problems before they reach your monthly report.</h3>
+      <p>60+ anomaly detection rules monitor your data around the clock. Alerts when traffic drops, conversions shift, or attribution patterns change.</p>
+      <ul class="ft-list">
+        <li>Automated anomaly detection across all metrics</li>
+        <li>Natural language queries — ask your data anything</li>
+        <li>Weekly executive summaries to your inbox</li>
+        <li>Trend prediction for proactive decisions</li>
+      </ul>
+      <a href="#" class="btn-link">Discover LENS AI &rarr;</a>
+    </div>
+    <div class="ft-visual">
+      <div class="fv-header">Lens AI — Active monitoring</div>
+      <div class="fv-body" style="padding: 16px;">
+        <div class="alert-card danger"><div class="alert-tag red">Anomaly Detected</div><div class="alert-text">Conversion rate from Google Ads dropped 23% vs. previous period.</div><div class="alert-meta">Detected 2h ago — Est. impact: -€4,200/week</div></div>
+        <div class="alert-card info"><div class="alert-tag green">AI Recommendation</div><div class="alert-text">Review Google Ads landing page. Bounce rate increased 18% on mobile devices.</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- COMPARISON -->
+<section class="comparison section-padding"><div class="container-narrow">
+  <div style="text-align: center;">
+    <div class="label-green">Why teams switch</div>
+    <h2 class="headline-section">SealMetrics vs Google Analytics 4</h2>
+  </div>
+  <table>
+    <thead><tr><th>Capability</th><th>Google Analytics 4</th><th>SealMetrics</th></tr></thead>
+    <tbody>
+      <tr><td>Data capture rate (EU)</td><td class="c-no">13–40%</td><td class="c-yes">100%</td></tr>
+      <tr><td>Cookies required</td><td class="c-no">Yes</td><td class="c-yes">None</td></tr>
+      <tr><td>Consent banners required</td><td class="c-no">Yes (EU)</td><td class="c-yes">No</td></tr>
+      <tr><td>GDPR compliant (EU hosting)</td><td class="c-no">No — US transfers</td><td class="c-yes">Yes — Dublin</td></tr>
+      <tr><td>Ad blocker resistant</td><td class="c-no">No</td><td class="c-yes">First-party tracker</td></tr>
+      <tr><td>Setup time</td><td>30–60 min</td><td class="c-yes">2 minutes</td></tr>
+      <tr><td>AI-powered insights</td><td class="c-no">Limited</td><td class="c-yes">LENS AI — 60+ rules</td></tr>
+      <tr><td>Data retention</td><td>14 months</td><td class="c-yes">24 months</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<!-- CASE STUDY -->
+<section class="case-study section-padding"><div class="container-wide">
+  <div class="label-green">Case Study</div>
+  <h2 style="font-size: 24px; font-weight: 500; max-width: 520px; letter-spacing: -0.015em;">How a €45M fashion retailer discovered 64% of their traffic was invisible.</h2>
+  <div class="cs-card">
+    <div class="cs-content">
+      <p>After implementing SealMetrics alongside GA4, the marketing team discovered their existing reports showed only 36% of actual EU visitors. Attribution, ROAS, and budget allocation had been based on fundamentally incomplete data.</p>
+      <div class="cs-metrics">
+        <div><div class="csm-value">+64%</div><div class="csm-label">More traffic</div></div>
+        <div><div class="csm-value">3.2x</div><div class="csm-label">Accurate ROAS</div></div>
+        <div><div class="csm-value">€0</div><div class="csm-label">GDPR cost</div></div>
+      </div>
+      <a href="#" class="btn-link">Read the full case study &rarr;</a>
+    </div>
+    <div class="cs-data">
+      <div class="cs-table">
+        <div class="cs-table-header"><span>Metric</span><span>Before</span><span>After</span></div>
+        <div class="cs-row"><span class="cs-row-label">Monthly visitors</span><span class="cs-before">38,200</span><span class="cs-after">106,400</span></div>
+        <div class="cs-row"><span class="cs-row-label">Conversions</span><span class="cs-before">412</span><span class="cs-after">1,147</span></div>
+        <div class="cs-row"><span class="cs-row-label">Revenue attributed</span><span class="cs-before">€89K</span><span class="cs-after">€247K</span></div>
+        <div class="cs-row"><span class="cs-row-label">GDPR risk</span><span class="cs-before">High</span><span class="cs-after">None</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-padding"><div class="container-wide">
+  <div class="label-green">What our clients say</div>
+  <h2 class="headline-section" style="max-width: 520px;">Trusted by marketing leaders across Europe.</h2>
+  <div class="t-grid">
+    <div class="t-card">
+      <div class="t-quote">We discovered we were making €2M+ in annual budget decisions based on data that represented only 36% of our actual traffic. SealMetrics changed how our entire leadership team thinks about marketing investment.</div>
+      <div class="t-author"><div class="t-avatar">MC</div><div><div class="t-name">Maria C.</div><div class="t-role">CMO, Fashion Retail — €45M</div><div class="t-result">+64% traffic visibility</div></div></div>
+    </div>
+    <div class="t-card">
+      <div class="t-quote">Our legal team spent months evaluating GA4 compliance. With SealMetrics, there was nothing to evaluate — no personal data means no GDPR obligations. We went from risk to zero liability in one afternoon.</div>
+      <div class="t-author"><div class="t-avatar">JR</div><div><div class="t-name">Javier R.</div><div class="t-role">Head of Digital, Ecommerce — €28M</div><div class="t-result">Zero GDPR compliance cost</div></div></div>
+    </div>
+    <div class="t-card">
+      <div class="t-quote">We used to spend the first 30 minutes of every performance meeting debating whose numbers were right. Now we have one source of truth. The attribution finally matches our actual revenue.</div>
+      <div class="t-author"><div class="t-avatar">AK</div><div><div class="t-name">Andreas K.</div><div class="t-role">Ecommerce Director — €120M</div><div class="t-result">30h/month saved</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- COMPLIANCE -->
+<section class="compliance section-padding"><div class="container-wide">
+  <div class="label-green">Security & Compliance</div>
+  <h2 class="headline-section" style="max-width: 520px;">Built for the strictest privacy regulations.</h2>
+  <div class="badge-grid">
+    <div class="badge-card"><div class="badge-icon">&#9745;</div><h4>GDPR Compliant</h4><p>No personal data. Art. 6(1)(f) legitimate interest. No consent required.</p></div>
+    <div class="badge-card"><div class="badge-icon">&#127466;&#127482;</div><h4>EU Hosted</h4><p>All infrastructure in Dublin, Ireland. Zero international transfers.</p></div>
+    <div class="badge-card"><div class="badge-icon">&#128274;</div><h4>CCPA & PECR</h4><p>No personal information means no CCPA or PECR obligations.</p></div>
+    <div class="badge-card"><div class="badge-icon">&#9888;&#65039;</div><h4>CNIL Recommended</h4><p>Recommended GA4 alternative by the French data authority.</p></div>
+  </div>
+</div></section>
+
+<!-- INTEGRATIONS -->
+<section class="integrations"><div class="container-wide">
+  <div class="label-green">Integrations</div>
+  <h2 style="font-size: 24px; font-weight: 500; letter-spacing: -0.015em;">Connects with your existing stack.</h2>
+  <div class="int-grid">
+    <div class="int-item">WooCommerce</div><div class="int-item">Magento 2</div><div class="int-item">PrestaShop</div>
+    <div class="int-item">BigCommerce</div><div class="int-item">WordPress</div><div class="int-item">Shopify</div>
+    <div class="int-item">Google Tag Manager</div><div class="int-item">BigQuery</div><div class="int-item">Webflow</div>
+    <div class="int-item">Next.js</div><div class="int-item">React</div><div class="int-item">Nuxt 3</div>
+    <div class="int-item">Wix</div><div class="int-item">Squarespace</div><div class="int-item">REST API</div><div class="int-item">Webhooks</div>
+  </div>
+</div></section>
+
+<!-- PRICING -->
+<section class="pricing section-padding"><div class="container-wide">
+  <div style="text-align: center;">
+    <div class="label-green">Pricing</div>
+    <h2 class="headline-section">Simple pricing. No traffic limits.</h2>
+    <p class="subheadline" style="max-width: 480px; margin: 12px auto 0;">You pay for how your team uses data — not how much your business grows.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pr-card">
+      <div class="pr-name">Guard</div><div class="pr-desc">Operational Copilot</div>
+      <div class="pr-price">€399<span> /mo</span></div><div class="pr-period">€339/mo billed annually</div>
+      <ul class="pr-features"><li>100% first-party data capture</li><li>Unlimited events & traffic</li><li>Unlimited team members</li><li>Consentless — GDPR safe</li><li>AI anomaly detection</li><li>1 website included</li></ul>
+      <button class="pr-btn secondary">Book a Demo</button>
+    </div>
+    <div class="pr-card featured">
+      <div class="pr-name">Growth</div><div class="pr-desc">Decision Accelerator</div>
+      <div class="pr-price">€599<span> /mo</span></div><div class="pr-period">€508/mo billed annually</div>
+      <ul class="pr-features"><li>Everything in Guard</li><li>AI trend prediction</li><li>BigQuery integration</li><li>Priority support</li><li>Advanced attribution</li><li>1 website included</li></ul>
+      <button class="pr-btn primary">Book a Demo</button>
+    </div>
+    <div class="pr-card">
+      <div class="pr-name">Enterprise</div><div class="pr-desc">Full Orchestration</div>
+      <div class="pr-price">Custom</div><div class="pr-period">Annual contracts</div>
+      <ul class="pr-features"><li>Everything in Growth</li><li>Dedicated account manager</li><li>White-labeled reports</li><li>Custom integrations</li><li>SLA guarantees</li><li>SSO / SAML</li></ul>
+      <button class="pr-btn secondary">Contact Sales</button>
+    </div>
+  </div>
+</div></section>
+
+<!-- RESOURCES -->
+<section class="resources section-padding"><div class="container-wide">
+  <div class="label-green">Resources</div>
+  <h2 style="font-size: 24px; font-weight: 500; letter-spacing: -0.015em;">Insights for data-driven leaders.</h2>
+  <div class="res-grid">
+    <div class="res-card"><div class="res-img">Guide</div><div class="res-body"><div class="res-tag">Guide</div><div class="res-title">Why CNIL recommends alternatives to Google Analytics</div><div class="res-desc">The regulatory landscape and what it means for your analytics stack in 2026.</div></div></div>
+    <div class="res-card"><div class="res-img">Case Study</div><div class="res-body"><div class="res-tag">Case Study</div><div class="res-title">From 35% to 100%: a fashion retailer's data transformation</div><div class="res-desc">How one CMO discovered the true cost of cookie-based analytics.</div></div></div>
+    <div class="res-card"><div class="res-img">Technical</div><div class="res-body"><div class="res-tag">Technical</div><div class="res-title">How cookieless analytics works without compromising privacy</div><div class="res-desc">A deep dive into anonymous data architecture and why consent isn't needed.</div></div></div>
+  </div>
+</div></section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="glow"></div>
+  <h2>Complete data. Confident decisions.</h2>
+  <p>See what a complete, privacy-compliant analytics infrastructure looks like for your organization.</p>
+  <a href="#" class="btn-enterprise">Book a Demo</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span>SealMetrics</span></div>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Product</h4><a href="#">Features</a><a href="#">Pricing</a><a href="#">Integrations</a><a href="#">Changelog</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="#">Documentation</a><a href="#">Blog</a><a href="#">Case Studies</a><a href="#">API Reference</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">About</a><a href="#">Security</a><a href="#">Contact</a><a href="#">Support</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">GDPR</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 SealMetrics, SL. All rights reserved.</span>
+      <div class="footer-badges"><span class="footer-badge">GDPR Compliant</span><span class="footer-badge">EU Hosted</span><span class="footer-badge">No Cookies</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

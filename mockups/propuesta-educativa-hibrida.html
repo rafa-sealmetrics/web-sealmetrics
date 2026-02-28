@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SealMetrics — See What Others Can't</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     DESIGN SYSTEM
+     Light editorial + Dark product showcase
+     ============================================ */
+
+  :root {
+    /* Light palette */
+    --white: #FFFFFF;
+    --warm-white: #FAFAF7;
+    --warm-gray-50: #F5F5F0;
+    --warm-gray-100: #EBEBDF;
+    --warm-gray-200: #D4D4C8;
+    --warm-gray-300: #A3A396;
+    --warm-gray-400: #78786C;
+    --text-dark: #1A1A1A;
+    --text-body: #3D3D3D;
+    --text-secondary: #6B6B5E;
+    --text-tertiary: #9B9B8E;
+
+    /* Dark palette (product sections) */
+    --dark-bg: #0A0A10;
+    --dark-card: #0F1018;
+    --dark-border: #262833;
+    --dark-text: #E8E8E8;
+    --dark-text-secondary: #999999;
+    --dark-text-tertiary: #737373;
+
+    /* Accent */
+    --green: #00FF7F;
+    --green-muted: #5BBFA0;
+    --green-dark: #0D3D2E;
+    --green-glow: rgba(0, 255, 127, 0.15);
+
+    /* Brand */
+    --blue-accent: #2E5C8A;
+    --red-alert: #C85A54;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 400;
+    color: var(--text-body);
+    background: var(--white);
+    line-height: 1.7;
+  }
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  .serif { font-family: 'Source Serif 4', Georgia, serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  .headline-hero {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-dark);
+  }
+
+  .headline-section {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text-dark);
+  }
+
+  .headline-sub {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--text-dark);
+  }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .body-large {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    max-width: 640px;
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  /* ============================================
+     LAYOUT
+     ============================================ */
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-light {
+    background: var(--white);
+    padding: 7rem 0;
+  }
+
+  .section-warm {
+    background: var(--warm-white);
+    padding: 7rem 0;
+  }
+
+  .section-dark {
+    background: var(--dark-bg);
+    padding: 7rem 0;
+    color: var(--dark-text);
+    position: relative;
+  }
+
+  .section-dark .headline-section,
+  .section-dark .headline-sub,
+  .section-dark .headline-hero {
+    color: var(--dark-text);
+  }
+
+  .section-dark .label {
+    color: var(--green-muted);
+  }
+
+  .section-dark .body-large {
+    color: var(--dark-text-secondary);
+  }
+
+  /* ============================================
+     HEADER
+     ============================================ */
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--warm-gray-100);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--text-dark);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-dark);
+  }
+
+  .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--text-dark);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-demo:hover {
+    background: #333;
+  }
+
+  /* ============================================
+     HERO — Light, editorial, pain-first
+     ============================================ */
+
+  .hero {
+    padding: 10rem 0 6rem;
+    background: var(--white);
+  }
+
+  .hero-content {
+    max-width: 820px;
+  }
+
+  .hero .label {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+
+  .hero .headline-hero {
+    margin-bottom: 2rem;
+  }
+
+  .hero .headline-hero em {
+    font-style: italic;
+    color: var(--red-alert);
+  }
+
+  .hero .body-large {
+    margin-bottom: 3rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    background: var(--text-dark);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #333;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-secondary);
+    background: none;
+    border: 1px solid var(--warm-gray-200);
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--text-body);
+    color: var(--text-dark);
+  }
+
+  .hero-note {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ============================================
+     LOGOS
+     ============================================ */
+
+  .logos-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--warm-gray-100);
+    border-bottom: 1px solid var(--warm-gray-100);
+  }
+
+  .logos-label {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .logos-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+    opacity: 0.4;
+  }
+
+  .logo-placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
+  }
+
+  /* ============================================
+     THE PROBLEM — Editorial, educational
+     ============================================ */
+
+  .problem-section {
+    padding: 8rem 0;
+    background: var(--white);
+  }
+
+  .problem-intro {
+    max-width: 700px;
+    margin-bottom: 5rem;
+  }
+
+  .problem-intro .label {
+    margin-bottom: 1rem;
+  }
+
+  .problem-intro .headline-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .stat-card {
+    padding: 2.5rem;
+    border: 1px solid var(--warm-gray-100);
+    border-radius: 4px;
+    background: var(--warm-white);
+  }
+
+  .stat-number {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-number span {
+    color: var(--red-alert);
+  }
+
+  .stat-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* Problem explanation - editorial style */
+  .problem-explain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    padding-top: 3rem;
+    border-top: 1px solid var(--warm-gray-100);
+  }
+
+  .problem-explain .headline-sub {
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-explain p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .problem-explain p em {
+    font-style: italic;
+    color: var(--text-dark);
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  .problem-diagram {
+    background: var(--warm-white);
+    border: 1px solid var(--warm-gray-100);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .diagram-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 2rem;
+  }
+
+  .diagram-bar-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .diagram-bar-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .diagram-bar {
+    height: 32px;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .diagram-bar-full {
+    background: var(--warm-gray-100);
+    width: 100%;
+    position: relative;
+  }
+
+  .diagram-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 2px;
+  }
+
+  .fill-red { background: var(--red-alert); opacity: 0.7; }
+  .fill-green { background: var(--green-muted); }
+
+  .diagram-legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--warm-gray-100);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+
+  /* ============================================
+     HOW IT WORKS — Still light, educational
+     ============================================ */
+
+  .how-section {
+    padding: 7rem 0;
+    background: var(--warm-white);
+    border-top: 1px solid var(--warm-gray-100);
+    border-bottom: 1px solid var(--warm-gray-100);
+  }
+
+  .how-header {
+    max-width: 600px;
+    margin-bottom: 5rem;
+  }
+
+  .how-header .label {
+    margin-bottom: 1rem;
+  }
+
+  .how-header .headline-section {
+    margin-bottom: 1rem;
+  }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .how-step {
+    position: relative;
+  }
+
+  .step-number {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--warm-gray-200);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .step-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .step-detail {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--warm-gray-200);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     TRANSITION — Gradient from light to dark
+     ============================================ */
+
+  .transition-section {
+    height: 120px;
+    background: linear-gradient(to bottom, var(--warm-white), var(--dark-bg));
+  }
+
+  .transition-reverse {
+    height: 120px;
+    background: linear-gradient(to bottom, var(--dark-bg), var(--white));
+  }
+
+  /* ============================================
+     PRODUCT SHOWCASE — Dark sections
+     ============================================ */
+
+  .product-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 5rem;
+  }
+
+  .product-header .label {
+    margin-bottom: 1rem;
+  }
+
+  .product-header .headline-section {
+    margin-bottom: 1rem;
+  }
+
+  /* Dashboard preview */
+  .dashboard-preview {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .dash-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(38, 40, 51, 0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .dash-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--dark-text);
+  }
+
+  .dash-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--dark-text-tertiary);
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--dark-border);
+    border-radius: 4px;
+  }
+
+  .dash-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dash-metric {
+    padding: 1.25rem;
+    background: rgba(15, 16, 24, 0.5);
+    border: 1px solid rgba(38, 40, 51, 0.4);
+    border-radius: 4px;
+  }
+
+  .dash-metric-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--dark-text-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  .dash-metric-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--green);
+  }
+
+  .dash-metric-change {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-muted);
+    margin-top: 0.25rem;
+  }
+
+  .dash-chart {
+    background: rgba(15, 16, 24, 0.5);
+    border: 1px solid rgba(38, 40, 51, 0.4);
+    border-radius: 4px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    gap: 3px;
+  }
+
+  .chart-bar {
+    flex: 1;
+    background: var(--green);
+    opacity: 0.3;
+    border-radius: 1px 1px 0 0;
+    min-height: 8px;
+    transition: opacity 0.2s;
+  }
+
+  .chart-bar:hover {
+    opacity: 0.6;
+  }
+
+  /* Feature rows in dark */
+  .feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .feature-row.reverse {
+    direction: rtl;
+  }
+
+  .feature-row.reverse > * {
+    direction: ltr;
+  }
+
+  .feature-info .label {
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-info .headline-sub {
+    margin-bottom: 1rem;
+  }
+
+  .feature-info p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-text-secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-list {
+    list-style: none;
+  }
+
+  .feature-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    color: var(--dark-text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .feature-list li::before {
+    content: "—";
+    color: var(--green-muted);
+    flex-shrink: 0;
+  }
+
+  .feature-visual {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 4px;
+    padding: 2rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .visual-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--dark-text-tertiary);
+    margin-bottom: 1.5rem;
+  }
+
+  .visual-data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(38, 40, 51, 0.3);
+  }
+
+  .visual-data-row:last-child {
+    border-bottom: none;
+  }
+
+  .visual-data-key {
+    font-size: 0.85rem;
+    color: var(--dark-text-secondary);
+  }
+
+  .visual-data-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--green);
+  }
+
+  .visual-data-value.muted {
+    color: var(--dark-text-tertiary);
+  }
+
+  /* AI anomaly visualization */
+  .anomaly-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .anomaly-item {
+    padding: 1rem;
+    background: rgba(15, 16, 24, 0.5);
+    border: 1px solid rgba(38, 40, 51, 0.3);
+    border-radius: 4px;
+  }
+
+  .anomaly-severity {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .severity-high { color: var(--red-alert); }
+  .severity-medium { color: #E0A458; }
+  .severity-info { color: var(--green-muted); }
+
+  .anomaly-text {
+    font-size: 0.8rem;
+    color: var(--dark-text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ============================================
+     COMPARISON — Dark
+     ============================================ */
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .comparison-table thead th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--dark-text-tertiary);
+    border-bottom: 1px solid var(--dark-border);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .comparison-table thead th:nth-child(2) {
+    color: var(--green);
+  }
+
+  .comparison-table tbody td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(38, 40, 51, 0.3);
+    color: var(--dark-text-secondary);
+  }
+
+  .comparison-table tbody td:first-child {
+    color: var(--dark-text);
+    font-weight: 400;
+  }
+
+  .comparison-table tbody td:nth-child(2) {
+    color: var(--green-muted);
+  }
+
+  .check { color: var(--green-muted); }
+  .cross { color: var(--dark-text-tertiary); }
+
+  /* ============================================
+     CASE STUDY — Back to light
+     ============================================ */
+
+  .case-study {
+    padding: 7rem 0;
+    background: var(--white);
+  }
+
+  .case-header {
+    margin-bottom: 4rem;
+  }
+
+  .case-header .label {
+    margin-bottom: 1rem;
+  }
+
+  .case-header .headline-section {
+    margin-bottom: 1rem;
+  }
+
+  .case-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .case-quote {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--warm-gray-200);
+  }
+
+  .case-author {
+    margin-bottom: 2.5rem;
+  }
+
+  .case-author-name {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+  }
+
+  .case-author-role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+  }
+
+  .case-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .case-metric {
+    padding: 2rem;
+    background: var(--warm-white);
+    border: 1px solid var(--warm-gray-100);
+    border-radius: 4px;
+  }
+
+  .case-metric-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .case-metric-before {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    text-decoration: line-through;
+    margin-bottom: 0.25rem;
+  }
+
+  .case-metric-after {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  /* ============================================
+     TESTIMONIALS — Light, warm
+     ============================================ */
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 2rem;
+    border: 1px solid var(--warm-gray-100);
+    border-radius: 4px;
+    background: var(--white);
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-body);
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+  }
+
+  .testimonial-role {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+  }
+
+  /* ============================================
+     COMPLIANCE — Light, trust
+     ============================================ */
+
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .compliance-card {
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--warm-gray-100);
+    border-radius: 4px;
+    background: var(--warm-white);
+  }
+
+  .compliance-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--green-muted);
+  }
+
+  .compliance-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .compliance-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ============================================
+     INTEGRATIONS — Dark
+     ============================================ */
+
+  .integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .integration-card {
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(38, 40, 51, 0.5);
+    border-radius: 4px;
+    background: var(--dark-card);
+    transition: border-color 0.2s;
+  }
+
+  .integration-card:hover {
+    border-color: var(--green-muted);
+  }
+
+  .integration-name {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--dark-text-secondary);
+    margin-top: 0.75rem;
+  }
+
+  .integration-icon {
+    font-size: 1.5rem;
+    opacity: 0.7;
+  }
+
+  /* ============================================
+     PRICING — Light
+     ============================================ */
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .pricing-card {
+    padding: 2.5rem;
+    border: 1px solid var(--warm-gray-100);
+    border-radius: 4px;
+    background: var(--white);
+  }
+
+  .pricing-card.featured {
+    border-color: var(--text-dark);
+    position: relative;
+  }
+
+  .pricing-card.featured::before {
+    content: "Most popular";
+    position: absolute;
+    top: -0.75rem;
+    left: 2rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--text-dark);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+  }
+
+  .pricing-name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .pricing-price {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .pricing-price span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .pricing-period {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .pricing-features li::before {
+    content: "—";
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+  }
+
+  .btn-pricing {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid var(--warm-gray-200);
+    border-radius: 4px;
+    background: var(--white);
+    color: var(--text-dark);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-pricing:hover {
+    background: var(--warm-white);
+    border-color: var(--text-body);
+  }
+
+  .pricing-card.featured .btn-pricing {
+    background: var(--text-dark);
+    color: var(--white);
+    border-color: var(--text-dark);
+  }
+
+  .pricing-card.featured .btn-pricing:hover {
+    background: #333;
+  }
+
+  /* ============================================
+     FINAL CTA — Dark
+     ============================================ */
+
+  .cta-section {
+    padding: 8rem 0;
+    background: var(--dark-bg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 255, 127, 0.05), transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content .headline-section {
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+  }
+
+  .cta-content .body-large {
+    color: var(--dark-text-secondary);
+    margin: 0 auto 2.5rem;
+  }
+
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-bg);
+    background: var(--green);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 40px -10px rgba(0, 255, 127, 0.3);
+  }
+
+  .btn-cta:hover {
+    box-shadow: 0 0 50px -5px rgba(0, 255, 127, 0.4);
+  }
+
+  .cta-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--dark-text-tertiary);
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+
+  footer {
+    background: var(--dark-bg);
+    border-top: 1px solid var(--dark-border);
+    padding: 4rem 0 2rem;
+    color: var(--dark-text-secondary);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--dark-text-tertiary);
+    margin-top: 0.75rem;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--dark-text-tertiary);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--dark-text-secondary);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: var(--dark-text);
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(38, 40, 51, 0.5);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--dark-text-tertiary);
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+
+  @media (max-width: 768px) {
+    .stat-grid,
+    .how-steps,
+    .problem-explain,
+    .feature-row,
+    .case-content,
+    .testimonials-grid,
+    .compliance-grid,
+    .pricing-grid,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dash-metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .integrations-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logos-grid {
+      gap: 2rem;
+    }
+
+    .feature-row.reverse {
+      direction: ltr;
+    }
+
+    .case-metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero { padding: 8rem 0 4rem; }
+
+    .section-light,
+    .section-warm,
+    .section-dark {
+      padding: 5rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">SM</div>
+      SealMetrics
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Company</a></li>
+        <li><a href="#" class="btn-demo">Book a Demo</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================
+     HERO — Light, editorial, pain-first
+     ============================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="label">Web Analytics</span>
+      <h1 class="headline-hero">Your marketing data is missing <em>most</em> of the picture.</h1>
+      <p class="body-large">
+        Consent banners, ad blockers, and cookie restrictions have made traditional analytics unreliable. Most European businesses are making decisions on 13% of their actual traffic. SealMetrics captures 100% — without cookies, without consent prompts, without guesswork.
+      </p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Book a Demo</a>
+        <a href="#" class="btn-secondary">See How It Works</a>
+      </div>
+      <p class="hero-note">No cookies. No consent banners. Full GDPR compliance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     LOGOS
+     ============================================ -->
+<section class="logos-section">
+  <div class="container">
+    <p class="label logos-label">Trusted by marketing teams across Europe</p>
+    <div class="logos-grid">
+      <span class="logo-placeholder">Mango</span>
+      <span class="logo-placeholder">MediaMarkt</span>
+      <span class="logo-placeholder">Promofarma</span>
+      <span class="logo-placeholder">Tous</span>
+      <span class="logo-placeholder">Masaltos</span>
+      <span class="logo-placeholder">Tendam</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     THE PROBLEM — Editorial, educational
+     ============================================ -->
+<section class="problem-section">
+  <div class="container">
+    <div class="problem-intro">
+      <span class="label">The Problem</span>
+      <h2 class="headline-section">The data you rely on is fundamentally incomplete.</h2>
+      <p class="body-large">
+        Every business using cookie-based analytics in Europe is working with a fraction of reality. Here is what the numbers actually look like.
+      </p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-number"><span>87%</span></div>
+        <div class="stat-title">Traffic goes unrecorded</div>
+        <div class="stat-desc">Average EU consent rate is 13%. Every visitor who declines cookies becomes invisible to your analytics.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span>4%</span></div>
+        <div class="stat-title">Conversion accuracy</div>
+        <div class="stat-desc">Consent fragmentation, cookie expiration, and cross-device gaps reduce real conversion tracking to single digits.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number"><span>30h</span></div>
+        <div class="stat-title">Wasted monthly per team</div>
+        <div class="stat-desc">Marketing teams spend an average of 30 hours a month reconciling conflicting data across platforms.</div>
+      </div>
+    </div>
+
+    <div class="problem-explain">
+      <div>
+        <h3 class="headline-sub">Why this happens</h3>
+        <p>
+          Traditional analytics tools were designed in a world where every browser accepted third-party cookies. That world no longer exists.
+        </p>
+        <p>
+          Today, <em>GDPR consent banners reject 60–87% of tracking</em> before it even starts. Safari and Firefox block third-party cookies by default. Ad blockers strip Google Analytics tags from more than 40% of European sessions.
+        </p>
+        <p>
+          The result is not a slight inaccuracy — it is a structural failure. Your analytics tool reports 10,000 visitors. The real number might be 70,000.
+        </p>
+        <p>
+          Every campaign decision, every attribution model, every ROI calculation built on this data is fundamentally compromised.
+        </p>
+      </div>
+      <div class="problem-diagram">
+        <div class="diagram-title">Typical EU data capture — cookie-based vs. cookieless</div>
+        <div class="diagram-bar-group">
+          <div class="diagram-bar-label">
+            <span>Google Analytics 4</span>
+            <span style="font-family: 'JetBrains Mono'; font-size: 0.8rem;">13%</span>
+          </div>
+          <div class="diagram-bar diagram-bar-full">
+            <div class="diagram-bar-fill fill-red" style="width: 13%"></div>
+          </div>
+        </div>
+        <div class="diagram-bar-group">
+          <div class="diagram-bar-label">
+            <span>SealMetrics</span>
+            <span style="font-family: 'JetBrains Mono'; font-size: 0.8rem;">100%</span>
+          </div>
+          <div class="diagram-bar diagram-bar-full">
+            <div class="diagram-bar-fill fill-green" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="diagram-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--red-alert); opacity: 0.7;"></div>
+            Cookie-based capture
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--green-muted);"></div>
+            Cookieless capture
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     HOW IT WORKS — Educational
+     ============================================ -->
+<section class="how-section">
+  <div class="container">
+    <div class="how-header">
+      <span class="label">How It Works</span>
+      <h2 class="headline-section">A different approach to measurement.</h2>
+      <p class="body-large">No cookies. No consent dependency. No modeled or sampled data.</p>
+    </div>
+
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-number">01</div>
+        <div class="step-title">First-party data collection</div>
+        <div class="step-desc">
+          A lightweight script runs on your domain, collecting behavioral data through first-party server-side methods. No third-party cookies, no external requests, no consent barriers.
+        </div>
+        <div class="step-detail">
+          &lt;script&gt; 1.2KB gzipped<br>
+          Load time: &lt;50ms<br>
+          Zero external dependencies
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-number">02</div>
+        <div class="step-title">Full-resolution processing</div>
+        <div class="step-desc">
+          Every session is recorded individually — not modeled, not sampled, not estimated. Your data reflects actual behavior, not statistical inference.
+        </div>
+        <div class="step-detail">
+          100% session capture<br>
+          No data sampling<br>
+          Real-time processing
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-number">03</div>
+        <div class="step-title">Actionable intelligence</div>
+        <div class="step-desc">
+          Nine specialized reports, AI-powered anomaly detection, and revenue attribution — all built on complete data. Decisions grounded in reality, not approximation.
+        </div>
+        <div class="step-detail">
+          9 report types<br>
+          60+ anomaly rules<br>
+          Revenue attribution
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TRANSITION to dark
+     ============================================ -->
+<div class="transition-section"></div>
+
+<!-- ============================================
+     PRODUCT SHOWCASE — Dark mode
+     ============================================ -->
+<section class="section-dark">
+  <div class="container">
+    <div class="product-header">
+      <span class="label">The Platform</span>
+      <h2 class="headline-section">Built for the data you have been missing.</h2>
+      <p class="body-large" style="margin: 0 auto;">Complete analytics built on complete data. Every visitor, every session, every conversion.</p>
+    </div>
+
+    <!-- Dashboard preview -->
+    <div class="dashboard-preview">
+      <div class="dash-topbar">
+        <div class="dash-title">SealMetrics Dashboard</div>
+        <div class="dash-period">Feb 1 – Feb 28, 2026</div>
+      </div>
+      <div class="dash-metrics">
+        <div class="dash-metric">
+          <div class="dash-metric-label">Real visitors</div>
+          <div class="dash-metric-value">72,847</div>
+          <div class="dash-metric-change">+34% vs. GA4</div>
+        </div>
+        <div class="dash-metric">
+          <div class="dash-metric-label">Tracked conversions</div>
+          <div class="dash-metric-value">2,341</div>
+          <div class="dash-metric-change">+612% vs. GA4</div>
+        </div>
+        <div class="dash-metric">
+          <div class="dash-metric-label">Revenue attributed</div>
+          <div class="dash-metric-value">€184K</div>
+          <div class="dash-metric-change">+89% identified</div>
+        </div>
+        <div class="dash-metric">
+          <div class="dash-metric-label">Data accuracy</div>
+          <div class="dash-metric-value">100%</div>
+          <div class="dash-metric-change">No sampling</div>
+        </div>
+      </div>
+      <div class="dash-chart">
+        <div class="chart-bar" style="height: 35%"></div>
+        <div class="chart-bar" style="height: 42%"></div>
+        <div class="chart-bar" style="height: 38%"></div>
+        <div class="chart-bar" style="height: 55%"></div>
+        <div class="chart-bar" style="height: 48%"></div>
+        <div class="chart-bar" style="height: 62%"></div>
+        <div class="chart-bar" style="height: 58%"></div>
+        <div class="chart-bar" style="height: 72%"></div>
+        <div class="chart-bar" style="height: 65%"></div>
+        <div class="chart-bar" style="height: 78%"></div>
+        <div class="chart-bar" style="height: 70%"></div>
+        <div class="chart-bar" style="height: 85%"></div>
+        <div class="chart-bar" style="height: 80%"></div>
+        <div class="chart-bar" style="height: 75%"></div>
+        <div class="chart-bar" style="height: 88%"></div>
+        <div class="chart-bar" style="height: 82%"></div>
+        <div class="chart-bar" style="height: 90%"></div>
+        <div class="chart-bar" style="height: 85%"></div>
+        <div class="chart-bar" style="height: 92%"></div>
+        <div class="chart-bar" style="height: 88%"></div>
+        <div class="chart-bar" style="height: 80%"></div>
+        <div class="chart-bar" style="height: 95%"></div>
+        <div class="chart-bar" style="height: 90%"></div>
+        <div class="chart-bar" style="height: 87%"></div>
+        <div class="chart-bar" style="height: 93%"></div>
+        <div class="chart-bar" style="height: 85%"></div>
+        <div class="chart-bar" style="height: 88%"></div>
+        <div class="chart-bar" style="height: 91%"></div>
+      </div>
+    </div>
+
+    <!-- Feature 1: Data Capture -->
+    <div class="feature-row">
+      <div class="feature-info">
+        <span class="label">Data Capture</span>
+        <h3 class="headline-sub">Every visitor. No exceptions.</h3>
+        <p>
+          Traditional analytics depend on cookie consent. SealMetrics uses first-party, server-side collection that works regardless of consent banners, ad blockers, or browser restrictions.
+        </p>
+        <ul class="feature-list">
+          <li>Cookieless tracking — no consent dependency</li>
+          <li>Ad blocker resistant — first-party infrastructure</li>
+          <li>Cross-device recognition without third-party data</li>
+          <li>Full session reconstruction from first touch to conversion</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="visual-label">Session capture comparison</div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Safari (ITP enabled)</span>
+          <span class="visual-data-value">100%</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Firefox (ETP enabled)</span>
+          <span class="visual-data-value">100%</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Brave Browser</span>
+          <span class="visual-data-value">100%</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Ad blocker active</span>
+          <span class="visual-data-value">100%</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Consent declined</span>
+          <span class="visual-data-value">100%</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Incognito mode</span>
+          <span class="visual-data-value">100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Revenue Intelligence -->
+    <div class="feature-row reverse">
+      <div class="feature-info">
+        <span class="label">Revenue Intelligence</span>
+        <h3 class="headline-sub">Know what actually drives revenue.</h3>
+        <p>
+          Attribution models built on incomplete data produce misleading results. SealMetrics connects every touchpoint to revenue outcomes using complete session data — revealing the true ROI of every channel.
+        </p>
+        <ul class="feature-list">
+          <li>Multi-touch attribution across the full journey</li>
+          <li>Channel-level revenue breakdown</li>
+          <li>Campaign cost integration and true ROAS</li>
+          <li>Funnel analysis with drop-off diagnostics</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="visual-label">Revenue by channel — last 30 days</div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Organic Search</span>
+          <span class="visual-data-value">€67,240</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Paid Search</span>
+          <span class="visual-data-value">€52,180</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Social (Meta)</span>
+          <span class="visual-data-value">€31,450</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Email</span>
+          <span class="visual-data-value">€22,890</span>
+        </div>
+        <div class="visual-data-row">
+          <span class="visual-data-key">Direct</span>
+          <span class="visual-data-value">€11,070</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3: LENS AI -->
+    <div class="feature-row">
+      <div class="feature-info">
+        <span class="label">LENS AI</span>
+        <h3 class="headline-sub">Anomalies detected before they become problems.</h3>
+        <p>
+          LENS monitors 60+ metrics continuously, alerting your team when something changes — a traffic drop, a conversion spike, a channel underperforming. No manual dashboards. No surprises in the monthly report.
+        </p>
+        <ul class="feature-list">
+          <li>60+ automated anomaly detection rules</li>
+          <li>Natural language alerts — no data interpretation needed</li>
+          <li>Root cause analysis with suggested actions</li>
+          <li>Continuous monitoring, not periodic reporting</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="visual-label">Recent anomalies detected</div>
+        <div class="anomaly-grid">
+          <div class="anomaly-item">
+            <div class="anomaly-severity severity-high">High priority</div>
+            <div class="anomaly-text">Organic traffic from Germany dropped 34% over 72 hours. Correlates with indexing changes.</div>
+          </div>
+          <div class="anomaly-item">
+            <div class="anomaly-severity severity-medium">Medium</div>
+            <div class="anomaly-text">Cart abandonment rate increased 12% on mobile since Tuesday deployment.</div>
+          </div>
+          <div class="anomaly-item">
+            <div class="anomaly-severity severity-info">Insight</div>
+            <div class="anomaly-text">Email campaign "Winter Sale" outperforming paid search by 3.2x on ROAS.</div>
+          </div>
+          <div class="anomaly-item">
+            <div class="anomaly-severity severity-info">Insight</div>
+            <div class="anomaly-text">New landing page converts 28% better than control. Statistical significance reached.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <div style="margin-top: 4rem;">
+      <div class="product-header">
+        <span class="label">Comparison</span>
+        <h2 class="headline-section">A different category of analytics.</h2>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>SealMetrics</th>
+            <th>Google Analytics 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EU data capture rate</td>
+            <td>100% of visitors</td>
+            <td>13% average</td>
+          </tr>
+          <tr>
+            <td>Cookie dependency</td>
+            <td class="check">None — fully cookieless</td>
+            <td>Requires cookies</td>
+          </tr>
+          <tr>
+            <td>Consent banner required</td>
+            <td class="check">No</td>
+            <td>Yes (GDPR)</td>
+          </tr>
+          <tr>
+            <td>Ad blocker resistance</td>
+            <td class="check">First-party infrastructure</td>
+            <td class="cross">Blocked 40%+ sessions</td>
+          </tr>
+          <tr>
+            <td>Data sampling</td>
+            <td class="check">Never — full resolution</td>
+            <td class="cross">Sampled above thresholds</td>
+          </tr>
+          <tr>
+            <td>Revenue attribution</td>
+            <td class="check">Complete multi-touch</td>
+            <td class="cross">Partial, consent-dependent</td>
+          </tr>
+          <tr>
+            <td>AI anomaly detection</td>
+            <td class="check">60+ automated rules</td>
+            <td class="cross">Basic insights</td>
+          </tr>
+          <tr>
+            <td>Data residency</td>
+            <td class="check">EU-only servers</td>
+            <td class="cross">US data transfers</td>
+          </tr>
+          <tr>
+            <td>GDPR compliance</td>
+            <td class="check">By design — no PII</td>
+            <td class="cross">Requires configuration + DPA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TRANSITION to light
+     ============================================ -->
+<div class="transition-reverse"></div>
+
+<!-- ============================================
+     CASE STUDY — Light
+     ============================================ -->
+<section class="case-study">
+  <div class="container">
+    <div class="case-header">
+      <span class="label">Case Study</span>
+      <h2 class="headline-section">How a European retailer recovered its invisible revenue.</h2>
+    </div>
+
+    <div class="case-content">
+      <div>
+        <blockquote class="case-quote">
+          "We thought our analytics were accurate. SealMetrics showed us we were missing 74% of our conversions. Our entire attribution model was built on incomplete data — every budget decision we made was wrong."
+        </blockquote>
+        <div class="case-author">
+          <div class="case-author-name">Head of Digital Marketing</div>
+          <div class="case-author-role">European Fashion Retailer — 45M€ annual revenue</div>
+        </div>
+        <p class="body-text" style="color: var(--text-secondary);">
+          After implementing SealMetrics alongside their existing GA4 setup, the team discovered that their paid search channel was generating 3x more attributed revenue than previously visible. This led to a reallocation of budget that improved overall ROAS by 40%.
+        </p>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <div class="case-metric-label">Tracked visitors</div>
+          <div class="case-metric-before">12,400 / month</div>
+          <div class="case-metric-after">47,200</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-label">Recorded conversions</div>
+          <div class="case-metric-before">340 / month</div>
+          <div class="case-metric-after">1,290</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-label">Attributed revenue</div>
+          <div class="case-metric-before">€89K / month</div>
+          <div class="case-metric-after">€342K</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-label">ROAS improvement</div>
+          <div class="case-metric-before">Baseline</div>
+          <div class="case-metric-after">+40%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS — Warm
+     ============================================ -->
+<section class="section-warm">
+  <div class="container">
+    <div style="margin-bottom: 3rem;">
+      <span class="label">What our clients say</span>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">"The difference between our GA4 data and SealMetrics data was alarming. We had been underreporting conversions by over 600%. Our board was making investment decisions on fundamentally wrong numbers."</p>
+        <div class="testimonial-author">CMO</div>
+        <div class="testimonial-role">International E-commerce, 25M€ revenue</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"We removed our consent banner entirely and still maintain full GDPR compliance. Our bounce rate dropped 8% just from eliminating that friction point. SealMetrics captures everything regardless."</p>
+        <div class="testimonial-author">Head of Growth</div>
+        <div class="testimonial-role">SaaS Platform, Series B</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"LENS AI caught a conversion drop from a payment page error at 3 AM. By the time our team was online, the alert had already identified the root cause and estimated revenue impact. We fixed it in 20 minutes."</p>
+        <div class="testimonial-author">VP of Marketing</div>
+        <div class="testimonial-role">Travel & Hospitality, 60M€ revenue</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     COMPLIANCE — Light
+     ============================================ -->
+<section class="section-light">
+  <div class="container">
+    <div style="max-width: 600px;">
+      <span class="label">Compliance & Security</span>
+      <h2 class="headline-section">Privacy by architecture, not by policy.</h2>
+      <p class="body-large">
+        SealMetrics does not collect personal data. Compliance is not a configuration option — it is the foundation.
+      </p>
+    </div>
+    <div class="compliance-grid">
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="compliance-name">GDPR Compliant</div>
+        <div class="compliance-desc">No PII collection. No consent required for analytics.</div>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="compliance-name">EU Data Residency</div>
+        <div class="compliance-desc">All data processed and stored in European infrastructure.</div>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="compliance-name">No Cookie Policy Needed</div>
+        <div class="compliance-desc">Cookieless by design. No consent management overhead.</div>
+      </div>
+      <div class="compliance-card">
+        <div class="compliance-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="compliance-name">ePrivacy Ready</div>
+        <div class="compliance-desc">Prepared for upcoming ePrivacy regulation requirements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     INTEGRATIONS — Dark
+     ============================================ -->
+<section class="section-dark">
+  <div class="container">
+    <div class="product-header">
+      <span class="label">Integrations</span>
+      <h2 class="headline-section">Works with your existing stack.</h2>
+      <p class="body-large" style="margin: 0 auto;">Connect SealMetrics to your marketing platforms, CRMs, and data infrastructure. One-click setup for most integrations.</p>
+    </div>
+    <div class="integrations-grid">
+      <div class="integration-card">
+        <div class="integration-icon">G</div>
+        <div class="integration-name">Google Ads</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">M</div>
+        <div class="integration-name">Meta Ads</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">S</div>
+        <div class="integration-name">Shopify</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">W</div>
+        <div class="integration-name">WooCommerce</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">H</div>
+        <div class="integration-name">HubSpot</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">S</div>
+        <div class="integration-name">Salesforce</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">B</div>
+        <div class="integration-name">BigQuery</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">T</div>
+        <div class="integration-name">TikTok Ads</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">P</div>
+        <div class="integration-name">PrestaShop</div>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon">+</div>
+        <div class="integration-name">20+ more</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="transition-reverse"></div>
+
+<!-- ============================================
+     PRICING — Light
+     ============================================ -->
+<section class="section-light">
+  <div class="container">
+    <div style="max-width: 600px; margin-bottom: 1rem;">
+      <span class="label">Pricing</span>
+      <h2 class="headline-section">Transparent pricing. No hidden costs.</h2>
+      <p class="body-large">Based on monthly tracked pageviews. All plans include full data capture and compliance features.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-desc">For growing businesses establishing data-driven marketing.</div>
+        <div class="pricing-price">€390 <span>/ month</span></div>
+        <div class="pricing-period">Up to 500K pageviews</div>
+        <ul class="pricing-features">
+          <li>Full cookieless tracking</li>
+          <li>9 analytics reports</li>
+          <li>3 domains</li>
+          <li>Email support</li>
+          <li>Standard integrations</li>
+        </ul>
+        <a href="#" class="btn-pricing">Get started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-name">Business</div>
+        <div class="pricing-desc">For established teams that need attribution and intelligence.</div>
+        <div class="pricing-price">€790 <span>/ month</span></div>
+        <div class="pricing-period">Up to 2M pageviews</div>
+        <ul class="pricing-features">
+          <li>Everything in Growth</li>
+          <li>Revenue attribution</li>
+          <li>LENS AI anomaly detection</li>
+          <li>10 domains</li>
+          <li>Priority support + onboarding</li>
+        </ul>
+        <a href="#" class="btn-pricing">Book a Demo</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-desc">For large organizations with custom infrastructure and compliance needs.</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-period">Unlimited pageviews</div>
+        <ul class="pricing-features">
+          <li>Everything in Business</li>
+          <li>Unlimited domains</li>
+          <li>Custom integrations</li>
+          <li>Dedicated account manager</li>
+          <li>SLA + dedicated infrastructure</li>
+        </ul>
+        <a href="#" class="btn-pricing">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FINAL CTA — Dark
+     ============================================ -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2 class="headline-section">See what your analytics have been missing.</h2>
+    <p class="body-large">
+      Run SealMetrics alongside your current setup. Compare the data. Then decide.
+    </p>
+    <a href="#" class="btn-cta">Book a Demo</a>
+    <p class="cta-note">30-minute walkthrough. No commitment required.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color: var(--dark-text);">
+          <div class="logo-icon" style="background: var(--dark-text);">SM</div>
+          SealMetrics
+        </div>
+        <p>Cookieless web analytics that captures 100% of your traffic. GDPR compliant by design.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Product</div>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Integrations</a>
+        <a href="#">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="#">Documentation</a>
+        <a href="#">Case Studies</a>
+        <a href="#">Blog</a>
+        <a href="#">API Reference</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Partners</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Security</a>
+        <a href="#">GDPR</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SealMetrics. All rights reserved.</span>
+      <span>EU-hosted. Cookieless by design.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

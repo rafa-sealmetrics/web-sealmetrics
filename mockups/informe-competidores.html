@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe Competitivo — SealMetrics vs. Mercado</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --white: #FFFFFF;
+    --text: #1A1A1A;
+    --text-body: #3D3D3D;
+    --text-secondary: #6B6B5E;
+    --text-tertiary: #9B9B8E;
+    --border: #E5E5DB;
+    --border-light: #EBEBDF;
+    --green: #2E8B6A;
+    --red: #C85A54;
+    --blue: #2E5C8A;
+    --purple: #6B5CA5;
+    --orange: #D4874D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--text-body);
+    background: var(--bg);
+    line-height: 1.7;
+    padding: 3rem 2rem;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Header */
+  .report-header {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid var(--text);
+  }
+
+  .report-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 1rem;
+  }
+
+  .report-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.75rem;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .report-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.7;
+  }
+
+  .report-meta {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 750px;
+    line-height: 1.75;
+  }
+
+  /* Competitor card */
+  .competitor {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .competitor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+  }
+
+  .competitor-header:hover {
+    background: var(--bg);
+  }
+
+  .competitor-name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .competitor-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+
+  .competitor-tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid;
+  }
+
+  .tag-privacy { color: var(--green); border-color: var(--green); background: rgba(46,139,106,0.05); }
+  .tag-enterprise { color: var(--blue); border-color: var(--blue); background: rgba(46,92,138,0.05); }
+  .tag-product { color: var(--purple); border-color: var(--purple); background: rgba(107,92,165,0.05); }
+  .tag-attribution { color: var(--orange); border-color: var(--orange); background: rgba(212,135,77,0.05); }
+  .tag-cdp { color: var(--red); border-color: var(--red); background: rgba(200,90,84,0.05); }
+  .tag-infra { color: var(--text-secondary); border-color: var(--text-secondary); background: rgba(107,107,94,0.05); }
+
+  .competitor-body {
+    padding: 2rem;
+  }
+
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .analysis-item h4 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .analysis-item p, .analysis-item ul {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-body);
+  }
+
+  .analysis-item ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .analysis-item ul li {
+    padding: 0.3rem 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .analysis-item ul li::before {
+    content: "—";
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+  }
+
+  .analysis-full {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .analysis-full h4 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .analysis-full p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-body);
+  }
+
+  .hero-quote {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text);
+    padding: 1rem 0 0.5rem;
+    line-height: 1.5;
+  }
+
+  .cta-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+  }
+
+  /* Comparison table */
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    background: var(--white);
+  }
+
+  table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-tertiary);
+    border-bottom: 2px solid var(--border);
+    background: var(--bg);
+    white-space: nowrap;
+  }
+
+  table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-body);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  table tr:last-child td {
+    border-bottom: none;
+  }
+
+  table td:first-child {
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .highlight-row {
+    background: rgba(46,139,106,0.04);
+  }
+
+  .highlight-row td:first-child {
+    color: var(--green);
+  }
+
+  /* Insights section */
+  .insight-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .insight-number {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--border);
+    margin-bottom: 0.5rem;
+  }
+
+  .insight-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .insight-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .insight-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .sm-implication {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.85rem;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* Final recommendation */
+  .recommendation {
+    background: var(--text);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 3rem;
+    margin-top: 3rem;
+  }
+
+  .recommendation .report-label {
+    color: rgba(255,255,255,0.4);
+  }
+
+  .recommendation h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendation p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1rem;
+    max-width: 800px;
+  }
+
+  .recommendation ul {
+    list-style: none;
+    margin-top: 1.5rem;
+  }
+
+  .recommendation ul li {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .recommendation ul li::before {
+    content: "—";
+    color: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .analysis-grid { grid-template-columns: 1fr; }
+    .report-title { font-size: 2rem; }
+    body { padding: 2rem 1rem; }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .competitor { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="report-header">
+  <div class="report-label">Informe competitivo</div>
+  <h1 class="report-title">Landscape de Competidores:<br>Web Analytics & Attribution</h1>
+  <p class="report-subtitle">
+    Analisis de 23 competidores agrupados en 6 categorias. Se evalua: diseno, arquitectura web, mensajes, CTAs, social proof y posicionamiento. Objetivo: identificar oportunidades de diferenciacion para SealMetrics.
+  </p>
+  <div class="report-meta">Febrero 2026 — Preparado para SealMetrics</div>
+</header>
+
+<!-- ============================================
+     1. PRIVACY-FIRST ANALYTICS
+     ============================================ -->
+<section class="section">
+  <h2 class="section-title">1. Privacy-First Analytics</h2>
+  <p class="section-intro">
+    Competencia directa. Estas herramientas se posicionan como alternativas a GA4 con foco en privacidad. La mayoria usa un mensaje similar: "Google Analytics alternative" + GDPR. El reto de SealMetrics es diferenciarse de este grupo.
+  </p>
+
+  <!-- Matomo -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Matomo</div>
+        <div class="competitor-url">matomo.org</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+        <span class="tag tag-enterprise">Open Source</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Light mode, paleta azul oscuro + verde para CTAs</li>
+            <li>Tipografia Nunito (bold, uppercase). Estetica corporativa</li>
+            <li>Aspecto: SaaS maduro, no startup. Profesional pero algo anticuado</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Aprobacion CNIL (Francia) para tracking sin consentimiento</li>
+            <li>Claim: "20-40% mas datos que GA4"</li>
+            <li>162 paises con compliance</li>
+            <li>Open source como senal de confianza</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Privacy-first Google Analytics Alternative"</p>
+        <p>Pain-first: lidera con los peligros de usar GA ("200,000 casos contra webs usando Google Analytics"). Tono autoritario, ligeramente basado en miedo. Dos tracks: Cloud vs. On-Premise self-hosted.</p>
+      </div>
+      <div class="analysis-full">
+        <h4>CTAs</h4>
+        <p><span class="cta-badge">Start free trial</span> <span class="cta-badge">TRY MATOMO FOR FREE</span> Modelo freemium + self-hosted gratuito. Cloud desde 22 EUR/mes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Piwik PRO -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Piwik PRO</div>
+        <div class="competitor-url">piwikpro.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+        <span class="tag tag-enterprise">Enterprise</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Light mode, azul corporativo, Inter font. Muy enterprise</li>
+            <li>El mas "enterprise-grade" de los privacy-first</li>
+            <li>Screenshots de producto con tabs, testimonios en carrusel</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Credit Agricole, European Commission, DKMS, Gobierno de Holanda, Microsoft</li>
+            <li>Clientes gubernamentales como validacion implicita</li>
+            <li>Claim: "4x mas data que herramientas estandar"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Turn behavioral insights into actions that grow your revenue"</p>
+        <p>A diferencia del resto, Piwik PRO lidera con beneficio de negocio (revenue), no con privacidad. La privacidad es un proof point, no el headline. Suite completa: Analytics + Tag Manager + Consent Manager + CDP.</p>
+      </div>
+      <div class="analysis-full">
+        <h4>CTAs</h4>
+        <p><span class="cta-badge">Start free 30-day trial</span> <span class="cta-badge">Book a demo</span> Dual: self-serve + sales-led. Tambien tiene tier gratuito (Core).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plausible -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Plausible</div>
+        <div class="competitor-url">plausible.io</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+        <span class="tag tag-enterprise">Open Source</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Minimalista, limpio, dark/light mode toggle</li>
+            <li>Estetica indie/community. Developer-friendly</li>
+            <li>Dashboard screenshot en hero, iconos simples</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>16K suscriptores de pago, 260B pageviews, 99.99% uptime</li>
+            <li>Testimonios de alto perfil: DHH (Basecamp), Clem Delangue (Hugging Face), John O'Nolan (Ghost)</li>
+            <li>"Equipo bootstrapped de 10 personas" como identidad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Easy to use and privacy-friendly Google Analytics alternative"</p>
+        <p>Benefit-first: simplicidad primero, privacidad segundo. 4 pilares: simple, ligero, privado, open source. Tono amigable, comunitario, orgullo de ser independientes.</p>
+      </div>
+      <div class="analysis-full">
+        <h4>CTAs</h4>
+        <p><span class="cta-badge">Start free trial</span> <span class="cta-badge">View live demo</span> Comparativas directas vs GA4, Matomo, Cloudflare en la navegacion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fathom -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Fathom Analytics</div>
+        <div class="competitor-url">usefathom.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Indie con personalidad: mascotas gato animadas (Pixel Cats)</li>
+            <li>Dark/light mode. Calido, memorable</li>
+            <li>10+ secciones en homepage. Muy brand-driven</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>"Trusted by 1,000,000+ websites"</li>
+            <li>IBM, GitHub, Tailwind, NYT, Bosch, Huberman Lab</li>
+            <li>Testimonios: Joel Gascoigne (Buffer), Evan You (Vue.js)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"A Google Analytics alternative that's simple & privacy-first"</p>
+        <p>Pain-first: "Ditch complex, intrusive web analytics". Luego beneficios: facilidad, retencion de datos permanente, GDPR sin preocupaciones. Tono calido, ligeramente irreverente. La personalidad de marca es el mayor diferenciador.</p>
+      </div>
+      <div class="analysis-full">
+        <h4>CTAs</h4>
+        <p><span class="cta-badge">Start free trial</span> <span class="cta-badge">View a live demo</span> Trial 7 dias, sin obligacion. Hook: "Import your GA data".</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple Analytics -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Simple Analytics</div>
+        <div class="competitor-url">simpleanalytics.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Rojo coral (#ff4f64) + SpaceGrotesk font. Design-forward</li>
+            <li>Dark/light mode con persistencia en localStorage</li>
+            <li>Estetica europea, moderna, limpia</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>600+ clientes de pago</li>
+            <li>CEO Missive como testimonial principal</li>
+            <li>Datos nunca salen de Holanda/EU</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"The privacy-first Google Analytics alternative"</p>
+        <p>Simplicidad como posicionamiento (el nombre ES el posicionamiento). AI chat con analytics como diferenciador. Tono directo, holandés, sin fluff.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usermaven -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Usermaven</div>
+        <div class="competitor-url">usermaven.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+        <span class="tag tag-attribution">Attribution</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Purpura (#7D47EB) como primario — unico en el espacio</li>
+            <li>Inter font. Estetica "AI startup 2025"</li>
+            <li>11 secciones en homepage — el mas denso</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>4.9/5 en 5 plataformas (PH, Capterra, G2, GetApp, Software Advice)</li>
+            <li>Product of the Day/Week en Product Hunt</li>
+            <li>9 testimoniales nombrados</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Know exactly which channels drive revenue"</p>
+        <p>Pain-first: "Your attribution is broken". El unico que combina web analytics + product analytics + CRM + ad attribution + AI. Tono growth-hacker, mas sobre revenue que sobre privacidad.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pirsch -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Pirsch</div>
+        <div class="competitor-url">pirsch.io</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-privacy">Privacy</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>6 temas de dashboard (light, dark, green, blue, retro, contrast)</li>
+            <li>Estetica "ingenieria alemana". Preciso, bien construido</li>
+            <li>"Made in Germany" como ancla de confianza</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>500+ clientes</li>
+            <li>GDPR, CCPA, PECR compliance</li>
+            <li>Hosting aleman como diferenciador geografico</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"See Beyond Clicks With the Best Google Analytics Alternative"</p>
+        <p>Benefit-first con ancla geografica. Profesional, preciso, menos casual que Plausible/Fathom pero menos corporativo que Piwik PRO. Secciones con nombres creativos: "Easy Start", "Creative Freedom", "Good Company".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     2. ANALYTICS TRADICIONALES
+     ============================================ -->
+<section class="section">
+  <h2 class="section-title">2. Analytics Tradicionales & Product Analytics</h2>
+  <p class="section-intro">
+    El incumbent (GA4) y las herramientas de product analytics. Estos no compiten directamente en privacidad, pero un CMO podria evaluarlos como "ya tenemos esto, para que necesitamos SealMetrics?".
+  </p>
+
+  <!-- GA4 -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Google Analytics 4</div>
+        <div class="competitor-url">marketingplatform.google.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-enterprise">Incumbent</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Light mode, azul Google, ilustraciones flat</li>
+            <li>Google Sans. Limpio, accesible, "big tech friendly"</li>
+            <li>No dark mode. Sin pretensiones de diseno</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>McDonald's HK: "550% aumento in-app orders"</li>
+            <li>Sin badges — la confianza ES la marca Google</li>
+            <li>Integracion con ecosistema Google como prueba</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Get essential customer insights"</p>
+        <p>Benefit-first, low-pressure. "Free of charge" como diferenciador principal. Tono profesional pero accesible. Product-led growth puro: sin demo, sin call de ventas. El halo de marca Google hace todo el trabajo de confianza.</p>
+      </div>
+      <div class="analysis-full">
+        <h4>CTAs</h4>
+        <p><span class="cta-badge">Get started today</span> 100% self-serve. Gratis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adobe -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Adobe Analytics</div>
+        <div class="competitor-url">business.adobe.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-enterprise">Enterprise</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Enterprise pesado. Gradiente azul-rosa en hero</li>
+            <li>Adobe Clean font. Multi-producto (CJA, Product Analytics)</li>
+            <li>Disenado para comites de compras, no individuos</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>The Home Depot como cliente visible</li>
+            <li>Enfasis en governance, compliance, permisos granulares</li>
+            <li>Sin badges G2/Forrester en homepage. La marca Adobe basta</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Unified customer analytics across data, content, and journeys"</p>
+        <p>Feature-first y enterprise-capability. "Unified", "holistic", "governance". Habla el idioma del procurement. Sales-led puro: no hay free trial, todo va a demo o video.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Amplitude -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Amplitude</div>
+        <div class="competitor-url">amplitude.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-product">Product Analytics</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Premium SaaS. Secciones dark/light alternas</li>
+            <li>Hero con texto animado rotativo. Video testimoniales</li>
+            <li>Fotografia profesional, no ilustraciones</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Square, Shopify, Walmart, NBC, Figma, Atlassian</li>
+            <li>G2 Market Leader, Forrester Leader</li>
+            <li>217% ROI a 3 anos, payback en 6 meses</li>
+            <li>Testimonios en video con metricas: +40% suscriptores</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"The AI analytics platform for [faster answers / testing everything / non-stop optimization]"</p>
+        <p>AI-first. El diferenciador es AI, no privacidad. "Unfair advantage", "grow like never before". Tono aspiracional, orientado al logro. El social proof mas pesado de todo el landscape.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mixpanel -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Mixpanel</div>
+        <div class="competitor-url">mixpanel.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-product">Product Analytics</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Blanco + purpura (#7856FF). DM Sans + Garnett</li>
+            <li>Ilustraciones 3D, screenshots de producto</li>
+            <li>Hero interactivo con selector de categorias (8 use cases)</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Docusign como testimonial principal</li>
+            <li>SOC 2 Type II, ISO 27001, HIPAA, SSO/SAML</li>
+            <li>"12,000+ peers" en comunidad analytics</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Digital analytics that drive confident decisions"</p>
+        <p>Benefit-first con orientacion a la accion. "Stop guessing, start growing." Demo es la CTA primaria (boton filled), free signup es secundaria (outlined). El hero interactivo permite autoseleccion del visitante.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Heap -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Heap</div>
+        <div class="competitor-url">heap.io</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-product">Product Analytics</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Navy blue + verde brillante (#31D891) para CTAs</li>
+            <li>Enterprise SaaS conservador. Contentsquare merger</li>
+            <li>Visualizaciones abstractas de datos en hero</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Dropbox, Walmart Labs, Nielsen, Eventbrite</li>
+            <li>a16z Top Data Startups, G2 Top 100</li>
+            <li>Freshworks +20% adoption, Huel +30% conversions, LendingClub $1M+</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Better Insights. Faster."</p>
+        <p>Benefit-first, speed-oriented. Auto-captura como diferenciador: "never miss data, without engineering overhead." Free trial como CTA primaria. Product-led growth con soporte enterprise.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PostHog -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">PostHog</div>
+        <div class="competitor-url">posthog.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-product">Product Analytics</span>
+        <span class="tag tag-enterprise">Open Source</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>RADICALMENTE diferente: homepage como IDE + mundo isometrico de fantasia</li>
+            <li>Paleta calida (beige, tierra). Amarillo/naranja para CTAs</li>
+            <li>Mascota erizo. Anti-corporativo, irreverente</li>
+            <li>34 apps en catalogo interactivo</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>NINGUNO visible en homepage</li>
+            <li>Sin logos, sin testimonios, sin badges</li>
+            <li>El social proof ES el producto y la comunidad</li>
+            <li>Cookie banner con chiste sobre Ursula von der Leyen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"We make dev tools that help product engineers build successful products"</p>
+        <p>Developer-first puro. No "analytics platform" sino "dev tools". Target: "product engineers", no marketers. "Talk to a human" en vez de "Contact sales". CTA secundario unico: "Install with AI". La apuesta anti-convencional mas radical del mercado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullstory -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Fullstory</div>
+        <div class="competitor-url">fullstory.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-product">Product Analytics</span>
+        <span class="tag tag-enterprise">Enterprise</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Gradiente purpura-teal bold. Fotografia real + UI cards flotantes</li>
+            <li>Neulis Sans (font custom). Premium con edge creativo</li>
+            <li>Chatbot AI "Storybot" como conversion tool persistente</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Chipotle, Pizza Hut, Finicity como case studies visuales</li>
+            <li>"Private by Default" como feature</li>
+            <li>Demo-led puro: sin free trial visible</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Better data. Better digital experiences."</p>
+        <p>Benefit-first con AI. "Always-on AI-agent analysts". 3 pilares: Customer Journey, Employee Experience, Data Activation. Fullcapture como captura completa privacy-first. Tono confiado, pulido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     3. CDP & DATA INFRASTRUCTURE
+     ============================================ -->
+<section class="section">
+  <h2 class="section-title">3. CDP & Data Infrastructure</h2>
+  <p class="section-intro">
+    Capa de datos. Un CMO podria considerar que un CDP resuelve su problema de datos. SealMetrics debe posicionarse como complemento o como alternativa mas simple.
+  </p>
+
+  <!-- Segment -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Segment</div>
+        <div class="competitor-url">segment.com → twilio.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-cdp">CDP</span>
+        <span class="tag tag-enterprise">Enterprise</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Absorbido por Twilio. Hereda su estetica corporativa</li>
+            <li>Light mode, azul Twilio, generoso whitespace</li>
+            <li>Metaforas de puzzle y conexiones como imagery</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Gartner Magic Quadrant Leader 2025</li>
+            <li>750+ integraciones, 550+ destinos</li>
+            <li>Trust center y security center prominentes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Collect, clean and activate your customer data in any tool"</p>
+        <p>Plataforma/ecosistema. Data layer fundamental dentro de Twilio. Dual path: "Start for free" + "Contact sales".</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Snowplow -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Snowplow</div>
+        <div class="competitor-url">snowplow.io</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-cdp">Data Platform</span>
+        <span class="tag tag-enterprise">Enterprise</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Purpura claro como primario. Enterprise tech pulido</li>
+            <li>Source Sans 3 font. Lottie animations</li>
+            <li>10+ secciones en homepage. Muy completo</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>AutoTrader, Strava, Burberry, Samsung, HelloFresh</li>
+            <li>CCPA, GDPR, ISO 27001, HIPAA badges</li>
+            <li>3x datos mas granulares, 2x implementacion mas rapida</li>
+            <li>6+ testimoniales nombrados con cargo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"AI runs on models, but wins on context"</p>
+        <p>Pain-first + future-forward. "Tus agentes AI estan ciegos. Tu analytics no fue construido para un mundo donde la AI toma decisiones." Demo-only, sin free trial.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RudderStack -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">RudderStack</div>
+        <div class="competitor-url">rudderstack.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-cdp">CDP</span>
+        <span class="tag tag-enterprise">Open Source</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Developer-tool aesthetic (tipo Stripe/Datadog)</li>
+            <li>Inter + PolySans + Basis Grotesque Mono</li>
+            <li>Azul primario, limpio, tecnico, sin adornos</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>40,000+ businesses. Crate & Barrel, Foot Locker, Stripe, Allbirds</li>
+            <li>SOC 2. G2, Gartner Peer Insights, AWS Marketplace</li>
+            <li>Case studies especificos de implementacion</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Connect Real-Time Customer Data Everywhere"</p>
+        <p>Developer-first, warehouse-native CDP. Event Stream + ETL + Reverse ETL. Freemium: Free, Starter ($600/mo), Growth, Enterprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     4. ATTRIBUTION & ECOMMERCE
+     ============================================ -->
+<section class="section">
+  <h2 class="section-title">4. Attribution & Ecommerce Analytics</h2>
+  <p class="section-intro">
+    Competencia por el presupuesto de ecommerce. Estos hablan de ROAS, atribucion y revenue — el mismo lenguaje que un CMO de ecommerce usa a diario.
+  </p>
+
+  <!-- Triple Whale -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Triple Whale</div>
+        <div class="competitor-url">triplewhale.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-attribution">Attribution</span>
+        <span class="tag tag-enterprise">Ecommerce</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Dark mode premium. Lime green (#bdfd2e) + glassmorphism</li>
+            <li>Inter, Space Grotesk, Inconsolata. Muy tech-forward</li>
+            <li>11 secciones, counters animados, parallax</li>
+            <li>El mas "high-energy" del grupo</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>50,000+ marcas, 2,000+ agencias, $82B+ GMV en AI</li>
+            <li>9.2B eventos diarios procesados</li>
+            <li>SOC 2 Type II, GDPR, CCPA, G2 Leader</li>
+            <li>"+42% revenue nuevos clientes en 90 dias"</li>
+            <li>Landing pages por rol (Founder, CMO, Performance Marketer)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"The complete intelligence platform for ecommerce"</p>
+        <p>Benefit-first con AI. "AI que realmente funciona para ecommerce" vs. herramientas genericas. Measurement + Analytics + AI + Creative + Automation. Dual CTA: "Start for Free" + "Book Demo". Quiz de personalidad como entrada alternativa.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Northbeam -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Northbeam</div>
+        <div class="competitor-url">northbeam.io</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-attribution">Attribution</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Dark navy (#021230), cornflower blue, pale green CTAs</li>
+            <li>Inter font. Aesthetic "mission control"</li>
+            <li>Animaciones orbitales, formas geometricas abstractas</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>800+ companias. $130B revenue atribuido, $25B ad spend</li>
+            <li>+37% ROAS promedio, -20% CAC, +14% CVR</li>
+            <li>Timex, Hexclad, Dr. Squatch como testimoniales</li>
+            <li>Demo-only: sin free trial</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Make your marketing more profitable"</p>
+        <p>Benefit-first (profitabilidad). "Laser-accurate first party data." MTA + MMM + Incrementality. Demo-only: sin self-serve.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rockerbox -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Rockerbox</div>
+        <div class="competitor-url">rockerbox.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-attribution">Attribution</span>
+        <span class="tag tag-enterprise">Enterprise</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Navy + teal. Roboto font. Enterprise, conservador</li>
+            <li>El mas "maduro" del grupo de atribucion</li>
+            <li>FAQs prominentes, case study de Weight Watchers</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>Weight Watchers, Burton, Staples, Unilever, FIGS</li>
+            <li>$9.89B+ en marketing spend tracked</li>
+            <li>$300M+ en wasted ad spend identificado</li>
+            <li>SOC2 Type 2, GDPR, G2 High Performer, Digiday Award</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"The Platform of Record for All Marketing Measurement"</p>
+        <p>Agnostico de metodologia. "Donde los metodos coinciden, donde divergen, y que acciones puedes tomar con confianza." MTA + MMM + Testing. Demo-only, enterprise sales-led.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hyros -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Hyros</div>
+        <div class="competitor-url">hyros.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-attribution">Attribution</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Purpura hero (#5150f7), IBM Plex Serif para titulares</li>
+            <li>Parallax agresivo (300vh, 600vh). Built on Framer</li>
+            <li>Hibrido editorial/direct-response. Serif = autoridad</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>3,000+ businesses, $3.5B+ ad spend</li>
+            <li>Alex Becker como marca personal del founder</li>
+            <li>SIN badges de compliance — notable ausencia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"The Best Ad Tracking & Attribution Software"</p>
+        <p>Superlativo directo. "The Best" — challenger brand. Pricing-first approach: lleva a /pricing-ai-tracking directamente. Desde $230/mes. No demo, no trial.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wicked Reports -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Wicked Reports</div>
+        <div class="competitor-url">wickedreports.com</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-attribution">Attribution</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Blue-gray + naranja. Inter Tight 900 para titulares</li>
+            <li>Estetica performance marketing, mas direct-response</li>
+            <li>Pilares visuales: Measure, Signal, Action</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>2,000+ marcas analizadas</li>
+            <li>Testimoniales con metricas: "-63% nCAC", "-60% retargeting waste"</li>
+            <li>SIN badges SOC2/GDPR prominentes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"The Attribution System that Finds New Customers"</p>
+        <p>Pain-first y contrarian. Ataca directamente: "Paid Ads estan sesgados hacia retargeting." EL UNICO que nombra competidores directamente (Hyros, Triple Whale, Northbeam). Diferencia: foco en new customers vs. repeat. Scale/Chill/Kill como framework.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stape -->
+  <div class="competitor">
+    <div class="competitor-header">
+      <div>
+        <div class="competitor-name">Stape</div>
+        <div class="competitor-url">stape.io</div>
+      </div>
+      <div class="competitor-tags">
+        <span class="tag tag-infra">Server-Side</span>
+      </div>
+    </div>
+    <div class="competitor-body">
+      <div class="analysis-grid">
+        <div class="analysis-item">
+          <h4>Diseno</h4>
+          <ul>
+            <li>Navy + verde/naranja. Mascota perro recurrente</li>
+            <li>Prompt font + Source Code Pro. Playful pero profesional</li>
+            <li>"Try for free" aparece 15+ veces — la mas agresiva</li>
+          </ul>
+        </div>
+        <div class="analysis-item">
+          <h4>Social Proof</h4>
+          <ul>
+            <li>200,000+ clientes</li>
+            <li>SOC 2, ISO 27001, HIPAA, GDPR (via Vanta)</li>
+            <li>12+ case studies con metricas: +37% ROAS, -20% CPA</li>
+            <li>"100s de millones de requests/dia"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="analysis-full">
+        <h4>Headline & Posicionamiento</h4>
+        <p class="hero-quote">"Boost ROAS and get complete data with server-side tracking"</p>
+        <p>Benefit-first. Server-side tracking simplificado (vs. GCP/AWS). Gateways especificos: Meta CAPI, TikTok Events API. FAQ sincero: "I'm sorry, so what exactly Stape does?" Tono educativo, a veces humoristico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TABLAS COMPARATIVAS
+     ============================================ -->
+<section class="section">
+  <h2 class="section-title">5. Tablas Comparativas</h2>
+
+  <h3 style="font-family: 'Source Serif 4', serif; font-size: 1.15rem; font-weight: 500; color: var(--text); margin-bottom: 1rem;">5.1 Posicionamiento & Mensajes</h3>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Competidor</th>
+          <th>Headline</th>
+          <th>Posicionamiento</th>
+          <th>Tono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Matomo</td><td>"Privacy-first GA Alternative"</td><td>Pain-first (peligros GA)</td><td>Autoritario, fear-based</td></tr>
+        <tr><td>Piwik PRO</td><td>"Turn insights into actions that grow revenue"</td><td>Benefit-first (revenue)</td><td>Enterprise, outcome-oriented</td></tr>
+        <tr><td>Plausible</td><td>"Easy to use and privacy-friendly"</td><td>Benefit-first (simplicidad)</td><td>Friendly, community</td></tr>
+        <tr><td>Fathom</td><td>"Simple & privacy-first"</td><td>Pain-first (ditch complexity)</td><td>Calido, irreverente</td></tr>
+        <tr><td>GA4</td><td>"Get essential customer insights"</td><td>Benefit-first (free)</td><td>Low-pressure, big tech</td></tr>
+        <tr><td>Adobe</td><td>"Unified customer analytics"</td><td>Feature-first (enterprise)</td><td>Formal, procurement</td></tr>
+        <tr><td>Amplitude</td><td>"The AI analytics platform"</td><td>AI-first</td><td>Aspirational, achievement</td></tr>
+        <tr><td>Mixpanel</td><td>"Drive confident decisions"</td><td>Benefit-first (confianza)</td><td>Directo, urgente</td></tr>
+        <tr><td>Triple Whale</td><td>"Complete intelligence for ecommerce"</td><td>Benefit-first (AI ecom)</td><td>Energico, empowering</td></tr>
+        <tr><td>Northbeam</td><td>"Make marketing more profitable"</td><td>Benefit-first (profit)</td><td>Data-driven, directo</td></tr>
+        <tr><td>Snowplow</td><td>"AI wins on context"</td><td>Pain-first (AI blind)</td><td>Forward-thinking</td></tr>
+        <tr class="highlight-row"><td>SealMetrics</td><td>"Your data is missing most of the picture"</td><td>Pain-first (data loss) + educativo</td><td>Editorial, autoritativo, cercano</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family: 'Source Serif 4', serif; font-size: 1.15rem; font-weight: 500; color: var(--text); margin: 2rem 0 1rem;">5.2 CTAs & Modelo de Conversion</h3>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Competidor</th>
+          <th>CTA Primario</th>
+          <th>CTA Secundario</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Matomo</td><td>Start free trial</td><td>—</td><td>Freemium + self-hosted</td></tr>
+        <tr><td>Piwik PRO</td><td>Start 30-day trial</td><td>Book a demo</td><td>Trial + sales-led</td></tr>
+        <tr><td>Plausible</td><td>Start free trial</td><td>View live demo</td><td>Trial + self-serve</td></tr>
+        <tr><td>Fathom</td><td>Start free trial</td><td>View live demo</td><td>7-day trial</td></tr>
+        <tr><td>GA4</td><td>Get started today</td><td>—</td><td>Free, 100% self-serve</td></tr>
+        <tr><td>Adobe</td><td>Watch video</td><td>Book a demo</td><td>Sales-led puro</td></tr>
+        <tr><td>Amplitude</td><td>Get started</td><td>Request a demo</td><td>Hibrido free + demo</td></tr>
+        <tr><td>Mixpanel</td><td>Get a Demo</td><td>Get Started Free</td><td>Demo primary, free secondary</td></tr>
+        <tr><td>Triple Whale</td><td>Start for Free</td><td>Book Demo</td><td>Free + demo dual</td></tr>
+        <tr><td>Northbeam</td><td>BOOK A DEMO</td><td>—</td><td>Demo-only</td></tr>
+        <tr><td>Rockerbox</td><td>Get a Demo</td><td>—</td><td>Demo-only, enterprise</td></tr>
+        <tr><td>Snowplow</td><td>Book a Demo</td><td>Watch demos</td><td>Demo-only</td></tr>
+        <tr class="highlight-row"><td>SealMetrics</td><td>Book a Demo</td><td>See How It Works</td><td>Demo-led + educativo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family: 'Source Serif 4', serif; font-size: 1.15rem; font-weight: 500; color: var(--text); margin: 2rem 0 1rem;">5.3 Diseno & Estetica</h3>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Competidor</th>
+          <th>Modo</th>
+          <th>Color primario</th>
+          <th>Estetica</th>
+          <th>Font</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Matomo</td><td>Light</td><td>Blue + Green</td><td>Corporate SaaS</td><td>Nunito</td></tr>
+        <tr><td>Piwik PRO</td><td>Light</td><td>Blue</td><td>Enterprise</td><td>Inter</td></tr>
+        <tr><td>Plausible</td><td>Light/Dark</td><td>Neutral</td><td>Indie community</td><td>Sans-serif</td></tr>
+        <tr><td>Fathom</td><td>Light/Dark</td><td>Warm neutral</td><td>Indie playful</td><td>Sans-serif</td></tr>
+        <tr><td>Simple Analytics</td><td>Light/Dark</td><td>Red coral</td><td>Designer modern</td><td>SpaceGrotesk</td></tr>
+        <tr><td>GA4</td><td>Light</td><td>Google Blue</td><td>Big tech clean</td><td>Google Sans</td></tr>
+        <tr><td>Adobe</td><td>Light</td><td>Adobe Blue</td><td>Enterprise heavy</td><td>Adobe Clean</td></tr>
+        <tr><td>Amplitude</td><td>Mixed</td><td>Dark + coral</td><td>Premium SaaS</td><td>Sans-serif</td></tr>
+        <tr><td>Mixpanel</td><td>Light</td><td>Purple #7856FF</td><td>Modern product</td><td>DM Sans + Garnett</td></tr>
+        <tr><td>PostHog</td><td>Light (warm)</td><td>Yellow/orange</td><td>Indie developer</td><td>Sans-serif</td></tr>
+        <tr><td>Triple Whale</td><td>Dark</td><td>Lime #bdfd2e</td><td>Premium ecom startup</td><td>Space Grotesk</td></tr>
+        <tr><td>Northbeam</td><td>Dark</td><td>Navy + green</td><td>Premium dark SaaS</td><td>Inter</td></tr>
+        <tr><td>Snowplow</td><td>Light</td><td>Light purple</td><td>Enterprise tech</td><td>Source Sans 3</td></tr>
+        <tr class="highlight-row"><td>SealMetrics</td><td>Light + Dark</td><td>Serif + green</td><td>Editorial corporate</td><td>Source Serif 4 + Inter</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================
+     6. INSIGHTS ESTRATEGICOS
+     ============================================ -->
+<section class="section">
+  <h2 class="section-title">6. Insights Estrategicos para SealMetrics</h2>
+
+  <div class="insight-card">
+    <div class="insight-number">01</div>
+    <div class="insight-title">Todos dicen "Google Analytics alternative". Nadie educa sobre el problema real.</div>
+    <div class="insight-text">
+      Matomo, Plausible, Fathom, Simple Analytics, Pirsch — todos compiten por el mismo headline: "privacy-first GA alternative". El visitante ve 7 herramientas diciendo lo mismo. <strong>Ninguno explica por que el 87% de tus datos desaparecen.</strong> Se asume que el CMO ya lo sabe. Pero como dijiste: necesitan que se lo expliques.
+    </div>
+    <div class="sm-implication">Implicacion para SM: Liderar con educacion, no con "somos como ellos pero mejor". El approach editorial-educativo de nuestra propuesta es diferencial.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">02</div>
+    <div class="insight-title">AI ya es table stakes. Si no tienes AI story, no existes.</div>
+    <div class="insight-text">
+      Amplitude ("AI analytics platform"), Mixpanel (AI Summary), Fullstory (StoryAI + Storybot), PostHog (PostHog AI), Triple Whale (Moby AI), Snowplow ("AI wins on context"), Usermaven ("AI analytics & attribution"). <strong>LENS AI de SealMetrics es una ventaja real, pero la web actual no lo comunica con fuerza.</strong>
+    </div>
+    <div class="sm-implication">Implicacion para SM: LENS AI debe tener seccion propia con demostraciones visuales de alertas reales. No basta con listarlo como feature.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">03</div>
+    <div class="insight-title">El mercado se bifurca: privacy-simple (Plausible/Fathom) vs. privacy-enterprise (Piwik PRO). SealMetrics esta en el medio.</div>
+    <div class="insight-text">
+      Plausible/Fathom son simples, baratos, para desarrolladores y startups. Piwik PRO es enterprise con suite completa (Tag Manager, Consent Manager, CDP). <strong>SealMetrics tiene la profundidad de Piwik PRO (9 reportes, atribucion, AI) con la simplicidad de setup de Plausible (1 script, sin cookies).</strong> Pero no lo comunica.
+    </div>
+    <div class="sm-implication">Implicacion para SM: Posicionarse como "enterprise-grade analytics with zero-friction setup". La complejidad del producto con la simplicidad de implementacion.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">04</div>
+    <div class="insight-title">Los tools de atribucion hablan de revenue. Los de privacidad hablan de compliance. Nadie conecta ambos.</div>
+    <div class="insight-text">
+      Triple Whale, Northbeam, Rockerbox hablan de ROAS, revenue, profitabilidad. Matomo, Plausible, Fathom hablan de privacidad, GDPR, cookies. <strong>SealMetrics es el unico que puede decir: "Ves mas revenue PORQUE capturamos todos los datos PORQUE no usamos cookies."</strong> La privacidad no es el fin — es el medio para obtener datos completos que impulsan revenue.
+    </div>
+    <div class="sm-implication">Implicacion para SM: El mensaje debe ser: privacidad → datos completos → revenue real. La cadena causal completa, no solo un eslabon.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">05</div>
+    <div class="insight-title">El diseno hibrido light+dark es practicamente unico en el mercado.</div>
+    <div class="insight-text">
+      De 23 competidores analizados: la mayoria son full light (Matomo, Piwik PRO, GA4, Adobe, Rockerbox) o full dark (Triple Whale, Northbeam). <strong>Solo Amplitude usa secciones dark/light alternas, y lo hace por estetica, no por narrativa.</strong> Nuestro approach de light-para-educar y dark-para-demostrar es funcionalmente unico.
+    </div>
+    <div class="sm-implication">Implicacion para SM: El diseno hibrido no es solo una preferencia estetica — es una herramienta narrativa. Ningun competidor lo usa asi.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">06</div>
+    <div class="insight-title">Compliance como diferenciador: los enterprise lo muestran, los startups no.</div>
+    <div class="insight-text">
+      Snowplow (CCPA, GDPR, ISO 27001, HIPAA), Stape (SOC 2, ISO 27001, HIPAA, GDPR via Vanta), Rockerbox (SOC2 Type 2) muestran badges prominentes. Hyros y Wicked Reports no muestran nada. <strong>Para el ICP de SealMetrics (empresas 10M€+), los badges de compliance son un requisito de procurement, no un nice-to-have.</strong>
+    </div>
+    <div class="sm-implication">Implicacion para SM: Incluir seccion de compliance con badges reales (GDPR, EU data residency, no-PII). Si no tienes SOC 2, considerar obtenerlo.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">07</div>
+    <div class="insight-title">Los testimonios con metricas convierten. Los genericos no.</div>
+    <div class="insight-text">
+      Los mejores social proofs del mercado: Triple Whale ("+42% revenue en 90 dias"), Northbeam ("+37% ROAS"), Stape ("+37% ROAS, -20% CPA"), Heap ("$1M+ loan volume"). <strong>Los peores: citas genericas sin numeros.</strong> Plausible gana con celebrity endorsements (DHH, Evan You). Fathom gana con volumen ("1M+ websites").
+    </div>
+    <div class="sm-implication">Implicacion para SM: Cada testimonial debe incluir un numero: % de datos recuperados, % de revenue atribuido, horas ahorradas. Sin numero, sin testimonial.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">08</div>
+    <div class="insight-title">Nadie usa tipografia serif. SealMetrics puede poseerla.</div>
+    <div class="insight-text">
+      De 23 competidores: Hyros usa IBM Plex Serif (solo titulares). PostHog usa serif en algunos elementos. <strong>El resto: 100% sans-serif.</strong> Source Serif 4 en titulares da a SealMetrics un tono editorial, de autoridad, de informe de consultoria — exactamente lo que un CMO de empresa de 10M€+ espera leer.
+    </div>
+    <div class="sm-implication">Implicacion para SM: La serif no es solo estetica — es posicionamiento. Dice "somos serios, no somos otro SaaS." Mantener Source Serif 4 en titulares.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">09</div>
+    <div class="insight-title">"Book a Demo" es el CTA correcto para el ICP enterprise.</div>
+    <div class="insight-text">
+      Los competidores que venden a enterprise usan "Book a Demo": Adobe, Snowplow, Northbeam, Rockerbox, Fullstory. Los que venden a SMB usan "Start free trial": Plausible, Fathom, PostHog. <strong>Triple Whale hace dual: "Start for Free" + "Book Demo" — segmenta por intent.</strong>
+    </div>
+    <div class="sm-implication">Implicacion para SM: "Book a Demo" como primario esta alineado con el ICP. "See How It Works" como secundario educa sin comprometer. Correcto.</div>
+  </div>
+
+  <div class="insight-card">
+    <div class="insight-number">10</div>
+    <div class="insight-title">La oportunidad: nadie combina educacion + datos + autoridad en una sola web.</div>
+    <div class="insight-text">
+      Stripe educa (pero no vende analytics). McKinsey tiene autoridad (pero no vende software). Triple Whale tiene datos (pero es startup-y). Piwik PRO es enterprise (pero no educa). <strong>SealMetrics puede ser el primero en combinar: la educacion editorial de un informe de consultoria, la autoridad visual de una empresa enterprise, y los datos concretos de un tool de atribucion.</strong>
+    </div>
+    <div class="sm-implication">Implicacion para SM: Esta es la tesis central del diseno. La propuesta educativa-hibrida es la materializacion de esta oportunidad. Ningun competidor ocupa este espacio.</div>
+  </div>
+</section>
+
+<!-- ============================================
+     RECOMENDACION FINAL
+     ============================================ -->
+<div class="recommendation">
+  <div class="report-label">Recomendacion</div>
+  <h2>El posicionamiento de SealMetrics debe ser unico en el mercado.</h2>
+  <p>
+    Tras analizar 23 competidores, la oportunidad es clara: nadie ocupa el espacio de "analytics enterprise que educa". Los privacy-first asumen que el CMO ya entiende el problema. Los enterprise asumen que el CMO quiere features. Los de atribucion asumen que el CMO solo quiere ROAS.
+  </p>
+  <p>
+    SealMetrics puede ser el primero en decir:
+  </p>
+  <ul>
+    <li><strong>"Tus datos de marketing estan rotos"</strong> (education, no blame)</li>
+    <li><strong>"Esto es lo que te pierdes y por que"</strong> (editorial, consultoria)</li>
+    <li><strong>"Asi funciona la solucion"</strong> (producto, dark mode, autoridad tecnica)</li>
+    <li><strong>"Estos son los resultados"</strong> (case studies con numeros, revenue real)</li>
+  </ul>
+  <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.9); font-weight: 500;">
+    El diseno light-to-dark con tipografia serif editorial no es solo una preferencia estetica — es un posicionamiento estrategico que ningun competidor esta usando.
+  </p>
+</div>
+
+</div>
+</body>
+</html>

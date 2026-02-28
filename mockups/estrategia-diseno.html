@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrategia de Diseno — SealMetrics</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --white: #FFFFFF;
+    --text: #1A1A1A;
+    --text-body: #3D3D3D;
+    --text-secondary: #6B6B5E;
+    --text-tertiary: #9B9B8E;
+    --border: #E5E5DB;
+    --border-light: #EBEBDF;
+    --green: #2E8B6A;
+    --green-light: rgba(46,139,106,0.06);
+    --red: #C85A54;
+    --blue: #2E5C8A;
+    --dark: #0A0A10;
+    --dark-card: #0F1018;
+    --dark-green: #00FF7F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--text-body);
+    background: var(--bg);
+    line-height: 1.7;
+    padding: 3rem 2rem;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; }
+
+  .report-header {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid var(--text);
+  }
+
+  .report-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 1rem;
+  }
+
+  .report-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .report-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.7;
+  }
+
+  .report-meta {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .section-number {
+    font-family: 'Source Serif 4', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    line-height: 1.75;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-highlight {
+    background: var(--white);
+    border: 2px solid var(--text);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-dark {
+    background: var(--dark);
+    border: 1px solid #262833;
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    color: #E8E8E8;
+  }
+
+  .card-dark h4 { color: rgba(255,255,255,0.4); }
+  .card-dark p { color: rgba(255,255,255,0.7); }
+  .card-dark strong { color: #E8E8E8; }
+
+  .card-green {
+    background: var(--green-light);
+    border: 1px solid rgba(46,139,106,0.15);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-highlight h3, .card-green h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-dark h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #E8E8E8;
+    margin-bottom: 0.75rem;
+  }
+
+  h4 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+  }
+
+  .card p, .card-highlight p, .card-green p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .card p strong, .card-highlight p strong, .card-green p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+    color: var(--text-body);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    line-height: 1.6;
+  }
+
+  li::before {
+    content: "—";
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+  }
+
+  .card-dark li { color: rgba(255,255,255,0.7); }
+  .card-dark li::before { color: rgba(255,255,255,0.3); }
+
+  /* Grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 3rem 0;
+  }
+
+  /* Quote */
+  .quote {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.5;
+    padding: 2rem 0 2rem 1.5rem;
+    border-left: 2px solid var(--green);
+    margin: 2rem 0;
+    max-width: 700px;
+  }
+
+  /* Palette swatch */
+  .palette {
+    display: flex;
+    gap: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1rem 0;
+    height: 60px;
+  }
+
+  .swatch {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.4rem 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .swatch.light-text { color: rgba(0,0,0,0.5); }
+
+  /* Typography specimen */
+  .type-specimen {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .type-specimen:last-child { border-bottom: none; }
+
+  .type-sample {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  .type-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+  }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 1.5rem 0;
+  }
+
+  .flow-step {
+    flex: 1;
+    padding: 1.25rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .flow-step-light {
+    background: var(--white);
+    border: 1px solid var(--border);
+  }
+
+  .flow-step-transition {
+    background: linear-gradient(to right, var(--white), var(--dark));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    max-width: 60px;
+  }
+
+  .flow-step-dark {
+    background: var(--dark);
+    border: 1px solid #262833;
+    color: #E8E8E8;
+  }
+
+  .flow-step-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  .flow-step-dark .flow-step-number { color: rgba(255,255,255,0.3); }
+
+  .flow-step-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .flow-step-desc {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    line-height: 1.4;
+  }
+
+  .flow-step-dark .flow-step-desc { color: rgba(255,255,255,0.4); }
+
+  /* Sitemap */
+  .sitemap {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+
+  .sitemap-level-0 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 0.75rem;
+    background: var(--bg);
+    border-radius: 4px;
+  }
+
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .sitemap-group h5 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .sitemap-group a {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-body);
+    text-decoration: none;
+    padding: 0.2rem 0;
+  }
+
+  .sitemap-group .priority {
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .sitemap-group .phase2 {
+    color: var(--text-tertiary);
+    font-style: italic;
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.25rem;
+  }
+
+  .badge-green { background: rgba(46,139,106,0.1); color: var(--green); }
+  .badge-red { background: rgba(200,90,84,0.1); color: var(--red); }
+  .badge-blue { background: rgba(46,92,138,0.1); color: var(--blue); }
+
+  /* Comparison visual */
+  .vs-block {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin: 1rem 0;
+  }
+
+  .vs-side {
+    padding: 1.25rem;
+    border-radius: 4px;
+  }
+
+  .vs-wrong {
+    background: rgba(200,90,84,0.06);
+    border: 1px solid rgba(200,90,84,0.15);
+  }
+
+  .vs-right {
+    background: rgba(46,139,106,0.06);
+    border: 1px solid rgba(46,139,106,0.15);
+  }
+
+  .vs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+
+  .vs-side h5 {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .vs-wrong h5 { color: var(--red); }
+  .vs-right h5 { color: var(--green); }
+
+  .vs-side p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-body);
+  }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .sitemap-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-step-transition { min-width: auto; max-width: none; min-height: 30px; background: linear-gradient(to bottom, var(--white), var(--dark)); }
+    .vs-block { grid-template-columns: 1fr; }
+    .vs-center { padding: 0.5rem; }
+    .report-title { font-size: 2rem; }
+    body { padding: 2rem 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="report-header">
+  <div class="report-label">Estrategia de diseno</div>
+  <h1 class="report-title">SealMetrics: La web que educa, demuestra y convierte.</h1>
+  <p class="report-subtitle">
+    Propuesta estrategica basada en el analisis de 23 competidores, el conocimiento del producto, y la comprension del ICP (CMOs y ecommerce managers de empresas 10M€+ internacionales).
+  </p>
+  <div class="report-meta">Febrero 2026</div>
+</header>
+
+<!-- ============================================
+     0. TESIS CENTRAL
+     ============================================ -->
+<section class="section">
+  <div class="section-number">00</div>
+  <div class="section-title">La tesis central</div>
+
+  <div class="quote">
+    SealMetrics no vende analytics. Vende la verdad sobre los datos que ya tienes — y los que no sabes que te faltan.
+  </div>
+
+  <div class="card-highlight">
+    <h3>El problema de posicionamiento del mercado</h3>
+    <p>
+      Hay 7+ herramientas diciendo <strong>"somos la alternativa privacy-first a Google Analytics"</strong>. Hay 5+ diciendo <strong>"mejora tu ROAS con mejor atribucion"</strong>. Y hay 3+ diciendo <strong>"AI analytics platform"</strong>. Todos hablan al visitante que ya sabe lo que busca.
+    </p>
+    <p style="margin-top: 1rem;">
+      Pero tu CMO <strong>no sabe que su problema son los datos incompletos</strong>. Piensa que GA4 funciona. Piensa que su ROAS es real. Piensa que sus 10,000 visitantes mensuales son todos los que tiene. No necesita una "alternativa" — necesita que alguien le diga que esta tomando decisiones con el 13% de la realidad.
+    </p>
+  </div>
+
+  <div class="card-green">
+    <h3>La oportunidad de SealMetrics</h3>
+    <p>
+      <strong>Ser la primera web de analytics que educa antes de vender.</strong> No competir en features contra Matomo. No competir en simplicidad contra Plausible. No competir en ROAS contra Triple Whale. Competir en una categoria nueva: <strong>la herramienta que te muestra lo que no sabes que no ves</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     1. POSICIONAMIENTO
+     ============================================ -->
+<section class="section">
+  <div class="section-number">01</div>
+  <div class="section-title">Posicionamiento</div>
+  <p class="section-subtitle">Que decimos, a quien se lo decimos, y por que nos escucharian.</p>
+
+  <div class="card">
+    <h4>Angulo de posicionamiento</h4>
+    <h3>No somos "otro analytics". Somos el diagnostico que revela que tus datos estan rotos.</h3>
+    <p>
+      El CMO no busca "cookieless analytics" en Google. Busca "por que no cuadran mis datos de marketing" o "por que mi ROAS en GA4 no se refleja en ventas reales". <strong>SealMetrics debe aparecer como la respuesta a una pregunta que el CMO ya se hace — no como una categoria que aun no conoce.</strong>
+    </p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Lo que NO decimos</h4>
+      <ul>
+        <li>"Google Analytics alternative" — hay 7+ competidores con ese claim</li>
+        <li>"Privacy-first analytics" — la privacidad es el medio, no el fin</li>
+        <li>"Cookieless tracking" — termino tecnico que el CMO no busca</li>
+        <li>"GDPR compliant" — es requisito minimo, no diferenciador</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Lo que SI decimos</h4>
+      <ul>
+        <li>"Your marketing data is missing most of the picture" — dolor reconocible</li>
+        <li>"See 100% of your traffic, not the 13% your tools show" — contraste impactante</li>
+        <li>"Revenue you can trust" — conecta datos completos con resultados de negocio</li>
+        <li>"Decisions on real data, not estimates" — toca la inseguridad del CMO</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="card">
+    <h4>Cadena de valor del mensaje</h4>
+    <h3>Privacidad → Datos completos → Decisiones correctas → Revenue real</h3>
+    <p>
+      La mayoria de competidores se queda en un eslabon. Matomo dice "privacidad". Triple Whale dice "revenue". Plausible dice "simplicidad". <strong>SealMetrics cuenta la cadena completa</strong>: porque no usamos cookies (privacidad), capturamos el 100% del trafico (datos completos), lo que permite atribucion real (decisiones correctas), lo que impacta directamente en presupuesto y ROI (revenue real).
+    </p>
+    <p style="margin-top: 1rem;">
+      El CMO no necesita saber que es una cookie. Necesita saber que sus numeros estan mal, por que, y como arreglarlo.
+    </p>
+  </div>
+
+  <div class="vs-block">
+    <div class="vs-side vs-wrong">
+      <h5>Competencia: un claim</h5>
+      <p>"We're the privacy-first alternative to Google Analytics. GDPR compliant, no cookies needed."</p>
+    </div>
+    <div class="vs-center">vs</div>
+    <div class="vs-side vs-right">
+      <h5>SealMetrics: la cadena completa</h5>
+      <p>"87% of your EU traffic is invisible to traditional analytics. We capture 100% — revealing the revenue your current tools can't attribute."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     2. NARRATIVA DE LA HOMEPAGE
+     ============================================ -->
+<section class="section">
+  <div class="section-number">02</div>
+  <div class="section-title">Narrativa de la Homepage</div>
+  <p class="section-subtitle">La homepage no es una lista de features. Es una historia en cuatro actos que lleva al CMO de "no sabia esto" a "necesito verlo".</p>
+
+  <div class="flow">
+    <div class="flow-step flow-step-light" style="border-radius: 4px 0 0 4px;">
+      <div class="flow-step-number">ACTO 1</div>
+      <div class="flow-step-title">Conectar</div>
+      <div class="flow-step-desc">Fondo claro, serif, editorial. "Tus datos estan incompletos."</div>
+    </div>
+    <div class="flow-step flow-step-light">
+      <div class="flow-step-number">ACTO 2</div>
+      <div class="flow-step-title">Educar</div>
+      <div class="flow-step-desc">Diagramas simples, stats, "por que" y "como".</div>
+    </div>
+    <div class="flow-step flow-step-transition">
+      <span style="font-size: 0.6rem; color: rgba(255,255,255,0.5);">↓</span>
+    </div>
+    <div class="flow-step flow-step-dark">
+      <div class="flow-step-number">ACTO 3</div>
+      <div class="flow-step-title">Demostrar</div>
+      <div class="flow-step-desc">Fondo oscuro, dashboard, producto real, metricas.</div>
+    </div>
+    <div class="flow-step flow-step-light" style="border-radius: 0 4px 4px 0;">
+      <div class="flow-step-number">ACTO 4</div>
+      <div class="flow-step-title">Convencer</div>
+      <div class="flow-step-desc">Vuelta a claro. Case study, testimonios, pricing, CTA.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Acto 1 — Conectar con el dolor</h4>
+    <h3>Fondo claro. Serif. Tono editorial. El CMO siente que lee un informe de consultoria, no una landing page SaaS.</h3>
+    <ul>
+      <li><strong>Hero</strong>: Headline serif que nombra el dolor sin jerga tecnica. Subheadline que cuantifica: "13% de tus datos reales". Dual CTA: "Book a Demo" + "See How It Works"</li>
+      <li><strong>Logos</strong>: Banda de logos en gris, tono discreto. "Trusted by marketing teams across Europe"</li>
+      <li><strong>Stats</strong>: Tres tarjetas con numeros grandes: 87% traffic invisible, 4% conversion accuracy, 30h wasted/month. Serif para numeros, sans-serif para explicacion</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Acto 2 — Educar sin abrumar</h4>
+    <h3>Sigue en fondo claro. Diagramas visuales, no texto denso. El CMO entiende el problema en 30 segundos.</h3>
+    <ul>
+      <li><strong>El "por que"</strong>: Dos columnas. Texto editorial explicando consent banners, ad blockers, cookie expiration. Diagrama de barras: GA4 (13%) vs SealMetrics (100%)</li>
+      <li><strong>"How it works"</strong>: Tres pasos numerados, cada uno con detalle tecnico pequeno en monospace. No vende features — explica el mecanismo. "First-party collection → Full-resolution processing → Actionable intelligence"</li>
+    </ul>
+  </div>
+
+  <div class="card-dark">
+    <h4>Acto 3 — Demostrar con el producto</h4>
+    <h3>Transicion gradiente a fondo oscuro. El verde neon aparece. El CMO ve el producto real.</h3>
+    <ul>
+      <li><strong>Dashboard preview</strong>: Metricas reales en verde sobre negro. Comparativa implicita: "Real visitors: 72,847 (+34% vs GA4)"</li>
+      <li><strong>Feature rows</strong>: Tres bloques alternados texto/visual. Data Capture (tabla 100% en todas las condiciones), Revenue Intelligence (tabla de revenue por canal), LENS AI (grid de anomalias detectadas con severidad)</li>
+      <li><strong>Comparativa</strong>: Tabla SealMetrics vs GA4, punto por punto. Sin adjetivos — hechos</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Acto 4 — Convencer con prueba</h4>
+    <h3>Vuelta a fondo claro. El CMO siente confianza y cercania. Prueba social, pricing, CTA final.</h3>
+    <ul>
+      <li><strong>Case study</strong>: Cita serif en italica + metricas before/after en monospace. Nombre + cargo + tamano de empresa. Numeros concretos, no genericos</li>
+      <li><strong>Testimonios</strong>: Tres tarjetas, cada una con un numero especifico. "600% more conversions tracked", "8% bounce rate drop", "20 minutes to fix at 3 AM"</li>
+      <li><strong>Compliance</strong>: 4 cards con iconos: GDPR, EU Data Residency, No Cookie Policy, ePrivacy Ready</li>
+      <li><strong>Pricing</strong>: 3 tiers limpios. Growth / Business / Enterprise. Sin sorpresas</li>
+      <li><strong>CTA final</strong>: Vuelve a oscuro para el cierre. Verde glow. "See what your analytics have been missing." + "Book a Demo"</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================
+     3. IDENTIDAD VISUAL
+     ============================================ -->
+<section class="section">
+  <div class="section-number">03</div>
+  <div class="section-title">Identidad Visual</div>
+  <p class="section-subtitle">No es solo "bonito". Cada decision visual es una decision de posicionamiento.</p>
+
+  <div class="card">
+    <h4>Paleta de color</h4>
+    <h3>Dos mundos: calido editorial + oscuro tecnico</h3>
+    <p style="margin-bottom: 1rem;">La paleta refleja los dos actos de la narrativa. El mundo claro educa y genera confianza. El mundo oscuro demuestra competencia tecnica.</p>
+
+    <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.5rem;">Secciones educativas (light)</p>
+    <div class="palette">
+      <div class="swatch light-text" style="background: #FFFFFF;">#FFF</div>
+      <div class="swatch light-text" style="background: #FAFAF7;">#FAFAF7</div>
+      <div class="swatch light-text" style="background: #F5F5F0;">#F5F5F0</div>
+      <div class="swatch" style="background: #1A1A1A;">#1A1A1A</div>
+      <div class="swatch" style="background: #3D3D3D;">#3D3D3D</div>
+      <div class="swatch" style="background: #6B6B5E;">#6B6B5E</div>
+    </div>
+
+    <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.5rem; margin-top: 1rem;">Secciones de producto (dark)</p>
+    <div class="palette">
+      <div class="swatch" style="background: #0A0A10;">#0A0A10</div>
+      <div class="swatch" style="background: #0F1018;">#0F1018</div>
+      <div class="swatch" style="background: #262833;">#262833</div>
+      <div class="swatch" style="background: #5BBFA0;">#5BBFA0</div>
+      <div class="swatch" style="background: #00FF7F; color: #0A0A10;">#00FF7F</div>
+      <div class="swatch" style="background: #E8E8E8; color: #0A0A10;">#E8E8E8</div>
+    </div>
+
+    <p style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.5rem; margin-top: 1rem;">Acentos semanticos</p>
+    <div class="palette">
+      <div class="swatch" style="background: #C85A54;">#C85A54</div>
+      <div class="swatch" style="background: #2E5C8A;">#2E5C8A</div>
+      <div class="swatch" style="background: #2E8B6A;">#2E8B6A</div>
+      <div class="swatch light-text" style="background: #E5E5DB;">#E5E5DB</div>
+      <div class="swatch light-text" style="background: #EBEBDF;">#EBEBDF</div>
+      <div class="swatch light-text" style="background: #9B9B8E;">#9B9B8E</div>
+    </div>
+
+    <ul style="margin-top: 1rem;">
+      <li><span class="badge badge-red">Rojo #C85A54</span> — para el dolor: datos que faltan, problemas, GA4 en comparativa. Nunca para CTAs</li>
+      <li><span class="badge badge-green">Verde #00FF7F</span> — solo en secciones dark, para datos positivos y CTAs de producto</li>
+      <li><span class="badge badge-green">Verde muted #5BBFA0</span> — en secciones dark para texto secundario positivo</li>
+      <li><span class="badge badge-blue">Azul #2E5C8A</span> — nunca como primario. Solo para enlaces o acentos menores en secciones light</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Tipografia</h4>
+    <h3>Serif para autoridad. Sans-serif para claridad. Mono para datos.</h3>
+    <p style="margin-bottom: 1.5rem;">Ningun competidor directo usa serif. Esta decision sola posiciona a SealMetrics como "el adulto en la sala" — un informe de consultoria, no otro SaaS landing page.</p>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family: 'Source Serif 4', serif; font-weight: 400;">Your marketing data is missing most of the picture.</div>
+      <div class="type-meta">Source Serif 4 — Regular 400 — Headlines hero & section — Tracking -0.02em</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 1.25rem;">Every visitor. No exceptions.</div>
+      <div class="type-meta">Source Serif 4 — Medium 500 — Sub-headlines & card titles — Tracking -0.01em</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1rem;">Consent banners, ad blockers, and cookie restrictions have made traditional analytics unreliable.</div>
+      <div class="type-meta">Inter — Regular 400 — Body text — Line-height 1.7</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 1rem; color: var(--green);">72,847 visitors · +34% vs GA4</div>
+      <div class="type-meta">JetBrains Mono — Regular 400 — Data, metrics, code — Color verde en secciones dark</div>
+    </div>
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary);">THE PROBLEM &nbsp;&nbsp;·&nbsp;&nbsp; HOW IT WORKS &nbsp;&nbsp;·&nbsp;&nbsp; REVENUE INTELLIGENCE</div>
+      <div class="type-meta">Inter — Medium 500 — Labels, eyebrows — Uppercase, tracking 0.08em</div>
+    </div>
+
+    <ul style="margin-top: 1.5rem;">
+      <li><strong>Peso maximo: 600</strong>. Nunca 700, 800 o 900. Los pesos altos = startup. Los pesos bajos = consultoria</li>
+      <li><strong>Italica real</strong> para enfasis, no bold ni color. "Your data is missing <em style="font-family: 'Source Serif 4', serif;">most</em> of the picture" — la italica serif en un headline tiene peso editorial</li>
+      <li><strong>Numeros grandes en serif</strong>: "87%" en Source Serif 4 weight 300 tiene mas gravitas que en Inter weight 800</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Principios de diseno</h4>
+    <h3>6 reglas que definen la diferencia visual con cualquier competidor</h3>
+    <div class="grid-2" style="margin-top: 1rem;">
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>1. Border-radius: 4px, nunca mas.</strong><br>
+        <span style="color: var(--text-secondary); font-size: 0.85rem;">Los border-radius grandes (8px, 12px, 16px) son codigo visual de "startup friendly". 4px dice precision, ingenieria, seriedad. Es la diferencia entre un Porsche y un Beetle.</span></p>
+      </div>
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>2. Espaciado generoso: 7rem entre secciones.</strong><br>
+        <span style="color: var(--text-secondary); font-size: 0.85rem;">Las webs enterprise respiran. Las startups comprimen. Dejar espacio es senal de confianza — no necesitas gritar para ser escuchado.</span></p>
+      </div>
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>3. Bordes sutiles, no shadows.</strong><br>
+        <span style="color: var(--text-secondary); font-size: 0.85rem;">1px solid con opacidad baja. Sin box-shadow excepto el glow verde del CTA final. Las sombras son decoracion; los bordes son estructura.</span></p>
+      </div>
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>4. Guiones (—) en vez de bullets (•).</strong><br>
+        <span style="color: var(--text-secondary); font-size: 0.85rem;">Los bullets son listas de features. Los guiones son argumentos editoriales. Detalle minimo, diferencia maxima en percepcion.</span></p>
+      </div>
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>5. Sin iconos de feature. Sin emoji. Sin gradientes decorativos.</strong><br>
+        <span style="color: var(--text-secondary); font-size: 0.85rem;">Los datos hablan solos. Los iconos genericos (shield, chart, lock) son ruido visual que todo SaaS usa. Sustituir por datos reales, tablas, y diagramas.</span></p>
+      </div>
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>6. La transicion light→dark es un evento narrativo.</strong><br>
+        <span style="color: var(--text-secondary); font-size: 0.85rem;">No es un cambio de color — es un cambio de autoridad. "Ya entiendes el problema. Ahora dejame mostrarte la solucion." El gradiente de 120px marca el umbral.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     4. MENSAJES Y COPYWRITING
+     ============================================ -->
+<section class="section">
+  <div class="section-number">04</div>
+  <div class="section-title">Framework de Mensajes</div>
+  <p class="section-subtitle">Cada seccion tiene un objetivo emocional especifico. El copy sirve a ese objetivo, no al reves.</p>
+
+  <div class="card">
+    <h4>Tono de voz</h4>
+    <h3>Autoritativo pero cercano. Como un consultor senior que te explica algo importante sin condescendencia.</h3>
+    <div class="grid-2" style="margin-top: 1rem;">
+      <div>
+        <p style="margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Somos:</p>
+        <ul>
+          <li>Directos — sin rodeos, sin marketing fluff</li>
+          <li>Basados en datos — cada claim tiene un numero</li>
+          <li>Educativos — explicamos, no asumimos conocimiento</li>
+          <li>Seguros — sin exclamaciones, sin "amazing!", sin superlativos</li>
+        </ul>
+      </div>
+      <div>
+        <p style="margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">No somos:</p>
+        <ul>
+          <li>Agresivos — no atacamos a GA4 por nombre (dejamos que los datos hablen)</li>
+          <li>Tecnicos — nunca "server-side first-party pixel" en un headline</li>
+          <li>Hiperbólicos — no "revolutionary", no "game-changing", no "the best"</li>
+          <li>Casuales — no emoji, no slang, no "hey there!"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Headlines por seccion</h4>
+    <h3>Propuestas de copy para cada momento de la narrativa</h3>
+    <ul>
+      <li><strong>Hero</strong>: "Your marketing data is missing most of the picture." — dolor + curiosidad</li>
+      <li><strong>Problema</strong>: "The data you rely on is fundamentally incomplete." — escala el dolor</li>
+      <li><strong>How it works</strong>: "A different approach to measurement." — no "better", sino "different"</li>
+      <li><strong>Producto</strong>: "Built for the data you have been missing." — conecta solucion con dolor</li>
+      <li><strong>Revenue</strong>: "Know what actually drives revenue." — habla el idioma del CMO</li>
+      <li><strong>LENS AI</strong>: "Anomalies detected before they become problems." — valor tangible</li>
+      <li><strong>Comparativa</strong>: "A different category of analytics." — no compite, recategoriza</li>
+      <li><strong>Case study</strong>: "How a European retailer recovered its invisible revenue." — historia, no claim</li>
+      <li><strong>CTA</strong>: "See what your analytics have been missing." — cierra el circulo con el hero</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>CTA Strategy</h4>
+    <h3>"Book a Demo" como primario. "See How It Works" como puerta educativa.</h3>
+    <p>
+      El dual CTA resuelve dos intents distintos. El CMO que ya esta convencido va directo a demo. El CMO que aun explora necesita una puerta mas baja — "See How It Works" le lleva a contenido educativo sin compromiso. <strong>Nunca "Start free trial"</strong> — el ICP enterprise espera una demo personalizada, no un self-serve.
+    </p>
+    <ul style="margin-top: 1rem;">
+      <li><strong>"Book a Demo"</strong> — boton solido, oscuro en secciones light, verde glow en secciones dark</li>
+      <li><strong>"See How It Works"</strong> — boton outline, secundario. Lleva a scroll down o a pagina de producto</li>
+      <li><strong>"Run SealMetrics alongside your current setup. Compare the data. Then decide."</strong> — micro-copy bajo CTA final. Reduce riesgo percibido</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================
+     5. ARQUITECTURA WEB
+     ============================================ -->
+<section class="section">
+  <div class="section-number">05</div>
+  <div class="section-title">Arquitectura Web</div>
+  <p class="section-subtitle">Que paginas, en que orden de prioridad, y como se conectan.</p>
+
+  <div class="card">
+    <h4>Mapa del sitio</h4>
+    <h3>Fase 1: 6 paginas esenciales. Fase 2: expansion.</h3>
+  </div>
+
+  <div class="sitemap">
+    <div class="sitemap-level-0">sealmetrics.com</div>
+    <div class="sitemap-grid">
+      <div class="sitemap-group">
+        <h5>Core (Fase 1)</h5>
+        <a class="priority">/ — Homepage</a>
+        <a class="priority">/product — Producto</a>
+        <a class="priority">/pricing — Pricing</a>
+        <a class="priority">/demo — Book a Demo</a>
+        <a class="priority">/how-it-works — Como funciona</a>
+        <a class="priority">/vs-ga4 — Comparativa</a>
+      </div>
+      <div class="sitemap-group">
+        <h5>Trust (Fase 1)</h5>
+        <a class="priority">/case-studies — Casos de exito</a>
+        <a class="priority">/security — Seguridad & Compliance</a>
+        <a class="priority">/about — Sobre nosotros</a>
+        <a class="phase2">/integrations — Integraciones</a>
+        <a class="phase2">/partners — Partners</a>
+      </div>
+      <div class="sitemap-group">
+        <h5>Educacion (Fase 2)</h5>
+        <a class="phase2">/blog — Blog</a>
+        <a class="phase2">/resources — Recursos</a>
+        <a class="phase2">/changelog — Changelog</a>
+        <a class="phase2">/docs — Documentacion</a>
+        <a class="phase2">/webinars — Webinars</a>
+      </div>
+      <div class="sitemap-group">
+        <h5>Segmentacion (Fase 2)</h5>
+        <a class="phase2">/for/ecommerce — Vertical Ecom</a>
+        <a class="phase2">/for/agencies — Vertical Agencias</a>
+        <a class="phase2">/for/enterprise — Vertical Enterprise</a>
+        <a class="phase2">/for/cmo — Por rol: CMO</a>
+        <a class="phase2">/for/data-team — Por rol: Data</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 1.5rem;">
+    <h4>Navegacion</h4>
+    <h3>Simple, plana, sin mega-menus. Maximo 5 items + CTA.</h3>
+    <ul>
+      <li><strong>Product</strong> — enlaza a /product</li>
+      <li><strong>Pricing</strong> — enlaza a /pricing</li>
+      <li><strong>Case Studies</strong> — enlaza a /case-studies</li>
+      <li><strong>Docs</strong> — enlaza a /docs (externo)</li>
+      <li><strong>Company</strong> — dropdown minimal: About, Security, Blog, Changelog</li>
+      <li><strong>Book a Demo</strong> — CTA boton solido, siempre visible</li>
+    </ul>
+    <p style="margin-top: 1rem;">
+      Header con frosted glass (backdrop-filter blur) en light sections, solido oscuro en dark sections. Transicion automatica segun scroll position. Altura: 64px.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     6. SOCIAL PROOF
+     ============================================ -->
+<section class="section">
+  <div class="section-number">06</div>
+  <div class="section-title">Estrategia de Social Proof</div>
+  <p class="section-subtitle">La prueba social es el punto mas debil de las webs que solo tienen features. Y el mas fuerte de las que convierten.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Tier 1 — Logos de clientes</h4>
+      <h3>Banda de logos en gris. Discreto, no protagonista.</h3>
+      <p>
+        Ubicacion: justo debajo del hero. En gris con opacidad 40%. Label: "Trusted by marketing teams across Europe". <strong>Minimo 6 logos reconocibles</strong>. Si no hay 6, no incluir seccion.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Tier 2 — Metricas de impacto</h4>
+      <h3>Numeros antes/despues. Siempre concretos.</h3>
+      <p>
+        Case study con 4 metricas: visitors tracked (before/after), conversions recorded, revenue attributed, ROAS improvement. <strong>Formato: tachado para "before" + grande para "after".</strong> Monospace.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Tier 3 — Testimoniales con metrica</h4>
+      <h3>Cada testimonial debe tener un numero.</h3>
+      <p>
+        Formato: cita corta (1-2 frases) + nombre + cargo + tamano empresa. <strong>La cita debe incluir un dato cuantificable</strong>: "600% more conversions", "74% of data we were missing", "20 minutes to fix." Sin numero = sin testimonial.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Tier 4 — Compliance badges</h4>
+      <h3>GDPR, EU Residency, No PII, ePrivacy Ready.</h3>
+      <p>
+        Ubicacion: seccion propia despues de testimoniales. 4 cards con icono SVG + titulo + una linea. <strong>Considerar obtener SOC 2 Type II</strong> — el 100% de los competidores enterprise lo tienen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     7. TECH STACK
+     ============================================ -->
+<section class="section">
+  <div class="section-number">07</div>
+  <div class="section-title">Stack Tecnico</div>
+  <p class="section-subtitle">Decisiones tecnicas alineadas con el objetivo de negocio.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h4>Framework</h4>
+      <h3>Next.js 14+ (App Router)</h3>
+      <ul>
+        <li>SSG para paginas estaticas (home, product, pricing)</li>
+        <li>ISR para blog y case studies</li>
+        <li>RSC para componentes pesados</li>
+        <li>TypeScript estricto</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Styling</h4>
+      <h3>Tailwind CSS 4</h3>
+      <ul>
+        <li>Design tokens via CSS custom properties</li>
+        <li>Componentes con class variance authority (CVA)</li>
+        <li>Sin CSS-in-JS — performance first</li>
+        <li>Dark/light via seccion, no via toggle global</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Animacion</h4>
+      <h3>Framer Motion (selectivo)</h3>
+      <ul>
+        <li>Fade-in on scroll para cards y stats</li>
+        <li>Barras de chart animadas al entrar en viewport</li>
+        <li>Sin parallax, sin scroll hijacking</li>
+        <li>prefers-reduced-motion: respetar</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h4>CMS</h4>
+      <h3>Headless (Sanity o MDX)</h3>
+      <ul>
+        <li>Blog posts, case studies, changelog</li>
+        <li>Testimoniales editables</li>
+        <li>Pricing como dato, no como codigo</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Deploy</h4>
+      <h3>Vercel</h3>
+      <ul>
+        <li>Edge functions para geo-routing (futuro i18n)</li>
+        <li>Preview deploys para review</li>
+        <li>Analytics integrado</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Performance</h4>
+      <h3>Core Web Vitals: 100</h3>
+      <ul>
+        <li>Fonts preloaded + swap</li>
+        <li>Images: next/image + WebP/AVIF</li>
+        <li>JS bundle &lt;100KB first load</li>
+        <li>LCP &lt;1.5s, CLS 0, FID &lt;50ms</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     8. PAGINAS CLAVE
+     ============================================ -->
+<section class="section">
+  <div class="section-number">08</div>
+  <div class="section-title">Paginas Clave — Estructura</div>
+
+  <div class="card">
+    <h4">/product — Pagina de producto</h4>
+    <h3>Expansion profunda de las 3 features del homepage</h3>
+    <p>
+      Estructura: Hero dark con dashboard completo → 3 secciones deep-dive (Data Capture, Revenue Intelligence, LENS AI) cada una con screenshots, datos tecnicos en monospace, y un mini-case study → Integraciones grid → CTA.
+    </p>
+    <p style="margin-top: 0.75rem;">
+      <strong>Diferencia con homepage:</strong> aqui se puede ser tecnico. El visitante que llega a /product ya esta interesado. Monospace para specs, diagramas de arquitectura simplificados, lista completa de 9 reportes.
+    </p>
+  </div>
+
+  <div class="card">
+    <h4>/vs-ga4 — Comparativa</h4>
+    <h3>La pagina que Plausible y Fathom ya tienen (y funciona para SEO)</h3>
+    <p>
+      Hero: "SealMetrics vs Google Analytics 4: a comparison based on data, not opinion." → Tabla comparativa extendida (15+ filas) → Diagrama de captura → Seccion "When to use each" (honesto, no agresivo — "GA4 works well for... SealMetrics is better when...") → CTA.
+    </p>
+    <p style="margin-top: 0.75rem;">
+      <strong>SEO critical:</strong> "google analytics alternative", "GA4 alternative EU", "cookieless analytics". Esta pagina captura busquedas que el CMO SI hace.
+    </p>
+  </div>
+
+  <div class="card">
+    <h4>/how-it-works — Como funciona</h4>
+    <h3>La pagina educativa para el CMO que necesita entender antes de comprar</h3>
+    <p>
+      Sin jerga. Flujo visual: "Tu web tiene 70,000 visitantes reales → GA4 ve 10,000 → Aqui es donde se pierden los otros 60,000 → SealMetrics los captura asi → Este es el resultado." Diagrama visual paso a paso, no texto.
+    </p>
+    <p style="margin-top: 0.75rem;">
+      <strong>El secondary CTA "See How It Works" del hero enlaza aqui.</strong> Es la puerta baja para el CMO que aun explora.
+    </p>
+  </div>
+
+  <div class="card">
+    <h4>/case-studies — Casos de exito</h4>
+    <h3>Index de casos + paginas individuales detalladas</h3>
+    <p>
+      Index: grid de cards con empresa (anonimizada o no), vertical, metrica principal. Pagina individual: problema → solucion → implementacion → resultados (con graficas before/after) → cita del CMO. <strong>Cada caso debe incluir: vertical, tamano empresa, metricas antes/despues, tiempo de implementacion.</strong>
+    </p>
+  </div>
+
+  <div class="card">
+    <h4>/pricing — Pricing</h4>
+    <h3>3 tiers claros. Sin calculadoras complejas. FAQ abajo.</h3>
+    <p>
+      Growth (€390/mo, 500K PV) → Business (€790/mo, 2M PV, featured) → Enterprise (Custom). Features en lista con guiones, no checkmarks. FAQ debajo para objeciones: "Can I run SealMetrics alongside GA4?", "Do I need to remove my consent banner?", "Where is data stored?".
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     9. DIFERENCIACION VISUAL
+     ============================================ -->
+<section class="section">
+  <div class="section-number">09</div>
+  <div class="section-title">Diferenciacion Visual vs. Competidores</div>
+  <p class="section-subtitle">Resumen de las decisiones que nos separan del mercado.</p>
+
+  <div class="card-highlight">
+    <div class="grid-2">
+      <div>
+        <h4>Lo que todos hacen</h4>
+        <ul>
+          <li>Sans-serif everywhere (Inter, DM Sans)</li>
+          <li>Full light o full dark mode</li>
+          <li>"GA alternative" como headline</li>
+          <li>Bento grids con iconos genericos</li>
+          <li>Font-weight 700-800 en headlines</li>
+          <li>Border-radius 8-16px</li>
+          <li>Checkmarks ✓ y X en comparativas</li>
+          <li>Feature-first positioning</li>
+          <li>Blue como color primario</li>
+          <li>Self-serve "Start free trial"</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Lo que SealMetrics hace diferente</h4>
+        <ul>
+          <li><strong>Serif en headlines</strong> — autoridad editorial unica</li>
+          <li><strong>Light → Dark transicion narrativa</strong> — nadie lo hace</li>
+          <li><strong>Pain-first education</strong> — "tus datos estan rotos"</li>
+          <li><strong>Datos reales en vez de iconos</strong> — tablas, barras, numeros</li>
+          <li><strong>Font-weight max 500-600</strong> — consultoria, no startup</li>
+          <li><strong>Border-radius 4px</strong> — precision, ingenieria</li>
+          <li><strong>Guiones (—) en listas</strong> — editorial, no checklist</li>
+          <li><strong>Education-first positioning</strong> — explica antes de vender</li>
+          <li><strong>Green como acento en dark, warm neutrals en light</strong></li>
+          <li><strong>"Book a Demo" enterprise-led</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     10. PRIORIDADES DE IMPLEMENTACION
+     ============================================ -->
+<section class="section">
+  <div class="section-number">10</div>
+  <div class="section-title">Prioridades de Implementacion</div>
+
+  <div class="card">
+    <h4>Fase 1 — MVP Web (4 semanas)</h4>
+    <h3>Homepage + Pricing + Demo + Compliance</h3>
+    <ul>
+      <li>Homepage completa con los 4 actos narrativos</li>
+      <li>Pagina de pricing con 3 tiers</li>
+      <li>Pagina de demo con formulario (HubSpot o Cal.com)</li>
+      <li>Pagina de seguridad/compliance</li>
+      <li>Header + Footer + SEO basico + Analytics (SealMetrics tracking)</li>
+      <li>Deploy en Vercel, dominio apuntado</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Fase 2 — Conversion (2 semanas)</h4>
+    <h3>Product + vs-GA4 + How it Works</h3>
+    <ul>
+      <li>Pagina de producto con deep-dive en 3 features</li>
+      <li>Comparativa vs GA4 (SEO-critical)</li>
+      <li>How it Works (destino del CTA secundario)</li>
+      <li>About page</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Fase 3 — Trust (2 semanas)</h4>
+    <h3>Case Studies + Integraciones + Blog setup</h3>
+    <ul>
+      <li>Template de case study + 2-3 casos iniciales</li>
+      <li>Pagina de integraciones con grid</li>
+      <li>Blog con CMS (Sanity o MDX) + 3 articulos iniciales</li>
+      <li>Changelog page</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Fase 4 — Expansion (ongoing)</h4>
+    <h3>Verticales + i18n + contenido</h3>
+    <ul>
+      <li>Landing pages por vertical (ecommerce, agencies)</li>
+      <li>Landing pages por rol (CMO, Data Team)</li>
+      <li>Espanol como segundo idioma</li>
+      <li>Webinars, recursos descargables, SEO content</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================
+     CIERRE
+     ============================================ -->
+<div style="background: var(--text); color: var(--white); border-radius: 4px; padding: 3rem; margin-top: 2rem;">
+  <div class="report-label" style="color: rgba(255,255,255,0.4);">En resumen</div>
+  <h2 style="font-family: 'Source Serif 4', serif; font-size: 1.65rem; font-weight: 400; margin-bottom: 1.5rem;">SealMetrics no necesita ser "mejor" que 23 competidores. Necesita ser diferente a todos.</h2>
+  <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.7); max-width: 800px; margin-bottom: 1rem;">
+    La estrategia no es competir en la categoria "privacy-first GA alternative" — es crear una categoria nueva: <strong style="color: #E8E8E8;">"el analytics que te muestra lo que no sabes que no ves"</strong>.
+  </p>
+  <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.7); max-width: 800px; margin-bottom: 1rem;">
+    El diseno hibrido light+dark, la tipografia serif editorial, el tono educativo, los datos en vez de iconos, y la narrativa en 4 actos no son preferencias esteticas — son decisiones de posicionamiento que ningun competidor ocupa.
+  </p>
+  <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.5); max-width: 800px;">
+    La web propuesta no vende un producto. Educa sobre un problema, demuestra una solucion, y convierte con prueba. En ese orden.
+  </p>
+</div>
+
+</div>
+</body>
+</html>
