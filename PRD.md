@@ -1,8 +1,12 @@
 # PRD — SealMetrics Marketing Website
 
-**Versión:** 1.0
+**Versión:** 1.1
 **Fecha:** 28 febrero 2026
 **Estado:** En desarrollo
+
+**Documentos relacionados:**
+- `CLAUDE.md` — Reglas operativas del proyecto (design system, convenciones, SEO rules)
+- `SEO-STRATEGY.md` — Topic clusters, interlinking, keyword map, LLM discoverability
 
 ---
 
