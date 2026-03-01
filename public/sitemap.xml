@@ -116,6 +116,36 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://sealmetrics.com/blog/analytics-scripts-costing-you-sales</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/we-measured-every-analytics-script</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/uk-pecr-analytics-exemption</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/cnil-self-assessment-published</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sealmetrics.com/glossary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

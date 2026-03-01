@@ -9,6 +9,35 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "analytics-scripts-costing-you-sales",
+    title:
+      "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales",
+    description:
+      "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data. The compound effect is costing you conversions.",
+    date: "2026-02-26",
+    category: "Performance",
+    readTime: "3 min",
+  },
+  {
+    slug: "we-measured-every-analytics-script",
+    title: "We Measured Every Analytics Script. Here Is What We Found.",
+    description:
+      "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 99x heavier than SealMetrics.",
+    date: "2026-02-20",
+    category: "Performance",
+    readTime: "4 min",
+  },
+  {
+    slug: "uk-pecr-analytics-exemption",
+    title:
+      "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment",
+    description:
+      "The DUAA 2025 exempts certain analytics from consent requirements in the UK. We published our self-assessment showing how SealMetrics qualifies.",
+    date: "2026-02-17",
+    category: "Regulation",
+    readTime: "2 min",
+  },
+  {
     slug: "ga4-data-sampling-problem",
     title: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong",
     description:
@@ -16,6 +45,35 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-15",
     category: "Data Quality",
     readTime: "7 min",
+  },
+  {
+    slug: "eu-digital-omnibus-cookie-banners-analytics",
+    title:
+      "The EU Digital Omnibus: What It Means for Cookie Banners and Analytics",
+    description:
+      "The European Commission proposed the biggest change to EU data law since GDPR. Cookie consent moves to GDPR, and first-party analytics may not require consent.",
+    date: "2026-02-12",
+    category: "Regulation",
+    readTime: "2 min",
+  },
+  {
+    slug: "eu-digital-omnibus-marketer-guide-2026",
+    title:
+      "The EU Digital Omnibus Explained: What Every Marketer Needs to Know in 2026",
+    description:
+      "Cookie banners could vanish for 60% of websites. First-party analytics gets explicit legal authorization. A deep dive into COM(2025) 837 and what to do now.",
+    date: "2026-02-12",
+    category: "Regulation",
+    readTime: "6 min",
+  },
+  {
+    slug: "cnil-self-assessment-published",
+    title: "We Published Our CNIL Self-Assessment",
+    description:
+      "The French CNIL allows certain analytics tools to operate without cookie banners. We documented how SealMetrics meets all 14 technical criteria.",
+    date: "2026-02-10",
+    category: "Regulation",
+    readTime: "2 min",
   },
   {
     slug: "cookieless-analytics-explained",
