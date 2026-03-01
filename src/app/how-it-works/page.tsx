@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "How It Works — SealMetrics",
   description:
     "Understand how SealMetrics captures 100% of your traffic without cookies. First-party server-side collection explained simply.",
+  openGraph: {
+    title: "How It Works — SealMetrics",
+    description:
+      "How cookieless analytics captures 100% of your traffic. First-party server-side collection explained.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/how-it-works",
+  },
 };
 
 export default function HowItWorksPage() {

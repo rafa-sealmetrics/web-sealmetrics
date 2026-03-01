@@ -1,10 +1,13 @@
+import Image from "next/image";
+
 const logos = [
-  "Mango",
-  "MediaMarkt",
-  "Promofarma",
-  "Tous",
-  "Masaltos",
-  "Tendam",
+  { name: "Acciona", src: "/logos/clients/acciona.svg", width: 120, height: 32 },
+  { name: "Crocs", src: "/logos/clients/crocs.svg", width: 100, height: 32 },
+  { name: "Desigual", src: "/logos/clients/desigual-dark.svg", width: 130, height: 24 },
+  { name: "UNICEF", src: "/logos/clients/unicef.svg", width: 90, height: 28 },
+  { name: "Palladium Hotel Group", src: "/logos/clients/palladium-dark.svg", width: 120, height: 36 },
+  { name: "Casa Batlló", src: "/logos/clients/casabatllo.png", width: 110, height: 28 },
+  { name: "Juguettos", src: "/logos/clients/juguettos.png", width: 110, height: 24 },
 ];
 
 export function Logos() {
@@ -14,14 +17,16 @@ export function Logos() {
         <p className="text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary text-center mb-8">
           Trusted by marketing teams across Europe
         </p>
-        <div className="flex items-center justify-center gap-14 flex-wrap opacity-40">
-          {logos.map((name) => (
-            <span
-              key={name}
-              className="text-[0.95rem] font-medium text-text-primary tracking-[0.02em]"
-            >
-              {name}
-            </span>
+        <div className="flex items-center justify-center gap-12 flex-wrap opacity-40 grayscale">
+          {logos.map((logo) => (
+            <Image
+              key={logo.name}
+              src={logo.src}
+              alt={logo.name}
+              width={logo.width}
+              height={logo.height}
+              className="h-7 w-auto object-contain"
+            />
           ))}
         </div>
       </div>

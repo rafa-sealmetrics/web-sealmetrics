@@ -17,14 +17,15 @@ export function ProductShowcase() {
         {/* Header */}
         <div className="text-center max-w-[700px] mx-auto mb-20">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-            The Platform
+            What Changes with Complete Data
           </span>
           <h2 className="headline-section mb-4">
-            Built for the data you have been missing.
+            Nine reports built on 100% of reality.
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
-            Complete analytics built on complete data. Every visitor, every
-            session, every conversion.
+            When every visitor, every session, and every conversion is captured,
+            your analytics stop being estimates and become operational
+            infrastructure.
           </p>
         </div>
 
@@ -67,24 +68,28 @@ export function ProductShowcase() {
           </div>
         </div>
 
-        {/* Feature 1: Data Capture */}
+        {/* Feature 1: Revenue Attribution */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
-              Data Capture
+              Revenue Attribution
             </span>
-            <h3 className="headline-sub mb-4">Every visitor. No exceptions.</h3>
+            <h3 className="headline-sub mb-4">
+              Know what actually drives revenue.
+            </h3>
             <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
-              Traditional analytics depend on cookie consent. SealMetrics uses
-              first-party, server-side collection that works regardless of
-              consent banners, ad blockers, or browser restrictions.
+              Attribution models built on 13% of data produce misleading results.
+              With complete session capture, SealMetrics connects every
+              touchpoint to revenue outcomes&nbsp;&mdash; revealing the true ROI
+              of every channel, not an estimate based on the visitors who
+              happened to accept cookies.
             </p>
             <ul className="space-y-1.5">
               {[
-                "Cookieless tracking — no consent dependency",
-                "Ad blocker resistant — first-party infrastructure",
-                "Cross-device recognition without third-party data",
-                "Full session reconstruction from first touch to conversion",
+                "Multi-touch attribution across the full journey",
+                "Channel-level revenue breakdown on complete data",
+                "Campaign cost integration and true ROAS",
+                "Funnel analysis with drop-off diagnostics",
               ].map((item) => (
                 <li
                   key={item}
@@ -97,35 +102,6 @@ export function ProductShowcase() {
             </ul>
           </div>
           <div className="bg-white border border-warm-100 rounded-[4px] p-8">
-            <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
-              Session capture comparison
-            </div>
-            {[
-              "Safari (ITP enabled)",
-              "Firefox (ETP enabled)",
-              "Brave Browser",
-              "Ad blocker active",
-              "Consent declined",
-              "Incognito mode",
-            ].map((label) => (
-              <div
-                key={label}
-                className="flex justify-between items-center py-3 border-b border-warm-100/60 last:border-0"
-              >
-                <span className="text-[0.85rem] text-text-secondary">
-                  {label}
-                </span>
-                <span className="font-mono text-[0.85rem] text-green-muted font-medium">
-                  100%
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Feature 2: Revenue Intelligence */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="order-2 lg:order-1 bg-white border border-warm-100 rounded-[4px] p-8">
             <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
               Revenue by channel &mdash; last 30 days
             </div>
@@ -149,73 +125,13 @@ export function ProductShowcase() {
               </div>
             ))}
           </div>
-          <div className="order-1 lg:order-2">
-            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
-              Revenue Intelligence
-            </span>
-            <h3 className="headline-sub mb-4">
-              Know what actually drives revenue.
-            </h3>
-            <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
-              Attribution models built on incomplete data produce misleading
-              results. SealMetrics connects every touchpoint to revenue outcomes
-              using complete session data&nbsp;&mdash; revealing the true ROI of
-              every channel.
-            </p>
-            <ul className="space-y-1.5">
-              {[
-                "Multi-touch attribution across the full journey",
-                "Channel-level revenue breakdown",
-                "Campaign cost integration and true ROAS",
-                "Funnel analysis with drop-off diagnostics",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-[0.9rem] text-text-secondary"
-                >
-                  <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        {/* Feature 3: LENS AI */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
-              LENS AI
-            </span>
-            <h3 className="headline-sub mb-4">
-              Anomalies detected before they become problems.
-            </h3>
-            <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
-              LENS monitors 60+ metrics continuously, alerting your team when
-              something changes&nbsp;&mdash; a traffic drop, a conversion spike,
-              a channel underperforming. No manual dashboards. No surprises in
-              the monthly report.
-            </p>
-            <ul className="space-y-1.5">
-              {[
-                "60+ automated anomaly detection rules",
-                "Natural language alerts — no data interpretation needed",
-                "Root cause analysis with suggested actions",
-                "Continuous monitoring, not periodic reporting",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-[0.9rem] text-text-secondary"
-                >
-                  <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-white border border-warm-100 rounded-[4px] p-8">
+        {/* Feature 2: LENS AI */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="order-2 lg:order-1 bg-white border border-warm-100 rounded-[4px] p-8">
             <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
-              Recent anomalies detected
+              LENS AI &mdash; Recent detections
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
@@ -254,6 +170,107 @@ export function ProductShowcase() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
+              LENS AI
+            </span>
+            <h3 className="headline-sub mb-4">
+              Ask business questions. Get answers from complete data.
+            </h3>
+            <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
+              LENS monitors 60+ metrics continuously and answers business
+              questions in natural language. No manual dashboards. No waiting for
+              the monthly report. When something changes&nbsp;&mdash; a traffic
+              drop, a conversion spike, a channel underperforming&nbsp;&mdash;
+              you know before it becomes a problem.
+            </p>
+            <ul className="space-y-1.5">
+              {[
+                "60+ automated anomaly detection rules",
+                "Natural language alerts and business question answering",
+                "Root cause analysis with suggested actions",
+                "Continuous supervision, not periodic reporting",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-[0.9rem] text-text-secondary"
+                >
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Feature 3: Agent Analytics */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
+              Agent Analytics
+            </span>
+            <h3 className="headline-sub mb-4">
+              See what AI agents do on your site.
+            </h3>
+            <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
+              ChatGPT, Claude, Perplexity, and other AI agents are already
+              browsing your site&nbsp;&mdash; scraping content, answering
+              questions about your products, sending traffic your way. Most
+              analytics tools cannot tell you this is happening. SealMetrics
+              tracks AI agent activity separately from human traffic, so you
+              understand both audiences.
+            </p>
+            <ul className="space-y-1.5">
+              {[
+                "Separate tracking for AI agents vs. human visitors",
+                "Identify which AI models browse your site",
+                "Understand how AI agents interact with your content",
+                "Free and unlimited on every plan",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-[0.9rem] text-text-secondary"
+                >
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white border border-warm-100 rounded-[4px] p-8">
+            <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
+              Agent activity &mdash; last 7 days
+            </div>
+            {[
+              { agent: "GPT-4 (OpenAI)", sessions: "1,247", pages: "4,891" },
+              { agent: "Claude (Anthropic)", sessions: "892", pages: "3,104" },
+              { agent: "Perplexity", sessions: "634", pages: "2,340" },
+              { agent: "Google AI Overview", sessions: "421", pages: "1,687" },
+              { agent: "Other AI agents", sessions: "298", pages: "1,052" },
+            ].map((row) => (
+              <div
+                key={row.agent}
+                className="flex justify-between items-center py-3 border-b border-warm-100/60 last:border-0"
+              >
+                <span className="text-[0.85rem] text-text-secondary">
+                  {row.agent}
+                </span>
+                <div className="flex gap-6">
+                  <span className="font-mono text-[0.8rem] text-text-tertiary">
+                    {row.sessions} sessions
+                  </span>
+                  <span className="font-mono text-[0.8rem] text-text-primary font-medium">
+                    {row.pages} pages
+                  </span>
+                </div>
+              </div>
+            ))}
+            <div className="mt-4 pt-4 border-t border-warm-100">
+              <div className="text-[0.75rem] text-green-muted font-medium">
+                Included free on every plan
+              </div>
             </div>
           </div>
         </div>

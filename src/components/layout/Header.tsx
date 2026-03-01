@@ -1,13 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
   { href: "/product", label: "Product" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/case-studies", label: "Case Studies" },
   { href: "/how-it-works", label: "How It Works" },
+  { href: "/vs-ga4", label: "vs GA4" },
+  { href: "/pricing", label: "Pricing" },
 ];
 
 export function Header() {
@@ -16,13 +17,15 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-xl border-b border-warm-100">
       <div className="max-w-[1200px] mx-auto px-8 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2 no-underline">
-          <div className="w-7 h-7 bg-text-primary rounded-md flex items-center justify-center text-white text-[0.65rem] font-semibold">
-            SM
-          </div>
-          <span className="font-semibold text-[1.1rem] text-text-primary">
-            SealMetrics
-          </span>
+        <Link href="/" className="flex items-center no-underline">
+          <Image
+            src="/logos/logo-sealmetrics-negro.png"
+            alt="SealMetrics"
+            width={160}
+            height={32}
+            className="h-7 w-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

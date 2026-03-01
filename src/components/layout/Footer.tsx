@@ -1,40 +1,41 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerColumns = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "/product" },
+      { label: "Platform Overview", href: "/product" },
+      { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Integrations", href: "/integrations" },
-      { label: "Changelog", href: "/changelog" },
+      { label: "Security", href: "/security" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { label: "vs Google Analytics 4", href: "/vs-ga4" },
+      { label: "vs GA360", href: "/vs/ga360" },
+      { label: "vs Adobe Analytics", href: "/vs/adobe-analytics" },
+      { label: "vs Piwik PRO", href: "/vs/piwik-pro" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "/docs" },
-      { label: "Case Studies", href: "/case-studies" },
       { label: "Blog", href: "/blog" },
-      { label: "How It Works", href: "/how-it-works" },
+      { label: "Data Loss Calculator", href: "/data-loss-calculator" },
+      { label: "Documentation", href: "/docs" },
+      { label: "Changelog", href: "/changelog" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact", href: "/contact" },
-      { label: "Partners", href: "/partners" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
-      { label: "Security", href: "/security" },
-      { label: "GDPR", href: "/gdpr" },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ];
@@ -45,17 +46,18 @@ export function Footer() {
       <div className="max-w-[1200px] mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 bg-warm-white rounded-md flex items-center justify-center text-warm-900 text-[0.65rem] font-semibold">
-                SM
-              </div>
-              <span className="font-semibold text-[1.1rem] text-warm-white">
-                SealMetrics
-              </span>
-            </div>
+            <Link href="/" className="inline-block mb-3 no-underline">
+              <Image
+                src="/logos/logo-sealmetrics-blancov.png"
+                alt="SealMetrics"
+                width={160}
+                height={32}
+                className="h-7 w-auto"
+              />
+            </Link>
             <p className="text-[0.85rem] leading-relaxed text-warm-400 max-w-[280px]">
-              Cookieless web analytics that captures 100% of your traffic. GDPR
-              compliant by design.
+              Decision intelligence for ecommerce teams. Complete data, no
+              cookies, full GDPR compliance by design.
             </p>
           </div>
           {footerColumns.map((col) => (

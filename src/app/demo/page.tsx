@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: "Book a Demo — SealMetrics",
   description:
     "See how SealMetrics captures 100% of your traffic without cookies. 30-minute personalized walkthrough.",
+  openGraph: {
+    title: "Book a Demo — SealMetrics",
+    description:
+      "30-minute personalized walkthrough. See what 100% of your traffic looks like.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/demo",
+  },
 };
 
 export default function DemoPage() {

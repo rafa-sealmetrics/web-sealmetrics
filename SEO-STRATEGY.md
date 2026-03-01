@@ -28,13 +28,13 @@ Primary search competitors: GA4 documentation, Matomo, Plausible, Piwik Pro, Amp
 
 ### Cluster 2 — Comparisons (pillar: `/vs-ga4`)
 
+**Competitive tier: enterprise analytics.** SealMetrics competes with GA360, Adobe Analytics, and Piwik PRO — NOT with lightweight privacy tools (Plausible, Fathom, Simple Analytics). Never create comparison pages for lightweight tools.
+
 ```
-/vs-ga4                           ← Pillar (main competitor)
-  ↔ /vs/matomo                    ← Cross-linked comparisons
-  ↔ /vs/plausible
-  ↔ /vs/amplitude
-  ↔ /vs/piwik-pro
-  ↔ /vs/adobe-analytics
+/vs-ga4                           ← Pillar (main competitor, free tier)
+  ↔ /vs/ga360                     ← Enterprise Google ($150K+/yr)
+  ↔ /vs/adobe-analytics           ← Enterprise legacy ($100K+/yr)
+  ↔ /vs/piwik-pro                 ← EU enterprise privacy (€30K+/yr)
   → /product                      ← "See full product"
   → /data-loss-calculator         ← "Calculate your own data loss"
   → /demo                         ← CTA
@@ -163,11 +163,11 @@ Never generic lists:
 | Page | Primary keyword | Secondary keywords |
 |------|----------------|-------------------|
 | `/vs-ga4` | sealmetrics vs google analytics | ga4 alternative, ga4 replacement gdpr |
-| `/vs/matomo` | sealmetrics vs matomo | matomo alternative, matomo vs cookieless |
-| `/vs/plausible` | sealmetrics vs plausible | plausible alternative enterprise |
-| `/vs/amplitude` | sealmetrics vs amplitude | amplitude alternative privacy |
-| `/pricing` | sealmetrics pricing | cookieless analytics pricing, ga4 alternative cost |
-| `/demo` | sealmetrics demo | cookieless analytics demo |
+| `/vs/ga360` | sealmetrics vs ga360 | ga360 alternative, google analytics 360 alternative eu |
+| `/vs/adobe-analytics` | sealmetrics vs adobe analytics | adobe analytics alternative, adobe analytics eu alternative |
+| `/vs/piwik-pro` | sealmetrics vs piwik pro | piwik pro alternative, piwik pro vs cookieless |
+| `/pricing` | sealmetrics pricing | enterprise analytics pricing, ga360 alternative cost |
+| `/demo` | sealmetrics demo | enterprise cookieless analytics demo |
 
 ### Educational (awareness)
 

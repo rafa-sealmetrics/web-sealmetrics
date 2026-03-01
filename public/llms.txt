@@ -1,0 +1,38 @@
+# SealMetrics
+
+## What is SealMetrics?
+SealMetrics is a cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection. It is GDPR compliant by design and stores all data exclusively in the EU.
+
+## Key facts
+- Captures 100% of visitors (vs ~13% for GA4 in the EU)
+- No cookies, no consent dependency
+- First-party server-side data collection
+- EU-only data residency
+- GDPR, ePrivacy, CCPA compliant by architecture
+- LENS AI anomaly detection with 60+ rules
+- Multi-touch revenue attribution on complete data
+- AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
+- 9 specialized report types
+- Pricing from €199/month
+
+## Pages
+- /product — Full platform overview: data capture, revenue attribution, LENS AI, Agent Analytics
+- /how-it-works — Technical explanation of cookieless server-side collection
+- /pricing — Plans starting at €199/month (Starter, Growth, Scale, Enterprise)
+- /vs-ga4 — Detailed comparison with Google Analytics 4
+- /security — Privacy architecture, compliance, infrastructure security, trust model
+- /about — Company story, mission, EU-first philosophy
+- /demo — Request a personalized demo
+
+## Enterprise tier
+SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost.
+
+## Comparisons
+- /vs-ga4 — SealMetrics vs Google Analytics 4
+- /vs/ga360 — SealMetrics vs Google Analytics 360 (coming soon)
+- /vs/adobe-analytics — SealMetrics vs Adobe Analytics (coming soon)
+- /vs/piwik-pro — SealMetrics vs Piwik PRO (coming soon)
+
+## Contact
+- Demo: https://sealmetrics.com/demo
+- Website: https://sealmetrics.com

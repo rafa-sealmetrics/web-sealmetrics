@@ -27,14 +27,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SealMetrics — See What Your Analytics Have Been Missing",
+  title: "SealMetrics — Decision Intelligence for Ecommerce",
   description:
-    "Cookieless web analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance. See the revenue your current tools can't attribute.",
+    "Cookieless web analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance. Enterprise-grade analytics from €199/mo.",
   openGraph: {
-    title: "SealMetrics — See What Your Analytics Have Been Missing",
+    title: "SealMetrics — Decision Intelligence for Ecommerce",
     description:
-      "87% of your EU traffic is invisible to traditional analytics. SealMetrics captures 100% — without cookies, without consent prompts, without guesswork.",
+      "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €199/mo.",
     type: "website",
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com",
   },
 };
 

@@ -354,13 +354,12 @@ interface CaseStudy {
 
 **Estado:** 🔲 Por construir
 **Objetivo:** Capturar búsquedas "sealmetrics vs X" (alto intent de compra)
+**Competitive tier: enterprise analytics.** SealMetrics competes with GA360, Adobe Analytics, and Piwik PRO — NOT with lightweight privacy tools (Plausible, Fathom, Simple Analytics).
+
 **Páginas a crear:**
-1. `/vs/matomo` — open source, self-hosted
-2. `/vs/plausible` — lightweight, privacy
-3. `/vs/amplitude` — product analytics
-4. `/vs/piwik-pro` — enterprise privacy
-5. `/vs/snowplow` — data pipeline
-6. `/vs/adobe-analytics` — enterprise legacy
+1. `/vs/ga360` — enterprise Google ($150K+/yr), cookie-dependent, US data processing
+2. `/vs/adobe-analytics` — enterprise legacy ($100K+/yr), complex implementation
+3. `/vs/piwik-pro` — EU enterprise privacy (€30K+/yr), still uses cookies
 
 **Estructura por página:**
 - Hero: "SealMetrics vs [Competitor]"
@@ -557,8 +556,9 @@ Cada página debe tener:
 | Página | Keyword target | Search intent |
 |--------|---------------|---------------|
 | `/vs-ga4` | "sealmetrics vs google analytics" | Comparativo |
-| `/vs/matomo` | "sealmetrics vs matomo" | Comparativo |
-| `/vs/plausible` | "sealmetrics vs plausible" | Comparativo |
+| `/vs/ga360` | "sealmetrics vs ga360" | Comparativo |
+| `/vs/adobe-analytics` | "sealmetrics vs adobe analytics" | Comparativo |
+| `/vs/piwik-pro` | "sealmetrics vs piwik pro" | Comparativo |
 | `/how-it-works` | "cookieless analytics how it works" | Educacional |
 | `/glossary` (terms) | "what is cookieless analytics" etc. | Educacional |
 | `/blog` (articles) | "ga4 data loss", "gdpr analytics" etc. | Educacional |
@@ -627,16 +627,16 @@ Las páginas que más impacto tienen en tasa de conversión.
 |--------|-----------|-----------------|
 | `/customers` + 3 casos | Alta | Social proof = confianza |
 | `/data-loss-calculator` | Alta | Viral + generador de demos |
-| `/vs/matomo` | Alta | SEO alto intent |
-| `/vs/plausible` | Alta | SEO alto intent |
-| `/vs/amplitude` | Media | SEO alto intent |
+| `/vs/ga360` | Alta | SEO alto intent, justifica precio |
+| `/vs/adobe-analytics` | Alta | SEO alto intent, enterprise positioning |
+| `/vs/piwik-pro` | Media | SEO alto intent, EU competitor |
 | Header con dropdowns (Solutions, Resources) | Alta | Navegación mejorada |
 | Componentes UI reutilizables | Alta | Velocidad de desarrollo |
 
 **Dependencias:**
 - Casos de clientes requieren datos reales (contenido)
 - Calculator requiere client component con React state
-- Comparisons requieren investigación de cada competidor
+- Comparisons requieren investigación de GA360, Adobe Analytics y Piwik PRO (enterprise tier only)
 
 **Estimación de complejidad:** Media — ~15 ficheros nuevos
 

@@ -48,6 +48,26 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - Comparisons (/vs/*) link to each other in a "Other comparisons" footer section
 - See `SEO-STRATEGY.md` for full cluster map and keyword targets
 
+## Competitive Positioning
+
+SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-lightweight tier.
+
+**Compare with (same league):**
+- Google Analytics 360 (GA360) — enterprise Google, $150K+/yr
+- Adobe Analytics — enterprise legacy, $100K+/yr
+- Piwik PRO — EU enterprise privacy analytics, €30K+/yr
+- GA4 (free) — the default everyone is migrating from
+
+**NEVER compare with (different category):**
+- Plausible, Fathom, Simple Analytics, Umami, Cabin — these are lightweight/privacy tools at €9-50/mo
+- Comparing with them commoditizes SealMetrics and makes the price look expensive
+- If a blog post mentions them, frame them as "privacy-first lightweight alternatives" in a different category
+
+**Positioning frame:**
+- SealMetrics is enterprise-grade analytics at a fraction of GA360/Adobe pricing
+- The differentiator is complete data (cookieless, 100%) + EU compliance + AI supervision
+- Frame price as investment vs. cost of bad decisions on incomplete data
+
 ## Copywriting Rules
 
 - Language: English only (i18n planned for later)
@@ -58,6 +78,67 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - CTA text should be action-specific: "Book a Demo", "Calculate Your Data Loss", "See Full Comparison" — not "Learn More" or "Click Here"
 - Avoid jargon without explanation on educational pages
 - Be honest about competitors — "GA4 works well when..." not "GA4 is terrible"
+- Frame SealMetrics vs enterprise tools (GA360, Adobe), never vs lightweight privacy tools
+
+## Page Generation Rules (auto-applied when creating any page)
+
+When asked to create a new page, ALWAYS apply these rules automatically:
+
+### Structure
+1. Read `PRD.md` section 5 for page spec if it exists
+2. Read `SEO-STRATEGY.md` sections 2-4 to determine which cluster the page belongs to and what it should link to
+3. Follow the design system rules above (light mode, alternating white/warm-white)
+4. Include proper `metadata` export with title (<60 chars), description (<160 chars), openGraph, and canonical URL
+
+### SEO (automatic)
+5. Add JSON-LD structured data matching the page type (see SEO-STRATEGY.md section 6)
+6. Ensure exactly 1 `<h1>`, proper heading hierarchy (h1 → h2 → h3)
+7. Add contextual inline internal links per interlinking rules (SEO-STRATEGY.md section 4)
+8. First mention of a key concept → link to glossary page
+9. Include breadcrumbs (unless homepage)
+
+### Copy (automatic)
+10. Pain before solution — state the problem first
+11. Use specific numbers, never vague qualifiers
+12. CTA text must be action-specific ("Book a Demo", not "Learn More")
+13. Honest about competitors — acknowledge strengths, differentiate on data
+14. Tone: authoritative, editorial — not startup-casual
+
+### Conversion (automatic)
+15. Every page below Tier 1 must include at least 1 CTA linking to /demo or /pricing
+16. CTA placement: after demonstrating value, never at the top before context
+17. Comparison pages include "Other comparisons" footer section linking to sibling /vs/* pages
+18. Blog posts do NOT link directly to /demo (flow: blog → pillar → demo)
+
+### Technical
+19. Static export compatible — no server components with dynamic data
+20. Images via next/image with unoptimized: true
+21. Client components only where interactive (forms, calculators)
+22. No additional JS libraries
+
+## Skills (manual invocation with `/command`)
+
+Available skills in `.claude/commands/`:
+
+### Generation
+- `/generate-page [topic]` — Generate a complete new page from a topic
+- `/generate-blog [topic]` — Generate a blog post with proper interlinking
+- `/generate-comparison [competitor]` — Generate a /vs/* comparison page
+- `/generate-glossary [term]` — Generate a glossary term page
+- `/generate-schema [page]` — Generate JSON-LD structured data for a page
+- `/generate-sitemap` — Generate/update sitemap.xml and robots.txt
+- `/generate-llms-txt` — Generate/update llms.txt for LLM discoverability
+
+### Optimization
+- `/optimize-page [page]` — Optimize an existing page for SEO + conversion
+- `/content-brief [topic]` — Generate a content brief before building
+
+### Audits
+- `/seo-audit [page?]` — Audit SEO of a specific page or all pages
+- `/interlinking-audit [page?]` — Audit internal links across the site
+- `/conversion-audit [page?]` — Audit CTAs, social proof, and conversion flow
+- `/accessibility-audit [page?]` — Audit WCAG 2.1 AA compliance
+- `/lighthouse-check` — Build analysis + performance/SEO/a11y report
 
 ## Reference Documents
 

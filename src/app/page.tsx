@@ -11,9 +11,49 @@ import { Integrations } from "@/components/sections/Integrations";
 import { Pricing } from "@/components/sections/Pricing";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "SealMetrics",
+      url: "https://sealmetrics.com",
+      description:
+        "Cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection.",
+      foundingDate: "2020",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "ES",
+      },
+    },
+    {
+      "@type": "WebSite",
+      name: "SealMetrics",
+      url: "https://sealmetrics.com",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "SealMetrics",
+      applicationCategory: "AnalyticsApplication",
+      operatingSystem: "Web",
+      offers: {
+        "@type": "Offer",
+        price: "199",
+        priceCurrency: "EUR",
+        description: "Starter plan — 1M human events/mo",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ACT 1 — Connect */}
       <Hero />
       <Logos />
