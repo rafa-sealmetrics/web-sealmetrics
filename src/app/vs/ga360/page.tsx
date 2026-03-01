@@ -6,48 +6,50 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
+  title: "SealMetrics vs GA360 — Enterprise Analytics Comparison",
   description:
-    "A data-driven comparison between SealMetrics and Google Analytics 4. Data capture rates, privacy compliance, attribution accuracy, pricing, and more.",
+    "SealMetrics vs Google Analytics 360: 100% vs ~35% EU data capture. Enterprise analytics from €199/mo instead of $150,000+/yr. Full comparison.",
   openGraph: {
-    title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
+    title: "SealMetrics vs GA360 — Enterprise Analytics Comparison",
     description:
-      "A data-driven comparison between SealMetrics and GA4. 13% vs 100% data capture, enterprise analytics from €199/mo.",
+      "SealMetrics vs GA360: 100% vs ~35% EU data capture. Enterprise-grade analytics at 1/60th the cost.",
     type: "website",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/vs-ga4",
+    canonical: "https://sealmetrics.com/vs/ga360",
   },
 };
 
 const comparisonRows = [
-  { feature: "EU data capture rate", sm: "100% of visitors", ga: "~13% average (consent-dependent)", category: "Data Capture" },
+  { feature: "EU data capture rate", sm: "100% of visitors", ga: "~35% average (consent tools help, still cookie-dependent)", category: "Data Capture" },
   { feature: "Cookie dependency", sm: "None — fully cookieless", ga: "Requires first and third-party cookies", category: "Data Capture" },
-  { feature: "Consent banner required", sm: "No", ga: "Yes (GDPR Article 6)", category: "Data Capture" },
-  { feature: "Ad blocker resistance", sm: "First-party infrastructure", ga: "Blocked by 40%+ of EU sessions", category: "Data Capture" },
-  { feature: "Data sampling", sm: "Never — full resolution at any volume", ga: "Sampled above 500K sessions/day", category: "Data Capture" },
-  { feature: "Data freshness", sm: "Real-time", ga: "24-48 hour processing delay", category: "Data Capture" },
+  { feature: "Consent banner required", sm: "No", ga: "Yes (enhanced consent mode available)", category: "Data Capture" },
+  { feature: "Ad blocker resistance", sm: "First-party infrastructure", ga: "Partially mitigated with server-side GTM", category: "Data Capture" },
+  { feature: "Data sampling", sm: "Never — full resolution at any volume", ga: "Unsampled reports available (quota-limited)", category: "Data Capture" },
+  { feature: "Data freshness", sm: "Real-time", ga: "4-8 hour processing, real-time limited", category: "Data Capture" },
   { feature: "AI agent tracking", sm: "Built-in, free", ga: "Not available", category: "Data Capture" },
-  { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", ga: "Partial (consent-dependent, modeled)", category: "Intelligence" },
-  { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", ga: "Basic automated insights", category: "Intelligence" },
-  { feature: "Natural language queries", sm: "Ask business questions, get answers", ga: "Limited natural language", category: "Intelligence" },
-  { feature: "Funnel analysis", sm: "Complete with drop-off diagnostics", ga: "Available but consent-limited", category: "Intelligence" },
-  { feature: "Custom reports", sm: "9 specialized report types", ga: "Explorations (limited free quota)", category: "Intelligence" },
-  { feature: "GDPR compliance", sm: "By design — no PII collected", ga: "Requires DPA, consent config, IP anonymization", category: "Privacy" },
-  { feature: "Data residency", sm: "EU-only servers, guaranteed", ga: "US data transfers (Standard Contractual Clauses)", category: "Privacy" },
-  { feature: "ePrivacy compliance", sm: "No consent needed (no device storage)", ga: "Consent required (cookies = device storage)", category: "Privacy" },
-  { feature: "Personal data collection", sm: "None — zero PII by architecture", ga: "IP address, device identifiers, user IDs", category: "Privacy" },
-  { feature: "Starting price", sm: "From €199/mo", ga: "Free (GA360: ~$150,000/yr)", category: "Other" },
-  { feature: "Setup complexity", sm: "One script tag, 5 minutes", ga: "Tag Manager, consent mode, config", category: "Other" },
-  { feature: "Support", sm: "Priority email + onboarding", ga: "Community forums (paid: dedicated)", category: "Other" },
+  { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", ga: "Advanced (consent-dependent data)", category: "Intelligence" },
+  { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", ga: "Custom alerts, basic anomaly detection", category: "Intelligence" },
+  { feature: "Natural language queries", sm: "Ask business questions, get answers", ga: "Limited to Explore interface", category: "Intelligence" },
+  { feature: "BigQuery integration", sm: "Native export available", ga: "Native BigQuery export (strength)", category: "Intelligence" },
+  { feature: "Custom reports", sm: "9 specialized report types", ga: "Unlimited custom reports + explorations", category: "Intelligence" },
+  { feature: "Audience building", sm: "Based on 100% data", ga: "Advanced, Google Ads integration", category: "Intelligence" },
+  { feature: "GDPR compliance", sm: "By design — no PII collected", ga: "Requires DPA, consent mode v2, legal review", category: "Privacy" },
+  { feature: "Data residency", sm: "EU-only servers, guaranteed", ga: "EU data storage option (US processing possible)", category: "Privacy" },
+  { feature: "ePrivacy compliance", sm: "No consent needed", ga: "Consent required", category: "Privacy" },
+  { feature: "Personal data collection", sm: "None — zero PII", ga: "IP address, device IDs, user IDs, Google signals", category: "Privacy" },
+  { feature: "Annual cost", sm: "From €2,388/yr", ga: "$150,000+/yr", category: "Other" },
+  { feature: "Setup complexity", sm: "One script tag, 5 minutes", ga: "6-12 week implementation, certified partner recommended", category: "Other" },
+  { feature: "Support", sm: "Priority email + onboarding", ga: "Dedicated account manager", category: "Other" },
+  { feature: "Contract", sm: "Monthly, cancel anytime", ga: "Annual contract required", category: "Other" },
 ];
 
-export default function VsGA4Page() {
+export default function VsGA360Page() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Comparisons", href: "/vs-ga4" }, { label: "vs GA4" }]} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4", description: "A data-driven comparison between SealMetrics and GA4.", url: "/vs-ga4" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Comparisons", url: "/vs-ga4" }, { name: "vs GA4" }])} />
+      <Breadcrumbs items={[{ label: "Comparisons", href: "/vs-ga4" }, { label: "vs GA360" }]} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs GA360", description: "Enterprise analytics comparison: SealMetrics vs Google Analytics 360.", url: "/vs/ga360" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Comparisons", url: "/vs-ga4" }, { name: "vs GA360" }])} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -56,12 +58,13 @@ export default function VsGA4Page() {
               Comparison
             </span>
             <h1 className="headline-hero mb-8">
-              SealMetrics vs Google Analytics&nbsp;4
+              SealMetrics vs Google Analytics&nbsp;360
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              A comparison based on data, not opinion. Both tools measure web
-              traffic&nbsp;&mdash; but they capture fundamentally different
-              amounts of it. Here is what that means for your business decisions.
+              GA360 is the enterprise tier of Google Analytics at
+              $150,000+/yr. SealMetrics offers enterprise-grade analytics
+              from&nbsp;&euro;199/mo&nbsp;&mdash; with complete data capture
+              that GA360 still cannot deliver in the EU.
             </p>
           </div>
         </div>
@@ -73,15 +76,15 @@ export default function VsGA4Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             <div className="p-9 bg-warm-white border border-warm-100 rounded-[4px]">
               <div className="font-mono text-[0.7rem] text-text-tertiary uppercase tracking-[0.06em] mb-4">
-                Google Analytics 4
+                Google Analytics 360
               </div>
               <div className="font-serif text-[3.5rem] font-light text-red-alert leading-none mb-3">
-                ~13%
+                ~35%
               </div>
               <p className="text-[1rem] text-text-secondary leading-relaxed">
-                Average EU data capture rate. Depends on cookie consent, browser
-                support, and absence of ad blockers. Every decision is based on a
-                fraction of reality.
+                Average EU data capture rate. Better than free GA4 thanks to
+                enhanced consent tools, but still fundamentally
+                cookie-dependent. Two thirds of your visitors remain invisible.
               </p>
             </div>
             <div className="p-9 bg-warm-white border border-warm-100 rounded-[4px]">
@@ -93,8 +96,8 @@ export default function VsGA4Page() {
               </div>
               <p className="text-[1rem] text-text-secondary leading-relaxed">
                 Full data capture regardless of consent status, browser, or ad
-                blocker. No cookies, no dependencies. Decisions grounded in
-                complete data.
+                blocker. No cookies, no dependencies. Enterprise-grade analytics
+                at 1/60th of the cost.
               </p>
             </div>
           </div>
@@ -116,7 +119,7 @@ export default function VsGA4Page() {
                     SealMetrics
                   </th>
                   <th className="text-left py-4 px-6 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em]">
-                    Google Analytics 4
+                    Google Analytics 360
                   </th>
                 </tr>
               </thead>
@@ -164,15 +167,15 @@ export default function VsGA4Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             <div className="p-8 border border-warm-100 rounded-[4px]">
               <h3 className="font-serif text-[1.15rem] font-medium text-text-primary mb-4">
-                GA4 works well when
+                GA360 works well when
               </h3>
               <ul className="space-y-2">
                 {[
-                  "Your audience is primarily outside the EU",
-                  "Consent rates are above 80%",
-                  "You need deep Google Ads integration above all else",
-                  "Approximate data is acceptable for your decisions",
-                  "Budget is the primary constraint (GA4 is free)",
+                  "You need deep Google Ads and DV360 integration",
+                  "Your team has 6+ analysts who need unlimited custom reports",
+                  "You've already invested in the Google Marketing Platform ecosystem",
+                  "Budget is not a constraint and you can afford $150K+/yr",
+                  "Consent rates are above 70% in your markets",
                 ].map((item) => (
                   <li
                     key={item}
@@ -190,12 +193,12 @@ export default function VsGA4Page() {
               </h3>
               <ul className="space-y-2">
                 {[
-                  "You operate in the EU and consent rates are below 50%",
-                  "Accurate attribution drives budget allocation decisions",
-                  "You need GDPR compliance without ongoing configuration",
-                  "Your data must stay in the EU — no exceptions",
-                  "You want to see 100% of traffic, not a consent-dependent fraction",
-                  "You need AI agent tracking alongside human analytics",
+                  "You operate in the EU and need 100% data capture",
+                  "You want enterprise analytics without enterprise pricing",
+                  "GDPR compliance must be architectural, not configured",
+                  "Your data must stay in the EU exclusively",
+                  "You want AI-powered anomaly detection included, not add-on",
+                  "You need to track AI agent traffic alongside human analytics",
                 ].map((item) => (
                   <li
                     key={item}
@@ -216,21 +219,21 @@ export default function VsGA4Page() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <h2 className="headline-section mb-6">
-              The real comparison is with GA360.
+              Enterprise analytics shouldn&rsquo;t require enterprise budgets.
             </h2>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
-              GA4 is free — and for many businesses, "free" is the right price
-              for approximate data. But if your marketing budget depends on
-              accurate attribution, the real question is whether to invest in
-              GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), or
-              SealMetrics (from €199/mo).
+              GA360 is an excellent product if you can afford it and consent
+              isn&rsquo;t a concern. But at $150,000+/yr, it still misses 65% of
+              EU visitors due to its fundamental cookie dependency. Better consent
+              tools improve the numbers, but they don&rsquo;t solve the underlying
+              architecture problem.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
-              SealMetrics delivers enterprise-grade analytics&nbsp;&mdash;
-              complete data capture, AI supervision, multi-touch
-              attribution&nbsp;&mdash; at a fraction of enterprise pricing. With
-              capabilities that GA360 and Adobe do not offer: cookieless
-              collection, AI agent tracking, and GDPR compliance by design.
+              SealMetrics delivers complete data&nbsp;&mdash; 100% of visitors,
+              zero cookie dependency, GDPR compliance by design&nbsp;&mdash; at
+              1/60th of the cost. With capabilities GA360 does not offer:
+              cookieless collection, AI agent tracking, and privacy compliance
+              that requires no configuration.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link
@@ -253,29 +256,29 @@ export default function VsGA4Page() {
       {/* Other comparisons */}
       <section className="py-16 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">
-            Other comparisons
-          </h2>
-          <div className="flex items-center gap-6 flex-wrap">
+          <p className="text-[0.8rem] text-text-tertiary">
+            Other comparisons:{" "}
             <Link
-              href="/vs/ga360"
-              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+              href="/vs-ga4"
+              className="text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
             >
-              vs GA360
+              SealMetrics vs GA4
             </Link>
+            {" / "}
             <Link
               href="/vs/adobe-analytics"
-              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+              className="text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
             >
-              vs Adobe Analytics
+              SealMetrics vs Adobe Analytics
             </Link>
+            {" / "}
             <Link
               href="/vs/piwik-pro"
-              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+              className="text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
             >
-              vs Piwik PRO
+              SealMetrics vs Piwik PRO
             </Link>
-          </div>
+          </p>
         </div>
       </section>
 
@@ -286,7 +289,7 @@ export default function VsGA4Page() {
             Compare with your own data.
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
-            Run SealMetrics alongside GA4. See the difference in your own
+            Run SealMetrics alongside GA360. See the difference in your own
             numbers. Then decide which tool tells you the truth.
           </p>
           <div className="flex items-center justify-center gap-5 flex-wrap">

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
@@ -20,19 +23,12 @@ export const metadata: Metadata = {
 
 export default function MultiTouchAttributionPage() {
   return (
-    <article className="pt-40 pb-28 bg-white">
-      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
-          <Link
-            href="/blog"
-            className="no-underline hover:text-text-primary transition-colors"
-          >
-            Blog
-          </Link>
-          <span>/</span>
-          <span className="text-text-secondary">Attribution</span>
-        </nav>
+    <>
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Multi-Touch Attribution" }]} />
+      <JsonLd data={articleSchema({ headline: "Why Multi-Touch Attribution Fails Without Complete Data", description: "Attribution models need complete data to work.", datePublished: "2026-01-10", url: "/blog/multi-touch-attribution-complete-data", category: "Attribution" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Multi-Touch Attribution" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -226,5 +222,6 @@ export default function MultiTouchAttributionPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

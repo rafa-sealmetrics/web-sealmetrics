@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "What Is Intelligent Tracking Prevention (ITP)? — SealMetrics Glossary",
@@ -15,13 +18,12 @@ export const metadata: Metadata = {
 
 export default function ITPPage() {
   return (
-    <article className="pt-40 pb-28 bg-white">
-      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
-        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
-          <Link href="/glossary" className="no-underline hover:text-text-primary transition-colors">Glossary</Link>
-          <span>/</span>
-          <span className="text-text-secondary">Privacy</span>
-        </nav>
+    <>
+      <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Intelligent Tracking Prevention" }]} />
+      <JsonLd data={definedTermSchema({ name: "Intelligent Tracking Prevention", description: "Apple Safari's privacy feature that limits cookie lifespan and cross-site tracking.", url: "/glossary/intelligent-tracking-prevention" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Intelligent Tracking Prevention" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">Definition</span>
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">Intelligent Tracking Prevention (ITP)</h1>
@@ -47,5 +49,6 @@ export default function ITPPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

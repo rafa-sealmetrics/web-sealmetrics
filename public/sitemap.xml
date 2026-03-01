@@ -41,6 +41,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sealmetrics.com/integrations</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/vs/ga360</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/vs/adobe-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/vs/piwik-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sealmetrics.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

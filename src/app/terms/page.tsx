@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Terms of Service — SealMetrics",
@@ -18,7 +21,10 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="pt-40 pb-28 bg-white">
+    <>
+      <Breadcrumbs items={[{ label: "Terms of Service" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Terms of Service", url: "/terms" }])} />
+      <section className="pt-12 pb-28 bg-white">
       <div className="max-w-[800px] mx-auto px-5 sm:px-8">
         <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
           Legal
@@ -192,5 +198,6 @@ export default function TermsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

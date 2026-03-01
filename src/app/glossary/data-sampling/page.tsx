@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "What Is Data Sampling in Analytics? — SealMetrics Glossary",
@@ -15,13 +18,12 @@ export const metadata: Metadata = {
 
 export default function DataSamplingPage() {
   return (
-    <article className="pt-40 pb-28 bg-white">
-      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
-        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
-          <Link href="/glossary" className="no-underline hover:text-text-primary transition-colors">Glossary</Link>
-          <span>/</span>
-          <span className="text-text-secondary">Data Quality</span>
-        </nav>
+    <>
+      <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Data Sampling" }]} />
+      <JsonLd data={definedTermSchema({ name: "Data Sampling", description: "A technique where analytics tools analyze a subset of data and extrapolate results.", url: "/glossary/data-sampling" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Data Sampling" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">Definition</span>
@@ -69,5 +71,6 @@ export default function DataSamplingPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

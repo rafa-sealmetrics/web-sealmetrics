@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts } from "@/lib/content/blog";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Blog — SealMetrics",
@@ -20,8 +23,11 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Blog" }]} />
+      <JsonLd data={collectionPageSchema({ name: "Blog", description: "Insights on web analytics, data quality, and privacy-first measurement.", url: "/blog" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }])} />
       {/* Hero */}
-      <section className="pt-40 pb-20 bg-white">
+      <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">

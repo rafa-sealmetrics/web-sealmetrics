@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
@@ -19,19 +22,12 @@ export const metadata: Metadata = {
 
 export default function CookielessAnalyticsExplainedPage() {
   return (
-    <article className="pt-40 pb-28 bg-white">
-      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
-          <Link
-            href="/blog"
-            className="no-underline hover:text-text-primary transition-colors"
-          >
-            Blog
-          </Link>
-          <span>/</span>
-          <span className="text-text-secondary">Technology</span>
-        </nav>
+    <>
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics Explained" }]} />
+      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", url: "/blog/cookieless-analytics-explained", category: "Technology" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -267,5 +263,6 @@ export default function CookielessAnalyticsExplainedPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

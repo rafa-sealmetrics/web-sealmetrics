@@ -2,6 +2,9 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PricingPlans } from "@/components/sections/PricingPlans";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Pricing — SealMetrics",
@@ -199,8 +202,15 @@ function CellValue({ value }: { value: string | boolean }) {
 export default function PricingPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Pricing" }]} />
+      <JsonLd data={pricingSchema([
+        { name: "Starter", price: "199", description: "1M human events/mo" },
+        { name: "Growth", price: "499", description: "5M human events/mo" },
+        { name: "Scale", price: "899", description: "15M human events/mo" },
+      ])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Pricing", url: "/pricing" }])} />
       {/* Hero */}
-      <section className="pt-40 pb-20 bg-white">
+      <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
           <h1 className="headline-hero mb-6">
             Pay for humans. Not bots. Not consent banners. Not guesswork.

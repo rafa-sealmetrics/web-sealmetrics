@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Book a Demo — SealMetrics",
@@ -19,7 +22,9 @@ export const metadata: Metadata = {
 export default function DemoPage() {
   return (
     <>
-      <section className="pt-40 pb-28 bg-white min-h-screen">
+      <Breadcrumbs items={[{ label: "Book a Demo" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Book a Demo", url: "/demo" }])} />
+      <section className="pt-12 pb-28 bg-white min-h-screen">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             {/* Left: info */}

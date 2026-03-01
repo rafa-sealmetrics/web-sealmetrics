@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Changelog — SealMetrics",
@@ -109,8 +112,10 @@ function typeBadgeColor(type: string): string {
 export default function ChangelogPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Changelog" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Changelog", url: "/changelog" }])} />
       {/* Hero */}
-      <section className="pt-40 pb-20 bg-white">
+      <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">

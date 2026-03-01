@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
@@ -20,19 +23,12 @@ export const metadata: Metadata = {
 
 export default function ConsentBannerImpactPage() {
   return (
-    <article className="pt-40 pb-28 bg-white">
-      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
-          <Link
-            href="/blog"
-            className="no-underline hover:text-text-primary transition-colors"
-          >
-            Blog
-          </Link>
-          <span>/</span>
-          <span className="text-text-secondary">Data Quality</span>
-        </nav>
+    <>
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
+      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 35%+ EU visitor data loss.", datePublished: "2026-01-25", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -217,5 +213,6 @@ export default function ConsentBannerImpactPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }

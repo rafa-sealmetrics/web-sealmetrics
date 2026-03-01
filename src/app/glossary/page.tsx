@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { glossaryTerms } from "@/lib/content/glossary";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Analytics Glossary — SealMetrics",
@@ -22,8 +25,11 @@ const categories = [...new Set(glossaryTerms.map((t) => t.category))];
 export default function GlossaryPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Glossary" }]} />
+      <JsonLd data={collectionPageSchema({ name: "Analytics Glossary", description: "Clear definitions of web analytics terms.", url: "/glossary" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }])} />
       {/* Hero */}
-      <section className="pt-40 pb-20 bg-white">
+      <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">

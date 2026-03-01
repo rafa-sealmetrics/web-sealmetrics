@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong — SealMetrics",
@@ -18,19 +21,12 @@ export const metadata: Metadata = {
 
 export default function GA4DataSamplingPage() {
   return (
-    <article className="pt-40 pb-28 bg-white">
-      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
-          <Link
-            href="/blog"
-            className="no-underline hover:text-text-primary transition-colors"
-          >
-            Blog
-          </Link>
-          <span>/</span>
-          <span className="text-text-secondary">Data Quality</span>
-        </nav>
+    <>
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GA4 Data Sampling Problem" }]} />
+      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", url: "/blog/ga4-data-sampling-problem", category: "Data Quality" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Data Sampling" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -208,5 +204,6 @@ export default function GA4DataSamplingPage() {
         </div>
       </div>
     </article>
+    </>
   );
 }
