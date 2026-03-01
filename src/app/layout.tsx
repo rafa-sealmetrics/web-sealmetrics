@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://sealmetrics.com",
   },
+  other: {
+    "llms-txt": "https://sealmetrics.com/llms.txt",
+  },
 };
 
 export default function RootLayout({
@@ -64,6 +67,9 @@ export default function RootLayout({
       lang="en"
       className={`${sourceSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
+      </head>
       <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>

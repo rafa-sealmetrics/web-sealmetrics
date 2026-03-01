@@ -3,3 +3,7 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://sealmetrics.com/sitemap.xml
+
+# LLM discoverability
+# See https://llmstxt.org for the specification
+LLMs-Txt: https://sealmetrics.com/llms.txt
