@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 declare global {
@@ -37,8 +37,14 @@ function getContentGroup(pathname: string): string {
 
 export function SealMetricsTracker() {
   const pathname = usePathname();
+  const isFirstLoad = useRef(true);
 
   useEffect(() => {
+    // Skip first load — t.js already fires the initial pageview
+    if (isFirstLoad.current) {
+      isFirstLoad.current = false;
+      return;
+    }
     if (typeof window === "undefined" || !window.sealmetrics) return;
     const group = getContentGroup(pathname);
     window.sealmetrics.call(undefined, { group });
