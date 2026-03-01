@@ -19,7 +19,7 @@ const testimonials = [
 export function Testimonials() {
   return (
     <section className="py-28 bg-warm-white">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary">
             What our clients say

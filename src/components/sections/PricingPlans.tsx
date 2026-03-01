@@ -63,7 +63,7 @@ export function PricingPlans() {
 
   return (
     <section className="pb-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         {/* Billing toggle */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex items-center border border-warm-200 rounded-[4px] p-1 bg-warm-white">

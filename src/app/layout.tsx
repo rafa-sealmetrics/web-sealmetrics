@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
@@ -26,6 +26,11 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "SealMetrics — Decision Intelligence for Ecommerce",
   description:
@@ -35,6 +40,14 @@ export const metadata: Metadata = {
     description:
       "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €199/mo.",
     type: "website",
+    images: [
+      {
+        url: "https://sealmetrics.com/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "SealMetrics — Decision Intelligence for Ecommerce",
+      },
+    ],
   },
   alternates: {
     canonical: "https://sealmetrics.com",

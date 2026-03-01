@@ -21,7 +21,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="pt-40 pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
               About SealMetrics
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="pb-28 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="headline-section mb-6">Why we exist</h2>
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
       {/* Principles */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">What we believe</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
             {[
@@ -139,7 +139,7 @@ export default function AboutPage() {
 
       {/* European-first */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <h2 className="headline-section mb-6">European-first by design</h2>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
@@ -167,7 +167,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="py-28 bg-warm-white text-center border-t border-warm-100">
-        <div className="max-w-[500px] mx-auto px-8">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             Want to see what complete data looks like?
           </h2>

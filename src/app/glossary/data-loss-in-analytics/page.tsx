@@ -1,0 +1,64 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "What Is Data Loss in Analytics? — SealMetrics Glossary",
+  description:
+    "Data loss in analytics is the gap between actual website traffic and what analytics tools report. Typically 70-87% in the EU due to consent, ad blockers, and browser restrictions.",
+  openGraph: {
+    title: "What Is Data Loss in Analytics?",
+    description: "Data loss in analytics: the gap between real traffic and what tools report. Typically 70-87% in the EU.",
+    type: "article",
+  },
+  alternates: { canonical: "https://sealmetrics.com/glossary/data-loss-in-analytics" },
+};
+
+export default function DataLossPage() {
+  return (
+    <article className="pt-40 pb-28 bg-white">
+      <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <nav className="flex items-center gap-2 text-[0.8rem] text-text-tertiary mb-10">
+          <Link href="/glossary" className="no-underline hover:text-text-primary transition-colors">Glossary</Link>
+          <span>/</span>
+          <span className="text-text-secondary">Data Quality</span>
+        </nav>
+        <header className="mb-12">
+          <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">Definition</span>
+          <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">Data Loss in Analytics</h1>
+        </header>
+        <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
+          <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+            <p className="text-[1rem] text-text-primary font-medium">
+              The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. Typically 70-87% in the EU.
+            </p>
+          </div>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The cascade of losses</h2>
+          <p>Data loss in web analytics is not caused by a single factor. It is a cascade where each loss compounds on the previous one:</p>
+          <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6 text-[0.9rem] space-y-3">
+            <div className="flex justify-between"><span className="text-text-secondary">Consent banner rejection (EU)</span><span className="font-mono text-text-primary">-35%</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Ad blocker blocking</span><span className="font-mono text-text-primary">-40%</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary"><Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5">ITP</Link> / ETP cookie limits</span><span className="font-mono text-text-primary">-40%</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary"><Link href="/glossary/data-sampling" className="text-text-primary no-underline border-b border-warm-200 pb-0.5">Data sampling</Link></span><span className="font-mono text-text-primary">-25%</span></div>
+            <div className="flex justify-between border-t border-warm-100 pt-3"><span className="text-text-primary font-medium">Cumulative: GA4 reports</span><span className="font-mono text-red-alert font-medium">~13% of real traffic</span></div>
+          </div>
+          <p>Use the <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss calculator</Link> to see the specific numbers for your traffic and region.</p>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The business impact</h2>
+          <p>Data loss is not just a measurement problem. It directly affects <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue attribution</Link>, campaign optimization, and board reporting. When your analytics show 10,000 visitors but 70,000 actually visited, every decision built on that data is compromised.</p>
+        </div>
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
+          <div className="space-y-3">
+            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+            <Link href="/glossary/data-sampling" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Sampling</Link>
+            <Link href="/glossary/consent-management-platform" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Consent Management Platform (CMP)</Link>
+          </div>
+        </div>
+        <div className="mt-10 pt-6 border-t border-warm-100">
+          <p className="text-[0.85rem] text-text-tertiary">
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate Your Data Loss</Link>
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}

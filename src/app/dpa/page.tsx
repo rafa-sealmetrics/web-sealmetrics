@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Data Processing Agreement — SealMetrics",
   description:
     "SealMetrics Data Processing Agreement (DPA). Details on data processing, sub-processors, security measures, and GDPR compliance.",
+  openGraph: {
+    title: "Data Processing Agreement — SealMetrics",
+    description:
+      "Details on data processing, sub-processors, security measures, and GDPR compliance.",
+    type: "website",
+  },
   alternates: {
     canonical: "https://sealmetrics.com/dpa",
   },
@@ -12,7 +19,7 @@ export const metadata: Metadata = {
 export default function DpaPage() {
   return (
     <section className="pt-40 pb-28 bg-white">
-      <div className="max-w-[800px] mx-auto px-8">
+      <div className="max-w-[800px] mx-auto px-5 sm:px-8">
         <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
           Legal
         </span>
@@ -184,6 +191,12 @@ export default function DpaPage() {
               </span>
               .
             </p>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-warm-100 flex flex-wrap gap-6 text-[0.85rem]">
+            <Link href="/privacy" className="text-text-secondary no-underline hover:text-text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-text-secondary no-underline hover:text-text-primary transition-colors">Terms of Service</Link>
+            <Link href="/security" className="text-text-secondary no-underline hover:text-text-primary transition-colors">Security Architecture</Link>
           </div>
         </div>
       </div>

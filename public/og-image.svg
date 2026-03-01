@@ -1,0 +1,9 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FAFAF7"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#5BBFA0"/>
+  <text x="80" y="250" font-family="Georgia, serif" font-size="64" font-weight="400" fill="#1A1A1A" letter-spacing="-1">Decision Intelligence</text>
+  <text x="80" y="330" font-family="Georgia, serif" font-size="64" font-weight="400" fill="#1A1A1A" letter-spacing="-1">for Ecommerce</text>
+  <text x="80" y="400" font-family="Arial, sans-serif" font-size="24" fill="#6B6B5E">Cookieless analytics that captures 100% of your traffic</text>
+  <text x="80" y="520" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#1A1A1A">SealMetrics</text>
+  <text x="80" y="550" font-family="Arial, sans-serif" font-size="16" fill="#9B9B8E">sealmetrics.com</text>
+</svg>

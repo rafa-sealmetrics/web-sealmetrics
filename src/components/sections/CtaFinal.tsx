@@ -3,7 +3,7 @@ import Link from "next/link";
 export function CtaFinal() {
   return (
     <section className="py-32 bg-white text-center border-t border-warm-100">
-      <div className="max-w-[600px] mx-auto px-8">
+      <div className="max-w-[600px] mx-auto px-5 sm:px-8">
         <h2 className="headline-section mb-4">
           Ready to see what 100% of your traffic looks like?
         </h2>

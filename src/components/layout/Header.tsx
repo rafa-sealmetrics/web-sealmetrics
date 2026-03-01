@@ -16,7 +16,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-xl border-b border-warm-100">
-      <div className="max-w-[1200px] mx-auto px-8 flex items-center justify-between h-16">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center no-underline">
           <Image
             src="/logos/logo-sealmetrics-negro.png"
@@ -38,6 +38,12 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://my.sealmetrics.com/register"
+            className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+          >
+            Login
+          </a>
           <Link
             href="/demo"
             className="inline-flex items-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
@@ -69,7 +75,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-warm-100 px-8 py-6">
+        <div className="md:hidden bg-white border-t border-warm-100 px-4 sm:px-6 py-6">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
@@ -81,6 +87,13 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href="https://my.sealmetrics.com/register"
+              className="text-text-secondary no-underline hover:text-text-primary"
+              onClick={() => setMobileOpen(false)}
+            >
+              Login
+            </a>
             <Link
               href="/demo"
               className="inline-flex items-center justify-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-2"

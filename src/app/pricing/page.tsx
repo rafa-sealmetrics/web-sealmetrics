@@ -201,7 +201,7 @@ export default function PricingPage() {
     <>
       {/* Hero */}
       <section className="pt-40 pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8 text-center">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
           <h1 className="headline-hero mb-6">
             Pay for humans. Not bots. Not consent banners. Not guesswork.
           </h1>
@@ -227,7 +227,7 @@ export default function PricingPage() {
 
       {/* Every plan includes */}
       <section className="py-20 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-10">Every plan includes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
             {everyPlanIncludes.map((feature) => (
@@ -255,7 +255,7 @@ export default function PricingPage() {
 
       {/* What differentiates each plan */}
       <section className="py-20 bg-white border-t border-warm-100">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-10">What differentiates each plan</h2>
           <div className="space-y-5">
             {differentiators.map((d) => (
@@ -281,7 +281,7 @@ export default function PricingPage() {
 
       {/* Full capabilities comparison */}
       <section className="py-20 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12 text-center">
             Full capabilities comparison
           </h2>
@@ -349,7 +349,7 @@ export default function PricingPage() {
 
       {/* How traffic counting works */}
       <section className="py-20 bg-white border-t border-warm-100">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-10 text-center">
             How traffic counting works
           </h2>
@@ -413,7 +413,7 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12 text-center">
             Frequently asked questions
           </h2>
@@ -437,7 +437,7 @@ export default function PricingPage() {
 
       {/* CTA */}
       <section className="py-24 bg-white border-t border-warm-100 text-center">
-        <div className="max-w-[500px] mx-auto px-8">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-8">
             Ready to see what humans actually do on your site?
           </h2>

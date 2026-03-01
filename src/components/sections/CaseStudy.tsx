@@ -8,7 +8,7 @@ const caseMetrics = [
 export function CaseStudy() {
   return (
     <section className="py-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="mb-16">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
             Case Study
@@ -42,7 +42,7 @@ export function CaseStudy() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {caseMetrics.map((m) => (
               <div
                 key={m.label}

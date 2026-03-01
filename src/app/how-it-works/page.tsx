@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
     <>
       {/* Hero */}
       <section className="pt-40 pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
               How It Works
@@ -31,9 +31,9 @@ export default function HowItWorksPage() {
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               Traditional analytics lose most of your data before it is even
-              recorded. SealMetrics was built from scratch to solve this
-              problem&nbsp;&mdash; without cookies, without consent dependency,
-              and without compromising privacy.
+              recorded. SealMetrics was built from scratch to solve
+              this&nbsp;&mdash; without cookies, without consent dependency, and
+              without compromising privacy.
             </p>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function HowItWorksPage() {
 
       {/* The problem visual */}
       <section className="pb-28 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[800px]">
             <h2 className="headline-section mb-8">
               Where your data disappears
@@ -94,7 +94,7 @@ export default function HowItWorksPage() {
                   </div>
                   <div className="h-6 bg-warm-100 rounded-[2px]">
                     <div
-                      className={`h-full ${item.color} rounded-[2px] transition-all`}
+                      className={`h-full ${item.color} rounded-[2px]`}
                       style={{ width: item.width }}
                     />
                   </div>
@@ -118,13 +118,23 @@ export default function HowItWorksPage() {
                 100% capture. No consent dependency. No data loss.
               </p>
             </div>
+
+            <p className="mt-8 text-[0.9rem] text-text-secondary">
+              Want to see the numbers for your own site?{" "}
+              <Link
+                href="/data-loss-calculator"
+                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                Calculate your data loss
+              </Link>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Three steps */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-16">How SealMetrics works</h2>
           <div className="space-y-20">
             {[
@@ -154,14 +164,14 @@ export default function HowItWorksPage() {
               },
               {
                 number: "03",
-                title: "Actionable intelligence",
-                desc: "Complete data enables complete intelligence. Nine specialized reports, multi-touch revenue attribution, and AI-powered anomaly detection — all built on the full picture, not approximations.",
+                title: "Decision-ready intelligence",
+                desc: "Complete data enables complete intelligence. Nine specialized reports, multi-touch revenue attribution, LENS AI anomaly detection with 60+ rules, and AI agent tracking — all built on the full picture, not approximations.",
                 details: [
                   "9 report types covering the full funnel",
                   "Multi-touch attribution with complete journey data",
-                  "LENS AI: 60+ anomaly detection rules, running continuously",
+                  "LENS AI: ask questions in natural language, get answers from real data",
+                  "AI agent tracking — see GPT, Claude, Perplexity visits as sessions",
                   "Revenue attribution by channel, campaign, and creative",
-                  "Alerts in plain language, not data tables",
                 ],
               },
             ].map((step) => (
@@ -199,27 +209,75 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* Technical details */}
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12">
+            What makes this different from other tools
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+            {[
+              {
+                title: "First-party, not third-party",
+                desc: "Traditional tools send data to external servers via third-party requests. SealMetrics operates as first-party infrastructure on your domain, making it invisible to ad blockers and immune to third-party cookie restrictions.",
+              },
+              {
+                title: "Server-side, not client-side",
+                desc: "Client-side JavaScript is the first thing blocked by privacy tools. Our server-side collection method means the data path is between your visitor and your server — no external call to intercept.",
+              },
+              {
+                title: "No cookies, no consent dependency",
+                desc: "SealMetrics does not use cookies and does not collect personal data. This means consent banners do not affect data collection. You measure 100% of visitors regardless of their consent choice.",
+              },
+              {
+                title: "No sampling, no modeling",
+                desc: "GA4 applies data sampling when traffic exceeds certain thresholds. Adobe uses statistical modeling. SealMetrics records every session individually — what you see is what actually happened.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="p-8 bg-warm-white border border-warm-100 rounded-[4px]"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[0.9rem] leading-[1.7] text-text-secondary">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-[0.9rem] text-text-secondary">
+            Want the full technical and compliance details?{" "}
+            <Link
+              href="/security"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              Read our security and privacy architecture
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="section-dark py-24 bg-dark-bg text-center relative overflow-hidden">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(0,255,127,0.05), transparent 70%)" }}
-        />
-        <div className="relative z-10 max-w-[500px] mx-auto px-8">
+      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             See it with your own data.
           </h2>
-          <p className="text-[1rem] leading-[1.7] text-dark-text-secondary mb-8">
+          <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
             Run SealMetrics alongside your current setup. Compare the numbers.
             Then decide.
           </p>
           <Link
             href="/demo"
-            className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-dark-bg bg-green rounded-[4px] no-underline hover:shadow-[0_0_50px_-5px_rgba(0,255,127,0.4)] transition-shadow"
-            style={{ boxShadow: "0 0 40px -10px rgba(0,255,127,0.3)" }}
+            className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
             Book a Demo
           </Link>
+          <p className="mt-4 text-[0.8rem] text-text-tertiary">
+            30-minute walkthrough. No commitment required.
+          </p>
         </div>
       </section>
     </>

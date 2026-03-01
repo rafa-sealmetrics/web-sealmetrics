@@ -19,7 +19,7 @@ const consequences = [
 export function Problem() {
   return (
     <section className="py-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         {/* Intro */}
         <div className="max-w-[700px] mb-20">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">

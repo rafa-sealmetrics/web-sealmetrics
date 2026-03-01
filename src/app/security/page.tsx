@@ -105,7 +105,7 @@ export default function SecurityPage() {
     <>
       {/* Hero */}
       <section className="pt-40 pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
               Security & Compliance
@@ -138,7 +138,7 @@ export default function SecurityPage() {
 
       {/* Principles */}
       <section className="pb-28 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">Core principles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             {principles.map((p) => (
@@ -160,7 +160,7 @@ export default function SecurityPage() {
 
       {/* Regulations */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">Regulatory compliance</h2>
           <div className="space-y-6">
             {regulations.map((r) => (
@@ -187,7 +187,7 @@ export default function SecurityPage() {
 
       {/* Infrastructure Security */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">Infrastructure security</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             {security.map((s) => (
@@ -209,7 +209,7 @@ export default function SecurityPage() {
 
       {/* Trust Architecture */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">Trust architecture</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             {trust.map((t) => (
@@ -231,7 +231,7 @@ export default function SecurityPage() {
 
       {/* CTA */}
       <section className="py-28 bg-white text-center border-t border-warm-100">
-        <div className="max-w-[500px] mx-auto px-8">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             Questions about compliance?
           </h2>

@@ -12,20 +12,12 @@ const footerColumns = [
     ],
   },
   {
-    title: "Compare",
-    links: [
-      { label: "vs Google Analytics 4", href: "/vs-ga4" },
-      { label: "vs GA360", href: "/vs/ga360" },
-      { label: "vs Adobe Analytics", href: "/vs/adobe-analytics" },
-      { label: "vs Piwik PRO", href: "/vs/piwik-pro" },
-    ],
-  },
-  {
     title: "Resources",
     links: [
-      { label: "Blog", href: "/blog" },
+      { label: "vs Google Analytics 4", href: "/vs-ga4" },
       { label: "Data Loss Calculator", href: "/data-loss-calculator" },
-      { label: "Documentation", href: "/docs" },
+      { label: "Blog", href: "/blog" },
+      { label: "Glossary", href: "/glossary" },
       { label: "Changelog", href: "/changelog" },
     ],
   },
@@ -35,7 +27,7 @@ const footerColumns = [
       { label: "About", href: "/about" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
-      { label: "Contact", href: "/contact" },
+      { label: "DPA", href: "/dpa" },
     ],
   },
 ];
@@ -43,8 +35,8 @@ const footerColumns = [
 export function Footer() {
   return (
     <footer className="bg-warm-900 border-t border-warm-800 pt-16 pb-8">
-      <div className="max-w-[1200px] mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
             <Link href="/" className="inline-block mb-3 no-underline">
               <Image

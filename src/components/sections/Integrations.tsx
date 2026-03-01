@@ -14,7 +14,7 @@ const integrations = [
 export function Integrations() {
   return (
     <section className="py-28 bg-warm-white border-t border-warm-100">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="text-center max-w-[700px] mx-auto mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
             Integrations
@@ -27,7 +27,7 @@ export function Integrations() {
             infrastructure. One-click setup for most integrations.
           </p>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {integrations.map((int) => (
             <div
               key={int.name}

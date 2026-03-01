@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Book a Demo — SealMetrics",
@@ -19,7 +20,7 @@ export default function DemoPage() {
   return (
     <>
       <section className="pt-40 pb-28 bg-white min-h-screen">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             {/* Left: info */}
             <div>
@@ -72,6 +73,12 @@ export default function DemoPage() {
                 <p className="text-[0.8rem] text-text-tertiary mt-2">
                   Head of Digital Marketing &mdash; European Fashion Retailer
                 </p>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-5 text-[0.85rem]">
+                <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How it works</Link>
+                <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Full product</Link>
+                <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate your data loss</Link>
               </div>
             </div>
 

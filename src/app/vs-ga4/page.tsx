@@ -44,7 +44,7 @@ export default function VsGA4Page() {
     <>
       {/* Hero */}
       <section className="pt-40 pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[750px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
               Comparison
@@ -63,7 +63,7 @@ export default function VsGA4Page() {
 
       {/* Key difference cards */}
       <section className="pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             <div className="p-9 bg-warm-white border border-warm-100 rounded-[4px]">
               <div className="font-mono text-[0.7rem] text-text-tertiary uppercase tracking-[0.06em] mb-4">
@@ -97,7 +97,7 @@ export default function VsGA4Page() {
 
       {/* Full comparison table */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">Full comparison</h2>
           <div className="overflow-x-auto bg-white border border-warm-100 rounded-[4px]">
             <table className="w-full border-collapse text-[0.9rem]">
@@ -153,7 +153,7 @@ export default function VsGA4Page() {
 
       {/* When to use each */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">When to use each</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             <div className="p-8 border border-warm-100 rounded-[4px]">
@@ -207,7 +207,7 @@ export default function VsGA4Page() {
 
       {/* Enterprise context */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <h2 className="headline-section mb-6">
               The real comparison is with GA360.
@@ -228,22 +228,16 @@ export default function VsGA4Page() {
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link
-                href="/vs/ga360"
+                href="/pricing"
                 className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
               >
-                SealMetrics vs GA360
+                See Pricing
               </Link>
               <Link
-                href="/vs/adobe-analytics"
+                href="/product"
                 className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
               >
-                SealMetrics vs Adobe Analytics
-              </Link>
-              <Link
-                href="/vs/piwik-pro"
-                className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
-              >
-                SealMetrics vs Piwik PRO
+                Full Product Overview
               </Link>
             </div>
           </div>
@@ -252,7 +246,7 @@ export default function VsGA4Page() {
 
       {/* CTA */}
       <section className="py-28 bg-white text-center border-t border-warm-100">
-        <div className="max-w-[550px] mx-auto px-8">
+        <div className="max-w-[550px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             Compare with your own data.
           </h2>

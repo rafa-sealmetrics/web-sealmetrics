@@ -60,7 +60,7 @@ export default function ProductPage() {
     <>
       {/* Hero */}
       <section className="pt-40 pb-28 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
               Product
@@ -94,7 +94,7 @@ export default function ProductPage() {
 
       {/* Data Capture */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
@@ -172,7 +172,7 @@ export default function ProductPage() {
 
       {/* Revenue Attribution */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 bg-warm-white border border-warm-100 rounded-[4px] p-8">
               <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
@@ -256,7 +256,7 @@ export default function ProductPage() {
 
       {/* LENS AI */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
@@ -346,7 +346,7 @@ export default function ProductPage() {
 
       {/* Agent Analytics */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 bg-warm-white border border-warm-100 rounded-[4px] p-8">
               <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
@@ -429,7 +429,7 @@ export default function ProductPage() {
 
       {/* Reports */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[600px] mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Reports
@@ -466,7 +466,7 @@ export default function ProductPage() {
 
       {/* Enterprise comparison */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="text-center max-w-[600px] mx-auto mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Enterprise Tier
@@ -575,7 +575,7 @@ export default function ProductPage() {
 
       {/* CTA */}
       <section className="py-28 bg-warm-white text-center border-t border-warm-100">
-        <div className="max-w-[500px] mx-auto px-8">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             See it with your own data.
           </h2>

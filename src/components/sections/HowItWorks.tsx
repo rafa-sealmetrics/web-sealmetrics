@@ -24,7 +24,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section className="py-28 bg-warm-white border-t border-b border-warm-100">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="max-w-[600px] mb-20">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
             How It Works
