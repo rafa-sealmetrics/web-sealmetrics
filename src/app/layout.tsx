@@ -3,6 +3,7 @@ import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
@@ -69,8 +70,13 @@ export default function RootLayout({
     >
       <head>
         <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
+        <script
+          async
+          src="https://t.sealmetrics.com/t.js?id=sealmetricsv2"
+        />
       </head>
       <body className="font-sans antialiased">
+        <SealMetricsTracker />
         <Header />
         <main>{children}</main>
         <Footer />

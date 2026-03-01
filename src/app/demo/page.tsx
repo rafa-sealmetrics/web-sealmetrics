@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { DemoForm } from "./DemoForm";
 
 export const metadata: Metadata = {
   title: "Book a Demo — SealMetrics",
@@ -88,94 +89,7 @@ export default function DemoPage() {
             </div>
 
             {/* Right: form */}
-            <div className="bg-warm-white border border-warm-100 rounded-[4px] p-10">
-              <h2 className="font-serif text-[1.35rem] font-medium text-text-primary mb-2">
-                Request a demo
-              </h2>
-              <p className="text-[0.85rem] text-text-secondary mb-8">
-                Fill in your details and we will get back to you within 24
-                hours.
-              </p>
-
-              <form className="space-y-5">
-                <div>
-                  <label className="block text-[0.8rem] font-medium text-text-body mb-1.5">
-                    Full name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[0.8rem] font-medium text-text-body mb-1.5">
-                    Work email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[0.8rem] font-medium text-text-body mb-1.5">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[0.8rem] font-medium text-text-body mb-1.5">
-                    Website URL
-                  </label>
-                  <input
-                    type="url"
-                    className="w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors"
-                    placeholder="https://"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[0.8rem] font-medium text-text-body mb-1.5">
-                    Monthly pageviews (estimate)
-                  </label>
-                  <select
-                    className="w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select range
-                    </option>
-                    <option>Under 100K</option>
-                    <option>100K – 500K</option>
-                    <option>500K – 2M</option>
-                    <option>2M – 10M</option>
-                    <option>10M+</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-[0.8rem] font-medium text-text-body mb-1.5">
-                    Anything else we should know?
-                  </label>
-                  <textarea
-                    rows={3}
-                    className="w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] hover:bg-[#333] transition-colors cursor-pointer"
-                >
-                  Request Demo
-                </button>
-                <p className="text-[0.75rem] text-text-tertiary text-center">
-                  No commitment. We will respond within one business day.
-                </p>
-              </form>
-            </div>
+            <DemoForm />
           </div>
         </div>
       </section>

@@ -198,6 +198,13 @@ export function Calculator() {
   const handleCalculate = () => {
     if (visitors > 0 && monthlyRevenue > 0) {
       setHasCalculated(true);
+      // Fire micro-conversion
+      if (typeof window !== "undefined" && window.sealmetrics) {
+        window.sealmetrics.micro("calculator_used", {
+          country,
+          visitors: String(visitors),
+        });
+      }
       // Update URL without reload for shareability
       const url = new URL(window.location.href);
       url.searchParams.set("v", String(visitors));
