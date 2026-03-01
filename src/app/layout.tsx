@@ -70,10 +70,12 @@ export default function RootLayout({
     >
       <head>
         <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
+        {/* Sealmetrics Analytics */}
         <script
           async
-          src="https://t.sealmetrics.com/t.js?id=sealmetricsv2"
+          src="https://pixel-pre.sealmetrics.com/t.js?id=sealmetrics2"
         />
+        {/* End Sealmetrics Analytics */}
       </head>
       <body className="font-sans antialiased">
         <SealMetricsTracker />
