@@ -165,6 +165,30 @@ export function DemoForm() {
           />
         </div>
 
+        {/* GDPR consent */}
+        <div className="flex items-start gap-3">
+          <input
+            id="gdpr"
+            name="gdpr"
+            type="checkbox"
+            required
+            className="mt-1 w-4 h-4 rounded-[2px] border border-warm-200 accent-text-primary cursor-pointer flex-shrink-0"
+          />
+          <label htmlFor="gdpr" className="text-[0.75rem] text-text-secondary leading-relaxed cursor-pointer">
+            I agree to the{" "}
+            <a
+              href="https://legal.sealmetrics.com/privacy-notice"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-body underline hover:text-text-primary transition-colors"
+            >
+              Privacy Notice
+            </a>{" "}
+            and consent to SealMetrics processing my data to respond to my
+            request.
+          </label>
+        </div>
+
         {error && (
           <p className="text-[0.8rem] text-red-alert">{error}</p>
         )}

@@ -28,6 +28,7 @@ function getContentGroup(pathname: string): string {
   if (pathname.startsWith("/for/")) return "for";
   if (pathname.startsWith("/blog")) return "blog";
   if (pathname.startsWith("/glossary")) return "glossary";
+  if (pathname === "/videos") return "videos";
   if (pathname === "/changelog") return "changelog";
   if (pathname === "/privacy" || pathname === "/terms" || pathname === "/dpa")
     return "legal";
