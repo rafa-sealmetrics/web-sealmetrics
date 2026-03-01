@@ -8,7 +8,7 @@ import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics vs Adobe Analytics — Full Comparison",
   description:
-    "Compare SealMetrics and Adobe Analytics. 100% vs ~25% EU data capture, cookieless vs cookie-dependent, €199/mo vs $100,000+/yr. Enterprise analytics without the legacy tax.",
+    "SealMetrics vs Adobe Analytics: 100% vs ~25% EU data capture, cookieless vs cookie-dependent, €199/mo vs $100K+/yr.",
   openGraph: {
     title: "SealMetrics vs Adobe Analytics — Full Comparison",
     description:

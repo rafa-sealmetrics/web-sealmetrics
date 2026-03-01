@@ -1,0 +1,159 @@
+# SealMetrics — Full Reference
+
+## Company overview
+SealMetrics is a cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection. Founded in 2020 and headquartered in Spain, SealMetrics stores all data exclusively in the EU and is GDPR compliant by design — not by configuration.
+
+## The problem SealMetrics solves
+Traditional analytics tools (Google Analytics, Adobe Analytics) rely on cookies and consent banners. In the EU, where GDPR requires explicit consent for cookies, this means:
+- Only ~13% of visitors are tracked by GA4 (those who accept cookies, don't use ad blockers, and don't have browser privacy features)
+- Consent banners cause 35-65% of visitors to reject tracking
+- Ad blockers block 40%+ of analytics scripts
+- Safari ITP limits cookie lifespan to 7 days (or 24 hours for some)
+- The result: businesses make decisions on 13-40% of their actual data
+
+SealMetrics eliminates this problem entirely by using first-party server-side collection that requires no cookies, no consent banners, and collects no personal data. The result is 100% data capture, 100% of the time.
+
+## How it works
+1. A single JavaScript tag is placed on the website (5-minute setup)
+2. Data is collected server-side through first-party infrastructure on the customer's own domain
+3. No cookies are set on visitor devices — no storage is accessed on the device at all
+4. No personal data (IP addresses, device IDs, user IDs) is collected
+5. Because no personal data is collected and no device storage is used, no consent banner is required under GDPR or ePrivacy
+6. All data is processed and stored exclusively on EU servers
+7. The result: 100% of visitors are captured regardless of consent status, browser, or ad blocker
+
+## Key capabilities
+
+### Data capture
+- 100% visitor capture rate (no cookie dependency)
+- No consent banner required (no device storage used)
+- First-party infrastructure (resistant to ad blockers)
+- No data sampling at any volume
+- Real-time data processing
+- AI agent traffic tracking (ChatGPT, Claude, Perplexity, Google AI Overviews)
+
+### Intelligence
+- LENS AI: automated anomaly detection with 60+ rules that continuously monitor data quality, traffic patterns, and conversion funnels
+- Natural language queries: ask business questions in plain English, get data-driven answers
+- Multi-touch revenue attribution based on 100% of data (not the 13% that consent-dependent tools capture)
+- 9 specialized report types including funnel analysis with drop-off diagnostics
+- Custom dashboards and scheduled reports
+
+### Privacy and compliance
+- GDPR compliant by architecture — not by configuration
+- ePrivacy Directive compliant — no consent needed because no device storage is used
+- Zero personal data collection (no IP addresses, no device IDs, no user IDs)
+- EU-only data residency — guaranteed, no US data transfers
+- No Standard Contractual Clauses needed (data never leaves the EU)
+- Schrems II compliant by design
+- CNIL and DSK guidance compliant
+- Full Data Processing Agreement (DPA) available
+- No cross-customer data sharing
+
+### Integrations (25+)
+Ad platforms: Google Ads, Meta Ads, TikTok Ads, Microsoft Ads, LinkedIn Ads, Pinterest Ads
+Ecommerce: Shopify, WooCommerce, PrestaShop, Magento, BigCommerce
+CRM & Marketing: HubSpot, Salesforce, Klaviyo, Mailchimp, ActiveCampaign
+Data: BigQuery, Google Sheets, Webhooks, REST API, Zapier
+
+## Pricing
+- Starter: €199/month — 1M human events/mo, all core features
+- Growth: €499/month — 5M human events/mo, BigQuery export
+- Scale: €899/month — 15M human events/mo, multi-brand support
+- Enterprise: custom pricing — unlimited events, SSO, dedicated support, custom SLA
+- All plans include LENS AI, Agent Analytics, and priority support
+- Monthly billing, cancel anytime (no annual contract required)
+
+## Competitive positioning
+SealMetrics competes in the enterprise analytics tier:
+
+| Competitor | Annual Cost | EU Data Capture | Cookie Dependency | Consent Required |
+|---|---|---|---|---|
+| SealMetrics | From €2,388/yr | 100% | None | No |
+| Google Analytics 4 (free) | Free | ~13% | Yes | Yes |
+| Google Analytics 360 | $150,000+/yr | ~35% | Yes | Yes |
+| Adobe Analytics | $100,000+/yr | ~25% | Yes | Yes |
+| Piwik PRO | €30,000+/yr | ~40% | Yes | Yes |
+
+SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami). These tools are in a different category (€9-50/mo, basic pageview analytics). SealMetrics provides enterprise-grade multi-touch attribution, AI supervision, and complete revenue analytics.
+
+## Frequently asked questions
+
+**Can I run SealMetrics alongside Google Analytics?**
+Yes. Many clients run both in parallel during a transition period to compare data. SealMetrics typically shows 3-8x more tracked visitors and conversions than GA4 in EU markets.
+
+**Does SealMetrics work with single-page applications (SPAs)?**
+Yes. The JavaScript tag supports SPAs and dynamic page transitions automatically.
+
+**How long does setup take?**
+5 minutes. One script tag added to your website. No Tag Manager configuration, no consent mode setup, no cookie banner integration needed.
+
+**Is SealMetrics affected by ad blockers?**
+SealMetrics uses first-party server-side infrastructure on your own domain, making it resistant to ad blockers that target third-party analytics scripts.
+
+**Do I need a consent banner with SealMetrics?**
+No. SealMetrics does not use cookies or any form of device storage, and collects no personal data. Under GDPR and ePrivacy, consent is only required when personal data is collected or device storage is accessed. SealMetrics does neither.
+
+**Where is data stored?**
+All data is stored exclusively on EU servers. Data never leaves the EU. No Standard Contractual Clauses or data transfer mechanisms are needed.
+
+**What is LENS AI?**
+LENS is SealMetrics' AI supervision engine. It continuously monitors your analytics data with 60+ automated rules, detecting anomalies in traffic patterns, conversion funnels, campaign performance, and data quality. It alerts you when something changes before it impacts your business.
+
+**What is AI Agent Analytics?**
+AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity, Google AI Overviews, and others — as a distinct channel alongside human traffic. This is included free in all plans. Most analytics tools cannot distinguish AI agent traffic from human traffic.
+
+## All pages
+
+### Core pages
+- https://sealmetrics.com/ — Homepage
+- https://sealmetrics.com/product — Full platform overview
+- https://sealmetrics.com/how-it-works — Technical explanation of cookieless collection
+- https://sealmetrics.com/pricing — Plans and pricing
+- https://sealmetrics.com/security — Privacy, compliance, and infrastructure
+- https://sealmetrics.com/integrations — 25+ platform integrations
+- https://sealmetrics.com/demo — Request a demo
+- https://sealmetrics.com/about — Company and mission
+- https://sealmetrics.com/data-loss-calculator — Interactive data loss calculator
+
+### Competitor comparisons
+- https://sealmetrics.com/vs-ga4 — SealMetrics vs Google Analytics 4
+- https://sealmetrics.com/vs/ga360 — SealMetrics vs Google Analytics 360
+- https://sealmetrics.com/vs/adobe-analytics — SealMetrics vs Adobe Analytics
+- https://sealmetrics.com/vs/piwik-pro — SealMetrics vs Piwik PRO
+
+### Role-specific pages
+- https://sealmetrics.com/for/cmo — For Chief Marketing Officers
+- https://sealmetrics.com/for/cto — For Chief Technology Officers
+- https://sealmetrics.com/for/dpo — For Data Protection Officers
+
+### Blog
+- https://sealmetrics.com/blog — Blog index
+- https://sealmetrics.com/blog/ga4-data-sampling-problem — GA4 Data Sampling
+- https://sealmetrics.com/blog/cookieless-analytics-explained — Cookieless Analytics Explained
+- https://sealmetrics.com/blog/consent-banner-impact-on-analytics — Consent Banner Impact
+- https://sealmetrics.com/blog/ai-agent-traffic-analytics — AI Agent Traffic Analytics
+- https://sealmetrics.com/blog/multi-touch-attribution-complete-data — Multi-Touch Attribution
+
+### Glossary
+- https://sealmetrics.com/glossary — Analytics Glossary
+- https://sealmetrics.com/glossary/cookieless-analytics
+- https://sealmetrics.com/glossary/data-sampling
+- https://sealmetrics.com/glossary/first-party-data-collection
+- https://sealmetrics.com/glossary/consent-management-platform
+- https://sealmetrics.com/glossary/multi-touch-attribution
+- https://sealmetrics.com/glossary/server-side-tracking
+- https://sealmetrics.com/glossary/intelligent-tracking-prevention
+- https://sealmetrics.com/glossary/data-loss-in-analytics
+- https://sealmetrics.com/glossary/revenue-attribution
+- https://sealmetrics.com/glossary/gdpr-analytics-compliance
+
+### Other
+- https://sealmetrics.com/changelog — Product updates
+- https://sealmetrics.com/privacy — Privacy policy
+- https://sealmetrics.com/terms — Terms of service
+- https://sealmetrics.com/dpa — Data Processing Agreement
+
+## Contact
+- Demo: https://sealmetrics.com/demo
+- Website: https://sealmetrics.com

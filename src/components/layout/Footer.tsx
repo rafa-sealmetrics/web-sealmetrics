@@ -10,6 +10,8 @@ const footerColumns = [
       { label: "Integrations", href: "/integrations" },
       { label: "Pricing", href: "/pricing" },
       { label: "Security", href: "/security" },
+      { label: "For CMOs", href: "/for/cmo" },
+      { label: "For CTOs", href: "/for/cto" },
     ],
   },
   {

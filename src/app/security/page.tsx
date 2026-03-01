@@ -121,7 +121,14 @@ export default function SecurityPage() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary mb-10">
               SealMetrics does not collect personal data. Compliance is not a
               configuration option&nbsp;&mdash; it is the foundation of how the
-              platform works. Your DPO will appreciate the simplicity.
+              platform works. Your DPO will appreciate the simplicity, and you can read why{" "}
+              <Link
+                href="/for/cto"
+                className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
+              >
+                engineering teams approve SealMetrics
+              </Link>{" "}
+              without the usual security review friction.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link

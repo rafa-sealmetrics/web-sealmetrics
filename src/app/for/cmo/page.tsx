@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for CMOs — Decision Intelligence for Marketing Leaders",
+  title: "SealMetrics for CMOs — Decision Intelligence",
   description:
     "Stop making marketing decisions on 13% of your data. SealMetrics gives CMOs complete traffic visibility, accurate attribution, and AI-powered anomaly detection.",
   openGraph: {

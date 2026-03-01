@@ -253,7 +253,14 @@ export default function HowItWorksPage() {
             ))}
           </div>
           <p className="mt-10 text-[0.9rem] text-text-secondary">
-            Want the full technical and compliance details?{" "}
+            SealMetrics{" "}
+            <Link
+              href="/integrations"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              connects to 25+ platforms
+            </Link>{" "}
+            including Google Ads, Meta, Shopify, and BigQuery. Want the full technical and compliance details?{" "}
             <Link
               href="/security"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -272,7 +279,14 @@ export default function HowItWorksPage() {
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
             Run SealMetrics alongside your current setup. Compare the numbers.
-            Then decide.
+            Then decide. Or read more in our{" "}
+            <Link
+              href="/blog"
+              className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
+            >
+              analytics blog
+            </Link>
+            .
           </p>
           <Link
             href="/demo"

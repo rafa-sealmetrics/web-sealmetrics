@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for CTOs — Lightweight, EU-Only, Privacy-First Analytics",
+  title: "SealMetrics for CTOs — EU-Only, Privacy-First",
   description:
     "1.2KB script, <50ms load, EU-only infrastructure, no cookies, no PII. The analytics platform your engineering team will actually approve.",
   openGraph: {

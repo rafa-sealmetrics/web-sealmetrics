@@ -5,8 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title:
-    "Cookieless Analytics Explained: How to Measure Without Cookies — SealMetrics",
+  title: "Cookieless Analytics: How to Measure Without Cookies",
   description:
     "Cookies are disappearing. Learn how cookieless analytics works, why it captures more data, and what it means for GDPR compliance.",
   openGraph: {

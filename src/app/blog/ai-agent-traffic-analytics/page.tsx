@@ -5,8 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title:
-    "AI Agent Traffic: The Invisible Channel Your Analytics Miss — SealMetrics",
+  title: "AI Agent Traffic: The Invisible Analytics Channel",
   description:
     "GPT, Claude, Perplexity, and Google AI Overviews are sending traffic to your site. Traditional analytics cannot see it. Here is why it matters.",
   openGraph: {

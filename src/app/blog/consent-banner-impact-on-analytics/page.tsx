@@ -5,8 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title:
-    "How Consent Banners Destroy Your Analytics Data — SealMetrics",
+  title: "How Consent Banners Destroy Your Analytics Data",
   description:
     "35% of EU visitors reject cookies. That means 35% of your traffic is invisible. Here is the real impact on attribution, conversions, and revenue reporting.",
   openGraph: {

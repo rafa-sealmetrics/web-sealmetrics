@@ -7,7 +7,7 @@ import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Product — SealMetrics",
   description:
-    "Complete web analytics with 100% data capture, multi-touch revenue attribution, LENS AI supervision, and AI agent tracking. Enterprise-grade analytics from €199/mo.",
+    "100% data capture, multi-touch revenue attribution, LENS AI supervision, and AI agent tracking. Enterprise-grade analytics from €199/mo.",
   openGraph: {
     title: "Product — SealMetrics",
     description:
@@ -77,7 +77,14 @@ export default function ProductPage() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary mb-10">
               Revenue attribution, AI anomaly detection, and agent
               tracking&nbsp;&mdash; all powered by complete data capture, not
-              statistical estimates. Enterprise-grade analytics at a fraction of
+              statistical estimates. See how{" "}
+              <Link
+                href="/for/cmo"
+                className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
+              >
+                marketing leaders use SealMetrics
+              </Link>{" "}
+              to reclaim the data they have been missing. Enterprise-grade analytics at a fraction of
               GA360 or Adobe pricing.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
@@ -234,7 +241,14 @@ export default function ProductPage() {
               </h2>
               <p className="text-[1rem] leading-[1.7] text-text-secondary mb-6">
                 Attribution built on 13% of data produces misleading results.
-                SealMetrics connects every touchpoint to revenue using complete
+                SealMetrics{" "}
+                <Link
+                  href="/integrations"
+                  className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
+                >
+                  connects to 25+ platforms
+                </Link>{" "}
+                and ties every touchpoint to revenue using complete
                 session data&nbsp;&mdash; showing the real ROI of every channel,
                 campaign, and creative.
               </p>
@@ -586,7 +600,21 @@ export default function ProductPage() {
             See it with your own data.
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
-            We will run SealMetrics on your site and show you exactly what you
+            Built by a team that{" "}
+            <Link
+              href="/about"
+              className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
+            >
+              understands ecommerce data
+            </Link>
+            , SealMetrics is constantly evolving. Check out our latest{" "}
+            <Link
+              href="/changelog"
+              className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
+            >
+              product updates
+            </Link>
+            , or let us run it on your site and show you exactly what you
             have been missing.
           </p>
           <Link

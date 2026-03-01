@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "What Is Intelligent Tracking Prevention (ITP)? — SealMetrics Glossary",
+  title: "What Is Intelligent Tracking Prevention (ITP)?",
   description:
     "ITP is Safari's privacy feature that limits cookie lifespan and blocks cross-site tracking. It reduces first-party cookie life to 7 days or less.",
   openGraph: {

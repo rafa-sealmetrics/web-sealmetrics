@@ -5,8 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title:
-    "Why Multi-Touch Attribution Fails Without Complete Data — SealMetrics",
+  title: "Multi-Touch Attribution Fails Without Complete Data",
   description:
     "Your attribution model is only as good as the data feeding it. When 87% of touchpoints are missing, every attribution conclusion is wrong.",
   openGraph: {

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://sealmetrics.com/og-image.svg",
+        url: "https://sealmetrics.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "SealMetrics — Decision Intelligence for Ecommerce",

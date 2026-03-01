@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for DPOs — GDPR-Compliant Analytics Without Cookies",
+  title: "SealMetrics for DPOs — GDPR Analytics by Design",
   description:
     "No cookies, no PII, no consent dependency, EU-only infrastructure. SealMetrics is the analytics platform your privacy team will sign off on.",
   openGraph: {

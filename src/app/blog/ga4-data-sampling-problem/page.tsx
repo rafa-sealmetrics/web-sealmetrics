@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong — SealMetrics",
+  title: "GA4 Data Sampling: Why Your Numbers Are Wrong",
   description:
     "GA4 applies data sampling when traffic exceeds certain thresholds. Here is how it works, why it matters, and what you can do about it.",
   openGraph: {

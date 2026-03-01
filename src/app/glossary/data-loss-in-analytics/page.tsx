@@ -7,7 +7,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is Data Loss in Analytics? — SealMetrics Glossary",
   description:
-    "Data loss in analytics is the gap between actual website traffic and what analytics tools report. Typically 70-87% in the EU due to consent, ad blockers, and browser restrictions.",
+    "Data loss in analytics is the gap between actual traffic and what tools report. Typically 70-87% in the EU due to consent, ad blockers, and ITP.",
   openGraph: {
     title: "What Is Data Loss in Analytics?",
     description: "Data loss in analytics: the gap between real traffic and what tools report. Typically 70-87% in the EU.",

@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "What Is a Consent Management Platform (CMP)? — SealMetrics Glossary",
+  title: "What Is a Consent Management Platform (CMP)?",
   description:
     "A CMP displays cookie consent banners and manages user preferences. Required under GDPR for cookie-based analytics. 35% of EU visitors reject.",
   openGraph: {
