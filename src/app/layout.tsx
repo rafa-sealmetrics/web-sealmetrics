@@ -78,9 +78,12 @@ export default function RootLayout({
         {/* End Sealmetrics Analytics */}
       </head>
       <body className="font-sans antialiased">
+        <a href="#main-content" className="skip-to-content">
+          Skip to content
+        </a>
         <SealMetricsTracker />
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/webform-lead";
 
 const inputClasses =
-  "w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors";
+  "w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none focus-visible:outline-2 focus-visible:outline-blue-accent focus-visible:outline-offset-2 transition-colors";
 
 export function DemoForm() {
   const router = useRouter();

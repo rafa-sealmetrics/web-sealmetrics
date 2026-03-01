@@ -66,10 +66,10 @@ export function Footer() {
           </div>
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">
+              <h3 className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">
                 {col.title}
-              </h4>
-              <nav className="flex flex-col">
+              </h3>
+              <nav aria-label={col.title} className="flex flex-col">
                 {col.links.map((link) => (
                   <Link
                     key={link.href}

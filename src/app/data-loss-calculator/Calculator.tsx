@@ -222,7 +222,7 @@ export function Calculator() {
   const [copied, setCopied] = useState(false);
 
   const inputClasses =
-    "w-full px-4 py-3 text-[0.95rem] border border-warm-200 rounded-[4px] bg-white text-text-primary outline-none focus:border-text-body transition-colors";
+    "w-full px-4 py-3 text-[0.95rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none focus-visible:outline-2 focus-visible:outline-blue-accent focus-visible:outline-offset-2 transition-colors";
   const labelClasses = "block text-[0.8rem] font-medium text-text-body mb-1.5";
 
   // Funnel data for visualization
@@ -270,8 +270,9 @@ export function Calculator() {
             <div className="space-y-5">
               {/* Monthly visitors */}
               <div>
-                <label className={labelClasses}>Monthly website visitors</label>
+                <label htmlFor="calc-visitors" className={labelClasses}>Monthly website visitors</label>
                 <input
+                  id="calc-visitors"
                   type="text"
                   inputMode="numeric"
                   value={visitorsRaw}
@@ -286,8 +287,9 @@ export function Calculator() {
 
               {/* Country */}
               <div>
-                <label className={labelClasses}>Primary market</label>
+                <label htmlFor="calc-country" className={labelClasses}>Primary market</label>
                 <select
+                  id="calc-country"
                   value={country}
                   onChange={(e) => {
                     setCountry(e.target.value as CountryCode);
@@ -308,10 +310,11 @@ export function Calculator() {
 
               {/* Monthly revenue */}
               <div>
-                <label className={labelClasses}>
+                <label htmlFor="calc-revenue" className={labelClasses}>
                   Monthly online revenue (EUR)
                 </label>
                 <input
+                  id="calc-revenue"
                   type="text"
                   inputMode="numeric"
                   value={revenueRaw}
@@ -336,10 +339,11 @@ export function Calculator() {
                 {showAdvanced && (
                   <div className="mt-4 space-y-4 pt-4 border-t border-warm-100">
                     <div>
-                      <label className={labelClasses}>
+                      <label htmlFor="calc-cr" className={labelClasses}>
                         Conversion rate (%)
                       </label>
                       <input
+                        id="calc-cr"
                         type="text"
                         inputMode="decimal"
                         value={conversionRate}
@@ -352,10 +356,11 @@ export function Calculator() {
                       />
                     </div>
                     <div>
-                      <label className={labelClasses}>
+                      <label htmlFor="calc-aov" className={labelClasses}>
                         Average order value (EUR)
                       </label>
                       <input
+                        id="calc-aov"
                         type="text"
                         inputMode="decimal"
                         value={avgOrderValue}
