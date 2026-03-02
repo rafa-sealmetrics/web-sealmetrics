@@ -73,7 +73,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-03",
     category: "Data Quality",
     readTime: "5 min",
-    draft: true,
   },
   {
     slug: "analytics-scripts-costing-you-sales",
