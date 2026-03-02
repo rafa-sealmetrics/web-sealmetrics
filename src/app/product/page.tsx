@@ -134,7 +134,7 @@ export default function ProductPage() {
                   "First-party infrastructure — invisible to ad blockers",
                   "Cross-device recognition without third-party data",
                   "Session reconstruction from first touch to conversion",
-                  "1.2KB script — zero impact on page performance",
+                  "846-byte script — zero impact on page performance",
                 ].map((item) => (
                   <li
                     key={item}

@@ -5,7 +5,7 @@ const steps = [
     number: "01",
     title: "First-party server-side collection",
     desc: "A lightweight script runs on your domain, collecting behavioral data through first-party server-side methods. No third-party cookies, no external requests, no consent barriers. Works in every browser, every scenario.",
-    detail: "<script> 1.2KB gzipped\nLoad time: <50ms\nZero external dependencies",
+    detail: "<script> 846 bytes gzipped\nLoad time: <50ms\nZero external dependencies",
   },
   {
     number: "02",

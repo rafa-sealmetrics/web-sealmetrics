@@ -146,7 +146,7 @@ export default function HowItWorksPage() {
               {
                 number: "01",
                 title: "First-party data collection",
-                desc: "A lightweight 1.2KB script runs on your domain. It collects behavioral data through first-party server-side methods — meaning the data travels directly from your visitor's browser to your server, never through a third party.",
+                desc: "A lightweight 846-byte script runs on your domain. It collects behavioral data through first-party server-side methods — meaning the data travels directly from your visitor's browser to your server, never through a third party.",
                 details: [
                   "No third-party cookies or external requests",
                   "Invisible to ad blockers (first-party infrastructure)",

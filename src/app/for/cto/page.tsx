@@ -7,11 +7,11 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for CTOs — EU-Only, Privacy-First",
   description:
-    "1.2KB script, <50ms load, EU-only infrastructure, no cookies, no PII. The analytics platform your engineering team will actually approve.",
+    "846-byte script, <50ms load, EU-only infrastructure, no cookies, no PII. The analytics platform your engineering team will actually approve.",
   openGraph: {
     title: "SealMetrics for CTOs",
     description:
-      "1.2KB script, EU-only infrastructure, no cookies. Analytics your engineering team will approve.",
+      "846-byte script, EU-only infrastructure, no cookies. Analytics your engineering team will approve.",
     type: "website",
   },
   alternates: {
@@ -35,7 +35,7 @@ export default function ForCTOPage() {
               Analytics that your engineering team will not fight.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              A 1.2KB script. Sub-50ms load. EU-only infrastructure. No cookies,
+              An 846-byte script. Sub-50ms load. EU-only infrastructure. No cookies,
               no PII, no consent management headaches. One line of code to
               install, zero ongoing engineering maintenance.
             </p>
@@ -52,7 +52,7 @@ export default function ForCTOPage() {
               {
                 title: "Minimal footprint",
                 specs: [
-                  "Script size: 1.2KB gzipped",
+                  "Script size: 846 bytes gzipped",
                   "Load time: <50ms on 3G",
                   "Zero external dependencies",
                   "No impact on Core Web Vitals",
@@ -130,7 +130,7 @@ export default function ForCTOPage() {
               },
               {
                 title: "No performance regression",
-                desc: "At 1.2KB gzipped with sub-50ms load time, SealMetrics has zero measurable impact on Core Web Vitals. Compare this to GA4 (45KB+ with gtag.js) or Adobe Analytics (100KB+). Your Lighthouse scores stay exactly where they are.",
+                desc: "At 846 bytes gzipped with sub-50ms load time, SealMetrics has zero measurable impact on Core Web Vitals. Compare this to GA4 (45KB+ with gtag.js) or Adobe Analytics (100KB+). Your Lighthouse scores stay exactly where they are.",
               },
               {
                 title: "No data pipeline to maintain",
@@ -180,7 +180,7 @@ export default function ForCTOPage() {
                 {[
                   {
                     concern: "Script size",
-                    sm: "1.2KB",
+                    sm: "846B",
                     ga: "45KB+",
                     adobe: "100KB+",
                   },
