@@ -138,7 +138,7 @@ export default function GA4DataSamplingPage() {
               Cookieless analytics
             </Link>{" "}
             platforms like SealMetrics take a fundamentally different approach.
-            By collecting data through first-party server-side methods, every
+            By collecting data through first-party cookieless methods, every
             session is captured regardless of consent banner status, ad blocker
             usage, or browser restrictions. And because the data volume is
             managed at the infrastructure level, there is no need for statistical

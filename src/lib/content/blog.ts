@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared",
     description:
-      "GA4 starts sampling at 500K events. Adobe varies by contract. Piwik PRO at 10M. SealMetrics: never. We documented every threshold.",
+      "GA4 starts sampling at 10M events in Explorations. Adobe varies by contract. Piwik PRO: optional. SealMetrics: never. We documented every threshold.",
     date: "2026-03-03",
     category: "Data Quality",
     readTime: "5 min",

@@ -59,7 +59,7 @@ export default function TermsPage() {
               SealMetrics provides cookieless web analytics, including data
               collection, processing, reporting, AI-powered anomaly detection,
               and revenue attribution. The Service collects anonymous behavioral
-              data from your website visitors using first-party server-side
+              data from your website visitors using first-party cookieless
               methods. No personal data is collected by the analytics script.
             </p>
           </div>

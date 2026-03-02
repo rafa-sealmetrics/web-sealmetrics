@@ -34,7 +34,7 @@ const reports = [
   },
   {
     name: "User Journeys",
-    desc: "Full path reconstruction from first touch to conversion, across devices and sessions.",
+    desc: "Full path reconstruction from first touch to conversion within each session.",
   },
   {
     name: "Conversion Funnels",
@@ -77,7 +77,7 @@ const productFaqs = [
   },
   {
     q: "How does multi-touch attribution work without cookies?",
-    a: "SealMetrics reconstructs visitor journeys using first-party server-side session data. Because 100% of touchpoints are captured, multi-touch attribution models (first-touch, last-touch, linear, time-decay) produce accurate results — unlike cookie-based tools where 87% of touchpoints are missing.",
+    a: "SealMetrics reconstructs visitor journeys using first-party cookieless session data. Because 100% of touchpoints are captured, multi-touch attribution models (first-touch, last-touch, linear, time-decay) produce accurate results — unlike cookie-based tools where 87% of touchpoints are missing.",
   },
   {
     q: "Does SealMetrics track ecommerce transactions?",
@@ -155,7 +155,7 @@ export default function ProductPage() {
                   href="/how-it-works"
                   className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
                 >
-                  first-party, server-side collection
+                  first-party cookieless collection
                 </Link>{" "}
                 that captures every session regardless of consent status,
                 browser settings, or ad blocker usage.
@@ -164,7 +164,7 @@ export default function ProductPage() {
                 {[
                   "No cookies — works without consent banners",
                   "First-party infrastructure — invisible to ad blockers",
-                  "Cross-device recognition without third-party data",
+                  "100% session capture regardless of browser or consent",
                   "Session reconstruction from first touch to conversion",
                   "846-byte script — zero impact on page performance",
                 ].map((item) => (

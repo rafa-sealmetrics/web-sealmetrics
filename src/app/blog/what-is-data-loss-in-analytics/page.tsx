@@ -313,7 +313,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
 
           <p>
             The only way to eliminate the gap is to remove the dependency on
-            cookies entirely. First-party server-side collection &mdash; where
+            cookies entirely. First-party cookieless collection &mdash; where
             analytics data flows through your own infrastructure without
             cookies, without PII, and without third-party scripts &mdash;
             bypasses every cause of data loss simultaneously:

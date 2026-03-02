@@ -3,8 +3,8 @@ import Link from "next/link";
 const steps = [
   {
     number: "01",
-    title: "First-party server-side collection",
-    desc: "A lightweight script runs on your domain, collecting behavioral data through first-party server-side methods. No third-party cookies, no external requests, no consent barriers. Works in every browser, every scenario.",
+    title: "First-party cookieless collection",
+    desc: "A lightweight script runs on your domain, collecting behavioral data through first-party methods. No third-party cookies, no external requests, no consent barriers. Works in every browser, every scenario.",
     detail: "<script> 846 bytes gzipped\nLoad time: <50ms\nZero external dependencies",
   },
   {

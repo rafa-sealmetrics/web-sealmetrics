@@ -406,7 +406,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
               href="/glossary/first-party-data-collection"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side first-party data collection
+              cookieless first-party data collection
             </Link>{" "}
             that captures{" "}
             <span className="font-mono font-medium text-text-primary">
@@ -465,7 +465,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              cookieless server-side collection
+              cookieless first-party collection
             </Link>{" "}
             — no cookies, no consent banners, no data loss. Read more about
             how we handle{" "}

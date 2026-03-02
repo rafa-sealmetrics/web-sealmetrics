@@ -26,7 +26,7 @@ const principles = [
   },
   {
     title: "No cookies, no consent required",
-    desc: "Because SealMetrics uses first-party server-side collection without cookies, no consent banner is required for analytics under GDPR. This eliminates both the legal burden and the UX friction.",
+    desc: "Because SealMetrics uses first-party cookieless collection, no consent banner is required for analytics under GDPR. This eliminates both the legal burden and the UX friction.",
   },
   {
     title: "EU-only data residency",

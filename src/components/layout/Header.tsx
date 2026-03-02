@@ -58,7 +58,7 @@ const solutionsDropdown: NavDropdown = {
         {
           href: "/for/hotels",
           label: "Hotels & Travel",
-          desc: "Full booking journey visibility",
+          desc: "100% booking data visibility",
         },
         {
           href: "/for/saas",

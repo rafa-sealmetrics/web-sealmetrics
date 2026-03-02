@@ -125,7 +125,7 @@ export default function AnalyticsScriptsPage() {
             Heavy scripts compete for bandwidth, increase Total Blocking Time,
             and degrade Interaction to Next Paint. The tool you use to
             understand conversions may be costing you conversions. A{" "}
-            <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">server-side collection approach</Link>{" "}
+            <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless first-party approach</Link>{" "}
             eliminates this overhead entirely.
           </p>
 

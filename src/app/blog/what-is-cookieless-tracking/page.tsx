@@ -75,7 +75,7 @@ export default function WhatIsCookielessTrackingPage() {
             cookies or any other identifiers on the visitor&rsquo;s browser.
             Instead of relying on a small text file placed on the user&rsquo;s
             device to recognize returning visitors, cookieless tracking uses
-            server-side data collection to measure page views, sessions,
+            first-party data collection to measure page views, sessions,
             referral sources, and conversions.
           </p>
 
@@ -93,13 +93,12 @@ export default function WhatIsCookielessTrackingPage() {
           </h2>
 
           <p>
-            Cookieless tracking replaces the traditional client-side JavaScript
-            tag and third-party cookie with{" "}
+            Cookieless tracking replaces the traditional third-party cookie model with{" "}
             <Link
-              href="/glossary/server-side-tracking"
+              href="/glossary/first-party-data-collection"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side tracking
+              first-party data collection
             </Link>
             . The process works in three stages:
           </p>
@@ -108,7 +107,7 @@ export default function WhatIsCookielessTrackingPage() {
             {[
               "A lightweight first-party script runs on your domain (not a third-party domain), collecting page-level interaction data",
               "Data is sent to a first-party endpoint on your own server, making it indistinguishable from normal website requests",
-              "The analytics platform processes the data server-side without storing any identifier on the visitor\u2019s device",
+              "The analytics platform processes the data without storing any identifier on the visitor\u2019s device",
             ].map((item) => (
               <li
                 key={item}

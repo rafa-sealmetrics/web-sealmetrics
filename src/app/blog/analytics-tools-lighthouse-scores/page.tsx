@@ -377,7 +377,7 @@ export default function LighthouseScoresPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side cookieless collection
+              cookieless first-party collection
             </Link>{" "}
             with zero measurable impact on page performance. No consent banner
             required. No tag manager dependency. The data is complete and the

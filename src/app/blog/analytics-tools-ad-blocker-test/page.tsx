@@ -262,9 +262,9 @@ export default function AdBlockerTestPage() {
             >
               cookieless
             </Link>
-            {" "}server-side collection from a first-party domain. There is
+            {" "}cookieless collection from a first-party domain. There is
             no third-party script for blockers to identify. The data
-            collection happens at the server level, on a domain that belongs
+            collection happens on a domain that belongs
             to the website owner. From the browser&apos;s perspective, it is
             indistinguishable from a normal first-party request — because it
             is one.
@@ -387,7 +387,7 @@ export default function AdBlockerTestPage() {
           </p>
 
           <p>
-            Server-side, first-party collection is the only architecture
+            Cookieless, first-party collection is the only architecture
             that survives all five blockers.{" "}
             <Link
               href="/how-it-works"

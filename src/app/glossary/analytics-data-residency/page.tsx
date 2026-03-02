@@ -67,7 +67,7 @@ export default function AnalyticsDataResidencyPage() {
             The EU-US Data Privacy Framework (DPF), adopted in July 2023, provides a new adequacy basis. However, legal experts widely expect a &ldquo;Schrems III&rdquo; challenge, and the European Data Protection Board has flagged concerns about the DPF&rsquo;s durability. Organizations prioritizing long-term compliance are choosing EU-resident analytics solutions that are structurally immune to transfer rulings.
           </p>
           <p>
-            <Link href="/glossary/server-side-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Server-side tracking</Link> with EU-only infrastructure, combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link> that collects no personal data, provides the strongest compliance posture &mdash; no consent required, no transfers, no dependency on shifting adequacy decisions.
+            <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> with EU-only infrastructure, combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link> that collects no personal data, provides the strongest compliance posture &mdash; no consent required, no transfers, no dependency on shifting adequacy decisions.
           </p>
         </div>
 

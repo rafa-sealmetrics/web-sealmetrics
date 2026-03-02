@@ -164,7 +164,7 @@ export default function AIAgentTrafficPage() {
 
           <p>
             SealMetrics Agent Analytics identifies AI agent sessions through{" "}
-            <Link href="/glossary/server-side-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">server-side</Link>{" "}
+            <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party</Link>{" "}
             detection — analyzing request patterns, user agent
             strings, and behavioral signatures that distinguish AI agents from
             human visitors and traditional crawlers.

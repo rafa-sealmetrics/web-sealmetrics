@@ -7,11 +7,11 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "How It Works — SealMetrics",
   description:
-    "Understand how SealMetrics captures 100% of your traffic without cookies. First-party server-side collection explained simply.",
+    "Understand how SealMetrics captures 100% of your traffic without cookies. First-party cookieless collection explained simply.",
   openGraph: {
     title: "How It Works — SealMetrics",
     description:
-      "How cookieless analytics captures 100% of your traffic. First-party server-side collection explained.",
+      "How cookieless analytics captures 100% of your traffic. First-party cookieless collection explained.",
     type: "website",
   },
   alternates: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const howItWorksFaqs = [
   {
     q: "How does cookieless tracking work without identifying users?",
-    a: "SealMetrics uses first-party server-side collection to capture behavioral data (pages visited, referrer, browser type, session duration) without storing anything on the visitor's device. No cookies, no localStorage, no fingerprints. Sessions are reconstructed server-side without personal identifiers.",
+    a: "SealMetrics uses first-party cookieless collection to capture behavioral data (pages visited, referrer, browser type, session duration) without storing anything on the visitor's device. No cookies, no localStorage, no fingerprints. Sessions are reconstructed without personal identifiers.",
   },
   {
     q: "Is SealMetrics affected by ad blockers?",
@@ -178,7 +178,7 @@ export default function HowItWorksPage() {
               {
                 number: "01",
                 title: "First-party data collection",
-                desc: "A lightweight 846-byte script runs on your domain. It collects behavioral data through first-party server-side methods — meaning the data travels directly from your visitor's browser to your server, never through a third party.",
+                desc: "A lightweight 846-byte script runs on your domain. It collects behavioral data through first-party methods — meaning the data travels directly from your visitor's browser to your domain, never through a third party.",
                 details: [
                   "No third-party cookies or external requests",
                   "Invisible to ad blockers (first-party infrastructure)",
@@ -259,8 +259,8 @@ export default function HowItWorksPage() {
                 desc: "Traditional tools send data to external servers via third-party requests. SealMetrics operates as first-party infrastructure on your domain, making it invisible to ad blockers and immune to third-party cookie restrictions.",
               },
               {
-                title: "Server-side, not client-side",
-                desc: "Client-side JavaScript is the first thing blocked by privacy tools. Our server-side collection method means the data path is between your visitor and your server — no external call to intercept.",
+                title: "Invisible to blockers",
+                desc: "Third-party analytics requests are the first thing blocked by privacy tools. SealMetrics operates as first-party infrastructure on your domain — the data path is between your visitor and your domain, with no external call to intercept.",
               },
               {
                 title: "No cookies, no consent dependency",

@@ -7,10 +7,10 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is Event Tracking? — SealMetrics Glossary",
   description:
-    "Event tracking records specific user interactions beyond pageviews. Learn how GA4's event model works and why server-side collection is more reliable.",
+    "Event tracking records specific user interactions beyond pageviews. Learn how GA4's event model works and why first-party cookieless collection is more reliable.",
   openGraph: {
     title: "What Is Event Tracking?",
-    description: "Event tracking records user interactions beyond pageviews. Learn about GA4's event model and server-side alternatives.",
+    description: "Event tracking records user interactions beyond pageviews. Learn about GA4's event model and cookieless alternatives.",
     type: "article",
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/event-tracking" },
@@ -48,7 +48,7 @@ export default function EventTrackingPage() {
             &mdash; <strong className="font-medium">Custom events</strong> &mdash; any interaction specific to your product (filter applied, configurator used, calculator completed)
           </p>
           <p>
-            GA4 automatically collects a set of enhanced measurement events (page_view, scroll, click, file_download, video_start, video_complete) without additional configuration. Custom events require either gtag.js calls or GTM triggers. SealMetrics captures 60+ standard events automatically through <Link href="/glossary/server-side-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">server-side tracking</Link>, including interactions that client-side scripts miss.
+            GA4 automatically collects a set of enhanced measurement events (page_view, scroll, click, file_download, video_start, video_complete) without additional configuration. Custom events require either gtag.js calls or GTM triggers. SealMetrics captures 60+ standard events automatically through <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless tracking</Link>, including interactions that third-party scripts miss.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">GA4 event model</h2>

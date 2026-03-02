@@ -221,10 +221,10 @@ export default function AnalyticsHttpRequestsPage() {
           <p>
             SealMetrics uses{" "}
             <Link
-              href="/glossary/server-side-tracking"
+              href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side tracking
+              cookieless first-party tracking
             </Link>{" "}
             through a single first-party endpoint. One domain. One DNS
             lookup. One TLS handshake. Zero third-party connections.
@@ -304,7 +304,7 @@ export default function AnalyticsHttpRequestsPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              cookieless server-side collection
+              cookieless first-party collection
             </Link>
             . No third-party domains. No connection overhead. No wasted
             bytes on features your visitors never agreed to.

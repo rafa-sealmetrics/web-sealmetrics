@@ -114,7 +114,7 @@ export default function CookielessAnalyticsExplainedPage() {
               href="/glossary/first-party-data-collection"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              first-party server-side data collection
+              first-party cookieless data collection
             </Link>
             . Instead of placing a cookie on the visitor&rsquo;s browser and
             sending data to a third-party analytics server, the data collection

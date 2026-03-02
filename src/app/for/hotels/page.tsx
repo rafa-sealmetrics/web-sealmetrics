@@ -5,13 +5,13 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for Hotels — Complete Booking Attribution",
+  title: "SealMetrics for Hotels — 100% Booking Traffic Visibility",
   description:
-    "Guests search on mobile, compare on desktop, book on tablet. Traditional analytics sees fragments. SealMetrics captures the full booking journey.",
+    "Hotels lose 60-70% of website visitor data to consent walls and ad blockers. SealMetrics captures 100% of booking traffic without cookies.",
   openGraph: {
     title: "SealMetrics for Hotels",
     description:
-      "Complete booking attribution for hotels and travel. Full journey visibility, direct vs OTA clarity, seasonal campaign optimization.",
+      "100% booking traffic visibility for hotels and travel. Direct vs OTA clarity, seasonal campaign optimization, no cookies required.",
     type: "website",
   },
   alternates: {
@@ -32,19 +32,18 @@ export default function ForHotelsPage() {
               For Hotels &amp; Travel
             </span>
             <h1 className="headline-hero mb-8">
-              Your guests search on mobile, compare on desktop, and book on tablet. You see fragments.
+              60-70% of your booking traffic is invisible. Your direct channel strategy is built on a fraction of reality.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              Multi-device booking journeys and high consent rejection in EU
-              travel markets mean 60-70% of your guest interactions are
-              invisible. Your direct booking strategy is built on a fraction
-              of the data. SealMetrics{" "}
-              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">captures the complete booking journey</Link>{" "}
+              High consent rejection and ad blocker usage in EU
+              travel markets mean most of your guest interactions are
+              never recorded. SealMetrics{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">captures 100% of your booking traffic</Link>{" "}
               with{" "}
               <Link href="/glossary/cookieless-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 cookieless
               </Link>{" "}
-              server-side collection.
+              first-party collection &mdash; no cookies, no consent dependency, no data loss.
             </p>
           </div>
         </div>
@@ -63,8 +62,8 @@ export default function ForHotelsPage() {
                 desc: "You invest in driving direct bookings, but you cannot measure the true cost per direct booking versus OTA commission. When 60-70% of website visitors are invisible, your direct channel performance is guesswork.",
               },
               {
-                title: "Multi-device journeys break attribution",
-                desc: "A guest searches on their phone during lunch, compares prices on their laptop at home, and books on a tablet in bed. Cookie-based analytics sees three different visitors — not one guest on a booking journey.",
+                title: "Consent walls destroy booking data",
+                desc: "In EU travel markets, 35-60% of visitors decline consent banners. Add ad blockers and Safari ITP on top, and your booking engine analytics become a small sample of reality — not the full picture you need for revenue decisions.",
               },
               {
                 title: "Seasonal campaign ROI is guesswork",
@@ -97,7 +96,7 @@ export default function ForHotelsPage() {
             {[
               {
                 title: "Complete booking funnel visibility",
-                desc: "From initial search to rate comparison to final booking — across every device. See the full guest journey without relying on cookies or cross-device stitching that breaks with consent walls.",
+                desc: "From initial search to rate comparison to final booking. See every step in the funnel with 100% of visitor data — without relying on cookies that consent walls and browser restrictions destroy.",
               },
               {
                 title: "Direct vs OTA channel clarity",
@@ -133,7 +132,7 @@ export default function ForHotelsPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
             {[
-              { metric: "100%", label: "Booking journeys captured" },
+              { metric: "100%", label: "Booking traffic captured" },
               { metric: "60-70%", label: "Previously invisible" },
               { metric: "0", label: "Cookies required" },
               { metric: "EU-only", label: "Infrastructure" },

@@ -147,8 +147,8 @@ export default function DataSamplingComparedPage() {
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">GA4 (Free)</td>
-                  <td className="py-2.5 pr-4 font-mono text-red-alert">~500K sessions/report</td>
-                  <td className="py-2.5 pr-4 text-text-body">Report complexity + date range + segments</td>
+                  <td className="py-2.5 pr-4 font-mono text-red-alert">~10M events/query</td>
+                  <td className="py-2.5 pr-4 text-text-body">Exploration reports exceeding 10M events</td>
                   <td className="py-2.5 pr-4 text-center text-text-body">Small shield icon</td>
                   <td className="py-2.5 text-text-body">Upgrade to GA360 ($150K+/yr)</td>
                 </tr>
@@ -182,11 +182,12 @@ export default function DataSamplingComparedPage() {
           </h2>
 
           <p>
-            The ~500K threshold in GA4 is per report, not per property. That
-            distinction matters. You do not need 500,000 sessions on your site to
-            hit sampling — you need a report that touches 500,000 sessions. Add
-            a segment, extend the date range, or compare multiple dimensions, and
-            you reach the threshold far sooner than you expect.
+            The ~10M threshold in GA4 applies to Exploration reports — the
+            advanced analysis section, not standard reports. Standard reports use
+            pre-aggregated data and are typically unsampled. But the moment you
+            build a custom Exploration, add segments, extend the date range, or
+            compare multiple dimensions, you can exceed 10 million events and
+            trigger sampling — often without realizing it.
           </p>
 
           <p>
@@ -276,7 +277,7 @@ export default function DataSamplingComparedPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side collection
+              cookieless first-party collection
             </Link>
             , and full funnel analysis — all on 100% of your data.
           </p>

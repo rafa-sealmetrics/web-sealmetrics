@@ -287,16 +287,16 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p>
             The approach uses{" "}
             <Link
-              href="/glossary/server-side-tracking"
+              href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side tracking
+              first-party cookieless tracking
             </Link>{" "}
             through a first-party subdomain (e.g.,
             analytics.yourdomain.com). When a visitor loads a page,
-            the request is processed server-side without setting any
+            the request is processed without setting any
             cookies, accessing localStorage, or fingerprinting the
-            browser. Session recognition uses ephemeral server-side
+            browser. Session recognition uses ephemeral
             signals that do not persist on the user&rsquo;s device.
           </p>
 

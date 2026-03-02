@@ -63,7 +63,7 @@ export default function ForCTOPage() {
                 title: "First-party architecture",
                 specs: [
                   "Runs on your domain as first-party",
-                  "Server-side data collection",
+                  "First-party cookieless collection",
                   "No third-party requests",
                   "Invisible to ad blockers",
                   "No client-side cookie storage",

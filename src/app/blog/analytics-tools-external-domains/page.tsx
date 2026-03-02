@@ -143,15 +143,15 @@ export default function ExternalDomainsPage() {
                   <td className="py-2.5 pr-4 text-text-body">Google Analytics 4</td>
                   <td className="py-2.5 px-3 text-center font-mono text-red-alert">3</td>
                   <td className="py-2.5 px-3 text-center font-mono text-red-alert">3</td>
-                  <td className="py-2.5 px-3 text-text-body">US</td>
-                  <td className="py-2.5 font-mono text-[0.82rem] text-text-secondary">googletagmanager.com, google-analytics.com, region1.google-analytics.com</td>
+                  <td className="py-2.5 px-3 text-text-body">US/EU (CDN)</td>
+                  <td className="py-2.5 font-mono text-[0.82rem] text-text-secondary">googletagmanager.com (US), google-analytics.com (EU CDN), region1.google-analytics.com (US)</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Adobe Analytics</td>
                   <td className="py-2.5 px-3 text-center font-mono text-red-alert">4</td>
                   <td className="py-2.5 px-3 text-center font-mono text-red-alert">4</td>
-                  <td className="py-2.5 px-3 text-text-body">US</td>
-                  <td className="py-2.5 font-mono text-[0.82rem] text-text-secondary">assets.adobedtm.com, dpm.demdex.net, yourdomain.sc.omtrdc.net, yourdomain.d1.sc.omtrdc.net</td>
+                  <td className="py-2.5 px-3 text-text-body">EU (CDN/AWS)</td>
+                  <td className="py-2.5 font-mono text-[0.82rem] text-text-secondary">assets.adobedtm.com (Akamai CDN), dpm.demdex.net (AWS Dublin), sc.omtrdc.net, d1.sc.omtrdc.net</td>
                 </tr>
               </tbody>
             </table>
@@ -239,20 +239,30 @@ export default function ExternalDomainsPage() {
           </p>
 
           <p>
-            GA4&apos;s collect endpoint &mdash;{" "}
+            GA4&apos;s primary endpoint &mdash;{" "}
+            <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">googletagmanager.com</code>{" "}
+            &mdash; resolves to Mountain View, California (216.58.215.136).
+            Its collect endpoint{" "}
             <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">region1.google-analytics.com</code>{" "}
-            &mdash; resolves to Mountain View, California. Adobe&apos;s{" "}
-            <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">omtrdc.net</code>{" "}
-            resolves to San Jose, California. Both are US-based data
-            destinations, regardless of what the marketing pages say about
-            &ldquo;regional data processing.&rdquo;
+            resolves to Austell, Georgia (216.239.34.36). Note that{" "}
+            <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">google-analytics.com</code>{" "}
+            serves from a CDN that may resolve to EU nodes (we measured Frankfurt),
+            but the data processing still occurs on Google&apos;s US infrastructure.
+            Adobe&apos;s domains use CDN and AWS endpoints &mdash;{" "}
+            <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">assets.adobedtm.com</code>{" "}
+            serves via Akamai (we measured Madrid),{" "}
+            <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">dpm.demdex.net</code>{" "}
+            resolves to AWS Dublin (54.246.175.19). CDN edge location does not
+            equal data residency &mdash; the processing and storage may still
+            happen elsewhere.
           </p>
 
           <p>
-            SealMetrics resolves to{" "}
+            SealMetrics resolves to the customer&apos;s own subdomain
+            (e.g.{" "}
             <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">collect.yourdomain.com</code>
-            , which points to EU infrastructure via a CNAME record on the
-            customer&apos;s own domain. The{" "}
+            ), which points to EU infrastructure in Barcelona, Spain
+            (91.242.131.41, Noraina) via a CNAME record. The{" "}
             <Link
               href="/glossary/analytics-data-residency"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -282,10 +292,10 @@ export default function ExternalDomainsPage() {
           <p>
             SealMetrics uses{" "}
             <Link
-              href="/glossary/server-side-tracking"
+              href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              server-side collection
+              cookieless first-party collection
             </Link>{" "}
             through a CNAME on the customer&apos;s own domain. To the browser,
             to DNS resolvers, and to ad blockers, it looks like a first-party
