@@ -56,11 +56,9 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </p>
 
           <p>
-            We wanted to know exactly what each major analytics tool sets. Not
-            what their documentation says. What actually appears in{" "}
-            <span className="font-mono text-[0.95rem]">DevTools &gt; Application &gt; Cookies</span>{" "}
-            on a clean browser profile. So we cataloged every cookie from
-            9 tools — name, domain, type, size, expiry, and purpose.
+            We cataloged every cookie from 9 analytics tools — name, domain,
+            type, expiry, and purpose — using official vendor documentation
+            and DevTools verification on clean browser profiles.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -113,43 +111,43 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
                   <td className="py-2.5 pl-3 text-right font-mono text-text-body">&mdash;</td>
                 </tr>
                 <tr className="border-b border-warm-100">
+                  <td className="py-2.5 pr-4 text-text-body">PostHog</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">1</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">1</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">0</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">~70</td>
+                  <td className="py-2.5 pl-3 text-right font-mono text-text-body">365 days</td>
+                </tr>
+                <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Piwik PRO</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">3</td>
                   <td className="py-2.5 px-3 text-right font-mono text-text-body">2</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">1</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">180</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">2</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">0</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">~80</td>
                   <td className="py-2.5 pl-3 text-right font-mono text-text-body">13 months</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Mixpanel</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">3</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">3</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">0</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">220</td>
-                  <td className="py-2.5 pl-3 text-right font-mono text-text-body">365 days</td>
-                </tr>
-                <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 text-text-body">PostHog</td>
                   <td className="py-2.5 px-3 text-right font-mono text-text-body">2</td>
                   <td className="py-2.5 px-3 text-right font-mono text-text-body">2</td>
                   <td className="py-2.5 px-3 text-right font-mono text-text-body">0</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">150</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">~200</td>
                   <td className="py-2.5 pl-3 text-right font-mono text-text-body">365 days</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Google Analytics 4</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">4</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">3</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">1</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">280</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">2</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">2</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">0</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">~120</td>
                   <td className="py-2.5 pl-3 text-right font-mono text-red-alert">2 years</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Adobe Analytics</td>
                   <td className="py-2.5 px-3 text-right font-mono text-red-alert">6</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">3</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">3</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">420</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">4</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">2</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">~450</td>
                   <td className="py-2.5 pl-3 text-right font-mono text-red-alert">2 years</td>
                 </tr>
               </tbody>
@@ -157,13 +155,14 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </div>
 
           <p>
-            Four tools set zero cookies. Five tools set between 2 and 6.
+            Four tools set zero cookies. The rest range from 1 to 6.
             Adobe Analytics leads with{" "}
             <span className="font-mono font-medium text-text-primary">
               6 cookies
             </span>{" "}
-            totaling 420 bytes, including 3 third-party cookies on external
-            domains.
+            including 2 third-party cookies on external domains. GA4 sets 2
+            first-party cookies in its base configuration — fewer than many
+            assume, but each one persists for 2 years.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -171,10 +170,9 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            Google Analytics 4 sets 4 cookies. Three are first-party, placed on
-            your domain. One is a third-party cookie on{" "}
-            <span className="font-mono text-[0.95rem]">.doubleclick.net</span>{" "}
-            — Google&apos;s ad-serving domain.
+            A base GA4 installation (gtag.js, no Google Ads, no Google Signals)
+            sets 2 first-party cookies. Both are placed on your domain. No
+            third-party cookies are set by GA4 itself.
           </p>
 
           <div className="overflow-x-auto my-6">
@@ -201,34 +199,35 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
                   <td className="py-2.5 px-3 font-mono text-[0.85rem] text-text-body">.example.com</td>
                   <td className="py-2.5 px-3 text-text-body">First-party</td>
                   <td className="py-2.5 px-3 font-mono text-text-body">2 years</td>
-                  <td className="py-2.5 pl-3 text-text-body">Session state</td>
-                </tr>
-                <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">_gid</td>
-                  <td className="py-2.5 px-3 font-mono text-[0.85rem] text-text-body">.example.com</td>
-                  <td className="py-2.5 px-3 text-text-body">First-party</td>
-                  <td className="py-2.5 px-3 font-mono text-text-body">24 hours</td>
-                  <td className="py-2.5 pl-3 text-text-body">Session identifier</td>
-                </tr>
-                <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">_gac_*</td>
-                  <td className="py-2.5 px-3 font-mono text-[0.85rem] text-red-alert">.doubleclick.net</td>
-                  <td className="py-2.5 px-3 text-red-alert">Third-party</td>
-                  <td className="py-2.5 px-3 font-mono text-text-body">90 days</td>
-                  <td className="py-2.5 pl-3 text-text-body">Google Ads conversion linking</td>
+                  <td className="py-2.5 pl-3 text-text-body">Session state (session ID, count, engagement)</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p>
-            The <span className="font-mono text-[0.95rem]">_ga</span> cookie
-            persists for 2 years. That means once a visitor accepts your consent
-            banner, GA4 can recognize them for up to 24 months. But the reverse
-            is also true: if they reject, GA4 cannot recognize them at all.
-            Note: the <span className="font-mono text-[0.95rem]">_gac_*</span> cookie
-            on doubleclick.net is only set when Google Ads conversion linking is
-            active. Sites without Google Ads integration will see 3 cookies, not 4.
+            Google&apos;s{" "}
+            <span className="font-mono text-[0.95rem]">_ga</span> cookie
+            persists for 2 years. Once a visitor accepts your consent
+            banner, GA4 can recognize them for up to 24 months. If they reject,
+            GA4 cannot recognize them at all.
+          </p>
+
+          <p>
+            A common misconception is that GA4 sets third-party cookies on{" "}
+            <span className="font-mono text-[0.95rem]">.doubleclick.net</span>.
+            It does not — not in its base configuration. Third-party cookies
+            on doubleclick.net (like{" "}
+            <span className="font-mono text-[0.95rem]">IDE</span>) only appear
+            when Google Signals or Google Ads linking is enabled. With Google
+            Ads, GA4 also sets{" "}
+            <span className="font-mono text-[0.95rem]">_gac_gb_*</span> and{" "}
+            <span className="font-mono text-[0.95rem]">_gcl_*</span> cookies —
+            but these are first-party cookies on your domain, not third-party.
+            Note: the legacy{" "}
+            <span className="font-mono text-[0.95rem]">_gid</span> cookie (24
+            hours) no longer appears in Google&apos;s official documentation,
+            though it may still be set on some older implementations.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -236,12 +235,12 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            Adobe Analytics sets 6 cookies — the most of any tool we tested.
-            Three are first-party. Three are third-party cookies on Adobe&apos;s
+            A typical Adobe Analytics deployment with the Experience Cloud ID
+            Service (ECID) sets 6 cookies — the most of any tool we tested.
+            Four are first-party. Two are third-party cookies on Adobe&apos;s
             tracking domains:{" "}
-            <span className="font-mono text-[0.95rem]">.omtrdc.net</span>,{" "}
-            <span className="font-mono text-[0.95rem]">.demdex.net</span>, and{" "}
-            <span className="font-mono text-[0.95rem]">.dpm.demdex.net</span>.
+            <span className="font-mono text-[0.95rem]">.omtrdc.net</span> and{" "}
+            <span className="font-mono text-[0.95rem]">.demdex.net</span>.
           </p>
 
           <div className="overflow-x-auto my-6">
@@ -259,7 +258,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">s_vi</td>
                   <td className="py-2.5 px-3 font-mono text-[0.85rem] text-red-alert">.omtrdc.net</td>
-                  <td className="py-2.5 px-3 text-red-alert">Third-party</td>
+                  <td className="py-2.5 px-3 text-red-alert">Third-party*</td>
                   <td className="py-2.5 px-3 font-mono text-text-body">2 years</td>
                   <td className="py-2.5 pl-3 text-text-body">Visitor ID</td>
                 </tr>
@@ -268,46 +267,57 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
                   <td className="py-2.5 px-3 font-mono text-[0.85rem] text-text-body">.example.com</td>
                   <td className="py-2.5 px-3 text-text-body">First-party</td>
                   <td className="py-2.5 px-3 font-mono text-text-body">2 years</td>
-                  <td className="py-2.5 pl-3 text-text-body">Fallback visitor ID</td>
+                  <td className="py-2.5 pl-3 text-text-body">Fallback visitor ID (when s_vi fails)</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">AMCV_*</td>
                   <td className="py-2.5 px-3 font-mono text-[0.85rem] text-text-body">.example.com</td>
                   <td className="py-2.5 px-3 text-text-body">First-party</td>
-                  <td className="py-2.5 px-3 font-mono text-text-body">2 years</td>
-                  <td className="py-2.5 pl-3 text-text-body">Experience Cloud visitor ID</td>
+                  <td className="py-2.5 px-3 font-mono text-text-body">13 months</td>
+                  <td className="py-2.5 pl-3 text-text-body">Experience Cloud visitor ID (ECID)</td>
+                </tr>
+                <tr className="border-b border-warm-100">
+                  <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">AMCVS_*</td>
+                  <td className="py-2.5 px-3 font-mono text-[0.85rem] text-text-body">.example.com</td>
+                  <td className="py-2.5 px-3 text-text-body">First-party</td>
+                  <td className="py-2.5 px-3 font-mono text-text-body">Session</td>
+                  <td className="py-2.5 pl-3 text-text-body">Session initialization flag</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">s_cc</td>
                   <td className="py-2.5 px-3 font-mono text-[0.85rem] text-text-body">.example.com</td>
                   <td className="py-2.5 px-3 text-text-body">First-party</td>
                   <td className="py-2.5 px-3 font-mono text-text-body">Session</td>
-                  <td className="py-2.5 pl-3 text-text-body">Cookie check</td>
+                  <td className="py-2.5 pl-3 text-text-body">Cookie support check</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">demdex</td>
                   <td className="py-2.5 px-3 font-mono text-[0.85rem] text-red-alert">.demdex.net</td>
                   <td className="py-2.5 px-3 text-red-alert">Third-party</td>
                   <td className="py-2.5 px-3 font-mono text-text-body">180 days</td>
-                  <td className="py-2.5 pl-3 text-text-body">Audience Manager sync</td>
-                </tr>
-                <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-mono text-[0.85rem] text-text-primary">dpm</td>
-                  <td className="py-2.5 px-3 font-mono text-[0.85rem] text-red-alert">.dpm.demdex.net</td>
-                  <td className="py-2.5 px-3 text-red-alert">Third-party</td>
-                  <td className="py-2.5 px-3 font-mono text-text-body">180 days</td>
-                  <td className="py-2.5 pl-3 text-text-body">Data provider matching</td>
+                  <td className="py-2.5 pl-3 text-text-body">Cross-domain user ID (ECID infrastructure)</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p>
-            The <span className="font-mono text-[0.95rem]">demdex</span> and{" "}
-            <span className="font-mono text-[0.95rem]">dpm</span> cookies are
-            used for Adobe Audience Manager cross-site syncing. These are the
-            kind of third-party cookies that Safari and Firefox already block by
-            default, and that Chrome is phasing out.
+            *The <span className="font-mono text-[0.95rem]">s_vi</span> cookie
+            is third-party by default (on{" "}
+            <span className="font-mono text-[0.95rem]">.omtrdc.net</span>), but
+            becomes first-party when a CNAME record is configured. With CNAME
+            on Safari, it is capped to 7 days by Intelligent Tracking
+            Prevention.
+          </p>
+
+          <p>
+            The <span className="font-mono text-[0.95rem]">demdex</span> cookie
+            is part of the ECID infrastructure — it appears even without Adobe
+            Audience Manager. With Audience Manager enabled, additional
+            third-party cookies (<span className="font-mono text-[0.95rem]">dextp</span>,{" "}
+            <span className="font-mono text-[0.95rem]">dst</span>) may also
+            appear on <span className="font-mono text-[0.95rem]">.demdex.net</span>.
+            Safari and Firefox already block these third-party cookies by default.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -358,7 +368,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
 
           <p>
             Third-party cookies — those set on domains you do not own, like{" "}
-            <span className="font-mono text-[0.95rem]">.doubleclick.net</span>{" "}
+            <span className="font-mono text-[0.95rem]">.omtrdc.net</span>{" "}
             or{" "}
             <span className="font-mono text-[0.95rem]">.demdex.net</span>{" "}
             — face an additional problem beyond consent. Browsers are killing
@@ -369,10 +379,13 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             Safari&apos;s Intelligent Tracking Prevention already blocks all
             third-party cookies by default. Firefox&apos;s Enhanced Tracking
             Protection does the same. Chrome has restricted third-party cookie
-            access and continues to tighten controls. GA4&apos;s{" "}
-            <span className="font-mono text-[0.95rem]">_gac_*</span> cookie on
-            doubleclick.net and Adobe&apos;s 3 cookies on demdex.net domains
-            are already non-functional for a significant share of browsers.
+            access and continues to tighten controls. Adobe&apos;s{" "}
+            <span className="font-mono text-[0.95rem]">s_vi</span> on
+            omtrdc.net and{" "}
+            <span className="font-mono text-[0.95rem]">demdex</span> on
+            demdex.net are already non-functional for a significant share of
+            browsers. When Google Signals is enabled, GA4 also relies on
+            third-party cookies on doubleclick.net — equally blocked.
           </p>
 
           <p>
@@ -425,29 +438,47 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            Reproducibility matters. Here is the exact process we followed for
-            every tool:
+            We used two sources for each tool:
           </p>
 
           <ol className="list-decimal pl-6 space-y-2 text-text-body">
-            <li>Clean Chrome profile, all cookies and site data cleared</li>
-            <li>Loaded a test page instrumented with the analytics tool</li>
             <li>
-              Opened{" "}
-              <span className="font-mono text-[0.95rem]">DevTools &gt; Application &gt; Cookies</span>
+              Official vendor documentation — cookie names, domains, types,
+              and expiry periods as published by each vendor (linked in sources
+              below)
             </li>
             <li>
-              Documented every cookie: name, domain, type (first-party or
-              third-party), size in bytes, expiration, and stated purpose
+              DevTools verification — clean Chrome profile, no extensions, no
+              ad blockers, default settings. Loaded each tool&apos;s default
+              installation and checked{" "}
+              <span className="font-mono text-[0.95rem]">Application &gt; Cookies</span>
             </li>
-            <li>Repeated with a second clean profile to verify consistency</li>
           </ol>
 
           <p>
-            No extensions installed. No ad blockers. No VPN. Default Chrome
-            settings on macOS. This represents the baseline cookie behavior
-            for each tool — some tools may set additional cookies depending on
-            configuration, consent mode, or ad integrations.
+            Cookie names, domains, types, and expiry periods come from
+            official documentation. Byte sizes are approximate. Some tools may
+            set additional cookies depending on configuration — GA4 with Google
+            Ads adds first-party{" "}
+            <span className="font-mono text-[0.95rem]">_gac_*</span> and{" "}
+            <span className="font-mono text-[0.95rem]">_gcl_*</span> cookies;
+            Adobe with Audience Manager adds{" "}
+            <span className="font-mono text-[0.95rem]">dextp</span> and{" "}
+            <span className="font-mono text-[0.95rem]">dst</span> on
+            demdex.net. The counts above reflect base configurations.
+          </p>
+
+          <p className="text-[0.9rem] text-text-tertiary">
+            Sources: Google Analytics{" "}
+            <span className="font-mono text-[0.85rem]">support.google.com/analytics/answer/11397207</span>,
+            Adobe Experience League{" "}
+            <span className="font-mono text-[0.85rem]">experienceleague.adobe.com/docs/core-services/interface/data-collection/cookies/analytics</span>,
+            Piwik PRO Help{" "}
+            <span className="font-mono text-[0.85rem]">help.piwik.pro/support/privacy/cookies-created-for-visitors-by-piwik-pro</span>,
+            PostHog Docs{" "}
+            <span className="font-mono text-[0.85rem]">posthog.com/docs/libraries/js/persistence</span>,
+            Mixpanel Docs{" "}
+            <span className="font-mono text-[0.85rem]">docs.mixpanel.com/docs/tracking-methods/sdks/javascript</span>.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

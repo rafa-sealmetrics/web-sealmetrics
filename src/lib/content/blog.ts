@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "Every Cookie Set by Every Major Analytics Tool, Cataloged",
     description:
-      "We opened DevTools and documented every cookie from 9 analytics tools. Name, type, size, expiration. GA4 sets 4. Adobe sets 6. SealMetrics sets 0.",
+      "We cataloged every cookie from 9 analytics tools using vendor docs and DevTools. GA4 sets 2 first-party cookies. Adobe sets 6. SealMetrics sets 0.",
     date: "2026-03-05",
     category: "Privacy",
     readTime: "5 min",
