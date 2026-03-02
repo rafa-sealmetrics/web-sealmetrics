@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 /* ===========================================
@@ -22,7 +23,8 @@ const productDemos: Video[] = [
     description:
       "A complete tour of the SealMetrics dashboard, from traffic overview to AI insights.",
     duration: "3:24",
-    embedUrl: "",
+    embedUrl:
+      "https://iframe.mediadelivery.net/embed/609541/e616aab7-d8cf-47d1-b250-517df6a8c593",
     ctaHeadline: "Ready to see your own data?",
     ctaText:
       "Start tracking your website in under 5 minutes. No cookies, no consent banners, just clean analytics.",
@@ -143,34 +145,16 @@ const tutorials: Video[] = [
 ];
 
 /* ===========================================
-   Play icon SVG
-   =========================================== */
-
-function PlayIcon() {
-  return (
-    <div className="w-12 h-12 rounded-full bg-text-primary flex items-center justify-center transition-transform group-hover:scale-110">
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="white"
-        stroke="none"
-      >
-        <polygon points="8,5 20,12 8,19" />
-      </svg>
-    </div>
-  );
-}
-
-/* ===========================================
    Video card
    =========================================== */
 
 function VideoCard({
   video,
+  category,
   onClick,
 }: {
   video: Video;
+  category: string;
   onClick: () => void;
 }) {
   return (
@@ -179,10 +163,35 @@ function VideoCard({
       onClick={onClick}
       className="group text-left bg-warm-white border border-warm-100 rounded-[4px] overflow-hidden cursor-pointer transition-all hover:border-warm-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
     >
-      {/* Thumbnail */}
-      <div className="relative aspect-video bg-warm-50 flex items-center justify-center">
-        <PlayIcon />
-        <span className="absolute bottom-2 right-2 text-[0.65rem] font-mono font-medium text-text-primary bg-white/80 rounded-[2px] px-1.5 py-0.5">
+      {/* Corporate thumbnail */}
+      <div className="relative aspect-video bg-warm-900 flex items-center justify-center overflow-hidden">
+        {/* Category label */}
+        <span className="absolute top-3 left-3 text-[0.6rem] font-medium tracking-[0.08em] uppercase text-warm-400">
+          {category}
+        </span>
+        {/* Play button */}
+        <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all group-hover:scale-110 group-hover:bg-white/20">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="white"
+            stroke="none"
+          >
+            <polygon points="8,5 20,12 8,19" />
+          </svg>
+        </div>
+        {/* Logo watermark */}
+        <Image
+          src="/logos/logo-sealmetrics-blanco.png"
+          alt=""
+          width={90}
+          height={24}
+          unoptimized
+          className="absolute bottom-3 left-3 h-4 w-auto opacity-25"
+        />
+        {/* Duration */}
+        <span className="absolute bottom-3 right-3 text-[0.65rem] font-mono font-medium text-warm-300 bg-white/10 rounded-[2px] px-1.5 py-0.5">
           {video.duration}
         </span>
       </div>
@@ -254,8 +263,9 @@ function VideoModal({
         <div className="relative bg-warm-900 aspect-video">
           {video.embedUrl ? (
             <iframe
-              src={`${video.embedUrl}?autoplay=1`}
-              allow="autoplay; fullscreen"
+              src={`${video.embedUrl}?autoplay=true&preload=true&responsive=true`}
+              loading="lazy"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
               allowFullScreen
               className="absolute inset-0 w-full h-full border-none"
             />
@@ -345,6 +355,7 @@ function VideoSection({
             <VideoCard
               key={video.title}
               video={video}
+              category={label}
               onClick={() => onSelect(video)}
             />
           ))}
