@@ -17,7 +17,7 @@ interface Video {
   ctaText: string;
 }
 
-const productDemos: Video[] = [
+const videos: Video[] = [
   {
     title: "Platform Overview",
     description:
@@ -39,109 +39,6 @@ const productDemos: Video[] = [
     ctaHeadline: "Get started in minutes",
     ctaText:
       "Create your account, install the tracker, and start seeing real-time data from your first visitor.",
-  },
-  {
-    title: "Conversion Tracking",
-    description:
-      "Learn how to track purchases, signups, and custom conversions with SealMetrics.",
-    duration: "4:10",
-    embedUrl: "",
-    ctaHeadline: "Track what matters most",
-    ctaText:
-      "Set up conversion and micro-conversion tracking to measure the real impact of your marketing efforts.",
-  },
-  {
-    title: "Traffic Sources & UTMs",
-    description:
-      "Deep dive into source attribution, UTM parameters, and channel analysis.",
-    duration: "3:45",
-    embedUrl: "",
-    ctaHeadline: "Know where your traffic comes from",
-    ctaText:
-      "Understand every channel, campaign, and referrer driving visitors to your site.",
-  },
-  {
-    title: "AI Insights with LENS",
-    description:
-      "See how LENS detects anomalies, broken checkouts, and revenue opportunities.",
-    duration: "5:02",
-    embedUrl: "",
-    ctaHeadline: "Let AI work for you",
-    ctaText:
-      "LENS automatically detects anomalies, revenue opportunities, and broken checkouts so you never miss an insight.",
-  },
-  {
-    title: "Funnel Analysis",
-    description:
-      "Build and analyze conversion funnels to identify drop-off points in your user journey.",
-    duration: "3:58",
-    embedUrl: "",
-    ctaHeadline: "Optimize your conversion path",
-    ctaText:
-      "Build custom funnels to visualize your customer journey and identify exactly where visitors drop off.",
-  },
-];
-
-const tutorials: Video[] = [
-  {
-    title: "WordPress Integration",
-    description:
-      "Install the SealMetrics plugin on your WordPress site in one click.",
-    duration: "1:48",
-    embedUrl: "",
-    ctaHeadline: "WordPress in one click",
-    ctaText:
-      "Install our WordPress plugin and start tracking in under a minute. No code required.",
-  },
-  {
-    title: "WooCommerce Setup",
-    description:
-      "Set up automatic e-commerce conversion tracking for your WooCommerce store.",
-    duration: "2:35",
-    embedUrl: "",
-    ctaHeadline: "Track every sale",
-    ctaText:
-      "Automatically track WooCommerce purchases, revenue, and product conversions.",
-  },
-  {
-    title: "BigQuery Export",
-    description:
-      "Connect your SealMetrics account to Google BigQuery for raw data analysis.",
-    duration: "4:22",
-    embedUrl: "",
-    ctaHeadline: "Own your raw data",
-    ctaText:
-      "Push all your analytics data to Google BigQuery for advanced analysis and custom reporting.",
-  },
-  {
-    title: "Team & Permissions",
-    description:
-      "Invite team members, assign roles, and manage per-site access controls.",
-    duration: "2:10",
-    embedUrl: "",
-    ctaHeadline: "Built for teams",
-    ctaText:
-      "Invite your team, assign roles, and control who sees what across all your sites.",
-  },
-  {
-    title: "Custom Micro-Conversions",
-    description:
-      "Track scroll depth, button clicks, form submissions, and custom events.",
-    duration: "3:15",
-    embedUrl: "",
-    ctaHeadline: "Track every interaction",
-    ctaText:
-      "Set up scroll tracking, button clicks, form submissions, and any custom event you need.",
-  },
-  {
-    title: "Shopify Integration",
-    description:
-      "Add SealMetrics tracking to your Shopify store with automatic conversion tracking.",
-    duration: "2:50",
-    embedUrl: "",
-    ctaHeadline: "Shopify made easy",
-    ctaText:
-      "Install SealMetrics on your Shopify store and automatically track purchases and customer journeys.",
   },
 ];
 
@@ -201,9 +98,12 @@ function VideoCard({
         <h3 className="text-[0.9rem] font-medium text-text-primary mb-1.5 leading-snug">
           {video.title}
         </h3>
-        <p className="text-[0.8rem] text-text-secondary leading-relaxed">
+        <p className="text-[0.8rem] text-text-secondary leading-relaxed mb-2">
           {video.description}
         </p>
+        <span className="text-[0.7rem] text-text-tertiary">
+          In Spanish — English version coming soon
+        </span>
       </div>
     </button>
   );
@@ -322,51 +222,6 @@ function VideoModal({
 }
 
 /* ===========================================
-   Section component
-   =========================================== */
-
-function VideoSection({
-  label,
-  title,
-  subtitle,
-  videos,
-  onSelect,
-}: {
-  label: string;
-  title: string;
-  subtitle: string;
-  videos: Video[];
-  onSelect: (video: Video) => void;
-}) {
-  return (
-    <section className="py-20 bg-white border-t border-warm-100 first:border-t-0">
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-        <div className="max-w-[640px] mb-12">
-          <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-            {label}
-          </span>
-          <h2 className="headline-section mb-4">{title}</h2>
-          <p className="text-[1rem] text-text-secondary leading-relaxed">
-            {subtitle}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {videos.map((video) => (
-            <VideoCard
-              key={video.title}
-              video={video}
-              category={label}
-              onClick={() => onSelect(video)}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ===========================================
    Main export
    =========================================== */
 
@@ -385,21 +240,20 @@ export function VideoGrid() {
 
   return (
     <>
-      <VideoSection
-        label="Product Demos"
-        title="See SealMetrics in action"
-        subtitle="Short walkthroughs of core features. See how SealMetrics helps you understand your traffic, conversions, and audience."
-        videos={productDemos}
-        onSelect={handleSelect}
-      />
-
-      <VideoSection
-        label="Tutorials"
-        title="Step-by-step guides"
-        subtitle="Learn how to set up integrations, configure advanced features, and make the most of your analytics."
-        videos={tutorials}
-        onSelect={handleSelect}
-      />
+      <section className="py-20 bg-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[800px]">
+            {videos.map((video) => (
+              <VideoCard
+                key={video.title}
+                video={video}
+                category="Product Demo"
+                onClick={() => handleSelect(video)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {activeVideo && (
         <VideoModal video={activeVideo} onClose={handleClose} />
