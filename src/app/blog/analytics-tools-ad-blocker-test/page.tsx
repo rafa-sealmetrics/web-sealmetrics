@@ -153,30 +153,30 @@ export default function AdBlockerTestPage() {
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Plausible</td>
-                  <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
+                  <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
                   <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
-                  <td className="py-2.5 pl-4 text-right font-mono text-text-body">2/5</td>
+                  <td className="py-2.5 pl-4 text-right font-mono text-red-alert">3/5</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Fathom</td>
-                  <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
+                  <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
                   <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
-                  <td className="py-2.5 pl-4 text-right font-mono text-text-body">2/5</td>
+                  <td className="py-2.5 pl-4 text-right font-mono text-red-alert">3/5</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Simple Analytics</td>
-                  <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
+                  <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
                   <td className="py-2.5 px-2 text-center font-mono text-red-alert">Blocked</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
-                  <td className="py-2.5 pl-4 text-right font-mono text-text-body">1/5</td>
+                  <td className="py-2.5 pl-4 text-right font-mono text-text-body">2/5</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Piwik PRO</td>
@@ -230,7 +230,10 @@ export default function AdBlockerTestPage() {
           <p>
             Three tools — GA4, Adobe Analytics, and PostHog — were blocked
             by every single ad blocker we tested. Piwik PRO and Mixpanel
-            were blocked by 4 out of 5. Only one tool passed all five tests.
+            were blocked by 4 out of 5. Even privacy-focused tools like
+            Plausible and Fathom were blocked by 3 out of 5 — their domains
+            appear in the EasyPrivacy filter list that uBlock Origin loads by
+            default. Only one tool passed all five tests.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -249,9 +252,13 @@ export default function AdBlockerTestPage() {
 
           <p>
             Privacy-focused tools like Plausible and Fathom use lighter
-            scripts and less well-known domains, which gets them past
-            extension-based blockers. But browser-native protections in Brave
-            and Firefox use more aggressive heuristics that catch them too.
+            scripts, but their collection domains —
+            {" "}<span className="font-mono text-[0.9rem]">plausible.io</span> and
+            {" "}<span className="font-mono text-[0.9rem]">cdn.usefathom.com</span> —
+            are explicitly listed in the EasyPrivacy filter list. uBlock
+            Origin loads EasyPrivacy by default, meaning these tools are
+            blocked for its 40+ million users. Browser-native protections
+            in Brave and Firefox catch them as well.
           </p>
 
           <p>
@@ -325,52 +332,55 @@ export default function AdBlockerTestPage() {
           </h2>
 
           <p>
-            We followed a strict, reproducible protocol:
+            We combined two approaches: filter list analysis and browser verification.
           </p>
 
           <ul className="space-y-2 pl-5">
             <li className="flex gap-2">
               <span className="text-text-secondary shrink-0">&mdash;</span>
               <span>
-                Fresh Chrome profile with no extensions, no browsing history, no cached data
+                Downloaded the default filter lists used by each blocker — EasyList,
+                EasyPrivacy, uBlock filters, and Peter Lowe&apos;s ad server list
               </span>
             </li>
             <li className="flex gap-2">
               <span className="text-text-secondary shrink-0">&mdash;</span>
               <span>
-                One ad blocker installed at a time, using default settings (no custom filter lists)
+                Searched each list for every analytics domain (e.g.,{" "}
+                <span className="font-mono text-[0.9rem]">google-analytics.com</span>,{" "}
+                <span className="font-mono text-[0.9rem]">plausible.io</span>,{" "}
+                <span className="font-mono text-[0.9rem]">cdn.usefathom.com</span>)
               </span>
             </li>
             <li className="flex gap-2">
               <span className="text-text-secondary shrink-0">&mdash;</span>
               <span>
-                Each analytics tool loaded on a test page via its standard installation method
+                Verified in-browser with each ad blocker installed on a fresh Chrome profile using default settings
               </span>
             </li>
             <li className="flex gap-2">
               <span className="text-text-secondary shrink-0">&mdash;</span>
               <span>
-                Verification via Chrome DevTools Network tab: did the analytics request reach its collection endpoint?
+                Binary pass/fail per combination — does the analytics request reach its collection endpoint?
               </span>
             </li>
             <li className="flex gap-2">
               <span className="text-text-secondary shrink-0">&mdash;</span>
               <span>
-                Binary pass/fail per combination — no partial credit for delayed or degraded requests
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-text-secondary shrink-0">&mdash;</span>
-              <span>
-                For browser-native blockers (Brave, Firefox ETP), we used each browser with its built-in protection set to strict mode
+                For browser-native blockers (Brave, Firefox ETP), we tested with built-in protection set to strict mode
               </span>
             </li>
           </ul>
 
           <p>
-            Every test was repeated three times to confirm consistency. The
-            results were identical across all three runs for every
-            combination.
+            The filter list approach is more reproducible than browser testing alone —
+            anyone can download EasyPrivacy and search for{" "}
+            <span className="font-mono text-[0.9rem]">plausible.io</span> or{" "}
+            <span className="font-mono text-[0.9rem]">cdn.usefathom.com</span> to verify
+            the results. SealMetrics has one rule in EasyPrivacy:{" "}
+            <span className="font-mono text-[0.9rem]">||sealmetrics.com^$third-party</span>{" "}
+            — which only triggers when loaded as a third-party resource. Since
+            SealMetrics uses first-party CNAME collection, this rule does not apply.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

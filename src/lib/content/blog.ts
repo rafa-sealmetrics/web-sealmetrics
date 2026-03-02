@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.",
     description:
-      "One pageview, one browser. GA4 makes 4 requests to 3 domains. Adobe makes 6 to 4 domains. SealMetrics makes 1. The network waterfall tells the story.",
+      "One pageview, one browser. GA4 makes 4 requests to 3 domains. Adobe makes 6 to 4 domains. SealMetrics makes 2 to 1. The network waterfall tells the story.",
     date: "2026-03-06",
     category: "Performance",
     readTime: "4 min",
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     slug: "we-measured-every-analytics-script",
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
-      "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 99x heavier than SealMetrics.",
+      "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 52x heavier than SealMetrics.",
     date: "2026-02-20",
     category: "Performance",
     readTime: "4 min",

@@ -7,7 +7,7 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "How Many HTTP Requests Does Your Analytics Tool Make?",
   description:
-    "We counted every HTTP request from 9 analytics tools. GA4 makes 4 requests across 3 domains. SealMetrics makes 1 to a single first-party endpoint.",
+    "We counted every HTTP request from 9 analytics tools. GA4 makes 4 requests across 3 domains. SealMetrics makes 2 to a single first-party endpoint.",
   openGraph: {
     title: "How Many HTTP Requests Does Your Analytics Tool Make?",
     description:
@@ -86,24 +86,24 @@ export default function AnalyticsHttpRequestsPage() {
               <tbody>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 px-3 text-center font-mono text-green-muted">2</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">1</td>
-                  <td className="py-2.5 px-3 text-center font-mono text-green-muted">1</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-green-muted">1.4</td>
-                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Single beacon to first-party endpoint</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-green-muted">2.7</td>
+                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script (2.5 KB) + beacon to first-party endpoint</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Plausible</td>
-                  <td className="py-2.5 px-3 text-center font-mono text-text-body">1</td>
+                  <td className="py-2.5 px-3 text-center font-mono text-green-muted">2</td>
                   <td className="py-2.5 px-3 text-center font-mono text-text-body">1</td>
                   <td className="py-2.5 px-3 text-right font-mono text-text-body">1.5</td>
-                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script + inline beacon</td>
+                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script (1.3 KB) + beacon</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Fathom</td>
+                  <td className="py-2.5 px-3 text-center font-mono text-text-body">2</td>
                   <td className="py-2.5 px-3 text-center font-mono text-text-body">1</td>
-                  <td className="py-2.5 px-3 text-center font-mono text-text-body">1</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-text-body">2.1</td>
-                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script + beacon</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-text-body">2.2</td>
+                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script (2.0 KB) + beacon</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Simple Analytics</td>
@@ -156,10 +156,10 @@ export default function AnalyticsHttpRequestsPage() {
             <span className="font-mono font-medium text-text-primary">
               6 requests across 4 domains
             </span>{" "}
-            and transfers 158 KB. SealMetrics fires 1 request to 1 domain
-            and transfers 1.4 KB. That is a{" "}
+            and transfers 158 KB. SealMetrics fires 2 requests to 1 domain
+            and transfers 2.7 KB. That is a{" "}
             <span className="font-mono font-medium text-text-primary">
-              113x difference
+              59x difference
             </span>{" "}
             in bytes transferred.
           </p>
@@ -227,7 +227,8 @@ export default function AnalyticsHttpRequestsPage() {
               cookieless first-party tracking
             </Link>{" "}
             through a single first-party endpoint. One domain. One DNS
-            lookup. One TLS handshake. Zero third-party connections.
+            lookup. One TLS handshake. Two requests. Zero third-party
+            connections.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -255,9 +256,9 @@ export default function AnalyticsHttpRequestsPage() {
           </p>
 
           <p>
-            SealMetrics&apos; 1.4 KB is a single beacon to a first-party
-            endpoint. No visitor IDs to sync. No cross-domain stitching. No
-            remarketing payloads.{" "}
+            SealMetrics&apos; 2.7 KB total — a 2.5 KB script and a small
+            beacon — goes to a single first-party endpoint. No visitor IDs
+            to sync. No cross-domain stitching. No remarketing payloads.{" "}
             <Link
               href="/glossary/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -298,7 +299,7 @@ export default function AnalyticsHttpRequestsPage() {
 
           <p>
             Your analytics tool should measure your site, not slow it down.
-            A single 1.4 KB request to one first-party domain captures
+            Two requests totaling 2.7 KB to one first-party domain captures
             100% of traffic through{" "}
             <Link
               href="/how-it-works"

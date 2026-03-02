@@ -7,7 +7,7 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "We Measured Every Analytics Script. Here Is What We Found.",
   description:
-    "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 99x heavier than SealMetrics.",
+    "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 52x heavier than SealMetrics.",
   openGraph: {
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
@@ -64,27 +64,27 @@ export default function MeasuredScriptsPage() {
               <tbody>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
-                  <td className="py-2.5 text-right font-mono text-green-muted">1.3 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">2.5 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Plausible</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">1.3 KB</td>
+                  <td className="py-2.5 text-right font-mono text-green-muted">1.3 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Fathom</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">1.9 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">2.0 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Simple Analytics</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">3.8 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">3.7 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Mixpanel</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">29.8 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">30.0 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">PostHog</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">56.4 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">56.5 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Matomo</td>
@@ -92,7 +92,7 @@ export default function MeasuredScriptsPage() {
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Google Analytics 4</td>
-                  <td className="py-2.5 text-right font-mono text-red-alert">129.6 KB</td>
+                  <td className="py-2.5 text-right font-mono text-red-alert">128.8 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Adobe Analytics</td>
@@ -105,9 +105,9 @@ export default function MeasuredScriptsPage() {
           <p>
             GA4 is{" "}
             <span className="font-mono font-medium text-text-primary">
-              99x heavier
+              52x heavier
             </span>{" "}
-            than SealMetrics. Adobe Analytics is 115x heavier.
+            than SealMetrics. Adobe Analytics is 60x heavier.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -117,7 +117,7 @@ export default function MeasuredScriptsPage() {
           <p>
             For a site with 100,000 monthly visitors, GA4&apos;s script alone
             consumes 12.9 GB of bandwidth per month. SealMetrics consumes
-            130 MB. That is not a rounding error — it is a 99x difference in
+            250 MB. That is not a rounding error — it is a 52x difference in
             network resources, battery drain, and page load time.
           </p>
 
@@ -147,7 +147,7 @@ export default function MeasuredScriptsPage() {
           <p>
             At 1 million pageviews per month, GA4&apos;s script generates
             approximately 30 kg of CO&#x2082; annually — equivalent to driving
-            120 km. SealMetrics&apos; equivalent: 0.3 kg, or about 1.2 km.
+            120 km. SealMetrics&apos; equivalent: 0.6 kg, or about 2.4 km.
           </p>
 
           <p>
@@ -174,7 +174,7 @@ export default function MeasuredScriptsPage() {
 
           <p>
             The script that measures your site performance is itself degrading
-            your site performance. A 1.3 KB script captures 100% of traffic
+            your site performance. A 2.5 KB script captures 100% of traffic
             through{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless first-party collection</Link>
             , complies with{" "}

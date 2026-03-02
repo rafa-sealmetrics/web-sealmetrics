@@ -226,6 +226,9 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             persists for 2 years. That means once a visitor accepts your consent
             banner, GA4 can recognize them for up to 24 months. But the reverse
             is also true: if they reject, GA4 cannot recognize them at all.
+            Note: the <span className="font-mono text-[0.95rem]">_gac_*</span> cookie
+            on doubleclick.net is only set when Google Ads conversion linking is
+            active. Sites without Google Ads integration will see 3 cookies, not 4.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
