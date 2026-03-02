@@ -48,7 +48,7 @@ export default function BlogPage() {
       <section className="pb-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="space-y-0">
-            {blogPosts.map((post) => (
+            {blogPosts.filter((p) => !p.draft).map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}

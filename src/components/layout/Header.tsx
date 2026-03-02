@@ -14,65 +14,128 @@ interface DropdownItem {
   desc: string;
 }
 
+interface DropdownGroup {
+  title?: string;
+  items: DropdownItem[];
+}
+
 interface NavDropdown {
   label: string;
-  items: DropdownItem[];
+  groups: DropdownGroup[];
 }
 
 const solutionsDropdown: NavDropdown = {
   label: "Solutions",
-  items: [
+  groups: [
     {
-      href: "/for/cmo",
-      label: "For CMOs",
-      desc: "Revenue attribution on 100% of data",
+      title: "By Role",
+      items: [
+        {
+          href: "/for/cmo",
+          label: "For CMOs",
+          desc: "Revenue attribution on 100% of data",
+        },
+        {
+          href: "/for/cto",
+          label: "For CTOs",
+          desc: "One script, full compliance, zero maintenance",
+        },
+        {
+          href: "/for/dpo",
+          label: "For DPOs",
+          desc: "GDPR compliant by architecture",
+        },
+      ],
     },
     {
-      href: "/for/cto",
-      label: "For CTOs",
-      desc: "One script, full compliance, zero maintenance",
+      title: "By Industry",
+      items: [
+        {
+          href: "/for/ecommerce",
+          label: "Ecommerce",
+          desc: "Complete purchase attribution",
+        },
+        {
+          href: "/for/hotels",
+          label: "Hotels & Travel",
+          desc: "Full booking journey visibility",
+        },
+        {
+          href: "/for/saas",
+          label: "SaaS",
+          desc: "Trial-to-paid conversion tracking",
+        },
+        {
+          href: "/for/agencies",
+          label: "Agencies",
+          desc: "Multi-client campaign attribution",
+        },
+        {
+          href: "/for/media",
+          label: "Media & Publishers",
+          desc: "True audience measurement",
+        },
+        {
+          href: "/for/finance",
+          label: "Finance",
+          desc: "Compliant financial services analytics",
+        },
+        {
+          href: "/for/healthcare",
+          label: "Healthcare",
+          desc: "Patient journey analytics, zero PII",
+        },
+        {
+          href: "/for/education",
+          label: "Education",
+          desc: "Complete enrollment attribution",
+        },
+      ],
     },
     {
-      href: "/for/dpo",
-      label: "For DPOs",
-      desc: "GDPR compliant by architecture",
-    },
-    {
-      href: "/data-loss-calculator",
-      label: "Data Loss Calculator",
-      desc: "See how much traffic you are missing",
+      items: [
+        {
+          href: "/data-loss-calculator",
+          label: "Data Loss Calculator",
+          desc: "See how much traffic you are missing",
+        },
+      ],
     },
   ],
 };
 
 const resourcesDropdown: NavDropdown = {
   label: "Resources",
-  items: [
-    { href: "/blog", label: "Blog", desc: "Analytics insights and guides" },
+  groups: [
     {
-      href: "/videos",
-      label: "Videos",
-      desc: "Product demos and tutorials",
-    },
-    {
-      href: "/glossary",
-      label: "Glossary",
-      desc: "Analytics terms explained",
-    },
-    {
-      href: "/how-it-works",
-      label: "How It Works",
-      desc: "Cookieless tracking explained",
-    },
-    {
-      href: "/vs-ga4",
-      label: "vs GA4",
-      desc: "Side-by-side comparison",
-    },
-    {
-      href: "/changelog",
-      label: "Changelog",
-      desc: "Product updates",
+      items: [
+        { href: "/blog", label: "Blog", desc: "Analytics insights and guides" },
+        {
+          href: "/videos",
+          label: "Videos",
+          desc: "Product demos and tutorials",
+        },
+        {
+          href: "/glossary",
+          label: "Glossary",
+          desc: "Analytics terms explained",
+        },
+        {
+          href: "/how-it-works",
+          label: "How It Works",
+          desc: "Cookieless tracking explained",
+        },
+        {
+          href: "/vs-ga4",
+          label: "vs GA4",
+          desc: "Side-by-side comparison",
+        },
+        {
+          href: "/changelog",
+          label: "Changelog",
+          desc: "Product updates",
+        },
+      ],
     },
   ],
 };
@@ -131,21 +194,33 @@ function Dropdown({
       {isOpen && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
           <div role="menu" className="bg-white border border-warm-100 rounded-[4px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] py-2 min-w-[260px]">
-            {dropdown.items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                role="menuitem"
-                onClick={onClose}
-                className="block px-5 py-2.5 no-underline hover:bg-warm-50 transition-colors"
-              >
-                <span className="block text-[0.85rem] font-medium text-text-primary leading-snug">
-                  {item.label}
-                </span>
-                <span className="block text-[0.75rem] text-text-tertiary mt-0.5">
-                  {item.desc}
-                </span>
-              </Link>
+            {dropdown.groups.map((group, gi) => (
+              <div key={gi}>
+                {gi > 0 && (
+                  <div className="my-1.5 mx-5 border-t border-warm-100" />
+                )}
+                {group.title && (
+                  <span className="block px-5 pt-2 pb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-text-tertiary">
+                    {group.title}
+                  </span>
+                )}
+                {group.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    role="menuitem"
+                    onClick={onClose}
+                    className="block px-5 py-2 no-underline hover:bg-warm-50 transition-colors"
+                  >
+                    <span className="block text-[0.85rem] font-medium text-text-primary leading-snug">
+                      {item.label}
+                    </span>
+                    <span className="block text-[0.75rem] text-text-tertiary mt-0.5">
+                      {item.desc}
+                    </span>
+                  </Link>
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -273,16 +348,18 @@ export function Header() {
                 Solutions
               </span>
               <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
-                {solutionsDropdown.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {solutionsDropdown.groups.map((group) =>
+                  group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
 
@@ -300,16 +377,18 @@ export function Header() {
                 Resources
               </span>
               <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
-                {resourcesDropdown.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {resourcesDropdown.groups.map((group) =>
+                  group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
 

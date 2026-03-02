@@ -15,6 +15,19 @@ const footerColumns = [
     ],
   },
   {
+    title: "Industries",
+    links: [
+      { label: "Ecommerce", href: "/for/ecommerce" },
+      { label: "Hotels & Travel", href: "/for/hotels" },
+      { label: "SaaS", href: "/for/saas" },
+      { label: "Agencies", href: "/for/agencies" },
+      { label: "Media & Publishers", href: "/for/media" },
+      { label: "Finance", href: "/for/finance" },
+      { label: "Healthcare", href: "/for/healthcare" },
+      { label: "Education", href: "/for/education" },
+    ],
+  },
+  {
     title: "Compare",
     links: [
       { label: "vs Google Analytics 4", href: "/vs-ga4" },
@@ -48,7 +61,7 @@ export function Footer() {
   return (
     <footer className="bg-warm-900 border-t border-warm-800 pt-16 pb-8">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
             <Link href="/" className="inline-block mb-3 no-underline">
               <Image

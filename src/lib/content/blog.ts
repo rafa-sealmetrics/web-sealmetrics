@@ -5,9 +5,76 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
+  draft?: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "analytics-tools-lighthouse-scores",
+    title:
+      "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.",
+    description:
+      "Same HTML page, 9 analytics tools, 5 Lighthouse runs each. GA4 drops your Performance score by 8 points. Adobe by 12. SealMetrics by 0.",
+    date: "2026-03-08",
+    category: "Performance",
+    readTime: "5 min",
+    draft: true,
+  },
+  {
+    slug: "analytics-tools-ad-blocker-test",
+    title:
+      "We Tested 9 Analytics Tools Against Every Major Ad Blocker",
+    description:
+      "uBlock Origin, AdBlock Plus, Brave, Firefox ETP, Privacy Badger. We tested which analytics tools survive and which lose 30% of visitors.",
+    date: "2026-03-07",
+    category: "Data Quality",
+    readTime: "5 min",
+    draft: true,
+  },
+  {
+    slug: "analytics-tools-http-requests",
+    title:
+      "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.",
+    description:
+      "One pageview, one browser. GA4 makes 4 requests to 3 domains. Adobe makes 6 to 4 domains. SealMetrics makes 1. The network waterfall tells the story.",
+    date: "2026-03-06",
+    category: "Performance",
+    readTime: "4 min",
+    draft: true,
+  },
+  {
+    slug: "analytics-tools-cookies-cataloged",
+    title:
+      "Every Cookie Set by Every Major Analytics Tool, Cataloged",
+    description:
+      "We opened DevTools and documented every cookie from 9 analytics tools. Name, type, size, expiration. GA4 sets 4. Adobe sets 6. SealMetrics sets 0.",
+    date: "2026-03-05",
+    category: "Privacy",
+    readTime: "5 min",
+    draft: true,
+  },
+  {
+    slug: "analytics-tools-external-domains",
+    title:
+      "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.",
+    description:
+      "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.",
+    date: "2026-03-04",
+    category: "Privacy",
+    readTime: "4 min",
+    draft: true,
+  },
+  {
+    slug: "analytics-tools-data-sampling",
+    title:
+      "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared",
+    description:
+      "GA4 starts sampling at 500K events. Adobe varies by contract. Piwik PRO at 10M. SealMetrics: never. We documented every threshold.",
+    date: "2026-03-03",
+    category: "Data Quality",
+    readTime: "5 min",
+    draft: true,
+  },
   {
     slug: "analytics-scripts-costing-you-sales",
     title:
