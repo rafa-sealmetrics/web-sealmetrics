@@ -34,7 +34,8 @@ const productDemos: Video[] = [
     description:
       "How to create your account, add your site, and install the tracking script.",
     duration: "2:15",
-    embedUrl: "",
+    embedUrl:
+      "https://iframe.mediadelivery.net/embed/609541/c39d3844-8ef3-4362-8579-d71a6b832b0f",
     ctaHeadline: "Get started in minutes",
     ctaText:
       "Create your account, install the tracker, and start seeing real-time data from your first visitor.",
