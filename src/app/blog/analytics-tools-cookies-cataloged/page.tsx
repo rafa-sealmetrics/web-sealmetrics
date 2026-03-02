@@ -154,6 +154,74 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             </table>
           </div>
 
+          {/* Visual: cookie count chart */}
+          <div className="my-8 space-y-1.5" aria-label="Cookie count comparison chart">
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '0%', minWidth: '0px' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-green-muted w-[55px] shrink-0 text-right">0</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Plausible</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '0%', minWidth: '0px' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">0</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Fathom</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '0%', minWidth: '0px' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">0</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '0%', minWidth: '0px' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">0</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '16.7%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">1</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Piwik PRO</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '33.3%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">2</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Mixpanel</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '33.3%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">2</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">GA4</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '33.3%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[55px] shrink-0 text-right">2</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[55px] shrink-0 text-right">6</span>
+            </div>
+            <p className="text-[0.75rem] text-text-tertiary mt-2 text-right">Total cookies (base configuration)</p>
+          </div>
+
           <p>
             Four tools set zero cookies. The rest range from 1 to 6.
             Adobe Analytics leads with{" "}

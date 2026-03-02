@@ -227,6 +227,95 @@ export default function AdBlockerTestPage() {
             </table>
           </div>
 
+          {/* Visual pass/fail grid */}
+          <div className="my-8" aria-label="Ad blocker pass/fail visual summary">
+            <div className="grid grid-cols-[110px_repeat(5,1fr)_40px] gap-1 text-[0.7rem]">
+              <div className="text-text-tertiary text-right pr-2 py-1" />
+              <div className="text-text-tertiary text-center py-1">uB</div>
+              <div className="text-text-tertiary text-center py-1">ABP</div>
+              <div className="text-text-tertiary text-center py-1">Brave</div>
+              <div className="text-text-tertiary text-center py-1">FF</div>
+              <div className="text-text-tertiary text-center py-1">PB</div>
+              <div />
+              {/* SealMetrics */}
+              <div className="text-[0.8rem] font-medium text-text-primary text-right pr-2 py-0.5">SealMetrics</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="text-[0.75rem] font-mono text-green-muted text-right py-0.5">0/5</div>
+              {/* Plausible */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">Plausible</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="text-[0.75rem] font-mono text-text-body text-right py-0.5">3/5</div>
+              {/* Fathom */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">Fathom</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="text-[0.75rem] font-mono text-text-body text-right py-0.5">3/5</div>
+              {/* Simple Analytics */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">Simple Analytics</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="text-[0.75rem] font-mono text-text-body text-right py-0.5">2/5</div>
+              {/* Piwik PRO */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">Piwik PRO</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="text-[0.75rem] font-mono text-red-alert text-right py-0.5">4/5</div>
+              {/* Mixpanel */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">Mixpanel</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="text-[0.75rem] font-mono text-red-alert text-right py-0.5">4/5</div>
+              {/* PostHog */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">PostHog</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="text-[0.75rem] font-mono text-red-alert text-right py-0.5">5/5</div>
+              {/* GA4 */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">GA4</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="text-[0.75rem] font-mono text-red-alert text-right py-0.5">5/5</div>
+              {/* Adobe */}
+              <div className="text-[0.8rem] text-text-secondary text-right pr-2 py-0.5">Adobe</div>
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} />
+              <div className="text-[0.75rem] font-mono text-red-alert text-right py-0.5">5/5</div>
+            </div>
+            <div className="flex gap-4 mt-3 text-[0.7rem] text-text-tertiary">
+              <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} /><span>Pass</span></div>
+              <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-[2px]" style={{ backgroundColor: 'var(--color-red-alert)' }} /><span>Blocked</span></div>
+            </div>
+          </div>
+
           <p>
             Three tools — GA4, Adobe Analytics, and PostHog — were blocked
             by every single ad blocker we tested. Piwik PRO and Mixpanel

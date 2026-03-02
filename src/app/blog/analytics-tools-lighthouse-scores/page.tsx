@@ -200,6 +200,80 @@ export default function LighthouseScoresPage() {
             </table>
           </div>
 
+          {/* Visual score bars */}
+          <div className="my-8 space-y-1.5" aria-label="Lighthouse score comparison chart">
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-tertiary italic w-[110px] shrink-0 text-right">Baseline</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">100</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-green-muted w-[32px] shrink-0 text-right">100</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Plausible</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '99%', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">99</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Fathom</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '99%', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">99</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '98%', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">98</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Piwik PRO</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '94%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">94</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Mixpanel</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '93%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">93</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">GA4</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '92%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[32px] shrink-0 text-right">92</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '91%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[32px] shrink-0 text-right">91</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '88%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[32px] shrink-0 text-right">88</span>
+            </div>
+          </div>
+
           <p>
             The gap between the lightest and heaviest tools is{" "}
             <span className="font-mono font-medium text-text-primary">

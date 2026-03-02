@@ -157,6 +157,73 @@ export default function ExternalDomainsPage() {
             </table>
           </div>
 
+          {/* Visual: domain count chart */}
+          <div className="my-8 space-y-1.5" aria-label="External domain count comparison chart">
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '25%', minWidth: '6px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-green-muted w-[80px] shrink-0 text-right">1 (0 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Plausible</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '25%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[80px] shrink-0 text-right">1 (1 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Fathom</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '25%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[80px] shrink-0 text-right">1 (1 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '25%', minWidth: '6px', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[80px] shrink-0 text-right">1 (1 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Piwik PRO</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '50%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[80px] shrink-0 text-right">2 (2 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Mixpanel</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '50%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[80px] shrink-0 text-right">2 (2 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '50%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[80px] shrink-0 text-right">2 (2 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">GA4</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '75%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[80px] shrink-0 text-right">3 (3 3P)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[80px] shrink-0 text-right">4 (4 3P)</span>
+            </div>
+          </div>
+
           <p>
             The range is stark. SealMetrics contacts one domain &mdash; your
             own. Adobe Analytics contacts four third-party domains, all

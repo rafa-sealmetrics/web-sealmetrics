@@ -102,6 +102,73 @@ export default function MeasuredScriptsPage() {
             </table>
           </div>
 
+          {/* Visual bar chart */}
+          <div className="my-8 space-y-1.5" aria-label="Script size comparison chart">
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Plausible</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '1.5%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">1.3 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Fathom</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '1.5%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">2.0 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '1.7%', minWidth: '5px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-primary w-[65px] shrink-0 text-right">2.5 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '2.5%', minWidth: '6px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">3.7 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Mixpanel</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '19.9%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">30.0 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '37.5%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">56.5 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Matomo</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '43.3%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">65.2 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">GA4</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '85.5%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">128.8 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">150.7 KB</span>
+            </div>
+          </div>
+
           <p>
             GA4 is{" "}
             <span className="font-mono font-medium text-text-primary">

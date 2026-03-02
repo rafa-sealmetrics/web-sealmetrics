@@ -151,6 +151,73 @@ export default function AnalyticsHttpRequestsPage() {
             </table>
           </div>
 
+          {/* Visual: transfer size chart */}
+          <div className="my-8 space-y-1.5" aria-label="HTTP transfer size comparison chart">
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Plausible</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '0.9%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">1.5 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Fathom</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '1.4%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">2.2 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '1.7%', minWidth: '5px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-primary w-[65px] shrink-0 text-right">2.7 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '2.7%', minWidth: '6px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">4.2 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Mixpanel</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '20.3%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">32 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Piwik PRO</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '24.1%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">38 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '37.3%', backgroundColor: 'var(--color-warm-400)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">59 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">GA4</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '84.8%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">134 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">158 KB</span>
+            </div>
+          </div>
+
           <p>
             Adobe Analytics fires{" "}
             <span className="font-mono font-medium text-text-primary">
