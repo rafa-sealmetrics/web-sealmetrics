@@ -45,6 +45,7 @@ export default function RevenueAttributionPage() {
           <div className="space-y-3">
             <Link href="/glossary/multi-touch-attribution" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Multi-Touch Attribution</Link>
             <Link href="/glossary/data-loss-in-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Loss in Analytics</Link>
+            <Link href="/glossary/attribution-model" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Attribution Model</Link>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-warm-100">

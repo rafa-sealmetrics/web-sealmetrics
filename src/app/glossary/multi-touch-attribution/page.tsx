@@ -45,11 +45,12 @@ export default function MultiTouchAttributionPage() {
           <div className="space-y-3">
             <Link href="/glossary/revenue-attribution" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Revenue Attribution</Link>
             <Link href="/glossary/data-loss-in-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Loss in Analytics</Link>
+            <Link href="/glossary/attribution-model" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Attribution Model</Link>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link>
+            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
           </p>
         </div>
       </div>

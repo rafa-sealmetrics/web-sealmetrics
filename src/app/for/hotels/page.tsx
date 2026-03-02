@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for Hotels — Complete Booking Attribution",
   description:
-    "Your guests search on mobile, compare on desktop, and book on tablet. Traditional analytics sees fragments. SealMetrics captures the complete booking journey — cookieless.",
+    "Guests search on mobile, compare on desktop, book on tablet. Traditional analytics sees fragments. SealMetrics captures the full booking journey.",
   openGraph: {
     title: "SealMetrics for Hotels",
     description:
@@ -38,11 +38,13 @@ export default function ForHotelsPage() {
               Multi-device booking journeys and high consent rejection in EU
               travel markets mean 60-70% of your guest interactions are
               invisible. Your direct booking strategy is built on a fraction
-              of the data. SealMetrics captures the{" "}
+              of the data. SealMetrics{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">captures the complete booking journey</Link>{" "}
+              with{" "}
               <Link href="/glossary/cookieless-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
-                complete journey
-              </Link>
-              .
+                cookieless
+              </Link>{" "}
+              server-side collection.
             </p>
           </div>
         </div>

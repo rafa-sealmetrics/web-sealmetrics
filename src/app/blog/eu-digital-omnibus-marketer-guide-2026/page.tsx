@@ -46,8 +46,9 @@ export default function OmnibusGuidePage() {
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] text-[0.9rem] my-6">
             <p className="font-medium text-text-primary mb-2">TL;DR</p>
             <p>
-              Cookie banners could vanish for approximately 60% of websites.
-              First-party analytics receives explicit legal authorization.
+              Cookie banners could vanish for approximately 60% of websites.{" "}
+              <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party analytics</Link>{" "}
+              receives explicit legal authorization.
               European businesses stand to save an estimated &euro;1 billion
               annually.
             </p>
@@ -61,7 +62,8 @@ export default function OmnibusGuidePage() {
             On November 19, 2025, the European Commission released proposal
             COM(2025) 837. It consolidates five separate data regulations into
             just two, making it the most comprehensive overhaul of
-            Europe&apos;s digital governance framework since GDPR.
+            Europe&apos;s digital governance framework since{" "}
+            <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR</Link>.
           </p>
 
           <div className="overflow-x-auto my-6">

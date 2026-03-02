@@ -129,7 +129,9 @@ export default function OmnibusShortPage() {
             If you use first-party, aggregated analytics — and nothing else
             that requires consent — you may not need a cookie banner at all.
             France and the UK already permit this approach. The EU proposal
-            would standardize it across all member states.
+            would standardize it across all member states. Learn{" "}
+            <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">how cookieless collection works</Link>{" "}
+            and why it qualifies.
           </p>
 
           <p>

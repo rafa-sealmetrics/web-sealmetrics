@@ -229,8 +229,9 @@ export default function VsGA4Page() {
               SealMetrics delivers enterprise-grade analytics&nbsp;&mdash;
               complete data capture, AI supervision, multi-touch
               attribution&nbsp;&mdash; at a fraction of enterprise pricing. With
-              capabilities that GA360 and Adobe do not offer: cookieless
-              collection, AI agent tracking, and GDPR compliance by design.
+              capabilities that GA360 and Adobe do not offer:{" "}
+              <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
+              collection</Link>, AI agent tracking, and GDPR compliance by design.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link

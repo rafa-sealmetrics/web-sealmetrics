@@ -231,8 +231,9 @@ export default function VsGA360Page() {
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               SealMetrics delivers complete data&nbsp;&mdash; 100% of visitors,
               zero cookie dependency, GDPR compliance by design&nbsp;&mdash; at
-              1/60th of the cost. With capabilities GA360 does not offer:
-              cookieless collection, AI agent tracking, and privacy compliance
+              1/60th of the cost. With capabilities GA360 does not offer:{" "}
+              <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
+              collection</Link>, AI agent tracking, and privacy compliance
               that requires no configuration.
             </p>
             <div className="flex items-center gap-5 flex-wrap">

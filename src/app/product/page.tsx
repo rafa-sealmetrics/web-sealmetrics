@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
+import { softwareApplicationSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Product — SealMetrics",
@@ -58,12 +58,44 @@ const reports = [
   },
 ];
 
+const productFaqs = [
+  {
+    q: "What data does SealMetrics capture?",
+    a: "SealMetrics captures pageviews, sessions, referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions, and ecommerce transactions. All data comes from 100% of visitors — no sampling, no consent dependency.",
+  },
+  {
+    q: "Can I run SealMetrics alongside GA4?",
+    a: "Yes. Many clients run both in parallel during a transition period. SealMetrics typically shows 3-8x more tracked visitors and conversions than GA4 in EU markets because it captures traffic that GA4 misses due to consent rejection and ad blockers.",
+  },
+  {
+    q: "How does SealMetrics handle single-page applications?",
+    a: "The JavaScript tag automatically detects client-side navigation events in SPAs and frameworks like React, Next.js, and Vue. No additional configuration is needed — page transitions are tracked as standard pageviews.",
+  },
+  {
+    q: "What is LENS AI and what does it detect?",
+    a: "LENS is SealMetrics' AI supervision engine. It continuously monitors 60+ metrics including traffic patterns, conversion rates, revenue trends, and campaign performance. It detects anomalies, provides root cause analysis, and suggests actions — all grounded in complete data.",
+  },
+  {
+    q: "How does multi-touch attribution work without cookies?",
+    a: "SealMetrics reconstructs visitor journeys using first-party server-side session data. Because 100% of touchpoints are captured, multi-touch attribution models (first-touch, last-touch, linear, time-decay) produce accurate results — unlike cookie-based tools where 87% of touchpoints are missing.",
+  },
+  {
+    q: "Does SealMetrics track ecommerce transactions?",
+    a: "Yes. SealMetrics tracks product views, add-to-cart events, checkout steps, and purchases with full revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic ecommerce tracking.",
+  },
+  {
+    q: "What integrations are available?",
+    a: "SealMetrics integrates with 25+ platforms: Google Ads, Meta Ads, TikTok Ads, Shopify, WooCommerce, BigQuery, HubSpot, Salesforce, Klaviyo, and more. Data can be exported via API, BigQuery, webhooks, or CSV.",
+  },
+];
+
 export default function ProductPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Product" }]} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Product", url: "/product" }])} />
+      <JsonLd data={faqSchema(productFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -593,8 +625,32 @@ export default function ProductPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {productFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
+      <section className="py-28 bg-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             See it with your own data.

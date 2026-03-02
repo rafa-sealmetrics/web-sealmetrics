@@ -41,7 +41,9 @@ export default function ForSaaSPage() {
               <Link href="/glossary/multi-touch-attribution" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 multi-touch attribution
               </Link>{" "}
-              model is built on fragments.
+              model is built on fragments. SealMetrics delivers{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete trial-to-paid attribution</Link>{" "}
+              across every touchpoint.
             </p>
           </div>
         </div>

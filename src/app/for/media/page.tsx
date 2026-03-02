@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for Media — Complete Audience Measurement",
   description:
-    "Ad revenue depends on audience numbers. When 60-70% of EU readers are invisible to analytics, your CPMs are undervalued. SealMetrics captures every visit — cookieless.",
+    "When 60-70% of EU readers are invisible to analytics, your CPMs are undervalued. SealMetrics captures every visit — cookieless, 100% data.",
   openGraph: {
     title: "SealMetrics for Media",
     description:
@@ -41,7 +41,9 @@ export default function ForMediaPage() {
               <Link href="/glossary/data-loss-in-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 lost revenue
               </Link>
-              .
+              . SealMetrics provides{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete audience measurement</Link>{" "}
+              so your ad rates reflect your true reach.
             </p>
           </div>
         </div>

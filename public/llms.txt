@@ -36,21 +36,50 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - /for/cto — Technical architecture, setup, and engineering overhead comparison
 - /for/dpo — GDPR compliance, privacy architecture, regulatory alignment
 
+## Industry-specific pages
+- /for/ecommerce — Analytics for ecommerce: revenue attribution, funnel analysis, complete conversion tracking
+- /for/hotels — Analytics for hospitality: booking funnels, seasonal patterns, multi-channel attribution
+- /for/agencies — Analytics for marketing agencies: multi-client reporting, white-label dashboards
+- /for/saas — Analytics for SaaS: trial conversion, feature adoption, churn prediction
+- /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
+- /for/finance — Analytics for financial services: compliance-first tracking, EU data residency
+- /for/education — Analytics for education: enrollment funnels, student engagement, GDPR compliance
+- /for/healthcare — Analytics for healthcare: privacy-first tracking, patient journey analytics
+
 ## Blog (latest articles)
+- /blog/what-is-cookieless-tracking — What Is Cookieless Tracking? A Complete Guide for 2026
+- /blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics? Causes, Impact, and Solutions
+- /blog/ga4-alternatives-enterprise — GA4 Alternatives for Enterprise: A 2026 Comparison
+- /blog/gdpr-analytics-without-consent — GDPR-Compliant Analytics Without Consent Banners
+- /blog/analytics-scripts-costing-you-sales — How Analytics Scripts Cost You Sales
+- /blog/we-measured-every-analytics-script — We Measured Every Analytics Script
+- /blog/uk-pecr-analytics-exemption — UK Analytics Exemption: Our PECR Self-Assessment
 - /blog/ga4-data-sampling-problem — GA4 Data Sampling: Why Your Numbers Are Wrong
+- /blog/eu-digital-omnibus-marketer-guide-2026 — The EU Digital Omnibus Explained for Marketers
+- /blog/eu-digital-omnibus-cookie-banners-analytics — EU Digital Omnibus: Cookie Banners and Analytics
+- /blog/cnil-self-assessment-published — Our CNIL Self-Assessment Published
 - /blog/cookieless-analytics-explained — How Cookieless Analytics Works
 - /blog/consent-banner-impact-on-analytics — How Consent Banners Destroy Analytics Data
 - /blog/ai-agent-traffic-analytics — AI Agent Traffic: The Invisible Channel
 - /blog/multi-touch-attribution-complete-data — Multi-Touch Attribution Needs Complete Data
 
 ## Glossary
-- /glossary — Full analytics glossary (10 terms)
+- /glossary — Full analytics glossary (15 terms)
 - /glossary/cookieless-analytics — What Is Cookieless Analytics
 - /glossary/data-sampling — What Is Data Sampling
+- /glossary/first-party-data-collection — First-Party Data Collection Explained
+- /glossary/consent-management-platform — Consent Management Platform (CMP)
 - /glossary/multi-touch-attribution — Multi-Touch Attribution Explained
 - /glossary/server-side-tracking — Server-Side Tracking Explained
+- /glossary/intelligent-tracking-prevention — Intelligent Tracking Prevention (ITP)
+- /glossary/data-loss-in-analytics — Data Loss in Analytics
 - /glossary/revenue-attribution — Revenue Attribution Explained
 - /glossary/gdpr-analytics-compliance — GDPR Analytics Compliance
+- /glossary/ad-blocker-analytics-impact — Ad Blocker Impact on Analytics
+- /glossary/bounce-rate — Bounce Rate Explained
+- /glossary/attribution-model — Attribution Model Types
+- /glossary/event-tracking — Event Tracking Explained
+- /glossary/analytics-data-residency — Analytics Data Residency
 
 ## Enterprise positioning
 SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics).

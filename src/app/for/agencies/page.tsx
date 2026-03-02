@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for Agencies — Prove Campaign ROI with Complete Data",
   description:
-    "Stop defending campaign results with incomplete data. SealMetrics gives agencies 100% attribution across every client — no cookies, no consent gaps, no more reconciliation.",
+    "Stop defending campaign results with incomplete data. SealMetrics gives agencies 100% attribution across every client — no cookies, no consent gaps.",
   openGraph: {
     title: "SealMetrics for Agencies",
     description:
@@ -42,7 +42,9 @@ export default function ForAgenciesPage() {
               <Link href="/glossary/data-loss-in-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 data loss
               </Link>{" "}
-              between click and conversion.
+              between click and conversion. SealMetrics gives agencies{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete multi-client analytics</Link>{" "}
+              with one source of truth per account.
             </p>
           </div>
         </div>

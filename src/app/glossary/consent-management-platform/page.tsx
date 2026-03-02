@@ -45,11 +45,12 @@ export default function ConsentManagementPlatformPage() {
           <div className="space-y-3">
             <Link href="/glossary/gdpr-analytics-compliance" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">GDPR Analytics Compliance</Link>
             <Link href="/glossary/data-loss-in-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Loss in Analytics</Link>
+            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Consent Banners Destroy Your Analytics Data</Link>
+            Learn more: <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Consent Banners Destroy Your Analytics Data</Link> &middot; <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Security & Privacy Architecture</Link>
           </p>
         </div>
       </div>

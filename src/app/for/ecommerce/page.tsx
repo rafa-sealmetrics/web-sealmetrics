@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for Ecommerce — Complete Revenue Attribution",
   description:
-    "Stop optimizing ROAS on 30% of your conversions. SealMetrics captures every add-to-cart, checkout step, and purchase — no cookies, no consent dependency, 100% attribution.",
+    "Stop optimizing ROAS on 30% of conversions. SealMetrics captures every add-to-cart, checkout, and purchase — cookieless, 100% attribution.",
   openGraph: {
     title: "SealMetrics for Ecommerce",
     description:
@@ -41,7 +41,9 @@ export default function ForEcommercePage() {
               <Link href="/glossary/cookieless-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 cookieless
               </Link>{" "}
-              conversions they generate.
+              conversions they generate. SealMetrics provides{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete revenue attribution</Link>{" "}
+              across every checkout journey.
             </p>
           </div>
         </div>

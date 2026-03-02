@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for Healthcare — Complete Patient Journey Analytics",
   description:
-    "Healthcare faces the highest privacy bar in Europe. SealMetrics captures 100% of website visitor journeys without cookies or personal data — fully GDPR compliant, EU-hosted.",
+    "Healthcare faces the highest privacy bar in Europe. SealMetrics captures 100% of visitor journeys without cookies or personal data — GDPR compliant.",
   openGraph: {
     title: "SealMetrics for Healthcare",
     description:
@@ -41,7 +41,9 @@ export default function ForHealthcarePage() {
                 GDPR compliance
               </Link>{" "}
               is essential — but it should not mean operating with 10-20% of
-              your visitor data.
+              your visitor data. SealMetrics is built on{" "}
+              <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">privacy-first EU infrastructure</Link>{" "}
+              that captures 100% without processing personal data.
             </p>
           </div>
         </div>

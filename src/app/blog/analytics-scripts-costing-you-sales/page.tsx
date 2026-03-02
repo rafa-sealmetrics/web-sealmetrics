@@ -5,11 +5,11 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales",
+  title: "How Analytics Scripts Are Costing You Sales",
   description:
     "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data. The compound effect is costing you conversions.",
   openGraph: {
-    title: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales",
+    title: "How Analytics Scripts Are Costing You Sales",
     description:
       "Heavy scripts, consent banners, and ad blockers create a compound effect that costs you conversions.",
     type: "article",
@@ -124,7 +124,9 @@ export default function AnalyticsScriptsPage() {
           <p>
             Heavy scripts compete for bandwidth, increase Total Blocking Time,
             and degrade Interaction to Next Paint. The tool you use to
-            understand conversions may be costing you conversions.
+            understand conversions may be costing you conversions. A{" "}
+            <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">server-side collection approach</Link>{" "}
+            eliminates this overhead entirely.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

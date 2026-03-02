@@ -60,11 +60,12 @@ export default function GDPRCompliancePage() {
           <div className="space-y-3">
             <Link href="/glossary/consent-management-platform" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Consent Management Platform (CMP)</Link>
             <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+            <Link href="/glossary/analytics-data-residency" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Analytics Data Residency</Link>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Security & Privacy Architecture</Link> &middot; <Link href="/for/dpo" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics for DPOs</Link>
+            Learn more: <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Security & Privacy Architecture</Link> &middot; <Link href="/blog/gdpr-analytics-without-consent" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GDPR Analytics Without Consent</Link>
           </p>
         </div>
       </div>

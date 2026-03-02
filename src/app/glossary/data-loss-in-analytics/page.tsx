@@ -57,7 +57,7 @@ export default function DataLossPage() {
         </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate Your Data Loss</Link>
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate Your Data Loss</Link> &middot; <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">What Is Data Loss in Analytics?</Link>
           </p>
         </div>
       </div>

@@ -229,8 +229,8 @@ export default function VsAdobeAnalyticsPage() {
               Adobe&rsquo;s architecture no longer hold.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
-              SealMetrics was built for the web as it is now&nbsp;&mdash;
-              cookieless, consent-aware, AI-inclusive&nbsp;&mdash; at a fraction
+              SealMetrics was built for the web as it is now&nbsp;&mdash;{" "}
+              <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless, consent-aware, AI-inclusive</Link>&nbsp;&mdash; at a fraction
               of the cost.
             </p>
             <div className="flex items-center gap-5 flex-wrap">

@@ -60,7 +60,9 @@ export default function AIAgentTrafficPage() {
           <p>
             Traditional analytics tools identify traffic sources through
             referrer headers, UTM parameters, and cookies. AI agents present
-            unique challenges for all three:
+            unique challenges for all three. Unlike{" "}
+            <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party</Link>{" "}
+            collection methods, client-side scripts cannot detect these visits:
           </p>
 
           <ul className="space-y-2 pl-0 list-none">
@@ -161,8 +163,9 @@ export default function AIAgentTrafficPage() {
           </h2>
 
           <p>
-            SealMetrics Agent Analytics identifies AI agent sessions through
-            server-side detection — analyzing request patterns, user agent
+            SealMetrics Agent Analytics identifies AI agent sessions through{" "}
+            <Link href="/glossary/server-side-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">server-side</Link>{" "}
+            detection — analyzing request patterns, user agent
             strings, and behavioral signatures that distinguish AI agents from
             human visitors and traditional crawlers.
           </p>

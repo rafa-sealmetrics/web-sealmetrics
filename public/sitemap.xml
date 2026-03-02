@@ -86,6 +86,46 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sealmetrics.com/for/ecommerce</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/hotels</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/agencies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/saas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/media</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/finance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/education</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/for/healthcare</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sealmetrics.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -146,6 +186,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://sealmetrics.com/blog/what-is-cookieless-tracking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/what-is-data-loss-in-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/ga4-alternatives-enterprise</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/blog/gdpr-analytics-without-consent</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sealmetrics.com/glossary</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -197,6 +257,31 @@
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/gdpr-analytics-compliance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/glossary/ad-blocker-analytics-impact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/glossary/bounce-rate</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/glossary/attribution-model</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/glossary/event-tracking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/glossary/analytics-data-residency</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

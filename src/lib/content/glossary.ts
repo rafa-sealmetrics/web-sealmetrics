@@ -76,4 +76,39 @@ export const glossaryTerms: GlossaryTerm[] = [
       "Meeting GDPR requirements for web analytics: lawful basis for processing, data minimization, purpose limitation, and — if using cookies — valid consent collection before tracking.",
     category: "Privacy",
   },
+  {
+    slug: "ad-blocker-analytics-impact",
+    term: "Ad Blocker Impact on Analytics",
+    shortDefinition:
+      "The data loss caused by browser extensions and built-in features that block third-party analytics scripts. Ad blockers affect 40%+ of EU users, making analytics tools like GA4 blind to a significant portion of traffic.",
+    category: "Data Quality",
+  },
+  {
+    slug: "bounce-rate",
+    term: "Bounce Rate",
+    shortDefinition:
+      "The percentage of sessions where a visitor views only one page before leaving. In GA4, bounce rate is the inverse of engagement rate — a session is a bounce if it lasts less than 10 seconds, has no conversion, and has no second pageview.",
+    category: "Metrics",
+  },
+  {
+    slug: "attribution-model",
+    term: "Attribution Model",
+    shortDefinition:
+      "A rule or algorithm that determines how credit for conversions is distributed across marketing touchpoints. Common models include first-touch, last-touch, linear, time-decay, and data-driven attribution.",
+    category: "Attribution",
+  },
+  {
+    slug: "event-tracking",
+    term: "Event Tracking",
+    shortDefinition:
+      "The method of recording specific user interactions on a website beyond pageviews — clicks, form submissions, video plays, downloads, and ecommerce actions. GA4 uses an event-based data model where every interaction is an event.",
+    category: "Technology",
+  },
+  {
+    slug: "analytics-data-residency",
+    term: "Analytics Data Residency",
+    shortDefinition:
+      "The geographic location where analytics data is processed and stored. Under GDPR, data residency determines which legal frameworks apply and whether cross-border data transfer mechanisms (like SCCs) are required.",
+    category: "Privacy",
+  },
 ];

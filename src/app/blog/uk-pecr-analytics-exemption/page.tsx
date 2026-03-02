@@ -50,7 +50,9 @@ export default function UkPecrPage() {
           </p>
 
           <p>
-            Previously, UK law required consent for virtually all cookies,
+            Previously, UK law required{" "}
+            <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent</Link>{" "}
+            for virtually all cookies,
             with narrow exceptions for strictly necessary functionality.
             Analytics did not qualify. That meant every UK website needed a
             consent banner to run analytics — and every rejection meant lost
@@ -158,13 +160,14 @@ export default function UkPecrPage() {
 
           <p>
             Cookie banners remain necessary if you use other tools that
-            require consent (GA4, advertising pixels, etc.). But for
-            analytics alone, the exemption is clear. Learn more about{" "}
+            require consent (GA4, advertising pixels, etc.). But for{" "}
+            <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>{" "}
+            alone, the exemption is clear. Learn more about{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              how cookieless analytics works
+              how it works
             </Link>
             .
           </p>

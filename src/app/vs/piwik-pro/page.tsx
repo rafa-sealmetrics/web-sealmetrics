@@ -8,7 +8,7 @@ import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics vs Piwik PRO — Detailed Comparison",
   description:
-    "SealMetrics vs Piwik PRO: cookieless 100% data capture vs cookie-based ~40%. EU analytics from €199/mo vs €30,000+/yr. Privacy, features, and pricing compared.",
+    "SealMetrics vs Piwik PRO: cookieless 100% data capture vs cookie-based ~40%. EU analytics from €199/mo vs €30,000+/yr. Full comparison.",
   openGraph: {
     title: "SealMetrics vs Piwik PRO — Detailed Comparison",
     description:
@@ -226,7 +226,8 @@ export default function VsPiwikProPage() {
               Piwik PRO and SealMetrics share a commitment to privacy and EU
               data sovereignty. The fundamental difference is architectural:
               Piwik PRO improved the cookie-based model with better privacy
-              controls. SealMetrics eliminated cookies entirely.
+              controls. SealMetrics{" "}
+              <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">eliminated cookies entirely</Link>.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               In a world where consent rates average 30&ndash;40% in the EU,

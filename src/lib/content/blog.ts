@@ -111,4 +111,44 @@ export const blogPosts: BlogPost[] = [
     category: "Attribution",
     readTime: "7 min",
   },
+  {
+    slug: "what-is-cookieless-tracking",
+    title:
+      "What Is Cookieless Tracking? A Complete Guide for 2026",
+    description:
+      "Cookieless tracking captures visitor behavior without browser cookies. Learn how it works, why it matters for GDPR compliance, and how it compares to traditional analytics.",
+    date: "2026-03-02",
+    category: "Technology",
+    readTime: "8 min",
+  },
+  {
+    slug: "what-is-data-loss-in-analytics",
+    title:
+      "What Is Data Loss in Analytics? Causes, Impact, and Solutions",
+    description:
+      "Analytics data loss is the gap between real traffic and reported traffic. Learn the four causes, quantify the impact, and understand how to eliminate it.",
+    date: "2026-03-02",
+    category: "Data Quality",
+    readTime: "7 min",
+  },
+  {
+    slug: "ga4-alternatives-enterprise",
+    title:
+      "GA4 Alternatives for Enterprise: A 2026 Comparison",
+    description:
+      "GA4 works for small sites. Enterprise needs more. Compare GA360, Adobe Analytics, Piwik PRO, and SealMetrics on data capture, compliance, and cost.",
+    date: "2026-03-02",
+    category: "Comparisons",
+    readTime: "8 min",
+  },
+  {
+    slug: "gdpr-analytics-without-consent",
+    title:
+      "GDPR-Compliant Analytics Without Consent Banners: How It Works",
+    description:
+      "Consent banners are not always required for analytics. Learn the legal basis, technical requirements, and which analytics tools qualify under GDPR and ePrivacy.",
+    date: "2026-03-02",
+    category: "Regulation",
+    readTime: "7 min",
+  },
 ];

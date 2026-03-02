@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics for Education — Complete Enrollment Attribution",
   description:
-    "Prospective students research for months before enrolling. Cookie-based analytics loses the journey. SealMetrics captures every visit — cookieless, GDPR compliant, 100% complete.",
+    "Students research for months before enrolling. Cookie-based analytics loses the journey. SealMetrics captures every visit — cookieless, GDPR compliant.",
   openGraph: {
     title: "SealMetrics for Education",
     description:
@@ -42,6 +42,9 @@ export default function ForEducationPage() {
                 attribution
               </Link>{" "}
               captures fragments of a journey that determines your next intake.
+              SealMetrics provides{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete enrollment attribution</Link>{" "}
+              across every touchpoint.
             </p>
           </div>
         </div>

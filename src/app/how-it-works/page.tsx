@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "How It Works — SealMetrics",
@@ -19,11 +19,43 @@ export const metadata: Metadata = {
   },
 };
 
+const howItWorksFaqs = [
+  {
+    q: "How does cookieless tracking work without identifying users?",
+    a: "SealMetrics uses first-party server-side collection to capture behavioral data (pages visited, referrer, browser type, session duration) without storing anything on the visitor's device. No cookies, no localStorage, no fingerprints. Sessions are reconstructed server-side without personal identifiers.",
+  },
+  {
+    q: "Is SealMetrics affected by ad blockers?",
+    a: "No. SealMetrics operates as first-party infrastructure on your own domain. Ad blockers target third-party analytics requests (like those to google-analytics.com). Because SealMetrics data flows through your domain, it is invisible to ad blockers.",
+  },
+  {
+    q: "How long does setup take?",
+    a: "5 minutes. Add one JavaScript tag to your website — either directly in the HTML or via Google Tag Manager. No consent mode configuration, no cookie banner integration, and no Tag Manager variables to set up.",
+  },
+  {
+    q: "Do I need to modify my consent banner?",
+    a: "No. SealMetrics does not require consent under GDPR or ePrivacy because it uses no cookies and collects no personal data. If you already have a consent banner for other tools (like GA4 or advertising pixels), SealMetrics operates independently of it.",
+  },
+  {
+    q: "Where is data processed and stored?",
+    a: "All data is processed and stored exclusively on EU servers. No data transfers outside the EU, no sub-processors in third countries, no reliance on Standard Contractual Clauses or other cross-border transfer mechanisms.",
+  },
+  {
+    q: "Does SealMetrics use fingerprinting?",
+    a: "No. SealMetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent.",
+  },
+  {
+    q: "What happens if I exceed my event limit?",
+    a: "We never block your tracking. At 80% of your event limit you receive an email alert, at 100% a dashboard notification, and at 120% we contact you to discuss upgrading. No data is lost during any overage period.",
+  },
+];
+
 export default function HowItWorksPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "How It Works" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "How It Works", url: "/how-it-works" }])} />
+      <JsonLd data={faqSchema(howItWorksFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -271,8 +303,32 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {howItWorksFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
+      <section className="py-28 bg-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             See it with your own data.

@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "We Published Our CNIL Self-Assessment — SealMetrics",
+  title: "We Published Our CNIL Self-Assessment",
   description:
     "The French CNIL allows certain analytics tools to operate without cookie banners. We documented how SealMetrics meets all 14 technical criteria.",
   openGraph: {
@@ -44,7 +44,9 @@ export default function CnilAssessmentPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             If you operate a website in France, you know the challenge: the
-            French data protection authority (CNIL) allows certain audience
+            French data protection authority (CNIL) allows certain{" "}
+            <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>{" "}
+            audience
             measurement tools to operate without cookie banners — but only if
             they meet strict technical and operational criteria. Rather than
             simply claiming compliance, we published a comprehensive
@@ -109,7 +111,9 @@ export default function CnilAssessmentPage() {
           </p>
 
           <p>
-            The approach mirrors what we did for the{" "}
+            The approach mirrors what we did for{" "}
+            <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link>{" "}
+            documentation and the{" "}
             <Link
               href="/blog/uk-pecr-analytics-exemption"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

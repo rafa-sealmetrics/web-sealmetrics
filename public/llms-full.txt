@@ -103,6 +103,30 @@ LENS is SealMetrics' AI supervision engine. It continuously monitors your analyt
 **What is AI Agent Analytics?**
 AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity, Google AI Overviews, and others — as a distinct channel alongside human traffic. This is included free in all plans. Most analytics tools cannot distinguish AI agent traffic from human traffic.
 
+**What data does SealMetrics capture?**
+Pageviews, sessions, referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions, and ecommerce transactions — from 100% of visitors with no sampling.
+
+**How does multi-touch attribution work without cookies?**
+SealMetrics reconstructs visitor journeys using first-party server-side session data. Because 100% of touchpoints are captured, multi-touch attribution models produce accurate results — unlike cookie-based tools where 87% of touchpoints are missing.
+
+**Does SealMetrics track ecommerce transactions?**
+Yes. Product views, add-to-cart events, checkout steps, and purchases with full revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic ecommerce tracking.
+
+**Does SealMetrics use fingerprinting?**
+No. SealMetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. Fingerprinting creates personal data and would require consent.
+
+**Is SealMetrics GDPR compliant?**
+Yes, by architecture. SealMetrics does not collect personal data — no IP addresses, no device fingerprints, no user identifiers. The data processed does not constitute personal data under GDPR Article 4(1).
+
+**Does SealMetrics transfer data outside the EU?**
+No. All data is processed and stored exclusively on EU servers. No sub-processors in third countries, no US-based infrastructure.
+
+**What happens if I exceed my event limit?**
+Tracking is never blocked. At 80% you get an email alert, at 100% a dashboard notification, at 120% we contact you to discuss upgrading. No data is lost.
+
+**Is there a Data Processing Agreement?**
+Yes. A DPA is available for all clients, documenting data processing practices, security measures, and sub-processor list.
+
 ## All pages
 
 ### Core pages
@@ -127,26 +151,51 @@ AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity
 - https://sealmetrics.com/for/cto — For Chief Technology Officers
 - https://sealmetrics.com/for/dpo — For Data Protection Officers
 
+### Industry-specific pages
+- https://sealmetrics.com/for/ecommerce — Analytics for Ecommerce
+- https://sealmetrics.com/for/hotels — Analytics for Hotels & Hospitality
+- https://sealmetrics.com/for/agencies — Analytics for Marketing Agencies
+- https://sealmetrics.com/for/saas — Analytics for SaaS
+- https://sealmetrics.com/for/media — Analytics for Media & Publishing
+- https://sealmetrics.com/for/finance — Analytics for Financial Services
+- https://sealmetrics.com/for/education — Analytics for Education
+- https://sealmetrics.com/for/healthcare — Analytics for Healthcare
+
 ### Blog
 - https://sealmetrics.com/blog — Blog index
-- https://sealmetrics.com/blog/ga4-data-sampling-problem — GA4 Data Sampling
+- https://sealmetrics.com/blog/what-is-cookieless-tracking — What Is Cookieless Tracking? Complete Guide
+- https://sealmetrics.com/blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics?
+- https://sealmetrics.com/blog/ga4-alternatives-enterprise — GA4 Alternatives for Enterprise (2026)
+- https://sealmetrics.com/blog/gdpr-analytics-without-consent — GDPR Analytics Without Consent Banners
+- https://sealmetrics.com/blog/analytics-scripts-costing-you-sales — Analytics Scripts Costing You Sales
+- https://sealmetrics.com/blog/we-measured-every-analytics-script — We Measured Every Analytics Script
+- https://sealmetrics.com/blog/uk-pecr-analytics-exemption — UK PECR Analytics Exemption
+- https://sealmetrics.com/blog/ga4-data-sampling-problem — GA4 Data Sampling Problem
+- https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics — EU Digital Omnibus: Cookie Banners
+- https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026 — EU Digital Omnibus Marketer Guide
+- https://sealmetrics.com/blog/cnil-self-assessment-published — CNIL Self-Assessment Published
 - https://sealmetrics.com/blog/cookieless-analytics-explained — Cookieless Analytics Explained
 - https://sealmetrics.com/blog/consent-banner-impact-on-analytics — Consent Banner Impact
 - https://sealmetrics.com/blog/ai-agent-traffic-analytics — AI Agent Traffic Analytics
 - https://sealmetrics.com/blog/multi-touch-attribution-complete-data — Multi-Touch Attribution
 
 ### Glossary
-- https://sealmetrics.com/glossary — Analytics Glossary
-- https://sealmetrics.com/glossary/cookieless-analytics
-- https://sealmetrics.com/glossary/data-sampling
-- https://sealmetrics.com/glossary/first-party-data-collection
-- https://sealmetrics.com/glossary/consent-management-platform
-- https://sealmetrics.com/glossary/multi-touch-attribution
-- https://sealmetrics.com/glossary/server-side-tracking
-- https://sealmetrics.com/glossary/intelligent-tracking-prevention
-- https://sealmetrics.com/glossary/data-loss-in-analytics
-- https://sealmetrics.com/glossary/revenue-attribution
-- https://sealmetrics.com/glossary/gdpr-analytics-compliance
+- https://sealmetrics.com/glossary — Analytics Glossary (15 terms)
+- https://sealmetrics.com/glossary/cookieless-analytics — Cookieless Analytics
+- https://sealmetrics.com/glossary/data-sampling — Data Sampling
+- https://sealmetrics.com/glossary/first-party-data-collection — First-Party Data Collection
+- https://sealmetrics.com/glossary/consent-management-platform — Consent Management Platform
+- https://sealmetrics.com/glossary/multi-touch-attribution — Multi-Touch Attribution
+- https://sealmetrics.com/glossary/server-side-tracking — Server-Side Tracking
+- https://sealmetrics.com/glossary/intelligent-tracking-prevention — Intelligent Tracking Prevention
+- https://sealmetrics.com/glossary/data-loss-in-analytics — Data Loss in Analytics
+- https://sealmetrics.com/glossary/revenue-attribution — Revenue Attribution
+- https://sealmetrics.com/glossary/gdpr-analytics-compliance — GDPR Analytics Compliance
+- https://sealmetrics.com/glossary/ad-blocker-analytics-impact — Ad Blocker Impact on Analytics
+- https://sealmetrics.com/glossary/bounce-rate — Bounce Rate
+- https://sealmetrics.com/glossary/attribution-model — Attribution Model
+- https://sealmetrics.com/glossary/event-tracking — Event Tracking
+- https://sealmetrics.com/glossary/analytics-data-residency — Analytics Data Residency
 
 ### Other
 - https://sealmetrics.com/changelog — Product updates

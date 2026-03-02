@@ -37,7 +37,8 @@ export default function ForCMOPage() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               GA4 captures roughly 13% of EU traffic. Your attribution models,
               campaign decisions, and revenue reports are built on that fraction.
-              SealMetrics captures 100%.
+              SealMetrics{" "}
+              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">captures 100% with complete attribution and AI-powered anomaly detection</Link>.
             </p>
           </div>
         </div>

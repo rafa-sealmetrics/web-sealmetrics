@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Security & Compliance — SealMetrics",
@@ -103,11 +103,43 @@ const trust = [
   },
 ];
 
+const securityFaqs = [
+  {
+    q: "Does SealMetrics require a consent banner?",
+    a: "No. SealMetrics does not use cookies, localStorage, or any form of device storage, and it collects no personal data (no IP addresses, no device IDs, no user identifiers). Under GDPR and the ePrivacy Directive, consent is only required when personal data is collected or information is stored on the user's device. SealMetrics does neither.",
+  },
+  {
+    q: "Is SealMetrics GDPR compliant?",
+    a: "Yes, by architecture. GDPR applies to the processing of personal data. SealMetrics does not collect personal data — no IP addresses, no device fingerprints, no user identifiers. The data SealMetrics processes (page URLs, referrers, browser type, screen size, session behavior) does not constitute personal data under GDPR Article 4(1).",
+  },
+  {
+    q: "Does SealMetrics transfer data outside the EU?",
+    a: "No. All data is processed and stored exclusively on EU servers. There are no sub-processors in third countries, no US-based cloud infrastructure, and no reliance on Standard Contractual Clauses, adequacy decisions, or other cross-border transfer mechanisms.",
+  },
+  {
+    q: "What personal data does SealMetrics collect?",
+    a: "None. SealMetrics collects page URLs, referrer URLs, browser type, operating system, screen resolution, language, session duration, and scroll depth. It does not collect IP addresses, device fingerprints, user IDs, email addresses, or any data that could identify an individual.",
+  },
+  {
+    q: "How does SealMetrics comply with the ePrivacy Directive?",
+    a: "Article 5(3) of the ePrivacy Directive requires consent for storing or accessing information on a user's device. SealMetrics does not store anything on the user's device — no cookies, no localStorage, no fingerprints. This means the ePrivacy consent requirement does not apply.",
+  },
+  {
+    q: "Can my DPO verify compliance?",
+    a: "Yes. We provide a Data Processing Agreement (DPA), detailed technical documentation of our data collection methods, a list of all data points collected, and our infrastructure architecture. We also publish self-assessments against CNIL and UK PECR criteria.",
+  },
+  {
+    q: "Is there a Data Processing Agreement?",
+    a: "Yes. A DPA is available for all clients, even though SealMetrics analytics data does not contain personal data. Many organizations require a DPA as part of their internal governance, and we provide one that documents our data processing practices, security measures, and sub-processor list.",
+  },
+];
+
 export default function SecurityPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Security" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Security", url: "/security" }])} />
+      <JsonLd data={faqSchema(securityFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -241,8 +273,32 @@ export default function SecurityPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {securityFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-28 bg-white text-center border-t border-warm-100">
+      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             Questions about compliance?

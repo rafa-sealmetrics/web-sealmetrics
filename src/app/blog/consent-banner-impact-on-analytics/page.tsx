@@ -45,8 +45,9 @@ export default function ConsentBannerImpactPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             Since GDPR enforcement began in 2018, every European website that
-            uses cookies must ask for consent before tracking. The intent was to
-            protect user privacy. The side effect was to make web analytics
+            uses cookies must ask for consent before tracking. The{" "}
+            <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link>{" "}
+            was meant to protect user privacy. The side effect was to make web analytics
             deeply unreliable.
           </p>
 
@@ -126,7 +127,7 @@ export default function ConsentBannerImpactPage() {
           <p>
             When 35% of visitors are invisible to your analytics, your{" "}
             <Link
-              href="/blog/multi-touch-attribution-complete-data"
+              href="/glossary/multi-touch-attribution"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               attribution model

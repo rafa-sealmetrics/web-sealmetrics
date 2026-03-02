@@ -41,7 +41,8 @@ export default function ForFinancePage() {
                 GDPR compliance
               </Link>{" "}
               is impeccable, but your analytics shows a fraction of reality.
-              SealMetrics captures 100% without compromising compliance.
+              SealMetrics captures 100% without compromising compliance — built on{" "}
+              <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">EU-only infrastructure with privacy-first architecture</Link>.
             </p>
           </div>
         </div>

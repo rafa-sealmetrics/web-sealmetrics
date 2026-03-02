@@ -45,11 +45,12 @@ export default function ServerSideTrackingPage() {
           <div className="space-y-3">
             <Link href="/glossary/first-party-data-collection" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">First-Party Data Collection</Link>
             <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+            <Link href="/glossary/event-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Event Tracking</Link>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
           </p>
         </div>
       </div>
