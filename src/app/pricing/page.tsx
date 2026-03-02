@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PricingPlans } from "@/components/sections/PricingPlans";
+import { Logos } from "@/components/sections/Logos";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
@@ -234,6 +235,9 @@ export default function PricingPage() {
 
       {/* Plans with billing toggle */}
       <PricingPlans />
+
+      {/* Client logos — social proof */}
+      <Logos />
 
       {/* Every plan includes */}
       <section className="py-20 bg-warm-white border-t border-warm-100">

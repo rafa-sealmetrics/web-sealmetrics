@@ -8,6 +8,7 @@ const logos = [
   { name: "Palladium Hotel Group", src: "/logos/clients/palladium-dark.svg", width: 120, height: 36 },
   { name: "Casa Batlló", src: "/logos/clients/casabatllo.png", width: 110, height: 28 },
   { name: "Juguettos", src: "/logos/clients/juguettos.png", width: 110, height: 24 },
+  { name: "Fundaci\u00f3n Bankinter", src: "/logos/clients/fundacion-bankinter.png", width: 130, height: 36 },
 ];
 
 export function Logos() {
