@@ -131,6 +131,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sealmetrics.com/blog/ga4-data-sampling-problem</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

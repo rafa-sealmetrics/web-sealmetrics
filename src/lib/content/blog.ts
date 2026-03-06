@@ -32,6 +32,15 @@ export const blogPosts: BlogPost[] = [
     draft: true,
   },
   {
+    slug: "why-ga4-shows-13pct-eu-traffic",
+    title: "Why GA4 Shows 13% of Your EU Traffic",
+    description:
+      "GA4 loses data at three levels: consent rejection, ad blockers, and browser restrictions. The result is roughly 13% of real EU traffic. Here is the math.",
+    date: "2026-03-06",
+    category: "Data Quality",
+    readTime: "8 min",
+  },
+  {
     slug: "analytics-tools-http-requests",
     title:
       "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.",

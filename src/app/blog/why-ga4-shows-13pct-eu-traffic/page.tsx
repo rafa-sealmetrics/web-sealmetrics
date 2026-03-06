@@ -1,0 +1,343 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  title: "Why GA4 Shows 13% of Your EU Traffic",
+  description:
+    "GA4 loses data at three levels: consent rejection, ad blockers, and browser restrictions. The result is roughly 13% of real EU traffic. Here is the math.",
+  openGraph: {
+    title: "Why GA4 Shows 13% of Your EU Traffic",
+    description:
+      "GA4 loses EU traffic at three structural levels. Here is the cascade that leaves you with 13%.",
+    type: "article",
+  },
+  alternates: {
+    canonical:
+      "https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic",
+  },
+};
+
+export default function WhyGA4Shows13PctPage() {
+  return (
+    <>
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
+      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic" }])} />
+      <article className="pt-12 pb-28 bg-white">
+        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+
+        <header className="mb-12">
+          <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            Data Quality
+          </span>
+          <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
+            Why GA4 Shows 13% of Your EU Traffic
+          </h1>
+          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
+            <time className="font-mono">March 6, 2026</time>
+            <span>8 min read</span>
+          </div>
+        </header>
+
+        <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
+          <p>
+            Open GA4 right now and look at yesterday&rsquo;s sessions. The
+            number on your screen is not wrong, exactly. It is real data from
+            real visitors. The problem is what it leaves out: roughly 87% of
+            the people who actually visited your site.
+          </p>
+
+          <p>
+            This is not a bug. It is not a misconfiguration. It is the
+            structural result of how cookie-based analytics works in the
+            European Union in 2026. And understanding the math behind it is
+            the first step toward fixing it.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            Three layers of data loss
+          </h2>
+
+          <p>
+            GA4 does not lose your data in one place. It loses it in three
+            successive layers, each compounding on the last. The term for this
+            cumulative erosion is{" "}
+            <Link
+              href="/glossary/data-loss-in-analytics"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              data loss in analytics
+            </Link>
+            , and in the EU it follows a predictable cascade.
+          </p>
+
+          <p>
+            Start with 100 real visitors arriving at your site. By the time
+            GA4 has processed them, you are left with approximately 13. Here
+            is how each layer works.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            Layer 1: Consent rejection removes 35%
+          </h2>
+
+          <p>
+            Under GDPR and the ePrivacy Directive, any website using cookies
+            for analytics must obtain explicit user consent before firing
+            tracking scripts. The average consent rejection rate across EU
+            markets is approximately 35%. In Germany and the Netherlands, it
+            regularly exceeds 50%.
+          </p>
+
+          <p>
+            When a visitor clicks &ldquo;Reject&rdquo; on your cookie banner,
+            GA4 never loads. That visitor does not exist in your analytics. No
+            pageview, no session, no event. They are invisible.
+          </p>
+
+          <p>
+            The deeper problem is that{" "}
+            <Link
+              href="/blog/consent-banner-impact-on-analytics"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              consent rejection is not random
+            </Link>
+            . Privacy-conscious users tend to be more tech-savvy, often have
+            higher purchasing power, and are more likely to use premium
+            devices. Losing them introduces a systematic bias into your data.
+          </p>
+
+          <p>
+            After this first layer: 100 visitors become approximately 65.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            Layer 2: Ad blockers remove another 40%
+          </h2>
+
+          <p>
+            Of the 65 visitors who accepted cookies, roughly 40% are running
+            browser extensions that block analytics scripts. uBlock Origin,
+            AdBlock Plus, Brave&rsquo;s built-in shields, and dozens of
+            similar tools all target gtag.js and the Google Analytics
+            collection endpoint.
+          </p>
+
+          <p>
+            Unlike consent rejection, ad blocking is silent. The visitor
+            accepted your cookie banner, they are browsing your site, they
+            may even be converting &mdash; but GA4 never fires because the
+            script was blocked before it could load.
+          </p>
+
+          <p>
+            Ad blocker adoption varies by market but continues to climb
+            year-over-year. In technical audiences &mdash; software, SaaS,
+            developer tools &mdash; the rate can exceed 60%.
+          </p>
+
+          <p>
+            After this second layer: 65 visitors become approximately 39.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            Layer 3: Browser restrictions erode the rest
+          </h2>
+
+          <p>
+            Safari&rsquo;s{" "}
+            <Link
+              href="/glossary/intelligent-tracking-prevention"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              Intelligent Tracking Prevention
+            </Link>{" "}
+            (ITP) caps third-party cookies at 7 days and client-side
+            first-party cookies at 24 hours in many scenarios.
+            Firefox&rsquo;s Enhanced Tracking Protection (ETP) applies similar
+            restrictions. These browsers together account for approximately
+            35% of EU web traffic.
+          </p>
+
+          <p>
+            The effect is subtle but significant: returning visitors appear as
+            new visitors because their identifier expired. Sessions fragment.
+            Attribution chains break. A customer who visited your site five
+            times over two weeks looks like five different people in GA4.
+          </p>
+
+          <p>
+            This does not eliminate visitors from your count entirely, but it
+            distorts session data, inflates new-user metrics, and destroys
+            multi-session attribution. Combined with the visitors already lost
+            to consent and ad blockers, the remaining accurate data drops to
+            roughly 13% of actual traffic.
+          </p>
+
+          <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-8">
+            <p className="text-[0.85rem] font-medium text-text-primary mb-4 uppercase tracking-[0.06em]">
+              The cascade
+            </p>
+            <div className="space-y-3 font-mono text-[0.9rem]">
+              <div className="flex justify-between">
+                <span className="text-text-secondary">Real visitors</span>
+                <span className="text-text-primary font-medium">100</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-text-secondary">After consent rejection (&#8722;35%)</span>
+                <span className="text-text-primary font-medium">65</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-text-secondary">After ad blockers (&#8722;40%)</span>
+                <span className="text-text-primary font-medium">39</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-text-secondary">After browser restrictions</span>
+                <span className="text-red-alert font-medium">~13 accurate</span>
+              </div>
+            </div>
+            <p className="text-[0.8rem] text-text-tertiary mt-4">
+              Approximate figures based on EU averages. Actual rates vary by
+              market, audience, and consent banner design.
+            </p>
+          </div>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            Why this is not solvable inside GA4
+          </h2>
+
+          <p>
+            Google&rsquo;s answer to consent-based data loss is Consent Mode
+            v2. When a visitor rejects cookies, Consent Mode sends
+            &ldquo;cookieless pings&rdquo; to Google, which then uses machine
+            learning to model the missing data and fill in the gaps.
+          </p>
+
+          <p>
+            This sounds promising until you examine what it actually produces.
+            Consent Mode does not measure the visitors who rejected cookies.
+            It estimates what those visitors probably did based on the
+            behavior of visitors who accepted. The resulting numbers are
+            modeled data, not measurement.
+          </p>
+
+          <p>
+            Modeled data is acceptable for high-level trends. It is not
+            acceptable for campaign-level attribution, conversion path
+            analysis, or revenue decisions. When Google tells you that
+            &ldquo;estimated conversions&rdquo; from a campaign are 47, that
+            number is a statistical projection, not a count of real events.
+          </p>
+
+          <p>
+            And Consent Mode does nothing about ad blockers or browser
+            restrictions. If gtag.js never loads, no ping is sent &mdash;
+            modeled or otherwise.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            What complete data looks like
+          </h2>
+
+          <p>
+            The alternative is analytics that does not depend on cookies,
+            does not load client-side scripts that can be blocked, and does
+            not require consent for basic measurement.
+          </p>
+
+          <p>
+            SealMetrics uses a{" "}
+            <Link
+              href="/glossary/cookieless-analytics"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              cookieless
+            </Link>
+            , server-side approach. A lightweight first-party script (under
+            1 KB) collects events through your own domain. No cookies are
+            set. No third-party requests are made. Because the data
+            collection method does not fall under cookie consent requirements,
+            it captures 100% of traffic &mdash; including the 87% that GA4
+            misses.
+          </p>
+
+          <p>
+            You can{" "}
+            <Link
+              href="/how-it-works"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              see how the architecture works
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/data-loss-calculator"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              calculate your own data loss
+            </Link>{" "}
+            based on your market and consent rates.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            Is this unique to GA4?
+          </h2>
+
+          <p>
+            To be fair: no. Any cookie-based analytics tool &mdash; Adobe
+            Analytics, Piwik PRO in its default configuration, Matomo with
+            cookies enabled &mdash; faces the same three-layer problem. GA4
+            is not uniquely bad. It is the most widely used tool that
+            demonstrates a structural limitation shared by the entire
+            category.
+          </p>
+
+          <p>
+            The{" "}
+            <Link
+              href="/vs-ga4"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              detailed comparison between SealMetrics and GA4
+            </Link>{" "}
+            covers pricing, data ownership, and compliance alongside data
+            completeness. The 13% figure is the starting point, but it is
+            not the only difference.
+          </p>
+        </div>
+
+        {/* Related */}
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">
+            Related articles
+          </h3>
+          <div className="space-y-3">
+            <Link
+              href="/blog/consent-banner-impact-on-analytics"
+              className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+            >
+              How Consent Banners Destroy Your Analytics Data
+            </Link>
+            <Link
+              href="/blog/ga4-data-sampling-problem"
+              className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+            >
+              GA4 Data Sampling: Why Your Traffic Numbers Are Wrong
+            </Link>
+            <Link
+              href="/blog/cookieless-analytics-explained"
+              className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+            >
+              Cookieless Analytics Explained: How to Measure Without Cookies
+            </Link>
+          </div>
+        </div>
+      </div>
+    </article>
+    </>
+  );
+}
