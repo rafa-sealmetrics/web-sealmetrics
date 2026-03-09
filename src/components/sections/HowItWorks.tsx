@@ -16,7 +16,7 @@ const steps = [
   {
     number: "03",
     title: "Decision-ready intelligence",
-    desc: "Nine specialized reports, LENS AI anomaly detection with 60+ rules, multi-touch revenue attribution, and AI agent tracking — all built on complete data. Ask questions in natural language, get answers grounded in reality.",
+    desc: "Nine specialized reports, LENS AI anomaly detection with 60+ rules, and multi-touch revenue attribution — all built on complete data. Ask questions in natural language, get answers grounded in reality. AI agent tracking coming soon.",
     detail: "9 report types\n60+ anomaly rules\nLENS AI supervision",
   },
 ];

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const everyPlanIncludes = [
   "Unlimited websites",
   "Unlimited users",
-  "Agent Analytics (AI detection)",
+  "Agent Analytics (AI detection) — Coming Soon",
   "LENS AI (forecasting & anomalies)",
   "Conversion Properties",
   "24 months data retention",
@@ -78,12 +78,12 @@ const comparisonData: ComparisonSection[] = [
     ],
   },
   {
-    category: "Agent Analytics",
+    category: "Agent Analytics (Coming Soon)",
     rows: [
-      { feature: "AI Agent Detection", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Agent Scoring (300+ signals)", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "HTTP Signatures (RFC 9421)", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Provider Detection (OpenAI, Anthropic, etc.)", starter: true, growth: true, scale: true, enterprise: true },
+      { feature: "AI Agent Detection", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Agent Scoring (300+ signals)", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "HTTP Signatures (RFC 9421)", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Provider Detection (OpenAI, Anthropic, etc.)", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
     ],
   },
   {
@@ -151,7 +151,7 @@ const comparisonData: ComparisonSection[] = [
     category: "Infrastructure",
     rows: [
       { feature: "Human Events / month", starter: "1M", growth: "5M", scale: "15M", enterprise: "Unlimited" },
-      { feature: "AI Agents", starter: "Unlimited (free)", growth: "Unlimited (free)", scale: "Unlimited (free)", enterprise: "Unlimited (free)" },
+      { feature: "AI Agents", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
       { feature: "Websites", starter: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
       { feature: "Users", starter: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
       { feature: "Data Retention", starter: "24 months", growth: "24 months", scale: "24 months", enterprise: "Custom" },
@@ -218,7 +218,7 @@ export default function PricingPage() {
             Pay for humans. Not bots. Not consent banners. Not guesswork.
           </h1>
           <p className="text-[1.15rem] leading-[1.75] text-text-secondary max-w-[640px] mx-auto mb-2">
-            AI agent traffic is tracked but never billed.
+            AI agent traffic tracking coming soon.
             <br />
             All features included in every plan.
           </p>
@@ -263,7 +263,7 @@ export default function PricingPage() {
             </span>
           </div>
           <p className="text-[0.8rem] text-text-tertiary mt-8">
-            AI agents (ChatGPT, Claude, Perplexity) are tracked for insights but never count against your event limit.
+            AI agent tracking (ChatGPT, Claude, Perplexity) coming soon. Will not count against your event limit.
           </p>
         </div>
       </section>
@@ -406,8 +406,8 @@ export default function PricingPage() {
                     <span className="text-[0.9rem] font-medium text-text-primary">
                       AI Agents
                     </span>{" "}
-                    <span className="text-[0.8rem] text-text-tertiary">
-                      (ChatGPT, Claude, etc.)
+                    <span className="inline-block px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-text-tertiary border border-warm-200 rounded-[2px]">
+                      Coming Soon
                     </span>
                   </td>
                   <td className="py-3.5 px-4 text-center text-green-muted">

@@ -24,7 +24,7 @@ const entries = [
     updates: [
       {
         title: "Agent Analytics: AI traffic identification",
-        type: "New",
+        type: "Coming Soon",
         desc: "Identify and track visits from GPT, Claude, Perplexity, and Google AI Overviews as distinct sessions. See which pages AI agents visit, how long they stay, and whether AI-referred visitors convert.",
       },
       {

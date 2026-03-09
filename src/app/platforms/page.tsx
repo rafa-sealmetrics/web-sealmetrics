@@ -175,12 +175,12 @@ export default function PlatformsPage() {
           </div>
           <div className="max-w-[700px] mx-auto bg-warm-900 rounded-[4px] p-6 overflow-x-auto">
             <pre className="text-[0.8rem] leading-relaxed text-warm-300 font-mono whitespace-pre-wrap break-all">
-              <code>{`<script async src="https://your-domain.sealmetrics.com/sm.js"></script>`}</code>
+              <code>{`<script async src="https://t.sealmetrics.com/t.js?siteid=yoursite"></script>`}</code>
             </pre>
           </div>
           <p className="text-center text-[0.8rem] text-text-tertiary mt-4">
-            Replace <span className="font-mono">your-domain</span> with your
-            SealMetrics subdomain. You get this when you sign up.
+            Replace <span className="font-mono">yoursite</span> with your
+            site ID. You get this when you sign up.
           </p>
         </div>
       </section>

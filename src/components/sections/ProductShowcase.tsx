@@ -212,7 +212,10 @@ export function ProductShowcase() {
               Agent Analytics
             </span>
             <h3 className="headline-sub mb-4">
-              See what AI agents do on your site.
+              See what AI agents do on your site.{" "}
+              <span className="inline-block px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-text-tertiary border border-warm-200 rounded-[2px] align-middle">
+                Coming Soon
+              </span>
             </h3>
             <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
               ChatGPT, Claude, Perplexity, and other AI agents are already

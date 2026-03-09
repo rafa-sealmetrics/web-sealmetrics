@@ -437,8 +437,8 @@ export default function ProductPage() {
                 </div>
               ))}
               <div className="mt-4 pt-4 border-t border-warm-100">
-                <div className="text-[0.75rem] text-green-muted font-medium">
-                  Included free and unlimited on every plan
+                <div className="text-[0.75rem] text-text-tertiary font-medium">
+                  Coming Soon
                 </div>
               </div>
             </div>
@@ -447,7 +447,10 @@ export default function ProductPage() {
                 Agent Analytics
               </span>
               <h2 className="headline-section mb-5">
-                See what AI agents do on your site.
+                See what AI agents do on your site.{" "}
+                <span className="inline-block px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-text-tertiary border border-warm-200 rounded-[2px] align-middle">
+                  Coming Soon
+                </span>
               </h2>
               <p className="text-[1rem] leading-[1.7] text-text-secondary mb-6">
                 ChatGPT, Claude, Perplexity, and other AI agents are already

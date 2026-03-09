@@ -46,7 +46,7 @@ const comparisonRows = [
   { feature: "Ad blocker resistance", sm: "First-party infrastructure", ga: "Partially mitigated with server-side GTM", category: "Data Capture" },
   { feature: "Data sampling", sm: "Never — full resolution at any volume", ga: "Unsampled reports available (quota-limited)", category: "Data Capture" },
   { feature: "Data freshness", sm: "Real-time", ga: "4-8 hour processing, real-time limited", category: "Data Capture" },
-  { feature: "AI agent tracking", sm: "Built-in, free", ga: "Not available", category: "Data Capture" },
+  { feature: "AI agent tracking (Coming Soon)", sm: "Built-in", ga: "Not available", category: "Data Capture" },
   { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", ga: "Advanced (consent-dependent data)", category: "Intelligence" },
   { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", ga: "Custom alerts, basic anomaly detection", category: "Intelligence" },
   { feature: "Natural language queries", sm: "Ask business questions, get answers", ga: "Limited to Explore interface", category: "Intelligence" },
@@ -219,7 +219,7 @@ export default function VsGA360Page() {
                   "GDPR compliance must be architectural, not configured",
                   "Your data must stay in the EU exclusively",
                   "You want AI-powered anomaly detection included, not add-on",
-                  "You need to track AI agent traffic alongside human analytics",
+                  "You need to track AI agent traffic alongside human analytics (Coming Soon)",
                 ].map((item) => (
                   <li
                     key={item}
@@ -257,7 +257,7 @@ export default function VsGA360Page() {
               <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance by design</Link>&nbsp;&mdash; at
               1/60th of the cost. With capabilities GA360 does not offer:{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
-              collection</Link>, AI agent tracking, and privacy compliance
+              collection</Link>, AI agent tracking (coming soon), and privacy compliance
               that requires no configuration.
             </p>
             <div className="flex items-center gap-5 flex-wrap">

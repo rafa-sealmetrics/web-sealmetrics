@@ -50,7 +50,7 @@ const comparisonRows = [
   { feature: "Ad blocker resistance", sm: "First-party infrastructure", ga: "Blocked by 40%+ of EU sessions", category: "Data Capture" },
   { feature: "Data sampling", sm: "Never — full resolution at any volume", ga: "Sampled above 500K sessions/day", category: "Data Capture" },
   { feature: "Data freshness", sm: "Real-time", ga: "24-48 hour processing delay", category: "Data Capture" },
-  { feature: "AI agent tracking", sm: "Built-in, free", ga: "Not available", category: "Data Capture" },
+  { feature: "AI agent tracking (Coming Soon)", sm: "Built-in", ga: "Not available", category: "Data Capture" },
   { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", ga: "Partial (consent-dependent, modeled)", category: "Intelligence" },
   { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", ga: "Basic automated insights", category: "Intelligence" },
   { feature: "Natural language queries", sm: "Ask business questions, get answers", ga: "Limited natural language", category: "Intelligence" },
@@ -222,7 +222,7 @@ export default function VsGA4Page() {
                   "You need GDPR compliance without ongoing configuration",
                   "Your data must stay in the EU — no exceptions",
                   "You want to see 100% of traffic, not a consent-dependent fraction",
-                  "You need AI agent tracking alongside human analytics",
+                  "You need AI agent tracking alongside human analytics (Coming Soon)",
                 ].map((item) => (
                   <li
                     key={item}
@@ -263,7 +263,7 @@ export default function VsGA4Page() {
               attribution</Link>&nbsp;&mdash; at a fraction of enterprise pricing. With
               capabilities that GA360 and Adobe do not offer:{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
-              collection</Link>, AI agent tracking, and{" "}
+              collection</Link>, AI agent tracking (coming soon), and{" "}
               <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance by design</Link>.
             </p>
             <div className="flex items-center gap-5 flex-wrap">

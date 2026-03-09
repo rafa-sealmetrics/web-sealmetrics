@@ -48,7 +48,7 @@ const plans = [
     desc: "SSO, dedicated support, custom SLA",
     monthlyPrice: "Custom",
     annualPrice: "Custom",
-    annualTotal: "From €3,000/mo",
+    annualTotal: "",
     annualSave: "",
     period: "Unlimited human events/mo",
     cta: "Contact Sales",
@@ -149,8 +149,11 @@ export function PricingPlans() {
                 <div className="text-[0.85rem] font-medium text-text-primary mb-1">
                   {plan.period}
                 </div>
-                <div className="text-[0.75rem] text-text-tertiary mb-8">
-                  AI agents: unlimited (free)
+                <div className="text-[0.75rem] text-text-tertiary mb-8 flex items-center gap-2">
+                  AI agents{" "}
+                  <span className="inline-block px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-text-tertiary border border-warm-200 rounded-[2px]">
+                    Coming Soon
+                  </span>
                 </div>
                 <Link
                   href={plan.href}

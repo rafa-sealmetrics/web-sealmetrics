@@ -102,7 +102,7 @@ export default function ForCMOPage() {
                 desc: "No more reconciling GA4, ad platform dashboards, and CRM exports. SealMetrics captures every session, every conversion, and every revenue event. The numbers match because the data is complete.",
               },
               {
-                title: "AI agent visibility",
+                title: "AI agent visibility (Coming Soon)",
                 desc: "GPT, Claude, Perplexity, and Google AI Overviews are sending traffic to your site. Traditional analytics classify these visits as direct or unknown. SealMetrics identifies them as distinct agent sessions.",
               },
             ].map((item) => (
