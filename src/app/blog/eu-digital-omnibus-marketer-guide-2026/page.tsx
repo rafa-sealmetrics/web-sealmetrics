@@ -23,7 +23,7 @@ export default function OmnibusGuidePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "EU Digital Omnibus Marketer Guide" }]} />
-      <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus Explained: What Every Marketer Needs to Know in 2026", description: "Cookie banners could vanish for 60% of websites. First-party analytics gets explicit legal authorization.", datePublished: "2026-02-12", url: "/blog/eu-digital-omnibus-marketer-guide-2026", category: "Regulation" })} />
+      <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus Explained: What Every Marketer Needs to Know in 2026", description: "Cookie banners could vanish for 60% of websites. First-party analytics gets explicit legal authorization.", datePublished: "2026-02-12", url: "/blog/eu-digital-omnibus-marketer-guide-2026", category: "Regulation", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus Marketer Guide" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,8 +38,22 @@ export default function OmnibusGuidePage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 12, 2026</time>
             <span>6 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>The Digital Omnibus consolidates 5+ EU data regulations into 2, with cookie banners potentially vanishing for ~60% of websites that use only first-party analytics.</li>
+            <li>Article 88a(3)(c) explicitly permits aggregated audience measurement by the website controller for its own use without consent — first-party analytics gets clear legal authorization.</li>
+            <li>Cookie implementation currently costs European businesses an estimated 820 million euros annually; projected savings by 2029 exceed 5 billion euros.</li>
+            <li>GA4 involves Google as a third party and may not qualify for the exemption — first-party, privacy-respecting solutions are better positioned.</li>
+            <li>The EDPB and EDPS support the analytics aggregation exemption, cookie consent reform, and the higher breach notification threshold in their Joint Opinion 2/2026.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
 
@@ -59,8 +73,8 @@ export default function OmnibusGuidePage() {
           </h2>
 
           <p>
-            On November 19, 2025, the European Commission released proposal
-            COM(2025) 837. It consolidates five separate data regulations into
+            On November 19, 2025, the European Commission released proposal{" "}
+            <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act-package_en" target="_blank" rel="noopener noreferrer">COM(2025) 837</a>. It consolidates five separate data regulations into
             just two, making it the most comprehensive overhaul of
             Europe&apos;s digital governance framework since{" "}
             <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR</Link>.
@@ -119,7 +133,7 @@ export default function OmnibusGuidePage() {
           </h3>
 
           <p>
-            Consent rules move from the ePrivacy Directive into GDPR with a
+            Consent rules move from the <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32002L0058" target="_blank" rel="noopener noreferrer">ePrivacy Directive</a> into <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> with a
             crucial modification: common use cases no longer require consent.
           </p>
 

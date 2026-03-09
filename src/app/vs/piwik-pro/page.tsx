@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Piwik PRO — Detailed Comparison",
@@ -19,6 +19,25 @@ export const metadata: Metadata = {
     canonical: "https://sealmetrics.com/vs/piwik-pro",
   },
 };
+
+const vsPiwikFaqs = [
+  {
+    q: "What is the main difference between SealMetrics and Piwik PRO?",
+    a: "Data capture. Piwik PRO uses cookies and requires consent, capturing ~40% of EU traffic. SealMetrics is fully cookieless, capturing 100% without consent dependency.",
+  },
+  {
+    q: "Is Piwik PRO more privacy-friendly than SealMetrics?",
+    a: "Both are EU-hosted and privacy-focused. The key difference: Piwik PRO uses first-party cookies (requiring consent under ePrivacy), while SealMetrics uses no cookies at all (no consent needed for basic analytics).",
+  },
+  {
+    q: "Does Piwik PRO have features SealMetrics doesn\u2019t?",
+    a: "Yes. Piwik PRO includes a built-in Tag Manager, Consent Manager, and Customer Data Platform. SealMetrics focuses on complete data capture, AI analytics, and revenue attribution.",
+  },
+  {
+    q: "Why is SealMetrics cheaper than Piwik PRO?",
+    a: "Piwik PRO Enterprise starts at \u20AC30,000+/yr. SealMetrics starts at \u20AC2,388/yr. The price difference reflects different market positioning \u2014 SealMetrics delivers enterprise-grade analytics without enterprise-grade pricing.",
+  },
+];
 
 const comparisonRows = [
   { feature: "EU data capture rate", sm: "100% of visitors", pp: "~40% average (consent-dependent)", category: "Data Capture" },
@@ -48,9 +67,10 @@ const comparisonRows = [
 export default function VsPiwikProPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Comparisons", href: "/vs-ga4" }, { label: "vs Piwik PRO" }]} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Piwik PRO", description: "Cookieless 100% data vs cookie-based ~40%. EU analytics compared.", url: "/vs/piwik-pro" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Comparisons", url: "/vs-ga4" }, { name: "vs Piwik PRO" }])} />
+      <Breadcrumbs items={[{ label: "vs Piwik PRO" }]} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Piwik PRO", description: "Cookieless 100% data vs cookie-based ~40%. EU analytics compared.", url: "/vs/piwik-pro", competitor: { name: "Piwik PRO", url: "https://piwik.pro" }, dateModified: "2026-03-09" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/vs/piwik-pro" }])} />
+      <JsonLd data={faqSchema(vsPiwikFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -64,8 +84,9 @@ export default function VsPiwikProPage() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               Two EU-focused, privacy-first analytics platforms with the same
               values&nbsp;&mdash; but fundamentally different architectures.
-              One improved the cookie model. The other eliminated it. Here is
-              what that means for your data.
+              One improved the cookie model. The other{" "}
+              <Link href="/blog/cookieless-analytics-explained" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">eliminated it entirely</Link>.
+              Here is what that means for your data.
             </p>
           </div>
         </div>
@@ -223,17 +244,20 @@ export default function VsPiwikProPage() {
               Same values, different architecture.
             </h2>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
-              Piwik PRO and SealMetrics share a commitment to privacy and EU
+              <a href="https://piwik.pro" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Piwik PRO</a>{" "}
+              and SealMetrics share a commitment to privacy and EU
               data sovereignty. The fundamental difference is architectural:
               Piwik PRO improved the cookie-based model with better privacy
               controls. SealMetrics{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">eliminated cookies entirely</Link>.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
-              In a world where consent rates average 30&ndash;40% in the EU,
+              In a world where{" "}
+              <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent rates average 30–40% in the EU</Link>,
               that architectural choice determines whether you see 40% or 100%
               of your data. Both platforms respect your users. Only one captures
-              all of them.
+              all of them. See{" "}
+              <Link href="/blog/gdpr-analytics-without-consent" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">how GDPR-compliant analytics works without consent</Link>.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link
@@ -278,6 +302,36 @@ export default function VsPiwikProPage() {
             >
               SealMetrics vs Adobe Analytics
             </Link>
+            <Link
+              href="/security"
+              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+            >
+              Security & Privacy
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {vsPiwikFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

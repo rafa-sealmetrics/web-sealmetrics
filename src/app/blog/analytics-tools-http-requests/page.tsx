@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "We counted every HTTP request, domain lookup, and byte transferred by 9 analytics tools. The results are revealing.",
     type: "article",
   },
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "https://sealmetrics.com/blog/analytics-tools-http-requests",
   },
@@ -23,7 +24,7 @@ export default function AnalyticsHttpRequestsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools HTTP Requests" }]} />
-      <JsonLd data={articleSchema({ headline: "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.", description: "We counted every HTTP request from 9 analytics tools on the same test page. GA4 makes 4 requests across 3 domains. SealMetrics makes 1.", datePublished: "2026-03-06", url: "/blog/analytics-tools-http-requests", category: "Performance" })} />
+      <JsonLd data={articleSchema({ headline: "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.", description: "We counted every HTTP request from 9 analytics tools on the same test page. GA4 makes 4 requests across 3 domains. SealMetrics makes 1.", datePublished: "2026-03-06", url: "/blog/analytics-tools-http-requests", category: "Performance", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools HTTP Requests" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,6 +39,7 @@ export default function AnalyticsHttpRequestsPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 6, 2026</time>
             <span>4 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
 

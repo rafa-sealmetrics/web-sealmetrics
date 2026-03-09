@@ -24,7 +24,7 @@ export default function MultiTouchAttributionPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Multi-Touch Attribution" }]} />
-      <JsonLd data={articleSchema({ headline: "Why Multi-Touch Attribution Fails Without Complete Data", description: "Attribution models need complete data to work.", datePublished: "2026-01-10", url: "/blog/multi-touch-attribution-complete-data", category: "Attribution" })} />
+      <JsonLd data={articleSchema({ headline: "Why Multi-Touch Attribution Fails Without Complete Data", description: "Attribution models need complete data to work.", datePublished: "2026-01-10", url: "/blog/multi-touch-attribution-complete-data", category: "Attribution", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Multi-Touch Attribution" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,8 +39,21 @@ export default function MultiTouchAttributionPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">January 10, 2026</time>
             <span>7 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Multi-touch attribution models see only 13% of touchpoints in EU traffic — the remaining 87% are lost to consent rejection, ad blockers, and browser restrictions.</li>
+            <li>Direct traffic is systematically inflated because it absorbs all untracked touchpoints, while top-of-funnel channels (organic, social, display) are undervalued because first touches are most likely to be lost.</li>
+            <li>GA4 data-driven attribution uses ML on a biased 13% sample — it learns patterns from cookie-accepting visitors and extrapolates to the full population, producing sophisticated but misleading results.</li>
+            <li>When cookieless analytics captures 100% of traffic, every touchpoint in every journey is visible, and attribution models distribute credit based on actual behavior rather than estimates.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -144,7 +157,7 @@ export default function MultiTouchAttributionPage() {
           </h2>
 
           <p>
-            GA4&rsquo;s data-driven attribution (DDA) uses machine learning to
+            <a href="https://support.google.com/analytics/answer/10596866" target="_blank" rel="noopener noreferrer">GA4&rsquo;s data-driven attribution</a> (DDA) uses machine learning to
             distribute credit across touchpoints. It is technically advanced, but
             it has a fundamental limitation: it can only learn from the data it
             has.

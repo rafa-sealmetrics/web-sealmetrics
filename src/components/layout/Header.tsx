@@ -126,6 +126,11 @@ const resourcesDropdown: NavDropdown = {
           desc: "Cookieless tracking explained",
         },
         {
+          href: "/platforms",
+          label: "Supported Platforms",
+          desc: "WordPress, Shopify, Wix & more",
+        },
+        {
           href: "/vs-ga4",
           label: "vs GA4",
           desc: "Side-by-side comparison",

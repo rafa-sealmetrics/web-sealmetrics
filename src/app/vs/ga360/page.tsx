@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs GA360 — Enterprise Analytics Comparison",
@@ -19,6 +19,25 @@ export const metadata: Metadata = {
     canonical: "https://sealmetrics.com/vs/ga360",
   },
 };
+
+const vsGa360Faqs = [
+  {
+    q: "Can SealMetrics really replace GA360?",
+    a: "For EU businesses focused on data completeness, yes. SealMetrics captures 100% of traffic vs ~35% for GA360. It includes multi-touch attribution, AI anomaly detection, and real-time processing \u2014 at 1/60th the cost.",
+  },
+  {
+    q: "Does SealMetrics have unsampled data like GA360?",
+    a: "Yes. SealMetrics never samples data at any traffic level. Every session is recorded individually. GA360 offers unsampled reports but with quota limits.",
+  },
+  {
+    q: "What about BigQuery integration?",
+    a: "SealMetrics supports data export to BigQuery and 25+ other platforms. GA360\u2019s native BigQuery export is a strength, but SealMetrics provides the same capability with complete underlying data.",
+  },
+  {
+    q: "Is SealMetrics suitable for large ecommerce operations?",
+    a: "Yes. The Enterprise plan handles custom event volumes with dedicated infrastructure. Built on ClickHouse for sub-second queries at any scale, with EU-only data residency guaranteed.",
+  },
+];
 
 const comparisonRows = [
   { feature: "EU data capture rate", sm: "100% of visitors", ga: "~35% average (consent tools help, still cookie-dependent)", category: "Data Capture" },
@@ -47,9 +66,10 @@ const comparisonRows = [
 export default function VsGA360Page() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Comparisons", href: "/vs-ga4" }, { label: "vs GA360" }]} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs GA360", description: "Enterprise analytics comparison: SealMetrics vs Google Analytics 360.", url: "/vs/ga360" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Comparisons", url: "/vs-ga4" }, { name: "vs GA360" }])} />
+      <Breadcrumbs items={[{ label: "vs GA360" }]} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs GA360", description: "Enterprise analytics comparison: SealMetrics vs Google Analytics 360.", url: "/vs/ga360", competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" }, dateModified: "2026-03-09" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs GA360", url: "/vs/ga360" }])} />
+      <JsonLd data={faqSchema(vsGa360Faqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -63,7 +83,8 @@ export default function VsGA360Page() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               GA360 is the enterprise tier of Google Analytics at
               $150,000+/yr. SealMetrics offers enterprise-grade analytics
-              from&nbsp;&euro;199/mo&nbsp;&mdash; with complete data capture
+              from&nbsp;&euro;199/mo&nbsp;&mdash; with{" "}
+              <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data capture</Link>{" "}
               that GA360 still cannot deliver in the EU.
             </p>
           </div>
@@ -222,15 +243,18 @@ export default function VsGA360Page() {
               Enterprise analytics shouldn&rsquo;t require enterprise budgets.
             </h2>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
-              GA360 is an excellent product if you can afford it and consent
+              <a href="https://marketingplatform.google.com/about/analytics-360/" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA360</a>{" "}
+              is an excellent product if you can afford it and consent
               isn&rsquo;t a concern. But at $150,000+/yr, it still misses 65% of
               EU visitors due to its fundamental cookie dependency. Better consent
               tools improve the numbers, but they don&rsquo;t solve the underlying
-              architecture problem.
+              architecture problem — as we explain in{" "}
+              <Link href="/blog/analytics-tools-data-sampling" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">our data sampling comparison</Link>.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               SealMetrics delivers complete data&nbsp;&mdash; 100% of visitors,
-              zero cookie dependency, GDPR compliance by design&nbsp;&mdash; at
+              zero cookie dependency,{" "}
+              <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance by design</Link>&nbsp;&mdash; at
               1/60th of the cost. With capabilities GA360 does not offer:{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
               collection</Link>, AI agent tracking, and privacy compliance
@@ -257,29 +281,59 @@ export default function VsGA360Page() {
       {/* Other comparisons */}
       <section className="py-16 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <p className="text-[0.8rem] text-text-tertiary">
-            Other comparisons:{" "}
+          <p className="text-[0.8rem] text-text-tertiary mb-4 font-medium uppercase tracking-[0.06em]">
+            Other comparisons
+          </p>
+          <div className="flex items-center gap-6 flex-wrap">
             <Link
               href="/vs-ga4"
-              className="text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
             >
               SealMetrics vs GA4
             </Link>
-            {" / "}
             <Link
               href="/vs/adobe-analytics"
-              className="text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
             >
               SealMetrics vs Adobe Analytics
             </Link>
-            {" / "}
             <Link
               href="/vs/piwik-pro"
-              className="text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
             >
               SealMetrics vs Piwik PRO
             </Link>
-          </p>
+            <Link
+              href="/security"
+              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+            >
+              Security & Privacy
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {vsGa360Faqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

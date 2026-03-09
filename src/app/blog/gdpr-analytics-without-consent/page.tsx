@@ -24,7 +24,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GDPR Analytics Without Consent" }]} />
-      <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", datePublished: "2026-03-02", url: "/blog/gdpr-analytics-without-consent", category: "Regulation" })} />
+      <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", datePublished: "2026-03-02", url: "/blog/gdpr-analytics-without-consent", category: "Regulation", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics Without Consent" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,14 +39,28 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 2, 2026</time>
             <span>7 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Consent-free analytics is legally possible under both GDPR (Article 6(1)(f) legitimate interest) and ePrivacy (Article 5(3) does not apply when nothing is stored on the user's device).</li>
+            <li>The CNIL has published specific criteria for consent-exempt analytics: anonymous statistical output only, no cross-site tracking, no advertising use, and IP anonymization at minimum.</li>
+            <li>Six technical requirements must all be met: no cookies, no localStorage, no fingerprinting, no personal data, first-party only, and EU data residency — any single failure invalidates the approach.</li>
+            <li>The EU Digital Omnibus would create a harmonized EU-wide framework explicitly authorizing first-party analytics without consent, replacing the current patchwork of national DPA interpretations.</li>
+            <li>SealMetrics was built from the ground up for consent-free operation — no cookies, no PII, EU-only infrastructure — satisfying CNIL, ePrivacy, and GDPR requirements simultaneously.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             The assumption that web analytics always requires a consent
             banner is widespread &mdash; and wrong. Under specific
-            conditions, both GDPR and the ePrivacy Directive allow
+            conditions, both <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> and the <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32002L0058" target="_blank" rel="noopener noreferrer">ePrivacy Directive</a> allow
             audience measurement without asking for consent. This is not
             a loophole. It is a deliberate carve-out that European
             regulators have clarified repeatedly since 2020.
@@ -131,7 +145,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           </h2>
 
           <p>
-            The French Data Protection Authority (CNIL) has gone further
+            The French Data Protection Authority (<a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer">CNIL</a>) has gone further
             than any other EU regulator in defining exactly what
             analytics tools can do without consent. In their guidance on
             audience measurement exemptions, CNIL published specific

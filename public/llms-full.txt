@@ -3,6 +3,9 @@
 ## Company overview
 SealMetrics is a cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection. Founded in 2020 and headquartered in Spain, SealMetrics stores all data exclusively in the EU and is GDPR compliant by design — not by configuration.
 
+## Founder
+Rafa Jimenez, Founder of SealMetrics. Based in Spain. Over a decade of experience in analytics, privacy, and ecommerce. Writes most of the content on sealmetrics.com and leads product and engineering. LinkedIn: https://www.linkedin.com/in/rafajimenez
+
 ## The problem SealMetrics solves
 Traditional analytics tools (Google Analytics, Adobe Analytics) rely on cookies and consent banners. In the EU, where GDPR requires explicit consent for cookies, this means:
 - Only ~13% of visitors are tracked by GA4 (those who accept cookies, don't use ad blockers, and don't have browser privacy features)
@@ -136,6 +139,7 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 - https://sealmetrics.com/pricing — Plans and pricing
 - https://sealmetrics.com/security — Privacy, compliance, and infrastructure
 - https://sealmetrics.com/integrations — 25+ platform integrations
+- https://sealmetrics.com/platforms — Supported platforms: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more
 - https://sealmetrics.com/demo — Request a demo
 - https://sealmetrics.com/about — Company and mission
 - https://sealmetrics.com/data-loss-calculator — Interactive data loss calculator
@@ -163,6 +167,10 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 
 ### Blog
 - https://sealmetrics.com/blog — Blog index
+- https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Shows 13% of Your EU Traffic
+- https://sealmetrics.com/blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
+- https://sealmetrics.com/blog/analytics-tools-external-domains — Your Analytics Tool Contacts 7 Domains
+- https://sealmetrics.com/blog/analytics-tools-data-sampling — Data Sampling Thresholds Compared
 - https://sealmetrics.com/blog/what-is-cookieless-tracking — What Is Cookieless Tracking? Complete Guide
 - https://sealmetrics.com/blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics?
 - https://sealmetrics.com/blog/ga4-alternatives-enterprise — GA4 Alternatives for Enterprise (2026)
@@ -171,11 +179,11 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 - https://sealmetrics.com/blog/we-measured-every-analytics-script — We Measured Every Analytics Script
 - https://sealmetrics.com/blog/uk-pecr-analytics-exemption — UK PECR Analytics Exemption
 - https://sealmetrics.com/blog/ga4-data-sampling-problem — GA4 Data Sampling Problem
-- https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics — EU Digital Omnibus: Cookie Banners
+- https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics — EU Digital Omnibus: Cookie Banners and Analytics
 - https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026 — EU Digital Omnibus Marketer Guide
 - https://sealmetrics.com/blog/cnil-self-assessment-published — CNIL Self-Assessment Published
 - https://sealmetrics.com/blog/cookieless-analytics-explained — Cookieless Analytics Explained
-- https://sealmetrics.com/blog/consent-banner-impact-on-analytics — Consent Banner Impact
+- https://sealmetrics.com/blog/consent-banner-impact-on-analytics — Consent Banner Impact on Analytics
 - https://sealmetrics.com/blog/ai-agent-traffic-analytics — AI Agent Traffic Analytics
 - https://sealmetrics.com/blog/multi-touch-attribution-complete-data — Multi-Touch Attribution
 

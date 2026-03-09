@@ -23,7 +23,7 @@ export default function DataSamplingComparedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Data Sampling Thresholds Compared" }]} />
-      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", url: "/blog/analytics-tools-data-sampling", category: "Data Quality" })} />
+      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Data Sampling Thresholds Compared" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,8 +38,21 @@ export default function DataSamplingComparedPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 3, 2026</time>
             <span>5 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>GA4 (free) starts sampling at ~10M events per query in Exploration reports; avoiding it requires upgrading to GA360 at $150K+/year.</li>
+            <li>A 10% sample introduces approximately +/-3% margin of error — at $10M revenue, that represents a $200K uncertainty in business decisions.</li>
+            <li>SealMetrics, Plausible, Fathom, and Simple Analytics never apply data sampling — every number is a count, not an extrapolation.</li>
+            <li>Sampling functions as a pricing lever in enterprise tools: companies must pay more to see their actual data instead of estimates.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -182,7 +195,7 @@ export default function DataSamplingComparedPage() {
           </h2>
 
           <p>
-            The ~10M threshold in GA4 applies to Exploration reports — the
+            The <a href="https://support.google.com/analytics/answer/13331684" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">~10M threshold in GA4</a> applies to Exploration reports — the
             advanced analysis section, not standard reports. Standard reports use
             pre-aggregated data and are typically unsampled. But the moment you
             build a custom Exploration, add segments, extend the date range, or
@@ -313,7 +326,7 @@ export default function DataSamplingComparedPage() {
             Piwik PRO
           </p>
           <p>
-            Piwik PRO does not sample within your plan limits, but it stops
+            <a href="https://piwikpro.com/" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Piwik PRO</a> does not sample within your plan limits, but it stops
             collecting data once you exceed your event cap. Check your plan usage
             in the administration panel. If you are consistently near your limit,
             reports at the end of the billing period may be incomplete — not

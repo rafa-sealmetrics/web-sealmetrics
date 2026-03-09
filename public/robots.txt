@@ -2,6 +2,35 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# AI Crawlers — Allow content, block internal paths
+User-agent: GPTBot
+Allow: /blog/
+Allow: /glossary/
+Allow: /how-it-works/
+Allow: /vs-ga4/
+Allow: /vs/
+Allow: /for/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /blog/
+Allow: /glossary/
+Allow: /how-it-works/
+Allow: /vs-ga4/
+Allow: /vs/
+Allow: /for/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /blog/
+Allow: /glossary/
+Allow: /how-it-works/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
 Sitemap: https://sealmetrics.com/sitemap.xml
 
 # LLM discoverability

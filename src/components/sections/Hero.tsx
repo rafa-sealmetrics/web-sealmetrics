@@ -9,8 +9,8 @@ export function Hero() {
             Decision Intelligence for Ecommerce
           </span>
           <h1 className="headline-hero mb-8">
-            Every satisfying marketing decision starts with{" "}
-            <em className="italic text-green-muted">complete data</em>.
+            Cookieless analytics that captures{" "}
+            <em className="italic text-green-muted">100% of your traffic</em>.
           </h1>
           <p className="text-[1.2rem] leading-[1.75] text-text-secondary max-w-[640px] mb-10">
             GA4 captures ~13% of your EU traffic. SealMetrics captures

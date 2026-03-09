@@ -23,7 +23,7 @@ export default function GA4DataSamplingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GA4 Data Sampling Problem" }]} />
-      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", url: "/blog/ga4-data-sampling-problem", category: "Data Quality" })} />
+      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", url: "/blog/ga4-data-sampling-problem", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Data Sampling" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,8 +38,21 @@ export default function GA4DataSamplingPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 15, 2026</time>
             <span>7 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>GA4 applies data sampling in Exploration reports when data exceeds internal thresholds — the free version has lower thresholds than GA360.</li>
+            <li>Sampled data can reverse campaign performance rankings: Campaign A with 342 real conversions could be estimated at 310 while Campaign B with 298 shows as 320.</li>
+            <li>Before sampling even begins, GA4 has already lost ~87% of EU traffic to consent rejection, ad blockers, and browser restrictions — you are making decisions based on an estimate of a fraction.</li>
+            <li>Cookieless analytics captures every session without sampling — when you see 72,847 visitors, that is 72,847 actual sessions, not a projection.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -69,7 +82,7 @@ export default function GA4DataSamplingPage() {
           </p>
 
           <p>
-            In GA4, sampling is triggered when you create exploration reports
+            In GA4, <a href="https://support.google.com/analytics/answer/13331684" target="_blank" rel="noopener noreferrer">sampling is triggered</a> when you create exploration reports
             that exceed certain data thresholds. Google does not publicly
             disclose the exact thresholds, but the sampling icon appears in your
             reports when it is active. The free version of GA4 has lower

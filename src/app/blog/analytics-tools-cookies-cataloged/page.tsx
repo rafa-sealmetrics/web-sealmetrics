@@ -23,7 +23,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Every Cookie Set by Every Major Analytics Tool" }]} />
-      <JsonLd data={articleSchema({ headline: "Every Cookie Set by Every Major Analytics Tool, Cataloged", description: "We cataloged every cookie set by GA4, Adobe Analytics, Mixpanel, PostHog, Piwik PRO, and cookieless tools.", datePublished: "2026-03-05", url: "/blog/analytics-tools-cookies-cataloged", category: "Privacy" })} />
+      <JsonLd data={articleSchema({ headline: "Every Cookie Set by Every Major Analytics Tool, Cataloged", description: "We cataloged every cookie set by GA4, Adobe Analytics, Mixpanel, PostHog, Piwik PRO, and cookieless tools.", datePublished: "2026-03-05", url: "/blog/analytics-tools-cookies-cataloged", category: "Privacy", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Every Cookie Set by Every Major Analytics Tool" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,8 +38,21 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 5, 2026</time>
             <span>5 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Four analytics tools (SealMetrics, Plausible, Fathom, Simple Analytics) set zero cookies; Adobe Analytics sets 6 including 2 third-party cookies.</li>
+            <li>GA4 sets 2 first-party cookies (_ga and _ga_XXXX) with a 2-year expiry — each one requires consent under the ePrivacy Directive.</li>
+            <li>EU consent rejection rates run between 60% and 70%, meaning any tool that sets cookies measures at most 30-40% of actual traffic.</li>
+            <li>Zero cookies means zero consent dependency means 100% data capture — every cookie above zero is a gate most EU visitors will close.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -275,7 +288,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
 
           <p>
             Google&apos;s{" "}
-            <span className="font-mono text-[0.95rem]">_ga</span> cookie
+            <a href="https://support.google.com/analytics/answer/11397207" target="_blank" rel="noopener noreferrer" className="font-mono text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">_ga</a> cookie
             persists for 2 years. Once a visitor accepts your consent
             banner, GA4 can recognize them for up to 24 months. If they reject,
             GA4 cannot recognize them at all.
@@ -303,7 +316,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            A typical Adobe Analytics deployment with the Experience Cloud ID
+            A typical <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/cookie-settings.html" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Adobe Analytics</a> deployment with the Experience Cloud ID
             Service (ECID) sets 6 cookies — the most of any tool we tested.
             Four are first-party. Two are third-party cookies on Adobe&apos;s
             tracking domains:{" "}

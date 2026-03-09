@@ -5,12 +5,12 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Ad Blocker Impact on Analytics — SealMetrics Glossary",
+  title: "What Is Ad Blocker Impact on Analytics? — SealMetrics Glossary",
   description:
-    "Ad blockers cause 40%+ data loss in EU analytics by blocking third-party scripts. Learn how ad blockers affect your data and what to do about it.",
+    "Ad blockers block 40%+ of EU analytics sessions by intercepting third-party scripts like GA4. First-party cookieless tools bypass ad blockers entirely.",
   openGraph: {
-    title: "Ad Blocker Impact on Analytics",
-    description: "Ad blockers cause 40%+ data loss in EU analytics by blocking third-party scripts.",
+    title: "What Is Ad Blocker Impact on Analytics?",
+    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
     type: "article",
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact" },

@@ -9,11 +9,35 @@ export function organizationSchema() {
         "@type": "Organization",
         name: ORG_NAME,
         url: SITE_URL,
-        logo: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
+          width: 160,
+          height: 32,
+        },
         description:
-          "Cookieless web analytics that captures 100% of your traffic. GDPR compliant by design.",
+          "Cookieless web analytics platform that captures 100% of website traffic. GDPR-compliant alternative to Google Analytics without cookie consent banners.",
         foundingDate: "2020",
+        founders: [
+          {
+            "@type": "Person",
+            name: "Rafa Jimenez",
+            jobTitle: "Founder",
+            url: `${SITE_URL}/about`,
+          },
+        ],
         address: { "@type": "PostalAddress", addressCountry: "ES" },
+        sameAs: [
+          "https://www.linkedin.com/company/sealmetrics",
+          "https://x.com/sealmetrics",
+        ],
+        knowsAbout: [
+          "Web Analytics",
+          "GDPR Compliance",
+          "Cookieless Tracking",
+          "Privacy-First Analytics",
+          "Ecommerce Analytics",
+        ],
       },
       {
         "@type": "WebSite",
@@ -47,14 +71,53 @@ export function softwareApplicationSchema() {
     name: ORG_NAME,
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
+    url: SITE_URL,
     description:
-      "Cookieless web analytics platform that captures 100% of website traffic without cookies or consent banners.",
-    offers: {
-      "@type": "Offer",
-      price: "199",
-      priceCurrency: "EUR",
-      priceValidUntil: "2026-12-31",
-      availability: "https://schema.org/InStock",
+      "Cookieless web analytics platform that captures 100% of website traffic without cookies or consent banners. GDPR-compliant alternative to Google Analytics.",
+    featureList: [
+      "Cookieless tracking (no consent banner required)",
+      "100% traffic data capture",
+      "GDPR/ePrivacy compliant by design",
+      "Multi-touch revenue attribution",
+      "LENS AI anomaly detection",
+      "AI Agent Analytics",
+    ],
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Starter",
+        price: "199",
+        priceCurrency: "EUR",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        description: "1M human events/month",
+        url: `${SITE_URL}/pricing`,
+      },
+      {
+        "@type": "Offer",
+        name: "Growth",
+        price: "499",
+        priceCurrency: "EUR",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        description: "5M human events/month",
+        url: `${SITE_URL}/pricing`,
+      },
+      {
+        "@type": "Offer",
+        name: "Scale",
+        price: "899",
+        priceCurrency: "EUR",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        description: "15M human events/month",
+        url: `${SITE_URL}/pricing`,
+      },
+    ],
+    provider: {
+      "@type": "Organization",
+      name: ORG_NAME,
+      url: SITE_URL,
     },
   };
 }
@@ -63,8 +126,10 @@ export function articleSchema(props: {
   headline: string;
   description: string;
   datePublished: string;
+  dateModified?: string;
   url: string;
   category?: string;
+  author?: { name: string; url?: string; jobTitle?: string };
 }) {
   return {
     "@context": "https://schema.org",
@@ -72,9 +137,20 @@ export function articleSchema(props: {
     headline: props.headline,
     description: props.description,
     datePublished: props.datePublished,
-    dateModified: props.datePublished,
+    dateModified: props.dateModified || props.datePublished,
     url: `${SITE_URL}${props.url}`,
-    author: { "@type": "Organization", name: ORG_NAME },
+    author: props.author
+      ? {
+          "@type": "Person",
+          name: props.author.name,
+          ...(props.author.url
+            ? { url: `${SITE_URL}${props.author.url}` }
+            : {}),
+          ...(props.author.jobTitle
+            ? { jobTitle: props.author.jobTitle }
+            : {}),
+        }
+      : { "@type": "Organization", name: ORG_NAME },
     publisher: {
       "@type": "Organization",
       name: ORG_NAME,
@@ -110,6 +186,8 @@ export function comparisonPageSchema(props: {
   name: string;
   description: string;
   url: string;
+  competitor?: { name: string; url: string };
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -117,10 +195,25 @@ export function comparisonPageSchema(props: {
     name: props.name,
     description: props.description,
     url: `${SITE_URL}${props.url}`,
-    about: {
-      "@type": "SoftwareApplication",
-      name: ORG_NAME,
-    },
+    ...(props.dateModified ? { dateModified: props.dateModified } : {}),
+    about: [
+      {
+        "@type": "SoftwareApplication",
+        name: ORG_NAME,
+        applicationCategory: "AnalyticsApplication",
+        url: SITE_URL,
+      },
+      ...(props.competitor
+        ? [
+            {
+              "@type": "SoftwareApplication",
+              name: props.competitor.name,
+              applicationCategory: "AnalyticsApplication",
+              url: props.competitor.url,
+            },
+          ]
+        : []),
+    ],
   };
 }
 

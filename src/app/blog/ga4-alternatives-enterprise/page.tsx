@@ -98,7 +98,7 @@ export default function GA4AlternativesEnterprisePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GA4 Alternatives for Enterprise" }]} />
-      <JsonLd data={articleSchema({ headline: "GA4 Alternatives for Enterprise: A 2026 Comparison", description: "Compare enterprise analytics: GA360, Adobe, Piwik PRO, SealMetrics.", datePublished: "2026-03-02", url: "/blog/ga4-alternatives-enterprise", category: "Comparisons" })} />
+      <JsonLd data={articleSchema({ headline: "GA4 Alternatives for Enterprise: A 2026 Comparison", description: "Compare enterprise analytics: GA360, Adobe, Piwik PRO, SealMetrics.", datePublished: "2026-03-02", url: "/blog/ga4-alternatives-enterprise", category: "Comparisons", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Alternatives for Enterprise" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -113,8 +113,22 @@ export default function GA4AlternativesEnterprisePage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 2, 2026</time>
             <span>8 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>GA360 costs $150K+/year and still loses 35-55% of EU traffic due to cookie dependency; Adobe Analytics costs $100K+ with the same consent-driven data gaps.</li>
+            <li>SealMetrics captures 100% of EU traffic at a starting price of 2,388 euros/year — enterprise analytics capabilities at a fraction of legacy enterprise pricing.</li>
+            <li>Piwik PRO offers EU-only data residency but still depends on cookies, leaving 35-55% of European traffic invisible despite being privacy-focused.</li>
+            <li>The three decision factors are: how much data loss you can accept, what compliance requirements you face, and whether your budget should go toward estimates or complete data.</li>
+            <li>SealMetrics is the only platform in this tier combining cookieless collection (no consent needed), EU-only data residency, zero sampling, LENS AI anomaly detection, and agent analytics.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -187,7 +201,7 @@ export default function GA4AlternativesEnterprisePage() {
             Privacy Framework certification, the legal landscape
             continues to evolve. Several EU Data Protection Authorities
             have issued guidance questioning whether GA4 data transfers
-            meet GDPR requirements. For regulated industries &mdash;
+            meet <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> requirements. For regulated industries &mdash;
             finance, healthcare, government &mdash; this creates ongoing
             legal uncertainty.
           </p>
@@ -245,7 +259,7 @@ export default function GA4AlternativesEnterprisePage() {
           </h2>
 
           <p>
-            GA360 is the enterprise tier of Google Analytics. It
+            <a href="https://marketingplatform.google.com/about/analytics-360/" target="_blank" rel="noopener noreferrer">GA360</a> is the enterprise tier of Google Analytics. It
             addresses some of GA4&rsquo;s limitations &mdash; higher
             sampling thresholds, native BigQuery export, guaranteed
             SLAs, and dedicated support. For organizations already
@@ -285,7 +299,7 @@ export default function GA4AlternativesEnterprisePage() {
           </h2>
 
           <p>
-            Adobe Analytics is the legacy enterprise standard. It offers
+            <a href="https://business.adobe.com/products/analytics/adobe-analytics.html" target="_blank" rel="noopener noreferrer">Adobe Analytics</a> is the legacy enterprise standard. It offers
             the deepest segmentation capabilities in the market, an
             extensive data warehouse, and robust workflow integrations
             across the Adobe Experience Cloud. For organizations already
@@ -327,7 +341,7 @@ export default function GA4AlternativesEnterprisePage() {
           </h2>
 
           <p>
-            Piwik PRO is the strongest EU-native alternative. Built in
+            <a href="https://piwikpro.com/" target="_blank" rel="noopener noreferrer">Piwik PRO</a> is the strongest EU-native alternative. Built in
             Poland, it offers EU-only data hosting, a privacy-first
             architecture, and a compliance posture that resonates with
             European enterprises &mdash; particularly in regulated

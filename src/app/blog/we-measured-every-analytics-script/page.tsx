@@ -23,7 +23,7 @@ export default function MeasuredScriptsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Measured Every Analytics Script" }]} />
-      <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", datePublished: "2026-02-20", url: "/blog/we-measured-every-analytics-script", category: "Performance" })} />
+      <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", datePublished: "2026-02-20", url: "/blog/we-measured-every-analytics-script", category: "Performance", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Measured Every Analytics Script" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,8 +38,21 @@ export default function MeasuredScriptsPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 20, 2026</time>
             <span>4 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>GA4 is 52x heavier than SealMetrics (128.8 KB vs 2.5 KB gzipped) and Adobe Analytics is 60x heavier at 150.7 KB.</li>
+            <li>For a site with 100,000 monthly visitors, GA4 consumes 12.9 GB of bandwidth per month versus 250 MB for SealMetrics.</li>
+            <li>Enterprise analytics scripts carry legacy code for cross-site tracking and fingerprinting — features now illegal under GDPR or blocked by browsers.</li>
+            <li>At 1 million pageviews/month, GA4 generates approximately 30 kg of CO2 annually versus 0.6 kg for SealMetrics.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -182,7 +195,7 @@ export default function MeasuredScriptsPage() {
           </h2>
 
           <p>
-            For a site with 100,000 monthly visitors, GA4&apos;s script alone
+            For a site with 100,000 monthly visitors, <a href="https://developers.google.com/tag-platform/gtagjs" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4&apos;s script</a> alone
             consumes 12.9 GB of bandwidth per month. SealMetrics consumes
             250 MB. That is not a rounding error — it is a 52x difference in
             network resources, battery drain, and page load time.
@@ -191,7 +204,7 @@ export default function MeasuredScriptsPage() {
           <p>
             53% of mobile users abandon sites that take more than 3 seconds
             to load. Heavy analytics scripts contribute directly to that
-            latency through Total Blocking Time, Interaction to Next Paint
+            latency through Total Blocking Time, <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Interaction to Next Paint</a>
             delays, and bandwidth competition with your actual content.
           </p>
 

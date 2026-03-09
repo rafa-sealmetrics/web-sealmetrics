@@ -23,7 +23,7 @@ export default function WhatIsCookielessTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Cookieless Tracking?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", url: "/blog/what-is-cookieless-tracking", category: "Technology" })} />
+      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,15 +38,29 @@ export default function WhatIsCookielessTrackingPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 2, 2026</time>
             <span>8 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
+            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
+            <li>Cookieless tracking is not fingerprinting — it collects aggregate, non-identifying data points (URLs, referrals, timestamps) that cannot identify individual visitors.</li>
+            <li>GDPR compliance is architectural: no cookies stored, no PII collected, no cross-site tracking — consistent with CNIL and German DSK guidance for consent-free analytics.</li>
+            <li>Every downstream analytics function improves when input data goes from 13% to 100%: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             Cookies are failing. Not in theory &mdash; in measurable,
             quantifiable ways that show up in every analytics dashboard across
-            Europe. Safari and Firefox block third-party cookies by default.
-            Chrome has restricted them. GDPR consent requirements mean 35% of
+            Europe. <a href="https://webkit.org/tracking-prevention/" target="_blank" rel="noopener noreferrer">Safari</a> and Firefox block third-party cookies by default.
+            Chrome has restricted them. <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> consent requirements mean 35% of
             EU visitors reject cookie-based tracking outright. Ad blockers
             strip analytics scripts from another 40%.
           </p>
@@ -277,7 +291,7 @@ export default function WhatIsCookielessTrackingPage() {
             plugins, operating system version &mdash; to create a unique
             identifier for each visitor. It is a tracking technique that
             regulators, including the CNIL and the German DPAs, consider
-            equivalent to cookies under ePrivacy rules.
+            equivalent to cookies under <a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32002L0058" target="_blank" rel="noopener noreferrer">ePrivacy</a> rules.
           </p>
 
           <p>

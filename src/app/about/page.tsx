@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About — SealMetrics",
+  title: "About SealMetrics — European Cookieless Analytics Platform",
   description:
-    "SealMetrics is a European analytics company building decision infrastructure for ecommerce teams. Founded in Spain, EU-first by design.",
+    "SealMetrics is a European analytics company building cookieless analytics for ecommerce teams. Founded in Spain, EU-first by design.",
   openGraph: {
-    title: "About — SealMetrics",
+    title: "About SealMetrics — European Cookieless Analytics Platform",
     description:
       "SealMetrics is a European analytics company building decision infrastructure for ecommerce teams.",
     type: "website",
@@ -24,6 +24,38 @@ export default function AboutPage() {
     <>
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About SealMetrics",
+          url: "https://sealmetrics.com/about",
+          mainEntity: {
+            "@type": "Organization",
+            name: "SealMetrics",
+            url: "https://sealmetrics.com",
+            founders: [
+              {
+                "@type": "Person",
+                name: "Rafa Jimenez",
+                jobTitle: "Founder, SealMetrics",
+                url: "https://sealmetrics.com/about",
+                worksFor: {
+                  "@type": "Organization",
+                  name: "SealMetrics",
+                },
+                knowsAbout: [
+                  "Web Analytics",
+                  "GDPR Compliance",
+                  "Cookieless Tracking",
+                  "Ecommerce Analytics",
+                  "Privacy Engineering",
+                ],
+              },
+            ],
+          },
+        }}
+      />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -170,8 +202,58 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12">Who builds SealMetrics</h2>
+          <div className="max-w-[700px]">
+            <div className="p-8 bg-white border border-warm-100 rounded-[4px]">
+              <div className="mb-4">
+                <h3 className="font-serif text-[1.25rem] font-medium text-text-primary">
+                  Rafa Jimenez
+                </h3>
+                <p className="text-[0.85rem] text-text-tertiary mt-1">
+                  Founder, SealMetrics
+                </p>
+              </div>
+              <div className="space-y-4 text-[0.95rem] leading-[1.75] text-text-secondary">
+                <p>
+                  Before founding SealMetrics in 2020, Rafa spent over a decade
+                  working at the intersection of analytics, privacy, and
+                  ecommerce. He saw firsthand how GDPR consent requirements were
+                  eroding the data that marketing teams relied on — and how the
+                  industry&apos;s response was to model the gaps rather than
+                  close them.
+                </p>
+                <p>
+                  SealMetrics was built on a contrarian premise: that privacy
+                  regulation and complete data are not trade-offs. By designing
+                  analytics infrastructure that collects zero personal data, the
+                  consent question disappears entirely — and with it, the 87% of
+                  traffic that cookie-based tools lose.
+                </p>
+                <p>
+                  Rafa writes most of the content on this site and leads the
+                  product and engineering teams. He is based in Spain.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-4">
+                <a
+                  href="https://www.linkedin.com/in/rafajimenez"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[0.8rem] text-text-tertiary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary hover:border-text-primary transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
+      <section className="py-28 bg-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             Want to see what complete data looks like?

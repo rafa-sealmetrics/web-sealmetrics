@@ -8,6 +8,7 @@ const footerColumns = [
       { label: "Platform Overview", href: "/product" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Integrations", href: "/integrations" },
+      { label: "Platforms", href: "/platforms" },
       { label: "Pricing", href: "/pricing" },
       { label: "Security", href: "/security" },
       { label: "For CMOs", href: "/for/cmo" },

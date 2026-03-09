@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
   description:
-    "A data-driven comparison between SealMetrics and Google Analytics 4. Data capture rates, privacy compliance, attribution accuracy, pricing, and more.",
+    "GA4 captures ~13% of EU traffic. SealMetrics captures 100% without cookies. Full comparison: data capture, GDPR compliance, attribution, pricing (€199/mo vs free).",
   openGraph: {
     title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
     description:
@@ -19,6 +19,29 @@ export const metadata: Metadata = {
     canonical: "https://sealmetrics.com/vs-ga4",
   },
 };
+
+const vsGa4Faqs = [
+  {
+    q: "Does SealMetrics capture more data than GA4 in the EU?",
+    a: "Yes. GA4 captures approximately 13% of real EU traffic due to consent rejection (35%), ad blockers (40%), and browser restrictions. SealMetrics captures 100% because it uses no cookies, no third-party requests, and requires no consent for basic analytics.",
+  },
+  {
+    q: "Is SealMetrics GDPR compliant without a consent banner?",
+    a: "Yes. SealMetrics collects zero personal data and uses no cookies or device storage. Under GDPR Article 6(1)(f) and the ePrivacy Directive, consent is not required when no personal data is processed and no device storage is accessed. The French CNIL and UK ICO have confirmed this approach for cookieless analytics.",
+  },
+  {
+    q: "Can I run SealMetrics alongside GA4?",
+    a: "Yes. Most customers run both tools in parallel during evaluation. SealMetrics operates independently — it does not conflict with GA4, Tag Manager, or consent mode. The side-by-side comparison typically shows SealMetrics reporting 3-8x more visitors than GA4 in EU markets.",
+  },
+  {
+    q: "Why is GA4 free while SealMetrics costs €199/month?",
+    a: "GA4 is free because Google monetizes the data through its advertising ecosystem. SealMetrics is an independent, EU-based analytics platform with no advertising business model. The €199/mo Starter plan includes all features, 1M events/month, and EU-only data residency.",
+  },
+  {
+    q: "Does SealMetrics work with ad blockers?",
+    a: "Yes. SealMetrics operates as first-party infrastructure on your own domain. Ad blockers target third-party analytics requests (like google-analytics.com). Because SealMetrics data flows through your domain, it is invisible to ad blockers.",
+  },
+];
 
 const comparisonRows = [
   { feature: "EU data capture rate", sm: "100% of visitors", ga: "~13% average (consent-dependent)", category: "Data Capture" },
@@ -45,9 +68,10 @@ const comparisonRows = [
 export default function VsGA4Page() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Comparisons", href: "/vs-ga4" }, { label: "vs GA4" }]} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4", description: "A data-driven comparison between SealMetrics and GA4.", url: "/vs-ga4" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Comparisons", url: "/vs-ga4" }, { name: "vs GA4" }])} />
+      <Breadcrumbs items={[{ label: "SealMetrics vs GA4" }]} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4", description: "A data-driven comparison between SealMetrics and GA4.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://analytics.google.com" }, dateModified: "2026-03-09" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "SealMetrics vs GA4", url: "/vs-ga4" }])} />
+      <JsonLd data={faqSchema(vsGa4Faqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -61,7 +85,10 @@ export default function VsGA4Page() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               A comparison based on data, not opinion. Both tools measure web
               traffic&nbsp;&mdash; but they capture fundamentally different
-              amounts of it. Here is what that means for your business decisions.
+              amounts of it.{" "}
+              <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Here
+              is why GA4 shows only 13% of EU traffic</Link>, and what that means
+              for your business decisions.
             </p>
           </div>
         </div>
@@ -219,19 +246,25 @@ export default function VsGA4Page() {
               The real comparison is with GA360.
             </h2>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
-              GA4 is free — and for many businesses, "free" is the right price
+              GA4 is free — and for many businesses, &ldquo;free&rdquo; is the right price
               for approximate data. But if your marketing budget depends on
               accurate attribution, the real question is whether to invest in
               GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), or
-              SealMetrics (from €199/mo).
+              SealMetrics (from €199/mo). Under{" "}
+              <a href="https://gdpr-info.eu/art-6-gdpr/" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR
+              Article 6</a>, consent is required when personal data is processed
+              — which is why{" "}
+              <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banners destroy analytics data</Link>.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               SealMetrics delivers enterprise-grade analytics&nbsp;&mdash;
-              complete data capture, AI supervision, multi-touch
-              attribution&nbsp;&mdash; at a fraction of enterprise pricing. With
+              complete data capture, AI supervision,{" "}
+              <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch
+              attribution</Link>&nbsp;&mdash; at a fraction of enterprise pricing. With
               capabilities that GA360 and Adobe do not offer:{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
-              collection</Link>, AI agent tracking, and GDPR compliance by design.
+              collection</Link>, AI agent tracking, and{" "}
+              <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance by design</Link>.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link
@@ -280,8 +313,32 @@ export default function VsGA4Page() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {vsGa4Faqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
+      <section className="py-28 bg-white text-center border-t border-warm-100">
         <div className="max-w-[550px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
             Compare with your own data.

@@ -23,7 +23,7 @@ export default function AIAgentTrafficPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "AI Agent Traffic Analytics" }]} />
-      <JsonLd data={articleSchema({ headline: "AI Agent Traffic: The Invisible Channel Your Analytics Miss", description: "AI agents are sending traffic your analytics can't see.", datePublished: "2026-01-18", url: "/blog/ai-agent-traffic-analytics", category: "AI & Analytics" })} />
+      <JsonLd data={articleSchema({ headline: "AI Agent Traffic: The Invisible Channel Your Analytics Miss", description: "AI agents are sending traffic your analytics can't see.", datePublished: "2026-01-18", url: "/blog/ai-agent-traffic-analytics", category: "AI & Analytics", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "AI Agent Traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,14 +38,27 @@ export default function AIAgentTrafficPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">January 18, 2026</time>
             <span>5 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>AI agents (GPT, Claude, Perplexity, Google AI Overviews) are sending 7-22% of sessions to content-rich sites, but traditional analytics classifies this traffic as "direct" or "unassigned."</li>
+            <li>AI crawlers do not execute JavaScript and often omit referrer headers — client-side analytics like GA4 cannot detect these visits at all.</li>
+            <li>For a site with 500,000 monthly sessions, 35,000 to 100,000 AI-influenced sessions per month may be invisible to or misclassified by traditional analytics.</li>
+            <li>SealMetrics Agent Analytics identifies each AI agent type (GPT, Claude, Perplexity) as a distinct source with pages visited, time on site, and downstream conversions.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             A growing percentage of your website traffic comes from AI agents —
-            GPT browsing, Claude web access, Perplexity search, and Google AI
-            Overviews. These systems crawl your pages, extract information, and
+            <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener noreferrer">GPT browsing</a>, <a href="https://docs.anthropic.com/en/docs/build-with-claude/web-search" target="_blank" rel="noopener noreferrer">Claude web access</a>, Perplexity search, and <a href="https://blog.google/products/search/generative-ai-google-search-may-2024/" target="_blank" rel="noopener noreferrer">Google AI
+            Overviews</a>. These systems crawl your pages, extract information, and
             either cite you in their responses or direct users to your site.
           </p>
 

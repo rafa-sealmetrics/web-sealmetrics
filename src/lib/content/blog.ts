@@ -1,3 +1,21 @@
+export interface BlogAuthor {
+  name: string;
+  url?: string;
+  jobTitle?: string;
+}
+
+export const AUTHORS = {
+  rafa: {
+    name: "Rafa Jimenez",
+    url: "/about",
+    jobTitle: "Founder, SealMetrics",
+  } satisfies BlogAuthor,
+  sealmetrics: {
+    name: "SealMetrics Team",
+    url: "/about",
+  } satisfies BlogAuthor,
+};
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -5,6 +23,7 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
+  author?: BlogAuthor;
   draft?: boolean;
 }
 
@@ -18,6 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-08",
     category: "Performance",
     readTime: "5 min",
+    author: AUTHORS.rafa,
     draft: true,
   },
   {
@@ -29,6 +49,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-07",
     category: "Data Quality",
     readTime: "5 min",
+    author: AUTHORS.rafa,
     draft: true,
   },
   {
@@ -39,6 +60,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-06",
     category: "Data Quality",
     readTime: "8 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "analytics-tools-http-requests",
@@ -49,6 +71,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-06",
     category: "Performance",
     readTime: "4 min",
+    author: AUTHORS.rafa,
     draft: true,
   },
   {
@@ -60,6 +83,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-05",
     category: "Privacy",
     readTime: "5 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "analytics-tools-external-domains",
@@ -70,6 +94,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-04",
     category: "Privacy",
     readTime: "4 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "analytics-tools-data-sampling",
@@ -80,6 +105,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-03",
     category: "Data Quality",
     readTime: "5 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "analytics-scripts-costing-you-sales",
@@ -90,6 +116,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-26",
     category: "Performance",
     readTime: "3 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "we-measured-every-analytics-script",
@@ -99,6 +126,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-20",
     category: "Performance",
     readTime: "4 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "uk-pecr-analytics-exemption",
@@ -109,6 +137,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-17",
     category: "Regulation",
     readTime: "2 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "ga4-data-sampling-problem",
@@ -118,6 +147,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-15",
     category: "Data Quality",
     readTime: "7 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "eu-digital-omnibus-cookie-banners-analytics",
@@ -128,6 +158,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-12",
     category: "Regulation",
     readTime: "2 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "eu-digital-omnibus-marketer-guide-2026",
@@ -138,6 +169,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-12",
     category: "Regulation",
     readTime: "6 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "cnil-self-assessment-published",
@@ -147,6 +179,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-10",
     category: "Regulation",
     readTime: "2 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "cookieless-analytics-explained",
@@ -156,6 +189,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-08",
     category: "Technology",
     readTime: "8 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "consent-banner-impact-on-analytics",
@@ -165,6 +199,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-25",
     category: "Data Quality",
     readTime: "6 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "ai-agent-traffic-analytics",
@@ -174,6 +209,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-18",
     category: "AI & Analytics",
     readTime: "5 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "multi-touch-attribution-complete-data",
@@ -183,6 +219,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-10",
     category: "Attribution",
     readTime: "7 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "what-is-cookieless-tracking",
@@ -193,6 +230,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-02",
     category: "Technology",
     readTime: "8 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "what-is-data-loss-in-analytics",
@@ -203,6 +241,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-02",
     category: "Data Quality",
     readTime: "7 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "ga4-alternatives-enterprise",
@@ -213,6 +252,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-02",
     category: "Comparisons",
     readTime: "8 min",
+    author: AUTHORS.rafa,
   },
   {
     slug: "gdpr-analytics-without-consent",
@@ -223,5 +263,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-02",
     category: "Regulation",
     readTime: "7 min",
+    author: AUTHORS.rafa,
   },
 ];

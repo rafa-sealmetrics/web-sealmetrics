@@ -24,7 +24,7 @@ export default function WhyGA4Shows13PctPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
-      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality" })} />
+      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,8 +39,21 @@ export default function WhyGA4Shows13PctPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 6, 2026</time>
             <span>8 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>GA4 captures approximately 13% of real EU traffic after three layers of data loss: consent rejection (35%), ad blockers (40%), and browser restrictions.</li>
+            <li>The cascade is multiplicative: 100 real visitors become ~65 after consent, ~39 after ad blockers, and ~13 after browser restrictions like Safari ITP.</li>
+            <li>Google Consent Mode v2 models missing data but cannot recover what was never collected — it estimates, not measures.</li>
+            <li>Cookieless analytics avoids all three layers by operating without cookies, third-party requests, or consent dependency.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -85,7 +98,7 @@ export default function WhyGA4Shows13PctPage() {
           </h2>
 
           <p>
-            Under GDPR and the ePrivacy Directive, any website using cookies
+            Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR and the ePrivacy Directive</a>, any website using cookies
             for analytics must obtain explicit user consent before firing
             tracking scripts. The average consent rejection rate across EU
             markets is approximately 35%. In Germany and the Netherlands, it
@@ -156,7 +169,7 @@ export default function WhyGA4Shows13PctPage() {
             >
               Intelligent Tracking Prevention
             </Link>{" "}
-            (ITP) caps third-party cookies at 7 days and client-side
+            (<a href="https://webkit.org/tracking-prevention/" target="_blank" rel="noopener noreferrer">ITP</a>) caps third-party cookies at 7 days and client-side
             first-party cookies at 24 hours in many scenarios.
             Firefox&rsquo;s Enhanced Tracking Protection (ETP) applies similar
             restrictions. These browsers together account for approximately
@@ -211,8 +224,8 @@ export default function WhyGA4Shows13PctPage() {
           </h2>
 
           <p>
-            Google&rsquo;s answer to consent-based data loss is Consent Mode
-            v2. When a visitor rejects cookies, Consent Mode sends
+            Google&rsquo;s answer to consent-based data loss is <a href="https://support.google.com/analytics/answer/9976101" target="_blank" rel="noopener noreferrer">Consent Mode
+            v2</a>. When a visitor rejects cookies, Consent Mode sends
             &ldquo;cookieless pings&rdquo; to Google, which then uses machine
             learning to model the missing data and fill in the gaps.
           </p>

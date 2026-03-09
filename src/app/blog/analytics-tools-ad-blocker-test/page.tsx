@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. The results split the market in two.",
     type: "article",
   },
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "https://sealmetrics.com/blog/analytics-tools-ad-blocker-test",
   },
@@ -23,7 +24,7 @@ export default function AdBlockerTestPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Tested 9 Analytics Tools Against Ad Blockers" }]} />
-      <JsonLd data={articleSchema({ headline: "We Tested 9 Analytics Tools Against Every Major Ad Blocker", description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. GA4, Adobe, and PostHog are blocked by all five.", datePublished: "2026-03-07", url: "/blog/analytics-tools-ad-blocker-test", category: "Data Quality" })} />
+      <JsonLd data={articleSchema({ headline: "We Tested 9 Analytics Tools Against Every Major Ad Blocker", description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. GA4, Adobe, and PostHog are blocked by all five.", datePublished: "2026-03-07", url: "/blog/analytics-tools-ad-blocker-test", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Tested 9 Analytics Tools Against Ad Blockers" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,6 +39,7 @@ export default function AdBlockerTestPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 7, 2026</time>
             <span>5 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
 

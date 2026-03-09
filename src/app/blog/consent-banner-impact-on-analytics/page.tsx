@@ -24,7 +24,7 @@ export default function ConsentBannerImpactPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
-      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 35%+ EU visitor data loss.", datePublished: "2026-01-25", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality" })} />
+      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 35%+ EU visitor data loss.", datePublished: "2026-01-25", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,12 +39,25 @@ export default function ConsentBannerImpactPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">January 25, 2026</time>
             <span>6 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
 
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>EU consent rejection rates average ~35% overall, reaching 45-55% in Germany and 40-50% in the Netherlands — these visitors become completely invisible to cookie-based analytics.</li>
+            <li>Cookie rejection is not random: privacy-conscious users tend to be more tech-savvy with higher purchasing power, introducing systematic demographic bias into your data.</li>
+            <li>When 35% of visitors are invisible, attribution models work with incomplete journey data — conversions show up in your CRM but not in analytics, creating persistent reporting gaps.</li>
+            <li>The solution is architectural, not tactical — optimizing banner design cannot fix the problem because regulators are increasingly scrutinizing dark patterns that nudge acceptance.</li>
+          </ul>
+        </div>
+
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
-            Since GDPR enforcement began in 2018, every European website that
+            Since <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> enforcement began in 2018, every European website that
             uses cookies must ask for consent before tracking. The{" "}
             <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link>{" "}
             was meant to protect user privacy. The side effect was to make web analytics

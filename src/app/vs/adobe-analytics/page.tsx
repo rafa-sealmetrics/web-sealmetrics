@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { comparisonPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Adobe Analytics — Full Comparison",
   description:
-    "SealMetrics vs Adobe Analytics: 100% vs ~25% EU data capture, cookieless vs cookie-dependent, €199/mo vs $100K+/yr.",
+    "SealMetrics vs Adobe Analytics: 100% vs ~25% EU data capture. Cookieless architecture vs cookie-dependent. Enterprise analytics from €199/mo vs $100,000+/yr. Full feature comparison.",
   openGraph: {
     title: "SealMetrics vs Adobe Analytics — Full Comparison",
     description:
@@ -19,6 +19,25 @@ export const metadata: Metadata = {
     canonical: "https://sealmetrics.com/vs/adobe-analytics",
   },
 };
+
+const vsAdobeFaqs = [
+  {
+    q: "Is SealMetrics a real alternative to Adobe Analytics for enterprise?",
+    a: "Yes. SealMetrics captures 100% of EU traffic vs ~25% for Adobe. Multi-touch attribution, AI anomaly detection, and 9 report types. From \u20AC2,388/yr vs $100,000+/yr for Adobe.",
+  },
+  {
+    q: "Does SealMetrics replace Adobe\u2019s segmentation and Analysis Workspace?",
+    a: "SealMetrics focuses on complete data capture and revenue attribution rather than unlimited custom reports. For EU businesses, the 4x more data typically outweighs the fewer report templates.",
+  },
+  {
+    q: "Can SealMetrics handle enterprise-level traffic?",
+    a: "Yes. The Scale plan handles 15M events/month, and the Enterprise plan supports custom volumes. Built on ClickHouse for sub-second queries at any scale.",
+  },
+  {
+    q: "How long does migration from Adobe Analytics take?",
+    a: "SealMetrics can be deployed in 5 minutes with a single script tag. Most enterprise customers run both tools in parallel for 30\u201360 days before deciding.",
+  },
+];
 
 const comparisonRows = [
   { feature: "EU data capture rate", sm: "100% of visitors", adobe: "~25% average (consent-dependent)", category: "Data Capture" },
@@ -47,9 +66,10 @@ const comparisonRows = [
 export default function VsAdobeAnalyticsPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Comparisons", href: "/vs-ga4" }, { label: "vs Adobe Analytics" }]} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Modern cookieless analytics vs legacy enterprise analytics.", url: "/vs/adobe-analytics" })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Comparisons", url: "/vs-ga4" }, { name: "vs Adobe Analytics" }])} />
+      <Breadcrumbs items={[{ label: "vs Adobe Analytics" }]} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Modern cookieless analytics vs legacy enterprise analytics.", url: "/vs/adobe-analytics", competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" }, dateModified: "2026-03-09" })} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs Adobe Analytics", url: "/vs/adobe-analytics" }])} />
+      <JsonLd data={faqSchema(vsAdobeFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -63,8 +83,9 @@ export default function VsAdobeAnalyticsPage() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               Adobe Analytics is the legacy enterprise analytics platform.
               SealMetrics is the modern alternative&nbsp;&mdash; built for a
-              cookieless, consent-aware web, at a fraction of the cost. Here is
-              how they compare on the metrics that matter.
+              cookieless, consent-aware web, at a fraction of the cost. In EU markets where{" "}
+              <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banners destroy analytics data</Link>,
+              architecture matters more than features.
             </p>
           </div>
         </div>
@@ -226,12 +247,16 @@ export default function VsAdobeAnalyticsPage() {
               Adobe Analytics was built for a pre-GDPR, cookie-rich web. In
               2026, with consent rates below 30% in most EU markets and AI
               agents generating increasing traffic, the assumptions underlying
-              Adobe&rsquo;s architecture no longer hold.
+              Adobe&rsquo;s architecture no longer hold. Under the{" "}
+              <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR</a>,{" "}
+              <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss in analytics</Link>{" "}
+              is no longer a minor inconvenience — it is a structural problem.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               SealMetrics was built for the web as it is now&nbsp;&mdash;{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless, consent-aware, AI-inclusive</Link>&nbsp;&mdash; at a fraction
-              of the cost.
+              of the cost. See how it compares to{" "}
+              <Link href="/blog/ga4-alternatives-enterprise" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">other enterprise GA4 alternatives</Link>.
             </p>
             <div className="flex items-center gap-5 flex-wrap">
               <Link
@@ -276,6 +301,36 @@ export default function VsAdobeAnalyticsPage() {
             >
               SealMetrics vs Piwik PRO
             </Link>
+            <Link
+              href="/security"
+              className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+            >
+              Security & Privacy
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12 text-center">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-8">
+            {vsAdobeFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="pb-8 border-b border-warm-100 last:border-0"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

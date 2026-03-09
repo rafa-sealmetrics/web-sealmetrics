@@ -8,11 +8,11 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Pricing — SealMetrics",
+  title: "SealMetrics Pricing — Cookieless Analytics from €199/mo",
   description:
-    "Pay for humans. Not bots. All features included in every plan. 14-day free trial, no credit card required.",
+    "Cookieless analytics from €199/mo. Starter (1M events), Growth (5M, €499), Scale (15M, €899). All features included. 14-day free trial, no card required.",
   openGraph: {
-    title: "Pricing — SealMetrics",
+    title: "SealMetrics Pricing — Cookieless Analytics from €199/mo",
     description:
       "Enterprise analytics from €199/mo. All features included. 14-day free trial.",
     type: "website",

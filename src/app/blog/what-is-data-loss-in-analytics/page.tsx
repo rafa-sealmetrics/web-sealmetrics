@@ -24,7 +24,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Data Loss in Analytics?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Data Loss in Analytics? Causes, Impact, and Solutions", description: "The 4 causes of analytics data loss and how to eliminate them.", datePublished: "2026-03-02", url: "/blog/what-is-data-loss-in-analytics", category: "Data Quality" })} />
+      <JsonLd data={articleSchema({ headline: "What Is Data Loss in Analytics? Causes, Impact, and Solutions", description: "The 4 causes of analytics data loss and how to eliminate them.", datePublished: "2026-03-02", url: "/blog/what-is-data-loss-in-analytics", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Data Loss in Analytics?" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,8 +39,21 @@ export default function WhatIsDataLossInAnalyticsPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 2, 2026</time>
             <span>7 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Analytics data loss compounds through 4 layers: consent rejection (-35%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — leaving approximately 13% of real traffic visible.</li>
+            <li>Data loss is not inaccuracy — an inaccurate tool misattributes a visit, but a tool with data loss has no record the visit happened at all.</li>
+            <li>Revenue attribution built on 13% of data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>
+            <li>First-party cookieless collection bypasses every cause of data loss simultaneously: no consent dependency, no ad blocker vulnerability, no browser restrictions, no sampling.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
@@ -101,7 +114,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </h3>
 
           <p>
-            Under GDPR, any analytics tool that uses cookies must obtain
+            Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a>, any analytics tool that uses cookies must obtain
             consent before tracking. Across the EU, approximately 35% of
             visitors reject cookie consent. In Germany and the Netherlands,
             rejection rates exceed 50%. Every visitor who clicks
@@ -139,7 +152,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </h3>
 
           <p>
-            Safari&rsquo;s{" "}
+            <a href="https://webkit.org/tracking-prevention/" target="_blank" rel="noopener noreferrer">Safari&rsquo;s</a>{" "}
             <Link
               href="/glossary/intelligent-tracking-prevention"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

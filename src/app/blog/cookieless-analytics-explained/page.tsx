@@ -23,7 +23,7 @@ export default function CookielessAnalyticsExplainedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics Explained" }]} />
-      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", url: "/blog/cookieless-analytics-explained", category: "Technology" })} />
+      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", url: "/blog/cookieless-analytics-explained", category: "Technology", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,15 +38,28 @@ export default function CookielessAnalyticsExplainedPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 8, 2026</time>
             <span>8 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~35% rejection, and ad blockers strip scripts from another 40%.</li>
+            <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
+            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
+            <li>Consent exemption is architectural, not a workaround — no personal data is collected and no cookies are stored, which is consistent with CNIL and German DSK guidance.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             The cookie — the small text file that has powered web analytics
             since 1994 — is reaching the end of its useful life. Safari blocks
             third-party cookies by default. Firefox does the same. Chrome has
-            restricted them. And GDPR consent requirements mean that a
+            restricted them. And <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> consent requirements mean that a
             significant percentage of European visitors opt out of cookie-based
             tracking entirely.
           </p>
@@ -195,7 +208,7 @@ export default function CookielessAnalyticsExplainedPage() {
           </p>
 
           <p>
-            This is consistent with the CNIL (French DPA) exemption criteria for
+            This is consistent with the <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer">CNIL</a> (French DPA) exemption criteria for
             audience measurement tools and with German DSK guidance on
             consent-free analytics. The{" "}
             <Link

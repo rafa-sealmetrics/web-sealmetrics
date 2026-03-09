@@ -1,14 +1,16 @@
+import Image from "next/image";
+
 const integrations = [
-  { icon: "G", name: "Google Ads" },
-  { icon: "M", name: "Meta Ads" },
-  { icon: "S", name: "Shopify" },
-  { icon: "W", name: "WooCommerce" },
-  { icon: "H", name: "HubSpot" },
-  { icon: "S", name: "Salesforce" },
-  { icon: "B", name: "BigQuery" },
-  { icon: "T", name: "TikTok Ads" },
-  { icon: "P", name: "PrestaShop" },
-  { icon: "+", name: "20+ more" },
+  { logo: "/logos/brands/googleads.svg", name: "Google Ads" },
+  { logo: "/logos/brands/meta.svg", name: "Meta Ads" },
+  { logo: "/logos/brands/shopify.svg", name: "Shopify" },
+  { logo: "/logos/brands/woocommerce.svg", name: "WooCommerce" },
+  { logo: "/logos/brands/hubspot.svg", name: "HubSpot" },
+  { logo: "/logos/brands/salesforce.svg", name: "Salesforce" },
+  { logo: "/logos/brands/bigquery.svg", name: "BigQuery" },
+  { logo: "/logos/brands/tiktok.svg", name: "TikTok Ads" },
+  { logo: "/logos/brands/prestashop.svg", name: "PrestaShop" },
+  { logo: null, name: "20+ more", fallback: "+" },
 ];
 
 export function Integrations() {
@@ -33,8 +35,20 @@ export function Integrations() {
               key={int.name}
               className="p-5 text-center border border-warm-100 rounded-[4px] bg-white hover:border-text-tertiary transition-colors"
             >
-              <div className="text-[1.5rem] opacity-40 text-text-secondary">
-                {int.icon}
+              <div className="flex items-center justify-center h-[36px]">
+                {int.logo ? (
+                  <Image
+                    src={int.logo}
+                    alt={int.name}
+                    width={28}
+                    height={28}
+                    className="opacity-40 grayscale"
+                  />
+                ) : (
+                  <span className="text-[1.5rem] opacity-40 text-text-secondary">
+                    {int.fallback}
+                  </span>
+                )}
               </div>
               <div className="text-[0.8rem] text-text-secondary mt-3">
                 {int.name}

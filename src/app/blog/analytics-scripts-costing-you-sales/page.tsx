@@ -23,7 +23,7 @@ export default function AnalyticsScriptsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Scripts Costing You Sales" }]} />
-      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance" })} />
+      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Scripts Costing You Sales" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -38,8 +38,21 @@ export default function AnalyticsScriptsPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 26, 2026</time>
             <span>3 min read</span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
+
+        <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
+            Key Takeaways
+          </h2>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <li>Every 100ms of site speed improvement produces +8.4% conversions in ecommerce, +10.1% in travel, and +21.6% in lead forms.</li>
+            <li>GA4 script is ~90 KB (gzipped) and Adobe Analytics is ~150 KB, while SealMetrics is just 1.3 KB — the tool measuring conversions may be costing you conversions.</li>
+            <li>The compound effect is multiplicative: heavy scripts slow pages, consent banners reject 25-70% of visitors, and ad blockers erase ~32% of the rest.</li>
+            <li>Traditional analytics captures less than half of actual traffic once all three forces — script weight, consent rejection, and tracker blocking — combine.</li>
+          </ul>
+        </div>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p className="text-[1.15rem] leading-[1.8] text-text-secondary italic">
@@ -87,7 +100,7 @@ export default function AnalyticsScriptsPage() {
 
           <p>
             More recent case studies reinforce this. Vodafone Italy improved
-            LCP by 31% and saw an 8% increase in sales. Redbus reduced INP by
+            <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">LCP</a> by 31% and saw an 8% increase in sales. Redbus reduced INP by
             50% and mobile conversions jumped 80-100%. Lazada improved LCP by
             3x and gained 16.9% more mobile conversions.
           </p>
@@ -123,7 +136,7 @@ export default function AnalyticsScriptsPage() {
 
           <p>
             Heavy scripts compete for bandwidth, increase Total Blocking Time,
-            and degrade Interaction to Next Paint. The tool you use to
+            and degrade <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Interaction to Next Paint</a>. The tool you use to
             understand conversions may be costing you conversions. A{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless first-party approach</Link>{" "}
             eliminates this overhead entirely.

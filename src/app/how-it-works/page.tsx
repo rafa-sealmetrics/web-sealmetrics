@@ -5,11 +5,11 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "How It Works — SealMetrics",
+  title: "How Cookieless Analytics Works — SealMetrics",
   description:
-    "Understand how SealMetrics captures 100% of your traffic without cookies. First-party cookieless collection explained simply.",
+    "SealMetrics uses a first-party 846-byte script on your domain. No cookies, no consent dependency, no ad-blocker vulnerability. 100% traffic capture in 5 minutes.",
   openGraph: {
-    title: "How It Works — SealMetrics",
+    title: "How Cookieless Analytics Works — SealMetrics",
     description:
       "How cookieless analytics captures 100% of your traffic. First-party cookieless collection explained.",
     type: "website",

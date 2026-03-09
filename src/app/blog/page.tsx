@@ -26,6 +26,16 @@ export default function BlogPage() {
       <Breadcrumbs items={[{ label: "Blog" }]} />
       <JsonLd data={collectionPageSchema({ name: "Blog", description: "Insights on web analytics, data quality, and privacy-first measurement.", url: "/blog" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }])} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: blogPosts.filter((p) => !p.draft).map((post, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://sealmetrics.com/blog/${post.slug}`,
+          name: post.title,
+        })),
+      }} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">

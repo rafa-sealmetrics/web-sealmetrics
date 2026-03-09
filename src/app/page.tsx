@@ -7,16 +7,21 @@ import { Comparison } from "@/components/sections/Comparison";
 import { CaseStudy } from "@/components/sections/CaseStudy";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Compliance } from "@/components/sections/Compliance";
+import { Platforms } from "@/components/sections/Platforms";
 import { Integrations } from "@/components/sections/Integrations";
 import { Pricing } from "@/components/sections/Pricing";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { organizationSchema } from "@/lib/schema";
+import {
+  organizationSchema,
+  softwareApplicationSchema,
+} from "@/lib/schema";
 
 export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={softwareApplicationSchema()} />
 
       {/* ACT 1 — Connect */}
       <Hero />
@@ -25,6 +30,7 @@ export default function Home() {
       {/* ACT 2 — Educate */}
       <Problem />
       <HowItWorks />
+      <Platforms />
 
       {/* ACT 3 — Demonstrate */}
       <ProductShowcase />
