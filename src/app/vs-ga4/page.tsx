@@ -8,11 +8,11 @@ import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema"
 export const metadata: Metadata = {
   title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
   description:
-    "GA4 captures ~13% of EU traffic. SealMetrics captures 100% without cookies. Full comparison: data capture, GDPR compliance, attribution, pricing (€199/mo vs free).",
+    "GA4 captures ~13% of EU traffic. SealMetrics captures 100% without cookies. Full comparison: data capture, GDPR compliance, attribution, pricing (€239/mo vs free).",
   openGraph: {
     title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
     description:
-      "A data-driven comparison between SealMetrics and GA4. 13% vs 100% data capture, enterprise analytics from €199/mo.",
+      "A data-driven comparison between SealMetrics and GA4. 13% vs 100% data capture, enterprise analytics from €239/mo.",
     type: "website",
   },
   alternates: {
@@ -34,8 +34,8 @@ const vsGa4Faqs = [
     a: "Yes. Most customers run both tools in parallel during evaluation. SealMetrics operates independently — it does not conflict with GA4, Tag Manager, or consent mode. The side-by-side comparison typically shows SealMetrics reporting 3-8x more visitors than GA4 in EU markets.",
   },
   {
-    q: "Why is GA4 free while SealMetrics costs €199/month?",
-    a: "GA4 is free because Google monetizes the data through its advertising ecosystem. SealMetrics is an independent, EU-based analytics platform with no advertising business model. The €199/mo Starter plan includes all features, 1M events/month, and EU-only data residency.",
+    q: "Why is GA4 free while SealMetrics costs €239/month?",
+    a: "GA4 is free because Google monetizes the data through its advertising ecosystem. SealMetrics is an independent, EU-based analytics platform with no advertising business model. The €239/mo Starter plan includes core analytics, 1M events/month, and EU-only data residency. Annual billing starts at €199/mo.",
   },
   {
     q: "Does SealMetrics work with ad blockers?",
@@ -60,7 +60,7 @@ const comparisonRows = [
   { feature: "Data residency", sm: "EU-only servers, guaranteed", ga: "US data transfers (Standard Contractual Clauses)", category: "Privacy" },
   { feature: "ePrivacy compliance", sm: "No consent needed (no device storage)", ga: "Consent required (cookies = device storage)", category: "Privacy" },
   { feature: "Personal data collection", sm: "None — zero PII by architecture", ga: "IP address, device identifiers, user IDs", category: "Privacy" },
-  { feature: "Starting price", sm: "From €199/mo", ga: "Free (GA360: ~$150,000/yr)", category: "Other" },
+  { feature: "Starting price", sm: "From €239/mo", ga: "Free (GA360: ~$150,000/yr)", category: "Other" },
   { feature: "Setup complexity", sm: "One script tag, 5 minutes", ga: "Tag Manager, consent mode, config", category: "Other" },
   { feature: "Support", sm: "Priority email + onboarding", ga: "Community forums (paid: dedicated)", category: "Other" },
 ];
@@ -250,7 +250,7 @@ export default function VsGA4Page() {
               for approximate data. But if your marketing budget depends on
               accurate attribution, the real question is whether to invest in
               GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), or
-              SealMetrics (from €199/mo). Under{" "}
+              SealMetrics (from €239/mo). Under{" "}
               <a href="https://gdpr-info.eu/art-6-gdpr/" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR
               Article 6</a>, consent is required when personal data is processed
               — which is why{" "}

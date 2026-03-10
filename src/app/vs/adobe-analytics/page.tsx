@@ -8,11 +8,11 @@ import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema"
 export const metadata: Metadata = {
   title: "SealMetrics vs Adobe Analytics — Full Comparison",
   description:
-    "SealMetrics vs Adobe Analytics: 100% vs ~25% EU data capture. Cookieless architecture vs cookie-dependent. Enterprise analytics from €199/mo vs $100,000+/yr. Full feature comparison.",
+    "SealMetrics vs Adobe Analytics: 100% vs ~25% EU data capture. Cookieless architecture vs cookie-dependent. Enterprise analytics from €239/mo vs $100,000+/yr. Full feature comparison.",
   openGraph: {
     title: "SealMetrics vs Adobe Analytics — Full Comparison",
     description:
-      "Enterprise analytics compared. 100% vs ~25% EU data capture, cookieless architecture, from €199/mo vs $100,000+/yr.",
+      "Enterprise analytics compared. 100% vs ~25% EU data capture, cookieless architecture, from €239/mo vs $100,000+/yr.",
     type: "website",
   },
   alternates: {

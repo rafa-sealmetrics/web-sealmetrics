@@ -4,7 +4,7 @@ const plans = [
   {
     name: "Starter",
     desc: "For growing eCommerce teams starting with complete data.",
-    price: "€199",
+    price: "€239",
     period: "1M human events/mo",
     cta: "Start Free Trial",
     ctaHref: "/demo",
@@ -12,8 +12,8 @@ const plans = [
   },
   {
     name: "Growth",
-    desc: "For growing teams that need BigQuery and deeper analysis.",
-    price: "€499",
+    desc: "For teams that need API, LENS AI & BigQuery.",
+    price: "€599",
     period: "5M human events/mo",
     cta: "Start Free Trial",
     ctaHref: "/demo",
@@ -21,8 +21,8 @@ const plans = [
   },
   {
     name: "Scale",
-    desc: "For multi-brand retailers with complex attribution needs.",
-    price: "€899",
+    desc: "For multi-brand retailers with Agent Analytics.",
+    price: "€1,079",
     period: "15M human events/mo",
     cta: "Talk to Us",
     ctaHref: "/demo",
@@ -52,7 +52,7 @@ export function Pricing() {
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
             GA360 starts at $150,000/yr. Adobe Analytics at $100,000/yr.
-            SealMetrics delivers complete data from €199/mo&nbsp;&mdash; with AI
+            SealMetrics delivers complete data from €239/mo&nbsp;&mdash; with AI
             agent tracking included free on every plan.
           </p>
         </div>

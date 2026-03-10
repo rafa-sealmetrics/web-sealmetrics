@@ -8,13 +8,13 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics Pricing — Cookieless Analytics from €199/mo",
+  title: "SealMetrics Pricing — Cookieless Analytics from €239/mo",
   description:
-    "Cookieless analytics from €199/mo. Starter (1M events), Growth (5M, €499), Scale (15M, €899). All features included. 14-day free trial, no card required.",
+    "Cookieless analytics from €239/mo. Starter (1M events), Growth (5M, €599), Scale (15M, €1,079). Annual billing from €199/mo. 14-day free trial, no card required.",
   openGraph: {
-    title: "SealMetrics Pricing — Cookieless Analytics from €199/mo",
+    title: "SealMetrics Pricing — Cookieless Analytics from €239/mo",
     description:
-      "Enterprise analytics from €199/mo. All features included. 14-day free trial.",
+      "Enterprise analytics from €239/mo. Annual billing from €199/mo. 14-day free trial.",
     type: "website",
   },
   alternates: {
@@ -25,24 +25,24 @@ export const metadata: Metadata = {
 const everyPlanIncludes = [
   "Unlimited websites",
   "Unlimited users",
-  "Agent Analytics (AI detection) — Coming Soon",
-  "LENS AI (forecasting & anomalies)",
   "Conversion Properties",
   "24 months data retention",
-  "Full API access",
   "Consentless Tracking (GDPR)",
+  "Real-time data (<2 min)",
+  "Funnel Analysis",
+  "Multi-site Portfolio View",
 ];
 
 const differentiators = [
   {
     from: "Starter",
     to: "Growth",
-    diff: "More events (5M) + BigQuery + Chat support",
+    diff: "More events (5M) + API + MCP + LENS AI + BigQuery + Chat support",
   },
   {
     from: "Growth",
     to: "Scale",
-    diff: "More events (15M) + Webhooks + Guided onboarding",
+    diff: "More events (15M) + Agent AI Analytics + Webhooks + Guided onboarding",
   },
   {
     from: "Scale",
@@ -80,10 +80,10 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Agent Analytics (Coming Soon)",
     rows: [
-      { feature: "AI Agent Detection", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "Agent Scoring (300+ signals)", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "HTTP Signatures (RFC 9421)", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "Provider Detection (OpenAI, Anthropic, etc.)", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "AI Agent Detection", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Agent Scoring (300+ signals)", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "HTTP Signatures (RFC 9421)", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Provider Detection (OpenAI, Anthropic, etc.)", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
     ],
   },
   {
@@ -98,10 +98,10 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "LENS AI",
     rows: [
-      { feature: "Forecasting & Prediction", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Anomaly Detection", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Growth Opportunities", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Weekly & Monthly Reporting", starter: true, growth: true, scale: true, enterprise: true },
+      { feature: "Forecasting & Prediction", starter: false, growth: true, scale: true, enterprise: true },
+      { feature: "Anomaly Detection", starter: false, growth: true, scale: true, enterprise: true },
+      { feature: "Growth Opportunities", starter: false, growth: true, scale: true, enterprise: true },
+      { feature: "Weekly & Monthly Reporting", starter: false, growth: true, scale: true, enterprise: true },
     ],
   },
   {
@@ -116,7 +116,8 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Data & API",
     rows: [
-      { feature: "API Access (full)", starter: true, growth: true, scale: true, enterprise: true },
+      { feature: "API Access (full)", starter: false, growth: true, scale: true, enterprise: true },
+      { feature: "MCP Server", starter: false, growth: true, scale: true, enterprise: true },
       { feature: "CSV / JSON Export", starter: true, growth: true, scale: true, enterprise: true },
       { feature: "BigQuery Export", starter: false, growth: true, scale: true, enterprise: true },
       { feature: "Webhooks", starter: false, growth: false, scale: true, enterprise: true },
@@ -174,7 +175,7 @@ const faqs = [
   },
   {
     q: "Are all features really included in every plan?",
-    a: "Yes. Analytics, Agent Analytics, LENS AI, Conversion Tracking, and Monitoring are included in every plan. The only differences are event volume, data integrations (BigQuery, Webhooks), governance features, and support level.",
+    a: "Core analytics, conversion tracking, and monitoring are included in every plan. API, MCP, LENS AI, and BigQuery are available from the Growth plan. Agent AI Analytics is available from the Scale plan. The differences also include event volume, governance features, and support level.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -205,9 +206,9 @@ export default function PricingPage() {
     <>
       <Breadcrumbs items={[{ label: "Pricing" }]} />
       <JsonLd data={pricingSchema([
-        { name: "Starter", price: "199", description: "1M human events/mo" },
-        { name: "Growth", price: "499", description: "5M human events/mo" },
-        { name: "Scale", price: "899", description: "15M human events/mo" },
+        { name: "Starter", price: "239", description: "1M human events/mo" },
+        { name: "Growth", price: "599", description: "5M human events/mo" },
+        { name: "Scale", price: "1079", description: "15M human events/mo" },
       ])} />
       <JsonLd data={breadcrumbSchema([{ name: "Pricing", url: "/pricing" }])} />
       <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />

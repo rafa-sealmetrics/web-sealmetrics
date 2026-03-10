@@ -404,8 +404,8 @@ export default function GA4AlternativesEnterprisePage() {
           </p>
 
           <p>
-            Pricing starts at {"\u20ac"}199 per month ({"\u20ac"}2,388
-            per year) &mdash; a fraction of GA360 or Adobe Analytics.
+            Pricing starts at {"\u20ac"}239 per month ({"\u20ac"}2,388
+            per year with annual billing) &mdash; a fraction of GA360 or Adobe Analytics.
             The value proposition is straightforward: complete data at a
             lower price point, with full EU compliance built into the
             architecture rather than bolted on as an afterthought.

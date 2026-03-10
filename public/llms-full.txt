@@ -60,12 +60,13 @@ CRM & Marketing: HubSpot, Salesforce, Klaviyo, Mailchimp, ActiveCampaign
 Data: BigQuery, Google Sheets, Webhooks, REST API, Zapier
 
 ## Pricing
-- Starter: €199/month — 1M human events/mo, all core features
-- Growth: €499/month — 5M human events/mo, BigQuery export
-- Scale: €899/month — 15M human events/mo, multi-brand support
+- Starter: €239/month (€199/mo annually) — 1M human events/mo, core analytics
+- Growth: €599/month (€499/mo annually) — 5M human events/mo, adds API, MCP, LENS AI, BigQuery
+- Scale: €1,079/month (€899/mo annually) — 15M human events/mo, adds Agent AI Analytics
 - Enterprise: custom pricing — unlimited events, SSO, dedicated support, custom SLA
-- All plans include LENS AI, Agent Analytics, and priority support
-- Monthly billing, cancel anytime (no annual contract required)
+- API, MCP, LENS AI, and BigQuery available from Growth plan
+- Agent AI Analytics available from Scale plan
+- Monthly billing, cancel anytime (annual billing saves 2 months)
 
 ## Competitive positioning
 SealMetrics competes in the enterprise analytics tier:

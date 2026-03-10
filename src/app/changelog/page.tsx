@@ -90,7 +90,7 @@ const entries = [
       {
         title: "SealMetrics launch",
         type: "Launch",
-        desc: "First public release of SealMetrics. Cookieless analytics with 100% traffic capture, 9 report types, LENS AI anomaly detection, and multi-touch revenue attribution. Starting at €199/month.",
+        desc: "First public release of SealMetrics. Cookieless analytics with 100% traffic capture, 9 report types, LENS AI anomaly detection, and multi-touch revenue attribution. Starting at €239/month.",
       },
     ],
   },

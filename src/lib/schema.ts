@@ -86,7 +86,7 @@ export function softwareApplicationSchema() {
       {
         "@type": "Offer",
         name: "Starter",
-        price: "199",
+        price: "239",
         priceCurrency: "EUR",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
@@ -96,7 +96,7 @@ export function softwareApplicationSchema() {
       {
         "@type": "Offer",
         name: "Growth",
-        price: "499",
+        price: "599",
         priceCurrency: "EUR",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
@@ -106,7 +106,7 @@ export function softwareApplicationSchema() {
       {
         "@type": "Offer",
         name: "Scale",
-        price: "899",
+        price: "1079",
         priceCurrency: "EUR",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
