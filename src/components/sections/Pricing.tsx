@@ -2,15 +2,6 @@ import Link from "next/link";
 
 const plans = [
   {
-    name: "Starter",
-    desc: "For growing eCommerce teams starting with complete data.",
-    price: "€239",
-    period: "1M human events/mo",
-    cta: "Start Free Trial",
-    ctaHref: "/demo",
-    featured: false,
-  },
-  {
     name: "Growth",
     desc: "For teams that need API, LENS AI & BigQuery.",
     price: "€599",
@@ -52,12 +43,12 @@ export function Pricing() {
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
             GA360 starts at $150,000/yr. Adobe Analytics at $100,000/yr.
-            SealMetrics delivers complete data from €239/mo&nbsp;&mdash; with AI
+            SealMetrics delivers complete data from €599/mo&nbsp;&mdash; with AI
             agent tracking included free on every plan.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
           {plans.map((plan) => (
             <div
               key={plan.name}

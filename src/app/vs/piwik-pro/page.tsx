@@ -8,11 +8,11 @@ import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema"
 export const metadata: Metadata = {
   title: "SealMetrics vs Piwik PRO — Detailed Comparison",
   description:
-    "SealMetrics vs Piwik PRO: cookieless 100% data capture vs cookie-based ~40%. EU analytics from €239/mo vs €30,000+/yr. Full comparison.",
+    "SealMetrics vs Piwik PRO: cookieless 100% data capture vs cookie-based ~40%. EU analytics from €599/mo vs €30,000+/yr. Full comparison.",
   openGraph: {
     title: "SealMetrics vs Piwik PRO — Detailed Comparison",
     description:
-      "Cookieless vs cookie-based EU analytics. 100% vs ~40% data capture, €239/mo vs €30,000+/yr. Full comparison.",
+      "Cookieless vs cookie-based EU analytics. 100% vs ~40% data capture, €599/mo vs €30,000+/yr. Full comparison.",
     type: "website",
   },
   alternates: {

@@ -35,11 +35,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "SealMetrics — Cookieless Analytics for Ecommerce",
   description:
-    "Cookieless web analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance. Enterprise-grade analytics from €239/mo.",
+    "Cookieless web analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance. Enterprise-grade analytics from €599/mo.",
   openGraph: {
     title: "SealMetrics — Cookieless Analytics for Ecommerce",
     description:
-      "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €239/mo.",
+      "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €599/mo.",
     type: "website",
     images: [
       {

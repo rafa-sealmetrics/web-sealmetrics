@@ -8,13 +8,13 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics Pricing — Cookieless Analytics from €239/mo",
+  title: "SealMetrics Pricing — Cookieless Analytics from €599/mo",
   description:
-    "Cookieless analytics from €239/mo. Starter (1M events), Growth (5M, €599), Scale (15M, €1,079). Annual billing from €199/mo. 14-day free trial, no card required.",
+    "Cookieless analytics from €599/mo. Growth (5M events), Scale (15M, €1,079). Annual billing from €499/mo. 14-day free trial, no card required.",
   openGraph: {
-    title: "SealMetrics Pricing — Cookieless Analytics from €239/mo",
+    title: "SealMetrics Pricing — Cookieless Analytics from €599/mo",
     description:
-      "Enterprise analytics from €239/mo. Annual billing from €199/mo. 14-day free trial.",
+      "Enterprise analytics from €599/mo. Annual billing from €499/mo. 14-day free trial.",
     type: "website",
   },
   alternates: {
@@ -35,11 +35,6 @@ const everyPlanIncludes = [
 
 const differentiators = [
   {
-    from: "Starter",
-    to: "Growth",
-    diff: "More events (5M) + API + MCP + LENS AI + BigQuery + Chat support",
-  },
-  {
     from: "Growth",
     to: "Scale",
     diff: "More events (15M) + Agent AI Analytics + Webhooks + Guided onboarding",
@@ -53,7 +48,6 @@ const differentiators = [
 
 interface ComparisonRow {
   feature: string;
-  starter: string | boolean;
   growth: string | boolean;
   scale: string | boolean;
   enterprise: string | boolean;
@@ -68,94 +62,94 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Analytics Core",
     rows: [
-      { feature: "Consentless Tracking (GDPR)", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Real-time Data (<2 min)", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Pageview & Session Tracking", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "UTM & Channel Attribution", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Device & Geo Analytics", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Funnel Analysis", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Data Freshness", starter: "Before 6am daily", growth: "Before 6am daily", scale: "Before 6am daily — SLA 99.5%", enterprise: "Before 6am daily — Custom SLA" },
+      { feature: "Consentless Tracking (GDPR)", growth: true, scale: true, enterprise: true },
+      { feature: "Real-time Data (<2 min)", growth: true, scale: true, enterprise: true },
+      { feature: "Pageview & Session Tracking", growth: true, scale: true, enterprise: true },
+      { feature: "UTM & Channel Attribution", growth: true, scale: true, enterprise: true },
+      { feature: "Device & Geo Analytics", growth: true, scale: true, enterprise: true },
+      { feature: "Funnel Analysis", growth: true, scale: true, enterprise: true },
+      { feature: "Data Freshness", growth: "Before 6am daily", scale: "Before 6am daily — SLA 99.5%", enterprise: "Before 6am daily — Custom SLA" },
     ],
   },
   {
     category: "Agent Analytics (Coming Soon)",
     rows: [
-      { feature: "AI Agent Detection", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "Agent Scoring (300+ signals)", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "HTTP Signatures (RFC 9421)", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "Provider Detection (OpenAI, Anthropic, etc.)", starter: false, growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "AI Agent Detection", growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Agent Scoring (300+ signals)", growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "HTTP Signatures (RFC 9421)", growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Provider Detection (OpenAI, Anthropic, etc.)", growth: false, scale: "Coming Soon", enterprise: "Coming Soon" },
     ],
   },
   {
     category: "E-Commerce",
     rows: [
-      { feature: "Conversion Tracking", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Microconversion Tracking", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Conversion Properties", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Revenue Attribution", starter: true, growth: true, scale: true, enterprise: true },
+      { feature: "Conversion Tracking", growth: true, scale: true, enterprise: true },
+      { feature: "Microconversion Tracking", growth: true, scale: true, enterprise: true },
+      { feature: "Conversion Properties", growth: true, scale: true, enterprise: true },
+      { feature: "Revenue Attribution", growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "LENS AI",
     rows: [
-      { feature: "Forecasting & Prediction", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "Anomaly Detection", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "Growth Opportunities", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "Weekly & Monthly Reporting", starter: false, growth: true, scale: true, enterprise: true },
+      { feature: "Forecasting & Prediction", growth: true, scale: true, enterprise: true },
+      { feature: "Anomaly Detection", growth: true, scale: true, enterprise: true },
+      { feature: "Growth Opportunities", growth: true, scale: true, enterprise: true },
+      { feature: "Weekly & Monthly Reporting", growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "Monitoring & Alerts",
     rows: [
-      { feature: "Critical Alerts", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Business Monitoring", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Risk Management", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Custom Alerts", starter: true, growth: true, scale: true, enterprise: true },
+      { feature: "Critical Alerts", growth: true, scale: true, enterprise: true },
+      { feature: "Business Monitoring", growth: true, scale: true, enterprise: true },
+      { feature: "Risk Management", growth: true, scale: true, enterprise: true },
+      { feature: "Custom Alerts", growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "Data & API",
     rows: [
-      { feature: "API Access (full)", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "MCP Server", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "CSV / JSON Export", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "BigQuery Export", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "Webhooks", starter: false, growth: false, scale: true, enterprise: true },
+      { feature: "API Access (full)", growth: true, scale: true, enterprise: true },
+      { feature: "MCP Server", growth: true, scale: true, enterprise: true },
+      { feature: "CSV / JSON Export", growth: true, scale: true, enterprise: true },
+      { feature: "BigQuery Export", growth: true, scale: true, enterprise: true },
+      { feature: "Webhooks", growth: false, scale: true, enterprise: true },
     ],
   },
   {
     category: "Multi-site",
     rows: [
-      { feature: "Multi-site Portfolio View", starter: true, growth: true, scale: true, enterprise: true },
+      { feature: "Multi-site Portfolio View", growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "Governance",
     rows: [
-      { feature: "Role-based Access (RBAC)", starter: "Basic", growth: "Basic", scale: "Advanced", enterprise: "Full" },
-      { feature: "SSO / SAML", starter: false, growth: false, scale: false, enterprise: true },
-      { feature: "Isolated Processing", starter: false, growth: false, scale: false, enterprise: true },
+      { feature: "Role-based Access (RBAC)", growth: "Basic", scale: "Advanced", enterprise: "Full" },
+      { feature: "SSO / SAML", growth: false, scale: false, enterprise: true },
+      { feature: "Isolated Processing", growth: false, scale: false, enterprise: true },
     ],
   },
   {
     category: "Support",
     rows: [
-      { feature: "Email Support", starter: true, growth: true, scale: true, enterprise: true },
-      { feature: "Chat Support", starter: false, growth: true, scale: true, enterprise: true },
-      { feature: "Priority Support", starter: false, growth: false, scale: true, enterprise: true },
-      { feature: "Dedicated Account Manager", starter: false, growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", starter: "Docs + Videos", growth: "Docs + Videos", scale: "1 session", enterprise: "White-glove" },
-      { feature: "SLA", starter: "99%", growth: "99%", scale: "99.5%", enterprise: "99.9%" },
+      { feature: "Email Support", growth: true, scale: true, enterprise: true },
+      { feature: "Chat Support", growth: true, scale: true, enterprise: true },
+      { feature: "Priority Support", growth: false, scale: true, enterprise: true },
+      { feature: "Dedicated Account Manager", growth: false, scale: false, enterprise: true },
+      { feature: "Onboarding", growth: "Docs + Videos", scale: "1 session", enterprise: "White-glove" },
+      { feature: "SLA", growth: "99%", scale: "99.5%", enterprise: "99.9%" },
     ],
   },
   {
     category: "Infrastructure",
     rows: [
-      { feature: "Human Events / month", starter: "1M", growth: "5M", scale: "15M", enterprise: "Unlimited" },
-      { feature: "AI Agents", starter: "Coming Soon", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
-      { feature: "Websites", starter: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
-      { feature: "Users", starter: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
-      { feature: "Data Retention", starter: "24 months", growth: "24 months", scale: "24 months", enterprise: "Custom" },
+      { feature: "Human Events / month", growth: "5M", scale: "15M", enterprise: "Unlimited" },
+      { feature: "AI Agents", growth: "Coming Soon", scale: "Coming Soon", enterprise: "Coming Soon" },
+      { feature: "Websites", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
+      { feature: "Users", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
+      { feature: "Data Retention", growth: "24 months", scale: "24 months", enterprise: "Custom" },
     ],
   },
 ];
@@ -175,7 +169,7 @@ const faqs = [
   },
   {
     q: "Are all features really included in every plan?",
-    a: "Core analytics, conversion tracking, and monitoring are included in every plan. API, MCP, LENS AI, and BigQuery are available from the Growth plan. Agent AI Analytics is available from the Scale plan. The differences also include event volume, governance features, and support level.",
+    a: "Core analytics, conversion tracking, monitoring, API, MCP, LENS AI, and BigQuery are included in every plan starting from Growth. Agent AI Analytics is available from the Scale plan. The differences include event volume, governance features, and support level.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -206,7 +200,6 @@ export default function PricingPage() {
     <>
       <Breadcrumbs items={[{ label: "Pricing" }]} />
       <JsonLd data={pricingSchema([
-        { name: "Starter", price: "239", description: "1M human events/mo" },
         { name: "Growth", price: "599", description: "5M human events/mo" },
         { name: "Scale", price: "1079", description: "15M human events/mo" },
       ])} />
@@ -305,11 +298,8 @@ export default function PricingPage() {
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-warm-200">
-                  <th className="py-3 pr-4 text-[0.8rem] font-medium text-text-tertiary uppercase tracking-wider w-[35%]">
+                  <th className="py-3 pr-4 text-[0.8rem] font-medium text-text-tertiary uppercase tracking-wider w-[40%]">
                     Feature
-                  </th>
-                  <th className="py-3 px-4 text-[0.8rem] font-medium text-text-tertiary uppercase tracking-wider text-center">
-                    Starter
                   </th>
                   <th className="py-3 px-4 text-[0.8rem] font-medium text-text-tertiary uppercase tracking-wider text-center">
                     Growth
@@ -327,7 +317,7 @@ export default function PricingPage() {
                   <Fragment key={section.category}>
                     <tr>
                       <td
-                        colSpan={5}
+                        colSpan={4}
                         className="pt-6 pb-2 text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-text-tertiary"
                       >
                         {section.category}
@@ -340,9 +330,6 @@ export default function PricingPage() {
                       >
                         <td className="py-3.5 pr-4 text-[0.85rem] text-text-secondary">
                           {row.feature}
-                        </td>
-                        <td className="py-3.5 px-4 text-center">
-                          <CellValue value={row.starter} />
                         </td>
                         <td className="py-3.5 px-4 text-center">
                           <CellValue value={row.growth} />

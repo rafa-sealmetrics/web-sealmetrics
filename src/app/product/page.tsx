@@ -7,7 +7,7 @@ import { softwareApplicationSchema, breadcrumbSchema, faqSchema } from "@/lib/sc
 export const metadata: Metadata = {
   title: "Product — SealMetrics",
   description:
-    "100% data capture, multi-touch revenue attribution, LENS AI supervision, and AI agent tracking. Enterprise-grade analytics from €239/mo.",
+    "100% data capture, multi-touch revenue attribution, LENS AI supervision, and AI agent tracking. Enterprise-grade analytics from €599/mo.",
   openGraph: {
     title: "Product — SealMetrics",
     description:
@@ -546,7 +546,7 @@ export default function ProductPage() {
                   "Agent Analytics (free)",
                   "EU-only servers",
                   "No consent required",
-                  "From €239/mo",
+                  "From €599/mo",
                 ],
               },
               {

@@ -8,7 +8,7 @@ import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema"
 export const metadata: Metadata = {
   title: "SealMetrics vs GA360 — Enterprise Analytics Comparison",
   description:
-    "SealMetrics vs Google Analytics 360: 100% vs ~35% EU data capture. Enterprise analytics from €239/mo instead of $150,000+/yr. Full comparison.",
+    "SealMetrics vs Google Analytics 360: 100% vs ~35% EU data capture. Enterprise analytics from €599/mo instead of $150,000+/yr. Full comparison.",
   openGraph: {
     title: "SealMetrics vs GA360 — Enterprise Analytics Comparison",
     description:
@@ -83,7 +83,7 @@ export default function VsGA360Page() {
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
               GA360 is the enterprise tier of Google Analytics at
               $150,000+/yr. SealMetrics offers enterprise-grade analytics
-              from&nbsp;&euro;239/mo&nbsp;&mdash; with{" "}
+              from&nbsp;&euro;599/mo&nbsp;&mdash; with{" "}
               <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data capture</Link>{" "}
               that GA360 still cannot deliver in the EU.
             </p>

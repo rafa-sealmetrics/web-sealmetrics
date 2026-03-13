@@ -5,19 +5,6 @@ import Link from "next/link";
 
 const plans = [
   {
-    name: "Starter",
-    desc: "Perfect for growing eCommerce teams",
-    monthlyPrice: "€239",
-    annualPrice: "€199",
-    annualTotal: "€2,388 billed annually",
-    annualSave: "€199/mo if billed annually",
-    period: "1M human events/mo",
-    cta: "Start Free Trial",
-    ctaNote: "14-day free trial · No credit card required",
-    featured: false,
-    href: "/demo",
-  },
-  {
     name: "Growth",
     desc: "For teams that need API, LENS AI & BigQuery",
     monthlyPrice: "€599",
@@ -100,7 +87,7 @@ export function PricingPlans() {
         </div>
 
         {/* Plan cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
           {plans.map((plan) => {
             const isCustom = plan.monthlyPrice === "Custom";
             const displayPrice =

@@ -85,16 +85,6 @@ export function softwareApplicationSchema() {
     offers: [
       {
         "@type": "Offer",
-        name: "Starter",
-        price: "239",
-        priceCurrency: "EUR",
-        priceValidUntil: "2026-12-31",
-        availability: "https://schema.org/InStock",
-        description: "1M human events/month",
-        url: `${SITE_URL}/pricing`,
-      },
-      {
-        "@type": "Offer",
         name: "Growth",
         price: "599",
         priceCurrency: "EUR",

@@ -59,7 +59,7 @@ const rows = [
   },
   {
     feature: "Starting price",
-    sm: "From €239/mo",
+    sm: "From €599/mo",
     ga360: "~$150,000/yr",
     adobe: "~$100,000/yr",
     piwik: "~€30,000/yr",
