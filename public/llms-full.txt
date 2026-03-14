@@ -38,7 +38,7 @@ SealMetrics eliminates this problem entirely by using first-party server-side co
 ### Intelligence
 - LENS AI: automated anomaly detection with 60+ rules that continuously monitor data quality, traffic patterns, and conversion funnels
 - Natural language queries: ask business questions in plain English, get data-driven answers
-- Multi-touch revenue attribution based on 100% of data (not the 13% that consent-dependent tools capture)
+- Revenue attribution based on 100% of data (not the 13% that consent-dependent tools capture)
 - 9 specialized report types including funnel analysis with drop-off diagnostics
 - Custom dashboards and scheduled reports
 
@@ -60,11 +60,10 @@ CRM & Marketing: HubSpot, Salesforce, Klaviyo, Mailchimp, ActiveCampaign
 Data: BigQuery, Google Sheets, Webhooks, REST API, Zapier
 
 ## Pricing
-- Starter: €239/month (€199/mo annually) — 1M human events/mo, core analytics
-- Growth: €599/month (€499/mo annually) — 5M human events/mo, adds API, MCP, LENS AI, BigQuery
+- Growth: €599/month (€499/mo annually) — 5M human events/mo, API, MCP, LENS AI, BigQuery
 - Scale: €1,079/month (€899/mo annually) — 15M human events/mo, adds Agent AI Analytics
 - Enterprise: custom pricing — unlimited events, SSO, dedicated support, custom SLA
-- API, MCP, LENS AI, and BigQuery available from Growth plan
+- API, MCP, LENS AI, and BigQuery included in all plans
 - Agent AI Analytics available from Scale plan
 - Monthly billing, cancel anytime (annual billing saves 2 months)
 
@@ -73,13 +72,13 @@ SealMetrics competes in the enterprise analytics tier:
 
 | Competitor | Annual Cost | EU Data Capture | Cookie Dependency | Consent Required |
 |---|---|---|---|---|
-| SealMetrics | From €2,388/yr | 100% | None | No |
+| SealMetrics | From €5,988/yr | 100% | None | No |
 | Google Analytics 4 (free) | Free | ~13% | Yes | Yes |
 | Google Analytics 360 | $150,000+/yr | ~35% | Yes | Yes |
 | Adobe Analytics | $100,000+/yr | ~25% | Yes | Yes |
 | Piwik PRO | €30,000+/yr | ~40% | Yes | Yes |
 
-SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami). These tools are in a different category (€9-50/mo, basic pageview analytics). SealMetrics provides enterprise-grade multi-touch attribution, AI supervision, and complete revenue analytics.
+SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami). These tools are in a different category (€9-50/mo, basic pageview analytics). SealMetrics provides enterprise-grade revenue attribution, AI supervision, and complete revenue analytics.
 
 ## Frequently asked questions
 
@@ -110,8 +109,8 @@ AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity
 **What data does SealMetrics capture?**
 Pageviews, sessions, referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions, and ecommerce transactions — from 100% of visitors with no sampling.
 
-**How does multi-touch attribution work without cookies?**
-SealMetrics reconstructs visitor journeys using first-party server-side session data. Because 100% of touchpoints are captured, multi-touch attribution models produce accurate results — unlike cookie-based tools where 87% of touchpoints are missing.
+**How does revenue attribution work without cookies?**
+SealMetrics reconstructs visitor journeys using first-party server-side session data. Because 100% of touchpoints are captured, revenue attribution produces accurate results — unlike cookie-based tools where 87% of touchpoints are missing.
 
 **Does SealMetrics track ecommerce transactions?**
 Yes. Product views, add-to-cart events, checkout steps, and purchases with full revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic ecommerce tracking.

@@ -72,6 +72,7 @@ export function softwareApplicationSchema() {
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
     url: SITE_URL,
+    image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     description:
       "Cookieless web analytics platform that captures 100% of website traffic without cookies or consent banners. GDPR-compliant alternative to Google Analytics.",
     featureList: [
@@ -119,6 +120,7 @@ export function articleSchema(props: {
   dateModified?: string;
   url: string;
   category?: string;
+  image?: string;
   author?: { name: string; url?: string; jobTitle?: string };
 }) {
   return {
@@ -129,6 +131,7 @@ export function articleSchema(props: {
     datePublished: props.datePublished,
     dateModified: props.dateModified || props.datePublished,
     url: `${SITE_URL}${props.url}`,
+    image: props.image || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     author: props.author
       ? {
           "@type": "Person",
@@ -245,6 +248,7 @@ export function pricingSchema(
     name: "SealMetrics Analytics",
     description:
       "Cookieless web analytics with 100% data capture, GDPR compliant by design.",
+    image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     brand: { "@type": "Brand", name: ORG_NAME },
     offers: plans.map((plan) => ({
       "@type": "Offer",
@@ -254,6 +258,7 @@ export function pricingSchema(
       priceValidUntil: "2026-12-31",
       availability: "https://schema.org/InStock",
       description: plan.description,
+      url: `${SITE_URL}/pricing`,
     })),
   };
 }

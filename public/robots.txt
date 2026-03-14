@@ -2,29 +2,17 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-# AI Crawlers — Allow content, block internal paths
+# AI Crawlers — Allow all public content
 User-agent: GPTBot
-Allow: /blog/
-Allow: /glossary/
-Allow: /how-it-works/
-Allow: /vs-ga4/
-Allow: /vs/
-Allow: /for/
+Allow: /
 Disallow: /api/
 
 User-agent: ClaudeBot
-Allow: /blog/
-Allow: /glossary/
-Allow: /how-it-works/
-Allow: /vs-ga4/
-Allow: /vs/
-Allow: /for/
+Allow: /
 Disallow: /api/
 
 User-agent: PerplexityBot
-Allow: /blog/
-Allow: /glossary/
-Allow: /how-it-works/
+Allow: /
 Disallow: /api/
 
 User-agent: Google-Extended

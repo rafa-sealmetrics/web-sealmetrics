@@ -10,15 +10,15 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - EU-only data residency
 - GDPR, ePrivacy, CCPA compliant by architecture
 - LENS AI anomaly detection with 60+ rules
-- Multi-touch revenue attribution on complete data
+- Revenue attribution on complete data
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
-- Pricing from €239/month (€199/mo billed annually)
+- Pricing from €599/month (€499/mo billed annually)
 
 ## Core pages
 - /product — Full platform overview: data capture, revenue attribution, LENS AI, Agent Analytics
 - /how-it-works — Technical explanation of cookieless server-side collection
-- /pricing — Plans: Starter (€239/mo), Growth (€599/mo), Scale (€1,079/mo), Enterprise (custom)
+- /pricing — Plans: Growth (€599/mo), Scale (€1,079/mo), Enterprise (custom)
 - /security — Privacy architecture, compliance, infrastructure security, trust model
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
