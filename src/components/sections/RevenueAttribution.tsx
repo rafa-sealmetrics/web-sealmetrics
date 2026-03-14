@@ -15,11 +15,36 @@ export function RevenueAttribution() {
             </p>
             <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
               Attribution models built on 13% of data produce misleading results.
-              With complete session capture, SealMetrics connects every
-              touchpoint to revenue outcomes&nbsp;&mdash; revealing the true ROI
-              of every channel, not an estimate based on the visitors who
-              happened to accept cookies.
+              But the problem goes deeper: of the 45% of EU visitors who accept
+              cookies, 65% accept on the second page view&nbsp;&mdash; after the
+              landing page where referrer and UTM data is captured. Only ~16% of
+              visitors have correct traffic source attribution. With complete
+              session capture, SealMetrics connects every touchpoint to revenue
+              outcomes&nbsp;&mdash; revealing the true ROI of every channel.
             </p>
+            <div className="p-5 bg-warm-white border border-warm-100 rounded-[4px] mb-5">
+              <p className="text-[0.75rem] font-medium tracking-[0.06em] uppercase text-text-tertiary mb-3">
+                Attribution cascade &mdash; 100 EU visitors
+              </p>
+              <div className="space-y-2 font-mono text-[0.85rem]">
+                <div className="flex justify-between">
+                  <span className="text-text-secondary">Total visitors</span>
+                  <span className="text-text-primary font-medium">100</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-text-secondary">Reject cookies entirely</span>
+                  <span className="text-red-alert font-medium">&minus;55</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-text-secondary">Accept on page 2 (too late for source)</span>
+                  <span className="text-red-alert font-medium">&minus;29</span>
+                </div>
+                <div className="flex justify-between border-t border-warm-100 pt-2">
+                  <span className="text-text-primary font-medium">Correct traffic source attribution</span>
+                  <span className="text-red-alert font-medium">~16</span>
+                </div>
+              </div>
+            </div>
             <ul className="space-y-1.5">
               {[
                 "Channel-level revenue breakdown on complete data",

@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const consequences = [
   {
-    number: "87%",
-    title: "Wrong attribution",
-    desc: "When 87% of visitors are invisible to your analytics, every channel looks underperforming. Budget gets reallocated based on a distorted picture.",
+    number: "16%",
+    title: "Correct attribution",
+    desc: "Only 16% of EU visitors have their traffic source correctly attributed. 55% reject cookies entirely, and most who accept do so after the landing page — too late to capture the referrer.",
   },
   {
     number: "\u20AC23K",
@@ -71,11 +71,12 @@ export function Problem() {
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
               Today,{" "}
               <em className="not-italic font-serif text-text-primary">
-                GDPR consent banners reject 60&ndash;87% of tracking
-              </em>{" "}
-              before it starts. Safari and Firefox block third-party cookies by
-              default. Ad blockers strip Google Analytics tags from 40%+ of
-              European sessions.
+                55% of EU visitors reject cookies entirely
+              </em>
+              . Of the 45% who accept, 65% do so on the second page view&nbsp;&mdash;
+              after the landing page where the traffic source is captured. Only
+              ~16% of visitors have correct attribution to their traffic source.
+              Then ad blockers and browser restrictions erode the rest.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
               Your analytics report 10,000 visitors. The real number is 70,000.

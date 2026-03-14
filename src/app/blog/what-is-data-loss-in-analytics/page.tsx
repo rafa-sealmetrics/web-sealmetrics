@@ -48,7 +48,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-            <li>Analytics data loss compounds through 4 layers: consent rejection (-35%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — leaving approximately 13% of real traffic visible.</li>
+            <li>Analytics data loss compounds through 4 layers: consent rejection (-55%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — leaving approximately 13% of real traffic visible.</li>
             <li>Data loss is not inaccuracy — an inaccurate tool misattributes a visit, but a tool with data loss has no record the visit happened at all.</li>
             <li>Revenue attribution built on 13% of data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>
             <li>First-party cookieless collection bypasses every cause of data loss simultaneously: no consent dependency, no ad blocker vulnerability, no browser restrictions, no sampling.</li>
@@ -110,14 +110,14 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </p>
 
           <h3 className="text-[1.1rem] font-medium text-text-primary mt-8 mb-3">
-            1. Consent rejection &mdash; 35% lost
+            1. Consent rejection &mdash; 55% lost
           </h3>
 
           <p>
             Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a>, any analytics tool that uses cookies must obtain
-            consent before tracking. Across the EU, approximately 35% of
-            visitors reject cookie consent. In Germany and the Netherlands,
-            rejection rates exceed 50%. Every visitor who clicks
+            consent before tracking. Across the EU, approximately 55% of
+            visitors reject cookie consent. In Germany, rejection rates
+            exceed 65%. In the Netherlands, 60%. Every visitor who clicks
             &ldquo;Reject&rdquo; on your{" "}
             <Link
               href="/glossary/consent-management-platform"
@@ -200,10 +200,10 @@ export default function WhatIsDataLossInAnalyticsPage() {
             <div className="space-y-4">
               {[
                 { stage: "Real visitors arrive", count: 100, lost: null, color: "text-text-primary" },
-                { stage: "After consent rejection (35% reject)", count: 65, lost: "\u221235", color: "text-text-primary" },
-                { stage: "After ad blockers (40% of remainder)", count: 39, lost: "\u221226", color: "text-text-secondary" },
-                { stage: "After browser restrictions (ITP/ETP)", count: 23, lost: "\u221216", color: "text-text-secondary" },
-                { stage: "After data sampling", count: 13, lost: "\u221210", color: "text-red-alert" },
+                { stage: "After consent rejection (55% reject)", count: 45, lost: "\u221255", color: "text-text-primary" },
+                { stage: "After ad blockers (40% of remainder)", count: 27, lost: "\u221218", color: "text-text-secondary" },
+                { stage: "After browser restrictions (ITP/ETP)", count: 18, lost: "\u22129", color: "text-text-secondary" },
+                { stage: "After data sampling", count: 13, lost: "\u22125", color: "text-red-alert" },
               ].map((item) => (
                 <div
                   key={item.stage}

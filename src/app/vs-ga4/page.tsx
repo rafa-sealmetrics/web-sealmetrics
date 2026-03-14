@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const vsGa4Faqs = [
   {
     q: "Does SealMetrics capture more data than GA4 in the EU?",
-    a: "Yes. GA4 captures approximately 13% of real EU traffic due to consent rejection (35%), ad blockers (40%), and browser restrictions. SealMetrics captures 100% because it uses no cookies, no third-party requests, and requires no consent for basic analytics.",
+    a: "Yes. GA4 captures approximately 13% of real EU traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Even among the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct attribution. SealMetrics captures 100% because it uses no cookies, no third-party requests, and requires no consent for basic analytics.",
   },
   {
     q: "Is SealMetrics GDPR compliant without a consent banner?",

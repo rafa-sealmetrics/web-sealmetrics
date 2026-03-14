@@ -47,11 +47,11 @@ export default function AdBlockerAnalyticsImpactPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The scale of the problem</h2>
           <p>
-            According to PageFair and Statista research, ad blocker adoption in Europe exceeds 40% on desktop, with Germany (39%), France (36%), and the Nordics (40%+) leading adoption. On tech-savvy audiences, the rate climbs above 50%. Combined with <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link> rejection rates of 30&ndash;50% in the EU, the compounding effect is severe:
+            According to PageFair and Statista research, ad blocker adoption in Europe exceeds 40% on desktop, with Germany (39%), France (36%), and the Nordics (40%+) leading adoption. On tech-savvy audiences, the rate climbs above 50%. Combined with <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link> rejection rates of 40&ndash;70% in the EU, the compounding effect is severe:
           </p>
           <p>
             &mdash; 40% of visitors blocked by ad blockers<br />
-            &mdash; 35% of remaining visitors reject cookies via consent banners<br />
+            &mdash; 55% of visitors reject cookies via consent banners<br />
             &mdash; Net result: cookie-based analytics captures roughly 13% of actual traffic
           </p>
           <p>

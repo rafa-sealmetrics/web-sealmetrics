@@ -60,7 +60,7 @@ export default function WhatIsCookielessTrackingPage() {
             Cookies are failing. Not in theory &mdash; in measurable,
             quantifiable ways that show up in every analytics dashboard across
             Europe. <a href="https://webkit.org/tracking-prevention/" target="_blank" rel="noopener noreferrer">Safari</a> and Firefox block third-party cookies by default.
-            Chrome has restricted them. <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> consent requirements mean 35% of
+            Chrome has restricted them. <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> consent requirements mean 55% of
             EU visitors reject cookie-based tracking outright. Ad blockers
             strip analytics scripts from another 40%.
           </p>
@@ -187,7 +187,7 @@ export default function WhatIsCookielessTrackingPage() {
                   },
                   {
                     aspect: "Consent dependency",
-                    cookie: "Required (35% reject in EU)",
+                    cookie: "Required (55% reject in EU)",
                     cookieless: "Not required (no cookies or PII)",
                   },
                   {
@@ -220,7 +220,7 @@ export default function WhatIsCookielessTrackingPage() {
 
           <p>
             The 13% vs 100% gap is not an exaggeration. It is the documented
-            result of compounding losses: consent rejection removes 35%,
+            result of compounding losses: consent rejection removes 55%,
             ad blockers remove 40% of the remainder, browser restrictions
             remove another portion, and data sampling removes more. The{" "}
             <Link

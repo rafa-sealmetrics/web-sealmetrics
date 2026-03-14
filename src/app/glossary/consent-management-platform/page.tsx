@@ -7,10 +7,10 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is a Consent Management Platform (CMP)?",
   description:
-    "A CMP displays cookie consent banners and manages user preferences. Required under GDPR for cookie-based analytics. 35% of EU visitors reject.",
+    "A CMP displays cookie consent banners and manages user preferences. Required under GDPR for cookie-based analytics. 55% of EU visitors reject.",
   openGraph: {
     title: "What Is a Consent Management Platform (CMP)?",
-    description: "A CMP displays cookie consent banners and manages user preferences. 35% of EU visitors reject.",
+    description: "A CMP displays cookie consent banners and manages user preferences. 55% of EU visitors reject.",
     type: "article",
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/consent-management-platform" },
@@ -35,7 +35,7 @@ export default function ConsentManagementPlatformPage() {
             </p>
           </div>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The analytics cost of consent</h2>
-          <p>CMPs are legally necessary for cookie-based analytics, but they create a fundamental measurement problem: visitors who reject cookies become invisible to analytics. In the EU, approximately 35% of visitors decline — and in privacy-conscious markets like Germany, the rate exceeds 50%.</p>
+          <p>CMPs are legally necessary for cookie-based analytics, but they create a fundamental measurement problem: visitors who reject cookies become invisible to analytics. In the EU, approximately 55% of visitors decline — and in privacy-conscious markets like Germany, the rate exceeds 65%.</p>
           <p>This creates a systematic bias in your data. Your analytics over-represent the cookie-accepting segment and entirely miss the privacy-conscious segment, which often includes higher-value visitors.</p>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The alternative</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not require a CMP for its operation because it does not use cookies or collect personal data. This eliminates the consent rejection data loss vector entirely while maintaining full <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link>.</p>

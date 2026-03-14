@@ -37,7 +37,9 @@ export default function DataLossPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The cascade of losses</h2>
           <p>Data loss in web analytics is not caused by a single factor. It is a cascade where each loss compounds on the previous one:</p>
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6 text-[0.9rem] space-y-3">
-            <div className="flex justify-between"><span className="text-text-secondary">Consent banner rejection (EU)</span><span className="font-mono text-text-primary">-35%</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Consent banner rejection (EU)</span><span className="font-mono text-text-primary">-55%</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Accept on page 2 (no source attribution)</span><span className="font-mono text-text-primary">65% of accepted</span></div>
+            <div className="flex justify-between"><span className="text-text-secondary">Correct traffic source attribution</span><span className="font-mono text-red-alert">~16%</span></div>
             <div className="flex justify-between"><span className="text-text-secondary">Ad blocker blocking</span><span className="font-mono text-text-primary">-40%</span></div>
             <div className="flex justify-between"><span className="text-text-secondary"><Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5">ITP</Link> / ETP cookie limits</span><span className="font-mono text-text-primary">-40%</span></div>
             <div className="flex justify-between"><span className="text-text-secondary"><Link href="/glossary/data-sampling" className="text-text-primary no-underline border-b border-warm-200 pb-0.5">Data sampling</Link></span><span className="font-mono text-text-primary">-25%</span></div>

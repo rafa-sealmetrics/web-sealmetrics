@@ -47,7 +47,7 @@ export default function CookielessAnalyticsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why it matters</h2>
           <p>
-            In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (35%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, capturing 100% of real visitor activity.
+            In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, capturing 100% of real visitor activity.
           </p>
           <p>
             This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete data.

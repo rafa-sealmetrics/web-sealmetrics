@@ -48,8 +48,9 @@ export default function WhyGA4Shows13PctPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-            <li>GA4 captures approximately 13% of real EU traffic after three layers of data loss: consent rejection (35%), ad blockers (40%), and browser restrictions.</li>
-            <li>The cascade is multiplicative: 100 real visitors become ~65 after consent, ~39 after ad blockers, and ~13 after browser restrictions like Safari ITP.</li>
+            <li>GA4 captures approximately 13% of real EU traffic after three layers of data loss: consent rejection (55%), ad blockers (40%), and browser restrictions.</li>
+            <li>Even among the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct attribution.</li>
+            <li>The cascade is multiplicative: 100 real visitors become ~45 after consent, ~27 after ad blockers, and ~13 after browser restrictions like Safari ITP.</li>
             <li>Google Consent Mode v2 models missing data but cannot recover what was never collected — it estimates, not measures.</li>
             <li>Cookieless analytics avoids all three layers by operating without cookies, third-party requests, or consent dependency.</li>
           </ul>
@@ -94,15 +95,15 @@ export default function WhyGA4Shows13PctPage() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            Layer 1: Consent rejection removes 35%
+            Layer 1: Consent rejection removes 55%
           </h2>
 
           <p>
             Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR and the ePrivacy Directive</a>, any website using cookies
             for analytics must obtain explicit user consent before firing
             tracking scripts. The average consent rejection rate across EU
-            markets is approximately 35%. In Germany and the Netherlands, it
-            regularly exceeds 50%.
+            markets is approximately 55%. In Germany, it regularly exceeds
+            65%. In the Netherlands, 60%.
           </p>
 
           <p>
@@ -125,7 +126,41 @@ export default function WhyGA4Shows13PctPage() {
           </p>
 
           <p>
-            After this first layer: 100 visitors become approximately 65.
+            After this first layer: 100 visitors become approximately 45.
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            The hidden layer: cookies that arrive too late
+          </h2>
+
+          <p>
+            There is a detail that makes the attribution problem even worse
+            than the headline numbers suggest. Of the 45% of visitors who
+            accept cookies, research shows that 65% accept starting from the
+            second page view&nbsp;&mdash; not the first.
+          </p>
+
+          <p>
+            Why does this matter? Because the landing page is where the
+            traffic source is recorded. The referrer URL, the UTM parameters,
+            the campaign data&nbsp;&mdash; all of it is captured on the first
+            page view. If cookies are not active on that page, the traffic
+            source is never attributed.
+          </p>
+
+          <p>
+            The math: 45 visitors accept cookies. 65% of them (29 visitors)
+            accept on page two or later. Only 35% of 45&nbsp;&mdash; roughly
+            16 visitors out of every 100&nbsp;&mdash; have cookies active on
+            the landing page and therefore have their traffic source correctly
+            attributed.
+          </p>
+
+          <p>
+            This means that even if you focus only on visitors who accept
+            cookies, your attribution data is correct for just ~16% of total
+            traffic. The rest are either invisible (55%) or visible but with
+            unknown traffic origin (29%).
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -133,7 +168,7 @@ export default function WhyGA4Shows13PctPage() {
           </h2>
 
           <p>
-            Of the 65 visitors who accepted cookies, roughly 40% are running
+            Of the 45 visitors who accepted cookies, roughly 40% are running
             browser extensions that block analytics scripts. uBlock Origin,
             AdBlock Plus, Brave&rsquo;s built-in shields, and dozens of
             similar tools all target gtag.js and the Google Analytics
@@ -154,7 +189,7 @@ export default function WhyGA4Shows13PctPage() {
           </p>
 
           <p>
-            After this second layer: 65 visitors become approximately 39.
+            After this second layer: 45 visitors become approximately 27.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -187,8 +222,8 @@ export default function WhyGA4Shows13PctPage() {
             This does not eliminate visitors from your count entirely, but it
             distorts session data, inflates new-user metrics, and destroys
             multi-session attribution. Combined with the visitors already lost
-            to consent and ad blockers, the remaining accurate data drops to
-            roughly 13% of actual traffic.
+            to consent and ad blockers, the remaining accurate data drops from
+            27 to roughly 13 out of every 100 actual visitors.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-8">
@@ -201,12 +236,16 @@ export default function WhyGA4Shows13PctPage() {
                 <span className="text-text-primary font-medium">100</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-text-secondary">After consent rejection (&#8722;35%)</span>
-                <span className="text-text-primary font-medium">65</span>
+                <span className="text-text-secondary">After consent rejection (&#8722;55%)</span>
+                <span className="text-text-primary font-medium">45</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-text-secondary">With correct page-1 attribution</span>
+                <span className="text-text-primary font-medium">~16</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-text-secondary">After ad blockers (&#8722;40%)</span>
-                <span className="text-text-primary font-medium">39</span>
+                <span className="text-text-primary font-medium">27</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-text-secondary">After browser restrictions</span>

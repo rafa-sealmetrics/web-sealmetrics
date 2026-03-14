@@ -7,11 +7,11 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "How Consent Banners Destroy Your Analytics Data",
   description:
-    "35% of EU visitors reject cookies. That means 35% of your traffic is invisible. Here is the real impact on attribution, conversions, and revenue reporting.",
+    "55% of EU visitors reject cookies. Of those who accept, 65% do so after the landing page. Here is the real impact on attribution, conversions, and revenue reporting.",
   openGraph: {
     title: "How Consent Banners Destroy Your Analytics Data",
     description:
-      "35% of EU visitors reject cookies. Here is the real impact on your analytics.",
+      "55% of EU visitors reject cookies. Here is the real impact on your analytics.",
     type: "article",
   },
   alternates: {
@@ -24,7 +24,7 @@ export default function ConsentBannerImpactPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
-      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 35%+ EU visitor data loss.", datePublished: "2026-01-25", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", datePublished: "2026-01-25", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -48,9 +48,9 @@ export default function ConsentBannerImpactPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-            <li>EU consent rejection rates average ~35% overall, reaching 45-55% in Germany and 40-50% in the Netherlands — these visitors become completely invisible to cookie-based analytics.</li>
+            <li>EU consent rejection rates average ~55% overall, reaching 60-70% in Germany and 55-65% in the Netherlands — these visitors become completely invisible to cookie-based analytics.</li>
+            <li>Of the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct traffic source attribution.</li>
             <li>Cookie rejection is not random: privacy-conscious users tend to be more tech-savvy with higher purchasing power, introducing systematic demographic bias into your data.</li>
-            <li>When 35% of visitors are invisible, attribution models work with incomplete journey data — conversions show up in your CRM but not in analytics, creating persistent reporting gaps.</li>
             <li>The solution is architectural, not tactical — optimizing banner design cannot fix the problem because regulators are increasingly scrutinizing dark patterns that nudge acceptance.</li>
           </ul>
         </div>
@@ -70,19 +70,19 @@ export default function ConsentBannerImpactPage() {
 
           <p>
             The consent rejection rate varies by country, industry, and banner
-            design, but the European average is approximately 35%. In
-            privacy-conscious markets like Germany and the Netherlands, rejection
-            rates can exceed 50%.
+            design, but the European average is approximately 55%. In
+            privacy-conscious markets like Germany, rejection rates regularly
+            exceed 65%. In the Netherlands, 60%.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6">
             <div className="space-y-4">
               {[
-                { country: "Germany", rate: "45-55%" },
-                { country: "Netherlands", rate: "40-50%" },
-                { country: "France", rate: "35-45%" },
-                { country: "Spain", rate: "25-35%" },
-                { country: "UK", rate: "20-30%" },
+                { country: "Germany", rate: "60-70%" },
+                { country: "Netherlands", rate: "55-65%" },
+                { country: "France", rate: "50-60%" },
+                { country: "Spain", rate: "40-50%" },
+                { country: "UK", rate: "35-45%" },
               ].map((item) => (
                 <div
                   key={item.country}
@@ -138,7 +138,7 @@ export default function ConsentBannerImpactPage() {
           </h2>
 
           <p>
-            When 35% of visitors are invisible to your analytics, your{" "}
+            When 55% of visitors are invisible to your analytics, your{" "}
             <Link
               href="/glossary/multi-touch-attribution"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -157,6 +157,33 @@ export default function ConsentBannerImpactPage() {
             visitors show up in your CRM but not in your analytics. This creates
             the persistent gap between &ldquo;analytics says we had 200
             conversions&rdquo; and &ldquo;the CRM shows 340.&rdquo;
+          </p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
+            The second-page problem: when cookies arrive too late
+          </h2>
+
+          <p>
+            Even the 45% of visitors who accept cookies present an attribution
+            problem that most teams overlook. Research shows that 65% of users
+            who accept cookies do so starting from the second page
+            view&nbsp;&mdash; not the first.
+          </p>
+
+          <p>
+            The landing page is where the traffic source is recorded: the
+            referrer URL, the UTM parameters, the campaign identifiers. If
+            cookies are not active on that first page view, the traffic origin
+            is never captured. The visitor becomes &ldquo;direct&rdquo; in your
+            reports regardless of how they actually arrived.
+          </p>
+
+          <p>
+            The result: only 35% of the 45% who accept cookies&nbsp;&mdash;
+            roughly 16 out of every 100 visitors&nbsp;&mdash; have their
+            traffic source correctly attributed. The remaining 29 are tracked
+            but with no source data, inflating your &ldquo;Direct&rdquo;
+            channel and making every other channel look weaker than it is.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

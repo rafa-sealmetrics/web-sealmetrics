@@ -47,7 +47,7 @@ export default function CookielessAnalyticsExplainedPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-            <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~35% rejection, and ad blockers strip scripts from another 40%.</li>
+            <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~55% rejection, and ad blockers strip scripts from another 40%.</li>
             <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
             <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
             <li>Consent exemption is architectural, not a workaround — no personal data is collected and no cookies are stored, which is consistent with CNIL and German DSK guidance.</li>
@@ -165,7 +165,7 @@ export default function CookielessAnalyticsExplainedPage() {
                   },
                   {
                     aspect: "Affected by consent",
-                    cookie: "Yes (35% reject in EU)",
+                    cookie: "Yes (55% reject in EU)",
                     cookieless: "No (no cookies or PII)",
                   },
                   {

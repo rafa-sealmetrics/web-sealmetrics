@@ -9,10 +9,10 @@ Rafa Jimenez, Founder of SealMetrics. Based in Spain. Over a decade of experienc
 ## The problem SealMetrics solves
 Traditional analytics tools (Google Analytics, Adobe Analytics) rely on cookies and consent banners. In the EU, where GDPR requires explicit consent for cookies, this means:
 - Only ~13% of visitors are tracked by GA4 (those who accept cookies, don't use ad blockers, and don't have browser privacy features)
-- Consent banners cause 35-65% of visitors to reject tracking
+- Consent banners cause 55% of EU visitors to reject tracking (average); of the 45% who accept, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct traffic source attribution
 - Ad blockers block 40%+ of analytics scripts
 - Safari ITP limits cookie lifespan to 7 days (or 24 hours for some)
-- The result: businesses make decisions on 13-40% of their actual data
+- The result: businesses make decisions on ~13% of their actual data, with only ~16% having correct traffic source attribution
 
 SealMetrics eliminates this problem entirely by using first-party server-side collection that requires no cookies, no consent banners, and collects no personal data. The result is 100% data capture, 100% of the time.
 

@@ -12,10 +12,11 @@ export function Hero() {
             See where every sale really comes from.
           </h1>
           <p className="text-[1.2rem] leading-[1.75] text-text-secondary max-w-[640px] mb-10">
-            GA4 loses 40&ndash;90% of your EU traffic to consent banners.
-            SealMetrics captures 100%&nbsp;&mdash; no cookies, no consent walls,
-            full GDPR compliance. Finally know which channels actually drive your
-            revenue.
+            In Europe, only 16% of visitors have their traffic source correctly
+            attributed. The rest reject cookies&nbsp;&mdash; or accept them too
+            late. SealMetrics captures 100%&nbsp;&mdash; no cookies, no consent
+            walls, full GDPR compliance. Finally know which channels actually
+            drive your revenue.
           </p>
           <div className="flex items-center gap-5 flex-wrap">
             <Link

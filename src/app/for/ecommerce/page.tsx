@@ -35,9 +35,11 @@ export default function ForEcommercePage() {
               You are optimizing ROAS on a fraction of your conversions.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              Cookie consent in the EU means 60-70% of checkout journeys are
-              invisible to traditional analytics. Your best campaigns may look
-              like your worst — because you cannot see the{" "}
+              55% of EU visitors reject cookies entirely, and of those who
+              accept, most do so after the landing page. The result: the
+              majority of checkout journeys are invisible or misattributed.
+              Your best campaigns may look like your worst — because you
+              cannot see the{" "}
               <Link href="/glossary/cookieless-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 cookieless
               </Link>{" "}
@@ -63,7 +65,7 @@ export default function ForEcommercePage() {
               },
               {
                 title: "Invisible conversions distort ROAS",
-                desc: "When 60-70% of conversions are invisible, your best-performing campaigns may look like underperformers. You are reallocating budget based on which channels happen to have higher consent rates — not which ones actually drive revenue.",
+                desc: "55% of visitors reject cookies, and most who accept do so after the landing page — meaning only ~16% have correct traffic source attribution. You are reallocating budget based on which channels happen to have higher consent rates — not which ones actually drive revenue.",
               },
               {
                 title: "Cart abandonment data is incomplete",
