@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const vsGa360Faqs = [
   {
     q: "Can SealMetrics really replace GA360?",
-    a: "For EU businesses focused on data completeness, yes. SealMetrics captures 100% of traffic vs ~35% for GA360. It includes multi-touch attribution, AI anomaly detection, and real-time processing \u2014 at 1/60th the cost.",
+    a: "For EU businesses focused on data completeness, yes. SealMetrics captures 100% of traffic vs ~35% for GA360. It includes revenue attribution, AI anomaly detection, and real-time processing \u2014 at 1/60th the cost.",
   },
   {
     q: "Does SealMetrics have unsampled data like GA360?",
@@ -34,7 +34,7 @@ const vsGa360Faqs = [
     a: "SealMetrics supports data export to BigQuery and 25+ other platforms. GA360\u2019s native BigQuery export is a strength, but SealMetrics provides the same capability with complete underlying data.",
   },
   {
-    q: "Is SealMetrics suitable for large ecommerce operations?",
+    q: "Is SealMetrics suitable for large eCommerce operations?",
     a: "Yes. The Enterprise plan handles custom event volumes with dedicated infrastructure. Built on ClickHouse for sub-second queries at any scale, with EU-only data residency guaranteed.",
   },
 ];

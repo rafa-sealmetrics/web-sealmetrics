@@ -28,7 +28,7 @@ const platforms = [
   {
     logo: "/logos/brands/woocommerce.svg",
     name: "WooCommerce",
-    method: "Same as WordPress — paste in theme header. Ecommerce events tracked automatically.",
+    method: "Same as WordPress — paste in theme header. eCommerce events tracked automatically.",
   },
   {
     logo: "/logos/brands/magento.svg",

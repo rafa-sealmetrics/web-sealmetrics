@@ -314,7 +314,7 @@ export default function LighthouseScoresPage() {
           </p>
 
           <p>
-            For an ecommerce site processing 50,000 sessions per month at a 2.5%
+            For an eCommerce site processing 50,000 sessions per month at a 2.5%
             conversion rate and a 80 EUR average order value, a 7% conversion drop
             represents roughly 7,000 EUR in lost monthly revenue. From a
             measurement script.

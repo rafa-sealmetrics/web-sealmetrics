@@ -47,7 +47,7 @@ export default function AnalyticsScriptsPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-            <li>Every 100ms of site speed improvement produces +8.4% conversions in ecommerce, +10.1% in travel, and +21.6% in lead forms.</li>
+            <li>Every 100ms of site speed improvement produces +8.4% conversions in eCommerce, +10.1% in travel, and +21.6% in lead forms.</li>
             <li>GA4 script is ~90 KB (gzipped) and Adobe Analytics is ~150 KB, while SealMetrics is just 1.3 KB — the tool measuring conversions may be costing you conversions.</li>
             <li>The compound effect is multiplicative: heavy scripts slow pages, consent banners reject 25-70% of visitors, and ad blockers erase ~32% of the rest.</li>
             <li>Traditional analytics captures less than half of actual traffic once all three forces — script weight, consent rejection, and tracker blocking — combine.</li>
@@ -86,7 +86,7 @@ export default function AnalyticsScriptsPage() {
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] text-[0.9rem] my-6 space-y-2">
             <p>
               <span className="font-mono font-medium text-text-primary">+8.4%</span>{" "}
-              conversions per 100ms improvement in ecommerce
+              conversions per 100ms improvement in eCommerce
             </p>
             <p>
               <span className="font-mono font-medium text-text-primary">+10.1%</span>{" "}
@@ -147,7 +147,7 @@ export default function AnalyticsScriptsPage() {
           </h2>
 
           <p>
-            In EU ecommerce, consent acceptance rates typically range from 30%
+            In EU eCommerce, consent acceptance rates typically range from 30%
             to 75%. Every visitor who rejects the banner becomes invisible to
             cookie-based analytics. You lose not just pageview data but the
             entire session — every product viewed, every add-to-cart, every

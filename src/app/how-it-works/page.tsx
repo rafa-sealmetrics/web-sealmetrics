@@ -202,10 +202,10 @@ export default function HowItWorksPage() {
               {
                 number: "03",
                 title: "Decision-ready intelligence",
-                desc: "Complete data enables complete intelligence. Nine specialized reports, multi-touch revenue attribution, LENS AI anomaly detection with 60+ rules — all built on the full picture, not approximations. AI agent tracking coming soon.",
+                desc: "Complete data enables complete intelligence. Nine specialized reports, revenue attribution, LENS AI anomaly detection with 60+ rules — all built on the full picture, not approximations. AI agent tracking coming soon.",
                 details: [
                   "9 report types covering the full funnel",
-                  "Multi-touch attribution with complete journey data",
+                  "Revenue attribution by channel, campaign, and creative",
                   "LENS AI: ask questions in natural language, get answers from real data",
                   "AI agent tracking — see GPT, Claude, Perplexity visits as sessions (Coming Soon)",
                   "Revenue attribution by channel, campaign, and creative",

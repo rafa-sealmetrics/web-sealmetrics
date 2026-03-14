@@ -40,7 +40,7 @@ const entries = [
       {
         title: "Revenue Attribution report redesign",
         type: "Improved",
-        desc: "Redesigned revenue attribution interface with clearer multi-touch journey visualization. See channel, campaign, and creative-level contribution to revenue with one-click drill-down.",
+        desc: "Redesigned revenue attribution interface with clearer channel-level visualization. See channel, campaign, and creative-level contribution to revenue with one-click drill-down.",
       },
       {
         title: "Webhook event forwarding",
@@ -90,7 +90,7 @@ const entries = [
       {
         title: "SealMetrics launch",
         type: "Launch",
-        desc: "First public release of SealMetrics. Cookieless analytics with 100% traffic capture, 9 report types, LENS AI anomaly detection, and multi-touch revenue attribution. Starting at €599/month.",
+        desc: "First public release of SealMetrics. Cookieless analytics with 100% traffic capture, 9 report types, LENS AI anomaly detection, and revenue attribution. Starting at €599/month.",
       },
     ],
   },

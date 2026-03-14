@@ -5,13 +5,13 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About SealMetrics — European Cookieless Analytics Platform",
+  title: "About SealMetrics — European Complete Analytics Platform",
   description:
-    "SealMetrics is a European analytics company building cookieless analytics for ecommerce teams. Founded in Spain, EU-first by design.",
+    "SealMetrics is a European analytics company building complete-data analytics for eCommerce teams. Founded in Spain, EU-first by design.",
   openGraph: {
-    title: "About SealMetrics — European Cookieless Analytics Platform",
+    title: "About SealMetrics — European Complete Analytics Platform",
     description:
-      "SealMetrics is a European analytics company building decision infrastructure for ecommerce teams.",
+      "SealMetrics is a European analytics company building decision infrastructure for eCommerce teams.",
     type: "website",
   },
   alternates: {
@@ -48,7 +48,7 @@ export default function AboutPage() {
                   "Web Analytics",
                   "GDPR Compliance",
                   "Cookieless Tracking",
-                  "Ecommerce Analytics",
+                  "eCommerce Analytics",
                   "Privacy Engineering",
                 ],
               },
@@ -111,14 +111,14 @@ export default function AboutPage() {
                   { label: "Founded", value: "2020" },
                   { label: "Headquarters", value: "Spain, EU" },
                   { label: "Data residency", value: "EU-only" },
-                  { label: "Focus", value: "Ecommerce and agency analytics" },
+                  { label: "Focus", value: "eCommerce and agency analytics" },
                   {
                     label: "Approach",
                     value: "Cookieless, privacy-first, complete data",
                   },
                   {
                     label: "Clients",
-                    value: "Enterprise ecommerce across Europe",
+                    value: "Enterprise eCommerce across Europe",
                   },
                 ].map((fact) => (
                   <div
@@ -220,7 +220,7 @@ export default function AboutPage() {
                 <p>
                   Before founding SealMetrics in 2020, Rafa spent over a decade
                   working at the intersection of analytics, privacy, and
-                  ecommerce. He saw firsthand how GDPR consent requirements were
+                  eCommerce. He saw firsthand how GDPR consent requirements were
                   eroding the data that marketing teams relied on — and how the
                   industry&apos;s response was to model the gaps rather than
                   close them.

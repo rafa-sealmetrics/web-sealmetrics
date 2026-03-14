@@ -2,7 +2,7 @@ const testimonials = [
   {
     text: "The difference between our GA4 data and SealMetrics data was alarming. We had been underreporting conversions by over 600%. Our board was making investment decisions on fundamentally wrong numbers.",
     title: "CMO",
-    role: "International E-commerce, 25M\u20AC revenue",
+    role: "International eCommerce, 25M\u20AC revenue",
     name: null as string | null,
     photo: null as string | null,
     company: null as string | null,

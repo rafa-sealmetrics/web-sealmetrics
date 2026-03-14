@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SealMetrics for SaaS",
     description:
-      "Complete trial-to-paid attribution for SaaS. Full funnel visibility across long sales cycles, multi-touch journeys, and product-led growth.",
+      "Complete trial-to-paid attribution for SaaS. Full funnel visibility across long sales cycles and product-led growth.",
     type: "website",
   },
   alternates: {
@@ -38,10 +38,7 @@ export default function ForSaaSPage() {
               SaaS buying journeys are long, multi-session, and multi-device.
               Cookie expiration and consent rejection in EU markets mean you
               lose the thread between first touch and paid conversion. Your{" "}
-              <Link href="/glossary/multi-touch-attribution" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
-                multi-touch attribution
-              </Link>{" "}
-              model is built on fragments. SealMetrics delivers{" "}
+              attribution model is built on fragments. SealMetrics delivers{" "}
               <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete trial-to-paid attribution</Link>{" "}
               across every touchpoint.
             </p>

@@ -101,7 +101,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     slug: "event-tracking",
     term: "Event Tracking",
     shortDefinition:
-      "The method of recording specific user interactions on a website beyond pageviews — clicks, form submissions, video plays, downloads, and ecommerce actions. GA4 uses an event-based data model where every interaction is an event.",
+      "The method of recording specific user interactions on a website beyond pageviews — clicks, form submissions, video plays, downloads, and eCommerce actions. GA4 uses an event-based data model where every interaction is an event.",
     category: "Technology",
   },
   {

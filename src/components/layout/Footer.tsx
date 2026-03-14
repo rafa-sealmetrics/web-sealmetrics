@@ -18,7 +18,7 @@ const footerColumns = [
   {
     title: "Industries",
     links: [
-      { label: "Ecommerce", href: "/for/ecommerce" },
+      { label: "eCommerce", href: "/for/ecommerce" },
       { label: "Hotels & Travel", href: "/for/hotels" },
       { label: "SaaS", href: "/for/saas" },
       { label: "Agencies", href: "/for/agencies" },
@@ -74,7 +74,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-[0.85rem] leading-relaxed text-warm-400 max-w-[280px]">
-              Decision intelligence for ecommerce teams. Complete data, no
+              Decision intelligence for eCommerce teams. Complete data, no
               cookies, full GDPR compliance by design.
             </p>
           </div>

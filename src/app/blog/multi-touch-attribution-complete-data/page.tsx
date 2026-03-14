@@ -71,7 +71,7 @@ export default function MultiTouchAttributionPage() {
           <p>
             For any attribution model to work correctly, it needs to see the
             complete customer journey — every touchpoint from first awareness to
-            final conversion. A typical ecommerce purchase might involve:
+            final conversion. A typical eCommerce purchase might involve:
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6 text-[0.9rem] space-y-2">

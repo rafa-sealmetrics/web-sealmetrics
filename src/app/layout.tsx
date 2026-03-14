@@ -33,11 +33,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Cookieless Analytics for Ecommerce",
+  title: "SealMetrics — Complete Analytics for eCommerce",
   description:
-    "Cookieless web analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance. Enterprise-grade analytics from €599/mo.",
+    "Web analytics that captures 100% of your traffic. No cookies, no consent banners, no data loss. Enterprise-grade complete data from €599/mo.",
   openGraph: {
-    title: "SealMetrics — Cookieless Analytics for Ecommerce",
+    title: "SealMetrics — Complete Analytics for eCommerce",
     description:
       "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €599/mo.",
     type: "website",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
         url: "https://sealmetrics.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SealMetrics — Cookieless Analytics for Ecommerce",
+        alt: "SealMetrics — Complete Analytics for eCommerce",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics — Cookieless Analytics for Ecommerce",
+    title: "SealMetrics — Complete Analytics for eCommerce",
     description:
       "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling.",
     images: ["https://sealmetrics.com/og-image.png"],

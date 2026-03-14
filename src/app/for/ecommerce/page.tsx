@@ -5,13 +5,13 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for Ecommerce — Complete Revenue Attribution",
+  title: "SealMetrics for eCommerce — Complete Revenue Attribution",
   description:
     "Stop optimizing ROAS on 30% of conversions. SealMetrics captures every add-to-cart, checkout, and purchase — cookieless, 100% attribution.",
   openGraph: {
-    title: "SealMetrics for Ecommerce",
+    title: "SealMetrics for eCommerce",
     description:
-      "Complete revenue attribution for ecommerce. 100% of conversions captured, true ROAS by channel, full cart abandonment analysis.",
+      "Complete revenue attribution for eCommerce. 100% of conversions captured, true ROAS by channel, full cart abandonment analysis.",
     type: "website",
   },
   alternates: {
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 export default function ForEcommercePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For Ecommerce" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For Ecommerce", url: "/for/ecommerce" }])} />
+      <Breadcrumbs items={[{ label: "For eCommerce" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "For eCommerce", url: "/for/ecommerce" }])} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
-              For Ecommerce
+              For eCommerce
             </span>
             <h1 className="headline-hero mb-8">
               You are optimizing ROAS on a fraction of your conversions.
@@ -107,8 +107,8 @@ export default function ForEcommercePage() {
                 desc: "See where ALL users drop off — not just the 30-40% who accepted cookies. Identify payment friction, shipping cost surprises, and checkout UX issues with data from every single visitor.",
               },
               {
-                title: "LENS AI for ecommerce",
-                desc: "60+ anomaly detection rules tuned for ecommerce patterns. Stock availability issues affecting conversion, payment gateway failures, sudden changes in average order value, and campaign performance shifts — detected automatically and explained in plain language.",
+                title: "LENS AI for eCommerce",
+                desc: "60+ anomaly detection rules tuned for eCommerce patterns. Stock availability issues affecting conversion, payment gateway failures, sudden changes in average order value, and campaign performance shifts — detected automatically and explained in plain language.",
               },
             ].map((item) => (
               <div key={item.title} className="pb-8 border-b border-warm-100 last:border-0">
@@ -128,7 +128,7 @@ export default function ForEcommercePage() {
       <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">
-            Metrics that matter for ecommerce
+            Metrics that matter for eCommerce
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
             {[

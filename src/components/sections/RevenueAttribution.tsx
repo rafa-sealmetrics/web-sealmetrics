@@ -22,7 +22,6 @@ export function RevenueAttribution() {
             </p>
             <ul className="space-y-1.5">
               {[
-                "Multi-touch attribution across the full journey",
                 "Channel-level revenue breakdown on complete data",
                 "Campaign cost integration and true ROAS",
                 "Funnel analysis with drop-off diagnostics",

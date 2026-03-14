@@ -52,7 +52,7 @@ const solutionsDropdown: NavDropdown = {
       items: [
         {
           href: "/for/ecommerce",
-          label: "Ecommerce",
+          label: "eCommerce",
           desc: "Complete purchase attribution",
         },
         {

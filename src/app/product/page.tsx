@@ -42,7 +42,7 @@ const reports = [
   },
   {
     name: "Revenue Attribution",
-    desc: "Multi-touch attribution connecting every marketing touchpoint to revenue outcomes.",
+    desc: "Channel-level revenue attribution connecting every marketing touchpoint to revenue outcomes.",
   },
   {
     name: "Campaign Analysis",
@@ -61,7 +61,7 @@ const reports = [
 const productFaqs = [
   {
     q: "What data does SealMetrics capture?",
-    a: "SealMetrics captures pageviews, sessions, referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions, and ecommerce transactions. All data comes from 100% of visitors — no sampling, no consent dependency.",
+    a: "SealMetrics captures pageviews, sessions, referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions, and eCommerce transactions. All data comes from 100% of visitors — no sampling, no consent dependency.",
   },
   {
     q: "Can I run SealMetrics alongside GA4?",
@@ -76,12 +76,12 @@ const productFaqs = [
     a: "LENS is SealMetrics' AI supervision engine. It continuously monitors 60+ metrics including traffic patterns, conversion rates, revenue trends, and campaign performance. It detects anomalies, provides root cause analysis, and suggests actions — all grounded in complete data.",
   },
   {
-    q: "How does multi-touch attribution work without cookies?",
-    a: "SealMetrics reconstructs visitor journeys using first-party cookieless session data. Because 100% of touchpoints are captured, multi-touch attribution models (first-touch, last-touch, linear, time-decay) produce accurate results — unlike cookie-based tools where 87% of touchpoints are missing.",
+    q: "How does revenue attribution work without cookies?",
+    a: "SealMetrics reconstructs visitor journeys using first-party cookieless session data. Because 100% of touchpoints are captured, revenue attribution reflects what actually happened — unlike cookie-based tools where 87% of touchpoints are missing.",
   },
   {
-    q: "Does SealMetrics track ecommerce transactions?",
-    a: "Yes. SealMetrics tracks product views, add-to-cart events, checkout steps, and purchases with full revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic ecommerce tracking.",
+    q: "Does SealMetrics track eCommerce transactions?",
+    a: "Yes. SealMetrics tracks product views, add-to-cart events, checkout steps, and purchases with full revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic eCommerce tracking.",
   },
   {
     q: "What integrations are available?",
@@ -286,7 +286,6 @@ export default function ProductPage() {
               </p>
               <ul className="space-y-2">
                 {[
-                  "Multi-touch attribution across the full journey",
                   "Channel and campaign-level revenue breakdown",
                   "Cost integration for true ROAS calculation",
                   "Funnel analysis with drop-off diagnostics",
@@ -664,7 +663,7 @@ export default function ProductPage() {
               href="/about"
               className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"
             >
-              understands ecommerce data
+              understands eCommerce data
             </Link>
             , SealMetrics is constantly evolving. Check out our latest{" "}
             <Link

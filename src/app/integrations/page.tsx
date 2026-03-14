@@ -32,7 +32,7 @@ const categories = [
     ],
   },
   {
-    name: "Ecommerce",
+    name: "eCommerce",
     integrations: [
       { icon: "S", name: "Shopify" },
       { icon: "W", name: "WooCommerce" },
@@ -98,7 +98,7 @@ export default function IntegrationsPage() {
               Connect to your existing stack.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              SealMetrics integrates with your marketing platforms, ecommerce
+              SealMetrics integrates with your marketing platforms, eCommerce
               systems, CRMs, and data infrastructure. Most integrations are
               one-click setup.
             </p>
@@ -180,7 +180,7 @@ export default function IntegrationsPage() {
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               For enterprise deployments, our onboarding team handles the
-              integration end-to-end&nbsp;&mdash; connecting your ecommerce
+              integration end-to-end&nbsp;&mdash; connecting your eCommerce
               platform, ad accounts, and data warehouse so you see complete{" "}
               <Link
                 href="/glossary/revenue-attribution"

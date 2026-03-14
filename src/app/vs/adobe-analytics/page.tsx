@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const vsAdobeFaqs = [
   {
     q: "Is SealMetrics a real alternative to Adobe Analytics for enterprise?",
-    a: "Yes. SealMetrics captures 100% of EU traffic vs ~25% for Adobe. Multi-touch attribution, AI anomaly detection, and 9 report types. From \u20AC5,988/yr vs $100,000+/yr for Adobe.",
+    a: "Yes. SealMetrics captures 100% of EU traffic vs ~25% for Adobe. Revenue attribution, AI anomaly detection, and 9 report types. From \u20AC5,988/yr vs $100,000+/yr for Adobe.",
   },
   {
     q: "Does SealMetrics replace Adobe\u2019s segmentation and Analysis Workspace?",

@@ -108,7 +108,7 @@ export default function AIAgentTrafficPage() {
 
           <p>
             The volume varies significantly by industry. Content-rich sites
-            (ecommerce product pages, knowledge bases, editorial content) see
+            (eCommerce product pages, knowledge bases, editorial content) see
             higher AI agent activity. Based on SealMetrics client data from
             2025-2026:
           </p>
@@ -135,7 +135,7 @@ export default function AIAgentTrafficPage() {
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
               Ranges based on SealMetrics Agent Analytics data across 100+
-              ecommerce sites, Q4 2025 — Q1 2026.
+              eCommerce sites, Q4 2025 — Q1 2026.
             </p>
           </div>
 

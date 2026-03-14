@@ -91,7 +91,7 @@ export default function ForCMOPage() {
             {[
               {
                 title: "Attribution you can trust",
-                desc: "Multi-touch revenue attribution built on 100% of visitor journeys. See which channels, campaigns, and creatives actually drive revenue — not which ones happen to be visible to cookies.",
+                desc: "Revenue attribution built on 100% of visitor journeys. See which channels, campaigns, and creatives actually drive revenue — not which ones happen to be visible to cookies.",
               },
               {
                 title: "LENS AI flags what matters",

@@ -397,8 +397,8 @@ export default function GA4AlternativesEnterprisePage() {
           <p>
             This is not a lightweight privacy tool. SealMetrics is
             enterprise-grade analytics with LENS AI for automated
-            anomaly detection across 60+ rules, multi-touch attribution
-            built on complete journey data, and agent analytics that
+            anomaly detection across 60+ rules, revenue attribution
+            built on complete data, and agent analytics that
             identifies AI bot traffic separately from human visitors.
             Data is processed and stored exclusively in the EU.
           </p>

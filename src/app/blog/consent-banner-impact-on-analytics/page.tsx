@@ -130,7 +130,7 @@ export default function ConsentBannerImpactPage() {
             This introduces a systematic bias into your data. Your analytics
             over-represent users who accept tracking (less privacy-aware, often
             younger or less tech-savvy) and under-represent exactly the audience
-            many ecommerce businesses want to understand.
+            many eCommerce businesses want to understand.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -8,11 +8,11 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "SealMetrics Pricing — Cookieless Analytics from €599/mo",
+  title: "SealMetrics Pricing — Complete Analytics from €599/mo",
   description:
-    "Cookieless analytics from €599/mo. All features included. Plans auto-scale with your traffic — no surprises, no blocked data. 14-day free trial, no card required.",
+    "Complete analytics from €599/mo. 100% of your traffic captured. Plans auto-scale — no surprises, no blocked data. 14-day free trial, no card required.",
   openGraph: {
-    title: "SealMetrics Pricing — Cookieless Analytics from €599/mo",
+    title: "SealMetrics Pricing — Complete Analytics from €599/mo",
     description:
       "Enterprise analytics from €599/mo. Annual billing from €499/mo. 14-day free trial.",
     type: "website",
@@ -81,7 +81,7 @@ const comparisonData: ComparisonSection[] = [
     ],
   },
   {
-    category: "E-Commerce",
+    category: "eCommerce",
     rows: [
       { feature: "Conversion Tracking", growth: true, scale: true, enterprise: true },
       { feature: "Microconversion Tracking", growth: true, scale: true, enterprise: true },

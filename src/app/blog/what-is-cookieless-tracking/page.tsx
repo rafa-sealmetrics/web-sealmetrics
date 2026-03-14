@@ -66,7 +66,7 @@ export default function WhatIsCookielessTrackingPage() {
           </p>
 
           <p>
-            The cascade is brutal: a typical European ecommerce site captures
+            The cascade is brutal: a typical European eCommerce site captures
             approximately 13% of its actual traffic in cookie-based analytics.
             The other 87% &mdash; real visitors, real sessions, real revenue
             &mdash; disappears before a single report is generated. That is

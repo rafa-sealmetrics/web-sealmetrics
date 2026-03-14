@@ -99,7 +99,7 @@ export default function CookielessAnalyticsExplainedPage() {
           </ul>
 
           <p>
-            The cumulative effect is dramatic. A typical European ecommerce site
+            The cumulative effect is dramatic. A typical European eCommerce site
             loses approximately 87% of its visitor data before any analytics
             processing occurs. The{" "}
             <Link

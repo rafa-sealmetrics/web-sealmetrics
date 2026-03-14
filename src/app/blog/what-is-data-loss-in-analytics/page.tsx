@@ -192,7 +192,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
 
           <p>
             Each cause does not operate in isolation. They cascade. Start
-            with 100 real visitors arriving at a European ecommerce site and
+            with 100 real visitors arriving at a European eCommerce site and
             follow the data through each stage:
           </p>
 

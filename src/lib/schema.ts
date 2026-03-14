@@ -36,7 +36,7 @@ export function organizationSchema() {
           "GDPR Compliance",
           "Cookieless Tracking",
           "Privacy-First Analytics",
-          "Ecommerce Analytics",
+          "eCommerce Analytics",
         ],
       },
       {
@@ -78,7 +78,7 @@ export function softwareApplicationSchema() {
       "Cookieless tracking (no consent banner required)",
       "100% traffic data capture",
       "GDPR/ePrivacy compliant by design",
-      "Multi-touch revenue attribution",
+      "Revenue attribution",
       "LENS AI anomaly detection",
       "AI Agent Analytics",
     ],
