@@ -9,7 +9,7 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - Next.js 16 (App Router) + React 19 + TypeScript (strict)
 - Tailwind CSS 4 (v4 syntax with `@theme` block in globals.css)
 - Static export (`output: "export"` in next.config.ts)
-- Fonts: Source Serif 4 (headlines), Inter (body), JetBrains Mono (data)
+- Fonts: Plus Jakarta Sans (headlines + body), JetBrains Mono (data)
 - No additional JS libraries (no Framer Motion, no animation libs)
 
 ## Design System Rules
