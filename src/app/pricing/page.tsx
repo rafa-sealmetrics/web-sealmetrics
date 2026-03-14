@@ -10,7 +10,7 @@ import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "SealMetrics Pricing — Cookieless Analytics from €599/mo",
   description:
-    "Cookieless analytics from €599/mo. Growth (5M events), Scale (15M, €1,079). Annual billing from €499/mo. 14-day free trial, no card required.",
+    "Cookieless analytics from €599/mo. All features included. Plans auto-scale with your traffic — no surprises, no blocked data. 14-day free trial, no card required.",
   openGraph: {
     title: "SealMetrics Pricing — Cookieless Analytics from €599/mo",
     description:
@@ -157,7 +157,7 @@ const comparisonData: ComparisonSection[] = [
 const faqs = [
   {
     q: "What counts as a human event?",
-    a: "A human event is any interaction from a real visitor: pageviews, clicks, conversions, form submissions. AI agent traffic and traditional bots are excluded from your event count.",
+    a: "A human event is any interaction from a real visitor: pageviews, clicks, conversions, form submissions, add-to-cart actions, newsletter signups. AI agent traffic and traditional bots are excluded from your event count — they're tracked separately and don't count toward your limit.",
   },
   {
     q: "Why is AI agent traffic free?",
@@ -165,23 +165,62 @@ const faqs = [
   },
   {
     q: "What happens if I exceed my event limit?",
-    a: "We never block your tracking. At 80% you get an email alert, at 100% a dashboard notification, and at 120% we contact you to discuss upgrading. No data is lost.",
+    a: "Your tracking never stops. We never block, throttle, or sample your data — that would defeat the purpose of complete analytics. At 80% usage you get an informational email (no action needed). At 100% a badge appears in your dashboard. If you exceed your limit for 2+ consecutive months, your plan automatically upgrades at your next billing cycle. One month of overage per year is free — seasonal spikes don't trigger anything.",
+  },
+  {
+    q: "Will I ever be automatically upgraded without warning?",
+    a: "You'll always receive an email before any plan change takes effect. Auto-upgrades only happen after 2+ consecutive months above 120% of your limit, and they apply at the start of your next billing cycle — never mid-cycle. Annual plan customers are only adjusted at renewal. We will never upgrade you based on a single spike month.",
+  },
+  {
+    q: "What if my traffic decreases? Can I downgrade?",
+    a: "Yes — and we'll actually suggest it. If your usage drops below 50% of your plan limit for 3+ months, we'll proactively email you with a one-click option to move to a smaller plan. If you do nothing, nothing changes. We'd rather you pay for what you use.",
   },
   {
     q: "Are all features really included in every plan?",
-    a: "Core analytics, conversion tracking, monitoring, API, MCP, LENS AI, and BigQuery are included in every plan starting from Growth. Agent AI Analytics is available from the Scale plan. The differences include event volume, governance features, and support level.",
+    a: "Yes. Core analytics, conversion tracking, LENS AI, monitoring, API, MCP Server, and BigQuery export are included in every plan starting from Growth. The only differences between plans are event volume, governance features (RBAC, SSO), support level, and Agent AI Analytics (available from Scale). You never hit a feature wall.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
-    a: "Yes. You can switch to annual billing at any time to get 2 months free. Annual commitments are billed upfront for the full year.",
+    a: "Yes. Switch to annual billing at any time to get 2 months free. Annual commitments are billed upfront. If you switch from monthly to annual, the change applies at your next billing cycle.",
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. Every plan includes a 14-day free trial with full access to all features. No credit card required — just sign up and start exploring.",
+    a: "Yes. Every plan includes a 14-day free trial with full access to all features. No credit card required. You'll see your real data within minutes of installing our script.",
   },
   {
     q: "What about unlimited websites and users?",
-    a: "Every plan includes unlimited websites and unlimited team members. No per-seat or per-domain charges.",
+    a: "Every plan includes unlimited websites and unlimited team members. No per-seat charges, no per-domain charges. Add your entire team and all your domains from day one.",
+  },
+  {
+    q: "SealMetrics captures 100% of traffic — does that mean my event count will be higher than what I see in GA4?",
+    a: "Yes, significantly. Because we track without cookies or consent banners, we capture visitors that GA4 never sees — typically 40-90% more traffic depending on your consent rejection rate. Keep this in mind when estimating your plan: if GA4 shows you 100K sessions/month, your real traffic may be 170K-300K sessions, generating roughly 4-6 events per session.",
+  },
+  {
+    q: "Do you charge per event if I go over my limit?",
+    a: "No. We don't do per-event overage billing. Your plan has a clear limit, and if you consistently grow beyond it, you move to the next plan at a fixed price. No surprise line items, no variable invoices, no calculator needed.",
+  },
+  {
+    q: "How does billing work for annual plans if my usage grows mid-year?",
+    a: "Annual plans are protected for the full contract period. If your traffic grows mid-year, we absorb the overage until your renewal date. At renewal, we'll recommend the plan that fits your current usage. You'll never receive an unexpected invoice mid-contract.",
+  },
+];
+
+const adaptCards = [
+  {
+    title: "We never cut your data",
+    desc: "No matter your usage, your tracking keeps running. We will never block, throttle, or sample your data. Complete data is our promise — we don't break it over billing.",
+  },
+  {
+    title: "If you grow, your plan grows with you",
+    desc: "If your traffic consistently exceeds your plan limit for 2+ months, we automatically upgrade your plan at the start of your next billing cycle. You'll get an email confirming the change — no sales calls, no negotiations. Monthly plans adjust the next month. Annual plans adjust at renewal only.",
+  },
+  {
+    title: "If you need less, we'll tell you",
+    desc: "If your usage drops significantly for 3+ months, we proactively email you suggesting a smaller plan. One click to confirm. If you do nothing, nothing changes. We'd rather you pay for what you need than overpay in silence.",
+  },
+  {
+    title: "Seasonal spikes are on us",
+    desc: "Black Friday? January sales? A viral campaign? One month of overage per year is included at no extra charge and doesn't trigger any plan change. Your business has peaks — your analytics bill shouldn't punish you for them.",
   },
 ];
 
@@ -411,28 +450,62 @@ export default function PricingPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-[0.85rem] text-text-secondary mt-8 p-5 bg-warm-white border border-warm-100 rounded-[4px] leading-[1.7]">
+            <span className="font-medium text-text-primary">Important:</span>{" "}
+            SealMetrics captures 100% of your traffic — including visitors who reject cookies on other analytics tools. This means your event count in SealMetrics will be significantly higher than what you see in Google Analytics. When choosing your plan, estimate your real traffic at 2-3x what GA4 reports.
+          </p>
+        </div>
+      </section>
+
+      {/* How your plan adapts */}
+      <section className="py-20 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-3 text-center">
+            Your plan adapts to your business
+          </h2>
+          <p className="text-[1.05rem] leading-[1.75] text-text-secondary text-center max-w-[680px] mx-auto mb-14">
+            We never block your tracking. We never surprise you with invoices. Your plan scales with you — automatically and transparently.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
+            {adaptCards.map((card) => (
+              <div
+                key={card.title}
+                className="p-7 bg-white border border-warm-100 rounded-[4px]"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-[0.9rem] leading-[1.7] text-text-secondary">
+                  {card.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-28 bg-warm-white border-t border-warm-100">
+      <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[800px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12 text-center">
             Frequently asked questions
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-0">
             {faqs.map((faq) => (
-              <div
+              <details
                 key={faq.q}
-                className="pb-8 border-b border-warm-100 last:border-0"
+                className="group border-b border-warm-100 last:border-0"
               >
-                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                <summary className="cursor-pointer list-none flex items-center justify-between py-5 font-serif text-[1.1rem] font-medium text-text-primary [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                </h3>
-                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  <span className="text-text-tertiary text-[1.1rem] ml-4 shrink-0 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary pb-6">
                   {faq.a}
                 </p>
-              </div>
+              </details>
             ))}
           </div>
         </div>

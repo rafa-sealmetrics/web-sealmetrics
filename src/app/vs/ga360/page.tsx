@@ -57,7 +57,7 @@ const comparisonRows = [
   { feature: "Data residency", sm: "EU-only servers, guaranteed", ga: "EU data storage option (US processing possible)", category: "Privacy" },
   { feature: "ePrivacy compliance", sm: "No consent needed", ga: "Consent required", category: "Privacy" },
   { feature: "Personal data collection", sm: "None — zero PII", ga: "IP address, device IDs, user IDs, Google signals", category: "Privacy" },
-  { feature: "Annual cost", sm: "From €2,388/yr", ga: "$150,000+/yr", category: "Other" },
+  { feature: "Annual cost", sm: "From €5,988/yr", ga: "$150,000+/yr", category: "Other" },
   { feature: "Setup complexity", sm: "One script tag, 5 minutes", ga: "6-12 week implementation, certified partner recommended", category: "Other" },
   { feature: "Support", sm: "Priority email + onboarding", ga: "Dedicated account manager", category: "Other" },
   { feature: "Contract", sm: "Monthly, cancel anytime", ga: "Annual contract required", category: "Other" },

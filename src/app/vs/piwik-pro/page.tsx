@@ -35,7 +35,7 @@ const vsPiwikFaqs = [
   },
   {
     q: "Why is SealMetrics cheaper than Piwik PRO?",
-    a: "Piwik PRO Enterprise starts at \u20AC30,000+/yr. SealMetrics starts at \u20AC2,388/yr. The price difference reflects different market positioning \u2014 SealMetrics delivers enterprise-grade analytics without enterprise-grade pricing.",
+    a: "Piwik PRO Enterprise starts at \u20AC30,000+/yr. SealMetrics starts at \u20AC5,988/yr. The price difference reflects different market positioning \u2014 SealMetrics delivers enterprise-grade analytics without enterprise-grade pricing.",
   },
 ];
 
@@ -58,7 +58,7 @@ const comparisonRows = [
   { feature: "ePrivacy compliance", sm: "No consent needed (no device storage)", pp: "Consent needed (cookies used)", category: "Privacy" },
   { feature: "Consent management", sm: "Not needed", pp: "Built-in Consent Manager", category: "Privacy" },
   { feature: "Personal data", sm: "None — zero PII by architecture", pp: "Configurable — can minimize but cookies remain", category: "Privacy" },
-  { feature: "Annual cost", sm: "From €2,388/yr", pp: "From €30,000+/yr (Core plan free, limited)", category: "Other" },
+  { feature: "Annual cost", sm: "From €5,988/yr", pp: "From €30,000+/yr (Core plan free, limited)", category: "Other" },
   { feature: "Setup complexity", sm: "One script tag, 5 minutes", pp: "Tag Manager setup + consent configuration", category: "Other" },
   { feature: "Support", sm: "Priority email + onboarding", pp: "Priority support (enterprise tiers)", category: "Other" },
   { feature: "Open source", sm: "Proprietary", pp: "Partially open-source heritage", category: "Other" },

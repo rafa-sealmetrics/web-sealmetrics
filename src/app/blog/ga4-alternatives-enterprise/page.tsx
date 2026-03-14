@@ -26,7 +26,7 @@ const comparisonData = [
     ga360: "$150K+",
     adobe: "$100K+",
     piwik: "\u20ac30K+",
-    seal: "From \u20ac2,388",
+    seal: "From \u20ac5,988",
   },
   {
     feature: "EU data capture rate",
@@ -123,7 +123,7 @@ export default function GA4AlternativesEnterprisePage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
             <li>GA360 costs $150K+/year and still loses 35-55% of EU traffic due to cookie dependency; Adobe Analytics costs $100K+ with the same consent-driven data gaps.</li>
-            <li>SealMetrics captures 100% of EU traffic at a starting price of 2,388 euros/year — enterprise analytics capabilities at a fraction of legacy enterprise pricing.</li>
+            <li>SealMetrics captures 100% of EU traffic at a starting price of 5,988 euros/year — enterprise analytics capabilities at a fraction of legacy enterprise pricing.</li>
             <li>Piwik PRO offers EU-only data residency but still depends on cookies, leaving 35-55% of European traffic invisible despite being privacy-focused.</li>
             <li>The three decision factors are: how much data loss you can accept, what compliance requirements you face, and whether your budget should go toward estimates or complete data.</li>
             <li>SealMetrics is the only platform in this tier combining cookieless collection (no consent needed), EU-only data residency, zero sampling, LENS AI anomaly detection, and agent analytics.</li>
@@ -404,7 +404,7 @@ export default function GA4AlternativesEnterprisePage() {
           </p>
 
           <p>
-            Pricing starts at {"\u20ac"}239 per month ({"\u20ac"}2,388
+            Pricing starts at {"\u20ac"}599 per month ({"\u20ac"}5,988
             per year with annual billing) &mdash; a fraction of GA360 or Adobe Analytics.
             The value proposition is straightforward: complete data at a
             lower price point, with full EU compliance built into the
@@ -470,7 +470,7 @@ export default function GA4AlternativesEnterprisePage() {
             annual commitments. GA360 at $150K+ and Adobe at $100K+ are
             priced for organizations where analytics infrastructure is a
             major line item. Piwik PRO at {"\u20ac"}30K+ occupies the
-            mid-range. SealMetrics at {"\u20ac"}2,388 per year
+            mid-range. SealMetrics at {"\u20ac"}5,988 per year
             represents a different cost category entirely &mdash;
             enterprise capabilities at a fraction of enterprise pricing.
           </p>

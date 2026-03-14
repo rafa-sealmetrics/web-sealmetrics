@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const vsAdobeFaqs = [
   {
     q: "Is SealMetrics a real alternative to Adobe Analytics for enterprise?",
-    a: "Yes. SealMetrics captures 100% of EU traffic vs ~25% for Adobe. Multi-touch attribution, AI anomaly detection, and 9 report types. From \u20AC2,388/yr vs $100,000+/yr for Adobe.",
+    a: "Yes. SealMetrics captures 100% of EU traffic vs ~25% for Adobe. Multi-touch attribution, AI anomaly detection, and 9 report types. From \u20AC5,988/yr vs $100,000+/yr for Adobe.",
   },
   {
     q: "Does SealMetrics replace Adobe\u2019s segmentation and Analysis Workspace?",
@@ -57,7 +57,7 @@ const comparisonRows = [
   { feature: "Data residency", sm: "EU-only servers, guaranteed", adobe: "Regional data centers (US processing common)", category: "Privacy" },
   { feature: "ePrivacy compliance", sm: "No consent needed", adobe: "Consent required (cookies)", category: "Privacy" },
   { feature: "Personal data", sm: "None — zero PII", adobe: "IP, device IDs, Experience Cloud IDs", category: "Privacy" },
-  { feature: "Annual cost", sm: "From €2,388/yr", adobe: "$100,000+/yr (custom quote)", category: "Other" },
+  { feature: "Annual cost", sm: "From €5,988/yr", adobe: "$100,000+/yr (custom quote)", category: "Other" },
   { feature: "Setup complexity", sm: "One script tag, 5 minutes", adobe: "3-6 month implementation, Adobe consultants", category: "Other" },
   { feature: "Support", sm: "Priority email + onboarding", adobe: "Enterprise support (tiered)", category: "Other" },
   { feature: "Ecosystem lock-in", sm: "Open, API-first", adobe: "Deep Experience Cloud dependency", category: "Other" },
