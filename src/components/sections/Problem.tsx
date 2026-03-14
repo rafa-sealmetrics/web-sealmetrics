@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const consequences = [
   {
     number: "87%",
@@ -5,9 +7,9 @@ const consequences = [
     desc: "When 87% of visitors are invisible to your analytics, every channel looks underperforming. Budget gets reallocated based on a distorted picture.",
   },
   {
-    number: "€0",
-    title: "Untracked revenue",
-    desc: "Conversions from users who declined cookies, use Safari ITP, or run ad blockers are never recorded. Revenue exists — your tools just cannot see it.",
+    number: "\u20AC23K",
+    title: "Untracked revenue per month",
+    desc: "Average untracked revenue for a mid-market eCommerce using GA4 in Europe. Real revenue from real customers \u2014 invisible to cookie-based analytics.",
   },
   {
     number: "30h",
@@ -23,10 +25,10 @@ export function Problem() {
         {/* Intro */}
         <div className="max-w-[700px] mb-20">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-            The Real Cost
+            The Cost of Incomplete Data
           </span>
           <h2 className="headline-section mb-5">
-            What happens when 87% of your data is missing.
+            The cost of incomplete data for your eCommerce.
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
             Every business using cookie-based analytics in Europe is making
@@ -127,6 +129,19 @@ export function Problem() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Micro-CTA */}
+        <div className="mt-12 pt-8 border-t border-warm-100 text-center">
+          <Link
+            href="/data-loss-calculator"
+            className="text-[0.95rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+          >
+            Want to know your exact number?{" "}
+            <span className="border-b border-warm-200 pb-0.5">
+              Calculate your data loss in 2 minutes &rarr;
+            </span>
+          </Link>
         </div>
       </div>
     </section>

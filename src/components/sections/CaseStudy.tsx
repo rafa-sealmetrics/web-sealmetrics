@@ -1,7 +1,7 @@
 const caseMetrics = [
   { label: "Tracked visitors", before: "12,400 / month", after: "47,200" },
   { label: "Recorded conversions", before: "340 / month", after: "1,290" },
-  { label: "Attributed revenue", before: "€89K / month", after: "€342K" },
+  { label: "Attributed revenue", before: "\u20AC89K / month", after: "\u20AC342K" },
   { label: "ROAS improvement", before: "Baseline", after: "+40%" },
 ];
 
@@ -14,7 +14,7 @@ export function CaseStudy() {
             Case Study
           </span>
           <h2 className="headline-section mb-4">
-            How a European retailer recovered its invisible revenue.
+            How a European fashion retailer recovered its invisible revenue.
           </h2>
         </div>
 
@@ -31,14 +31,22 @@ export function CaseStudy() {
                 Head of Digital Marketing
               </div>
               <div className="text-[0.85rem] text-text-secondary mt-1">
-                European Fashion Retailer &mdash; 45M&euro; annual revenue
+                European Fashion Retailer &mdash; 200+ SKUs, &euro;12K/mo Google
+                Ads spend, 45M&euro; annual revenue
               </div>
             </div>
-            <p className="text-[1rem] leading-[1.7] text-text-secondary">
+            <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
               After implementing SealMetrics alongside their existing GA4 setup,
-              the team discovered that their paid search channel was generating
-              3x more attributed revenue than previously visible. This led to a
-              reallocation of budget that improved overall ROAS by 40%.
+              the team discovered that GA4 was only recording 26% of their real
+              conversions. Paid search was generating 3x more attributed revenue
+              than previously visible. Organic search&nbsp;&mdash; a channel
+              they had been deprioritizing for two years&nbsp;&mdash; was their
+              second-highest revenue driver.
+            </p>
+            <p className="text-[1rem] leading-[1.7] text-text-primary font-medium">
+              What decision did they change? They reallocated 35% of their Meta
+              budget to organic search&nbsp;&mdash; a channel that GA4 had been
+              underreporting by 4x.
             </p>
           </div>
 

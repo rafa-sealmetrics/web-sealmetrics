@@ -68,66 +68,7 @@ export function ProductShowcase() {
           </div>
         </div>
 
-        {/* Feature 1: Revenue Attribution */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
-            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
-              Revenue Attribution
-            </span>
-            <h3 className="headline-sub mb-4">
-              Know what actually drives revenue.
-            </h3>
-            <p className="text-[1rem] leading-[1.7] text-text-secondary mb-5">
-              Attribution models built on 13% of data produce misleading results.
-              With complete session capture, SealMetrics connects every
-              touchpoint to revenue outcomes&nbsp;&mdash; revealing the true ROI
-              of every channel, not an estimate based on the visitors who
-              happened to accept cookies.
-            </p>
-            <ul className="space-y-1.5">
-              {[
-                "Multi-touch attribution across the full journey",
-                "Channel-level revenue breakdown on complete data",
-                "Campaign cost integration and true ROAS",
-                "Funnel analysis with drop-off diagnostics",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-[0.9rem] text-text-secondary"
-                >
-                  <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-white border border-warm-100 rounded-[4px] p-8">
-            <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
-              Revenue by channel &mdash; last 30 days
-            </div>
-            {[
-              { channel: "Organic Search", revenue: "€67,240" },
-              { channel: "Paid Search", revenue: "€52,180" },
-              { channel: "Social (Meta)", revenue: "€31,450" },
-              { channel: "Email", revenue: "€22,890" },
-              { channel: "Direct", revenue: "€11,070" },
-            ].map((row) => (
-              <div
-                key={row.channel}
-                className="flex justify-between items-center py-3 border-b border-warm-100/60 last:border-0"
-              >
-                <span className="text-[0.85rem] text-text-secondary">
-                  {row.channel}
-                </span>
-                <span className="font-mono text-[0.85rem] text-text-primary font-medium">
-                  {row.revenue}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Feature 2: LENS AI */}
+        {/* Feature: LENS AI */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="order-2 lg:order-1 bg-white border border-warm-100 rounded-[4px] p-8">
             <div className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-6">
@@ -202,6 +143,20 @@ export function ProductShowcase() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+              <div className="text-[0.65rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-3">
+                Real impact
+              </div>
+              <p className="text-[0.9rem] leading-[1.6] text-text-secondary">
+                LENS AI detected a payment page error at 3 AM. By the time the
+                team was online, the alert had already identified the root cause
+                and estimated{" "}
+                <span className="font-mono text-red-alert font-medium">
+                  &euro;47K
+                </span>{" "}
+                in potential lost revenue. They fixed it in 20 minutes.
+              </p>
+            </div>
           </div>
         </div>
 

@@ -6,6 +6,7 @@ const plans = [
     desc: "For teams that need API, LENS AI & BigQuery.",
     price: "€599",
     period: "5M human events/mo",
+    roiContext: "Less than the cost of one wrong budget decision per month.",
     cta: "Start Free Trial",
     ctaHref: "/demo",
     featured: false,
@@ -15,6 +16,7 @@ const plans = [
     desc: "For multi-brand retailers with Agent Analytics.",
     price: "€1,079",
     period: "15M human events/mo",
+    roiContext: null as string | null,
     cta: "Talk to Us",
     ctaHref: "/demo",
     featured: true,
@@ -24,6 +26,7 @@ const plans = [
     desc: "SSO, dedicated support, custom SLA, unlimited events.",
     price: "Custom",
     period: "Unlimited human events/mo",
+    roiContext: null as string | null,
     cta: "Contact Sales",
     ctaHref: "/demo",
     featured: false,
@@ -78,9 +81,16 @@ export function Pricing() {
                   </span>
                 )}
               </div>
-              <div className="text-[0.8rem] text-text-tertiary mb-8">
+              <div className="text-[0.8rem] text-text-tertiary mb-2">
                 {plan.period}
               </div>
+              {plan.roiContext ? (
+                <div className="text-[0.8rem] text-green-muted mb-8">
+                  {plan.roiContext}
+                </div>
+              ) : (
+                <div className="mb-8" />
+              )}
               <Link
                 href={plan.ctaHref}
                 className={`block w-full py-3 text-center text-[0.9rem] font-medium rounded-[4px] no-underline transition-colors ${
