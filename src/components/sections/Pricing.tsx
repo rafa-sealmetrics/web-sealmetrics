@@ -4,8 +4,9 @@ const plans = [
   {
     name: "Growth",
     desc: "For teams that need API, LENS AI & BigQuery.",
-    price: "€599",
+    price: "\u20AC499",
     period: "5M human events/mo",
+    billingNote: "Billed annually. \u20AC599/mo if monthly.",
     roiContext: "Less than the cost of one wrong budget decision per month.",
     cta: "Start Free Trial",
     ctaHref: "/demo",
@@ -14,8 +15,9 @@ const plans = [
   {
     name: "Scale",
     desc: "For multi-brand retailers with Agent Analytics.",
-    price: "€1,079",
+    price: "\u20AC899",
     period: "15M human events/mo",
+    billingNote: "Billed annually. \u20AC1,079/mo if monthly.",
     roiContext: null as string | null,
     cta: "Talk to Us",
     ctaHref: "/demo",
@@ -26,6 +28,7 @@ const plans = [
     desc: "SSO, dedicated support, custom SLA, unlimited events.",
     price: "Custom",
     period: "Unlimited human events/mo",
+    billingNote: "",
     roiContext: null as string | null,
     cta: "Contact Sales",
     ctaHref: "/demo",
@@ -46,7 +49,7 @@ export function Pricing() {
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
             GA360 starts at $150,000/yr. Adobe Analytics at $100,000/yr.
-            SealMetrics delivers complete data from €599/mo&nbsp;&mdash; with AI
+            SealMetrics delivers complete data from €499/mo&nbsp;&mdash; with AI
             agent tracking included free on every plan.
           </p>
         </div>
@@ -81,6 +84,11 @@ export function Pricing() {
                   </span>
                 )}
               </div>
+              {plan.billingNote && (
+                <div className="text-[0.75rem] text-green-muted mb-2">
+                  {plan.billingNote}
+                </div>
+              )}
               <div className="text-[0.8rem] text-text-tertiary mb-2">
                 {plan.period}
               </div>

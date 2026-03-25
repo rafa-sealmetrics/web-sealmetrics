@@ -20,7 +20,7 @@ export function ProductShowcase() {
             What Changes with Complete Data
           </span>
           <h2 className="headline-section mb-4">
-            Nine reports built on 100% of reality.
+            All reports built on 100% of reality.
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
             When every visitor, every session, and every conversion is captured,
