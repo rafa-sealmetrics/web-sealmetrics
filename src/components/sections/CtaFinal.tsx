@@ -8,8 +8,8 @@ export function CtaFinal() {
           Ready to see what 100% of your traffic looks like?
         </h2>
         <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-10">
-          Run SealMetrics alongside your current setup. Compare the data. Then
-          decide.
+          Run SealMetrics alongside GA4 for 30 days. See the gap with your own
+          data. Then decide. No commitment, no credit card.
         </p>
         <div className="flex items-center justify-center gap-5 flex-wrap">
           <Link
@@ -17,12 +17,6 @@ export function CtaFinal() {
             className="inline-flex items-center gap-2 px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
             Book a Demo
-          </Link>
-          <Link
-            href="/how-it-works"
-            className="inline-flex items-center gap-2 px-9 py-4 text-[1rem] text-text-secondary bg-transparent border border-warm-200 rounded-[4px] no-underline hover:border-text-body hover:text-text-primary transition-colors"
-          >
-            See How It Works
           </Link>
         </div>
         <p className="mt-5 text-[0.8rem] text-text-tertiary">

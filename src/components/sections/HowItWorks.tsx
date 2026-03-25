@@ -3,20 +3,20 @@ import Link from "next/link";
 const steps = [
   {
     number: "01",
-    title: "First-party cookieless collection",
-    desc: "A lightweight script runs on your domain, collecting behavioral data through first-party methods. No third-party cookies, no external requests, no consent barriers. Works in every browser, every scenario.",
+    title: "You install. We capture everything.",
+    desc: "A single script — 846 bytes — runs on your domain. From that moment, every visitor, every session, every conversion is recorded. No consent required. No data lost waiting for a banner.",
     detail: "<script> 846 bytes gzipped\nLoad time: <50ms\nZero external dependencies",
   },
   {
     number: "02",
-    title: "Full-resolution processing",
-    desc: "Every session is recorded individually — not modeled, not sampled, not estimated. Your data reflects actual behavior from 100% of visitors, not statistical inference from the 13% who accepted cookies.",
+    title: "100% of sessions. Zero estimates.",
+    desc: "Every visit is recorded individually, not modeled or sampled. When GA4 shows you 10,000 visitors, we show you what those 10,000 actually did — not a statistical inference from the 13% who accepted cookies.",
     detail: "100% session capture\nNo data sampling\nReal-time processing",
   },
   {
     number: "03",
-    title: "Decision-ready intelligence",
-    desc: "Nine specialized reports, LENS AI anomaly detection with 60+ rules, and multi-touch revenue attribution — all built on complete data. Ask questions in natural language, get answers grounded in reality. AI agent tracking coming soon.",
+    title: "Decisions grounded in reality.",
+    desc: "Nine specialized reports, AI anomaly detection, and last-click revenue attribution — all built on complete data. Know exactly which channels drive revenue. Enter every budget meeting with numbers nobody can question.",
     detail: "9 report types\n60+ anomaly rules\nLENS AI supervision",
   },
 ];
