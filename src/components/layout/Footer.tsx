@@ -42,6 +42,7 @@ const footerColumns = [
     title: "Resources",
     links: [
       { label: "Blog", href: "/blog" },
+      { label: "Case Studies", href: "/case-studies" },
       { label: "Videos", href: "/videos" },
       { label: "Glossary", href: "/glossary" },
       { label: "Changelog", href: "/changelog" },

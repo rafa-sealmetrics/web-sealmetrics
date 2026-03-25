@@ -51,7 +51,7 @@ const comparisonRows = [
   { feature: "Data sampling", sm: "Never — full resolution at any volume", ga: "Sampled above 500K sessions/day", category: "Data Capture" },
   { feature: "Data freshness", sm: "Real-time", ga: "24-48 hour processing delay", category: "Data Capture" },
   { feature: "AI agent tracking (Coming Soon)", sm: "Built-in", ga: "Not available", category: "Data Capture" },
-  { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", ga: "Partial (consent-dependent, modeled)", category: "Intelligence" },
+  { feature: "Revenue attribution", sm: "Last-click on 100% of data", ga: "Partial (consent-dependent, modeled)", category: "Intelligence" },
   { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", ga: "Basic automated insights", category: "Intelligence" },
   { feature: "Natural language queries", sm: "Ask business questions, get answers", ga: "Limited natural language", category: "Intelligence" },
   { feature: "Funnel analysis", sm: "Complete with drop-off diagnostics", ga: "Available but consent-limited", category: "Intelligence" },
@@ -259,26 +259,34 @@ export default function VsGA4Page() {
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
               SealMetrics delivers enterprise-grade analytics&nbsp;&mdash;
               complete data capture, AI supervision,{" "}
-              <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch
-              attribution</Link>&nbsp;&mdash; at a fraction of enterprise pricing. With
+              <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue
+              attribution on complete data</Link>&nbsp;&mdash; at a fraction of enterprise pricing. With
               capabilities that GA360 and Adobe do not offer:{" "}
               <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless
               collection</Link>, AI agent tracking (coming soon), and{" "}
               <Link href="/security" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance by design</Link>.
             </p>
-            <div className="flex items-center gap-5 flex-wrap">
-              <Link
-                href="/pricing"
-                className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
+            <div className="mt-12 p-8 bg-warm-white border border-warm-100 rounded-[4px] text-center max-w-[600px]">
+              <p className="text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-3">
+                See it with your own data
+              </p>
+              <h3 className="text-[1.4rem] font-medium text-text-primary mb-3">
+                We&rsquo;ll show you your exact gap in 30 minutes.
+              </h3>
+              <p className="text-[0.9rem] text-text-secondary mb-6">
+                Not a generic demo. We run SealMetrics alongside your GA4 and
+                show you what your setup is missing &mdash; with your traffic,
+                your conversions, your revenue.
+              </p>
+              <a
+                href="/demo/"
+                className="inline-flex items-center px-7 py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
               >
-                See Pricing
-              </Link>
-              <Link
-                href="/product"
-                className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5"
-              >
-                Full Product Overview
-              </Link>
+                Book a 30-minute demo
+              </a>
+              <p className="mt-3 text-[0.75rem] text-text-tertiary">
+                No commitment. No credit card. Just your real numbers.
+              </p>
             </div>
           </div>
         </div>
@@ -309,6 +317,26 @@ export default function VsGA4Page() {
             >
               vs Piwik PRO
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section className="py-14 border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[760px] mx-auto">
+            <blockquote className="border-l-2 border-warm-200 pl-6">
+              <p className="text-[1.1rem] text-text-primary leading-relaxed italic mb-4">
+                &ldquo;We thought our analytics were accurate. SealMetrics showed
+                us we were missing 74% of our conversions. Our entire attribution
+                model was built on incomplete data &mdash; every budget decision
+                we made was wrong.&rdquo;
+              </p>
+              <footer className="text-[0.85rem] text-text-secondary">
+                Head of Digital Marketing &mdash; European Fashion Retailer,
+                45M&euro; revenue, &euro;12K/mo Google Ads spend
+              </footer>
+            </blockquote>
           </div>
         </div>
       </section>

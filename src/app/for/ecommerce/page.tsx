@@ -126,6 +126,45 @@ export default function ForEcommercePage() {
         </div>
       </section>
 
+      {/* Case study */}
+      <section className="py-16 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[760px]">
+            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+              Real result
+            </span>
+            <h2 className="headline-section mb-8">
+              European fashion retailer. 74% of conversions invisible to GA4.
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+              {[
+                { num: "47,200", label: "Real visitors/mo", sub: "vs 12,400 in GA4" },
+                { num: "1,290", label: "Tracked conversions", sub: "vs 340 in GA4" },
+                { num: "\u20AC342K", label: "Revenue attributed", sub: "vs \u20AC89K in GA4" },
+                { num: "+40%", label: "ROAS improvement", sub: "after 60 days" },
+              ].map((stat, i) => (
+                <div key={i} className="p-4 bg-white border border-warm-100 rounded-[4px]">
+                  <div className="font-serif text-[1.5rem] font-medium text-text-primary mb-1">{stat.num}</div>
+                  <div className="text-[0.75rem] font-medium text-text-secondary mb-0.5">{stat.label}</div>
+                  <div className="text-[0.7rem] text-text-tertiary">{stat.sub}</div>
+                </div>
+              ))}
+            </div>
+            <blockquote className="border-l-2 border-warm-200 pl-5 mb-6">
+              <p className="text-[0.95rem] text-text-secondary italic leading-relaxed">
+                &ldquo;Our entire attribution model was built on incomplete data
+                &mdash; every budget decision we made was wrong. SealMetrics
+                showed us we were missing 74% of our conversions.&rdquo;
+              </p>
+              <footer className="text-[0.8rem] text-text-tertiary mt-2">
+                Head of Digital Marketing, European Fashion Retailer &mdash;
+                45M&euro; revenue
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
       {/* Metrics that matter */}
       <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -162,14 +201,15 @@ export default function ForEcommercePage() {
             See your complete revenue data.
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
-            30-minute demo with your actual traffic. We show you every
-            conversion GA4 is missing — and the revenue it represents.
+            We&rsquo;ll run SealMetrics alongside your GA4 for 30 days.
+            You&rsquo;ll see every conversion your current setup is missing
+            &mdash; and the revenue it represents.
           </p>
           <Link
             href="/demo"
             className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            See Your Complete Revenue Data
+            See your complete revenue data &rarr;
           </Link>
           <p className="mt-4 text-[0.8rem] text-text-tertiary">
             Or{" "}

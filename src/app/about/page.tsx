@@ -72,6 +72,20 @@ export default function AboutPage() {
               data&nbsp;&mdash; not on the fraction that cookie-based tools
               happen to capture.
             </p>
+            <div className="flex items-center gap-8 mt-8 pt-8 border-t border-warm-100">
+              <div>
+                <div className="font-serif text-[1.8rem] font-medium text-text-primary">35+</div>
+                <div className="text-[0.75rem] text-text-secondary">eCommerce clients</div>
+              </div>
+              <div>
+                <div className="font-serif text-[1.8rem] font-medium text-text-primary">2020</div>
+                <div className="text-[0.75rem] text-text-secondary">Founded in Spain</div>
+              </div>
+              <div>
+                <div className="font-serif text-[1.8rem] font-medium text-text-primary">EU-only</div>
+                <div className="text-[0.75rem] text-text-secondary">Data infrastructure</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -208,13 +222,18 @@ export default function AboutPage() {
           <h2 className="headline-section mb-12">Who builds SealMetrics</h2>
           <div className="max-w-[700px]">
             <div className="p-8 bg-white border border-warm-100 rounded-[4px]">
-              <div className="mb-4">
-                <h3 className="font-serif text-[1.25rem] font-medium text-text-primary">
-                  Rafa Jimenez
-                </h3>
-                <p className="text-[0.85rem] text-text-tertiary mt-1">
-                  Founder, SealMetrics
-                </p>
+              <div className="flex items-start gap-6 mb-6">
+                <div className="w-20 h-20 rounded-full bg-warm-200 flex items-center justify-center text-[1.2rem] font-medium text-text-secondary flex-shrink-0">
+                  RJ
+                </div>
+                <div>
+                  <h3 className="font-serif text-[1.25rem] font-medium text-text-primary">
+                    Rafa Jimenez
+                  </h3>
+                  <p className="text-[0.85rem] text-text-tertiary mt-1">
+                    Founder, SealMetrics
+                  </p>
+                </div>
               </div>
               <div className="space-y-4 text-[0.95rem] leading-[1.75] text-text-secondary">
                 <p>
