@@ -264,6 +264,15 @@ export default function PricingPage() {
           >
             Book a Demo
           </Link>
+          <p className="mt-4 text-[0.85rem] text-text-tertiary">
+            Or{" "}
+            <a
+              href="/data-loss-calculator/"
+              className="text-text-secondary no-underline border-b border-warm-200 hover:text-text-primary transition-colors"
+            >
+              calculate your data loss first &rarr;
+            </a>
+          </p>
         </div>
       </section>
 
@@ -324,6 +333,57 @@ export default function PricingPage() {
           <p className="text-[0.85rem] text-text-secondary mt-10 pt-8 border-t border-warm-100 text-center">
             You only pay more if you grow. All core features are always included.
           </p>
+        </div>
+      </section>
+
+      {/* Quick FAQ — pre-decision questions */}
+      <section className="py-20 bg-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[640px] mx-auto text-center mb-12">
+            <h2 className="headline-section">
+              Questions before you decide.
+            </h2>
+          </div>
+          <div className="max-w-[760px] mx-auto divide-y divide-warm-100">
+            {[
+              {
+                q: "Is there really a 14-day free trial with no credit card?",
+                a: "Yes. Install the script, see your real data within minutes, and decide at the end of 14 days. No card required to start. If you don\u2019t see value, you don\u2019t pay.",
+              },
+              {
+                q: "SealMetrics captures 100% of traffic \u2014 will my event count be much higher than GA4?",
+                a: "Yes, significantly. If GA4 shows 100K sessions/month, your real traffic may be 150K\u2013300K, generating 4\u20136 events per session. We flag this proactively so you choose the right plan from the start. No surprises.",
+              },
+              {
+                q: "What happens if I exceed my plan limit?",
+                a: "Your tracking never stops. We never block or sample your data \u2014 that would defeat the purpose. At 80% usage you get an email (no action needed). Auto-upgrades only happen after 2+ consecutive months above your limit, always at your next billing cycle. One overage month per year is free.",
+              },
+              {
+                q: "Can I downgrade if my traffic decreases?",
+                a: "Yes \u2014 and we\u2019ll suggest it. If your usage drops below 50% of your plan for 3+ months, we proactively offer a one-click downgrade. We\u2019d rather you pay for what you use.",
+              },
+              {
+                q: "Are all features really included in every plan?",
+                a: "Yes. Core analytics, LENS AI, conversion tracking, API, MCP Server, and BigQuery export are included from Growth. The only differences between plans are event volume, governance features (SSO, RBAC), support level, and Agent Analytics (Scale+). You never hit a feature wall.",
+              },
+              {
+                q: "Is there a minimum contract or lock-in?",
+                a: "No lock-in on monthly plans \u2014 cancel anytime. Annual plans are billed upfront and offer 2 months free. We prefer to earn retention through results, not contracts.",
+              },
+            ].map((item, i) => (
+              <details key={i} className="group py-5 cursor-pointer">
+                <summary className="flex items-center justify-between gap-4 text-[1rem] font-medium text-text-primary select-none list-none marker:hidden [&::-webkit-details-marker]:hidden">
+                  {item.q}
+                  <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center text-text-tertiary group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 text-[0.95rem] text-text-secondary leading-relaxed pr-8">
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

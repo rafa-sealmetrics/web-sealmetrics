@@ -12,6 +12,7 @@ const plans = [
     annualTotal: "€5,988 billed annually",
     annualSave: "€499/mo if billed annually",
     period: "5M human events/mo",
+    roiContext: "Less than the cost of one misattributed campaign decision.",
     cta: "Start Free Trial",
     ctaNote: "14-day free trial · No credit card required",
     featured: false,
@@ -19,20 +20,22 @@ const plans = [
   },
   {
     name: "Scale",
-    desc: "For multi-brand retailers with Agent Analytics",
+    desc: "For growing eCommerce teams that need complete attribution",
     monthlyPrice: "€1,079",
     annualPrice: "€899",
     annualTotal: "€10,788 billed annually",
     annualSave: "€899/mo if billed annually",
     period: "15M human events/mo",
-    cta: "Talk to Us",
-    ctaNote: "",
+    roiContext: "For teams spending \u20AC20K+/mo in paid media.",
+    cta: "Start Free Trial",
+    ctaNote: "14-day free trial \u00b7 No credit card required",
     featured: true,
     href: "/demo",
   },
   {
     name: "Enterprise",
     desc: "SSO, dedicated support, custom SLA",
+    roiContext: "",
     monthlyPrice: "Custom",
     annualPrice: "Custom",
     annualTotal: "",
@@ -46,7 +49,7 @@ const plans = [
 ];
 
 export function PricingPlans() {
-  const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
+  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
 
   return (
     <section className="pb-28 bg-white">
@@ -133,6 +136,11 @@ export function PricingPlans() {
                     <span className="text-green-muted">{subPrice}</span>
                   ) : null}
                 </div>
+                {plan.roiContext && (
+                  <p className="text-[0.72rem] text-text-tertiary italic mb-2 leading-snug">
+                    {plan.roiContext}
+                  </p>
+                )}
                 <div className="text-[0.85rem] font-medium text-text-primary mb-1">
                   {plan.period}
                 </div>

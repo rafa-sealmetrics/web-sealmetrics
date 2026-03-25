@@ -22,11 +22,7 @@ export function DemoForm() {
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      company: (form.elements.namedItem("company") as HTMLInputElement).value,
       website: (form.elements.namedItem("website") as HTMLInputElement).value,
-      pageviews: (form.elements.namedItem("pageviews") as HTMLSelectElement)
-        .value,
-      notes: (form.elements.namedItem("notes") as HTMLTextAreaElement).value,
       source: window.location.href,
     };
 
@@ -35,7 +31,6 @@ export function DemoForm() {
       if (window.sealmetrics) {
         window.sealmetrics.conv("demo_request", 1, {
           email: data.email,
-          company: data.company,
         });
       }
 
@@ -62,7 +57,7 @@ export function DemoForm() {
         Request a demo
       </h2>
       <p className="text-[0.85rem] text-text-secondary mb-8">
-        Fill in your details and we will get back to you within 24 hours.
+        Three fields. We&rsquo;ll reach out the same day to confirm your slot.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -98,70 +93,18 @@ export function DemoForm() {
         </div>
         <div>
           <label
-            htmlFor="company"
-            className="block text-[0.8rem] font-medium text-text-body mb-1.5"
-          >
-            Company
-          </label>
-          <input
-            id="company"
-            name="company"
-            type="text"
-            required
-            className={inputClasses}
-          />
-        </div>
-        <div>
-          <label
             htmlFor="website"
             className="block text-[0.8rem] font-medium text-text-body mb-1.5"
           >
-            Website URL
+            Your website
           </label>
           <input
             id="website"
             name="website"
             type="url"
             placeholder="https://"
-            className={inputClasses}
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="pageviews"
-            className="block text-[0.8rem] font-medium text-text-body mb-1.5"
-          >
-            Monthly pageviews (estimate)
-          </label>
-          <select
-            id="pageviews"
-            name="pageviews"
             required
-            defaultValue=""
             className={inputClasses}
-          >
-            <option value="" disabled>
-              Select range
-            </option>
-            <option value="Under 100K">Under 100K</option>
-            <option value="100K-500K">100K - 500K</option>
-            <option value="500K-2M">500K - 2M</option>
-            <option value="2M-10M">2M - 10M</option>
-            <option value="10M+">10M+</option>
-          </select>
-        </div>
-        <div>
-          <label
-            htmlFor="notes"
-            className="block text-[0.8rem] font-medium text-text-body mb-1.5"
-          >
-            Anything else we should know?
-          </label>
-          <textarea
-            id="notes"
-            name="notes"
-            rows={3}
-            className={`${inputClasses} resize-none`}
           />
         </div>
 
@@ -198,7 +141,7 @@ export function DemoForm() {
           disabled={submitting}
           className="w-full py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] hover:bg-[#333] transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {submitting ? "Sending..." : "Request Demo"}
+          {submitting ? "Sending..." : "Book my 30-minute demo \u2192"}
         </button>
         <p className="text-[0.75rem] text-text-tertiary text-center">
           No commitment. We will respond within one business day.

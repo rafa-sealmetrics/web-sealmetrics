@@ -71,6 +71,17 @@ export default function DemoPage() {
                 ))}
               </div>
 
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                <div className="p-5 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+                  <div className="font-serif text-[2rem] font-medium text-text-primary mb-1">58%</div>
+                  <div className="text-[0.75rem] text-text-secondary leading-snug">Average untracked conversions recovered</div>
+                </div>
+                <div className="p-5 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+                  <div className="font-serif text-[2rem] font-medium text-text-primary mb-1">30 min</div>
+                  <div className="text-[0.75rem] text-text-secondary leading-snug">To see your own data gap live</div>
+                </div>
+              </div>
+
               <div className="mt-10 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
                 <p className="text-[0.85rem] text-text-secondary leading-relaxed">
                   &ldquo;We thought our analytics were accurate. SealMetrics
