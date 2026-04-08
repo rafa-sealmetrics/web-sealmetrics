@@ -47,7 +47,7 @@ const comparisonRows = [
   { feature: "Data sampling", sm: "Never — full resolution", adobe: "Configurable thresholds", category: "Data Capture" },
   { feature: "Data freshness", sm: "Real-time", adobe: "30-90 minute latency", category: "Data Capture" },
   { feature: "AI agent tracking (Coming Soon)", sm: "Built-in", adobe: "Not available", category: "Data Capture" },
-  { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", adobe: "Advanced Attribution IQ (consent-limited)", category: "Intelligence" },
+  { feature: "Revenue attribution", sm: "Last-click on 100% of data", adobe: "Advanced Attribution IQ (consent-limited)", category: "Intelligence" },
   { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", adobe: "Adobe Sensei (additional licensing)", category: "Intelligence" },
   { feature: "Natural language queries", sm: "Ask business questions, get answers", adobe: "Limited Analysis Workspace NLP", category: "Intelligence" },
   { feature: "Segmentation", sm: "Based on 100% data", adobe: "Advanced segmentation (strength)", category: "Intelligence" },

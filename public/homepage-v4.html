@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SealMetrics — Unblock Your Hidden Revenue</title>
+  <meta name="description" content="GA4 + consent banners block analytics for nearly half your visitors. Enter your numbers and see exactly what revenue you're missing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'warm-white': '#FAFAF7',
+            'warm-50': '#F5F5F0',
+            'warm-100': '#EBEBDF',
+            'warm-200': '#D4D4C8',
+            'warm-300': '#A3A396',
+            'warm-400': '#78786C',
+            'warm-800': '#1A1A16',
+            'warm-900': '#0E0E0C',
+            'text-primary': '#1A1A1A',
+            'text-body': '#3D3D3D',
+            'text-secondary': '#6B6B5E',
+            'text-tertiary': '#717165',
+            'green-muted': '#2D8B6D',
+            'green-dark': '#0D3D2E',
+            'red-alert': '#B5423B',
+            'blue-accent': '#2E5C8A',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            serif: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: "Plus Jakarta Sans", system-ui, sans-serif; color: #3D3D3D; background: #FFFFFF; }
+
+    .headline-hero { font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: clamp(2.75rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; color: #1A1A1A; }
+    .headline-section { font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.015em; color: #1A1A1A; }
+    .headline-sub { font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: clamp(1.5rem, 2vw, 2rem); font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; color: #1A1A1A; }
+
+    /* Calculator-specific */
+    .calc-input { width: 100%; padding: 0.75rem 1rem; border: 1px solid #EBEBDF; border-radius: 4px; font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: 0.95rem; color: #1A1A1A; background: #FAFAF7; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; }
+    .calc-input:focus { outline: none; border-color: #78786C; }
+    .calc-input::placeholder { color: #A3A396; }
+    select.calc-input { background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B6B5E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+
+    /* Results slide-up */
+    .results-panel { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.7s ease, opacity 0.5s ease; }
+    .results-panel.visible { max-height: 1200px; opacity: 1; }
+
+    /* Traffic bars */
+    .bar-fill { width: 0%; transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+
+    /* FAQ */
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::marker { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER — exact copy of Header.tsx
+       ============================================ -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-xl border-b border-warm-100">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center no-underline">
+        <img src="./logos/logo-sealmetrics-negro.png" alt="SealMetrics" width="160" height="32" class="h-7 w-auto">
+      </a>
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="#how-it-works" class="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">How it works</a>
+        <a href="#features" class="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Features</a>
+        <a href="#case-study" class="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Case studies</a>
+        <a href="#start" class="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Pricing</a>
+        <a href="#start" class="inline-flex items-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors">Start now</a><!-- TODO: replace with real URL -->
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================
+         HERO — pattern from Hero.tsx (two-column)
+         ============================================ -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-24 bg-white overflow-hidden">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+
+        <!-- Full-width headline -->
+        <div class="max-w-[820px] mb-12">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
+            Analytics without blind spots
+          </span>
+          <h1 class="headline-hero">
+            Your eCommerce is missing <em class="not-italic font-serif text-green-muted">up to 35% of its revenue</em>
+          </h1>
+        </div>
+
+        <!-- Two columns: copy left, calculator right -->
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-14 items-start">
+          <div class="lg:pt-4 order-2 lg:order-1">
+            <p class="text-[1.1rem] leading-[1.75] text-text-secondary mb-8">
+              GA4 + consent banners block analytics for nearly half your visitors.
+              Enter your numbers and see exactly what's hidden.
+            </p>
+            <div class="flex items-center gap-5 flex-wrap mb-8">
+              <a class="inline-flex items-center gap-2 px-7 py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors" href="#start">
+                Book a Demo
+              </a><!-- TODO: replace with real URL -->
+              <a class="text-[0.9rem] text-text-tertiary no-underline hover:text-text-primary transition-colors underline underline-offset-4" href="#methodology">
+                How we calculated this
+              </a>
+            </div>
+            <p class="text-[0.8rem] text-text-tertiary">
+              35+ European eCommerce brands · No cookies · GDPR-native · Setup in 15 min
+            </p>
+          </div>
+
+          <!-- Calculator card (replaces screenshot) -->
+          <div class="order-1 lg:order-2">
+            <div class="border border-warm-100 rounded-[4px] bg-white p-8 shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div>
+                  <label for="inp-traffic" class="block text-[0.8rem] font-medium text-text-secondary mb-2">Monthly GA4 sessions</label>
+                  <input type="text" id="inp-traffic" inputmode="numeric" placeholder="e.g. 120,000" class="calc-input">
+                </div>
+                <div>
+                  <label for="inp-revenue" class="block text-[0.8rem] font-medium text-text-secondary mb-2">Monthly revenue (&euro;)</label>
+                  <input type="text" id="inp-revenue" inputmode="numeric" placeholder="e.g. 180,000" class="calc-input">
+                </div>
+                <div>
+                  <label for="inp-annual" class="block text-[0.8rem] font-medium text-text-secondary mb-2">Annual revenue (&euro;) <span class="font-normal text-text-tertiary">&mdash; optional</span></label>
+                  <input type="text" id="inp-annual" inputmode="numeric" placeholder="e.g. 2,200,000" class="calc-input">
+                </div>
+                <div>
+                  <label for="inp-market" class="block text-[0.8rem] font-medium text-text-secondary mb-2">Primary market</label>
+                  <select id="inp-market" class="calc-input">
+                    <option value="">Select market</option>
+                    <option value="es">Spain</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                    <option value="it">Italy</option>
+                    <option value="pt">Portugal</option>
+                    <option value="nl">Netherlands</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="eu">Rest of EU</option>
+                  </select>
+                </div>
+              </div>
+              <button onclick="calculateGap()" class="w-full py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] hover:bg-[#333] transition-colors cursor-pointer border-none">
+                Calculate my hidden revenue &rarr;
+              </button>
+
+              <!-- Results panel -->
+              <div class="results-panel" id="results-panel">
+                <div class="h-px bg-warm-100 mt-6 mb-5"></div>
+                <p class="text-[1.05rem] leading-[1.75] text-text-primary mb-5" id="results-headline"></p>
+                <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4"></div>
+                <div id="results-roas" class="mb-5"></div>
+                <div class="flex items-center gap-5 flex-wrap">
+                  <a href="#start" class="inline-flex items-center px-7 py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors">Start now — talk to a specialist</a><!-- TODO: replace with real URL -->
+                  <button onclick="document.getElementById('methodology').scrollIntoView({behavior:'smooth'})" class="text-[0.9rem] text-text-secondary hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5 bg-transparent border-t-0 border-l-0 border-r-0 cursor-pointer p-0">How we calculated this</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal banner (full-width, below hero grid) -->
+        <div id="personal-banner" class="hidden mt-8 p-4 bg-warm-50 border border-warm-100 rounded-[4px] text-[0.85rem] text-text-secondary text-center">
+          Your numbers: <strong class="text-text-primary font-medium" id="banner-sessions"></strong> sessions/month · <strong class="text-text-primary font-medium" id="banner-revenue"></strong>/month revenue — the analysis below reflects your specific situation.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         THE DATA GAP — pattern from Problem.tsx
+         ============================================ -->
+    <section id="how-it-works" class="py-28 bg-white">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+
+        <!-- Intro (same as Problem intro) -->
+        <div class="max-w-[700px] mb-20">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            The data gap
+          </span>
+          <h2 class="headline-section mb-5">
+            Your GA4 dashboard shows a fraction of reality.
+          </h2>
+          <p class="text-[1.05rem] leading-[1.75] text-text-secondary">
+            Every time a visitor declines your cookie banner, GA4 goes blind.
+            SealMetrics works without cookies — so you see 100% of traffic, always.
+          </p>
+        </div>
+
+        <!-- Traffic comparison (same two-column layout as Problem's diagram area) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-12 border-t border-warm-100">
+          <!-- GA4 bars -->
+          <div class="bg-warm-white border border-warm-100 rounded-[4px] p-9">
+            <div class="text-[0.75rem] font-medium tracking-[0.06em] uppercase text-text-tertiary mb-8">
+              GA4 sees this
+            </div>
+            <div id="ga4-bars"></div>
+          </div>
+
+          <!-- SealMetrics bars -->
+          <div class="bg-warm-white border border-warm-100 rounded-[4px] p-9">
+            <div class="text-[0.75rem] font-medium tracking-[0.06em] uppercase text-text-tertiary mb-8">
+              SealMetrics sees
+            </div>
+            <div id="sm-bars"></div>
+          </div>
+        </div>
+
+        <!-- Stat block (4-column grid like case metrics) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
+          <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+            <div class="font-mono text-[1.75rem] font-medium text-text-primary" id="stat-traffic">+50%</div>
+            <div class="text-[0.8rem] text-text-secondary mt-1">more real traffic captured on average</div>
+          </div>
+          <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+            <div class="font-mono text-[1.75rem] font-medium text-text-primary">3rd &darr;</div>
+            <div class="text-[0.8rem] text-text-secondary mt-1">"Direct" drops from #1 to 3rd-4th once sources are correct</div>
+          </div>
+          <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+            <div class="font-mono text-[1.75rem] font-medium text-text-primary" id="stat-revenue-recovery">+28%</div>
+            <div class="text-[0.8rem] text-text-secondary mt-1">of revenue correctly attributed after switching</div>
+          </div>
+          <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+            <div class="font-mono text-[1.75rem] font-medium text-text-primary" id="stat-roas-uplift">+35%</div>
+            <div class="text-[0.8rem] text-text-secondary mt-1">ROAS uplift potential on complete data</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ATTRIBUTION — pattern from Comparison.tsx (table)
+         ============================================ -->
+    <section id="attribution" class="py-28 bg-white border-t border-warm-100">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div class="max-w-[700px] mb-16">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            Correct attribution
+          </span>
+          <h2 class="headline-section mb-4">
+            "Direct" isn't a channel. It's where GA4 gives up.
+          </h2>
+          <p class="text-[1.05rem] leading-[1.75] text-text-secondary">
+            When GA4 can't attribute a visit, it calls it "Direct". With SealMetrics,
+            those sessions get their real source — revealing which channels are
+            actually driving your revenue.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto bg-warm-white border border-warm-100 rounded-[4px]">
+          <table class="w-full border-collapse text-[0.85rem]">
+            <thead>
+              <tr class="bg-warm-50">
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em] min-w-[140px]">Channel</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em]">GA4 rank</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-primary border-b border-warm-100 uppercase tracking-[0.04em]">SM rank</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em]">GA4 share</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-primary border-b border-warm-100 uppercase tracking-[0.04em]">Real share</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em]">Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Organic Search</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">#2</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">#1</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">22%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">31%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60"><span class="inline-block px-2 py-0.5 rounded-[4px] text-[0.75rem] font-mono bg-green-muted/10 text-green-muted">+9pp</span></td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Paid Search</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">#3</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">#2</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">18%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">24%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60"><span class="inline-block px-2 py-0.5 rounded-[4px] text-[0.75rem] font-mono bg-green-muted/10 text-green-muted">+6pp</span></td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Direct</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60"><span class="inline-block px-2 py-0.5 rounded-[4px] text-[0.75rem] font-mono bg-red-alert/10 text-red-alert">#1</span></td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">#4</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">41%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">14%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60"><span class="inline-block px-2 py-0.5 rounded-[4px] text-[0.75rem] font-mono bg-warm-50 text-text-tertiary">-27pp</span></td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Email</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">#4</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">#3</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">11%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">19%</td>
+                <td class="py-3.5 px-4 border-b border-warm-100/60"><span class="inline-block px-2 py-0.5 rounded-[4px] text-[0.75rem] font-mono bg-green-muted/10 text-green-muted">+8pp</span></td>
+              </tr>
+              <tr>
+                <td class="py-3.5 px-4 text-text-primary font-medium">Social</td>
+                <td class="py-3.5 px-4 text-text-tertiary">#5</td>
+                <td class="py-3.5 px-4 text-text-primary font-medium">#5</td>
+                <td class="py-3.5 px-4 text-text-tertiary">8%</td>
+                <td class="py-3.5 px-4 text-text-primary font-medium">12%</td>
+                <td class="py-3.5 px-4"><span class="inline-block px-2 py-0.5 rounded-[4px] text-[0.75rem] font-mono bg-green-muted/10 text-green-muted">+4pp</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[0.8rem] text-text-tertiary mt-4 italic">Based on aggregate data from SealMetrics clients. Individual results vary.</p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ROAS — pattern from CaseStudy.tsx (two-column)
+         ============================================ -->
+    <section id="roas" class="py-28 bg-warm-white border-t border-warm-100">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div class="max-w-[700px] mb-16">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            ROAS recovery
+          </span>
+          <h2 class="headline-section mb-4">
+            Your campaigns are more profitable than GA4 shows.
+          </h2>
+          <p class="text-[1.05rem] leading-[1.75] text-text-secondary">
+            When GA4 misses 45-55% of sessions, it also misses the revenue those
+            sessions generate. Your real ROAS is higher than your dashboard says —
+            and you may be cutting budgets on channels that are actually performing.
+          </p>
+        </div>
+
+        <!-- Two ROAS cards (like case metrics but 2-column) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-7 mb-8">
+          <!-- GA4 ROAS -->
+          <div class="p-9 border border-warm-100 rounded-[4px] bg-white">
+            <div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-3">
+              What GA4 tells you
+            </div>
+            <div class="font-mono text-[3.5rem] font-light leading-none text-text-tertiary mb-1" id="roas-ga4-display">6.6x</div>
+            <div class="font-mono text-[0.8rem] text-text-tertiary tracking-[0.04em] mb-5">ROAS</div>
+            <p class="text-[0.85rem] text-text-secondary leading-[1.65] mb-5">
+              Based on the revenue GA4 can see — roughly 55% of actual sales
+              for EU eCommerce with standard consent rates.
+            </p>
+            <div class="p-3 rounded-[4px] bg-red-alert/5 border border-red-alert/10 text-[0.8rem] font-medium text-red-alert">
+              Decisions made on this number may be cutting profitable channels
+            </div>
+          </div>
+
+          <!-- Real ROAS -->
+          <div class="p-9 border-2 border-text-primary rounded-[4px] bg-white relative">
+            <div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-green-muted mb-3">
+              What your ROAS really is
+            </div>
+            <div class="font-mono text-[3.5rem] font-light leading-none text-green-muted mb-1" id="roas-real-display">9.0x</div>
+            <div class="font-mono text-[0.8rem] text-text-tertiary tracking-[0.04em] mb-5">ROAS</div>
+            <p class="text-[0.85rem] text-text-secondary leading-[1.65] mb-5">
+              Once SealMetrics captures 100% of traffic and attributes revenue
+              correctly — including sessions GA4 never saw.
+            </p>
+            <div class="p-3 rounded-[4px] bg-green-muted/5 border border-green-muted/10 text-[0.8rem] font-medium text-green-muted">
+              Make budget decisions on the number that reflects reality
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 bg-white border border-warm-100 rounded-[4px]">
+          <p class="text-[0.8rem] text-text-tertiary leading-[1.6]">
+            Enter your numbers above to see your personalized ROAS gap. The default
+            shows a typical EU eCommerce scenario with &euro;180K monthly revenue and 15% ad spend.
+          </p>
+          <a href="#start" class="inline-flex items-center px-5 py-2.5 text-[0.875rem] font-medium text-text-primary bg-white border border-warm-200 rounded-[4px] no-underline hover:bg-warm-white hover:border-text-body transition-colors shrink-0">Talk to a specialist &rarr;</a><!-- TODO: replace with real URL -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES — pattern from Compliance.tsx (grid cards)
+         ============================================ -->
+    <section id="features" class="py-28 bg-white border-t border-warm-100">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div class="max-w-[600px] mb-12">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            What you get
+          </span>
+          <h2 class="headline-section mb-4">
+            Complete data. Every dimension.
+          </h2>
+          <p class="text-[1.05rem] leading-[1.75] text-text-secondary">
+            Not just more traffic. The full picture — per channel, per product,
+            per sale — in real time.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          <!-- Featured card -->
+          <div class="p-8 border-2 border-text-primary rounded-[4px] bg-white relative">
+            <span class="absolute -top-3 left-8 px-3 py-1 bg-text-primary text-white text-[0.7rem] font-medium uppercase tracking-[0.04em] rounded-[2px]">Core</span>
+            <div class="text-green-muted mb-4 flex justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="font-medium text-[1rem] text-text-primary mb-2">Complete Attribution</div>
+            <div class="text-[0.85rem] text-text-secondary leading-[1.65]">Every sale traced to its real source. No more Direct black hole. Know which channels actually drive revenue — and stop wasting budget on the ones that don't.</div>
+          </div>
+
+          <div class="p-8 text-left border border-warm-100 rounded-[4px] bg-warm-white">
+            <div class="text-green-muted mb-4 flex justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="8" y1="9" x2="8" y2="15"/><line x1="12" y1="7" x2="12" y2="15"/><line x1="16" y1="11" x2="16" y2="15"/></svg>
+            </div>
+            <div class="font-medium text-[1rem] text-text-primary mb-2">SKU-Level Analytics</div>
+            <div class="text-[0.85rem] text-text-secondary leading-[1.65]">Not just orders. See which individual products drive revenue, returns, and repeat purchase. Optimize your catalog with real demand signals.</div>
+          </div>
+
+          <div class="p-8 text-left border border-warm-100 rounded-[4px] bg-warm-white">
+            <div class="text-green-muted mb-4 flex justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div class="font-medium text-[1rem] text-text-primary mb-2">Real-Time, Always</div>
+            <div class="text-[0.85rem] text-text-secondary leading-[1.65]">Full data during Black Friday peaks. No sampling. No 48-hour delays. Make decisions while campaigns are still running.</div>
+          </div>
+
+          <div class="p-8 text-left border border-warm-100 rounded-[4px] bg-warm-white">
+            <div class="text-green-muted mb-4 flex justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+            </div>
+            <div class="font-medium text-[1rem] text-text-primary mb-2">AI on Complete Data (LENS)</div>
+            <div class="text-[0.85rem] text-text-secondary leading-[1.65]">Our AI runs on 100% of your data. Because recommendations built on 55% of traffic are not insights — they are expensive guesses.</div>
+          </div>
+
+          <div class="p-8 text-left border border-warm-100 rounded-[4px] bg-warm-white">
+            <div class="text-green-muted mb-4 flex justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H6a2 2 0 00-2 2v4m11-6h3a2 2 0 012 2v4m-6 11h3a2 2 0 002-2v-4M9 20H6a2 2 0 01-2-2v-4"/></svg>
+            </div>
+            <div class="font-medium text-[1rem] text-text-primary mb-2">Connects to Your Stack</div>
+            <div class="text-[0.85rem] text-text-secondary leading-[1.65]">BigQuery, Looker, MCP-ready. Push your complete data to any BI tool. Your analytics infrastructure, finally fed with the full picture.</div>
+          </div>
+
+          <div class="p-8 text-left border border-warm-100 rounded-[4px] bg-warm-white">
+            <div class="text-green-muted mb-4 flex justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="font-medium text-[1rem] text-text-primary mb-2">GDPR-Native</div>
+            <div class="text-[0.85rem] text-text-secondary leading-[1.65]">No cookies. No consent banner needed. Compliant with GDPR Article 6(1)(f) by design — not by policy workaround.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COMPARISON — pattern from Comparison.tsx (table)
+         ============================================ -->
+    <section id="vs-ga4" class="py-28 bg-warm-white border-t border-warm-100">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-[700px] mx-auto mb-16">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            SealMetrics vs GA4 + CMP
+          </span>
+          <h2 class="headline-section mb-4">
+            GA4 wasn't built for a cookieless Europe.
+          </h2>
+          <p class="text-[1.05rem] leading-[1.75] text-text-secondary">
+            GA4 is a great tool — for companies with over 80% consent rates.
+            For European eCommerce, that means flying blind on nearly half your traffic.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto bg-white border border-warm-100 rounded-[4px]">
+          <table class="w-full border-collapse text-[0.85rem]">
+            <thead>
+              <tr class="bg-warm-50">
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em] min-w-[160px]">Feature</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-primary border-b border-warm-100 uppercase tracking-[0.04em] min-w-[180px]">SealMetrics</th>
+                <th class="text-left py-4 px-4 font-medium text-[0.75rem] text-text-tertiary border-b border-warm-100 uppercase tracking-[0.04em] min-w-[180px]">GA4 + CMP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-body">Traffic captured</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">100% of visits</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">~45-55% avg (EU)</td></tr>
+              <tr><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-body">Attribution accuracy</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Channel-level, always</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">"Direct" dominates</td></tr>
+              <tr><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-body">Real-time data</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Yes, always</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">24-48h processing lag</td></tr>
+              <tr><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-body">Consent banner required</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">No</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">Yes</td></tr>
+              <tr><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-body">SKU analytics</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-primary font-medium">Native</td><td class="py-3.5 px-4 border-b border-warm-100/60 text-text-tertiary">Custom setup required</td></tr>
+              <tr><td class="py-3.5 px-4 text-text-body">AI recommendations</td><td class="py-3.5 px-4 text-text-primary font-medium">LENS — on 100% data</td><td class="py-3.5 px-4 text-text-tertiary">On partial data only</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CASE STUDY — pattern from CaseStudy.tsx
+         ============================================ -->
+    <!-- TODO: replace with real client data -->
+    <section id="case-study" class="py-28 bg-white border-t border-warm-100">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div class="mb-16">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            What clients discover
+          </span>
+          <h2 class="headline-section mb-4">
+            From blind to fully informed.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <blockquote class="font-serif text-[1.35rem] italic leading-relaxed text-text-primary mb-8 pl-6 border-l-2 border-warm-200">
+              &ldquo;We thought Direct was our best channel. It wasn't even a channel —
+              it was everything GA4 couldn't attribute. Once we saw the real picture,
+              we moved &euro;18K out of underperforming paid campaigns in the first month.&rdquo;
+            </blockquote>
+            <div class="mb-10">
+              <div class="font-medium text-[0.95rem] text-text-primary">CMO</div>
+              <div class="text-[0.85rem] text-text-secondary mt-1">European fashion eCommerce — 12M ARR</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px]">
+              <div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-3">Traffic invisible in GA4</div>
+              <div class="font-mono text-[1.75rem] font-medium text-text-primary">61%</div>
+            </div>
+            <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px]">
+              <div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-3">Reallocated to real channels</div>
+              <div class="font-mono text-[1.75rem] font-medium text-text-primary">&euro;18K</div>
+            </div>
+            <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px]">
+              <div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-3">Setup to first reallocation</div>
+              <div class="font-mono text-[1.75rem] font-medium text-text-primary">30 days</div>
+            </div>
+            <div class="p-7 bg-warm-white border border-warm-100 rounded-[4px]">
+              <div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-3">ROAS improvement</div>
+              <div class="font-mono text-[1.75rem] font-medium text-green-muted">+40%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         METHODOLOGY — pattern from HowItWorks.tsx (steps)
+         ============================================ -->
+    <section id="methodology" class="py-28 bg-white border-t border-b border-warm-100">
+      <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div class="max-w-[600px] mb-20">
+          <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+            How we calculate
+          </span>
+          <h2 class="headline-sub mb-4">
+            The math behind the numbers.
+          </h2>
+          <p class="text-[1.05rem] leading-[1.75] text-text-secondary">
+            When you enter your traffic and revenue, we apply three conservative
+            estimates based on aggregate data from our client base:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <div class="font-serif text-[3rem] font-light text-warm-200 leading-none mb-6">01</div>
+            <h3 class="font-serif text-[1.35rem] font-medium text-text-primary mb-3 leading-snug">Hidden traffic estimate</h3>
+            <p class="text-[0.95rem] leading-[1.7] text-text-secondary">
+              EU eCommerce average consent rate: 45-55%. We apply a conservative
+              uplift to your reported GA4 sessions based on your market's specific
+              consent block rate.
+            </p>
+            <div class="mt-5 pt-5 border-t border-warm-200 font-mono text-[0.8rem] text-text-tertiary leading-relaxed whitespace-pre-line">Conservative estimate
+Market-specific rates
+Based on client data</div>
+          </div>
+          <div>
+            <div class="font-serif text-[3rem] font-light text-warm-200 leading-none mb-6">02</div>
+            <h3 class="font-serif text-[1.35rem] font-medium text-text-primary mb-3 leading-snug">Implied conversion rate</h3>
+            <p class="text-[0.95rem] leading-[1.7] text-text-secondary">
+              Your revenue divided by visible sessions equals your current conversion
+              rate. We apply this same rate to the hidden traffic to estimate the
+              revenue you're not seeing.
+            </p>
+            <div class="mt-5 pt-5 border-t border-warm-200 font-mono text-[0.8rem] text-text-tertiary leading-relaxed whitespace-pre-line">Revenue / visible sessions
+Same rate applied to hidden
+No inflation or modeling</div>
+          </div>
+          <div>
+            <div class="font-serif text-[3rem] font-light text-warm-200 leading-none mb-6">03</div>
+            <h3 class="font-serif text-[1.35rem] font-medium text-text-primary mb-3 leading-snug">Attribution correction</h3>
+            <p class="text-[0.95rem] leading-[1.7] text-text-secondary">
+              Clients recover 25-35% of revenue from "Direct" to real channels.
+              We apply 28% as a baseline for decision impact.
+            </p>
+            <div class="mt-5 pt-5 border-t border-warm-200 font-mono text-[0.8rem] text-text-tertiary leading-relaxed whitespace-pre-line">25-35% recovery range
+28% conservative baseline
+Verified across clients</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FINAL CTA — exact copy of CtaFinal.tsx
+         ============================================ -->
+    <section id="start" class="py-32 bg-white text-center border-t border-warm-100">
+      <div class="max-w-[600px] mx-auto px-5 sm:px-8">
+        <span class="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
+          No sales calls. No pitches.
+        </span>
+        <h2 class="headline-section mb-4">
+          Talk to an Analytics &amp; Privacy Specialist.
+        </h2>
+        <p class="text-[1.05rem] leading-[1.75] text-text-secondary mb-3">
+          Your first session is a pre-kickoff call — we map your current data
+          setup, identify where you're losing visibility, and show you exactly
+          what complete data would look like for your store.
+        </p>
+        <p class="text-[0.85rem] text-text-tertiary mb-10">
+          No product demos. No pressure. Just a specialist who knows
+          analytics and EU privacy law.
+        </p>
+        <div class="flex items-center justify-center gap-5 flex-wrap mb-10">
+          <a href="#" class="inline-flex items-center gap-2 px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors">Start now &rarr;</a><!-- TODO: replace with real URL -->
+        </div>
+        <div class="text-center mb-3">
+          <a href="#" class="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors border-b border-warm-200 pb-0.5">Schedule a pre-kickoff session</a><!-- TODO: replace with real URL -->
+        </div>
+
+        <!-- Trust signals (like case metrics grid) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-12 pt-10 border-t border-warm-100">
+          <div class="text-center">
+            <div class="font-mono text-[1.5rem] font-medium text-text-primary">15 min</div>
+            <div class="text-[0.75rem] text-text-tertiary mt-1">setup time</div>
+          </div>
+          <div class="text-center">
+            <div class="font-mono text-[1.5rem] font-medium text-text-primary">24h</div>
+            <div class="text-[0.75rem] text-text-tertiary mt-1">to real data</div>
+          </div>
+          <div class="text-center">
+            <div class="font-mono text-[1.5rem] font-medium text-text-primary">0</div>
+            <div class="text-[0.75rem] text-text-tertiary mt-1">sales reps involved</div>
+          </div>
+          <div class="text-center">
+            <div class="font-mono text-[1.5rem] font-medium text-text-primary">GDPR</div>
+            <div class="text-[0.75rem] text-text-tertiary mt-1">native by design</div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-[0.8rem] text-text-tertiary">
+          Used by 35+ European eCommerce teams · No cookies · No consent banner needed
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER — exact copy of Footer.tsx
+       ============================================ -->
+  <footer class="bg-warm-900 border-t border-warm-800 pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
+        <div class="lg:col-span-2">
+          <a href="#" class="inline-block mb-3 no-underline">
+            <img src="./logos/logo-sealmetrics-blancov.png" alt="SealMetrics" width="160" height="32" class="h-7 w-auto">
+          </a>
+          <p class="text-[0.85rem] leading-relaxed text-warm-400 max-w-[280px]">
+            Decision intelligence for eCommerce teams. Complete data, no
+            cookies, full GDPR compliance by design.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">Product</h3>
+          <nav class="flex flex-col">
+            <a href="/product" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Platform Overview</a>
+            <a href="/how-it-works" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">How It Works</a>
+            <a href="/pricing" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Pricing</a>
+            <a href="/security" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Security</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">Compare</h3>
+          <nav class="flex flex-col">
+            <a href="/vs-ga4" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">vs Google Analytics 4</a>
+            <a href="/vs/ga360" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">vs GA360</a>
+            <a href="/vs/adobe-analytics" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">vs Adobe Analytics</a>
+            <a href="/vs/piwik-pro" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">vs Piwik PRO</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">Resources</h3>
+          <nav class="flex flex-col">
+            <a href="/blog" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Blog</a>
+            <a href="/case-studies" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Case Studies</a>
+            <a href="/glossary" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Glossary</a>
+            <a href="/changelog" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Changelog</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">Company</h3>
+          <nav class="flex flex-col">
+            <a href="/about" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">About</a>
+            <a href="/privacy" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">Terms of Service</a>
+            <a href="/dpa" class="text-[0.85rem] text-warm-300 no-underline py-1 hover:text-white transition-colors">DPA</a>
+          </nav>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-warm-800 flex flex-col md:flex-row justify-between text-[0.8rem] text-warm-400 gap-2">
+        <span>&copy; 2026 SealMetrics. All rights reserved.</span>
+        <span>EU-hosted. Cookieless by design.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+  <script>
+    /* Market consent block rates */
+    var marketRates = {
+      'de': 0.52, 'fr': 0.54, 'es': 0.48, 'it': 0.50,
+      'pt': 0.47, 'nl': 0.55, 'uk': 0.44, 'eu': 0.50, '': 0.50
+    };
+
+    function fmt(n) {
+      if (n >= 1000000) return '\u20AC' + (n / 1000000).toFixed(1) + 'M';
+      if (n >= 1000) return '\u20AC' + Math.round(n / 1000) + 'K';
+      return '\u20AC' + Math.round(n);
+    }
+
+    function fmtNum(n) {
+      if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+      if (n >= 1000) return Math.round(n / 1000) + 'K';
+      return Math.round(n).toLocaleString();
+    }
+
+    function parseNum(str) {
+      if (!str) return 0;
+      str = str.replace(/[\u20AC$\s]/g, '');
+      if (/,\d{3}/.test(str)) str = str.replace(/,/g, '');
+      else if (/\.\d{3}$/.test(str) && str.indexOf(',') === -1) str = str.replace(/\./g, '');
+      str = str.replace(',', '.');
+      return parseFloat(str) || 0;
+    }
+
+    function calculateGap() {
+      var traffic = parseNum(document.getElementById('inp-traffic').value);
+      var revenue = parseNum(document.getElementById('inp-revenue').value);
+      var annualRev = parseNum(document.getElementById('inp-annual').value);
+      var market = document.getElementById('inp-market').value;
+
+      if (!traffic) { document.getElementById('inp-traffic').focus(); return; }
+      if (!revenue) { document.getElementById('inp-revenue').focus(); return; }
+      if (!annualRev) annualRev = revenue * 12;
+
+      var blockRate = marketRates[market] || 0.50;
+      var hiddenTraffic = Math.round(traffic * blockRate);
+      var impliedCR = revenue / traffic;
+      var hiddenRevenue = hiddenTraffic * impliedCR;
+      var attributionRecovery = revenue * 0.28;
+      var totalHiddenRevenue = hiddenRevenue + attributionRecovery;
+      var annualHidden = totalHiddenRevenue * 12;
+
+      var estimatedAdSpend = revenue * 0.15;
+      var roasGA4 = revenue / estimatedAdSpend;
+      var roasReal = (revenue + totalHiddenRevenue) / estimatedAdSpend;
+      var roasUplift = ((roasReal - roasGA4) / roasGA4 * 100).toFixed(0);
+
+      /* Results headline */
+      document.getElementById('results-headline').innerHTML =
+        'Based on your numbers, SealMetrics would uncover <span class="font-medium text-green-muted">' +
+        fmtNum(hiddenTraffic) + ' monthly sessions</span> and <span class="font-medium text-green-muted">' +
+        fmt(Math.round(totalHiddenRevenue)) + '/month</span> of revenue data you\'re currently flying blind on.';
+
+      /* Results grid (same pattern as case metrics) */
+      document.getElementById('results-grid').innerHTML =
+        '<div class="p-5 bg-warm-white border border-warm-100 rounded-[4px]">' +
+          '<div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-2">Hidden sessions/month</div>' +
+          '<div class="font-mono text-[1.5rem] font-medium text-text-primary">' + fmtNum(hiddenTraffic) + '</div>' +
+          '<div class="font-mono text-[0.75rem] text-text-tertiary mt-1">sessions GA4 never sees</div>' +
+        '</div>' +
+        '<div class="p-5 bg-warm-white border border-warm-100 rounded-[4px]">' +
+          '<div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-2">Blind revenue/month</div>' +
+          '<div class="font-mono text-[1.5rem] font-medium text-green-muted">' + fmt(Math.round(totalHiddenRevenue)) + '</div>' +
+          '<div class="font-mono text-[0.75rem] text-text-tertiary mt-1">revenue you\'re deciding without</div>' +
+        '</div>' +
+        '<div class="p-5 bg-warm-white border border-warm-100 rounded-[4px]">' +
+          '<div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-2">Annual blind spot</div>' +
+          '<div class="font-mono text-[1.5rem] font-medium text-text-primary">' + fmt(Math.round(annualHidden)) + '</div>' +
+          '<div class="font-mono text-[0.75rem] text-text-tertiary mt-1">yearly data gap</div>' +
+        '</div>';
+
+      /* ROAS row */
+      document.getElementById('results-roas').innerHTML =
+        '<div class="p-5 bg-warm-white border border-warm-100 rounded-[4px] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">' +
+          '<div>' +
+            '<div class="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-2">ROAS impact</div>' +
+            '<p class="text-[0.85rem] text-text-secondary leading-[1.65]">Your real ROAS could be up to <strong>' + roasUplift + '%</strong> higher than what GA4 reports.</p>' +
+          '</div>' +
+          '<div class="font-mono text-[1.75rem] font-medium text-green-muted shrink-0">+' + roasUplift + '%</div>' +
+        '</div>';
+
+      /* Show results */
+      document.getElementById('results-panel').classList.add('visible');
+
+      /* Update stat block */
+      document.getElementById('stat-traffic').textContent = '+' + Math.round(blockRate * 100) + '%';
+      document.getElementById('stat-revenue-recovery').textContent = '+' + fmt(Math.round(attributionRecovery)) + '/mo';
+      document.getElementById('stat-roas-uplift').textContent = '+' + roasUplift + '%';
+
+      /* Update ROAS cards */
+      document.getElementById('roas-ga4-display').textContent = roasGA4.toFixed(1) + 'x';
+      document.getElementById('roas-real-display').textContent = roasReal.toFixed(1) + 'x';
+
+      /* Show personal banner */
+      document.getElementById('banner-sessions').textContent = fmtNum(traffic);
+      document.getElementById('banner-revenue').textContent = fmt(revenue);
+      document.getElementById('personal-banner').classList.remove('hidden');
+
+      /* Re-render bars */
+      renderBars();
+
+      /* Scroll to results */
+      setTimeout(function() {
+        document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+
+    /* Enter key in inputs */
+    document.querySelectorAll('.calc-input').forEach(function(inp) {
+      if (inp.tagName === 'INPUT') {
+        inp.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') calculateGap();
+        });
+      }
+    });
+
+    /* Traffic bars */
+    var ga4Channels = [
+      { name: 'Direct',  pct: 41, color: 'bg-red-alert/70' },
+      { name: 'Organic', pct: 22, color: 'bg-[#4a9eff]' },
+      { name: 'Paid',    pct: 18, color: 'bg-[#f5a623]' },
+      { name: 'Email',   pct: 11, color: 'bg-[#a78bfa]' },
+      { name: 'Social',  pct: 8,  color: 'bg-[#34d399]' }
+    ];
+
+    var smChannels = [
+      { name: 'Organic', pct: 31, color: 'bg-[#2d7dd2]' },
+      { name: 'Paid',    pct: 24, color: 'bg-[#d4841a]' },
+      { name: 'Email',   pct: 19, color: 'bg-[#7c3aed]' },
+      { name: 'Direct',  pct: 14, color: 'bg-[#4a4a42]' },
+      { name: 'Social',  pct: 12, color: 'bg-[#059669]' }
+    ];
+
+    var barColors = {
+      'bg-red-alert/70': 'rgba(181,66,59,0.7)',
+      'bg-[#4a9eff]': '#4a9eff',
+      'bg-[#f5a623]': '#f5a623',
+      'bg-[#a78bfa]': '#a78bfa',
+      'bg-[#34d399]': '#34d399',
+      'bg-[#2d7dd2]': '#2d7dd2',
+      'bg-[#d4841a]': '#d4841a',
+      'bg-[#7c3aed]': '#7c3aed',
+      'bg-[#4a4a42]': '#4a4a42',
+      'bg-[#059669]': '#059669'
+    };
+
+    function buildBarHTML(channels) {
+      return channels.map(function(ch) {
+        var bg = barColors[ch.color] || '#999';
+        return '<div class="mb-2">' +
+          '<div class="flex justify-between text-[0.85rem] text-text-secondary mb-2">' +
+            '<span>' + ch.name + '</span>' +
+            '<span class="font-mono text-[0.8rem]">' + ch.pct + '%</span>' +
+          '</div>' +
+          '<div class="h-8 bg-warm-100 rounded-[2px] relative">' +
+            '<div class="absolute top-0 left-0 h-full rounded-[2px] bar-fill" data-width="' + ch.pct + '" style="background:' + bg + ';"></div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function renderBars() {
+      document.getElementById('ga4-bars').innerHTML = buildBarHTML(ga4Channels);
+      document.getElementById('sm-bars').innerHTML = buildBarHTML(smChannels);
+      setTimeout(function() {
+        document.querySelectorAll('.bar-fill').forEach(function(bar) {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }, 200);
+    }
+
+    /* Init */
+    document.addEventListener('DOMContentLoaded', function() {
+      renderBars();
+    });
+  </script>
+</body>
+</html>

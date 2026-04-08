@@ -239,6 +239,28 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
+export function itemListSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+  items: { name: string; url?: string; position?: number }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: props.name,
+    description: props.description,
+    url: `${SITE_URL}${props.url}`,
+    numberOfItems: props.items.length,
+    itemListElement: props.items.map((item, i) => ({
+      "@type": "ListItem",
+      position: item.position || i + 1,
+      name: item.name,
+      ...(item.url ? { url: item.url } : {}),
+    })),
+  };
+}
+
 export function pricingSchema(
   plans: { name: string; price: string; description: string }[]
 ) {

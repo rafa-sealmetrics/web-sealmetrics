@@ -1,8 +1,8 @@
 const testimonials = [
   {
-    text: "The difference between our GA4 data and SealMetrics data was alarming. We had been underreporting conversions by over 600%. Our board was making investment decisions on fundamentally wrong numbers.",
-    title: "CMO",
-    role: "International eCommerce, 25M\u20AC revenue",
+    text: "We removed our consent banner entirely and still maintain full GDPR compliance. Our bounce rate dropped 8% just from eliminating that friction point. SealMetrics captures everything regardless.",
+    title: "Head of Growth",
+    role: "SaaS Platform, Series B",
     name: null as string | null,
     photo: null as string | null,
     company: null as string | null,
@@ -20,9 +20,9 @@ const testimonials = [
     logo: null as string | null,
   },
   {
-    text: "We removed our consent banner entirely and still maintain full GDPR compliance. Our bounce rate dropped 8% just from eliminating that friction point. SealMetrics captures everything regardless.",
-    title: "Head of Growth",
-    role: "SaaS Platform, Series B",
+    text: "The difference between our GA4 data and SealMetrics data was alarming. We had been underreporting conversions by over 600%. Our board was making investment decisions on fundamentally wrong numbers.",
+    title: "CMO",
+    role: "International eCommerce, 25M\u20AC revenue",
     name: null as string | null,
     photo: null as string | null,
     company: null as string | null,

@@ -15,8 +15,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "Decisions grounded in reality.",
-    desc: "Nine specialized reports, AI anomaly detection, and last-click revenue attribution — all built on complete data. Know exactly which channels drive revenue. Enter every budget meeting with numbers nobody can question.",
+    title: "Scale the channels that actually drive growth.",
+    desc: "Nine specialized reports, AI anomaly detection, and last-click revenue attribution — all built on complete data. Know exactly which channels to scale and which to pause. Enter every budget meeting with numbers that show the full picture.",
     detail: "9 report types\n60+ anomaly rules\nLENS AI supervision",
   },
 ];
@@ -30,7 +30,7 @@ export function HowItWorks() {
             How It Works
           </span>
           <h2 className="headline-section mb-4">
-            From invisible traffic to complete picture in three steps.
+            Complete data in three steps. Then scale what actually works.
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
             No cookies. No consent dependency. No modeled or sampled data.

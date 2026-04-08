@@ -10,13 +10,13 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - EU-only data residency
 - GDPR, ePrivacy, CCPA compliant by architecture
 - LENS AI anomaly detection with 60+ rules
-- Revenue attribution on complete data
+- Last-click revenue attribution on complete data
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
 - Pricing from €599/month (€499/mo billed annually)
 
 ## Core pages
-- /product — Full platform overview: data capture, revenue attribution, LENS AI, Agent Analytics
+- /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
 - /how-it-works — Technical explanation of cookieless server-side collection
 - /pricing — Plans: Growth (€599/mo), Scale (€1,079/mo), Enterprise (custom)
 - /security — Privacy architecture, compliance, infrastructure security, trust model
@@ -31,6 +31,9 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - /vs/adobe-analytics — SealMetrics vs Adobe Analytics ($100,000+/yr)
 - /vs/piwik-pro — SealMetrics vs Piwik PRO (€30,000+/yr)
 - /data-loss-calculator — Interactive calculator showing how much data you lose with cookie-based analytics
+
+## Alternatives (editorial comparisons)
+- /alternatives/google-analytics — 8 Google Analytics alternatives compared: data capture, GDPR compliance, pricing, features
 
 ## Role-specific pages
 - /for/cmo — How CMOs use SealMetrics for attribution and budget decisions
@@ -48,13 +51,14 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - /for/healthcare — Analytics for healthcare: privacy-first tracking, patient journey analytics
 
 ## Blog (latest articles)
+- /blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking: GA4, GA360, Adobe, Piwik PRO, SealMetrics, Matomo, Amplitude, Mixpanel)
 - /blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Shows 13% of Your EU Traffic (the math behind the data loss cascade)
 - /blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
 - /blog/analytics-tools-external-domains — Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters
 - /blog/analytics-tools-data-sampling — Data Sampling Thresholds Compared: When Your Analytics Starts Guessing
 - /blog/what-is-cookieless-tracking — What Is Cookieless Tracking? A Complete Guide for 2026
 - /blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics? Causes, Impact, and Solutions
-- /blog/ga4-alternatives-enterprise — GA4 Alternatives for Enterprise: A 2026 Comparison
+- /blog/ga4-alternatives-enterprise — 7 GA4 Alternatives for eCommerce Teams in 2026 (editorial listicle with pricing, data capture, EU compliance per tool)
 - /blog/gdpr-analytics-without-consent — GDPR-Compliant Analytics Without Consent Banners
 - /blog/analytics-scripts-costing-you-sales — How Analytics Scripts Cost You Sales
 - /blog/we-measured-every-analytics-script — We Measured Every Analytics Script (GA4 is 52x heavier than SealMetrics)
@@ -87,7 +91,7 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - /glossary/analytics-data-residency — Analytics Data Residency
 
 ## Enterprise positioning
-SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics).
+SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution only (not multi-touch). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics).
 
 ## Contact
 - Demo: https://sealmetrics.com/demo

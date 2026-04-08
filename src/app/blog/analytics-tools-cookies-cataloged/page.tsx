@@ -498,7 +498,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             Fathom, and Simple Analytics are privacy-first lightweight
             alternatives — they give you pageviews, referrers, and basic
             metrics. SealMetrics combines zero cookies with enterprise-grade
-            attribution, multi-touch journey mapping, and{" "}
+            attribution, full journey visibility, and{" "}
             <Link
               href="/glossary/first-party-data-collection"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

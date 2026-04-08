@@ -17,7 +17,7 @@ export function ProductShowcase() {
         {/* Header */}
         <div className="text-center max-w-[700px] mx-auto mb-20">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-            What Changes with Complete Data
+            What Complete Data Makes Possible
           </span>
           <h2 className="headline-section mb-4">
             All reports built on 100% of reality.
@@ -154,7 +154,8 @@ export function ProductShowcase() {
                 <span className="font-mono text-red-alert font-medium">
                   &euro;47K
                 </span>{" "}
-                in potential lost revenue. They fixed it in 20 minutes.
+                in protected revenue, and outlined the fix before morning
+                traffic peaked. They fixed it in 20 minutes.
               </p>
             </div>
           </div>

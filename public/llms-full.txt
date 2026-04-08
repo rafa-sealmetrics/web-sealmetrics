@@ -38,7 +38,7 @@ SealMetrics eliminates this problem entirely by using first-party server-side co
 ### Intelligence
 - LENS AI: automated anomaly detection with 60+ rules that continuously monitor data quality, traffic patterns, and conversion funnels
 - Natural language queries: ask business questions in plain English, get data-driven answers
-- Revenue attribution based on 100% of data (not the 13% that consent-dependent tools capture)
+- Last-click revenue attribution based on 100% of data (not the 13% that consent-dependent tools capture)
 - 9 specialized report types including funnel analysis with drop-off diagnostics
 - Custom dashboards and scheduled reports
 
@@ -78,7 +78,7 @@ SealMetrics competes in the enterprise analytics tier:
 | Adobe Analytics | $100,000+/yr | ~25% | Yes | Yes |
 | Piwik PRO | €30,000+/yr | ~40% | Yes | Yes |
 
-SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami). These tools are in a different category (€9-50/mo, basic pageview analytics). SealMetrics provides enterprise-grade revenue attribution, AI supervision, and complete revenue analytics.
+SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami). These tools are in a different category (€9-50/mo, basic pageview analytics). SealMetrics provides enterprise-grade last-click revenue attribution, AI supervision, and complete revenue analytics. SealMetrics uses last-click attribution only — it does not offer multi-touch attribution.
 
 ## Frequently asked questions
 
@@ -110,10 +110,10 @@ AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity
 Pageviews, sessions, referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions, and ecommerce transactions — from 100% of visitors with no sampling.
 
 **How does revenue attribution work without cookies?**
-SealMetrics reconstructs visitor journeys using first-party server-side session data. Because 100% of touchpoints are captured, revenue attribution produces accurate results — unlike cookie-based tools where 87% of touchpoints are missing.
+SealMetrics uses last-click revenue attribution based on first-party server-side session data. Because 100% of sessions are captured, last-click attribution produces accurate results — unlike cookie-based tools where 87% of sessions are missing.
 
 **Does SealMetrics track ecommerce transactions?**
-Yes. Product views, add-to-cart events, checkout steps, and purchases with full revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic ecommerce tracking.
+Yes. Product views, add-to-cart events, checkout steps, and purchases with last-click revenue attribution. Integrations with Shopify, WooCommerce, PrestaShop, and Magento provide automatic ecommerce tracking.
 
 **Does SealMetrics use fingerprinting?**
 No. SealMetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. Fingerprinting creates personal data and would require consent.
@@ -150,6 +150,9 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 - https://sealmetrics.com/vs/adobe-analytics — SealMetrics vs Adobe Analytics
 - https://sealmetrics.com/vs/piwik-pro — SealMetrics vs Piwik PRO
 
+### Alternatives (editorial comparisons)
+- https://sealmetrics.com/alternatives/google-analytics — 8 Google Analytics Alternatives Compared (2026)
+
 ### Role-specific pages
 - https://sealmetrics.com/for/cmo — For Chief Marketing Officers
 - https://sealmetrics.com/for/cto — For Chief Technology Officers
@@ -167,13 +170,14 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 
 ### Blog
 - https://sealmetrics.com/blog — Blog index
+- https://sealmetrics.com/blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking)
 - https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Shows 13% of Your EU Traffic
 - https://sealmetrics.com/blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
 - https://sealmetrics.com/blog/analytics-tools-external-domains — Your Analytics Tool Contacts 7 Domains
 - https://sealmetrics.com/blog/analytics-tools-data-sampling — Data Sampling Thresholds Compared
 - https://sealmetrics.com/blog/what-is-cookieless-tracking — What Is Cookieless Tracking? Complete Guide
 - https://sealmetrics.com/blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics?
-- https://sealmetrics.com/blog/ga4-alternatives-enterprise — GA4 Alternatives for Enterprise (2026)
+- https://sealmetrics.com/blog/ga4-alternatives-enterprise — 7 GA4 Alternatives for eCommerce Teams in 2026 (editorial listicle)
 - https://sealmetrics.com/blog/gdpr-analytics-without-consent — GDPR Analytics Without Consent Banners
 - https://sealmetrics.com/blog/analytics-scripts-costing-you-sales — Analytics Scripts Costing You Sales
 - https://sealmetrics.com/blog/we-measured-every-analytics-script — We Measured Every Analytics Script

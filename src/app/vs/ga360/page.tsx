@@ -47,7 +47,7 @@ const comparisonRows = [
   { feature: "Data sampling", sm: "Never — full resolution at any volume", ga: "Unsampled reports available (quota-limited)", category: "Data Capture" },
   { feature: "Data freshness", sm: "Real-time", ga: "4-8 hour processing, real-time limited", category: "Data Capture" },
   { feature: "AI agent tracking (Coming Soon)", sm: "Built-in", ga: "Not available", category: "Data Capture" },
-  { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", ga: "Advanced (consent-dependent data)", category: "Intelligence" },
+  { feature: "Revenue attribution", sm: "Last-click on 100% of data", ga: "Advanced (consent-dependent data)", category: "Intelligence" },
   { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", ga: "Custom alerts, basic anomaly detection", category: "Intelligence" },
   { feature: "Natural language queries", sm: "Ask business questions, get answers", ga: "Limited to Explore interface", category: "Intelligence" },
   { feature: "BigQuery integration", sm: "Native export available", ga: "Native BigQuery export (strength)", category: "Intelligence" },

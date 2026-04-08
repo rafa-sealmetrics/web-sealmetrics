@@ -47,7 +47,7 @@ const comparisonRows = [
   { feature: "Data sampling", sm: "Never — full resolution", pp: "No sampling (strength)", category: "Data Capture" },
   { feature: "Data freshness", sm: "Real-time", pp: "Near real-time", category: "Data Capture" },
   { feature: "AI agent tracking (Coming Soon)", sm: "Built-in", pp: "Not available", category: "Data Capture" },
-  { feature: "Revenue attribution", sm: "Complete multi-touch (100% data)", pp: "Multi-channel (consent-limited)", category: "Intelligence" },
+  { feature: "Revenue attribution", sm: "Last-click on 100% of data", pp: "Multi-channel (consent-limited)", category: "Intelligence" },
   { feature: "AI anomaly detection", sm: "LENS AI — 60+ automated rules", pp: "No built-in AI detection", category: "Intelligence" },
   { feature: "Natural language queries", sm: "Ask business questions, get answers", pp: "Not available", category: "Intelligence" },
   { feature: "Tag management", sm: "Not needed (no tags)", pp: "Built-in Tag Manager (strength)", category: "Intelligence" },

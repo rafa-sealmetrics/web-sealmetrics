@@ -10,14 +10,14 @@ const logos = [
   { name: "Juguettos", src: "/logos/clients/juguettos.png", width: 110, height: 24 },
 ];
 
-export function Logos() {
+export function Logos({ colorful = false }: { colorful?: boolean }) {
   return (
     <section className="py-14 border-t border-b border-warm-100">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <p className="text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary text-center mb-8">
           Trusted by marketing teams across Europe
         </p>
-        <div className="flex items-center justify-center gap-12 flex-wrap opacity-40 grayscale">
+        <div className={`flex items-center justify-center gap-12 flex-wrap ${colorful ? "opacity-70" : "opacity-40 grayscale"}`}>
           {logos.map((logo) => (
             <Image
               key={logo.name}

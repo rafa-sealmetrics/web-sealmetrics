@@ -190,7 +190,7 @@ export default function MultiTouchAttributionPage() {
           </p>
 
           <p>
-            SealMetrics provides multi-touch revenue attribution built on
+            SealMetrics provides last-click revenue attribution built on
             complete session data. Because every visit is captured regardless of
             consent status or browser restrictions, the attribution reflects
             what actually happened — not what the cookie-accepting subset

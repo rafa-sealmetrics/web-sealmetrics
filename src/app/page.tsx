@@ -23,13 +23,13 @@ import { FounderNote } from "@/components/sections/FounderNote";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Complete Analytics for eCommerce",
+  title: "SealMetrics — See Every Growth Lever in Your eCommerce",
   description:
-    "See where every sale really comes from. Cookieless analytics that captures 100% of your traffic with full GDPR compliance.",
+    "Your eCommerce is growing. With complete data on 100% of traffic, you see exactly which channels to scale — without cookies or consent banners.",
   openGraph: {
-    title: "SealMetrics — Complete Analytics for eCommerce",
+    title: "SealMetrics — See Every Growth Lever in Your eCommerce",
     description:
-      "See where every sale really comes from. Cookieless analytics that captures 100% of your traffic.",
+      "See every growth lever in your eCommerce. Complete data on 100% of traffic so you scale what works — not what GA4 happens to report.",
     type: "website",
   },
   alternates: {

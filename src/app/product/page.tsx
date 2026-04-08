@@ -7,11 +7,11 @@ import { softwareApplicationSchema, breadcrumbSchema, faqSchema } from "@/lib/sc
 export const metadata: Metadata = {
   title: "Product — SealMetrics",
   description:
-    "100% data capture, multi-touch revenue attribution, LENS AI supervision, and AI agent tracking. Enterprise-grade analytics from €599/mo.",
+    "100% data capture, last-click revenue attribution, LENS AI supervision, and AI agent tracking. Enterprise-grade analytics from €599/mo.",
   openGraph: {
     title: "Product — SealMetrics",
     description:
-      "Complete web analytics with 100% data capture, multi-touch revenue attribution, LENS AI supervision, and AI agent tracking.",
+      "Complete web analytics with 100% data capture, last-click revenue attribution, LENS AI supervision, and AI agent tracking.",
     type: "website",
   },
   alternates: {

@@ -2,19 +2,19 @@ import Link from "next/link";
 
 const consequences = [
   {
-    number: "16%",
-    title: "Correct attribution",
-    desc: "Only 16% of EU visitors have their traffic source correctly attributed. 55% reject cookies entirely, and most who accept do so after the landing page — too late to capture the referrer.",
+    number: "84%",
+    title: "Attribution you are not capturing",
+    desc: "84% of EU visitors have no traffic source attributed. 55% reject cookies entirely, and most who accept do so after the landing page. That is 84% of channel performance you cannot optimize.",
   },
   {
     number: "\u20AC23K",
-    title: "Untracked revenue per month",
-    desc: "Average untracked revenue for a mid-market eCommerce using GA4 in Europe. Real revenue from real customers \u2014 invisible to cookie-based analytics.",
+    title: "Revenue you could be scaling per month",
+    desc: "Average unattributed revenue for a mid-market eCommerce using GA4 in Europe. Real revenue from real customers — the channels that drove them are invisible. Once you can see it, you can scale it.",
   },
   {
     number: "30h",
-    title: "Reconciling conflicting data",
-    desc: "Marketing teams spend an average of 30 hours per month trying to match numbers across platforms that each see a different slice of reality.",
+    title: "Per month reclaimed for growth work",
+    desc: "Marketing teams spend 30 hours per month reconciling conflicting data across platforms. Complete data gives that time back for testing, scaling, and strategic work.",
   },
 ];
 
@@ -25,16 +25,17 @@ export function Problem() {
         {/* Intro */}
         <div className="max-w-[700px] mb-20">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-            The Cost of Incomplete Data
+            The Growth Case for Complete Data
           </span>
           <h2 className="headline-section mb-5">
-            The cost of incomplete data for your eCommerce.
+            The channels driving your revenue that you cannot see yet.
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
-            Every business using cookie-based analytics in Europe is making
-            decisions on a fraction of reality. The consequences are not
-            theoretical&nbsp;&mdash; they compound in every budget meeting, every
-            campaign review, every board report.
+            Every business using cookie-based analytics in Europe is
+            optimizing on a fraction of reality. The growth you are missing is
+            not theoretical&nbsp;&mdash; it compounds in every budget meeting, every
+            campaign review, every board report. Complete data does not just fix
+            reports. It reveals where to grow.
           </p>
         </div>
 
@@ -62,7 +63,7 @@ export function Problem() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-12 border-t border-warm-100">
           <div>
             <h3 className="headline-sub mb-6">
-              Decisions built on 13% of reality
+              87% of your traffic is telling you something. Are you listening?
             </h3>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
               Traditional analytics were designed when every browser accepted
@@ -85,8 +86,8 @@ export function Problem() {
               actually happened.
             </p>
             <p className="text-[1.05rem] leading-[1.75] text-text-primary font-medium">
-              The question is not whether your data is inaccurate. It is how many
-              wrong decisions you have already made because of it.
+              The question is not whether your data is inaccurate. It is how
+              much growth you would unlock if you could see the full picture.
             </p>
           </div>
 
@@ -140,7 +141,7 @@ export function Problem() {
           >
             Want to know your exact number?{" "}
             <span className="border-b border-warm-200 pb-0.5">
-              Calculate your data loss in 2 minutes &rarr;
+              Discover your real traffic in 2 minutes &rarr;
             </span>
           </Link>
         </div>

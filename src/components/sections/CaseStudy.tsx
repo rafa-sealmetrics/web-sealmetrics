@@ -1,7 +1,7 @@
 const caseMetrics = [
   { label: "Tracked visitors", before: "12,400 / month", after: "47,200" },
   { label: "Recorded conversions", before: "340 / month", after: "1,290" },
-  { label: "Attributed revenue", before: "\u20AC89K / month", after: "\u20AC342K" },
+  { label: "Revenue now attributed", before: "\u20AC89K / month", after: "\u20AC342K" },
   { label: "ROAS improvement", before: "Baseline", after: "+40%" },
 ];
 
@@ -14,7 +14,7 @@ export function CaseStudy() {
             Case Study
           </span>
           <h2 className="headline-section mb-4">
-            How a European fashion retailer recovered its invisible revenue.
+            How a European fashion retailer found the channel driving 4x more revenue than it knew.
           </h2>
         </div>
 
@@ -44,9 +44,10 @@ export function CaseStudy() {
               second-highest revenue driver.
             </p>
             <p className="text-[1rem] leading-[1.7] text-text-primary font-medium">
-              What decision did they change? They reallocated 35% of their Meta
+              What did complete data unlock? They reallocated 35% of their Meta
               budget to organic search&nbsp;&mdash; a channel that GA4 had been
-              underreporting by 4x.
+              underreporting by 4x. That single decision changed their entire
+              channel strategy.
             </p>
           </div>
 
