@@ -136,7 +136,7 @@ export function Problem() {
         {/* Micro-CTA */}
         <div className="mt-12 pt-8 border-t border-warm-100 text-center">
           <Link
-            href="/data-loss-calculator"
+            href="/growth-calculator"
             className="text-[0.95rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
           >
             Want to know your exact number?{" "}

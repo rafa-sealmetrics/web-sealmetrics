@@ -20,7 +20,7 @@ export function CalculatorEmbed() {
               See the full picture — not just what GA4 captured.
             </p>
             <a
-              href="/data-loss-calculator/"
+              href="/growth-calculator/"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
             >
               Reveal My Hidden Revenue &rarr;

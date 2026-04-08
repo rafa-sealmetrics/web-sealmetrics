@@ -27,7 +27,7 @@ export function Hero() {
             <div className="flex items-center gap-5 flex-wrap">
               <a
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
-                href="/data-loss-calculator/"
+                href="/growth-calculator/"
               >
                 Discover your hidden revenue — free, 2 minutes
               </a>
