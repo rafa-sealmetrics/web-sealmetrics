@@ -304,10 +304,10 @@ export function Header() {
             Login
           </a>
           <Link
-            href="/#quiz"
+            href="/demo"
             className="inline-flex items-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            Start Diagnostic
+            Book a Demo
           </Link>
         </nav>
 
@@ -406,11 +406,11 @@ export function Header() {
             </a>
 
             <Link
-              href="/#quiz"
+              href="/demo"
               className="inline-flex items-center justify-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-3"
               onClick={() => setMobileOpen(false)}
             >
-              Start Diagnostic
+              Book a Demo
             </Link>
           </nav>
         </div>
