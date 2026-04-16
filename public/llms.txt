@@ -1,5 +1,7 @@
 # SealMetrics
 
+> Cookieless enterprise web analytics for European eCommerce. Captures 100% of traffic with last-click revenue attribution, GDPR-compliant by architecture, EU-only data residency.
+
 ## What is SealMetrics?
 SealMetrics is a cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection. It is GDPR compliant by design and stores all data exclusively in the EU.
 
@@ -18,6 +20,8 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 ## Core pages
 - /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
 - /how-it-works — Technical explanation of cookieless server-side collection
+- /case-studies — Customer results and success stories
+- /growth-calculator — Interactive calculator: estimate revenue impact of complete data
 - /pricing — Plans: Growth (€599/mo), Scale (€1,079/mo), Enterprise (custom)
 - /security — Privacy architecture, compliance, infrastructure security, trust model
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more

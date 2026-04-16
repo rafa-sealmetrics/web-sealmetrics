@@ -1,116 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sealmetrics.com</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://sealmetrics.com/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/product/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/product/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/product/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/product/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/product/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/product/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/product/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/product/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/pricing/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/pricing/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/pricing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/pricing/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/pricing/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/pricing/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/pricing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/pricing/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/demo/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/demo/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/demo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/demo/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/demo/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/demo/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/demo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/demo/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/how-it-works/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/how-it-works/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/how-it-works/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/how-it-works/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/how-it-works/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/how-it-works/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/how-it-works/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/how-it-works/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/vs-ga4/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/security/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/security/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/security/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/security/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/security/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/security/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/security/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/security/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/data-loss-calculator/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/integrations/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/platforms/</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/vs/ga360/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/vs/adobe-analytics/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/vs/piwik-pro/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/case-studies/</loc>
+    <lastmod>2026-04-12</lastmod>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/growth-calculator/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/growth-calculator/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/growth-calculator/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/growth-calculator/" />
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/growth-calculator/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sealmetrics.com/growth-calculator/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://sealmetrics.com/es/growth-calculator/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sealmetrics.com/growth-calculator/" />
   </url>
   <url>
     <loc>https://sealmetrics.com/videos/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/about/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/cmo/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/cto/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/dpo/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/ecommerce/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/hotels/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/agencies/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/saas/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/media/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/finance/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/education/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/for/healthcare/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/alternatives/google-analytics/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/blog/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/blog/best-enterprise-analytics-platforms/</loc>
@@ -194,71 +272,71 @@
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/cookieless-analytics/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/data-sampling/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/first-party-data-collection/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/consent-management-platform/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/multi-touch-attribution/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/server-side-tracking/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/intelligent-tracking-prevention/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/data-loss-in-analytics/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/revenue-attribution/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/gdpr-analytics-compliance/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/ad-blocker-analytics-impact/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/bounce-rate/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/attribution-model/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/event-tracking/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/glossary/analytics-data-residency/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/changelog/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://sealmetrics.com/privacy/</loc>
@@ -271,5 +349,9 @@
   <url>
     <loc>https://sealmetrics.com/dpa/</loc>
     <lastmod>2026-01-01</lastmod>
+  </url>
+  <url>
+    <loc>https://sealmetrics.com/es/blog/ga4-google-ads-separation/</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
 </urlset>

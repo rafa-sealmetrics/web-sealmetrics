@@ -3,6 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
+import type { Locale } from "@/lib/i18n/types";
+import { getDictionary } from "@/lib/i18n/getDictionary";
+import { localizedHref } from "@/lib/i18n/navigation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 /* ===========================================
    Dropdown data
@@ -24,126 +28,58 @@ interface NavDropdown {
   groups: DropdownGroup[];
 }
 
-const solutionsDropdown: NavDropdown = {
-  label: "Solutions",
-  groups: [
-    {
-      title: "By Role",
-      items: [
-        {
-          href: "/for/cmo",
-          label: "For CMOs",
-          desc: "Revenue attribution on 100% of data",
-        },
-        {
-          href: "/for/cto",
-          label: "For CTOs",
-          desc: "One script, full compliance, zero maintenance",
-        },
-        {
-          href: "/for/dpo",
-          label: "For DPOs",
-          desc: "GDPR compliant by architecture",
-        },
-      ],
-    },
-    {
-      title: "By Industry",
-      items: [
-        {
-          href: "/for/ecommerce",
-          label: "eCommerce",
-          desc: "Complete purchase attribution",
-        },
-        {
-          href: "/for/hotels",
-          label: "Hotels & Travel",
-          desc: "100% booking data visibility",
-        },
-        {
-          href: "/for/saas",
-          label: "SaaS",
-          desc: "Trial-to-paid conversion tracking",
-        },
-        {
-          href: "/for/agencies",
-          label: "Agencies",
-          desc: "Multi-client campaign attribution",
-        },
-        {
-          href: "/for/media",
-          label: "Media & Publishers",
-          desc: "True audience measurement",
-        },
-        {
-          href: "/for/finance",
-          label: "Finance",
-          desc: "Compliant financial services analytics",
-        },
-        {
-          href: "/for/healthcare",
-          label: "Healthcare",
-          desc: "Patient journey analytics, zero PII",
-        },
-        {
-          href: "/for/education",
-          label: "Education",
-          desc: "Complete enrollment attribution",
-        },
-      ],
-    },
-    {
-      items: [
-        {
-          href: "/data-loss-calculator",
-          label: "Data Loss Calculator",
-          desc: "See how much traffic you are missing",
-        },
-      ],
-    },
-  ],
-};
+function getSolutionsDropdown(t: ReturnType<typeof getDictionary>["header"], locale: Locale): NavDropdown {
+  return {
+    label: t.solutions,
+    groups: [
+      {
+        title: t.byRole,
+        items: [
+          { href: localizedHref("/for/cmo", locale), label: t.forCmos, desc: t.forCmosDesc },
+          { href: localizedHref("/for/cto", locale), label: t.forCtos, desc: t.forCtosDesc },
+          { href: localizedHref("/for/dpo", locale), label: t.forDpos, desc: t.forDposDesc },
+        ],
+      },
+      {
+        title: t.byIndustry,
+        items: [
+          { href: localizedHref("/for/ecommerce", locale), label: t.ecommerce, desc: t.ecommerceDesc },
+          { href: localizedHref("/for/hotels", locale), label: t.hotels, desc: t.hotelsDesc },
+          { href: localizedHref("/for/saas", locale), label: t.saas, desc: t.saasDesc },
+          { href: localizedHref("/for/agencies", locale), label: t.agencies, desc: t.agenciesDesc },
+          { href: localizedHref("/for/media", locale), label: t.media, desc: t.mediaDesc },
+          { href: localizedHref("/for/finance", locale), label: t.finance, desc: t.financeDesc },
+          { href: localizedHref("/for/healthcare", locale), label: t.healthcare, desc: t.healthcareDesc },
+          { href: localizedHref("/for/education", locale), label: t.education, desc: t.educationDesc },
+        ],
+      },
+      {
+        items: [
+          { href: localizedHref("/data-loss-calculator", locale), label: t.dataLossCalc, desc: t.dataLossCalcDesc },
+        ],
+      },
+    ],
+  };
+}
 
-const resourcesDropdown: NavDropdown = {
-  label: "Resources",
-  groups: [
-    {
-      items: [
-        { href: "/blog", label: "Blog", desc: "Analytics insights and guides" },
-        {
-          href: "/videos",
-          label: "Videos",
-          desc: "Product demos and tutorials",
-        },
-        {
-          href: "/glossary",
-          label: "Glossary",
-          desc: "Analytics terms explained",
-        },
-        {
-          href: "/how-it-works",
-          label: "How It Works",
-          desc: "Cookieless tracking explained",
-        },
-        {
-          href: "/platforms",
-          label: "Supported Platforms",
-          desc: "WordPress, Shopify, Wix & more",
-        },
-        {
-          href: "/vs-ga4",
-          label: "vs GA4",
-          desc: "Side-by-side comparison",
-        },
-        {
-          href: "/changelog",
-          label: "Changelog",
-          desc: "Product updates",
-        },
-      ],
-    },
-  ],
-};
+function getResourcesDropdown(t: ReturnType<typeof getDictionary>["header"], locale: Locale): NavDropdown {
+  return {
+    label: t.resources,
+    groups: [
+      {
+        items: [
+          { href: localizedHref("/blog", locale), label: t.blog, desc: t.blogDesc },
+          { href: localizedHref("/videos", locale), label: t.videos, desc: t.videosDesc },
+          { href: localizedHref("/glossary", locale), label: t.glossary, desc: t.glossaryDesc },
+          { href: localizedHref("/how-it-works", locale), label: t.howItWorks, desc: t.howItWorksDesc },
+          { href: localizedHref("/platforms", locale), label: t.platforms, desc: t.platformsDesc },
+          { href: localizedHref("/vs-ga4", locale), label: t.vsGa4, desc: t.vsGa4Desc },
+          { href: localizedHref("/changelog", locale), label: t.changelog, desc: t.changelogDesc },
+        ],
+      },
+    ],
+  };
+}
 
 /* ===========================================
    Dropdown component
@@ -238,9 +174,13 @@ function Dropdown({
    Header
    =========================================== */
 
-export function Header() {
+export function Header({ locale = "en" }: { locale?: Locale }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const t = getDictionary(locale).header;
+  const solutionsDropdown = getSolutionsDropdown(t, locale);
+  const resourcesDropdown = getResourcesDropdown(t, locale);
 
   const handleToggle = useCallback(
     (label: string) => {
@@ -256,7 +196,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-xl border-b border-warm-100">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center no-underline">
+        <Link href={localizedHref("/", locale)} className="flex items-center no-underline">
           <Image
             src="/logos/logo-sealmetrics-negro.png"
             alt="SealMetrics"
@@ -270,10 +210,10 @@ export function Header() {
         {/* Desktop nav */}
         <nav aria-label="Main navigation" className="hidden md:flex items-center gap-7">
           <Link
-            href="/product"
+            href={localizedHref("/product", locale)}
             className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
           >
-            Product
+            {t.product}
           </Link>
 
           <Dropdown
@@ -284,10 +224,10 @@ export function Header() {
           />
 
           <Link
-            href="/pricing"
+            href={localizedHref("/pricing", locale)}
             className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
           >
-            Pricing
+            {t.pricing}
           </Link>
 
           <Dropdown
@@ -301,21 +241,22 @@ export function Header() {
             href="https://my.sealmetrics.com/register"
             className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
           >
-            Login
+            {t.login}
           </a>
           <Link
-            href="/demo"
+            href={localizedHref("/demo", locale)}
             className="inline-flex items-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            Book a Demo
+            {t.bookDemo}
           </Link>
+          <LanguageSwitcher locale={locale} />
         </nav>
 
         {/* Mobile toggle */}
         <button
           className="md:hidden p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-label={mobileOpen ? t.closeMenu : t.openMenu}
           aria-expanded={mobileOpen}
         >
           <svg
@@ -340,17 +281,17 @@ export function Header() {
         <div className="md:hidden bg-white border-t border-warm-100 px-4 sm:px-6 py-6 max-h-[calc(100vh-64px)] overflow-y-auto">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
             <Link
-              href="/product"
+              href={localizedHref("/product", locale)}
               className="py-2.5 text-text-secondary no-underline hover:text-text-primary"
               onClick={() => setMobileOpen(false)}
             >
-              Product
+              {t.product}
             </Link>
 
             {/* Solutions group */}
             <div className="py-2.5">
               <span className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary">
-                Solutions
+                {t.solutions}
               </span>
               <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
                 {solutionsDropdown.groups.map((group) =>
@@ -369,17 +310,17 @@ export function Header() {
             </div>
 
             <Link
-              href="/pricing"
+              href={localizedHref("/pricing", locale)}
               className="py-2.5 text-text-secondary no-underline hover:text-text-primary"
               onClick={() => setMobileOpen(false)}
             >
-              Pricing
+              {t.pricing}
             </Link>
 
             {/* Resources group */}
             <div className="py-2.5">
               <span className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary">
-                Resources
+                {t.resources}
               </span>
               <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
                 {resourcesDropdown.groups.map((group) =>
@@ -402,16 +343,20 @@ export function Header() {
               className="py-2.5 text-text-secondary no-underline hover:text-text-primary"
               onClick={() => setMobileOpen(false)}
             >
-              Login
+              {t.login}
             </a>
 
             <Link
-              href="/demo"
+              href={localizedHref("/demo", locale)}
               className="inline-flex items-center justify-center px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-3"
               onClick={() => setMobileOpen(false)}
             >
-              Book a Demo
+              {t.bookDemo}
             </Link>
+
+            <div className="mt-3 flex justify-center">
+              <LanguageSwitcher locale={locale} />
+            </div>
           </nav>
         </div>
       )}

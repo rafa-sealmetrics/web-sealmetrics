@@ -25,6 +25,7 @@ export interface BlogPost {
   readTime: string;
   author?: BlogAuthor;
   draft?: boolean;
+  related?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -37,6 +38,7 @@ export const blogPosts: BlogPost[] = [
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.sealmetrics,
+    related: ["ga4-alternatives-enterprise", "ga4-data-sampling-problem", "analytics-tools-data-sampling"],
   },
   {
     slug: "analytics-tools-lighthouse-scores",
@@ -71,6 +73,7 @@ export const blogPosts: BlogPost[] = [
     category: "Data Quality",
     readTime: "8 min",
     author: AUTHORS.rafa,
+    related: ["consent-banner-impact-on-analytics", "what-is-data-loss-in-analytics", "ga4-data-sampling-problem"],
   },
   {
     slug: "analytics-tools-http-requests",
@@ -94,6 +97,7 @@ export const blogPosts: BlogPost[] = [
     category: "Privacy",
     readTime: "5 min",
     author: AUTHORS.rafa,
+    related: ["analytics-tools-external-domains", "cookieless-analytics-explained", "gdpr-analytics-without-consent"],
   },
   {
     slug: "analytics-tools-external-domains",
@@ -105,6 +109,7 @@ export const blogPosts: BlogPost[] = [
     category: "Privacy",
     readTime: "4 min",
     author: AUTHORS.rafa,
+    related: ["analytics-tools-cookies-cataloged", "analytics-scripts-costing-you-sales", "we-measured-every-analytics-script"],
   },
   {
     slug: "analytics-tools-data-sampling",
@@ -116,6 +121,7 @@ export const blogPosts: BlogPost[] = [
     category: "Data Quality",
     readTime: "5 min",
     author: AUTHORS.rafa,
+    related: ["ga4-data-sampling-problem", "what-is-data-loss-in-analytics", "best-enterprise-analytics-platforms"],
   },
   {
     slug: "analytics-scripts-costing-you-sales",
@@ -127,6 +133,7 @@ export const blogPosts: BlogPost[] = [
     category: "Performance",
     readTime: "3 min",
     author: AUTHORS.rafa,
+    related: ["we-measured-every-analytics-script", "consent-banner-impact-on-analytics", "analytics-tools-external-domains"],
   },
   {
     slug: "we-measured-every-analytics-script",
@@ -137,6 +144,7 @@ export const blogPosts: BlogPost[] = [
     category: "Performance",
     readTime: "4 min",
     author: AUTHORS.rafa,
+    related: ["analytics-scripts-costing-you-sales", "analytics-tools-external-domains", "analytics-tools-cookies-cataloged"],
   },
   {
     slug: "uk-pecr-analytics-exemption",
@@ -148,6 +156,7 @@ export const blogPosts: BlogPost[] = [
     category: "Regulation",
     readTime: "2 min",
     author: AUTHORS.rafa,
+    related: ["cnil-self-assessment-published", "gdpr-analytics-without-consent", "eu-digital-omnibus-cookie-banners-analytics"],
   },
   {
     slug: "ga4-data-sampling-problem",
@@ -158,6 +167,7 @@ export const blogPosts: BlogPost[] = [
     category: "Data Quality",
     readTime: "7 min",
     author: AUTHORS.rafa,
+    related: ["analytics-tools-data-sampling", "why-ga4-shows-13pct-eu-traffic", "ga4-alternatives-enterprise"],
   },
   {
     slug: "eu-digital-omnibus-cookie-banners-analytics",
@@ -169,6 +179,7 @@ export const blogPosts: BlogPost[] = [
     category: "Regulation",
     readTime: "2 min",
     author: AUTHORS.rafa,
+    related: ["eu-digital-omnibus-marketer-guide-2026", "consent-banner-impact-on-analytics", "gdpr-analytics-without-consent"],
   },
   {
     slug: "eu-digital-omnibus-marketer-guide-2026",
@@ -180,6 +191,7 @@ export const blogPosts: BlogPost[] = [
     category: "Regulation",
     readTime: "6 min",
     author: AUTHORS.rafa,
+    related: ["eu-digital-omnibus-cookie-banners-analytics", "cnil-self-assessment-published", "uk-pecr-analytics-exemption"],
   },
   {
     slug: "cnil-self-assessment-published",
@@ -190,6 +202,7 @@ export const blogPosts: BlogPost[] = [
     category: "Regulation",
     readTime: "2 min",
     author: AUTHORS.rafa,
+    related: ["uk-pecr-analytics-exemption", "gdpr-analytics-without-consent", "eu-digital-omnibus-marketer-guide-2026"],
   },
   {
     slug: "cookieless-analytics-explained",
@@ -200,6 +213,7 @@ export const blogPosts: BlogPost[] = [
     category: "Technology",
     readTime: "8 min",
     author: AUTHORS.rafa,
+    related: ["what-is-cookieless-tracking", "analytics-tools-cookies-cataloged", "consent-banner-impact-on-analytics"],
   },
   {
     slug: "consent-banner-impact-on-analytics",
@@ -210,6 +224,7 @@ export const blogPosts: BlogPost[] = [
     category: "Data Quality",
     readTime: "6 min",
     author: AUTHORS.rafa,
+    related: ["why-ga4-shows-13pct-eu-traffic", "cookieless-analytics-explained", "eu-digital-omnibus-cookie-banners-analytics"],
   },
   {
     slug: "ai-agent-traffic-analytics",
@@ -220,6 +235,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI & Analytics",
     readTime: "5 min",
     author: AUTHORS.rafa,
+    related: ["what-is-data-loss-in-analytics", "why-ga4-shows-13pct-eu-traffic", "best-enterprise-analytics-platforms"],
   },
   {
     slug: "multi-touch-attribution-complete-data",
@@ -230,6 +246,7 @@ export const blogPosts: BlogPost[] = [
     category: "Attribution",
     readTime: "7 min",
     author: AUTHORS.rafa,
+    related: ["consent-banner-impact-on-analytics", "what-is-data-loss-in-analytics", "why-ga4-shows-13pct-eu-traffic"],
   },
   {
     slug: "what-is-cookieless-tracking",
@@ -241,6 +258,7 @@ export const blogPosts: BlogPost[] = [
     category: "Technology",
     readTime: "8 min",
     author: AUTHORS.rafa,
+    related: ["cookieless-analytics-explained", "gdpr-analytics-without-consent", "consent-banner-impact-on-analytics"],
   },
   {
     slug: "what-is-data-loss-in-analytics",
@@ -252,6 +270,7 @@ export const blogPosts: BlogPost[] = [
     category: "Data Quality",
     readTime: "7 min",
     author: AUTHORS.rafa,
+    related: ["why-ga4-shows-13pct-eu-traffic", "consent-banner-impact-on-analytics", "multi-touch-attribution-complete-data"],
   },
   {
     slug: "ga4-alternatives-enterprise",
@@ -261,6 +280,17 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-02",
     category: "Comparisons",
     readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["best-enterprise-analytics-platforms", "ga4-data-sampling-problem", "why-ga4-shows-13pct-eu-traffic"],
+  },
+  {
+    slug: "ga4-google-ads-separation",
+    title: "GA4 y Google Ads: la separacion que nadie vio venir",
+    description:
+      "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Analisis del impacto real en datos y riesgo legal para anunciantes europeos.",
+    date: "2026-04-16",
+    category: "Privacidad",
+    readTime: "8 min",
     author: AUTHORS.rafa,
   },
   {
@@ -273,5 +303,6 @@ export const blogPosts: BlogPost[] = [
     category: "Regulation",
     readTime: "7 min",
     author: AUTHORS.rafa,
+    related: ["cnil-self-assessment-published", "uk-pecr-analytics-exemption", "cookieless-analytics-explained"],
   },
 ];

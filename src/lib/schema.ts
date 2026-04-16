@@ -131,6 +131,10 @@ export function articleSchema(props: {
     datePublished: props.datePublished,
     dateModified: props.dateModified || props.datePublished,
     url: `${SITE_URL}${props.url}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}${props.url}`,
+    },
     image: props.image || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     author: props.author
       ? {
@@ -282,5 +286,55 @@ export function pricingSchema(
       description: plan.description,
       url: `${SITE_URL}/pricing`,
     })),
+  };
+}
+
+export function servicePageSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+  audience?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: props.name,
+    description: props.description,
+    url: `${SITE_URL}${props.url}`,
+    ...(props.audience
+      ? { audience: { "@type": "Audience", audienceType: props.audience } }
+      : {}),
+    provider: {
+      "@type": "Organization",
+      name: ORG_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
+export function webApplicationSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: props.name,
+    description: props.description,
+    url: `${SITE_URL}${props.url}`,
+    applicationCategory: "AnalyticsApplication",
+    operatingSystem: "Web",
+    provider: {
+      "@type": "Organization",
+      name: ORG_NAME,
+      url: SITE_URL,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+    },
   };
 }

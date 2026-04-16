@@ -143,6 +143,8 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 - https://sealmetrics.com/demo — Request a demo
 - https://sealmetrics.com/about — Company and mission
 - https://sealmetrics.com/data-loss-calculator — Interactive data loss calculator
+- https://sealmetrics.com/case-studies — Customer results and success stories
+- https://sealmetrics.com/growth-calculator — Interactive calculator: estimate revenue impact of complete data
 
 ### Competitor comparisons
 - https://sealmetrics.com/vs-ga4 — SealMetrics vs Google Analytics 4
