@@ -8,7 +8,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 export const metadata: Metadata = {
   title: "How Cookieless Analytics Works — SealMetrics",
   description:
-    "SealMetrics uses a first-party 846-byte script on your domain. No cookies, no consent dependency, no ad-blocker vulnerability. 100% traffic capture in 5 minutes.",
+    "SealMetrics uses a first-party 846-byte script on your domain. No cookies, no consent dependency, no ad blockers. 100% traffic capture in 5 minutes.",
   openGraph: {
     title: "How Cookieless Analytics Works — SealMetrics",
     description:

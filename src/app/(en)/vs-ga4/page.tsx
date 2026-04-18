@@ -4,11 +4,12 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { OtherComparisons } from "@/components/ui/OtherComparisons";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
   description:
-    "GA4 captures ~13% of EU traffic. SealMetrics captures 100% without cookies. Full comparison: data capture, GDPR compliance, attribution, pricing (€599/mo vs free).",
+    "GA4 captures ~13% of EU traffic. SealMetrics captures 100% without cookies. Data capture, GDPR, attribution, pricing compared.",
   openGraph: {
     title: "SealMetrics vs Google Analytics 4 — Detailed Comparison",
     description:
@@ -400,6 +401,7 @@ export default function VsGA4Page() {
           </p>
         </div>
       </section>
+      <OtherComparisons currentHref="/vs-ga4/" />
     </>
   );
 }

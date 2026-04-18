@@ -9,13 +9,13 @@ import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
-  title: "Precios de SealMetrics — Analitica Completa desde €599/mes",
+  title: "Precios de SealMetrics — Analítica Completa desde €599/mes",
   description:
-    "Analitica completa desde €599/mes. El 100% de tu trafico capturado. Planes auto-escalables — sin sorpresas, sin datos bloqueados. 14 dias gratis, sin tarjeta.",
+    "Analítica completa desde €599/mes. El 100% de tu tráfico capturado. Planes auto-escalables — sin sorpresas, sin datos bloqueados. 14 días gratis, sin tarjeta.",
   openGraph: {
-    title: "Precios de SealMetrics — Analitica Completa desde €599/mes",
+    title: "Precios de SealMetrics — Analítica Completa desde €599/mes",
     description:
-      "Analitica enterprise desde €599/mes. Facturacion anual desde €499/mes. 14 dias gratis.",
+      "Analítica enterprise desde €599/mes. Facturación anual desde €499/mes. 14 días gratis.",
     type: "website",
     locale: "es_ES",
   },
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const everyPlanIncludes = [
   "Webs ilimitadas",
   "Usuarios ilimitados",
-  "Conversion Properties",
-  "24 meses de retencion de datos",
+  "Conversión Properties",
+  "24 meses de retención de datos",
   "Tracking sin cookies (RGPD)",
   "Datos en tiempo real (<2 min)",
-  "Analisis de funnels",
+  "Análisis de funnels",
   "Vista multi-sitio (Portfolio)",
 ];
 
@@ -40,7 +40,7 @@ const differentiators = [
   {
     from: "Growth",
     to: "Scale",
-    diff: "Mas eventos (15M) + Agent AI Analytics + Webhooks + Onboarding guiado",
+    diff: "Más eventos (15M) + Agent AI Analytics + Webhooks + Onboarding guiado",
   },
   {
     from: "Scale",
@@ -63,24 +63,24 @@ interface ComparisonSection {
 
 const comparisonData: ComparisonSection[] = [
   {
-    category: "Analitica Core",
+    category: "Analítica Core",
     rows: [
       { feature: "Tracking sin cookies (RGPD)", growth: true, scale: true, enterprise: true },
       { feature: "Datos en tiempo real (<2 min)", growth: true, scale: true, enterprise: true },
       { feature: "Tracking de pageviews y sesiones", growth: true, scale: true, enterprise: true },
-      { feature: "Atribucion UTM y por canal", growth: true, scale: true, enterprise: true },
-      { feature: "Analitica por dispositivo y geo", growth: true, scale: true, enterprise: true },
-      { feature: "Analisis de funnels", growth: true, scale: true, enterprise: true },
+      { feature: "Atribución UTM y por canal", growth: true, scale: true, enterprise: true },
+      { feature: "Analítica por dispositivo y geo", growth: true, scale: true, enterprise: true },
+      { feature: "Análisis de funnels", growth: true, scale: true, enterprise: true },
       { feature: "Frescura de datos", growth: "Antes de las 6am diario", scale: "Antes de las 6am diario — SLA 99,5%", enterprise: "Antes de las 6am diario — SLA personalizado" },
     ],
   },
   {
-    category: "Agent Analytics (Proximamente)",
+    category: "Agent Analytics (Próximamente)",
     rows: [
-      { feature: "Deteccion de agentes IA", growth: false, scale: "Proximamente", enterprise: "Proximamente" },
-      { feature: "Agent Scoring (300+ senales)", growth: false, scale: "Proximamente", enterprise: "Proximamente" },
-      { feature: "Firmas HTTP (RFC 9421)", growth: false, scale: "Proximamente", enterprise: "Proximamente" },
-      { feature: "Deteccion de proveedor (OpenAI, Anthropic, etc.)", growth: false, scale: "Proximamente", enterprise: "Proximamente" },
+      { feature: "Detección de agentes IA", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "Agent Scoring (300+ señales)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "Firmas HTTP (RFC 9421)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "Detección de proveedor (OpenAI, Anthropic, etc.)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
     ],
   },
   {
@@ -88,25 +88,25 @@ const comparisonData: ComparisonSection[] = [
     rows: [
       { feature: "Tracking de conversiones", growth: true, scale: true, enterprise: true },
       { feature: "Tracking de microconversiones", growth: true, scale: true, enterprise: true },
-      { feature: "Conversion Properties", growth: true, scale: true, enterprise: true },
-      { feature: "Atribucion de ingresos", growth: true, scale: true, enterprise: true },
+      { feature: "Conversión Properties", growth: true, scale: true, enterprise: true },
+      { feature: "Atribución de ingresos", growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "LENS AI",
     rows: [
-      { feature: "Prediccion y forecasting", growth: true, scale: true, enterprise: true },
-      { feature: "Deteccion de anomalias", growth: true, scale: true, enterprise: true },
+      { feature: "Predicción y forecasting", growth: true, scale: true, enterprise: true },
+      { feature: "Detección de anomalías", growth: true, scale: true, enterprise: true },
       { feature: "Oportunidades de crecimiento", growth: true, scale: true, enterprise: true },
       { feature: "Informes semanales y mensuales", growth: true, scale: true, enterprise: true },
     ],
   },
   {
-    category: "Monitorizacion y alertas",
+    category: "Monitorización y alertas",
     rows: [
       { feature: "Alertas criticas", growth: true, scale: true, enterprise: true },
-      { feature: "Monitorizacion de negocio", growth: true, scale: true, enterprise: true },
-      { feature: "Gestion de riesgos", growth: true, scale: true, enterprise: true },
+      { feature: "Monitorización de negocio", growth: true, scale: true, enterprise: true },
+      { feature: "Gestión de riesgos", growth: true, scale: true, enterprise: true },
       { feature: "Alertas personalizadas", growth: true, scale: true, enterprise: true },
     ],
   },
@@ -115,7 +115,7 @@ const comparisonData: ComparisonSection[] = [
     rows: [
       { feature: "Acceso API (completo)", growth: true, scale: true, enterprise: true },
       { feature: "MCP Server", growth: true, scale: true, enterprise: true },
-      { feature: "Exportacion CSV / JSON", growth: true, scale: true, enterprise: true },
+      { feature: "Exportación CSV / JSON", growth: true, scale: true, enterprise: true },
       { feature: "BigQuery Export", growth: true, scale: true, enterprise: true },
       { feature: "Webhooks", growth: false, scale: true, enterprise: true },
     ],
@@ -129,7 +129,7 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Gobernanza",
     rows: [
-      { feature: "Control de acceso por roles (RBAC)", growth: "Basico", scale: "Avanzado", enterprise: "Completo" },
+      { feature: "Control de acceso por roles (RBAC)", growth: "Básico", scale: "Avanzado", enterprise: "Completo" },
       { feature: "SSO / SAML", growth: false, scale: false, enterprise: true },
       { feature: "Procesamiento aislado", growth: false, scale: false, enterprise: true },
     ],
@@ -141,7 +141,7 @@ const comparisonData: ComparisonSection[] = [
       { feature: "Soporte por chat", growth: true, scale: true, enterprise: true },
       { feature: "Soporte prioritario", growth: false, scale: true, enterprise: true },
       { feature: "Account Manager dedicado", growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", growth: "Docs + Videos", scale: "1 sesion", enterprise: "White-glove" },
+      { feature: "Onboarding", growth: "Docs + Videos", scale: "1 sesión", enterprise: "White-glove" },
       { feature: "SLA", growth: "99%", scale: "99,5%", enterprise: "99,9%" },
     ],
   },
@@ -149,7 +149,7 @@ const comparisonData: ComparisonSection[] = [
     category: "Infraestructura",
     rows: [
       { feature: "Eventos humanos / mes", growth: "5M", scale: "15M", enterprise: "Ilimitados" },
-      { feature: "Agentes IA", growth: "Proximamente", scale: "Proximamente", enterprise: "Proximamente" },
+      { feature: "Agentes IA", growth: "Próximamente", scale: "Próximamente", enterprise: "Próximamente" },
       { feature: "Webs", growth: "Ilimitadas", scale: "Ilimitadas", enterprise: "Ilimitadas" },
       { feature: "Usuarios", growth: "Ilimitados", scale: "Ilimitados", enterprise: "Ilimitados" },
       { feature: "Retencion de datos", growth: "24 meses", scale: "24 meses", enterprise: "Personalizada" },
@@ -159,63 +159,63 @@ const comparisonData: ComparisonSection[] = [
 
 const faqs = [
   {
-    q: "Que cuenta como un evento humano?",
-    a: "Un evento humano es cualquier interaccion de un visitante real: pageviews, clics, conversiones, envios de formulario, acciones de anadir al carrito, suscripciones a newsletter. El trafico de agentes IA y bots tradicionales se excluye de tu recuento de eventos — se rastrean por separado y no cuentan para tu limite.",
+    q: "¿Qué cuenta como un evento humano?",
+    a: "Un evento humano es cualquier interaccion de un visitante real: pageviews, clics, conversiones, envios de formulario, acciones de añadir al carrito, suscripciones a newsletter. El tráfico de agentes IA y bots tradicionales se excluye de tu recuento de eventos — se rastrean por separado y no cuentan para tu límite.",
   },
   {
-    q: "Por que el trafico de agentes IA es gratis?",
-    a: "Los agentes IA (ChatGPT, Claude, Perplexity) representan una nueva categoria de trafico sobre la que necesitas visibilidad. Los rastreamos gratis porque entender quien lee tu contenido con IA es una ventaja estrategica, no un centro de coste.",
+    q: "¿Por qué el tráfico de agentes IA es gratis?",
+    a: "Los agentes IA (ChatGPT, Claude, Perplexity) representan una nueva categoría de tráfico sobre la que necesitas visibilidad. Los rastreamos gratis porque entender quien lee tu contenido con IA es una ventaja estrategica, no un centro de coste.",
   },
   {
-    q: "Que pasa si supero mi limite de eventos?",
-    a: "Tu tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos tus datos — eso iria en contra del proposito de una analitica completa. Al 80% de uso recibes un email informativo (sin accion necesaria). Al 100% aparece un indicador en tu panel. Si superas tu limite durante 2+ meses consecutivos, tu plan se actualiza automaticamente en tu proximo ciclo de facturacion. Un mes de exceso al ano es gratuito — los picos estacionales no activan nada.",
+    q: "¿Qué pasa si supero mi límite de eventos?",
+    a: "Tu tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos tus datos — eso iría en contra del propósito de una analítica completa. Al 80% de uso recibes un email informativo (sin acción necesaria). Al 100% aparece un indicador en tu panel. Si superas tu límite durante 2+ meses consecutivos, tu plan se actualiza automáticamente en tu próximo ciclo de facturación. Un mes de exceso al año es gratuito — los picos estacionales no activan nada.",
   },
   {
-    q: "Me pueden subir de plan automaticamente sin avisar?",
-    a: "Siempre recibiras un email antes de que cualquier cambio de plan entre en vigor. Las subidas automaticas solo ocurren tras 2+ meses consecutivos por encima del 120% de tu limite, y se aplican al inicio de tu proximo ciclo de facturacion — nunca a mitad de ciclo. Los clientes con plan anual solo se ajustan en la renovacion. Nunca te subiremos de plan por un unico mes de pico.",
+    q: "¿Me pueden subir de plan automáticamente sin avisar?",
+    a: "Siempre recibirás un email antes de que cualquier cambio de plan entre en vigor. Las subidas automáticas solo ocurren tras 2+ meses consecutivos por encima del 120% de tu límite, y se aplican al inicio de tu próximo ciclo de facturación — nunca a mitad de ciclo. Los clientes con plan anual solo se ajustan en la renovación. Nunca te subiremos de plan por un unico mes de pico.",
   },
   {
-    q: "Y si mi trafico baja? Puedo bajar de plan?",
-    a: "Si — y de hecho te lo sugeriremos. Si tu uso cae por debajo del 50% de tu limite de plan durante 3+ meses, te enviaremos proactivamente un email con una opcion de un clic para pasar a un plan menor. Si no haces nada, nada cambia. Preferimos que pagues por lo que usas.",
+    q: "¿Y si mi tráfico baja? Puedo bajar de plan?",
+    a: "Si — y de hecho te lo sugeriremos. Si tu uso cae por debajo del 50% de tu límite de plan durante 3+ meses, te enviaremos proactivamente un email con una opción de un clic para pasar a un plan menor. Si no haces nada, nada cambia. Preferimos que pagues por lo que usas.",
   },
   {
-    q: "Todas las funcionalidades estan realmente incluidas en todos los planes?",
-    a: "Si. Analitica core, tracking de conversiones, LENS AI, monitorizacion, API, MCP Server y BigQuery Export estan incluidos en todos los planes desde Growth. Las unicas diferencias entre planes son el volumen de eventos, funcionalidades de gobernanza (RBAC, SSO), nivel de soporte y Agent AI Analytics (disponible desde Scale). Nunca encontraras un muro de funcionalidades.",
+    q: "¿Todas las funcionalidades están realmente incluidas en todos los planes?",
+    a: "Sí. Analítica core, tracking de conversiones, LENS AI, monitorización, API, MCP Server y BigQuery Export están incluidos en todos los planes desde Growth. Las unicas diferencias entre planes son el volumen de eventos, funcionalidades de gobernanza (RBAC, SSO), nivel de soporte y Agent AI Analytics (disponible desde Scale). Nunca encontraras un muro de funcionalidades.",
   },
   {
-    q: "Puedo cambiar entre facturacion mensual y anual?",
-    a: "Si. Cambia a facturacion anual en cualquier momento para obtener 2 meses gratis. Los compromisos anuales se facturan por adelantado. Si cambias de mensual a anual, el cambio se aplica en tu proximo ciclo de facturacion.",
+    q: "¿Puedo cambiar entre facturación mensual y anual?",
+    a: "Sí. Cambia a facturación anual en cualquier momento para obtener 2 meses gratis. Los compromisos anuales se facturan por adelantado. Si cambias de mensual a anual, el cambio se aplica en tu próximo ciclo de facturación.",
   },
   {
-    q: "Hay prueba gratuita?",
-    a: "Si. Todos los planes incluyen una prueba gratuita de 14 dias con acceso completo a todas las funcionalidades. Sin tarjeta de credito. Veras tus datos reales a los pocos minutos de instalar nuestro script.",
+    q: "¿Hay prueba gratuita?",
+    a: "Sí. Todos los planes incluyen una prueba gratuita de 14 días con acceso completo a todas las funcionalidades. Sin tarjeta de crédito. Veras tus datos reales a los pocos minutos de instalar nuestro script.",
   },
   {
-    q: "Que significa webs y usuarios ilimitados?",
-    a: "Todos los planes incluyen webs ilimitadas y miembros de equipo ilimitados. Sin cargos por puesto, sin cargos por dominio. Anade todo tu equipo y todos tus dominios desde el primer dia.",
+    q: "¿Qué significa webs y usuarios ilimitados?",
+    a: "Todos los planes incluyen webs ilimitadas y miembros de equipo ilimitados. Sin cargos por puesto, sin cargos por dominio. Añade todo tu equipo y todos tus dominios desde el primer día.",
   },
   {
-    q: "SealMetrics captura el 100% del trafico — significa eso que mi recuento de eventos sera mayor que en GA4?",
-    a: "Si, significativamente. Como rastreamos sin cookies ni banners de consentimiento, capturamos visitantes que GA4 nunca ve — tipicamente un 40-90% mas de trafico dependiendo de tu tasa de rechazo de consentimiento. Tenlo en cuenta al estimar tu plan: si GA4 te muestra 100K sesiones/mes, tu trafico real puede ser 170K-300K sesiones, generando aproximadamente 4-6 eventos por sesion.",
+    q: "¿SealMetrics captura el 100% del tráfico — significa eso que mi recuento de eventos será mayor que en GA4?",
+    a: "Sí, significativamente. Como rastreamos sin cookies ni banners de consentimiento, capturamos visitantes que GA4 nunca ve — tipicamente un 40-90% más de tráfico dependiendo de tu tasa de rechazo de consentimiento. Tenlo en cuenta al estimar tu plan: si GA4 te muestra 100K sesiones/mes, tu tráfico real puede ser 170K-300K sesiones, generando aproximadamente 4-6 eventos por sesión.",
   },
   {
-    q: "Cobrais por evento si me paso de mi limite?",
-    a: "No. No hacemos facturacion por exceso de eventos. Tu plan tiene un limite claro, y si creces consistentemente mas alla de el, pasas al siguiente plan a un precio fijo. Sin partidas sorpresa, sin facturas variables, sin necesidad de calculadora.",
+    q: "¿Cobráis por evento si me paso de mi límite?",
+    a: "No. No hacemos facturación por exceso de eventos. Tu plan tiene un límite claro, y si creces consistentemente más alla de el, pasas al siguiente plan a un precio fijo. Sin partidas sorpresa, sin facturas variables, sin necesidad de calculadora.",
   },
   {
-    q: "Como funciona la facturacion de planes anuales si mi uso crece a mitad de ano?",
-    a: "Los planes anuales estan protegidos durante todo el periodo de contrato. Si tu trafico crece a mitad de ano, absorbemos el exceso hasta tu fecha de renovacion. En la renovacion, te recomendaremos el plan que se ajuste a tu uso actual. Nunca recibiras una factura inesperada a mitad de contrato.",
+    q: "¿Cómo funciona la facturación de planes anuales si mi uso crece a mitad de año?",
+    a: "Los planes anuales están protegidos durante todo el período de contrato. Si tu tráfico crece a mitad de año, absorbemos el exceso hasta tu fecha de renovación. En la renovación, te recomendaremos el plan que se ajuste a tu uso actual. Nunca recibirás una factura inesperada a mitad de contrato.",
   },
 ];
 
 const adaptCards = [
   {
     title: "Nunca cortamos tus datos",
-    desc: "Sin importar tu uso, tu tracking sigue funcionando. Nunca bloqueamos, limitamos ni muestreamos tus datos. Datos completos es nuestra promesa — no la rompemos por facturacion.",
+    desc: "Sin importar tu uso, tu tracking sigue funcionando. Nunca bloqueamos, limitamos ni muestreamos tus datos. Datos completos es nuestra promesa — no la rompemos por facturación.",
   },
   {
     title: "Si creces, tu plan crece contigo",
-    desc: "Si tu trafico supera consistentemente el limite de tu plan durante 2+ meses, actualizamos automaticamente tu plan al inicio de tu proximo ciclo de facturacion. Recibiras un email confirmando el cambio — sin llamadas comerciales, sin negociaciones. Los planes mensuales se ajustan el mes siguiente. Los planes anuales se ajustan solo en la renovacion.",
+    desc: "Si tu tráfico supera consistentemente el límite de tu plan durante 2+ meses, actualizamos automáticamente tu plan al inicio de tu próximo ciclo de facturación. Recibiras un email confirmando el cambio — sin llamadas comerciales, sin negociaciones. Los planes mensuales se ajustan el mes siguiente. Los planes anuales se ajustan solo en la renovación.",
   },
   {
     title: "Si necesitas menos, te lo diremos",
@@ -223,7 +223,7 @@ const adaptCards = [
   },
   {
     title: "Los picos estacionales corren de nuestra cuenta",
-    desc: "Black Friday? Rebajas de enero? Una campana viral? Un mes de exceso al ano esta incluido sin coste adicional y no activa ningun cambio de plan. Tu negocio tiene picos — tu factura de analitica no deberia penalizarte por ellos.",
+    desc: "Black Friday? Rebajas de enero? Una campaña viral? Un mes de exceso al año esta incluido sin coste adicional y no activa ningún cambio de plan. Tu negocio tiene picos — tu factura de analítica no deberia penalizarte por ellos.",
   },
 ];
 
@@ -255,12 +255,12 @@ export default function PricingPageEs() {
             Paga por humanos. No por bots. No por banners de consentimiento. No por suposiciones.
           </h1>
           <p className="text-[1.15rem] leading-[1.75] text-text-secondary max-w-[640px] mx-auto mb-2">
-            Tracking de agentes IA disponible proximamente.
+            Tracking de agentes IA disponible próximamente.
             <br />
             Todas las funcionalidades incluidas en todos los planes.
           </p>
           <p className="text-[0.9rem] text-text-tertiary mb-10">
-            Otras analiticas te cobran por trafico de bots. Nosotros solo contamos humanos.
+            Otras analíticas te cobran por tráfico de bots. Nosotros solo contamos humanos.
           </p>
           <Link
             href="/es/demo"
@@ -274,7 +274,7 @@ export default function PricingPageEs() {
               href="/es/growth-calculator"
               className="text-text-secondary no-underline border-b border-warm-200 hover:text-text-primary transition-colors"
             >
-              calcula tu perdida de datos primero &rarr;
+              calcula tu pérdida de datos primero &rarr;
             </a>
           </p>
         </div>
@@ -309,7 +309,7 @@ export default function PricingPageEs() {
             </span>
           </div>
           <p className="text-[0.8rem] text-text-tertiary mt-8">
-            Tracking de agentes IA (ChatGPT, Claude, Perplexity) disponible proximamente. No contara contra tu limite de eventos.
+            Tracking de agentes IA (ChatGPT, Claude, Perplexity) disponible próximamente. No contara contra tu límite de eventos.
           </p>
         </div>
       </section>
@@ -335,12 +335,12 @@ export default function PricingPageEs() {
             ))}
           </div>
           <p className="text-[0.85rem] text-text-secondary mt-10 pt-8 border-t border-warm-100 text-center">
-            Solo pagas mas si creces. Todas las funcionalidades core estan siempre incluidas.
+            Solo pagas mas si creces. Todas las funcionalidades core están siempre incluidas.
           </p>
         </div>
       </section>
 
-      {/* FAQ rapido — preguntas pre-decision */}
+      {/* FAQ rápido — preguntas pre-decisión */}
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[640px] mx-auto text-center mb-12">
@@ -351,28 +351,28 @@ export default function PricingPageEs() {
           <div className="max-w-[760px] mx-auto divide-y divide-warm-100">
             {[
               {
-                q: "Hay realmente una prueba gratuita de 14 dias sin tarjeta de credito?",
-                a: "Si. Instala el script, ve tus datos reales en minutos y decide al final de los 14 dias. No se requiere tarjeta para empezar. Si no ves valor, no pagas.",
+                q: "¿Hay realmente una prueba gratuita de 14 días sin tarjeta de crédito?",
+                a: "Sí. Instala el script, ve tus datos reales en minutos y decide al final de los 14 días. No se requiere tarjeta para empezar. Si no ves valor, no pagas.",
               },
               {
-                q: "SealMetrics captura el 100% del trafico — sera mi recuento de eventos mucho mayor que en GA4?",
-                a: "Si, significativamente. Si GA4 muestra 100K sesiones/mes, tu trafico real puede ser 150K-300K, generando 4-6 eventos por sesion. Lo senalamos proactivamente para que elijas el plan correcto desde el principio. Sin sorpresas.",
+                q: "¿SealMetrics captura el 100% del tráfico — será mi recuento de eventos mucho mayor que en GA4?",
+                a: "Sí, significativamente. Si GA4 muestra 100K sesiones/mes, tu tráfico real puede ser 150K-300K, generando 4-6 eventos por sesión. Lo senalamos proactivamente para que elijas el plan correcto desde el principio. Sin sorpresas.",
               },
               {
-                q: "Que pasa si supero el limite de mi plan?",
-                a: "Tu tracking nunca se detiene. Nunca bloqueamos ni muestreamos tus datos — eso iria en contra del proposito. Al 80% de uso recibes un email (sin accion necesaria). Las subidas automaticas solo ocurren tras 2+ meses consecutivos por encima de tu limite, siempre en tu proximo ciclo de facturacion. Un mes de exceso al ano es gratuito.",
+                q: "¿Qué pasa si supero el límite de mi plan?",
+                a: "Tu tracking nunca se detiene. Nunca bloqueamos ni muestreamos tus datos — eso iría en contra del propósito. Al 80% de uso recibes un email (sin acción necesaria). Las subidas automáticas solo ocurren tras 2+ meses consecutivos por encima de tu límite, siempre en tu próximo ciclo de facturación. Un mes de exceso al año es gratuito.",
               },
               {
-                q: "Puedo bajar de plan si mi trafico disminuye?",
+                q: "¿Puedo bajar de plan si mi tráfico disminuye?",
                 a: "Si — y te lo sugeriremos. Si tu uso baja por debajo del 50% de tu plan durante 3+ meses, te ofrecemos proactivamente una bajada con un clic. Preferimos que pagues por lo que usas.",
               },
               {
-                q: "Todas las funcionalidades estan realmente incluidas en todos los planes?",
-                a: "Si. Analitica core, LENS AI, tracking de conversiones, API, MCP Server y BigQuery Export estan incluidos desde Growth. Las unicas diferencias entre planes son volumen de eventos, funcionalidades de gobernanza (SSO, RBAC), nivel de soporte y Agent Analytics (Scale+). Nunca encontraras un muro de funcionalidades.",
+                q: "¿Todas las funcionalidades están realmente incluidas en todos los planes?",
+                a: "Sí. Analítica core, LENS AI, tracking de conversiones, API, MCP Server y BigQuery Export están incluidos desde Growth. Las unicas diferencias entre planes son volumen de eventos, funcionalidades de gobernanza (SSO, RBAC), nivel de soporte y Agent Analytics (Scale+). Nunca encontraras un muro de funcionalidades.",
               },
               {
-                q: "Hay un contrato minimo o permanencia?",
-                a: "Sin permanencia en planes mensuales — cancela cuando quieras. Los planes anuales se facturan por adelantado y ofrecen 2 meses gratis. Preferimos ganarnos la retencion con resultados, no con contratos.",
+                q: "¿Hay un contrato mínimo o permanencia?",
+                a: "Sin permanencia en planes mensuales — cancela cuando quieras. Los planes anuales se facturan por adelantado y ofrecen 2 meses gratis. Preferimos ganarnos la retención con resultados, no con contratos.",
               },
             ].map((item, i) => (
               <details key={i} className="group py-5 cursor-pointer">
@@ -391,11 +391,11 @@ export default function PricingPageEs() {
         </div>
       </section>
 
-      {/* Comparacion completa de funcionalidades */}
+      {/* Comparación completa de funcionalidades */}
       <section className="py-20 bg-warm-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12 text-center">
-            Comparacion completa de funcionalidades
+            Comparación completa de funcionalidades
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
@@ -453,24 +453,24 @@ export default function PricingPageEs() {
         </div>
       </section>
 
-      {/* Como funciona el recuento de trafico */}
+      {/* Cómo funciona el recuento de tráfico */}
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[800px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-10 text-center">
-            Como funciona el recuento de trafico
+            Cómo funciona el recuento de tráfico
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-warm-200">
                   <th className="py-3 pr-4 text-[0.8rem] font-medium text-text-tertiary">
-                    Tipo de trafico
+                    Tipo de tráfico
                   </th>
                   <th className="py-3 px-4 text-[0.8rem] font-medium text-text-tertiary text-center">
                     Rastreado
                   </th>
                   <th className="py-3 px-4 text-[0.8rem] font-medium text-text-tertiary text-center">
-                    Cuenta para el limite
+                    Cuenta para el límite
                   </th>
                   <th className="py-3 px-4 text-[0.8rem] font-medium text-text-tertiary text-center">
                     Visible en el panel
@@ -498,7 +498,7 @@ export default function PricingPageEs() {
                       Agentes IA
                     </span>{" "}
                     <span className="inline-block px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-text-tertiary border border-warm-200 rounded-[2px]">
-                      Proximamente
+                      Próximamente
                     </span>
                   </td>
                   <td className="py-3.5 px-4 text-center text-[0.85rem] font-medium text-green-muted">
@@ -516,7 +516,7 @@ export default function PricingPageEs() {
           </div>
           <p className="text-[0.85rem] text-text-secondary mt-8 p-5 bg-warm-white border border-warm-100 rounded-[4px] leading-[1.7]">
             <span className="font-medium text-text-primary">Importante:</span>{" "}
-            SealMetrics captura el 100% de tu trafico — incluyendo visitantes que rechazan cookies en otras herramientas de analitica. Esto significa que tu recuento de eventos en SealMetrics sera significativamente mayor que lo que ves en Google Analytics. Al elegir tu plan, estima tu trafico real como 2-3x lo que GA4 reporta.
+            SealMetrics captura el 100% de tu tráfico — incluyendo visitantes que rechazan cookies en otras herramientas de analítica. Esto significa que tu recuento de eventos en SealMetrics será significativamente mayor que lo que ves en Google Analytics. Al elegir tu plan, estima tu tráfico real como 2-3x lo que GA4 reporta.
           </p>
         </div>
       </section>
@@ -528,7 +528,7 @@ export default function PricingPageEs() {
             Tu plan se adapta a tu negocio
           </h2>
           <p className="text-[1.05rem] leading-[1.75] text-text-secondary text-center max-w-[680px] mx-auto mb-14">
-            Nunca bloqueamos tu tracking. Nunca te sorprendemos con facturas. Tu plan escala contigo — automatica y transparentemente.
+            Nunca bloqueamos tu tracking. Nunca te sorprendemos con facturas. Tu plan escala contigo — automática y transparentemente.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
             {adaptCards.map((card) => (
@@ -579,8 +579,7 @@ export default function PricingPageEs() {
       <section className="py-24 bg-white border-t border-warm-100 text-center">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-8">
-            Listo para ver lo que los humanos realmente hacen en tu web?
-          </h2>
+            ¿Listo para ver lo que los humanos realmente hacen en tu web?</h2>
           <Link
             href="/es/demo"
             className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
@@ -592,7 +591,7 @@ export default function PricingPageEs() {
               href="/es/how-it-works"
               className="text-[0.9rem] text-text-tertiary hover:text-text-secondary transition-colors"
             >
-              Descubre como funciona
+              Descubre cómo funciona
             </Link>
           </div>
         </div>

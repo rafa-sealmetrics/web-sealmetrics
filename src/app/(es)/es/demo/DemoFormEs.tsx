@@ -37,7 +37,7 @@ export function DemoFormEs() {
       });
       router.push("/demo/thank-you");
     } catch {
-      setError("Algo ha ido mal. Por favor, intentalo de nuevo o escribenos directamente.");
+      setError("Algo ha ido mal. Por favor, inténtalo de nuevo o escríbenos directamente.");
       setSubmitting(false);
     }
   };
@@ -48,7 +48,7 @@ export function DemoFormEs() {
         Solicita una demo
       </h2>
       <p className="text-[0.85rem] text-text-secondary mb-8">
-        Tres campos. Te contactamos el mismo dia para confirmar tu hora.
+        Tres campos. Te contactamos el mismo día para confirmar tu hora.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -98,7 +98,7 @@ export function DemoFormEs() {
           {submitting ? "Enviando..." : "Reservar mi demo de 30 minutos \u2192"}
         </button>
         <p className="text-[0.75rem] text-text-tertiary text-center">
-          Sin compromiso. Respondemos en un dia laborable.
+          Sin compromiso. Respondemos en un día laborable.
         </p>
       </form>
     </div>

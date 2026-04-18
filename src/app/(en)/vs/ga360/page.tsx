@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { OtherComparisons } from "@/components/ui/OtherComparisons";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs GA360 — Enterprise Analytics Comparison",
@@ -366,6 +367,7 @@ export default function VsGA360Page() {
           </p>
         </div>
       </section>
+      <OtherComparisons currentHref="/vs/ga360/" />
     </>
   );
 }

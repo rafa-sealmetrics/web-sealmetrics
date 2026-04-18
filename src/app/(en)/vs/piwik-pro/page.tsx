@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { comparisonPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { OtherComparisons } from "@/components/ui/OtherComparisons";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Piwik PRO — Detailed Comparison",
@@ -365,6 +366,7 @@ export default function VsPiwikProPage() {
           </p>
         </div>
       </section>
+      <OtherComparisons currentHref="/vs/piwik-pro/" />
     </>
   );
 }

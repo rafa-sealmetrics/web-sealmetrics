@@ -9,11 +9,11 @@ import { DemoFormEs } from "./DemoFormEs";
 export const metadata: Metadata = {
   title: "Solicitar Demo — SealMetrics",
   description:
-    "Descubre como SealMetrics captura el 100% de tu trafico sin cookies. Demo personalizada de 30 minutos.",
+    "Descubre cómo SealMetrics captura el 100% de tu tráfico sin cookies. Demo personalizada de 30 minutos.",
   openGraph: {
     title: "Solicitar Demo — SealMetrics",
     description:
-      "Demo personalizada de 30 minutos. Descubre como es ver el 100% de tu trafico.",
+      "Demo personalizada de 30 minutos. Descubre cómo es ver el 100% de tu tráfico.",
     type: "website",
     locale: "es_ES",
   },
@@ -37,26 +37,26 @@ export default function DemoPageEs() {
                 Solicitar Demo
               </span>
               <h1 className="headline-hero mb-8">
-                Descubre lo que tus analiticas estan perdiendo.
+                Descubre lo que tus analíticas están perdiendo.
               </h1>
               <p className="text-[1.1rem] leading-[1.75] text-text-secondary mb-10">
-                En 30 minutos, te mostramos exactamente cuantos datos pierde tu
-                configuracion actual&nbsp;&mdash; y como SealMetrics los recupera.
+                En 30 minutos, te mostramos exactamente cuántos datos pierde tu
+                configuración actual&nbsp;&mdash; y cómo SealMetrics los recupera.
               </p>
 
               <div className="space-y-6">
                 {[
                   {
                     title: "Comparativa lado a lado",
-                    desc: "Ejecutamos SealMetrics junto a tus datos de GA4 para que veas la diferencia en numeros reales.",
+                    desc: "Ejecutamos SealMetrics junto a tus datos de GA4 para que veas la diferencia en números reales.",
                   },
                   {
                     title: "Tus datos, tus dominios",
-                    desc: "La demo usa tu trafico real, no dashboards genericos. Ves tus propios visitantes invisibles.",
+                    desc: "La demo usa tu tráfico real, no dashboards genéricos. Ves tus propios visitantes invisibles.",
                   },
                   {
                     title: "Sin compromiso",
-                    desc: "30 minutos. Sin contrato, sin presion, sin llamadas de seguimiento que no hayas pedido.",
+                    desc: "30 minutos. Sin contrato, sin presión, sin llamadas de seguimiento que no hayas pedido.",
                   },
                 ].map((item) => (
                   <div
@@ -86,8 +86,8 @@ export default function DemoPageEs() {
 
               <div className="mt-10 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
                 <p className="text-[0.85rem] text-text-secondary leading-relaxed">
-                  &ldquo;Pensabamos que nuestras analiticas eran precisas. SealMetrics
-                  nos mostro que estabamos perdiendo el 74% de nuestras conversiones.&rdquo;
+                  &ldquo;Pensábamos que nuestras analíticas eran precisas. SealMetrics
+                  nos mostró que estábamos perdiendo el 74% de nuestras conversiones.&rdquo;
                 </p>
                 <p className="text-[0.8rem] text-text-tertiary mt-2">
                   Head of Digital Marketing &mdash; Retailer de Moda Europeo
@@ -95,9 +95,9 @@ export default function DemoPageEs() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-5 text-[0.85rem]">
-                <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Como funciona</Link>
+                <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona</Link>
                 <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto completo</Link>
-                <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calcula tu perdida de datos</Link>
+                <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calcula tu pérdida de datos</Link>
               </div>
             </div>
 

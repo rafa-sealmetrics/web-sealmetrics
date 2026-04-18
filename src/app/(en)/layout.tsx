@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { SharedLayout } from "@/components/layout/SharedLayout";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://sealmetrics.com",
+    languages: getAlternates("/"),
   },
   other: {
     "llms-txt": "https://sealmetrics.com/llms.txt",

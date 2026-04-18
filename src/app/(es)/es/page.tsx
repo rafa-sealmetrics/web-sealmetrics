@@ -233,7 +233,7 @@ const costCards = [
   {
     title: "Detecta páginas rotas antes de que te cuesten un día entero",
     withGA4: "Un error JavaScript en tu checkout falla silenciosamente para el 3% de los visitantes. GA4 muestra una caída vaga en conversiones... 24 horas después.",
-    withSeal: "LENS AI monitoriza más de 60 reglas y lo detecta en minutos. 900 transacciones perdidas al mes prevenidas, no descubiertas después del hecho.",
+    withSeal: "LENS AI monitoriza más de 60 reglas y lo detecta en minutos. 900 transacciones pérdidas al mes prevenidas, no descubiertas después del hecho.",
   },
   {
     title: "Acaba con la reunión semanal de reconciliación de datos",

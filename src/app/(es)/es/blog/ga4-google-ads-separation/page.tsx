@@ -7,11 +7,11 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "GA4 y Google Ads: la separacion que nadie vio venir",
   description:
-    "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Analisis del impacto real en datos y riesgo legal para anunciantes europeos.",
+    "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Análisis del impacto real en datos y riesgo legal para anunciantes europeos.",
   openGraph: {
     title: "GA4 y Google Ads: la separacion que nadie vio venir",
     description:
-      "Google elimina Google Signals como control de datos GA4 a Google Ads. Que significa para tu privacidad y tus campanas.",
+      "Google elimina Google Signals como control de datos GA4 a Google Ads. Qué significa para tu privacidad y tus campañas.",
     type: "article",
     locale: "es_ES",
   },
@@ -34,7 +34,7 @@ export default function GA4GoogleAdsSeparationPage() {
           headline:
             "GA4 y Google Ads: la separacion que nadie vio venir",
           description:
-            "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Analisis del impacto real en datos y riesgo legal.",
+            "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Análisis del impacto real en datos y riesgo legal.",
           datePublished: "2026-04-16",
           url: "/es/blog/ga4-google-ads-separation",
           category: "Privacidad",
@@ -79,7 +79,7 @@ export default function GA4GoogleAdsSeparationPage() {
                 (efectivo 15 de junio de 2026).
               </li>
               <li>
-                La proteccion del editor web se reduce de doble llave (Signals +
+                La protección del editor web se reduce de doble llave (Signals +
                 Consent Mode) a una sola (Consent Mode). Si tu CMP falla, no hay
                 red de seguridad.
               </li>
@@ -90,11 +90,11 @@ export default function GA4GoogleAdsSeparationPage() {
               </li>
               <li>
                 GA4 no es necesario para alimentar Google Ads. El tag de
-                conversion de Google Ads, Enhanced Conversions y Offline Import
+                conversión de Google Ads, Enhanced Conversions y Offline Import
                 funcionan de forma independiente.
               </li>
               <li>
-                La alternativa logica: analitica completa con SealMetrics + tag
+                La alternativa lógica: analítica completa con SealMetrics + tag
                 propio de Google Ads solo para conversiones.
               </li>
             </ul>
@@ -108,7 +108,7 @@ export default function GA4GoogleAdsSeparationPage() {
             </h2>
 
             <p>
-              El 16 de febrero de 2025, Google publico un anuncio discreto en su
+              El 16 de febrero de 2025, Google público un anuncio discreto en su
               blog de Google Ads: a partir del 15 de junio de 2026, Google
               Signals dejara de funcionar como control del flujo de datos entre
               GA4 y Google Ads.
@@ -118,17 +118,17 @@ export default function GA4GoogleAdsSeparationPage() {
               El lenguaje oficial habla de &ldquo;simplificar la experiencia del
               anunciante&rdquo;. La realidad es mas matizada. Lo que Google esta
               haciendo es eliminar una de las dos cerraduras que el editor web
-              tenia para controlar que datos de GA4 llegaban a Google Ads.
+              tenía para controlar que datos de GA4 llegaban a Google Ads.
             </p>
 
             <p>
-              Para entender el impacto real, necesitas entender que eran esas dos
+              Para entender el impacto real, necesitas entender qué eran esas dos
               cerraduras y como funcionaban juntas.
             </p>
 
-            {/* 2. Matriz antes/despues */}
+            {/* 2. Matriz antes/después */}
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              La matriz antes y despues
+              La matriz antes y después
             </h2>
 
             <p>
@@ -140,7 +140,7 @@ export default function GA4GoogleAdsSeparationPage() {
               <li className="text-text-secondary">
                 &mdash; <strong className="text-text-primary">Google Signals</strong>: un
                 interruptor dentro de GA4 que, al activarlo, permite enviar
-                audiencias y datos de conversion a Google Ads. Lo controla el
+                audiencias y datos de conversión a Google Ads. Lo controla el
                 editor web.
               </li>
               <li className="text-text-secondary">
@@ -222,7 +222,7 @@ export default function GA4GoogleAdsSeparationPage() {
             </p>
 
             <h3 className="font-serif text-[1.15rem] font-medium text-text-primary mt-8 mb-3">
-              Despues (junio 2026): 2 combinaciones
+              Después (junio 2026): 2 combinaciones
             </h3>
 
             <div className="overflow-x-auto my-6">
@@ -259,7 +259,7 @@ export default function GA4GoogleAdsSeparationPage() {
             </div>
 
             <p>
-              La cerradura de Signals desaparece. Ahora todo depende de una unica
+              La cerradura de Signals desaparece. Ahora todo depende de una única
               senyal: la que envia tu CMP.
             </p>
 
@@ -270,27 +270,27 @@ export default function GA4GoogleAdsSeparationPage() {
 
             <p>
               Para la mayoria de anunciantes europeos, el cambio en los datos
-              sera pequenyo. La razon es sencilla: la gran mayoria ya tenia
+              será pequenyo. La razon es sencilla: la gran mayoria ya tenía
               Google Signals activado.
             </p>
 
             <p>
               Google Signals era el mecanismo que permitia el cross-device
               tracking y las audiencias demograficas en GA4. Desactivarlo
-              significaba perder esas funcionalidades, asi que la mayoria de
-              implementaciones lo tenian encendido.
+              significaba perder esas funcionalidades, así que la mayoria de
+              implementaciones lo tenían encendido.
             </p>
 
             <p>
-              En la practica, el flujo de datos de GA4 a Google Ads ya dependia
-              casi exclusivamente de Consent Mode. La eliminacion de Signals como
+              En la práctica, el flujo de datos de GA4 a Google Ads ya dependía
+              casi exclusivamente de Consent Mode. La eliminación de Signals como
               control simplemente formaliza lo que ya ocurria en la mayoria de
               instalaciones.
             </p>
 
             <p>
               Sin embargo, habia un grupo importante de editores web que
-              deliberadamente mantenian Signals OFF como medida de proteccion
+              deliberadamente mantenian Signals OFF como medida de protección
               adicional frente a transferencias de datos a Google Ads. Para este
               grupo, el cambio es significativo.
             </p>
@@ -301,11 +301,11 @@ export default function GA4GoogleAdsSeparationPage() {
             </h2>
 
             <p>
-              Aqui es donde el cambio importa de verdad.
+              Aquí es donde el cambio importa de verdad.
             </p>
 
             <p>
-              Con dos cerraduras, un fallo en una de ellas no causaba una
+              Con dos cerraduras, un falló en una de ellas no causaba una
               transferencia ilicita de datos. Si tu CMP estaba mal configurado
               pero tenias Signals OFF, los datos no fluian. Si Signals estaba ON
               pero el CMP funcionaba correctamente, solo fluian datos con
@@ -313,7 +313,7 @@ export default function GA4GoogleAdsSeparationPage() {
             </p>
 
             <p>
-              Con una sola cerradura, cada fallo del CMP es una transferencia
+              Con una sola cerradura, cada falló del CMP es una transferencia
               potencialmente ilicita:
             </p>
 
@@ -324,11 +324,11 @@ export default function GA4GoogleAdsSeparationPage() {
                 defecto
               </li>
               <li className="text-text-secondary">
-                &mdash; Actualizacion del CMP que rompe la integracion con Consent
+                &mdash; Actualizacion del CMP que rompe la integración con Consent
                 Mode
               </li>
               <li className="text-text-secondary">
-                &mdash; Paginas que cargan sin CMP (errores de JavaScript, cacheo
+                &mdash; Páginas que cargan sin CMP (errores de JavaScript, cacheo
                 agresivo)
               </li>
               <li className="text-text-secondary">
@@ -345,7 +345,7 @@ export default function GA4GoogleAdsSeparationPage() {
 
             <p>
               Para empresas europeas, esto no es un riesgo teorico. Las
-              autoridades de proteccion de datos de Austria, Francia e Italia ya
+              autoridades de protección de datos de Austria, Francia e Italia ya
               han sancionado transferencias de datos a Google sin consentimiento
               adecuado.
             </p>
@@ -365,17 +365,17 @@ export default function GA4GoogleAdsSeparationPage() {
 
             <p>
               Google usa estos pings para alimentar sus modelos de
-              &ldquo;conversion modeling&rdquo; &mdash; estimaciones estadisticas de
+              &ldquo;conversión modeling&rdquo; &mdash; estimaciones estadísticas de
               las conversiones que no puede medir directamente. El resultado es
-              una asimetria de informacion: el anunciante ve datos modelados
+              una asimetria de información: el anunciante ve datos modelados
               (estimaciones), pero Google recibe datos reales que usa para
               optimizar sus propios algoritmos de puja.
             </p>
 
             <p>
-              Esta asimetria existia antes del cambio en Signals y seguira
-              existiendo despues. Es una caracteristica estructural de usar un
-              sistema de medicion propiedad del mismo ecosistema publicitario que
+              Esta asimetria existía antes del cambio en Signals y seguira
+              existiendo después. Es una característica estructural de usar un
+              sistema de medición propiedad del mismo ecosistema publicitario que
               mides.
             </p>
 
@@ -386,12 +386,12 @@ export default function GA4GoogleAdsSeparationPage() {
 
             <p>
               Existe una percepcion generalizada de que necesitas GA4 para que
-              Google Ads funcione. No es asi. GA4 y Google Ads son productos
+              Google Ads funcione. No es así. GA4 y Google Ads son productos
               independientes con tracking independiente.
             </p>
 
             <p>
-              Google Ads tiene sus propios mecanismos de medicion de
+              Google Ads tiene sus propios mecanismos de medición de
               conversiones:
             </p>
 
@@ -399,7 +399,7 @@ export default function GA4GoogleAdsSeparationPage() {
               <li className="text-text-secondary">
                 &mdash;{" "}
                 <strong className="text-text-primary">
-                  Tag de conversion de Google Ads
+                  Tag de conversión de Google Ads
                 </strong>{" "}
                 &mdash; mide conversiones directamente sin pasar por GA4
               </li>
@@ -409,12 +409,12 @@ export default function GA4GoogleAdsSeparationPage() {
                   Enhanced Conversions
                 </strong>{" "}
                 &mdash; envia datos hasheados de primer contacto (email, telefono) para
-                mejorar la atribucion
+                mejorar la atribución
               </li>
               <li className="text-text-secondary">
                 &mdash;{" "}
                 <strong className="text-text-primary">
-                  Offline Conversion Import
+                  Offline Conversión Import
                 </strong>{" "}
                 &mdash; importa conversiones desde tu CRM sin ninguna dependencia de
                 GA4
@@ -422,29 +422,29 @@ export default function GA4GoogleAdsSeparationPage() {
             </ul>
 
             <p>
-              La vinculacion GA4-Google Ads es util para crear audiencias de
+              La vinculacion GA4-Google Ads es útil para crear audiencias de
               remarketing basadas en comportamiento en el sitio. Pero para
-              medicion de conversiones y optimizacion de campanyass, Google Ads se
+              medición de conversiones y optimizacion de campanyass, Google Ads se
               basta solo.
             </p>
 
             <p>
-              Esto significa que puedes desacoplar completamente tu analitica web
-              de tu medicion publicitaria. Una herramienta para entender a tus
+              Esto significa que puedes desacoplar completamente tu analítica web
+              de tu medición publicitaria. Una herramienta para entender a tus
               usuarios. Otra para medir tus campanyass. Sin que una dependa de la
               otra.
             </p>
 
-            {/* 7. La salida logica */}
+            {/* 7. La salida lógica */}
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              La salida logica: SealMetrics + tag de Google Ads
+              La salida lógica: SealMetrics + tag de Google Ads
             </h2>
 
             <p>
               Si GA4 no es necesario para Google Ads, y GA4 introduce riesgos
-              legales crecientes por la dependencia de un CMP como unica
+              legales crecientes por la dependencia de un CMP como única
               cerradura, la pregunta obvia es: para que seguir usando GA4 como
-              herramienta de analitica?
+              herramienta de analítica?
             </p>
 
             <p>
@@ -455,27 +455,27 @@ export default function GA4GoogleAdsSeparationPage() {
               <li className="text-text-secondary">
                 &mdash;{" "}
                 <strong className="text-text-primary">
-                  Analitica web: SealMetrics
+                  Analítica web: SealMetrics
                 </strong>{" "}
-                &mdash; captura el 100% del trafico sin cookies, sin banners de
+                &mdash; captura el 100% del tráfico sin cookies, sin banners de
                 consentimiento, sin transferencias de datos a terceros. Datos
                 completos para decisiones de negocio.
               </li>
               <li className="text-text-secondary">
                 &mdash;{" "}
                 <strong className="text-text-primary">
-                  Medicion de campanyass: tag de conversion de Google Ads
+                  Medición de campanyass: tag de conversión de Google Ads
                 </strong>{" "}
-                &mdash; mantiene la optimizacion de puja automatica con datos de
-                conversion directos, sin pasar por GA4.
+                &mdash; mantiene la optimizacion de puja automática con datos de
+                conversión directos, sin pasar por GA4.
               </li>
             </ul>
 
             <p>
-              Con esta configuracion, eliminas la dependencia de GA4, reduces la
-              superficie de riesgo legal a un unico tag con un proposito
-              especifico (conversion de campanyass), y obtienes datos de analitica
-              completos que GA4 nunca podra darte por su dependencia de cookies y
+              Con esta configuración, eliminas la dependencia de GA4, reduces la
+              superficie de riesgo legal a un unico tag con un propósito
+              específico (conversión de campanyass), y obtienes datos de analítica
+              completos que GA4 nunca podrá darte por su dependencia de cookies y
               consentimiento.
             </p>
 
@@ -485,10 +485,10 @@ export default function GA4GoogleAdsSeparationPage() {
                 href="/es/how-it-works"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                ver como funciona SealMetrics
+                ver cómo funciona SealMetrics
               </Link>{" "}
-              y entender por que no necesita cookies ni banners de consentimiento
-              para capturar datos completos de trafico.
+              y entender por qué no necesita cookies ni banners de consentimiento
+              para capturar datos completos de tráfico.
             </p>
           </div>
 

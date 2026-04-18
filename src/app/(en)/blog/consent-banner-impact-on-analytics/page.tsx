@@ -8,7 +8,7 @@ import { RelatedReading } from "@/components/ui/RelatedReading";
 export const metadata: Metadata = {
   title: "How Consent Banners Destroy Your Analytics Data",
   description:
-    "55% of EU visitors reject cookies. Of those who accept, 65% do so after the landing page. Here is the real impact on attribution, conversions, and revenue reporting.",
+    "55% of EU visitors reject cookies. 65% accept only after the landing. Real impact on attribution, conversions, and revenue reporting.",
   openGraph: {
     title: "How Consent Banners Destroy Your Analytics Data",
     description:

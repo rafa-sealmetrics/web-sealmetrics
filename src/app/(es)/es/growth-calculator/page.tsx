@@ -8,11 +8,11 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 export const metadata: Metadata = {
   title: "Calculadora de Crecimiento — SealMetrics",
   description:
-    "Cuanto revenue podrias escalar con datos completos? Introduce tus numeros y descubre el potencial de crecimiento que tu analitica no puede mostrarte.",
+    "¿Cuánto revenue podrías escalar con datos completos? Introduce tus números y descubre el potencial de crecimiento que tu analítica no puede mostrarte.",
   openGraph: {
     title: "Calculadora de Crecimiento — SealMetrics",
     description:
-      "Cuanto revenue podrias escalar con datos completos? Introduce tus numeros y descubre el potencial de crecimiento que tu analitica no puede mostrarte.",
+      "¿Cuánto revenue podrías escalar con datos completos? Introduce tus números y descubre el potencial de crecimiento que tu analítica no puede mostrarte.",
     type: "website",
     locale: "es_ES",
   },
@@ -40,11 +40,10 @@ export default function GrowthCalculatorPageEs() {
               Calculadora de Crecimiento
             </span>
             <h1 className="headline-hero mb-6">
-              Cuanto crecimiento se esconde en tu trafico no medido?
-            </h1>
+              ¿Cuánto crecimiento se esconde en tu tráfico no medido?</h1>
             <p className="text-[1.15rem] leading-[1.75] text-text-secondary">
-              Tu analitica captura solo una fraccion del trafico real &mdash;
-              descubre lo que los datos completos revelan sobre donde escalar.
+              Tu analítica captura solo una fracción del tráfico real &mdash;
+              descubre lo que los datos completos revelan sobre dónde escalar.
             </p>
           </div>
         </div>
