@@ -10,6 +10,17 @@ const translatedPaths = new Set([
   "/security",
   "/growth-calculator",
   "/blog/ga4-google-ads-separation",
+  "/for/cmo",
+  "/for/cto",
+  "/for/dpo",
+  "/for/ecommerce",
+  "/for/hotels",
+  "/for/saas",
+  "/for/agencies",
+  "/for/media",
+  "/for/finance",
+  "/for/healthcare",
+  "/for/education",
 ]);
 
 /** Returns true if the path has a Spanish translation */

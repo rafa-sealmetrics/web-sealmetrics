@@ -3,44 +3,46 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, servicePageSchema } from "@/lib/schema";
-import { getAlternates } from "@/lib/i18n/navigation";
+import { getAlternatesEs } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for CTOs — EU-Only, Privacy-First",
+  title: "SealMetrics para CTOs — Sin cookies, en la UE",
   description:
-    "846-byte script, <50ms load, EU-only infrastructure, no cookies, no PII. The analytics platform your engineering team will actually approve.",
+    "Script de 846 bytes, carga <50ms, infraestructura 100% UE, sin cookies ni PII. La plataforma de analítica que tu equipo de ingeniería sí aprobará.",
   openGraph: {
-    title: "SealMetrics for CTOs",
+    title: "SealMetrics para CTOs",
     description:
-      "846-byte script, EU-only infrastructure, no cookies. Analytics your engineering team will approve.",
+      "Script de 846 bytes, infraestructura 100% UE, sin cookies. Analítica que tu equipo de ingeniería aprobará.",
     type: "website",
+    locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/cto",
-    languages: getAlternates("/for/cto"),
+    canonical: "https://sealmetrics.com/es/for/cto",
+    languages: getAlternatesEs("/for/cto"),
   },
 };
 
 export default function ForCTOPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For CTOs" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For CTOs", url: "/for/cto" }])} />
-      <JsonLd data={servicePageSchema({ name: "SealMetrics for CTOs", description: "846-byte script, <50ms load, EU-only infrastructure, no cookies, no PII. The analytics platform your engineering team will actually approve.", url: "/for/cto", audience: "Chief Technology Officers" })} />
+      <Breadcrumbs items={[{ label: "Para CTOs" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para CTOs", url: "/es/for/cto" }])} />
+      <JsonLd data={servicePageSchema({ name: "SealMetrics para CTOs", description: "Script de 846 bytes, carga <50ms, infraestructura 100% UE, sin cookies ni PII. La plataforma de analítica que tu equipo de ingeniería sí aprobará.", url: "/es/for/cto", audience: "Directores de Tecnología (CTOs)" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
-              For CTOs
+              Para CTOs
             </span>
             <h1 className="headline-hero mb-8">
-              Analytics that your engineering team will not fight.
+              Analítica que tu equipo de ingeniería no va a rechazar.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              An 846-byte script. Sub-50ms load. EU-only infrastructure. No cookies,
-              no PII, no consent management headaches. One line of code to
-              install, zero ongoing engineering maintenance.
+              Un script de 846 bytes. Carga por debajo de 50ms. Infraestructura
+              exclusivamente en la UE. Sin cookies, sin PII, sin dolores de
+              cabeza de gestión de consentimiento. Una línea de código para
+              instalarlo, cero mantenimiento continuo por parte de ingeniería.
             </p>
           </div>
         </div>
@@ -49,47 +51,47 @@ export default function ForCTOPage() {
       {/* Technical specs */}
       <section className="pb-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-12">Technical specifications</h2>
+          <h2 className="headline-section mb-12">Especificaciones técnicas</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             {[
               {
-                title: "Minimal footprint",
+                title: "Huella mínima",
                 specs: [
-                  "Script size: 846 bytes gzipped",
-                  "Load time: <50ms on 3G",
-                  "Zero external dependencies",
-                  "No impact on Core Web Vitals",
-                  "Async loading, non-blocking",
+                  "Tamaño del script: 846 bytes gzipped",
+                  "Tiempo de carga: <50ms en 3G",
+                  "Sin dependencias externas",
+                  "Sin impacto en Core Web Vitals",
+                  "Carga asíncrona, no bloqueante",
                 ],
               },
               {
-                title: "First-party architecture",
+                title: "Arquitectura first-party",
                 specs: [
-                  "Runs on your domain as first-party",
-                  "First-party cookieless collection",
-                  "No third-party requests",
-                  "Invisible to ad blockers",
-                  "No client-side cookie storage",
+                  "Funciona en tu dominio como first-party",
+                  "Recogida first-party sin cookies",
+                  "Sin peticiones de terceros",
+                  "Invisible para los bloqueadores de anuncios",
+                  "Sin almacenamiento de cookies en el cliente",
                 ],
               },
               {
-                title: "Infrastructure",
+                title: "Infraestructura",
                 specs: [
-                  "EU-only data processing and storage",
-                  "No sub-processors outside EU",
-                  "No US-EU data transfer mechanisms needed",
-                  "Real-time processing, no batch delays",
-                  "99.9% uptime SLA on Scale and Enterprise",
+                  "Procesamiento y almacenamiento exclusivamente en la UE",
+                  "Sin subencargados fuera de la UE",
+                  "Sin necesidad de mecanismos de transferencia UE-EE.UU.",
+                  "Procesamiento en tiempo real, sin retrasos por lotes",
+                  "SLA de 99,9% de uptime en Scale y Enterprise",
                 ],
               },
               {
-                title: "Integration",
+                title: "Integración",
                 specs: [
-                  "One-line script installation",
-                  "REST API for custom integrations",
-                  "Webhooks for real-time event forwarding",
-                  "Native integrations: GA4, Shopify, WooCommerce",
-                  "No ongoing engineering maintenance required",
+                  "Instalación con un script de una línea",
+                  "API REST para integraciones personalizadas",
+                  "Webhooks para reenvío de eventos en tiempo real",
+                  "Integraciones nativas: GA4, Shopify, WooCommerce",
+                  "Sin mantenimiento continuo de ingeniería",
                 ],
               },
             ].map((section) => (
@@ -123,25 +125,25 @@ export default function ForCTOPage() {
       <section className="py-28 bg-warm-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">
-            Why engineering teams approve SealMetrics
+            Por qué los equipos de ingeniería aprueban SealMetrics
           </h2>
           <div className="space-y-12 max-w-[750px]">
             {[
               {
-                title: "No consent management complexity",
-                desc: "SealMetrics does not use cookies and does not collect personal data. Your team does not need to build, maintain, or debug consent management platforms. No cookie banners to implement, no consent state to synchronize across services.",
+                title: "Cero complejidad de gestión de consentimiento",
+                desc: "SealMetrics no utiliza cookies ni recoge datos personales. Tu equipo no necesita construir, mantener ni depurar plataformas de gestión de consentimiento. Sin banners de cookies que implementar, sin estado de consentimiento que sincronizar entre servicios.",
               },
               {
-                title: "No performance regression",
-                desc: "At 846 bytes gzipped with sub-50ms load time, SealMetrics has zero measurable impact on Core Web Vitals. Compare this to GA4 (45KB+ with gtag.js) or Adobe Analytics (100KB+). Your Lighthouse scores stay exactly where they are.",
+                title: "Sin regresión de rendimiento",
+                desc: "Con 846 bytes gzipped y un tiempo de carga inferior a 50ms, SealMetrics no tiene impacto medible en Core Web Vitals. Compáralo con GA4 (45KB+ con gtag.js) o Adobe Analytics (100KB+). Tus puntuaciones de Lighthouse se mantienen exactamente donde están.",
               },
               {
-                title: "No data pipeline to maintain",
-                desc: "Traditional enterprise analytics require ETL pipelines, BigQuery exports, scheduled queries, and data warehouse integration. SealMetrics processes and serves complete data directly. No engineering time spent maintaining analytics infrastructure.",
+                title: "Sin pipeline de datos que mantener",
+                desc: "La analítica enterprise tradicional requiere pipelines ETL, exportaciones a BigQuery, consultas programadas e integración con data warehouse. SealMetrics procesa y sirve datos completos directamente. Cero tiempo de ingeniería dedicado a mantener infraestructura de analítica.",
               },
               {
-                title: "Compliance by architecture",
-                desc: "Privacy compliance is not a configuration option — it is how the system works. No PII is collected, no cookies are stored, no data leaves the EU. Your DPO signs off once and does not need to revisit.",
+                title: "Cumplimiento por arquitectura",
+                desc: "El cumplimiento de privacidad no es una opción de configuración — es cómo funciona el sistema. Sin recogida de PII, sin cookies almacenadas, sin salida de datos de la UE. Tu DPO lo aprueba una vez y no tiene que volver a revisarlo.",
               },
             ].map((item) => (
               <div key={item.title} className="pb-8 border-b border-warm-100 last:border-0">
@@ -160,13 +162,13 @@ export default function ForCTOPage() {
       {/* Quick comparison */}
       <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-10">Engineering overhead comparison</h2>
+          <h2 className="headline-section mb-10">Comparativa de carga para ingeniería</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-[0.85rem]">
               <thead>
                 <tr className="border-b border-warm-200">
                   <th className="text-left py-3 pr-6 text-text-tertiary font-medium">
-                    Concern
+                    Aspecto
                   </th>
                   <th className="text-left py-3 px-6 text-green-muted font-medium">
                     SealMetrics
@@ -182,40 +184,40 @@ export default function ForCTOPage() {
               <tbody>
                 {[
                   {
-                    concern: "Script size",
+                    concern: "Tamaño del script",
                     sm: "846B",
                     ga: "45KB+",
                     adobe: "100KB+",
                   },
                   {
-                    concern: "Installation",
-                    sm: "1 line",
-                    ga: "Multi-step + consent",
-                    adobe: "Days of configuration",
+                    concern: "Instalación",
+                    sm: "1 línea",
+                    ga: "Varios pasos + consentimiento",
+                    adobe: "Días de configuración",
                   },
                   {
-                    concern: "Consent management",
-                    sm: "Not needed",
-                    ga: "Required (CMP)",
-                    adobe: "Required (CMP)",
+                    concern: "Gestión de consentimiento",
+                    sm: "No es necesaria",
+                    ga: "Requerida (CMP)",
+                    adobe: "Requerida (CMP)",
                   },
                   {
-                    concern: "Data pipeline",
-                    sm: "None",
-                    ga: "BigQuery export + ETL",
+                    concern: "Pipeline de datos",
+                    sm: "Ninguno",
+                    ga: "Exportación a BigQuery + ETL",
                     adobe: "Data feeds + ETL",
                   },
                   {
-                    concern: "Ongoing maintenance",
-                    sm: "Zero",
-                    ga: "Monthly",
-                    adobe: "Weekly",
+                    concern: "Mantenimiento continuo",
+                    sm: "Cero",
+                    ga: "Mensual",
+                    adobe: "Semanal",
                   },
                   {
-                    concern: "Core Web Vitals impact",
-                    sm: "None measurable",
-                    ga: "Moderate",
-                    adobe: "Significant",
+                    concern: "Impacto en Core Web Vitals",
+                    sm: "Sin impacto medible",
+                    ga: "Moderado",
+                    adobe: "Significativo",
                   },
                 ].map((row) => (
                   <tr
@@ -242,25 +244,25 @@ export default function ForCTOPage() {
       <section className="py-28 bg-warm-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
-            See the technical implementation.
+            Revisa la implementación técnica.
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
-            30-minute technical walkthrough. We cover architecture,
-            implementation, and data flow.
+            Sesión técnica de 30 minutos. Cubrimos arquitectura, implementación
+            y flujos de datos.
           </p>
           <Link
-            href="/demo"
+            href="/es/demo"
             className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            Book a Technical Demo
+            Solicitar Demo Técnica
           </Link>
           <p className="mt-4 text-[0.8rem] text-text-tertiary">
-            Or{" "}
+            O{" "}
             <Link
-              href="/security"
+              href="/es/security"
               className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors"
             >
-              review our security architecture
+              revisa nuestra arquitectura de seguridad
             </Link>
           </p>
         </div>

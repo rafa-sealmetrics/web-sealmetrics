@@ -3,52 +3,53 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, servicePageSchema } from "@/lib/schema";
-import { getAlternates } from "@/lib/i18n/navigation";
+import { getAlternatesEs } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for eCommerce — Complete Revenue Attribution",
+  title: "SealMetrics para eCommerce — Atribución de Ingresos Completa",
   description:
-    "Stop optimizing ROAS on 30% of conversions. SealMetrics captures every add-to-cart, checkout, and purchase — cookieless, 100% attribution.",
+    "Deja de optimizar el ROAS sobre el 30% de tus conversiones. SealMetrics captura cada añadido al carrito, checkout y compra — sin cookies, 100% atribución.",
   openGraph: {
-    title: "SealMetrics for eCommerce",
+    title: "SealMetrics para eCommerce",
     description:
-      "Complete revenue attribution for eCommerce. 100% of conversions captured, true ROAS by channel, full cart abandonment analysis.",
+      "Atribución de ingresos completa para eCommerce. 100% de conversiones capturadas, ROAS real por canal, análisis completo de abandono de carrito.",
     type: "website",
+    locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/ecommerce",
-    languages: getAlternates("/for/ecommerce"),
+    canonical: "https://sealmetrics.com/es/for/ecommerce",
+    languages: getAlternatesEs("/for/ecommerce"),
   },
 };
 
 export default function ForEcommercePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For eCommerce" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For eCommerce", url: "/for/ecommerce" }])} />
-      <JsonLd data={servicePageSchema({ name: "SealMetrics for eCommerce", description: "Stop optimizing ROAS on 30% of conversions. SealMetrics captures every add-to-cart, checkout, and purchase — cookieless, 100% attribution.", url: "/for/ecommerce", audience: "eCommerce Teams" })} />
+      <Breadcrumbs items={[{ label: "Para eCommerce" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para eCommerce", url: "/es/for/ecommerce" }])} />
+      <JsonLd data={servicePageSchema({ name: "SealMetrics para eCommerce", description: "Deja de optimizar el ROAS sobre el 30% de tus conversiones. SealMetrics captura cada añadido al carrito, checkout y compra — sin cookies, 100% atribución.", url: "/es/for/ecommerce", audience: "Equipos de eCommerce" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
-              For eCommerce
+              Para eCommerce
             </span>
             <h1 className="headline-hero mb-8">
-              You are optimizing ROAS on a fraction of your conversions.
+              Estás optimizando el ROAS sobre una fracción de tus conversiones.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              55% of EU visitors reject cookies entirely, and of those who
-              accept, most do so after the landing page. The result: the
-              majority of checkout journeys are invisible or misattributed.
-              Your best campaigns may look like your worst — because you
-              cannot see the{" "}
+              El 55% de los visitantes europeos rechaza las cookies por completo,
+              y de los que aceptan, la mayoría lo hace después de la landing page.
+              El resultado: la mayor parte de los recorridos de checkout son
+              invisibles o se atribuyen mal. Tus mejores campañas pueden parecer
+              las peores — porque no puedes ver las conversiones{" "}
               <Link href="/glossary/cookieless-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 cookieless
               </Link>{" "}
-              conversions they generate. SealMetrics provides{" "}
-              <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">complete revenue attribution</Link>{" "}
-              across every checkout journey.
+              que generan. SealMetrics ofrece{" "}
+              <Link href="/es/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">atribución de ingresos completa</Link>{" "}
+              en cada recorrido de checkout.
             </p>
           </div>
         </div>
@@ -58,21 +59,21 @@ export default function ForEcommercePage() {
       <section className="pb-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">
-            Problems you recognize
+            Problemas que reconoces
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
             {[
               {
-                title: "Revenue attribution is broken",
-                desc: "Ad platforms, GA4, and your CRM never agree on revenue numbers. You spend hours reconciling — and the gap only grows as consent rates drop. The problem is not the attribution model. It is the missing conversions.",
+                title: "La atribución de ingresos está rota",
+                desc: "Plataformas publicitarias, GA4 y tu CRM nunca coinciden en las cifras de ingresos. Dedicas horas a reconciliar — y la brecha solo crece a medida que caen las tasas de consentimiento. El problema no es el modelo de atribución. Son las conversiones que faltan.",
               },
               {
-                title: "Invisible conversions distort ROAS",
-                desc: "55% of visitors reject cookies, and most who accept do so after the landing page — meaning only ~16% have correct traffic source attribution. You are reallocating budget based on which channels happen to have higher consent rates — not which ones actually drive revenue.",
+                title: "Conversiones invisibles distorsionan el ROAS",
+                desc: "El 55% de los visitantes rechaza las cookies, y la mayoría de quienes aceptan lo hacen después de la landing page — lo que significa que solo ~16% tiene atribución correcta de fuente de tráfico. Reasignas presupuesto según qué canales tienen mayor tasa de consentimiento — no cuáles generan realmente ingresos.",
               },
               {
-                title: "Cart abandonment data is incomplete",
-                desc: "You only see abandonment from consented users. The full picture — where ALL users drop off, which payment methods cause friction, which steps lose the most revenue — is hidden behind the consent wall.",
+                title: "Los datos de abandono de carrito están incompletos",
+                desc: "Solo ves el abandono de usuarios que consintieron. El panorama completo — dónde abandonan TODOS los usuarios, qué métodos de pago causan fricción, qué pasos pierden más ingresos — permanece oculto tras el muro del consentimiento.",
               },
             ].map((item) => (
               <div
@@ -95,25 +96,25 @@ export default function ForEcommercePage() {
       <section className="py-28 bg-warm-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">
-            What changes with complete data
+            Qué cambia con datos completos
           </h2>
           <div className="space-y-12 max-w-[750px]">
             {[
               {
-                title: "Full-funnel revenue attribution",
-                desc: "Every add-to-cart, checkout step, and purchase is captured — regardless of cookies or consent. See the complete path from first visit to transaction, across every channel and device.",
+                title: "Atribución de ingresos de funnel completo",
+                desc: "Cada añadido al carrito, cada paso del checkout y cada compra se captura — independientemente de cookies o consentimiento. Visualiza el camino completo desde la primera visita hasta la transacción, en todos los canales y dispositivos.",
               },
               {
-                title: "True ROAS by channel",
-                desc: "100% of conversions attributed to their actual source, not modeled or estimated. When you see that a campaign delivers 4.2x ROAS, that number reflects every conversion it generated — not just the ones cookies happened to track.",
+                title: "ROAS real por canal",
+                desc: "100% de las conversiones atribuidas a su fuente real, no modeladas ni estimadas. Cuando ves que una campaña ofrece un ROAS de 4,2x, esa cifra refleja cada conversión que generó — no solo las que las cookies consiguieron rastrear.",
               },
               {
-                title: "Complete cart abandonment analysis",
-                desc: "See where ALL users drop off — not just the 30-40% who accepted cookies. Identify payment friction, shipping cost surprises, and checkout UX issues with data from every single visitor.",
+                title: "Análisis completo de abandono de carrito",
+                desc: "Descubre dónde abandonan TODOS los usuarios — no solo el 30-40% que aceptó cookies. Identifica fricción en el pago, sorpresas por costes de envío y problemas de UX en el checkout con datos de cada visitante.",
               },
               {
-                title: "LENS AI for eCommerce",
-                desc: "60+ anomaly detection rules tuned for eCommerce patterns. Stock availability issues affecting conversion, payment gateway failures, sudden changes in average order value, and campaign performance shifts — detected automatically and explained in plain language.",
+                title: "LENS AI para eCommerce",
+                desc: "Más de 60 reglas de detección de anomalías afinadas para patrones de eCommerce. Problemas de disponibilidad de stock que afectan a la conversión, fallos de pasarela de pago, cambios repentinos en el valor medio del pedido y variaciones de rendimiento de campañas — detectados automáticamente y explicados en lenguaje claro.",
               },
             ].map((item) => (
               <div key={item.title} className="pb-8 border-b border-warm-100 last:border-0">
@@ -134,17 +135,17 @@ export default function ForEcommercePage() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[760px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-              Real result
+              Resultado real
             </span>
             <h2 className="headline-section mb-8">
-              European fashion retailer. 74% of conversions invisible to GA4.
+              Retailer europeo de moda. 74% de las conversiones invisibles para GA4.
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
               {[
-                { num: "47,200", label: "Real visitors/mo", sub: "vs 12,400 in GA4" },
-                { num: "1,290", label: "Tracked conversions", sub: "vs 340 in GA4" },
-                { num: "\u20AC342K", label: "Revenue attributed", sub: "vs \u20AC89K in GA4" },
-                { num: "+40%", label: "ROAS improvement", sub: "after 60 days" },
+                { num: "47.200", label: "Visitantes reales/mes", sub: "vs 12.400 en GA4" },
+                { num: "1.290", label: "Conversiones rastreadas", sub: "vs 340 en GA4" },
+                { num: "\u20AC342K", label: "Ingresos atribuidos", sub: "vs \u20AC89K en GA4" },
+                { num: "+40%", label: "Mejora del ROAS", sub: "tras 60 días" },
               ].map((stat, i) => (
                 <div key={i} className="p-4 bg-white border border-warm-100 rounded-[4px]">
                   <div className="font-serif text-[1.5rem] font-medium text-text-primary mb-1">{stat.num}</div>
@@ -155,13 +156,14 @@ export default function ForEcommercePage() {
             </div>
             <blockquote className="border-l-2 border-warm-200 pl-5 mb-6">
               <p className="text-[0.95rem] text-text-secondary italic leading-relaxed">
-                &ldquo;Our entire attribution model was built on incomplete data
-                &mdash; every budget decision we made was wrong. SealMetrics
-                showed us we were missing 74% of our conversions.&rdquo;
+                &ldquo;Todo nuestro modelo de atribución estaba construido sobre
+                datos incompletos &mdash; cada decisión de presupuesto que
+                tomábamos era errónea. SealMetrics nos mostró que nos faltaba
+                el 74% de nuestras conversiones.&rdquo;
               </p>
               <footer className="text-[0.8rem] text-text-tertiary mt-2">
-                Head of Digital Marketing, European Fashion Retailer &mdash;
-                45M&euro; revenue
+                Head of Digital Marketing, retailer europeo de moda &mdash;
+                45M&euro; de ingresos
               </footer>
             </blockquote>
           </div>
@@ -172,14 +174,14 @@ export default function ForEcommercePage() {
       <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">
-            Metrics that matter for eCommerce
+            Métricas que importan al eCommerce
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
             {[
-              { metric: "100%", label: "Conversions captured" },
-              { metric: "+40%", label: "ROAS visibility" },
-              { metric: "280%", label: "More attributed revenue" },
-              { metric: "0", label: "Consent dependency" },
+              { metric: "100%", label: "Conversiones capturadas" },
+              { metric: "+40%", label: "Visibilidad del ROAS" },
+              { metric: "280%", label: "Más ingresos atribuidos" },
+              { metric: "0", label: "Dependencia del consentimiento" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -201,26 +203,26 @@ export default function ForEcommercePage() {
       <section className="py-28 bg-warm-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
-            See your complete revenue data.
+            Descubre tus datos de ingresos completos.
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
-            We&rsquo;ll run SealMetrics alongside your GA4 for 30 days.
-            You&rsquo;ll see every conversion your current setup is missing
-            &mdash; and the revenue it represents.
+            Ejecutaremos SealMetrics junto a tu GA4 durante 30 días. Verás cada
+            conversión que tu configuración actual se está perdiendo &mdash; y los
+            ingresos que representan.
           </p>
           <Link
-            href="/demo"
+            href="/es/demo"
             className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            See your complete revenue data &rarr;
+            Ver tus datos de ingresos completos &rarr;
           </Link>
           <p className="mt-4 text-[0.8rem] text-text-tertiary">
-            Or{" "}
+            O{" "}
             <Link
-              href="/data-loss-calculator"
+              href="/es/growth-calculator"
               className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors"
             >
-              calculate your data loss first
+              calcula tu pérdida de datos primero
             </Link>
           </p>
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, servicePageSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "SealMetrics for DPOs — GDPR Analytics by Design",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/dpo",
+    languages: getAlternates("/for/dpo"),
   },
 };
 
