@@ -26,7 +26,7 @@ export default function ForMediaPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para Medios y Editores" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para Medios y Editores", url: "/es/for/media" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para Medios y Editores", url: "/es/for/media" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Medios", description: "Cuando el 60-70% de los lectores europeos es invisible para la analítica, tus CPMs están infravalorados. SealMetrics captura cada visita — sin cookies, 100% de los datos.", url: "/es/for/media", audience: "Editores y medios" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

@@ -49,7 +49,7 @@ export default function GA4GoogleAdsSeparationPage() {
         data={breadcrumbSchema([
           { name: "Blog", url: "/es/blog" },
           { name: "GA4 y Google Ads" },
-        ])}
+        ], "es")}
       />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">

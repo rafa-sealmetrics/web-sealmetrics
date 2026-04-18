@@ -26,7 +26,7 @@ export default function ForHotelsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para Hoteles y Turismo" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para Hoteles y Turismo", url: "/es/for/hotels" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para Hoteles y Turismo", url: "/es/for/hotels" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Hoteles", description: "Los hoteles pierden el 60-70% de los datos de visitantes por muros de consentimiento y bloqueadores de anuncios. SealMetrics captura el 100% del tráfico de reservas sin cookies.", url: "/es/for/hotels", audience: "Sector hotelero y turístico" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

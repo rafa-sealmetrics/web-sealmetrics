@@ -27,7 +27,7 @@ export default function DemoPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Solicitar Demo" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Solicitar Demo", url: "/es/demo" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Solicitar Demo", url: "/es/demo" }], "es")} />
       <section className="pt-12 pb-28 bg-white min-h-screen">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">

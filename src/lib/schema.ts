@@ -16,7 +16,7 @@ export function organizationSchema() {
           height: 32,
         },
         description:
-          "Cookieless web analytics platform that captures 100% of website traffic. GDPR-compliant alternative to Google Analytics without cookie consent banners.",
+          "Complete analytics for eCommerce: captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.",
         foundingDate: "2020",
         founders: [
           {
@@ -48,12 +48,17 @@ export function organizationSchema() {
   };
 }
 
-export function breadcrumbSchema(items: { name: string; url?: string }[]) {
+export function breadcrumbSchema(
+  items: { name: string; url?: string }[],
+  locale: "en" | "es" = "en"
+) {
+  const rootLabel = locale === "es" ? "Inicio" : "Home";
+  const rootUrl = locale === "es" ? `${SITE_URL}/es` : SITE_URL;
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 1, name: rootLabel, item: rootUrl },
       ...items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 2,
@@ -74,7 +79,7 @@ export function softwareApplicationSchema() {
     url: SITE_URL,
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     description:
-      "Cookieless web analytics platform that captures 100% of website traffic without cookies or consent banners. GDPR-compliant alternative to Google Analytics.",
+      "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
     featureList: [
       "Cookieless tracking (no consent banner required)",
       "100% traffic data capture",

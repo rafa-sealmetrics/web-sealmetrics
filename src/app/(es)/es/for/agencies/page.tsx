@@ -26,7 +26,7 @@ export default function ForAgenciesPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para Agencias" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para Agencias", url: "/es/for/agencies" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para Agencias", url: "/es/for/agencies" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Agencias", description: "Deja de defender resultados de campaña con datos incompletos. SealMetrics ofrece a las agencias 100% de atribución en cada cliente — sin cookies, sin huecos de consentimiento.", url: "/es/for/agencies", audience: "Agencias de marketing" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

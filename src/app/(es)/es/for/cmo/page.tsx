@@ -26,7 +26,7 @@ export default function ForCMOPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para CMOs" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para CMOs", url: "/es/for/cmo" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para CMOs", url: "/es/for/cmo" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para CMOs", description: "Deja de tomar decisiones de marketing con el 13% de tus datos. SealMetrics ofrece a los CMOs visibilidad total del tráfico, atribución precisa y detección de anomalías con IA.", url: "/es/for/cmo", audience: "Directores de Marketing (CMOs)" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

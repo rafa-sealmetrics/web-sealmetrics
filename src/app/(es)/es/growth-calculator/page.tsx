@@ -29,7 +29,7 @@ export default function GrowthCalculatorPageEs() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Calculadora de Crecimiento", url: "/es/growth-calculator" },
-        ])}
+        ], "es")}
       />
 
       {/* Hero */}

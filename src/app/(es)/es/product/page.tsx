@@ -97,7 +97,7 @@ export default function ProductoPage() {
     <>
       <Breadcrumbs items={[{ label: "Producto" }]} />
       <JsonLd data={softwareApplicationSchema()} />
-      <JsonLd data={breadcrumbSchema([{ name: "Producto", url: "/es/product" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Producto", url: "/es/product" }], "es")} />
       <JsonLd data={faqSchema(productFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
 
       {/* Hero */}

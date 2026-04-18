@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const everyPlanIncludes = [
   "Webs ilimitadas",
   "Usuarios ilimitados",
-  "Conversión Properties",
+  "Propiedades de Conversión",
   "24 meses de retención de datos",
   "Tracking sin cookies (RGPD)",
   "Datos en tiempo real (<2 min)",
@@ -40,12 +40,12 @@ const differentiators = [
   {
     from: "Growth",
     to: "Scale",
-    diff: "Más eventos (15M) + Agent AI Analytics + Webhooks + Onboarding guiado",
+    diff: "Más eventos (15M) + Analítica de Agentes IA + Webhooks + Onboarding asistido",
   },
   {
     from: "Scale",
     to: "Enterprise",
-    diff: "Eventos ilimitados + SSO + Account Manager dedicado + Procesamiento aislado",
+    diff: "Eventos ilimitados + SSO + Gestor de Cuenta dedicado + Procesamiento aislado",
   },
 ];
 
@@ -75,7 +75,7 @@ const comparisonData: ComparisonSection[] = [
     ],
   },
   {
-    category: "Agent Analytics (Próximamente)",
+    category: "Analítica de Agentes IA (Próximamente)",
     rows: [
       { feature: "Detección de agentes IA", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
       { feature: "Agent Scoring (300+ señales)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
@@ -88,7 +88,7 @@ const comparisonData: ComparisonSection[] = [
     rows: [
       { feature: "Tracking de conversiones", growth: true, scale: true, enterprise: true },
       { feature: "Tracking de microconversiones", growth: true, scale: true, enterprise: true },
-      { feature: "Conversión Properties", growth: true, scale: true, enterprise: true },
+      { feature: "Propiedades de Conversión", growth: true, scale: true, enterprise: true },
       { feature: "Atribución de ingresos", growth: true, scale: true, enterprise: true },
     ],
   },
@@ -104,7 +104,7 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Monitorización y alertas",
     rows: [
-      { feature: "Alertas criticas", growth: true, scale: true, enterprise: true },
+      { feature: "Alertas críticas", growth: true, scale: true, enterprise: true },
       { feature: "Monitorización de negocio", growth: true, scale: true, enterprise: true },
       { feature: "Gestión de riesgos", growth: true, scale: true, enterprise: true },
       { feature: "Alertas personalizadas", growth: true, scale: true, enterprise: true },
@@ -140,8 +140,8 @@ const comparisonData: ComparisonSection[] = [
       { feature: "Soporte por email", growth: true, scale: true, enterprise: true },
       { feature: "Soporte por chat", growth: true, scale: true, enterprise: true },
       { feature: "Soporte prioritario", growth: false, scale: true, enterprise: true },
-      { feature: "Account Manager dedicado", growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", growth: "Docs + Videos", scale: "1 sesión", enterprise: "White-glove" },
+      { feature: "Gestor de Cuenta dedicado", growth: false, scale: false, enterprise: true },
+      { feature: "Onboarding", growth: "Docs + Vídeos", scale: "1 sesión", enterprise: "Servicio a medida" },
       { feature: "SLA", growth: "99%", scale: "99,5%", enterprise: "99,9%" },
     ],
   },
@@ -152,7 +152,7 @@ const comparisonData: ComparisonSection[] = [
       { feature: "Agentes IA", growth: "Próximamente", scale: "Próximamente", enterprise: "Próximamente" },
       { feature: "Webs", growth: "Ilimitadas", scale: "Ilimitadas", enterprise: "Ilimitadas" },
       { feature: "Usuarios", growth: "Ilimitados", scale: "Ilimitados", enterprise: "Ilimitados" },
-      { feature: "Retencion de datos", growth: "24 meses", scale: "24 meses", enterprise: "Personalizada" },
+      { feature: "Retención de datos", growth: "24 meses", scale: "24 meses", enterprise: "Personalizada" },
     ],
   },
 ];
@@ -245,7 +245,7 @@ export default function PricingPageEs() {
         { name: "Growth", price: "599", description: "5M eventos humanos/mes" },
         { name: "Scale", price: "1079", description: "15M eventos humanos/mes" },
       ])} />
-      <JsonLd data={breadcrumbSchema([{ name: "Precios", url: "/es/pricing" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Precios", url: "/es/pricing" }], "es")} />
       <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
 
       {/* Hero */}

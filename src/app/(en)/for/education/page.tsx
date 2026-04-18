@@ -41,7 +41,7 @@ export default function ForEducationPage() {
               University enrollment journeys span months — program research,
               campus comparisons, financial aid pages, open day registrations.
               Cookie expiration and EU consent rejection mean your{" "}
-              <Link href="/glossary/multi-touch-attribution" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
+              <Link href="/glossary/revenue-attribution" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 attribution
               </Link>{" "}
               captures fragments of a journey that determines your next intake.

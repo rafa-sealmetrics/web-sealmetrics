@@ -26,7 +26,7 @@ export default function ForFinancePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para Finanzas" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para Finanzas", url: "/es/for/finance" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para Finanzas", url: "/es/for/finance" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Finanzas", description: "El sector financiero enfrenta los requisitos de consentimiento más estrictos de Europa. SealMetrics captura el 100% de los recorridos de visitantes sin cookies — cumpliendo el GDPR, con alojamiento en la UE.", url: "/es/for/finance", audience: "Servicios financieros" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

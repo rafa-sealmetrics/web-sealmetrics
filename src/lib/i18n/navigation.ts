@@ -9,7 +9,6 @@ const translatedPaths = new Set([
   "/demo",
   "/security",
   "/growth-calculator",
-  "/blog/ga4-google-ads-separation",
   "/for/cmo",
   "/for/cto",
   "/for/dpo",

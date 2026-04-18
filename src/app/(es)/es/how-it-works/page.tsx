@@ -6,12 +6,12 @@ import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
-  title: "Como Funciona la Analítica Sin Cookies — SealMetrics",
+  title: "Cómo Funciona la Analítica Sin Cookies — SealMetrics",
   description:
     "Script first-party de 846 bytes en tu dominio. Sin cookies, sin consentimiento, inmune a ad blockers. Captura del 100% en 5 minutos.",
   openGraph: {
-    title: "Como Funciona la Analítica Sin Cookies — SealMetrics",
-    description: "Como la analítica sin cookies captura el 100% de tu tráfico. Recopilación cookieless first-party explicada.",
+    title: "Cómo Funciona la Analítica Sin Cookies — SealMetrics",
+    description: "Cómo la analítica sin cookies captura el 100% de tu tráfico. Recopilación cookieless first-party explicada.",
     type: "website",
     locale: "es_ES",
   },
@@ -28,7 +28,7 @@ const howItWorksFaqs = [
   },
   {
     q: "¿SealMetrics se ve afectado por los ad blockers?",
-    a: "No. SealMetrics opera como infraestructura first-party en tu propio dominio. Los ad blockers apuntan a peticiones de analítica de terceros (como las dirigidas a google-analytics.com). Cómo los datos de SealMetrics fluyen a través de tu dominio, son invisibles para los ad blockers.",
+    a: "No. SealMetrics opera como infraestructura first-party en tu propio dominio. Los ad blockers apuntan a peticiones de analítica de terceros (como las dirigidas a google-analytics.com). Como los datos de SealMetrics fluyen a través de tu dominio, son invisibles para los ad blockers.",
   },
   {
     q: "¿Cuánto tiempo lleva la instalación?",
@@ -36,15 +36,15 @@ const howItWorksFaqs = [
   },
   {
     q: "¿Necesito modificar mi banner de consentimiento?",
-    a: "No. SealMetrics no requiere consentimiento bajo el RGPD ni la ePrivacy porque no utiliza cookies y no recopila datos personales. Sí ya tienes un banner de consentimiento para otras herramientas (como GA4 o pixeles publicitarios), SealMetrics funciona de forma independiente.",
+    a: "No. SealMetrics no requiere consentimiento bajo el RGPD ni la ePrivacy porque no utiliza cookies y no recopila datos personales. Si ya tienes un banner de consentimiento para otras herramientas (como GA4 o pixeles publicitarios), SealMetrics funciona de forma independiente.",
   },
   {
     q: "¿Dónde se procesan y almacenan los datos?",
-    a: "Todos los datos se procesan y almacenan exclusivamente en servidores de la UE. Sin transferencias fuera de la UE, sin subencargados en terceros países, sin dependencia de Clausulas Contractuales Tipo ni otros mecanismos de transferencia internacional.",
+    a: "Todos los datos se procesan y almacenan exclusivamente en servidores de la UE. Sin transferencias fuera de la UE, sin subencargados en terceros países, sin dependencia de Cláusulas Contractuales Tipo ni otros mecanismos de transferencia internacional.",
   },
   {
     q: "¿SealMetrics utiliza fingerprinting?",
-    a: "No. SealMetrics no utiliza browser fingerprinting, canvas fingerprinting ni ninguna técnica que cree un identificador unico a partir de las características del dispositivo. Es una decisión arquitectónica deliberada: el fingerprinting genera datos personales y requeriría consentimiento.",
+    a: "No. SealMetrics no utiliza browser fingerprinting, canvas fingerprinting ni ninguna técnica que cree un identificador único a partir de las características del dispositivo. Es una decisión arquitectónica deliberada: el fingerprinting genera datos personales y requeriría consentimiento.",
   },
   {
     q: "¿Qué ocurre si supero mi límite de eventos?",
@@ -55,8 +55,8 @@ const howItWorksFaqs = [
 export default function ComoFuncionaPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Como Funciona" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Como Funciona", url: "/es/how-it-works" }])} />
+      <Breadcrumbs items={[{ label: "Cómo Funciona" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Cómo Funciona", url: "/es/how-it-works" }], "es")} />
       <JsonLd data={faqSchema(howItWorksFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
 
       {/* Hero */}
@@ -64,7 +64,7 @@ export default function ComoFuncionaPage() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="max-w-[700px]">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
-              Como Funciona
+              Cómo Funciona
             </span>
             <h1 className="headline-hero mb-8">
               Un enfoque diferente para la medición.
@@ -161,7 +161,7 @@ export default function ComoFuncionaPage() {
             </div>
 
             <p className="mt-8 text-[0.9rem] text-text-secondary">
-              Quieres ver los números para tu propia web?{" "}
+              ¿Quieres ver los números para tu propia web?{" "}
               <Link
                 href="/data-loss-calculator"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -176,7 +176,7 @@ export default function ComoFuncionaPage() {
       {/* Three steps */}
       <section className="py-28 bg-warm-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-16">Como funciona SealMetrics</h2>
+          <h2 className="headline-section mb-16">Cómo funciona SealMetrics</h2>
           <div className="space-y-20">
             {[
               {
@@ -188,13 +188,13 @@ export default function ComoFuncionaPage() {
                   "Invisible para ad blockers (infraestructura first-party)",
                   "Funciona independientemente del estado del banner de consentimiento",
                   "Impacto cero en la velocidad de carga (<50ms)",
-                  "Una sola linea de código para instalar",
+                  "Una sola línea de código para instalar",
                 ],
               },
               {
                 number: "02",
                 title: "Procesamiento a resolución completa",
-                desc: "Cada sesión se registra de forma individual. No modelamos, no muestreamos, no estimamos. Cuando ves 72.847 visitantes en tu dashboard, ese número representa 72.847 sesiones reales, no una proyeccion estadística.",
+                desc: "Cada sesión se registra de forma individual. No modelamos, no muestreamos, no estimamos. Cuando ves 72.847 visitantes en tu dashboard, ese número representa 72.847 sesiones reales, no una proyección estadística.",
                 details: [
                   "100% de las sesiones capturadas, no una muestra",
                   "Procesamiento de datos en tiempo real",
@@ -254,13 +254,13 @@ export default function ComoFuncionaPage() {
       <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-12">
-            Que diferencia a SealMetrics de otras herramientas
+            Lo que diferencia a SealMetrics de otras herramientas
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
             {[
               {
                 title: "First-party, no third-party",
-                desc: "Las herramientas tradicionales envian datos a servidores externos mediante peticiones de terceros. SealMetrics opera como infraestructura first-party en tu dominio, lo que lo hace invisible para los ad blockers e inmune a las restricciones de cookies de terceros.",
+                desc: "Las herramientas tradicionales envían datos a servidores externos mediante peticiones de terceros. SealMetrics opera como infraestructura first-party en tu dominio, lo que lo hace invisible para los ad blockers e inmune a las restricciones de cookies de terceros.",
               },
               {
                 title: "Invisible para los bloqueadores",
@@ -268,11 +268,11 @@ export default function ComoFuncionaPage() {
               },
               {
                 title: "Sin cookies, sin dependencia de consentimiento",
-                desc: "SealMetrics no utiliza cookies y no recopila datos personales. Esto significa que los banners de consentimiento no afectan a la recopilación de datos. Mides el 100% de los visitantes independientemente de su eleccion de consentimiento.",
+                desc: "SealMetrics no utiliza cookies y no recopila datos personales. Esto significa que los banners de consentimiento no afectan a la recopilación de datos. Mides el 100% de los visitantes independientemente de su elección de consentimiento.",
               },
               {
                 title: "Sin muestreo, sin modelado",
-                desc: "GA4 aplica muestreo de datos cuando el tráfico supera ciertos umbrales. Adobe utiliza modelado estadistico. SealMetrics registra cada sesión de forma individual: lo que ves es lo que realmente ocurrió.",
+                desc: "GA4 aplica muestreo de datos cuando el tráfico supera ciertos umbrales. Adobe utiliza modelado estadístico. SealMetrics registra cada sesión de forma individual: lo que ves es lo que realmente ocurrió.",
               },
             ].map((item) => (
               <div
@@ -296,7 +296,7 @@ export default function ComoFuncionaPage() {
             >
               se conecta con 25+ plataformas
             </Link>{" "}
-            incluyendo Google Ads, Meta, Shopify y BigQuery. Quieres los detalles técnicos y de cumplimiento?{" "}
+            incluyendo Google Ads, Meta, Shopify y BigQuery. ¿Quieres los detalles técnicos y de cumplimiento?{" "}
             <Link
               href="/es/security"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -335,11 +335,11 @@ export default function ComoFuncionaPage() {
       <section className="py-28 bg-white text-center border-t border-warm-100">
         <div className="max-w-[500px] mx-auto px-5 sm:px-8">
           <h2 className="headline-section mb-4">
-            Compruebalo con tus propios datos.
+            Compruébalo con tus propios datos.
           </h2>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
             Ejecuta SealMetrics junto a tu configuración actual. Compara los
-            números. Y entonces decide. O lee mas en nuestro{" "}
+            números. Y entonces decide. O lee más en nuestro{" "}
             <Link
               href="/blog"
               className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors"

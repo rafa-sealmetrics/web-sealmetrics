@@ -26,7 +26,7 @@ export default function ForSaaSPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para SaaS" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para SaaS", url: "/es/for/saas" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para SaaS", url: "/es/for/saas" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para SaaS", description: "El recorrido desde registro a cliente de pago abarca semanas y múltiples sesiones. La analítica basada en cookies pierde el hilo. SealMetrics captura cada touchpoint — sin cookies, 100% completo.", url: "/es/for/saas", audience: "Empresas SaaS" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

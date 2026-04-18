@@ -26,7 +26,7 @@ export default function ForEcommercePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para eCommerce" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para eCommerce", url: "/es/for/ecommerce" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para eCommerce", url: "/es/for/ecommerce" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para eCommerce", description: "Deja de optimizar el ROAS sobre el 30% de tus conversiones. SealMetrics captura cada añadido al carrito, checkout y compra — sin cookies, 100% atribución.", url: "/es/for/ecommerce", audience: "Equipos de eCommerce" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">

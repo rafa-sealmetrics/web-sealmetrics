@@ -26,7 +26,7 @@ export default function ForEducationPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para Educación" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Para Educación", url: "/es/for/education" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para Educación", url: "/es/for/education" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Educación", description: "Los estudiantes investigan durante meses antes de matricularse. La analítica basada en cookies pierde el recorrido. SealMetrics captura cada visita — sin cookies, conforme al GDPR.", url: "/es/for/education", audience: "Instituciones educativas" })} />
       {/* Hero */}
       <section className="pt-12 pb-20 bg-white">
@@ -44,7 +44,7 @@ export default function ForEducationPage() {
               ayudas económicas, inscripciones a jornadas de puertas abiertas.
               La expiración de cookies y el rechazo del consentimiento en la UE
               hacen que tu{" "}
-              <Link href="/glossary/multi-touch-attribution" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
+              <Link href="/glossary/revenue-attribution" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
                 atribución
               </Link>{" "}
               capture solo fragmentos de un recorrido que determina tu próxima
