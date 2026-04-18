@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ForEducationPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para Educación" }]} />
+      <Breadcrumbs items={[{ label: "Para Educación" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para Educación", url: "/es/for/education" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Educación", description: "Los estudiantes investigan durante meses antes de matricularse. La analítica basada en cookies pierde el recorrido. SealMetrics captura cada visita — sin cookies, conforme al GDPR.", url: "/es/for/education", audience: "Instituciones educativas" })} />
       {/* Hero */}

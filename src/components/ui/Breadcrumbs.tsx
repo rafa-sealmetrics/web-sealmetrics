@@ -5,7 +5,15 @@ interface BreadcrumbItem {
   href?: string;
 }
 
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+export function Breadcrumbs({
+  items,
+  locale = "en",
+}: {
+  items: BreadcrumbItem[];
+  locale?: "en" | "es";
+}) {
+  const rootLabel = locale === "es" ? "Inicio" : "Home";
+  const rootHref = locale === "es" ? "/es" : "/";
   return (
     <nav
       aria-label="Breadcrumb"
@@ -14,10 +22,10 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       <ol className="flex items-center gap-1.5 text-[0.75rem] text-text-tertiary">
         <li>
           <Link
-            href="/"
+            href={rootHref}
             className="no-underline hover:text-text-primary transition-colors"
           >
-            Home
+            {rootLabel}
           </Link>
         </li>
         {items.map((item, i) => (

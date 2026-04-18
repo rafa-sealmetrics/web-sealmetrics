@@ -28,6 +28,7 @@ export default function GA4GoogleAdsSeparationPage() {
           { label: "Blog", href: "/es/blog" },
           { label: "GA4 y Google Ads" },
         ]}
+        locale="es"
       />
       <JsonLd
         data={articleSchema({

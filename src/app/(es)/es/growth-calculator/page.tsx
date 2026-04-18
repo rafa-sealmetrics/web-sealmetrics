@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function GrowthCalculatorPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Calculadora de Crecimiento" }]} />
+      <Breadcrumbs items={[{ label: "Calculadora de Crecimiento" }]} locale="es" />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Calculadora de Crecimiento", url: "/es/growth-calculator" },

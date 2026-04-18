@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ForDPOPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para DPOs" }]} />
+      <Breadcrumbs items={[{ label: "Para DPOs" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para DPOs", url: "/es/for/dpo" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para DPOs", description: "Sin cookies, sin PII, sin dependencia del consentimiento, infraestructura exclusivamente en la UE. SealMetrics es la plataforma de analítica que tu equipo de privacidad sí aprobará.", url: "/es/for/dpo", audience: "Delegados de Protección de Datos (DPOs)" })} />
       {/* Hero */}

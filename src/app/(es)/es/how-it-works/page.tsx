@@ -55,7 +55,7 @@ const howItWorksFaqs = [
 export default function ComoFuncionaPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Cómo Funciona" }]} />
+      <Breadcrumbs items={[{ label: "Cómo Funciona" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Cómo Funciona", url: "/es/how-it-works" }], "es")} />
       <JsonLd data={faqSchema(howItWorksFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
 

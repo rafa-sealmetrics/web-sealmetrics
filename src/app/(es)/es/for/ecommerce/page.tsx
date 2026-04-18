@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ForEcommercePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para eCommerce" }]} />
+      <Breadcrumbs items={[{ label: "Para eCommerce" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para eCommerce", url: "/es/for/ecommerce" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para eCommerce", description: "Deja de optimizar el ROAS sobre el 30% de tus conversiones. SealMetrics captura cada añadido al carrito, checkout y compra — sin cookies, 100% atribución.", url: "/es/for/ecommerce", audience: "Equipos de eCommerce" })} />
       {/* Hero */}

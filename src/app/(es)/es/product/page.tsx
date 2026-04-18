@@ -95,7 +95,7 @@ const productFaqs = [
 export default function ProductoPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Producto" }]} />
+      <Breadcrumbs items={[{ label: "Producto" }]} locale="es" />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Producto", url: "/es/product" }], "es")} />
       <JsonLd data={faqSchema(productFaqs.map((f) => ({ question: f.q, answer: f.a })))} />

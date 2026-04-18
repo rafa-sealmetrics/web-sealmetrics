@@ -240,7 +240,7 @@ function CellValue({ value }: { value: string | boolean }) {
 export default function PricingPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Precios" }]} />
+      <Breadcrumbs items={[{ label: "Precios" }]} locale="es" />
       <JsonLd data={pricingSchema([
         { name: "Growth", price: "599", description: "5M eventos humanos/mes" },
         { name: "Scale", price: "1079", description: "15M eventos humanos/mes" },

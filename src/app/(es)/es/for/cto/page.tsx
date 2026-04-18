@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ForCTOPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para CTOs" }]} />
+      <Breadcrumbs items={[{ label: "Para CTOs" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para CTOs", url: "/es/for/cto" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para CTOs", description: "Script de 846 bytes, carga <50ms, infraestructura 100% UE, sin cookies ni PII. La plataforma de analítica que tu equipo de ingeniería sí aprobará.", url: "/es/for/cto", audience: "Directores de Tecnología (CTOs)" })} />
       {/* Hero */}

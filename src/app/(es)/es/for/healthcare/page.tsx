@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ForHealthcarePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para Salud" }]} />
+      <Breadcrumbs items={[{ label: "Para Salud" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para Salud", url: "/es/for/healthcare" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Salud", description: "La sanidad enfrenta el mayor listón de privacidad de Europa. SealMetrics captura el 100% de los recorridos de visitantes sin cookies ni datos personales — conforme al GDPR.", url: "/es/for/healthcare", audience: "Organizaciones sanitarias" })} />
       {/* Hero */}

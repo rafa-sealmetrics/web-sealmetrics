@@ -24,8 +24,9 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   return (
     <Link
       href={targetHref}
-      className="text-[0.8rem] font-medium text-text-tertiary hover:text-text-primary transition-colors no-underline uppercase tracking-wide"
+      className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-2 text-[0.85rem] font-medium text-text-tertiary hover:text-text-primary transition-colors no-underline uppercase tracking-wide"
       hrefLang={targetLocale}
+      aria-label={targetLocale === "es" ? "Cambiar a español" : "Switch to English"}
     >
       {targetLocale === "es" ? "ES" : "EN"}
     </Link>

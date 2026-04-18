@@ -252,13 +252,15 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
           <LanguageSwitcher locale={locale} />
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? t.closeMenu : t.openMenu}
-          aria-expanded={mobileOpen}
-        >
+        {/* Mobile: language switcher + hamburger */}
+        <div className="md:hidden flex items-center gap-1">
+          <LanguageSwitcher locale={locale} />
+          <button
+            className="p-2 inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? t.closeMenu : t.openMenu}
+            aria-expanded={mobileOpen}
+          >
           <svg
             width="20"
             height="20"
@@ -273,7 +275,8 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
               <path d="M3 6h14M3 10h14M3 14h14" />
             )}
           </svg>
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

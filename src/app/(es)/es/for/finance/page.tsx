@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ForFinancePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para Finanzas" }]} />
+      <Breadcrumbs items={[{ label: "Para Finanzas" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para Finanzas", url: "/es/for/finance" }], "es")} />
       <JsonLd data={servicePageSchema({ name: "SealMetrics para Finanzas", description: "El sector financiero enfrenta los requisitos de consentimiento más estrictos de Europa. SealMetrics captura el 100% de los recorridos de visitantes sin cookies — cumpliendo el GDPR, con alojamiento en la UE.", url: "/es/for/finance", audience: "Servicios financieros" })} />
       {/* Hero */}

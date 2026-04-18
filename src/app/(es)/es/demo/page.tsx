@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function DemoPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Solicitar Demo" }]} />
+      <Breadcrumbs items={[{ label: "Solicitar Demo" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Solicitar Demo", url: "/es/demo" }], "es")} />
       <section className="pt-12 pb-28 bg-white min-h-screen">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">

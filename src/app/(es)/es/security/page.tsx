@@ -139,7 +139,7 @@ const securityFaqs = [
 export default function SecurityPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Seguridad" }]} />
+      <Breadcrumbs items={[{ label: "Seguridad" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Seguridad", url: "/es/security" }], "es")} />
       <JsonLd data={faqSchema(securityFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
 
