@@ -108,7 +108,7 @@ export default function ProductoPage() {
               Producto
             </span>
             <h1 className="headline-hero mb-8">
-              Nueve informes construidos sobre el 100% de la realidad.
+              Todos los informes construidos sobre el 100% de la realidad.
             </h1>
             <p className="text-[1.2rem] leading-[1.75] text-text-secondary mb-10">
               Atribución de ingresos, detección de anomalías con IA y tracking
@@ -495,7 +495,7 @@ export default function ProductoPage() {
               Informes
             </span>
             <h2 className="headline-section mb-4">
-              Nueve informes. Cero conjeturas.
+              Todos los informes con Cero conjeturas
             </h2>
             <p className="text-[1.05rem] leading-[1.75] text-text-secondary">
               Cada informe se construye sobre el 100% de tus datos&nbsp;&mdash;
