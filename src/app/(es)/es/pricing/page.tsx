@@ -252,7 +252,7 @@ export default function PricingPageEs() {
       <section className="pt-12 pb-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
           <h1 className="headline-hero mb-6">
-            Paga por humanos. No por bots. No por banners de consentimiento. No por suposiciones.
+            Paga por tráfico humano. No por bots. No por suposiciones.
           </h1>
           <p className="text-[1.15rem] leading-[1.75] text-text-secondary max-w-[640px] mx-auto mb-2">
             Tracking de agentes IA disponible próximamente.
@@ -281,10 +281,10 @@ export default function PricingPageEs() {
       </section>
 
       {/* Plans with billing toggle */}
-      <PricingPlans />
+      <PricingPlans locale="es" />
 
       {/* Client logos — social proof */}
-      <Logos />
+      <Logos locale="es" />
 
       {/* Todos los planes incluyen */}
       <section className="py-20 bg-warm-white border-t border-warm-100">

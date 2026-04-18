@@ -3,7 +3,24 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const plans = [
+type Locale = "en" | "es";
+
+interface Plan {
+  name: string;
+  desc: string;
+  monthlyPrice: string;
+  annualPrice: string;
+  annualTotal: string;
+  annualSave: string;
+  period: string;
+  roiContext: string;
+  cta: string;
+  ctaNote: string;
+  featured: boolean;
+  href: string;
+}
+
+const plansEn: Plan[] = [
   {
     name: "Growth",
     desc: "For teams that need API, LENS AI & BigQuery",
@@ -48,8 +65,78 @@ const plans = [
   },
 ];
 
-export function PricingPlans() {
+const plansEs: Plan[] = [
+  {
+    name: "Growth",
+    desc: "Para equipos que necesitan API, LENS AI y BigQuery",
+    monthlyPrice: "€599",
+    annualPrice: "€499",
+    annualTotal: "€5.988 facturados anualmente",
+    annualSave: "€499/mes con facturación anual",
+    period: "5M eventos humanos/mes",
+    roiContext: "Menos que el coste de una decisión de campaña mal atribuida.",
+    cta: "Solicitar Demo",
+    ctaNote: "14 días gratis · Sin tarjeta de crédito",
+    featured: false,
+    href: "/es/demo",
+  },
+  {
+    name: "Scale",
+    desc: "Para equipos eCommerce en crecimiento que necesitan atribución completa",
+    monthlyPrice: "€1.079",
+    annualPrice: "€899",
+    annualTotal: "€10.788 facturados anualmente",
+    annualSave: "€899/mes con facturación anual",
+    period: "15M eventos humanos/mes",
+    roiContext: "Para equipos que invierten \u20AC20K+/mes en paid media.",
+    cta: "Solicitar Demo",
+    ctaNote: "14 días gratis \u00b7 Sin tarjeta de crédito",
+    featured: true,
+    href: "/es/demo",
+  },
+  {
+    name: "Enterprise",
+    desc: "SSO, soporte dedicado, SLA personalizado",
+    roiContext: "",
+    monthlyPrice: "Personalizado",
+    annualPrice: "Personalizado",
+    annualTotal: "",
+    annualSave: "",
+    period: "Eventos humanos ilimitados/mes",
+    cta: "Contactar Ventas",
+    ctaNote: "",
+    featured: false,
+    href: "/es/demo",
+  },
+];
+
+const copy = {
+  en: {
+    monthly: "Monthly",
+    annual: "Annual",
+    annualBadge: "2 months free",
+    mostPopular: "Most popular",
+    perMonth: "/ mo",
+    aiAgents: "AI agents",
+    comingSoon: "Coming Soon",
+    customLabel: "Custom",
+  },
+  es: {
+    monthly: "Mensual",
+    annual: "Anual",
+    annualBadge: "2 meses gratis",
+    mostPopular: "Más popular",
+    perMonth: "/ mes",
+    aiAgents: "Agentes IA",
+    comingSoon: "Próximamente",
+    customLabel: "Personalizado",
+  },
+} as const;
+
+export function PricingPlans({ locale = "en" }: { locale?: Locale }) {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  const plans = locale === "es" ? plansEs : plansEn;
+  const t = copy[locale];
 
   return (
     <section className="pb-28 bg-white">
@@ -65,7 +152,7 @@ export function PricingPlans() {
                   : "text-text-secondary hover:text-text-primary"
               }`}
             >
-              Monthly
+              {t.monthly}
             </button>
             <button
               onClick={() => setBilling("annual")}
@@ -75,7 +162,7 @@ export function PricingPlans() {
                   : "text-text-secondary hover:text-text-primary"
               }`}
             >
-              Annual
+              {t.annual}
               <span
                 className={`text-[0.7rem] font-medium ${
                   billing === "annual"
@@ -83,7 +170,7 @@ export function PricingPlans() {
                     : "text-green-muted"
                 }`}
               >
-                2 months free
+                {t.annualBadge}
               </span>
             </button>
           </div>
@@ -92,7 +179,7 @@ export function PricingPlans() {
         {/* Plan cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
           {plans.map((plan) => {
-            const isCustom = plan.monthlyPrice === "Custom";
+            const isCustom = plan.monthlyPrice === "Custom" || plan.monthlyPrice === "Personalizado";
             const displayPrice =
               billing === "monthly" ? plan.monthlyPrice : plan.annualPrice;
             const subPrice =
@@ -111,7 +198,7 @@ export function PricingPlans() {
               >
                 {plan.featured && (
                   <span className="absolute -top-3 left-8 px-3 py-1 bg-text-primary text-white text-[0.7rem] font-medium uppercase tracking-[0.04em] rounded-[2px]">
-                    Most popular
+                    {t.mostPopular}
                   </span>
                 )}
                 <div className="font-serif text-[1.25rem] font-medium text-text-primary mb-2">
@@ -125,7 +212,7 @@ export function PricingPlans() {
                   {!isCustom && (
                     <span className="text-[1rem] text-text-secondary font-normal">
                       {" "}
-                      / mo
+                      {t.perMonth}
                     </span>
                   )}
                 </div>
@@ -145,9 +232,9 @@ export function PricingPlans() {
                   {plan.period}
                 </div>
                 <div className="text-[0.75rem] text-text-tertiary mb-8 flex items-center gap-2">
-                  AI agents{" "}
+                  {t.aiAgents}{" "}
                   <span className="inline-block px-2 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider text-text-tertiary border border-warm-200 rounded-[2px]">
-                    Coming Soon
+                    {t.comingSoon}
                   </span>
                 </div>
                 <Link

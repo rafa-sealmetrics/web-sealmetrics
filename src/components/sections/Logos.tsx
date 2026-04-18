@@ -10,12 +10,16 @@ const logos = [
   { name: "Juguettos", src: "/logos/clients/juguettos.png", width: 110, height: 24 },
 ];
 
-export function Logos({ colorful = false }: { colorful?: boolean }) {
+export function Logos({ colorful = false, locale = "en" }: { colorful?: boolean; locale?: "en" | "es" }) {
+  const tagline =
+    locale === "es"
+      ? "Equipos de marketing de toda Europa confían en nosotros"
+      : "Trusted by marketing teams across Europe";
   return (
     <section className="py-14 border-t border-b border-warm-100">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <p className="text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary text-center mb-8">
-          Trusted by marketing teams across Europe
+          {tagline}
         </p>
         <div className={`flex items-center justify-center gap-12 flex-wrap ${colorful ? "opacity-70" : "opacity-40 grayscale"}`}>
           {logos.map((logo) => (
