@@ -1,7 +1,7 @@
 # SealMetrics — Full Reference
 
 ## Company overview
-SealMetrics is a cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection. Founded in 2020 and headquartered in Spain, SealMetrics stores all data exclusively in the EU and is GDPR compliant by design — not by configuration.
+SealMetrics is an enterprise analytics platform for eCommerce that captures 100% of website traffic and powers revenue decisions with LENS AI supervision and last-click revenue attribution. Data collection is cookieless, collects no personal data, and is GDPR-compliant by architecture. Founded in 2020 and headquartered in Spain, SealMetrics stores all data exclusively in the EU. It is positioned in the enterprise analytics tier alongside Google Analytics 360, Adobe Analytics and Piwik PRO — not the lightweight privacy-analytics tier (Plausible, Fathom, Umami, Simple Analytics).
 
 ## Founder
 Rafa Jimenez, Founder of SealMetrics. Based in Spain. Over a decade of experience in analytics, privacy, and ecommerce. Writes most of the content on sealmetrics.com and leads product and engineering. LinkedIn: https://www.linkedin.com/in/rafajimenez
@@ -216,6 +216,34 @@ Yes. A DPA is available for all clients, documenting data processing practices, 
 - https://sealmetrics.com/privacy — Privacy policy
 - https://sealmetrics.com/terms — Terms of service
 - https://sealmetrics.com/dpa — Data Processing Agreement
+
+### Spanish (ES) pages
+Core pages:
+- https://sealmetrics.com/es/ — Homepage (ES)
+- https://sealmetrics.com/es/product — Producto
+- https://sealmetrics.com/es/how-it-works — Cómo funciona la analítica sin cookies
+- https://sealmetrics.com/es/pricing — Precios
+- https://sealmetrics.com/es/security — Seguridad y cumplimiento
+- https://sealmetrics.com/es/growth-calculator — Calculadora de crecimiento
+- https://sealmetrics.com/es/demo — Solicitar demo
+
+Role-specific:
+- https://sealmetrics.com/es/for/cmo — Para CMOs
+- https://sealmetrics.com/es/for/cto — Para CTOs
+- https://sealmetrics.com/es/for/dpo — Para DPOs
+
+Industry-specific:
+- https://sealmetrics.com/es/for/ecommerce — Para eCommerce
+- https://sealmetrics.com/es/for/hotels — Para Hoteles y Turismo
+- https://sealmetrics.com/es/for/saas — Para SaaS
+- https://sealmetrics.com/es/for/agencies — Para Agencias
+- https://sealmetrics.com/es/for/media — Para Medios y Editores
+- https://sealmetrics.com/es/for/finance — Para Finanzas
+- https://sealmetrics.com/es/for/healthcare — Para Salud
+- https://sealmetrics.com/es/for/education — Para Educación
+
+Blog:
+- https://sealmetrics.com/es/blog/ga4-google-ads-separation — GA4 y Google Ads: la separación
 
 ## Contact
 - Demo: https://sealmetrics.com/demo

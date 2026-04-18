@@ -1,9 +1,9 @@
 # SealMetrics
 
-> Cookieless enterprise web analytics for European eCommerce. Captures 100% of traffic with last-click revenue attribution, GDPR-compliant by architecture, EU-only data residency.
+> Complete analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.
 
 ## What is SealMetrics?
-SealMetrics is a cookieless web analytics platform that captures 100% of website traffic without cookies, consent banners, or personal data collection. It is GDPR compliant by design and stores all data exclusively in the EU.
+SealMetrics is an enterprise analytics platform for eCommerce that captures 100% of website traffic. It powers revenue decisions with LENS AI supervision and last-click revenue attribution. Data collection is cookieless and GDPR-compliant by architecture, with EU-only residency — so the 100% data capture holds without requiring consent banners.
 
 ## Key facts
 - Captures 100% of visitors (vs ~13% for GA4 in the EU)
@@ -82,7 +82,7 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 - /glossary/data-sampling — What Is Data Sampling
 - /glossary/first-party-data-collection — First-Party Data Collection Explained
 - /glossary/consent-management-platform — Consent Management Platform (CMP)
-- /glossary/multi-touch-attribution — Multi-Touch Attribution Explained
+- /glossary/multi-touch-attribution — Multi-Touch Attribution Explained (why MTA fails without complete data — SealMetrics uses last-click only)
 - /glossary/server-side-tracking — Server-Side Tracking Explained
 - /glossary/intelligent-tracking-prevention — Intelligent Tracking Prevention (ITP)
 - /glossary/data-loss-in-analytics — Data Loss in Analytics
@@ -96,6 +96,36 @@ SealMetrics is a cookieless web analytics platform that captures 100% of website
 
 ## Enterprise positioning
 SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution only (not multi-touch). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics).
+
+## Spanish (ES) site
+SealMetrics is also available in Spanish. The Spanish surface mirrors the English site for core pages and persona/industry pages.
+
+Core pages (ES):
+- /es/ — Homepage (ES)
+- /es/product — Plataforma completa
+- /es/how-it-works — Cómo funciona la analítica sin cookies
+- /es/pricing — Precios
+- /es/security — Seguridad y cumplimiento
+- /es/growth-calculator — Calculadora de crecimiento
+- /es/demo — Solicitar demo
+
+Role-specific (ES):
+- /es/for/cmo — Para CMOs
+- /es/for/cto — Para CTOs
+- /es/for/dpo — Para DPOs
+
+Industry-specific (ES):
+- /es/for/ecommerce — Para eCommerce
+- /es/for/hotels — Para Hoteles y Turismo
+- /es/for/saas — Para SaaS
+- /es/for/agencies — Para Agencias
+- /es/for/media — Para Medios y Editores
+- /es/for/finance — Para Finanzas
+- /es/for/healthcare — Para Salud
+- /es/for/education — Para Educación
+
+Blog (ES):
+- /es/blog/ga4-google-ads-separation — GA4 y Google Ads: la separación
 
 ## Contact
 - Demo: https://sealmetrics.com/demo
