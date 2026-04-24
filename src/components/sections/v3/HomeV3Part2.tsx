@@ -1,0 +1,607 @@
+import Link from "next/link";
+
+/* ============================================
+   INDUSTRIES · "Built for" with scenes
+   ============================================ */
+export function IndustriesBuiltFor() {
+  return (
+    <section className="py-28 bg-warm-50 border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">Built for</span>
+            <h2 className="h-section mt-5">
+              The teams for whom <em>&ldquo;half the data&rdquo;</em> isn&apos;t acceptable.
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            SealMetrics fits any team that depends on marketing data to make revenue decisions — but it shows up earliest where consent rejection hurts most.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          {/* Hotels */}
+          <IndustryCard
+            tag="Hotels & Travel"
+            name={<>Hotels &amp; <em className="italic-accent">resort groups</em></>}
+            line="Where cookie rejection hides real CRM bookings from marketing reports and the OTA comparison breaks."
+            proof="European hotel groups · up to 50% traffic recovered"
+            scene={
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#F5F5F0" />
+                <circle cx="330" cy="80" r="34" fill="#E8B84B" />
+                <path d="M0,240 Q100,230 200,240 T400,238 L400,300 L0,300 Z" fill="#2D8B6D" opacity="0.18" />
+                <rect x="70" y="110" width="170" height="130" fill="#0E0E0C" />
+                <g fill="#E8B84B">
+                  {[125, 150, 175].map((y) =>
+                    [85, 115, 145, 175, 205].map((x) => (
+                      <rect
+                        key={`${x}-${y}`}
+                        x={x}
+                        y={y}
+                        width="14"
+                        height="14"
+                        opacity={((x + y) % 60 === 0) ? 0.5 : 1}
+                      />
+                    ))
+                  )}
+                </g>
+                <rect x="145" y="200" width="20" height="40" fill="#FAFAF7" />
+                <g stroke="#0E0E0C" strokeWidth="3" fill="#2D8B6D" strokeLinecap="round">
+                  <path d="M290,240 L290,180" fill="none" />
+                  <path d="M290,180 Q278,172 268,178 Q276,168 286,170 Q280,162 288,158 Q296,162 290,170 Q302,168 310,178 Q300,172 290,180" />
+                </g>
+              </svg>
+            }
+          />
+          {/* eCommerce */}
+          <IndustryCard
+            tag="eCommerce"
+            name={<>eCommerce &amp; <em className="italic-accent">DTC brands</em></>}
+            line="Where paid media budget and CRM disagree every quarter, and the pixel-blocker debate never ends."
+            proof="DTC & fashion brands · +30–40% recovery"
+            scene={
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#C9E3D4" />
+                <rect x="80" y="80" width="240" height="160" rx="10" fill="#FAFAF7" stroke="#0E0E0C" strokeWidth="2" />
+                <rect x="80" y="80" width="240" height="30" rx="10" fill="#0E0E0C" />
+                <rect x="80" y="104" width="240" height="6" fill="#0E0E0C" />
+                <circle cx="96" cy="95" r="3" fill="#E8B84B" />
+                <circle cx="108" cy="95" r="3" fill="#2D8B6D" />
+                <circle cx="120" cy="95" r="3" fill="#B5423B" />
+                <rect x="100" y="128" width="70" height="90" fill="#E4E3DE" />
+                <rect x="180" y="128" width="60" height="14" fill="#0E0E0C" />
+                <rect x="180" y="150" width="90" height="8" fill="#6B6B5E" />
+                <rect x="180" y="165" width="70" height="8" fill="#6B6B5E" />
+                <rect x="180" y="190" width="90" height="28" rx="4" fill="#2D8B6D" />
+                <text x="225" y="209" fill="#fff" fontFamily="Onest,sans-serif" fontSize="10" fontWeight="700" textAnchor="middle">
+                  ADD TO CART
+                </text>
+                <path d="M100,265 L140,250 L180,258 L220,232 L260,240 L300,215" fill="none" stroke="#0E0E0C" strokeWidth="3" strokeLinecap="round" />
+                <circle cx="300" cy="215" r="5" fill="#0E0E0C" />
+              </svg>
+            }
+          />
+          {/* Infrastructure (Dublin) */}
+          <IndustryCard
+            tag="Infrastructure"
+            name={<>EU-hosted <em className="italic-accent">by architecture</em></>}
+            line="Hosted in Dublin, Ireland. Schrems II clean. GDPR-compliant without a compliance layer bolted on."
+            proof="Dublin · Ireland · Schrems II clean · GDPR"
+            scene={
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#0E0E0C" />
+                <g fill="#1A1A16" stroke="#2B2A28" strokeWidth="1">
+                  <rect x="40" y="60" width="80" height="200" />
+                  <rect x="160" y="60" width="80" height="200" />
+                  <rect x="280" y="60" width="80" height="200" />
+                </g>
+                <g fill="#2B2A28">
+                  {[80, 115, 150, 185, 220].map((y) =>
+                    [50, 170, 290].map((x) => (
+                      <rect key={`${x}-${y}`} x={x} y={y} width="60" height="28" />
+                    ))
+                  )}
+                </g>
+                <g fill="#00FF7F">
+                  {[94, 129, 164, 199, 234].map((y) =>
+                    [100, 220, 340].map((x) => (
+                      <circle key={`l-${x}-${y}`} cx={x} cy={y} r="2" />
+                    ))
+                  )}
+                </g>
+                <g fill="#E8B84B">
+                  <circle cx="60" cy="94" r="2" />
+                  <circle cx="180" cy="129" r="2" />
+                  <circle cx="300" cy="164" r="2" />
+                </g>
+                <text x="200" y="290" fill="#6B6B5E" fontFamily="JetBrains Mono,monospace" fontSize="9" letterSpacing="2" textAnchor="middle">
+                  EU · DUBLIN · IRELAND
+                </text>
+              </svg>
+            }
+          />
+          {/* Agencies */}
+          <IndustryCard
+            tag="Agencies & groups"
+            name={<>Agencies &amp; <em className="italic-accent">multi-brand groups</em></>}
+            line="Where brand, paid media agency and creative agency need the same number to sign a conversion target against."
+            proof="Partners: Product Hackers · 3dids · Ayesa"
+            scene={
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#FAFAF7" />
+                <g stroke="#0E0E0C" strokeWidth="2" fill="#F5F5F0">
+                  <rect x="50" y="90" width="90" height="120" rx="6" />
+                  <rect x="155" y="60" width="90" height="180" rx="6" />
+                  <rect x="260" y="110" width="90" height="100" rx="6" />
+                </g>
+                <g fill="#0E0E0C">
+                  <rect x="62" y="100" width="66" height="8" />
+                  <rect x="62" y="115" width="40" height="6" />
+                  <rect x="167" y="70" width="66" height="8" />
+                  <rect x="167" y="85" width="50" height="6" />
+                  <rect x="272" y="120" width="66" height="8" />
+                  <rect x="272" y="135" width="44" height="6" />
+                </g>
+                <g fill="#2D8B6D">
+                  <rect x="62" y="135" width="66" height="60" opacity="0.18" />
+                  <rect x="167" y="105" width="66" height="120" opacity="0.18" />
+                  <rect x="272" y="155" width="66" height="40" opacity="0.18" />
+                </g>
+                <g fill="none" stroke="#2D8B6D" strokeWidth="2.5">
+                  <path d="M70,180 L90,165 L110,170 L128,155" />
+                  <path d="M175,190 L195,170 L215,175 L233,150" />
+                  <path d="M280,185 L300,175 L320,175 L338,165" />
+                </g>
+                <circle cx="128" cy="155" r="4" fill="#2D8B6D" />
+                <circle cx="233" cy="150" r="4" fill="#2D8B6D" />
+                <circle cx="338" cy="165" r="4" fill="#2D8B6D" />
+                <text x="200" y="275" fill="#6B6B5E" fontFamily="JetBrains Mono,monospace" fontSize="10" letterSpacing="1.5" textAnchor="middle">
+                  ONE SOURCE · MANY BRANDS
+                </text>
+              </svg>
+            }
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function IndustryCard({
+  tag,
+  name,
+  line,
+  proof,
+  scene,
+}: {
+  tag: string;
+  name: React.ReactNode;
+  line: string;
+  proof: string;
+  scene: React.ReactNode;
+}) {
+  return (
+    <article className="bg-white border border-warm-100 rounded-xl overflow-hidden flex flex-col transition-all hover:border-rule-2 hover:-translate-y-0.5">
+      <div className="aspect-[4/3] w-full border-b border-warm-100 overflow-hidden">
+        {scene}
+      </div>
+      <div className="p-6 flex flex-col gap-1.5 flex-1">
+        <span className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-ink-soft">
+          {tag}
+        </span>
+        <h3 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] text-ink mt-0.5">
+          {name}
+        </h3>
+        <p className="text-[14px] leading-[1.55] text-ink-soft mt-1.5 flex-1">{line}</p>
+        <span className="font-mono text-[11px] font-semibold tracking-[0.04em] text-brand mt-3 pt-3 border-t border-warm-100">
+          {proof}
+        </span>
+      </div>
+    </article>
+  );
+}
+
+/* ============================================
+   COMPARATOR · GA4 vs SealMetrics
+   ============================================ */
+export function ComparatorGA4() {
+  const rows: { cap: string; ga: string; seal: string; icoGa: "no" | "partial"; icoSeal: "yes" }[] = [
+    { cap: "Measurement method", ga: "Cookie-based · consent required", seal: "Cookieless · 100% captured", icoGa: "partial", icoSeal: "yes" },
+    { cap: "Consent banner needed", ga: "Required in EU · ~40–60% reject", seal: "Not required · no bounce tax", icoGa: "no", icoSeal: "yes" },
+    { cap: "Data at scale", ga: "Sampled and modelled above thresholds", seal: "Zero sampling · every event observed", icoGa: "partial", icoSeal: "yes" },
+    { cap: "Attribution stance", ga: "Biased toward Google ecosystem", seal: "Neutral · no ad inventory to sell", icoGa: "partial", icoSeal: "yes" },
+    { cap: "AI / MCP access", ga: "No native LLM / MCP integration", seal: "Ask via Claude or ChatGPT · MCP native", icoGa: "no", icoSeal: "yes" },
+    { cap: "Hosting & compliance", ga: "US-based · Schrems II concerns", seal: "EU-hosted (Dublin, Ireland) · GDPR · ePrivacy", icoGa: "no", icoSeal: "yes" },
+  ];
+
+  return (
+    <section id="compare-table" className="py-28 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">How it compares</span>
+            <h2 className="h-section mt-5">
+              GA4 vs SealMetrics. <em>Run both alongside.</em>
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            We don&apos;t ask you to replace GA4. Run SealMetrics next to it for 30 days, compare the numbers with your own CRM, and decide what each tool is best for.
+          </p>
+        </div>
+
+        <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
+          <div className="grid md:grid-cols-[1.4fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
+            <div className="p-5">Capability</div>
+            <div className="p-5">Google Analytics 4</div>
+            <div className="p-5 bg-white text-ink" style={{ borderLeft: "2px solid #2D8B6D" }}>
+              SealMetrics
+            </div>
+          </div>
+          {rows.map((r, i) => (
+            <div
+              key={r.cap}
+              className={`grid md:grid-cols-[1.4fr_1fr_1fr] ${
+                i < rows.length - 1 ? "border-b border-warm-100" : ""
+              }`}
+            >
+              <div className="p-5 md:p-6 text-ink font-semibold text-[14.5px]">{r.cap}</div>
+              <div className="p-5 md:p-6 text-[14px] text-ink-soft leading-[1.5] flex items-start gap-2.5">
+                <IcoBadge kind={r.icoGa} />
+                {r.ga}
+              </div>
+              <div
+                className="p-5 md:p-6 text-[14px] text-ink leading-[1.5] flex items-start gap-2.5 font-medium"
+                style={{
+                  background: "rgba(45,139,109,0.04)",
+                  borderLeft: "2px solid #2D8B6D",
+                }}
+              >
+                <IcoBadge kind={r.icoSeal} />
+                {r.seal}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-5 p-6 bg-warm-50 border border-warm-100 rounded-xl text-center text-[15px] text-ink-2 leading-[1.55]">
+          <b className="text-ink font-semibold">Not &ldquo;GA4 is broken&rdquo;.</b> Run SealMetrics alongside GA4 for 30 days. Compare with your own CRM.{" "}
+          <em className="italic-accent">Then decide.</em>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function IcoBadge({ kind }: { kind: "yes" | "no" | "partial" }) {
+  const styles = {
+    yes: { bg: "#2D8B6D", fg: "#fff", char: "✓" },
+    no: { bg: "#F5E1DE", fg: "#B5423B", char: "✕" },
+    partial: { bg: "#F5E8C7", fg: "#2B2A28", char: "~" },
+  }[kind];
+  return (
+    <span
+      className="inline-flex shrink-0 w-[18px] h-[18px] rounded-full items-center justify-center text-[11px] font-bold mt-0.5"
+      style={{ background: styles.bg, color: styles.fg }}
+    >
+      {styles.char}
+    </span>
+  );
+}
+
+/* ============================================
+   HOW IT WORKS · 3 steps
+   ============================================ */
+export function HowItWorksV3() {
+  return (
+    <section id="how" className="py-28 bg-warm-50 border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">Implementation</span>
+            <h2 className="h-section mt-5">
+              From install to <em>defensible decisions</em> in one week.
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Runs alongside GA4. No migration, no disruption. One script — same as any analytics tool — but without the cookie banner and without the sampling. First data from the first hour.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-4">
+          {[
+            { n: "Step 01", time: "15 minutes", title: "Install the pixel", p: "One script tag. Works next to GA4. No code changes, no cookie banners, no tag manager gymnastics." },
+            { n: "Step 02", time: "Day 1", title: "See everything", p: "Complete traffic from the first hour. Every visitor, every source, every conversion — 100% observed." },
+            { n: "Step 03", time: "Week 1", title: "Scale what works", p: "Reallocate budget to channels actually driving revenue. Cut the ones GA4 told you were working — but weren't." },
+          ].map((s) => (
+            <div key={s.n} className="bg-white border border-warm-100 rounded-xl p-8 flex flex-col min-h-[260px]">
+              <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                {s.n}
+              </span>
+              <span
+                className="inline-flex self-start px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded mt-2"
+              >
+                {s.time}
+              </span>
+              <h3 className="text-[24px] font-semibold tracking-[-0.025em] mt-auto mb-2.5 leading-[1.15]">
+                {s.title}
+              </h3>
+              <p className="text-[14.5px] leading-[1.55] text-ink-soft">{s.p}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   CREDENTIALS · data center + stats + badges
+   ============================================ */
+export function CredentialsV3() {
+  return (
+    <section className="py-28 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">Credentials</span>
+            <h2 className="h-section mt-5">
+              Built for the next <em>three years</em> of European privacy reality.
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            EU-founded, EU-hosted, GDPR-compliant by architecture — not by a compliance layer bolted on afterwards.
+          </p>
+        </div>
+
+        <div className="aspect-[16/5] w-full rounded-xl overflow-hidden border border-warm-100 mb-8 bg-ink">
+          <svg
+            viewBox="0 0 1200 375"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            className="w-full h-full block"
+          >
+            <rect width="1200" height="375" fill="#0E0E0C" />
+            <defs>
+              <linearGradient id="aisle-v3" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="#1A1A16" />
+                <stop offset="100%" stopColor="#0E0E0C" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="250" width="1200" height="125" fill="url(#aisle-v3)" />
+            <g fill="#1A1A16" stroke="#2B2A28" strokeWidth="1">
+              {[40, 200, 360, 700, 860, 1020].map((x) => (
+                <rect key={x} x={x} y="60" width="140" height="220" />
+              ))}
+            </g>
+            <g fill="#2B2A28">
+              {[40, 200, 360, 700, 860, 1020].map((xBase) =>
+                [75, 100, 125, 150, 175, 200, 225, 250].map((y) => (
+                  <rect key={`${xBase}-${y}`} x={xBase + 10} y={y} width="120" height="20" />
+                ))
+              )}
+            </g>
+            <g fill="#00FF7F">
+              {[165, 325, 485, 825, 985, 1145].map((x) =>
+                [85, 110, 135, 160, 185, 210].map((y) => (
+                  <circle key={`l-${x}-${y}`} cx={x} cy={y} r="2" />
+                ))
+              )}
+            </g>
+            <g fill="#E8B84B">
+              <circle cx="60" cy="85" r="2" />
+              <circle cx="220" cy="135" r="2" />
+              <circle cx="380" cy="210" r="2" />
+              <circle cx="720" cy="110" r="2" />
+              <circle cx="880" cy="185" r="2" />
+              <circle cx="1040" cy="235" r="2" />
+            </g>
+            <text
+              x="600"
+              y="345"
+              fill="#6B6B5E"
+              fontFamily="JetBrains Mono,monospace"
+              fontSize="11"
+              letterSpacing="3"
+              textAnchor="middle"
+            >
+              EU-HOSTED · DUBLIN, IRELAND · GDPR · SCHREMS II CLEAN
+            </text>
+          </svg>
+        </div>
+
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-3 mb-8">
+          {[
+            { n: <><em className="italic-accent">5+</em> yrs</>, l: "Running in production · 2,000+ accounts across hotels, DTC and media" },
+            { n: <>99.<em className="italic-accent">99</em>%</>, l: "Uptime SLA · peak traffic tested at Black Friday scale" },
+            { n: <>EU-<em className="italic-accent">hosted</em></>, l: "Hosted in Dublin, Ireland · Schrems II clean · GDPR by architecture" },
+            { n: <><em className="italic-accent">846</em> bytes</>, l: "Pixel size · roughly 100× lighter than GA4's tag" },
+          ].map((c, i) => (
+            <div key={i} className="bg-white border border-warm-100 rounded-xl p-6">
+              <span
+                className="block font-semibold tracking-[-0.025em] leading-none text-ink tabular-nums"
+                style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
+              >
+                {c.n}
+              </span>
+              <span className="block mt-3.5 text-[13.5px] leading-[1.5] text-ink-soft">{c.l}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2.5 justify-center pt-8 border-t border-warm-100">
+          {["GDPR by architecture", "ePrivacy", "Schrems II", "EU-hosted · Dublin", "DPA included", "TPSR package"].map(
+            (b) => (
+              <span
+                key={b}
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-warm-100 rounded-lg font-mono text-[11.5px] font-bold uppercase tracking-[0.08em] text-ink"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+                {b}
+              </span>
+            )
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   PRICING V3
+   ============================================ */
+export function PricingV3() {
+  return (
+    <section id="pricing" className="py-28 bg-warm-50 border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="max-w-[44rem] mx-auto text-center mb-14">
+          <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
+            Pricing
+          </span>
+          <h2 className="h-section mt-5 mx-auto text-center">
+            Analytics at the price of being <em>honest about your data.</em>
+          </h2>
+          <p className="text-[18px] leading-[1.65] text-ink-soft mt-5">
+            No freemium. No usage-based surprises. Annual billing with two months free.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4 items-stretch">
+          {[
+            { name: "Growth", price: "€499", per: "/mo", billing: "Annual billing", feat: ["5M events / month", "3 domains", "Full MCP + BigQuery + API", "GA4 comparison dashboard", "Email support"], cta: "Start with Growth", featured: false },
+            { name: "Scale", price: "€999", per: "/mo", billing: "Annual billing", feat: ["15M events / month", "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"], cta: "Start with Scale", featured: true },
+            { name: "Enterprise", price: "Custom", per: "", billing: "Annual or custom terms", feat: ["Unlimited events", "Unlimited domains", "Everything in Scale", "SSO, audit logs, SLA", "Dedicated customer engineer"], cta: "Talk to us", featured: false },
+          ].map((p) => (
+            <article
+              key={p.name}
+              className={`rounded-xl p-8 flex flex-col bg-white ${
+                p.featured ? "border-2 border-brand" : "border border-warm-100"
+              }`}
+            >
+              <header className="pb-5 border-b border-warm-100 mb-5">
+                {p.featured && (
+                  <span className="inline-block mb-2.5 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
+                    Most eCommerce teams land here
+                  </span>
+                )}
+                <h3 className="text-[24px] font-semibold tracking-[-0.01em] mb-2.5">{p.name}</h3>
+                <div className="flex items-baseline gap-1">
+                  <span
+                    className="font-semibold tracking-[-0.025em] leading-none tabular-nums text-ink"
+                    style={{ fontSize: "clamp(36px, 4vw, 44px)" }}
+                  >
+                    {p.price}
+                  </span>
+                  {p.per && <span className="text-[15px] text-ink-soft">{p.per}</span>}
+                </div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft mt-1.5">
+                  {p.billing}
+                </div>
+              </header>
+              <ul className="flex flex-col gap-2 mb-7 flex-1">
+                {p.feat.map((f) => (
+                  <li key={f} className="relative pl-4 text-[14.5px] leading-[1.55] text-ink">
+                    <span className="absolute left-0 text-ink-soft">—</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="#audit"
+                className={`inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
+                  p.featured
+                    ? "bg-ink text-white hover:bg-brand"
+                    : "border border-warm-200 text-ink hover:bg-warm-50"
+                }`}
+              >
+                {p.cta}
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-10 p-6 bg-white border border-warm-100 rounded-xl text-center max-w-[48rem] mx-auto text-[14.5px] leading-[1.65] text-ink-soft">
+          If you&apos;re not sure which plan fits, we&apos;ll tell you on the walkthrough. For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. SealMetrics was built so you don&apos;t need an enterprise contract to get enterprise data.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   FINAL CTA · audit + founder
+   ============================================ */
+export function FinalCtaV3() {
+  return (
+    <section id="audit" className="py-20 bg-white">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
+        <div
+          className="bg-ink text-white rounded-[20px] px-12 py-16 md:py-20 text-center relative overflow-hidden"
+        >
+          <div
+            aria-hidden
+            className="absolute pointer-events-none"
+            style={{
+              right: -100,
+              top: -100,
+              width: 300,
+              height: 300,
+              borderRadius: "50%",
+              background: "radial-gradient(circle,rgba(45,139,109,0.3),transparent 70%)",
+            }}
+          />
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55 mb-5 relative">
+            How many versions of the same campaign circulate in your organization?
+          </p>
+          <h2
+            className="text-white font-semibold leading-[1.1] tracking-[-0.03em] mx-auto max-w-[22ch] relative"
+            style={{ fontSize: "clamp(32px, 4vw, 52px)" }}
+          >
+            Get a free audit of{" "}
+            <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
+              your current measurement.
+            </em>
+          </h2>
+          <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
+            We show you how much traffic and revenue attribution is falling outside your current analytics, and in how many channels the data you have is reconcilable with reality. No commitment. Nothing to install.
+          </p>
+
+          <div className="inline-flex items-center gap-4 p-4 px-6 bg-white/5 border border-white/12 rounded-xl mb-8 max-w-[520px] text-left mx-auto relative">
+            <div
+              className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-ink text-[16px] shrink-0"
+              style={{ background: "linear-gradient(135deg,#2D8B6D,#E8B84B)", letterSpacing: "-0.02em" }}
+            >
+              RJ
+            </div>
+            <div>
+              <b className="block text-[14px] font-semibold text-white">
+                Book a 30-min walkthrough with the founder
+              </b>
+              <span className="font-mono text-[12px] text-white/60 tracking-[0.04em]">
+                Direct Cal.com link · no forms, no sales handoff
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
+            <a
+              href="https://cal.com/sealmetrics"
+              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+            >
+              Book 30-min walkthrough →
+            </a>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
+            >
+              See pricing
+            </Link>
+          </div>
+          <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
+            Built by a founder · supported by a founder · EU-hosted by design
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

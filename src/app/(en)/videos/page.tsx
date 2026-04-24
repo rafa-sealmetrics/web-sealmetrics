@@ -2,8 +2,33 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, videoObjectSchema, itemListSchema } from "@/lib/schema";
 import { VideoGrid } from "./VideoGrid";
+
+const videosForSchema = [
+  {
+    name: "SealMetrics Platform Overview",
+    description:
+      "A complete tour of the SealMetrics dashboard — from traffic overview to AI insights.",
+    thumbnailUrl: "/og-image.png",
+    uploadDate: "2025-09-01",
+    duration: "PT3M24S",
+    embedUrl: "https://iframe.mediadelivery.net/embed/609541/e616aab7-d8cf-47d1-b250-517df6a8c593",
+    inLanguage: "es",
+    url: "/videos",
+  },
+  {
+    name: "Getting Started with SealMetrics",
+    description:
+      "How to create your account, add your site, and install the 846-byte tracking script in 5 minutes.",
+    thumbnailUrl: "/og-image.png",
+    uploadDate: "2025-09-15",
+    duration: "PT2M15S",
+    embedUrl: "https://iframe.mediadelivery.net/embed/609541/c39d3844-8ef3-4362-8579-d71a6b832b0f",
+    inLanguage: "es",
+    url: "/videos",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Videos — SealMetrics",
@@ -14,6 +39,7 @@ export const metadata: Metadata = {
     description:
       "Product demos and tutorials to help you get the most out of SealMetrics.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/videos",
@@ -27,6 +53,21 @@ export default function VideosPage() {
       <JsonLd
         data={breadcrumbSchema([{ name: "Videos", url: "/videos" }])}
       />
+      <JsonLd
+        data={itemListSchema({
+          name: "SealMetrics video library",
+          description: "Product demos and tutorials for the SealMetrics analytics platform.",
+          url: "/videos",
+          items: videosForSchema.map((v, i) => ({
+            name: v.name,
+            url: `https://sealmetrics.com/videos#${v.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+            position: i + 1,
+          })),
+        })}
+      />
+      {videosForSchema.map((v) => (
+        <JsonLd key={v.name} data={videoObjectSchema(v)} />
+      ))}
 
       {/* Hero */}
       <section className="pt-12 pb-16 bg-white">

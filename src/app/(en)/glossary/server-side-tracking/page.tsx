@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function ServerSideTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Server-Side Tracking" }]} />
-      <JsonLd data={definedTermSchema({ name: "Server-Side Tracking", description: "Data collection method where events are processed on the server rather than the browser.", url: "/glossary/server-side-tracking" })} />
+      <JsonLd data={definedTermSchema({ name: "Server-Side Tracking", description: "Data collection method where events are processed on the server rather than the browser.", url: "/glossary/server-side-tracking", related: [{ name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }, { name: "Event Tracking", url: "/glossary/event-tracking" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Server-Side Tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -40,14 +41,7 @@ export default function ServerSideTrackingPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Combined with first-party collection</h2>
           <p>Server-side tracking is most effective when combined with <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party data collection</Link>. When the entire data path is first-party (your domain) and server-side (your server), the analytics infrastructure is invisible to blocking tools and immune to browser restrictions.</p>
         </div>
-        <div className="mt-16 pt-10 border-t border-warm-100">
-          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
-          <div className="space-y-3">
-            <Link href="/glossary/first-party-data-collection" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">First-Party Data Collection</Link>
-            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
-            <Link href="/glossary/event-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Event Tracking</Link>
-          </div>
-        </div>
+        <RelatedGlossaryTerms slug="server-side-tracking" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>

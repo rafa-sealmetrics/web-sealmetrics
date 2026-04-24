@@ -6,8 +6,8 @@ export interface BlogAuthor {
 
 export const AUTHORS = {
   rafa: {
-    name: "Rafa Jimenez",
-    url: "/about",
+    name: "Rafa Jiménez",
+    url: "/authors/rafa-jimenez",
     jobTitle: "Founder, SealMetrics",
   } satisfies BlogAuthor,
   sealmetrics: {
@@ -29,6 +29,66 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "cookieless-analytics-for-ecommerce",
+    title: "Cookieless Analytics for eCommerce: The 2026 Guide",
+    description:
+      "How European eCommerce teams measure revenue, attribution and conversion without cookies or consent banners. Shopify, WooCommerce and Magento reconciliation patterns.",
+    date: "2026-04-24",
+    category: "eCommerce",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: [
+      "why-ga4-shows-13pct-eu-traffic",
+      "cookieless-analytics-explained",
+      "consentless-analytics-for-dtc",
+    ],
+  },
+  {
+    slug: "cookieless-analytics-for-hotels",
+    title: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
+    description:
+      "How European hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns for Mews, Cloudbeds, Opera.",
+    date: "2026-04-24",
+    category: "Hotels",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: [
+      "cookieless-analytics-for-ecommerce",
+      "cookieless-analytics-explained",
+      "why-ga4-shows-13pct-eu-traffic",
+    ],
+  },
+  {
+    slug: "cookieless-analytics-for-saas",
+    title: "Cookieless Analytics for SaaS: PLG Without Consent Banners",
+    description:
+      "How European SaaS teams measure trial-to-paid, PQLs and self-serve funnels without cookies. Works alongside Mixpanel/Amplitude, exports to BigQuery.",
+    date: "2026-04-24",
+    category: "SaaS",
+    readTime: "8 min",
+    author: AUTHORS.rafa,
+    related: [
+      "cookieless-analytics-for-ecommerce",
+      "cookieless-analytics-explained",
+      "multi-touch-attribution-complete-data",
+    ],
+  },
+  {
+    slug: "consentless-analytics-for-dtc",
+    title: "Consentless Analytics for DTC: What It Is and Why It Matters in 2026",
+    description:
+      "Consentless analytics captures 100% of DTC traffic without a cookie banner. How it works under GDPR/ePrivacy, and what European DTC teams get from it.",
+    date: "2026-04-24",
+    category: "eCommerce",
+    readTime: "7 min",
+    author: AUTHORS.rafa,
+    related: [
+      "cookieless-analytics-for-ecommerce",
+      "gdpr-analytics-without-consent",
+      "cookieless-analytics-explained",
+    ],
+  },
   {
     slug: "best-enterprise-analytics-platforms",
     title: "8 Best Enterprise Analytics Platforms in 2026",

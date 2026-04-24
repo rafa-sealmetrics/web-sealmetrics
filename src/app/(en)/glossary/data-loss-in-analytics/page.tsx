@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function DataLossPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Data Loss in Analytics" }]} />
-      <JsonLd data={definedTermSchema({ name: "Data Loss in Analytics", description: "The gap between actual website traffic and what analytics tools report.", url: "/glossary/data-loss-in-analytics" })} />
+      <JsonLd data={definedTermSchema({ name: "Data Loss in Analytics", description: "The gap between actual website traffic and what analytics tools report.", url: "/glossary/data-loss-in-analytics", related: [{ name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }, { name: "Consent Management Platform (CMP)", url: "/glossary/consent-management-platform" }, { name: "Intelligent Tracking Prevention (ITP)", url: "/glossary/intelligent-tracking-prevention" }, { name: "Data Sampling", url: "/glossary/data-sampling" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Data Loss in Analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -49,14 +50,7 @@ export default function DataLossPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The business impact</h2>
           <p>Data loss is not just a measurement problem. It directly affects <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue attribution</Link>, campaign optimization, and board reporting. When your analytics show 10,000 visitors but 70,000 actually visited, every decision built on that data is compromised.</p>
         </div>
-        <div className="mt-16 pt-10 border-t border-warm-100">
-          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
-          <div className="space-y-3">
-            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
-            <Link href="/glossary/data-sampling" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Sampling</Link>
-            <Link href="/glossary/consent-management-platform" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Consent Management Platform (CMP)</Link>
-          </div>
-        </div>
+        <RelatedGlossaryTerms slug="data-loss-in-analytics" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate Your Data Loss</Link> &middot; <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">What Is Data Loss in Analytics?</Link>

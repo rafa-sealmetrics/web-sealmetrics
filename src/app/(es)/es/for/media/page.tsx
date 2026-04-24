@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, servicePageSchema } from "@/lib/schema";
+import { TldrBlock } from "@/components/ui/TldrBlock";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  verticalSoftwareApplicationSchema,
+} from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
+import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
+import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
+import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "SealMetrics para Medios — Medición de audiencia completa",
+  title: "Analítica sin cookies para medios y editores — SealMetrics",
   description:
-    "Cuando el 60-70% de tus lectores europeos es invisible, tus CPMs están infravalorados. SealMetrics captura cada visita — sin cookies, 100% de los datos.",
+    "Analítica sin cookies para editores: captura el 50–70% de lectores que los ad-blockers esconden a GA4. Audiencia, engagement y atribución de suscripción first-party, alojado en UE.",
   openGraph: {
-    title: "SealMetrics para Medios",
+    title: "Analítica sin cookies para medios y editores — SealMetrics",
     description:
-      "Medición de audiencia completa para editores. 100% de lectores capturados, pageviews precisos, datos reales de engagement para venta publicitaria.",
+      "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
   },
   alternates: {
@@ -22,170 +31,93 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ForMediaPage() {
+const seoFaqs = [
+  {
+    question: "¿Qué es analítica sin cookies para medios y editores?",
+    answer:
+      "La analítica sin cookies para editores captura lectorazgo, engagement y datos del funnel de suscripción sin cookies, localStorage ni fingerprinting. Sobrevive a los ad-blockers (que afectan al 50–70% de las audiencias de medios) y opera first-party desde el dominio del editor.",
+  },
+  {
+    question: "¿Cómo ayuda a los editores con alta presión de ad-blockers?",
+    answer:
+      "Las audiencias de medios tienen la mayor penetración de ad-blockers en la web abierta (50–70% en sitios de tecnología y noticias). La analítica sin cookies corre first-party desde el dominio del editor, así que los ad-blockers — que apuntan a endpoints de analítica de terceros como google-analytics.com — no la ven y no pueden bloquearla.",
+  },
+  {
+    question: "¿Puede la analítica sin cookies medir conversión de suscripción?",
+    answer:
+      "Sí, a nivel de totales por canal. Se capturan conteos agregados en cada paso del embudo (landings de artículo, impresiones de paywall, eventos de suscripción), y cada evento de suscripción se atribuye last-click a la fuente registrada en esa pageview. Los ingresos vuelven vía REST API para atribuir el valor de suscripción al canal de adquisición sobre el 100% del tráfico UE. Nota: es atribución agregada por canal, no tracking de journey por suscriptor.",
+  },
+  {
+    question: "¿La analítica sin cookies reemplaza Chartbeat o Parse.ly?",
+    answer:
+      "Categorías distintas. Chartbeat y Parse.ly son herramientas editoriales en tiempo real para redacciones. SealMetrics cubre audiencia, atribución y funnels de suscripción. Muchos editores corren los dos: Chartbeat para la redacción, SealMetrics para decisiones de marketing y suscripción.",
+  },
+];
+
+export default function Page() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para Medios y Editores" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Para Medios y Editores", url: "/es/for/media" }], "es")} />
-      <JsonLd data={servicePageSchema({ name: "SealMetrics para Medios", description: "Cuando el 60-70% de los lectores europeos es invisible para la analítica, tus CPMs están infravalorados. SealMetrics captura cada visita — sin cookies, 100% de los datos.", url: "/es/for/media", audience: "Editores y medios" })} />
-      {/* Hero */}
-      <section className="pt-12 pb-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <div className="max-w-[700px]">
-            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
-              Para Medios y Editores
-            </span>
-            <h1 className="headline-hero mb-8">
-              Tu audiencia es mayor de lo que dice tu analítica. Tus ingresos publicitarios reflejan la cifra menor.
-            </h1>
-            <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
-              Las tasas de rechazo de consentimiento en la UE hacen que el 60-70%
-              de tus lectores nunca aparezca en la analítica. Tu audiencia real
-              es 2-3 veces lo que reportas a los anunciantes. Cada pageview
-              invisible es{" "}
-              <Link href="/glossary/data-loss-in-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
-                ingresos perdidos
-              </Link>
-              . SealMetrics ofrece{" "}
-              <Link href="/es/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">medición de audiencia completa</Link>{" "}
-              para que tus tarifas publicitarias reflejen tu alcance real.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Breadcrumbs items={[{ label: "Para medios" }]} locale="es" />
+      <JsonLd
+        data={breadcrumbSchema([{ name: "Para medios", url: "/es/for/media" }], "es")}
+      />
+      <JsonLd
+        data={verticalSoftwareApplicationSchema({
+          vertical: "Medios y editores",
+          audienceType: "Empresas de medios europeas, editores y redacciones digitales",
+          description:
+            "Analítica sin cookies para medios y editores: medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sobre infraestructura first-party, resistente a ad-blockers.",
+          url: "/es/for/media",
+        })}
+      />
+      <JsonLd data={faqSchema(seoFaqs)} />
 
-      {/* Pain points */}
-      <section className="pb-28 bg-white">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-12">
-            Problemas que reconoces
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {[
-              {
-                title: "Las cifras de audiencia infravaloran tu inventario",
-                desc: "Los anunciantes pagan según el tamaño reportado de audiencia. Cuando tu analítica solo captura el 30-40% de los lectores, tus CPMs se calculan sobre una fracción de tu alcance real. Estás vendiendo tu inventario con descuento sin saberlo.",
-              },
-              {
-                title: "Los datos de rendimiento de contenido están distorsionados",
-                desc: "¿Qué artículos generan engagement? ¿Qué temas retienen lectores? Cuando la mayoría de las visitas son invisibles, tus decisiones editoriales se basan en una muestra sesgada — lectores que aceptaron cookies, no tu audiencia completa.",
-              },
-              {
-                title: "Los funnels de conversión a suscripción están incompletos",
-                desc: "No puedes optimizar un paywall que no puedes medir. Cuando el 60-70% de los recorridos de lector es invisible, tu funnel de free-to-paid se construye sobre datos parciales. Los puntos reales de abandono están ocultos.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="p-8 bg-warm-white border border-warm-100 rounded-[4px]"
-              >
-                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-[0.9rem] leading-[1.7] text-text-secondary">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <VerticalPageV3 data={getVerticalData("media", "es")} />
 
-      {/* What changes */}
-      <section className="py-28 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-12">
-            Qué cambia con datos completos
-          </h2>
-          <div className="space-y-12 max-w-[750px]">
-            {[
-              {
-                title: "Cifras de audiencia reales para venta publicitaria",
-                desc: "Reporta tu tamaño real de audiencia a los anunciantes — cada lector, cada pageview, cada sesión. Cuando tu audiencia verificada es 2-3 veces lo que reporta GA4, tus CPMs y tarifas de patrocinio deberían reflejarlo.",
-              },
-              {
-                title: "Analítica completa de rendimiento de contenido",
-                desc: "Descubre qué artículos, temas y formatos generan engagement real en el 100% de tu audiencia. Toma decisiones editoriales basadas en toda tu base de lectores, no en el subconjunto que aceptó cookies.",
-              },
-              {
-                title: "Visibilidad completa del funnel de suscripción",
-                desc: "Rastrea cada recorrido de lector desde la primera visita hasta la interacción con el paywall y la suscripción de pago. Identifica las barreras reales de conversión y optimiza con datos completos — no con una muestra del 30-40%.",
-              },
-              {
-                title: "LENS AI para editores",
-                desc: "Anomalías de tráfico, cambios de engagement, variaciones de fuentes de referencia y outliers de rendimiento de contenido — detectados automáticamente. Sabe cuándo una historia está en tendencia o cuando cae una fuente de tráfico antes de que impacte los ingresos.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="pb-8 border-b border-warm-100 last:border-0">
-                <h3 className="font-serif text-[1.15rem] font-medium text-text-primary mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TldrBlock
+        label="Analítica sin cookies para medios y editores"
+        answer={
+          <>
+            La <strong>analítica sin cookies para medios y editores</strong>{" "}
+            captura lectorazgo, funnels de suscripción y atribución de ingresos
+            publicitarios sin cookies — crítico para sitios donde el 50–70% de
+            los visitantes usan ad-blockers. SealMetrics opera como
+            infraestructura first-party en el dominio del propio editor,
+            invisible a los ad-blockers e independiente de la deprecation de
+            cookies de terceros.
+          </>
+        }
+        bullets={[
+          <>Recupera el 50–70% de lectores que los ad-blockers ocultan a GA4 en sitios de tech y noticias.</>,
+          <>Conteos por paso del funnel por canal: landings de artículo, impresiones de paywall, eventos de suscripción — cada suscripción atribuida last-click a nivel de canal.</>,
+          <>La arquitectura first-party sobrevive a Safari ITP, Firefox ETP y Brave Shield.</>,
+        ]}
+      />
 
-      {/* Metrics that matter */}
-      <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-12">
-            Métricas que importan a los editores
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
-            {[
-              { metric: "100%", label: "Lectores capturados" },
-              { metric: "2-3x", label: "Audiencia real vs reportada" },
-              { metric: "0", label: "Dependencia de cookies" },
-              { metric: "Solo UE", label: "Infraestructura" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="text-center p-6 bg-warm-white border border-warm-100 rounded-[4px]"
-              >
-                <p className="font-mono text-[2rem] font-medium text-text-primary leading-tight">
-                  {item.metric}
-                </p>
-                <p className="text-[0.8rem] text-text-tertiary mt-2">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
-        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
-          <h2 className="headline-section mb-4">
-            Descubre el tamaño real de tu audiencia.
-          </h2>
-          <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
-            Demo de 30 minutos con tu tráfico real. Te mostramos la brecha entre
-            la audiencia reportada y la real — y lo que significa para los
-            ingresos publicitarios.
-          </p>
-          <Link
-            href="/es/demo"
-            className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
-          >
-            Ver tus datos completos de audiencia
-          </Link>
-          <p className="mt-4 text-[0.8rem] text-text-tertiary">
-            O{" "}
-            <Link
-              href="/es/growth-calculator"
-              className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors"
-            >
-              calcula tu pérdida de datos primero
-            </Link>
-          </p>
-        </div>
-      </section>
+      <RelatedPagesV3
+        locale="es"
+        eyebrow="Explora también"
+        titleEn="Related roles and industries"
+        titleEs="Roles e industrias relacionadas"
+        pages={[
+          {
+            href: "/glossary/ad-blocker-analytics-impact",
+            title: "Impacto de ad-blockers en analítica",
+            desc: "Cómo afectan los ad-blockers a la medición en sitios de medios.",
+          },
+          {
+            href: "/glossary/cookieless-analytics",
+            title: "Qué es la analítica sin cookies",
+            desc: "Definición, cómo funciona, por qué importa.",
+          },
+          {
+            href: "/es/for/ecommerce",
+            title: "Para eCommerce",
+            desc: "Marcas editoriales con foco comercial.",
+          },
+        ]}
+      />
+      <LogosStripEs />
     </>
   );
 }

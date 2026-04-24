@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "How SealMetrics handles data, what we collect, and how we protect your information.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/privacy",

@@ -126,7 +126,7 @@ export default function GA4AlternativesEnterprisePage() {
           url: "/blog/ga4-alternatives-enterprise",
           category: "Comparisons",
           author: {
-            name: "Rafa Jimenez",
+            name: "Rafa Jiménez",
             url: "/about",
             jobTitle: "Founder, SealMetrics",
           },
@@ -163,7 +163,7 @@ export default function GA4AlternativesEnterprisePage() {
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">March 2, 2026</time>
               <span>10 min read</span>
-              <span>By Rafa Jimenez</span>
+              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
             </div>
           </header>
 
