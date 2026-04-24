@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     description:
       "Details on data processing, sub-processors, security measures, and GDPR compliance.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/dpa",

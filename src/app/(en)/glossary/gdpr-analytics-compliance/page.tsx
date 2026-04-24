@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function GDPRCompliancePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "GDPR Analytics Compliance" }]} />
-      <JsonLd data={definedTermSchema({ name: "GDPR Analytics Compliance", description: "Meeting GDPR requirements for web analytics data collection and processing.", url: "/glossary/gdpr-analytics-compliance", related: [{ name: "Consent Management Platform (CMP)", url: "/glossary/consent-management-platform" }, { name: "Analytics Data Residency", url: "/glossary/analytics-data-residency" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }] })} />
+      <JsonLd data={definedTermSchema({ name: "GDPR Analytics Compliance", description: "Meeting GDPR requirements for web analytics data collection and processing.", url: "/glossary/gdpr-analytics-compliance" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "GDPR Analytics Compliance" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -56,7 +55,14 @@ export default function GDPRCompliancePage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Compliance by architecture</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> approaches compliance differently. By collecting no personal data and storing nothing on the visitor&rsquo;s device, the consent requirement under ePrivacy does not apply, and GDPR obligations are minimal. This is consistent with guidance from CNIL (France), DSK (Germany), and other EU data protection authorities on audience measurement exemptions.</p>
         </div>
-        <RelatedGlossaryTerms slug="gdpr-analytics-compliance" />
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
+          <div className="space-y-3">
+            <Link href="/glossary/consent-management-platform" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Consent Management Platform (CMP)</Link>
+            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+            <Link href="/glossary/analytics-data-residency" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Analytics Data Residency</Link>
+          </div>
+        </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Security & Privacy Architecture</Link> &middot; <Link href="/blog/gdpr-analytics-without-consent" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GDPR Analytics Without Consent</Link>

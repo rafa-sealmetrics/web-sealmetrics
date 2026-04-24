@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     description:
       "Conditions for using the SealMetrics analytics platform.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/terms",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function EventTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Event Tracking" }]} />
-      <JsonLd data={definedTermSchema({ name: "Event Tracking", description: "Recording specific user interactions on a website beyond pageviews, such as clicks, form submissions, and video plays.", url: "/glossary/event-tracking", related: [{ name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "Revenue Attribution", url: "/glossary/revenue-attribution" }, { name: "Attribution Model", url: "/glossary/attribution-model" }, { name: "Bounce Rate", url: "/glossary/bounce-rate" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Event Tracking", description: "Recording specific user interactions on a website beyond pageviews, such as clicks, form submissions, and video plays.", url: "/glossary/event-tracking" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Event Tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -81,7 +80,14 @@ export default function EventTrackingPage() {
           </p>
         </div>
 
-        <RelatedGlossaryTerms slug="event-tracking" />
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
+          <div className="space-y-3">
+            <Link href="/glossary/server-side-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Server-Side Tracking</Link>
+            <Link href="/glossary/first-party-data-collection" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">First-Party Data Collection</Link>
+            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+          </div>
+        </div>
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

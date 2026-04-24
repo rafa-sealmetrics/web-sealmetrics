@@ -1,28 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { TldrBlock } from "@/components/ui/TldrBlock";
-import {
-  breadcrumbSchema,
-  faqSchema,
-  verticalSoftwareApplicationSchema,
-} from "@/lib/schema";
+import { breadcrumbSchema, servicePageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analítica sin cookies para hoteles — SealMetrics",
+  title: "SealMetrics para Hoteles — 100% del tráfico de reservas",
   description:
-    "Analítica sin cookies para hoteles: cuadra la atribución de reservas directas con tu PMS, recupera el 25% de reservas invisibles, consolida portfolios multi-propiedad. Alojado en UE.",
+    "Los hoteles pierden el 60-70% de los datos de visitantes por muros de consentimiento y bloqueadores. SealMetrics captura el 100% del tráfico de reservas sin cookies.",
   openGraph: {
-    title: "Analítica sin cookies para hoteles — SealMetrics",
+    title: "SealMetrics para Hoteles",
     description:
-      "Analítica first-party sin consentimiento para grupos hoteleros. Reconcilia reservas directas con tu PMS y atribuye ingresos de meta-search sin cajas negras de OTAs.",
+      "100% de visibilidad del tráfico de reservas para hoteles y turismo. Claridad entre canal directo y OTAs, optimización estacional, sin cookies.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
   },
   alternates: {
@@ -31,97 +22,168 @@ export const metadata: Metadata = {
   },
 };
 
-const seoFaqs = [
-  {
-    question: "¿Qué es analítica sin cookies para hoteles?",
-    answer:
-      "La analítica sin cookies para hoteles cuenta los eventos del recorrido de reserva — landings de meta-search, referrals de OTAs, confirmaciones de booking — sin cookies, banners de consentimiento ni identificadores personales. Cada reserva se atribuye last-click a la fuente en esa pageview, los totales agregados cuadran con el PMS (Mews, Cloudbeds, Opera), y no se trackea a ningún huésped individual.",
-  },
-  {
-    question: "¿Cómo ayuda la analítica sin cookies a recuperar reservas invisibles?",
-    answer:
-      "De media, el 25% de las reservas directas registradas en el PMS no aparecen bien atribuidas en GA4 por rechazo de consentimiento en móvil (Safari), expiración de cookies por ITP y rupturas de ruta en OTAs. La analítica sin cookies cuenta cada pageview de forma anónima en servidor, captura la fuente de tráfico en cada pageview de reserva y agrega las reservas por canal — sin tracking por huésped.",
-  },
-  {
-    question: "¿SealMetrics funciona con múltiples propiedades hoteleras?",
-    answer:
-      "Sí. La vista de portfolio está incluida en cada plan. Cada propiedad corre su propio tracking y los datos se consolidan a nivel de marca/grupo — ideal para cadenas con 5+ propiedades en varios países.",
-  },
-  {
-    question: "¿La analítica sin cookies integra con mi PMS?",
-    answer:
-      "Sí. Integraciones nativas con Mews, Cloudbeds y Opera; cualquier otro PMS o booking engine custom integra vía REST API. Los ingresos de reservas fluyen automáticamente para atribución real ligada a ingresos.",
-  },
-];
-
-export default function Page() {
+export default function ForHotelsPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para hoteles" }]} locale="es" />
-      <JsonLd
-        data={breadcrumbSchema(
-          [{ name: "Para hoteles", url: "/es/for/hotels" }],
-          "es"
-        )}
-      />
-      <JsonLd
-        data={verticalSoftwareApplicationSchema({
-          vertical: "Hoteles",
-          audienceType: "Grupos hoteleros y marcas de viaje europeas",
-          description:
-            "Analítica sin cookies para hoteles y viaje: atribución de reservas directas cuadrada con el PMS, consolidación multi-propiedad y tracking de touchpoints de meta-search sin cookies.",
-          url: "/es/for/hotels",
-        })}
-      />
-      <JsonLd data={faqSchema(seoFaqs)} />
+      <Breadcrumbs items={[{ label: "Para Hoteles y Turismo" }]} locale="es" />
+      <JsonLd data={breadcrumbSchema([{ name: "Para Hoteles y Turismo", url: "/es/for/hotels" }], "es")} />
+      <JsonLd data={servicePageSchema({ name: "SealMetrics para Hoteles", description: "Los hoteles pierden el 60-70% de los datos de visitantes por muros de consentimiento y bloqueadores de anuncios. SealMetrics captura el 100% del tráfico de reservas sin cookies.", url: "/es/for/hotels", audience: "Sector hotelero y turístico" })} />
+      {/* Hero */}
+      <section className="pt-12 pb-20 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[700px]">
+            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
+              Para Hoteles y Turismo
+            </span>
+            <h1 className="headline-hero mb-8">
+              El 60-70% de tu tráfico de reservas es invisible. Tu estrategia de canal directo se construye sobre una fracción de la realidad.
+            </h1>
+            <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
+              Las altas tasas de rechazo de consentimiento y el uso de
+              bloqueadores en mercados turísticos europeos hacen que la mayoría
+              de interacciones con tus huéspedes nunca se registren. SealMetrics{" "}
+              <Link href="/es/product" className="text-text-primary no-underline border-b border-warm-200 hover:border-text-body transition-colors">captura el 100% de tu tráfico de reservas</Link>{" "}
+              con recogida{" "}
+              <Link href="/glossary/cookieless-analytics" className="text-text-secondary border-b border-warm-200 pb-0.5 no-underline hover:text-text-primary transition-colors">
+                cookieless
+              </Link>{" "}
+              first-party &mdash; sin cookies, sin dependencia del consentimiento, sin pérdida de datos.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <VerticalPageV3 data={getVerticalData("hotels", "es")} />
+      {/* Pain points */}
+      <section className="pb-28 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12">
+            Problemas que reconoces
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            {[
+              {
+                title: "La atribución directo vs OTA es una caja negra",
+                desc: "Inviertes en captar reservas directas, pero no puedes medir el coste real por reserva directa frente a la comisión de las OTAs. Cuando el 60-70% de los visitantes es invisible, el rendimiento del canal directo es pura conjetura.",
+              },
+              {
+                title: "Los muros de consentimiento destruyen los datos de reserva",
+                desc: "En mercados turísticos europeos, entre el 35% y el 60% de los visitantes rechaza los banners de consentimiento. Suma bloqueadores de anuncios y Safari ITP y tu analítica de motor de reservas se convierte en una pequeña muestra de la realidad — no en la foto completa que necesitas para decidir sobre ingresos.",
+              },
+              {
+                title: "El ROI de las campañas estacionales es adivinación",
+                desc: "Las decisiones de inversión en temporada alta requieren confianza. Pero cuando tomas decisiones de seis cifras basadas en el 30-40% de los datos de conversión, estás optimizando para la minoría visible — no para tu base real de huéspedes.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="p-8 bg-warm-white border border-warm-100 rounded-[4px]"
+              >
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[0.9rem] leading-[1.7] text-text-secondary">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <TldrBlock
-        label="Analítica sin cookies para hoteles"
-        answer={
-          <>
-            La <strong>analítica sin cookies para hoteles</strong> permite a los
-            grupos hoteleros cuadrar los totales agregados de reservas directas
-            con el PMS sin cookies, banners de consentimiento ni gaps de
-            ad-blockers. SealMetrics cuenta de forma anónima cada landing de
-            meta-search, cada visita móvil Safari y cada evento de reserva —
-            cada reserva atribuida last-click a nivel de canal y consolidada
-            entre propiedades para reporting de ingresos de portfolio.
-          </>
-        }
-        bullets={[
-          <>Recupera ~25% de reservas del CRM normalmente invisibles a GA4.</>,
-          <>Totales agregados por canal para meta-search (Google Hotel Ads, Trivago) sin dependencia de cajas negras de OTAs.</>,
-          <>Integraciones PMS nativas: Mews, Cloudbeds, Opera; REST API para cualquier otro stack.</>,
-          <>Sin tracking de journey por huésped — solo conteos agregados, defendibles bajo RGPD.</>,
-        ]}
-      />
+      {/* What changes */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12">
+            Qué cambia con datos completos
+          </h2>
+          <div className="space-y-12 max-w-[750px]">
+            {[
+              {
+                title: "Visibilidad completa del funnel de reservas",
+                desc: "Desde la búsqueda inicial hasta la comparación de tarifas y la reserva final. Ve cada paso del funnel con el 100% de los datos de visitantes — sin depender de cookies que los muros de consentimiento y las restricciones del navegador destruyen.",
+              },
+              {
+                title: "Claridad entre canal directo y OTAs",
+                desc: "Mide la tasa real de reserva directa con el 100% de los datos. Consulta el coste por reserva por canal — directo, OTA, metasearch, campañas de pago — y toma decisiones de distribución con cifras completas, no con estimaciones.",
+              },
+              {
+                title: "Optimización de campañas estacionales",
+                desc: "Tener el 100% de los datos de conversión significa decidir con confianza el presupuesto en temporada alta y baja. Sabes exactamente qué campañas generan reservas en temporada alta, y qué promociones de temporada baja aportan retorno real.",
+              },
+              {
+                title: "LENS AI para hostelería",
+                desc: "Anomalías de reservas, problemas de paridad de tarifas, caídas bruscas de tráfico desde mercados clave y cambios en las tasas de conversión — detectados en tiempo real y explicados en lenguaje claro. Se acabó descubrir los problemas en la reunión semanal de revenue.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="pb-8 border-b border-warm-100 last:border-0">
+                <h3 className="font-serif text-[1.15rem] font-medium text-text-primary mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.7] text-text-secondary">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <RelatedPagesV3
-        locale="es"
-        eyebrow="Explora también"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-          {
-            href: "/glossary/cookieless-analytics",
-            title: "Qué es la analítica sin cookies",
-            desc: "Definición, cómo funciona, por qué importa.",
-          },
-          {
-            href: "/es/for/ecommerce",
-            title: "Para eCommerce",
-            desc: "Shopify, Magento y atribución de checkout DTC.",
-          },
-          {
-            href: "/es/for/media",
-            title: "Para medios",
-            desc: "Audiencias con alto uso de ad-blockers.",
-          },
-        ]}
-      />
-      <LogosStripEs />
+      {/* Metrics that matter */}
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-12">
+            Métricas que importan a los hoteles
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
+            {[
+              { metric: "100%", label: "Tráfico de reservas capturado" },
+              { metric: "60-70%", label: "Antes invisible" },
+              { metric: "0", label: "Cookies necesarias" },
+              { metric: "Solo UE", label: "Infraestructura" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="text-center p-6 bg-warm-white border border-warm-100 rounded-[4px]"
+              >
+                <p className="font-mono text-[2rem] font-medium text-text-primary leading-tight">
+                  {item.metric}
+                </p>
+                <p className="text-[0.8rem] text-text-tertiary mt-2">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-28 bg-warm-white text-center border-t border-warm-100">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-4">
+            Descubre tus datos de reserva completos.
+          </h2>
+          <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
+            Demo de 30 minutos con tu tráfico real. Te mostramos cada recorrido
+            de reserva que GA4 está perdiendo — y los ingresos que representa.
+          </p>
+          <Link
+            href="/es/demo"
+            className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+          >
+            Ver tus datos completos de reservas
+          </Link>
+          <p className="mt-4 text-[0.8rem] text-text-tertiary">
+            O{" "}
+            <Link
+              href="/es/growth-calculator"
+              className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors"
+            >
+              calcula tu pérdida de datos primero
+            </Link>
+          </p>
+        </div>
+      </section>
     </>
   );
 }

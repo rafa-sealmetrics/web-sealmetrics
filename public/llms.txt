@@ -52,7 +52,7 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 - /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
 - /for/finance — Analytics for financial services: compliance-first tracking, EU data residency
 - /for/education — Analytics for education: enrollment funnels, student engagement, GDPR compliance
-- /for/healthcare — Analytics for healthcare: privacy-first aggregate event measurement, no patient identification
+- /for/healthcare — Analytics for healthcare: privacy-first tracking, patient journey analytics
 
 ## Blog (latest articles)
 - /blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking: GA4, GA360, Adobe, Piwik PRO, SealMetrics, Matomo, Amplitude, Mixpanel)

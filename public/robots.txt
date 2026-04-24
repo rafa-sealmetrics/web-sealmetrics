@@ -1,21 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /demo/thank-you
 
-# ============================================================
-# AI / LLM crawlers — allow full public content for citation
-# ============================================================
-
+# AI Crawlers — Allow all public content
 User-agent: GPTBot
-Allow: /
-Disallow: /api/
-
-User-agent: ChatGPT-User
-Allow: /
-Disallow: /api/
-
-User-agent: OAI-SearchBot
 Allow: /
 Disallow: /api/
 
@@ -23,19 +11,7 @@ User-agent: ClaudeBot
 Allow: /
 Disallow: /api/
 
-User-agent: Claude-Web
-Allow: /
-Disallow: /api/
-
-User-agent: anthropic-ai
-Allow: /
-Disallow: /api/
-
 User-agent: PerplexityBot
-Allow: /
-Disallow: /api/
-
-User-agent: Perplexity-User
 Allow: /
 Disallow: /api/
 
@@ -43,55 +19,8 @@ User-agent: Google-Extended
 Allow: /
 Disallow: /api/
 
-User-agent: Applebot-Extended
-Allow: /
-Disallow: /api/
-
-User-agent: CCBot
-Allow: /
-Disallow: /api/
-
-User-agent: Bytespider
-Allow: /
-Disallow: /api/
-
-User-agent: FacebookBot
-Allow: /
-Disallow: /api/
-
-User-agent: Meta-ExternalAgent
-Allow: /
-Disallow: /api/
-
-User-agent: Amazonbot
-Allow: /
-Disallow: /api/
-
-User-agent: Diffbot
-Allow: /
-Disallow: /api/
-
-User-agent: DuckAssistBot
-Allow: /
-Disallow: /api/
-
-User-agent: cohere-ai
-Allow: /
-Disallow: /api/
-
-User-agent: Mistral-AI-User
-Allow: /
-Disallow: /api/
-
-User-agent: YouBot
-Allow: /
-Disallow: /api/
-
-# ============================================================
-# Sitemaps + LLM discoverability
-# ============================================================
-
 Sitemap: https://sealmetrics.com/sitemap.xml
 
-# LLM discoverability — see https://llmstxt.org
+# LLM discoverability
+# See https://llmstxt.org for the specification
 LLMs-Txt: https://sealmetrics.com/llms.txt

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function ConsentManagementPlatformPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Consent Management Platform" }]} />
-      <JsonLd data={definedTermSchema({ name: "Consent Management Platform", description: "Software that manages cookie consent banners and user privacy preferences.", url: "/glossary/consent-management-platform", related: [{ name: "GDPR Analytics Compliance", url: "/glossary/gdpr-analytics-compliance" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }, { name: "Analytics Data Residency", url: "/glossary/analytics-data-residency" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Consent Management Platform", description: "Software that manages cookie consent banners and user privacy preferences.", url: "/glossary/consent-management-platform" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Consent Management Platform" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -41,7 +40,14 @@ export default function ConsentManagementPlatformPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The alternative</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not require a CMP for its operation because it does not use cookies or collect personal data. This eliminates the consent rejection data loss vector entirely while maintaining full <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link>.</p>
         </div>
-        <RelatedGlossaryTerms slug="consent-management-platform" />
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
+          <div className="space-y-3">
+            <Link href="/glossary/gdpr-analytics-compliance" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">GDPR Analytics Compliance</Link>
+            <Link href="/glossary/data-loss-in-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Loss in Analytics</Link>
+            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+          </div>
+        </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Consent Banners Destroy Your Analytics Data</Link> &middot; <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Security & Privacy Architecture</Link>

@@ -9,34 +9,22 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - Next.js 16 (App Router) + React 19 + TypeScript (strict)
 - Tailwind CSS 4 (v4 syntax with `@theme` block in globals.css)
 - Static export (`output: "export"` in next.config.ts)
-- Fonts: **Onest** (headlines + body), JetBrains Mono (data)
+- Fonts: Plus Jakarta Sans (headlines + body), JetBrains Mono (data)
 - No additional JS libraries (no Framer Motion, no animation libs)
 
-## Design System Rules (v3 — Editorial Authority)
+## Design System Rules
 
-- **Light mode default** · warm cream background `#FAFAF7` · alternate `bg-warm-white` and `bg-white` between sections
-- **Two dark slabs allowed per page** (typically: featured case study, final CTA or pricing) — `bg-ink` (#0E0E0C)
+- **All pages light mode** — alternate `bg-white` and `bg-warm-white` between sections
 - **Footer** — `bg-warm-900` (#0E0E0C), warm near-black
-- **Border radius**: up to 4px for inputs, 10–16px for cards, 20–24px for hero/case slabs, pills (999px) for chips and announcement tags
-- **Font weight**: headlines 600, italic emphasis 500, body 400, data chips 600 mono
-- **Italic emphasis** on key phrases in H1/H2 with subtle amber highlight underneath (`color-amber-soft`)
-- **Bullets**: dashes (—), never dots or icons
-- **No emojis, ever**
-- **Decorative gradients**: allowed as subtle `radial-gradient` (opacity ≤0.35) inside dark slabs only (case study, pricing, final CTA)
+- Border radius: 4px maximum
+- Font weight: 600 maximum, headlines at 400
+- Bullets: dashes (—), never dots or icons
+- No emojis, ever
+- No decorative gradients
 - Icons: minimal, SVG line style only
-- **Brand accent** (`color-brand: #2D8B6D`) for positive indicators, deltas, link color
-- **Amber** (`color-amber: #E8B84B`) for highlight behind italic emphasis, positive deltas inside dark slabs
-- **Red alert** (`color-red-alert: #B5423B`) for negative data, anomalies, urgency
-- **Blue quote** (`color-quote: #2E5C8A`) for editorial pull-quote left-border
+- Green accent (`green-muted: #5BBFA0`) for positive indicators in light sections
+- Red accent (`red-alert: #C85A54`) for negative data, urgency
 - Sections separated by `border-t border-warm-100`
-- Case studies currently anonymized (e.g. "European hotel group" instead of "Grupo Palladium") until explicit client OK to de-anonymize
-
-## Content rules — DO NOT include
-
-- **NEVER claim ISO 27001 or SOC 2 certification** — not certified yet. If compliance is mentioned, use: GDPR by architecture, ePrivacy, Schrems II clean, EU-hosted in Dublin, DPA included, TPSR package
-- **NEVER include `rafa@sealmetrics.com` or any personal email** — use Cal.com link or `/demo` CTA for contact
-- Data centre location: **Dublin, Ireland only** (not Frankfurt, not Germany)
-- Agency partners to mention when relevant: Product Hackers, 3dids, Ayesa
 
 ## File Conventions
 

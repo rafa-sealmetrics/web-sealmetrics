@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function CookielessAnalyticsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Cookieless Analytics" }]} />
-      <JsonLd data={definedTermSchema({ name: "Cookieless Analytics", description: "Web analytics that captures visitor data without using browser cookies.", url: "/glossary/cookieless-analytics", related: [{ name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "GDPR Analytics Compliance", url: "/glossary/gdpr-analytics-compliance" }, { name: "Consent Management Platform (CMP)", url: "/glossary/consent-management-platform" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Cookieless Analytics", description: "Web analytics that captures visitor data without using browser cookies.", url: "/glossary/cookieless-analytics" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Cookieless Analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -40,21 +39,18 @@ export default function CookielessAnalyticsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How it works</h2>
           <p>
-            Traditional analytics tools (like GA4) rely on cookies — small text files stored in the visitor&rsquo;s browser — to identify returning visitors, track sessions and build per-user journeys. Cookieless analytics replaces this mechanism with <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party data collection</Link> that operates without any identifiers on the visitor&rsquo;s device.
+            Traditional analytics tools (like GA4) rely on cookies — small text files stored in the visitor&rsquo;s browser — to identify returning visitors, track sessions, and build user journeys. Cookieless analytics replaces this mechanism with <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party data collection</Link> that operates without any identifiers on the visitor&rsquo;s device.
           </p>
           <p>
-            Instead of storing identifiers, cookieless analytics counts events on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign, landing page and country. Each event is logged with anonymous channel metadata (referrer, UTM parameters, landing page, device class). The data path is first-party (your domain to your server), which means it is not blocked by ad blockers, not affected by browser cookie restrictions like <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, and not dependent on consent banners.
+            Instead of storing identifiers on the visitor&rsquo;s device, cookieless analytics processes behavioral data at the server level, on your own domain. The data path is first-party (your domain to your server), which means it is not blocked by ad blockers, not affected by browser cookie restrictions like <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, and not dependent on consent banners.
           </p>
-
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What cookieless analytics does not do</h2>
-          <p>The architecture has a deliberate trade-off: per-user detail is given up in exchange for complete, defensible aggregate totals. Cookieless analytics does not identify visitors, does not link pageviews into per-user journeys, does not recognise a returning visitor, and does not support multi-touch attribution models. What it produces is aggregate counts and last-click revenue attribution at channel level.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why it matters</h2>
           <p>
-            In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, counting 100% of real visits anonymously.
+            In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, capturing 100% of real visitor activity.
           </p>
           <p>
-            This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete aggregate totals.
+            This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete data.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Privacy implications</h2>
@@ -63,7 +59,14 @@ export default function CookielessAnalyticsPage() {
           </p>
         </div>
 
-        <RelatedGlossaryTerms slug="cookieless-analytics" />
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
+          <div className="space-y-3">
+            <Link href="/glossary/first-party-data-collection" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">First-Party Data Collection</Link>
+            <Link href="/glossary/server-side-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Server-Side Tracking</Link>
+            <Link href="/glossary/data-loss-in-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Loss in Analytics</Link>
+          </div>
+        </div>
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

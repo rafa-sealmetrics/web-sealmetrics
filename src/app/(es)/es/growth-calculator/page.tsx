@@ -1,49 +1,60 @@
 import type { Metadata } from "next";
-import { Calculator } from "../../../(en)/growth-calculator/Calculator";
+import { Calculator } from "@/app/(en)/growth-calculator/Calculator";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, webApplicationSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "Calculadora de crecimiento — SealMetrics",
-  description: "¿Cuánto ingreso podrías escalar con datos completos? Mete tus números y ve el potencial de crecimiento que tu analítica actual no puede mostrarte.",
-  alternates: { canonical: "https://sealmetrics.com/es/growth-calculator", languages: getAlternatesEs("/growth-calculator") },
+  title: "Calculadora de Crecimiento — SealMetrics",
+  description:
+    "¿Cuánto revenue podrías escalar con datos completos? Introduce tus números y descubre el potencial de crecimiento que tu analítica no puede mostrarte.",
+  openGraph: {
+    title: "Calculadora de Crecimiento — SealMetrics",
+    description:
+      "¿Cuánto revenue podrías escalar con datos completos? Introduce tus números y descubre el potencial de crecimiento que tu analítica no puede mostrarte.",
+    type: "website",
+    locale: "es_ES",
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/es/growth-calculator",
+    languages: getAlternatesEs("/growth-calculator"),
+  },
 };
 
-export default function Page() {
+export default function GrowthCalculatorPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Calculadora de crecimiento" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Calculadora de crecimiento", url: "/es/growth-calculator" }])} />
-      <JsonLd data={webApplicationSchema({ name: "Calculadora de crecimiento", description: "Estima el crecimiento potencial al cambiar a analítica completa.", url: "/es/growth-calculator" })} />
+      <Breadcrumbs items={[{ label: "Calculadora de Crecimiento" }]} locale="es" />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Calculadora de Crecimiento", url: "/es/growth-calculator" },
+        ], "es")}
+      />
 
-      <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-10">
-        <div className="max-w-[900px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Calculadora de crecimiento</span>
-          <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
-            ¿Cuánto crecimiento <em>se esconde</em> en tu tráfico sin medir?
-          </h1>
-          <p className="text-ink-soft mt-8 mx-auto max-w-[58ch] leading-[1.55]" style={{ fontSize: "clamp(16px, 1.3vw, 19px)" }}>
-            Tu analítica captura una fracción del tráfico real. Mete tus números y ve dónde el dato completo te dice que escales.
-          </p>
+      {/* Hero */}
+      <section className="pt-12 pb-16 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[660px]">
+            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
+              Calculadora de Crecimiento
+            </span>
+            <h1 className="headline-hero mb-6">
+              ¿Cuánto crecimiento se esconde en tu tráfico no medido?</h1>
+            <p className="text-[1.15rem] leading-[1.75] text-text-secondary">
+              Tu analítica captura solo una fracción del tráfico real &mdash;
+              descubre lo que los datos completos revelan sobre dónde escalar.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="pb-28 bg-warm-white">
+      {/* Calculator — reuse the English calculator component (numbers are universal) */}
+      <section className="pb-28 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <Calculator />
         </div>
       </section>
-
-      <FinalCtaSharedV3
-        locale="es"
-        titleEn={<>See where to scale.</>}
-        titleEs={<>Ve dónde <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>escalar ahora.</em></>}
-        ledeEn="30 min live review."
-        ledeEs="30 min. Pasamos tu tráfico por la proyección de crecimiento — en directo, contra tu analítica actual."
-      />
     </>
   );
 }

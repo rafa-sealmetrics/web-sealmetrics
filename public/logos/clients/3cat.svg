@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="160" height="60">
-  <rect x="6" y="12" width="36" height="36" rx="6" fill="#E30613"/>
-  <text x="24" y="39" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">3</text>
-  <text x="52" y="39" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="#1A1A1A" letter-spacing="-0.02em">Cat</text>
-  <text x="122" y="39" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#6B6B5E" letter-spacing="0.05em">.cat</text>
-</svg>

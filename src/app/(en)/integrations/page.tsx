@@ -2,135 +2,241 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
-
-const faqs = [
-  {
-    question: "Does SealMetrics connect to Google Ads for conversion import?",
-    answer: "Yes, via BigQuery export and REST API. Most teams keep GA4 running alongside SealMetrics for native Google Ads conversion import — SealMetrics becomes the source of truth for decisions, GA4 stays as the Google Ads conduit.",
-  },
-  {
-    question: "Which eCommerce CMS does SealMetrics work with?",
-    answer: "Shopify, WooCommerce, Magento, PrestaShop, BigCommerce and Salesforce Commerce Cloud have native integrations. Any other CMS works with the standard JavaScript tag.",
-  },
-  {
-    question: "Can I export data to BigQuery or Snowflake?",
-    answer: "Yes. Full-resolution export to BigQuery, Snowflake, Databricks and Redshift is included from the Growth plan up — no ETL, no sampling, no thresholds.",
-  },
-  {
-    question: "What is the MCP server?",
-    answer: "SealMetrics ships a native Model Context Protocol server. AI agents (Claude, ChatGPT, custom LLMs) can query your analytics data in natural language, enabling AI-native reporting and forecasting workflows.",
-  },
-  {
-    question: "Are there webhooks for real-time events?",
-    answer: "Yes. Webhooks fire on real-time events (conversions, micro-conversions, anomaly alerts) so you can pipe signals into ops tools, Slack or your own automations.",
-  },
-];
-import { getAlternates } from "@/lib/i18n/navigation";
-import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Integrations — SealMetrics",
-  description: "25+ native integrations: ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus MCP server for AI agents and full REST API.",
-  alternates: { canonical: "https://sealmetrics.com/integrations", languages: getAlternates("/integrations") },
+  description:
+    "Connect SealMetrics to Google Ads, Meta, Shopify, WooCommerce, BigQuery, and 20+ platforms. One-click setup, real-time data sync.",
+  openGraph: {
+    title: "Integrations — SealMetrics",
+    description:
+      "Connect SealMetrics to Google Ads, Meta, Shopify, WooCommerce, BigQuery, and 20+ platforms. One-click setup, real-time data sync.",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/integrations",
+  },
 };
 
-const groups = [
-  { title: "Ad platforms", items: ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "Microsoft Ads"] },
-  { title: "eCommerce", items: ["Shopify", "WooCommerce", "Magento", "PrestaShop", "BigCommerce", "Salesforce Commerce Cloud"] },
-  { title: "Data warehouses", items: ["BigQuery", "Snowflake", "Databricks", "Redshift"] },
-  { title: "BI tools", items: ["Looker Studio", "Power BI", "Tableau", "Metabase"] },
-  { title: "CRM & email", items: ["HubSpot", "Salesforce", "Klaviyo", "Mailchimp"] },
-  { title: "Developer", items: ["REST API", "Streaming API", "Webhooks", "MCP server", "Segment", "Zapier"] },
+const categories = [
+  {
+    name: "Ad Platforms",
+    integrations: [
+      { icon: "G", name: "Google Ads" },
+      { icon: "M", name: "Meta Ads" },
+      { icon: "T", name: "TikTok Ads" },
+      { icon: "M", name: "Microsoft Ads" },
+      { icon: "L", name: "LinkedIn Ads" },
+      { icon: "P", name: "Pinterest Ads" },
+    ],
+  },
+  {
+    name: "eCommerce",
+    integrations: [
+      { icon: "S", name: "Shopify" },
+      { icon: "W", name: "WooCommerce" },
+      { icon: "P", name: "PrestaShop" },
+      { icon: "M", name: "Magento" },
+      { icon: "B", name: "BigCommerce" },
+      { icon: "C", name: "Custom (API)" },
+    ],
+  },
+  {
+    name: "CRM & Marketing",
+    integrations: [
+      { icon: "H", name: "HubSpot" },
+      { icon: "S", name: "Salesforce" },
+      { icon: "K", name: "Klaviyo" },
+      { icon: "M", name: "Mailchimp" },
+      { icon: "A", name: "ActiveCampaign" },
+    ],
+  },
+  {
+    name: "Data & Infrastructure",
+    integrations: [
+      { icon: "B", name: "BigQuery" },
+      { icon: "G", name: "Google Sheets" },
+      { icon: "W", name: "Webhooks" },
+      { icon: "R", name: "REST API" },
+      { icon: "Z", name: "Zapier" },
+    ],
+  },
 ];
 
-export default function Page() {
+const steps = [
+  {
+    number: "01",
+    title: "Connect your account",
+    desc: "Authenticate directly from the SealMetrics dashboard. No API keys, no manual configuration.",
+  },
+  {
+    number: "02",
+    title: "Data flows automatically",
+    desc: "Revenue, campaign spend, and conversion data sync in real-time across all connected platforms.",
+  },
+  {
+    number: "03",
+    title: "See complete attribution",
+    desc: "Every channel, every touchpoint, every conversion — attributed with 100% data.",
+  },
+];
+
+export default function IntegrationsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Integrations" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Integrations", url: "/integrations" }])} />
-      <JsonLd data={faqSchema(faqs)} />
-
-      <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>25+ native integrations</span>
-          <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
-            Plug into <em>the stack you already run.</em>
-          </h1>
-          <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus REST + streaming API, webhooks and an MCP server for AI agents.
-          </p>
+      {/* Hero */}
+      <section className="pt-12 pb-20 bg-white">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[700px]">
+            <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
+              Integrations
+            </span>
+            <h1 className="headline-hero mb-8">
+              Connect to your existing stack.
+            </h1>
+            <p className="text-[1.2rem] leading-[1.75] text-text-secondary">
+              SealMetrics integrates with your marketing platforms, eCommerce
+              systems, CRMs, and data infrastructure. Most integrations are
+              one-click setup.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-28 bg-warm-50 border-t border-warm-100">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {groups.map((g) => (
-              <article key={g.title} className="bg-white border border-warm-100 rounded-xl p-7">
-                <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] mb-4">{g.title}</h3>
-                <ul className="flex flex-col gap-2">
-                  {g.items.map((i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-[14px] text-ink-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      {i}
-                    </li>
+      {/* Integration categories */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="space-y-16">
+            {categories.map((category) => (
+              <div key={category.name}>
+                <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-6">
+                  {category.name}
+                </h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                  {category.integrations.map((int) => (
+                    <div
+                      key={`${category.name}-${int.name}`}
+                      className="p-5 text-center border border-warm-100 rounded-[4px] bg-white hover:border-text-tertiary transition-colors"
+                    >
+                      <div className="text-[1.5rem] opacity-40 text-text-secondary">
+                        {int.icon}
+                      </div>
+                      <div className="text-[0.8rem] text-text-secondary mt-3">
+                        {int.name}
+                      </div>
+                    </div>
                   ))}
-                </ul>
-              </article>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* How it works */}
       <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
-          <div className="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
-            <div>
-              <span className="inline-block font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand bg-brand-soft px-3 py-1 rounded-md mb-5">
-                Developer-first
-              </span>
-              <h3 className="font-semibold text-ink tracking-[-0.03em] leading-[1.05]" style={{ fontSize: "clamp(30px, 3.6vw, 44px)" }}>
-                Full API, <em>native MCP,</em> no quotas.
-              </h3>
-              <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
-                REST + streaming coverage of every event, every property. Webhooks for real-time ops. MCP server so Claude, ChatGPT or your own copilot can query directly.
-              </p>
-              <div className="mt-6 flex gap-3 flex-wrap">
-                <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white rounded-md text-[14px] font-semibold no-underline hover:bg-brand transition-colors">
-                  See product →
-                </Link>
-                <Link href="/demo" className="inline-flex items-center gap-2 px-6 py-3 border border-warm-200 text-ink rounded-md text-[14px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-                  Book demo
-                </Link>
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[700px] mb-16">
+            <h2 className="headline-section mb-4">
+              One-click integration, no engineering required.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            {steps.map((step) => (
+              <div
+                key={step.number}
+                className="p-8 bg-warm-white border border-warm-100 rounded-[4px]"
+              >
+                <span className="font-mono text-[0.75rem] text-text-tertiary">
+                  {step.number}
+                </span>
+                <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mt-2 mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-[0.9rem] leading-[1.7] text-text-secondary">
+                  {step.desc}
+                </p>
               </div>
-            </div>
-            <div className="bg-ink text-white rounded-[20px] p-8 md:p-10 font-mono text-[12.5px] leading-[1.8]">
-              <div className="flex gap-1.5 mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#FF6058]" />
-                <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
-                <span className="w-2 h-2 rounded-full bg-[#28CA42]" />
-              </div>
-              <div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/events</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/conversions</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/channels</div>
-                <div><span style={{ color: "#E8B84B" }}>POST</span> /api/v1/webhooks</div>
-                <div><span style={{ color: "#E8B84B" }}>MCP</span> claude://sealmetrics</div>
-                <div className="mt-3 text-white/45">// no quotas · no sampling · full resolution</div>
-              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Custom integrations */}
+      <section className="py-28 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          <div className="max-w-[700px]">
+            <h2 className="headline-section mb-6">
+              Need a custom integration?
+            </h2>
+            <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-5">
+              SealMetrics provides a full REST API and webhook support for
+              teams that need to build custom data pipelines. Push conversion
+              data, pull attribution reports, or trigger workflows based on
+              real-time analytics events.
+            </p>
+            <p className="text-[1.05rem] leading-[1.75] text-text-secondary mb-8">
+              For enterprise deployments, our onboarding team handles the
+              integration end-to-end&nbsp;&mdash; connecting your eCommerce
+              platform, ad accounts, and data warehouse so you see complete{" "}
+              <Link
+                href="/glossary/revenue-attribution"
+                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                revenue attribution
+              </Link>{" "}
+              from day one.
+            </p>
+            <div className="flex items-center gap-5 flex-wrap">
+              <Link
+                href="/product"
+                className="text-[0.9rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                See the full platform
+              </Link>
+              <Link
+                href="/demo"
+                className="text-[0.9rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                Book a demo for custom needs
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <FinalCtaSharedV3
-        locale="en"
-        titleEn={<>Install in <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>15 minutes.</em></>}
-        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>15 minutos.</em></>}
-        ledeEn="Book a technical walkthrough. Script, API, BigQuery schema, MCP server. No marketing fluff — we show the integration."
-        ledeEs="Reserva walkthrough técnico. Script, API, schema BigQuery, MCP server. Sin marketing — te enseñamos la integración."
-      />
+      {/* CTA */}
+      <section className="py-28 bg-white text-center border-t border-warm-100">
+        <div className="max-w-[500px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-4">
+            Ready to connect your stack?
+          </h2>
+          <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-8">
+            Most integrations take under five minutes. Our team handles the
+            rest.
+          </p>
+          <div className="flex items-center justify-center gap-5 flex-wrap">
+            <Link
+              href="/demo"
+              className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+            >
+              Book a Demo
+            </Link>
+            <Link
+              href="/product"
+              className="inline-flex items-center px-7 py-3.5 text-[0.95rem] text-text-secondary border border-warm-200 rounded-[4px] no-underline hover:border-text-body hover:text-text-primary transition-colors"
+            >
+              See Full Platform
+            </Link>
+          </div>
+          <p className="mt-4 text-[0.8rem] text-text-tertiary">
+            30-minute walkthrough. No commitment required.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

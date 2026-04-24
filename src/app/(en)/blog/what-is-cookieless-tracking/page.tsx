@@ -24,7 +24,7 @@ export default function WhatIsCookielessTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Cookieless Tracking?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,7 +39,7 @@ export default function WhatIsCookielessTrackingPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 2, 2026</time>
             <span>8 min read</span>
-            <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
+            <span>By Rafa Jimenez</span>
           </div>
         </header>
 
@@ -319,7 +319,7 @@ export default function WhatIsCookielessTrackingPage() {
 
           <ul className="space-y-2 pl-0 list-none">
             {[
-              "Channel attribution finally reflects real traffic, not just the cookie-accepting fraction",
+              "Attribution models finally reflect real customer journeys, not just the journeys of cookie-accepting visitors",
               "Campaign optimization uses complete traffic data instead of the biased subset that accepted tracking",
               "Budget allocation decisions are based on actual ROI, not ROI extrapolated from a fraction of visitors",
               "A/B test results reflect your real audience, eliminating the selection bias of consent-based samples",

@@ -5,25 +5,18 @@ import { getAlternates } from "@/lib/i18n/navigation";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FAFAF7" },
-    { media: "(prefers-color-scheme: dark)", color: "#0E0E0C" },
-  ],
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sealmetrics.com"),
   title: "SealMetrics — Complete Analytics for eCommerce",
   description:
-    "Web analytics that captures 100% of your traffic. No cookies, no consent banners, no data loss. Enterprise-grade complete data from €499/mo.",
+    "Web analytics that captures 100% of your traffic. No cookies, no consent banners, no data loss. Enterprise-grade complete data from €599/mo.",
   openGraph: {
     title: "SealMetrics — Complete Analytics for eCommerce",
     description:
-      "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €499/mo.",
-    url: "https://sealmetrics.com",
-    siteName: "SealMetrics",
+      "GA4 captures ~13% of EU traffic. SealMetrics captures 100% — no cookies, no consent walls, no sampling. Enterprise analytics from €599/mo.",
     type: "website",
-    locale: "en_US",
+    locale: "en",
     images: [
       {
         url: "https://sealmetrics.com/og-image.png",
@@ -48,17 +41,6 @@ export const metadata: Metadata = {
   other: {
     "llms-txt": "https://sealmetrics.com/llms.txt",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/logos/logo-sealmetrics-negro.png", sizes: "192x192", type: "image/png" },
-    ],
-    apple: [
-      { url: "/logos/logo-sealmetrics-negro.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: "/favicon.svg",
-  },
-  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({

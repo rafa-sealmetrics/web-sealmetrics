@@ -7,14 +7,14 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { DemoFormEs } from "./DemoFormEs";
 
 export const metadata: Metadata = {
-  title: "Pide una demo — SealMetrics",
+  title: "Solicitar Demo — SealMetrics",
   description:
-    "Walkthrough de 30 minutos personalizado. Ve cómo luce el 100% de tu tráfico sobre tu propia web.",
+    "Descubre cómo SealMetrics captura el 100% de tu tráfico sin cookies. Demo personalizada de 30 minutos.",
   openGraph: {
-    title: "Pide una demo — SealMetrics",
-    description: "30 min con el founder. Ve tu gap de datos en directo.",
+    title: "Solicitar Demo — SealMetrics",
+    description:
+      "Demo personalizada de 30 minutos. Descubre cómo es ver el 100% de tu tráfico.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
   },
   alternates: {
@@ -26,73 +26,83 @@ export const metadata: Metadata = {
 export default function DemoPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Pide una demo" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Pide una demo", url: "/es/demo" }])} />
-
-      <section className="pt-24 md:pt-28 pb-24 bg-warm-white">
+      <Breadcrumbs items={[{ label: "Solicitar Demo" }]} locale="es" />
+      <JsonLd data={breadcrumbSchema([{ name: "Solicitar Demo", url: "/es/demo" }], "es")} />
+      <section className="pt-12 pb-28 bg-white min-h-screen">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            {/* Left: info */}
             <div>
-              <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>
-                Pide una demo
+              <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
+                Solicitar Demo
               </span>
-              <h1 className="h-display mt-5" style={{ maxWidth: "18ch", fontSize: "clamp(40px, 5.4vw, 72px)" }}>
-                Ve lo que tu analítica <em>te está ocultando.</em>
+              <h1 className="headline-hero mb-8">
+                Descubre lo que tus analíticas están perdiendo.
               </h1>
-              <p className="text-ink-soft mt-7 leading-[1.55] max-w-[50ch]" style={{ fontSize: "clamp(16px, 1.3vw, 19px)" }}>
-                En 30 minutos pasamos tu web por la calculadora de gap — en directo. Ves cuánto dato está perdiendo tu setup actual y dónde. Sin slides. Sin pitch comercial.
+              <p className="text-[1.1rem] leading-[1.75] text-text-secondary mb-10">
+                En 30 minutos, te mostramos exactamente cuántos datos pierde tu
+                configuración actual&nbsp;&mdash; y cómo SealMetrics los recupera.
               </p>
 
-              <div className="mt-8 flex flex-col gap-4">
+              <div className="space-y-6">
                 {[
-                  { t: "Al lado de GA4", d: "Tus números de GA4 al lado de SealMetrics sobre el mismo tráfico. El gap está en tu propio dato." },
-                  { t: "Tus webs, tus UTMs", d: "No un sandbox genérico. Tiramos de tus canales, campañas y embudos reales." },
-                  { t: "Sin compromiso, sin email drip", d: "30 minutos. Si no te encaja, te lo decimos. Sin secuencia comercial." },
+                  {
+                    title: "Comparativa lado a lado",
+                    desc: "Ejecutamos SealMetrics junto a tus datos de GA4 para que veas la diferencia en números reales.",
+                  },
+                  {
+                    title: "Tus datos, tus dominios",
+                    desc: "La demo usa tu tráfico real, no dashboards genéricos. Ves tus propios visitantes invisibles.",
+                  },
+                  {
+                    title: "Sin compromiso",
+                    desc: "30 minutos. Sin contrato, sin presión, sin llamadas de seguimiento que no hayas pedido.",
+                  },
                 ].map((item) => (
-                  <div key={item.t} className="flex gap-4 pb-4 border-b border-warm-100 last:border-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0" />
-                    <div>
-                      <h3 className="text-[16px] font-semibold text-ink tracking-[-0.01em] mb-1">{item.t}</h3>
-                      <p className="text-[14px] text-ink-soft leading-[1.55]">{item.d}</p>
-                    </div>
+                  <div
+                    key={item.title}
+                    className="pb-6 border-b border-warm-100 last:border-0"
+                  >
+                    <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-[0.9rem] text-text-secondary leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-3">
-                <div className="p-5 bg-white border border-warm-100 rounded-xl text-center">
-                  <div className="font-semibold text-ink tabular-nums leading-none" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>
-                    <em className="italic-accent">58</em>%
-                  </div>
-                  <div className="text-[12px] text-ink-soft mt-2 leading-[1.4]">Conversiones sin trackear recuperadas de media</div>
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                <div className="p-5 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+                  <div className="font-serif text-[2rem] font-medium text-text-primary mb-1">58%</div>
+                  <div className="text-[0.75rem] text-text-secondary leading-snug">Conversiones no rastreadas recuperadas de media</div>
                 </div>
-                <div className="p-5 bg-white border border-warm-100 rounded-xl text-center">
-                  <div className="font-semibold text-ink tabular-nums leading-none" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>
-                    <em className="italic-accent">30</em> min
-                  </div>
-                  <div className="text-[12px] text-ink-soft mt-2 leading-[1.4]">Para ver tu gap de datos en directo</div>
+                <div className="p-5 bg-warm-white border border-warm-100 rounded-[4px] text-center">
+                  <div className="font-serif text-[2rem] font-medium text-text-primary mb-1">30 min</div>
+                  <div className="text-[0.75rem] text-text-secondary leading-snug">Para ver tu brecha de datos en vivo</div>
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-white rounded-xl" style={{ borderLeft: "3px solid #2E5C8A" }}>
-                <p className="text-[15px] text-ink-2 leading-[1.6] italic">
-                  &ldquo;Creíamos que nuestra analítica era fiable. SealMetrics nos mostró que nos estábamos perdiendo el 74% de las conversiones.&rdquo;
+              <div className="mt-10 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+                <p className="text-[0.85rem] text-text-secondary leading-relaxed">
+                  &ldquo;Pensábamos que nuestras analíticas eran precisas. SealMetrics
+                  nos mostró que estábamos perdiendo el 74% de nuestras conversiones.&rdquo;
                 </p>
-                <p className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
-                  Head of Digital Marketing · Retailer europeo de moda
+                <p className="text-[0.8rem] text-text-tertiary mt-2">
+                  Head of Digital Marketing &mdash; Retailer de Moda Europeo
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px]">
-                <Link href="/es/how-it-works" className="text-ink-soft no-underline border-b border-warm-200 pb-0.5 hover:text-ink transition-colors">Cómo funciona</Link>
-                <Link href="/es/product" className="text-ink-soft no-underline border-b border-warm-200 pb-0.5 hover:text-ink transition-colors">Producto completo</Link>
-                <Link href="/es/data-loss-calculator" className="text-ink-soft no-underline border-b border-warm-200 pb-0.5 hover:text-ink transition-colors">Calcula tu pérdida de datos</Link>
+              <div className="mt-8 flex flex-wrap gap-5 text-[0.85rem]">
+                <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona</Link>
+                <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto completo</Link>
+                <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calcula tu pérdida de datos</Link>
               </div>
             </div>
 
-            <div className="lg:sticky lg:top-24">
-              <DemoFormEs />
-            </div>
+            {/* Right: form */}
+            <DemoFormEs />
           </div>
         </div>
       </section>

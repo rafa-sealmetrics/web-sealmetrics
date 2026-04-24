@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function FirstPartyDataCollectionPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "First-Party Data Collection" }]} />
-      <JsonLd data={definedTermSchema({ name: "First-Party Data Collection", description: "Collecting analytics data through your own domain infrastructure.", url: "/glossary/first-party-data-collection", related: [{ name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }, { name: "Analytics Data Residency", url: "/glossary/analytics-data-residency" }, { name: "Intelligent Tracking Prevention (ITP)", url: "/glossary/intelligent-tracking-prevention" }] })} />
+      <JsonLd data={definedTermSchema({ name: "First-Party Data Collection", description: "Collecting analytics data through your own domain infrastructure.", url: "/glossary/first-party-data-collection" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "First-Party Data Collection" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -42,7 +41,14 @@ export default function FirstPartyDataCollectionPage() {
           <p>Approximately 40% of EU users run ad blockers that specifically target third-party analytics requests. First-party data collection bypasses this entirely — not through deception, but by fundamentally changing the data path to be genuinely first-party.</p>
           <p>Combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, first-party collection eliminates two of the three major <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link> vectors: ad blocker blocking and browser cookie restrictions.</p>
         </div>
-        <RelatedGlossaryTerms slug="first-party-data-collection" />
+        <div className="mt-16 pt-10 border-t border-warm-100">
+          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
+          <div className="space-y-3">
+            <Link href="/glossary/server-side-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Server-Side Tracking</Link>
+            <Link href="/glossary/cookieless-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Cookieless Analytics</Link>
+            <Link href="/glossary/ad-blocker-analytics-impact" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Ad Blocker Impact on Analytics</Link>
+          </div>
+        </div>
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
