@@ -1,15 +1,15 @@
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Onest, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
 import type { Locale } from "@/lib/i18n/types";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const onest = Onest({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -29,10 +29,12 @@ export function SharedLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakarta.variable} ${jetbrainsMono.variable}`}
+      className={`${onest.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
+        <link rel="preconnect" href="https://pixel-pre.sealmetrics.com" />
+        <link rel="dns-prefetch" href="https://pixel-pre.sealmetrics.com" />
         {/* Sealmetrics Analytics */}
         <script
           async

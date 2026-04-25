@@ -24,7 +24,7 @@ export default function UkPecrPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "UK PECR Analytics Exemption" }]} />
-      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jimenez", url: "/about", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "UK PECR Analytics Exemption" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -39,7 +39,7 @@ export default function UkPecrPage() {
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 17, 2026</time>
             <span>2 min read</span>
-            <span>By Rafa Jimenez</span>
+            <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
           </div>
         </header>
 

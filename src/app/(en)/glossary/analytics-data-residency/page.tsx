@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function AnalyticsDataResidencyPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Analytics Data Residency" }]} />
-      <JsonLd data={definedTermSchema({ name: "Analytics Data Residency", description: "The geographic location where analytics data is processed and stored, determining the applicable legal framework.", url: "/glossary/analytics-data-residency" })} />
+      <JsonLd data={definedTermSchema({ name: "Analytics Data Residency", description: "The geographic location where analytics data is processed and stored, determining the applicable legal framework.", url: "/glossary/analytics-data-residency", related: [{ name: "GDPR Analytics Compliance", url: "/glossary/gdpr-analytics-compliance" }, { name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Consent Management Platform (CMP)", url: "/glossary/consent-management-platform" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Analytics Data Residency" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -71,14 +72,7 @@ export default function AnalyticsDataResidencyPage() {
           </p>
         </div>
 
-        <div className="mt-16 pt-10 border-t border-warm-100">
-          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
-          <div className="space-y-3">
-            <Link href="/glossary/gdpr-analytics-compliance" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">GDPR Analytics Compliance</Link>
-            <Link href="/glossary/server-side-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Server-Side Tracking</Link>
-            <Link href="/glossary/consent-management-platform" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Consent Management Platform</Link>
-          </div>
-        </div>
+        <RelatedGlossaryTerms slug="analytics-data-residency" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

@@ -11,57 +11,46 @@ export default function NotFound() {
   }, []);
 
   return (
-    <section className="pt-40 pb-28 bg-white min-h-[70vh] flex items-center">
+    <section className="pt-40 pb-28 bg-warm-white min-h-[70vh] flex items-center">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-        <p className="font-mono text-[5rem] sm:text-[7rem] font-medium text-warm-200 leading-none mb-6">
+        <p
+          className="font-mono font-medium text-warm-200 leading-none mb-8 tabular-nums"
+          style={{ fontSize: "clamp(6rem, 15vw, 10rem)" }}
+        >
           404
         </p>
-        <h1 className="font-serif text-[2rem] sm:text-[2.5rem] font-normal text-text-primary mb-4">
-          Page not found
+        <h1 className="h-display mx-auto" style={{ fontSize: "clamp(36px, 5vw, 60px)", maxWidth: "20ch" }}>
+          Page <em>not found.</em>
         </h1>
-        <p className="text-[1rem] text-text-secondary mb-10 max-w-[480px] mx-auto leading-relaxed">
-          The page you are looking for does not exist or has been moved. Here
-          are some helpful links instead.
+        <p className="mt-8 text-ink-soft max-w-[50ch] mx-auto leading-[1.55]" style={{ fontSize: "clamp(15px, 1.3vw, 18px)" }}>
+          The page you are looking for does not exist or has been moved. Here are some helpful links instead.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link
             href="/"
-            className="inline-flex items-center px-8 py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
-            Go to Homepage
+            Go to homepage →
           </Link>
           <Link
             href="/demo"
-            className="inline-flex items-center px-8 py-3.5 text-[0.95rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline hover:bg-warm-white transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Book a Demo
+            Book a demo
           </Link>
         </div>
-        <div className="mt-10 flex flex-wrap justify-center gap-6 text-[0.85rem]">
-          <Link
-            href="/product"
-            className="text-text-secondary no-underline hover:text-text-primary transition-colors"
-          >
-            Product
-          </Link>
-          <Link
-            href="/pricing"
-            className="text-text-secondary no-underline hover:text-text-primary transition-colors"
-          >
-            Pricing
-          </Link>
-          <Link
-            href="/blog"
-            className="text-text-secondary no-underline hover:text-text-primary transition-colors"
-          >
-            Blog
-          </Link>
-          <Link
-            href="/glossary"
-            className="text-text-secondary no-underline hover:text-text-primary transition-colors"
-          >
-            Glossary
-          </Link>
+        <div className="mt-10 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[13.5px]">
+          {[
+            { href: "/product", label: "Product" },
+            { href: "/pricing", label: "Pricing" },
+            { href: "/how-it-works", label: "How it works" },
+            { href: "/blog", label: "Blog" },
+            { href: "/glossary", label: "Glossary" },
+          ].map((l) => (
+            <Link key={l.href} href={l.href} className="text-ink-soft no-underline border-b border-warm-200 pb-0.5 hover:text-ink transition-colors">
+              {l.label}
+            </Link>
+          ))}
         </div>
       </div>
     </section>

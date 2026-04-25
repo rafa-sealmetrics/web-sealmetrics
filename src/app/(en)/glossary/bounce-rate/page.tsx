@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function BounceRatePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Bounce Rate" }]} />
-      <JsonLd data={definedTermSchema({ name: "Bounce Rate", description: "Percentage of sessions where the visitor viewed only one page before leaving the site.", url: "/glossary/bounce-rate" })} />
+      <JsonLd data={definedTermSchema({ name: "Bounce Rate", description: "Percentage of sessions where the visitor viewed only one page before leaving the site.", url: "/glossary/bounce-rate", related: [{ name: "Event Tracking", url: "/glossary/event-tracking" }, { name: "Data Sampling", url: "/glossary/data-sampling" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Bounce Rate" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -73,14 +74,7 @@ export default function BounceRatePage() {
           </p>
         </div>
 
-        <div className="mt-16 pt-10 border-t border-warm-100">
-          <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">Related terms</h3>
-          <div className="space-y-3">
-            <Link href="/glossary/event-tracking" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Event Tracking</Link>
-            <Link href="/glossary/data-sampling" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Sampling</Link>
-            <Link href="/glossary/data-loss-in-analytics" className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors">Data Loss in Analytics</Link>
-          </div>
-        </div>
+        <RelatedGlossaryTerms slug="bounce-rate" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

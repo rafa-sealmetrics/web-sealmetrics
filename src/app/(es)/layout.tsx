@@ -4,16 +4,23 @@ import { SharedLayout } from "@/components/layout/SharedLayout";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E0E0C" },
+  ],
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sealmetrics.com"),
   title: "SealMetrics — Analítica Completa para eCommerce",
   description:
-    "Analítica web que captura el 100% de tu tráfico. Sin cookies, sin banners de consentimiento, sin pérdida de datos. Datos completos desde 599 EUR/mes.",
+    "Analítica web que captura el 100% de tu tráfico. Sin cookies, sin banners de consentimiento, sin pérdida de datos. Datos completos desde 499 EUR/mes.",
   openGraph: {
     title: "SealMetrics — Analítica Completa para eCommerce",
     description:
       "GA4 captura ~13% del tráfico europeo. SealMetrics captura el 100% — sin cookies, sin muros de consentimiento, sin muestreo.",
+    url: "https://sealmetrics.com/es",
+    siteName: "SealMetrics",
     type: "website",
     locale: "es_ES",
     images: [
@@ -36,6 +43,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://sealmetrics.com/es",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logos/logo-sealmetrics-negro.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logos/logo-sealmetrics-negro.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.svg",
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayoutEs({

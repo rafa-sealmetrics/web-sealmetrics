@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Changelog — SealMetrics",
     description: "Product updates and new features from SealMetrics.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/changelog",

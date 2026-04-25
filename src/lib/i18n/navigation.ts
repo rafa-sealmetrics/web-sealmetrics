@@ -1,6 +1,6 @@
 import { type Locale, SITE_URL, localePrefix } from "./types";
 
-/** Pages available in Spanish (Phase 1) */
+/** Pages available in Spanish */
 const translatedPaths = new Set([
   "/",
   "/pricing",
@@ -9,6 +9,20 @@ const translatedPaths = new Set([
   "/demo",
   "/security",
   "/growth-calculator",
+  "/data-loss-calculator",
+  "/about",
+  "/integrations",
+  "/platforms",
+  "/vs",
+  "/vs-ga4",
+  "/vs/ga360",
+  "/vs/adobe-analytics",
+  "/vs/piwik-pro",
+  "/alternatives/google-analytics",
+  "/for",
+  "/blog",
+  "/glossary",
+  "/case-studies",
   "/for/cmo",
   "/for/cto",
   "/for/dpo",
@@ -20,6 +34,7 @@ const translatedPaths = new Set([
   "/for/finance",
   "/for/healthcare",
   "/for/education",
+  "/authors/rafa-jimenez",
 ]);
 
 /** Returns true if the path has a Spanish translation */
