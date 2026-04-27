@@ -73,7 +73,7 @@ const LOGOS: { src: string; alt: string; h: number }[] = [
   { src: "/logos/clients/unicef.svg", alt: "UNICEF", h: 36 },
   { src: "/logos/clients/casabatllo.png", alt: "Casa Batlló", h: 44 },
   { src: "/logos/clients/juguettos.png", alt: "Juguettos", h: 38 },
-  { src: "/logos/clients/3cat.svg", alt: "3Cat.cat", h: 36 },
+  { src: "/logos/clients/3cat.png", alt: "3Cat", h: 36 },
   { src: "/logos/clients/fundacion-bankinter.png", alt: "Fundación Bankinter", h: 80 },
 ];
 
