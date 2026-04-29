@@ -5,3 +5,14 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 vite.config.ts.timestamp-*
+
+# Local mockups, agent configs, backups
+Seal-Web-2/
+AGENTS.md
+public/sitemap.xml.old
+.claude/scheduled_tasks.lock
+
+# Env (do not commit secrets)
+.env
+.env.local
+.env.*.local
