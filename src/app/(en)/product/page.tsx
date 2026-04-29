@@ -7,6 +7,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import {
   ProductHeroV3,
+  ProblemNarrativeV3,
   FourPillarsV3,
   FeatureLensAIV3,
   FeatureAttributionV3,
@@ -41,6 +42,7 @@ export default function ProductPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Product", url: "/product" }])} />
 
       <ProductHeroV3 />
+      <ProblemNarrativeV3 />
       <TldrBlock
         answer={
           <>SealMetrics is a <strong>cookieless, first-party analytics platform</strong> for European eCommerce teams. It captures 100% of traffic without consent banners, attributes revenue last-click on complete data, and runs AI anomaly detection (LENS) on top — all hosted in Dublin under GDPR-by-architecture.</>

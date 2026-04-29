@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: "¿Qué tan preciso es el tracking sin cookies?",
-    a: "Una cadena hotelera española midió +30% más tráfico vs GA y 15–20% más venta atribuida — acercándose a la realidad del CRM. Un grupo hotelero europeo descubrió que el 50% de su tráfico era invisible en su stack anterior. Sin muestreo, sin modelado — cada dato observado.",
+    a: "Una cadena hotelera española midió +30% más tráfico vs GA y 15–20% más venta atribuida — acercándose a la realidad del CRM. Palladium Hotel Group descubrió que el 40% de su tráfico no tenía atribución en su stack anterior y mejoró el Coste por Búsqueda en Display un +165% al cambiar. Sin muestreo, sin modelado — cada dato observado.",
   },
   {
     q: "¿Tengo que quitar GA4?",
@@ -53,7 +53,7 @@ export function FaqV3Es() {
             <p className="text-[16px] text-ink-soft leading-[1.55] mb-5">
               ¿Más preguntas? Nuestro equipo — incluido el founder — está a un mensaje.
             </p>
-            <Link href="#audit" className="inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
+            <Link href="/es/audit" className="inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
               Escríbenos →
             </Link>
           </div>

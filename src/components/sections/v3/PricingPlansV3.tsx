@@ -38,9 +38,9 @@ const plansEn: Plan[] = [
       "AI agents · coming soon",
     ],
     cta: "Start 14-day trial",
-    ctaNote: "No credit card required",
+    ctaNote: "",
     featured: false,
-    href: "/demo",
+    href: "https://my.sealmetrics.com/register",
   },
   {
     name: "Scale",
@@ -58,9 +58,9 @@ const plansEn: Plan[] = [
       "Guided onboarding (1 session)",
     ],
     cta: "Start 14-day trial",
-    ctaNote: "No credit card required",
+    ctaNote: "",
     featured: true,
-    href: "/demo",
+    href: "https://my.sealmetrics.com/register",
   },
   {
     name: "Enterprise",
@@ -101,9 +101,9 @@ const plansEs: Plan[] = [
       "Agentes IA · próximamente",
     ],
     cta: "Empezar prueba de 14 días",
-    ctaNote: "Sin tarjeta de crédito",
+    ctaNote: "",
     featured: false,
-    href: "/es/demo",
+    href: "https://my.sealmetrics.com/register",
   },
   {
     name: "Scale",
@@ -121,9 +121,9 @@ const plansEs: Plan[] = [
       "Onboarding guiado (1 sesión)",
     ],
     cta: "Empezar prueba de 14 días",
-    ctaNote: "Sin tarjeta de crédito",
+    ctaNote: "",
     featured: true,
-    href: "/es/demo",
+    href: "https://my.sealmetrics.com/register",
   },
   {
     name: "Enterprise",
@@ -302,16 +302,31 @@ export function PricingPlansV3({ locale = "en" }: { locale?: Locale }) {
                   ))}
                 </ul>
 
-                <Link
-                  href={plan.href}
-                  className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
-                    plan.featured
-                      ? "bg-ink text-white hover:bg-brand"
-                      : "border border-warm-200 text-ink hover:bg-warm-50"
-                  }`}
-                >
-                  {plan.cta} →
-                </Link>
+                {plan.href.startsWith("http") ? (
+                  <a
+                    href={plan.href}
+                    target="_blank"
+                    rel="noopener"
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
+                      plan.featured
+                        ? "bg-ink text-white hover:bg-brand"
+                        : "border border-warm-200 text-ink hover:bg-warm-50"
+                    }`}
+                  >
+                    {plan.cta} →
+                  </a>
+                ) : (
+                  <Link
+                    href={plan.href}
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
+                      plan.featured
+                        ? "bg-ink text-white hover:bg-brand"
+                        : "border border-warm-200 text-ink hover:bg-warm-50"
+                    }`}
+                  >
+                    {plan.cta} →
+                  </Link>
+                )}
                 {plan.ctaNote && (
                   <p className="text-[11.5px] text-ink-soft text-center mt-3 font-mono tracking-[0.04em]">
                     {plan.ctaNote}

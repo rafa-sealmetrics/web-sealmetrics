@@ -25,7 +25,7 @@ export function IndustriesBuiltFor() {
             tag="Hotels & Travel"
             name={<>Hotels &amp; <em className="italic-accent">resort groups</em></>}
             line="Where cookie rejection hides real CRM bookings from marketing reports and the OTA comparison breaks."
-            proof="European hotel groups · up to 50% traffic recovered"
+            proof="Palladium Hotel Group · 40% traffic recovered, +165% Display CPS"
             scene={
               <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                 <rect width="400" height="300" fill="#F5F5F0" />
@@ -507,7 +507,7 @@ export function PricingV3() {
                 ))}
               </ul>
               <Link
-                href="#audit"
+                href="/audit"
                 className={`inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
                   p.featured
                     ? "bg-ink text-white hover:bg-brand"

@@ -8,6 +8,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import {
   VsGA4HeroV3,
   VsGA4GapStatsV3,
+  DashboardPatternsV3,
   VsGA4TableV3,
   RunBothV3,
 } from "@/components/sections/v3/VsGA4V3Sections";
@@ -62,6 +63,7 @@ export default function VsGA4PageEs() {
       />
       <LogosStripEs />
       <VsGA4GapStatsV3 locale="es" />
+      <DashboardPatternsV3 locale="es" />
       <VsGA4TableV3 locale="es" />
       <RunBothV3 locale="es" />
       <FaqAccordionV3

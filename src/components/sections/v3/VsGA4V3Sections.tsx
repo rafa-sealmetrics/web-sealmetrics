@@ -126,6 +126,146 @@ export function VsGA4GapStatsV3({ locale = "en" as Locale }) {
   );
 }
 
+/* DASHBOARD PATTERNS · 5 cards · "what GA4 reports" vs "what SealMetrics captures"
+   Ported from v2 homepage. Anchored to consequence framing.
+   ============================================ */
+export function DashboardPatternsV3({ locale = "en" as Locale }) {
+  const t = locale === "es"
+    ? {
+        eyebrow: "Lo que el dashboard dice vs lo que pasó",
+        title: <>Lo que tu dashboard muestra <em>vs lo que de verdad pasó.</em></>,
+        lede: "Cinco patrones que vemos en cuentas eCommerce europeas. La mayoría de clientes encuentra al menos dos de estos huecos en sus propios datos durante los primeros 30 días corriendo SealMetrics junto a GA4.",
+        gaTag: "GA4 reporta",
+        sealTag: "SealMetrics captura",
+        consequence: "Consecuencia —",
+        foot: "El tamaño exacto del gap depende de tu mix de mercado, mix de dispositivo y tasa de aceptación de consent. Ningún cliente ve los cinco — pero casi todos ven uno o dos.",
+        cards: [
+          {
+            scenario: "Tráfico orgánico",
+            ga: "Muestreado y filtrado por cookie. Las sesiones donde se rechazó el consent desaparecen del canal orgánico.",
+            seal: "100% observado, server-side, independiente del consent.",
+            con: "Los canales orgánicos suelen ser 2–4× mayores que lo que reporta GA4. La inversión SEO que estás a punto de recortar puede ser tu mejor canal.",
+          },
+          {
+            scenario: "Conversiones de campañas Meta",
+            ga: "Parcial. Dependiente del píxel. Deduplicado contra estimaciones modeladas de Consent Mode v2.",
+            seal: "Conversiones server-side, independientes del rechazo de consent o el bloqueo del píxel.",
+            con: "El ROAS real suele ser bastante mayor de lo que sugiere GA4. La campaña que estabas a punto de matar puede llevar tiempo funcionando.",
+          },
+          {
+            scenario: "Cubo de tráfico directo",
+            ga: "40–60% del total atribuido a \u201Cdirect\u201D o \u201C(none)\u201D. El canal que más creció trimestre a trimestre — y que no puedes asignar.",
+            seal: "Atribución de canal real preservada server-side. El cubo \u201Cdirect\u201D vuelve a su peso real.",
+            con: "El canal \u201Cdirect\u201D deja de tapar a las campañas que en silencio sostenían el trimestre. La atribución se vuelve defendible en una review de presupuesto.",
+          },
+          {
+            scenario: "Datos en tiempo real durante picos (Black Friday)",
+            ga: "Retraso, muestreo por encima del umbral, reconciliaciones modeladas que llegan horas después.",
+            seal: "Stream de eventos en tiempo real con cero muestreo, da igual el pico de tráfico.",
+            con: "La llamada de las 2 AM en Black Friday se hace sobre datos reales — no sobre una estimación que reconcilia tres horas después de cerrar la ventana de decisión.",
+          },
+          {
+            scenario: "Atribución de reservas (hoteles y travel)",
+            ga: "Dependiente de cookie y consent. Una parte de las reservas reales del CRM simplemente no aparece en los reports de marketing.",
+            seal: "Conversiones de reserva contadas server-side a nivel de canal de aterrizaje — independientes del estado de consent.",
+            con: "20–25% de las reservas reales del CRM dejan de ser invisibles. Agencias y equipos internos cuadran sobre el mismo número de reservas.",
+          },
+        ],
+      }
+    : {
+        eyebrow: "What the dashboard says vs what happened",
+        title: <>What your dashboard shows <em>vs what actually happened.</em></>,
+        lede: "Five patterns we see across European eCommerce accounts. Most customers find at least two of these gaps in their own data within the first 30 days running SealMetrics alongside GA4.",
+        gaTag: "GA4 reports",
+        sealTag: "SealMetrics captures",
+        consequence: "Consequence —",
+        foot: "The exact size of the gap depends on your market mix, device mix and consent acceptance rate. No client sees all five — but almost every one sees one or two.",
+        cards: [
+          {
+            scenario: "Organic search traffic",
+            ga: "Sampled and cookie-filtered. Sessions where consent was rejected are missing from the organic channel entirely.",
+            seal: "100% observed, server-side, consent-independent.",
+            con: "Organic channels are typically 2–4× bigger than GA4 reports. The SEO investment you're about to cut may be your best-performing channel.",
+          },
+          {
+            scenario: "Meta campaign conversions",
+            ga: "Partial. Pixel-dependent. De-duplicated against modelled Consent Mode v2 estimations.",
+            seal: "Server-side conversions, independent of consent rejection or pixel-blocking.",
+            con: "True ROAS is often meaningfully higher than GA4 suggests. The campaign you were about to kill may have been working the whole time.",
+          },
+          {
+            scenario: "Direct traffic bucket",
+            ga: "40–60% of total sessions attributed to \u201Cdirect\u201D or \u201C(none)\u201D. The channel that grew fastest quarter-over-quarter — and you can't assign it.",
+            seal: "Real channel attribution preserved server-side. The \u201Cdirect\u201D bucket returns to its actual share.",
+            con: "Direct stops masking the campaigns that were secretly carrying the quarter. Attribution becomes defensible in a budget review.",
+          },
+          {
+            scenario: "Real-time data during peak events (Black Friday)",
+            ga: "Delayed, sampled above threshold, modelled reconciliations that land hours later.",
+            seal: "Real-time event stream with zero sampling, regardless of traffic peak.",
+            con: "The 2 AM call on Black Friday gets made on real data, not an estimate that reconciles three hours after the decision window closed.",
+          },
+          {
+            scenario: "Booking attribution (hotels & travel)",
+            ga: "Cookie-dependent, consent-gated. A share of real CRM bookings simply doesn't appear in marketing reports.",
+            seal: "Booking conversions counted server-side at landing-channel level — independent of consent state.",
+            con: "20–25% of real CRM bookings stop being invisible. Agencies and internal teams align on the same booking number.",
+          },
+        ],
+      };
+
+  return (
+    <section className="py-28 bg-warm-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">{t.eyebrow}</span>
+            <h2 className="h-section mt-5">{t.title}</h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">{t.lede}</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {t.cards.map((c) => (
+            <article
+              key={c.scenario}
+              className="bg-white border border-warm-100 rounded-xl p-7 md:p-8 flex flex-col gap-5"
+            >
+              <h3 className="text-[19px] font-semibold tracking-[-0.02em] text-ink leading-[1.2]">
+                {c.scenario}
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-3.5">
+                <div className="bg-warm-50 border border-warm-100 rounded-lg p-4">
+                  <span className="font-mono text-[10.5px] font-bold uppercase tracking-[0.1em] text-red-alert block mb-2">
+                    {t.gaTag}
+                  </span>
+                  <p className="text-[13.5px] leading-[1.55] text-ink-2">{c.ga}</p>
+                </div>
+                <div
+                  className="rounded-lg p-4"
+                  style={{ background: "rgba(45,139,109,0.06)", borderLeft: "2px solid #2D8B6D" }}
+                >
+                  <span className="font-mono text-[10.5px] font-bold uppercase tracking-[0.1em] text-brand-hover block mb-2">
+                    {t.sealTag}
+                  </span>
+                  <p className="text-[13.5px] leading-[1.55] text-ink">{c.seal}</p>
+                </div>
+              </div>
+              <p className="text-[13.5px] leading-[1.55] text-ink-soft pt-3 border-t border-warm-100">
+                <strong className="text-ink font-semibold">{t.consequence}</strong> {c.con}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-10 text-center text-[14px] leading-[1.55] text-ink-soft max-w-[64ch] mx-auto">
+          {t.foot}
+        </p>
+      </div>
+    </section>
+  );
+}
+
 /* COMPARISON TABLE · feature-by-feature */
 interface Row { feature: string; ga4: string; seal: string; }
 

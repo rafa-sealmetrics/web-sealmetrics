@@ -18,7 +18,7 @@ import { PricingFaqV3 } from "@/components/sections/v3/PricingFaqV3";
 export const metadata: Metadata = {
   title: "SealMetrics Pricing — Pay for humans, not bots",
   description:
-    "Complete analytics from €499/mo annual. Every feature in every plan. AI agents free. You only pay more if you grow. 14-day free trial, no card.",
+    "Complete analytics from €499/mo annual. Every feature in every plan. AI agents free. You only pay more if you grow. 14-day free trial.",
   openGraph: {
     title: "SealMetrics Pricing — Pay for humans, not bots",
     description:
@@ -36,7 +36,7 @@ const faqsForSchema = [
   { question: "What counts as a human event?", answer: "Any real visitor interaction: pageviews, clicks, conversions, form submissions, add-to-cart, newsletter signups. AI agent traffic and traditional bots are excluded — they don't count toward your limit." },
   { question: "Why is AI agent traffic free?", answer: "AI agents (ChatGPT, Claude, Perplexity) are a new category of traffic you need visibility into. We track them for free because understanding who reads your content with AI is a strategic advantage." },
   { question: "What happens if I exceed my event limit?", answer: "Your tracking never stops. We never block, throttle or sample your data. If you exceed for 2+ consecutive months, your plan auto-upgrades at your next billing cycle. One overage month per year is free." },
-  { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features. No credit card required." },
+  { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features." },
   { question: "Are all features included in every plan?", answer: "Yes. Core analytics, conversion tracking, LENS AI, monitoring, API, MCP Server and BigQuery export are included from Growth up. Plan differences are event volume, governance, support and Agent Analytics (Scale+)." },
 ];
 

@@ -91,6 +91,20 @@ export default function DemoPageEs() {
             </div>
 
             <div className="lg:sticky lg:top-24">
+              <div className="mb-5">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                  Contacta con nosotros
+                </span>
+                <h2
+                  className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-2"
+                  style={{ fontSize: "clamp(22px, 2.4vw, 28px)" }}
+                >
+                  Cuéntanos tu setup — <em className="italic-accent">respondemos en 24h.</em>
+                </h2>
+                <p className="text-[14px] text-ink-soft leading-[1.55] mt-2">
+                  6 preguntas rápidas. Las usamos para adaptar el audit a tus números reales, no a un deck genérico.
+                </p>
+              </div>
               <DemoFormEs />
             </div>
           </div>

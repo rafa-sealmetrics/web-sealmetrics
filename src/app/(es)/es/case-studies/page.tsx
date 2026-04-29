@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, itemListSchema, collectionPageSchema, reviewSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Casos de estudio — SealMetrics",
-  description: "Cómo equipos eCommerce europeos recuperaron sus ingresos invisibles con SealMetrics. Resultados reales, números reales (anonimizados hasta aprobación del cliente).",
+  description: "Cómo equipos eCommerce europeos convirtieron a SealMetrics en la fuente única de verdad que aceptan marca, agencias y departamentos. Caso destacado: Palladium Hotel Group.",
   alternates: {
     canonical: "https://sealmetrics.com/es/case-studies",
     languages: getAlternatesEs("/case-studies"),
@@ -16,12 +17,13 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    client: "Grupo hotelero europeo",
+    client: "Palladium Hotel Group",
     sector: "Hoteles · eCommerce",
-    stat1: { n: "50%", l: "Tráfico invisible antes de SealMetrics" },
-    stat2: { n: "25%", l: "Reservas CRM ahora atribuidas" },
-    quote: "Los datos que entrega SealMetrics son agnósticos, neutrales y sin sesgo. No hay caja negra.",
-    cite: "Equipo de marketing · Grupo hotelero",
+    stat1: { n: "40%", l: "Tráfico sin atribución antes de SealMetrics" },
+    stat2: { n: "+165%", l: "Mejora en Coste por Búsqueda en Display" },
+    quote: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+    cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+    href: "/es/case-studies/palladium-hotel-group",
   },
   {
     client: "Cadena hotelera · España",
@@ -45,7 +47,29 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Casos de estudio" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Casos de estudio", url: "/es/case-studies" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Casos de estudio", url: "/es/case-studies" }], "es")} />
+      <JsonLd data={collectionPageSchema({ name: "Casos de estudio", description: "Casos de marcas europeas que usan SealMetrics como fuente única de verdad. Caso destacado: Palladium Hotel Group.", url: "/es/case-studies" })} />
+      <JsonLd
+        data={itemListSchema({
+          name: "Casos de estudio SealMetrics",
+          description: "Casos de marcas europeas: hoteles, DTC y retail. Destacado: Palladium Hotel Group.",
+          url: "/es/case-studies",
+          items: cases.map((c) => ({
+            name: `${c.client} — ${c.sector}`,
+            url: c.href ? `https://sealmetrics.com${c.href}` : `https://sealmetrics.com/es/case-studies`,
+          })),
+        })}
+      />
+      {cases.map((c) => (
+        <JsonLd
+          key={c.client}
+          data={reviewSchema({
+            reviewBody: c.quote,
+            authorName: c.client,
+            authorRole: c.cite,
+          })}
+        />
+      ))}
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
@@ -54,7 +78,7 @@ export default function Page() {
             Equipos reales. Números reales. <em>Escritos honestos.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Los casos están anonimizados hasta que el cliente firma la autorización de publicación. Los números son reales y verificados contra el CRM y reportes internos de cada cliente.
+            Caso destacado este mes: Palladium Hotel Group sobre por qué la neutralidad ganó al volumen reportado. El resto siguen anonimizados hasta autorización del cliente — los números son reales y verificados contra el CRM y reportes internos de cada cliente.
           </p>
         </div>
       </section>
@@ -62,26 +86,40 @@ export default function Page() {
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {cases.map((c) => (
-              <article key={c.client} className="bg-white border border-warm-100 rounded-xl p-7 flex flex-col">
-                <div className="flex items-center justify-between flex-wrap gap-2 pb-4 border-b border-warm-100">
-                  <span className="text-[16px] font-semibold text-ink tracking-[-0.015em]">{c.client}</span>
-                  <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold">{c.sector}</span>
-                </div>
-                <blockquote className="text-[16px] leading-[1.45] tracking-[-0.01em] text-ink font-medium mt-4">
-                  &ldquo;{c.quote}&rdquo;
-                  <cite className="block mt-2.5 not-italic font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft font-semibold">{c.cite}</cite>
-                </blockquote>
-                <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t border-warm-100">
-                  {[c.stat1, c.stat2].map((s) => (
-                    <div key={s.n}>
-                      <div className="text-[26px] font-semibold tracking-[-0.03em] text-brand leading-none tabular-nums">{s.n}</div>
-                      <div className="text-[12px] leading-[1.45] text-ink-soft mt-1.5">{s.l}</div>
+            {cases.map((c) => {
+              const card = (
+                <article key={c.client} className={`bg-white border border-warm-100 rounded-xl p-7 flex flex-col h-full ${c.href ? "hover:border-warm-200 transition-colors" : ""}`}>
+                  <div className="flex items-center justify-between flex-wrap gap-2 pb-4 border-b border-warm-100">
+                    <span className="text-[16px] font-semibold text-ink tracking-[-0.015em]">{c.client}</span>
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold">{c.sector}</span>
+                  </div>
+                  <blockquote className="text-[16px] leading-[1.45] tracking-[-0.01em] text-ink font-medium mt-4">
+                    &ldquo;{c.quote}&rdquo;
+                    <cite className="block mt-2.5 not-italic font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft font-semibold">{c.cite}</cite>
+                  </blockquote>
+                  <div className="grid grid-cols-2 gap-3 mt-5 pt-4 border-t border-warm-100">
+                    {[c.stat1, c.stat2].map((s) => (
+                      <div key={s.n}>
+                        <div className="text-[26px] font-semibold tracking-[-0.03em] text-brand leading-none tabular-nums">{s.n}</div>
+                        <div className="text-[12px] leading-[1.45] text-ink-soft mt-1.5">{s.l}</div>
+                      </div>
+                    ))}
+                  </div>
+                  {c.href && (
+                    <div className="mt-5 pt-4 border-t border-warm-100 font-mono text-[11px] uppercase tracking-[0.1em] text-brand font-semibold">
+                      Lee el caso completo →
                     </div>
-                  ))}
-                </div>
-              </article>
-            ))}
+                  )}
+                </article>
+              );
+              return c.href ? (
+                <Link key={c.client} href={c.href} className="no-underline text-current">
+                  {card}
+                </Link>
+              ) : (
+                card
+              );
+            })}
           </div>
         </div>
       </section>

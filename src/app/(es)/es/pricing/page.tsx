@@ -18,7 +18,7 @@ import { PricingFaqV3 } from "@/components/sections/v3/PricingFaqV3";
 export const metadata: Metadata = {
   title: "Precios SealMetrics — Paga por humanos, no por bots",
   description:
-    "Analítica completa desde €499/mes anual. Todas las features en cada plan. Agentes IA gratis. Solo pagas más si creces. 14 días gratis, sin tarjeta.",
+    "Analítica completa desde €499/mes anual. Todas las features en cada plan. Agentes IA gratis. Solo pagas más si creces. 14 días gratis.",
   openGraph: {
     title: "Precios SealMetrics — Paga por humanos, no por bots",
     description:
@@ -37,7 +37,7 @@ const faqsForSchema = [
   { question: "¿Qué cuenta como evento humano?", answer: "Cualquier interacción real de un visitante: páginas vistas, clics, conversiones, envíos de formulario, añadir al carrito, suscripciones. El tráfico de agentes IA y bots tradicionales se excluye." },
   { question: "¿Por qué el tráfico de agentes IA es gratis?", answer: "Los agentes IA (ChatGPT, Claude, Perplexity) son una categoría nueva de tráfico sobre la que necesitas visibilidad. Los trackeamos gratis." },
   { question: "¿Qué pasa si supero mi límite de eventos?", answer: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos. Si superas 2+ meses seguidos, el plan se actualiza en el siguiente ciclo. Un mes de exceso al año es gratis." },
-  { question: "¿Hay prueba gratuita?", answer: "Sí. Cada plan incluye 14 días gratis con acceso completo. Sin tarjeta." },
+  { question: "¿Hay prueba gratuita?", answer: "Sí. Cada plan incluye 14 días gratis con acceso completo." },
   { question: "¿Todas las features están incluidas en cada plan?", answer: "Sí. Analítica core, tracking de conversiones, LENS AI, monitoring, API, MCP Server y export BigQuery están incluidos desde Growth." },
 ];
 

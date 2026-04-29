@@ -2,151 +2,324 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { scoreAnswers, type DemoAnswers } from "@/lib/demo-scoring";
 
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/webform-lead";
 
-const inputClasses =
-  "w-full px-4 py-3 text-[0.9rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none focus-visible:outline-2 focus-visible:outline-blue-accent focus-visible:outline-offset-2 transition-colors";
+interface Question {
+  id: keyof DemoAnswers;
+  label: string;
+  helper?: string;
+  options: { value: string; label: string }[];
+}
+
+const QUESTIONS: Question[] = [
+  {
+    id: "ga4Gap",
+    label: "How big is the gap between GA4 and your real backend revenue?",
+    helper: "If you've never compared, that's an answer too.",
+    options: [
+      { value: "gt50", label: "More than 50%" },
+      { value: "30-50", label: "30 to 50%" },
+      { value: "10-30", label: "10 to 30%" },
+      { value: "lt10", label: "Less than 10%" },
+      { value: "never", label: "I've never compared" },
+    ],
+  },
+  {
+    id: "pressure",
+    label: "Who's asking for clearer numbers above you?",
+    options: [
+      { value: "cfo", label: "The CFO is blocking decisions on this" },
+      { value: "board", label: "Direction or board" },
+      { value: "team", label: "My team" },
+      { value: "me", label: "Just me" },
+      { value: "nobody", label: "Nobody yet" },
+    ],
+  },
+  {
+    id: "paidSpend",
+    label: "Monthly paid media spend?",
+    options: [
+      { value: "gt100k", label: "More than €100K" },
+      { value: "20k-100k", label: "€20K to €100K" },
+      { value: "5k-20k", label: "€5K to €20K" },
+      { value: "lt5k", label: "Less than €5K" },
+      { value: "none", label: "We don't run paid" },
+    ],
+  },
+  {
+    id: "revenue",
+    label: "Annual revenue?",
+    options: [
+      { value: "1m-50m", label: "€1M to €50M" },
+      { value: "gt50m", label: "More than €50M" },
+      { value: "500k-1m", label: "€500K to €1M" },
+      { value: "lt500k", label: "Less than €500K" },
+    ],
+  },
+  {
+    id: "business",
+    label: "What kind of business?",
+    options: [
+      { value: "ecommerce", label: "eCommerce / DTC" },
+      { value: "hotel", label: "Hotel group" },
+      { value: "travel", label: "Travel" },
+      { value: "saas", label: "SaaS" },
+      { value: "other", label: "Other" },
+    ],
+  },
+  {
+    id: "role",
+    label: "Your role in the decision?",
+    helper: "We use this to tailor the conversation, not to disqualify you.",
+    options: [
+      { value: "decisor", label: "I decide (CMO / CEO)" },
+      { value: "recommends", label: "I recommend" },
+      { value: "implements", label: "I implement" },
+      { value: "other", label: "Something else" },
+    ],
+  },
+];
+
+const TOTAL_STEPS = QUESTIONS.length + 1;
 
 export function DemoForm() {
   const router = useRouter();
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<Partial<DemoAnswers>>({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [gdpr, setGdpr] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const select = (id: keyof DemoAnswers, value: string) => {
+    setAnswers((prev) => ({ ...prev, [id]: value }));
+    if (step < QUESTIONS.length - 1) {
+      setStep(step + 1);
+    } else {
+      setStep(step + 1);
+    }
+  };
+
+  const back = () => setStep(Math.max(0, step - 1));
+
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
     setError(null);
 
-    const form = e.currentTarget;
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      website: (form.elements.namedItem("website") as HTMLInputElement).value,
-      source: window.location.href,
+    if (
+      !answers.business ||
+      !answers.revenue ||
+      !answers.role ||
+      !answers.paidSpend ||
+      !answers.ga4Gap ||
+      !answers.pressure
+    ) {
+      setError("Please complete all questions before submitting.");
+      setSubmitting(false);
+      return;
+    }
+
+    const { raw, normalized, tier } = scoreAnswers(answers as DemoAnswers);
+
+    const payload = {
+      name,
+      email,
+      website,
+      locale: "en",
+      source: typeof window !== "undefined" ? window.location.href : "",
+      answers,
+      score: { raw, normalized, tier },
     };
 
-    try {
-      // Fire SealMetrics conversion
-      if (window.sealmetrics) {
-        window.sealmetrics.conv("demo_request", 1, {
-          email: data.email,
-        });
+    if (typeof window !== "undefined" && window.sealmetrics) {
+      try {
+        window.sealmetrics.conv("demo_request", 1, { email });
+      } catch (err) {
+        console.warn("SealMetrics conv failed", err);
       }
+    }
 
-      // Send to webhook
+    try {
       await fetch(WEBHOOK_URL, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
-
-      // Redirect to thank-you
-      router.push("/demo/thank-you");
-    } catch {
-      setError(
-        "Something went wrong. Please try again or email us directly."
-      );
-      setSubmitting(false);
+    } catch (err) {
+      console.warn("Webhook delivery failed, continuing", err);
     }
+
+    router.push(`/demo/thank-you?tier=${tier}`);
   };
 
+  const progressPct = ((step + 1) / TOTAL_STEPS) * 100;
+
   return (
-    <div className="bg-warm-white border border-warm-100 rounded-[4px] p-10">
-      <h2 className="font-serif text-[1.35rem] font-medium text-text-primary mb-2">
-        Request a demo
-      </h2>
-      <p className="text-[0.85rem] text-text-secondary mb-8">
-        Three fields. We&rsquo;ll reach out the same day to confirm your slot.
-      </p>
-
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-[0.8rem] font-medium text-text-body mb-1.5"
-          >
-            Full name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            className={inputClasses}
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-[0.8rem] font-medium text-text-body mb-1.5"
-          >
-            Work email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            className={inputClasses}
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="website"
-            className="block text-[0.8rem] font-medium text-text-body mb-1.5"
-          >
-            Your website
-          </label>
-          <input
-            id="website"
-            name="website"
-            type="url"
-            placeholder="https://"
-            required
-            className={inputClasses}
-          />
-        </div>
-
-        {/* GDPR consent */}
-        <div className="flex items-start gap-3">
-          <input
-            id="gdpr"
-            name="gdpr"
-            type="checkbox"
-            required
-            className="mt-1 w-4 h-4 rounded-[2px] border border-warm-200 accent-text-primary cursor-pointer flex-shrink-0"
-          />
-          <label htmlFor="gdpr" className="text-[0.75rem] text-text-secondary leading-relaxed cursor-pointer">
-            I agree to the{" "}
-            <a
-              href="https://legal.sealmetrics.com/privacy-notice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-body underline hover:text-text-primary transition-colors"
+    <div className="bg-white border border-warm-100 rounded-xl p-8 md:p-9">
+      {/* Progress */}
+      <div className="mb-7">
+        <div className="flex items-center justify-between mb-2">
+          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+            Step {step + 1} of {TOTAL_STEPS}
+          </span>
+          {step > 0 && step <= QUESTIONS.length && (
+            <button
+              type="button"
+              onClick={back}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft hover:text-ink transition-colors"
             >
-              Privacy Notice
-            </a>{" "}
-            and consent to SealMetrics processing my data to respond to my
-            request.
-          </label>
+              ← Back
+            </button>
+          )}
         </div>
+        <div className="h-1 bg-warm-100 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-brand transition-all duration-300"
+            style={{ width: `${progressPct}%` }}
+          />
+        </div>
+      </div>
 
-        {error && (
-          <p className="text-[0.8rem] text-red-alert">{error}</p>
-        )}
+      {/* Question steps */}
+      {step < QUESTIONS.length && (
+        <div>
+          <h2
+            className="font-semibold text-ink leading-[1.2] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(20px, 2.2vw, 26px)" }}
+          >
+            {QUESTIONS[step].label}
+          </h2>
+          {QUESTIONS[step].helper && (
+            <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-2">
+              {QUESTIONS[step].helper}
+            </p>
+          )}
+          <div className="flex flex-col gap-2.5 mt-6">
+            {QUESTIONS[step].options.map((opt) => {
+              const selected = answers[QUESTIONS[step].id] === opt.value;
+              return (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => select(QUESTIONS[step].id, opt.value)}
+                  className={`text-left px-5 py-4 rounded-lg border text-[15px] leading-[1.4] transition-all ${
+                    selected
+                      ? "bg-brand text-white border-brand"
+                      : "bg-warm-50 border-warm-100 text-ink hover:border-brand hover:bg-white"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
-        <button
-          type="submit"
-          disabled={submitting}
-          className="w-full py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] hover:bg-[#333] transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-        >
-          {submitting ? "Sending..." : "Book my 30-minute demo \u2192"}
-        </button>
-        <p className="text-[0.75rem] text-text-tertiary text-center">
-          No commitment. We will respond within one business day.
-        </p>
-      </form>
+      {/* Final step: contact */}
+      {step === QUESTIONS.length && (
+        <form onSubmit={submit} className="space-y-5">
+          <div>
+            <h2
+              className="font-semibold text-ink leading-[1.2] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(20px, 2.2vw, 26px)" }}
+            >
+              One last thing — where do we send your audit?
+            </h2>
+            <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-2">
+              Human-written, delivered within 24h. No drip sequence.
+            </p>
+          </div>
+
+          <div>
+            <label htmlFor="name" className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5">
+              Full name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5">
+              Work email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="website" className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5">
+              Your website
+            </label>
+            <input
+              id="website"
+              name="website"
+              type="url"
+              required
+              placeholder="https://"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+            />
+          </div>
+
+          <div className="flex items-start gap-3">
+            <input
+              id="gdpr"
+              type="checkbox"
+              required
+              checked={gdpr}
+              onChange={(e) => setGdpr(e.target.checked)}
+              className="mt-1 w-4 h-4 rounded border border-warm-200 accent-brand cursor-pointer flex-shrink-0"
+            />
+            <label htmlFor="gdpr" className="text-[12.5px] text-ink-soft leading-relaxed cursor-pointer">
+              I agree to the{" "}
+              <a
+                href="https://legal.sealmetrics.com/privacy-notice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink underline hover:text-brand transition-colors"
+              >
+                Privacy Notice
+              </a>{" "}
+              and consent to SealMetrics processing my data to respond to my request.
+            </label>
+          </div>
+
+          {error && <p className="text-[13px] text-red-alert">{error}</p>}
+
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md hover:bg-brand transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {submitting ? "Sending…" : "Talk with a Privacy-Analytics Specialist →"}
+          </button>
+          <p className="text-[12px] text-ink-soft text-center font-mono tracking-[0.04em]">
+            We respond within one business day.
+          </p>
+        </form>
+      )}
     </div>
   );
 }

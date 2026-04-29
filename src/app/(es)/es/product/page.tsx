@@ -7,6 +7,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import {
   ProductHeroV3Es,
+  ProblemNarrativeV3Es,
   FourPillarsV3Es,
   FeatureLensAIV3Es,
   FeatureAttributionV3Es,
@@ -42,6 +43,7 @@ export default function ProductPageEs() {
       <JsonLd data={breadcrumbSchema([{ name: "Producto", url: "/es/product" }])} />
 
       <ProductHeroV3Es />
+      <ProblemNarrativeV3Es />
       <TldrBlock
         label="En resumen"
         answer={

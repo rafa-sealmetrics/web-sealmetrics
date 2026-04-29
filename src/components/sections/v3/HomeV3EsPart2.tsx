@@ -22,7 +22,7 @@ export function IndustriesBuiltForEs() {
             tag="Hoteles & Travel"
             name={<>Hoteles &amp; <em className="italic-accent">cadenas hoteleras</em></>}
             line="Donde el rechazo de cookies esconde reservas reales del CRM y la comparación con OTAs se rompe."
-            proof="Grupos hoteleros europeos · hasta 50% tráfico recuperado"
+            proof="Palladium Hotel Group · 40% tráfico recuperado, +165% Display CPS"
             scene={
               <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                 <rect width="400" height="300" fill="#F5F5F0" />
@@ -368,7 +368,7 @@ export function PricingV3Es() {
                   </li>
                 ))}
               </ul>
-              <Link href="#audit" className={`inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${p.featured ? "bg-ink text-white hover:bg-brand" : "border border-warm-200 text-ink hover:bg-warm-50"}`}>{p.cta}</Link>
+              <Link href="/es/audit" className={`inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${p.featured ? "bg-ink text-white hover:bg-brand" : "border border-warm-200 text-ink hover:bg-warm-50"}`}>{p.cta}</Link>
             </article>
           ))}
         </div>

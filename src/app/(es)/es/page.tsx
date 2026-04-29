@@ -50,23 +50,30 @@ export default function HomeEs() {
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={claimReviewSchema({
-        claimReviewed: "El 50% del tráfico era invisible para el stack de medición previo.",
-        datePublished: "2026-04-01",
+        claimReviewed: "El 40% del tráfico entrante no tenía atribución de source/medium en el stack de medición anterior.",
+        datePublished: "2026-04-15",
         url: "/es",
-        itemReviewedName: "Auditoría interna de grupo hotelero sobre visibilidad de tráfico",
-        itemReviewedAuthor: "Grupo hotelero europeo",
+        itemReviewedName: "Auditoría interna de Palladium Hotel Group sobre atribución de tráfico",
+        itemReviewedAuthor: "Palladium Hotel Group",
       })} />
       <JsonLd data={claimReviewSchema({
-        claimReviewed: "El 25% de las reservas reales del CRM no aparecían en los reportes de marketing.",
-        datePublished: "2026-04-01",
+        claimReviewed: "El 35% de las reservas registradas en GA4 no podían asignarse al canal que las había generado.",
+        datePublished: "2026-04-15",
         url: "/es",
-        itemReviewedName: "Hallazgo de auditoría sobre brecha CRM-marketing",
-        itemReviewedAuthor: "Grupo hotelero europeo",
+        itemReviewedName: "Brecha de atribución de reservas · Palladium Hotel Group",
+        itemReviewedAuthor: "Palladium Hotel Group",
+      })} />
+      <JsonLd data={claimReviewSchema({
+        claimReviewed: "Mejora del +165% en Coste por Búsqueda en Display tras aplicar un modelo de medición basado en SealMetrics sobre DV360.",
+        datePublished: "2026-04-15",
+        url: "/es",
+        itemReviewedName: "Mejora de eficiencia DV360 · Palladium Hotel Group",
+        itemReviewedAuthor: "Palladium Hotel Group",
       })} />
       <JsonLd data={quotationSchema({
-        text: "Los datos que entrega SealMetrics son agnósticos, neutrales y sin sesgo. No hay caja negra.",
-        spokenBy: "Equipo de marketing",
-        spokenByRole: "Grupo hotelero europeo",
+        text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+        spokenBy: "Toni Andújar",
+        spokenByRole: "Digital & Direct Sales Director · Palladium Hotel Group",
         url: "/es",
       })} />
       <JsonLd data={quotationSchema({

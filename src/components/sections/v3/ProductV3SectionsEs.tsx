@@ -23,8 +23,69 @@ export function ProductHeroV3Es() {
           </Link>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14 días gratis · Sin tarjeta
+          14 días gratis
         </p>
+      </div>
+    </section>
+  );
+}
+
+/* PROBLEM NARRATIVE · ES — pain before solution */
+export function ProblemNarrativeV3Es() {
+  const cards = [
+    {
+      title: "La paradoja de Meta",
+      scenario:
+        "Tu campaña en Meta marca 340 conversiones en el píxel. El CRM marca 180. Tu agencia defiende el primer número. Tu CFO quiere el segundo. Nadie en la sala sabe explicar la diferencia.",
+      reframe:
+        "Los números divergen porque el píxel está bloqueado o deduplicado por aproximadamente la mitad del tráfico europeo. El píxel no se equivoca — está viendo una porción de la realidad distinta a la del CRM.",
+    },
+    {
+      title: "El cubo \u201Cdirect / none\u201D",
+      scenario:
+        "Abres GA4. Filtras por canal. Entre el 40 y el 60% de tus conversiones cae en \u201Cdirect\u201D o \u201C(none)\u201D. Sabes que no son visitas directas. Lo que no sabes es a qué canal pertenecían.",
+      reframe:
+        "Ese cubo es la silueta de visitantes que rechazaron el consentimiento o llegaron con bloqueador. Las campañas que de verdad los trajeron son invisibles en tu atribución — y en tu decisión de presupuesto.",
+    },
+    {
+      title: "La reunión trimestral de reconciliación",
+      scenario:
+        "Un martes recurrente. Noventa minutos. La agencia llega con un número. Analítica interna con otro distinto. Finanzas con un tercero. La reunión termina con \u201Clo cerramos offline\u201D — otra vez.",
+      reframe:
+        "El coste no es la reunión. Es que las decisiones reales de presupuesto — dónde recortar, dónde doblar la apuesta — se posponen porque nadie confía en el dato base.",
+    },
+  ];
+  return (
+    <section className="py-28 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">El problema</span>
+            <h2 className="h-section mt-5">
+              Cuatro herramientas. Cuatro números. <em>Una reunión.</em>
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Cada semana, alguien en tu organización está reconciliando GA4, Meta Ads, Google Ads y el CRM. Tres no coinciden. El cuarto es el que en secreto crees. El problema no son los datos — es qué decisiones puedes defender.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          {cards.map((c) => (
+            <article
+              key={c.title}
+              className="bg-warm-50 border border-warm-100 rounded-xl p-8 flex flex-col gap-4 min-h-[360px]"
+            >
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-ink leading-[1.2]">
+                {c.title}
+              </h3>
+              <p className="text-[14.5px] leading-[1.55] text-ink-2">{c.scenario}</p>
+              <p className="text-[14.5px] leading-[1.55] text-ink-soft mt-auto pt-4 border-t border-warm-100">
+                <em className="italic-accent not-italic font-medium">Por qué pasa —</em> {c.reframe}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -330,7 +391,7 @@ export function ProductFinalCtaV3Es() {
             </Link>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            14 días gratis · Sin tarjeta · Alojado en UE · Sin consentimiento por diseño
+            14 días gratis · Alojado en UE · Sin consentimiento por diseño
           </p>
         </div>
       </div>

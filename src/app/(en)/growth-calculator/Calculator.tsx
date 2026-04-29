@@ -725,7 +725,7 @@ export function Calculator() {
                   See Your Full Traffic
                 </Link>
                 <p className="mt-4 text-[0.75rem] text-text-tertiary">
-                  No commitment. No credit card. Just your actual data.
+                  No commitment. Just your actual data.
                 </p>
               </div>
 

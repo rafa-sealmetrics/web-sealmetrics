@@ -97,8 +97,8 @@ export default function VideosPage() {
             Start tracking without cookies today
           </h2>
           <p className="text-[1.05rem] text-text-secondary mb-8 max-w-[480px] mx-auto leading-relaxed">
-            No credit card. No cookies. No consent banners. Just clear,
-            accurate analytics that respects your visitors.
+            No cookies. No consent banners. Just clear, accurate analytics
+            that respects your visitors.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

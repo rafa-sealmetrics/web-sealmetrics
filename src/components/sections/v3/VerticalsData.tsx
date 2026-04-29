@@ -39,7 +39,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "1", label: "Source of truth", detail: "Brand, finance and agencies sign the same number." },
           { n: "4–6h", label: "Per week saved", detail: "No more reconciling conflicting reports in QBRs." },
         ],
-        quote: { text: "The data SealMetrics delivers is agnostic, unbiased, neutral. No black box. All players — brand, departments, agencies — accept it as the reference.", cite: "Marketing team · European hotel group" },
+        quote: { text: "The data SealMetrics delivers is agnostic, unbiased, neutral. No black box. All players — brand, departments, agencies — accept it as the reference.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
         faqs: [
           { q: "Will my agency accept these numbers?", a: "Most do — once they see the methodology. SealMetrics has no ad inventory to sell and no channel to favour. Agencies that push back are usually the ones inflating their own reports. Test the gap for 30 days with both running in parallel." },
           { q: "How does this help me defend spend to the CFO?", a: "You stop defending. The CFO sees SealMetrics numbers matching the CRM to within 15–20%. When numbers match reality, spend defence becomes automatic. The conversation shifts from \"can we trust this?\" to \"where do we scale next?\"." },
@@ -67,7 +67,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "1", label: "Fuente de verdad", detail: "Marca, finanzas y agencias firman el mismo número." },
           { n: "4–6h", label: "Por semana ahorradas", detail: "Adiós a cuadrar reportes conflictivos en QBRs." },
         ],
-        quote: { text: "Los datos que entrega SealMetrics son agnósticos, neutrales, sin sesgo. No hay caja negra. Todos los players — marca, departamentos, agencias — los aceptan como referencia.", cite: "Equipo de marketing · Grupo hotelero europeo" },
+        quote: { text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra. Todos los players — marca, departamentos, agencias — los aceptan como referencia.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
         faqs: [
           { q: "¿Mi agencia aceptará estos números?", a: "La mayoría sí — cuando ven la metodología. SealMetrics no tiene inventario publicitario ni canal que favorecer. Las agencias que protestan suelen ser las que inflan sus reportes. Prueba el gap 30 días con ambos en paralelo." },
           { q: "¿Cómo me ayuda a defender inversión ante el CFO?", a: "Dejas de defender. El CFO ve los números de SealMetrics cuadrar con el CRM dentro del 15–20%. Cuando los números cuadran con la realidad, la defensa es automática. La conversación pasa de \"¿podemos fiarnos?\" a \"¿dónde escalamos ahora?\"." },

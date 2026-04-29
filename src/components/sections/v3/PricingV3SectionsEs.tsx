@@ -30,7 +30,7 @@ export function PricingHeroV3Es() {
           </Link>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14 días gratis · Sin tarjeta
+          14 días gratis
         </p>
       </div>
     </section>

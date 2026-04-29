@@ -131,6 +131,20 @@ export default function DemoPage() {
 
             {/* Right: form */}
             <div className="lg:sticky lg:top-24">
+              <div className="mb-5">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                  Get in touch
+                </span>
+                <h2
+                  className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-2"
+                  style={{ fontSize: "clamp(22px, 2.4vw, 28px)" }}
+                >
+                  Tell us about your setup — <em className="italic-accent">we&apos;ll reply in 24h.</em>
+                </h2>
+                <p className="text-[14px] text-ink-soft leading-[1.55] mt-2">
+                  6 quick questions. We use them to tailor your audit to your real numbers, not a generic deck.
+                </p>
+              </div>
               <DemoForm />
             </div>
           </div>

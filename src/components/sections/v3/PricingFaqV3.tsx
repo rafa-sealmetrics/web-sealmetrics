@@ -36,7 +36,7 @@ const ITEMS_EN = [
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. Every plan includes a 14-day free trial with full access to all features. No credit card required. You'll see your real data within minutes of installing our script.",
+    a: "Yes. Every plan includes a 14-day free trial with full access to all features. You'll see your real data within minutes of installing our script.",
   },
   {
     q: "Unlimited websites and users?",
@@ -87,7 +87,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Hay prueba gratuita?",
-    a: "Sí. Cada plan incluye 14 días gratis con acceso completo a todas las features. Sin tarjeta. Verás tus datos reales a los pocos minutos de instalar el script.",
+    a: "Sí. Cada plan incluye 14 días gratis con acceso completo a todas las features. Verás tus datos reales a los pocos minutos de instalar el script.",
   },
   {
     q: "¿Webs y usuarios ilimitados?",

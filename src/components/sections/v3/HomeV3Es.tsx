@@ -12,7 +12,7 @@ export function HeroV3Es() {
             Nuevo · Caso de estudio
           </span>
           <a href="#featured-case" className="text-ink border-b border-warm-200 hover:border-ink">
-            Grupo hotelero europeo: el 50% del tráfico era invisible →
+            Palladium Hotel Group: 40% del tráfico sin atribución → +165% Display CPS
           </a>
         </div>
 
@@ -28,7 +28,7 @@ export function HeroV3Es() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <Link href="#audit" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
+          <Link href="/es/audit" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
             Pide una auditoría gratuita <span>→</span>
           </Link>
           <Link href="#how" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
@@ -144,7 +144,7 @@ export function ValueProp4MinEs() {
             Tu web · tu gap real · sin instalar nada · sin compromiso
           </p>
         </div>
-        <Link href="#audit" className="inline-flex items-center gap-2 bg-amber text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-105 transition" style={{ backgroundColor: "#E8B84B" }}>
+        <Link href="/es/audit" className="inline-flex items-center gap-2 bg-amber text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-105 transition" style={{ backgroundColor: "#E8B84B" }}>
           Reserva un walkthrough de 4 min →
         </Link>
       </div>
@@ -165,7 +165,7 @@ export function CompareSectionEs() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Cuando un grupo hotelero europeo comparó SealMetrics con su stack completo — pixel de Meta, Google Ads, Analytics, CRM — descubrieron que aproximadamente la mitad de su tráfico real era invisible. Ni en &ldquo;directo&rdquo;. Ni mal etiquetado. Simplemente no aparecía.
+            Cuando Palladium Hotel Group comparó SealMetrics con su stack completo — pixel de Meta, Google Ads, Analytics, CRM — descubrieron que el 40% de su tráfico entrante no tenía atribución. Ni mal etiquetado, ni en &ldquo;directo&rdquo;. Source y medium simplemente perdidos en tránsito.
           </p>
         </div>
 
@@ -179,17 +179,17 @@ export function CompareSectionEs() {
                 </h3>
               </div>
               <div className="font-semibold leading-[0.88] tracking-[-0.045em] mt-6 text-warm-300 tabular-nums" style={{ fontSize: "clamp(100px, 13vw, 180px)" }}>
-                50<span className="text-[0.5em] text-ink-soft ml-1 align-top relative top-[0.3em] font-normal">%</span>
+                40<span className="text-[0.5em] text-ink-soft ml-1 align-top relative top-[0.3em] font-normal">%</span>
               </div>
               <div className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-soft font-semibold mb-7 mt-1.5">
-                del tráfico invisible · sin medir
+                del tráfico sin atribución · source/medium perdido
               </div>
             </div>
             <p className="text-[17px] text-ink-2 leading-[1.5] max-w-[40ch]">
-              Cada reporte — marca, agencia, dashboard — se construye sobre la mitad que sobrevivió a muros de cookies, muestreo y sesgo de plataforma. Cada decisión de presupuesto, sobre una fracción de lo que realmente ocurrió.
+              Cada reporte — marca, agencia, dashboard — se construye sobre la parte que sobrevivió a muros de cookies, muestreo y sesgo de plataforma. Cada decisión de presupuesto, defendida sobre una fracción de lo que realmente ocurrió.
             </p>
             <div className="mt-6 pt-5 border-t border-warm-100 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft font-semibold">
-              Fuente · Auditoría interna grupo hotelero · 2026
+              Fuente · Auditoría interna · Palladium Hotel Group · abril 2026
             </div>
           </article>
 
@@ -206,7 +206,7 @@ export function CompareSectionEs() {
                 100<span className="text-[0.5em] text-white/60 ml-1 align-top relative top-[0.3em] font-normal">%</span>
               </div>
               <div className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/60 font-semibold mb-7 mt-1.5">
-                del tráfico observado · 25% más reservas visibles
+                de eventos observados · 35% más reservas ahora atribuidas
               </div>
             </div>
             <p className="text-[17px] text-white/85 leading-[1.5] max-w-[40ch] relative">
@@ -214,7 +214,7 @@ export function CompareSectionEs() {
               El número que todos los stakeholders aceptan — porque no tiene inventario de anuncios que vender ni nada que inflar.
             </p>
             <div className="mt-6 pt-5 border-t border-white/15 font-mono text-[11px] uppercase tracking-[0.08em] text-white/50 font-semibold relative">
-              Cita · Equipo de marketing · Grupo hotelero
+              Cita · Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
             </div>
           </article>
         </div>
@@ -229,10 +229,10 @@ export function CompareSectionEs() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
+              { n: "+165%", l: "Mejora en Coste por Búsqueda en Display", src: "Palladium Hotel Group · DV360" },
+              { n: "40%", l: "Del tráfico sin atribución antes", src: "Palladium Hotel Group · auditoría 2026" },
+              { n: "35%", l: "Reservas sin atribuir en GA4", src: "Palladium Hotel Group · auditoría 2026" },
               { n: "30–70%", l: "Más tráfico observado vs GA", src: "Media cross-industry" },
-              { n: "15–20%", l: "Más cerca del CRM en atribución de venta", src: "Cadena hotelera · España" },
-              { n: "4×", l: "Más conversiones capturadas", src: "Hoteles, moda" },
-              { n: "50%", l: "Tráfico invisible en stacks típicos", src: "Grupo hotelero · auditoría 2026" },
             ].map((p) => (
               <div key={p.l} className="p-5 bg-white border border-warm-100 rounded-xl">
                 <div className="text-[26px] font-semibold tracking-[-0.025em] text-ink tabular-nums">{p.n}</div>
@@ -278,13 +278,13 @@ export function FeaturedCaseEs() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
           <div>
-            <span className="eyebrow mb-5">Caso de estudio destacado</span>
+            <span className="eyebrow mb-5">Caso destacado · Palladium Hotel Group</span>
             <h2 className="h-section mt-5">
-              Marca, agencias y departamentos — <em>firmando el mismo número.</em>
+              Una única fuente de verdad que marca, agencias y departamentos — <em>aceptan como válida.</em>
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Un grupo hotelero europeo eligió SealMetrics por una razón: neutralidad. Cuatro herramientas reportaban cuatro verdades distintas. SealMetrics se convirtió en el único número que marca, agencia de medios, agencia creativa y analítica interna aceptan como válido.
+            Palladium Hotel Group eligió SealMetrics por una razón: neutralidad. Cuatro herramientas reportaban cuatro verdades distintas. SealMetrics se convirtió en el único número que marca, agencia de medios, agencia creativa y analítica interna aceptan como válido.
           </p>
         </div>
 
@@ -292,31 +292,31 @@ export function FeaturedCaseEs() {
           <div aria-hidden className="absolute pointer-events-none" style={{ left: -80, bottom: -80, width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle,rgba(45,139,109,0.4),transparent 70%)" }} />
           <div className="relative">
             <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-7 inline-block">
-              Caso de estudio · Hoteles · eCommerce
+              Palladium Hotel Group · Hoteles · eCommerce
             </span>
             <div className="text-brand text-[72px] leading-[0.5] h-8 font-semibold">&ldquo;</div>
             <blockquote className="mt-5 text-white font-medium leading-[1.2] tracking-[-0.02em]" style={{ fontSize: "clamp(24px, 2.6vw, 34px)" }}>
-              Los datos que entrega SealMetrics son{" "}
-              <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>agnósticos, neutrales y sin sesgo.</em>{" "}
+              Los datos que da SealMetrics son{" "}
+              <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>agnósticos, no están sesgados y son neutrales.</em>{" "}
               No hay caja negra.
             </blockquote>
             <div className="flex gap-3.5 mt-7 pt-6 border-t border-white/15 items-center">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-ink text-[14px]" style={{ background: "linear-gradient(135deg,#2D8B6D,#E8B84B)" }}>H</div>
+              <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-ink text-[14px]" style={{ background: "linear-gradient(135deg,#2D8B6D,#E8B84B)" }}>P</div>
               <div>
-                <b className="block text-[14px] font-semibold">Equipo de marketing · Grupo hotelero europeo</b>
-                <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60 font-semibold">Abril 2026 · auditoría interna</span>
+                <b className="block text-[14px] font-semibold">Toni Andújar · Digital &amp; Direct Sales Director</b>
+                <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60 font-semibold">Palladium Hotel Group · abril 2026</span>
               </div>
             </div>
-            <Link href="/es/case-studies/hotel-group" className="mt-7 inline-flex items-center gap-2 bg-amber text-ink px-6 py-3 rounded-md text-[14px] font-semibold no-underline hover:brightness-105" style={{ backgroundColor: "#E8B84B" }}>
+            <Link href="/es/case-studies/palladium-hotel-group" className="mt-7 inline-flex items-center gap-2 bg-amber text-ink px-6 py-3 rounded-md text-[14px] font-semibold no-underline hover:brightness-105" style={{ backgroundColor: "#E8B84B" }}>
               Lee el caso completo →
             </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-2.5 relative">
             {[
-              { l: "Tráfico invisible · antes", v: "50", u: "%", hl: false, note: "Del tráfico no se medía. Ni mal atribuido — simplemente no existía." },
-              { l: "Reservas invisibles · antes", v: "25", u: "%", hl: true, note: "Reservas reales del CRM que no aparecían en ningún reporte de marketing." },
-              { l: "Fuentes de verdad · después", v: "1", u: "", hl: false, note: "Número que todos los players — marca, departamentos y agencias externas — aceptan como referencia.", span: true },
+              { l: "Tráfico sin atribución · antes", v: "40", u: "%", hl: false, note: "Del tráfico registrado pero con source/medium perdido — absorbido por 'directo' o sin asignar." },
+              { l: "Reservas sin atribuir · antes", v: "35", u: "%", hl: true, note: "Reservas reales registradas como evento en GA4 que no se podían asignar al canal que las generó." },
+              { l: "Mejora en Coste por Búsqueda · DV360", v: "+165", u: "%", hl: false, note: "En el canal Display, tras rebalancear partners, soportes, audiencias y estrategias sobre el modelo de medición de SealMetrics.", span: true },
             ].map((s, i) => (
               <div key={i} className={`p-6 rounded-xl border flex flex-col gap-1.5 min-h-[150px] justify-between ${s.hl ? "bg-brand border-brand" : "bg-white/5 border-white/12"} ${s.span ? "col-span-2" : ""}`}>
                 <div className={`font-mono text-[10px] uppercase tracking-[0.12em] font-semibold ${s.hl ? "text-white/85" : "text-white/55"}`}>{s.l}</div>

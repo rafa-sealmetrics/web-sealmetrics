@@ -49,23 +49,30 @@ export default function Home() {
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={claimReviewSchema({
-        claimReviewed: "50% of traffic was invisible to the previous measurement stack.",
-        datePublished: "2026-04-01",
+        claimReviewed: "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
+        datePublished: "2026-04-15",
         url: "/",
-        itemReviewedName: "Hotel group internal audit finding on traffic visibility",
-        itemReviewedAuthor: "European hotel group",
+        itemReviewedName: "Palladium Hotel Group internal audit on traffic attribution",
+        itemReviewedAuthor: "Palladium Hotel Group",
       })} />
       <JsonLd data={claimReviewSchema({
-        claimReviewed: "25% of real CRM bookings were not appearing in marketing reports.",
-        datePublished: "2026-04-01",
+        claimReviewed: "35% of bookings recorded in GA4 could not be assigned to the channel that generated them.",
+        datePublished: "2026-04-15",
         url: "/",
-        itemReviewedName: "Hotel group internal audit finding on CRM-to-marketing attribution gap",
-        itemReviewedAuthor: "European hotel group",
+        itemReviewedName: "Palladium Hotel Group bookings attribution gap",
+        itemReviewedAuthor: "Palladium Hotel Group",
+      })} />
+      <JsonLd data={claimReviewSchema({
+        claimReviewed: "+165% improvement in Cost-per-Search on Display after applying a SealMetrics-based measurement model on DV360.",
+        datePublished: "2026-04-15",
+        url: "/",
+        itemReviewedName: "Palladium Hotel Group DV360 efficiency improvement",
+        itemReviewedAuthor: "Palladium Hotel Group",
       })} />
       <JsonLd data={quotationSchema({
         text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
-        spokenBy: "Marketing team",
-        spokenByRole: "European hotel group",
+        spokenBy: "Toni Andújar",
+        spokenByRole: "Digital & Direct Sales Director · Palladium Hotel Group",
         url: "/",
       })} />
       <JsonLd data={quotationSchema({

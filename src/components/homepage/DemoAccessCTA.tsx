@@ -154,7 +154,7 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
             </button>
 
             <p className="text-[0.75rem] text-dark-text-tertiary text-center pt-1">
-              No credit card required. Demo account expires after 7 days.
+              Demo account expires after 7 days.
             </p>
           </form>
         )}

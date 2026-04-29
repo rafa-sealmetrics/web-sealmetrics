@@ -14,7 +14,7 @@ export function HeroV3() {
             New · Case study
           </span>
           <a href="#featured-case" className="text-ink border-b border-warm-200 hover:border-ink">
-            European hotel group: 50% of traffic was invisible →
+            Palladium Hotel Group: 40% of traffic had no attribution → +165% Display CPS
           </a>
         </div>
 
@@ -31,7 +31,7 @@ export function HeroV3() {
 
         <div className="flex flex-wrap justify-center gap-3 mt-9">
           <Link
-            href="#audit"
+            href="/audit"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
             Get a free measurement audit <span>→</span>
@@ -170,7 +170,7 @@ export function ValueProp4Min() {
           </p>
         </div>
         <Link
-          href="#audit"
+          href="/audit"
           className="inline-flex items-center gap-2 bg-amber text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-105 transition"
           style={{ backgroundColor: "#E8B84B" }}
         >
@@ -197,7 +197,7 @@ export function CompareSection() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            When a European hotel group compared SealMetrics against their full stack — Meta Pixel, Google Ads, Analytics, their CRM — they discovered roughly half of their real traffic was invisible. Not in &ldquo;direct&rdquo;. Not mis-tagged. Simply not in any report.
+            When Palladium Hotel Group compared SealMetrics against their full stack — Meta Pixel, Google Ads, Analytics, their CRM — they discovered 40% of their inbound traffic had no attribution. Not mis-tagged. Not in &ldquo;direct&rdquo;. Source and medium simply lost in transit.
           </p>
         </div>
 
@@ -217,17 +217,17 @@ export function CompareSection() {
                 className="font-semibold leading-[0.88] tracking-[-0.045em] mt-6 text-warm-300 tabular-nums"
                 style={{ fontSize: "clamp(100px, 13vw, 180px)" }}
               >
-                50<span className="text-[0.5em] text-ink-soft ml-1 align-top relative top-[0.3em] font-normal">%</span>
+                40<span className="text-[0.5em] text-ink-soft ml-1 align-top relative top-[0.3em] font-normal">%</span>
               </div>
               <div className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-soft font-semibold mb-7 mt-1.5">
-                of traffic invisible · not measured
+                of traffic with no attribution · source/medium lost
               </div>
             </div>
             <p className="text-[17px] text-ink-2 leading-[1.5] max-w-[40ch]">
-              Every report — brand, agency, dashboard — is built on the half that survived cookie walls, sampling and platform bias. Every budget decision, built on a fraction of what actually happened.
+              Every report — brand, agency, dashboard — is built on the share that survived cookie walls, sampling and platform bias. Every budget decision, defended on a fraction of what actually happened.
             </p>
             <div className="mt-6 pt-5 border-t border-warm-100 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft font-semibold">
-              Source · Hotel group internal audit · 2026
+              Source · Palladium Hotel Group internal audit · April 2026
             </div>
           </article>
 
@@ -263,7 +263,7 @@ export function CompareSection() {
                 100<span className="text-[0.5em] text-white/60 ml-1 align-top relative top-[0.3em] font-normal">%</span>
               </div>
               <div className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/60 font-semibold mb-7 mt-1.5">
-                of traffic observed · 25% more bookings visible
+                of events observed · 35% more bookings now attributed
               </div>
             </div>
             <p className="text-[17px] text-white/85 leading-[1.5] max-w-[40ch] relative">
@@ -271,7 +271,7 @@ export function CompareSection() {
               The number every stakeholder signs against — because it has no ad inventory to sell and nothing to inflate.
             </p>
             <div className="mt-6 pt-5 border-t border-white/15 font-mono text-[11px] uppercase tracking-[0.08em] text-white/50 font-semibold relative">
-              Quote · Marketing team · Hotel group
+              Quote · Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
             </div>
           </article>
         </div>
@@ -293,10 +293,10 @@ export function CompareSection() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
+              { n: "+165%", em: "165", l: "Cost-per-Search improvement on Display", src: "Palladium Hotel Group · DV360" },
+              { n: "40%", em: "40", l: "Of traffic with no attribution before", src: "Palladium Hotel Group · 2026 audit" },
+              { n: "35%", em: "35", l: "Of bookings unattributed in GA4", src: "Palladium Hotel Group · 2026 audit" },
               { n: "30–70%", em: "70", l: "More traffic observed vs GA", src: "Cross-industry average" },
-              { n: "15–20%", em: "20", l: "Closer to CRM in attributed sales", src: "Hotel chain · Spain" },
-              { n: "4×", em: "4×", l: "More conversions tracked", src: "Hotels, fashion" },
-              { n: "50%", em: "50", l: "Traffic invisible in typical stacks", src: "Hotel group · 2026 audit" },
             ].map((p) => (
               <div key={p.l} className="p-5 bg-white border border-warm-100 rounded-xl">
                 <div className="text-[26px] font-semibold tracking-[-0.025em] text-ink tabular-nums">
@@ -378,13 +378,13 @@ export function FeaturedCase() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
           <div>
-            <span className="eyebrow mb-5">Featured case study</span>
+            <span className="eyebrow mb-5">Featured case study · Palladium Hotel Group</span>
             <h2 className="h-section mt-5">
-              Brand, agencies and departments — <em>all signing the same number.</em>
+              A single source of truth that brand, agencies and departments — <em>all sign as valid.</em>
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            A European hotel group chose SealMetrics for one reason: neutrality. Four tools reported four different truths. SealMetrics became the one number the brand, the paid media agency, the creative agency and internal analytics all accept as valid.
+            Palladium Hotel Group chose SealMetrics for one reason: neutrality. Four tools reported four different truths. SealMetrics became the single number the brand, the paid media agency, the creative agency and internal analytics all accept as valid.
           </p>
         </div>
 
@@ -403,7 +403,7 @@ export function FeaturedCase() {
           />
           <div className="relative">
             <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-7 inline-block">
-              Case study · Hotels · eCommerce
+              Palladium Hotel Group · Hotels · eCommerce
             </span>
             <div className="text-brand text-[72px] leading-[0.5] h-8 font-semibold">&ldquo;</div>
             <blockquote
@@ -421,17 +421,17 @@ export function FeaturedCase() {
                 className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-ink text-[14px]"
                 style={{ background: "linear-gradient(135deg,#2D8B6D,#E8B84B)" }}
               >
-                H
+                P
               </div>
               <div>
-                <b className="block text-[14px] font-semibold">Marketing team · European hotel group</b>
+                <b className="block text-[14px] font-semibold">Toni Andújar · Digital &amp; Direct Sales Director</b>
                 <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60 font-semibold">
-                  April 2026 · internal audit
+                  Palladium Hotel Group · April 2026
                 </span>
               </div>
             </div>
             <Link
-              href="/case-studies/hotel-group"
+              href="/case-studies/palladium-hotel-group"
               className="mt-7 inline-flex items-center gap-2 bg-amber text-ink px-6 py-3 rounded-md text-[14px] font-semibold no-underline hover:brightness-105"
               style={{ backgroundColor: "#E8B84B" }}
             >
@@ -441,9 +441,9 @@ export function FeaturedCase() {
 
           <div className="grid grid-cols-2 gap-2.5 relative">
             {[
-              { l: "Invisible traffic · before", v: "50", u: "%", hl: false, note: "Of traffic wasn't measured. Not mis-attributed — not there at all." },
-              { l: "Invisible bookings · before", v: "25", u: "%", hl: true, note: "Real CRM bookings that didn't appear in any marketing report." },
-              { l: "Sources of truth · after", v: "1", u: "", hl: false, note: "Number all players — brand, departments and external agencies — accept as the reference.", span: true },
+              { l: "Traffic with no attribution · before", v: "40", u: "%", hl: false, note: "Of traffic logged but with source/medium lost — absorbed into 'direct' or unassigned." },
+              { l: "Bookings without attribution · before", v: "35", u: "%", hl: true, note: "Real bookings logged in GA4 that couldn't be tied to the channel that generated them." },
+              { l: "Cost-per-Search improvement · DV360", v: "+165", u: "%", hl: false, note: "On the Display channel, after rebalancing partners, placements, audiences and strategies on a SealMetrics-based measurement model.", span: true },
             ].map((s, i) => (
               <div
                 key={i}

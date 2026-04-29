@@ -37,8 +37,72 @@ export function ProductHeroV3() {
           </Link>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14-day free trial · No credit card
+          14-day free trial
         </p>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   PROBLEM NARRATIVE · 3 cards · pain before solution
+   Ported from v2 "Four tools, four numbers, one meeting"
+   ============================================ */
+export function ProblemNarrativeV3() {
+  const cards = [
+    {
+      title: "The Meta paradox",
+      scenario:
+        "Your Meta campaign shows 340 conversions in the pixel. Your CRM shows 180. Your agency defends the first number. Your CFO wants the second. Nobody in the room can explain the gap.",
+      reframe:
+        "The numbers diverge because the pixel is blocked or de-duplicated by roughly half of European traffic. The pixel isn't wrong — it's seeing a different slice of reality than your CRM.",
+    },
+    {
+      title: "The \u201Cdirect / none\u201D bucket",
+      scenario:
+        "Open GA4. Filter by channel. 40 to 60% of conversions are attributed to \u201Cdirect\u201D or \u201C(none)\u201D. You know those aren't direct visits. You just don't know which channels they belonged to.",
+      reframe:
+        "That bucket is the silhouette of visitors who rejected consent or ran with ad-blockers. The campaigns that actually brought them in are invisible in your attribution — and in your budget decisions.",
+    },
+    {
+      title: "The quarterly reconciliation meeting",
+      scenario:
+        "A recurring Tuesday. Ninety minutes. Agency walks in with their number. Internal analytics with a different one. Finance with a third. The meeting ends with \u201Cwe'll align offline\u201D — again.",
+      reframe:
+        "The cost isn't the meeting. It's that real budget decisions — where to cut, where to double down — keep getting postponed because nobody trusts the baseline.",
+    },
+  ];
+  return (
+    <section className="py-28 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">The problem</span>
+            <h2 className="h-section mt-5">
+              Four tools. Four numbers. <em>One meeting.</em>
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Every week, someone in your organization is reconciling GA4, Meta Ads, Google Ads and the CRM. Three of them disagree. The fourth is the one you secretly trust. The actual problem isn&apos;t the data — it&apos;s what decisions you can defend.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          {cards.map((c) => (
+            <article
+              key={c.title}
+              className="bg-warm-50 border border-warm-100 rounded-xl p-8 flex flex-col gap-4 min-h-[360px]"
+            >
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-ink leading-[1.2]">
+                {c.title}
+              </h3>
+              <p className="text-[14.5px] leading-[1.55] text-ink-2">{c.scenario}</p>
+              <p className="text-[14.5px] leading-[1.55] text-ink-soft mt-auto pt-4 border-t border-warm-100">
+                <em className="italic-accent not-italic font-medium">Why it happens —</em> {c.reframe}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -553,7 +617,7 @@ export function ProductFinalCtaV3() {
             </Link>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            14-day free trial · No credit card · EU-hosted · Consentless by design
+            14-day free trial · EU-hosted · Consentless by design
           </p>
         </div>
       </div>

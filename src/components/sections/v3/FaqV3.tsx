@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: "How accurate is cookieless tracking?",
-    a: "A Spanish hotel chain measured +30% more traffic vs GA and 15–20% more attributed sales — approaching their CRM reality. A European hotel group discovered 50% of their traffic was invisible in their previous stack. No sampling, no modelling — every data point observed.",
+    a: "A Spanish hotel chain measured +30% more traffic vs GA and 15–20% more attributed sales — approaching their CRM reality. Palladium Hotel Group discovered 40% of their traffic had no attribution in their previous stack and improved Cost-per-Search on Display by +165% after switching. No sampling, no modelling — every data point observed.",
   },
   {
     q: "Do I need to remove GA4?",
@@ -54,7 +54,7 @@ export function FaqV3() {
               Still have questions? Our team — including the founder — is one message away.
             </p>
             <Link
-              href="#audit"
+              href="/audit"
               className="inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
             >
               Talk to us →

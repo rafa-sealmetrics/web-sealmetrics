@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
+import { SEALMETRICS_PIXEL_URL, SEALMETRICS_PIXEL_SRC } from "@/lib/sealmetrics";
 import type { Locale } from "@/lib/i18n/types";
 
 const onest = Onest({
@@ -33,14 +34,11 @@ export function SharedLayout({
     >
       <head>
         <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
-        <link rel="preconnect" href="https://pixel-pre.sealmetrics.com" />
-        <link rel="dns-prefetch" href="https://pixel-pre.sealmetrics.com" />
-        {/* Sealmetrics Analytics */}
-        <script
-          async
-          src="https://pixel-pre.sealmetrics.com/t.js?id=sealmetrics2"
-        />
-        {/* End Sealmetrics Analytics */}
+        <link rel="preconnect" href={SEALMETRICS_PIXEL_URL} />
+        <link rel="dns-prefetch" href={SEALMETRICS_PIXEL_URL} />
+        {/* SealMetrics Analytics */}
+        <script async src={SEALMETRICS_PIXEL_SRC} />
+        {/* End SealMetrics Analytics */}
       </head>
       <body className="font-sans antialiased">
         <a href="#main-content" className="skip-to-content">

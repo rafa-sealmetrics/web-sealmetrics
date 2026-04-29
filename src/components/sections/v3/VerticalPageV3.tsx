@@ -32,8 +32,8 @@ export function VerticalPageV3({ data }: { data: VerticalPageData }) {
   const pricingHref = locale === "es" ? "/es/pricing" : "/pricing";
   const micro =
     locale === "es"
-      ? "14 días gratis · Sin tarjeta · Alojado en UE"
-      : "14-day free trial · No credit card · EU-hosted";
+      ? "14 días gratis · Alojado en UE"
+      : "14-day free trial · EU-hosted";
 
   return (
     <>
