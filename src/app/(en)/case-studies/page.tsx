@@ -8,26 +8,33 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Case Studies — SealMetrics",
   description: "How European eCommerce teams turned SealMetrics into the single source of truth brand, agencies and departments accept. Real numbers, named clients.",
+  openGraph: {
+    title: "Case Studies — SealMetrics",
+    description: "How European eCommerce teams turned SealMetrics into the single source of truth brand, agencies and departments accept. Real numbers, named clients.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/case-studies" },
 };
 
 const cases = [
   {
-    client: "Palladium Hotel Group",
+    client: "European hotel group",
     sector: "Hotels · eCommerce",
     stat1: { n: "40%", l: "Traffic with no attribution before SealMetrics" },
     stat2: { n: "+165%", l: "Cost-per-Search improvement on Display" },
     quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
-    cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
-    href: "/case-studies/palladium-hotel-group",
+    cite: "Digital & Direct Sales Director · European hotel group",
+    href: "/case-studies/european-hotel-group",
   },
   {
-    client: "Hotel chain · Spain",
-    sector: "Hotels · eCommerce",
-    stat1: { n: "+30%", l: "Traffic recovered vs GA4" },
-    stat2: { n: "15–20%", l: "Closer to CRM in attribution" },
+    client: "Dreamplace Hotels",
+    sector: "Hospitality · eCommerce",
+    stat1: { n: "+30%", l: "More traffic vs Google Analytics" },
+    stat2: { n: "15–20%", l: "Closer to CRM in sales attribution" },
     quote: "It's no longer a tool that sits next to the process. It's the tool we make decisions with.",
-    cite: "Head of eCommerce · Hotel chain",
+    cite: "Eduardo Martin · eCommerce · Dreamplace Hotels",
+    href: "/case-studies/dreamplace-hotels",
   },
   {
     client: "DTC coffee brand",
@@ -48,7 +55,7 @@ export default function Page() {
       <JsonLd
         data={itemListSchema({
           name: "SealMetrics Case Studies",
-          description: "Customer case studies from European hotels, DTC and retail teams. Featured: Palladium Hotel Group.",
+          description: "Customer case studies from European hotels, DTC and retail teams. Featured: European hotel group.",
           url: "/case-studies",
           items: cases.map((c) => ({
             name: `${c.client} — ${c.sector}`,
@@ -74,7 +81,7 @@ export default function Page() {
             Real teams. Real numbers. <em>Honest write-ups.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Featured this month: Palladium Hotel Group on why neutrality beat reported volume. Other cases are anonymised until the client signs off on disclosure — numbers are real and verified against each customer&apos;s own CRM and internal reports.
+            Featured this month: European hotel group on why neutrality beat reported volume. Other cases are anonymised until the client signs off on disclosure — numbers are real and verified against each customer&apos;s own CRM and internal reports.
           </p>
         </div>
       </section>

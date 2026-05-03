@@ -30,7 +30,8 @@ const bilingualPaths = [
   "/blog",
   "/glossary",
   "/case-studies",
-  "/case-studies/palladium-hotel-group",
+  "/case-studies/european-hotel-group",
+  "/case-studies/dreamplace-hotels",
   "/audit",
   "/for",
   "/for/cmo",
@@ -54,7 +55,6 @@ const enOnlyPaths = [
   "/dpa",
   "/changelog",
   "/videos",
-  "/diagnostic-result",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

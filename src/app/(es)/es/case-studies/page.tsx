@@ -8,7 +8,13 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Casos de estudio — SealMetrics",
-  description: "Cómo equipos eCommerce europeos convirtieron a SealMetrics en la fuente única de verdad que aceptan marca, agencias y departamentos. Caso destacado: Palladium Hotel Group.",
+  description: "Cómo equipos eCommerce europeos convirtieron SealMetrics en fuente única de verdad para marca, agencias y departamentos. Caso: grupo hotelero europeo.",
+  openGraph: {
+    title: "Casos de estudio — SealMetrics",
+    description: "Cómo equipos eCommerce europeos convirtieron SealMetrics en fuente única de verdad para marca, agencias y departamentos. Caso: grupo hotelero europeo.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/case-studies",
     languages: getAlternatesEs("/case-studies"),
@@ -17,21 +23,22 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    client: "Palladium Hotel Group",
+    client: "grupo hotelero europeo",
     sector: "Hoteles · eCommerce",
     stat1: { n: "40%", l: "Tráfico sin atribución antes de SealMetrics" },
     stat2: { n: "+165%", l: "Mejora en Coste por Búsqueda en Display" },
     quote: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
-    cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
-    href: "/es/case-studies/palladium-hotel-group",
+    cite: "Director Digital y Venta Directa · grupo hotelero europeo",
+    href: "/es/case-studies/european-hotel-group",
   },
   {
-    client: "Cadena hotelera · España",
-    sector: "Hoteles · eCommerce",
-    stat1: { n: "+30%", l: "Tráfico recuperado vs GA4" },
+    client: "Dreamplace Hotels",
+    sector: "Hotelería · eCommerce",
+    stat1: { n: "+30%", l: "Más tráfico vs Google Analytics" },
     stat2: { n: "15–20%", l: "Más cerca del CRM en atribución" },
     quote: "Ya no es una herramienta que está al lado del proceso. Es la herramienta que nos da el dato real — y con la que tomamos decisiones.",
-    cite: "Head of eCommerce · Cadena hotelera",
+    cite: "Eduardo Martin · eCommerce · Dreamplace Hotels",
+    href: "/es/case-studies/dreamplace-hotels",
   },
   {
     client: "Marca DTC de café",
@@ -48,11 +55,11 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Casos de estudio" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Casos de estudio", url: "/es/case-studies" }], "es")} />
-      <JsonLd data={collectionPageSchema({ name: "Casos de estudio", description: "Casos de marcas europeas que usan SealMetrics como fuente única de verdad. Caso destacado: Palladium Hotel Group.", url: "/es/case-studies" })} />
+      <JsonLd data={collectionPageSchema({ name: "Casos de estudio", description: "Casos de marcas europeas que usan SealMetrics como fuente única de verdad. Caso destacado: grupo hotelero europeo.", url: "/es/case-studies" })} />
       <JsonLd
         data={itemListSchema({
           name: "Casos de estudio SealMetrics",
-          description: "Casos de marcas europeas: hoteles, DTC y retail. Destacado: Palladium Hotel Group.",
+          description: "Casos de marcas europeas: hoteles, DTC y retail. Destacado: grupo hotelero europeo.",
           url: "/es/case-studies",
           items: cases.map((c) => ({
             name: `${c.client} — ${c.sector}`,
@@ -78,7 +85,7 @@ export default function Page() {
             Equipos reales. Números reales. <em>Escritos honestos.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Caso destacado este mes: Palladium Hotel Group sobre por qué la neutralidad ganó al volumen reportado. El resto siguen anonimizados hasta autorización del cliente — los números son reales y verificados contra el CRM y reportes internos de cada cliente.
+            Caso destacado este mes: grupo hotelero europeo sobre por qué la neutralidad ganó al volumen reportado. El resto siguen anonimizados hasta autorización del cliente — los números son reales y verificados contra el CRM y reportes internos de cada cliente.
           </p>
         </div>
       </section>
