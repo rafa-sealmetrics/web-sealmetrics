@@ -50,13 +50,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.png", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/logos/logo-sealmetrics-negro.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/logos/logo-sealmetrics-negro.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.svg",
+    shortcut: "/favicon.png",
   },
   manifest: "/manifest.webmanifest",
 };

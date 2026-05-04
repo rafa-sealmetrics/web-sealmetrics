@@ -7,6 +7,7 @@ import {
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import Link from "next/link";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
@@ -15,7 +16,7 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 export const metadata: Metadata = {
   title: "Analytics for Hotels — Direct-Booking | SealMetrics",
   description:
-    "Cookieless analytics for hotels: match direct-booking attribution to your PMS, recover invisible reservations, and roll up multi-property portfolios.",
+    "Cookieless analytics for hotels: match direct-booking attribution to your PMS. How Palladium Hotel Group recovered 35% of unattributed bookings and Dreamplace Hotels closed a 15-20% sales gap.",
   openGraph: {
     title: "Analytics for Hotels — Direct-Booking | SealMetrics",
     description:
@@ -69,7 +70,128 @@ export default function Page() {
         })}
       />
 
-      <VerticalPageV3 data={getVerticalData("hotels", "en")} />
+      <VerticalPageV3
+        data={getVerticalData("hotels", "en")}
+        featured={
+          <section className="bg-warm-white border-t border-warm-100 py-24">
+            <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+              <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+            <div>
+              <span className="eyebrow mb-5">Featured hotel case studies</span>
+              <h2 className="h-section mt-5">
+                Two hotel groups. <em>Same finding: half the data was missing.</em>
+              </h2>
+            </div>
+            <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+              Palladium Hotel Group and Dreamplace Hotels both ran SealMetrics next to their existing stack. Both found a structural gap. Both started taking paid-media decisions on the recovered data — not on what each platform reports back to itself.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Palladium card */}
+            <article className="bg-white border border-warm-100 rounded-2xl p-8 md:p-10 flex flex-col gap-6">
+              <header className="flex items-baseline justify-between flex-wrap gap-3 pb-5 border-b border-warm-100">
+                <span className="text-[18px] font-semibold text-ink tracking-[-0.015em]">
+                  Palladium Hotel Group
+                </span>
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Hotels · Spain · ~5 brands
+                </span>
+              </header>
+
+              <blockquote
+                className="border-l-[3px] pl-5 italic"
+                style={{ borderColor: "#2E5C8A" }}
+              >
+                <p className="text-[18.5px] leading-[1.4] tracking-[-0.01em] font-medium text-ink">
+                  &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
+                </p>
+                <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Toni Andújar · Digital &amp; Direct Sales Director
+                </cite>
+              </blockquote>
+
+              <ul className="grid grid-cols-3 gap-4 pt-5 border-t border-warm-100">
+                {[
+                  { n: "40%", l: "Traffic with no attribution before" },
+                  { n: "35%", l: "Bookings unattributed in GA4" },
+                  { n: "+165%", l: "Display CPS improvement (DV360)" },
+                ].map((s) => (
+                  <li key={s.l}>
+                    <div className="text-[24px] font-semibold tracking-[-0.025em] text-ink leading-none tabular-nums">
+                      {s.n}
+                    </div>
+                    <div className="text-[12.5px] text-ink-soft mt-2 leading-[1.4]">
+                      {s.l}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/case-studies/palladium-hotel-group"
+                className="inline-flex items-center gap-1.5 mt-2 text-[14.5px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink self-start"
+              >
+                Read the Palladium case study <span>→</span>
+              </Link>
+            </article>
+
+            {/* Dreamplace card */}
+            <article className="bg-white border border-warm-100 rounded-2xl p-8 md:p-10 flex flex-col gap-6">
+              <header className="flex items-baseline justify-between flex-wrap gap-3 pb-5 border-b border-warm-100">
+                <span className="text-[18px] font-semibold text-ink tracking-[-0.015em]">
+                  Dreamplace Hotels
+                </span>
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Hotels · Spain · ~2 yrs using
+                </span>
+              </header>
+
+              <blockquote
+                className="border-l-[3px] pl-5 italic"
+                style={{ borderColor: "#2E5C8A" }}
+              >
+                <p className="text-[18.5px] leading-[1.4] tracking-[-0.01em] font-medium text-ink">
+                  &ldquo;What it gives us is what we&apos;ve always needed: data as real as possible, as close to reality as possible.&rdquo;
+                </p>
+                <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Eduardo Martin · eCommerce
+                </cite>
+              </blockquote>
+
+              <ul className="grid grid-cols-3 gap-4 pt-5 border-t border-warm-100">
+                {[
+                  { n: "+30%", l: "More traffic vs Google Analytics" },
+                  { n: "15–20%", l: "Sales attribution gap closed (vs CRM)" },
+                  { n: "Meta + Google", l: "First channels using SealMetrics data to decide" },
+                ].map((s) => (
+                  <li key={s.l}>
+                    <div className="text-[24px] font-semibold tracking-[-0.025em] text-ink leading-none tabular-nums">
+                      {s.n}
+                    </div>
+                    <div className="text-[12.5px] text-ink-soft mt-2 leading-[1.4]">
+                      {s.l}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/case-studies/dreamplace-hotels"
+                className="inline-flex items-center gap-1.5 mt-2 text-[14.5px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink self-start"
+              >
+                Read the Dreamplace case study <span>→</span>
+              </Link>
+            </article>
+          </div>
+
+              <p className="mt-10 text-center text-[15px] text-ink-soft">
+                Different sizes. Different tech stacks. Same diagnosis: incomplete data was driving budget decisions until SealMetrics replaced it with the real number.
+              </p>
+            </div>
+          </section>
+        }
+      />
 
       <TldrBlock
         label="Cookieless analytics for hotels"

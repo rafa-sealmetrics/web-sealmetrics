@@ -7,6 +7,7 @@ import {
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import Link from "next/link";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
@@ -15,7 +16,7 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 export const metadata: Metadata = {
   title: "Analytics for Hotels — Direct-Booking | SealMetrics",
   description:
-    "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS, recupera reservas invisibles y consolida portfolios multi-propiedad.",
+    "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS. Cómo Palladium Hotel Group recuperó el 35% de reservas sin atribución y Dreamplace Hotels cerró un gap del 15-20% en ventas.",
   openGraph: {
     title: "Analytics for Hotels — Direct-Booking | SealMetrics",
     description:
@@ -73,7 +74,128 @@ export default function Page() {
         })}
       />
 
-      <VerticalPageV3 data={getVerticalData("hotels", "es")} />
+      <VerticalPageV3
+        data={getVerticalData("hotels", "es")}
+        featured={
+          <section className="bg-warm-white border-t border-warm-100 py-24">
+            <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+              <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+            <div>
+              <span className="eyebrow mb-5">Casos de estudio · hoteles</span>
+              <h2 className="h-section mt-5">
+                Dos grupos hoteleros. <em>Mismo hallazgo: faltaba la mitad del dato.</em>
+              </h2>
+            </div>
+            <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+              Palladium Hotel Group y Dreamplace Hotels pasaron SealMetrics junto a su stack actual. Los dos descubrieron un gap estructural. Los dos empezaron a tomar decisiones de paid media sobre el dato recuperado — no sobre lo que cada plataforma se reporta a sí misma.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Palladium card */}
+            <article className="bg-white border border-warm-100 rounded-2xl p-8 md:p-10 flex flex-col gap-6">
+              <header className="flex items-baseline justify-between flex-wrap gap-3 pb-5 border-b border-warm-100">
+                <span className="text-[18px] font-semibold text-ink tracking-[-0.015em]">
+                  Palladium Hotel Group
+                </span>
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Hoteles · España · ~5 marcas
+                </span>
+              </header>
+
+              <blockquote
+                className="border-l-[3px] pl-5 italic"
+                style={{ borderColor: "#2E5C8A" }}
+              >
+                <p className="text-[18.5px] leading-[1.4] tracking-[-0.01em] font-medium text-ink">
+                  &ldquo;El dato que entrega SealMetrics es agnóstico, sin sesgo y neutral. No hay caja negra.&rdquo;
+                </p>
+                <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Toni Andújar · Digital &amp; Direct Sales Director
+                </cite>
+              </blockquote>
+
+              <ul className="grid grid-cols-3 gap-4 pt-5 border-t border-warm-100">
+                {[
+                  { n: "40%", l: "Tráfico sin atribución antes" },
+                  { n: "35%", l: "Reservas sin atribuir en GA4" },
+                  { n: "+165%", l: "Mejora Display CPS (DV360)" },
+                ].map((s) => (
+                  <li key={s.l}>
+                    <div className="text-[24px] font-semibold tracking-[-0.025em] text-ink leading-none tabular-nums">
+                      {s.n}
+                    </div>
+                    <div className="text-[12.5px] text-ink-soft mt-2 leading-[1.4]">
+                      {s.l}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/es/case-studies/palladium-hotel-group"
+                className="inline-flex items-center gap-1.5 mt-2 text-[14.5px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink self-start"
+              >
+                Leer el caso Palladium <span>→</span>
+              </Link>
+            </article>
+
+            {/* Dreamplace card */}
+            <article className="bg-white border border-warm-100 rounded-2xl p-8 md:p-10 flex flex-col gap-6">
+              <header className="flex items-baseline justify-between flex-wrap gap-3 pb-5 border-b border-warm-100">
+                <span className="text-[18px] font-semibold text-ink tracking-[-0.015em]">
+                  Dreamplace Hotels
+                </span>
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Hoteles · España · ~2 años
+                </span>
+              </header>
+
+              <blockquote
+                className="border-l-[3px] pl-5 italic"
+                style={{ borderColor: "#2E5C8A" }}
+              >
+                <p className="text-[18.5px] leading-[1.4] tracking-[-0.01em] font-medium text-ink">
+                  &ldquo;Lo que nos aporta es lo que hemos necesitado siempre: el dato lo más real posible y lo más próximo a la realidad.&rdquo;
+                </p>
+                <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                  Eduardo Martin · eCommerce
+                </cite>
+              </blockquote>
+
+              <ul className="grid grid-cols-3 gap-4 pt-5 border-t border-warm-100">
+                {[
+                  { n: "+30%", l: "Más tráfico vs Google Analytics" },
+                  { n: "15–20%", l: "Gap de atribución cerrado (vs CRM)" },
+                  { n: "Meta + Google", l: "Primeros canales decidiendo con SealMetrics" },
+                ].map((s) => (
+                  <li key={s.l}>
+                    <div className="text-[24px] font-semibold tracking-[-0.025em] text-ink leading-none tabular-nums">
+                      {s.n}
+                    </div>
+                    <div className="text-[12.5px] text-ink-soft mt-2 leading-[1.4]">
+                      {s.l}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/es/case-studies/dreamplace-hotels"
+                className="inline-flex items-center gap-1.5 mt-2 text-[14.5px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink self-start"
+              >
+                Leer el caso Dreamplace <span>→</span>
+              </Link>
+            </article>
+          </div>
+
+              <p className="mt-10 text-center text-[15px] text-ink-soft">
+                Tamaños distintos. Stacks distintos. Mismo diagnóstico: el dato incompleto estaba dirigiendo las decisiones de presupuesto hasta que SealMetrics lo sustituyó por el número real.
+              </p>
+            </div>
+          </section>
+        }
+      />
 
       <TldrBlock
         label="Analítica sin cookies para hoteles"

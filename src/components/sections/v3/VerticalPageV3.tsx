@@ -26,7 +26,14 @@ export interface VerticalPageData {
   locale: Locale;
 }
 
-export function VerticalPageV3({ data }: { data: VerticalPageData }) {
+export function VerticalPageV3({
+  data,
+  featured,
+}: {
+  data: VerticalPageData;
+  /** Optional section rendered between Outcomes and Quote (e.g. featured case studies) */
+  featured?: React.ReactNode;
+}) {
   const { locale } = data;
   const demoHref = locale === "es" ? "/es/demo" : "/demo";
   const pricingHref = locale === "es" ? "/es/pricing" : "/pricing";
@@ -158,6 +165,9 @@ export function VerticalPageV3({ data }: { data: VerticalPageData }) {
           </div>
         </div>
       </section>
+
+      {/* OPTIONAL FEATURED SLOT (e.g. case studies) — rendered between Outcomes and Quote */}
+      {featured}
 
       {/* QUOTE (optional) */}
       {data.quote && (
