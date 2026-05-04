@@ -396,146 +396,55 @@ export function CompareSection() {
    ============================================ */
 export function FeaturedCase() {
   return (
-    <section id="featured-case" className="py-28 bg-warm-white border-t border-warm-100">
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
-          <div>
-            <span className="eyebrow mb-5">Featured case study · Palladium Hotel Group</span>
-            <h2 className="h-section mt-5">
-              A single source of truth that brand, agencies and departments — <em>all sign as valid.</em>
-            </h2>
-          </div>
-          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Palladium Hotel Group chose SealMetrics for one reason: neutrality. Four tools reported four different truths. SealMetrics became the single number the brand, the paid media agency, the creative agency and internal analytics all accept as valid.
-          </p>
-        </div>
+    <section id="featured-case" className="py-20 md:py-24 bg-warm-50 border-t border-warm-100">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
+        <p className="text-center font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand mb-10">
+          Case study · Palladium Hotel Group
+        </p>
 
-        <div className="bg-ink text-white rounded-[20px] p-10 md:p-[60px] grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-14 relative overflow-hidden">
-          <div
-            aria-hidden
-            className="absolute pointer-events-none"
-            style={{
-              left: -80,
-              bottom: -80,
-              width: 300,
-              height: 300,
-              borderRadius: "50%",
-              background: "radial-gradient(circle,rgba(45,139,109,0.4),transparent 70%)",
-            }}
-          />
-          <div className="relative">
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-7 inline-block">
-              Palladium Hotel Group · Hotels · eCommerce
-            </span>
-            <div className="text-brand text-[72px] leading-[0.5] h-8 font-semibold">&ldquo;</div>
-            <blockquote
-              className="mt-5 text-white font-medium leading-[1.2] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(24px, 2.6vw, 34px)" }}
+        {/* Big metric tiles */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+          {[
+            { n: "40%", c: "text-ink", l: "traffic that was invisible to GA4" },
+            { n: "35%", c: "text-brand", l: "bookings recovered & attributed" },
+            { n: "+165%", c: "text-brand", l: "Display CPS improvement on DV360" },
+          ].map((s) => (
+            <div
+              key={s.l}
+              className="bg-white rounded-2xl p-8 text-center border border-warm-100 shadow-[0_1px_0_rgba(14,14,12,0.04)]"
             >
-              The data SealMetrics delivers is{" "}
-              <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-                agnostic, unbiased and neutral.
-              </em>{" "}
-              There&apos;s no black box.
-            </blockquote>
-            <div className="flex gap-3.5 mt-7 pt-6 border-t border-white/15 items-center">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-ink text-[14px]"
-                style={{ background: "linear-gradient(135deg,#2D8B6D,#E8B84B)" }}
+              <p
+                className={`font-semibold tracking-[-0.03em] tabular-nums leading-none ${s.c}`}
+                style={{ fontSize: "clamp(40px, 5vw, 56px)" }}
               >
-                P
-              </div>
-              <div>
-                <b className="block text-[14px] font-semibold">Digital & Direct Sales Director · Digital &amp; Direct Sales Director</b>
-                <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60 font-semibold">
-                  Palladium Hotel Group · April 2026
-                </span>
-              </div>
+                {s.n}
+              </p>
+              <p className="text-[13.5px] text-ink-soft mt-3 leading-[1.4]">{s.l}</p>
             </div>
-            <Link
-              href="/case-studies/palladium-hotel-group"
-              className="mt-7 inline-flex items-center gap-2 bg-amber text-ink px-6 py-3 rounded-md text-[14px] font-semibold no-underline hover:brightness-105"
-              style={{ backgroundColor: "#E8B84B" }}
-            >
-              Read the full case study →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2.5 relative">
-            {[
-              { l: "Traffic with no attribution · before", v: "40", u: "%", hl: false, note: "Of traffic logged but with source/medium lost — absorbed into 'direct' or unassigned." },
-              { l: "Bookings without attribution · before", v: "35", u: "%", hl: true, note: "Real bookings logged in GA4 that couldn't be tied to the channel that generated them." },
-              { l: "Cost-per-Search improvement · DV360", v: "+165", u: "%", hl: false, note: "On the Display channel, after rebalancing partners, placements, audiences and strategies on a SealMetrics-based measurement model.", span: true },
-            ].map((s, i) => (
-              <div
-                key={i}
-                className={`p-6 rounded-xl border flex flex-col gap-1.5 min-h-[150px] justify-between ${
-                  s.hl ? "bg-brand border-brand" : "bg-white/5 border-white/12"
-                } ${s.span ? "col-span-2" : ""}`}
-              >
-                <div
-                  className={`font-mono text-[10px] uppercase tracking-[0.12em] font-semibold ${
-                    s.hl ? "text-white/85" : "text-white/55"
-                  }`}
-                >
-                  {s.l}
-                </div>
-                <div>
-                  <div
-                    className="font-semibold tracking-[-0.035em] text-white leading-none tabular-nums"
-                    style={{ fontSize: "clamp(36px, 4vw, 52px)" }}
-                  >
-                    {s.v}
-                    {s.u && (
-                      <span
-                        className={`italic font-medium ${s.hl ? "text-white" : ""}`}
-                        style={{ color: s.hl ? "#fff" : "#E8B84B", fontStyle: "italic" }}
-                      >
-                        {s.u}
-                      </span>
-                    )}
-                  </div>
-                  <div className={`text-[12px] leading-[1.45] mt-2 ${s.hl ? "text-white/90" : "text-white/60"}`}>
-                    {s.note}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
 
-        {/* Dreamplace + Incapto cards */}
-        <div className="grid md:grid-cols-2 gap-5 mt-7">
-          <CaseCard
-            client="Hotel chain · Spain"
-            sector="Hotels · eCommerce"
-            quote={
-              <>
-                It&apos;s no longer a tool that sits next to the process. It&apos;s{" "}
-                <em className="italic-accent">the tool that gives us the real data</em> — and the one we make decisions with.
-              </>
-            }
-            cite="Head of eCommerce · Hotel chain"
-            stats={[
-              { n: "+30%", l: "More traffic registered vs GA4 after closing the consent gap" },
-              { n: "15–20%", l: "Closer to CRM in attributed sales" },
-            ]}
-          />
-          <CaseCard
-            client="eCommerce DTC · Coffee"
-            sector="DTC eCommerce · Spain"
-            quote={
-              <>
-                We&apos;ve used SealMetrics as{" "}
-                <em className="italic-accent">&ldquo;OK, we believe this data.&rdquo;</em> It&apos;s now our single source of truth.
-              </>
-            }
-            cite="Founder & CEO · DTC brand"
-            stats={[
-              { n: "30–40%", l: "Under-reported by GA4 before switching" },
-              { n: "30 days", l: "Parallel test to reach single source of truth" },
-            ]}
-          />
+        {/* Quote */}
+        <blockquote className="max-w-[760px] mx-auto text-center">
+          <p
+            className="text-ink italic font-medium leading-[1.4] tracking-[-0.015em]"
+            style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
+          >
+            &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
+          </p>
+          <footer className="mt-5 font-mono text-[12px] uppercase tracking-[0.08em] text-ink-soft font-semibold">
+            — <strong className="text-ink">Toni Andújar</strong> · Digital &amp; Direct Sales Director · Palladium Hotel Group
+          </footer>
+        </blockquote>
+
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <DualCTA locale="en" />
+          <Link
+            href="/case-studies/palladium-hotel-group"
+            className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink"
+          >
+            Read the full case study <span>→</span>
+          </Link>
         </div>
       </div>
     </section>
@@ -670,11 +579,11 @@ export function SolutionStepsPLG() {
           <div>
             <span className="eyebrow mb-5">How to start</span>
             <h2 className="h-section mt-5">
-              From zero to <em>real data</em> in under 4 minutes.
+              5 minutes to see your <em>real traffic.</em>
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            No migration. No cookie banner. No data team required. Three steps and you&apos;re measuring everything GA4 hides from you.
+            No migration. No cookie banner. No data team required. From zero to real data in less time than your standup.
           </p>
         </div>
 
@@ -682,21 +591,21 @@ export function SolutionStepsPLG() {
           {[
             {
               n: "01",
-              time: "3 min",
-              t: "Add the SealMetrics pixel via GTM",
-              r: "Drop our module in your CMS or paste the pixel through Tag Manager. No engineering ticket. No deployment.",
+              time: "Minute 1",
+              t: "Paste the script",
+              r: "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
             },
             {
               n: "02",
-              time: "Real-time",
-              t: "We capture every visit, product and conversion",
-              r: "Visits, product views, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant, no consent prompt.",
+              time: "Minute 3",
+              t: "See real data",
+              r: "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant.",
             },
             {
               n: "03",
-              time: "From day one",
-              t: "Make decisions on real numbers",
-              r: "Reallocate paid media on data that matches Shopify. Defend every euro in front of finance and the board. No models, no estimates, no black box.",
+              time: "Minute 5",
+              t: "Discover your hidden traffic",
+              r: "See the 35-55% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
             },
           ].map((s) => (
             <li
@@ -849,19 +758,19 @@ export function FinalUrgencyV3() {
             }}
           />
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55 mb-5 relative">
-            The trend is one-way
+            The bleed is daily
           </p>
           <h2
-            className="text-white font-semibold leading-[1.08] tracking-[-0.03em] mx-auto max-w-[24ch] relative"
-            style={{ fontSize: "clamp(32px, 4.4vw, 54px)" }}
+            className="text-white font-semibold leading-[1.08] tracking-[-0.03em] mx-auto max-w-[28ch] relative"
+            style={{ fontSize: "clamp(30px, 4.2vw, 50px)" }}
           >
-            Today you lose 35%. Next year, 50%.{" "}
+            The average eCommerce loses 58% of its data.{" "}
             <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              What&apos;s your plan?
+              How many more days?
             </em>
           </h2>
           <p className="text-white/75 text-[16.5px] leading-[1.6] mt-7 mb-8 mx-auto max-w-[58ch] relative">
-            Every quarter, consent rates fall. Browsers block more. GA4 estimates more. Direction is unambiguous: less real data, more statistical fiction. While your competition adapts late, you can be a year ahead with real data already in hand.
+            Every day without SealMetrics means pageviews you don&apos;t see, conversions you can&apos;t attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.
           </p>
 
           <DualCTA locale="en" variant="dark" className="justify-center" />
@@ -895,7 +804,7 @@ export function PricingPLG() {
       ],
       cta: "Start free 14 days",
       href: "https://my.sealmetrics.com/register",
-      featured: false,
+      featured: true,
       type: "register" as const,
     },
     {
@@ -914,7 +823,7 @@ export function PricingPLG() {
       ],
       cta: "Start free 14 days",
       href: "https://my.sealmetrics.com/register",
-      featured: true,
+      featured: false,
       type: "register" as const,
     },
     {
@@ -963,7 +872,7 @@ export function PricingPLG() {
             >
               {p.featured && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
-                  Most eCommerce land here
+                  Most popular
                 </span>
               )}
               <header className="pb-5 border-b border-warm-100 mb-5">
@@ -990,6 +899,12 @@ export function PricingPLG() {
                     <div className="font-mono text-[10.5px] text-ink-soft mt-1.5 opacity-70">
                       or €{p.monthly!.toLocaleString("en-US")}/mo billed monthly
                     </div>
+                    <p className="text-[12px] text-ink-soft mt-3 leading-[1.4]">
+                      Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.
+                    </p>
+                    <p className="text-[12px] font-semibold text-brand mt-2">
+                      14-day free trial · No credit card
+                    </p>
                   </>
                 ) : (
                   <>
@@ -1033,6 +948,13 @@ export function PricingPLG() {
                 >
                   {p.cta} →
                 </Link>
+              )}
+
+              {p.featured && (
+                <p className="text-[12px] text-ink-soft italic mt-5 leading-[1.5] px-1">
+                  &ldquo;Recovered 35% of bookings without attribution.&rdquo;{" "}
+                  <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span>
+                </p>
               )}
             </article>
           ))}
