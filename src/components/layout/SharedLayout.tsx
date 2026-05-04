@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
+import { ChatWidget } from "@/components/homepage/ChatWidget";
 import { SEALMETRICS_PIXEL_URL, SEALMETRICS_PIXEL_SRC } from "@/lib/sealmetrics";
 import type { Locale } from "@/lib/i18n/types";
 
@@ -48,6 +49,7 @@ export function SharedLayout({
         <Header locale={locale} />
         <main id="main-content">{children}</main>
         <Footer locale={locale} />
+        <ChatWidget />
       </body>
     </html>
   );
