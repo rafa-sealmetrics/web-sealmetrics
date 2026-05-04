@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analítica sin cookies para eCommerce — SealMetrics",
+  title: "Analytics for eCommerce — Full Attribution | SealMetrics",
   description:
-    "Analítica sin cookies para eCommerce: 100% del tráfico capturado, atribución last-click contra tu CRM de Shopify, sin banner de consentimiento, alojado en Dublín. Desde 499€/mes.",
+    "Analítica sin cookies para eCommerce: 100% del tráfico capturado, atribución last-click, sin banner y alojado en Dublín. Desde 499 EUR/mes.",
   openGraph: {
-    title: "Analítica sin cookies para eCommerce — SealMetrics",
+    title: "Analytics for eCommerce — Full Attribution | SealMetrics",
     description:
       "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Captura el 100% del tráfico UE y cuadra con tu CRM de Shopify/Magento.",
     type: "website",
@@ -73,7 +72,6 @@ export default function Page() {
           url: "/es/for/ecommerce",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("ecommerce", "es")} />
 

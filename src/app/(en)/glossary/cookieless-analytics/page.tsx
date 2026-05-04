@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is Cookieless Analytics? — SealMetrics Glossary",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
     description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics", languages: getAlternates("/glossary/cookieless-analytics") },
 };
 
 export default function CookielessAnalyticsPage() {
@@ -22,14 +24,23 @@ export default function CookielessAnalyticsPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Cookieless Analytics" }]} />
       <JsonLd data={definedTermSchema({ name: "Cookieless Analytics", description: "Web analytics that captures visitor data without using browser cookies.", url: "/glossary/cookieless-analytics", related: [{ name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "GDPR Analytics Compliance", url: "/glossary/gdpr-analytics-compliance" }, { name: "Consent Management Platform (CMP)", url: "/glossary/consent-management-platform" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Cookieless Analytics" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">Definition</span>
-          <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">Cookieless Analytics</h1>
+          <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">What Is Cookieless Analytics?</h1>
         </header>
+
+        <QuickAnswer>
+          <p>
+            Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
+          </p>
+          <p>
+            For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. SealMetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
+          </p>
+        </QuickAnswer>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
@@ -38,7 +49,7 @@ export default function CookielessAnalyticsPage() {
             </p>
           </div>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How it works</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does cookieless analytics work?</h2>
           <p>
             Traditional analytics tools (like GA4) rely on cookies — small text files stored in the visitor&rsquo;s browser — to identify returning visitors, track sessions and build per-user journeys. Cookieless analytics replaces this mechanism with <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party data collection</Link> that operates without any identifiers on the visitor&rsquo;s device.
           </p>
@@ -46,10 +57,10 @@ export default function CookielessAnalyticsPage() {
             Instead of storing identifiers, cookieless analytics counts events on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign, landing page and country. Each event is logged with anonymous channel metadata (referrer, UTM parameters, landing page, device class). The data path is first-party (your domain to your server), which means it is not blocked by ad blockers, not affected by browser cookie restrictions like <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, and not dependent on consent banners.
           </p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What cookieless analytics does not do</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What does cookieless analytics not do?</h2>
           <p>The architecture has a deliberate trade-off: per-user detail is given up in exchange for complete, defensible aggregate totals. Cookieless analytics does not identify visitors, does not link pageviews into per-user journeys, does not recognise a returning visitor, and does not support multi-touch attribution models. What it produces is aggregate counts and last-click revenue attribution at channel level.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why it matters</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why does cookieless analytics matter for EU eCommerce?</h2>
           <p>
             In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, counting 100% of real visits anonymously.
           </p>
@@ -57,7 +68,7 @@ export default function CookielessAnalyticsPage() {
             This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete aggregate totals.
           </p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Privacy implications</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What are the privacy implications?</h2>
           <p>
             Cookieless analytics achieves <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link> by architecture: no personal data is collected, no cookies are stored, and no consent is required for the analytics to function. This is consistent with CNIL (French DPA) exemption criteria for audience measurement tools.
           </p>

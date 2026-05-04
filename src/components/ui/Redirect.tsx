@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/ui/JsonLd";
 
 /**
  * Static-export-friendly client-side redirect.
@@ -17,6 +18,20 @@ export function buildRedirectMetadata(destination: string): Metadata {
     description: `This page has moved. Redirecting to ${destination}.`,
     alternates: { canonical: absolute },
     robots: { index: false, follow: true },
+    openGraph: {
+      title: `Redirecting to ${destination} — SealMetrics`,
+      description: `This page has moved. Redirecting to ${destination}.`,
+      url: absolute,
+      siteName: "SealMetrics",
+      type: "website",
+      images: ["https://sealmetrics.com/og-image.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Redirecting to ${destination} — SealMetrics`,
+      description: `This page has moved. Redirecting to ${destination}.`,
+      images: ["https://sealmetrics.com/og-image.png"],
+    },
     other: {
       refresh: `0; url=${destination}`,
     },
@@ -24,8 +39,23 @@ export function buildRedirectMetadata(destination: string): Metadata {
 }
 
 export function RedirectStub({ to }: { to: string }) {
+  const absolute = to.startsWith("http") ? to : `https://sealmetrics.com${to}`;
+
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Page moved",
+          url: absolute,
+          isPartOf: {
+            "@type": "WebSite",
+            name: "SealMetrics",
+            url: "https://sealmetrics.com",
+          },
+        }}
+      />
       {/* Meta refresh for no-JS fallback — Next.js hoists this to <head> via metadata */}
       <section className="min-h-[50vh] flex items-center justify-center px-5 py-20 bg-warm-white">
         <div className="text-center max-w-[480px]">

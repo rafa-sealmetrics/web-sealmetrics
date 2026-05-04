@@ -25,9 +25,9 @@ export default function DataSamplingComparedPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Data Sampling Thresholds Compared" }]} />
       <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Data Sampling Thresholds Compared" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Data Sampling Thresholds Compared", url: "/blog/analytics-tools-data-sampling" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,10 +47,10 @@ export default function DataSamplingComparedPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 (free) starts sampling at ~10M events per query in Exploration reports; avoiding it requires upgrading to GA360 at $150K+/year.</li>
             <li>A 10% sample introduces approximately +/-3% margin of error — at $10M revenue, that represents a $200K uncertainty in business decisions.</li>
-            <li>SealMetrics, Plausible, Fathom, and Simple Analytics never apply data sampling — every number is a count, not an extrapolation.</li>
+            <li>Zero-sampling tools split into two categories: lightweight privacy tools for simple reporting, and SealMetrics for enterprise revenue attribution.</li>
             <li>Sampling functions as a pricing lever in enterprise tools: companies must pay more to see their actual data instead of estimates.</li>
           </ul>
         </div>
@@ -271,9 +271,10 @@ export default function DataSamplingComparedPage() {
 
           <p>
             Some tools simply do not sample. They store every event and query the
-            full dataset every time. SealMetrics, Plausible, Fathom, and Simple
-            Analytics fall in this category. When you see a number, it is a
-            count — not an extrapolation.
+            full dataset every time. SealMetrics and privacy-first lightweight
+            tools such as Plausible, Fathom and Simple Analytics share that
+            zero-sampling property, but they serve different buyers. When you see
+            a number, it is a count — not an extrapolation.
           </p>
 
           <p>

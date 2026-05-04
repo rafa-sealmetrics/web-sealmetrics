@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
@@ -11,6 +11,12 @@ import { getVsData } from "@/components/sections/v3/VsData";
 export const metadata: Metadata = {
   title: "SealMetrics vs Piwik PRO — EU hosting plus complete capture",
   description: "Piwik PRO is EU-hosted but still cookie-based. SealMetrics solves the root architecture, not just the hosting.",
+  openGraph: {
+    title: "SealMetrics vs Piwik PRO — EU hosting plus complete capture",
+    description: "Piwik PRO is EU-hosted but still cookie-based. SealMetrics solves the root architecture, not just the hosting.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/vs/piwik-pro", languages: getAlternates("/vs/piwik-pro") },
 };
 
@@ -18,7 +24,9 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "vs Piwik PRO" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/vs/piwik-pro" }])} /><VsComparisonV3 data={getVsData("piwik-pro", "en")} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/vs/piwik-pro" }])} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Piwik PRO", description: "Side-by-side comparison: SealMetrics versus Piwik PRO on architecture (cookie-based vs cookieless), EU hosting, consent dependency and AI readiness.", url: "/vs/piwik-pro", competitor: { name: "Piwik PRO", url: "https://piwik.pro/" } })} />
+      <VsComparisonV3 data={getVsData("piwik-pro", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"

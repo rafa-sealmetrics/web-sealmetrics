@@ -25,9 +25,9 @@ export default function AIAgentTrafficPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "AI Agent Traffic Analytics" }]} />
       <JsonLd data={articleSchema({ headline: "AI Agent Traffic: The Invisible Channel Your Analytics Miss", description: "AI agents are sending traffic your analytics can't see.", datePublished: "2026-01-18", url: "/blog/ai-agent-traffic-analytics", category: "AI & Analytics", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "AI Agent Traffic" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "AI Agent Traffic", url: "/blog/ai-agent-traffic-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function AIAgentTrafficPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>AI agents (GPT, Claude, Perplexity, Google AI Overviews) are sending 7-22% of sessions to content-rich sites, but traditional analytics classifies this traffic as "direct" or "unassigned."</li>
             <li>AI crawlers do not execute JavaScript and often omit referrer headers — client-side analytics like GA4 cannot detect these visits at all.</li>
             <li>For a site with 500,000 monthly sessions, 35,000 to 100,000 AI-influenced sessions per month may be invisible to or misclassified by traditional analytics.</li>

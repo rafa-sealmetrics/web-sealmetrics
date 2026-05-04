@@ -25,9 +25,9 @@ export default function GA4DataSamplingPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GA4 Data Sampling Problem" }]} />
       <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", url: "/blog/ga4-data-sampling-problem", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Data Sampling" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Data Sampling", url: "/blog/ga4-data-sampling-problem" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function GA4DataSamplingPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 applies data sampling in Exploration reports when data exceeds internal thresholds — the free version has lower thresholds than GA360.</li>
             <li>Sampled data can reverse campaign performance rankings: Campaign A with 342 real conversions could be estimated at 310 while Campaign B with 298 shows as 320.</li>
             <li>Before sampling even begins, GA4 has already lost ~87% of EU traffic to consent rejection, ad blockers, and browser restrictions — you are making decisions based on an estimate of a fraction.</li>

@@ -7,7 +7,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "SealMetrics para cada equipo — Roles, industrias, verticales",
+  title: "SealMetrics por equipo — Roles e industrias",
   description: "Páginas dedicadas para CMOs, CTOs, DPOs y 8 verticales. Honestos sobre a quién encaja, con resultados concretos para cada uno.",
   openGraph: {
     title: "SealMetrics para cada equipo",

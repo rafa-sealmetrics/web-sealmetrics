@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import {
-  breadcrumbSchema,
+  articleSchema,  breadcrumbSchema,
+  casePersonSchema,
   reviewSchema,
-  claimReviewSchema,
+  statisticClaimSchema,
   quotationSchema,
 } from "@/lib/schema";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
@@ -13,7 +14,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 export const metadata: Metadata = {
   title: "Palladium Hotel Group · fuente única de verdad — Caso",
   description:
-    "Palladium Hotel Group usa SealMetrics como single source of truth que marca, agencias y departamentos aceptan. La cifra que disparó el cambio: 40% del tráfico sin atribución.",
+    "Palladium Hotel Group usa SealMetrics como fuente única de verdad para marca, agencias y departamentos. El disparador: 40% de tráfico sin atribución.",
   alternates: {
     canonical: "https://sealmetrics.com/es/case-studies/palladium-hotel-group",
     languages: getAlternatesEs("/case-studies/palladium-hotel-group"),
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title:
       "Palladium Hotel Group — Una única fuente de verdad que todos los players aceptan",
     description:
-      "Por qué Palladium eligió neutralidad sobre volumen reportado. 40% sin atribución. 35% reservas sin asignar. +165% Coste por Búsqueda en Display.",
+      "Por qué Palladium Hotel Group eligió neutralidad sobre volumen reportado. 40% sin atribución. 35% reservas sin asignar. +165% Coste por Búsqueda en Display.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
@@ -49,40 +50,66 @@ export default function Page() {
         )}
       />
       <JsonLd
-        data={claimReviewSchema({
-          claimReviewed:
-            "El 40% del tráfico entrante no tenía atribución de source/medium en el stack de medición anterior.",
-          datePublished: "2026-04-15",
-          url: "/es/case-studies/palladium-hotel-group",
-          itemReviewedName: "Auditoría interna de Palladium Hotel Group · abril 2026",
-          itemReviewedAuthor: "Palladium Hotel Group",
+        data={casePersonSchema({
+          name: "Toni Andújar",
+          jobTitle: "Director Digital y Venta Directa",
+          worksForName: "Palladium Hotel Group",
+          worksForUrl: "https://www.palladiumhotelgroup.com/",
+          caseUrl: "/es/case-studies/palladium-hotel-group",
+          caseName: "Caso Palladium Hotel Group — Una fuente neutra única de verdad",
         })}
       />
       <JsonLd
-        data={claimReviewSchema({
-          claimReviewed:
-            "El 35% de las reservas registradas como evento en GA4 no podían asignarse al canal que las había generado.",
+        data={articleSchema({
+          headline: "Caso Palladium Hotel Group — Una fuente neutra única de verdad",
+          description:
+            "Palladium Hotel Group adoptó SealMetrics como capa de medición neutra que marca, agencias y departamentos aceptan. 40% del tráfico no estaba atribuido antes; +165% Coste-por-Búsqueda en Display después.",
           datePublished: "2026-04-15",
+          dateModified: "2026-04-15",
           url: "/es/case-studies/palladium-hotel-group",
-          itemReviewedName: "Brecha de atribución de reservas · Palladium Hotel Group · abril 2026",
-          itemReviewedAuthor: "Palladium Hotel Group",
+          category: "Caso de estudio",
+          author: { name: "SealMetrics", url: "/es/about" },
+          image: "https://sealmetrics.com/og-image.png",
         })}
       />
       <JsonLd
-        data={claimReviewSchema({
-          claimReviewed:
-            "Mejora del +165% en Coste por Búsqueda del canal Display tras implantar un modelo de medición basado en SealMetrics sobre DV360.",
-          datePublished: "2026-04-15",
+        data={statisticClaimSchema({
+          text: "El 40% del tráfico entrante no tenía atribución de source/medium en el stack de medición anterior.",
+          source: "Auditoría interna de Palladium Hotel Group · abril 2026",
+          sourceAuthor: "Palladium Hotel Group",
+          sourceDate: "2026-04-15",
           url: "/es/case-studies/palladium-hotel-group",
-          itemReviewedName: "Mejora de eficiencia DV360 · Palladium Hotel Group · abril 2026",
-          itemReviewedAuthor: "Palladium Hotel Group",
+          numericValue: 40,
+          unit: "PERCENT",
+        })}
+      />
+      <JsonLd
+        data={statisticClaimSchema({
+          text: "El 35% de las reservas registradas como evento en GA4 no podían asignarse al canal que las había generado.",
+          source: "Brecha de atribución de reservas · Palladium Hotel Group · abril 2026",
+          sourceAuthor: "Palladium Hotel Group",
+          sourceDate: "2026-04-15",
+          url: "/es/case-studies/palladium-hotel-group",
+          numericValue: 35,
+          unit: "PERCENT",
+        })}
+      />
+      <JsonLd
+        data={statisticClaimSchema({
+          text: "Mejora del +165% en Coste por Búsqueda del canal Display tras implantar un modelo de medición basado en SealMetrics sobre DV360.",
+          source: "Mejora de eficiencia DV360 · Palladium Hotel Group · abril 2026",
+          sourceAuthor: "Palladium Hotel Group",
+          sourceDate: "2026-04-15",
+          url: "/es/case-studies/palladium-hotel-group",
+          numericValue: 165,
+          unit: "PERCENT",
         })}
       />
       <JsonLd
         data={quotationSchema({
           text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
           spokenBy: "Toni Andújar",
-          spokenByRole: "Digital & Direct Sales Director · Palladium Hotel Group",
+          spokenByRole: "Director Digital y Venta Directa · Palladium Hotel Group",
           url: "/es/case-studies/palladium-hotel-group",
         })}
       />
@@ -90,7 +117,7 @@ export default function Page() {
         data={quotationSchema({
           text: "Hoy por hoy todos los players están contentos. Los datos son neutrales, no hay caja negra y todos han aceptado estos valores como la referencia.",
           spokenBy: "Toni Andújar",
-          spokenByRole: "Digital & Direct Sales Director · Palladium Hotel Group",
+          spokenByRole: "Director Digital y Venta Directa · Palladium Hotel Group",
           url: "/es/case-studies/palladium-hotel-group",
         })}
       />
@@ -99,7 +126,7 @@ export default function Page() {
           reviewBody:
             "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
           authorName: "Toni Andújar",
-          authorRole: "Digital & Direct Sales Director · Palladium Hotel Group",
+          authorRole: "Director Digital y Venta Directa · Palladium Hotel Group",
           datePublished: "2026-04-15",
         })}
       />
@@ -181,7 +208,7 @@ export default function Page() {
               neutrales. No hay caja negra.&rdquo;
             </p>
             <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-              Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
+              Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group
             </cite>
           </blockquote>
         </div>
@@ -245,7 +272,7 @@ export default function Page() {
           </h2>
           <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink">
             <p>
-              Como cualquier marca con inversión seria en paid media, Palladium Hotel
+              Como cualquier marca con inversión seria en paid media, Palladium Hotel Group
               Group opera con un ecosistema de medición fragmentado: el pixel de Meta, el
               tag de Google Ads, Google Analytics, el booking engine y las plataformas
               propias de cada agencia colaboradora. Varias fuentes que rara vez coinciden.
@@ -413,7 +440,7 @@ export default function Page() {
               referencia.&rdquo;
             </p>
             <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-              Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
+              Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group
             </cite>
           </blockquote>
         </div>
@@ -593,7 +620,7 @@ export default function Page() {
             {[
               {
                 t: "Objetivos alineados con agencias",
-                d: "Los KPIs de conversión que Palladium firma con sus agencias externas se definen y se miden contra el dato de SealMetrics. Fin de la discusión de qué pixel mira cada parte.",
+                d: "Los KPIs de conversión que Palladium Hotel Group firma con sus agencias externas se definen y se miden contra el dato de SealMetrics. Fin de la discusión de qué pixel mira cada parte.",
               },
               {
                 t: "Coherencia entre departamentos",
@@ -667,7 +694,7 @@ export default function Page() {
           </div>
 
           <p className="mt-12 italic text-[13px] leading-[1.6] text-ink-soft">
-            Caso de estudio elaborado a partir de una conversación con Toni Andújar,
+            Caso de estudio elaborado a partir de una conversación con Digital & Direct Sales Director,
             Digital &amp; Direct Sales Director de Palladium Hotel Group, en abril de
             2026. Todas las cifras citadas proceden de estimaciones propias del equipo de
             Palladium Hotel Group basadas en su comparación interna entre SealMetrics,

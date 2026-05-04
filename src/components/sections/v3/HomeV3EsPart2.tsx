@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRICING, fmtPrice } from "@/lib/content/pricing";
 
 /* INDUSTRIES · ES */
 export function IndustriesBuiltForEs() {
@@ -343,8 +344,8 @@ export function PricingV3Es() {
 
         <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {[
-            { name: "Growth", price: "€499", per: "/mes", billing: "Facturación anual", feat: ["5M eventos / mes", "3 dominios", "MCP + BigQuery + API completos", "Dashboard de comparación GA4", "Soporte email"], cta: "Empezar con Growth", featured: false },
-            { name: "Scale", price: "€999", per: "/mes", billing: "Facturación anual", feat: ["15M eventos / mes", "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding liderado por el founder"], cta: "Empezar con Scale", featured: true },
+            { name: "Growth", price: fmtPrice(PRICING.growth.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.growth.eventsMillions}M eventos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Dashboard de comparación GA4", "Soporte email"], cta: "Empezar con Growth", featured: false },
+            { name: "Scale", price: fmtPrice(PRICING.scale.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.scale.eventsMillions}M eventos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding liderado por el founder"], cta: "Empezar con Scale", featured: true },
             { name: "Enterprise", price: "A medida", per: "", billing: "Anual o términos personalizados", feat: ["Eventos ilimitados", "Dominios ilimitados", "Todo lo de Scale", "SSO, audit logs, SLA", "Customer engineer dedicado"], cta: "Hablemos", featured: false },
           ].map((p) => (
             <article key={p.name} className={`rounded-xl p-8 flex flex-col bg-white ${p.featured ? "border-2 border-brand" : "border border-warm-100"}`}>

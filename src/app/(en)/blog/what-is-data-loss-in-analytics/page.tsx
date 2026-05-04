@@ -26,9 +26,9 @@ export default function WhatIsDataLossInAnalyticsPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Data Loss in Analytics?" }]} />
       <JsonLd data={articleSchema({ headline: "What Is Data Loss in Analytics? Causes, Impact, and Solutions", description: "The 4 causes of analytics data loss and how to eliminate them.", datePublished: "2026-03-02", url: "/blog/what-is-data-loss-in-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Data Loss in Analytics?" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Data Loss in Analytics?", url: "/blog/what-is-data-loss-in-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -48,7 +48,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Analytics data loss compounds through 4 layers: consent rejection (-55%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — leaving approximately 13% of real traffic visible.</li>
             <li>Data loss is not inaccuracy — an inaccurate tool misattributes a visit, but a tool with data loss has no record the visit happened at all.</li>
             <li>Revenue attribution built on 13% of data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>

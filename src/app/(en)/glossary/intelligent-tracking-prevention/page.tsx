@@ -22,7 +22,7 @@ export default function ITPPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Intelligent Tracking Prevention" }]} />
       <JsonLd data={definedTermSchema({ name: "Intelligent Tracking Prevention", description: "Apple Safari's privacy feature that limits cookie lifespan and cross-site tracking.", url: "/glossary/intelligent-tracking-prevention", related: [{ name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }, { name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Intelligent Tracking Prevention" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Intelligent Tracking Prevention", url: "/glossary/intelligent-tracking-prevention" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
         <header className="mb-12">
@@ -38,7 +38,7 @@ export default function ITPPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Impact on analytics</h2>
           <p>Safari holds approximately 20% of European browser market share (higher on mobile). ITP means that any visitor who returns after 7 days appears as a &ldquo;new&rdquo; visitor in cookie-based analytics — inflating new user counts and fragmenting user journeys.</p>
           <p>For analytics that rely on cookies for session stitching and attribution, ITP makes accurate multi-visit tracking effectively impossible on Safari. Combined with Firefox&rsquo;s Enhanced Tracking Protection (ETP), more than 35% of browser traffic is subject to aggressive cookie restrictions.</p>
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why cookieless analytics is unaffected</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why first-party measurement is unaffected</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not store cookies on the visitor&rsquo;s device, so ITP and ETP have no effect on data collection. The <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless</Link> approach captures sessions regardless of browser privacy features.</p>
         </div>
         <RelatedGlossaryTerms slug="intelligent-tracking-prevention" />

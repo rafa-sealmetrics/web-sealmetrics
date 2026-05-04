@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import {
+  articleSchema,
   breadcrumbSchema,
+  casePersonSchema,
   reviewSchema,
-  claimReviewSchema,
+  statisticClaimSchema,
   quotationSchema,
 } from "@/lib/schema";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
-  title: "Dreamplace Hotels · paid media decisions on real data — Case study",
+  title: "Dreamplace Hotels case study — Paid media on real data",
   description:
     "Dreamplace Hotels uses SealMetrics to allocate paid media budget. 15–20% more sales attribution vs the previous tool, and +30% more traffic vs Google Analytics.",
   alternates: {
@@ -44,23 +46,48 @@ export default function Page() {
         ])}
       />
       <JsonLd
-        data={claimReviewSchema({
-          claimReviewed:
-            "SealMetrics attributes 15% to 20% more sales to the correct channel than the previous tool, getting closer to Dreamplace's native CRM data.",
-          datePublished: "2026-04-15",
-          url: "/case-studies/dreamplace-hotels",
-          itemReviewedName: "Dreamplace Hotels internal comparison · April 2026",
-          itemReviewedAuthor: "Dreamplace Hotels",
+        data={casePersonSchema({
+          name: "Eduardo Martin",
+          jobTitle: "eCommerce",
+          worksForName: "Dreamplace Hotels",
+          worksForUrl: "https://www.dreamplacehotels.com/",
+          caseUrl: "/case-studies/dreamplace-hotels",
+          caseName: "Dreamplace Hotels case study — Paid media on real data",
         })}
       />
       <JsonLd
-        data={claimReviewSchema({
-          claimReviewed:
-            "SealMetrics captures roughly 30% more traffic than Google Analytics after closing the consent gap.",
+        data={articleSchema({
+          headline: "Dreamplace Hotels case study — Paid media on real data",
+          description:
+            "Dreamplace Hotels reallocates paid media on SealMetrics data: 15–20% more attributed sales vs the previous tool and +30% more traffic vs Google Analytics.",
           datePublished: "2026-04-15",
+          dateModified: "2026-04-15",
           url: "/case-studies/dreamplace-hotels",
-          itemReviewedName: "Dreamplace Hotels traffic comparison vs Google Analytics · April 2026",
-          itemReviewedAuthor: "Dreamplace Hotels",
+          category: "Case study",
+          author: { name: "SealMetrics", url: "/about" },
+          image: "https://sealmetrics.com/og-image.png",
+        })}
+      />
+      <JsonLd
+        data={statisticClaimSchema({
+          text: "SealMetrics attributes 15% to 20% more sales to the correct channel than the previous tool, getting closer to Dreamplace's native CRM data.",
+          source: "Dreamplace Hotels internal comparison · April 2026",
+          sourceAuthor: "Dreamplace Hotels",
+          sourceDate: "2026-04-15",
+          url: "/case-studies/dreamplace-hotels",
+          numericValue: 20,
+          unit: "PERCENT",
+        })}
+      />
+      <JsonLd
+        data={statisticClaimSchema({
+          text: "SealMetrics captures roughly 30% more traffic than Google Analytics after closing the consent gap.",
+          source: "Dreamplace Hotels traffic comparison vs Google Analytics · April 2026",
+          sourceAuthor: "Dreamplace Hotels",
+          sourceDate: "2026-04-15",
+          url: "/case-studies/dreamplace-hotels",
+          numericValue: 30,
+          unit: "PERCENT",
         })}
       />
       <JsonLd

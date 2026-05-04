@@ -25,9 +25,9 @@ export default function OmnibusGuidePage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "EU Digital Omnibus Marketer Guide" }]} />
       <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus Explained: What Every Marketer Needs to Know in 2026", description: "Cookie banners could vanish for 60% of websites. First-party analytics gets explicit legal authorization.", datePublished: "2026-02-12", url: "/blog/eu-digital-omnibus-marketer-guide-2026", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus Marketer Guide" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus Marketer Guide", url: "/blog/eu-digital-omnibus-marketer-guide-2026" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function OmnibusGuidePage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The Digital Omnibus consolidates 5+ EU data regulations into 2, with cookie banners potentially vanishing for ~60% of websites that use only first-party analytics.</li>
             <li>Article 88a(3)(c) explicitly permits aggregated audience measurement by the website controller for its own use without consent — first-party analytics gets clear legal authorization.</li>
             <li>Cookie implementation currently costs European businesses an estimated 820 million euros annually; projected savings by 2029 exceed 5 billion euros.</li>

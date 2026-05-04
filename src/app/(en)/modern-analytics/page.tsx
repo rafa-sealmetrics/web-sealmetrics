@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
@@ -13,7 +13,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Modern Web Analytics — Clean, Unmodeled, AI-Agent Ready",
   description:
-    "The vanguard of web analytics vs legacy cookie-based tools. 100% capture, no sampling, no modeling, channel-agnostic, GDPR by design, and ready for AI agents via MCP. Built for CMOs and Ecommerce Managers.",
+    "Modern web analytics vs legacy cookie tools: 100% capture, no sampling, channel-agnostic, GDPR by design and ready for AI agents via MCP.",
   openGraph: {
     title: "Modern Web Analytics — Clean, Unmodeled, AI-Agent Ready",
     description:
@@ -167,7 +167,6 @@ export default function ModernAnalyticsPage() {
           { name: "Modern Web Analytics", url: "/modern-analytics" },
         ])}
       />
-      <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
 
       {/* HERO */}
       <section className="bg-warm-white border-b border-warm-100">

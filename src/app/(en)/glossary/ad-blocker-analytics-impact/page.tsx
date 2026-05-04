@@ -22,7 +22,7 @@ export default function AdBlockerAnalyticsImpactPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Ad Blocker Impact on Analytics" }]} />
       <JsonLd data={definedTermSchema({ name: "Ad Blocker Impact on Analytics", description: "Data loss caused by browser extensions that block third-party analytics scripts before they execute.", url: "/glossary/ad-blocker-analytics-impact", related: [{ name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }, { name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "Intelligent Tracking Prevention (ITP)", url: "/glossary/intelligent-tracking-prevention" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Ad Blocker Impact on Analytics" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 

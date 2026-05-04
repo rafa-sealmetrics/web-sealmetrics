@@ -22,7 +22,7 @@ export default function AttributionModelPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Attribution Model" }]} />
       <JsonLd data={definedTermSchema({ name: "Attribution Model", description: "Rules that determine how conversion credit is distributed across marketing touchpoints in a customer journey.", url: "/glossary/attribution-model", related: [{ name: "Multi-Touch Attribution", url: "/glossary/multi-touch-attribution" }, { name: "Revenue Attribution", url: "/glossary/revenue-attribution" }, { name: "Event Tracking", url: "/glossary/event-tracking" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Attribution Model" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Attribution Model", url: "/glossary/attribution-model" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 

@@ -7,7 +7,7 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "GA4 y Google Ads: la separacion que nadie vio venir",
   description:
-    "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Análisis del impacto real en datos y riesgo legal para anunciantes europeos.",
+    "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Impacto en datos y riesgo legal para anunciantes europeos.",
   openGraph: {
     title: "GA4 y Google Ads: la separacion que nadie vio venir",
     description:
@@ -49,11 +49,11 @@ export default function GA4GoogleAdsSeparationPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Blog", url: "/es/blog" },
-          { name: "GA4 y Google Ads" },
+          { name: "GA4 y Google Ads", url: "/es/blog/ga4-google-ads-separation" },
         ], "es")}
       />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Privacidad
@@ -73,7 +73,7 @@ export default function GA4GoogleAdsSeparationPage() {
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
               Puntos clave
             </h2>
-            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
                 Google eliminara Google Signals como mecanismo de control del
                 flujo de datos de GA4 a Google Ads el 16 de febrero de 2025

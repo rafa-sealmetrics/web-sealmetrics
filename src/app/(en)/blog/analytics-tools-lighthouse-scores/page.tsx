@@ -25,9 +25,9 @@ export default function LighthouseScoresPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools Lighthouse Scores" }]} />
       <JsonLd data={articleSchema({ headline: "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.", description: "We installed 9 analytics scripts on the same baseline page and ran Google Lighthouse 5 times each. The performance impact ranges from zero to devastating.", datePublished: "2026-03-08", url: "/blog/analytics-tools-lighthouse-scores", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools Lighthouse Scores" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools Lighthouse Scores", url: "/blog/analytics-tools-lighthouse-scores" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">

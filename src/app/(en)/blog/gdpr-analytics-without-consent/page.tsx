@@ -26,9 +26,9 @@ export default function GDPRAnalyticsWithoutConsentPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GDPR Analytics Without Consent" }]} />
       <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", datePublished: "2026-03-02", url: "/blog/gdpr-analytics-without-consent", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics Without Consent" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics Without Consent", url: "/blog/gdpr-analytics-without-consent" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -48,7 +48,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Consent-free analytics is legally possible under both GDPR (Article 6(1)(f) legitimate interest) and ePrivacy (Article 5(3) does not apply when nothing is stored on the user's device).</li>
             <li>The CNIL has published specific criteria for consent-exempt analytics: anonymous statistical output only, no cross-site tracking, no advertising use, and IP anonymization at minimum.</li>
             <li>Six technical requirements must all be met: no cookies, no localStorage, no fingerprinting, no personal data, first-party only, and EU data residency — any single failure invalidates the approach.</li>

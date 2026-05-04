@@ -25,9 +25,9 @@ export default function OmnibusShortPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "EU Digital Omnibus and Analytics" }]} />
       <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus: What It Means for Cookie Banners and Analytics", description: "The European Commission proposed the biggest change to EU data law since GDPR.", datePublished: "2026-02-12", url: "/blog/eu-digital-omnibus-cookie-banners-analytics", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus and Analytics" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus and Analytics", url: "/blog/eu-digital-omnibus-cookie-banners-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function OmnibusShortPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The EU Digital Omnibus (COM(2025) 837) would repeal the ePrivacy Directive cookie rules and move them into GDPR — first-party analytics for your own use would not require consent if data is aggregated.</li>
             <li>Cookie consent banners must include single-click refuse buttons with equal prominence to "accept," and re-asking is prohibited for 6 months after a decline.</li>
             <li>Browser-based consent signals (similar to Global Privacy Control) become mandatory — websites must respect them within 24 months, browsers must implement within 48 months.</li>

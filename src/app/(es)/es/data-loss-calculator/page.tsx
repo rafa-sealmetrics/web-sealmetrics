@@ -8,7 +8,13 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Calculadora de pérdida de datos — SealMetrics",
-  description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento + ad blockers + restricciones del navegador esconden la mayoría de tu tráfico.",
+  description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
+  openGraph: {
+    title: "Calculadora de pérdida de datos — SealMetrics",
+    description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/data-loss-calculator",
     languages: getAlternatesEs("/data-loss-calculator"),

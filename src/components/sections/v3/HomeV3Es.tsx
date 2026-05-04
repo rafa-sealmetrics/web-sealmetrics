@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import { HeroDashboardEs } from "./HeroDashboardEs";
 
@@ -51,7 +51,6 @@ export function HeroV3Es() {
 /* LOGOS — top row flagship (larger), bottom row secondary */
 const LOGOS: { src: string; alt: string; h: number }[] = [
   // Top row
-  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 48 },
   { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 54 },
   { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 44 },
   { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 38 },
@@ -112,14 +111,14 @@ function LogosGrid() {
               isTop ? "min-h-20" : "min-h-12"
             }`}
           >
-            <Image
+            <Picture
               src={logo.src}
               alt={logo.alt}
               width={isTop ? 200 : 200}
               height={logo.h}
               className="object-contain w-auto"
               style={{ height: `${logo.h}px`, maxWidth: "220px" }}
-              unoptimized
+
             />
           </div>
         );
@@ -214,7 +213,7 @@ export function CompareSectionEs() {
               El número que todos los stakeholders aceptan — porque no tiene inventario de anuncios que vender ni nada que inflar.
             </p>
             <div className="mt-6 pt-5 border-t border-white/15 font-mono text-[11px] uppercase tracking-[0.08em] text-white/50 font-semibold relative">
-              Cita · Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
+              Cita · Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group
             </div>
           </article>
         </div>
@@ -303,7 +302,7 @@ export function FeaturedCaseEs() {
             <div className="flex gap-3.5 mt-7 pt-6 border-t border-white/15 items-center">
               <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-ink text-[14px]" style={{ background: "linear-gradient(135deg,#2D8B6D,#E8B84B)" }}>P</div>
               <div>
-                <b className="block text-[14px] font-semibold">Toni Andújar · Digital &amp; Direct Sales Director</b>
+                <b className="block text-[14px] font-semibold">Digital & Direct Sales Director · Digital &amp; Direct Sales Director</b>
                 <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60 font-semibold">Palladium Hotel Group · abril 2026</span>
               </div>
             </div>

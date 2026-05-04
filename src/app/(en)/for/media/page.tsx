@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for Media & Publishers — SealMetrics",
+  title: "Analytics for Media & Publishers | SealMetrics",
   description:
-    "Cookieless analytics for publishers: capture the 50–70% of readers ad-blockers hide from GA4. First-party audience, engagement and subscription attribution, EU-hosted.",
+    "Cookieless analytics for publishers: capture readers ad blockers hide from GA4. First-party audience, engagement and subscription attribution, EU-hosted.",
   openGraph: {
-    title: "Cookieless Analytics for Media & Publishers — SealMetrics",
+    title: "Analytics for Media & Publishers | SealMetrics",
     description:
       "Consentless analytics built for European media companies. Audience measurement, subscription funnels and ad-revenue attribution without cookies.",
     type: "website",
@@ -69,7 +68,6 @@ export default function Page() {
           url: "/for/media",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("media", "en")} />
 

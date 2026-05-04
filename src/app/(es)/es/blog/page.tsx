@@ -10,6 +10,12 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Blog — SealMetrics",
   description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
+  openGraph: {
+    title: "Blog — SealMetrics",
+    description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog",
     languages: getAlternatesEs("/blog"),

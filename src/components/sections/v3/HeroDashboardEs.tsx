@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { Picture } from "@/components/ui/Picture";
 
 type ViewId =
   | "source"
@@ -135,7 +135,7 @@ export function HeroDashboardEs() {
       <div className="bg-white border border-warm-100 border-b-0 rounded-t-[10px] grid grid-cols-1 md:grid-cols-[260px_1fr] min-h-[520px] overflow-hidden">
         <aside className="hidden md:flex flex-col gap-1 border-r border-warm-100 bg-warm-50 p-5">
           <div className="flex items-center justify-between mb-3 px-1">
-            <Image
+            <Picture
               src="/logos/logo-sealmetrics-negro.png"
               alt="SealMetrics"
               width={120}

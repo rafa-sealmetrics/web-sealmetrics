@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, faqSchema, organizationSchema } from "@/lib/schema";
+import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 
 const faqs = [
   {
@@ -29,6 +29,12 @@ import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 export const metadata: Metadata = {
   title: "About SealMetrics — Founder-led analytics for Europe",
   description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+  openGraph: {
+    title: "About SealMetrics — Founder-led analytics for Europe",
+    description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/about", languages: getAlternates("/about") },
 };
 
@@ -38,7 +44,6 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
       <JsonLd data={organizationSchema()} />
-      <JsonLd data={faqSchema(faqs)} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">

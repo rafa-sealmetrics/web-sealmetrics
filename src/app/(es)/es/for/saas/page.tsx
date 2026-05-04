@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analítica sin cookies para SaaS — SealMetrics",
+  title: "Analytics for SaaS — PLG & Trial-to-Paid | SealMetrics",
   description:
-    "Analítica sin cookies para SaaS: medición product-led growth sin banners. Trackea conversión trial-to-paid, funnels self-serve y PQLs sobre el 100% del tráfico UE.",
+    "Analítica sin cookies para SaaS: medición product-led growth sin banners. Trackea conversión trial-to-paid y funnels self-serve sobre tráfico UE.",
   openGraph: {
-    title: "Analítica sin cookies para SaaS — SealMetrics",
+    title: "Analytics for SaaS — PLG & Trial-to-Paid | SealMetrics",
     description:
       "Analítica first-party para empresas SaaS europeas. Atribución trial-to-paid, tracking de funnel self-serve y métricas PLG — RGPD-safe, sin consentimiento.",
     type: "website",
@@ -70,7 +69,6 @@ export default function Page() {
           url: "/es/for/saas",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("saas", "es")} />
 

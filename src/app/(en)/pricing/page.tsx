@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
+import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { PricingPlansV3 } from "@/components/sections/v3/PricingPlansV3";
@@ -49,9 +50,20 @@ export default function PricingPage() {
         { name: "Scale", price: "899", description: "15M human events/mo · annual billing" },
       ])} />
       <JsonLd data={breadcrumbSchema([{ name: "Pricing", url: "/pricing" }])} />
-      <JsonLd data={faqSchema(faqsForSchema)} />
 
       <PricingHeroV3 />
+      <section className="bg-warm-white border-t border-warm-100 py-2">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer>
+            <p>
+              SealMetrics pricing is annual-billed enterprise analytics with no usage-based surprises. The Growth plan is €499/month billed annually (€599 monthly) for 5 million human events per month; the Scale plan is €899/month billed annually (€1,079 monthly) for 15 million events; Enterprise is custom for portfolio brands with unlimited events, isolated processing, SSO/SAML, RBAC, 99.9% SLA and a dedicated account manager. Every plan includes the same data architecture: 100% capture, last-click revenue attribution, EU-hosted in Dublin, GDPR-compliant by design, and the standard DPA.
+            </p>
+            <p>
+              For an EU eCommerce team spending €20K+/month in paid media, the Growth plan represents under 2.5% of paid spend — typically less than the cost of a single mis-attributed campaign decision. Annual billing includes two months free against monthly. Free 14-day trial; no migration from GA4 required since both run in parallel.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
       <LogosStrip />
       <PricingPlansV3 locale="en" />
       <PlanIncludesV3 />

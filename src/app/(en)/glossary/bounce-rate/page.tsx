@@ -22,7 +22,7 @@ export default function BounceRatePage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Bounce Rate" }]} />
       <JsonLd data={definedTermSchema({ name: "Bounce Rate", description: "Percentage of sessions where the visitor viewed only one page before leaving the site.", url: "/glossary/bounce-rate", related: [{ name: "Event Tracking", url: "/glossary/event-tracking" }, { name: "Data Sampling", url: "/glossary/data-sampling" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Bounce Rate" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Bounce Rate", url: "/glossary/bounce-rate" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 

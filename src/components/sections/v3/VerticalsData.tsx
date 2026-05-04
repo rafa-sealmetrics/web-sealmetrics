@@ -39,7 +39,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "1", label: "Source of truth", detail: "Brand, finance and agencies sign the same number." },
           { n: "4–6h", label: "Per week saved", detail: "No more reconciling conflicting reports in QBRs." },
         ],
-        quote: { text: "The data SealMetrics delivers is agnostic, unbiased, neutral. No black box. All players — brand, departments, agencies — accept it as the reference.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
+        quote: { text: "The data SealMetrics delivers is agnostic, unbiased, neutral. No black box. All players — brand, departments, agencies — accept it as the reference.", cite: "Director Digital y Venta Directa · Palladium Hotel Group" },
         faqs: [
           { q: "Will my agency accept these numbers?", a: "Most do — once they see the methodology. SealMetrics has no ad inventory to sell and no channel to favour. Agencies that push back are usually the ones inflating their own reports. Test the gap for 30 days with both running in parallel." },
           { q: "How does this help me defend spend to the CFO?", a: "You stop defending. The CFO sees SealMetrics numbers matching the CRM to within 15–20%. When numbers match reality, spend defence becomes automatic. The conversation shifts from \"can we trust this?\" to \"where do we scale next?\"." },
@@ -67,7 +67,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "1", label: "Fuente de verdad", detail: "Marca, finanzas y agencias firman el mismo número." },
           { n: "4–6h", label: "Por semana ahorradas", detail: "Adiós a cuadrar reportes conflictivos en QBRs." },
         ],
-        quote: { text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra. Todos los players — marca, departamentos, agencias — los aceptan como referencia.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
+        quote: { text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra. Todos los players — marca, departamentos, agencias — los aceptan como referencia.", cite: "Director Digital y Venta Directa · Palladium Hotel Group" },
         faqs: [
           { q: "¿Mi agencia aceptará estos números?", a: "La mayoría sí — cuando ven la metodología. SealMetrics no tiene inventario publicitario ni canal que favorecer. Las agencias que protestan suelen ser las que inflan sus reportes. Prueba el gap 30 días con ambos en paralelo." },
           { q: "¿Cómo me ayuda a defender inversión ante el CFO?", a: "Dejas de defender. El CFO ve los números de SealMetrics cuadrar con el CRM dentro del 15–20%. Cuando los números cuadran con la realidad, la defensa es automática. La conversación pasa de \"¿podemos fiarnos?\" a \"¿dónde escalamos ahora?\"." },
@@ -149,12 +149,12 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "0", label: "Personal data collected", detail: "No cookies, no localStorage, no fingerprinting, no identifiers." },
-          { n: "0", label: "Consent required", detail: "Outside GDPR scope. No banner modification needed." },
+          { n: "0", label: "Consent required", detail: "No cookies or identifiers. No banner modification needed." },
           { n: "Dublin", label: "Single EU region", detail: "Data never leaves the EU. Schrems II clean." },
           { n: "0", label: "Sub-processors outside EU", detail: "No SCCs, no TIAs, no cross-border assessments." },
         ],
         faqs: [
-          { q: "Is SealMetrics outside GDPR scope?", a: "Correct. GDPR applies to processing of personal data. SealMetrics does not process personal data — no cookies, no localStorage, no fingerprinting, no identifiers, no per-user profiling. Events are counted anonymously and aggregated into channel totals. Nothing in the data model can identify a natural person. This places our processing outside GDPR material scope." },
+          { q: "How is SealMetrics GDPR-compliant by architecture?", a: "SealMetrics avoids personal-data collection by design — no cookies, no localStorage, no fingerprinting, no identifiers, no per-user profiling. Events are counted anonymously and aggregated into channel totals, with EU-hosted processing in Dublin and DPA/TPSR documentation available for procurement review." },
           { q: "Do I still need to mention SealMetrics in my privacy policy?", a: "Best practice is yes — transparency is always good. But it's not legally required since we don't process personal data. We provide a ready-to-paste privacy policy paragraph you can use." },
           { q: "Where is data hosted?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU. All data processing and storage happens in Ireland end-to-end." },
           { q: "What about Schrems II?", a: "Schrems II invalidated Privacy Shield and created compliance risk for EU-US data transfers. SealMetrics has no data transfers outside the EU — Schrems II doesn't apply to our processing. Your legal team has one less framework to worry about." },
@@ -181,7 +181,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "0", label: "Sub-procesadores fuera UE", detail: "Sin SCCs, sin TIAs, sin evaluaciones transfronterizas." },
         ],
         faqs: [
-          { q: "¿SealMetrics está fuera del scope RGPD?", a: "Correcto. RGPD aplica al tratamiento de datos personales. SealMetrics no trata datos personales — sin cookies, sin localStorage, sin fingerprinting, sin identificadores, sin perfilado por usuario. Los eventos se cuentan de forma anónima y se agregan en totales por canal. Nada en el modelo de datos puede identificar a una persona física. Esto sitúa nuestro procesamiento fuera del ámbito material de RGPD." },
+          { q: "¿Cómo cumple SealMetrics RGPD por arquitectura?", a: "RGPD aplica al tratamiento de datos personales. SealMetrics no trata datos personales — sin cookies, sin localStorage, sin fingerprinting, sin identificadores, sin perfilado por usuario. Los eventos se cuentan de forma anónima y se agregan en totales por canal. Nada en el modelo de datos puede identificar a una persona física. Esta arquitectura es la base del cumplimiento — DPA, TPSR y diagramas disponibles para tu DPO." },
           { q: "¿Tengo que mencionar SealMetrics en mi política de privacidad?", a: "Best practice sí — la transparencia es siempre recomendable. Pero no es legalmente obligatorio ya que no tratamos datos personales. Proporcionamos un párrafo listo para pegar en tu política." },
           { q: "¿Dónde se alojan los datos?", a: "Dublín, Irlanda. Región UE única. Sin failover a terceros países. Sin sub-procesadores fuera de UE. Todo el procesamiento y almacenamiento ocurre en Irlanda, de extremo a extremo." },
           { q: "¿Y Schrems II?", a: "Schrems II invalidó Privacy Shield y creó riesgo de compliance para transferencias UE-US. SealMetrics no tiene transferencias fuera de UE — Schrems II no aplica. Tu equipo legal tiene un framework menos del que preocuparse." },
@@ -492,12 +492,12 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "1", label: "Meeting review", detail: "Architecture, DPA, Schrems II — one meeting, done." },
           { n: "Dublin", label: "EU-only infrastructure", detail: "No US transfers, no third-country sub-processors, ever." },
-          { n: "0", label: "Personal data scope", detail: "No cookies, no identifiers, no fingerprinting. Outside GDPR scope." },
+          { n: "0", label: "Personal identifiers", detail: "No cookies, no identifiers, no fingerprinting. GDPR by architecture." },
           { n: "Full", label: "Audit trail built-in", detail: "Every data access logged. Regulator-ready audit trails on demand." },
         ],
         faqs: [
           { q: "What regulated industries do you currently serve?", a: "Retail banking, insurance, wealth management, crypto exchanges operating in the EU. All rely on SealMetrics specifically because the architecture sidesteps consent, sub-processor and transfer review cycles." },
-          { q: "Do you support on-premises deployment?", a: "Not on-premises, but Enterprise plan includes isolated processing in a dedicated EU region (Dublin or Frankfurt, customer choice). Data never shares infrastructure with other customers." },
+          { q: "Do you support on-premises deployment?", a: "Not on-premises, but Enterprise plan includes isolated processing in the Dublin, Ireland EU region. Data never shares infrastructure with other customers." },
           { q: "Can you support PSD2 / DORA / EBA audit requirements?", a: "Yes. Full audit trail of data access + processing logs + DPA + security architecture documentation. All available to your auditors under NDA. Enterprise plans include named compliance contact for regulator-level queries." },
           { q: "How does SealMetrics help with bank KYC pre-signup journeys?", a: "KYC starts with marketing. You need first-party, consent-free tracking of the top-of-funnel without risking personal data exposure. SealMetrics captures signup intent without any identifier — your KYC system handles identification separately, once explicit consent is given." },
           faqGDPR.en,
@@ -519,12 +519,12 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "1", label: "Reunión de review", detail: "Arquitectura, DPA, Schrems II — una reunión, hecho." },
           { n: "Dublín", label: "Infra solo UE", detail: "Sin transferencias US, sin sub-procesadores en terceros países, nunca." },
-          { n: "0", label: "Scope dato personal", detail: "Sin cookies, sin identificadores, sin fingerprinting. Fuera del scope RGPD." },
+          { n: "0", label: "Datos personales", detail: "Sin cookies, sin identificadores, sin fingerprinting. RGPD por arquitectura." },
           { n: "Total", label: "Audit trail integrado", detail: "Cada acceso a datos logueado. Trails regulator-ready a demanda." },
         ],
         faqs: [
           { q: "¿Qué industrias reguladas servís actualmente?", a: "Banca retail, seguros, wealth management, exchanges crypto operando en UE. Todos usan SealMetrics específicamente porque la arquitectura esquiva los ciclos de revisión de consentimiento, sub-procesadores y transferencias." },
-          { q: "¿Soportáis despliegue on-premises?", a: "No on-premises, pero el plan Enterprise incluye procesamiento aislado en una región UE dedicada (Dublín o Frankfurt, elige cliente). Los datos nunca comparten infra con otros clientes." },
+          { q: "¿Soportáis despliegue on-premises?", a: "No on-premises, pero el plan Enterprise incluye procesamiento aislado en la región UE de Dublín, Irlanda. Los datos nunca comparten infra con otros clientes." },
           { q: "¿Podéis soportar requisitos PSD2 / DORA / EBA?", a: "Sí. Audit trail completo de acceso a datos + logs de procesamiento + DPA + documentación de arquitectura de seguridad. Todo disponible para tus auditores bajo NDA. Los planes Enterprise incluyen contacto compliance nombrado para queries de nivel regulador." },
           { q: "¿Cómo ayuda SealMetrics con journeys pre-KYC bancarios?", a: "KYC empieza en marketing. Necesitas tracking first-party, sin consentimiento, del top-of-funnel sin exponer datos personales. SealMetrics captura intent de signup sin identificador — tu sistema KYC maneja la identificación por separado, una vez dado consentimiento explícito." },
           faqGDPR.es,

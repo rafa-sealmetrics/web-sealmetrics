@@ -1,3 +1,7 @@
+import blogModifiedRaw from "./blog-modified.json";
+
+const BLOG_MODIFIED: Record<string, string> = blogModifiedRaw;
+
 export interface BlogAuthor {
   name: string;
   url?: string;
@@ -28,6 +32,11 @@ export interface BlogPost {
   related?: string[];
 }
 
+/** Returns the ISO date the blog post was last touched in git, or `fallback` if not tracked. */
+export function getBlogDateModified(slug: string, fallback: string): string {
+  return BLOG_MODIFIED[slug] ?? fallback;
+}
+
 export const blogPosts: BlogPost[] = [
   {
     slug: "cookieless-analytics-for-ecommerce",
@@ -48,7 +57,7 @@ export const blogPosts: BlogPost[] = [
     slug: "cookieless-analytics-for-hotels",
     title: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
     description:
-      "How European hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns for Mews, Cloudbeds, Opera.",
+      "How hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns for Mews, Cloudbeds, Opera.",
     date: "2026-04-24",
     category: "Hotels",
     readTime: "9 min",
@@ -352,6 +361,7 @@ export const blogPosts: BlogPost[] = [
     category: "Privacidad",
     readTime: "8 min",
     author: AUTHORS.rafa,
+    draft: true,
   },
   {
     slug: "gdpr-analytics-without-consent",

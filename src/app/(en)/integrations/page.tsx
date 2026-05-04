@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const faqs = [
   {
@@ -32,6 +32,12 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Integrations — SealMetrics",
   description: "25+ native integrations: ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus MCP server for AI agents and full REST API.",
+  openGraph: {
+    title: "Integrations — SealMetrics",
+    description: "25+ native integrations: ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus MCP server for AI agents and full REST API.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/integrations", languages: getAlternates("/integrations") },
 };
 
@@ -49,7 +55,6 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Integrations" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Integrations", url: "/integrations" }])} />
-      <JsonLd data={faqSchema(faqs)} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">

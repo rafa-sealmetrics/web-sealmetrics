@@ -1,0 +1,120 @@
+{
+  "$comment": "Ready-to-use JSON-LD snippets for SCHEMA-REPORT.md recommendations. Each entry shows the helper-style replacement and the rendered JSON-LD it produces.",
+  "recommendations": [
+    {
+      "id": "1-claimAsCreativeWork",
+      "title": "Replacement for deprecated ClaimReview (C1)",
+      "context": "Google retired ClaimReview from rich results June 2025. Use a CreativeWork with citation pointing at the audit source, embedded inside the case study Article schema. AI engines (ChatGPT, Claude, Perplexity) treat this as a citable claim with provenance.",
+      "helper_typescript": "export function statisticClaimSchema(props: {\n  text: string;\n  source: string;\n  sourceAuthor: string;\n  sourceDate: string;\n  url: string;\n  numericValue?: number;\n  unit?: string;\n}) {\n  return {\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"CreativeWork\",\n    name: props.text,\n    text: props.text,\n    url: `${SITE_URL}${props.url}`,\n    isBasedOn: {\n      \"@type\": \"CreativeWork\",\n      name: props.source,\n      author: { \"@type\": \"Organization\", name: props.sourceAuthor },\n      datePublished: props.sourceDate,\n    },\n    publisher: { \"@type\": \"Organization\", name: ORG_NAME, url: SITE_URL },\n    ...(props.numericValue !== undefined\n      ? {\n          mainEntity: {\n            \"@type\": \"QuantitativeValue\",\n            value: props.numericValue,\n            ...(props.unit ? { unitText: props.unit } : {}),\n          },\n        }\n      : {}),\n  };\n}",
+      "rendered_example": {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
+        "text": "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
+        "url": "https://sealmetrics.com/case-studies/palladium-hotel-group",
+        "isBasedOn": {
+          "@type": "CreativeWork",
+          "name": "Palladium Hotel Group internal audit · April 2026",
+          "author": { "@type": "Organization", "name": "Palladium Hotel Group" },
+          "datePublished": "2026-04-15"
+        },
+        "publisher": { "@type": "Organization", "name": "SealMetrics", "url": "https://sealmetrics.com" },
+        "mainEntity": {
+          "@type": "QuantitativeValue",
+          "value": 40,
+          "unitText": "PERCENT"
+        }
+      },
+      "delete_after": [
+        "src/lib/schema.ts: claimReviewSchema()",
+        "src/app/(en)/page.tsx: 3 claimReviewSchema calls",
+        "src/app/(en)/case-studies/palladium-hotel-group/page.tsx: 3 calls",
+        "src/app/(en)/case-studies/dreamplace-hotels/page.tsx: 2 calls",
+        "ES mirrors (all 3)"
+      ]
+    },
+    {
+      "id": "2-webSiteWithSearch",
+      "title": "WebSite + potentialAction for sitelinks search box (W2)",
+      "context": "Patch organizationSchema() to enable Google's sitelinks search box on the brand SERP. The url-template syntax is Google's documented contract; ?q= is just a placeholder route the user submits to.",
+      "patch_typescript": "// In src/lib/schema.ts organizationSchema(), replace the WebSite block:\n{\n  \"@type\": \"WebSite\",\n  name: ORG_NAME,\n  url: SITE_URL,\n  potentialAction: {\n    \"@type\": \"SearchAction\",\n    target: {\n      \"@type\": \"EntryPoint\",\n      urlTemplate: `${SITE_URL}/?q={search_term_string}`,\n    },\n    \"query-input\": \"required name=search_term_string\",\n  },\n}",
+      "rendered_example": {
+        "@type": "WebSite",
+        "name": "SealMetrics",
+        "url": "https://sealmetrics.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://sealmetrics.com/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      "caveat": "Site must actually accept ?q= URLs and route to a results page. If you don't have a /search route yet, skip this until you build one — Google ignores the SearchAction otherwise."
+    },
+    {
+      "id": "3-deleteDeadHelpers",
+      "title": "Remove dead/deprecated helpers (W3)",
+      "patch_typescript": "// In src/lib/schema.ts, delete these three exported functions:\n// - howToSchema()      — Google deprecated rich results September 2023\n// - faqSchema()        — Google restricted to gov/health August 2023\n// - claimReviewSchema()— Google retired rich results June 2025 (do this AFTER replacing call sites per recommendation #1)\n//\n// Verify zero callers first:\n//   grep -rln 'howToSchema\\|faqSchema\\|claimReviewSchema' src/ | grep -v lib/schema.ts\n// Should return empty before deleting."
+    },
+    {
+      "id": "4-homepageSpeakable",
+      "title": "Add speakable to homepage (M2)",
+      "patch_typescript": "// In src/app/(en)/page.tsx, after the existing JsonLd lines, add:\n<JsonLd data={speakableWebPageSchema({ url: \"/\", name: \"SealMetrics — complete data for eCommerce\" })} />\n\n// In src/app/(es)/es/page.tsx, mirror with locale-correct name:\n<JsonLd data={speakableWebPageSchema({ url: \"/es\", name: \"SealMetrics — datos completos para eCommerce\" })} />",
+      "import_addition": "// Already exported from @/lib/schema, just add to the import list:\nimport { speakableWebPageSchema } from \"@/lib/schema\";"
+    },
+    {
+      "id": "5-pricingRangeFix",
+      "title": "Reconcile pricing AggregateOffer range (M1)",
+      "context": "Today highPrice=899 reflects only annual pricing. With both billing modes visible to users, the range should span €499 → €1079 (Growth annual → Scale monthly).",
+      "patch_typescript": "// In src/lib/schema.ts pricingSchema(), accept both billing modes:\n// Either:\n//   A) Pass annual + monthly plans into pricingSchema and let it compute lowPrice/highPrice across both\n//   B) Hardcode the range: lowPrice: PRICING.growth.annual, highPrice: PRICING.scale.monthly\n//\n// Option B is simpler — single source of truth still wins:\nconst lowPrice = PRICING.growth.annual.toString();\nconst highPrice = PRICING.scale.monthly.toString();\n// Then the rest of the existing pricingSchema() logic continues unchanged.",
+      "rendered_example_offers_only": {
+        "lowPrice": "499",
+        "highPrice": "1079",
+        "priceCurrency": "EUR",
+        "offerCount": 2
+      }
+    },
+    {
+      "id": "6-personForToniAndEduardo",
+      "title": "Person schema for named case-study sources (M3)",
+      "context": "Toni Andújar (Palladium) and Eduardo Martin (Dreamplace) are cited as quote authors but only as strings inside Quotation.spokenByCharacter. Elevating them to standalone Person entities gives AI engines a citable Person URI per quote.",
+      "rendered_example_toni": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Toni Andújar",
+        "jobTitle": "Digital & Direct Sales Director",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Palladium Hotel Group",
+          "url": "https://www.palladiumhotelgroup.com/"
+        },
+        "url": "https://sealmetrics.com/case-studies/palladium-hotel-group",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Palladium Hotel Group case study — A neutral single source of truth",
+          "url": "https://sealmetrics.com/case-studies/palladium-hotel-group"
+        }
+      },
+      "rendered_example_eduardo": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eduardo Martin",
+        "jobTitle": "eCommerce",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Dreamplace Hotels",
+          "url": "https://www.dreamplacehotels.com/"
+        },
+        "url": "https://sealmetrics.com/case-studies/dreamplace-hotels",
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "Dreamplace Hotels case study — Paid media on real data",
+          "url": "https://sealmetrics.com/case-studies/dreamplace-hotels"
+        }
+      },
+      "where_to_add": "Add as a `<JsonLd>` block at the top of each case-study page.tsx (EN + ES = 4 files). New helper recommendation: `casePersonSchema()` in src/lib/schema.ts."
+    }
+  ]
+}

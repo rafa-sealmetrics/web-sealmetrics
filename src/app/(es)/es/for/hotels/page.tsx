@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analítica sin cookies para hoteles — SealMetrics",
+  title: "Analytics for Hotels — Direct-Booking | SealMetrics",
   description:
-    "Analítica sin cookies para hoteles: cuadra la atribución de reservas directas con tu PMS, recupera el 25% de reservas invisibles, consolida portfolios multi-propiedad. Alojado en UE.",
+    "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS, recupera reservas invisibles y consolida portfolios multi-propiedad.",
   openGraph: {
-    title: "Analítica sin cookies para hoteles — SealMetrics",
+    title: "Analytics for Hotels — Direct-Booking | SealMetrics",
     description:
       "Analítica first-party sin consentimiento para grupos hoteleros. Reconcilia reservas directas con tu PMS y atribuye ingresos de meta-search sin cajas negras de OTAs.",
     type: "website",
@@ -73,7 +72,6 @@ export default function Page() {
           url: "/es/for/hotels",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("hotels", "es")} />
 

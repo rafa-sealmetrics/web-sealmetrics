@@ -25,9 +25,9 @@ export default function AnalyticsScriptsPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Scripts Costing You Sales" }]} />
       <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Scripts Costing You Sales" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Scripts Costing You Sales", url: "/blog/analytics-scripts-costing-you-sales" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function AnalyticsScriptsPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Every 100ms of site speed improvement produces +8.4% conversions in eCommerce, +10.1% in travel, and +21.6% in lead forms.</li>
             <li>GA4 script is ~90 KB (gzipped) and Adobe Analytics is ~150 KB, while SealMetrics is just 1.3 KB — the tool measuring conversions may be costing you conversions.</li>
             <li>The compound effect is multiplicative: heavy scripts slow pages, consent banners reject 25-70% of visitors, and ad blockers erase ~32% of the rest.</li>

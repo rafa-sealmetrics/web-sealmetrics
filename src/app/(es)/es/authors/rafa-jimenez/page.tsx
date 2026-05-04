@@ -10,7 +10,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Rafa Jiménez — Founder & CEO de SealMetrics",
   description:
-    "20+ años en analítica eCommerce europea. Founder de SealMetrics, plataforma de analítica sin cookies para eCommerce UE. Marketer digital, fundador de agencia, arquitecto de analítica.",
+    "20+ años en analítica eCommerce europea. Founder de SealMetrics, marketer digital, fundador de agencia y arquitecto de analítica.",
   alternates: {
     canonical: "https://sealmetrics.com/es/authors/rafa-jimenez",
     languages: getAlternatesEs("/authors/rafa-jimenez"),
@@ -31,7 +31,6 @@ export default function Page() {
       <JsonLd
         data={breadcrumbSchema(
           [
-            { name: "Autores" },
             { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
           ],
           "es"
@@ -116,7 +115,7 @@ export default function Page() {
             {[
               { n: "Analítica sin cookies", d: "Conteo de eventos anónimo server-side first-party — sin cookies, sin identificadores, sin journeys por usuario." },
               { n: "Atribución de ingresos", d: "Last-click sobre datos completos — por qué la atribución modelada se rompe en Europa." },
-              { n: "Arquitectura RGPD", d: "Cómo diseñar analítica que cae fuera del scope material de RGPD, no dentro." },
+              { n: "Arquitectura RGPD", d: "Cómo diseñar analítica que evita la recolección de datos personales por arquitectura, no por capas de consentimiento." },
               { n: "Analítica eCommerce", d: "Lo que los equipos DTC y retail europeos realmente necesitan de un stack analítico." },
               { n: "Schrems II & residencia de datos", d: "Por qué UE-hosted importa y cómo las cadenas de sub-procesadores comprometen compliance." },
               { n: "Analítica AI-native", d: "MCP servers, medición de tráfico de agentes IA y data warehouses listos para LLMs." },

@@ -25,9 +25,9 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Every Cookie Set by Every Major Analytics Tool" }]} />
       <JsonLd data={articleSchema({ headline: "Every Cookie Set by Every Major Analytics Tool, Cataloged", description: "We cataloged every cookie set by GA4, Adobe Analytics, Mixpanel, PostHog, Piwik PRO, and cookieless tools.", datePublished: "2026-03-05", url: "/blog/analytics-tools-cookies-cataloged", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Every Cookie Set by Every Major Analytics Tool" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Every Cookie Set by Every Major Analytics Tool", url: "/blog/analytics-tools-cookies-cataloged" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,8 +47,8 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-            <li>Four analytics tools (SealMetrics, Plausible, Fathom, Simple Analytics) set zero cookies; Adobe Analytics sets 6 including 2 third-party cookies.</li>
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
+            <li>Zero-cookie tools split into two categories: lightweight privacy analytics for simple reporting, and SealMetrics for enterprise revenue attribution.</li>
             <li>GA4 sets 2 first-party cookies (_ga and _ga_XXXX) with a 2-year expiry — each one requires consent under the ePrivacy Directive.</li>
             <li>EU consent rejection rates run between 60% and 70%, meaning any tool that sets cookies measures at most 30-40% of actual traffic.</li>
             <li>Zero cookies means zero consent dependency means 100% data capture — every cookie above zero is a gate most EU visitors will close.</li>
@@ -482,9 +482,9 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            Four tools in our audit set zero cookies: SealMetrics, Plausible,
-            Fathom, and Simple Analytics. All four can operate without consent
-            banners under{" "}
+            Four tools in our audit set zero cookies: SealMetrics plus
+            privacy-first lightweight tools such as Plausible, Fathom and Simple
+            Analytics. All four can operate without consent banners under{" "}
             <Link
               href="/glossary/gdpr-analytics-compliance"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -499,7 +499,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             Fathom, and Simple Analytics are privacy-first lightweight
             alternatives — they give you pageviews, referrers, and basic
             metrics. SealMetrics combines zero cookies with enterprise-grade
-            attribution, full journey visibility, and{" "}
+            channel attribution, complete observed data, and{" "}
             <Link
               href="/glossary/first-party-data-collection"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

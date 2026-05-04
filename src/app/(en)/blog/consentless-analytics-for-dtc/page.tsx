@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 
 export const metadata: Metadata = {
-  title: "Consentless Analytics for DTC: What It Is and Why It Matters in 2026",
+  title: "Consentless Analytics for DTC — 2026 Guide",
   description:
     "Consentless analytics counts 100% of your DTC traffic without a cookie banner — anonymously, at channel level. How it works, why it's compliant, and what European DTC teams get from it.",
   openGraph: {
-    title: "Consentless Analytics for DTC: What It Is and Why It Matters in 2026",
+    title: "Consentless Analytics for DTC — 2026 Guide",
     description:
       "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
     type: "article",
@@ -45,7 +45,7 @@ const faqs = [
   {
     question: "Is consentless analytics legal under GDPR?",
     answer:
-      "When correctly implemented, yes. GDPR regulates processing of personal data; if no personal data is collected and no identifier is stored or read on the device, the analytics is outside the material scope. This is a question for a DPO to confirm against the specific implementation's architecture — SealMetrics ships a DPA and TPSR package for this review.",
+      "When correctly implemented, yes. GDPR regulates processing of personal data; if no personal data is collected and no identifier is stored or read on the device, the architecture meets GDPR by design. This is a question for a DPO to confirm against the specific implementation — SealMetrics ships a DPA and TPSR package for this review.",
   },
   {
     question: "Can I use consentless analytics alongside advertising pixels?",
@@ -60,7 +60,7 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consentless Analytics for DTC" }]} />
       <JsonLd
         data={articleSchema({
-          headline: "Consentless Analytics for DTC: What It Is and Why It Matters in 2026",
+          headline: "Consentless Analytics for DTC — 2026 Guide",
           description: "Consentless analytics counts 100% of DTC traffic anonymously at channel level — no banner, no tracking.",
           datePublished: "2026-04-24",
           url: "/blog/consentless-analytics-for-dtc",
@@ -68,17 +68,16 @@ export default function Page() {
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
         })}
       />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consentless Analytics for DTC" }])} />
-      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consentless Analytics for DTC", url: "/blog/consentless-analytics-for-dtc" }])} />
 
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               DTC
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              Consentless Analytics for DTC: What It Is and Why It Matters
+              How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
             </h1>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">April 24, 2026</time>
@@ -89,7 +88,7 @@ export default function Page() {
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
-            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Consentless analytics = no cookies, no localStorage, no fingerprinting, no personal identifiers, no per-user tracking. Therefore no consent required under GDPR/ePrivacy.</li>
               <li>For DTC brands, this closes the 40–60% consent-rejection gap that breaks aggregate channel ROAS in Europe.</li>
               <li>It works alongside advertising pixels (Meta, Google Ads) — pixels stay consent-gated, analytics is free.</li>
@@ -132,7 +131,7 @@ export default function Page() {
             <p>
               A typical European DTC stack running consentless analytics:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>Shopify (or WooCommerce/Magento) + consentless analytics.</strong> Analytics counts events on 100% of traffic, pre-banner, no identifier ever created.</li>
               <li><strong>Meta pixel + Google Ads pixel behind the banner.</strong> These still require consent because they use personal data for ad personalisation.</li>
               <li><strong>Klaviyo or CRM for email.</strong> Runs on explicit email-list opt-in, not tracking cookies.</li>
@@ -163,7 +162,7 @@ export default function Page() {
             <p>
               Consentless analytics is a marketing-site measurement layer. It does not replace:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>Advertising pixels</strong> — still required for Meta, TikTok, Google Ads optimisation. Still consent-gated.</li>
               <li><strong>CRM and email tracking</strong> — separate consent surface (explicit list opt-in, authenticated).</li>
               <li><strong>Customer data platforms (CDPs)</strong> — for authenticated users, different compliance basis and a different data model.</li>

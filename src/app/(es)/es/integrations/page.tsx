@@ -9,6 +9,12 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Integraciones — SealMetrics",
   description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
+  openGraph: {
+    title: "Integraciones — SealMetrics",
+    description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/es/integrations", languages: getAlternatesEs("/integrations") },
 };
 

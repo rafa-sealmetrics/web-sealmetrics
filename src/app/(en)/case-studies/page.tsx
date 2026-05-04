@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    client: "European hotel group",
+    client: "Palladium Hotel Group",
     sector: "Hotels · eCommerce",
     stat1: { n: "40%", l: "Traffic with no attribution before SealMetrics" },
     stat2: { n: "+165%", l: "Cost-per-Search improvement on Display" },
     quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
-    cite: "Digital & Direct Sales Director · European hotel group",
-    href: "/case-studies/european-hotel-group",
+    cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+    href: "/case-studies/palladium-hotel-group",
   },
   {
     client: "Dreamplace Hotels",
@@ -55,7 +55,7 @@ export default function Page() {
       <JsonLd
         data={itemListSchema({
           name: "SealMetrics Case Studies",
-          description: "Customer case studies from European hotels, DTC and retail teams. Featured: European hotel group.",
+          description: "Customer case studies from European hotels, DTC and retail teams. Featured: Palladium Hotel Group.",
           url: "/case-studies",
           items: cases.map((c) => ({
             name: `${c.client} — ${c.sector}`,
@@ -81,7 +81,7 @@ export default function Page() {
             Real teams. Real numbers. <em>Honest write-ups.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Featured this month: European hotel group on why neutrality beat reported volume. Other cases are anonymised until the client signs off on disclosure — numbers are real and verified against each customer&apos;s own CRM and internal reports.
+            Featured this month: Palladium Hotel Group on why neutrality beat reported volume. Other cases are anonymised until the client signs off on disclosure — numbers are real and verified against each customer&apos;s own CRM and internal reports.
           </p>
         </div>
       </section>

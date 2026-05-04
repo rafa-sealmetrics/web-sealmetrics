@@ -22,7 +22,7 @@ export default function AnalyticsDataResidencyPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Analytics Data Residency" }]} />
       <JsonLd data={definedTermSchema({ name: "Analytics Data Residency", description: "The geographic location where analytics data is processed and stored, determining the applicable legal framework.", url: "/glossary/analytics-data-residency", related: [{ name: "GDPR Analytics Compliance", url: "/glossary/gdpr-analytics-compliance" }, { name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Consent Management Platform (CMP)", url: "/glossary/consent-management-platform" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Analytics Data Residency" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Analytics Data Residency", url: "/glossary/analytics-data-residency" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 

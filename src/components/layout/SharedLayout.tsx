@@ -10,7 +10,7 @@ const onest = Onest({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -34,7 +34,7 @@ export function SharedLayout({
     >
       <head>
         <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
-        <link rel="preconnect" href={SEALMETRICS_PIXEL_URL} />
+        <link rel="preconnect" href={SEALMETRICS_PIXEL_URL} crossOrigin="anonymous" />
         <link rel="dns-prefetch" href={SEALMETRICS_PIXEL_URL} />
         {/* SealMetrics Analytics */}
         <script async src={SEALMETRICS_PIXEL_SRC} />

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
@@ -9,8 +9,14 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs GA360 — Datos enterprise sin la factura de 150K$",
+  title: "SealMetrics vs GA360 — Datos enterprise por menos",
   description: "GA360 cuesta 150K$+/año y sigue perdiendo 40-60% del tráfico UE. SealMetrics da dato completo desde 499€/mes.",
+  openGraph: {
+    title: "SealMetrics vs GA360 — Datos enterprise por menos",
+    description: "GA360 cuesta 150K$+/año y sigue perdiendo 40-60% del tráfico UE. SealMetrics da dato completo desde 499€/mes.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/es/vs/ga360", languages: getAlternatesEs("/vs/ga360") },
 };
 
@@ -18,7 +24,8 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "vs GA360" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "vs GA360", url: "/es/vs/ga360" }])} /><VsComparisonV3 data={getVsData("ga360", "es")} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs GA360", url: "/es/vs/ga360" }])} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs GA360", description: "Comparativa lado a lado: SealMetrics vs Google Analytics 360 en completitud de datos, cumplimiento UE, precio y disposicion para IA.", url: "/es/vs/ga360", competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" } })} /><VsComparisonV3 data={getVsData("ga360", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"

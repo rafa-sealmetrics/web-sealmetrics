@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
@@ -9,8 +9,14 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "SealMetrics para CMOs",
+  title: "Analytics for CMOs — Defensible Attribution | SealMetrics",
   description: getVerticalData("cmo", "es").lede.slice(0, 155) + "…",
+  openGraph: {
+    title: "Analytics for CMOs — Defensible Attribution | SealMetrics",
+    description: getVerticalData("cmo", "es").lede.slice(0, 155) + "…",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/cmo",
     languages: getAlternatesEs("/for/cmo"),
@@ -21,7 +27,8 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Para CMOs" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Para CMOs", url: "/es/for/cmo" }])} /><VerticalPageV3 data={getVerticalData("cmo", "es")} />
+      <JsonLd data={breadcrumbSchema([{ name: "Para CMOs", url: "/es/for/cmo" }])} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "CMOs", audienceType: "Chief Marketing Officer", description: "SealMetrics — enterprise analytics for CMOs teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/cmo" })} /><VerticalPageV3 data={getVerticalData("cmo", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

@@ -25,9 +25,9 @@ export default function WhatIsCookielessTrackingPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Cookieless Tracking?" }]} />
       <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?", url: "/blog/what-is-cookieless-tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function WhatIsCookielessTrackingPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
             <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
             <li>Cookieless tracking is not fingerprinting — it collects aggregate, non-identifying data points (URLs, referrals, timestamps) that cannot identify individual visitors.</li>

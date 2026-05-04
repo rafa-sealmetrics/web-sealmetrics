@@ -25,16 +25,16 @@ export default function CookielessAnalyticsExplainedPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics Explained" }]} />
       <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", url: "/blog/cookieless-analytics-explained", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics", url: "/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
             Technology
           </span>
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-            Cookieless Analytics Explained: How to Measure Without Cookies
+            How Web Analytics Works Without Cookies, Consent or Per-User Tracking
           </h1>
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 8, 2026</time>
@@ -47,7 +47,7 @@ export default function CookielessAnalyticsExplainedPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~55% rejection, and ad blockers strip scripts from another 40%.</li>
             <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
             <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>

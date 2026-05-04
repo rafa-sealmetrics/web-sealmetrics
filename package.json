@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-blog-modified.mjs && node scripts/generate-og-images.mjs && node scripts/optimize-images.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,12 +20,22 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.4",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^25.3.2",
     "@types/react": "^19.2.14",
     "eslint": "^10.0.2",
     "postcss": "^8.5.6",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
-  }
+  },
+  "browserslist": [
+    "supports es6-module",
+    "Chrome >= 91",
+    "Edge >= 91",
+    "Firefox >= 90",
+    "Safari >= 15"
+  ]
 }

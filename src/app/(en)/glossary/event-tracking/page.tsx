@@ -22,7 +22,7 @@ export default function EventTrackingPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Event Tracking" }]} />
       <JsonLd data={definedTermSchema({ name: "Event Tracking", description: "Recording specific user interactions on a website beyond pageviews, such as clicks, form submissions, and video plays.", url: "/glossary/event-tracking", related: [{ name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "Revenue Attribution", url: "/glossary/revenue-attribution" }, { name: "Attribution Model", url: "/glossary/attribution-model" }, { name: "Bounce Rate", url: "/glossary/bounce-rate" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Event Tracking" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Event Tracking", url: "/glossary/event-tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import {
@@ -46,12 +46,12 @@ export default function VsGA4Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/vs-ga4" }])} />
-      <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: SealMetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" } })} />
 
       <VsGA4HeroV3 locale="en" />
       <TldrBlock
         answer={
-          <>GA4 typically loses <strong>40–60% of EU traffic</strong> to consent rejection, ad blockers and Apple's Intelligent Tracking Prevention — then reconstructs the rest with statistical modelling. SealMetrics captures <strong>100% of traffic</strong> with a first-party cookieless pixel, attributes revenue last-click on complete data, and is GDPR-compliant by architecture. Most teams run both in parallel for 30 days, then make decisions on SealMetrics.</>
+          <>GA4 is Google&rsquo;s free analytics product, hosted in the United States, that requires a cookie consent banner across the EU and uses statistical modelling for unconsented traffic. SealMetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without a consent banner and attributes every conversion last-click on observed events. The substantive difference is data completeness: GA4 typically reports <strong>13–40% of real EU traffic</strong> after consent rejection (40–60%), ad blockers (~25%) and Safari&rsquo;s Intelligent Tracking Prevention; SealMetrics captures the full <strong>100%</strong> on aggregate. Most teams run both for 30 days side-by-side, compare against their CRM, then keep GA4 as a Google Ads conversion conduit while making revenue and budget decisions on SealMetrics. Pricing starts at €499/month annually.</>
         }
         bullets={[
           <>GA4: consent-gated, sampled, US-hosted, Google-owned — best for Google Ads conduit.</>,

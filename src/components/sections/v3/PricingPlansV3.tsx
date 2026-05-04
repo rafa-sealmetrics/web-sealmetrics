@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { PRICING, fmtPrice, annualTotal } from "@/lib/content/pricing";
 
 type Locale = "en" | "es";
 
@@ -25,11 +26,11 @@ const plansEn: Plan[] = [
   {
     name: "Growth",
     desc: "For teams starting with full-stack data",
-    monthlyPrice: "€599",
-    annualPrice: "€499",
-    annualTotal: "€5,988 billed annually",
-    annualSave: "€499/mo if billed annually",
-    events: "5M human events/mo",
+    monthlyPrice: fmtPrice(PRICING.growth.monthly, "en"),
+    annualPrice: fmtPrice(PRICING.growth.annual, "en"),
+    annualTotal: `${fmtPrice(annualTotal(PRICING.growth.annual), "en")} billed annually`,
+    annualSave: `${fmtPrice(PRICING.growth.annual, "en")}/mo if billed annually`,
+    events: `${PRICING.growth.eventsMillions}M human events/mo`,
     roiContext: "Less than the cost of one misattributed campaign decision.",
     highlights: [
       "5M human events / month",
@@ -45,11 +46,11 @@ const plansEn: Plan[] = [
   {
     name: "Scale",
     desc: "For growing eCommerce with complete attribution",
-    monthlyPrice: "€1,079",
-    annualPrice: "€899",
-    annualTotal: "€10,788 billed annually",
-    annualSave: "€899/mo if billed annually",
-    events: "15M human events/mo",
+    monthlyPrice: fmtPrice(PRICING.scale.monthly, "en"),
+    annualPrice: fmtPrice(PRICING.scale.annual, "en"),
+    annualTotal: `${fmtPrice(annualTotal(PRICING.scale.annual), "en")} billed annually`,
+    annualSave: `${fmtPrice(PRICING.scale.annual, "en")}/mo if billed annually`,
+    events: `${PRICING.scale.eventsMillions}M human events/mo`,
     roiContext: "Pays for itself if you recover one mis-attributed campaign per quarter.",
     highlights: [
       "15M human events / month",
@@ -88,11 +89,11 @@ const plansEs: Plan[] = [
   {
     name: "Growth",
     desc: "Para equipos empezando con datos full-stack",
-    monthlyPrice: "€599",
-    annualPrice: "€499",
-    annualTotal: "€5.988 facturados anualmente",
-    annualSave: "€499/mes con facturación anual",
-    events: "5M eventos humanos/mes",
+    monthlyPrice: fmtPrice(PRICING.growth.monthly, "es"),
+    annualPrice: fmtPrice(PRICING.growth.annual, "es"),
+    annualTotal: `${fmtPrice(annualTotal(PRICING.growth.annual), "es")} facturados anualmente`,
+    annualSave: `${fmtPrice(PRICING.growth.annual, "es")}/mes con facturación anual`,
+    events: `${PRICING.growth.eventsMillions}M eventos humanos/mes`,
     roiContext: "Menos que el coste de una decisión de campaña mal atribuida.",
     highlights: [
       "5M eventos humanos / mes",
@@ -108,11 +109,11 @@ const plansEs: Plan[] = [
   {
     name: "Scale",
     desc: "Para eCommerce en crecimiento con atribución completa",
-    monthlyPrice: "€1.079",
-    annualPrice: "€899",
-    annualTotal: "€10.788 facturados anualmente",
-    annualSave: "€899/mes con facturación anual",
-    events: "15M eventos humanos/mes",
+    monthlyPrice: fmtPrice(PRICING.scale.monthly, "es"),
+    annualPrice: fmtPrice(PRICING.scale.annual, "es"),
+    annualTotal: `${fmtPrice(annualTotal(PRICING.scale.annual), "es")} facturados anualmente`,
+    annualSave: `${fmtPrice(PRICING.scale.annual, "es")}/mes con facturación anual`,
+    events: `${PRICING.scale.eventsMillions}M eventos humanos/mes`,
     roiContext: "Se paga solo si recuperas una campaña mal atribuida al trimestre.",
     highlights: [
       "15M eventos humanos / mes",

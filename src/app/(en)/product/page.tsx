@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
+import { softwareApplicationSchema, breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import {
@@ -40,6 +40,7 @@ export default function ProductPage() {
       <Breadcrumbs items={[{ label: "Product" }]} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Product", url: "/product" }])} />
+      <JsonLd data={speakableWebPageSchema({ url: "/product", name: "Product — SealMetrics" })} />
 
       <ProductHeroV3 />
       <ProblemNarrativeV3 />

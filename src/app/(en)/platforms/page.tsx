@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const faqs = [
   {
@@ -28,6 +28,12 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Platforms — SealMetrics",
   description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
+  openGraph: {
+    title: "Platforms — SealMetrics",
+    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/platforms", languages: getAlternates("/platforms") },
 };
 
@@ -51,7 +57,6 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Platforms" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Platforms", url: "/platforms" }])} />
-      <JsonLd data={faqSchema(faqs)} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Fragment } from "react";
 import { FaqAccordionV3 } from "./FaqAccordionV3";
 import { FinalCtaSharedV3 } from "./FinalCtaSharedV3";
 
@@ -136,52 +135,75 @@ export function VsComparisonV3({ data }: { data: VsData }) {
           </div>
 
           <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
-            <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
-              <div className="p-5">{locale === "es" ? "Capacidad" : "Capability"}</div>
-              <div className="p-5">{competitor}</div>
-              <div
-                className="p-5 text-ink"
-                style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
-              >
-                SealMetrics
-              </div>
-            </div>
-            {data.comparison.map((section) => (
-              <Fragment key={section.category}>
-                <div className="px-5 py-3 bg-warm-white border-b border-warm-100 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink font-bold">
-                  {section.category}
-                </div>
-                {section.rows.map((row, i) => {
-                  const isLastOverall =
-                    i === section.rows.length - 1 &&
-                    section === data.comparison[data.comparison.length - 1];
-                  return (
-                    <div
-                      key={row.feature}
-                      className={`grid grid-cols-[1.4fr_1fr_1fr] items-center ${
-                        isLastOverall ? "" : "border-b border-warm-100"
-                      }`}
+            <table className="w-full border-collapse table-fixed">
+              <caption className="sr-only">
+                {locale === "es"
+                  ? `Comparativa feature por feature: SealMetrics vs ${competitor}`
+                  : `Feature-by-feature comparison: SealMetrics vs ${competitor}`}
+              </caption>
+              <colgroup>
+                <col style={{ width: "44%" }} />
+                <col style={{ width: "28%" }} />
+                <col style={{ width: "28%" }} />
+              </colgroup>
+              <thead>
+                <tr className="border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
+                  <th scope="col" className="p-5 text-left align-middle">
+                    {locale === "es" ? "Capacidad" : "Capability"}
+                  </th>
+                  <th scope="col" className="p-5 text-left align-middle">
+                    {competitor}
+                  </th>
+                  <th
+                    scope="col"
+                    className="p-5 text-left align-middle text-ink"
+                    style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
+                  >
+                    SealMetrics
+                  </th>
+                </tr>
+              </thead>
+              {data.comparison.map((section) => (
+                <tbody key={section.category}>
+                  <tr>
+                    <th
+                      scope="rowgroup"
+                      colSpan={3}
+                      className="px-5 py-3 bg-warm-white border-b border-warm-100 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink font-bold text-left"
                     >
-                      <div className="p-4 md:p-5 text-[14px] text-ink font-semibold leading-[1.4]">
-                        {row.feature}
-                      </div>
-                      <div className="p-4 md:p-5 text-[13.5px] text-ink-soft leading-[1.5]">
-                        {row.them}
-                      </div>
-                      <div
-                        className="p-4 md:p-5 text-[13.5px] text-ink leading-[1.5] font-medium"
-                        style={{
-                          background: "rgba(45,139,109,0.04)",
-                          borderLeft: "2px solid #2D8B6D",
-                        }}
+                      {section.category}
+                    </th>
+                  </tr>
+                  {section.rows.map((row, i) => {
+                    const isLastOverall =
+                      i === section.rows.length - 1 &&
+                      section === data.comparison[data.comparison.length - 1];
+                    return (
+                      <tr
+                        key={row.feature}
+                        className={isLastOverall ? "" : "border-b border-warm-100"}
                       >
-                        {row.us}
-                      </div>
-                    </div>
-                  );
-                })}
-              </Fragment>
-            ))}
+                        <th scope="row" className="p-4 md:p-5 text-[14px] text-ink font-semibold leading-[1.4] text-left align-top">
+                          {row.feature}
+                        </th>
+                        <td className="p-4 md:p-5 text-[13.5px] text-ink-soft leading-[1.5] align-top">
+                          {row.them}
+                        </td>
+                        <td
+                          className="p-4 md:p-5 text-[13.5px] text-ink leading-[1.5] font-medium align-top"
+                          style={{
+                            background: "rgba(45,139,109,0.04)",
+                            borderLeft: "2px solid #2D8B6D",
+                          }}
+                        >
+                          {row.us}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              ))}
+            </table>
           </div>
 
           <div className="mt-6 p-6 bg-warm-50 border border-warm-100 rounded-xl text-center text-[15px] text-ink-2 leading-[1.55]">

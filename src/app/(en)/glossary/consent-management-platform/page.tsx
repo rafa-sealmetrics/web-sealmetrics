@@ -22,7 +22,7 @@ export default function ConsentManagementPlatformPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Consent Management Platform" }]} />
       <JsonLd data={definedTermSchema({ name: "Consent Management Platform", description: "Software that manages cookie consent banners and user privacy preferences.", url: "/glossary/consent-management-platform", related: [{ name: "GDPR Analytics Compliance", url: "/glossary/gdpr-analytics-compliance" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }, { name: "Analytics Data Residency", url: "/glossary/analytics-data-residency" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Consent Management Platform" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Consent Management Platform", url: "/glossary/consent-management-platform" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
         <header className="mb-12">

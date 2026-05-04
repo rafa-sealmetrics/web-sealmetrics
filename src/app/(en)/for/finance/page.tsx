@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
@@ -9,8 +9,14 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for Finance",
+  title: "Analytics for Finance — Compliance | SealMetrics",
   description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
+  openGraph: {
+    title: "Analytics for Finance — Compliance | SealMetrics",
+    description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/for/finance",
     languages: getAlternates("/for/finance"),
@@ -21,7 +27,8 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "For Finance" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For Finance", url: "/for/finance" }])} /><VerticalPageV3 data={getVerticalData("finance", "en")} />
+      <JsonLd data={breadcrumbSchema([{ name: "For Finance", url: "/for/finance" }])} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banking, insurance and wealth management", description: "SealMetrics — enterprise analytics for finance teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Also explore"

@@ -87,7 +87,10 @@ export function FaqAccordionV3({
                     </span>
                   </div>
                   {isOpen && (
-                    <p className="mt-3.5 text-[14.5px] leading-[1.65] text-white/80 max-w-[62ch]">
+                    <p
+                      data-speakable
+                      className="faq-answer mt-3.5 text-[14.5px] leading-[1.65] text-white/80 max-w-[62ch]"
+                    >
                       {item.a}
                     </p>
                   )}

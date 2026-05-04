@@ -22,7 +22,7 @@ export default function ServerSideTrackingPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Server-Side Tracking" }]} />
       <JsonLd data={definedTermSchema({ name: "Server-Side Tracking", description: "Data collection method where events are processed on the server rather than the browser.", url: "/glossary/server-side-tracking", related: [{ name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }, { name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }, { name: "Event Tracking", url: "/glossary/event-tracking" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Server-Side Tracking" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
         <header className="mb-12">

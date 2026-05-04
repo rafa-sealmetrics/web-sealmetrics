@@ -26,9 +26,9 @@ export default function WhyGA4Shows13PctPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
       <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic", url: "/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -48,7 +48,7 @@ export default function WhyGA4Shows13PctPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 captures approximately 13% of real EU traffic after three layers of data loss: consent rejection (55%), ad blockers (40%), and browser restrictions.</li>
             <li>Even among the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct attribution.</li>
             <li>The cascade is multiplicative: 100 real visitors become ~45 after consent, ~27 after ad blockers, and ~13 after browser restrictions like Safari ITP.</li>

@@ -18,11 +18,11 @@ import {
 } from "@/components/sections/v3/ProductV3SectionsEs";
 
 export const metadata: Metadata = {
-  title: "Producto — SealMetrics · Analítica completa, sin compromisos",
+  title: "Producto — SealMetrics · Analítica completa",
   description:
-    "Tracking sin consentimiento, atribución de ingresos last-click, supervisión LENS AI, SuperAPI y MCP server — todo sobre 100% de datos observados. Sin muestreo, sin modelado.",
+    "Tracking sin consentimiento, atribución last-click, supervisión LENS AI, SuperAPI y MCP server sobre 100% de datos observados. Sin muestreo.",
   openGraph: {
-    title: "Producto — SealMetrics · Analítica completa, sin compromisos",
+    title: "Producto — SealMetrics · Analítica completa",
     description:
       "Stack analítico completo para equipos eCommerce. Sin consentimiento, 100% observado, alojado en UE. LENS AI + SuperAPI + MCP nativo.",
     type: "website",

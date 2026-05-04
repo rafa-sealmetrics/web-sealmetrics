@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PRICING, fmtPrice } from "@/lib/content/pricing";
 
 /* ============================================
    INDUSTRIES · "Built for" with scenes
@@ -468,8 +469,8 @@ export function PricingV3() {
 
         <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {[
-            { name: "Growth", price: "€499", per: "/mo", billing: "Annual billing", feat: ["5M events / month", "3 domains", "Full MCP + BigQuery + API", "GA4 comparison dashboard", "Email support"], cta: "Start with Growth", featured: false },
-            { name: "Scale", price: "€999", per: "/mo", billing: "Annual billing", feat: ["15M events / month", "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"], cta: "Start with Scale", featured: true },
+            { name: "Growth", price: fmtPrice(PRICING.growth.annual, "en"), per: "/mo", billing: "Annual billing", feat: [`${PRICING.growth.eventsMillions}M events / month`, "3 domains", "Full MCP + BigQuery + API", "GA4 comparison dashboard", "Email support"], cta: "Start with Growth", featured: false },
+            { name: "Scale", price: fmtPrice(PRICING.scale.annual, "en"), per: "/mo", billing: "Annual billing", feat: [`${PRICING.scale.eventsMillions}M events / month`, "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"], cta: "Start with Scale", featured: true },
             { name: "Enterprise", price: "Custom", per: "", billing: "Annual or custom terms", feat: ["Unlimited events", "Unlimited domains", "Everything in Scale", "SSO, audit logs, SLA", "Dedicated customer engineer"], cta: "Talk to us", featured: false },
           ].map((p) => (
             <article

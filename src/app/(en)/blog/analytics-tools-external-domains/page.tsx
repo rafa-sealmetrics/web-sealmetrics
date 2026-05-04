@@ -25,9 +25,9 @@ export default function ExternalDomainsPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools External Domains" }]} />
       <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", datePublished: "2026-03-04", url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools External Domains" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools External Domains", url: "/blog/analytics-tools-external-domains" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function ExternalDomainsPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Adobe Analytics contacts 4 third-party domains per page load, adding 600-1,200 ms of network overhead; GA4 contacts 3 domains costing 450-900 ms.</li>
             <li>SealMetrics contacts only 1 domain — your own subdomain — with zero third-party requests, zero cross-border transfers, and zero additional DNS lookups.</li>
             <li>Each third-party US domain is a GDPR legal surface requiring Standard Contractual Clauses and a Transfer Impact Assessment.</li>
@@ -327,7 +327,7 @@ export default function ExternalDomainsPage() {
             <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">region1.google-analytics.com</code>{" "}
             resolves to Austell, Georgia (216.239.34.36). Note that{" "}
             <a href="https://support.google.com/analytics/answer/12159447" target="_blank" rel="noopener noreferrer"><code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">google-analytics.com</code></a>{" "}
-            serves from a CDN that may resolve to EU nodes (we measured Frankfurt),
+            serves from a CDN that may resolve to EU edge nodes,
             but the data processing still occurs on Google&apos;s US infrastructure.
             Adobe&apos;s domains use CDN and AWS endpoints &mdash;{" "}
             <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">assets.adobedtm.com</code>{" "}

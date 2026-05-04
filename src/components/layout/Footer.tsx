@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/types";
 import { getDictionary } from "@/lib/i18n/getDictionary";
@@ -74,7 +74,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
             <Link href={localizedHref("/", locale)} className="inline-block mb-3 no-underline">
-              <Image
+              <Picture
                 src="/logos/logo-sealmetrics-blancov.png"
                 alt="SealMetrics"
                 width={160}

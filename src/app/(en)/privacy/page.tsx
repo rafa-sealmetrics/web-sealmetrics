@@ -34,8 +34,8 @@ export default function PrivacyPage() {
 
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
-            <strong className="text-text-primary">Last updated:</strong> March
-            1, 2026
+            <strong className="text-text-primary">Last updated:</strong> May 1,
+            2026
           </p>
 
           <div>
@@ -100,17 +100,31 @@ export default function PrivacyPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Country-level geolocation (derived from IP, which is immediately
-                discarded)
+                Country-level geolocation derived from the visitor&rsquo;s
+                browser timezone (Intl.DateTimeFormat). For accounts with
+                bot/agent detection enabled, an additional IP-based country
+                lookup (via MaxMind GeoLite2 offline database) is performed
+                only on session entry, used exclusively for bot detection
+                signals.
               </li>
             </ul>
             <p className="mt-3">
               <strong className="text-text-primary">
+                On IP addresses:
+              </strong>{" "}
+              We do not persist IP addresses in our analytics database. The IP
+              is used transitorily on the server for: (i) anti-abuse blocklist
+              matching, (ii) the GeoLite2 lookup described above when applicable,
+              and (iii) operational logging with limited retention. The IP is
+              never available to Clients in their reports.
+            </p>
+            <p className="mt-3">
+              <strong className="text-text-primary">
                 We do not collect:
               </strong>{" "}
-              IP addresses, device fingerprints, names, email addresses, or any
-              data that could identify an individual visitor. No cookies or local
-              storage are used.
+              device fingerprints, names, email addresses, or any data that
+              could identify an individual visitor. No cookies, local storage,
+              session storage, or IndexedDB are used.
             </p>
           </div>
 
@@ -143,8 +157,11 @@ export default function PrivacyPage() {
               6. Data retention
             </h2>
             <p>
-              Analytics data is retained for the duration of the Client&rsquo;s
-              contract plus 30 days. Form submissions on sealmetrics.com are
+              Analytics data on Client websites is retained for a maximum of
+              <strong className="text-text-primary"> 24 months</strong> (enforced
+              automatically via database TTL), in line with the AEPD audience
+              measurement guidance (January 2024). Aggregated hourly reports are
+              retained for 90 days. Form submissions on sealmetrics.com are
               retained for 24 months unless you request earlier deletion.
             </p>
           </div>

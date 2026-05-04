@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import {
@@ -16,11 +16,11 @@ import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs Google Analytics 4 — Datos completos, sin rodeos",
+  title: "SealMetrics vs Google Analytics 4 — Datos completos",
   description:
     "Comparativa honesta. GA4 pierde 40–60% del tráfico UE por consentimiento y ad blockers. SealMetrics captura el 100%. Corre ambos 30 días.",
   openGraph: {
-    title: "SealMetrics vs Google Analytics 4 — Datos completos, sin rodeos",
+    title: "SealMetrics vs Google Analytics 4 — Datos completos",
     description: "Comparativa feature a feature. Honesta.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
@@ -47,7 +47,7 @@ export default function VsGA4PageEs() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/es/vs-ga4" }])} />
-      <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Comparativa honesta: SealMetrics vs GA4 en completitud de dato UE, dependencia de consentimiento, atribucion y disposicion IA.", url: "/es/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" } })} />
 
       <VsGA4HeroV3 locale="es" />
       <TldrBlock

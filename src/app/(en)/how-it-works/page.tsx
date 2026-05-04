@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqSchema, howToSchema } from "@/lib/schema";
+import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
@@ -31,37 +31,17 @@ export const metadata: Metadata = {
   },
 };
 
-const faqs = [
-  { question: "How does cookieless tracking work without identifying users?", answer: "SealMetrics uses first-party cookieless collection to capture behavioral data without storing anything on the visitor's device." },
-  { question: "Is SealMetrics affected by ad blockers?", answer: "No. SealMetrics operates as first-party infrastructure on your own domain." },
-  { question: "How long does setup take?", answer: "5 minutes. Add one JavaScript tag to your website." },
-  { question: "Where is data processed and stored?", answer: "Dublin, Ireland — exclusively on EU servers. No transfers outside the EU." },
-];
-
 export default function HowItWorksPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "How it works" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "How it works", url: "/how-it-works" }])} />
-      <JsonLd data={faqSchema(faqs)} />
-      <JsonLd data={howToSchema({
-        name: "Install SealMetrics in one week",
-        description: "From install to decision-ready analytics in 7 days. No cookie banner integration, no migration from GA4.",
-        url: "/how-it-works",
-        totalTime: "P7D",
-        steps: [
-          { name: "Install the pixel", text: "Add one 846-byte script tag to your site. 15 minutes with your dev. Works with any CMS or framework. No cookie banner integration." },
-          { name: "Real data flows", text: "Full traffic visibility from the first hour. Every pageview, every source, every conversion counted — 100% observed on Day 1, no identifiers required." },
-          { name: "GA4 side-by-side", text: "On Day 3, compare SealMetrics against your existing GA4. See the gap with your own numbers." },
-          { name: "Tag microconversions", text: "On Day 5, tag the 5–10 microconversions that matter for revenue attribution." },
-          { name: "Decision-ready", text: "By Week 1, funnels, channels and attribution are all calibrated. Start making reallocation decisions with defensible data." },
-        ],
-      })} />
+      <JsonLd data={speakableWebPageSchema({ url: "/how-it-works", name: "How it works — SealMetrics" })} />
 
       <HowItWorksHeroV3 locale="en" />
       <TldrBlock
         answer={
-          <>SealMetrics works in three layers: a <strong>846-byte first-party pixel</strong> logs each pageview directly from your domain (no third-party cookies, no ad-blocker impact); a <strong>server-side pipeline in Dublin</strong> counts events anonymously and attributes each conversion last-click at channel level; a <strong>reporting + API layer</strong> exposes aggregate totals to dashboards, warehouses and AI agents. Install takes 15 minutes, full calibration one week.</>
+          <>SealMetrics is a cookieless web-analytics platform that captures 100% of website traffic anonymously, then attributes each conversion last-click at channel level for revenue decisions. The architecture is three layers: an <strong>846-byte first-party pixel</strong> logs each pageview directly from your own domain (no third-party cookies, no ad-blocker impact, no consent banner integration); a <strong>server-side pipeline in Dublin</strong> counts events anonymously and joins them to the channel observed on each pageview; a <strong>reporting and API layer</strong> exposes aggregate totals to dashboards, BigQuery, MCP servers and AI agents. Implementation takes 15 minutes for the script tag, runs side-by-side with GA4 from day 1 (no migration), and reaches full calibration within one week. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure with zero sub-processors outside the EU.</>
         }
         bullets={[
           <>One JavaScript tag — works on any CMS, SPA or headless setup.</>,

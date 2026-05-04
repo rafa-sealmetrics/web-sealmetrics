@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
@@ -11,12 +11,18 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Security & Compliance — SealMetrics",
   description: "EU-hosted in Dublin. Zero personal data collection. GDPR-compliant by architecture, not by a compliance layer bolted on afterwards.",
+  openGraph: {
+    title: "Security & Compliance — SealMetrics",
+    description: "EU-hosted in Dublin. Zero personal data collection. GDPR-compliant by architecture, not by a compliance layer bolted on afterwards.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/security", languages: getAlternates("/security") },
 };
 
 const faqs = [
   { q: "Where is data processed and stored?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU." },
-  { q: "Does SealMetrics fall under GDPR?", a: "No. GDPR applies to processing of personal data. SealMetrics doesn't process personal data — no cookies, no identifiers, no fingerprinting. Outside GDPR material scope." },
+  { q: "How is SealMetrics GDPR-compliant by architecture?", a: "SealMetrics is designed to avoid personal-data collection: no cookies, no identifiers, no fingerprinting and no per-user profiling. Events are counted anonymously, processed in Dublin, and supported with DPA and TPSR documentation." },
   { q: "Do you sign DPAs?", a: "Yes. Standard DPA with every plan. Enterprise plans support custom DPA negotiation for regulated industries." },
   { q: "What security documentation can you provide?", a: "DPA, architecture diagrams and vendor security questionnaire (TPSR) available under NDA during procurement review." },
   { q: "What happens in a security incident?", a: "Customers notified within 4 hours. Public report within 72 hours. Full post-mortem within 7 days. Status at status.sealmetrics.com." },
@@ -28,7 +34,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Security" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Security", url: "/security" }])} />
-      <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
+      <JsonLd data={speakableWebPageSchema({ url: "/security", name: "Security — SealMetrics" })} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
@@ -47,7 +53,7 @@ export default function Page() {
 
       <TldrBlock
         answer={
-          <>SealMetrics is <strong>GDPR-compliant by architecture</strong> — not by a compliance layer added on top. No cookies, no personal identifiers, no fingerprinting. All processing happens in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU. That places SealMetrics outside the material scope of GDPR and ePrivacy for most eCommerce use cases.</>
+          <>SealMetrics is <strong>GDPR-compliant by architecture</strong> rather than by a consent layer added on top. The data path stores no cookies, no localStorage, no fingerprinting, no personal identifiers — every event is counted anonymously and aggregated at channel, campaign, landing page and country level before storage. All processing happens in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU, which keeps the deployment Schrems II clean and removes the third-country transfer review that GA4 + Consent Mode requires. Compliance documentation is pre-packaged: standard DPA with every plan, custom DPA negotiation on Enterprise, and a Third-Party Security Review (TPSR) bundle with architecture diagrams, sub-processor list and answers to every common procurement questionnaire. DPOs typically sign off in one meeting rather than three.</>
         }
         bullets={[
           <>EU-hosted in Dublin, single region, no third-country transfers (Schrems II clean).</>,
@@ -60,16 +66,17 @@ export default function Page() {
         <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
             <div>
-              <span className="eyebrow mb-5">Certifications</span>
+              <span className="eyebrow mb-5">Compliance posture</span>
               <h2 className="h-section mt-5">All the <em>paperwork.</em> None of the excuses.</h2>
+              <h3 className="sr-only">How is SealMetrics GDPR-compliant by architecture?</h3>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Every certification and framework your compliance team looks for — certified, audited, available under NDA during procurement review.
+              Every framework your compliance team looks for — architectural, contractual and pre-documented for procurement review.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              { name: "GDPR", desc: "Compliant by architecture — outside material scope." },
+              { name: "GDPR", desc: "Compliant by architecture — no personal data collected." },
               { name: "ePrivacy", desc: "No cookies, no localStorage — directive doesn't apply." },
               { name: "Schrems II", desc: "Zero transfers outside EU. No SCCs needed." },
               { name: "EU-hosted · Dublin", desc: "Single region. No failover to third countries." },
@@ -94,6 +101,7 @@ export default function Page() {
             <div>
               <span className="eyebrow mb-5">Data flow</span>
               <h2 className="h-section mt-5">From visitor to dashboard. <em>All inside Ireland.</em></h2>
+              <h3 className="sr-only">Where does SealMetrics process and store data?</h3>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
               Every byte of data stays within the EU. No third-country transfers, no sub-processors, no hidden dependencies.

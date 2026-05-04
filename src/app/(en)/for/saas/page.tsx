@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for SaaS — SealMetrics",
+  title: "Analytics for SaaS — PLG & Trial-to-Paid | SealMetrics",
   description:
-    "Cookieless analytics for SaaS: product-led growth measurement without consent banners. Track trial-to-paid conversion, self-serve funnels and PQLs on 100% of EU traffic.",
+    "Cookieless analytics for SaaS: product-led growth measurement without consent banners. Track trial-to-paid conversion and self-serve funnels on EU traffic.",
   openGraph: {
-    title: "Cookieless Analytics for SaaS — SealMetrics",
+    title: "Analytics for SaaS — PLG & Trial-to-Paid | SealMetrics",
     description:
       "First-party analytics for European SaaS companies. Trial-to-paid attribution, self-serve funnel tracking and PLG metrics — GDPR-safe, consent-free.",
     type: "website",
@@ -69,7 +68,6 @@ export default function Page() {
           url: "/for/saas",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("saas", "en")} />
 

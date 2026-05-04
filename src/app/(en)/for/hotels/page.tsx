@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for Hotels — SealMetrics",
+  title: "Analytics for Hotels — Direct-Booking | SealMetrics",
   description:
-    "Cookieless analytics for hotels: match direct-booking attribution to your PMS, recover 25% of invisible reservations, roll up multi-property portfolios. EU-hosted, GDPR-safe.",
+    "Cookieless analytics for hotels: match direct-booking attribution to your PMS, recover invisible reservations, and roll up multi-property portfolios.",
   openGraph: {
-    title: "Cookieless Analytics for Hotels — SealMetrics",
+    title: "Analytics for Hotels — Direct-Booking | SealMetrics",
     description:
       "Consentless, first-party analytics for hotel groups. Reconcile direct bookings with your PMS and attribute revenue from meta-search without OTA black boxes.",
     type: "website",
@@ -69,7 +68,6 @@ export default function Page() {
           url: "/for/hotels",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("hotels", "en")} />
 
@@ -102,7 +100,7 @@ export default function Page() {
           {
             href: "/blog/cookieless-analytics-for-hotels",
             title: "Guide: Cookieless analytics for hotels",
-            desc: "How European hotel groups measure direct bookings in 2026.",
+            desc: "How hotel groups measure direct bookings in 2026.",
           },
           {
             href: "/glossary/cookieless-analytics",

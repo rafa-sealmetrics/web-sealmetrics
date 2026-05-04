@@ -26,9 +26,9 @@ export default function MultiTouchAttributionPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Multi-Touch Attribution" }]} />
       <JsonLd data={articleSchema({ headline: "Why Multi-Touch Attribution Fails Without Complete Data", description: "Attribution models need complete data to work.", datePublished: "2026-01-10", url: "/blog/multi-touch-attribution-complete-data", category: "Attribution", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Multi-Touch Attribution" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Multi-Touch Attribution", url: "/blog/multi-touch-attribution-complete-data" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -48,7 +48,7 @@ export default function MultiTouchAttributionPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Multi-touch attribution models see only 13% of touchpoints in EU traffic — the remaining 87% are lost to consent rejection, ad blockers, and browser restrictions.</li>
             <li>Direct traffic is systematically inflated because it absorbs all untracked touchpoints, while top-of-funnel channels (organic, social, display) are undervalued because first touches are most likely to be lost.</li>
             <li>GA4 data-driven attribution uses ML on a biased 13% sample — it learns patterns from cookie-accepting visitors and extrapolates to the full population, producing sophisticated but misleading results.</li>

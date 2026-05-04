@@ -22,7 +22,7 @@ export default function DataSamplingPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Data Sampling" }]} />
       <JsonLd data={definedTermSchema({ name: "Data Sampling", description: "A technique where analytics tools analyze a subset of data and extrapolate results.", url: "/glossary/data-sampling", related: [{ name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }, { name: "Event Tracking", url: "/glossary/event-tracking" }, { name: "Bounce Rate", url: "/glossary/bounce-rate" }, { name: "Revenue Attribution", url: "/glossary/revenue-attribution" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Data Sampling" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Data Sampling", url: "/glossary/data-sampling" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
 

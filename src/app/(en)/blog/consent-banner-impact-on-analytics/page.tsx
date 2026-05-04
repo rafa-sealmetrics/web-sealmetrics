@@ -26,9 +26,9 @@ export default function ConsentBannerImpactPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
       <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", datePublished: "2026-01-25", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact", url: "/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -48,7 +48,7 @@ export default function ConsentBannerImpactPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>EU consent rejection rates average ~55% overall, reaching 60-70% in Germany and 55-65% in the Netherlands — these visitors become completely invisible to cookie-based analytics.</li>
             <li>Of the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct traffic source attribution.</li>
             <li>Cookie rejection is not random: privacy-conscious users tend to be more tech-savvy with higher purchasing power, introducing systematic demographic bias into your data.</li>

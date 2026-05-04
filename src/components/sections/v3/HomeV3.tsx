@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import { HeroDashboard } from "./HeroDashboard";
 
@@ -64,7 +64,6 @@ export function HeroV3() {
    ============================================ */
 const LOGOS: { src: string; alt: string; h: number }[] = [
   // Top row — flagship
-  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 48 },
   { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 54 },
   { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 44 },
   { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 38 },
@@ -125,14 +124,14 @@ function LogosGrid() {
               isTop ? "min-h-20" : "min-h-12"
             }`}
           >
-            <Image
+            <Picture
               src={logo.src}
               alt={logo.alt}
               width={isTop ? 200 : 200}
               height={logo.h}
               className="object-contain w-auto"
               style={{ height: `${logo.h}px`, maxWidth: "220px" }}
-              unoptimized
+
             />
           </div>
         );
@@ -182,7 +181,7 @@ export function ValueProp4Min() {
 }
 
 /* ============================================
-   COMPARE · Palladium finding + Patterns
+   COMPARE · Palladium Hotel Group finding + Patterns
    ============================================ */
 export function CompareSection() {
   return (
@@ -424,7 +423,7 @@ export function FeaturedCase() {
                 P
               </div>
               <div>
-                <b className="block text-[14px] font-semibold">Toni Andújar · Digital &amp; Direct Sales Director</b>
+                <b className="block text-[14px] font-semibold">Digital & Direct Sales Director · Digital &amp; Direct Sales Director</b>
                 <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/60 font-semibold">
                   Palladium Hotel Group · April 2026
                 </span>

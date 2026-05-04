@@ -4,12 +4,22 @@ import { glossaryTerms } from "@/lib/content/glossary";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionPageSchema, breadcrumbSchema, itemListSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Analytics Glossary — SealMetrics",
   description: "Clear definitions of web analytics terms: cookieless analytics, data sampling, attribution, GDPR compliance, and more.",
-  alternates: { canonical: "https://sealmetrics.com/glossary" },
+  openGraph: {
+    title: "Analytics Glossary — SealMetrics",
+    description: "Clear definitions of web analytics terms: cookieless analytics, data sampling, attribution, GDPR compliance, and more.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary",
+    languages: getAlternates("/glossary"),
+  },
 };
 
 const categories = [...new Set(glossaryTerms.map((t) => t.category))];

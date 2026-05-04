@@ -16,3 +16,9 @@ public/sitemap.xml.old
 .env
 .env.local
 .env.*.local
+
+# Local audit outputs (large screenshots, JSON metrics) — regenerable on demand
+audits/
+
+# Build-time font cache for OG image generator
+.og-font-cache/

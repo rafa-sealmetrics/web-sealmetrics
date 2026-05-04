@@ -25,9 +25,9 @@ export default function MeasuredScriptsPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Measured Every Analytics Script" }]} />
       <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", datePublished: "2026-02-20", url: "/blog/we-measured-every-analytics-script", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Measured Every Analytics Script" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Measured Every Analytics Script", url: "/blog/we-measured-every-analytics-script" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function MeasuredScriptsPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 is 52x heavier than SealMetrics (128.8 KB vs 2.5 KB gzipped) and Adobe Analytics is 60x heavier at 150.7 KB.</li>
             <li>For a site with 100,000 monthly visitors, GA4 consumes 12.9 GB of bandwidth per month versus 250 MB for SealMetrics.</li>
             <li>Enterprise analytics scripts carry legacy code for cross-site tracking and fingerprinting — features now illegal under GDPR or blocked by browsers.</li>

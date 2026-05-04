@@ -195,7 +195,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Data capture", rows: [
             { feature: "Cookies", them: "Yes · opt-in required", us: "None" },
-            { feature: "Consent banner needed", them: "Yes", us: "No · outside GDPR scope" },
+            { feature: "Consent banner needed", them: "Yes", us: "No · GDPR by architecture" },
             { feature: "EU traffic captured", them: "60% typical with banner", us: "100% captured" },
           ]},
           { category: "Infrastructure", rows: [
@@ -277,7 +277,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Sampling at scale", them: "Yes", us: "Never" },
           ]},
           { category: "Compliance", rows: [
-            { feature: "GDPR posture", them: "Consent banner required", us: "Outside GDPR material scope" },
+            { feature: "GDPR posture", them: "Consent banner required", us: "GDPR by architecture" },
             { feature: "Schrems II", them: "Exposed", us: "Clean" },
             { feature: "Data residency", them: "US", us: "EU · Dublin" },
           ]},

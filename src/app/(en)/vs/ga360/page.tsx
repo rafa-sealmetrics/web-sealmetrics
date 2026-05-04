@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
+import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
@@ -9,8 +10,14 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs GA360 — Enterprise data without the $150K invoice",
+  title: "SealMetrics vs GA360 — Enterprise data for less",
   description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. SealMetrics delivers complete data at €499/mo.",
+  openGraph: {
+    title: "SealMetrics vs GA360 — Enterprise data for less",
+    description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. SealMetrics delivers complete data at €499/mo.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/vs/ga360", languages: getAlternates("/vs/ga360") },
 };
 
@@ -18,7 +25,21 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "vs GA360" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "vs GA360", url: "/vs/ga360" }])} /><VsComparisonV3 data={getVsData("ga360", "en")} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs GA360", url: "/vs/ga360" }])} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 360", description: "Side-by-side comparison: SealMetrics enterprise analytics versus Google Analytics 360 (GA360) on data completeness, EU compliance, pricing and AI readiness.", url: "/vs/ga360", competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" } })} />
+      <section className="bg-warm-white border-t border-warm-100 pt-28 pb-2">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer>
+            <p>
+              Google Analytics 360 (GA360) is the enterprise tier of Google Analytics, priced from $150,000/year with annual contracts, hosted in the United States, and requiring a cookie consent banner across the EU. SealMetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without consent dependency, attributes last-click on observed events, and starts at €499/month annually with no annual commit.
+            </p>
+            <p>
+              The architectural differences matter for EU eCommerce: GA360 still loses 40-60% of EU traffic to consent rejection (Consent Mode v2 reconstructs the gap with statistical modelling, not measurement), and US hosting requires Schrems II SCCs with quarterly DPIA review. SealMetrics&rsquo; Dublin-only infrastructure and zero sub-processors outside the EU remove that compliance overhead entirely. Customers typically run both for 30 days, reconcile against their CRM, and migrate revenue decisions to SealMetrics while keeping GA360 as a Google Ads conduit.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
+      <VsComparisonV3 data={getVsData("ga360", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"

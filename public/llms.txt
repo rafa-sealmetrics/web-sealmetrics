@@ -28,8 +28,12 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
 - /demo — Request a personalized demo
 - /about — Company story, mission, EU-first philosophy
+- /audit — Free SealMetrics audit: we run your site through SealMetrics and surface the attribution gap live
+- /modern-analytics — What modern analytics looks like in 2026: complete data, AI supervision, EU-hosted
+- /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of SealMetrics
 
 ## Comparisons (enterprise analytics tier)
+- /vs — All vendor comparisons
 - /vs-ga4 — SealMetrics vs Google Analytics 4 (free, ~13% EU data)
 - /vs/ga360 — SealMetrics vs Google Analytics 360 ($150,000+/yr)
 - /vs/adobe-analytics — SealMetrics vs Adobe Analytics ($100,000+/yr)
@@ -39,7 +43,13 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 ## Alternatives (editorial comparisons)
 - /alternatives/google-analytics — 8 Google Analytics alternatives compared: data capture, GDPR compliance, pricing, features
 
+## Customer case studies
+- /case-studies — All published case studies
+- /case-studies/palladium-hotel-group — Palladium Hotel Group: Toni Andújar (Digital & Direct Sales Director) on neutrality. 40% traffic with no attribution before, +165% Cost-per-Search on Display after
+- /case-studies/dreamplace-hotels — Dreamplace Hotels: Eduardo Martin (eCommerce) on paid-media reallocation. 15-20% more attributed sales, +30% more traffic vs Google Analytics
+
 ## Role-specific pages
+- /for — Audiences and verticals index
 - /for/cmo — How CMOs use SealMetrics for attribution and budget decisions
 - /for/cto — Technical architecture, setup, and engineering overhead comparison
 - /for/dpo — GDPR compliance, privacy architecture, regulatory alignment
@@ -55,6 +65,11 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 - /for/healthcare — Analytics for healthcare: privacy-first aggregate event measurement, no patient identification
 
 ## Blog (latest articles)
+- /blog — Full blog index
+- /blog/cookieless-analytics-for-ecommerce — How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
+- /blog/cookieless-analytics-for-hotels — How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
+- /blog/cookieless-analytics-for-saas — PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026
+- /blog/consentless-analytics-for-dtc — How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
 - /blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking: GA4, GA360, Adobe, Piwik PRO, SealMetrics, Matomo, Amplitude, Mixpanel)
 - /blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Shows 13% of Your EU Traffic (the math behind the data loss cascade)
 - /blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
@@ -97,6 +112,13 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 ## Enterprise positioning
 SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution only (not multi-touch). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics).
 
+## Legal & meta
+- /privacy — Privacy policy
+- /terms — Terms of service
+- /dpa — Data Processing Agreement
+- /changelog — Product changelog
+- /videos — Product videos
+
 ## Spanish (ES) site
 SealMetrics is also available in Spanish. The Spanish surface mirrors the English site for core pages and persona/industry pages.
 
@@ -110,6 +132,7 @@ Core pages (ES):
 - /es/demo — Solicitar demo
 
 Role-specific (ES):
+- /es/for — Audiencias y verticales (índice)
 - /es/for/cmo — Para CMOs
 - /es/for/cto — Para CTOs
 - /es/for/dpo — Para DPOs
@@ -124,8 +147,39 @@ Industry-specific (ES):
 - /es/for/healthcare — Para Salud
 - /es/for/education — Para Educación
 
+About / extras (ES):
+- /es/about — Quiénes somos
+- /es/audit — Auditoría gratuita SealMetrics
+- /es/modern-analytics — Analítica moderna en 2026
+- /es/data-loss-calculator — Calculadora de pérdida de datos
+- /es/integrations — Integraciones
+- /es/platforms — Plataformas
+- /es/authors/rafa-jimenez — Autor: Rafa Jiménez
+
+Comparisons (ES):
+- /es/vs — Todas las comparativas
+- /es/vs-ga4 — SealMetrics vs Google Analytics 4
+- /es/vs/ga360 — SealMetrics vs GA360
+- /es/vs/adobe-analytics — SealMetrics vs Adobe Analytics
+- /es/vs/piwik-pro — SealMetrics vs Piwik PRO
+- /es/alternatives/google-analytics — Alternativas a Google Analytics
+
+Case studies (ES):
+- /es/case-studies — Casos de estudio
+- /es/case-studies/palladium-hotel-group — Palladium Hotel Group: Toni Andújar y la decisión de neutralidad
+- /es/case-studies/dreamplace-hotels — Dreamplace Hotels: paid media con dato real
+
 Blog (ES):
+- /es/blog — Blog (ES)
 - /es/blog/ga4-google-ads-separation — GA4 y Google Ads: la separación
+
+Glossary (ES):
+- /es/glossary — Glosario completo
+- /es/glossary/cookieless-analytics — Analítica sin cookies
+- /es/glossary/gdpr-analytics-compliance — Cumplimiento RGPD en analítica
+- /es/glossary/multi-touch-attribution — Atribución multi-touch
+- /es/glossary/data-loss-in-analytics — Pérdida de datos en analítica
+- /es/glossary/revenue-attribution — Atribución de ingresos
 
 ## Contact
 - Demo: https://sealmetrics.com/demo

@@ -1,49 +1,30 @@
-"use client";
+import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
+import { DiagnosticResultClient } from "./DiagnosticResultClient";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { type QuizAnswers, isQuizComplete } from "@/lib/content/diagnostic";
-import { ScoreBanner } from "@/components/homepage/ScoreBanner";
-import { DataGapSection } from "@/components/homepage/DataGapSection";
-import { ComparisonReveal } from "@/components/homepage/ComparisonReveal";
-import { DemoAccessCTA } from "@/components/homepage/DemoAccessCTA";
+export const metadata: Metadata = {
+  title: "Diagnostic Results — SealMetrics",
+  description:
+    "View your analytics diagnostic result and see how much data your current setup may be missing.",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "https://sealmetrics.com/diagnostic-result" },
+  openGraph: {
+    title: "Diagnostic Results — SealMetrics",
+    description:
+      "View your analytics diagnostic result and see how much data your current setup may be missing.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+};
 
 export default function DiagnosticResultPage() {
-  const router = useRouter();
-  const [answers, setAnswers] = useState<QuizAnswers | null>(null);
-
-  useEffect(() => {
-    const stored = sessionStorage.getItem("diagnostic_answers");
-    if (!stored) {
-      router.replace("/#quiz");
-      return;
-    }
-    try {
-      const parsed = JSON.parse(stored) as QuizAnswers;
-      if (!isQuizComplete(parsed)) {
-        router.replace("/#quiz");
-        return;
-      }
-      setAnswers(parsed);
-    } catch {
-      router.replace("/#quiz");
-    }
-  }, [router]);
-
-  if (!answers) {
-    return (
-      <div className="pt-40 pb-20 text-center">
-        <p className="text-text-secondary">Loading your results...</p>
-      </div>
-    );
-  }
-
   return (
     <>
-      <ScoreBanner answers={answers} />
-      <DataGapSection answers={answers} />
-      <ComparisonReveal answers={answers} />
-      <DemoAccessCTA answers={answers} />
+      <Breadcrumbs items={[{ label: "Diagnostic Results" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Diagnostic Results", url: "/diagnostic-result" }])} />
+      <DiagnosticResultClient />
     </>
   );
 }

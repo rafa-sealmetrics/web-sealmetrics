@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { pricingSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { PricingPlansV3 } from "@/components/sections/v3/PricingPlansV3";
@@ -50,7 +50,6 @@ export default function PricingPageEs() {
         { name: "Scale", price: "899", description: "15M eventos humanos/mes · anual" },
       ], { locale: "es" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Precios", url: "/es/pricing" }])} />
-      <JsonLd data={faqSchema(faqsForSchema)} />
 
       <PricingHeroV3Es />
       <LogosStripEs />

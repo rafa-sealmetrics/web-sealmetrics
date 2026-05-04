@@ -1,189 +1,182 @@
-# GEO Analysis — sealmetrics.com
+# Generative Engine Optimization (GEO) Analysis · SealMetrics
 
-Date: 2026-04-18
-Scope: AI search / Generative Engine Optimization readiness (Google AI Overviews, ChatGPT web search, Perplexity, Bing Copilot).
+Date: 2026-05-04
+Site: `https://sealmetrics.com` (post-Sprint 4 + post-Schema-Council build, 124 sitemap URLs)
+Standard: GEO best practices Feb 2026 — brand mentions weighted 3× backlinks for AI citation
 
 ---
 
-## GEO Readiness Score: **82 / 100**
+## GEO Readiness Score: **69/100**
 
-Well above the industry median for B2B SaaS marketing sites. The site has already executed most high-leverage GEO fundamentals (llms.txt, FAQ schema, Article schema with author, question-based H2s, Key Takeaways blocks, specific statistics, SSR via static export). The gap to 95+ is primarily external entity-building and a few on-page author-schema improvements, not structural rework.
+| Category | Weight | Score | Notes |
+|---|---|---|---|
+| Citability (passage quality) | 25% | 14/25 | Strong DefinedTerm cluster + statisticClaimSchema, but 0 passages in the optimal 134-167 word range |
+| Structural Readability | 20% | 16/20 | Clean H1→H2→H3, but only 8% of H2/H3 are question-style |
+| Multi-Modal Content | 15% | 8/15 | 17 pages with comparison tables; few embedded images, no charts, no video |
+| Authority & Brand Signals | 20% | 11/20 | On-page E-E-A-T strong; off-page (Wikipedia, Reddit, YouTube) weak/absent |
+| Technical Accessibility | 20% | 20/20 | Best-in-class: 100% SSR, 21-bot allowlist, llms.txt synced, schema validated |
 
-### Platform breakdown
+---
 
-| Platform | Score | Rationale |
+## Platform-specific scores
+
+| Platform | Score | Lift opportunity |
 |---|---|---|
-| Google AI Overviews | 85/100 | Strong passage structure, FAQ schema, stats with sources. Top-10 ranking is the gating factor (92% of AIO citations come from top-10); most pillar pages are young and still climbing. |
-| ChatGPT web search | 80/100 | Good llms.txt, SSR content, author byline. Weakness: Wikipedia (47.9% of ChatGPT citations) and Reddit (11.3%) presence is minimal. |
-| Perplexity | 74/100 | Reddit is 46.7% of Perplexity citations — SealMetrics has no organic Reddit thread presence on target terms. Content itself is highly citable. |
-| Bing Copilot | 82/100 | Bing-compatible SEO, IndexNow not configured but static sitemap is clean. |
+| **Google AI Overviews** | 75/100 | Strong base. Add 134-167w answer blocks + comparison tables on top pages → 85+. |
+| **ChatGPT (web search)** | 55/100 | **Wikipedia missing** is the single biggest gap (47.9% of ChatGPT citations come from Wikipedia). |
+| **Perplexity** | 50/100 | **Reddit absent from sameAs.** Reddit is Perplexity's #1 source (46.7%). Need community presence. |
+| **Bing Copilot** | 75/100 | Mirrors AIO. IndexNow + Bing Webmaster account would accelerate. |
 
 ---
 
-## 1. AI Crawler Access Status
+## Detailed findings
 
-`public/robots.txt` — **allows** the critical AI crawlers via explicit rules + default `User-agent: *` allow:
+### ✅ Best-in-class (preserve)
 
-| Crawler | Status | Notes |
-|---|---|---|
-| GPTBot (OpenAI) | Allowed (explicit) | Good |
-| ClaudeBot (Anthropic) | Allowed (explicit) | Good |
-| PerplexityBot | Allowed (explicit) | Good |
-| Google-Extended | Allowed (explicit) | Good |
-| OAI-SearchBot | Allowed (implicit via `*`) | **Add explicit rule** — improves grader confidence |
-| ChatGPT-User | Allowed (implicit via `*`) | **Add explicit rule** |
-| anthropic-ai | Allowed (implicit via `*`) | **Add explicit rule** |
-| CCBot | Allowed (implicit) | Optional: block to prevent training-set inclusion |
-| Bytespider | Allowed (implicit) | Optional: block if undesired |
+1. **Crawler allowlist — 21 AI bots explicitly permitted** in `public/robots.txt`: GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, FacebookBot, Meta-ExternalAgent, Amazonbot, Diffbot, DuckAssistBot, cohere-ai, Mistral-AI-User, YouBot. Custom `LLMs-Txt:` declaration at the bottom is informative.
 
-**Sitemap** referenced correctly. **LLMs-Txt** directive present (non-standard but harmless).
+2. **llms.txt + llms-full.txt present.** 124 entries; **0 drift vs sitemap** (verified by `scripts/audit-llms-txt.mjs`). Each URL has a hand-written one-line description AI engines can lift verbatim.
 
----
+3. **100% server-side rendering.** Static export means every word of the visible UI is in the initial HTML response. AI crawlers — none of which execute JS — see the full content. Sample: homepage HTML body contains 1,866 words of visible text. Blog posts contain the full article body in HTML.
 
-## 2. llms.txt Status
+4. **E-E-A-T signals on every blog post:** all 27 posts have author (Person schema), `datePublished`, AND `dateModified` (auto-derived from git mtime via Sprint 2 build script). Both case studies have Person schema for the named source (Toni Andújar / Eduardo Martin) added in the Schema Council pass.
 
-`public/llms.txt` (102 lines) and `public/llms-full.txt` (222 lines) — **present, well-structured, above-average quality.**
+5. **Schema cluster optimized for AI citation:**
+   - `DefinedTerm` + `DefinedTermSet` on 14 EN + 5 ES glossary terms (citable knowledge graph)
+   - `statisticClaimSchema` (16 instances) — replaced deprecated `ClaimReview`; emits `CreativeWork` + `QuantitativeValue` + `isBasedOn` for each verifiable claim
+   - `Quotation` (14 instances) — testimonials with named `Person.spokenByCharacter`
+   - `speakableWebPageSchema` on `/`, `/es/`, `/product`, `/how-it-works`, `/security`
+   - `data-speakable` markers on TldrBlock + FaqAccordionV3 (63 blocks site-wide)
+   - `comparisonPageSchema` on 10 vs/alternatives pages (citable side-by-side comparisons)
 
-Strengths:
-- Title + `>` description line follows spec exactly.
-- Logical section groupings (Core pages, Comparisons, Role-specific, Industry, Blog, Glossary).
-- Enterprise-positioning paragraph disambiguates SealMetrics from lightweight privacy tools (prevents AI mis-classification).
-- `llms-full.txt` includes founder bio, compliance claims, pricing — strong for ChatGPT context retrieval.
+### ❌ Critical GEO gaps
 
-Gaps:
-- No `Contact:` structured block with email (only demo URL).
-- Founder paragraph lacks external authority anchors (no LinkedIn `sameAs`-style listing beyond a URL mention).
-- No explicit "last updated" date at the top.
+**G1 — No Wikipedia article for "SealMetrics".** Verified: `https://en.wikipedia.org/wiki/SealMetrics` returns 404. Per the skill: *brand mentions correlate 3× more strongly with AI citation than backlinks; Wikipedia mentions = 47.9% of ChatGPT citations*. This is the single biggest missing signal. Caveat: Wikipedia notability standards mean a self-published article will be deleted; the path is **earned** via independent press coverage.
 
----
+**G2 — No Reddit / YouTube presence in `Organization.sameAs`.** Current `sameAs`: LinkedIn, X, G2, Capterra, Crunchbase, ProductHunt, GitHub. Missing: Reddit (Perplexity's #1 source — 46.7%), YouTube (highest correlation with AI visibility per Ahrefs Dec 2025: 0.737), Wikipedia, Wikidata, Mastodon (optional). Adding the URLs to schema is a 5-minute fix; the harder part is having actual content on those platforms to link to.
 
-## 3. Brand Mention / Entity Presence — **Weakest area**
+**G3 — 0 passages in the optimal 134-167 word AI-citation range.** Distribution of speakable blocks (63 site-wide):
+- 0-50 words: 38 blocks (TldrBlock answers — too short for full citation)
+- 50-100 words: 23 blocks
+- 100-134 words: 0
+- **134-167 words: 0** ← this is the sweet spot AI engines extract verbatim
+- 167-250 words: 1
+- 250-500 words: 1
 
-(Brand mentions correlate 3× stronger with AI visibility than backlinks — Ahrefs Dec 2025.)
+The TldrBlock pattern (`answer + bullets`) keeps answers short by design. Need to add **dedicated 134-167 word "Quick Answer" blocks** at the top of the 10 highest-intent pages (homepage, /pricing, /product, /how-it-works, /security, top 5 blog posts, top 5 glossary terms).
 
-| Surface | Status | Impact |
-|---|---|---|
-| Wikipedia (brand or Rafa Jimenez) | **Missing** | Highest priority — 47.9% of ChatGPT citations |
-| YouTube channel with mentions | Unknown / not linked from site | 0.737 correlation — strongest single signal |
-| Reddit threads on r/analytics, r/PPC, r/ecommerce | Not seeded | 46.7% of Perplexity citations |
-| LinkedIn company page | Linked in Organization `sameAs` | OK |
-| X (Twitter) | Linked in Organization `sameAs` | OK |
-| Wikidata entry | **Missing** | Cheap win — enables Wikipedia eligibility |
-| GitHub org / open source | Unknown | Moderate signal for technical audiences |
+**G4 — Only 8% of H2/H3 are question-style** (166 of 1,912). AI engines route queries to question-form headings: "What is GDPR analytics compliance?" matches the user query better than "Compliance posture". The site uses statement-style headings for editorial weight ("All the paperwork. None of the excuses."). Recommendation: keep statement H2 as the visible headline, but add a question-form H3 immediately below for AI matching.
 
-The `sameAs` array in `src/lib/schema.ts:30-33` lists only LinkedIn + X. Every credible AI-cited brand has 5–10 entries here.
+**G5 — No RSL 1.0 (Really Simple Licensing) implementation.** December 2025 standard backed by Reddit, Yahoo, Medium, Quora, Cloudflare. Provides machine-readable AI training/inference licensing terms. Missing — emerging standard, low immediate impact but trending fast.
+
+### ⚠️ Medium gaps
+
+**M1 — Comparison tables present (17 pages) but few side-by-side spec tables.** The /vs/* pages emit data via React components, not `<table>` markup, so the structured comparison data is not in a queryable table format AI engines prefer. Convert the comparison cards to `<table>` semantics on `/vs/ga360`, `/vs/adobe-analytics`, `/vs/piwik-pro`, `/vs-ga4`, `/alternatives/google-analytics`.
+
+**M2 — No embedded video on key pages.** Homepage, /product, /how-it-works could each carry a 60-90s product walkthrough. Per the skill: *content with multi-modal elements sees 156% higher selection rates*. Even 1 embedded YouTube video per page lifts the multi-modal score.
+
+**M3 — No infographics / charts.** Data points like "13% EU traffic", "40-60% consent rejection", "+165% Display CPS" appear as text or single stats. Embedding 1-2 charts per pillar page (with proper `alt` text + `figcaption`) gives AI engines extractable visual signals.
+
+**M4 — Glossary first paragraphs use "Web analytics that..." (18 occurrences).** Good definitional pattern — but the `is a / refers to` opener is more directly matched. Consider rephrasing: "Cookieless analytics is a measurement approach that..." instead of "Web analytics that captures...".
 
 ---
 
-## 4. Passage-Level Citability
+## Top 5 highest-impact actions (in order)
 
-Sampled: homepage, `/blog/what-is-cookieless-tracking`, `/blog/why-ga4-shows-13pct-eu-traffic`.
-
-**Strong patterns already in place:**
-- "Key Takeaways" block at top of blog posts — extractable, quotable, self-contained.
-- First 60 words contain direct definitions ("Cookieless tracking is a method of collecting website analytics data without storing cookies…").
-- Question-based H2 headings ("What is cookieless tracking?").
-- Specific statistics with sources (13%, 87%, 55%, 40%) — highly citable.
-- Dash-separated clauses read cleanly when excerpted.
-
-**Passages in the 134-167 word sweet spot:** approximate — body paragraphs on blog posts are well-sized; FAQ answers on homepage run 50–90 words, which is slightly under-length for optimal AI extraction.
-
-**Recommended expansions:**
-- FAQ answers on `FaqFocused.tsx` — extend the top 3 answers to 130–160 words each (currently 60–100). Add one concrete number per answer.
-- Glossary term pages — verify each has a 140-word self-contained "What is X?" opening paragraph before subheadings.
+| # | Action | Effort | Impact platform |
+|---|---|---|---|
+| 1 | **Add Reddit + YouTube URLs to `Organization.sameAs`** + start posting (founder Q&A on r/analytics, Rafa videos on YouTube). 5-min schema patch + ongoing content. | 5 min code · 8h/mo content | Perplexity (+15), ChatGPT (+5), AIO (+3) |
+| 2 | **Ship 134-167 word Quick Answer blocks** on top 10 pages: homepage, /pricing, /product, /how-it-works, /security, /vs-ga4, /vs/ga360, top 3 glossary terms. New `<QuickAnswer>` component + content per page. | 4-6h | All platforms (+8 each) |
+| 3 | **Earn a Wikipedia mention** — get cited in 2-3 independent articles on EU privacy/analytics, then have a third party (not the company) draft the Wikipedia entry. Path is months not weeks. | months · external | ChatGPT (+15), AIO (+5) |
+| 4 | **Convert /vs/* comparison cards to `<table>` markup** with proper `<th>` headers and `<caption>`. AI engines extract row/column comparisons. | 2-3h | AIO (+5), ChatGPT (+3) |
+| 5 | **Add question-style H3 below each statement H2** on glossary + /security + /how-it-works. E.g., under "Compliance posture" add `<h3>How is SealMetrics GDPR-compliant?</h3>`. | 2h | AIO (+3), ChatGPT (+3) |
 
 ---
 
-## 5. Schema / Structured Data Audit
+## Schema recommendations for AI discoverability
 
-`src/lib/schema.ts` covers: Organization, WebSite, Breadcrumb, SoftwareApplication (with Offer pricing), Article (with Person author), DefinedTerm, FAQPage, ComparisonPage, CollectionPage, ItemList, Product, WebApplication, ServicePage. **Breadth is excellent.**
+Already shipped (post-Sprint 4 + Schema Council):
+- ✅ `Organization` (with knowsAbout array, areaServed, contactPoint, founders)
+- ✅ `DefinedTerm` + `DefinedTermSet` (glossary)
+- ✅ `Article` with `dateModified` from git mtime + per-post OG
+- ✅ `statisticClaimSchema` (16 verifiable claims with QuantitativeValue + isBasedOn)
+- ✅ `Quotation` with named `Person.spokenByCharacter`
+- ✅ `casePersonSchema` for Toni Andújar + Eduardo Martin
+- ✅ `speakableWebPageSchema` on top conversion pages
+- ✅ `comparisonPageSchema` on 10 vs/alternatives pages
+- ✅ `verticalSoftwareApplicationSchema` on 22 /for/* pages
 
-Gaps:
-- **Person schema for Rafa Jimenez is inline-only** (inside Article `author`). Create a standalone Person schema on `/about` with its own `sameAs` (LinkedIn, X, any speaker bios, GitHub). AI crawlers use this to resolve authorship as an entity.
-- **Organization `sameAs` is thin** — 2 entries. Target 5+.
-- **No `dateModified` discipline** — `articleSchema` defaults `dateModified` to `datePublished` when omitted. Adding a real last-reviewed date on evergreen posts boosts AI freshness signals.
-- **No `Review` / `aggregateRating`** on pricing page — if you have verified review counts (G2, Capterra), surface them.
-- **No `Dataset` schema** on `/blog/we-measured-every-analytics-script` — that post is original research and would benefit from Dataset markup for AI citation as source material.
-
----
-
-## 6. Server-Side Rendering Check
-
-Next.js 16 with `output: "export"` → every page is pre-rendered HTML. **All critical content (H1, H2s, paragraphs, FAQ text, schema) ships in initial HTML.** No JS-dependency risk for AI crawlers. ✔
-
-Interactive elements (growth-calculator, data-loss-calculator) are the only client-rendered islands; their static shell + copy are still in the HTML.
-
----
-
-## 7. Top 5 Highest-Impact Changes
-
-Ranked by effort × GEO lift:
-
-1. **Create Wikidata entry for SealMetrics and Rafa Jimenez.** Unlocks Wikipedia eligibility (47.9% of ChatGPT citations) and is a 2-hour task. Link both via `sameAs`. **Highest leverage per hour.**
-2. **Expand `Organization.sameAs` from 2 → 8+ entries** in `src/lib/schema.ts:30`. Add: Wikidata, Crunchbase, G2, Capterra, YouTube channel, GitHub (if exists), Product Hunt, Founder's LinkedIn. Publish Person schema on `/about` with its own sameAs.
-3. **Seed 3–5 authoritative Reddit threads** in r/analytics, r/PPC, r/ecommerce, r/GDPR — first-person posts about the 13% / 87% data-loss math, not promotional. Perplexity weights Reddit at 46.7% of citations. Do NOT spam; one thoughtful thread/month for 6 months.
-4. **Extend homepage FAQ answers to 130–160 words each** in `src/components/sections/FaqFocused.tsx`. Currently 60–100 words — just under the 134-167 AI-citation sweet spot. Add one statistic per answer.
-5. **Add explicit robots.txt rules for OAI-SearchBot, ChatGPT-User, anthropic-ai** in `public/robots.txt`. Implicitly allowed today; explicit improves scorecard grading and removes ambiguity if defaults change.
+Still missing (worth adding):
+- `VideoObject` once first product video ships (one helper exists; zero callers today)
+- `Course` or `LearningResource` if you publish the SealMetrics certification track
+- `Event` for upcoming webinars / EU Digital Omnibus AMAs
+- `WebSite.potentialAction` (`SearchAction`) — deferred until /search route exists
+- `AggregateRating` on Organization — only with verifiable customer reviews (don't fabricate)
 
 ---
 
-## 8. Medium-Effort Wins
+## Content reformatting suggestions
 
-- Publish a YouTube video per quarter (founder explaining the 13% problem, screencast of dashboard). Link from every blog post footer. **Highest single correlation signal (0.737).**
-- Add `dateModified` to every pillar page and evergreen blog post. Touch quarterly.
-- Add `Dataset` schema to `/blog/we-measured-every-analytics-script` and `/blog/analytics-tools-cookies-cataloged` — these are original-research posts.
-- Create `/blog/authors/rafa-jimenez` with full bio, credentials, external links, and Person schema. Link from every article byline.
-- Add RSL 1.0 licensing declaration (machine-readable permission for AI training/citation).
+**Pattern: Add a "Quick Answer" block at the top of every pillar/comparison/glossary page.**
+
+```tsx
+<aside className="my-10 p-6 bg-warm-50 border-l-4 border-brand">
+  <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold mb-3">
+    Quick answer
+  </p>
+  <p data-speakable className="text-[16px] leading-[1.6] text-ink">
+    {/* 134-167 words, self-contained, definitional opener */}
+    Cookieless analytics is a measurement approach that captures website
+    traffic without browser cookies, localStorage, fingerprinting, or any
+    personal identifier. ...
+  </p>
+</aside>
+```
+
+Apply to (priority order):
+1. `/glossary/cookieless-analytics/` (and 4 ES siblings)
+2. `/glossary/gdpr-analytics-compliance/` (and 4 ES siblings)
+3. `/glossary/multi-touch-attribution/` (and 4 ES siblings)
+4. `/blog/cookieless-analytics-explained/`
+5. `/blog/gdpr-analytics-without-consent/`
+6. `/how-it-works/`
+7. `/security/`
+8. `/vs-ga4/`
+9. Each `/vs/<vendor>/`
+
+Each block must:
+- Open with definitional pattern: "X is a [category] that [does what] [for whom]."
+- Include 1-2 specific numbers with citations
+- End with a single call-out sentence (not a CTA — CTA pollutes the citable passage)
+- Carry `data-speakable` and `.faq-answer` classes for SpeakableSpecification matching
 
 ---
 
-## 9. High-Impact Plays (strategic)
+## Quick reference: live verification commands
 
-- **Original research report** once per year (e.g., "State of EU Analytics Compliance 2027"). Nothing else produces as many citations as unique data.
-- **Wikipedia article** for SealMetrics once notability is established via ≥3 independent press mentions (TechCrunch, Heise, industry analyst).
-- **Expert quote network** — get Rafa Jimenez quoted in 5+ third-party pieces on GDPR analytics. AI models cite the *quoting* publication, but attribute to the quoted person.
+```sh
+# AI crawler allowlist
+curl -s https://sealmetrics.com/robots.txt | grep -A1 "GPTBot\|ClaudeBot\|PerplexityBot"
 
----
+# llms.txt freshness
+node scripts/audit-llms-txt.mjs
 
-## 10. Specific Content Reformatting Suggestions
+# SSR check (must show real article text, not a JS shell)
+curl -s https://sealmetrics.com/blog/cookieless-analytics-explained/ | grep -oE '<h1[^>]*>[^<]+</h1>'
 
-### `src/components/sections/FaqFocused.tsx` — extend answer length
-
-Current "Why pay for SealMetrics when GA4 is free?" answer ≈ 85 words. Expand to 140–150:
-- Add the specific cost-of-bad-decisions math (e.g., "For a €50M eCommerce site misallocating 20% of ad spend, that's €X in lost ROAS per quarter").
-- Close with a concrete data point, not a rhetorical flourish.
-
-### `src/components/sections/HeroDark.tsx:14-26`
-
-Hero paragraph is strong (3 specific claims + internal links). Consider adding one quantified proof point directly in the hero: "…captures 100% of traffic — vs ~13% for GA4 in the EU." Inline numbers in the hero are AI-extractable as brand facts.
-
-### Blog post pattern (verified on `/blog/what-is-cookieless-tracking`)
-
-Already follows best practice: Breadcrumbs → H1 → meta line (date/author/read-time) → Key Takeaways block → intro paragraphs → question-based H2s. **Use this as the template for every new pillar post.** Do NOT regress into introductions that bury the definition past word 100.
-
-### `src/lib/schema.ts:30-33` — expand sameAs
-
-```ts
-sameAs: [
-  "https://www.linkedin.com/company/sealmetrics",
-  "https://x.com/sealmetrics",
-  "https://www.wikidata.org/wiki/Q_TBD",        // after creation
-  "https://www.crunchbase.com/organization/sealmetrics",
-  "https://www.g2.com/products/sealmetrics",
-  "https://www.capterra.com/p/TBD/sealmetrics",
-  "https://www.youtube.com/@sealmetrics",        // after channel
-  "https://github.com/sealmetrics",              // if applicable
-],
+# AI mention quick check (manual)
+# - https://www.google.com/search?q=site:reddit.com+sealmetrics
+# - https://www.google.com/search?q=site:youtube.com+sealmetrics
+# - https://en.wikipedia.org/wiki/SealMetrics
 ```
 
 ---
 
-## Summary — what to do this week
+## Source-of-truth files
 
-1. Add 3 explicit AI crawler lines to `robots.txt` (15 min).
-2. Extend homepage FAQ answers to 130–160 words (1 hour).
-3. File Wikidata entry for SealMetrics + Rafa Jimenez (2 hours).
-4. Expand `Organization.sameAs` with verifiable profiles only (30 min + profile-creation time).
-5. Add standalone Person schema on `/about` with Rafa Jimenez's sameAs (30 min).
-
-Expected lift: +8–12 points on GEO readiness within 90 days, assuming external entity work (Wikidata, Reddit seeding, YouTube) is executed consistently.
+- `public/robots.txt` — 21-bot AI allowlist + `LLMs-Txt:` declaration
+- `public/llms.txt` — 124 entries, 0 drift vs sitemap (linter: `scripts/audit-llms-txt.mjs`)
+- `public/llms-full.txt` — long-form companion document
+- `src/lib/schema.ts` — 18 active schema helpers (post-Schema-Council cleanup)
+- `src/components/ui/TldrBlock.tsx` — `data-speakable` on answer + bullets
+- `src/components/sections/v3/FaqAccordionV3.tsx` — `data-speakable` + `.faq-answer` on answers

@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for SaaS: Marketing-Site Measurement Without Consent Banners",
+  title: "Cookieless Analytics for SaaS — 2026 Guide",
   description:
-    "How European SaaS teams count trial signups and paid conversions by channel without cookies or user-level tracking. Works alongside Mixpanel/Amplitude for in-product analytics.",
+    "How European SaaS teams count trial signups and paid conversions by channel without cookies or user-level tracking. Works alongside product analytics.",
   openGraph: {
-    title: "Cookieless Analytics for SaaS: Marketing-Site Measurement Without Consent Banners",
+    title: "Cookieless Analytics for SaaS — 2026 Guide",
     description:
       "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements Mixpanel/Amplitude. BigQuery export included.",
     type: "article",
@@ -55,7 +55,7 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for SaaS" }]} />
       <JsonLd
         data={articleSchema({
-          headline: "Cookieless Analytics for SaaS: Marketing-Site Measurement Without Consent Banners",
+          headline: "Cookieless Analytics for SaaS — 2026 Guide",
           description:
             "How European SaaS teams count trial signups and paid conversions by channel without cookies.",
           datePublished: "2026-04-24",
@@ -64,17 +64,16 @@ export default function Page() {
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
         })}
       />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for SaaS" }])} />
-      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for SaaS", url: "/blog/cookieless-analytics-for-saas" }])} />
 
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               SaaS
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              Cookieless Analytics for SaaS: Marketing-Site Measurement Without Consent Banners
+              PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026
             </h1>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">April 24, 2026</time>
@@ -85,7 +84,7 @@ export default function Page() {
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
-            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>SaaS marketing-site attribution breaks in Europe under consent-rejection rates of 40–60%.</li>
               <li>Cookieless analytics counts visits and trial signups at channel level without cookies or user identifiers.</li>
               <li>It does not replace Mixpanel or Amplitude for in-product analytics — the two layers complement each other.</li>
@@ -123,14 +122,14 @@ export default function Page() {
             <p>
               Cookieless analytics for SaaS replaces GA4 at the marketing-site layer. It does not replace Mixpanel or Amplitude anywhere. The two systems have different jobs:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>Cookieless analytics (marketing site, anonymous).</strong> Counts visits and signups by channel, campaign and landing page. No user identification, no per-visitor journey.</li>
               <li><strong>Mixpanel / Amplitude (authenticated product, user-level).</strong> Tracks what each logged-in user does inside the app. Retention cohorts, feature adoption, in-product funnels.</li>
             </ul>
             <p>
               What cookieless analytics covers:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Marketing-site visit counts by source</li>
               <li>Campaign-level signup conversion counts</li>
               <li>Landing-page test measurement without sampling</li>
@@ -140,7 +139,7 @@ export default function Page() {
             <p>
               What it does not cover:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>In-product feature adoption</li>
               <li>Retention cohort analysis</li>
               <li>Per-user behavior inside the app</li>

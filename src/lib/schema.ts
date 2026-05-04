@@ -1,3 +1,8 @@
+import { PRICING } from "./content/pricing";
+import blogModifiedRaw from "./content/blog-modified.json";
+
+const BLOG_MODIFIED: Record<string, string> = blogModifiedRaw;
+
 const SITE_URL = "https://sealmetrics.com";
 const ORG_NAME = "SealMetrics";
 
@@ -30,6 +35,8 @@ export function organizationSchema() {
         sameAs: [
           "https://www.linkedin.com/company/sealmetrics",
           "https://x.com/sealmetrics",
+          "https://www.youtube.com/@sealmetrics",
+          "https://www.reddit.com/user/sealmetrics",
           "https://www.g2.com/products/sealmetrics",
           "https://www.capterra.com/p/sealmetrics",
           "https://www.crunchbase.com/organization/sealmetrics",
@@ -76,17 +83,23 @@ export function organizationSchema() {
         "@type": "WebSite",
         name: ORG_NAME,
         url: SITE_URL,
+        inLanguage: ["en", "es"],
       },
     ],
   };
 }
 
 export function breadcrumbSchema(
-  items: { name: string; url?: string }[],
-  locale: "en" | "es" = "en"
+  items: { name: string; url: string }[],
+  explicitLocale?: "en" | "es"
 ) {
-  const rootLabel = locale === "es" ? "Inicio" : "Home";
-  const rootUrl = locale === "es" ? `${SITE_URL}/es` : SITE_URL;
+  const inferredLocale: "en" | "es" =
+    explicitLocale ??
+    (items.some((i) => i.url.startsWith("/es/") || i.url === "/es")
+      ? "es"
+      : "en");
+  const rootLabel = inferredLocale === "es" ? "Inicio" : "Home";
+  const rootUrl = inferredLocale === "es" ? `${SITE_URL}/es` : SITE_URL;
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -96,7 +109,7 @@ export function breadcrumbSchema(
         "@type": "ListItem",
         position: i + 2,
         name: item.name,
-        ...(item.url ? { item: `${SITE_URL}${item.url}` } : {}),
+        item: `${SITE_URL}${item.url}`,
       })),
     ],
   };
@@ -161,21 +174,21 @@ export function softwareApplicationSchema() {
       {
         "@type": "Offer",
         name: "Growth",
-        price: "599",
+        price: String(PRICING.growth.monthly),
         priceCurrency: "EUR",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
-        description: "5M human events/month",
+        description: `${PRICING.growth.eventsMillions}M human events/month`,
         url: `${SITE_URL}/pricing`,
       },
       {
         "@type": "Offer",
         name: "Scale",
-        price: "1079",
+        price: String(PRICING.scale.monthly),
         priceCurrency: "EUR",
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
-        description: "15M human events/month",
+        description: `${PRICING.scale.eventsMillions}M human events/month`,
         url: `${SITE_URL}/pricing`,
       },
     ],
@@ -197,19 +210,22 @@ export function articleSchema(props: {
   image?: string;
   author?: { name: string; url?: string; jobTitle?: string };
 }) {
+  const blogSlugMatch = props.url.match(/^\/(?:es\/)?blog\/([^/]+)/);
+  const autoModified = blogSlugMatch ? BLOG_MODIFIED[blogSlugMatch[1]] : undefined;
+  const autoBlogOg = blogSlugMatch ? `${SITE_URL}/og/blog/${blogSlugMatch[1]}.png` : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: props.headline,
     description: props.description,
     datePublished: props.datePublished,
-    dateModified: props.dateModified || props.datePublished,
+    dateModified: props.dateModified || autoModified || props.datePublished,
     url: `${SITE_URL}${props.url}`,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}${props.url}`,
     },
-    image: props.image || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
+    image: props.image || autoBlogOg || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     author: props.author
       ? {
           "@type": "Person",
@@ -318,25 +334,6 @@ export function collectionPageSchema(props: {
   };
 }
 
-export function faqSchema(faqs: { question: string; answer: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: [".faq-answer", "[data-speakable]"],
-    },
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-}
-
 export function speakableWebPageSchema(props: {
   url: string;
   name: string;
@@ -385,9 +382,14 @@ export function pricingSchema(
   opts?: { locale?: "en" | "es" }
 ) {
   const path = opts?.locale === "es" ? "/es/pricing" : "/pricing";
-  const prices = plans.map((p) => Number(p.price)).filter((n) => !Number.isNaN(n));
-  const lowPrice = prices.length ? Math.min(...prices).toString() : undefined;
-  const highPrice = prices.length ? Math.max(...prices).toString() : undefined;
+  // Range must span the full visible price spectrum across both billing modes.
+  // Annual prices are passed in via `plans`; monthly comes from PRICING (the
+  // "Custom" Enterprise plan returns NaN — filter it out).
+  const planPrices = plans.map((p) => Number(p.price)).filter((n) => !Number.isNaN(n));
+  const monthlyPrices = [PRICING.growth.monthly, PRICING.scale.monthly];
+  const allPrices = [...planPrices, ...monthlyPrices];
+  const lowPrice = allPrices.length ? Math.min(...allPrices).toString() : undefined;
+  const highPrice = allPrices.length ? Math.max(...allPrices).toString() : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -458,58 +460,44 @@ export function servicePageSchema(props: {
   };
 }
 
-export function howToSchema(props: {
-  name: string;
-  description: string;
+/**
+ * Statistic claim — replacement for the deprecated ClaimReview type
+ * (Google retired ClaimReview rich results in June 2025). Emits a
+ * `CreativeWork` whose body is the claim text, with `isBasedOn` pointing
+ * to the verifiable source and an optional `QuantitativeValue` for the
+ * numeric statistic. Citable by AI engines without the deprecated marker.
+ */
+export function statisticClaimSchema(props: {
+  text: string;
+  source: string;
+  sourceAuthor: string;
+  sourceDate: string;
   url: string;
-  totalTime?: string;
-  steps: { name: string; text: string }[];
+  numericValue?: number;
+  unit?: string;
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: props.name,
-    description: props.description,
+    "@type": "CreativeWork",
+    name: props.text,
+    text: props.text,
     url: `${SITE_URL}${props.url}`,
-    ...(props.totalTime ? { totalTime: props.totalTime } : {}),
-    step: props.steps.map((s, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: s.name,
-      text: s.text,
-    })),
-  };
-}
-
-/** ClaimReview — marks verifiable claims (case-study stats) as citable by AI engines */
-export function claimReviewSchema(props: {
-  claimReviewed: string;
-  datePublished: string;
-  url: string;
-  itemReviewedName: string;
-  itemReviewedAuthor: string;
-  bestRating?: number;
-  ratingValue?: number;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ClaimReview",
-    datePublished: props.datePublished,
-    url: `${SITE_URL}${props.url}`,
-    claimReviewed: props.claimReviewed,
-    itemReviewed: {
-      "@type": "Claim",
-      name: props.itemReviewedName,
-      author: { "@type": "Organization", name: props.itemReviewedAuthor },
-      datePublished: props.datePublished,
+    isBasedOn: {
+      "@type": "CreativeWork",
+      name: props.source,
+      author: { "@type": "Organization", name: props.sourceAuthor },
+      datePublished: props.sourceDate,
     },
-    author: { "@type": "Organization", name: ORG_NAME, url: SITE_URL },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: props.ratingValue ?? 5,
-      bestRating: props.bestRating ?? 5,
-      alternateName: "Verified against customer CRM",
-    },
+    publisher: { "@type": "Organization", name: ORG_NAME, url: SITE_URL },
+    ...(props.numericValue !== undefined
+      ? {
+          mainEntity: {
+            "@type": "QuantitativeValue",
+            value: props.numericValue,
+            ...(props.unit ? { unitText: props.unit } : {}),
+          },
+        }
+      : {}),
   };
 }
 
@@ -602,6 +590,39 @@ export function videoObjectSchema(props: {
         "@type": "ImageObject",
         url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
       },
+    },
+  };
+}
+
+/**
+ * Lightweight Person schema for case-study quote sources. Pairs with
+ * Quotation.spokenByCharacter to give AI engines a citable Person URI
+ * for named customers (Toni Andújar, Eduardo Martin), without claiming
+ * employment or sameAs we cannot verify.
+ */
+export function casePersonSchema(props: {
+  name: string;
+  jobTitle: string;
+  worksForName: string;
+  worksForUrl: string;
+  caseUrl: string;
+  caseName: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: props.name,
+    jobTitle: props.jobTitle,
+    worksFor: {
+      "@type": "Organization",
+      name: props.worksForName,
+      url: props.worksForUrl,
+    },
+    url: `${SITE_URL}${props.caseUrl}`,
+    subjectOf: {
+      "@type": "CreativeWork",
+      name: props.caseName,
+      url: `${SITE_URL}${props.caseUrl}`,
     },
   };
 }

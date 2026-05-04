@@ -10,6 +10,12 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Glosario de analítica — SealMetrics",
   description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
+  openGraph: {
+    title: "Glosario de analítica — SealMetrics",
+    description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary",
     languages: getAlternatesEs("/glossary"),

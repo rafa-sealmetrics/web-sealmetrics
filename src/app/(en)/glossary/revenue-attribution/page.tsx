@@ -4,17 +4,18 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is Revenue Attribution? — SealMetrics Glossary",
   description:
-    "Revenue attribution connects conversion events to the marketing channels that drove them. Different models produce different answers; accuracy depends on how many events your analytics actually sees.",
+    "Revenue attribution connects conversion events to marketing channels. Accuracy depends on the attribution model and how many events your analytics sees.",
   openGraph: {
     title: "What Is Revenue Attribution?",
     description: "Connecting revenue events to the marketing channels that drove them. Accuracy depends on observable data.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/revenue-attribution" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/revenue-attribution", languages: getAlternates("/glossary/revenue-attribution") },
 };
 
 export default function RevenueAttributionPage() {
@@ -22,7 +23,7 @@ export default function RevenueAttributionPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "Revenue Attribution" }]} />
       <JsonLd data={definedTermSchema({ name: "Revenue Attribution", description: "Connecting revenue events to the marketing channels that drove them.", url: "/glossary/revenue-attribution", related: [{ name: "Attribution Model", url: "/glossary/attribution-model" }, { name: "Multi-Touch Attribution", url: "/glossary/multi-touch-attribution" }, { name: "Event Tracking", url: "/glossary/event-tracking" }, { name: "Data Loss in Analytics", url: "/glossary/data-loss-in-analytics" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Revenue Attribution" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "Revenue Attribution", url: "/glossary/revenue-attribution" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
         <header className="mb-12">
@@ -35,19 +36,19 @@ export default function RevenueAttributionPage() {
               The process of connecting revenue events (purchases, subscriptions) to the marketing channels and campaigns that drove them. Accuracy depends on how many events the analytics system actually observes.
             </p>
           </div>
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How it works</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does revenue attribution work?</h2>
           <p>Revenue attribution assigns conversion credit to a traffic source. Different <Link href="/glossary/attribution-model" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">attribution models</Link> assign that credit differently:</p>
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li><strong>Last-click:</strong> the source recorded on the conversion pageview gets full credit.</li>
             <li><strong>First-touch:</strong> the source recorded on the first observed pageview gets full credit.</li>
             <li><strong>Multi-touch (linear, time-decay, position-based):</strong> credit is split across observed touchpoints of the same identified user across sessions. Requires per-user tracking.</li>
           </ul>
           <p>Last-click and first-touch models work with aggregate, anonymous event data. Multi-touch models require the analytics system to identify a visitor across sessions — which, in Europe, usually requires cookies and consent.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The observability requirement</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What does revenue attribution require to be accurate?</h2>
           <p>Revenue attribution is uniquely sensitive to <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link>. If your analytics miss 87% of pageviews to consent rejection, ad blockers and browser restrictions, the remaining 13% is what the attribution model operates on — so the channel totals it produces are biased by whatever demographic survived the filter. The typical result: direct traffic is inflated, top-of-funnel channels are undervalued, and budget allocation follows the bias.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How SealMetrics handles revenue attribution</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does SealMetrics handle revenue attribution?</h2>
           <p>SealMetrics does <strong>last-click revenue attribution on 100% of observed events</strong>. When a conversion event fires, the traffic source recorded on that pageview is credited. Channel totals roll up by campaign, landing page and creative. There is no multi-touch model and no cross-session stitching — because there is no cookie, no personal identifier and no way to recognise a returning visitor. The trade-off is deliberate: aggregate channel totals that reconcile with your backend, in exchange for giving up per-user journey analysis.</p>
 
           <p>Because every pageview is captured through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, last-click attribution reflects the full observed traffic — not the cookie-accepting minority.</p>

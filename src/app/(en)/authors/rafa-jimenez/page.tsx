@@ -10,7 +10,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Rafa Jiménez — Founder & CEO of SealMetrics",
   description:
-    "20+ years in European eCommerce analytics. Founder of SealMetrics, the cookieless analytics platform for EU eCommerce. Digital marketer, agency founder, analytics architect.",
+    "20+ years in European eCommerce analytics. Founder of SealMetrics, digital marketer, agency founder and analytics architect.",
   alternates: {
     canonical: "https://sealmetrics.com/authors/rafa-jimenez",
     languages: getAlternates("/authors/rafa-jimenez"),
@@ -30,7 +30,6 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Authors" }, { label: "Rafa Jiménez" }]} />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Authors" },
           { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
         ])}
       />
@@ -112,7 +111,7 @@ export default function Page() {
             {[
               { n: "Cookieless analytics", d: "First-party, anonymous event counting on the server side — no cookies, no identifiers, no per-user journeys." },
               { n: "Revenue attribution", d: "Last-click attribution on complete data — why modelled attribution breaks in Europe." },
-              { n: "GDPR architecture", d: "How to design analytics that falls outside the material scope of GDPR, not inside it." },
+              { n: "GDPR architecture", d: "How to design analytics that avoids personal-data collection by architecture rather than by consent layers." },
               { n: "eCommerce analytics", d: "What European DTC and retail teams actually need from an analytics stack." },
               { n: "Schrems II & data residency", d: "Why EU-hosted matters and how sub-processor chains compromise compliance." },
               { n: "AI-native analytics", d: "MCP servers, AI agent traffic measurement and LLM-ready data warehouses." },

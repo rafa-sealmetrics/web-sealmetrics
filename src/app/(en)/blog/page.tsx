@@ -4,12 +4,22 @@ import { blogPosts } from "@/lib/content/blog";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Blog — SealMetrics",
   description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
-  alternates: { canonical: "https://sealmetrics.com/blog" },
+  openGraph: {
+    title: "Blog — SealMetrics",
+    description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/blog",
+    languages: getAlternates("/blog"),
+  },
 };
 
 export default function Page() {

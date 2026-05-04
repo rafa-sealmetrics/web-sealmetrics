@@ -25,9 +25,9 @@ export default function AnalyticsHttpRequestsPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools HTTP Requests" }]} />
       <JsonLd data={articleSchema({ headline: "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.", description: "We counted every HTTP request from 9 analytics tools on the same test page. GA4 makes 4 requests across 3 domains. SealMetrics makes 1.", datePublished: "2026-03-06", url: "/blog/analytics-tools-http-requests", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools HTTP Requests" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools HTTP Requests", url: "/blog/analytics-tools-http-requests" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">

@@ -7,6 +7,17 @@ export const dynamic = "force-static";
 const SITE = "https://sealmetrics.com";
 const today = new Date().toISOString().split("T")[0];
 
+/** Build a fully-qualified URL with trailing slash (matches `trailingSlash: true`). */
+function url(path: string): string {
+  if (path === "/" || path === "") return `${SITE}/`;
+  return `${SITE}${path.endsWith("/") ? path : `${path}/`}`;
+}
+
+function esUrl(path: string): string {
+  if (path === "/" || path === "") return `${SITE}/es/`;
+  return `${SITE}/es${path.endsWith("/") ? path : `${path}/`}`;
+}
+
 /** Paths that have both EN + ES versions. Used to emit hreflang-aware entries. */
 const bilingualPaths = [
   "/",
@@ -29,9 +40,14 @@ const bilingualPaths = [
   "/alternatives/google-analytics",
   "/blog",
   "/glossary",
+  "/glossary/cookieless-analytics",
+  "/glossary/gdpr-analytics-compliance",
+  "/glossary/multi-touch-attribution",
+  "/glossary/data-loss-in-analytics",
+  "/glossary/revenue-attribution",
   "/case-studies",
-  "/case-studies/european-hotel-group",
   "/case-studies/dreamplace-hotels",
+  "/case-studies/palladium-hotel-group",
   "/audit",
   "/for",
   "/for/cmo",
@@ -57,35 +73,37 @@ const enOnlyPaths = [
   "/videos",
 ];
 
+/** Paths that only exist in ES (no EN equivalent yet). */
+const esOnlyPaths = [
+  "/blog/ga4-google-ads-separation",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   // Bilingual top-level paths with hreflang alternates
   for (const path of bilingualPaths) {
-    const cleanPath = path === "/" ? "" : path;
+    const enHref = url(path);
+    const esHref = esUrl(path);
     entries.push({
-      url: `${SITE}${cleanPath}`,
+      url: enHref,
       lastModified: today,
-      changeFrequency: "weekly",
-      priority: path === "/" ? 1.0 : 0.8,
       alternates: {
         languages: {
-          en: `${SITE}${cleanPath}`,
-          es: `${SITE}/es${cleanPath}`,
-          "x-default": `${SITE}${cleanPath}`,
+          en: enHref,
+          es: esHref,
+          "x-default": enHref,
         },
       },
     });
     entries.push({
-      url: `${SITE}/es${cleanPath}`,
+      url: esHref,
       lastModified: today,
-      changeFrequency: "weekly",
-      priority: path === "/" ? 0.9 : 0.7,
       alternates: {
         languages: {
-          en: `${SITE}${cleanPath}`,
-          es: `${SITE}/es${cleanPath}`,
-          "x-default": `${SITE}${cleanPath}`,
+          en: enHref,
+          es: esHref,
+          "x-default": enHref,
         },
       },
     });
@@ -94,40 +112,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // EN-only paths
   for (const path of enOnlyPaths) {
     entries.push({
-      url: `${SITE}${path}`,
+      url: url(path),
       lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.3,
+    });
+  }
+
+  // ES-only paths (no EN sibling — emit without hreflang alternates)
+  for (const path of esOnlyPaths) {
+    entries.push({
+      url: esUrl(path),
+      lastModified: today,
     });
   }
 
   // Blog posts (EN)
   for (const post of blogPosts.filter((p) => !p.draft)) {
     entries.push({
-      url: `${SITE}/blog/${post.slug}`,
+      url: url(`/blog/${post.slug}`),
       lastModified: post.date,
-      changeFrequency: "monthly",
-      priority: 0.6,
     });
   }
 
-  // Glossary terms (EN)
+  // Glossary terms (EN). Skip slugs already covered by bilingualPaths to avoid
+  // duplicate sitemap entries (one with hreflang alternates, one without).
+  const bilingualSlugs = new Set(
+    bilingualPaths
+      .filter((p) => p.startsWith("/glossary/"))
+      .map((p) => p.replace("/glossary/", ""))
+  );
   for (const term of glossaryTerms) {
+    if (bilingualSlugs.has(term.slug)) continue;
     entries.push({
-      url: `${SITE}/glossary/${term.slug}`,
+      url: url(`/glossary/${term.slug}`),
       lastModified: today,
-      changeFrequency: "monthly",
-      priority: 0.5,
     });
   }
-
-  // Demo thank-you (low priority)
-  entries.push({
-    url: `${SITE}/demo/thank-you`,
-    lastModified: today,
-    changeFrequency: "yearly",
-    priority: 0.1,
-  });
 
   return entries;
 }

@@ -4,7 +4,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import {
   breadcrumbSchema,
-  faqSchema,
   verticalSoftwareApplicationSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -14,11 +13,11 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for eCommerce — SealMetrics",
+  title: "Analytics for eCommerce — Full Attribution | SealMetrics",
   description:
-    "Cookieless analytics for eCommerce: 100% traffic captured, last-click revenue attribution against your Shopify CRM, no consent banner, EU-hosted in Dublin. From €499/mo.",
+    "Cookieless analytics for eCommerce: 100% traffic captured, last-click revenue attribution, no consent banner, EU-hosted in Dublin. From EUR499/mo.",
   openGraph: {
-    title: "Cookieless Analytics for eCommerce — SealMetrics",
+    title: "Analytics for eCommerce — Full Attribution | SealMetrics",
     description:
       "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
     type: "website",
@@ -71,7 +70,6 @@ export default function Page() {
           url: "/for/ecommerce",
         })}
       />
-      <JsonLd data={faqSchema(seoFaqs)} />
 
       <VerticalPageV3 data={getVerticalData("ecommerce", "en")} />
 

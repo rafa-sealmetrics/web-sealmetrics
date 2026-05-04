@@ -25,9 +25,9 @@ export default function CnilAssessmentPage() {
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "CNIL Self-Assessment Published" }]} />
       <JsonLd data={articleSchema({ headline: "We Published Our CNIL Self-Assessment", description: "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics.", datePublished: "2026-02-10", url: "/blog/cnil-self-assessment-published", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "CNIL Self-Assessment Published" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "CNIL Self-Assessment Published", url: "/blog/cnil-self-assessment-published" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
@@ -47,7 +47,7 @@ export default function CnilAssessmentPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The French CNIL allows certain cookieless analytics tools to operate without consent banners if they meet 5 permitted objectives and 14 technical criteria.</li>
             <li>SealMetrics meets all 14 CNIL criteria and exceeds several — it does not collect IP addresses at all (CNIL only requires last-octet removal) and uses no persistent cookies (CNIL permits up to 13 months).</li>
             <li>This is compliance documentation, not official CNIL certification — the authority explicitly prohibits such claims, but the self-assessment is publicly available.</li>

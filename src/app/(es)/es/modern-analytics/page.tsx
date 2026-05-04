@@ -3,18 +3,18 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "Analítica Web Moderna — Datos Limpios, Sin Modelar, Lista para IA",
+  title: "Analítica Web Moderna — Datos limpios para IA",
   description:
-    "La vanguardia de la analítica web frente a las herramientas legacy basadas en cookies. 100% de captura, sin sampling, sin modelado, agnóstica de canal, GDPR by design y lista para agentes IA vía MCP. Pensada para CMOs y Ecommerce Managers.",
+    "Analítica web moderna frente a herramientas legacy: 100% de captura, sin sampling, agnóstica de canal, GDPR by design y lista para IA vía MCP.",
   openGraph: {
-    title: "Analítica Web Moderna — Datos Limpios, Sin Modelar, Lista para IA",
+    title: "Analítica Web Moderna — Datos limpios para IA",
     description:
       "El fin de la analítica basada en cookies. Datos limpios, sin sampling, lista para IA vía MCP. Comprueba la diferencia.",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica Web Moderna — Datos Limpios, Sin Modelar, Lista para IA",
+    title: "Analítica Web Moderna — Datos limpios para IA",
     description: "La vanguardia de la analítica web. Sin cookies. Sin sampling. Sin modelado.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "¿Escala para tráfico enterprise?",
-    a: "Sí. El píxel maneja miles de millones de eventos al mes en un servicio Go horizontalmente escalable respaldado por ClickHouse. Entre los clientes están Palladium Hotel Group y otras marcas enterprise multipropiedad. Hosted en la UE (Dublín) por defecto.",
+    a: "Sí. El píxel maneja miles de millones de eventos al mes en un servicio Go horizontalmente escalable respaldado por ClickHouse. Entre los clientes hay grupos hoteleros europeos y otras marcas enterprise multipropiedad. Hosted en la UE (Dublín) por defecto.",
   },
 ];
 
@@ -166,7 +166,6 @@ export default function ModernAnalyticsPageEs() {
           { name: "Analítica Web Moderna", url: "/es/modern-analytics" },
         ])}
       />
-      <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />
 
       {/* HERO */}
       <section className="bg-warm-white border-b border-warm-100">

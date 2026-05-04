@@ -44,14 +44,14 @@ La web utiliza un tono claro uniforme en todas las páginas, alternando entre `b
 
 | Elemento | Decisión | Razón |
 |----------|----------|-------|
-| Tipografía headlines | Source Serif 4, weight 400 | Autoridad editorial, no corporativo genérico |
-| Tipografía body | Inter, weight 400 | Legibilidad, neutralidad |
+| Tipografía headlines | Onest, weight 600 | Autoridad editorial con consistencia de producto |
+| Tipografía body | Onest, weight 400 | Legibilidad, neutralidad |
 | Tipografía datos | JetBrains Mono | Precision, credibilidad numérica |
-| Border radius | 4px máximo | Seriedad sin frialdad |
+| Border radius | 4px inputs; 10–16px cards; 20–24px hero/case slabs | Seriedad sin frialdad |
 | Font weight máximo | 600 | Elegancia, evita estética startup |
 | Bullets | Dashes (—) | Editorial, no listas técnicas |
 | Emojis | Nunca | Profesionalismo |
-| Gradientes decorativos | Nunca | Limpieza |
+| Gradientes decorativos | Solo radial sutil en slabs dark, opacidad ≤0.35 | Limpieza con profundidad controlada |
 | Iconos | Mínimos, SVG lineales | No distraer del mensaje |
 
 ### Paleta
@@ -743,7 +743,7 @@ Sistema de contenido para captura orgánica de tráfico.
 
 Dirección visual:
   Homepage → 100% light mode (white / warm-white alternado)
-  Footer   → warm-900 (#1F1F1A), gris cálido oscuro
+  Footer   → warm-900 (#0E0E0C), gris cálido oscuro
   Subpáginas (product, security, etc.) → mantienen secciones dark por ahora
 
 Stack mínimo:

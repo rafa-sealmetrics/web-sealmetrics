@@ -135,7 +135,7 @@ export default function GA4AlternativesEnterprisePage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Blog", url: "/blog" },
-          { name: "GA4 Alternatives for eCommerce" },
+          { name: "GA4 Alternatives for eCommerce", url: "/blog/ga4-alternatives-enterprise" },
         ])}
       />
       <JsonLd
@@ -152,7 +152,7 @@ export default function GA4AlternativesEnterprisePage() {
         })}
       />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Comparisons
@@ -171,7 +171,7 @@ export default function GA4AlternativesEnterprisePage() {
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
               Key Takeaways
             </h2>
-            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
                 GA4 captures approximately 13% of actual EU eCommerce traffic
                 after accounting for consent rejection (35-55%), ad blockers

@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
+  title: "Cookieless Analytics for Hotels — 2026 Guide",
   description:
-    "How European hotel groups count direct bookings at channel level and reconcile with the PMS — without cookies, customer journeys or user-level tracking. Aggregate, anonymous, defensible.",
+    "How hotel groups count direct bookings by channel and reconcile with the PMS — without cookies, guest journeys or user-level tracking.",
   openGraph: {
-    title: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
+    title: "Cookieless Analytics for Hotels — 2026 Guide",
     description:
-      "Aggregate last-click booking attribution for European hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
+      "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -55,26 +55,25 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for Hotels" }]} />
       <JsonLd
         data={articleSchema({
-          headline: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
+          headline: "Cookieless Analytics for Hotels — 2026 Guide",
           description:
-            "How European hotel groups count direct bookings at channel level without cookies or user-level tracking.",
+            "How hotel groups count direct bookings at channel level without cookies or user-level tracking.",
           datePublished: "2026-04-24",
           url: "/blog/cookieless-analytics-for-hotels",
           category: "Hotels",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
         })}
       />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for Hotels" }])} />
-      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for Hotels", url: "/blog/cookieless-analytics-for-hotels" }])} />
 
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Hotels
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026
+              How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
             </h1>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">April 24, 2026</time>
@@ -85,8 +84,8 @@ export default function Page() {
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
-            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
-              <li>European hotel groups running GA4 typically miss 25% of direct bookings their PMS records.</li>
+            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
+              <li>hotel groups running GA4 typically miss 25% of direct bookings their PMS records.</li>
               <li>The gap comes from mobile Safari consent rejection, ITP-induced cookie expiry and OTA referral breaks.</li>
               <li>Cookieless analytics counts booking events anonymously — no cookies, no personal identifiers, no per-guest journey — and attributes each booking last-click to the source on that page load.</li>
               <li>Aggregate channel totals reconcile with the PMS (Mews, Cloudbeds, Opera) at the level of confirmed bookings and revenue.</li>
@@ -99,7 +98,7 @@ export default function Page() {
               Hotel revenue directors live with a specific version of the analytics problem. The PMS closes 240 reservations this week. GA4 reports 180. The missing 60 are attributed to &ldquo;direct&rdquo; — not because they were direct, but because the cookies that would have preserved the source were rejected, expired or blocked before the booking fired. On mobile Safari, with ITP, with consent rejection, with OTA referrals that land via meta-search — every one of these is a bug in the measurement architecture, not the marketing.
             </p>
             <p>
-              The 25% gap is real money. For a European hotel group doing €15M in direct bookings, it is €3.75M of revenue that marketing drove but cannot defend in the budget meeting. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all.
+              The 25% gap is real money. For a hotel group doing €15M in direct bookings, it is €3.75M of revenue that marketing drove but cannot defend in the budget meeting. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -124,7 +123,7 @@ export default function Page() {
             <p>
               It is important to state what cookieless analytics does <em>not</em> do, because the architecture trades per-guest detail for defensible channel totals:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>It does not identify individual guests.</li>
               <li>It does not stitch pageviews into per-guest journeys.</li>
               <li>It does not recognise a returning guest.</li>
@@ -133,7 +132,7 @@ export default function Page() {
             <p>
               What it does instead:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Counts landings per source (meta-search, OTA referral, direct, paid search, organic).</li>
               <li>Counts booking events per source using last-click on the booking pageview.</li>
               <li>Multiplies booking counts by the PMS-reported ADR to produce aggregate channel revenue.</li>
@@ -147,9 +146,9 @@ export default function Page() {
               What cookieless analytics for hotels delivers
             </h2>
             <p>
-              The practical outputs for a typical European hotel group:
+              The practical outputs for a typical hotel group:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>Aggregate bookings by channel that match the PMS.</strong> The 25% gap closes because there is no cookie for Safari to expire or for the visitor to reject.</li>
               <li><strong>Meta-search landing counts.</strong> Google Hotel Ads, Trivago, Kayak landings on the direct site are counted at the landing pageview, regardless of whether that specific visitor eventually books.</li>
               <li><strong>Portfolio rollups.</strong> Brand, sub-brand, individual property — all aggregate totals in one dashboard, without manually reconciling 12 separate GA4 properties.</li>
@@ -160,7 +159,7 @@ export default function Page() {
               Implementation: the PMS reconciliation pattern
             </h2>
             <p>
-              The typical setup for a European hotel group:
+              The typical setup for a hotel group:
             </p>
             <ol className="list-decimal pl-5 space-y-2">
               <li>Install first-party tracking on the direct booking site and supporting marketing pages.</li>

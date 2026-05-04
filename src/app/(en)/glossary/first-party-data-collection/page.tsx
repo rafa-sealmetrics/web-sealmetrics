@@ -22,7 +22,7 @@ export default function FirstPartyDataCollectionPage() {
     <>
       <Breadcrumbs items={[{ label: "Glossary", href: "/glossary" }, { label: "First-Party Data Collection" }]} />
       <JsonLd data={definedTermSchema({ name: "First-Party Data Collection", description: "Collecting analytics data through your own domain infrastructure.", url: "/glossary/first-party-data-collection", related: [{ name: "Cookieless Analytics", url: "/glossary/cookieless-analytics" }, { name: "Server-Side Tracking", url: "/glossary/server-side-tracking" }, { name: "Ad Blocker Impact on Analytics", url: "/glossary/ad-blocker-analytics-impact" }, { name: "Analytics Data Residency", url: "/glossary/analytics-data-residency" }, { name: "Intelligent Tracking Prevention (ITP)", url: "/glossary/intelligent-tracking-prevention" }] })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "First-Party Data Collection" }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Glossary", url: "/glossary" }, { name: "First-Party Data Collection", url: "/glossary/first-party-data-collection" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
         <header className="mb-12">

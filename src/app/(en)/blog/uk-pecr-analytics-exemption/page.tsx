@@ -6,11 +6,11 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 
 export const metadata: Metadata = {
-  title: "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment",
+  title: "UK Analytics Exemption — PECR Self-Assessment",
   description:
     "The DUAA 2025 exempts certain analytics from consent requirements in the UK. We published our self-assessment showing how SealMetrics qualifies.",
   openGraph: {
-    title: "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment",
+    title: "UK Analytics Exemption — PECR Self-Assessment",
     description:
       "The DUAA 2025 changes UK analytics consent requirements. Here is how SealMetrics qualifies.",
     type: "article",
@@ -24,17 +24,17 @@ export default function UkPecrPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "UK PECR Analytics Exemption" }]} />
-      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "UK PECR Analytics Exemption" }])} />
+      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption — PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "UK PECR Analytics Exemption", url: "/blog/uk-pecr-analytics-exemption" }])} />
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
         <header className="mb-12">
           <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
             Regulation
           </span>
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-            UK Analytics Exemption Is Now Live: Our PECR Self-Assessment
+            UK Analytics Exemption — PECR Self-Assessment
           </h1>
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">February 17, 2026</time>
@@ -47,7 +47,7 @@ export default function UkPecrPage() {
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
-          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+          <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The UK Data Use and Access Act 2025 (effective February 5, 2026) creates a new analytics exemption under PECR — certain analytics no longer require consent.</li>
             <li>Four conditions must be met: sole purpose is aggregate statistics, users are informed, a free opt-out exists, and data is not used for advertising.</li>
             <li>SealMetrics meets all four conditions in its standard configuration, allowing UK websites to run analytics without consent banners.</li>

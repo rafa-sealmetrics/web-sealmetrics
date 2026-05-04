@@ -2,13 +2,19 @@ import type { Metadata } from "next";
 import { Calculator } from "./Calculator";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, webApplicationSchema, howToSchema } from "@/lib/schema";
+import { breadcrumbSchema, webApplicationSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Growth Calculator — SealMetrics",
   description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
+  openGraph: {
+    title: "Growth Calculator — SealMetrics",
+    description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/growth-calculator", languages: getAlternates("/growth-calculator") },
 };
 
@@ -18,21 +24,6 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Growth Calculator" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Growth Calculator", url: "/growth-calculator" }])} />
       <JsonLd data={webApplicationSchema({ name: "Growth Calculator", description: "Estimate the revenue growth potential of switching to complete analytics.", url: "/growth-calculator" })} />
-      <JsonLd
-        data={howToSchema({
-          name: "How to calculate your analytics growth potential",
-          description: "Estimate how much additional revenue you could unlock by switching from incomplete cookie-based analytics to 100% observed data.",
-          url: "/growth-calculator",
-          totalTime: "PT2M",
-          steps: [
-            { name: "Enter monthly sessions and revenue", text: "Input your current monthly session volume and eCommerce revenue as reported by GA4 or your primary analytics tool." },
-            { name: "Select your paid-media investment", text: "Input monthly spend across Google Ads, Meta Ads and other paid channels so the calculator can model reallocation gains." },
-            { name: "Choose your primary market", text: "EU, UK or US. The calculator applies market-specific consent rejection and ad-blocker rates." },
-            { name: "Review the complete-data uplift", text: "See how much traffic you're currently missing and what CAC, ROAS and revenue look like once you measure the full funnel." },
-            { name: "Read the annual growth estimate", text: "The calculator produces an annualised revenue growth estimate from reallocating paid spend on the complete data set." },
-          ],
-        })}
-      />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-10">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8 text-center">

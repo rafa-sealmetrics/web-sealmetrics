@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
@@ -9,8 +9,14 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs Adobe Analytics — Potencia enterprise, cero overhead",
+  title: "SealMetrics vs Adobe Analytics — Alternativa enterprise",
   description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. SealMetrics da dato completo sin consultores.",
+  openGraph: {
+    title: "SealMetrics vs Adobe Analytics — Alternativa enterprise",
+    description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. SealMetrics da dato completo sin consultores.",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: { canonical: "https://sealmetrics.com/es/vs/adobe-analytics", languages: getAlternatesEs("/vs/adobe-analytics") },
 };
 
@@ -18,7 +24,8 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "vs Adobe Analytics" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "vs Adobe Analytics", url: "/es/vs/adobe-analytics" }])} /><VsComparisonV3 data={getVsData("adobe-analytics", "es")} />
+      <JsonLd data={breadcrumbSchema([{ name: "vs Adobe Analytics", url: "/es/vs/adobe-analytics" }])} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Comparativa lado a lado: SealMetrics vs Adobe Analytics en completitud de datos, cumplimiento UE, precio y tiempo de implementacion.", url: "/es/vs/adobe-analytics", competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" } })} /><VsComparisonV3 data={getVsData("adobe-analytics", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"

@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics for eCommerce: The 2026 Guide",
   description:
-    "How European eCommerce teams count every conversion and reconcile with the Shopify, WooCommerce or Magento backend — without cookies, consent banners or user-level tracking.",
+    "How European eCommerce teams count conversions and reconcile with Shopify, WooCommerce or Magento — without cookies, consent banners or user-level tracking.",
   openGraph: {
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
     description:
@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual customers across sessions?",
     answer:
-      "No. SealMetrics does not identify individual visitors, does not stitch pageviews into per-user journeys and does not build behavioral profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page and country. This is how the system avoids personal data and stays outside the material scope of GDPR.",
+      "No. SealMetrics does not identify individual visitors, does not stitch pageviews into per-user journeys and does not build behavioral profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page and country. By avoiding personal-data collection at the architecture level, the system meets GDPR by design — confirm against your specific implementation with your DPO; SealMetrics ships a DPA and TPSR package for this review.",
   },
   {
     question: "How does SealMetrics attribute revenue without journeys?",
@@ -64,17 +64,16 @@ export default function Page() {
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
         })}
       />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for eCommerce" }])} />
-      <JsonLd data={faqSchema(faqs)} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for eCommerce", url: "/blog/cookieless-analytics-for-ecommerce" }])} />
 
       <article className="pt-12 pb-28 bg-white">
-        <div className="max-w-[720px] mx-auto px-5 sm:px-8">
+        <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               eCommerce
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              Cookieless Analytics for eCommerce: The 2026 Guide
+              How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
             </h1>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">April 24, 2026</time>
@@ -85,10 +84,10 @@ export default function Page() {
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
-            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-disc pl-5">
+            <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>European eCommerce teams running GA4 see only 13–40% of real visits after consent rejection, ad blockers and Safari restrictions.</li>
               <li>Cookieless analytics counts events anonymously — no cookies, no identifiers, no per-user tracking — and attributes each conversion last-click at channel level.</li>
-              <li>Because no information is stored on or read from the device, the analytics falls outside the material scope of GDPR and requires no consent banner.</li>
+              <li>Because no information is stored on or read from the device, the analytics avoids personal-data collection by architecture — DPOs typically conclude no consent banner is required after reviewing the DPA and TPSR package.</li>
               <li>Typical outcome: aggregate attributed revenue reconciles to within 15–20% of the Shopify/WooCommerce/Magento backend.</li>
               <li>Run side-by-side with GA4 for 30 days to compare; no migration needed.</li>
             </ul>
@@ -146,7 +145,7 @@ export default function Page() {
             <p>
               The practical effects on a typical Shopify or Magento team are:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>Channel totals reconcile.</strong> Revenue attributed to each channel lands within 15–20% of the Shopify backend, not 50–70% off.</li>
               <li><strong>No Black Friday sampling.</strong> Cookieless analytics does not sample at volume thresholds, so peak-day decisions are made on real counts.</li>
               <li><strong>Microconversions visible.</strong> Every add-to-cart, checkout start and form submission is counted, not dropped at volume thresholds.</li>
@@ -159,7 +158,7 @@ export default function Page() {
             <p>
               Aggregate, anonymous measurement has trade-offs. Be clear about them:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>No per-user journey reports.</strong> You will not see &ldquo;customer X saw ad, then visited three times, then bought.&rdquo; Those reports require cookie-based tracking and personal identifiers.</li>
               <li><strong>No multi-touch attribution.</strong> Last-click only. If your model requires credit splitting across touchpoints of the same user, cookieless analytics is not the tool.</li>
               <li><strong>No returning-visitor identification.</strong> The system does not know if a visit is someone&apos;s first or fifth. For eCommerce channel decisions, that almost never matters — aggregate channel-level ROAS is what allocates budget.</li>
