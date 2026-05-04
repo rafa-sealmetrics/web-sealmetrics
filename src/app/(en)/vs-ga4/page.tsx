@@ -14,6 +14,12 @@ import {
 } from "@/components/sections/v3/VsGA4V3Sections";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
+import { ComparisonMethodology } from "@/components/sections/v3/ComparisonMethodology";
+import { quotationSchema } from "@/lib/schema";
+import Link from "next/link";
+
+const VS_GA4_DATE_MODIFIED = "2026-05-04";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
@@ -46,9 +52,18 @@ export default function VsGA4Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/vs-ga4" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: SealMetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" } })} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: SealMetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" } })} />
+      <JsonLd data={quotationSchema({
+        text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+        spokenBy: "Toni Andújar",
+        spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
+        url: "/vs-ga4",
+      })} />
 
       <VsGA4HeroV3 locale="en" />
+      <div className="-mt-12 mb-2 max-w-[1200px] mx-auto px-5 sm:px-8">
+        <ComparisonByline dateModified={VS_GA4_DATE_MODIFIED} locale="en" />
+      </div>
       <TldrBlock
         answer={
           <>GA4 is Google&rsquo;s free analytics product, hosted in the United States, that requires a cookie consent banner across the EU and uses statistical modelling for unconsented traffic. SealMetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without a consent banner and attributes every conversion last-click on observed events. The substantive difference is data completeness: GA4 typically reports <strong>13–40% of real EU traffic</strong> after consent rejection (40–60%), ad blockers (~25%) and Safari&rsquo;s Intelligent Tracking Prevention; SealMetrics captures the full <strong>100%</strong> on aggregate. Most teams run both for 30 days side-by-side, compare against their CRM, then keep GA4 as a Google Ads conversion conduit while making revenue and budget decisions on SealMetrics. Pricing starts at €499/month annually.</>
@@ -70,12 +85,55 @@ export default function VsGA4Page() {
         titleEn={<>The <em>objections</em>, answered.</>}
         ledeEn="What CMOs and CTOs actually ask before replacing (or complementing) GA4."
       />
+      {/* Migration callout — Palladium Hotel Group switched from GA-stack to SealMetrics */}
+      <section className="py-20 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[860px] mx-auto px-5 sm:px-8">
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
+            Switched from a Google-Analytics stack
+          </span>
+          <h2 className="text-[26px] sm:text-[32px] font-semibold tracking-[-0.02em] text-ink mt-3 mb-6 leading-[1.15]">
+            How Palladium Hotel Group recovered <em className="italic-accent">40% of unattributed traffic</em>.
+          </h2>
+          <blockquote
+            className="border-l-[3px] pl-6 py-1 italic"
+            style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}
+          >
+            <p className="text-[20px] leading-[1.45] tracking-[-0.01em] font-medium">
+              &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&rsquo;s no black box.&rdquo;
+            </p>
+            <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+              Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
+            </cite>
+          </blockquote>
+          <p className="mt-6 text-[15.5px] leading-[1.65] text-ink-2">
+            Palladium ran SealMetrics alongside their existing GA-tier stack. The audit
+            surfaced 40% of inbound traffic with no source/medium attribution, 35% of
+            bookings unassigned to a channel in GA4, and a +165% Cost-per-Search
+            improvement on Display once the SealMetrics measurement model drove DV360
+            decisions. They kept GA4 as the Google Ads conduit and made revenue
+            decisions on SealMetrics.
+          </p>
+          <Link
+            href="/case-studies/palladium-hotel-group"
+            className="inline-flex items-center gap-2 mt-6 text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
+          >
+            Read the full Palladium case study →
+          </Link>
+        </div>
+      </section>
+
       <FinalCtaSharedV3
         locale="en"
         titleEn={<>Run both for 30 days. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Then decide.</em></>}
         titleEs={<>Corre los dos 30 días. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Y entonces decide.</em></>}
         ledeEn="Install SealMetrics alongside GA4. Compare with your own CRM. If the gap isn't real, you owe us nothing."
         ledeEs="Instala SealMetrics junto a GA4. Compara con tu propio CRM. Si el gap no es real, no nos debes nada."
+      />
+
+      <ComparisonMethodology
+        locale="en"
+        competitor="Google Analytics 4"
+        dateModified={VS_GA4_DATE_MODIFIED}
       />
     </>
   );

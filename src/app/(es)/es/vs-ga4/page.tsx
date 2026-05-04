@@ -14,6 +14,12 @@ import {
 } from "@/components/sections/v3/VsGA4V3Sections";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
+import { ComparisonMethodology } from "@/components/sections/v3/ComparisonMethodology";
+import { quotationSchema } from "@/lib/schema";
+import Link from "next/link";
+
+const VS_GA4_DATE_MODIFIED = "2026-05-04";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Google Analytics 4 — Datos completos",
@@ -47,9 +53,18 @@ export default function VsGA4PageEs() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/es/vs-ga4" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Comparativa honesta: SealMetrics vs GA4 en completitud de dato UE, dependencia de consentimiento, atribucion y disposicion IA.", url: "/es/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" } })} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Comparativa honesta: SealMetrics vs GA4 en completitud de dato UE, dependencia de consentimiento, atribucion y disposicion IA.", url: "/es/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" } })} />
+      <JsonLd data={quotationSchema({
+        text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+        spokenBy: "Toni Andújar",
+        spokenByRole: "Director Digital y Venta Directa, Palladium Hotel Group",
+        url: "/es/vs-ga4",
+      })} />
 
       <VsGA4HeroV3 locale="es" />
+      <div className="-mt-12 mb-2 max-w-[1200px] mx-auto px-5 sm:px-8">
+        <ComparisonByline dateModified={VS_GA4_DATE_MODIFIED} locale="es" />
+      </div>
       <TldrBlock
         label="En resumen"
         answer={
@@ -72,12 +87,55 @@ export default function VsGA4PageEs() {
         titleEs={<>Las <em>objeciones</em>, respondidas.</>}
         ledeEs="Lo que CMOs y CTOs realmente preguntan antes de reemplazar (o complementar) GA4."
       />
+      {/* Migración — Palladium Hotel Group cambió desde un stack GA */}
+      <section className="py-20 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[860px] mx-auto px-5 sm:px-8">
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
+            Cambiaron desde un stack Google Analytics
+          </span>
+          <h2 className="text-[26px] sm:text-[32px] font-semibold tracking-[-0.02em] text-ink mt-3 mb-6 leading-[1.15]">
+            Cómo Palladium Hotel Group recuperó <em className="italic-accent">el 40% de tráfico sin atribuir</em>.
+          </h2>
+          <blockquote
+            className="border-l-[3px] pl-6 py-1 italic"
+            style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}
+          >
+            <p className="text-[20px] leading-[1.45] tracking-[-0.01em] font-medium">
+              &ldquo;Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.&rdquo;
+            </p>
+            <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+              Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group
+            </cite>
+          </blockquote>
+          <p className="mt-6 text-[15.5px] leading-[1.65] text-ink-2">
+            Palladium corrió SealMetrics junto a su stack GA. La auditoría reveló un
+            40% del tráfico entrante sin atribución de source/medium, un 35% de las
+            reservas sin asignar a canal en GA4, y una mejora del +165% en
+            Coste-por-Búsqueda en Display tras dirigir las decisiones de DV360 con el
+            modelo de medición de SealMetrics. Mantuvieron GA4 como conducto a
+            Google Ads y empezaron a decidir ingresos con SealMetrics.
+          </p>
+          <Link
+            href="/es/case-studies/palladium-hotel-group"
+            className="inline-flex items-center gap-2 mt-6 text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
+          >
+            Lee el caso completo de Palladium →
+          </Link>
+        </div>
+      </section>
+
       <FinalCtaSharedV3
         locale="es"
         titleEn={<>Run both for 30 days. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Then decide.</em></>}
         titleEs={<>Corre los dos 30 días. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Y entonces decide.</em></>}
         ledeEn="Install SealMetrics alongside GA4. Compare with your own CRM."
         ledeEs="Instala SealMetrics junto a GA4. Compara con tu propio CRM. Si el gap no es real, no nos debes nada."
+      />
+
+      <ComparisonMethodology
+        locale="es"
+        competitor="Google Analytics 4"
+        dateModified={VS_GA4_DATE_MODIFIED}
       />
     </>
   );

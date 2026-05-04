@@ -24,8 +24,8 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Google Analytics alternatives" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Google Analytics alternatives", url: "/alternatives/google-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "Google Analytics alternatives — SealMetrics", description: "Enterprise alternative to Google Analytics for European companies that need complete data, EU residency and decision-grade attribution.", url: "/alternatives/google-analytics", competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" } })} />
-      <VsComparisonV3 data={getVsData("google-analytics", "en")} />
+      <JsonLd data={comparisonPageSchema({ name: "Google Analytics alternatives — SealMetrics", description: "Enterprise alternative to Google Analytics for European companies that need complete data, EU residency and decision-grade attribution.", url: "/alternatives/google-analytics", competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" } })} />
+      <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-05-04" />
       <LogosStrip />
       
     </>

@@ -290,7 +290,9 @@ export function comparisonPageSchema(props: {
   description: string;
   url: string;
   competitor?: { name: string; url: string };
+  datePublished?: string;
   dateModified?: string;
+  author?: { name: string; url: string };
 }) {
   return {
     "@context": "https://schema.org",
@@ -298,7 +300,22 @@ export function comparisonPageSchema(props: {
     name: props.name,
     description: props.description,
     url: `${SITE_URL}${props.url}`,
+    ...(props.datePublished ? { datePublished: props.datePublished } : {}),
     ...(props.dateModified ? { dateModified: props.dateModified } : {}),
+    ...(props.author
+      ? {
+          author: {
+            "@type": "Person",
+            name: props.author.name,
+            url: `${SITE_URL}${props.author.url}`,
+          },
+          reviewedBy: {
+            "@type": "Person",
+            name: props.author.name,
+            url: `${SITE_URL}${props.author.url}`,
+          },
+        }
+      : {}),
     about: [
       {
         "@type": "SoftwareApplication",
@@ -317,6 +334,10 @@ export function comparisonPageSchema(props: {
           ]
         : []),
     ],
+    mainEntity: {
+      "@type": "Table",
+      about: `Feature-by-feature comparison of ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
+    },
   };
 }
 

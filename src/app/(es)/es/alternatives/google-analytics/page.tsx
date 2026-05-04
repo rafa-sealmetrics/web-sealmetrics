@@ -24,7 +24,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Alternativas a Google Analytics" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Alternativas a Google Analytics", url: "/es/alternatives/google-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "Alternativas a Google Analytics — SealMetrics", description: "Alternativa enterprise a Google Analytics para empresas europeas que necesitan datos completos y residencia UE.", url: "/es/alternatives/google-analytics", competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" } })} /><VsComparisonV3 data={getVsData("google-analytics", "es")} />
+      <JsonLd data={comparisonPageSchema({ name: "Alternativas a Google Analytics — SealMetrics", description: "Alternativa enterprise a Google Analytics para empresas europeas que necesitan datos completos y residencia UE.", url: "/es/alternatives/google-analytics", competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" } })} /><VsComparisonV3 data={getVsData("google-analytics", "es")} dateModified="2026-05-04" />
       <LogosStripEs />
       
     </>

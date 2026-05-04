@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ComparisonByline } from "./ComparisonByline";
+import { ComparisonMethodology } from "./ComparisonMethodology";
 import { FaqAccordionV3 } from "./FaqAccordionV3";
 import { FinalCtaSharedV3 } from "./FinalCtaSharedV3";
 
@@ -24,7 +26,7 @@ export interface VsData {
   locale: Locale;
 }
 
-export function VsComparisonV3({ data }: { data: VsData }) {
+export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModified: string }) {
   const { locale, competitor } = data;
   const demoHref = locale === "es" ? "/es/demo" : "/demo";
   const calcHref = locale === "es" ? "/es/data-loss-calculator" : "/data-loss-calculator";
@@ -43,6 +45,7 @@ export function VsComparisonV3({ data }: { data: VsData }) {
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             {data.h1}
           </h1>
+          <ComparisonByline dateModified={dateModified} locale={locale} />
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
@@ -240,6 +243,13 @@ export function VsComparisonV3({ data }: { data: VsData }) {
         titleEs={data.ctaTitle}
         ledeEn={data.ctaLede}
         ledeEs={data.ctaLede}
+      />
+
+      {/* METHODOLOGY */}
+      <ComparisonMethodology
+        locale={locale}
+        competitor={competitor}
+        dateModified={dateModified}
       />
     </>
   );

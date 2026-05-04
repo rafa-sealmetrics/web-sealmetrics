@@ -25,7 +25,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Adobe Analytics" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "vs Adobe Analytics", url: "/es/vs/adobe-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Comparativa lado a lado: SealMetrics vs Adobe Analytics en completitud de datos, cumplimiento UE, precio y tiempo de implementacion.", url: "/es/vs/adobe-analytics", competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" } })} /><VsComparisonV3 data={getVsData("adobe-analytics", "es")} />
+      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Comparativa lado a lado: SealMetrics vs Adobe Analytics en completitud de datos, cumplimiento UE, precio y tiempo de implementacion.", url: "/es/vs/adobe-analytics", competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" } })} /><VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-05-04" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"

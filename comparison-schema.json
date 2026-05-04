@@ -1,0 +1,50 @@
+{
+  "$comment": "Schema upgrade for /vs/* pages — adds author, dateModified, reviewedBy, mainEntity Table. Backwards compatible with current comparisonPageSchema; just adds optional fields.",
+  "current_state": {
+    "helper": "src/lib/schema.ts comparisonPageSchema()",
+    "callers": 10,
+    "fields_emitted": ["@type:WebPage", "name", "description", "url", "about[]"],
+    "missing": ["author", "dateModified", "reviewedBy", "mainEntity"]
+  },
+  "patched_helper": {
+    "typescript": "export function comparisonPageSchema(props: {\n  name: string;\n  description: string;\n  url: string;\n  competitor?: { name: string; url: string };\n  datePublished?: string;\n  dateModified?: string;\n  author?: { name: string; url: string };\n}) {\n  return {\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"WebPage\",\n    name: props.name,\n    description: props.description,\n    url: `${SITE_URL}${props.url}`,\n    ...(props.datePublished ? { datePublished: props.datePublished } : {}),\n    ...(props.dateModified ? { dateModified: props.dateModified } : {}),\n    ...(props.author\n      ? {\n          author: {\n            \"@type\": \"Person\",\n            name: props.author.name,\n            url: `${SITE_URL}${props.author.url}`,\n          },\n          reviewedBy: {\n            \"@type\": \"Person\",\n            name: props.author.name,\n            url: `${SITE_URL}${props.author.url}`,\n          },\n        }\n      : {}),\n    about: [\n      {\n        \"@type\": \"SoftwareApplication\",\n        name: ORG_NAME,\n        applicationCategory: \"AnalyticsApplication\",\n        url: SITE_URL,\n      },\n      ...(props.competitor\n        ? [\n            {\n              \"@type\": \"SoftwareApplication\",\n              name: props.competitor.name,\n              applicationCategory: \"AnalyticsApplication\",\n              url: props.competitor.url,\n            },\n          ]\n        : []),\n    ],\n    mainEntity: {\n      \"@type\": \"Table\",\n      about: `Feature-by-feature comparison of ${ORG_NAME} vs ${props.competitor?.name ?? \"competing analytics platforms\"}`,\n    },\n  };\n}"
+  },
+  "rendered_example": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SealMetrics vs Google Analytics 360",
+    "description": "Side-by-side comparison: SealMetrics enterprise analytics versus Google Analytics 360 (GA360) on data completeness, EU compliance, pricing and AI readiness.",
+    "url": "https://sealmetrics.com/vs/ga360",
+    "datePublished": "2026-04-15",
+    "dateModified": "2026-05-04",
+    "author": {
+      "@type": "Person",
+      "name": "Rafa Jiménez",
+      "url": "https://sealmetrics.com/authors/rafa-jimenez"
+    },
+    "reviewedBy": {
+      "@type": "Person",
+      "name": "Rafa Jiménez",
+      "url": "https://sealmetrics.com/authors/rafa-jimenez"
+    },
+    "about": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "SealMetrics",
+        "applicationCategory": "AnalyticsApplication",
+        "url": "https://sealmetrics.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Google Analytics 360",
+        "applicationCategory": "AnalyticsApplication",
+        "url": "https://marketingplatform.google.com/about/analytics-360/"
+      }
+    ],
+    "mainEntity": {
+      "@type": "Table",
+      "about": "Feature-by-feature comparison of SealMetrics vs Google Analytics 360"
+    }
+  },
+  "caller_changes": "All 10 vs/alternatives pages need `datePublished`, `dateModified`, and `author` props added. Pattern (per page):\n\n  comparisonPageSchema({\n    name: \"...\",\n    description: \"...\",\n    url: \"/vs/ga360\",\n    competitor: { name: \"...\", url: \"...\" },\n    datePublished: \"2026-04-15\",\n    dateModified: \"2026-05-04\",  // bump on edits, OR auto-derive from git mtime via a per-page helper mirroring blog-modified.json\n    author: { name: \"Rafa Jiménez\", url: \"/authors/rafa-jimenez\" },\n  })\n\nLong-term: add a sister script `scripts/build-vs-modified.mjs` that auto-populates dateModified per /vs page via git mtime (same pattern as blog-modified.json from Sprint 2)."
+}
