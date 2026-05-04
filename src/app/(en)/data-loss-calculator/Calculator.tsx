@@ -400,13 +400,13 @@ export function Calculator() {
                     numbers may be higher.
                   </p>
                   <a
-                    href="/demo/"
+                    href="https://my.sealmetrics.com/register"
                     className="block w-full py-3 text-center text-[0.9rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors mb-2"
                   >
-                    See your exact numbers &mdash; book a demo
+                    Start FREE Trial &mdash; see your exact numbers
                   </a>
                   <p className="text-[0.72rem] text-text-tertiary text-center">
-                    30 minutes. We use your actual traffic, not estimates.
+                    14-day free trial · No credit card · 4-minute setup.
                   </p>
                   <div className="mt-4 pt-4 border-t border-warm-100">
                     <p className="text-[0.75rem] text-text-tertiary text-center mb-3">

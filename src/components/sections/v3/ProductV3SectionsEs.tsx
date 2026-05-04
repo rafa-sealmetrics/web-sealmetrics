@@ -15,11 +15,11 @@ export function ProductHeroV3Es() {
           Un stack analítico completo para equipos eCommerce: tracking sin consentimiento, atribución de ingresos, LENS AI, SuperAPI y MCP server — todo sobre los mismos datos a resolución completa. Sin muestreo. Sin modelado.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
-            Pide una demo <span>→</span>
-          </Link>
-          <Link href="/es/how-it-works" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-            Cómo funciona
+          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
+            Empieza gratis <span>→</span>
+          </a>
+          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
+            Reserva una demo
           </Link>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
@@ -380,14 +380,14 @@ export function ProductFinalCtaV3Es() {
             La plataforma de analítica que <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>los equipos eCommerce merecen.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Reserva 30 minutos con el founder. Pasamos tu web por la calculadora de gap en directo y te mostramos los datos exactos que te están faltando.
+            Empieza la prueba gratis de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Sin tarjeta. Sin llamada.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <a href="https://cal.com/sealmetrics" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
-              Pide una demo →
+            <a href="https://my.sealmetrics.com/register" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
+              Empieza gratis →
             </a>
-            <Link href="/es/pricing" className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5">
-              Ver precios
+            <Link href="/es/demo" className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5">
+              Reserva una demo
             </Link>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">

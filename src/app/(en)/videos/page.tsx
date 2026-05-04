@@ -107,7 +107,7 @@ export default function VideosPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
             >
-              Start Now
+              Start FREE Trial
             </a>
             <Link
               href="/demo"

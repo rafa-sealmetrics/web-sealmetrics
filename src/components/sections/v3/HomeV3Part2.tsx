@@ -586,17 +586,17 @@ export function FinalCtaV3() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a
-              href="https://cal.com/sealmetrics"
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
             >
-              Book 30-min walkthrough →
+              Start FREE Trial →
             </a>
-            <Link
-              href="/pricing"
+            <a
+              href="https://cal.com/sealmetrics"
               className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
             >
-              See pricing
-            </Link>
+              Book a 30-min walkthrough
+            </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
             Built by a founder · supported by a founder · EU-hosted by design

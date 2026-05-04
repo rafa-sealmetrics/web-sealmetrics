@@ -23,17 +23,17 @@ export function ProductHeroV3() {
           A full analytics stack built for eCommerce teams: consentless tracking, revenue attribution, LENS AI, SuperAPI and MCP server — all on the same full-resolution data. No sampling. No modelling.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <Link
-            href="/demo"
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
-            Book a demo <span>→</span>
-          </Link>
+            Start FREE Trial <span>→</span>
+          </a>
           <Link
-            href="/how-it-works"
+            href="/demo"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            See how it works
+            Book a demo
           </Link>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
@@ -600,20 +600,20 @@ export function ProductFinalCtaV3() {
             The analytics platform <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>eCommerce teams deserve.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Book a 30-minute walkthrough with the founder. We&apos;ll run your own site through the gap calculator live and show you the exact data you&apos;re missing.
+            Start the free 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. No credit card. No call required.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a
-              href="https://cal.com/sealmetrics"
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
             >
-              Book a demo →
+              Start FREE Trial →
             </a>
             <Link
-              href="/pricing"
+              href="/demo"
               className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
             >
-              See pricing
+              Book a demo
             </Link>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">

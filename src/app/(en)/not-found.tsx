@@ -32,12 +32,12 @@ export default function NotFound() {
           >
             Go to homepage →
           </Link>
-          <Link
-            href="/demo"
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Book a demo
-          </Link>
+            Start FREE Trial
+          </a>
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[13.5px]">
           {[

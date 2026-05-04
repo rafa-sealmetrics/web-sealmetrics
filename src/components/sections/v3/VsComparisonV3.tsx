@@ -29,7 +29,6 @@ export interface VsData {
 export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModified: string }) {
   const { locale, competitor } = data;
   const demoHref = locale === "es" ? "/es/demo" : "/demo";
-  const calcHref = locale === "es" ? "/es/data-loss-calculator" : "/data-loss-calculator";
 
   return (
     <>
@@ -53,17 +52,17 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
             {data.lede}
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-9">
-            <Link
-              href={demoHref}
+            <a
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
             >
-              {locale === "es" ? "Pide una demo" : "Book a demo"} →
-            </Link>
+              {locale === "es" ? "Empieza gratis" : "Start FREE Trial"} →
+            </a>
             <Link
-              href={calcHref}
+              href={demoHref}
               className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
             >
-              {locale === "es" ? "Calcula tu pérdida de datos" : "Calculate your data loss"}
+              {locale === "es" ? "Reserva una demo" : "Book a demo"}
             </Link>
           </div>
           <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">

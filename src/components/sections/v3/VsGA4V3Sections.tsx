@@ -12,9 +12,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         h1Em: "40%",
         h1Post: " de tu tráfico. SealMetrics te enseña el 100%.",
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
-        ctaA: "Pide una demo",
-        ctaB: "Corre ambos 30 días",
-        micro: "Sin migración · Corren en paralelo · Decides tú",
+        ctaA: "Empieza gratis",
+        ctaB: "Reserva una demo",
+        micro: "14 días gratis · Sin tarjeta · Setup en 4 min",
       }
     : {
         eyebrow: "vs Google Analytics 4",
@@ -22,9 +22,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         h1Em: "40%",
         h1Post: " of your traffic. SealMetrics shows 100%.",
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
-        ctaA: "Book a demo",
-        ctaB: "Run both for 30 days",
-        micro: "No migration · Run side by side · You decide",
+        ctaA: "Start FREE Trial",
+        ctaB: "Book a demo",
+        micro: "14-day free trial · No credit card · 4-minute setup",
       };
 
   return (
@@ -43,14 +43,14 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
           {t.lede}
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <Link
-            href={locale === "es" ? "/es/demo" : "/demo"}
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
             {t.ctaA} →
-          </Link>
+          </a>
           <Link
-            href={locale === "es" ? "/es/data-loss-calculator" : "/data-loss-calculator"}
+            href={locale === "es" ? "/es/demo" : "/demo"}
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
             {t.ctaB}

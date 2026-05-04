@@ -245,12 +245,12 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
           >
             {t.login}
           </a>
-          <Link
-            href={localizedHref("/demo", locale)}
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            {t.bookDemo}
-          </Link>
+            {t.startTrial}
+          </a>
           <LanguageSwitcher locale={locale} />
         </nav>
 
@@ -351,13 +351,13 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
               {t.login}
             </a>
 
-            <Link
-              href={localizedHref("/demo", locale)}
+            <a
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-3"
               onClick={() => setMobileOpen(false)}
             >
-              {t.bookDemo}
-            </Link>
+              {t.startTrial}
+            </a>
 
             <div className="mt-3 flex justify-center">
               <LanguageSwitcher locale={locale} />

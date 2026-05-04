@@ -166,12 +166,12 @@ export default function ChangelogPage() {
           <p className="text-[0.9rem] text-text-secondary mb-4">
             Want to see these features in action?
           </p>
-          <Link
-            href="/demo"
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center px-7 py-3 text-[0.9rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            Book a Demo
-          </Link>
+            Start FREE Trial
+          </a>
           <p className="mt-4 text-[0.8rem] text-text-tertiary">
             Or explore the{" "}
             <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">full product</Link>

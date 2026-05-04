@@ -2,6 +2,8 @@ import Link from "next/link";
 
 type Locale = "en" | "es";
 
+const REGISTER_URL = "https://my.sealmetrics.com/register";
+
 interface Props {
   locale?: Locale;
   titleEn: React.ReactNode;
@@ -24,13 +26,15 @@ export function FinalCtaSharedV3({
   ledeEs,
   primaryHref,
   secondaryHref,
-  primaryTextEn = "Book a walkthrough →",
-  primaryTextEs = "Reserva un walkthrough →",
-  secondaryTextEn = "See pricing",
-  secondaryTextEs = "Ver precios",
+  primaryTextEn = "Start FREE Trial →",
+  primaryTextEs = "Empieza gratis →",
+  secondaryTextEn = "Book a demo",
+  secondaryTextEs = "Reserva una demo",
 }: Props) {
-  const resolvedPrimaryHref = primaryHref ?? (locale === "es" ? "/es/demo" : "/demo");
-  const resolvedSecondaryHref = secondaryHref ?? (locale === "es" ? "/es/pricing" : "/pricing");
+  const resolvedPrimaryHref = primaryHref ?? REGISTER_URL;
+  const resolvedSecondaryHref = secondaryHref ?? (locale === "es" ? "/es/demo" : "/demo");
+  const isExternalPrimary = resolvedPrimaryHref.startsWith("http");
+  const isExternalSecondary = resolvedSecondaryHref.startsWith("http");
 
   const t = locale === "es"
     ? { title: titleEs, lede: ledeEs, primary: primaryTextEs, secondary: secondaryTextEs }
@@ -58,18 +62,36 @@ export function FinalCtaSharedV3({
             {t.lede}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <Link
-              href={resolvedPrimaryHref}
-              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
-            >
-              {t.primary}
-            </Link>
-            <Link
-              href={resolvedSecondaryHref}
-              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
-            >
-              {t.secondary}
-            </Link>
+            {isExternalPrimary ? (
+              <a
+                href={resolvedPrimaryHref}
+                className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+              >
+                {t.primary}
+              </a>
+            ) : (
+              <Link
+                href={resolvedPrimaryHref}
+                className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+              >
+                {t.primary}
+              </Link>
+            )}
+            {isExternalSecondary ? (
+              <a
+                href={resolvedSecondaryHref}
+                className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
+              >
+                {t.secondary}
+              </a>
+            ) : (
+              <Link
+                href={resolvedSecondaryHref}
+                className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
+              >
+                {t.secondary}
+              </Link>
+            )}
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
             {locale === "es"
