@@ -1,6 +1,7 @@
 import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import { HeroDashboard } from "./HeroDashboard";
+import { PRICING } from "@/lib/content/pricing";
 
 /* ============================================
    HERO · V3 centered with dashboard
@@ -19,34 +20,37 @@ export function HeroV3() {
         </div>
 
         <h1 className="h-display mx-auto">
-          See the 50% of your traffic <em>GA4 doesn&apos;t.</em>
+          Your numbers are <em className="italic-accent">going to add up again.</em>
         </h1>
 
         <p
-          className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]"
-          style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
+          className="text-ink mt-7 mx-auto max-w-[62ch] leading-[1.4] font-medium"
+          style={{ fontSize: "clamp(18px, 1.55vw, 22px)" }}
         >
-          SealMetrics is the neutral source of truth brand, finance and agencies sign against — captured on 100% of your visitors, not a sampled estimate.
+          Consentless analytics for eCommerce that measures 100% of your traffic. No cookies. No modeling.
+        </p>
+
+        <p
+          className="text-ink-soft mt-5 mx-auto max-w-[58ch] leading-[1.55]"
+          style={{ fontSize: "clamp(15px, 1.2vw, 17px)" }}
+        >
+          Recover the sales GA4 can&apos;t see and present board-ready numbers that match Shopify.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mt-9">
           <Link
-            href="/audit"
+            href="/data-loss-calculator"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
-            Get a free measurement audit <span>→</span>
+            See how much traffic you&apos;re losing <span>→</span>
           </Link>
-          <Link
-            href="#how"
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            See how it works
-          </Link>
+            Start free <span>→</span>
+          </a>
         </div>
-
-        <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          No install required · No commitment
-        </p>
       </div>
 
       {/* Dashboard mockup (interactive) */}
@@ -80,15 +84,15 @@ export function LogosStrip() {
   return (
     <section className="py-14 bg-warm-white border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-        <div className="flex justify-between items-baseline flex-wrap gap-4 mb-9">
+        <div className="mb-9">
           <h3
             className="font-semibold text-ink tracking-[-0.02em] leading-[1.2]"
             style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
           >
-            Single <em className="italic-accent">source of truth</em> for European brands
+            The <em className="italic-accent">single source of truth</em> European eCommerce signs against
           </h3>
-          <p className="font-mono text-[12px] text-ink-soft uppercase tracking-[0.1em] font-semibold">
-            Teams with <b className="text-ink">€5M+</b> in annual paid media
+          <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[68ch]">
+            <b className="text-ink font-semibold">Dreamplace Hotels</b> recovered <b className="text-ink font-semibold">+30% more traffic</b> vs GA4 and closed a <b className="text-ink font-semibold">15–20% gap</b> in sales attribution against their CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recovered <b className="text-ink font-semibold">35% of unattributed bookings</b> and improved Display CPS by <b className="text-ink font-semibold">+165%</b>.
           </p>
         </div>
         <LogosGrid />
@@ -104,7 +108,7 @@ export function LogosSecondary() {
         <p className="text-center mx-auto max-w-[44rem] mb-8 leading-[1.4] text-ink font-medium"
           style={{ fontSize: "clamp(18px, 2vw, 22px)", letterSpacing: "-0.015em" }}
         >
-          Joining <em className="italic-accent">hotel groups, DTC brands and media companies</em> — 2,000+ European teams measuring what actually happened.
+          Joining <em className="italic-accent">hotel groups, DTC brands and media companies</em> — hundreds of European teams measuring what actually happened.
         </p>
         <LogosGrid />
       </div>
@@ -557,5 +561,632 @@ function CaseCard({
         ))}
       </div>
     </article>
+  );
+}
+
+/* ============================================
+   SOCIAL PROOF BAND · 2.2 · post-hero credibility
+   ============================================ */
+export function SocialProofBand() {
+  return (
+    <section className="bg-warm-white border-t border-warm-100 py-14">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+        <div className="bg-white border border-warm-100 rounded-2xl p-8 md:p-12 grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+          <div className="flex flex-col gap-2">
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-ink-soft font-semibold">
+              Featured proof
+            </span>
+            <span className="text-[17px] font-semibold text-ink tracking-[-0.015em]">
+              Palladium Hotel Group
+            </span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
+              Hotels · eCommerce · Spain
+            </span>
+          </div>
+          <div>
+            <p
+              className="text-ink font-medium leading-[1.35] tracking-[-0.015em]"
+              style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
+            >
+              Recovered <em className="italic-accent">35% of bookings</em> with no attribution and improved Display CPC by <em className="italic-accent">+165%</em>. Same budget. Zero extra euros. Just the right data.
+            </p>
+            <div className="grid grid-cols-3 gap-4 mt-7 pt-6 border-t border-warm-100">
+              {[
+                { n: "35%", l: "Bookings recovered" },
+                { n: "+165%", l: "Display CPC improvement" },
+                { n: "€0", l: "Extra spend" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <div className="text-[26px] font-semibold tracking-[-0.025em] text-ink tabular-nums leading-none">
+                    {s.n}
+                  </div>
+                  <div className="text-[12.5px] text-ink-soft mt-2 leading-[1.4]">
+                    {s.l}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Link
+              href="/case-studies/palladium-hotel-group"
+              className="inline-flex items-center gap-1.5 mt-6 text-[14px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink"
+            >
+              Read the full case study <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   PROBLEM SECTION · 2.3 · agitate the wound
+   ============================================ */
+export function ProblemSection() {
+  return (
+    <section className="bg-white border-t border-warm-100 py-24">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">The problem</span>
+            <h2 className="h-section mt-5">
+              GA4 wasn&apos;t built to measure your business. <em>It was built to sell Google ads.</em>
+            </h2>
+          </div>
+          <div className="text-[17px] leading-[1.65] text-ink-soft max-w-[58ch] space-y-4">
+            <p>
+              Every month, GA4 says you billed X. Shopify says Y. Your bank account says Z. The difference isn&apos;t a rounding error — it&apos;s the <b className="text-ink">30–40% of your traffic</b> that rejected cookies, which GA4 then &ldquo;models&rdquo; with estimates.
+            </p>
+            <p>
+              Your board reports are built on <em>partial statistical fiction</em>. And the worst part: you know it.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          {[
+            {
+              n: "55–65%",
+              h: "Average EU consent rate in 2026",
+              p: "And falling every quarter as browsers tighten and users learn to reject by default.",
+            },
+            {
+              n: "Modeled",
+              h: "GA4 Consent Mode v2",
+              p: "Doesn't measure what it can't see. It invents conversions from a sample. Estimates, not reality.",
+            },
+            {
+              n: "33% / 10%",
+              h: "Margin × misattribution",
+              p: "With 33% margins, a 10% attribution error wipes out the entire profit of a campaign. At scale, that's EBITDA.",
+            },
+          ].map((c) => (
+            <div key={c.h} className="bg-warm-50 border border-warm-100 rounded-xl p-7 flex flex-col gap-3">
+              <div
+                className="font-semibold tracking-[-0.025em] text-red-alert tabular-nums leading-none"
+                style={{ fontSize: "clamp(28px, 3vw, 38px)" }}
+              >
+                {c.n}
+              </div>
+              <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] leading-[1.25]">
+                {c.h}
+              </h3>
+              <p className="text-[14px] leading-[1.55] text-ink-soft">{c.p}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   HOW TO START · 2.4 · 3-step setup
+   ============================================ */
+export function SolutionStepsPLG() {
+  return (
+    <section id="how" className="bg-warm-50 border-t border-warm-100 py-24">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">How to start</span>
+            <h2 className="h-section mt-5">
+              From zero to <em>real data</em> in under 4 minutes.
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            No migration. No cookie banner. No data team required. Three steps and you&apos;re measuring everything GA4 hides from you.
+          </p>
+        </div>
+
+        <ol className="grid md:grid-cols-3 gap-4">
+          {[
+            {
+              n: "01",
+              time: "3 min",
+              t: "Add the SealMetrics pixel via GTM",
+              r: "Drop our module in your CMS or paste the pixel through Tag Manager. No engineering ticket. No deployment.",
+            },
+            {
+              n: "02",
+              time: "Real-time",
+              t: "We capture every visit, product and conversion",
+              r: "Visits, product views, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant, no consent prompt.",
+            },
+            {
+              n: "03",
+              time: "From day one",
+              t: "Make decisions on real numbers",
+              r: "Reallocate paid media on data that matches Shopify. Defend every euro in front of finance and the board. No models, no estimates, no black box.",
+            },
+          ].map((s) => (
+            <li
+              key={s.n}
+              className="bg-white border border-warm-100 rounded-xl p-8 flex flex-col gap-3 min-h-[260px]"
+            >
+              <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-brand">
+                Step {s.n}
+              </span>
+              <span className="inline-flex self-start px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">
+                {s.time}
+              </span>
+              <h3 className="text-[22px] font-semibold tracking-[-0.025em] leading-[1.2] mt-2">
+                {s.t}
+              </h3>
+              <p className="text-[14.5px] leading-[1.55] text-ink-soft mt-auto">{s.r}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <a
+            href="https://my.sealmetrics.com/register"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+          >
+            Start your 14-day free trial <span>→</span>
+          </a>
+          <a
+            href="#ga4-gap"
+            className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
+          >
+            See your GA4 gap first <span>→</span>
+          </a>
+        </div>
+
+        <p className="mt-5 text-center font-mono text-[12px] text-ink-soft uppercase tracking-[0.08em]">
+          14-day free trial · 4-minute setup · Worth a look before next quarter&apos;s budget
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   FOUR PILLARS · 2.5 · why SealMetrics
+   ============================================ */
+export function FourPillars() {
+  const pillars: { tag: string; problem: string; copy: string; em: string }[] = [
+    {
+      tag: "Ad arbitrage",
+      problem: "Discover profitable campaigns GA4 says aren't",
+      copy: "Find out how many profitable campaigns you're pausing because GA4 attributed them to the wrong channel.",
+      em: "profitable campaigns",
+    },
+    {
+      tag: "Data neutrality",
+      problem: "One source agencies and the board accept",
+      copy: "The data tool that doesn't sell ads. No incentive to inflate. Just the truth — which is exactly why every stakeholder signs against it.",
+      em: "doesn't sell ads",
+    },
+    {
+      tag: "Inventory audit",
+      problem: "Identify where you burn budget on Display",
+      copy: "Audit 100% of your publishers and placements. Cut what doesn't convert. Scale what does. With evidence, not opinions.",
+      em: "100% of your publishers",
+    },
+    {
+      tag: "Margin protection",
+      problem: "Every misallocated euro is lost EBITDA",
+      copy: "Protect your margin. At scale, every tenth of ROAS matters — and every misattribution silently bleeds the P&L.",
+      em: "every tenth of ROAS",
+    },
+  ];
+
+  return (
+    <section className="bg-white border-t border-warm-100 py-24">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">Why SealMetrics</span>
+            <h2 className="h-section mt-5">
+              Four pillars. <em>Four reasons</em> finance, brand and the agency align on the same number.
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Built around the four ways bad attribution silently destroys eCommerce margin — and the four ways neutral, complete data brings it back.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          {pillars.map((p) => (
+            <article
+              key={p.tag}
+              className="bg-warm-50 border border-warm-100 rounded-xl p-8 flex flex-col gap-3 transition-all hover:border-rule-2 hover:-translate-y-0.5"
+            >
+              <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
+                {p.tag}
+              </span>
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] leading-[1.2] mt-1">
+                {p.problem}
+              </h3>
+              <p className="text-[15px] leading-[1.6] text-ink-2 mt-1">
+                {p.copy.split(p.em).map((part, i, arr) => (
+                  <span key={i}>
+                    {part}
+                    {i < arr.length - 1 && <em className="italic-accent">{p.em}</em>}
+                  </span>
+                ))}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   GAP CALCULATOR CTA · 2.6 · functional signup
+   ============================================ */
+export function GapCalculatorCTA() {
+  return (
+    <section className="bg-warm-50 border-t border-warm-100 py-24">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+        <div className="bg-white border border-warm-100 rounded-2xl p-10 md:p-14 text-center">
+          <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
+            60-second gap report
+          </span>
+          <h2 className="h-section mt-5 mx-auto" style={{ maxWidth: "22ch" }}>
+            How much traffic are you losing? <em>Find out in 60 seconds.</em>
+          </h2>
+          <p className="text-[17px] leading-[1.6] text-ink-soft mt-5 mx-auto max-w-[58ch]">
+            Enter your domain. We estimate your real data gap based on country, industry and average consent rate. Instant report. No signup. No call.
+          </p>
+
+          <form
+            action="/data-loss-calculator"
+            method="get"
+            className="mt-9 mx-auto max-w-[520px] flex flex-col sm:flex-row gap-3"
+          >
+            <input
+              name="domain"
+              type="text"
+              placeholder="yourdomain.com"
+              aria-label="Your domain"
+              className="flex-1 px-5 py-4 border border-warm-200 rounded-md bg-white text-[15px] text-ink placeholder:text-ink-soft focus:outline-none focus:border-ink"
+              required
+            />
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold hover:bg-brand transition-colors"
+            >
+              Get my gap report <span>→</span>
+            </button>
+          </form>
+
+          <p className="mt-5 font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em]">
+            Country · Industry · Consent rate · Estimated traffic loss
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   FINAL URGENCY · 2.8 · close with stakes
+   ============================================ */
+export function FinalUrgencyV3() {
+  return (
+    <section className="bg-white py-20">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
+        <div className="bg-ink text-white rounded-[20px] px-10 md:px-16 py-16 md:py-20 text-center relative overflow-hidden">
+          <div
+            aria-hidden
+            className="absolute pointer-events-none"
+            style={{
+              right: -120,
+              top: -120,
+              width: 360,
+              height: 360,
+              borderRadius: "50%",
+              background: "radial-gradient(circle,rgba(181,66,59,0.28),transparent 70%)",
+            }}
+          />
+          <div
+            aria-hidden
+            className="absolute pointer-events-none"
+            style={{
+              left: -120,
+              bottom: -120,
+              width: 360,
+              height: 360,
+              borderRadius: "50%",
+              background: "radial-gradient(circle,rgba(45,139,109,0.32),transparent 70%)",
+            }}
+          />
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55 mb-5 relative">
+            The trend is one-way
+          </p>
+          <h2
+            className="text-white font-semibold leading-[1.08] tracking-[-0.03em] mx-auto max-w-[24ch] relative"
+            style={{ fontSize: "clamp(32px, 4.4vw, 54px)" }}
+          >
+            Today you lose 35%. Next year, 50%.{" "}
+            <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
+              What&apos;s your plan?
+            </em>
+          </h2>
+          <p className="text-white/75 text-[16.5px] leading-[1.6] mt-7 mb-8 mx-auto max-w-[58ch] relative">
+            Every quarter, consent rates fall. Browsers block more. GA4 estimates more. Direction is unambiguous: less real data, more statistical fiction. While your competition adapts late, you can be a year ahead with real data already in hand.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
+            <Link
+              href="/data-loss-calculator"
+              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+            >
+              See how much you&apos;re losing →
+            </Link>
+            <a
+              href="https://my.sealmetrics.com/register"
+              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
+            >
+              Start free →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   PRICING PLG · 2.7 · annual default, monthly secondary
+   ============================================ */
+export function PricingPLG() {
+  const plans = [
+    {
+      name: "Growth",
+      annualPerMonth: PRICING.growth.annual,
+      annualTotal: PRICING.growth.annual * 12,
+      monthly: PRICING.growth.monthly,
+      events: PRICING.growth.eventsMillions,
+      blurb: "For teams that want to see their real data.",
+      features: [
+        `${PRICING.growth.eventsMillions}M human events / month`,
+        "3 domains",
+        "Full MCP + BigQuery + API",
+        "GA4 side-by-side comparison",
+        "Email support",
+      ],
+      cta: "Start free 14 days",
+      href: "https://my.sealmetrics.com/register",
+      featured: false,
+      type: "register" as const,
+    },
+    {
+      name: "Scale",
+      annualPerMonth: PRICING.scale.annual,
+      annualTotal: PRICING.scale.annual * 12,
+      monthly: PRICING.scale.monthly,
+      events: PRICING.scale.eventsMillions,
+      blurb: "For serious eCommerce that needs the data to decide.",
+      features: [
+        `${PRICING.scale.eventsMillions}M human events / month`,
+        "10 domains",
+        "Everything in Growth",
+        "Priority support",
+        "Onboarding led by the founder",
+      ],
+      cta: "Start free 14 days",
+      href: "https://my.sealmetrics.com/register",
+      featured: true,
+      type: "register" as const,
+    },
+    {
+      name: "Enterprise",
+      annualPerMonth: null,
+      annualTotal: null,
+      monthly: null,
+      events: null,
+      blurb: "For portfolio brands or custom integration needs.",
+      features: [
+        "Unlimited events",
+        "BI & data warehouse integration",
+        "SSO, SAML, RBAC, audit logs",
+        "99.9% SLA",
+        "Dedicated account manager",
+      ],
+      cta: "Talk to us",
+      href: "/demo",
+      featured: false,
+      type: "demo" as const,
+    },
+  ];
+
+  return (
+    <section id="pricing" className="bg-warm-50 border-t border-warm-100 py-24">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="max-w-[44rem] mx-auto text-center mb-14">
+          <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
+            Pricing
+          </span>
+          <h2 className="h-section mt-5 mx-auto text-center">
+            Start measuring <em>reality.</em>
+          </h2>
+          <p className="text-[18px] leading-[1.6] text-ink-soft mt-5">
+            Annual billing — two months free vs monthly. Self-serve on Growth and Scale. Enterprise is custom-quoted. Every plan includes the same data architecture: 100% capture, last-click attribution, EU-hosted in Dublin.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4 items-stretch">
+          {plans.map((p) => (
+            <article
+              key={p.name}
+              className={`rounded-xl p-8 flex flex-col bg-white relative ${
+                p.featured ? "border-2 border-brand shadow-[0_8px_32px_-12px_rgba(45,139,109,0.25)]" : "border border-warm-100"
+              }`}
+            >
+              {p.featured && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
+                  Most eCommerce land here
+                </span>
+              )}
+              <header className="pb-5 border-b border-warm-100 mb-5">
+                <h3 className="text-[24px] font-semibold tracking-[-0.01em] mb-2">{p.name}</h3>
+                <p className="text-[14px] text-ink-soft leading-[1.5] mb-5">{p.blurb}</p>
+
+                {p.annualPerMonth !== null ? (
+                  <>
+                    <div className="flex items-baseline gap-1.5">
+                      <span
+                        className="font-semibold tracking-[-0.025em] leading-none tabular-nums text-ink"
+                        style={{ fontSize: "clamp(36px, 4vw, 44px)" }}
+                      >
+                        €{p.annualPerMonth.toLocaleString("en-US")}
+                      </span>
+                      <span className="text-[15px] text-ink-soft">/mo</span>
+                      <span className="ml-2 inline-flex items-center bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] px-2 py-1 rounded">
+                        2 mo free
+                      </span>
+                    </div>
+                    <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft mt-2">
+                      Billed annually · €{p.annualTotal!.toLocaleString("en-US")}/yr
+                    </div>
+                    <div className="font-mono text-[10.5px] text-ink-soft mt-1.5 opacity-70">
+                      or €{p.monthly!.toLocaleString("en-US")}/mo billed monthly
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div
+                      className="font-semibold tracking-[-0.025em] leading-none tabular-nums text-ink"
+                      style={{ fontSize: "clamp(36px, 4vw, 44px)" }}
+                    >
+                      Custom
+                    </div>
+                    <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft mt-2">
+                      Annual or custom terms
+                    </div>
+                  </>
+                )}
+              </header>
+
+              <ul className="flex flex-col gap-2 mb-7 flex-1">
+                {p.features.map((f) => (
+                  <li key={f} className="relative pl-4 text-[14.5px] leading-[1.55] text-ink">
+                    <span className="absolute left-0 text-ink-soft">—</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              {p.type === "register" ? (
+                <a
+                  href={p.href}
+                  className={`inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
+                    p.featured
+                      ? "bg-ink text-white hover:bg-brand"
+                      : "border border-warm-200 text-ink hover:bg-warm-50"
+                  }`}
+                >
+                  {p.cta} →
+                </a>
+              ) : (
+                <Link
+                  href={p.href}
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors border border-warm-200 text-ink hover:bg-warm-50"
+                >
+                  {p.cta} →
+                </Link>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-10 p-6 bg-white border border-warm-100 rounded-xl text-center max-w-[48rem] mx-auto text-[14.5px] leading-[1.65] text-ink-soft">
+          For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. SealMetrics gives you enterprise-grade data without the enterprise contract.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   CONNECTORS · 2.4b · direct integrations
+   ============================================ */
+const CONNECTORS: { name: string; src?: string; tag: "ecommerce" | "data" }[] = [
+  { name: "Shopify", src: "/logos/brands/shopify.svg", tag: "ecommerce" },
+  { name: "WordPress", src: "/logos/brands/wordpress.svg", tag: "ecommerce" },
+  { name: "WooCommerce", src: "/logos/brands/woocommerce.svg", tag: "ecommerce" },
+  { name: "Magento", src: "/logos/brands/magento.svg", tag: "ecommerce" },
+  { name: "PrestaShop", src: "/logos/brands/prestashop.svg", tag: "ecommerce" },
+  { name: "BigCommerce", tag: "ecommerce" },
+  { name: "BigQuery", src: "/logos/brands/bigquery.svg", tag: "data" },
+  { name: "Looker Studio", tag: "data" },
+];
+
+export function Connectors() {
+  return (
+    <section className="bg-white border-t border-warm-100 py-20">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-16 items-end mb-10">
+          <div>
+            <span className="eyebrow mb-5">Direct connectors</span>
+            <h2 className="h-section mt-5">
+              Plugs into the stack you already run. <em>One-click integrations.</em>
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Native connectors for the eCommerce platforms, BI tools and dashboards your team uses every day. No middleware. No custom engineering. No data team required.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {CONNECTORS.map((c) => (
+            <div
+              key={c.name}
+              className="bg-warm-50 border border-warm-100 rounded-xl p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] transition-all hover:-translate-y-0.5 hover:border-rule-2"
+            >
+              {c.src ? (
+                <Picture
+                  src={c.src}
+                  alt={c.name}
+                  width={140}
+                  height={36}
+                  className="object-contain"
+                  style={{ height: 36, maxWidth: 150 }}
+                />
+              ) : (
+                <span
+                  className="font-semibold text-ink tracking-[-0.015em] text-center"
+                  style={{ fontSize: "clamp(15px, 1.4vw, 18px)" }}
+                >
+                  {c.name}
+                </span>
+              )}
+              <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-soft font-semibold">
+                {c.tag === "ecommerce" ? "eCommerce" : "Data & BI"}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center font-mono text-[12px] text-ink-soft uppercase tracking-[0.08em]">
+          Need another integration? <Link href="/integrations" className="text-ink border-b border-warm-200 hover:border-ink no-underline">See full list of integrations</Link>
+        </p>
+      </div>
+    </section>
   );
 }

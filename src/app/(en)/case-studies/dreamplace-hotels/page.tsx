@@ -416,7 +416,7 @@ export default function Page() {
       </section>
 
       {/* The value: better-allocated investment (DARK SLAB) */}
-      <section className="bg-ink text-white py-24 relative overflow-hidden">
+      <section className="section-dark bg-ink text-white py-24 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute pointer-events-none"

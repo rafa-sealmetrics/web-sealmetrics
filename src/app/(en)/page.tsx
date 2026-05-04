@@ -13,28 +13,31 @@ import {
   HeroV3,
   LogosStrip,
   LogosSecondary,
-  ValueProp4Min,
   CompareSection,
   FeaturedCase,
+  SocialProofBand,
+  ProblemSection,
+  SolutionStepsPLG,
+  Connectors,
+  FourPillars,
+  PricingPLG,
+  FinalUrgencyV3,
 } from "@/components/sections/v3/HomeV3";
 import {
-  IndustriesBuiltFor,
   ComparatorGA4,
-  HowItWorksV3,
   CredentialsV3,
-  PricingV3,
-  FinalCtaV3,
 } from "@/components/sections/v3/HomeV3Part2";
 import { FaqV3 } from "@/components/sections/v3/FaqV3";
+import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — See the 50% of your traffic GA4 doesn't",
+  title: "SealMetrics — Consentless analytics for eCommerce. Real data again.",
   description:
-    "SealMetrics is the neutral source of truth brand, finance and agencies sign against — captured on 100% of your visitors, not a sampled estimate.",
+    "Consentless analytics for eCommerce that measures 100% of your traffic. No cookies. No models. Recover the sales GA4 can't see and present numbers that match Shopify.",
   openGraph: {
-    title: "SealMetrics — See the 50% of your traffic GA4 doesn't",
+    title: "SealMetrics — Consentless analytics for eCommerce",
     description:
-      "The neutral source of truth brand, finance and agencies all accept. Cookieless, 100% captured, EU-hosted in Dublin.",
+      "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -96,30 +99,33 @@ export default function Home() {
         url: "/",
       })} />
       <HeroV3 />
-      <section className="bg-warm-white border-t border-warm-100 py-2">
+      <SocialProofBand />
+      <LogosStrip />
+      <ProblemSection />
+      <SolutionStepsPLG />
+      <Connectors />
+      <FourPillars />
+      <ComparatorGA4 />
+      <FeaturedCase />
+      <CompareSection />
+      <CredentialsV3 />
+      <BlindnessCalculator />
+      <PricingPLG />
+      <FinalUrgencyV3 />
+      <LogosSecondary />
+      <FaqV3 />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              SealMetrics is the neutral source of truth for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
+              SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
             </p>
             <p>
-              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Pricing starts at €499/month annually; setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
+              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
           </QuickAnswer>
         </div>
       </section>
-      <LogosStrip />
-      <ValueProp4Min />
-      <CompareSection />
-      <FeaturedCase />
-      <IndustriesBuiltFor />
-      <ComparatorGA4 />
-      <HowItWorksV3 />
-      <LogosSecondary />
-      <CredentialsV3 />
-      <PricingV3 />
-      <FaqV3 />
-      <FinalCtaV3 />
     </>
   );
 }

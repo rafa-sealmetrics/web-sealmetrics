@@ -413,7 +413,7 @@ export function CredentialsV3() {
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-3 mb-8">
           {[
-            { n: <><em className="italic-accent">5+</em> yrs</>, l: "Running in production · 2,000+ accounts across hotels, DTC and media" },
+            { n: <><em className="italic-accent">5+</em> yrs</>, l: "Running in production · hundreds of accounts across hotels, DTC and media" },
             { n: <>99.<em className="italic-accent">99</em>%</>, l: "Uptime SLA · peak traffic tested at Black Friday scale" },
             { n: <>EU-<em className="italic-accent">hosted</em></>, l: "Hosted in Dublin, Ireland · Schrems II clean · GDPR by architecture" },
             { n: <><em className="italic-accent">846</em> bytes</>, l: "Pixel size · roughly 100× lighter than GA4's tag" },
@@ -431,7 +431,7 @@ export function CredentialsV3() {
         </div>
 
         <div className="flex flex-wrap gap-2.5 justify-center pt-8 border-t border-warm-100">
-          {["GDPR by architecture", "ePrivacy", "Schrems II", "EU-hosted · Dublin", "DPA included", "TPSR package"].map(
+          {["GDPR by architecture", "ePrivacy", "Schrems II", "EU-hosted · Dublin", "DPA included"].map(
             (b) => (
               <span
                 key={b}
