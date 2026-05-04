@@ -639,61 +639,21 @@ export function SocialProofBand() {
 }
 
 /* ============================================
-   PROBLEM SECTION · 2.3 · agitate the wound
+   PROBLEM SECTION · 2.3 · one impactful headline + datapoint
    ============================================ */
 export function ProblemSection() {
   return (
-    <section className="bg-white border-t border-warm-100 py-24">
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
-          <div>
-            <span className="eyebrow mb-5">The problem</span>
-            <h2 className="h-section mt-5">
-              GA4 wasn&apos;t built to measure your business. <em>It was built to sell Google ads.</em>
-            </h2>
-          </div>
-          <div className="text-[17px] leading-[1.65] text-ink-soft max-w-[58ch] space-y-4">
-            <p>
-              Every month, GA4 says you billed X. Shopify says Y. Your bank account says Z. The difference isn&apos;t a rounding error — it&apos;s the <b className="text-ink">30–40% of your traffic</b> that rejected cookies, which GA4 then &ldquo;models&rdquo; with estimates.
-            </p>
-            <p>
-              Your board reports are built on <em>partial statistical fiction</em>. And the worst part: you know it.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-4">
-          {[
-            {
-              n: "55–65%",
-              h: "Average EU consent rate in 2026",
-              p: "And falling every quarter as browsers tighten and users learn to reject by default.",
-            },
-            {
-              n: "Modeled",
-              h: "GA4 Consent Mode v2",
-              p: "Doesn't measure what it can't see. It invents conversions from a sample. Estimates, not reality.",
-            },
-            {
-              n: "33% / 10%",
-              h: "Margin × misattribution",
-              p: "With 33% margins, a 10% attribution error wipes out the entire profit of a campaign. At scale, that's EBITDA.",
-            },
-          ].map((c) => (
-            <div key={c.h} className="bg-warm-50 border border-warm-100 rounded-xl p-7 flex flex-col gap-3">
-              <div
-                className="font-semibold tracking-[-0.025em] text-red-alert tabular-nums leading-none"
-                style={{ fontSize: "clamp(28px, 3vw, 38px)" }}
-              >
-                {c.n}
-              </div>
-              <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] leading-[1.25]">
-                {c.h}
-              </h3>
-              <p className="text-[14px] leading-[1.55] text-ink-soft">{c.p}</p>
-            </div>
-          ))}
-        </div>
+    <section className="bg-white border-t border-warm-100 py-20 md:py-24">
+      <div className="max-w-[900px] mx-auto px-5 sm:px-10 text-center">
+        <p
+          className="font-semibold text-ink leading-[1.05] tracking-[-0.025em]"
+          style={{ fontSize: "clamp(34px, 5vw, 60px)" }}
+        >
+          <span className="text-red-alert">62%</span> of your traffic is <em className="italic-accent">invisible to GA4.</em>
+        </p>
+        <p className="mt-6 text-[17px] md:text-[18.5px] leading-[1.6] text-ink-soft max-w-[58ch] mx-auto">
+          Consent banners block most of your data. You&apos;re making decisions with a fraction of reality — and your CFO is starting to notice.
+        </p>
       </div>
     </section>
   );
@@ -781,74 +741,28 @@ export function SolutionStepsPLG() {
 }
 
 /* ============================================
-   FOUR PILLARS · 2.5 · why SealMetrics
+   FOUR PILLARS · 2.5 · condensed inline trust badges
    ============================================ */
 export function FourPillars() {
-  const pillars: { tag: string; problem: string; copy: string; em: string }[] = [
-    {
-      tag: "Ad arbitrage",
-      problem: "Discover profitable campaigns GA4 says aren't",
-      copy: "Find out how many profitable campaigns you're pausing because GA4 attributed them to the wrong channel.",
-      em: "profitable campaigns",
-    },
-    {
-      tag: "Data neutrality",
-      problem: "One source agencies and the board accept",
-      copy: "The data tool that doesn't sell ads. No incentive to inflate. Just the truth — which is exactly why every stakeholder signs against it.",
-      em: "doesn't sell ads",
-    },
-    {
-      tag: "Inventory audit",
-      problem: "Identify where you burn budget on Display",
-      copy: "Audit 100% of your publishers and placements. Cut what doesn't convert. Scale what does. With evidence, not opinions.",
-      em: "100% of your publishers",
-    },
-    {
-      tag: "Margin protection",
-      problem: "Every misallocated euro is lost EBITDA",
-      copy: "Protect your margin. At scale, every tenth of ROAS matters — and every misattribution silently bleeds the P&L.",
-      em: "every tenth of ROAS",
-    },
+  const pillars = [
+    "Ad arbitrage",
+    "Neutral data",
+    "Inventory audit",
+    "Margin protection",
   ];
 
   return (
-    <section className="bg-white border-t border-warm-100 py-24">
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
-          <div>
-            <span className="eyebrow mb-5">Why SealMetrics</span>
-            <h2 className="h-section mt-5">
-              Four pillars. <em>Four reasons</em> finance, brand and the agency align on the same number.
-            </h2>
-          </div>
-          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Built around the four ways bad attribution silently destroys eCommerce margin — and the four ways neutral, complete data brings it back.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-4">
-          {pillars.map((p) => (
-            <article
-              key={p.tag}
-              className="bg-warm-50 border border-warm-100 rounded-xl p-8 flex flex-col gap-3 transition-all hover:border-rule-2 hover:-translate-y-0.5"
-            >
-              <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
-                {p.tag}
-              </span>
-              <h3 className="text-[20px] font-semibold tracking-[-0.02em] leading-[1.2] mt-1">
-                {p.problem}
-              </h3>
-              <p className="text-[15px] leading-[1.6] text-ink-2 mt-1">
-                {p.copy.split(p.em).map((part, i, arr) => (
-                  <span key={i}>
-                    {part}
-                    {i < arr.length - 1 && <em className="italic-accent">{p.em}</em>}
-                  </span>
-                ))}
-              </p>
-            </article>
-          ))}
-        </div>
+    <section className="py-10 border-y border-warm-100 bg-warm-white">
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-8 flex flex-wrap justify-center gap-x-10 gap-y-4 items-center">
+        {pillars.map((p) => (
+          <span
+            key={p}
+            className="inline-flex items-center gap-2.5 text-[14px] font-semibold text-ink"
+          >
+            <span className="w-2 h-2 rounded-sm bg-brand shrink-0" />
+            {p}
+          </span>
+        ))}
       </div>
     </section>
   );

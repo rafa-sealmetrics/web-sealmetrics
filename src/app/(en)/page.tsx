@@ -12,10 +12,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import {
   HeroV3,
   LogosStrip,
-  LogosSecondary,
-  CompareSection,
   FeaturedCase,
-  SocialProofBand,
   ProblemSection,
   SolutionStepsPLG,
   Connectors,
@@ -23,10 +20,7 @@ import {
   PricingPLG,
   FinalUrgencyV3,
 } from "@/components/sections/v3/HomeV3";
-import {
-  ComparatorGA4,
-  CredentialsV3,
-} from "@/components/sections/v3/HomeV3Part2";
+import { ComparatorGA4 } from "@/components/sections/v3/HomeV3Part2";
 import { FaqV3 } from "@/components/sections/v3/FaqV3";
 import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { DualCTA } from "@/components/homepage/DualCTA";
@@ -101,12 +95,9 @@ export default function Home() {
         url: "/",
       })} />
       <HeroV3 />
-      <SocialProofBand />
       <LogosStrip />
       <ProblemSection />
-      <SolutionStepsPLG />
-      <Connectors />
-      <FourPillars />
+      <BlindnessCalculator />
       <ComparatorGA4 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 flex flex-col items-center text-center gap-5">
@@ -117,13 +108,12 @@ export default function Home() {
         </div>
       </section>
       <FeaturedCase />
-      <CompareSection />
-      <CredentialsV3 />
-      <BlindnessCalculator />
+      <SolutionStepsPLG />
+      <FourPillars />
+      <Connectors />
       <PricingPLG />
-      <FinalUrgencyV3 />
-      <LogosSecondary />
       <FaqV3 />
+      <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
