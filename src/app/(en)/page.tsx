@@ -29,6 +29,8 @@ import {
 } from "@/components/sections/v3/HomeV3Part2";
 import { FaqV3 } from "@/components/sections/v3/FaqV3";
 import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
+import { DualCTA } from "@/components/homepage/DualCTA";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
   title: "SealMetrics — Consentless analytics for eCommerce. Real data again.",
@@ -106,6 +108,14 @@ export default function Home() {
       <Connectors />
       <FourPillars />
       <ComparatorGA4 />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 flex flex-col items-center text-center gap-5">
+          <p className="font-semibold text-ink tracking-[-0.015em]" style={{ fontSize: "clamp(18px, 1.8vw, 22px)" }}>
+            Stop debating tools. <em className="italic-accent">Start measuring reality.</em>
+          </p>
+          <DualCTA locale="en" />
+        </div>
+      </section>
       <FeaturedCase />
       <CompareSection />
       <CredentialsV3 />
@@ -126,6 +136,7 @@ export default function Home() {
           </QuickAnswer>
         </div>
       </section>
+      <StickyCtaBar locale="en" />
     </>
   );
 }

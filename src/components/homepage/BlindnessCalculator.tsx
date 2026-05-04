@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { DualCTA } from "./DualCTA";
 
 const fmtNum = (n: number) =>
   new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -299,6 +300,9 @@ export function BlindnessCalculator() {
               </div>
             </div>
 
+            {/* Conversion block — CTA + email capture */}
+            <CalcConversionBlock blindPct={calc.blindPct} dRevenue={calc.dRevenue} />
+
             {/* Footnote */}
             <div className="mt-9 pt-5 border-t border-warm-100 grid sm:grid-cols-2 gap-7 font-mono text-[11px] leading-[1.6] text-ink-soft">
               <div>
@@ -579,6 +583,66 @@ function PaybackCell({
         {suffix}
       </div>
       <p className="text-[13px] leading-[1.5] text-white/70 max-w-[280px]">{explain}</p>
+    </div>
+  );
+}
+
+function CalcConversionBlock({ blindPct, dRevenue }: { blindPct: number; dRevenue: number }) {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const pct = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(blindPct);
+  const yearly = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+  }).format(Math.round(dRevenue * 12));
+
+  return (
+    <div
+      className="mt-6 p-7 rounded-xl border"
+      style={{
+        background: "rgba(45,139,109,0.06)",
+        borderColor: "rgba(45,139,109,0.25)",
+      }}
+    >
+      <p className="text-[19px] font-semibold tracking-[-0.015em] text-ink leading-[1.3] mb-2">
+        You&apos;re losing <span className="text-red-alert">{pct}%</span> of your data — that&apos;s {yearly}/year you&apos;re not seeing.{" "}
+        <em className="italic-accent">Get it back.</em>
+      </p>
+      <p className="text-[14.5px] leading-[1.55] text-ink-soft mb-5">
+        Install SealMetrics in 4 minutes. See every visit, every conversion, every channel — including the 35-55% GA4 hides from you.
+      </p>
+      <DualCTA locale="en" />
+
+      {/* Email capture */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          // TODO: connect to lead capture API
+          setSubmitted(true);
+        }}
+        className="mt-5 flex flex-col sm:flex-row gap-2"
+      >
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@email.com"
+          aria-label="Email"
+          className="flex-1 px-4 py-2.5 rounded-md border border-warm-200 bg-white text-[14px] text-ink placeholder:text-ink-soft focus:outline-none focus:border-ink"
+        />
+        <button
+          type="submit"
+          disabled={submitted}
+          className="px-4 py-2.5 bg-ink text-white rounded-md text-[13.5px] font-semibold hover:bg-brand transition-colors disabled:opacity-60"
+        >
+          {submitted ? "Sent — check your inbox" : "Send me the report"}
+        </button>
+      </form>
+      <p className="text-[11px] text-ink-soft mt-2 font-mono uppercase tracking-[0.06em]">
+        We&apos;ll send a personalized analysis. No spam.
+      </p>
     </div>
   );
 }

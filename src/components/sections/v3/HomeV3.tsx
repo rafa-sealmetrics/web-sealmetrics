@@ -2,13 +2,14 @@ import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import { HeroDashboard } from "./HeroDashboard";
 import { PRICING } from "@/lib/content/pricing";
+import { DualCTA } from "@/components/homepage/DualCTA";
 
 /* ============================================
    HERO · V3 centered with dashboard
    ============================================ */
 export function HeroV3() {
   return (
-    <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-0">
+    <section data-hero className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-0">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center pb-16">
         <div className="inline-flex items-center gap-3 bg-white border border-warm-100 rounded-full px-4 py-1.5 text-[13px] text-ink-2 mb-10">
           <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
@@ -20,36 +21,54 @@ export function HeroV3() {
         </div>
 
         <h1 className="h-display mx-auto">
-          Your numbers are <em className="italic-accent">going to add up again.</em>
+          60% of your traffic hits your site. <em className="italic-accent">Your analytics never knows.</em>
         </h1>
 
         <p
-          className="text-ink mt-7 mx-auto max-w-[62ch] leading-[1.4] font-medium"
-          style={{ fontSize: "clamp(18px, 1.55vw, 22px)" }}
+          className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
+          style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          Consentless analytics for eCommerce that measures 100% of your traffic. No cookies. No modeling.
+          Consent banners block most of your analytics data. SealMetrics captures every pageview, every conversion, every traffic source — without cookies or consent banners.
         </p>
 
-        <p
-          className="text-ink-soft mt-5 mx-auto max-w-[58ch] leading-[1.55]"
-          style={{ fontSize: "clamp(15px, 1.2vw, 17px)" }}
-        >
-          Recover the sales GA4 can&apos;t see and present board-ready numbers that match Shopify.
+        <p className="text-[13.5px] text-ink-soft mt-5">
+          Trusted by marketing teams analyzing <b className="font-semibold text-ink">500M+ events</b> across <b className="font-semibold text-ink">12 countries</b>
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <Link
-            href="/data-loss-calculator"
-            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-          >
-            See how much traffic you&apos;re losing <span>→</span>
-          </Link>
-          <a
-            href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
-          >
-            Start free <span>→</span>
-          </a>
+        <DualCTA locale="en" className="justify-center mt-7" />
+
+        {/* Trust badges */}
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
+          {["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted · Dublin"].map((b) => (
+            <span key={b} className="inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+              {b}
+            </span>
+          ))}
+        </div>
+
+        {/* Integration badges */}
+        <div className="flex flex-wrap justify-center items-center gap-x-7 gap-y-3 mt-7 opacity-70">
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft mr-1">
+            Integrates with
+          </span>
+          {[
+            { src: "/logos/brands/shopify.svg", alt: "Shopify" },
+            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce" },
+            { src: "/logos/brands/magento.svg", alt: "Magento" },
+            { src: "/logos/brands/prestashop.svg", alt: "PrestaShop" },
+            { src: "/logos/brands/bigquery.svg", alt: "BigQuery" },
+          ].map((logo) => (
+            <Picture
+              key={logo.alt}
+              src={logo.src}
+              alt={logo.alt}
+              width={90}
+              height={20}
+              className="object-contain"
+              style={{ height: 20, maxWidth: 100 }}
+            />
+          ))}
         </div>
       </div>
 
@@ -931,20 +950,10 @@ export function FinalUrgencyV3() {
             Every quarter, consent rates fall. Browsers block more. GA4 estimates more. Direction is unambiguous: less real data, more statistical fiction. While your competition adapts late, you can be a year ahead with real data already in hand.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <Link
-              href="/data-loss-calculator"
-              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
-            >
-              See how much you&apos;re losing →
-            </Link>
-            <a
-              href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
-            >
-              Start free →
-            </a>
-          </div>
+          <DualCTA locale="en" variant="dark" className="justify-center" />
+          <p className="mt-6 font-mono text-[11px] text-white/55 uppercase tracking-[0.08em] relative">
+            14-day free trial · No credit card · 4-minute setup
+          </p>
         </div>
       </div>
     </section>
