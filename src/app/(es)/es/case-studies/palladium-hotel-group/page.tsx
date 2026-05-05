@@ -134,6 +134,12 @@ export default function Page() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logos/clients/palladium-dark.svg"
+            alt="Palladium Hotel Group"
+            className="block h-20 md:h-28 w-auto mb-8"
+          />
           <span className="eyebrow mb-5">Caso de estudio · Palladium Hotel Group</span>
           <h1 className="h-display mt-5" style={{ maxWidth: "26ch" }}>
             Una única fuente de verdad que marca, agencias y departamentos{" "}
