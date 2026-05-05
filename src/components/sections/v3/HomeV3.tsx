@@ -48,25 +48,25 @@ export function HeroV3() {
         </div>
 
         {/* Integration badges */}
-        <div className="flex flex-wrap justify-center items-center gap-x-7 gap-y-3 mt-7 opacity-70">
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mt-7 opacity-70">
           <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft mr-1">
             Integrates with
           </span>
           {[
-            { src: "/logos/brands/shopify.svg", alt: "Shopify" },
-            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce" },
-            { src: "/logos/brands/magento.svg", alt: "Magento" },
-            { src: "/logos/brands/prestashop.svg", alt: "PrestaShop" },
-            { src: "/logos/brands/bigquery.svg", alt: "BigQuery" },
+            { src: "/logos/brands/shopify.svg", alt: "Shopify", h: 26 },
+            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce", h: 38 },
+            { src: "/logos/brands/magento.svg", alt: "Magento", h: 26 },
+            { src: "/logos/brands/prestashop.svg", alt: "PrestaShop", h: 26 },
+            { src: "/logos/brands/bigquery.svg", alt: "BigQuery", h: 26 },
           ].map((logo) => (
             <Picture
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              width={90}
-              height={20}
-              className="object-contain"
-              style={{ height: 20, maxWidth: 100 }}
+              width={140}
+              height={logo.h}
+              className="object-contain w-auto"
+              style={{ height: `${logo.h}px`, maxWidth: 150 }}
             />
           ))}
         </div>
