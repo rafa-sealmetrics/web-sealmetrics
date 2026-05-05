@@ -21,14 +21,14 @@ export function HeroV3() {
         </div>
 
         <h1 className="h-display mx-auto">
-          60% of your traffic hits your site. <em className="italic-accent">Your analytics never knows.</em>
+          Make decisions with <em className="italic-accent">data you trust</em> again.
         </h1>
 
         <p
           className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          Consent banners block most of your analytics data. SealMetrics captures every pageview, every conversion, every traffic source — without cookies or consent banners.
+          SealMetrics captures 100% of your traffic, without cookies or consent. The complete data source that puts your marketing budget back on solid ground.
         </p>
 
         <p className="text-[13.5px] text-ink-soft mt-5">

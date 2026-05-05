@@ -17,14 +17,14 @@ export function HeroV3Es() {
         </div>
 
         <h1 className="h-display mx-auto">
-          Ve el 50% de tu tráfico que <em>GA4 no ve.</em>
+          Vuelve a tomar decisiones con <em className="italic-accent">datos en los que confías.</em>
         </h1>
 
         <p
           className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          SealMetrics es la fuente neutral de verdad que marca, finanzas y agencias firman — capturada sobre el 100% de tus visitantes, no una estimación muestreada.
+          SealMetrics mide el 100% de tu tráfico, sin cookies ni consentimiento. La fuente de datos completa para que tu presupuesto de marketing vuelva a estar respaldado por la realidad.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mt-9">
