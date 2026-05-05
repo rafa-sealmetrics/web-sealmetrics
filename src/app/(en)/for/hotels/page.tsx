@@ -155,7 +155,7 @@ export default function Page() {
                   &ldquo;What it gives us is what we&apos;ve always needed: data as real as possible, as close to reality as possible.&rdquo;
                 </p>
                 <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-                  Eduardo Martin · eCommerce
+                  Eduardo Martin · Analytics & Campaigns · Dreamplace
                 </cite>
               </blockquote>
 

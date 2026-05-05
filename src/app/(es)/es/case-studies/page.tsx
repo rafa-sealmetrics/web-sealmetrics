@@ -37,7 +37,7 @@ const cases = [
     stat1: { n: "+30%", l: "Más tráfico vs Google Analytics" },
     stat2: { n: "15–20%", l: "Más cerca del CRM en atribución" },
     quote: "Ya no es una herramienta que está al lado del proceso. Es la herramienta que nos da el dato real — y con la que tomamos decisiones.",
-    cite: "Eduardo Martin · eCommerce · Dreamplace Hotels",
+    cite: "Eduardo Martin · Analítica y Campañas · Dreamplace Hotels",
     href: "/es/case-studies/dreamplace-hotels",
   },
   {

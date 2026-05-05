@@ -52,7 +52,7 @@ export default function Page() {
       <JsonLd
         data={casePersonSchema({
           name: "Eduardo Martin",
-          jobTitle: "eCommerce",
+          jobTitle: "Analítica y Gestión de Campañas",
           worksForName: "Dreamplace Hotels",
           worksForUrl: "https://www.dreamplacehotels.com/",
           caseUrl: "/es/case-studies/dreamplace-hotels",
@@ -98,7 +98,7 @@ export default function Page() {
         data={quotationSchema({
           text: "Lo que nos aporta es lo que hemos necesitado siempre: el dato lo más real posible y lo más próximo a la realidad.",
           spokenBy: "Eduardo Martin",
-          spokenByRole: "eCommerce · Dreamplace Hotels",
+          spokenByRole: "Analítica y Campañas · Dreamplace Hotels",
           url: "/es/case-studies/dreamplace-hotels",
         })}
       />
@@ -106,7 +106,7 @@ export default function Page() {
         data={quotationSchema({
           text: "El valor está en la optimización del presupuesto y la inversión. No es solo lo que generas de más: es cómo estás invirtiendo mejor, porque derivas hacia un canal o una estrategia que antes no estabas viendo.",
           spokenBy: "Eduardo Martin",
-          spokenByRole: "eCommerce · Dreamplace Hotels",
+          spokenByRole: "Analítica y Campañas · Dreamplace Hotels",
           url: "/es/case-studies/dreamplace-hotels",
         })}
       />
@@ -115,7 +115,7 @@ export default function Page() {
           reviewBody:
             "Lo que nos aporta es lo que hemos necesitado siempre: el dato lo más real posible y lo más próximo a la realidad.",
           authorName: "Eduardo Martin",
-          authorRole: "eCommerce · Dreamplace Hotels",
+          authorRole: "Analítica y Campañas · Dreamplace Hotels",
           datePublished: "2026-04-15",
         })}
       />
@@ -167,7 +167,7 @@ export default function Page() {
         <div className="max-w-[760px] mx-auto px-5 sm:px-8">
           <div className="space-y-6 text-[17px] leading-[1.7] text-ink">
             <p>
-              Eduardo Martin lidera el eCommerce de Dreamplace Hotels. Desde hace casi
+              Eduardo Martin lidera la analítica y gestión de campañas de Dreamplace Hotels. Desde hace casi
               dos años trabaja con SealMetrics, y lo que empezó como una herramienta de
               contraste se ha convertido en una pieza fija de su proceso de análisis.
             </p>
@@ -195,7 +195,7 @@ export default function Page() {
               más real posible y lo más próximo a la realidad.&rdquo;
             </p>
             <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-              Eduardo Martin · eCommerce · Dreamplace Hotels
+              Eduardo Martin · Analítica y Campañas · Dreamplace Hotels
             </cite>
           </blockquote>
         </div>
@@ -513,7 +513,7 @@ export default function Page() {
 
           <p className="mt-12 italic text-[13px] leading-[1.6] text-ink-soft">
             Caso de estudio elaborado a partir de una conversación con Eduardo Martin,
-            responsable de eCommerce de Dreamplace Hotels, en abril de 2026. Todas las
+            responsable de analítica y gestión de campañas de Dreamplace Hotels, en abril de 2026. Todas las
             cifras citadas proceden de estimaciones propias del equipo de Dreamplace
             basadas en su comparación interna entre SealMetrics, herramientas de
             analítica de terceros y su CRM.

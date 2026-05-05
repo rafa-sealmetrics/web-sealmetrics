@@ -54,7 +54,7 @@ export function HeroV3() {
           </span>
           {[
             { src: "/logos/brands/shopify.svg", alt: "Shopify", h: 26 },
-            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce", h: 38 },
+            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce", h: 57 },
             { src: "/logos/brands/magento.svg", alt: "Magento", h: 26 },
             { src: "/logos/brands/prestashop.svg", alt: "PrestaShop", h: 26 },
             { src: "/logos/brands/bigquery.svg", alt: "BigQuery", h: 26 },

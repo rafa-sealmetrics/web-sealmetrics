@@ -33,7 +33,7 @@ const cases = [
     stat1: { n: "+30%", l: "More traffic vs Google Analytics" },
     stat2: { n: "15–20%", l: "Closer to CRM in sales attribution" },
     quote: "It's no longer a tool that sits next to the process. It's the tool we make decisions with.",
-    cite: "Eduardo Martin · eCommerce · Dreamplace Hotels",
+    cite: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
     href: "/case-studies/dreamplace-hotels",
   },
   {

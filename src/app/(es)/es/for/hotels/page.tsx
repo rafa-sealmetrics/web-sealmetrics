@@ -159,7 +159,7 @@ export default function Page() {
                   &ldquo;Lo que nos aporta es lo que hemos necesitado siempre: el dato lo más real posible y lo más próximo a la realidad.&rdquo;
                 </p>
                 <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-                  Eduardo Martin · eCommerce
+                  Eduardo Martin · Analítica y Campañas · Dreamplace
                 </cite>
               </blockquote>
 
