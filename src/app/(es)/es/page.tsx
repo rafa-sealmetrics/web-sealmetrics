@@ -10,31 +10,30 @@ import {
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import {
-  HeroV3Es,
-  LogosStripEs,
-  LogosSecondaryEs,
-  ValueProp4MinEs,
-  CompareSectionEs,
-  FeaturedCaseEs,
-} from "@/components/sections/v3/HomeV3Es";
-import {
-  IndustriesBuiltForEs,
-  ComparatorGA4Es,
-  HowItWorksV3Es,
-  CredentialsV3Es,
-  PricingV3Es,
-  FinalCtaV3Es,
-} from "@/components/sections/v3/HomeV3EsPart2";
+  LogosStrip,
+  ProblemSection,
+  FeaturedCase,
+  SolutionStepsPLG,
+  FourPillars,
+  Connectors,
+  PricingPLG,
+  FinalUrgencyV3,
+} from "@/components/sections/v3/HomeV3";
+import { ComparatorGA4Es } from "@/components/sections/v3/HomeV3EsPart2";
+import { FeatureLensAIV3Es } from "@/components/sections/v3/ProductV3SectionsEs";
 import { FaqV3Es } from "@/components/sections/v3/FaqV3Es";
+import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
+import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { HeroV3Es } from "@/components/sections/v3/HomeV3Es";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Ve el 50% de tu tráfico que GA4 no ve",
+  title: "SealMetrics — Analítica completa para eCommerce. Datos reales otra vez.",
   description:
-    "SealMetrics es la fuente neutral de verdad que marca, finanzas y agencias firman — capturada sobre el 100% de tus visitantes, no una estimación muestreada.",
+    "Analítica sin consentimiento para eCommerce que mide el 100% de tu tráfico. Sin cookies. Sin modelos. Recupera las ventas que GA4 no ve y presenta números que cuadran con Shopify.",
   openGraph: {
-    title: "SealMetrics — Ve el 50% de tu tráfico que GA4 no ve",
+    title: "SealMetrics — Analítica sin consentimiento para eCommerce",
     description:
-      "La fuente neutral de verdad que marca, finanzas y agencias aceptan. Sin cookies, 100% capturado, alojado en Dublín.",
+      "Mide el 100% de tu tráfico. Sin cookies. Sin modelos. Presenta números board-ready que cuadran con Shopify. Alojado en Dublín.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
@@ -97,18 +96,18 @@ export default function HomeEs() {
         url: "/es",
       })} />
       <HeroV3Es />
-      <LogosStripEs />
-      <ValueProp4MinEs />
-      <CompareSectionEs />
-      <FeaturedCaseEs />
-      <IndustriesBuiltForEs />
+      <LogosStrip />
+      <ProblemSection locale="es" />
+      <BlindnessCalculator locale="es" />
       <ComparatorGA4Es />
-      <HowItWorksV3Es />
-      <LogosSecondaryEs />
-      <CredentialsV3Es />
-      <PricingV3Es />
+      <FeaturedCase locale="es" />
+      <SolutionStepsPLG locale="es" />
+      <FourPillars locale="es" />
+      <Connectors locale="es" />
+      <PricingPLG locale="es" />
       <FaqV3Es />
-      <FinalCtaV3Es />
+      <FeatureLensAIV3Es />
+      <FinalUrgencyV3 locale="es" />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
@@ -121,6 +120,7 @@ export default function HomeEs() {
           </QuickAnswer>
         </div>
       </section>
+      <StickyCtaBar locale="es" />
     </>
   );
 }

@@ -2,21 +2,163 @@
 
 import { useMemo, useState } from "react";
 
-const fmtNum = (n: number) =>
-  new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(n));
-const fmtEur = (n: number) =>
-  new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "EUR",
-    maximumFractionDigits: 0,
-  }).format(Math.round(n));
-const fmtPct = (n: number, d = 2) =>
-  new Intl.NumberFormat("en-US", {
-    minimumFractionDigits: d,
-    maximumFractionDigits: d,
-  }).format(n) + "%";
+type Locale = "en" | "es";
 
-export function BlindnessCalculator() {
+const COPY = {
+  en: {
+    masthead: "SealMetrics · Consentless Analytics",
+    vol: "Vol. 01 — The Blindness Calculator",
+    diag: "A diagnostic for CMOs and founders",
+    h1A: "Your Legacy Analytics is",
+    lying: "lying",
+    h1B: "— and it's costing you",
+    realMoney: "real money.",
+    intro: ["Enter your", "monthly", "numbers from GA4. We'll show you how many visits, orders and revenue you're missing every month — and why your conversion rate is, in reality, lower than you think."],
+    inputLabel: "INPUT",
+    yourCurrentNumbers: ["Your", "current", "numbers"],
+    monthlyFiguresFrom: "Monthly figures from GA4",
+    monthlyVisits: "Monthly visits (GA4)",
+    monthlyVisitsHint: "What GA4 reports today, after the consent banner.",
+    perMonth: "/ month",
+    aov: "Average order value (AOV)",
+    aovHint: "Average revenue per order.",
+    cr: "Observed conversion rate",
+    crHint: "The CR GA4 reports. Spoiler: it's inflated.",
+    sealmetricsModel: "SealMetrics model",
+    modelRows: [
+      { k: "Real visits vs GA4", v: "+55%" },
+      { k: "Real conversions vs GA4", v: "+25%" },
+      { k: "Consentless capture", v: "100% GDPR" },
+    ],
+    blindnessCalc: "THE BLINDNESS CALCULATION",
+    costOfBlindness: ["The cost of your", "blindness"],
+    liveUpdate: "live update",
+    metric: "Metric (monthly)",
+    ga4Biased: "GA4 (biased)",
+    sealReal: "SealMetrics (real)",
+    blindSpot: "Blind spot",
+    rowVisits: "Monthly visits",
+    rowOrders: "Total orders",
+    rowRevenue: "Monthly revenue",
+    crBlock: ["Conversion Rate", "— the inconvenient truth —"],
+    ga4TellsYou: "GA4 tells you",
+    reality: "Reality",
+    delta: "Delta",
+    verdict: "The verdict",
+    blindOpening: "You're operating with a blind spot of",
+    inMonthlyRevenue: "in monthly revenue and",
+    ordersCantSee: "orders you can't see.",
+    yearlyAside: ["That's", "a year you don't even know exists."],
+    stopBleeding: <>Stop the bleeding. <em className="italic-accent">Start your free trial.</em></>,
+    startTrial: "Start FREE Trial",
+    whyTitle: "Why this happens",
+    whyBody: "GA4 depends on the consent banner. Between 35% and 55% of European users reject or ignore cookies. Those users buy — but you never see them.",
+    whatTitle: "What SealMetrics does",
+    whatBody: "Captures 100% of traffic with no cookies, no consent banner, fully GDPR-compliant. You finally see what GA4 leaves behind.",
+    payEyebrow: "The math gets uncomfortable",
+    payTitle: ["How many sales does SealMetrics need to", "pay for itself?"],
+    plan: "Plan",
+    salesBE: "Sales to break even",
+    salesBESuffix: "orders / month",
+    salesBEHint: "Recovered orders SealMetrics needs to surface — at your AOV — to fully pay for itself.",
+    pctBlind: "% of the blind spot",
+    pctBlindSuffix: "of recovered orders",
+    pctBlindHint: "A tiny fraction of the orders you're already missing. The rest is pure upside.",
+    monthlyROI: "Monthly ROI",
+    monthlyROISuffix: "return on SealMetrics",
+    monthlyROIHint: "For every €1 spent on SealMetrics, this is the recovered revenue you gain visibility on.",
+    paybackFootA: "With",
+    paybackFootB: "recovered orders per day, SealMetrics is already paying for itself.",
+    paybackFootC: "days into the month, you're in profit.",
+    primaryFootCta: "Stop the bleeding · start free",
+    secondaryFootCta: "Run the deep gap audit",
+    auditHref: "/data-loss-calculator",
+    locale: "en-US",
+  },
+  es: {
+    masthead: "SealMetrics · Analítica sin consentimiento",
+    vol: "Vol. 01 — La calculadora de ceguera",
+    diag: "Un diagnóstico para CMOs y founders",
+    h1A: "Tu analítica legacy te",
+    lying: "miente",
+    h1B: "— y te está costando",
+    realMoney: "dinero real.",
+    intro: ["Introduce tus números", "mensuales", "de GA4. Te mostramos cuántas visitas, pedidos e ingresos estás perdiendo cada mes — y por qué tu tasa de conversión es, en realidad, más baja de lo que crees."],
+    inputLabel: "INPUT",
+    yourCurrentNumbers: ["Tus números", "actuales", ""],
+    monthlyFiguresFrom: "Cifras mensuales de GA4",
+    monthlyVisits: "Visitas mensuales (GA4)",
+    monthlyVisitsHint: "Lo que GA4 reporta hoy, tras el banner de consentimiento.",
+    perMonth: "/ mes",
+    aov: "Ticket medio (AOV)",
+    aovHint: "Ingreso medio por pedido.",
+    cr: "Tasa de conversión observada",
+    crHint: "La CR que GA4 reporta. Spoiler: está inflada.",
+    sealmetricsModel: "Modelo SealMetrics",
+    modelRows: [
+      { k: "Visitas reales vs GA4", v: "+55%" },
+      { k: "Conversiones reales vs GA4", v: "+25%" },
+      { k: "Captura sin consentimiento", v: "100% RGPD" },
+    ],
+    blindnessCalc: "EL CÁLCULO DE LA CEGUERA",
+    costOfBlindness: ["El coste de tu", "ceguera"],
+    liveUpdate: "actualización en vivo",
+    metric: "Métrica (mensual)",
+    ga4Biased: "GA4 (sesgado)",
+    sealReal: "SealMetrics (real)",
+    blindSpot: "Punto ciego",
+    rowVisits: "Visitas mensuales",
+    rowOrders: "Pedidos totales",
+    rowRevenue: "Ingresos mensuales",
+    crBlock: ["Tasa de conversión", "— la verdad incómoda —"],
+    ga4TellsYou: "GA4 te dice",
+    reality: "Realidad",
+    delta: "Delta",
+    verdict: "El veredicto",
+    blindOpening: "Estás operando con un punto ciego de",
+    inMonthlyRevenue: "en ingresos mensuales y",
+    ordersCantSee: "pedidos que no ves.",
+    yearlyAside: ["Eso son", "al año que ni sabes que existen."],
+    stopBleeding: <>Para la sangría. <em className="italic-accent">Empieza tu trial gratis.</em></>,
+    startTrial: "Empieza GRATIS",
+    whyTitle: "Por qué pasa",
+    whyBody: "GA4 depende del banner de consentimiento. Entre el 35% y 55% de los usuarios europeos rechazan o ignoran cookies. Esos usuarios compran — pero tú no los ves nunca.",
+    whatTitle: "Qué hace SealMetrics",
+    whatBody: "Captura el 100% del tráfico sin cookies, sin banner, totalmente RGPD-compliant. Por fin ves lo que GA4 deja atrás.",
+    payEyebrow: "La matemática se pone incómoda",
+    payTitle: ["¿Cuántas ventas necesita SealMetrics para", "pagarse a sí mismo?"],
+    plan: "Plan",
+    salesBE: "Ventas para break-even",
+    salesBESuffix: "pedidos / mes",
+    salesBEHint: "Pedidos recuperados que SealMetrics necesita aflorar — a tu AOV — para pagarse del todo.",
+    pctBlind: "% del punto ciego",
+    pctBlindSuffix: "de pedidos recuperados",
+    pctBlindHint: "Una fracción mínima de los pedidos que ya estás perdiendo. El resto es upside puro.",
+    monthlyROI: "ROI mensual",
+    monthlyROISuffix: "retorno sobre SealMetrics",
+    monthlyROIHint: "Por cada €1 gastado en SealMetrics, este es el ingreso recuperado del que ganas visibilidad.",
+    paybackFootA: "Con",
+    paybackFootB: "pedidos recuperados al día, SealMetrics ya se paga solo.",
+    paybackFootC: "días después de empezar el mes, estás en beneficio.",
+    primaryFootCta: "Para la sangría · empieza gratis",
+    secondaryFootCta: "Auditoría profunda del gap",
+    auditHref: "/es/data-loss-calculator",
+    locale: "es-ES",
+  },
+} as const;
+
+const fmtNumLocale = (n: number, l: string) =>
+  new Intl.NumberFormat(l, { maximumFractionDigits: 0 }).format(Math.round(n));
+const fmtEurLocale = (n: number, l: string) =>
+  new Intl.NumberFormat(l, { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(Math.round(n));
+const fmtPctLocale = (n: number, l: string, d = 2) =>
+  new Intl.NumberFormat(l, { minimumFractionDigits: d, maximumFractionDigits: d }).format(n) + "%";
+
+export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
+  const c = COPY[locale];
+  const fmtNum = (n: number) => fmtNumLocale(n, c.locale);
+  const fmtEur = (n: number) => fmtEurLocale(n, c.locale);
+  const fmtPct = (n: number, d = 2) => fmtPctLocale(n, c.locale, d);
   const [visits, setVisits] = useState(1_000_000);
   const [ticket, setTicket] = useState(87);
   const [crPct, setCrPct] = useState(0.8);
@@ -59,23 +201,23 @@ export function BlindnessCalculator() {
       <div className="max-w-[1180px] mx-auto px-5 sm:px-8">
         {/* Editorial masthead */}
         <header className="border-t-[3px] border-ink border-b border-ink py-3 flex justify-between items-baseline font-mono text-[11px] uppercase tracking-[0.12em]">
-          <span className="font-bold text-ink">SealMetrics · Consentless Analytics</span>
-          <span className="text-ink-soft hidden sm:inline">Vol. 01 — The Blindness Calculator</span>
+          <span className="font-bold text-ink">{c.masthead}</span>
+          <span className="text-ink-soft hidden sm:inline">{c.vol}</span>
         </header>
 
         {/* Hero */}
         <div className="py-12 md:py-14 border-b border-warm-100">
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-red-alert font-semibold mb-4 flex items-center gap-3">
             <span className="inline-block w-7 h-px bg-red-alert" />
-            A diagnostic for CMOs and founders
+            {c.diag}
           </div>
           <h2
             className="font-semibold text-ink leading-[1.02] tracking-[-0.025em]"
             style={{ fontSize: "clamp(34px, 5.4vw, 64px)" }}
           >
-            Your Legacy Analytics is{" "}
+            {c.h1A}{" "}
             <span className="relative inline-block">
-              lying
+              {c.lying}
               <span
                 aria-hidden
                 className="absolute left-[-2%] right-[-2%]"
@@ -88,10 +230,10 @@ export function BlindnessCalculator() {
               />
             </span>
             <br />
-            — and it&apos;s costing you <em className="italic-accent">real money.</em>
+            {c.h1B} <em className="italic-accent">{c.realMoney}</em>
           </h2>
           <p className="mt-6 text-[17px] md:text-[19px] leading-[1.55] text-ink-2 max-w-[680px]">
-            Enter your <b className="font-semibold text-ink">monthly</b> numbers from GA4. We&apos;ll show you how many visits, orders and revenue you&apos;re missing every month — and why your conversion rate is, in reality, lower than you think.
+            {c.intro[0]} <b className="font-semibold text-ink">{c.intro[1]}</b> {c.intro[2]}
           </p>
         </div>
 
@@ -103,37 +245,37 @@ export function BlindnessCalculator() {
           {/* INPUTS */}
           <aside className="bg-ink text-warm-white p-8 md:p-9 relative">
             <span className="absolute top-3 right-4 font-mono text-[10px] tracking-[0.2em] text-white/40">
-              INPUT
+              {c.inputLabel}
             </span>
             <h3
               className="font-semibold leading-[1.1] tracking-[-0.01em] text-white"
               style={{ fontSize: "26px" }}
             >
-              Your <em className="italic font-medium" style={{ color: "#E8B84B" }}>current</em> numbers
+              {c.yourCurrentNumbers[0]} <em className="italic font-medium" style={{ color: "#E8B84B" }}>{c.yourCurrentNumbers[1]}</em> {c.yourCurrentNumbers[2]}
             </h3>
             <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/55 mt-1.5 mb-8">
-              Monthly figures from GA4
+              {c.monthlyFiguresFrom}
             </p>
 
             <CalcField
-              label="Monthly visits (GA4)"
-              hint="What GA4 reports today, after the consent banner."
+              label={c.monthlyVisits}
+              hint={c.monthlyVisitsHint}
               value={visits}
               onChange={setVisits}
-              suffix="/ month"
+              suffix={c.perMonth}
               step={1000}
             />
             <CalcField
-              label="Average order value (AOV)"
-              hint="Average revenue per order."
+              label={c.aov}
+              hint={c.aovHint}
               value={ticket}
               onChange={setTicket}
               prefix="€"
               step={1}
             />
             <CalcField
-              label="Observed conversion rate"
-              hint="The CR GA4 reports. Spoiler: it's inflated."
+              label={c.cr}
+              hint={c.crHint}
               value={crPct}
               onChange={setCrPct}
               suffix="%"
@@ -142,13 +284,9 @@ export function BlindnessCalculator() {
 
             <div className="mt-9 pt-6 border-t border-dashed border-white/20">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/55 mb-3.5">
-                SealMetrics model
+                {c.sealmetricsModel}
               </div>
-              {[
-                { k: "Real visits vs GA4", v: "+55%" },
-                { k: "Real conversions vs GA4", v: "+25%" },
-                { k: "Consentless capture", v: "100% GDPR" },
-              ].map((row, i, arr) => (
+              {c.modelRows.map((row, i, arr) => (
                 <div
                   key={row.k}
                   className={`flex justify-between items-baseline py-2.5 text-[13px] ${
@@ -165,7 +303,7 @@ export function BlindnessCalculator() {
           {/* OUTPUT */}
           <section className="p-8 md:p-10 bg-warm-white relative">
             <span className="absolute top-3 right-6 font-mono text-[10px] tracking-[0.2em] text-ink/40">
-              THE BLINDNESS CALCULATION
+              {c.blindnessCalc}
             </span>
 
             <div className="flex items-baseline justify-between mb-7 pb-5 border-b-2 border-ink">
@@ -173,10 +311,10 @@ export function BlindnessCalculator() {
                 className="font-semibold text-ink leading-[1.1] tracking-[-0.01em]"
                 style={{ fontSize: "28px" }}
               >
-                The cost of your <em className="italic-accent">blindness</em>
+                {c.costOfBlindness[0]} <em className="italic-accent">{c.costOfBlindness[1]}</em>
               </h3>
               <span className="font-mono text-[11px] tracking-[0.1em] text-ink-soft hidden sm:inline">
-                live update
+                {c.liveUpdate}
               </span>
             </div>
 
@@ -186,34 +324,34 @@ export function BlindnessCalculator() {
                 <thead>
                   <tr>
                     <th className="text-left font-mono font-medium text-[10px] uppercase tracking-[0.16em] text-ink-soft pb-2.5 px-3 border-b border-ink">
-                      Metric (monthly)
+                      {c.metric}
                     </th>
                     <th className="text-right font-mono font-medium text-[10px] uppercase tracking-[0.16em] text-ink-soft pb-2.5 px-3 border-b border-ink">
-                      GA4 (biased)
+                      {c.ga4Biased}
                     </th>
                     <th className="text-right font-mono font-medium text-[10px] uppercase tracking-[0.16em] text-red-alert pb-2.5 px-3 border-b border-ink">
-                      SealMetrics (real)
+                      {c.sealReal}
                     </th>
                     <th className="text-right font-mono font-medium text-[10px] uppercase tracking-[0.16em] text-brand pb-2.5 px-3 border-b border-ink">
-                      Blind spot
+                      {c.blindSpot}
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <CalcRow
-                    label="Monthly visits"
+                    label={c.rowVisits}
                     ga4={fmtNum(calc.ga4Visits)}
                     seal={fmtNum(calc.sealVisits)}
                     diff={"+" + fmtNum(calc.dVisits)}
                   />
                   <CalcRow
-                    label="Total orders"
+                    label={c.rowOrders}
                     ga4={fmtNum(calc.ga4Orders)}
                     seal={fmtNum(calc.sealOrders)}
                     diff={"+" + fmtNum(calc.dOrders)}
                   />
                   <CalcRow
-                    label="Monthly revenue"
+                    label={c.rowRevenue}
                     ga4={fmtEur(calc.ga4Revenue)}
                     seal={fmtEur(calc.sealRevenue)}
                     diff={"+" + fmtEur(calc.dRevenue)}
@@ -226,14 +364,14 @@ export function BlindnessCalculator() {
             {/* CR truth */}
             <div className="bg-warm-100 border border-warm-200 px-5 md:px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-2 leading-[1.4]">
-                Conversion Rate
+                {c.crBlock[0]}
                 <br />
-                <span className="text-ink-soft">— the inconvenient truth —</span>
+                <span className="text-ink-soft">{c.crBlock[1]}</span>
               </div>
               <div className="flex flex-wrap gap-x-7 gap-y-3 items-baseline">
                 <div>
                   <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-ink-soft">
-                    GA4 tells you
+                    {c.ga4TellsYou}
                   </div>
                   <div
                     className="font-semibold text-[20px] tabular-nums text-ink-soft"
@@ -248,7 +386,7 @@ export function BlindnessCalculator() {
                 </div>
                 <div>
                   <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-ink-soft">
-                    Reality
+                    {c.reality}
                   </div>
                   <div className="font-semibold text-[20px] tabular-nums text-red-alert">
                     {fmtPct(calc.realCR)}
@@ -256,7 +394,7 @@ export function BlindnessCalculator() {
                 </div>
                 <div>
                   <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-ink-soft">
-                    Delta
+                    {c.delta}
                   </div>
                   <div
                     className="font-semibold text-[20px] tabular-nums"
@@ -286,35 +424,35 @@ export function BlindnessCalculator() {
               </div>
               <div className="text-ink leading-[1.45]">
                 <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-red-alert font-semibold mb-1.5">
-                  The verdict
+                  {c.verdict}
                 </div>
                 <p className="text-[16.5px]">
-                  You&apos;re operating with a blind spot of{" "}
-                  <b className="font-semibold">{fmtEur(calc.dRevenue)}</b> in monthly revenue and{" "}
-                  <b className="font-semibold">{fmtNum(calc.dOrders)}</b> orders you can&apos;t see.
+                  {c.blindOpening}{" "}
+                  <b className="font-semibold">{fmtEur(calc.dRevenue)}</b> {c.inMonthlyRevenue}{" "}
+                  <b className="font-semibold">{fmtNum(calc.dOrders)}</b> {c.ordersCantSee}
                 </p>
                 <p className="text-[14px] text-ink-2 mt-1.5">
-                  That&apos;s <b className="font-semibold text-ink">{fmtEur(calc.dRevenue * 12)}</b> a year you don&apos;t even know exists.
+                  {c.yearlyAside[0]} <b className="font-semibold text-ink">{fmtEur(calc.dRevenue * 12)}</b> {c.yearlyAside[1]}
                 </p>
               </div>
             </div>
 
             {/* Conversion block — CTA + email capture */}
-            <CalcConversionBlock blindPct={calc.blindPct} dRevenue={calc.dRevenue} />
+            <CalcConversionBlock stopBleeding={c.stopBleeding} startTrial={c.startTrial} />
 
             {/* Footnote */}
             <div className="mt-9 pt-5 border-t border-warm-100 grid sm:grid-cols-2 gap-7 font-mono text-[11px] leading-[1.6] text-ink-soft">
               <div>
                 <strong className="block text-ink uppercase tracking-[0.08em] text-[10px] mb-1.5">
-                  Why this happens
+                  {c.whyTitle}
                 </strong>
-                GA4 depends on the consent banner. Between 35% and 55% of European users reject or ignore cookies. Those users buy — but you never see them.
+                {c.whyBody}
               </div>
               <div>
                 <strong className="block text-ink uppercase tracking-[0.08em] text-[10px] mb-1.5">
-                  What SealMetrics does
+                  {c.whatTitle}
                 </strong>
-                Captures 100% of traffic with no cookies, no consent banner, fully GDPR-compliant. You finally see what GA4 leaves behind.
+                {c.whatBody}
               </div>
             </div>
           </section>
@@ -328,21 +466,21 @@ export function BlindnessCalculator() {
           <div className="flex flex-wrap justify-between items-baseline gap-4 px-7 md:px-9 py-6 border-b border-dashed border-white/20">
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-amber font-semibold mb-1.5">
-                The math gets uncomfortable
+                {c.payEyebrow}
               </div>
               <h3
                 className="font-semibold leading-[1.1] tracking-[-0.01em] text-white"
                 style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}
               >
-                How many sales does SealMetrics need to{" "}
+                {c.payTitle[0]}{" "}
                 <em className="italic font-medium" style={{ color: "#E8B84B" }}>
-                  pay for itself?
+                  {c.payTitle[1]}
                 </em>
               </h3>
             </div>
             <div className="flex items-baseline gap-2 bg-white/5 border border-white/15 px-4 py-2.5">
               <label htmlFor="plan-price" className="font-mono text-[10px] tracking-[0.14em] uppercase text-white/65">
-                Plan
+                {c.plan}
               </label>
               <span className="font-mono text-[12px] text-white/55">€</span>
               <input
@@ -354,39 +492,39 @@ export function BlindnessCalculator() {
                 onChange={(e) => setPlanPrice(parseFloat(e.target.value) || 0)}
                 className="bg-transparent border-0 text-white font-semibold text-[22px] w-[90px] text-right tabular-nums outline-none focus:ring-0"
               />
-              <span className="font-mono text-[12px] text-white/55">/ mo</span>
+              <span className="font-mono text-[12px] text-white/55">{c.perMonth}</span>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3">
             <PaybackCell
-              label="Sales to break even"
+              label={c.salesBE}
               num={
                 calc.ordersToBreakEven < 10
-                  ? new Intl.NumberFormat("en-US", { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(calc.ordersToBreakEven)
+                  ? new Intl.NumberFormat(c.locale, { maximumFractionDigits: 1, minimumFractionDigits: 1 }).format(calc.ordersToBreakEven)
                   : fmtNum(Math.ceil(calc.ordersToBreakEven))
               }
-              suffix="orders / month"
-              explain="Recovered orders SealMetrics needs to surface — at your AOV — to fully pay for itself."
+              suffix={c.salesBESuffix}
+              explain={c.salesBEHint}
               hero
             />
             <PaybackCell
-              label="% of the blind spot"
+              label={c.pctBlind}
               num={
                 calc.paybackPct < 1
-                  ? new Intl.NumberFormat("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2 }).format(calc.paybackPct)
-                  : new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(calc.paybackPct)
+                  ? new Intl.NumberFormat(c.locale, { maximumFractionDigits: 2, minimumFractionDigits: 2 }).format(calc.paybackPct)
+                  : new Intl.NumberFormat(c.locale, { maximumFractionDigits: 1 }).format(calc.paybackPct)
               }
               numSuffix="%"
-              suffix="of recovered orders"
-              explain="A tiny fraction of the orders you're already missing. The rest is pure upside."
+              suffix={c.pctBlindSuffix}
+              explain={c.pctBlindHint}
             />
             <PaybackCell
-              label="Monthly ROI"
-              num={new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(calc.monthlyROI))}
+              label={c.monthlyROI}
+              num={new Intl.NumberFormat(c.locale, { maximumFractionDigits: 0 }).format(Math.round(calc.monthlyROI))}
               numSuffix="×"
-              suffix="return on SealMetrics"
-              explain="For every €1 spent on SealMetrics, this is the recovered revenue you gain visibility on."
+              suffix={c.monthlyROISuffix}
+              explain={c.monthlyROIHint}
             />
           </div>
 
@@ -394,19 +532,19 @@ export function BlindnessCalculator() {
             className="px-7 md:px-9 py-4 font-mono text-[11.5px] leading-[1.55] tracking-[0.04em] text-warm-white"
             style={{ background: "rgba(232,184,75,0.12)", borderTop: "1px solid rgba(232,184,75,0.3)" }}
           >
-            With{" "}
+            {c.paybackFootA}{" "}
             <strong className="text-amber font-bold">
               {calc.ordersPerDay < 10
-                ? new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(calc.ordersPerDay)
+                ? new Intl.NumberFormat(c.locale, { maximumFractionDigits: 1 }).format(calc.ordersPerDay)
                 : fmtNum(Math.round(calc.ordersPerDay))}
             </strong>{" "}
-            recovered orders per day, SealMetrics is already paying for itself.{" "}
+            {c.paybackFootB}{" "}
             <strong className="text-amber font-bold">
               {calc.daysToPayback < 1
                 ? "< 1"
-                : new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(calc.daysToPayback)}
+                : new Intl.NumberFormat(c.locale, { maximumFractionDigits: 1 }).format(calc.daysToPayback)}
             </strong>{" "}
-            days into the month, you&apos;re in profit.
+            {c.paybackFootC}
           </div>
         </div>
 
@@ -415,13 +553,13 @@ export function BlindnessCalculator() {
             href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
-            Stop the bleeding · start free <span>→</span>
+            {c.primaryFootCta} <span>→</span>
           </a>
           <a
-            href="/data-loss-calculator"
+            href={c.auditHref}
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Run the deep gap audit
+            {c.secondaryFootCta}
           </a>
         </div>
       </div>
@@ -586,7 +724,7 @@ function PaybackCell({
   );
 }
 
-function CalcConversionBlock(_: { blindPct: number; dRevenue: number }) {
+function CalcConversionBlock({ stopBleeding, startTrial }: { stopBleeding: React.ReactNode; startTrial: string }) {
   return (
     <div
       className="mt-6 p-7 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-5"
@@ -596,13 +734,13 @@ function CalcConversionBlock(_: { blindPct: number; dRevenue: number }) {
       }}
     >
       <p className="text-[17px] font-semibold tracking-[-0.015em] text-ink leading-[1.3]">
-        Stop the bleeding. <em className="italic-accent">Start your free trial.</em>
+        {stopBleeding}
       </p>
       <a
         href="https://my.sealmetrics.com/register"
         className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors shrink-0"
       >
-        Start FREE Trial <span>→</span>
+        {startTrial} <span>→</span>
       </a>
     </div>
   );

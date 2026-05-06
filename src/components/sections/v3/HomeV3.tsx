@@ -395,7 +395,43 @@ export function CompareSection() {
 /* ============================================
    FEATURED CASE · Palladium Hotel Group spotlight
    ============================================ */
-export function FeaturedCase() {
+const FEATURED_COPY = {
+  en: {
+    badge: "Featured case",
+    badgeMeta: "April 2026 · Hotels · Spain",
+    headline: <>From <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>40% blind traffic</em> to{" "}
+      <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>+165%</em> Display efficiency.</>,
+    lede: "Palladium Hotel Group rebuilt their measurement stack on SealMetrics. One number every stakeholder — brand, agencies, departments — signs against.",
+    metrics: [
+      { n: "40%", l: "traffic that was invisible to GA4" },
+      { n: "35%", l: "bookings recovered & attributed" },
+      { n: "+165%", l: "Display CPS improvement on DV360" },
+    ],
+    quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+    quoteRole: "Digital & Direct Sales Director · Palladium Hotel Group",
+    readFull: "Read the full case study",
+    caseUrl: "/case-studies/palladium-hotel-group",
+  },
+  es: {
+    badge: "Caso destacado",
+    badgeMeta: "Abril 2026 · Hoteles · España",
+    headline: <>De <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>40% de tráfico ciego</em> a{" "}
+      <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>+165%</em> de eficiencia en Display.</>,
+    lede: "Palladium Hotel Group reconstruyó su stack de medición sobre SealMetrics. Un único número que cada stakeholder — marca, agencias, departamentos — firma como referencia.",
+    metrics: [
+      { n: "40%", l: "del tráfico era invisible para GA4" },
+      { n: "35%", l: "de reservas recuperadas y atribuidas" },
+      { n: "+165%", l: "mejora Display CPS en DV360" },
+    ],
+    quote: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+    quoteRole: "Director Digital y Venta Directa · Palladium Hotel Group",
+    readFull: "Leer el caso completo",
+    caseUrl: "/es/case-studies/palladium-hotel-group",
+  },
+} as const;
+
+export function FeaturedCase({ locale = "en" }: { locale?: "en" | "es" }) {
+  const c = FEATURED_COPY[locale];
   return (
     <section
       id="featured-case"
@@ -430,10 +466,10 @@ export function FeaturedCase() {
         <div className="flex flex-col items-center text-center mb-12">
           <span className="inline-flex items-center gap-3 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 text-[12px] text-white/80 mb-7 backdrop-blur-sm">
             <span className="bg-amber text-ink px-2 py-0.5 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
-              Featured case
+              {c.badge}
             </span>
             <span className="font-mono uppercase tracking-[0.08em]">
-              April 2026 · Hotels · Spain
+              {c.badgeMeta}
             </span>
           </span>
 
@@ -449,21 +485,16 @@ export function FeaturedCase() {
             className="font-semibold leading-[1.05] tracking-[-0.025em] max-w-[24ch]"
             style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
           >
-            From <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>40% blind traffic</em> to{" "}
-            <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>+165%</em> Display efficiency.
+            {c.headline}
           </h2>
           <p className="mt-7 text-[17px] md:text-[19px] leading-[1.55] text-white/75 max-w-[62ch]">
-            Palladium Hotel Group rebuilt their measurement stack on SealMetrics. One number every stakeholder — brand, agencies, departments — signs against.
+            {c.lede}
           </p>
         </div>
 
         {/* Big metric tiles */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          {[
-            { n: "40%", l: "traffic that was invisible to GA4" },
-            { n: "35%", l: "bookings recovered & attributed" },
-            { n: "+165%", l: "Display CPS improvement on DV360" },
-          ].map((s) => (
+          {c.metrics.map((s) => (
             <div
               key={s.l}
               className="bg-white/5 border border-white/15 rounded-2xl p-8 md:p-10 backdrop-blur-sm"
@@ -485,20 +516,20 @@ export function FeaturedCase() {
             className="text-white italic font-medium leading-[1.35] tracking-[-0.02em]"
             style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}
           >
-            &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
+            &ldquo;{c.quote}&rdquo;
           </p>
           <footer className="mt-6 font-mono text-[12px] uppercase tracking-[0.1em] text-white/60 font-semibold">
-            — <strong className="text-white">Toni Andújar</strong> · Digital &amp; Direct Sales Director · Palladium Hotel Group
+            — <strong className="text-white">Toni Andújar</strong> · {c.quoteRole}
           </footer>
         </blockquote>
 
         <div className="mt-12 flex flex-col items-center gap-5">
-          <DualCTA locale="en" variant="dark" />
+          <DualCTA locale={locale} variant="dark" />
           <Link
-            href="/case-studies/palladium-hotel-group"
+            href={c.caseUrl}
             className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-white no-underline border-b border-white/30 hover:border-white pb-0.5"
           >
-            Read the full case study <span>→</span>
+            {c.readFull} <span>→</span>
           </Link>
         </div>
       </div>
@@ -605,7 +636,19 @@ export function SocialProofBand() {
 /* ============================================
    PROBLEM SECTION · 2.3 · one impactful headline + datapoint
    ============================================ */
-export function ProblemSection() {
+const PROBLEM_COPY = {
+  en: {
+    headline: <>of your traffic is <em className="italic-accent">invisible to GA4.</em></>,
+    body: "Consent banners block most of your data. You're making decisions with a fraction of reality — and your CFO is starting to notice.",
+  },
+  es: {
+    headline: <>de tu tráfico es <em className="italic-accent">invisible para GA4.</em></>,
+    body: "Los banners de consentimiento bloquean la mayoría de tus datos. Estás tomando decisiones con una fracción de la realidad — y tu CFO empieza a notarlo.",
+  },
+} as const;
+
+export function ProblemSection({ locale = "en" }: { locale?: "en" | "es" }) {
+  const c = PROBLEM_COPY[locale];
   return (
     <section className="bg-white border-t border-warm-100 py-20 md:py-24">
       <div className="max-w-[900px] mx-auto px-5 sm:px-10 text-center">
@@ -613,10 +656,10 @@ export function ProblemSection() {
           className="font-semibold text-ink leading-[1.05] tracking-[-0.025em]"
           style={{ fontSize: "clamp(34px, 5vw, 60px)" }}
         >
-          <span className="text-red-alert">62%</span> of your traffic is <em className="italic-accent">invisible to GA4.</em>
+          <span className="text-red-alert">62%</span> {c.headline}
         </p>
         <p className="mt-6 text-[17px] md:text-[18.5px] leading-[1.6] text-ink-soft max-w-[58ch] mx-auto">
-          Consent banners block most of your data. You&apos;re making decisions with a fraction of reality — and your CFO is starting to notice.
+          {c.body}
         </p>
       </div>
     </section>
@@ -626,57 +669,70 @@ export function ProblemSection() {
 /* ============================================
    HOW TO START · 2.4 · 3-step setup
    ============================================ */
-export function SolutionStepsPLG() {
+const STEPS_COPY = {
+  en: {
+    eyebrow: "How to start",
+    headline: <>5 minutes to see your <em>real traffic.</em></>,
+    lede: "No migration. No cookie banner. No data team required. From zero to real data in less time than your standup.",
+    stepLabel: "Step",
+    times: ["Minute 1", "Minute 3", "Minute 5"],
+    titles: ["Paste our 846 bytes script", "See real data", "Unlock your real ROAs"],
+    bodies: [
+      "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
+      "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant.",
+      "See the 35-55% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
+    ],
+    primaryCta: "Start your 14-day free trial",
+    secondaryCta: "See your GA4 gap first",
+    foot: "14-day free trial · 4-minute setup · Worth a look before next quarter's budget",
+  },
+  es: {
+    eyebrow: "Cómo empezar",
+    headline: <>5 minutos para ver tu <em>tráfico real.</em></>,
+    lede: "Sin migración. Sin banner. Sin equipo de data. De cero a dato real en menos tiempo que tu standup.",
+    stepLabel: "Paso",
+    times: ["Minuto 1", "Minuto 3", "Minuto 5"],
+    titles: ["Pega nuestro script de 846 bytes", "Ve datos reales", "Desbloquea tu ROAS real"],
+    bodies: [
+      "Activa nuestro módulo en tu CMS o pega el pixel vía Tag Manager. Sin ticket de ingeniería, sin deployment.",
+      "Visitas, productos, add-to-cart, checkout, compra — todo fluyendo a tu dashboard desde el primer segundo. 100% del tráfico, RGPD-compliant.",
+      "Ve el 35-55% que GA4 te oculta. Reasigna paid media sobre datos que cuadran con Shopify. Defiende cada euro frente a finanzas.",
+    ],
+    primaryCta: "Empieza tu trial de 14 días",
+    secondaryCta: "Ver tu gap GA4 primero",
+    foot: "14 días gratis · Setup en 4 minutos · Antes del próximo presupuesto",
+  },
+} as const;
+
+export function SolutionStepsPLG({ locale = "en" }: { locale?: "en" | "es" }) {
+  const c = STEPS_COPY[locale];
   return (
     <section id="how" className="bg-warm-50 border-t border-warm-100 py-24">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
           <div>
-            <span className="eyebrow mb-5">How to start</span>
-            <h2 className="h-section mt-5">
-              5 minutes to see your <em>real traffic.</em>
-            </h2>
+            <span className="eyebrow mb-5">{c.eyebrow}</span>
+            <h2 className="h-section mt-5">{c.headline}</h2>
           </div>
-          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            No migration. No cookie banner. No data team required. From zero to real data in less time than your standup.
-          </p>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">{c.lede}</p>
         </div>
 
         <ol className="grid md:grid-cols-3 gap-4">
-          {[
-            {
-              n: "01",
-              time: "Minute 1",
-              t: "Paste our 846 bytes script",
-              r: "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
-            },
-            {
-              n: "02",
-              time: "Minute 3",
-              t: "See real data",
-              r: "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant.",
-            },
-            {
-              n: "03",
-              time: "Minute 5",
-              t: "Unlock your real ROAs",
-              r: "See the 35-55% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
-            },
-          ].map((s) => (
+          {[0, 1, 2].map((i) => (
             <li
-              key={s.n}
+              key={i}
               className="bg-white border border-warm-100 rounded-xl p-8 flex flex-col gap-3 min-h-[260px]"
             >
               <span className="font-mono text-[12px] font-semibold uppercase tracking-[0.14em] text-brand">
-                Step {s.n}
+                {c.stepLabel} {String(i + 1).padStart(2, "0")}
               </span>
               <span className="inline-flex self-start px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">
-                {s.time}
+                {c.times[i]}
               </span>
               <h3 className="text-[22px] font-semibold tracking-[-0.025em] leading-[1.2] mt-2">
-                {s.t}
+                {c.titles[i]}
               </h3>
-              <p className="text-[14.5px] leading-[1.55] text-ink-soft mt-auto">{s.r}</p>
+              <p className="text-[14.5px] leading-[1.55] text-ink-soft mt-auto">{c.bodies[i]}</p>
             </li>
           ))}
         </ol>
@@ -686,18 +742,18 @@ export function SolutionStepsPLG() {
             href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
-            Start your 14-day free trial <span>→</span>
+            {c.primaryCta} <span>→</span>
           </a>
           <a
             href="#ga4-gap"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            See your GA4 gap first <span>→</span>
+            {c.secondaryCta} <span>→</span>
           </a>
         </div>
 
         <p className="mt-5 text-center font-mono text-[12px] text-ink-soft uppercase tracking-[0.08em]">
-          14-day free trial · 4-minute setup · Worth a look before next quarter&apos;s budget
+          {c.foot}
         </p>
       </div>
     </section>
@@ -707,13 +763,13 @@ export function SolutionStepsPLG() {
 /* ============================================
    FOUR PILLARS · 2.5 · condensed inline trust badges
    ============================================ */
-export function FourPillars() {
-  const pillars = [
-    "Ad arbitrage",
-    "Neutral data",
-    "Inventory audit",
-    "Margin protection",
-  ];
+const PILLARS_COPY = {
+  en: ["Ad arbitrage", "Neutral data", "Inventory audit", "Margin protection"],
+  es: ["Arbitraje publicitario", "Dato neutral", "Auditoría de inventario", "Protección de margen"],
+} as const;
+
+export function FourPillars({ locale = "en" }: { locale?: "en" | "es" }) {
+  const pillars = PILLARS_COPY[locale];
 
   return (
     <section className="py-10 border-y border-warm-100 bg-warm-white">
@@ -783,7 +839,27 @@ export function GapCalculatorCTA() {
 /* ============================================
    FINAL URGENCY · 2.8 · close with stakes
    ============================================ */
-export function FinalUrgencyV3() {
+const URGENCY_COPY = {
+  en: {
+    eyebrow: "The bleed is daily",
+    headline: <>The average eCommerce loses 58% of its data.{" "}
+      <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
+    </>,
+    body: "Every day without SealMetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
+    foot: "14-day free trial · No credit card · 4-minute setup",
+  },
+  es: {
+    eyebrow: "La sangría es diaria",
+    headline: <>El eCommerce medio pierde el 58% de sus datos.{" "}
+      <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
+    </>,
+    body: "Cada día sin SealMetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
+    foot: "14 días gratis · Sin tarjeta · Setup en 4 minutos",
+  },
+} as const;
+
+export function FinalUrgencyV3({ locale = "en" }: { locale?: "en" | "es" }) {
+  const c = URGENCY_COPY[locale];
   return (
     <section className="bg-white py-20">
       <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
@@ -813,24 +889,21 @@ export function FinalUrgencyV3() {
             }}
           />
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55 mb-5 relative">
-            The bleed is daily
+            {c.eyebrow}
           </p>
           <h2
             className="text-white font-semibold leading-[1.08] tracking-[-0.03em] mx-auto max-w-[28ch] relative"
             style={{ fontSize: "clamp(30px, 4.2vw, 50px)" }}
           >
-            The average eCommerce loses 58% of its data.{" "}
-            <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              How many more days?
-            </em>
+            {c.headline}
           </h2>
           <p className="text-white/75 text-[16.5px] leading-[1.6] mt-7 mb-8 mx-auto max-w-[58ch] relative">
-            Every day without SealMetrics means pageviews you don&apos;t see, conversions you can&apos;t attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.
+            {c.body}
           </p>
 
-          <DualCTA locale="en" variant="dark" className="justify-center" />
+          <DualCTA locale={locale} variant="dark" className="justify-center" />
           <p className="mt-6 font-mono text-[11px] text-white/55 uppercase tracking-[0.08em] relative">
-            14-day free trial · No credit card · 4-minute setup
+            {c.foot}
           </p>
         </div>
       </div>
@@ -841,7 +914,61 @@ export function FinalUrgencyV3() {
 /* ============================================
    PRICING PLG · 2.7 · annual default, monthly secondary
    ============================================ */
-export function PricingPLG() {
+const PRICING_COPY = {
+  en: {
+    eyebrow: "Pricing",
+    headline: <>Start measuring <em>reality.</em></>,
+    lede: "Annual billing — two months free vs monthly. Self-serve on Growth and Scale. Enterprise is custom-quoted. Every plan includes the same data architecture: 100% capture, last-click attribution, EU-hosted in Dublin.",
+    mostPopular: "Most popular",
+    perMo: "/mo",
+    twoMonthsFree: "2 mo free",
+    billedAnnually: (total: string) => `Billed annually · ${total}/yr`,
+    monthlyAlt: (m: string) => `or ${m}/mo billed monthly`,
+    lessThanLost: <>Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.</>,
+    trial: "14-day free trial · No credit card",
+    customLabel: "Custom",
+    customSub: "Annual or custom terms",
+    growthBlurb: "For teams that want to see their real data.",
+    scaleBlurb: "For serious eCommerce that needs the data to decide.",
+    enterpriseBlurb: "For portfolio brands or custom integration needs.",
+    growthFeatures: (m: number) => [`${m}M human events / month`, "3 domains", "Full MCP + BigQuery + API", "GA4 side-by-side comparison", "Email support"],
+    scaleFeatures: (m: number) => [`${m}M human events / month`, "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"],
+    enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "SSO, SAML, RBAC, audit logs", "99.9% SLA", "Dedicated account manager"],
+    cta: "Start free 14 days",
+    enterpriseCta: "Talk to us",
+    quote: <>&ldquo;Recovered 35% of bookings without attribution.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
+    foot: <>For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. SealMetrics gives you enterprise-grade data without the enterprise contract.</>,
+    demoHref: "/demo",
+  },
+  es: {
+    eyebrow: "Precios",
+    headline: <>Empieza a medir la <em>realidad.</em></>,
+    lede: "Facturación anual — dos meses gratis frente a mensual. Self-serve en Growth y Scale. Enterprise se cotiza a medida. Todos los planes incluyen la misma arquitectura: 100% de captura, atribución last-click, alojado en Dublín.",
+    mostPopular: "El más popular",
+    perMo: "/mes",
+    twoMonthsFree: "2 meses gratis",
+    billedAnnually: (total: string) => `Anual · ${total}/año`,
+    monthlyAlt: (m: string) => `o ${m}/mes con facturación mensual`,
+    lessThanLost: <>Menos que lo que pierdes en <em className="italic-accent">un solo día</em> de datos incompletos.</>,
+    trial: "14 días gratis · Sin tarjeta",
+    customLabel: "A medida",
+    customSub: "Anual o términos custom",
+    growthBlurb: "Para equipos que quieren ver su dato real.",
+    scaleBlurb: "Para eCommerce serio que decide con dato real.",
+    enterpriseBlurb: "Para marcas portfolio o necesidades de integración custom.",
+    growthFeatures: (m: number) => [`${m}M eventos humanos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Comparativa GA4 lado a lado", "Soporte por email"],
+    scaleFeatures: (m: number) => [`${m}M eventos humanos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding con el founder"],
+    enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "SSO, SAML, RBAC, audit logs", "SLA 99,9%", "Account manager dedicado"],
+    cta: "Empieza gratis 14 días",
+    enterpriseCta: "Habla con nosotros",
+    quote: <>&ldquo;Recuperaron el 35% de las reservas sin atribución.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
+    foot: <>De referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics arranca en 100.000$/año</b>. SealMetrics te da dato enterprise sin contrato enterprise.</>,
+    demoHref: "/es/demo",
+  },
+} as const;
+
+export function PricingPLG({ locale = "en" }: { locale?: "en" | "es" }) {
+  const c = PRICING_COPY[locale];
   const plans = [
     {
       name: "Growth",
@@ -849,15 +976,9 @@ export function PricingPLG() {
       annualTotal: PRICING.growth.annual * 12,
       monthly: PRICING.growth.monthly,
       events: PRICING.growth.eventsMillions,
-      blurb: "For teams that want to see their real data.",
-      features: [
-        `${PRICING.growth.eventsMillions}M human events / month`,
-        "3 domains",
-        "Full MCP + BigQuery + API",
-        "GA4 side-by-side comparison",
-        "Email support",
-      ],
-      cta: "Start free 14 days",
+      blurb: c.growthBlurb,
+      features: c.growthFeatures(PRICING.growth.eventsMillions),
+      cta: c.cta,
       href: "https://my.sealmetrics.com/register",
       featured: true,
       type: "register" as const,
@@ -868,15 +989,9 @@ export function PricingPLG() {
       annualTotal: PRICING.scale.annual * 12,
       monthly: PRICING.scale.monthly,
       events: PRICING.scale.eventsMillions,
-      blurb: "For serious eCommerce that needs the data to decide.",
-      features: [
-        `${PRICING.scale.eventsMillions}M human events / month`,
-        "10 domains",
-        "Everything in Growth",
-        "Priority support",
-        "Onboarding led by the founder",
-      ],
-      cta: "Start free 14 days",
+      blurb: c.scaleBlurb,
+      features: c.scaleFeatures(PRICING.scale.eventsMillions),
+      cta: c.cta,
       href: "https://my.sealmetrics.com/register",
       featured: false,
       type: "register" as const,
@@ -887,16 +1002,10 @@ export function PricingPLG() {
       annualTotal: null,
       monthly: null,
       events: null,
-      blurb: "For portfolio brands or custom integration needs.",
-      features: [
-        "Unlimited events",
-        "BI & data warehouse integration",
-        "SSO, SAML, RBAC, audit logs",
-        "99.9% SLA",
-        "Dedicated account manager",
-      ],
-      cta: "Talk to us",
-      href: "/demo",
+      blurb: c.enterpriseBlurb,
+      features: c.enterpriseFeatures as unknown as string[],
+      cta: c.enterpriseCta,
+      href: c.demoHref,
       featured: false,
       type: "demo" as const,
     },
@@ -907,13 +1016,13 @@ export function PricingPLG() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="max-w-[44rem] mx-auto text-center mb-14">
           <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
-            Pricing
+            {c.eyebrow}
           </span>
           <h2 className="h-section mt-5 mx-auto text-center">
-            Start measuring <em>reality.</em>
+            {c.headline}
           </h2>
           <p className="text-[18px] leading-[1.6] text-ink-soft mt-5">
-            Annual billing — two months free vs monthly. Self-serve on Growth and Scale. Enterprise is custom-quoted. Every plan includes the same data architecture: 100% capture, last-click attribution, EU-hosted in Dublin.
+            {c.lede}
           </p>
         </div>
 
@@ -927,7 +1036,7 @@ export function PricingPLG() {
             >
               {p.featured && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
-                  Most popular
+                  {c.mostPopular}
                 </span>
               )}
               <header className="pb-5 border-b border-warm-100 mb-5">
@@ -941,24 +1050,24 @@ export function PricingPLG() {
                         className="font-semibold tracking-[-0.025em] leading-none tabular-nums text-ink"
                         style={{ fontSize: "clamp(36px, 4vw, 44px)" }}
                       >
-                        €{p.annualPerMonth.toLocaleString("en-US")}
+                        €{p.annualPerMonth.toLocaleString(locale === "es" ? "es-ES" : "en-US")}
                       </span>
-                      <span className="text-[15px] text-ink-soft">/mo</span>
+                      <span className="text-[15px] text-ink-soft">{c.perMo}</span>
                       <span className="ml-2 inline-flex items-center bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] px-2 py-1 rounded">
-                        2 mo free
+                        {c.twoMonthsFree}
                       </span>
                     </div>
                     <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft mt-2">
-                      Billed annually · €{p.annualTotal!.toLocaleString("en-US")}/yr
+                      {c.billedAnnually(`€${p.annualTotal!.toLocaleString(locale === "es" ? "es-ES" : "en-US")}`)}
                     </div>
                     <div className="font-mono text-[10.5px] text-ink-soft mt-1.5 opacity-70">
-                      or €{p.monthly!.toLocaleString("en-US")}/mo billed monthly
+                      {c.monthlyAlt(`€${p.monthly!.toLocaleString(locale === "es" ? "es-ES" : "en-US")}`)}
                     </div>
                     <p className="text-[12px] text-ink-soft mt-3 leading-[1.4]">
-                      Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.
+                      {c.lessThanLost}
                     </p>
                     <p className="text-[12px] font-semibold text-brand mt-2">
-                      14-day free trial · No credit card
+                      {c.trial}
                     </p>
                   </>
                 ) : (
@@ -967,10 +1076,10 @@ export function PricingPLG() {
                       className="font-semibold tracking-[-0.025em] leading-none tabular-nums text-ink"
                       style={{ fontSize: "clamp(36px, 4vw, 44px)" }}
                     >
-                      Custom
+                      {c.customLabel}
                     </div>
                     <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft mt-2">
-                      Annual or custom terms
+                      {c.customSub}
                     </div>
                   </>
                 )}
@@ -1007,8 +1116,7 @@ export function PricingPLG() {
 
               {p.featured && (
                 <p className="text-[12px] text-ink-soft italic mt-5 leading-[1.5] px-1">
-                  &ldquo;Recovered 35% of bookings without attribution.&rdquo;{" "}
-                  <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span>
+                  {c.quote}
                 </p>
               )}
             </article>
@@ -1016,7 +1124,7 @@ export function PricingPLG() {
         </div>
 
         <p className="mt-10 p-6 bg-white border border-warm-100 rounded-xl text-center max-w-[48rem] mx-auto text-[14.5px] leading-[1.65] text-ink-soft">
-          For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. SealMetrics gives you enterprise-grade data without the enterprise contract.
+          {c.foot}
         </p>
       </div>
     </section>
@@ -1037,32 +1145,51 @@ const CONNECTORS: { name: string; src?: string; tag: "ecommerce" | "data" }[] = 
   { name: "Looker Studio", tag: "data" },
 ];
 
-export function Connectors() {
+const CONNECTORS_COPY = {
+  en: {
+    eyebrow: "Direct connectors",
+    headline: <>Plugs into the stack you already run. <em>One-click integrations.</em></>,
+    lede: "Native connectors for the eCommerce platforms, BI tools and dashboards your team uses every day. No middleware. No custom engineering. No data team required.",
+    tagEcom: "eCommerce",
+    tagData: "Data & BI",
+    needMore: "Need another integration?",
+    seeAll: "See full list of integrations",
+  },
+  es: {
+    eyebrow: "Conectores directos",
+    headline: <>Encaja con el stack que ya usas. <em>Integraciones de un clic.</em></>,
+    lede: "Conectores nativos para las plataformas eCommerce, herramientas BI y dashboards que tu equipo usa cada día. Sin middleware. Sin ingeniería custom. Sin equipo de data.",
+    tagEcom: "eCommerce",
+    tagData: "Data y BI",
+    needMore: "¿Necesitas otra integración?",
+    seeAll: "Ver lista completa de integraciones",
+  },
+} as const;
+
+export function Connectors({ locale = "en" }: { locale?: "en" | "es" }) {
+  const c = CONNECTORS_COPY[locale];
+  const integrationsHref = locale === "es" ? "/es/integrations" : "/integrations";
   return (
     <section className="bg-white border-t border-warm-100 py-20">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-16 items-end mb-10">
           <div>
-            <span className="eyebrow mb-5">Direct connectors</span>
-            <h2 className="h-section mt-5">
-              Plugs into the stack you already run. <em>One-click integrations.</em>
-            </h2>
+            <span className="eyebrow mb-5">{c.eyebrow}</span>
+            <h2 className="h-section mt-5">{c.headline}</h2>
           </div>
-          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Native connectors for the eCommerce platforms, BI tools and dashboards your team uses every day. No middleware. No custom engineering. No data team required.
-          </p>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">{c.lede}</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {CONNECTORS.map((c) => (
+          {CONNECTORS.map((conn) => (
             <div
-              key={c.name}
+              key={conn.name}
               className="bg-warm-50 border border-warm-100 rounded-xl p-6 flex flex-col items-center justify-center gap-3 min-h-[120px] transition-all hover:-translate-y-0.5 hover:border-rule-2"
             >
-              {c.src ? (
+              {conn.src ? (
                 <Picture
-                  src={c.src}
-                  alt={c.name}
+                  src={conn.src}
+                  alt={conn.name}
                   width={140}
                   height={36}
                   className="object-contain"
@@ -1073,18 +1200,18 @@ export function Connectors() {
                   className="font-semibold text-ink tracking-[-0.015em] text-center"
                   style={{ fontSize: "clamp(15px, 1.4vw, 18px)" }}
                 >
-                  {c.name}
+                  {conn.name}
                 </span>
               )}
               <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-soft font-semibold">
-                {c.tag === "ecommerce" ? "eCommerce" : "Data & BI"}
+                {conn.tag === "ecommerce" ? c.tagEcom : c.tagData}
               </span>
             </div>
           ))}
         </div>
 
         <p className="mt-8 text-center font-mono text-[12px] text-ink-soft uppercase tracking-[0.08em]">
-          Need another integration? <Link href="/integrations" className="text-ink border-b border-warm-200 hover:border-ink no-underline">See full list of integrations</Link>
+          {c.needMore} <Link href={integrationsHref} className="text-ink border-b border-warm-200 hover:border-ink no-underline">{c.seeAll}</Link>
         </p>
       </div>
     </section>
