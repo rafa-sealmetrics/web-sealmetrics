@@ -15,7 +15,7 @@ export function HeroV3() {
           <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
             New · Case study
           </span>
-          <a href="#featured-case" className="text-ink border-b border-warm-200 hover:border-ink">
+          <a href="/case-studies/palladium-hotel-group/" className="text-ink border-b border-warm-200 hover:border-ink">
             Palladium Hotel Group: 40% of traffic had no attribution → +165% Display CPS
           </a>
         </div>
@@ -53,20 +53,20 @@ export function HeroV3() {
             Integrates with
           </span>
           {[
-            { src: "/logos/brands/shopify.svg", alt: "Shopify", h: 26 },
-            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce", h: 57 },
-            { src: "/logos/brands/magento.svg", alt: "Magento", h: 26 },
-            { src: "/logos/brands/prestashop.svg", alt: "PrestaShop", h: 26 },
-            { src: "/logos/brands/bigquery.svg", alt: "BigQuery", h: 26 },
+            { src: "/logos/brands/shopify.svg", alt: "Shopify", h: 26, maxW: 150 },
+            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce", h: 86, maxW: 240 },
+            { src: "/logos/brands/magento.svg", alt: "Magento", h: 26, maxW: 150 },
+            { src: "/logos/brands/prestashop.svg", alt: "PrestaShop", h: 26, maxW: 150 },
+            { src: "/logos/brands/bigquery.svg", alt: "BigQuery", h: 26, maxW: 150 },
           ].map((logo) => (
             <Picture
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              width={140}
+              width={240}
               height={logo.h}
               className="object-contain w-auto"
-              style={{ height: `${logo.h}px`, maxWidth: 150 }}
+              style={{ height: `${logo.h}px`, maxWidth: logo.maxW }}
             />
           ))}
         </div>
@@ -87,6 +87,7 @@ export function HeroV3() {
    ============================================ */
 const LOGOS: { src: string; alt: string; h: number }[] = [
   // Top row — flagship
+  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 50 },
   { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 54 },
   { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 44 },
   { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 38 },
@@ -392,56 +393,110 @@ export function CompareSection() {
 }
 
 /* ============================================
-   FEATURED CASE · anonymized hotel group
+   FEATURED CASE · Palladium Hotel Group spotlight
    ============================================ */
 export function FeaturedCase() {
   return (
-    <section id="featured-case" className="py-20 md:py-24 bg-warm-50 border-t border-warm-100">
-      <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
-        <p className="text-center font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand mb-10">
-          Case study · Palladium Hotel Group
-        </p>
+    <section
+      id="featured-case"
+      className="py-24 md:py-32 bg-ink text-white border-t border-warm-100 relative overflow-hidden"
+    >
+      <div
+        aria-hidden
+        className="absolute pointer-events-none"
+        style={{
+          right: -160,
+          top: -160,
+          width: 480,
+          height: 480,
+          borderRadius: "50%",
+          background: "radial-gradient(circle,rgba(45,139,109,0.32),transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute pointer-events-none"
+        style={{
+          left: -180,
+          bottom: -180,
+          width: 460,
+          height: 460,
+          borderRadius: "50%",
+          background: "radial-gradient(circle,rgba(232,184,75,0.16),transparent 70%)",
+        }}
+      />
+
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-10 relative">
+        <div className="flex flex-col items-center text-center mb-12">
+          <span className="inline-flex items-center gap-3 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 text-[12px] text-white/80 mb-7 backdrop-blur-sm">
+            <span className="bg-amber text-ink px-2 py-0.5 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
+              Featured case
+            </span>
+            <span className="font-mono uppercase tracking-[0.08em]">
+              April 2026 · Hotels · Spain
+            </span>
+          </span>
+
+          <Picture
+            src="/logos/clients/palladium.svg"
+            alt="Palladium Hotel Group"
+            width={320}
+            height={70}
+            className="h-14 md:h-16 w-auto object-contain mb-8 brightness-0 invert"
+          />
+
+          <h2
+            className="font-semibold leading-[1.05] tracking-[-0.025em] max-w-[24ch]"
+            style={{ fontSize: "clamp(34px, 5vw, 64px)" }}
+          >
+            From <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>40% blind traffic</em> to{" "}
+            <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>+165%</em> Display efficiency.
+          </h2>
+          <p className="mt-7 text-[17px] md:text-[19px] leading-[1.55] text-white/75 max-w-[62ch]">
+            Palladium Hotel Group rebuilt their measurement stack on SealMetrics. One number every stakeholder — brand, agencies, departments — signs against.
+          </p>
+        </div>
 
         {/* Big metric tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
           {[
-            { n: "40%", c: "text-ink", l: "traffic that was invisible to GA4" },
-            { n: "35%", c: "text-brand", l: "bookings recovered & attributed" },
-            { n: "+165%", c: "text-brand", l: "Display CPS improvement on DV360" },
+            { n: "40%", l: "traffic that was invisible to GA4" },
+            { n: "35%", l: "bookings recovered & attributed" },
+            { n: "+165%", l: "Display CPS improvement on DV360" },
           ].map((s) => (
             <div
               key={s.l}
-              className="bg-white rounded-2xl p-8 text-center border border-warm-100 shadow-[0_1px_0_rgba(14,14,12,0.04)]"
+              className="bg-white/5 border border-white/15 rounded-2xl p-8 md:p-10 backdrop-blur-sm"
             >
               <p
-                className={`font-semibold tracking-[-0.03em] tabular-nums leading-none ${s.c}`}
-                style={{ fontSize: "clamp(40px, 5vw, 56px)" }}
+                className="font-semibold tracking-[-0.035em] tabular-nums leading-none text-white"
+                style={{ fontSize: "clamp(54px, 7vw, 84px)" }}
               >
                 {s.n}
               </p>
-              <p className="text-[13.5px] text-ink-soft mt-3 leading-[1.4]">{s.l}</p>
+              <p className="text-[14.5px] text-white/70 mt-4 leading-[1.45]">{s.l}</p>
             </div>
           ))}
         </div>
 
         {/* Quote */}
-        <blockquote className="max-w-[760px] mx-auto text-center">
+        <blockquote className="max-w-[820px] mx-auto text-center">
           <p
-            className="text-ink italic font-medium leading-[1.4] tracking-[-0.015em]"
-            style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
+            className="text-white italic font-medium leading-[1.35] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}
           >
             &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
           </p>
-          <footer className="mt-5 font-mono text-[12px] uppercase tracking-[0.08em] text-ink-soft font-semibold">
-            — <strong className="text-ink">Toni Andújar</strong> · Digital &amp; Direct Sales Director · Palladium Hotel Group
+          <footer className="mt-6 font-mono text-[12px] uppercase tracking-[0.1em] text-white/60 font-semibold">
+            — <strong className="text-white">Toni Andújar</strong> · Digital &amp; Direct Sales Director · Palladium Hotel Group
           </footer>
         </blockquote>
 
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <DualCTA locale="en" />
+        <div className="mt-12 flex flex-col items-center gap-5">
+          <DualCTA locale="en" variant="dark" />
           <Link
             href="/case-studies/palladium-hotel-group"
-            className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink no-underline border-b border-warm-200 hover:border-ink"
+            className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-white no-underline border-b border-white/30 hover:border-white pb-0.5"
           >
             Read the full case study <span>→</span>
           </Link>
@@ -592,7 +647,7 @@ export function SolutionStepsPLG() {
             {
               n: "01",
               time: "Minute 1",
-              t: "Paste the script",
+              t: "Paste our 846 bytes script",
               r: "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
             },
             {
@@ -604,7 +659,7 @@ export function SolutionStepsPLG() {
             {
               n: "03",
               time: "Minute 5",
-              t: "Discover your hidden traffic",
+              t: "Unlock your real ROAs",
               r: "See the 35-55% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
             },
           ].map((s) => (

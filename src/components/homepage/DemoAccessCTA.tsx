@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { type QuizAnswers } from "@/lib/content/diagnostic";
 
 interface DemoAccessCTAProps {
@@ -13,6 +13,19 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
   const [company, setCompany] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const microFired = useRef(false);
+
+  useEffect(() => {
+    if (status !== "success" || microFired.current) return;
+    microFired.current = true;
+    if (typeof window !== "undefined" && window.sealmetrics) {
+      try {
+        window.sealmetrics.micro("lead_diagnostic_demo_access", { email });
+      } catch (err) {
+        console.warn("SealMetrics micro failed", err);
+      }
+    }
+  }, [status, email]);
 
   const canSubmit =
     name.trim() && email.trim() && company.trim() && gdprConsent && status !== "submitting";

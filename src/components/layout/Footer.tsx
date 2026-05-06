@@ -68,9 +68,30 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale).footer;
   const footerColumns = getFooterColumns(t, locale);
 
+  const demoAccessLabel = locale === "es" ? "Acceder a la cuenta demo" : "Access Demo Account";
+  const demoAccessHelper = locale === "es"
+    ? "Recibe credenciales por email · email corporativo requerido"
+    : "Credentials by email · corporate email required";
+
   return (
-    <footer className="bg-warm-900 border-t border-warm-800 pt-16 pb-8">
+    <footer className="bg-warm-900 border-t border-warm-800 pt-12 pb-8">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+        <div className="mb-12 pb-10 border-b border-warm-800 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div>
+            <p className="text-[0.95rem] font-semibold text-warm-white tracking-[-0.01em]">
+              {locale === "es"
+                ? "¿Quieres ver el dashboard antes de hablar con nosotros?"
+                : "Want to see the dashboard before talking to us?"}
+            </p>
+            <p className="text-[0.78rem] text-warm-400 mt-1">{demoAccessHelper}</p>
+          </div>
+          <Link
+            href="/demo-access"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-[0.9rem] font-semibold text-warm-900 bg-warm-white no-underline hover:bg-white transition-colors self-start md:self-auto"
+          >
+            {demoAccessLabel} <span aria-hidden>→</span>
+          </Link>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
             <Link href={localizedHref("/", locale)} className="inline-block mb-3 no-underline">

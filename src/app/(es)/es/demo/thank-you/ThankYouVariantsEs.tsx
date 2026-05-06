@@ -1,106 +1,59 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Picture } from "@/components/ui/Picture";
 import type { DemoTier } from "@/lib/demo-scoring";
+
+const REGISTER_URL = "https://my.sealmetrics.com/register";
+const VIDEO_EMBED_URL =
+  "https://iframe.mediadelivery.net/embed/609541/c39d3844-8ef3-4362-8579-d71a6b832b0f";
 
 interface Variant {
   eyebrow: string;
   headline: React.ReactNode;
   lede: React.ReactNode;
-  primaryCta: { label: string; href: string; external?: boolean };
-  secondaryCta?: { label: string; href: string };
-  next: { title: string; desc: string }[];
 }
 
 const variants: Record<DemoTier, Variant> = {
   A: {
     eyebrow: "Slot prioritario reservado",
-    headline: <>Tu audit está en la cola del founder.</>,
+    headline: <>Gracias — tu audit está en la cola del founder.</>,
     lede: (
       <>
-        Por tus respuestas, esto lo montamos directamente con el founder. Reserva un hueco de 30 minutos abajo — preparamos el audit con tu data real antes de la llamada.
+        Por tus respuestas, esto lo montamos directamente con el founder. Recibirás un email en menos de un día laborable con el calendario para reservar.
       </>
     ),
-    primaryCta: {
-      label: "Reservar walkthrough de 30 min →",
-      href: "https://cal.com/sealmetrics",
-      external: true,
-    },
-    secondaryCta: { label: "Volver al inicio", href: "/es" },
-    next: [
-      {
-        title: "Reserva tu hueco",
-        desc: "Cal.com directo con el founder. Sin handoff a comercial.",
-      },
-      {
-        title: "Preparamos tu audit",
-        desc: "Pasamos tu web por la calculadora de gap y llevamos cifras reales a la llamada.",
-      },
-      {
-        title: "Walkthrough de 30 minutos",
-        desc: "GA4 lado a lado con tus propios datos. Si no encaja, te lo decimos.",
-      },
-    ],
   },
   B: {
     eyebrow: "Audit confirmado",
-    headline: <>Tu audit lo escribimos a mano.</>,
+    headline: <>Gracias por contactar.</>,
     lede: (
       <>
-        Te enviamos un report personalizado en 24 horas con el gap entre GA4 y los ingresos reales de tu backend. Sin secuencia automatizada.
+        Te enviamos un audit personalizado a tu inbox en 24 horas. Sin secuencias automatizadas, sin follow-ups robóticos — solo una respuesta humana con el gap entre GA4 y los ingresos reales de tu backend.
       </>
     ),
-    primaryCta: {
-      label: "Crear cuenta gratis",
-      href: "https://my.sealmetrics.com/register",
-      external: true,
-    },
-    secondaryCta: { label: "Volver al inicio", href: "/es" },
-    next: [
-      {
-        title: "Audit en 24h",
-        desc: "Análisis escrito a mano de tu gap GA4. Llega a tu inbox.",
-      },
-      {
-        title: "Opcional: instala el píxel ya",
-        desc: "Crea cuenta gratis y capturamos data real antes de que llegue el audit.",
-      },
-      {
-        title: "Llamada de seguimiento si tiene sentido",
-        desc: "Si el audit muestra un gap relevante, proponemos un walkthrough de 30 min.",
-      },
-    ],
   },
   C: {
     eyebrow: "Gracias por dedicar el tiempo",
-    headline: <>Te mantenemos en el radar.</>,
+    headline: <>Gracias — te contactamos.</>,
     lede: (
       <>
-        Tu situación no es el mejor encaje para SealMetrics ahora, pero el panorama de analítica se mueve rápido. Te enviaremos puntualmente piezas sobre analítica cookieless y privacidad UE.
+        Revisaremos tu situación y respondemos en un día laborable. Mientras tanto, los recursos de abajo te dan una foto clara de cómo funciona SealMetrics.
       </>
     ),
-    primaryCta: {
-      label: "Calcula tu pérdida de datos",
-      href: "/es/data-loss-calculator",
-    },
-    secondaryCta: { label: "Leer el blog", href: "/es/blog" },
-    next: [
-      {
-        title: "Usa la calculadora de data loss",
-        desc: "Herramienta gratis. Estima tu punto ciego de GA4 con tres inputs.",
-      },
-      {
-        title: "Lee el primer sobre analítica cookieless",
-        desc: "Cómo está cambiando la medición en UE — y qué hacer al respecto.",
-      },
-      {
-        title: "Aquí estaremos cuando encaje",
-        desc: "Si tu contexto cambia, el formulario sigue abierto.",
-      },
-    ],
   },
 };
+
+const LOGOS = [
+  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 44 },
+  { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 50 },
+  { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 38 },
+  { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 34 },
+  { src: "/logos/clients/desigual-dark.svg", alt: "Desigual", h: 32 },
+  { src: "/logos/clients/casabatllo.png", alt: "Casa Batlló", h: 38 },
+] as const;
 
 function isTier(value: string | null): value is DemoTier {
   return value === "A" || value === "B" || value === "C";
@@ -111,81 +64,211 @@ export function ThankYouVariantsEs() {
   const tierParam = params.get("tier");
   const tier: DemoTier = isTier(tierParam) ? tierParam : "B";
   const v = variants[tier];
+  const fired = useRef(false);
+
+  useEffect(() => {
+    if (fired.current) return;
+    fired.current = true;
+    if (typeof window !== "undefined" && window.sealmetrics) {
+      try {
+        window.sealmetrics.micro("lead_book_demo", { tier, locale: "es" });
+      } catch (err) {
+        console.warn("SealMetrics micro failed", err);
+      }
+    }
+  }, [tier]);
 
   return (
-    <div className="max-w-[640px] mx-auto px-5 sm:px-8">
-      <div className="w-14 h-14 mx-auto mb-7 rounded-full flex items-center justify-center" style={{ background: "rgba(45,139,109,0.12)" }}>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2D8B6D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
+    <>
+      <div className="max-w-[760px] mx-auto px-5 sm:px-8 text-center">
+        <div
+          className="w-14 h-14 mx-auto mb-7 rounded-full flex items-center justify-center"
+          style={{ background: "rgba(45,139,109,0.12)" }}
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#2D8B6D"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+
+        <span
+          className="eyebrow mx-auto mb-5"
+          style={{ display: "inline-flex", justifyContent: "center" }}
+        >
+          {v.eyebrow}
+        </span>
+        <h1
+          className="font-semibold text-ink leading-[1.1] tracking-[-0.025em] mt-4"
+          style={{ fontSize: "clamp(28px, 3.6vw, 44px)" }}
+        >
+          {v.headline}
+        </h1>
+        <p className="text-[16.5px] leading-[1.6] text-ink-soft mt-5 mx-auto max-w-[58ch]">
+          {v.lede}
+        </p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold mt-6">
+          Revisa tu inbox en breve · respondemos en un día laborable
+        </p>
       </div>
 
-      <span className="eyebrow mx-auto mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>
-        {v.eyebrow}
-      </span>
-      <h1
-        className="font-semibold text-ink leading-[1.1] tracking-[-0.025em] text-center mt-4"
-        style={{ fontSize: "clamp(28px, 3.6vw, 44px)" }}
-      >
-        {v.headline}
-      </h1>
-      <p className="text-[16px] leading-[1.6] text-ink-soft text-center mt-5 mx-auto max-w-[54ch]">
-        {v.lede}
-      </p>
-
-      <div className="flex flex-col sm:flex-row justify-center gap-3 mt-9">
-        {v.primaryCta.external ? (
-          <a
-            href={v.primaryCta.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md no-underline hover:bg-brand transition-colors"
-          >
-            {v.primaryCta.label}
-          </a>
-        ) : (
-          <Link
-            href={v.primaryCta.href}
-            className="inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md no-underline hover:bg-brand transition-colors"
-          >
-            {v.primaryCta.label}
-          </Link>
-        )}
-        {v.secondaryCta && (
-          <Link
-            href={v.secondaryCta.href}
-            className="inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-semibold text-ink border border-warm-200 rounded-md no-underline hover:bg-warm-50 transition-colors"
-          >
-            {v.secondaryCta.label}
-          </Link>
-        )}
-      </div>
-
-      <div className="mt-14 text-left">
-        <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-ink-soft mb-5">
-          Qué pasa ahora
-        </h3>
-        <div className="flex flex-col gap-4">
-          {v.next.map((item, i) => (
-            <div
-              key={i}
-              className="flex gap-4 pb-4 border-b border-warm-100 last:border-0 last:pb-0"
+      <section className="mt-16 md:mt-20">
+        <div className="max-w-[1080px] mx-auto px-5 sm:px-8">
+          <div className="text-center mb-8">
+            <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-brand">
+              Mientras esperas · 2 minutos
+            </span>
+            <h2
+              className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-3 mx-auto max-w-[26ch]"
+              style={{ fontSize: "clamp(24px, 3vw, 36px)" }}
             >
-              <span className="font-mono text-[12px] font-semibold text-brand mt-0.5 tabular-nums">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+              Mira cómo SealMetrics consigue <em className="italic-accent">data en directo en tu sitio.</em>
+            </h2>
+            <p className="text-[15px] leading-[1.6] text-ink-soft mt-4 mx-auto max-w-[56ch]">
+              Getting Started — un walkthrough de 2 minutos sobre cómo crear tu cuenta, añadir tu sitio e instalar el script. Así cuando hablemos, tu data ya está fluyendo.
+            </p>
+          </div>
+
+          <div className="relative w-full overflow-hidden rounded-[16px] border border-warm-100 bg-ink shadow-[0_18px_60px_-20px_rgba(14,14,12,0.25)]" style={{ aspectRatio: "16 / 9" }}>
+            <iframe
+              src={VIDEO_EMBED_URL}
+              loading="lazy"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+              title="SealMetrics — Getting Started"
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16 md:mt-20">
+        <div className="max-w-[1080px] mx-auto px-5 sm:px-8">
+          <div className="bg-ink text-white rounded-[20px] px-8 md:px-14 py-12 md:py-16 relative overflow-hidden">
+            <div
+              aria-hidden
+              className="absolute pointer-events-none"
+              style={{
+                right: -120,
+                top: -120,
+                width: 320,
+                height: 320,
+                borderRadius: "50%",
+                background: "radial-gradient(circle,rgba(45,139,109,0.32),transparent 70%)",
+              }}
+            />
+            <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-12 items-center">
               <div>
-                <p className="text-[14.5px] font-semibold text-ink leading-[1.4]">
-                  {item.title}
+                <span className="inline-flex items-center gap-2 bg-amber text-ink px-3 py-1 rounded text-[11px] font-mono font-bold uppercase tracking-[0.1em] mb-5">
+                  Para la sangría de ROAS hoy
+                </span>
+                <h2
+                  className="text-white font-semibold leading-[1.15] tracking-[-0.02em]"
+                  style={{ fontSize: "clamp(24px, 3vw, 36px)" }}
+                >
+                  No esperes a la llamada. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Instala el píxel ya.</em>
+                </h2>
+                <p className="text-white/75 text-[15.5px] leading-[1.6] mt-5 max-w-[52ch]">
+                  Crea una cuenta gratis y pega el script de 846 bytes hoy. Cuando hablemos, tu data ya estará fluyendo — así la conversación va sobre <em>tus</em> números, no sobre un deck genérico. Cada día sin medición completa es paid media gastado sobre realidad incompleta.
                 </p>
-                <p className="text-[13.5px] text-ink-soft mt-1 leading-[1.55]">
-                  {item.desc}
+              </div>
+              <div className="flex flex-col gap-3 md:items-end">
+                <a
+                  href={REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-ink px-7 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95 transition w-full md:w-auto"
+                >
+                  Crear cuenta gratis →
+                </a>
+                <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/60 font-semibold text-center md:text-right">
+                  14 días gratis · sin tarjeta · setup en 4 min
                 </p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
+      </section>
+
+      <section className="mt-16 md:mt-20">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <p className="text-center font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-brand mb-10">
+            De equipos ya midiendo con datos reales
+          </p>
+          <div className="grid md:grid-cols-2 gap-5">
+            <blockquote
+              className="bg-white border border-warm-100 rounded-[16px] p-8 md:p-9 border-l-[3px]"
+              style={{ borderLeftColor: "#2E5C8A" }}
+            >
+              <p className="text-[17px] leading-[1.55] text-ink font-medium tracking-[-0.01em] italic">
+                &ldquo;El dato que entrega SealMetrics es agnóstico, neutral, sin sesgo. No hay caja negra.&rdquo;
+              </p>
+              <footer className="mt-5">
+                <p className="text-[14px] font-semibold text-ink leading-[1.3]">
+                  Toni Andújar
+                </p>
+                <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold mt-1">
+                  Digital &amp; Direct Sales Director · Palladium Hotel Group
+                </p>
+              </footer>
+            </blockquote>
+
+            <blockquote
+              className="bg-white border border-warm-100 rounded-[16px] p-8 md:p-9 border-l-[3px]"
+              style={{ borderLeftColor: "#2E5C8A" }}
+            >
+              <p className="text-[17px] leading-[1.55] text-ink font-medium tracking-[-0.01em] italic">
+                &ldquo;Lo que nos da es lo que siempre necesitamos: el dato lo más real posible, lo más cercano a la realidad posible.&rdquo;
+              </p>
+              <footer className="mt-5">
+                <p className="text-[14px] font-semibold text-ink leading-[1.3]">
+                  Eduardo Martin
+                </p>
+                <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold mt-1">
+                  Analytics &amp; Campaigns Lead · Dreamplace Hotels
+                </p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16 md:mt-20">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <p className="text-center font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-ink-soft mb-9">
+            Marcas europeas midiendo lo que realmente pasa
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-90">
+            {LOGOS.map((logo) => (
+              <Picture
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                width={200}
+                height={logo.h}
+                className="object-contain w-auto"
+                style={{ height: `${logo.h}px`, maxWidth: 200 }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-[1100px] mx-auto px-5 sm:px-8 mt-16 text-center">
+        <Link
+          href="/es"
+          className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink-soft no-underline border-b border-warm-200 pb-0.5 hover:text-ink hover:border-ink"
+        >
+          ← Volver al inicio
+        </Link>
       </div>
-    </div>
+    </>
   );
 }

@@ -24,6 +24,7 @@ const comparisons = [
   { slug: "es/vs/ga360", name: "Google Analytics 360", stat: "150K$/año", tagline: "Precio enterprise, contrato enterprise, misma arquitectura de cookies que GA4 gratis." },
   { slug: "es/vs/adobe-analytics", name: "Adobe Analytics", stat: "100K$ + especialistas", tagline: "Profundidad enterprise, pero 6 meses de implementación y staff certificado Adobe." },
   { slug: "es/vs/piwik-pro", name: "Piwik PRO", stat: "30K€ enterprise", tagline: "Alojado en UE — pero sigue con cookies y dependiente del consentimiento." },
+  { slug: "es/vs/matomo", name: "Matomo", stat: "Open-source + coste ops", tagline: "EU-friendly y open-source — pero cookies por defecto y el self-hosting se come el 'gratis'." },
   { slug: "es/alternatives/google-analytics", name: "Alternativas a Google Analytics", stat: "La foto completa", tagline: "Qué elegir si estás post-GA4 — y por qué la mayoría de \"alternativas\" son solo clones más baratos." },
 ];
 

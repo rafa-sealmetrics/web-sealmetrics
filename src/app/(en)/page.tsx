@@ -21,9 +21,9 @@ import {
   FinalUrgencyV3,
 } from "@/components/sections/v3/HomeV3";
 import { ComparatorGA4 } from "@/components/sections/v3/HomeV3Part2";
+import { FeatureLensAIV3 } from "@/components/sections/v3/ProductV3Sections";
 import { FaqV3 } from "@/components/sections/v3/FaqV3";
 import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
-import { DualCTA } from "@/components/homepage/DualCTA";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
@@ -99,20 +99,13 @@ export default function Home() {
       <ProblemSection />
       <BlindnessCalculator />
       <ComparatorGA4 />
-      <section className="bg-warm-white border-t border-warm-100 py-12">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 flex flex-col items-center text-center gap-5">
-          <p className="font-semibold text-ink tracking-[-0.015em]" style={{ fontSize: "clamp(18px, 1.8vw, 22px)" }}>
-            Stop debating tools. <em className="italic-accent">Start measuring reality.</em>
-          </p>
-          <DualCTA locale="en" />
-        </div>
-      </section>
       <FeaturedCase />
       <SolutionStepsPLG />
       <FourPillars />
       <Connectors />
       <PricingPLG />
       <FaqV3 />
+      <FeatureLensAIV3 />
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">

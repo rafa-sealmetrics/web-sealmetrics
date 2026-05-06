@@ -9,6 +9,7 @@ import {
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
+import { Picture } from "@/components/ui/Picture";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
@@ -90,6 +91,15 @@ export default function Page() {
           <div className="grid md:grid-cols-2 gap-4">
             {/* Palladium card */}
             <article className="bg-white border border-warm-100 rounded-2xl p-8 md:p-10 flex flex-col gap-6">
+              <div className="h-12 flex items-center">
+                <Picture
+                  src="/logos/clients/palladium-dark.svg"
+                  alt="Palladium Hotel Group"
+                  width={200}
+                  height={48}
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
               <header className="flex items-baseline justify-between flex-wrap gap-3 pb-5 border-b border-warm-100">
                 <span className="text-[18px] font-semibold text-ink tracking-[-0.015em]">
                   Palladium Hotel Group
@@ -138,6 +148,15 @@ export default function Page() {
 
             {/* Dreamplace card */}
             <article className="bg-white border border-warm-100 rounded-2xl p-8 md:p-10 flex flex-col gap-6">
+              <div className="h-12 flex items-center">
+                <Picture
+                  src="/logos/clients/dreamplace.svg"
+                  alt="Dreamplace Hotels"
+                  width={200}
+                  height={48}
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
               <header className="flex items-baseline justify-between flex-wrap gap-3 pb-5 border-b border-warm-100">
                 <span className="text-[18px] font-semibold text-ink tracking-[-0.015em]">
                   Dreamplace Hotels

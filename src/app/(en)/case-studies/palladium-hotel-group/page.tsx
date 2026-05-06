@@ -152,6 +152,141 @@ export default function Page() {
         </div>
       </section>
 
+      {/* DV360 case — moved to top of landing */}
+      <section className="section-dark bg-ink text-white py-24 relative overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute pointer-events-none"
+          style={{
+            right: -120,
+            top: -120,
+            width: 360,
+            height: 360,
+            borderRadius: "50%",
+            background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)",
+          }}
+        />
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 relative">
+          <div className="max-w-[760px] mx-auto">
+            <span className="eyebrow mb-5" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The DV360 case
+            </span>
+            <h2 className="h-section text-white mt-5">
+              An efficient measurement model{" "}
+              <em
+                className="italic font-medium"
+                style={{ color: "#E8B84B", fontStyle: "italic" }}
+              >
+                for the Display channel.
+              </em>
+            </h2>
+            <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-white/85">
+              <p>
+                One of the most intensive applications Palladium Hotel Group made of
+                SealMetrics was on their Display &amp; Video 360 campaigns, Google&apos;s
+                programmatic platform. The classic problem of any programmatic buy is
+                always the same: part of the inventory converts better than the rest, and
+                separating one from the other from inside the platform itself is non-trivial.
+              </p>
+              <p>
+                Before SealMetrics, the underlying issue was measurement: with 40% of traffic
+                unattributed, there was no way to build a robust model to evaluate Display.
+                With the pixel and native measurement, the team saw aggregates but
+                couldn&apos;t isolate which partners, placements or audiences were really
+                generating qualified intent.
+              </p>
+              <p>
+                SealMetrics let them implement{" "}
+                <b className="text-white">an efficient, robust measurement model for the
+                Display channel based on Cost-per-Search</b> — i.e. cost per availability
+                search in their booking engine. With every visit correctly attributed to
+                partner and placement of origin, the team could distinguish which parts of
+                the inventory moved real availability searches and which only added volume.
+              </p>
+              <p>
+                With that model in hand, Palladium Hotel Group optimised{" "}
+                <b className="text-white">partners, placements, audiences and strategies</b>{" "}
+                across Display, rebalancing investment toward the combination that performed
+                best on the metric that mattered.
+              </p>
+            </div>
+          </div>
+
+          {/* Headline result card */}
+          <div className="mt-12 max-w-[860px] mx-auto bg-white/5 border border-white/15 rounded-xl p-10">
+            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-4">
+              Display result
+            </div>
+            <div
+              className="font-semibold tracking-[-0.04em] text-white leading-[0.9] tabular-nums"
+              style={{ fontSize: "clamp(64px, 9vw, 130px)" }}
+            >
+              +165
+              <span
+                className="italic font-medium"
+                style={{ color: "#E8B84B", fontStyle: "italic" }}
+              >
+                %
+              </span>
+            </div>
+            <div className="mt-5 text-[18px] leading-[1.5] text-white/85 max-w-[58ch]">
+              improvement in Cost-per-Search on the Display channel, after applying the
+              SealMetrics-based measurement model and rebalancing the mix of partners,
+              placements, audiences and strategies. Same budget. Different measurement.
+              Different decisions.
+            </div>
+          </div>
+
+          {/* Decision flow */}
+          <div className="mt-14 max-w-[860px] mx-auto">
+            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/60 font-semibold mb-6">
+              How they used the data — decision flow
+            </div>
+            <ol className="space-y-6">
+              {[
+                {
+                  n: "01",
+                  t: "Attribute 100%",
+                  d: "SealMetrics correctly attributes inbound traffic from DV360 to partner, placement and audience — without depending on consent or the platform pixel.",
+                },
+                {
+                  n: "02",
+                  t: "Model on Cost-per-Search",
+                  d: "With attribution resolved, build a model based on Cost-per-Search of availability in the booking engine: a metric closer to real intent than aggregated conversions.",
+                },
+                {
+                  n: "03",
+                  t: "Optimise the mix",
+                  d: "Rebalance partners, placements, audiences and strategies toward the combination that performs best on Cost-per-Search. Cut the ones that bring volume without intent.",
+                },
+                {
+                  n: "04",
+                  t: "Scale with criteria",
+                  d: "With a robust model in place, new partners and placements come in with the certainty they'll be evaluated with the same rigour. Scaling decisions stop being intuition and become data.",
+                },
+              ].map((step) => (
+                <li
+                  key={step.n}
+                  className="grid grid-cols-[auto_1fr] gap-6 pb-6 border-b border-white/10 last:border-0"
+                >
+                  <div className="font-mono text-[12px] tracking-[0.08em] text-brand-soft font-semibold pt-1">
+                    {step.n}
+                  </div>
+                  <div>
+                    <div className="text-[18px] font-semibold text-white tracking-[-0.015em]">
+                      {step.t}
+                    </div>
+                    <div className="text-[15px] leading-[1.6] text-white/75 mt-1.5">
+                      {step.d}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
       {/* Client meta strip */}
       <section className="border-t border-warm-100 bg-warm-white py-10">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
@@ -439,141 +574,6 @@ export default function Page() {
               Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
             </cite>
           </blockquote>
-        </div>
-      </section>
-
-      {/* DV360 case */}
-      <section className="section-dark bg-ink text-white py-24 relative overflow-hidden">
-        <div
-          aria-hidden
-          className="absolute pointer-events-none"
-          style={{
-            right: -120,
-            top: -120,
-            width: 360,
-            height: 360,
-            borderRadius: "50%",
-            background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)",
-          }}
-        />
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 relative">
-          <div className="max-w-[760px] mx-auto">
-            <span className="eyebrow mb-5" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The DV360 case
-            </span>
-            <h2 className="h-section text-white mt-5">
-              An efficient measurement model{" "}
-              <em
-                className="italic font-medium"
-                style={{ color: "#E8B84B", fontStyle: "italic" }}
-              >
-                for the Display channel.
-              </em>
-            </h2>
-            <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-white/85">
-              <p>
-                One of the most intensive applications Palladium Hotel Group made of
-                SealMetrics was on their Display &amp; Video 360 campaigns, Google&apos;s
-                programmatic platform. The classic problem of any programmatic buy is
-                always the same: part of the inventory converts better than the rest, and
-                separating one from the other from inside the platform itself is non-trivial.
-              </p>
-              <p>
-                Before SealMetrics, the underlying issue was measurement: with 40% of traffic
-                unattributed, there was no way to build a robust model to evaluate Display.
-                With the pixel and native measurement, the team saw aggregates but
-                couldn&apos;t isolate which partners, placements or audiences were really
-                generating qualified intent.
-              </p>
-              <p>
-                SealMetrics let them implement{" "}
-                <b className="text-white">an efficient, robust measurement model for the
-                Display channel based on Cost-per-Search</b> — i.e. cost per availability
-                search in their booking engine. With every visit correctly attributed to
-                partner and placement of origin, the team could distinguish which parts of
-                the inventory moved real availability searches and which only added volume.
-              </p>
-              <p>
-                With that model in hand, Palladium Hotel Group optimised{" "}
-                <b className="text-white">partners, placements, audiences and strategies</b>{" "}
-                across Display, rebalancing investment toward the combination that performed
-                best on the metric that mattered.
-              </p>
-            </div>
-          </div>
-
-          {/* Headline result card */}
-          <div className="mt-12 max-w-[860px] mx-auto bg-white/5 border border-white/15 rounded-xl p-10">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-4">
-              Display result
-            </div>
-            <div
-              className="font-semibold tracking-[-0.04em] text-white leading-[0.9] tabular-nums"
-              style={{ fontSize: "clamp(64px, 9vw, 130px)" }}
-            >
-              +165
-              <span
-                className="italic font-medium"
-                style={{ color: "#E8B84B", fontStyle: "italic" }}
-              >
-                %
-              </span>
-            </div>
-            <div className="mt-5 text-[18px] leading-[1.5] text-white/85 max-w-[58ch]">
-              improvement in Cost-per-Search on the Display channel, after applying the
-              SealMetrics-based measurement model and rebalancing the mix of partners,
-              placements, audiences and strategies. Same budget. Different measurement.
-              Different decisions.
-            </div>
-          </div>
-
-          {/* Decision flow */}
-          <div className="mt-14 max-w-[860px] mx-auto">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/60 font-semibold mb-6">
-              How they used the data — decision flow
-            </div>
-            <ol className="space-y-6">
-              {[
-                {
-                  n: "01",
-                  t: "Attribute 100%",
-                  d: "SealMetrics correctly attributes inbound traffic from DV360 to partner, placement and audience — without depending on consent or the platform pixel.",
-                },
-                {
-                  n: "02",
-                  t: "Model on Cost-per-Search",
-                  d: "With attribution resolved, build a model based on Cost-per-Search of availability in the booking engine: a metric closer to real intent than aggregated conversions.",
-                },
-                {
-                  n: "03",
-                  t: "Optimise the mix",
-                  d: "Rebalance partners, placements, audiences and strategies toward the combination that performs best on Cost-per-Search. Cut the ones that bring volume without intent.",
-                },
-                {
-                  n: "04",
-                  t: "Scale with criteria",
-                  d: "With a robust model in place, new partners and placements come in with the certainty they'll be evaluated with the same rigour. Scaling decisions stop being intuition and become data.",
-                },
-              ].map((step) => (
-                <li
-                  key={step.n}
-                  className="grid grid-cols-[auto_1fr] gap-6 pb-6 border-b border-white/10 last:border-0"
-                >
-                  <div className="font-mono text-[12px] tracking-[0.08em] text-brand-soft font-semibold pt-1">
-                    {step.n}
-                  </div>
-                  <div>
-                    <div className="text-[18px] font-semibold text-white tracking-[-0.015em]">
-                      {step.t}
-                    </div>
-                    <div className="text-[15px] leading-[1.6] text-white/75 mt-1.5">
-                      {step.d}
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import type { VsData } from "./VsComparisonV3";
 
 type Locale = "en" | "es";
-export type VsKey = "ga360" | "adobe-analytics" | "piwik-pro" | "google-analytics";
+export type VsKey = "ga360" | "adobe-analytics" | "piwik-pro" | "matomo" | "google-analytics";
 
 export function getVsData(key: VsKey, locale: Locale): VsData {
   const data: Record<VsKey, Record<Locale, Omit<VsData, "locale">>> = {
@@ -255,6 +255,100 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         ],
         ctaTitle: <>Hosting UE <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>más captura completa.</em></>,
         ctaLede: "30 min. Pasamos tu web por SealMetrics y Piwik PRO simultáneamente. Ves cuánto tráfico UE sigue perdiendo el banner de Piwik PRO.",
+      },
+    },
+    matomo: {
+      en: {
+        competitor: "Matomo",
+        hook: "Matomo is open-source and EU-friendly. Cloud is mid-priced and self-hosted is 'free' on paper. But cookies are still on by default, the cookieless mode is partial, and the modern stack — MCP, native BigQuery, real-time — isn't there.",
+        eyebrow: "vs Matomo",
+        h1: <>Open-source is great. <em>Cookies are still the bottleneck.</em></>,
+        lede: "Matomo (Cloud or self-hosted) is the most credible open-source analytics in Europe. But its default is cookie-based, its cookieless mode trades features for compliance, and the operational cost of self-hosting eats the 'free' label. SealMetrics is cookieless by design, EU-hosted, with a modern stack — from €499/mo, no devops required.",
+        gapStats: [
+          { n: "Cookies on", label: "Default tracking mode", detail: "Cookieless mode exists but is limited and not the default." },
+          { n: "Self-host", label: "DevOps overhead", detail: "Servers, backups, security patches, scaling — your team's time." },
+          { n: "Plugin maze", label: "Modern features bolted on", detail: "Real-time, advanced reports and integrations live behind paid plugins." },
+          { n: "No MCP", label: "No AI-native interface", detail: "No MCP server. No agent-ready API. Built before the AI shift." },
+        ],
+        comparison: [
+          { category: "Pricing & operations", rows: [
+            { feature: "Entry cost", them: "Cloud from ~€23/mo · self-hosted 'free' + ops", us: "€499/mo · all-inclusive · no ops" },
+            { feature: "Total cost of ownership (self-host)", them: "Server, ops, security, plugins, upgrades", us: "Zero infra cost · fully managed" },
+            { feature: "Implementation support", them: "Community forum / paid consultancy", us: "Founder-led on all plans" },
+          ]},
+          { category: "Data capture", rows: [
+            { feature: "Default mode", them: "Cookies on · consent banner required", us: "Cookieless · no banner needed" },
+            { feature: "Cookieless mode available", them: "Yes, but limited (no visitor profiles, fewer reports)", us: "Full functionality, always cookieless" },
+            { feature: "EU traffic captured (typical)", them: "~60% with banner", us: "100% captured" },
+            { feature: "Sampling at scale", them: "Performance-driven (self-host bottlenecks)", us: "Zero sampling" },
+          ]},
+          { category: "Compliance", rows: [
+            { feature: "GDPR posture", them: "Compliant if cookieless mode + DPIA + banner", us: "GDPR by architecture · no DPIA needed for visitor data" },
+            { feature: "Data residency (Cloud)", them: "EU options · paid plans", us: "EU-only · Dublin · all plans" },
+            { feature: "Schrems II", them: "Clean (Cloud EU)", us: "Clean" },
+          ]},
+          { category: "Modern stack", rows: [
+            { feature: "Native MCP / AI agents", them: "No", us: "Native MCP server" },
+            { feature: "BigQuery / warehouse export", them: "Paid plugin or manual ETL", us: "Native · all plans · full resolution" },
+            { feature: "Real-time latency", them: "Minutes (with extra plugins)", us: "< 2 minutes · default" },
+            { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI included from Growth" },
+          ]},
+        ],
+        faqs: [
+          { q: "Isn't Matomo's cookieless mode equivalent to SealMetrics?", a: "Not really. Matomo's cookieless mode disables visitor profiles, custom variables and several reports — you trade features for compliance. SealMetrics is cookieless across the entire product: no feature loss, no toggle, no compromise. Plus aggregate-only architecture means you're outside GDPR's material scope, not relying on a configuration." },
+          { q: "Self-hosted Matomo is free. SealMetrics costs €499/mo. Why pay?", a: "Self-hosting is free on the licence. It is not free in operations: you need a server, security patches, backups, plugin maintenance, upgrade cycles and someone responsible when something breaks at 3 AM. For a serious eCommerce, that's typically 0.2–0.5 FTE — €15K–€40K/yr in real cost. SealMetrics replaces all of that for €6K/yr, with cookieless data and a modern stack on top." },
+          { q: "How does Matomo compare to Piwik PRO?", a: "Piwik PRO is a commercial fork of Matomo, with enterprise features and EU hosting layered on top. Both share the cookie-based architecture origin. Piwik PRO is closer to enterprise pricing (~€30K+/yr) while Matomo Cloud is more mid-market. SealMetrics differs from both at the architecture level: not a privacy-friendly skin on cookie tracking, but cookieless capture by design." },
+          { q: "What about Matomo's 1.5M+ users and ecosystem?", a: "Matomo's ecosystem is real and useful for blogs, content sites and small eCommerce. SealMetrics is built for European eCommerce €10M+ where 40–60% data loss to consent banners breaks paid-media decisions. Different category, different buyer. If your site is content-driven and consent is acceptable, Matomo Cloud is reasonable. If your CFO is questioning marketing spend on incomplete numbers, you're past the lightweight tier." },
+          { q: "Can I migrate gradually from Matomo?", a: "Yes. Run both in parallel 30 days. Compare traffic counts (SealMetrics typically captures 30–70% more EU traffic than Matomo with banner), compare attribution at channel level, compare revenue alignment with your backend. Most teams decide within the first 14 days." },
+        ],
+        ctaTitle: <>Cookieless by design. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>No devops required.</em></>,
+        ctaLede: "30 minutes with the founder. We run your site through SealMetrics and Matomo simultaneously — you see the traffic Matomo's banner still loses and what your real-data dashboards look like.",
+      },
+      es: {
+        competitor: "Matomo",
+        hook: "Matomo es open-source y amigable con UE. Cloud es de precio medio y self-hosted es 'gratis' sobre el papel. Pero las cookies siguen activas por defecto, el modo cookieless es parcial y el stack moderno — MCP, BigQuery nativo, tiempo real — no está.",
+        eyebrow: "vs Matomo",
+        h1: <>Open-source está bien. <em>Las cookies siguen siendo el cuello de botella.</em></>,
+        lede: "Matomo (Cloud o self-hosted) es la analítica open-source más creíble en Europa. Pero su modo por defecto es con cookies, su modo cookieless cambia features por compliance, y el coste operativo del self-hosting se come la etiqueta de 'gratis'. SealMetrics es cookieless por diseño, alojado en UE, con stack moderno — desde €499/mes, sin devops.",
+        gapStats: [
+          { n: "Cookies on", label: "Modo de tracking por defecto", detail: "El modo cookieless existe pero es limitado y no es el default." },
+          { n: "Self-host", label: "Overhead DevOps", detail: "Servidores, backups, parches de seguridad, escalado — tiempo de tu equipo." },
+          { n: "Laberinto plugins", label: "Features modernas a pedazos", detail: "Tiempo real, reportes avanzados e integraciones detrás de plugins de pago." },
+          { n: "Sin MCP", label: "Sin interfaz IA-nativa", detail: "Sin MCP server. Sin API agent-ready. Construido antes del shift de IA." },
+        ],
+        comparison: [
+          { category: "Precio y operación", rows: [
+            { feature: "Coste de entrada", them: "Cloud desde ~23€/mes · self-hosted 'gratis' + ops", us: "€499/mes · todo incluido · sin ops" },
+            { feature: "TCO (self-host)", them: "Servidor, ops, seguridad, plugins, upgrades", us: "Cero coste de infra · totalmente gestionado" },
+            { feature: "Soporte implementación", them: "Foro comunidad / consultoría de pago", us: "Liderado por founder en todos los planes" },
+          ]},
+          { category: "Captura de datos", rows: [
+            { feature: "Modo por defecto", them: "Cookies on · banner requerido", us: "Sin cookies · sin banner" },
+            { feature: "Modo cookieless disponible", them: "Sí, pero limitado (sin perfiles de visitante, menos reports)", us: "Funcionalidad completa, siempre sin cookies" },
+            { feature: "Tráfico UE capturado (típico)", them: "~60% con banner", us: "100% capturado" },
+            { feature: "Muestreo a escala", them: "Por rendimiento (cuellos de botella self-host)", us: "Cero muestreo" },
+          ]},
+          { category: "Compliance", rows: [
+            { feature: "Postura RGPD", them: "Compliant con modo cookieless + DPIA + banner", us: "RGPD por arquitectura · sin DPIA para datos de visitante" },
+            { feature: "Residencia (Cloud)", them: "Opciones UE · planes de pago", us: "Solo UE · Dublín · todos los planes" },
+            { feature: "Schrems II", them: "Limpio (Cloud UE)", us: "Limpio" },
+          ]},
+          { category: "Stack moderno", rows: [
+            { feature: "MCP / agentes IA nativos", them: "No", us: "MCP server nativo" },
+            { feature: "Export BigQuery / warehouse", them: "Plugin de pago o ETL manual", us: "Nativo · todos los planes · resolución completa" },
+            { feature: "Latencia tiempo real", them: "Minutos (con plugins extra)", us: "< 2 minutos · por defecto" },
+            { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI incluido desde Growth" },
+          ]},
+        ],
+        faqs: [
+          { q: "¿No es el modo cookieless de Matomo equivalente a SealMetrics?", a: "No del todo. El modo cookieless de Matomo desactiva perfiles de visitante, variables custom y varios reports — cambias features por compliance. SealMetrics es cookieless en todo el producto: sin pérdida de funcionalidad, sin toggle, sin compromiso. Y la arquitectura agregada por defecto te deja fuera del scope material del RGPD, no dependiendo de una configuración." },
+          { q: "Matomo self-hosted es gratis. SealMetrics cuesta €499/mes. ¿Por qué pagar?", a: "Self-hosting es gratis en licencia. No es gratis en operación: necesitas servidor, parches de seguridad, backups, mantenimiento de plugins, ciclos de upgrade y alguien responsable cuando algo se rompe a las 3 AM. Para un eCommerce serio, suele ser 0,2–0,5 FTE — 15K€–40K€/año de coste real. SealMetrics reemplaza todo eso por 6K€/año, con dato cookieless y stack moderno encima." },
+          { q: "¿Cómo se compara Matomo con Piwik PRO?", a: "Piwik PRO es un fork comercial de Matomo, con features enterprise y hosting UE encima. Ambos comparten el origen de arquitectura basada en cookies. Piwik PRO está más cerca de pricing enterprise (~30K€+/año) mientras Matomo Cloud es más mid-market. SealMetrics se diferencia de ambos en arquitectura: no es una capa privacy-friendly sobre tracking con cookies, sino captura cookieless por diseño." },
+          { q: "¿Y los más de 1,5M de usuarios y el ecosistema de Matomo?", a: "El ecosistema de Matomo es real y útil para blogs, sitios de contenido y eCommerce pequeño. SealMetrics está construido para eCommerce europeo de 10M€+ donde 40–60% de pérdida de datos por banners de consentimiento rompe las decisiones de paid media. Categoría distinta, buyer distinto. Si tu sitio es content-driven y el consentimiento es aceptable, Matomo Cloud es razonable. Si tu CFO está cuestionando el spend de marketing por números incompletos, estás más allá del tier ligero." },
+          { q: "¿Puedo migrar gradualmente desde Matomo?", a: "Sí. Corre ambos en paralelo 30 días. Compara conteos de tráfico (SealMetrics típicamente captura 30–70% más tráfico UE que Matomo con banner), compara atribución a nivel de canal, compara alineación de revenue con tu backend. La mayoría de equipos decide en los primeros 14 días." },
+        ],
+        ctaTitle: <>Cookieless por diseño. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Sin devops.</em></>,
+        ctaLede: "30 min con el founder. Pasamos tu sitio por SealMetrics y Matomo a la vez — ves el tráfico que el banner de Matomo sigue perdiendo y cómo se ven tus dashboards con datos reales.",
       },
     },
     "google-analytics": {

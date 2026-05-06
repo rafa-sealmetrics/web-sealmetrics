@@ -1,0 +1,371 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/demo-request";
+
+const FREE_EMAIL_DOMAINS = new Set([
+  "gmail.com",
+  "googlemail.com",
+  "yahoo.com",
+  "yahoo.es",
+  "yahoo.co.uk",
+  "yahoo.fr",
+  "yahoo.de",
+  "yahoo.it",
+  "ymail.com",
+  "rocketmail.com",
+  "hotmail.com",
+  "hotmail.es",
+  "hotmail.co.uk",
+  "hotmail.fr",
+  "hotmail.de",
+  "hotmail.it",
+  "outlook.com",
+  "outlook.es",
+  "outlook.fr",
+  "outlook.de",
+  "outlook.it",
+  "live.com",
+  "live.es",
+  "live.fr",
+  "live.de",
+  "live.co.uk",
+  "msn.com",
+  "aol.com",
+  "icloud.com",
+  "me.com",
+  "mac.com",
+  "protonmail.com",
+  "proton.me",
+  "pm.me",
+  "gmx.com",
+  "gmx.net",
+  "gmx.de",
+  "gmx.es",
+  "mail.com",
+  "mail.ru",
+  "yandex.com",
+  "yandex.ru",
+  "zoho.com",
+  "fastmail.com",
+  "fastmail.fm",
+  "tutanota.com",
+  "tutanota.de",
+  "tutamail.com",
+  "tuta.io",
+  "hey.com",
+  "duck.com",
+  "qq.com",
+  "163.com",
+  "126.com",
+  "sina.com",
+  "free.fr",
+  "orange.fr",
+  "wanadoo.fr",
+  "laposte.net",
+  "libero.it",
+  "tiscali.it",
+  "alice.it",
+  "virgilio.it",
+  "telefonica.net",
+  "terra.es",
+  "ya.com",
+]);
+
+function normalizeHostname(input: string): string | null {
+  const trimmed = input.trim();
+  if (!trimmed) return null;
+  let candidate = trimmed;
+  if (!/^https?:\/\//i.test(candidate)) candidate = `https://${candidate}`;
+  try {
+    const url = new URL(candidate);
+    return url.hostname.toLowerCase().replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
+function emailDomain(email: string): string | null {
+  const at = email.lastIndexOf("@");
+  if (at === -1) return null;
+  const domain = email.slice(at + 1).trim().toLowerCase();
+  return domain || null;
+}
+
+function domainsMatch(emailDom: string, siteHost: string): boolean {
+  if (emailDom === siteHost) return true;
+  if (emailDom.endsWith(`.${siteHost}`)) return true;
+  if (siteHost.endsWith(`.${emailDom}`)) return true;
+  return false;
+}
+
+type Status =
+  | { kind: "idle" }
+  | { kind: "submitting" }
+  | { kind: "success" }
+  | { kind: "error"; message: string };
+
+export function AccessForm() {
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+  const [website, setWebsite] = useState("");
+  const [email, setEmail] = useState("");
+  const [gdpr, setGdpr] = useState(false);
+  const [status, setStatus] = useState<Status>({ kind: "idle" });
+
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!name.trim() || !company.trim() || !website.trim() || !email.trim()) {
+      setStatus({ kind: "error", message: "All fields are required." });
+      return;
+    }
+
+    const host = normalizeHostname(website);
+    if (!host) {
+      setStatus({ kind: "error", message: "Enter a valid website URL." });
+      return;
+    }
+
+    const dom = emailDomain(email);
+    if (!dom) {
+      setStatus({ kind: "error", message: "Enter a valid email address." });
+      return;
+    }
+
+    if (FREE_EMAIL_DOMAINS.has(dom)) {
+      setStatus({
+        kind: "error",
+        message:
+          "Personal email providers are not accepted. Please use your corporate email.",
+      });
+      return;
+    }
+
+    if (!domainsMatch(dom, host)) {
+      setStatus({
+        kind: "error",
+        message: `Your email domain (${dom}) must match your website (${host}).`,
+      });
+      return;
+    }
+
+    if (!gdpr) {
+      setStatus({ kind: "error", message: "Please accept the privacy notice." });
+      return;
+    }
+
+    setStatus({ kind: "submitting" });
+
+    const payload = {
+      name: name.trim(),
+      company: company.trim(),
+      website: host,
+      websiteRaw: website.trim(),
+      email: email.trim().toLowerCase(),
+      emailDomain: dom,
+      locale: "en",
+      source: typeof window !== "undefined" ? window.location.href : "",
+      submittedAt: new Date().toISOString(),
+    };
+
+    if (typeof window !== "undefined" && window.sealmetrics) {
+      try {
+        window.sealmetrics.conv("demo_access_request", 1, { email: payload.email });
+      } catch (err) {
+        console.warn("SealMetrics conv failed", err);
+      }
+    }
+
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      setStatus({ kind: "success" });
+    } catch (err) {
+      console.warn("Webhook delivery failed", err);
+      setStatus({
+        kind: "error",
+        message: "Something went wrong. Please try again in a minute.",
+      });
+    }
+  };
+
+  const microFired = useRef(false);
+
+  useEffect(() => {
+    if (status.kind !== "success" || microFired.current) return;
+    microFired.current = true;
+    if (typeof window !== "undefined" && window.sealmetrics) {
+      try {
+        window.sealmetrics.micro("lead_demo_access", { email });
+      } catch (err) {
+        console.warn("SealMetrics micro failed", err);
+      }
+    }
+  }, [status.kind, email]);
+
+  if (status.kind === "success") {
+    return (
+      <div className="bg-white border border-warm-100 rounded-xl p-8 md:p-9">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+          Request received
+        </span>
+        <h2
+          className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-3"
+          style={{ fontSize: "clamp(22px, 2.4vw, 28px)" }}
+        >
+          Check your inbox — <em className="italic-accent">credentials are on the way.</em>
+        </h2>
+        <p className="text-[15px] text-ink-soft leading-[1.6] mt-4">
+          If your domain checks out, you&apos;ll receive your demo account user and password at{" "}
+          <span className="text-ink font-semibold">{email}</span> within a few minutes. The email may land in spam — search for &ldquo;SealMetrics&rdquo;.
+        </p>
+        <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-5">
+          Want a guided tour instead?{" "}
+          <a
+            href="/demo"
+            className="text-ink underline hover:text-brand transition-colors"
+          >
+            Book a 30-minute walkthrough
+          </a>
+          .
+        </p>
+      </div>
+    );
+  }
+
+  const submitting = status.kind === "submitting";
+  const errorMsg = status.kind === "error" ? status.message : null;
+
+  return (
+    <form
+      onSubmit={submit}
+      className="bg-white border border-warm-100 rounded-xl p-8 md:p-9 space-y-5"
+    >
+      <div>
+        <label
+          htmlFor="name"
+          className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5"
+        >
+          Full name
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="company"
+          className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5"
+        >
+          Company
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          required
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="website"
+          className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5"
+        >
+          Company website
+        </label>
+        <input
+          id="website"
+          name="website"
+          type="url"
+          required
+          placeholder="https://yourcompany.com"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="email"
+          className="block text-[12px] font-mono uppercase tracking-[0.08em] text-ink-soft font-semibold mb-1.5"
+        >
+          Corporate email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="you@yourcompany.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-4 py-3 text-[15px] border border-warm-200 rounded-md bg-white focus:border-brand focus:outline-none transition-colors"
+        />
+        <p className="text-[12px] text-ink-soft leading-[1.5] mt-1.5">
+          Must match the website domain. Gmail, Outlook, Yahoo, etc. are not accepted.
+        </p>
+      </div>
+
+      <div className="flex items-start gap-3">
+        <input
+          id="gdpr"
+          type="checkbox"
+          required
+          checked={gdpr}
+          onChange={(e) => setGdpr(e.target.checked)}
+          className="mt-1 w-4 h-4 rounded border border-warm-200 accent-brand cursor-pointer flex-shrink-0"
+        />
+        <label
+          htmlFor="gdpr"
+          className="text-[12.5px] text-ink-soft leading-relaxed cursor-pointer"
+        >
+          I agree to the{" "}
+          <a
+            href="https://legal.sealmetrics.com/privacy-notice"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink underline hover:text-brand transition-colors"
+          >
+            Privacy Notice
+          </a>{" "}
+          and consent to SealMetrics processing my data to send me demo credentials.
+        </label>
+      </div>
+
+      {errorMsg && (
+        <p className="text-[13px] text-red-alert leading-[1.5]" role="alert">
+          {errorMsg}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="w-full py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md hover:bg-brand transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {submitting ? "Sending…" : "Send Me Demo Credentials →"}
+      </button>
+      <p className="text-[12px] text-ink-soft text-center font-mono tracking-[0.04em]">
+        Credentials arrive by email within minutes.
+      </p>
+    </form>
+  );
+}

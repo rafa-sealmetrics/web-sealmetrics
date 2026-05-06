@@ -73,7 +73,7 @@ export function BlindnessCalculator() {
             className="font-semibold text-ink leading-[1.02] tracking-[-0.025em]"
             style={{ fontSize: "clamp(34px, 5.4vw, 64px)" }}
           >
-            Your GA4 is{" "}
+            Your Legacy Analytics is{" "}
             <span className="relative inline-block">
               lying
               <span

@@ -5,6 +5,7 @@ const comparisons = [
   { href: "/vs/ga360/", label: "SealMetrics vs GA360", blurb: "Enterprise analytics compared" },
   { href: "/vs/adobe-analytics/", label: "SealMetrics vs Adobe Analytics", blurb: "Legacy enterprise vs cookieless" },
   { href: "/vs/piwik-pro/", label: "SealMetrics vs Piwik PRO", blurb: "EU privacy analytics compared" },
+  { href: "/vs/matomo/", label: "SealMetrics vs Matomo", blurb: "Open-source meets cookieless" },
   { href: "/alternatives/google-analytics/", label: "Google Analytics alternatives", blurb: "Full category overview" },
 ];
 

@@ -1,6 +1,8 @@
 import { Picture } from "@/components/ui/Picture";
 
 const logos = [
+  { name: "Palladium Hotel Group", src: "/logos/clients/palladium-dark.svg", width: 130, height: 30 },
+  { name: "Dreamplace Hotels", src: "/logos/clients/dreamplace.svg", width: 130, height: 30 },
   { name: "Acciona", src: "/logos/clients/acciona.svg", width: 120, height: 32 },
   { name: "Crocs", src: "/logos/clients/crocs.svg", width: 100, height: 32 },
   { name: "Desigual", src: "/logos/clients/desigual-dark.svg", width: 130, height: 24 },
