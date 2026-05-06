@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import Link from "next/link";
 import { breadcrumbSchema, comparisonPageSchema, quotationSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
@@ -84,7 +85,18 @@ export default function Page() {
       ]}
       />
       <LogosStripEs />
-      
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer label="Respuesta rápida">
+            <p>
+              Google Analytics 360 (GA360) es el tier enterprise de Google Analytics, con precio desde 150.000$/año con contrato anual, alojado en Estados Unidos y requiriendo banner de cookies en toda la UE. SealMetrics es una plataforma de analítica cookieless alojada en UE que captura el 100% del tráfico entrante sin dependencia del consentimiento, atribuye last-click sobre eventos observados y arranca en 499€/mes anual sin compromiso anual.
+            </p>
+            <p>
+              Las diferencias arquitectónicas importan para eCommerce UE: GA360 sigue perdiendo el 40-60% del tráfico UE por rechazo de consentimiento (Consent Mode v2 reconstruye el gap con modelado estadístico, no con medición), y el hosting en US requiere SCCs Schrems II con revisión DPIA trimestral. La infraestructura solo-Dublín de SealMetrics y los cero sub-procesadores fuera de UE eliminan ese overhead de compliance por completo. Lo típico es correr ambos 30 días, conciliar contra el CRM y migrar las decisiones de ingresos a SealMetrics manteniendo GA360 como conducto a Google Ads.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
     </>
   );
 }

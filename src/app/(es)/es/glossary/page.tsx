@@ -3,7 +3,7 @@ import Link from "next/link";
 import { glossaryTerms } from "@/lib/content/glossary";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
+import { collectionPageSchema, breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
@@ -30,6 +30,17 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Glosario" }]} locale="es" />
       <JsonLd data={collectionPageSchema({ name: "Glosario de analítica", description: "Definiciones claras de términos de analítica web.", url: "/es/glossary" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glosario", url: "/es/glossary" }])} />
+      <JsonLd
+        data={itemListSchema({
+          name: "Glosario de analítica",
+          description: "Definiciones de términos de analítica web, RGPD y atribución para equipos eCommerce europeos.",
+          url: "/es/glossary",
+          items: glossaryTerms.map((t) => ({
+            name: t.term,
+            url: `https://sealmetrics.com/es/glossary/${t.slug}`,
+          })),
+        })}
+      />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">

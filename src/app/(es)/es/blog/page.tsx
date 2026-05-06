@@ -76,6 +76,17 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Blog" }]} locale="es" />
       <JsonLd data={collectionPageSchema({ name: "Blog", description: "Insights sobre analítica web, calidad de datos y medición privacy-first.", url: "/es/blog" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }])} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: posts.map((post, i) => ({
+          "@type": "ListItem", position: i + 1,
+          url: ES_TRANSLATED_SLUGS.has(post.slug)
+            ? `https://sealmetrics.com/es/blog/${post.slug}`
+            : `https://sealmetrics.com/blog/${post.slug}`,
+          name: post.title,
+        })),
+      }} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">

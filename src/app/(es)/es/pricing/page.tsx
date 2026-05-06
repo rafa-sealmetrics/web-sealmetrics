@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
@@ -60,6 +61,18 @@ export default function PricingPageEs() {
       <FullComparisonV3Es />
       <PricingFaqV3 locale="es" />
       <PricingFinalCtaV3Es />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer label="Respuesta rápida">
+            <p>
+              El precio de SealMetrics es analítica enterprise con facturación anual, sin sorpresas por uso. El plan Growth son 499€/mes anual (599€/mes mensual) por 5 millones de eventos humanos al mes; el Scale son 899€/mes anual (1.079€/mes mensual) por 15 millones; Enterprise es a medida para portfolios con eventos ilimitados, procesamiento aislado, SSO/SAML, RBAC, SLA del 99,9% y account manager dedicado. Todos los planes incluyen la misma arquitectura: 100% de captura, atribución last-click, alojado en Dublín, RGPD por diseño y DPA estándar.
+            </p>
+            <p>
+              Para un equipo eCommerce UE con 20K€+/mes en paid media, el plan Growth representa menos del 2,5% del spend en paid — típicamente menos que el coste de una sola decisión mal atribuida. La facturación anual incluye dos meses gratis frente a la mensual. Trial de 14 días gratis; sin migración desde GA4 porque corren en paralelo.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
     </>
   );
 }

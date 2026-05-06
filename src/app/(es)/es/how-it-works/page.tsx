@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
@@ -37,6 +37,7 @@ export default function HowItWorksPageEs() {
     <>
       <Breadcrumbs items={[{ label: "Cómo funciona" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Cómo funciona", url: "/es/how-it-works" }])} />
+      <JsonLd data={speakableWebPageSchema({ url: "/es/how-it-works", name: "Cómo funciona — SealMetrics" })} />
 
       <HowItWorksHeroV3 locale="es" />
       <TldrBlock

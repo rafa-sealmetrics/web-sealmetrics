@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
@@ -24,6 +24,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Sobre nosotros" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Sobre nosotros", url: "/es/about" }])} />
+      <JsonLd data={organizationSchema()} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">

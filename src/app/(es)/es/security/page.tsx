@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
@@ -34,6 +34,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Seguridad" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Seguridad", url: "/es/security" }])} />
+      <JsonLd data={speakableWebPageSchema({ url: "/es/security", name: "Seguridad — SealMetrics" })} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
@@ -89,6 +90,35 @@ export default function Page() {
                 </div>
                 <p className="text-[13.5px] leading-[1.6] text-ink-soft">{c.desc}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+          <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
+            <div>
+              <span className="eyebrow mb-5">Flujo del dato</span>
+              <h2 className="h-section mt-5">Del visitante al dashboard. <em>Todo dentro de Irlanda.</em></h2>
+              <h3 className="sr-only">¿Dónde procesa y almacena SealMetrics el dato?</h3>
+            </div>
+            <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+              Cada byte de dato se queda dentro de la UE. Sin transferencias a terceros países, sin sub-procesadores, sin dependencias ocultas.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+            {[
+              { n: "01 · Captura", t: "Pixel first-party", p: "Tu dominio. Sin cookies. Sin localStorage. Sin identificadores. Cero dato personal en el dispositivo." },
+              { n: "02 · Tránsito", t: "TLS 1.3 cifrado", p: "Direct-to-server con PFS. Sin CDN de terceros para tráfico de analítica." },
+              { n: "03 · Procesamiento", t: "Servidores solo UE", p: "Región Dublín. VPC aislada. Conteo anónimo de eventos sin almacenar identificadores personales nunca." },
+              { n: "04 · Almacenamiento", t: "Cifrado en reposo", p: "AES-256. Región Dublín. Retención 24 meses. Sin replicación a terceros países." },
+            ].map((s) => (
+              <div key={s.n} className="bg-warm-50 border border-warm-100 rounded-xl p-6">
+                <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand mb-3">{s.n}</div>
+                <h4 className="text-[17px] font-semibold tracking-[-0.015em] text-ink mb-2">{s.t}</h4>
+                <p className="text-[13.5px] leading-[1.55] text-ink-soft">{s.p}</p>
+              </div>
             ))}
           </div>
         </div>
