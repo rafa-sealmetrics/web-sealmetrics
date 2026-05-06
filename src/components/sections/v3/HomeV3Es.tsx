@@ -11,7 +11,7 @@ export function HeroV3Es() {
           <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
             Nuevo · Caso de estudio
           </span>
-          <a href="#featured-case" className="text-ink border-b border-warm-200 hover:border-ink">
+          <a href="/es/case-studies/palladium-hotel-group/" className="text-ink border-b border-warm-200 hover:border-ink">
             Palladium Hotel Group: 40% del tráfico sin atribución → +165% Display CPS
           </a>
         </div>
@@ -50,7 +50,8 @@ export function HeroV3Es() {
 
 /* LOGOS — top row flagship (larger), bottom row secondary */
 const LOGOS: { src: string; alt: string; h: number }[] = [
-  // Top row
+  // Top row — flagship
+  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 50 },
   { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 54 },
   { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 44 },
   { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 38 },

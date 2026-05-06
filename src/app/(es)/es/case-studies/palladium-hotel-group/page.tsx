@@ -157,6 +157,145 @@ export default function Page() {
         </div>
       </section>
 
+      {/* DV360 case — moved to top of landing */}
+      <section className="bg-ink text-white py-24 relative overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute pointer-events-none"
+          style={{
+            right: -120,
+            top: -120,
+            width: 360,
+            height: 360,
+            borderRadius: "50%",
+            background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)",
+          }}
+        />
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 relative">
+          <div className="max-w-[760px] mx-auto">
+            <span className="eyebrow mb-5" style={{ color: "rgba(255,255,255,0.7)" }}>
+              El caso DV360
+            </span>
+            <h2 className="h-section text-white mt-5">
+              Un modelo de medición eficiente{" "}
+              <em
+                className="italic font-medium"
+                style={{ color: "#E8B84B", fontStyle: "italic" }}
+              >
+                para el canal Display.
+              </em>
+            </h2>
+            <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-white/85">
+              <p>
+                Una de las aplicaciones más intensivas que Palladium Hotel Group hizo de
+                SealMetrics fue sobre sus campañas de Display &amp; Video 360, la
+                plataforma programática de Google. El problema clásico de cualquier
+                compra programática es el mismo: una parte del inventario convierte mejor
+                que la otra, y distinguirlas desde dentro de la propia plataforma no es
+                trivial.
+              </p>
+              <p>
+                Antes de SealMetrics, el problema de fondo era de medición: con un 40%
+                del tráfico sin atribución, no había manera de construir un modelo
+                robusto para evaluar Display. Con el pixel y la medición nativa, el equipo
+                veía agregados, pero no podía aislar qué partners, soportes o audiencias
+                estaban realmente generando intención cualificada.
+              </p>
+              <p>
+                SealMetrics les permitió implantar{" "}
+                <b className="text-white">
+                  un modelo de medición eficiente y robusto para el canal Display basado
+                  en el Coste por Búsqueda
+                </b>{" "}
+                —es decir, el coste por búsqueda de disponibilidad en su booking engine—.
+                Con todo el tráfico atribuido correctamente al partner y soporte de
+                origen, el equipo pudo distinguir qué partes del inventario movían
+                búsquedas reales de disponibilidad y cuáles solo aportaban volumen.
+              </p>
+              <p>
+                Con ese modelo en la mano, Palladium Hotel Group optimizó{" "}
+                <b className="text-white">
+                  partners, soportes, audiencias y estrategias
+                </b>{" "}
+                de display, rebalanceando inversión hacia la combinación que rendía mejor
+                sobre la métrica que importaba.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 max-w-[860px] mx-auto bg-white/5 border border-white/15 rounded-xl p-10">
+            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-4">
+              Resultado en Display
+            </div>
+            <div
+              className="font-semibold tracking-[-0.04em] text-white leading-[0.9] tabular-nums"
+              style={{ fontSize: "clamp(64px, 9vw, 130px)" }}
+            >
+              +165
+              <span
+                className="italic font-medium"
+                style={{ color: "#E8B84B", fontStyle: "italic" }}
+              >
+                %
+              </span>
+            </div>
+            <div className="mt-5 text-[18px] leading-[1.5] text-white/85 max-w-[58ch]">
+              de mejora en Coste por Búsqueda del canal Display tras implantar el modelo
+              de medición sobre SealMetrics y rebalancear el mix de partners, soportes,
+              audiencias y estrategias. Mismo presupuesto, modelo de medición distinto,
+              decisiones distintas.
+            </div>
+          </div>
+
+          <div className="mt-14 max-w-[860px] mx-auto">
+            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/60 font-semibold mb-6">
+              Cómo usaron el dato — flujo de decisión
+            </div>
+            <ol className="space-y-6">
+              {[
+                {
+                  n: "01",
+                  t: "Atribuir el 100%",
+                  d: "SealMetrics atribuye correctamente el tráfico entrante desde DV360 a partner, soporte y audiencia, sin depender del consentimiento ni del pixel de la plataforma.",
+                },
+                {
+                  n: "02",
+                  t: "Modelar sobre Coste por Búsqueda",
+                  d: "Con la atribución resuelta, se construye un modelo basado en el Coste por Búsqueda de disponibilidad en el booking engine: una métrica más cercana a la intención real que las conversiones agregadas.",
+                },
+                {
+                  n: "03",
+                  t: "Optimizar mix",
+                  d: "Se rebalancean partners, soportes, audiencias y estrategias hacia la combinación que rinde mejor sobre Coste por Búsqueda. Se cortan los que aportan volumen sin intención.",
+                },
+                {
+                  n: "04",
+                  t: "Escalar con criterio",
+                  d: "Con un modelo robusto, se incorporan nuevos partners y soportes con la certeza de que se evaluarán con el mismo rigor. Las decisiones de escalado dejan de ser intuición y pasan a ser dato.",
+                },
+              ].map((step) => (
+                <li
+                  key={step.n}
+                  className="grid grid-cols-[auto_1fr] gap-6 pb-6 border-b border-white/10 last:border-0"
+                >
+                  <div className="font-mono text-[12px] tracking-[0.08em] text-brand-soft font-semibold pt-1">
+                    {step.n}
+                  </div>
+                  <div>
+                    <div className="text-[18px] font-semibold text-white tracking-[-0.015em]">
+                      {step.t}
+                    </div>
+                    <div className="text-[15px] leading-[1.6] text-white/75 mt-1.5">
+                      {step.d}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
       {/* Client meta strip */}
       <section className="border-t border-warm-100 bg-warm-white py-10">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
@@ -449,145 +588,6 @@ export default function Page() {
               Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group
             </cite>
           </blockquote>
-        </div>
-      </section>
-
-      {/* DV360 case */}
-      <section className="bg-ink text-white py-24 relative overflow-hidden">
-        <div
-          aria-hidden
-          className="absolute pointer-events-none"
-          style={{
-            right: -120,
-            top: -120,
-            width: 360,
-            height: 360,
-            borderRadius: "50%",
-            background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)",
-          }}
-        />
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8 relative">
-          <div className="max-w-[760px] mx-auto">
-            <span className="eyebrow mb-5" style={{ color: "rgba(255,255,255,0.7)" }}>
-              El caso DV360
-            </span>
-            <h2 className="h-section text-white mt-5">
-              Un modelo de medición eficiente{" "}
-              <em
-                className="italic font-medium"
-                style={{ color: "#E8B84B", fontStyle: "italic" }}
-              >
-                para el canal Display.
-              </em>
-            </h2>
-            <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-white/85">
-              <p>
-                Una de las aplicaciones más intensivas que Palladium Hotel Group hizo de
-                SealMetrics fue sobre sus campañas de Display &amp; Video 360, la
-                plataforma programática de Google. El problema clásico de cualquier
-                compra programática es el mismo: una parte del inventario convierte mejor
-                que la otra, y distinguirlas desde dentro de la propia plataforma no es
-                trivial.
-              </p>
-              <p>
-                Antes de SealMetrics, el problema de fondo era de medición: con un 40%
-                del tráfico sin atribución, no había manera de construir un modelo
-                robusto para evaluar Display. Con el pixel y la medición nativa, el equipo
-                veía agregados, pero no podía aislar qué partners, soportes o audiencias
-                estaban realmente generando intención cualificada.
-              </p>
-              <p>
-                SealMetrics les permitió implantar{" "}
-                <b className="text-white">
-                  un modelo de medición eficiente y robusto para el canal Display basado
-                  en el Coste por Búsqueda
-                </b>{" "}
-                —es decir, el coste por búsqueda de disponibilidad en su booking engine—.
-                Con todo el tráfico atribuido correctamente al partner y soporte de
-                origen, el equipo pudo distinguir qué partes del inventario movían
-                búsquedas reales de disponibilidad y cuáles solo aportaban volumen.
-              </p>
-              <p>
-                Con ese modelo en la mano, Palladium Hotel Group optimizó{" "}
-                <b className="text-white">
-                  partners, soportes, audiencias y estrategias
-                </b>{" "}
-                de display, rebalanceando inversión hacia la combinación que rendía mejor
-                sobre la métrica que importaba.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 max-w-[860px] mx-auto bg-white/5 border border-white/15 rounded-xl p-10">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand-soft font-semibold mb-4">
-              Resultado en Display
-            </div>
-            <div
-              className="font-semibold tracking-[-0.04em] text-white leading-[0.9] tabular-nums"
-              style={{ fontSize: "clamp(64px, 9vw, 130px)" }}
-            >
-              +165
-              <span
-                className="italic font-medium"
-                style={{ color: "#E8B84B", fontStyle: "italic" }}
-              >
-                %
-              </span>
-            </div>
-            <div className="mt-5 text-[18px] leading-[1.5] text-white/85 max-w-[58ch]">
-              de mejora en Coste por Búsqueda del canal Display tras implantar el modelo
-              de medición sobre SealMetrics y rebalancear el mix de partners, soportes,
-              audiencias y estrategias. Mismo presupuesto, modelo de medición distinto,
-              decisiones distintas.
-            </div>
-          </div>
-
-          <div className="mt-14 max-w-[860px] mx-auto">
-            <div className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/60 font-semibold mb-6">
-              Cómo usaron el dato — flujo de decisión
-            </div>
-            <ol className="space-y-6">
-              {[
-                {
-                  n: "01",
-                  t: "Atribuir el 100%",
-                  d: "SealMetrics atribuye correctamente el tráfico entrante desde DV360 a partner, soporte y audiencia, sin depender del consentimiento ni del pixel de la plataforma.",
-                },
-                {
-                  n: "02",
-                  t: "Modelar sobre Coste por Búsqueda",
-                  d: "Con la atribución resuelta, se construye un modelo basado en el Coste por Búsqueda de disponibilidad en el booking engine: una métrica más cercana a la intención real que las conversiones agregadas.",
-                },
-                {
-                  n: "03",
-                  t: "Optimizar mix",
-                  d: "Se rebalancean partners, soportes, audiencias y estrategias hacia la combinación que rinde mejor sobre Coste por Búsqueda. Se cortan los que aportan volumen sin intención.",
-                },
-                {
-                  n: "04",
-                  t: "Escalar con criterio",
-                  d: "Con un modelo robusto, se incorporan nuevos partners y soportes con la certeza de que se evaluarán con el mismo rigor. Las decisiones de escalado dejan de ser intuición y pasan a ser dato.",
-                },
-              ].map((step) => (
-                <li
-                  key={step.n}
-                  className="grid grid-cols-[auto_1fr] gap-6 pb-6 border-b border-white/10 last:border-0"
-                >
-                  <div className="font-mono text-[12px] tracking-[0.08em] text-brand-soft font-semibold pt-1">
-                    {step.n}
-                  </div>
-                  <div>
-                    <div className="text-[18px] font-semibold text-white tracking-[-0.015em]">
-                      {step.t}
-                    </div>
-                    <div className="text-[15px] leading-[1.6] text-white/75 mt-1.5">
-                      {step.d}
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
         </div>
       </section>
 
