@@ -33,15 +33,6 @@ export default function CookielessAnalyticsPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">What Is Cookieless Analytics?</h1>
         </header>
 
-        <QuickAnswer>
-          <p>
-            Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
-          </p>
-          <p>
-            For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. SealMetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
-          </p>
-        </QuickAnswer>
-
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
@@ -80,6 +71,17 @@ export default function CookielessAnalyticsPage() {
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
           </p>
+        </div>
+
+        <div className="mt-12">
+          <QuickAnswer>
+            <p>
+              Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
+            </p>
+            <p>
+              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. SealMetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
+            </p>
+          </QuickAnswer>
         </div>
       </div>
     </article>

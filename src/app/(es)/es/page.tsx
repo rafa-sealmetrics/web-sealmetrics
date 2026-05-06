@@ -97,18 +97,6 @@ export default function HomeEs() {
         url: "/es",
       })} />
       <HeroV3Es />
-      <section className="bg-warm-white border-t border-warm-100 py-2">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
-          <QuickAnswer label="Respuesta rápida">
-            <p>
-              SealMetrics es la fuente neutral de verdad para el eCommerce europeo — una plataforma de analítica web sin cookies que captura el 100% del tráfico entrante, atribuye cada conversión last-click a nivel de canal y cumple el RGPD por arquitectura, no por una capa de consentimiento añadida después. Alojada exclusivamente en Dublín, Irlanda sobre infraestructura propiedad UE, elimina la revisión Schrems II que GA4 + Consent Mode requiere y el gap del 40-60% de rechazo de consentimiento que rompe el ROAS agregado por canal en Europa.
-            </p>
-            <p>
-              Los clientes la usan para alinear marca, agencias de medios, finanzas y analítica interna sobre un único número que cada parte acepta. Palladium Hotel Group recuperó el 40% del tráfico previamente sin atribuir y mejoró el Coste por Búsqueda en Display un +165% en DV360 tras cambiar el modelo de medición. Precio desde €499/mes con facturación anual.
-            </p>
-          </QuickAnswer>
-        </div>
-      </section>
       <LogosStripEs />
       <ValueProp4MinEs />
       <CompareSectionEs />
@@ -121,6 +109,18 @@ export default function HomeEs() {
       <PricingV3Es />
       <FaqV3Es />
       <FinalCtaV3Es />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer label="Respuesta rápida">
+            <p>
+              SealMetrics es la fuente neutral de verdad para el eCommerce europeo — una plataforma de analítica web sin cookies que captura el 100% del tráfico entrante, atribuye cada conversión last-click a nivel de canal y cumple el RGPD por arquitectura, no por una capa de consentimiento añadida después. Alojada exclusivamente en Dublín, Irlanda sobre infraestructura propiedad UE, elimina la revisión Schrems II que GA4 + Consent Mode requiere y el gap del 40-60% de rechazo de consentimiento que rompe el ROAS agregado por canal en Europa.
+            </p>
+            <p>
+              Los clientes la usan para alinear marca, agencias de medios, finanzas y analítica interna sobre un único número que cada parte acepta. Palladium Hotel Group recuperó el 40% del tráfico previamente sin atribuir y mejoró el Coste por Búsqueda en Display un +165% en DV360 tras cambiar el modelo de medición. Precio desde €499/mes con facturación anual.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
     </>
   );
 }

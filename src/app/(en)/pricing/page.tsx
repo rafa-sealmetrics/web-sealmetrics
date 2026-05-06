@@ -52,7 +52,15 @@ export default function PricingPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Pricing", url: "/pricing" }])} />
 
       <PricingHeroV3 />
-      <section className="bg-warm-white border-t border-warm-100 py-2">
+      <LogosStrip />
+      <PricingPlansV3 locale="en" />
+      <PlanIncludesV3 />
+      <TrafficCountingV3 />
+      <PlanAdaptsV3 />
+      <FullComparisonV3 />
+      <PricingFaqV3 locale="en" />
+      <PricingFinalCtaV3 />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
@@ -64,14 +72,6 @@ export default function PricingPage() {
           </QuickAnswer>
         </div>
       </section>
-      <LogosStrip />
-      <PricingPlansV3 locale="en" />
-      <PlanIncludesV3 />
-      <TrafficCountingV3 />
-      <PlanAdaptsV3 />
-      <FullComparisonV3 />
-      <PricingFaqV3 locale="en" />
-      <PricingFinalCtaV3 />
     </>
   );
 }
