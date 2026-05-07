@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
-import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
+import { pricingSchema, breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { PricingPlansV3 } from "@/components/sections/v3/PricingPlansV3";
@@ -49,6 +49,7 @@ export default function PricingPage() {
         { name: "Growth", price: "499", description: "5M human events/mo · annual billing" },
         { name: "Scale", price: "899", description: "15M human events/mo · annual billing" },
       ])} />
+      <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Pricing", url: "/pricing" }])} />
 
       <PricingHeroV3 />

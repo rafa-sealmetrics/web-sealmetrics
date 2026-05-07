@@ -12,6 +12,7 @@ export function organizationSchema() {
     "@graph": [
       {
         "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
         name: ORG_NAME,
         url: SITE_URL,
         logo: {
@@ -81,11 +82,26 @@ export function organizationSchema() {
       },
       {
         "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
         name: ORG_NAME,
         url: SITE_URL,
         inLanguage: ["en", "es"],
+        publisher: { "@id": `${SITE_URL}/#organization` },
       },
     ],
+  };
+}
+
+export function faqPageSchema(items: { question: string; answer: string }[], pageUrl?: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    ...(pageUrl ? { url: `${SITE_URL}${pageUrl}` } : {}),
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
   };
 }
 

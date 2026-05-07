@@ -7,6 +7,7 @@ import {
   statisticClaimSchema,
   quotationSchema,
   speakableWebPageSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import {
@@ -49,6 +50,14 @@ export default function Home() {
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
+      <JsonLd data={faqPageSchema([
+        { question: "Why pay for SealMetrics when GA4 is free?", answer: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject, so you make budget decisions on a fraction of real data. The cost of SealMetrics is a rounding error compared to the cost of misallocated ad spend." },
+        { question: "Why is neutrality a feature?", answer: "Meta reports with Meta's bias. Google reports with Google's bias. GA lives inside Google's ecosystem. SealMetrics has no ad inventory to sell and no channel to favour — so brand, agencies and finance can all sign the same number without feeling they're signing against a rival." },
+        { question: "How accurate is cookieless tracking?", answer: "A Spanish hotel chain measured +30% more traffic vs GA and 15–20% more attributed sales — approaching their CRM reality. Palladium Hotel Group discovered 40% of their traffic had no attribution in their previous stack and improved Cost-per-Search on Display by +165% after switching. No sampling, no modelling — every data point observed." },
+        { question: "Do I need to remove GA4?", answer: "No. Most clients run SealMetrics alongside GA4 for the first 30 days so you can compare side by side. After that, most teams use SealMetrics as their source of truth and keep GA4 for specific Google product integrations." },
+        { question: "GDPR compliant without a consent banner?", answer: "Yes. Cookieless by architecture — no cookies, no personal data storage, no cross-site tracking. 100% EU-hosted in Dublin, Ireland. Complies with GDPR, ePrivacy and Schrems II without consent banners." },
+        { question: "How long does implementation take?", answer: "Five minutes to install. First data from the first hour. Our team handles full onboarding and configures goals, funnels and reports in week one." },
+      ], "/")} />
       <JsonLd data={statisticClaimSchema({
         text: "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
         source: "Palladium Hotel Group internal audit on traffic attribution",
