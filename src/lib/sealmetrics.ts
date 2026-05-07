@@ -1,6 +1,6 @@
 export const SEALMETRICS_PIXEL_URL =
   process.env.NEXT_PUBLIC_SEALMETRICS_PIXEL_URL ??
-  "https://pixel.sealmetrics.com";
+  "https://pixel-pre.sealmetrics.com";
 
 export const SEALMETRICS_TAG_ID =
   process.env.NEXT_PUBLIC_SEALMETRICS_TAG_ID ?? "sealmetrics2";
