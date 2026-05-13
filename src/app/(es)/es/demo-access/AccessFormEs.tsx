@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { pushEvent } from "@/lib/analytics";
 
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/demo-request";
 
@@ -70,13 +71,7 @@ export function AccessFormEs() {
   useEffect(() => {
     if (status.kind !== "success" || microFired.current) return;
     microFired.current = true;
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      try {
-        window.sealmetrics.micro("lead_demo_access", { email, locale: "es" });
-      } catch (err) {
-        console.warn("SealMetrics micro failed", err);
-      }
-    }
+    pushEvent({ event: "lead_demo_access", email, locale: "es" });
   }, [status.kind, email]);
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -134,13 +129,7 @@ export function AccessFormEs() {
       submittedAt: new Date().toISOString(),
     };
 
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      try {
-        window.sealmetrics.conv("demo_access_request", 1, { email: payload.email });
-      } catch (err) {
-        console.warn("SealMetrics conv failed", err);
-      }
-    }
+    pushEvent({ event: "demo_access_request", value: 1, email: payload.email });
 
     try {
       await fetch(WEBHOOK_URL, {

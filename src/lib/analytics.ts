@@ -1,11 +1,18 @@
-export const SEALMETRICS_PIXEL_URL =
-  process.env.NEXT_PUBLIC_SEALMETRICS_PIXEL_URL ??
-  "https://pixel-pre.sealmetrics.com";
+export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-NWRCP5VH";
 
-export const SEALMETRICS_TAG_ID =
-  process.env.NEXT_PUBLIC_SEALMETRICS_TAG_ID ?? "sealmetrics2";
+type DataLayerEvent = Record<string, unknown> & { event: string };
 
-export const SEALMETRICS_PIXEL_SRC = `${SEALMETRICS_PIXEL_URL}/t.js?id=${SEALMETRICS_TAG_ID}`;
+declare global {
+  interface Window {
+    dataLayer?: DataLayerEvent[];
+  }
+}
+
+export function pushEvent(event: DataLayerEvent): void {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(event);
+}
 
 export function stripLocale(pathname: string): string {
   if (pathname === "/es") return "/";

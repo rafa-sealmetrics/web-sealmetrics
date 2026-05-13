@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { pushEvent } from "@/lib/analytics";
 
 /* ===========================================
    Country-specific loss rates
@@ -199,12 +200,11 @@ export function Calculator() {
     if (visitors > 0 && monthlyRevenue > 0) {
       setHasCalculated(true);
       // Fire micro-conversion
-      if (typeof window !== "undefined" && window.sealmetrics) {
-        window.sealmetrics.micro("growth_calculator_used", {
-          country,
-          visitors: String(visitors),
-        });
-      }
+      pushEvent({
+        event: "growth_calculator_used",
+        country,
+        visitors: String(visitors),
+      });
       // Update URL without reload for shareability
       const url = new URL(window.location.href);
       url.searchParams.set("v", String(visitors));

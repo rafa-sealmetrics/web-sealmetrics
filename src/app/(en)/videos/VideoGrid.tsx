@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
+import { pushEvent } from "@/lib/analytics";
 
 /* ===========================================
    Video data
@@ -233,9 +234,7 @@ export function VideoGrid() {
   // Fire micro-conversion on video play
   const handleSelect = useCallback((video: Video) => {
     setActiveVideo(video);
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      window.sealmetrics.micro("video_play", { title: video.title });
-    }
+    pushEvent({ event: "video_play", title: video.title });
   }, []);
 
   return (

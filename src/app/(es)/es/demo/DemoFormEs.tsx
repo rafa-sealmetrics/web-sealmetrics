@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { scoreAnswers, type DemoAnswers } from "@/lib/demo-scoring";
+import { pushEvent } from "@/lib/analytics";
 
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/webform-lead";
 
@@ -132,13 +133,7 @@ export function DemoFormEs() {
       score: { raw, normalized, tier },
     };
 
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      try {
-        window.sealmetrics.conv("demo_request", 1, { email });
-      } catch (err) {
-        console.warn("SealMetrics conv failed", err);
-      }
-    }
+    pushEvent({ event: "demo_request", value: 1, email });
 
     try {
       await fetch(WEBHOOK_URL, {

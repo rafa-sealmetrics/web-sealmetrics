@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { pushEvent } from "@/lib/analytics";
 
 type Locale = "en" | "es";
 
@@ -338,17 +339,12 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
   useEffect(() => {
     if (!submitted || microFired.current) return;
     microFired.current = true;
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      try {
-        window.sealmetrics.micro("lead_audit_submitted", {
-          tier: scoreTier,
-          locale,
-          email: contact.email,
-        });
-      } catch (err) {
-        console.warn("SealMetrics micro failed", err);
-      }
-    }
+    pushEvent({
+      event: "lead_audit_submitted",
+      tier: scoreTier,
+      locale,
+      email: contact.email,
+    });
   }, [submitted, scoreTier, locale, contact.email]);
 
   const isContactStep = step === TOTAL_QUESTIONS;

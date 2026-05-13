@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { type QuizAnswers } from "@/lib/content/diagnostic";
+import { pushEvent } from "@/lib/analytics";
 
 interface DemoAccessCTAProps {
   answers: QuizAnswers;
@@ -18,13 +19,7 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
   useEffect(() => {
     if (status !== "success" || microFired.current) return;
     microFired.current = true;
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      try {
-        window.sealmetrics.micro("lead_diagnostic_demo_access", { email });
-      } catch (err) {
-        console.warn("SealMetrics micro failed", err);
-      }
-    }
+    pushEvent({ event: "lead_diagnostic_demo_access", email });
   }, [status, email]);
 
   const canSubmit =

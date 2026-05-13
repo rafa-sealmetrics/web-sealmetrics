@@ -2,11 +2,12 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { pushEvent } from "@/lib/analytics";
 
 export default function NotFound() {
   useEffect(() => {
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      window.sealmetrics.micro("404", { path: window.location.pathname });
+    if (typeof window !== "undefined") {
+      pushEvent({ event: "404", path: window.location.pathname });
     }
   }, []);
 

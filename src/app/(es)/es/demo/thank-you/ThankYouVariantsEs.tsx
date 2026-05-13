@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Picture } from "@/components/ui/Picture";
 import type { DemoTier } from "@/lib/demo-scoring";
+import { pushEvent } from "@/lib/analytics";
 
 const REGISTER_URL = "https://my.sealmetrics.com/register";
 const VIDEO_EMBED_URL =
@@ -69,13 +70,7 @@ export function ThankYouVariantsEs() {
   useEffect(() => {
     if (fired.current) return;
     fired.current = true;
-    if (typeof window !== "undefined" && window.sealmetrics) {
-      try {
-        window.sealmetrics.micro("lead_book_demo", { tier, locale: "es" });
-      } catch (err) {
-        console.warn("SealMetrics micro failed", err);
-      }
-    }
+    pushEvent({ event: "lead_book_demo", tier, locale: "es" });
   }, [tier]);
 
   return (

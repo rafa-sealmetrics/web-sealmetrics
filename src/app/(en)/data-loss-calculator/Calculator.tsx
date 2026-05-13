@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { pushEvent } from "@/lib/analytics";
 
 /* ===========================================
    Country-specific loss rates
@@ -199,12 +200,11 @@ export function Calculator() {
     if (visitors > 0 && monthlyRevenue > 0) {
       setHasCalculated(true);
       // Fire micro-conversion
-      if (typeof window !== "undefined" && window.sealmetrics) {
-        window.sealmetrics.micro("calculator_used", {
-          country,
-          visitors: String(visitors),
-        });
-      }
+      pushEvent({
+        event: "calculator_used",
+        country,
+        visitors: String(visitors),
+      });
       // Update URL without reload for shareability
       const url = new URL(window.location.href);
       url.searchParams.set("v", String(visitors));
@@ -431,11 +431,10 @@ export function Calculator() {
                           disabled={!reportEmail}
                           onClick={async () => {
                             try {
-                              if (window.sealmetrics) {
-                                window.sealmetrics.micro("calculator_report_email", {
-                                  email: reportEmail,
-                                });
-                              }
+                              pushEvent({
+                                event: "calculator_report_email",
+                                email: reportEmail,
+                              });
                               await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
