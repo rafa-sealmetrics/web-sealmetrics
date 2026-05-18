@@ -1,0 +1,47 @@
+# Sealmetrics
+
+> Privacy-first web analytics platform that measures 100% of traffic without cookies or consent banners.
+
+## Getting Started
+
+- [What is Sealmetrics](https://sealmetrics.com/docs/what-is-sealmetrics): Overview of the platform and its cookieless tracking approach.
+- [Quick Start Guide](https://sealmetrics.com/docs/quick-start): Install the tracking snippet and start collecting data in minutes.
+- [How Sealmetrics Works](https://sealmetrics.com/docs/how-it-works): Technical explanation of the privacy-safe measurement methodology.
+
+## Installation
+
+- [JavaScript Snippet](https://sealmetrics.com/docs/javascript-snippet): Add the async script tag to your HTML to enable tracking.
+- [Google Tag Manager](https://sealmetrics.com/docs/google-tag-manager): Deploy Sealmetrics via GTM without touching source code.
+- [WordPress Plugin](https://sealmetrics.com/docs/wordpress): Install and configure the official WordPress plugin.
+
+## Core Concepts
+
+- [Cookieless Tracking](https://sealmetrics.com/docs/cookieless-tracking): How Sealmetrics identifies sessions without cookies or fingerprinting.
+- [Sessions and Pageviews](https://sealmetrics.com/docs/sessions-pageviews): Definitions and how they are counted in reports.
+- [Traffic Sources](https://sealmetrics.com/docs/traffic-sources): How Sealmetrics attributes visits to channels, campaigns, and referrers.
+- [Goals and Conversions](https://sealmetrics.com/docs/goals): Set up and track conversion events across your site.
+
+## Reports
+
+- [Dashboard Overview](https://sealmetrics.com/docs/dashboard): Navigate the main analytics dashboard and understand each metric.
+- [Acquisition Report](https://sealmetrics.com/docs/acquisition): Analyse where your visitors come from.
+- [Behaviour Report](https://sealmetrics.com/docs/behaviour): Understand how visitors interact with your content.
+- [Conversions Report](https://sealmetrics.com/docs/conversions): Track goal completions and measure conversion rates.
+
+## Privacy & Compliance
+
+- [GDPR Compliance](https://sealmetrics.com/docs/gdpr): How Sealmetrics operates within GDPR requirements without consent banners.
+- [No Cookie Policy](https://sealmetrics.com/docs/no-cookies): Details on the zero-cookie architecture and what data is processed.
+- [Data Retention](https://sealmetrics.com/docs/data-retention): Default retention periods and how to configure them.
+
+## API & Integrations
+
+- [REST API Overview](https://sealmetrics.com/docs/api): Authenticate and query your analytics data programmatically.
+- [API Endpoints Reference](https://sealmetrics.com/docs/api-reference): Full list of available endpoints, parameters, and response schemas.
+- [Zapier Integration](https://sealmetrics.com/docs/zapier): Connect Sealmetrics events to thousands of apps via Zapier.
+
+## Account & Billing
+
+- [Managing Users](https://sealmetrics.com/docs/users): Invite team members and assign roles within your account.
+- [Plans and Pricing](https://sealmetrics.com/docs/pricing): Compare available plans and understand usage limits.
+- [Billing FAQ](https://sealmetrics.com/docs/billing-faq): Common questions about invoices, upgrades, and cancellations.
