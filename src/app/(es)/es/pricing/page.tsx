@@ -39,7 +39,7 @@ const faqsForSchema = [
   { question: "¿Por qué el tráfico de agentes IA es gratis?", answer: "Los agentes IA (ChatGPT, Claude, Perplexity) son una categoría nueva de tráfico sobre la que necesitas visibilidad. Los trackeamos gratis." },
   { question: "¿Qué pasa si supero mi límite de eventos?", answer: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos. Si superas 2+ meses seguidos, el plan se actualiza en el siguiente ciclo. Un mes de exceso al año es gratis." },
   { question: "¿Hay prueba gratuita?", answer: "Sí. Cada plan incluye 14 días gratis con acceso completo." },
-  { question: "¿Todas las features están incluidas en cada plan?", answer: "Sí. Analítica core, tracking de conversiones, LENS AI, monitoring, API, MCP Server y export BigQuery están incluidos desde Growth." },
+  { question: "¿Todas las features están incluidas en cada plan?", answer: "Analítica core, tracking de conversiones, monitoring, API, MCP Server y export BigQuery están incluidos desde Growth. LENS AI y Agent Analytics son features premium disponibles en Scale+." },
 ];
 
 export default function PricingPageEs() {

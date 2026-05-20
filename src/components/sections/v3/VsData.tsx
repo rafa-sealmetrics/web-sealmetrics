@@ -291,7 +291,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Native MCP / AI agents", them: "No", us: "Native MCP server" },
             { feature: "BigQuery / warehouse export", them: "Paid plugin or manual ETL", us: "Native · all plans · full resolution" },
             { feature: "Real-time latency", them: "Minutes (with extra plugins)", us: "< 2 minutes · default" },
-            { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI included from Growth" },
+            { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI · premium on Scale+" },
           ]},
         ],
         faqs: [
@@ -337,7 +337,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "MCP / agentes IA nativos", them: "No", us: "MCP server nativo" },
             { feature: "Export BigQuery / warehouse", them: "Plugin de pago o ETL manual", us: "Nativo · todos los planes · resolución completa" },
             { feature: "Latencia tiempo real", them: "Minutos (con plugins extra)", us: "< 2 minutos · por defecto" },
-            { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI incluido desde Growth" },
+            { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI · premium en Scale+" },
           ]},
         ],
         faqs: [

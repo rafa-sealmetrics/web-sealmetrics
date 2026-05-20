@@ -28,7 +28,7 @@ const ITEMS_EN = [
   },
   {
     q: "Are all features really included in every plan?",
-    a: "Yes. Core analytics, conversion tracking, LENS AI, monitoring, API, MCP Server and BigQuery export are included from Growth up. The only differences between plans are event volume, governance (RBAC, SSO), support level and Agent AI Analytics (Scale+). You never hit a feature wall.",
+    a: "Core analytics, conversion tracking, monitoring, API, MCP Server and BigQuery export are included from Growth up. LENS AI (forecasting, anomaly detection, growth opportunities) and Agent AI Analytics are premium capabilities reserved for Scale+. Other differences between plans are event volume, governance (RBAC, SSO) and support level.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -79,7 +79,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Todas las features están incluidas en cada plan?",
-    a: "Sí. Analítica core, tracking de conversiones, LENS AI, monitoring, API, MCP Server y export a BigQuery están incluidos desde Growth. Las únicas diferencias entre planes son volumen de eventos, governance (RBAC, SSO), soporte y Agent Analytics (Scale+). Nunca hay un muro de features.",
+    a: "Analítica core, tracking de conversiones, monitoring, API, MCP Server y export a BigQuery están incluidos desde Growth. LENS AI (forecasting, detección de anomalías, oportunidades de crecimiento) y Agent AI Analytics son capacidades premium reservadas a Scale+. Otras diferencias entre planes son volumen de eventos, governance (RBAC, SSO) y nivel de soporte.",
   },
   {
     q: "¿Puedo cambiar entre mensual y anual?",

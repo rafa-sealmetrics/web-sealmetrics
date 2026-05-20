@@ -38,7 +38,7 @@ const faqsForSchema = [
   { question: "Why is AI agent traffic free?", answer: "AI agents (ChatGPT, Claude, Perplexity) are a new category of traffic you need visibility into. We track them for free because understanding who reads your content with AI is a strategic advantage." },
   { question: "What happens if I exceed my event limit?", answer: "Your tracking never stops. We never block, throttle or sample your data. If you exceed for 2+ consecutive months, your plan auto-upgrades at your next billing cycle. One overage month per year is free." },
   { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features." },
-  { question: "Are all features included in every plan?", answer: "Yes. Core analytics, conversion tracking, LENS AI, monitoring, API, MCP Server and BigQuery export are included from Growth up. Plan differences are event volume, governance, support and Agent Analytics (Scale+)." },
+  { question: "Are all features included in every plan?", answer: "Core analytics, conversion tracking, monitoring, API, MCP Server and BigQuery export are included from Growth up. LENS AI and Agent Analytics are premium features available on Scale+. Plan differences are event volume, governance, support and the premium AI capabilities." },
 ];
 
 export default function PricingPage() {

@@ -64,9 +64,9 @@ export function PlanIncludesV3() {
     "Real-time data · < 2 min",
     "Funnel analysis",
     "Multi-site portfolio view",
-    "LENS AI forecasting",
     "MCP server + BigQuery export",
     "Full API access",
+    "Monitoring & custom alerts",
     "Data freshness before 6 AM daily",
   ];
 
@@ -74,7 +74,7 @@ export function PlanIncludesV3() {
     {
       from: "Growth",
       to: "Scale",
-      diff: "15M events · Agent AI Analytics · Webhooks · Guided onboarding · Priority support",
+      diff: "15M events · LENS AI forecasting · Agent AI Analytics · Webhooks · Guided onboarding · Priority support",
     },
     {
       from: "Scale",
@@ -305,12 +305,12 @@ const comparisonData: ComparisonSection[] = [
     ],
   },
   {
-    category: "LENS AI",
+    category: "LENS AI (premium · Scale+)",
     rows: [
-      { feature: "Forecasting & prediction", growth: true, scale: true, enterprise: true },
-      { feature: "Anomaly detection", growth: true, scale: true, enterprise: true },
-      { feature: "Growth opportunities", growth: true, scale: true, enterprise: true },
-      { feature: "Weekly & monthly reporting", growth: true, scale: true, enterprise: true },
+      { feature: "Forecasting & prediction", growth: false, scale: true, enterprise: true },
+      { feature: "Anomaly detection", growth: false, scale: true, enterprise: true },
+      { feature: "Growth opportunities", growth: false, scale: true, enterprise: true },
+      { feature: "Weekly & monthly reporting", growth: false, scale: true, enterprise: true },
     ],
   },
   {

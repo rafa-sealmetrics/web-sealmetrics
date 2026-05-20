@@ -35,7 +35,7 @@ const plansEn: Plan[] = [
     highlights: [
       "5M human events / month",
       "Unlimited sites & users",
-      "LENS AI + MCP + BigQuery",
+      "MCP + BigQuery + Full API",
       "AI agents · coming soon",
     ],
     cta: "Start 14-day trial",
@@ -54,9 +54,9 @@ const plansEn: Plan[] = [
     roiContext: "Pays for itself if you recover one mis-attributed campaign per quarter.",
     highlights: [
       "15M human events / month",
+      "LENS AI forecasting · premium",
       "Agent AI Analytics · soon",
       "Webhooks + priority support",
-      "Guided onboarding (1 session)",
     ],
     cta: "Start 14-day trial",
     ctaNote: "",
@@ -98,7 +98,7 @@ const plansEs: Plan[] = [
     highlights: [
       "5M eventos humanos / mes",
       "Webs y usuarios ilimitados",
-      "LENS AI + MCP + BigQuery",
+      "MCP + BigQuery + API completa",
       "Agentes IA · próximamente",
     ],
     cta: "Empezar prueba de 14 días",
@@ -117,9 +117,9 @@ const plansEs: Plan[] = [
     roiContext: "Se paga solo si recuperas una campaña mal atribuida al trimestre.",
     highlights: [
       "15M eventos humanos / mes",
+      "LENS AI forecasting · premium",
       "Agent AI Analytics · próx.",
       "Webhooks + soporte prioritario",
-      "Onboarding guiado (1 sesión)",
     ],
     cta: "Empezar prueba de 14 días",
     ctaNote: "",

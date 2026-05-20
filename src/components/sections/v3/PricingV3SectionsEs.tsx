@@ -48,13 +48,13 @@ export function PlanIncludesV3Es() {
     "Datos en tiempo real · < 2 min",
     "Análisis de embudos",
     "Vista portfolio multi-site",
-    "LENS AI · forecasting",
     "MCP server + export BigQuery",
     "Acceso API completo",
+    "Monitoring & alertas personalizadas",
     "Datos frescos antes de las 6 AM",
   ];
   const diffs = [
-    { from: "Growth", to: "Scale", diff: "15M eventos · Agent AI Analytics · Webhooks · Onboarding guiado · Soporte prioritario" },
+    { from: "Growth", to: "Scale", diff: "15M eventos · LENS AI forecasting · Agent AI Analytics · Webhooks · Onboarding guiado · Soporte prioritario" },
     { from: "Scale", to: "Enterprise", diff: "Eventos ilimitados · SSO / SAML · Account manager · Procesamiento aislado · SLA personalizado" },
   ];
 
@@ -239,12 +239,12 @@ const comparisonDataEs: ComparisonSection[] = [
     ],
   },
   {
-    category: "LENS AI",
+    category: "LENS AI (premium · Scale+)",
     rows: [
-      { feature: "Forecasting y predicción", growth: true, scale: true, enterprise: true },
-      { feature: "Detección de anomalías", growth: true, scale: true, enterprise: true },
-      { feature: "Oportunidades de crecimiento", growth: true, scale: true, enterprise: true },
-      { feature: "Reporting semanal y mensual", growth: true, scale: true, enterprise: true },
+      { feature: "Forecasting y predicción", growth: false, scale: true, enterprise: true },
+      { feature: "Detección de anomalías", growth: false, scale: true, enterprise: true },
+      { feature: "Oportunidades de crecimiento", growth: false, scale: true, enterprise: true },
+      { feature: "Reporting semanal y mensual", growth: false, scale: true, enterprise: true },
     ],
   },
   {
