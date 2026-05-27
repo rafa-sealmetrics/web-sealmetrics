@@ -87,6 +87,17 @@ body {
   overflow-x: hidden;
 }
 
+/* overflow-x:hidden creates a scroll container that breaks position:sticky.
+   Modern browsers support overflow-x:clip, which prevents horizontal overflow
+   without becoming a scroll container — keeping sticky sidebars working.
+   Safari < 16 falls back to the rule above. */
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
 ::selection {
   background: var(--color-ink);
   color: #fff;
