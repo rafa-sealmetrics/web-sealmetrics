@@ -12,10 +12,11 @@ AGENTS.md
 public/sitemap.xml.old
 .claude/scheduled_tasks.lock
 
-# Env (do not commit secrets)
+# Env files. .env.production OK commitear porque solo lleva NEXT_PUBLIC_*.
 .env
 .env.local
 .env.*.local
+.env.development
 
 # Local audit outputs (large screenshots, JSON metrics) — regenerable on demand
 audits/
