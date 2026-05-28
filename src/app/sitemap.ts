@@ -13,11 +13,13 @@ const EN_ROOT = path.join(process.cwd(), "src", "app", "(en)");
 const ES_ROOT = path.join(process.cwd(), "src", "app", "(es)", "es");
 
 // Routes that should NOT appear in the sitemap
-// (thank-you, gated, ephemeral result pages).
+// (thank-you, gated, ephemeral result pages, and redirect stubs).
 const EXCLUDE = new Set<string>([
   "/demo/thank-you",
   "/diagnostic-result",
   "/demo-access",
+  // Redirect stub: canonical lives at /vs-ga4/. See src/app/(en)/vs/ga4/page.tsx.
+  "/vs/ga4",
 ]);
 
 // blog post slug → ISO date, used to emit accurate <lastmod>

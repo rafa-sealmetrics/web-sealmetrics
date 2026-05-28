@@ -28,9 +28,9 @@ import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Consentless analytics for eCommerce. Real data again.",
+  title: "SealMetrics — Consentless analytics for eCommerce",
   description:
-    "Consentless analytics for eCommerce that measures 100% of your traffic. No cookies. No models. Recover the sales GA4 can't see and present numbers that match Shopify.",
+    "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
   openGraph: {
     title: "SealMetrics — Consentless analytics for eCommerce",
     description:

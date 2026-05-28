@@ -27,9 +27,9 @@ import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { HeroV3Es } from "@/components/sections/v3/HomeV3Es";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Analítica completa para eCommerce. Datos reales otra vez.",
+  title: "SealMetrics — Analítica sin consentimiento para eCommerce",
   description:
-    "Analítica sin consentimiento para eCommerce que mide el 100% de tu tráfico. Sin cookies. Sin modelos. Recupera las ventas que GA4 no ve y presenta números que cuadran con Shopify.",
+    "Analítica sin consentimiento para eCommerce. Mide el 100% del tráfico — sin cookies, sin modelos. Números que cuadran con Shopify. Alojado en Dublín.",
   openGraph: {
     title: "SealMetrics — Analítica sin consentimiento para eCommerce",
     description:

@@ -50,12 +50,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.png?v=2", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.avif", type: "image/avif" },
+      { url: "/favicon.webp", type: "image/webp" },
     ],
     apple: [
-      { url: "/favicon.png?v=2", sizes: "180x180", type: "image/png" },
+      { url: "/favicon.webp", sizes: "180x180", type: "image/webp" },
     ],
-    shortcut: "/favicon.png?v=2",
+    shortcut: "/favicon.svg",
   },
   manifest: "/manifest.webmanifest",
 };
