@@ -1,157 +1,111 @@
 import type { MetadataRoute } from "next";
+import fs from "node:fs";
+import path from "node:path";
 import { blogPosts } from "@/lib/content/blog";
-import { glossaryTerms } from "@/lib/content/glossary";
+import { publishedChapters } from "@/lib/content/open";
 
 export const dynamic = "force-static";
 
 const SITE = "https://sealmetrics.com";
 const today = new Date().toISOString().split("T")[0];
 
-/** Build a fully-qualified URL with trailing slash (matches `trailingSlash: true`). */
-function url(path: string): string {
-  if (path === "/" || path === "") return `${SITE}/`;
-  return `${SITE}${path.endsWith("/") ? path : `${path}/`}`;
+const EN_ROOT = path.join(process.cwd(), "src", "app", "(en)");
+const ES_ROOT = path.join(process.cwd(), "src", "app", "(es)", "es");
+
+// Routes that should NOT appear in the sitemap
+// (thank-you, gated, ephemeral result pages).
+const EXCLUDE = new Set<string>([
+  "/demo/thank-you",
+  "/diagnostic-result",
+  "/demo-access",
+]);
+
+// blog post slug → ISO date, used to emit accurate <lastmod>
+const blogDates = new Map(blogPosts.map((p) => [p.slug, p.date]));
+
+/**
+ * Walk a route-group directory and return every route with a page file.
+ * Skips dynamic ([slug]), parallel (@x) and private (_x) segments —
+ * dynamic routes are expanded explicitly below from their content registry.
+ *   "/page.tsx"         → "/"
+ *   "/blog/foo/page.tsx" → "/blog/foo"
+ */
+function collectRoutes(dir: string, prefix = ""): string[] {
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (
+      entry.isFile() &&
+      (entry.name === "page.tsx" || entry.name === "page.ts")
+    ) {
+      out.push(prefix === "" ? "/" : prefix);
+      continue;
+    }
+    if (!entry.isDirectory()) continue;
+    const n = entry.name;
+    if (n.startsWith("[") || n.startsWith("@") || n.startsWith("_")) continue;
+    out.push(...collectRoutes(path.join(dir, n), `${prefix}/${n}`));
+  }
+  return out;
 }
 
-function esUrl(path: string): string {
-  if (path === "/" || path === "") return `${SITE}/es/`;
-  return `${SITE}/es${path.endsWith("/") ? path : `${path}/`}`;
+function enUrl(p: string): string {
+  return p === "/" ? `${SITE}/` : `${SITE}${p}/`;
+}
+function esUrl(p: string): string {
+  return p === "/" ? `${SITE}/es/` : `${SITE}/es${p}/`;
 }
 
-/** Paths that have both EN + ES versions. Used to emit hreflang-aware entries. */
-const bilingualPaths = [
-  "/",
-  "/pricing",
-  "/product",
-  "/how-it-works",
-  "/demo",
-  "/security",
-  "/about",
-  "/integrations",
-  "/platforms",
-  "/growth-calculator",
-  "/data-loss-calculator",
-  "/vs",
-  "/vs-ga4",
-  "/modern-analytics",
-  "/vs/ga360",
-  "/vs/adobe-analytics",
-  "/vs/piwik-pro",
-  "/vs/matomo",
-  "/alternatives/google-analytics",
-  "/blog",
-  "/blog/cookieless-analytics-explained",
-  "/blog/consent-banner-impact-on-analytics",
-  "/blog/ga4-data-sampling-problem",
-  "/blog/why-ga4-shows-13pct-eu-traffic",
-  "/blog/gdpr-analytics-without-consent",
-  "/glossary",
-  "/glossary/cookieless-analytics",
-  "/glossary/gdpr-analytics-compliance",
-  "/glossary/multi-touch-attribution",
-  "/glossary/data-loss-in-analytics",
-  "/glossary/revenue-attribution",
-  "/case-studies",
-  "/case-studies/dreamplace-hotels",
-  "/case-studies/palladium-hotel-group",
-  "/audit",
-  "/for",
-  "/for/cmo",
-  "/for/cto",
-  "/for/dpo",
-  "/for/ecommerce",
-  "/for/hotels",
-  "/for/saas",
-  "/for/agencies",
-  "/for/media",
-  "/for/finance",
-  "/for/healthcare",
-  "/for/education",
-  "/authors/rafa-jimenez",
-];
-
-/** Paths that only exist in EN (legal, content-only, utilities). */
-const enOnlyPaths = [
-  "/privacy",
-  "/terms",
-  "/dpa",
-  "/changelog",
-  "/videos",
-];
-
-/** Paths that only exist in ES (no EN equivalent yet). */
-const esOnlyPaths = [
-  "/blog/ga4-google-ads-separation",
-];
+function lastModFor(route: string): string {
+  const m = route.match(/^\/blog\/(.+)$/);
+  if (m) {
+    const date = blogDates.get(m[1]);
+    if (date) return date;
+  }
+  return today;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const enRoutes = collectRoutes(EN_ROOT).filter((r) => !EXCLUDE.has(r));
+  const esRoutes = collectRoutes(ES_ROOT).filter((r) => !EXCLUDE.has(r));
+
+  // Expand dynamic [slug] routes. /open/[slug] is EN-only today.
+  for (const c of publishedChapters) {
+    enRoutes.push(`/open/${c.slug}`);
+  }
+
+  const enSet = new Set(enRoutes);
+  const esSet = new Set(esRoutes);
+
   const entries: MetadataRoute.Sitemap = [];
 
-  // Bilingual top-level paths with hreflang alternates
-  for (const path of bilingualPaths) {
-    const enHref = url(path);
-    const esHref = esUrl(path);
+  // Bilingual: present in both locales → emit both URLs with hreflang.
+  for (const route of enRoutes) {
+    if (!esSet.has(route)) continue;
+    const enHref = enUrl(route);
+    const esHref = esUrl(route);
+    const languages = { en: enHref, es: esHref, "x-default": enHref };
     entries.push({
       url: enHref,
-      lastModified: today,
-      alternates: {
-        languages: {
-          en: enHref,
-          es: esHref,
-          "x-default": enHref,
-        },
-      },
+      lastModified: lastModFor(route),
+      alternates: { languages },
     });
     entries.push({
       url: esHref,
-      lastModified: today,
-      alternates: {
-        languages: {
-          en: enHref,
-          es: esHref,
-          "x-default": enHref,
-        },
-      },
+      lastModified: lastModFor(route),
+      alternates: { languages },
     });
   }
 
-  // EN-only paths
-  for (const path of enOnlyPaths) {
-    entries.push({
-      url: url(path),
-      lastModified: today,
-    });
+  // EN-only
+  for (const route of enRoutes) {
+    if (esSet.has(route)) continue;
+    entries.push({ url: enUrl(route), lastModified: lastModFor(route) });
   }
 
-  // ES-only paths (no EN sibling — emit without hreflang alternates)
-  for (const path of esOnlyPaths) {
-    entries.push({
-      url: esUrl(path),
-      lastModified: today,
-    });
-  }
-
-  // Blog posts (EN)
-  for (const post of blogPosts.filter((p) => !p.draft)) {
-    entries.push({
-      url: url(`/blog/${post.slug}`),
-      lastModified: post.date,
-    });
-  }
-
-  // Glossary terms (EN). Skip slugs already covered by bilingualPaths to avoid
-  // duplicate sitemap entries (one with hreflang alternates, one without).
-  const bilingualSlugs = new Set(
-    bilingualPaths
-      .filter((p) => p.startsWith("/glossary/"))
-      .map((p) => p.replace("/glossary/", ""))
-  );
-  for (const term of glossaryTerms) {
-    if (bilingualSlugs.has(term.slug)) continue;
-    entries.push({
-      url: url(`/glossary/${term.slug}`),
-      lastModified: today,
-    });
+  // ES-only
+  for (const route of esRoutes) {
+    if (enSet.has(route)) continue;
+    entries.push({ url: esUrl(route), lastModified: lastModFor(route) });
   }
 
   return entries;
