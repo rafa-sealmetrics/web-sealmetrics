@@ -71,7 +71,16 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             Understanding how this works requires separating two
             distinct legal frameworks that are often conflated: GDPR
             (which governs personal data processing) and the ePrivacy
-            Directive (which governs access to user devices).
+            Directive (which governs access to user devices). The full
+            framework — including country-by-country authority guidance —
+            lives on the{" "}
+            <Link
+              href="/consentless-analytics"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              consentless analytics pillar
+            </Link>
+            ; this piece focuses on the GDPR-side reasoning.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

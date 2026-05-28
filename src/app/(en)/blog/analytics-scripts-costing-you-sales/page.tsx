@@ -71,7 +71,10 @@ export default function AnalyticsScriptsPage() {
               consent banner rejection
             </Link>
             , and traffic erased by tracker blocking. Each one is damaging on
-            its own. Together, the compound effect is devastating.
+            its own. Together, the compound effect is devastating. The
+            architectural alternative — measurement on{" "}
+            <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data</Link>
+            , not on the surviving fraction — sits on the pillar.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -62,7 +62,9 @@ export default function ConsentBannerImpactPage() {
             uses cookies must ask for consent before tracking. The{" "}
             <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link>{" "}
             was meant to protect user privacy. The side effect was to make web analytics
-            deeply unreliable.
+            deeply unreliable. The way out is{" "}
+            <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics</Link>{" "}
+            — measurement that does not trigger the consent requirement in the first place.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

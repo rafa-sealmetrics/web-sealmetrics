@@ -68,7 +68,9 @@ export default function OmnibusShortPage() {
             For marketing teams that have spent years navigating the gap between
             privacy law and data completeness, this matters. Here is what
             the proposal says, what it changes, and what it means for your
-            analytics setup.
+            analytics setup. For the post-Omnibus framework for{" "}
+            <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics</Link>,
+            see the pillar.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

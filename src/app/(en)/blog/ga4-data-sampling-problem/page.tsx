@@ -100,7 +100,9 @@ export default function GA4DataSamplingPage() {
             trends, this might be acceptable. But for specific analyses —
             campaign performance by segment, conversion path analysis, revenue
             attribution by creative — even small margins of error compound into
-            unreliable conclusions.
+            unreliable conclusions. The case for{" "}
+            <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data</Link>{" "}
+            — measurement, not estimation — sits on the pillar.
           </p>
 
           <p>Consider a scenario:</p>

@@ -69,7 +69,10 @@ export default function WhyGA4Shows13PctPage() {
             This is not a bug. It is not a misconfiguration. It is the
             structural result of how cookie-based analytics works in the
             European Union in 2026. And understanding the math behind it is
-            the first step toward fixing it.
+            the first step toward fixing it. The wider argument — why
+            incomplete data produces wrong decisions and what{" "}
+            <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data</Link>{" "}
+            changes — lives on the pillar; this post is the arithmetic underneath it.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

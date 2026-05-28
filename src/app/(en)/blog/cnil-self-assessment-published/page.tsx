@@ -59,12 +59,14 @@ export default function CnilAssessmentPage() {
           <p>
             If you operate a website in France, you know the challenge: the
             French data protection authority (<a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer">CNIL</a>) allows certain{" "}
-            <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>{" "}
+            <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>{" "}
             audience
             measurement tools to operate without cookie banners — but only if
             they meet strict technical and operational criteria. Rather than
             simply claiming compliance, we published a comprehensive
-            self-assessment.
+            self-assessment. The broader legal framework for{" "}
+            <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics</Link>{" "}
+            (with the equivalent guidance from DSK, AEPD, Garante, ICO and AP) lives on the pillar.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

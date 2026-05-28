@@ -70,7 +70,9 @@ export default function WhatIsDataLossInAnalyticsPage() {
             consequence of how cookie-based analytics interacts with modern
             browsers, privacy regulations, and user behavior. Understanding
             it &mdash; and quantifying it &mdash; is the first step toward
-            making decisions based on complete data.
+            making decisions based on{" "}
+            <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data</Link>
+            .
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

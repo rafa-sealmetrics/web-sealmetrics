@@ -118,7 +118,7 @@ export default function CookielessAnalyticsExplainedPage() {
 
           <p>
             <Link
-              href="/glossary/cookieless-analytics"
+              href="/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               Cookieless analytics

@@ -70,7 +70,9 @@ export default function UkPecrPage() {
             with narrow exceptions for strictly necessary functionality.
             Analytics did not qualify. That meant every UK website needed a
             consent banner to run analytics — and every rejection meant lost
-            data.
+            data. The DUAA 2025 changes that; the broader framework for{" "}
+            <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics</Link>{" "}
+            (with equivalent CNIL/DSK/AEPD guidance) sits on the pillar.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

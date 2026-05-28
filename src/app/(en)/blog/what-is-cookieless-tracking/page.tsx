@@ -81,12 +81,12 @@ export default function WhatIsCookielessTrackingPage() {
 
           <p>
             <Link
-              href="/glossary/cookieless-analytics"
+              href="/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               Cookieless tracking
             </Link>{" "}
-            is a method of collecting website analytics data without storing
+            (covered in depth on the cookieless analytics pillar) is a method of collecting website analytics data without storing
             cookies or any other identifiers on the visitor&rsquo;s browser.
             Instead of relying on a small text file placed on the user&rsquo;s
             device to recognize returning visitors, cookieless tracking uses

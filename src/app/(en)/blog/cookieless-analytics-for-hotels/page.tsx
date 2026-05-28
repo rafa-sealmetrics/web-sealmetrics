@@ -98,7 +98,7 @@ export default function Page() {
               Hotel revenue directors live with a specific version of the analytics problem. The PMS closes 240 reservations this week. GA4 reports 180. The missing 60 are attributed to &ldquo;direct&rdquo; — not because they were direct, but because the cookies that would have preserved the source were rejected, expired or blocked before the booking fired. On mobile Safari, with ITP, with consent rejection, with OTA referrals that land via meta-search — every one of these is a bug in the measurement architecture, not the marketing.
             </p>
             <p>
-              The 25% gap is real money. For a hotel group doing €15M in direct bookings, it is €3.75M of revenue that marketing drove but cannot defend in the budget meeting. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all.
+              The 25% gap is real money. For a hotel group doing €15M in direct bookings, it is €3.75M of revenue that marketing drove but cannot defend in the budget meeting. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all. The architectural argument and trade-offs live on the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this piece focuses on the hotel-specific reconciliation patterns.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
