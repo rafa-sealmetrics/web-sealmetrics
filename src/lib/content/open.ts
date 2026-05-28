@@ -54,16 +54,17 @@ export const openChapters: OpenChapter[] = [
     number: 2,
     slug: "who-we-build-for",
     title: "Who we build for",
+    titleHtml: "Who we <em>build for</em>",
     part: 1,
     eyebrow: "Audience",
     summary:
-      "Not for everyone. For CMOs and measurement leads inside European eCommerce companies above 10M€ revenue.",
-    readMinutes: 4,
-    status: "draft",
+      "Every company knows more than half of their analytics data is missing. We build for the operators who refuse to keep making decisions on top of it — regardless of sector, country, or revenue band.",
+    readMinutes: 6,
+    status: "ready",
     toc: [
-      { id: "ideal-profile", label: "Ideal customer profile" },
-      { id: "the-10m-threshold", label: "Why the 10M€ threshold" },
-      { id: "industries", label: "Industries where we fit" },
+      { id: "the-numbers", label: "The numbers everyone already knows" },
+      { id: "the-operator", label: "The operator we build for" },
+      { id: "personas", label: "The personas who push for change" },
       { id: "when-we-dont-fit", label: "When we don't fit" },
     ],
   },
@@ -75,14 +76,14 @@ export const openChapters: OpenChapter[] = [
     part: 2,
     eyebrow: "Definition",
     summary:
-      "The technical difference between what GA4 measures (≈13% in the EU) and what you need to make sound decisions.",
-    readMinutes: 7,
-    status: "draft",
+      "The technical difference between what GA4 measures (≈13% in the EU) and what you need to defend a number to your CFO.",
+    readMinutes: 8,
+    status: "ready",
     toc: [
-      { id: "what-ga4-loses", label: "What GA4 loses and why" },
+      { id: "the-cascade", label: "Where the 13% comes from" },
       { id: "sampling-vs-complete", label: "Sampling vs complete measurement" },
       { id: "modeling-vs-measuring", label: "Modeling vs measuring" },
-      { id: "the-13-percent", label: "Where the 13% comes from" },
+      { id: "where-we-sit", label: "Where SealMetrics sits" },
     ],
   },
   {
@@ -125,34 +126,35 @@ export const openChapters: OpenChapter[] = [
     number: 6,
     slug: "gdpr-by-architecture",
     title: "GDPR by architecture",
+    titleHtml: "GDPR by <em>architecture</em>",
     part: 3,
     eyebrow: "Compliance",
     summary:
-      "How we meet GDPR, ePrivacy and Schrems II without resorting to creative legal interpretations.",
-    readMinutes: 9,
-    status: "draft",
+      "How we meet GDPR, ePrivacy, and Schrems II without resorting to creative legal interpretations — and what we explicitly do not claim.",
+    readMinutes: 10,
+    status: "ready",
     toc: [
       { id: "gdpr-architecture", label: "GDPR by architecture, not by permission" },
       { id: "eprivacy", label: "ePrivacy and the cookie question" },
       { id: "schrems-ii", label: "Schrems II and data transfers" },
       { id: "dpa-tpsr", label: "DPA and TPSR package" },
-      { id: "what-we-dont-claim", label: "What we don't claim (ISO/SOC 2)" },
     ],
   },
   {
     number: 7,
     slug: "how-we-price",
     title: "How we price",
+    titleHtml: "How we <em>price</em>",
     part: 3,
     eyebrow: "Commercial",
     summary:
-      "Why Scale+ exists, what it includes, and why we stay a fraction of GA360 or Adobe.",
-    readMinutes: 5,
-    status: "draft",
+      "Pay for human events, not for bots or AI agents. One architecture across plans. Honest comparison against the enterprise tier we replace.",
+    readMinutes: 8,
+    status: "ready",
     toc: [
       { id: "what-we-charge-for", label: "What we charge for and what we don't" },
-      { id: "scale-plus", label: "Why Scale+ exists" },
-      { id: "enterprise-compare", label: "Comparing against GA360 and Adobe" },
+      { id: "three-plans", label: "Three plans, one architecture" },
+      { id: "enterprise-compare", label: "Comparing against the enterprise tier" },
       { id: "billing-transparency", label: "What you see on the invoice" },
     ],
   },
@@ -181,9 +183,9 @@ export const openChapters: OpenChapter[] = [
     part: 3,
     eyebrow: "Limits",
     summary:
-      "No multi-touch attribution. No session reconstruction. No individual identification. Why this is a position, not a limitation.",
-    readMinutes: 6,
-    status: "draft",
+      "No multi-touch attribution. No session reconstruction. No individual identification. No fingerprinting. Why this is a position, not a limitation.",
+    readMinutes: 7,
+    status: "ready",
     toc: [
       { id: "no-multi-touch", label: "We won't do multi-touch attribution" },
       { id: "no-sessions", label: "We won't reconstruct sessions" },
@@ -213,12 +215,13 @@ export const openChapters: OpenChapter[] = [
     number: 11,
     slug: "glossary",
     title: "Glossary",
+    titleHtml: "<em>Glossary</em>",
     part: 4,
     eyebrow: "Reference",
     summary:
-      "Canonical definitions of the terms used throughout Open.",
-    readMinutes: 4,
-    status: "draft",
+      "Opinionated definitions of the terms used across Open. Where we use a word differently from the rest of the industry, we say so.",
+    readMinutes: 7,
+    status: "ready",
     toc: [
       { id: "method", label: "Method and measurement" },
       { id: "compliance", label: "Legal compliance" },
@@ -232,15 +235,31 @@ export function getChapterBySlug(slug: string): OpenChapter | undefined {
   return openChapters.find((c) => c.slug === slug);
 }
 
+/**
+ * Only chapters with `status: "ready"` are published.
+ * Drafts remain in the data structure (so the editorial plan and TOC stay
+ * intact) but are hidden from public listing, routing, and navigation.
+ */
+export const publishedChapters: OpenChapter[] = openChapters.filter(
+  (c) => c.status === "ready",
+);
+
+export function isPublished(slug: string): boolean {
+  return publishedChapters.some((c) => c.slug === slug);
+}
+
 export function getAdjacentChapters(slug: string): {
   prev?: OpenChapter;
   next?: OpenChapter;
 } {
-  const idx = openChapters.findIndex((c) => c.slug === slug);
+  const idx = publishedChapters.findIndex((c) => c.slug === slug);
   if (idx === -1) return {};
   return {
-    prev: idx > 0 ? openChapters[idx - 1] : undefined,
-    next: idx < openChapters.length - 1 ? openChapters[idx + 1] : undefined,
+    prev: idx > 0 ? publishedChapters[idx - 1] : undefined,
+    next:
+      idx < publishedChapters.length - 1
+        ? publishedChapters[idx + 1]
+        : undefined,
   };
 }
 
@@ -248,8 +267,18 @@ export function chaptersByPart(part: OpenPartNumber): OpenChapter[] {
   return openChapters.filter((c) => c.part === part);
 }
 
+export function publishedChaptersByPart(
+  part: OpenPartNumber,
+): OpenChapter[] {
+  return publishedChapters.filter((c) => c.part === part);
+}
+
 export const OPEN_BASE_PATH = "/open";
 export const OPEN_TOTAL_MINUTES = openChapters.reduce(
+  (sum, c) => sum + c.readMinutes,
+  0,
+);
+export const OPEN_PUBLISHED_MINUTES = publishedChapters.reduce(
   (sum, c) => sum + c.readMinutes,
   0,
 );

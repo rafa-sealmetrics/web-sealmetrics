@@ -5,8 +5,9 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import {
   openChapters,
   openParts,
-  chaptersByPart,
-  OPEN_TOTAL_MINUTES,
+  publishedChapters,
+  publishedChaptersByPart,
+  OPEN_PUBLISHED_MINUTES,
 } from "@/lib/content/open";
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function OpenIndexPage() {
     author: { "@type": "Organization", name: "SealMetrics" },
     description:
       "Eleven open chapters on how we measure, comply, and build SealMetrics.",
-    hasPart: openChapters.map((c) => ({
+    hasPart: publishedChapters.map((c) => ({
       "@type": "Chapter",
       name: c.title,
       position: c.number,
@@ -67,25 +68,19 @@ export default function OpenIndexPage() {
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.78rem] font-mono uppercase tracking-[0.08em] text-text-tertiary">
-            <span>{openChapters.length} chapters</span>
+            <span>{publishedChapters.length} chapters published</span>
             <span aria-hidden="true">·</span>
-            <span>{OPEN_TOTAL_MINUTES} min read</span>
+            <span>{OPEN_PUBLISHED_MINUTES} min read</span>
             <span aria-hidden="true">·</span>
-            <span>Last revised · May 2026</span>
+            <span>More chapters in progress</span>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href={`/open/${openChapters[0].slug}`}
+              href={`/open/${publishedChapters[0].slug}`}
               className="inline-flex items-center min-h-[44px] px-6 py-3 text-[0.9rem] font-medium text-white bg-ink rounded-[4px] no-underline hover:bg-ink-2 transition-colors"
             >
-              Start with chapter 01 →
-            </Link>
-            <Link
-              href="/open/glossary"
-              className="inline-flex items-center min-h-[44px] px-6 py-3 text-[0.9rem] font-medium text-ink no-underline hover:text-brand transition-colors"
-            >
-              Jump to glossary
+              Start with chapter {String(publishedChapters[0].number).padStart(2, "0")} →
             </Link>
           </div>
         </div>
@@ -97,7 +92,8 @@ export default function OpenIndexPage() {
       <section className="border-t border-warm-100 bg-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 py-16 sm:py-24">
           {openParts.map((part) => {
-            const chapters = chaptersByPart(part.number);
+            const chapters = publishedChaptersByPart(part.number);
+            if (chapters.length === 0) return null;
             return (
               <div
                 key={part.number}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { openParts, chaptersByPart } from "@/lib/content/open";
+import { openParts, publishedChaptersByPart } from "@/lib/content/open";
 
 export function OpenChapterSidebar({ currentSlug }: { currentSlug: string }) {
   return (
@@ -14,7 +14,8 @@ export function OpenChapterSidebar({ currentSlug }: { currentSlug: string }) {
 
         <nav aria-label="Chapters">
           {openParts.map((part) => {
-            const chapters = chaptersByPart(part.number);
+            const chapters = publishedChaptersByPart(part.number);
+            if (chapters.length === 0) return null;
             return (
               <div key={part.number} className="mb-7">
                 <span className="block font-mono text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-text-tertiary mb-3">
