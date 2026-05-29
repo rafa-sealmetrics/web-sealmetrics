@@ -44,11 +44,16 @@ export const metadata: Metadata = {
   },
 };
 
+const DATE_PUBLISHED = "2024-01-15";
+const DATE_MODIFIED = "2025-04-15";
+
 const webPageAuthorSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "url": "https://sealmetrics.com/",
   "name": "SealMetrics — Consentless analytics for eCommerce",
+  "datePublished": DATE_PUBLISHED,
+  "dateModified": DATE_MODIFIED,
   "author": {
     "@type": "Organization",
     "name": "SealMetrics",
@@ -139,7 +144,7 @@ export default function Home() {
               Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
           </QuickAnswer>
-          <p className="sr-only">Published by <span itemProp="author">SealMetrics</span></p>
+          <p className="sr-only">Published by <span itemProp="author">SealMetrics</span>. Last updated: <time dateTime={DATE_MODIFIED}>{DATE_MODIFIED}</time>. First published: <time dateTime={DATE_PUBLISHED}>{DATE_PUBLISHED}</time>.</p>
         </div>
       </section>
       <StickyCtaBar locale="en" />
