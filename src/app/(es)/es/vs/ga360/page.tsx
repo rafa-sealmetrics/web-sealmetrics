@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
-import Link from "next/link";
 import { breadcrumbSchema, comparisonPageSchema, quotationSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
@@ -27,51 +26,31 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "vs GA360" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "vs GA360", url: "/es/vs/ga360" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs GA360", description: "Comparativa lado a lado: SealMetrics vs Google Analytics 360 en completitud de datos, cumplimiento UE, precio y disposicion para IA.", url: "/es/vs/ga360", competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" } })} />
-      <VsComparisonV3 data={getVsData("ga360", "es")} dateModified="2026-05-04" />
-
-      {/* Migración — Palladium Hotel Group cambió desde un stack GA */}
+      <JsonLd data={comparisonPageSchema({
+        name: "SealMetrics vs GA360",
+        description: "Comparativa lado a lado: SealMetrics vs Google Analytics 360 en completitud de datos, cumplimiento UE, precio y disposicion para IA.",
+        url: "/es/vs/ga360",
+        competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" },
+        datePublished: "2026-04-15",
+        dateModified: "2026-05-29",
+        author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
+        criteria: [
+          "Coste anual y duración del contrato",
+          "Pérdida de tráfico UE por rechazo de consentimiento",
+          "Residencia de datos y postura Schrems II",
+          "Umbrales de muestreo en BigQuery export",
+          "Tiempo de implementación y especialistas requeridos",
+          "Interfaz MCP / IA nativa",
+          "Latencia de reporting en tiempo real",
+        ],
+      })} />
       <JsonLd data={quotationSchema({
-        text: "Hoy todos los players están contentos. El dato es neutral, no hay caja negra y todo el mundo ha aceptado estos números como referencia.",
+        text: "Los datos que entrega SealMetrics son agnósticos, sin sesgo y neutrales. No hay caja negra.",
         spokenBy: "Toni Andújar",
         spokenByRole: "Director Digital y Venta Directa, Palladium Hotel Group",
         url: "/es/vs/ga360",
       })} />
-      <section className="py-20 bg-warm-white border-t border-warm-100">
-        <div className="max-w-[860px] mx-auto px-5 sm:px-8">
-          <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
-            Cambiaron desde un stack Google Analytics
-          </span>
-          <h2 className="text-[26px] sm:text-[32px] font-semibold tracking-[-0.02em] text-ink mt-3 mb-6 leading-[1.15]">
-            Lo que sustituir GA en el tier enterprise <em className="italic-accent">desbloquea de verdad</em>.
-          </h2>
-          <blockquote
-            className="border-l-[3px] pl-6 py-1 italic"
-            style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}
-          >
-            <p className="text-[20px] leading-[1.45] tracking-[-0.01em] font-medium">
-              &ldquo;Hoy todos los players están contentos. El dato es neutral, no hay caja negra y todo el mundo ha aceptado estos números como referencia.&rdquo;
-            </p>
-            <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-              Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group
-            </cite>
-          </blockquote>
-          <p className="mt-6 text-[15.5px] leading-[1.65] text-ink-2">
-            Palladium auditó SealMetrics contra su stack GA existente y encontró un
-            40% del tráfico entrante sin atribución de source/medium, un 35% de las
-            reservas sin asignar a canal y una mejora del +165% en
-            Coste-por-Búsqueda en Display al dirigir DV360 con SealMetrics.
-            Mantuvieron GA como conducto a Google Ads y movieron las decisiones de
-            ingresos a SealMetrics.
-          </p>
-          <Link
-            href="/es/case-studies/palladium-hotel-group"
-            className="inline-flex items-center gap-2 mt-6 text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
-          >
-            Lee el caso completo de Palladium →
-          </Link>
-        </div>
-      </section>
+      <VsComparisonV3 data={getVsData("ga360", "es")} dateModified="2026-05-29" />
 
       <RelatedPagesV3
         locale="es"

@@ -25,8 +25,25 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Piwik PRO" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/vs/piwik-pro" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Piwik PRO", description: "Side-by-side comparison: SealMetrics versus Piwik PRO on architecture (cookie-based vs cookieless), EU hosting, consent dependency and AI readiness.", url: "/vs/piwik-pro", competitor: { name: "Piwik PRO", url: "https://piwik.pro/" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" } })} />
-      <VsComparisonV3 data={getVsData("piwik-pro", "en")} dateModified="2026-05-04" />
+      <JsonLd data={comparisonPageSchema({
+        name: "SealMetrics vs Piwik PRO",
+        description: "Side-by-side comparison: SealMetrics versus Piwik PRO on architecture (cookie-based vs cookieless), EU hosting, consent dependency and AI readiness.",
+        url: "/vs/piwik-pro",
+        competitor: { name: "Piwik PRO", url: "https://piwik.pro/" },
+        datePublished: "2026-04-15",
+        dateModified: "2026-05-29",
+        author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
+        criteria: [
+          "Cookie vs cookieless collection architecture",
+          "Consent banner requirement",
+          "EU traffic captured (with banner vs without)",
+          "Data residency and Schrems II posture",
+          "Pricing for enterprise eCommerce",
+          "MCP / AI-native interface",
+          "BigQuery / warehouse export",
+        ],
+      })} />
+      <VsComparisonV3 data={getVsData("piwik-pro", "en")} dateModified="2026-05-29" />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"

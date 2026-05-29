@@ -3,8 +3,19 @@ import { ComparisonByline } from "./ComparisonByline";
 import { ComparisonMethodology } from "./ComparisonMethodology";
 import { FaqAccordionV3 } from "./FaqAccordionV3";
 import { FinalCtaSharedV3 } from "./FinalCtaSharedV3";
+import { TldrBlock } from "@/components/ui/TldrBlock";
 
 type Locale = "en" | "es";
+
+export interface VsCaseStudy {
+  eyebrow: string;
+  title: React.ReactNode;
+  quote: string;
+  quoteAuthor: string;
+  body: string;
+  href: string;
+  linkLabel: string;
+}
 
 export interface VsData {
   /** Competitor name as shown in heading */
@@ -15,12 +26,16 @@ export interface VsData {
   eyebrow: string;
   h1: React.ReactNode;
   lede: string;
+  /** Optional TL;DR block, rendered between hero and gap stats. Citation-ready. */
+  tldr?: { answer: React.ReactNode; bullets: React.ReactNode[] };
   /** 4 stat cards — competitor pain points */
   gapStats: { n: string; label: string; detail: string }[];
   /** Feature-by-feature comparison table */
   comparison: { category: string; rows: { feature: string; them: string; us: string }[] }[];
   /** FAQ */
   faqs: { q: string; a: string }[];
+  /** Optional case-study callout rendered before final CTA. */
+  caseStudy?: VsCaseStudy;
   ctaTitle: React.ReactNode;
   ctaLede: string;
   locale: Locale;
@@ -72,6 +87,11 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
           </p>
         </div>
       </section>
+
+      {/* TL;DR (optional) */}
+      {data.tldr ? (
+        <TldrBlock answer={data.tldr.answer} bullets={data.tldr.bullets} />
+      ) : null}
 
       {/* GAP STATS */}
       <section className="py-28 bg-warm-50 border-t border-warm-100">
@@ -234,6 +254,40 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
         ledeEn={`What CMOs and CTOs ask before switching from ${competitor}.`}
         ledeEs={`Lo que CMOs y CTOs preguntan antes de cambiar desde ${competitor}.`}
       />
+
+      {/* CASE STUDY (optional) */}
+      {data.caseStudy ? (
+        <section className="py-20 bg-warm-white border-t border-warm-100">
+          <div className="max-w-[860px] mx-auto px-5 sm:px-8">
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
+              {data.caseStudy.eyebrow}
+            </span>
+            <h2 className="text-[26px] sm:text-[32px] font-semibold tracking-[-0.02em] text-ink mt-3 mb-6 leading-[1.15]">
+              {data.caseStudy.title}
+            </h2>
+            <blockquote
+              className="border-l-[3px] pl-6 py-1 italic"
+              style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}
+            >
+              <p className="text-[20px] leading-[1.45] tracking-[-0.01em] font-medium">
+                &ldquo;{data.caseStudy.quote}&rdquo;
+              </p>
+              <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                {data.caseStudy.quoteAuthor}
+              </cite>
+            </blockquote>
+            <p className="mt-6 text-[15.5px] leading-[1.65] text-ink-2">
+              {data.caseStudy.body}
+            </p>
+            <Link
+              href={data.caseStudy.href}
+              className="inline-flex items-center gap-2 mt-6 text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
+            >
+              {data.caseStudy.linkLabel} →
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       {/* FINAL CTA */}
       <FinalCtaSharedV3

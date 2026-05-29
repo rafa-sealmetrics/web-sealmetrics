@@ -38,11 +38,20 @@ export default function Page() {
           url: "/es/vs/matomo",
           competitor: { name: "Matomo", url: "https://matomo.org/" },
           datePublished: "2026-05-06",
-          dateModified: "2026-05-06",
+          dateModified: "2026-05-29",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
+          criteria: [
+            "Cookies por defecto vs sin cookies por diseño",
+            "Coste operativo del self-hosting (TCO)",
+            "Paridad de features en modo cookieless",
+            "Tráfico UE capturado con banner",
+            "Interfaz MCP / IA nativa",
+            "Disponibilidad de export BigQuery",
+            "Latencia en tiempo real",
+          ],
         })}
       />
-      <VsComparisonV3 data={getVsData("matomo", "es")} dateModified="2026-05-06" />
+      <VsComparisonV3 data={getVsData("matomo", "es")} dateModified="2026-05-29" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"

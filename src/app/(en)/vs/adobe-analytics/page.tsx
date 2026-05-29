@@ -25,8 +25,25 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Adobe Analytics" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Adobe Analytics", url: "/vs/adobe-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Side-by-side comparison: SealMetrics enterprise analytics versus Adobe Analytics on data completeness, EU compliance, pricing and implementation time.", url: "/vs/adobe-analytics", competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" } })} />
-      <VsComparisonV3 data={getVsData("adobe-analytics", "en")} dateModified="2026-05-04" />
+      <JsonLd data={comparisonPageSchema({
+        name: "SealMetrics vs Adobe Analytics",
+        description: "Side-by-side comparison: SealMetrics enterprise analytics versus Adobe Analytics on data completeness, EU compliance, pricing and implementation time.",
+        url: "/vs/adobe-analytics",
+        competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" },
+        datePublished: "2026-04-15",
+        dateModified: "2026-05-29",
+        author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
+        criteria: [
+          "Annual licence cost and implementation fees",
+          "Time to first decision-ready report",
+          "Required specialist headcount",
+          "EU consent-rejection traffic loss",
+          "Cookie-based AppMeasurement architecture",
+          "MCP / AI-native interface",
+          "BigQuery export inclusion",
+        ],
+      })} />
+      <VsComparisonV3 data={getVsData("adobe-analytics", "en")} dateModified="2026-05-29" />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"

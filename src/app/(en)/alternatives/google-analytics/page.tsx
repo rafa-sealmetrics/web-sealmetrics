@@ -24,8 +24,25 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Google Analytics alternatives" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Google Analytics alternatives", url: "/alternatives/google-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "Google Analytics alternatives — SealMetrics", description: "Enterprise alternative to Google Analytics for European companies that need complete data, EU residency and decision-grade attribution.", url: "/alternatives/google-analytics", competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" } })} />
-      <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-05-04" />
+      <JsonLd data={comparisonPageSchema({
+        name: "Google Analytics alternatives — SealMetrics",
+        description: "Enterprise alternative to Google Analytics for European companies that need complete data, EU residency and decision-grade attribution.",
+        url: "/alternatives/google-analytics",
+        competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" },
+        datePublished: "2026-04-15",
+        dateModified: "2026-05-29",
+        author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
+        criteria: [
+          "Cookie-free data capture vs Consent Mode modelling",
+          "EU consent-rejection traffic loss",
+          "Data residency and Schrems II posture",
+          "Sampling at scale",
+          "BigQuery export full resolution",
+          "MCP / AI-native interface",
+          "Pricing and data ownership",
+        ],
+      })} />
+      <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-05-29" />
       <LogosStrip />
       
     </>

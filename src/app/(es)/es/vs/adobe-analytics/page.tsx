@@ -25,7 +25,25 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Adobe Analytics" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "vs Adobe Analytics", url: "/es/vs/adobe-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Adobe Analytics", description: "Comparativa lado a lado: SealMetrics vs Adobe Analytics en completitud de datos, cumplimiento UE, precio y tiempo de implementacion.", url: "/es/vs/adobe-analytics", competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" } })} /><VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-05-04" />
+      <JsonLd data={comparisonPageSchema({
+        name: "SealMetrics vs Adobe Analytics",
+        description: "Comparativa lado a lado: SealMetrics vs Adobe Analytics en completitud de datos, cumplimiento UE, precio y tiempo de implementacion.",
+        url: "/es/vs/adobe-analytics",
+        competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" },
+        datePublished: "2026-04-15",
+        dateModified: "2026-05-29",
+        author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
+        criteria: [
+          "Coste anual de licencia y fees de implementación",
+          "Tiempo al primer informe accionable",
+          "Especialistas requeridos en plantilla",
+          "Pérdida de tráfico UE por rechazo de consentimiento",
+          "Arquitectura AppMeasurement basada en cookies",
+          "Interfaz MCP / IA nativa",
+          "Inclusión de export BigQuery",
+        ],
+      })} />
+      <VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-05-29" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"

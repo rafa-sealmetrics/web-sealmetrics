@@ -309,6 +309,8 @@ export function comparisonPageSchema(props: {
   datePublished?: string;
   dateModified?: string;
   author?: { name: string; url: string };
+  /** Populated comparison criteria — emitted as ItemList mainEntity to replace empty Table. */
+  criteria?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -350,10 +352,21 @@ export function comparisonPageSchema(props: {
           ]
         : []),
     ],
-    mainEntity: {
-      "@type": "Table",
-      about: `Feature-by-feature comparison of ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
-    },
+    mainEntity: props.criteria && props.criteria.length > 0
+      ? {
+          "@type": "ItemList",
+          name: `Comparison criteria — ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
+          itemListElement: props.criteria.map((criterion, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: criterion,
+          })),
+        }
+      : {
+          "@type": "ItemList",
+          name: `Comparison overview — ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
+          description: `Feature-by-feature comparison of ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
+        },
   };
 }
 

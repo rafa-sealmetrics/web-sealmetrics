@@ -24,7 +24,25 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Alternativas a Google Analytics" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Alternativas a Google Analytics", url: "/es/alternatives/google-analytics" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "Alternativas a Google Analytics — SealMetrics", description: "Alternativa enterprise a Google Analytics para empresas europeas que necesitan datos completos y residencia UE.", url: "/es/alternatives/google-analytics", competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: "2026-05-04", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" } })} /><VsComparisonV3 data={getVsData("google-analytics", "es")} dateModified="2026-05-04" />
+      <JsonLd data={comparisonPageSchema({
+        name: "Alternativas a Google Analytics — SealMetrics",
+        description: "Alternativa enterprise a Google Analytics para empresas europeas que necesitan datos completos y residencia UE.",
+        url: "/es/alternatives/google-analytics",
+        competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" },
+        datePublished: "2026-04-15",
+        dateModified: "2026-05-29",
+        author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
+        criteria: [
+          "Captura sin cookies vs modelado de Consent Mode",
+          "Pérdida de tráfico UE por rechazo de consentimiento",
+          "Residencia de datos y postura Schrems II",
+          "Muestreo a escala",
+          "Export BigQuery a resolución completa",
+          "Interfaz MCP / IA nativa",
+          "Pricing y propiedad de los datos",
+        ],
+      })} />
+      <VsComparisonV3 data={getVsData("google-analytics", "es")} dateModified="2026-05-29" />
       <LogosStripEs />
       
     </>

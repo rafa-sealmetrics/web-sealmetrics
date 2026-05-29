@@ -12,6 +12,38 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Google Analytics 360",
         h1: <>Enterprise data <em>without the $150K invoice.</em></>,
         lede: "GA360 costs six figures per year and still loses the same 40–60% of EU traffic that free GA4 loses — because the architecture is identical. SealMetrics is complete data, EU-hosted, from €499/mo.",
+        tldr: {
+          answer: (
+            <>
+              GA360 is Google&rsquo;s enterprise tier of Analytics:
+              SLAs, dedicated support, custom retention, sampling
+              relief on BigQuery — wrapped in a <strong>$150K+/year</strong>{" "}
+              annual commit. Underneath, the collection architecture is
+              identical to free GA4: cookie-based, consent-required,
+              US-hosted. In the EU, GA360 loses the same{" "}
+              <strong>40–60% of traffic</strong> to consent rejection
+              and ad blockers that free GA4 loses — premium price,
+              premium incomplete data. SealMetrics replaces the
+              measurement layer for around <strong>7%</strong> of the
+              GA360 cost, captures 100% on aggregate and keeps
+              everything in Dublin.
+            </>
+          ),
+          bullets: [
+            <>GA360: premium support &amp; sampling relief, same collection layer as free GA4.</>,
+            <>SealMetrics: full capture, EU-only processing, ~93% cheaper than GA360 at scale.</>,
+            <>Most teams keep GA360 only for Google Ads conversion import, run SealMetrics for revenue decisions.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Switched from a Google-Analytics stack",
+          title: <>How Palladium Hotel Group recovered <em className="italic-accent">40% of unattributed traffic</em>.</>,
+          quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+          quoteAuthor: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+          body: "Palladium ran SealMetrics alongside their existing GA-tier stack. The audit surfaced 40% of inbound traffic with no source/medium attribution, 35% of bookings unassigned to a channel in GA4, and a +165% Cost-per-Search improvement on Display once the SealMetrics measurement model drove DV360 decisions. They kept GA4 as the Google Ads conduit and made revenue decisions on SealMetrics.",
+          href: "/case-studies/palladium-hotel-group",
+          linkLabel: "Read the full Palladium case study",
+        },
         gapStats: [
           { n: "$150K+", label: "Annual cost", detail: "Starts at $150,000/year. Billed annually upfront." },
           { n: "40–60%", label: "Still cookie-dependent", detail: "Same consent rejection loss as free GA4." },
@@ -54,6 +86,39 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Google Analytics 360",
         h1: <>Datos enterprise <em>sin la factura de 150K$.</em></>,
         lede: "GA360 cuesta seis cifras al año y sigue perdiendo el mismo 40–60% del tráfico UE que GA4 gratis — porque la arquitectura es idéntica. SealMetrics es dato completo, alojado en UE, desde €499/mes.",
+        tldr: {
+          answer: (
+            <>
+              GA360 es el tier enterprise de Google Analytics: SLAs,
+              soporte dedicado, retención custom, alivio de muestreo
+              en BigQuery — todo envuelto en un compromiso anual de{" "}
+              <strong>150.000$+/año</strong>. Debajo, la capa de
+              recolección es idéntica a la de GA4 gratuito:
+              basada en cookies, requiere consentimiento, alojada en
+              EE.UU. En la UE, GA360 pierde el mismo{" "}
+              <strong>40–60% de tráfico</strong> que GA4 gratis por
+              rechazo de consentimiento y ad-blockers — precio premium,
+              datos premium incompletos. SealMetrics reemplaza la capa
+              de medición por cerca del <strong>7%</strong> del coste
+              de GA360, captura el 100% en agregado y mantiene todo en
+              Dublín.
+            </>
+          ),
+          bullets: [
+            <>GA360: soporte premium y alivio de muestreo, misma capa de recolección que GA4 gratis.</>,
+            <>SealMetrics: captura completa, procesamiento solo en UE, ~93% más barato que GA360 a escala.</>,
+            <>La mayoría de equipos mantienen GA360 solo para el import de conversiones de Google Ads y deciden sobre SealMetrics.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Migró desde un stack Google-Analytics",
+          title: <>Cómo Palladium Hotel Group recuperó <em className="italic-accent">el 40% de tráfico no atribuido</em>.</>,
+          quote: "Los datos que entrega SealMetrics son agnósticos, sin sesgo y neutrales. No hay caja negra.",
+          quoteAuthor: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+          body: "Palladium corrió SealMetrics junto a su stack GA-tier existente. La auditoría reveló un 40% del tráfico entrante sin atribución source/medium, un 35% de reservas sin canal asignado en GA4 y una mejora del +165% en Cost-per-Search en Display una vez el modelo de medición de SealMetrics dirigió las decisiones de DV360. Mantuvieron GA4 como conducto a Google Ads y tomaron las decisiones de ingresos sobre SealMetrics.",
+          href: "/es/case-studies/palladium-hotel-group",
+          linkLabel: "Leer el case study completo de Palladium",
+        },
         gapStats: [
           { n: "150K$+", label: "Coste anual", detail: "Arranca en 150.000$/año. Pagado anualmente por adelantado." },
           { n: "40–60%", label: "Sigue con cookies", detail: "Misma pérdida por rechazo de consentimiento que GA4." },
@@ -98,6 +163,37 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Adobe Analytics",
         h1: <>Enterprise power. <em>Zero enterprise overhead.</em></>,
         lede: "Adobe Analytics delivers depth at the cost of complexity: dedicated analysts, implementation consultants and $100K+ annual contracts. SealMetrics delivers complete data with no specialists required — from €499/mo.",
+        tldr: {
+          answer: (
+            <>
+              Adobe Analytics is a powerful enterprise reporting suite —
+              segmentation depth, calculated metrics, Customer Journey
+              Analytics stitching. Three frictions show up in every
+              vendor review: <strong>$100K+/year</strong> base licence,
+              <strong> 3–6 month</strong> implementation, and a dedicated
+              Adobe-certified analyst on staff. Under all of it, the
+              AppMeasurement collection layer is still cookie-based and
+              consent-gated — the EU traffic gap is unchanged. SealMetrics
+              replaces the measurement layer (complete capture, EU-only,
+              from €499/mo) and lets Adobe do what it does best on
+              complete data instead of incomplete.
+            </>
+          ),
+          bullets: [
+            <>Adobe: deep segmentation and CJA stitching for enterprise reporting.</>,
+            <>SealMetrics: complete EU data capture, no consultants, decision-ready in week one.</>,
+            <>Run both — Adobe for analyst-driven deep dives, SealMetrics for the board number that reconciles.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Switched from a GA-tier enterprise stack",
+          title: <>How Palladium Hotel Group made <em className="italic-accent">enterprise reporting unnecessary</em>.</>,
+          quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+          quoteAuthor: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+          body: "Palladium ran SealMetrics alongside their enterprise GA-tier stack. The audit surfaced 40% of inbound traffic with no source/medium attribution, 35% of bookings unassigned to a channel, and a +165% Cost-per-Search improvement on Display once the SealMetrics measurement model drove DV360 decisions. They kept their existing reporting tools for deep dives and moved revenue decisions to SealMetrics.",
+          href: "/case-studies/palladium-hotel-group",
+          linkLabel: "Read the full Palladium case study",
+        },
         gapStats: [
           { n: "$100K+", label: "Annual cost", detail: "Plus implementation consulting fees." },
           { n: "3–6 months", label: "Implementation", detail: "Typical time to first value." },
@@ -139,6 +235,39 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Adobe Analytics",
         h1: <>Potencia enterprise. <em>Cero overhead enterprise.</em></>,
         lede: "Adobe Analytics da profundidad a coste de complejidad: analistas dedicados, consultores de implementación y contratos de 100K$+ anuales. SealMetrics da dato completo sin especialistas — desde €499/mes.",
+        tldr: {
+          answer: (
+            <>
+              Adobe Analytics es una suite potente de reporting
+              enterprise — profundidad de segmentación, métricas
+              calculadas, stitching cross-canal de Customer Journey
+              Analytics. Tres fricciones aparecen en cada revisión de
+              vendor: licencia base de <strong>100K$+/año</strong>,
+              implementación de <strong>3–6 meses</strong> y un analista
+              certificado en Adobe en plantilla. Debajo de todo, la capa
+              de recolección AppMeasurement sigue siendo basada en
+              cookies y dependiente de consentimiento — el gap UE no
+              cambia. SealMetrics reemplaza la capa de medición (captura
+              completa, sólo UE, desde €499/mes) y deja que Adobe haga
+              lo que mejor hace sobre dato completo en lugar de
+              incompleto.
+            </>
+          ),
+          bullets: [
+            <>Adobe: segmentación profunda y stitching CJA para reporting enterprise.</>,
+            <>SealMetrics: captura UE completa, sin consultores, listo para decidir en semana uno.</>,
+            <>Corre ambos — Adobe para deep dives liderados por analista, SealMetrics para el número del board que cuadra.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Migró desde un stack enterprise tipo GA",
+          title: <>Cómo Palladium Hotel Group hizo <em className="italic-accent">innecesario el reporting enterprise</em>.</>,
+          quote: "Los datos que entrega SealMetrics son agnósticos, sin sesgo y neutrales. No hay caja negra.",
+          quoteAuthor: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+          body: "Palladium corrió SealMetrics junto a su stack enterprise GA-tier. La auditoría reveló un 40% del tráfico entrante sin atribución source/medium, un 35% de reservas sin canal asignado y una mejora del +165% en Cost-per-Search en Display una vez el modelo de medición de SealMetrics dirigió las decisiones de DV360. Mantuvieron sus herramientas existentes para deep dives y movieron las decisiones de ingresos a SealMetrics.",
+          href: "/es/case-studies/palladium-hotel-group",
+          linkLabel: "Leer el case study completo de Palladium",
+        },
         gapStats: [
           { n: "100K$+", label: "Coste anual", detail: "Más fees de consultoría de implementación." },
           { n: "3–6 meses", label: "Implementación", detail: "Tiempo típico al primer valor." },
@@ -182,6 +311,36 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Piwik PRO",
         h1: <>EU hosting is the <em>beginning</em>, not the finish line.</>,
         lede: "Piwik PRO runs in Europe — that's good. But it still uses cookies, requires consent, and loses the same EU traffic GA4 loses. SealMetrics solves the root problem: the architecture, not just the hosting.",
+        tldr: {
+          answer: (
+            <>
+              Piwik PRO is the most credible EU-hosted commercial
+              analytics — German data residency, enterprise contracts,
+              GDPR-aware product. But the architecture is closer to GA4
+              than the marketing suggests: cookies on by default,
+              consent banner required, the consentless mode is a
+              configuration with caveats per jurisdiction. SealMetrics
+              is consentless by design — no cookie, no identifier, no
+              configuration. EU hosting solves data residency; complete
+              capture requires removing the cookie itself. SealMetrics
+              does both.
+            </>
+          ),
+          bullets: [
+            <>Piwik PRO: EU-hosted, but cookie + consent architecture loses the same 40–60% of traffic.</>,
+            <>SealMetrics: cookieless and consentless by design, 100% capture, EU-only.</>,
+            <>If hosting was the only concern Piwik PRO would suffice; in 2026, the cookie is the bottleneck.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Switched from a cookie-based EU analytics stack",
+          title: <>How Dreamplace Hotels traded <em className="italic-accent">configuration for clarity</em>.</>,
+          quote: "What it gives us is what we've always needed: data as real as possible, as close to reality as possible.",
+          quoteAuthor: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
+          body: "Dreamplace moved off a cookie-based EU analytics stack to SealMetrics. Aggregate channel revenue began reconciling with the PMS within the first week. The reporting conversation shifted from \"which number is real\" to which channels actually drove the bookings — the original purpose of analytics, restored.",
+          href: "/case-studies/dreamplace-hotels",
+          linkLabel: "Read the full Dreamplace case study",
+        },
         gapStats: [
           { n: "€30K+", label: "Enterprise minimum", detail: "Enterprise plan starts around €30K/yr." },
           { n: "Cookie-based", label: "Same consent dependency", detail: "40–60% EU traffic still lost to rejection." },
@@ -222,6 +381,37 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Piwik PRO",
         h1: <>El hosting UE es el <em>principio</em>, no la meta.</>,
         lede: "Piwik PRO corre en Europa — eso está bien. Pero sigue usando cookies, requiere consentimiento y pierde el mismo tráfico UE que GA4. SealMetrics resuelve el problema de raíz: la arquitectura, no solo el hosting.",
+        tldr: {
+          answer: (
+            <>
+              Piwik PRO es la analítica comercial alojada en UE más
+              creíble — residencia de datos en Alemania, contratos
+              enterprise, producto consciente del RGPD. Pero la
+              arquitectura está más cerca de GA4 de lo que sugiere el
+              marketing: cookies activadas por defecto, banner de
+              consentimiento requerido, el modo sin consentimiento es
+              una configuración con matices por jurisdicción.
+              SealMetrics es sin consentimiento por diseño — sin
+              cookie, sin identificador, sin configuración. El hosting
+              UE resuelve la residencia; la captura completa requiere
+              quitar la cookie. SealMetrics hace ambos.
+            </>
+          ),
+          bullets: [
+            <>Piwik PRO: alojado en UE, pero la arquitectura cookie + consentimiento sigue perdiendo el 40–60%.</>,
+            <>SealMetrics: sin cookies y sin consentimiento por diseño, 100% de captura, sólo UE.</>,
+            <>Si solo importara el hosting Piwik PRO bastaría; en 2026, la cookie es el cuello de botella.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Migró desde un stack EU basado en cookies",
+          title: <>Cómo Dreamplace Hotels cambió <em className="italic-accent">configuración por claridad</em>.</>,
+          quote: "Nos da lo que siempre hemos necesitado: datos lo más reales posible, lo más cercanos a la realidad posible.",
+          quoteAuthor: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
+          body: "Dreamplace migró desde un stack EU basado en cookies a SealMetrics. Los ingresos agregados por canal empezaron a cuadrar con el PMS en la primera semana. La conversación de reporting pasó de \"qué número es real\" a qué canales realmente generaron las reservas — el propósito original de la analítica, restaurado.",
+          href: "/es/case-studies/dreamplace-hotels",
+          linkLabel: "Leer el case study completo de Dreamplace",
+        },
         gapStats: [
           { n: "30K€+", label: "Mínimo enterprise", detail: "Plan enterprise arranca en ~30K€/año." },
           { n: "Con cookies", label: "Misma dependencia", detail: "40–60% tráfico UE sigue perdido por rechazo." },
@@ -264,6 +454,37 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Matomo",
         h1: <>Open-source is great. <em>Cookies are still the bottleneck.</em></>,
         lede: "Matomo (Cloud or self-hosted) is the most credible open-source analytics in Europe. But its default is cookie-based, its cookieless mode trades features for compliance, and the operational cost of self-hosting eats the 'free' label. SealMetrics is cookieless by design, EU-hosted, with a modern stack — from €499/mo, no devops required.",
+        tldr: {
+          answer: (
+            <>
+              Matomo is the most credible open-source analytics in
+              Europe — Cloud or self-hosted, GDPR-aware, plugin
+              ecosystem. Two architectural realities: cookies are on
+              by default (the cookieless mode disables visitor profiles
+              and several reports), and self-hosting is &ldquo;free on
+              the licence&rdquo; but typically costs <strong>€15–40K/year</strong>{" "}
+              in operations once you account for servers, security
+              patches, plugin maintenance and on-call. SealMetrics is
+              cookieless across the entire product, fully managed,
+              EU-hosted in Dublin, with native MCP and BigQuery — from
+              €499/mo, no devops required.
+            </>
+          ),
+          bullets: [
+            <>Matomo Cloud / self-host: cookies on by default, cookieless mode is a partial feature set.</>,
+            <>Self-hosting TCO: licence is free, operations are 0.2–0.5 FTE for a serious eCommerce.</>,
+            <>SealMetrics: cookieless across the whole product, modern AI-native stack, zero ops.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Replaced a DIY analytics stack",
+          title: <>How Dreamplace Hotels traded <em className="italic-accent">DIY ops for clarity</em>.</>,
+          quote: "What it gives us is what we've always needed: data as real as possible, as close to reality as possible.",
+          quoteAuthor: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
+          body: "Dreamplace moved to SealMetrics from a DIY analytics setup. Aggregate channel revenue began reconciling with the PMS within the first week. No servers to patch, no plugins to maintain, no cookie banner to defend — just channel performance reconciled to the booking ledger, on day one.",
+          href: "/case-studies/dreamplace-hotels",
+          linkLabel: "Read the full Dreamplace case study",
+        },
         gapStats: [
           { n: "Cookies on", label: "Default tracking mode", detail: "Cookieless mode exists but is limited and not the default." },
           { n: "Self-host", label: "DevOps overhead", detail: "Servers, backups, security patches, scaling — your team's time." },
@@ -310,6 +531,37 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "vs Matomo",
         h1: <>Open-source está bien. <em>Las cookies siguen siendo el cuello de botella.</em></>,
         lede: "Matomo (Cloud o self-hosted) es la analítica open-source más creíble en Europa. Pero su modo por defecto es con cookies, su modo cookieless cambia features por compliance, y el coste operativo del self-hosting se come la etiqueta de 'gratis'. SealMetrics es cookieless por diseño, alojado en UE, con stack moderno — desde €499/mes, sin devops.",
+        tldr: {
+          answer: (
+            <>
+              Matomo es la analítica open-source más creíble de Europa
+              — Cloud o self-hosted, RGPD-aware, ecosistema de plugins.
+              Dos realidades arquitectónicas: cookies activadas por
+              defecto (el modo cookieless deshabilita perfiles de
+              visitante y varios informes) y self-hosting &laquo;gratis
+              en licencia&raquo; que suele costar{" "}
+              <strong>15–40K€/año</strong> en operaciones una vez
+              cuentas servidores, parches de seguridad, mantenimiento
+              de plugins y on-call. SealMetrics es cookieless en todo
+              el producto, totalmente gestionado, alojado en Dublín, con
+              MCP nativo y BigQuery — desde €499/mes, cero devops.
+            </>
+          ),
+          bullets: [
+            <>Matomo Cloud / self-host: cookies por defecto, el modo cookieless es un set parcial de features.</>,
+            <>TCO self-hosting: la licencia es gratis, las operaciones son 0,2–0,5 FTE para un eCommerce serio.</>,
+            <>SealMetrics: sin cookies en todo el producto, stack moderno AI-native, cero operaciones.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Reemplazó un stack DIY de analítica",
+          title: <>Cómo Dreamplace Hotels cambió <em className="italic-accent">DIY por claridad</em>.</>,
+          quote: "Nos da lo que siempre hemos necesitado: datos lo más reales posible, lo más cercanos a la realidad posible.",
+          quoteAuthor: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
+          body: "Dreamplace migró a SealMetrics desde un setup analítico DIY. Los ingresos agregados por canal empezaron a cuadrar con el PMS en la primera semana. Sin servidores que parchear, sin plugins que mantener, sin banner de cookies que defender — solo rendimiento de canal cuadrado con el ledger de reservas, desde el día uno.",
+          href: "/es/case-studies/dreamplace-hotels",
+          linkLabel: "Leer el case study completo de Dreamplace",
+        },
         gapStats: [
           { n: "Cookies on", label: "Modo de tracking por defecto", detail: "El modo cookieless existe pero es limitado y no es el default." },
           { n: "Self-host", label: "Overhead DevOps", detail: "Servidores, backups, parches de seguridad, escalado — tiempo de tu equipo." },
@@ -358,6 +610,37 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "Google Analytics alternatives",
         h1: <>Looking for a <em>GA alternative</em> that doesn't commoditize your data?</>,
         lede: "Most alternatives are cheaper or simpler GA clones. SealMetrics is a different category: complete data, EU-hosted, zero consent scope, enterprise reliability. The serious replacement for teams past the hobbyist tier.",
+        tldr: {
+          answer: (
+            <>
+              Google Analytics remains the default — and most
+              alternatives are cheaper clones of the same architecture.
+              Plausible and Fathom are lighter; Matomo is open-source;
+              Piwik PRO is EU-hosted; GA360 is the premium version of
+              the original. They share the same trade-off: cookie or
+              cookie-light tracking that still loses{" "}
+              <strong>40–60% of EU traffic</strong> to consent rejection
+              and ad blockers. The serious alternative for an eCommerce
+              over €10M revenue is a different category — complete
+              capture, EU-hosted, zero consent scope, last-click
+              attribution on 100% of data.
+            </>
+          ),
+          bullets: [
+            <>Plausible, Fathom, Umami: lightweight; fine for blogs and content sites.</>,
+            <>Matomo, Piwik PRO: open-source / EU-hosted; cookie-based architecture, same gap.</>,
+            <>SealMetrics: complete EU data capture, enterprise reliability, modern AI-native stack.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Migrated from a Google-Analytics stack",
+          title: <>What &ldquo;serious alternative&rdquo; <em className="italic-accent">actually unlocks</em>.</>,
+          quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+          quoteAuthor: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+          body: "Palladium audited SealMetrics against their existing GA stack. The result: 40% of inbound traffic with no source/medium attribution in GA, 35% of bookings unassigned to a channel, and a +165% Cost-per-Search improvement on Display once the SealMetrics measurement model drove DV360 decisions.",
+          href: "/case-studies/palladium-hotel-group",
+          linkLabel: "Read the full Palladium case study",
+        },
         gapStats: [
           { n: "40–60%", label: "EU traffic lost", detail: "GA + consent banner combo." },
           { n: "US-hosted", label: "Schrems II exposure", detail: "Ongoing CNIL/DPA challenges." },
@@ -400,6 +683,38 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         eyebrow: "Alternativas a Google Analytics",
         h1: <>¿Buscando una <em>alternativa a GA</em> que no commoditice tus datos?</>,
         lede: "La mayoría de alternativas son clones más baratos o simples de GA. SealMetrics es otra categoría: dato completo, alojado en UE, cero scope de consentimiento, fiabilidad enterprise. El reemplazo serio para equipos que pasan el tier hobbyist.",
+        tldr: {
+          answer: (
+            <>
+              Google Analytics sigue siendo el default — y la mayoría
+              de alternativas son clones más baratos de la misma
+              arquitectura. Plausible y Fathom son más ligeros; Matomo
+              es open-source; Piwik PRO está alojado en UE; GA360 es la
+              versión premium del original. Comparten el mismo
+              trade-off: tracking con cookies o cookie-light que sigue
+              perdiendo <strong>40–60% del tráfico UE</strong> por
+              rechazo de consentimiento y ad-blockers. La alternativa
+              seria para un eCommerce con más de 10M€ de ingresos es
+              otra categoría — captura completa, alojada en UE, cero
+              scope de consentimiento, atribución last-click sobre el
+              100% de los datos.
+            </>
+          ),
+          bullets: [
+            <>Plausible, Fathom, Umami: ligeros; bien para blogs y sites de contenido.</>,
+            <>Matomo, Piwik PRO: open-source / alojados en UE; arquitectura con cookies, mismo gap.</>,
+            <>SealMetrics: captura UE completa, fiabilidad enterprise, stack moderno AI-native.</>,
+          ],
+        },
+        caseStudy: {
+          eyebrow: "Migró desde un stack Google-Analytics",
+          title: <>Qué desbloquea <em className="italic-accent">una alternativa de verdad</em>.</>,
+          quote: "Los datos que entrega SealMetrics son agnósticos, sin sesgo y neutrales. No hay caja negra.",
+          quoteAuthor: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+          body: "Palladium auditó SealMetrics contra su stack GA existente. Resultado: 40% del tráfico entrante sin atribución source/medium en GA, 35% de reservas sin canal asignado y una mejora del +165% en Cost-per-Search en Display una vez el modelo de medición de SealMetrics dirigió las decisiones de DV360.",
+          href: "/es/case-studies/palladium-hotel-group",
+          linkLabel: "Leer el case study completo de Palladium",
+        },
         gapStats: [
           { n: "40–60%", label: "Tráfico UE perdido", detail: "Combo GA + banner de consentimiento." },
           { n: "US-hosted", label: "Exposición Schrems II", detail: "Challenges CNIL/DPA en curso." },
