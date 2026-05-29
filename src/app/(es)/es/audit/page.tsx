@@ -53,6 +53,8 @@ export default function Page() {
           description:
             "Responde 7 preguntas en 3 minutos. Te enviamos un análisis personalizado del gap entre lo que mide GA4 y lo que realmente vende tu eCommerce.",
           url: "https://sealmetrics.com/es/audit",
+          datePublished: "2025-01-01",
+          dateModified: "2025-01-01",
           author: {
             "@type": "Organization",
             name: "SealMetrics",
@@ -84,7 +86,8 @@ export default function Page() {
             3 minutos · sin instalar nada
           </p>
           <p className="text-[13px] text-ink-soft mt-4">
-            Por el equipo de <span itemProp="author">SealMetrics</span>
+            Por el equipo de <span itemProp="author">SealMetrics</span>{" ·"}{" "}
+            <time dateTime="2025-01-01" className="text-[13px] text-ink-soft">enero 2025</time>
           </p>
         </div>
       </section>
