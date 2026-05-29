@@ -28,11 +28,11 @@ import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Consentless analytics for eCommerce",
+  title: "Consentless Analytics for eCommerce — 100% Traffic, No Cookies",
   description:
-    "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
+    "SealMetrics is consentless analytics that captures 100% of your traffic — no cookies, no consent banners, no modelling. GDPR-compliant by design. EU-hosted in Dublin. Recover the sales GA4 can't see.",
   openGraph: {
-    title: "SealMetrics — Consentless analytics for eCommerce",
+    title: "Consentless Analytics for eCommerce — 100% Traffic, No Cookies",
     description:
       "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
@@ -48,7 +48,7 @@ const webPageAuthorSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   url: "https://sealmetrics.com/",
-  name: "SealMetrics — Consentless analytics for eCommerce",
+  name: "Consentless Analytics for eCommerce — 100% Traffic, No Cookies",
   datePublished: "2024-01-01",
   dateModified: "2025-05-01",
   author: {
