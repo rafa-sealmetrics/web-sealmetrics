@@ -46,6 +46,8 @@ export default function Page() {
           description:
             "Personalised audit of the gap between GA4 and your real backend revenue. 7 questions, 3 minutes, human-written report within 24h.",
           url: "https://sealmetrics.com/audit",
+          datePublished: "2024-01-15",
+          dateModified: "2025-01-15",
           author: {
             "@type": "Organization",
             name: "SealMetrics",
@@ -78,7 +80,8 @@ export default function Page() {
             3 minutes · no install
           </p>
           <p className="text-[13px] text-ink-soft mt-4">
-            By <span className="font-semibold">SealMetrics</span>
+            By <span className="font-semibold">SealMetrics</span>{" "}·{" "}
+            <time dateTime="2025-01-15" className="text-ink-soft">Updated Jan 15, 2025</time>
           </p>
         </div>
       </section>
