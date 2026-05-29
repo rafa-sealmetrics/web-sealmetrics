@@ -8,11 +8,11 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "Sobre SealMetrics — Analítica founder-led para Europa",
-  description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  title: "Analítica sin cookies para Europa — SealMetrics",
+  description: "Analítica consentless 100% UE-hosted: visibilidad completa sin cookies, sin IPs, sin RGPD friction. 2.000+ equipos europeos ya confían en sus datos.",
   openGraph: {
-    title: "Sobre SealMetrics — Analítica founder-led para Europa",
-    description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+    title: "Analítica sin cookies para Europa — SealMetrics",
+    description: "Analítica consentless 100% UE-hosted: visibilidad completa sin cookies, sin IPs, sin RGPD friction. 2.000+ equipos europeos ya confían en sus datos.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
