@@ -8,11 +8,11 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "Sobre SealMetrics — Analítica founder-led para Europa",
-  description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  title: "Consentless Analytics 100% UE — Sobre SealMetrics",
+  description: "SealMetrics: analítica cookieless sin dato personal, 95–100% cobertura real, alojada en la UE. Fundada por Rafa Jiménez tras 20 años en eCommerce europeo.",
   openGraph: {
-    title: "Sobre SealMetrics — Analítica founder-led para Europa",
-    description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+    title: "Consentless Analytics 100% UE — Sobre SealMetrics",
+    description: "SealMetrics: analítica cookieless sin dato personal, 95–100% cobertura real, alojada en la UE. Fundada por Rafa Jiménez tras 20 años en eCommerce europeo.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -23,8 +23,8 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "url": "https://sealmetrics.com/es/about",
-  "name": "Sobre SealMetrics — Analítica founder-led para Europa",
-  "description": "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  "name": "Consentless Analytics 100% UE — Sobre SealMetrics",
+  "description": "SealMetrics: analítica cookieless sin dato personal, 95–100% cobertura real, alojada en la UE. Fundada por Rafa Jiménez tras 20 años en eCommerce europeo.",
   "datePublished": "2024-01-15",
   "dateModified": "2025-01-15",
   "author": {
