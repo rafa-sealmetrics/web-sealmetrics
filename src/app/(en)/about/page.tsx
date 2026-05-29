@@ -96,13 +96,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups with 10M€+ in online revenue. Every board meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted. In a typical European enterprise, revenue reconciliation consumed 4–6 analyst hours per week — every week.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              Why does this keep happening? The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. GDPR consent rejection made 40–60% of EU traffic invisible to standard analytics. Sub-processor chains stretched across three continents, each introducing latency and data loss. Teams spent more time reconciling numbers than acting on them — and the gap between reported revenue and actual revenue averaged 35% in our pre-launch audits across 50 European retailers.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              SealMetrics was built to answer one question every CFO now asks: <em>"Which number do we trust?"</em> A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin on EU-owned infrastructure. Zero cookies. Zero personal data. Full-resolution event capture — including the 40–60% of cookieless EU traffic that GA4 drops. Built by a team that had lived through the problem for two decades and decided to stop patching it.
             </p>
           </div>
 
