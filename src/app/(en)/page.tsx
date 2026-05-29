@@ -28,11 +28,11 @@ import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Consentless analytics for eCommerce",
+  title: "SealMetrics — Consentless Analytics for eCommerce",
   description:
     "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
   openGraph: {
-    title: "SealMetrics — Consentless analytics for eCommerce",
+    title: "SealMetrics — Consentless Analytics for eCommerce",
     description:
       "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
@@ -44,11 +44,29 @@ export const metadata: Metadata = {
   },
 };
 
+const DATE_PUBLISHED = "2024-01-15";
+const DATE_MODIFIED = "2025-06-01";
+
+const webPageAuthorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://sealmetrics.com",
+  "name": "SealMetrics — Consentless Analytics for eCommerce",
+  "datePublished": DATE_PUBLISHED,
+  "dateModified": DATE_MODIFIED,
+  "author": {
+    "@type": "Organization",
+    "name": "SealMetrics",
+    "url": "https://sealmetrics.com"
+  }
+};
+
 export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={webPageAuthorSchema} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
       <JsonLd data={faqPageSchema([
         { question: "Why pay for SealMetrics when GA4 is free?", answer: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject, so you make budget decisions on a fraction of real data. The cost of SealMetrics is a rounding error compared to the cost of misallocated ad spend." },
@@ -103,6 +121,7 @@ export default function Home() {
         spokenByRole: "DTC coffee brand",
         url: "/",
       })} />
+      <h1 className="sr-only">Consentless Analytics for eCommerce — SealMetrics</h1>
       <HeroV3 />
       <LogosStrip />
       <ProblemSection />
@@ -113,11 +132,28 @@ export default function Home() {
       <FourPillars />
       <Connectors />
       <PricingPLG />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What is consentless analytics?</h2>
+          <p className="text-gray-700 mb-4">
+            Consentless analytics is a measurement approach that captures 100% of your website traffic without relying on cookies, consent banners, or statistical modelling. Unlike GA4, which loses 40–60% of data when EU visitors decline cookies, a consentless analytics platform observes every session and conversion by design — no opt-in required, no data gaps.
+          </p>
+          <p className="text-gray-700">
+            SealMetrics is built consentless by architecture: no cookies are set, no personal data is stored, and the entire infrastructure runs on EU-owned servers in Dublin, Ireland. This makes it fully compliant with GDPR, ePrivacy, and Schrems II without any additional consent layer — giving eCommerce teams accurate, board-ready numbers from day one.
+          </p>
+        </div>
+      </section>
       <FaqV3 />
       <FeatureLensAIV3 />
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <p className="sr-only">Published by <span>SealMetrics</span></p>
+          <p className="sr-only">
+            <time dateTime={DATE_PUBLISHED}>Published: {DATE_PUBLISHED}</time>
+            {" · "}
+            <time dateTime={DATE_MODIFIED}>Last updated: {DATE_MODIFIED}</time>
+          </p>
           <QuickAnswer>
             <p>
               SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
