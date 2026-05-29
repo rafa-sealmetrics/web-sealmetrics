@@ -91,13 +91,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups with 10M€+ in annual online revenue. Every board meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted. In some organisations, reconciling those three figures consumed more analyst hours than acting on them.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              Why does this happen? The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible to standard analytics. Sub-processor chains stretched across three continents, each adding latency and compliance risk. Teams spent more time arguing over which dashboard was right than fixing the underlying product.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              SealMetrics was built to end that argument. A single, cookieless, zero-personal-data layer that brand, finance and agencies can all sign against — hosted entirely in Dublin, Ireland, on EU-owned infrastructure. Full traffic resolution without consent banners. A neutral source of truth that survives DPA audits and board scrutiny alike. Built by a team that had lived through the problem for two decades and decided to stop patching it.
             </p>
           </div>
 
