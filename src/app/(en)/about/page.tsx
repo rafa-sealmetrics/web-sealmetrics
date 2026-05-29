@@ -72,7 +72,7 @@ export default function Page() {
             Built so European teams <em>could trust their own data again.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+            SealMetrics is an EU-founded, EU-hosted analytics platform. We serve 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
           </p>
           <p className="mt-4 text-[13px] text-ink-soft">
             Founded <time dateTime="2020-01-01">2020</time> · Last updated <time dateTime="2025-01-01">January 2025</time>
@@ -91,13 +91,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups with 10M€+ in annual online revenue. Every board meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted. In some organisations, reconciling those three figures consumed more analyst hours than acting on them.
+              Rafa Jiménez spent two decades in European eCommerce. He started as a digital marketer. Then he founded an agency. Then he advised retail groups with 10M€+ in annual online revenue. Every board meeting followed the same pattern: one GA4 number, one pixel number, one CRM number. All different. All defended. None trusted.
             </p>
             <p>
-              Why does this happen? The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible to standard analytics. Sub-processor chains stretched across three continents, each adding latency and compliance risk. Teams spent more time arguing over which dashboard was right than fixing the underlying product.
+              In some organisations, reconciling those three figures consumed more analyst hours than acting on them. The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents, adding latency and compliance risk.
             </p>
             <p>
-              SealMetrics was built to end that argument. A single, cookieless, zero-personal-data layer that brand, finance and agencies can all sign against — hosted entirely in Dublin, Ireland, on EU-owned infrastructure. Full traffic resolution without consent banners. A neutral source of truth that survives DPA audits and board scrutiny alike. Built by a team that had lived through the problem for two decades and decided to stop patching it.
+              SealMetrics was built to end that argument. It is a single, cookieless, zero-personal-data layer. Brand, finance and agencies can all rely on the same numbers. Data is hosted entirely in Dublin, Ireland, on EU-owned infrastructure. Full traffic is resolved without consent banners. It survives DPA audits and board scrutiny alike.
             </p>
           </div>
 
@@ -129,7 +129,7 @@ export default function Page() {
               <h2 className="h-section mt-5">What we've <em>proved so far.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Not projections, not aspirations. What 2,000+ European teams use SealMetrics for today.
+              Not projections. Not aspirations. These are the results 2,000+ European teams see with SealMetrics today.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
