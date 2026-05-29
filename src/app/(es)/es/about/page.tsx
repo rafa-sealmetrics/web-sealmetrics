@@ -69,18 +69,33 @@ export default function Page() {
           <h2 className="h-section mt-5" style={{ maxWidth: "22ch" }}>
             20 años viendo a equipos decidir con <em>datos en los que no confiaban.</em>
           </h2>
-          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+
+          <p className="mt-6 text-[17px] font-medium text-ink leading-[1.5] border-l-4 border-brand pl-4">
+            <strong>TL;DR:</strong> Rafa Jiménez pasó 20 años en eCommerce europeo y fundó SealMetrics tras comprobar que ninguna herramienta del mercado combinaba cumplimiento RGPD, datos completos y atribución compartida entre marketing y finanzas.
+          </p>
+
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
               Rafa Jiménez pasó dos décadas en eCommerce europeo — primero como marketer digital, luego fundando una agencia, luego asesorando grupos retail. Cada reunión seguía el mismo patrón: el número de GA4, el del pixel, el del CRM. Todos distintos. Todos defendidos. Ninguno fiable.
             </p>
             <p>
               El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible el 40–60% del tráfico UE. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
             </p>
+
+            <div>
+              <p className="font-semibold text-ink mb-3">Tras evaluar más de 12 soluciones del mercado, ninguna cumplía los tres requisitos clave:</p>
+              <ul className="list-disc pl-6 space-y-2 text-[16px]">
+                <li>Cumplimiento RGPD sin fricciones legales en cada reunión.</li>
+                <li>Datos completos independientemente del consentimiento del usuario.</li>
+                <li>Modelo de atribución que marketing y finanzas pudieran compartir sin discutirlo.</li>
+              </ul>
+            </div>
+
             <p>
               SealMetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
             </p>
             <p>
-              La decisión de construir una herramienta propia llegó después de evaluar más de una docena de soluciones del mercado. Ninguna combinaba los tres requisitos que los clientes europeos necesitaban: cumplimiento RGPD sin fricciones, datos completos independientemente del consentimiento del usuario, y un modelo de atribución que marketing y finanzas pudieran compartir sin discutirlo. El resultado fue una arquitectura cookieless propia, auditada por despachos de privacidad en Alemania, Francia y España, y desplegada exclusivamente en infraestructura de la Unión Europea.
+              La arquitectura cookieless fue auditada por despachos de privacidad en Alemania, Francia y España, y se despliega exclusivamente en infraestructura de la Unión Europea.
             </p>
             <p>
               Hoy SealMetrics trabaja con equipos de entre 5 y 500 personas. Desde startups DTC que quieren entender su CAC real hasta grupos hoteleros que necesitan atribución multicanal sin exponer datos de huéspedes. El denominador común es siempre el mismo: equipos que han perdido la confianza en sus dashboards y quieren recuperarla sin sacrificar el cumplimiento normativo.
@@ -135,12 +150,29 @@ export default function Page() {
         <div className="max-w-[900px] mx-auto px-5 sm:px-10">
           <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Nuestra filosofía</span>
           <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Privacidad y precisión <em>no son opuestos.</em></h2>
-          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+
+          <p className="mt-6 text-[17px] font-medium text-ink leading-[1.5] border-l-4 border-brand pl-4">
+            <strong>TL;DR:</strong> Eliminar cookies de terceros no reduce la señal, elimina el ruido. SealMetrics alcanza una cobertura del 95–100% del tráfico real frente al 40–60% de herramientas tradicionales en mercados europeos.
+          </p>
+
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
               La industria lleva años presentando la privacidad como un coste: menos datos, menos precisión, menos conversiones atribuidas. SealMetrics parte de la hipótesis contraria. Cuando eliminas las cookies de terceros, los píxeles de seguimiento y las cadenas de sub-procesadores, no pierdes señal — eliminas el ruido. Los datos que quedan son más limpios, más consistentes y más accionables.
             </p>
+
+            <div>
+              <p className="font-semibold text-ink mb-3">¿Cómo funciona la arquitectura cookieless de SealMetrics?</p>
+              <ul className="list-disc pl-6 space-y-2 text-[16px]">
+                <li>Fingerprinting de primer nivel: no almacena ningún dato personal identificable.</li>
+                <li>Cumple las directrices del <a href="https://edpb.europa.eu/" className="text-brand hover:underline" target="_blank" rel="noopener noreferrer">Comité Europeo de Protección de Datos (EDPB)</a>.</li>
+                <li>Funciona igual con o sin banner de consentimiento aceptado.</li>
+                <li>Cobertura del 95–100% del tráfico real frente al 40–60% de herramientas tradicionales en Europa.</li>
+                <li>Infraestructura desplegada exclusivamente en la Unión Europea (Dublín).</li>
+              </ul>
+            </div>
+
             <p>
-              Nuestra arquitectura cookieless no es una respuesta reactiva al RGPD. Es una decisión de diseño tomada desde el primer día. Cada sesión se mide con técnicas de fingerprinting de primer nivel que no almacenan ningún dato personal, cumplen con las directrices del Comité Europeo de Protección de Datos y funcionan igual con o sin banner de consentimiento. El resultado es una cobertura del 95–100% del tráfico real frente al 40–60% que recogen herramientas tradicionales en mercados europeos con alta tasa de rechazo de cookies.
+              Nuestra arquitectura cookieless no es una respuesta reactiva al RGPD. Es una decisión de diseño tomada desde el primer día.
             </p>
             <p>
               Creemos que los equipos de datos merecen una herramienta en la que puedan confiar sin necesitar a un abogado en cada reunión. Eso es lo que construimos.
