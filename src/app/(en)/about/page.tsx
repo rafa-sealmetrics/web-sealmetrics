@@ -96,13 +96,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups with 10M€+ in annual online revenue. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted. In some organisations, reconciling those three figures consumed more analyst hours each month than acting on any of them.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              Why does this happen? The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. GDPR consent rejection made 40–60% of EU traffic invisible to standard analytics. Sub-processor chains stretched across three continents, creating legal exposure that DPOs could not sign off on. Teams were measuring the tools, not the business.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              SealMetrics was built to answer one question boards actually ask: <em>how much revenue did we generate, and from which channel?</em> It is a neutral measurement layer — cookie-free, zero personal data, 100% EU-hosted in Dublin — that brand, finance and agencies can all rely on simultaneously. The result: a single number every stakeholder can sign against, with no reconciliation meetings required.
             </p>
           </div>
 
