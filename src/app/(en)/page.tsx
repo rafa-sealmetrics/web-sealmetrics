@@ -125,6 +125,12 @@ export default function Home() {
             <p>
               Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
+            <p>
+              Unlike GA4, which relies on cookie consent that up to 60% of EU visitors decline, SealMetrics uses a cookieless, server-side methodology that observes every session without sampling or statistical modelling. This means your channel reports — paid search, organic, direct, referral, display — reflect real visitor behaviour, not an extrapolation from the consenting minority. Finance teams get revenue figures that reconcile with Shopify and payment-processor exports. Agencies get unbiased ROAS numbers free from platform self-reporting bias. And you retain full data ownership: no data leaves EU jurisdiction, no third-party ad network ever touches your analytics pipeline.
+            </p>
+            <p>
+              Implementation requires a single JavaScript snippet — the same way you would add any tag manager. Most teams are live within one working day. SealMetrics runs in parallel with your existing stack, so there is zero migration risk: compare both tools side by side for 30 days, then decide. The platform ships with pre-built goal templates for eCommerce events (add-to-cart, checkout start, purchase), funnel visualisation, and a channel attribution dashboard designed to replace the standard GA4 acquisition report without requiring custom dimensions or BigQuery exports.
+            </p>
           </QuickAnswer>
         </div>
       </section>
