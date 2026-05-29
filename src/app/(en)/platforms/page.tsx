@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 const platforms = [
   { name: "Shopify", time: "5 min", desc: "One-click install on Shopify Plus. Theme.liquid snippet for Shopify Standard. Order data flows automatically.", href: "/platforms/shopify" },
   { name: "Magento", time: "15 min", desc: "Native Magento 2 module via Composer. Works on Adobe Commerce and Magento Open Source." },
-  { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it)." },
+  { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it).", href: "/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "PrestaShop 1.7 & 8.x module. Conversion tracking and full funnel out of the box." },
   { name: "BigCommerce", time: "10 min", desc: "Native app in the BigCommerce marketplace. SSO, product events, revenue attribution." },
   { name: "Salesforce Commerce Cloud", time: "30 min", desc: "Commerce Cloud cartridge. Works with SFRA and SiteGenesis storefronts." },
