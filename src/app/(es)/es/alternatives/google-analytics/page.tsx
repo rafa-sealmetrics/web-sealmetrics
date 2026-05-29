@@ -8,11 +8,11 @@ import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { getVsData } from "@/components/sections/v3/VsData";
 
 export const metadata: Metadata = {
-  title: "Alternativas a Google Analytics — SealMetrics",
-  description: "¿Buscando una alternativa a GA que no commoditice tus datos? SealMetrics es otra categoría: completo, UE-hosted, grado enterprise.",
+  title: "Analítica sin consentimiento: 100% datos vs Google Analytics",
+  description: "SealMetrics captura el 100% del tráfico sin cookies ni consentimiento. Alternativa a GA4 con datos completos, alojamiento UE y 0% muestreo. Prueba gratis.",
   openGraph: {
-    title: "Alternativas a Google Analytics — SealMetrics",
-    description: "¿Buscando una alternativa a GA que no commoditice tus datos? SealMetrics es otra categoría: completo, UE-hosted, grado enterprise.",
+    title: "Analítica sin consentimiento: 100% datos vs Google Analytics",
+    description: "SealMetrics captura el 100% del tráfico sin cookies ni consentimiento. Alternativa a GA4 con datos completos, alojamiento UE y 0% muestreo. Prueba gratis.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
