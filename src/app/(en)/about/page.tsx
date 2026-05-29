@@ -38,12 +38,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://sealmetrics.com/about", languages: getAlternates("/about") },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "About SealMetrics — Founder-led analytics for Europe",
+  url: "https://sealmetrics.com/about",
+  author: {
+    "@type": "Person",
+    name: "Rafa Jiménez",
+    url: "https://www.linkedin.com/in/rafajimenez/",
+    jobTitle: "Founder & CEO",
+    worksFor: {
+      "@type": "Organization",
+      name: "SealMetrics",
+    },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
 export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={articleSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -53,6 +76,9 @@ export default function Page() {
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+          </p>
+          <p className="mt-4 text-[14px] text-ink-soft">
+            By <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline" rel="author">Rafa Jiménez</a>, Founder &amp; CEO · SealMetrics
           </p>
         </div>
       </section>
@@ -89,7 +115,7 @@ export default function Page() {
               <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
               <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
-                <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline" rel="author">LinkedIn</a>
               </div>
             </div>
           </div>
