@@ -150,6 +150,54 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Our principles</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>How we think about <em>analytics and privacy.</em></h2>
+          <div className="mt-10 grid md:grid-cols-2 gap-8">
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">Privacy by architecture, not by policy</h3>
+              <p className="text-[15px] leading-[1.7] text-ink-2">
+                Most analytics platforms bolt on privacy features as an afterthought — a consent banner here, a data-deletion endpoint there. SealMetrics was designed from day one to collect zero personal data. There is nothing to delete, nothing to redact, and no consent banner required. GDPR compliance is structural, not operational.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">One number everyone can defend</h3>
+              <p className="text-[15px] leading-[1.7] text-ink-2">
+                Analytics fragmentation is expensive. When marketing, finance and operations each rely on a different tool, reconciliation meetings replace decision-making. SealMetrics is built to be the single source of truth — accurate enough for board reporting, granular enough for campaign optimisation, and fast enough for daily operations.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">EU sovereignty is not a marketing claim</h3>
+              <p className="text-[15px] leading-[1.7] text-ink-2">
+                SealMetrics is incorporated in Spain and processes all data on EU-owned infrastructure in Dublin, Ireland. No data leaves the EU. No sub-processors are headquartered outside the EU. This matters practically: it eliminates Schrems II transfer risk and simplifies DPA audit responses from months to hours.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">Cookieless is not a limitation</h3>
+              <p className="text-[15px] leading-[1.7] text-ink-2">
+                Third-party cookies are already blocked by Safari and Firefox, and Chrome is following. Teams that still rely on cookie-based attribution are systematically undercounting EU traffic. SealMetrics resolves full traffic — including the 40–60% that consent banners make invisible to GA4 — without cookies, fingerprinting, or personal identifiers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Frequently asked questions</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Common questions about <em>SealMetrics.</em></h2>
+          <dl className="mt-10 space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-warm-100 pb-8">
+                <dt className="text-[17px] font-semibold text-ink mb-3">{faq.question}</dt>
+                <dd className="text-[15px] leading-[1.7] text-ink-2">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <FinalCtaSharedV3
         locale="en"
         titleEn={<>Talk directly to <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>the founder.</em></>}
