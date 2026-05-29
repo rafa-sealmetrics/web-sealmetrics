@@ -8,11 +8,11 @@ import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { getVsData } from "@/components/sections/v3/VsData";
 
 export const metadata: Metadata = {
-  title: "Google Analytics Alternatives — SealMetrics",
-  description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+  title: "Consentless Google Analytics Alternatives — SealMetrics",
+  description: "Looking for a consentless GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
   openGraph: {
-    title: "Google Analytics Alternatives — SealMetrics",
-    description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+    title: "Consentless Google Analytics Alternatives — SealMetrics",
+    description: "Looking for a consentless GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -43,6 +43,10 @@ export default function Page() {
         ],
       })} />
       <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-05-29" />
+      <section className="mx-auto max-w-3xl px-4 py-12">
+        <h2 className="text-2xl font-bold mb-4">Why choose a consentless Google Analytics alternative?</h2>
+        <p>Google Analytics relies on consent banners and modelling to estimate traffic — meaning every user who rejects cookies becomes invisible. A consentless analytics approach captures every visit without relying on cookies or consent signals, giving you complete, unsampled data while remaining fully compliant with GDPR and ePrivacy regulations. SealMetrics is built consentless by design: no cookies, no consent mode, no data gaps.</p>
+      </section>
       <LogosStrip />
       
     </>
