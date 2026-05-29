@@ -46,11 +46,11 @@ const aboutPageSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "About SealMetrics — Founder-led analytics for Europe",
-  description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+  title: "Consentless Analytics for Europe — SealMetrics",
+  description: "SealMetrics is consentless analytics built for EU teams: 100% EU-hosted, zero personal data, full traffic visible without consent banners. 2,000+ customers.",
   openGraph: {
-    title: "About SealMetrics — Founder-led analytics for Europe",
-    description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+    title: "Consentless Analytics for Europe — SealMetrics",
+    description: "SealMetrics is consentless analytics built for EU teams: 100% EU-hosted, zero personal data, full traffic visible without consent banners. 2,000+ customers.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
