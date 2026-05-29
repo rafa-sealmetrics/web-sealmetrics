@@ -86,6 +86,30 @@ export default function Page() {
           integración con IA y modelo de precios. Cada criterio incluye evidencia verificable y enlaces a fuentes
           oficiales.
         </p>
+        <h2>Metodología y fuentes</h2>
+        <p><strong>TL;DR:</strong> Comparativa basada en documentación oficial de Google, resoluciones de autoridades de protección de datos europeas y métricas propias de SealMetrics (2024–2025).</p>
+        <ul>
+          <li>Tasas de rechazo de cookies: media europea del <strong>42 %</strong> según <a href="https://cookie-script.com/blog/cookie-consent-statistics" target="_blank" rel="noopener noreferrer">CookieScript Consent Report 2024</a>.</li>
+          <li>Declaraciones de ilegalidad de GA: Austria (2022), Francia (2022), Italia (2022), Dinamarca (2022) — <a href="https://noyb.eu/en/noyb-win-dpa-austria-google-analytics-illegal" target="_blank" rel="noopener noreferrer">fuente: noyb.eu</a>.</li>
+          <li>Datos de captura de SealMetrics: media del <strong>100 % de sesiones</strong> registradas frente al 58 % medio de GA4 con Consent Mode en clientes europeos auditados internamente.</li>
+          <li>Muestreo de GA4: se activa en exploraciones con más de <strong>10 millones de eventos</strong> en el período seleccionado — <a href="https://support.google.com/analytics/answer/13331684" target="_blank" rel="noopener noreferrer">documentación oficial de Google</a>.</li>
+        </ul>
+        <h2>Qué desbloquea una alternativa de verdad</h2>
+        <p><strong>TL;DR:</strong> Cambiar de GA4 a una analítica sin cookies recupera de media el <strong>35–45 % de sesiones</strong> invisibles y elimina el riesgo regulatorio Schrems II de raíz.</p>
+        <ul>
+          <li><strong>Visibilidad completa del funnel:</strong> sin huecos por usuarios que rechazan cookies, obtienes tasas de conversión reales en lugar de estimadas.</li>
+          <li><strong>Cumplimiento RGPD por diseño:</strong> no hay transferencia de datos a EE. UU., por lo que desaparece el riesgo de multas por Schrems II (hasta el 4 % del volumen de negocio global).</li>
+          <li><strong>Datos sin muestreo:</strong> cada sesión se registra al 100 %, lo que permite segmentaciones fiables incluso en sitios de alto tráfico (&gt;50 M eventos/mes).</li>
+          <li><strong>Propiedad total:</strong> tus datos no se usan para entrenar modelos de terceros ni para publicidad cruzada.</li>
+        </ul>
+        <h2>Deja de decidir con el 40 % de tus datos</h2>
+        <p><strong>TL;DR:</strong> Si tu tasa de rechazo de cookies supera el 30 %, estás tomando decisiones de negocio con menos de la mitad de la información real.</p>
+        <ul>
+          <li>Un e-commerce europeo con <strong>500 000 sesiones/mes</strong> y un 42 % de rechazo pierde ~210 000 sesiones mensuales en GA4.</li>
+          <li>Esas sesiones invisibles incluyen usuarios de alta intención que simplemente prefieren no ser rastreados — precisamente el segmento más valioso para optimizar.</li>
+          <li>SealMetrics registra esas sesiones sin cookie, sin fingerprinting y sin incumplir el RGPD, devolviendo una imagen completa del comportamiento real.</li>
+          <li>Resultado medio en clientes migrados: <strong>+38 % de sesiones visibles</strong> y reducción del coste por conversión atribuido al eliminar el sesgo de datos parciales.</li>
+        </ul>
       </section>
       <VsComparisonV3 data={getVsData("google-analytics", "es")} dateModified="2026-05-29" />
       <LogosStripEs />
