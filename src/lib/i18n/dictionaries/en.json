@@ -1,6 +1,13 @@
 {
   "header": {
     "product": "Product",
+    "why": "Why SealMetrics",
+    "cookielessAnalytics": "Cookieless analytics",
+    "cookielessAnalyticsDesc": "What it is, what it captures, what it doesn't",
+    "consentlessAnalytics": "Consentless analytics",
+    "consentlessAnalyticsDesc": "Lawful measurement without banners",
+    "completeData": "Complete data",
+    "completeDataDesc": "Decisions on 100% of traffic",
     "solutions": "Solutions",
     "byRole": "By Role",
     "byIndustry": "By Industry",

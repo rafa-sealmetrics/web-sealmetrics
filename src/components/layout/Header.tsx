@@ -28,6 +28,22 @@ interface NavDropdown {
   groups: DropdownGroup[];
 }
 
+function getWhyDropdown(t: ReturnType<typeof getDictionary>["header"], locale: Locale): NavDropdown {
+  return {
+    label: t.why,
+    groups: [
+      {
+        items: [
+          { href: localizedHref("/cookieless-analytics", locale), label: t.cookielessAnalytics, desc: t.cookielessAnalyticsDesc },
+          { href: localizedHref("/consentless-analytics", locale), label: t.consentlessAnalytics, desc: t.consentlessAnalyticsDesc },
+          { href: localizedHref("/complete-data", locale), label: t.completeData, desc: t.completeDataDesc },
+          { href: localizedHref("/how-it-works", locale), label: t.howItWorks, desc: t.howItWorksDesc },
+        ],
+      },
+    ],
+  };
+}
+
 function getSolutionsDropdown(t: ReturnType<typeof getDictionary>["header"], locale: Locale): NavDropdown {
   return {
     label: t.solutions,
@@ -71,7 +87,6 @@ function getResourcesDropdown(t: ReturnType<typeof getDictionary>["header"], loc
           { href: localizedHref("/blog", locale), label: t.blog, desc: t.blogDesc },
           { href: localizedHref("/videos", locale), label: t.videos, desc: t.videosDesc },
           { href: localizedHref("/glossary", locale), label: t.glossary, desc: t.glossaryDesc },
-          { href: localizedHref("/how-it-works", locale), label: t.howItWorks, desc: t.howItWorksDesc },
           { href: localizedHref("/platforms", locale), label: t.platforms, desc: t.platformsDesc },
           { href: localizedHref("/vs-ga4", locale), label: t.vsGa4, desc: t.vsGa4Desc },
           { href: localizedHref("/changelog", locale), label: t.changelog, desc: t.changelogDesc },
@@ -179,6 +194,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const t = getDictionary(locale).header;
+  const whyDropdown = getWhyDropdown(t, locale);
   const solutionsDropdown = getSolutionsDropdown(t, locale);
   const resourcesDropdown = getResourcesDropdown(t, locale);
 
@@ -217,6 +233,13 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
           >
             {t.product}
           </Link>
+
+          <Dropdown
+            dropdown={whyDropdown}
+            isOpen={openDropdown === "Why"}
+            onToggle={() => handleToggle("Why")}
+            onClose={handleClose}
+          />
 
           <Dropdown
             dropdown={solutionsDropdown}
@@ -292,6 +315,27 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
             >
               {t.product}
             </Link>
+
+            {/* Why group */}
+            <div className="py-2.5">
+              <span className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary">
+                {t.why}
+              </span>
+              <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
+                {whyDropdown.groups.map((group) =>
+                  group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))
+                )}
+              </div>
+            </div>
 
             {/* Solutions group */}
             <div className="py-2.5">
