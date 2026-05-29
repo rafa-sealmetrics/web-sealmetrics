@@ -31,6 +31,8 @@ const articleSchema = {
   "@type": "Article",
   headline: "About SealMetrics — Founder-led analytics for Europe",
   url: "https://sealmetrics.com/about",
+  datePublished: "2020-01-01",
+  dateModified: "2025-01-01",
   author: {
     "@type": "Person",
     name: "Rafa Jiménez",
@@ -76,6 +78,9 @@ export default function Page() {
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+          </p>
+          <p className="mt-4 text-[13px] text-ink-soft">
+            Founded <time dateTime="2020-01-01">2020</time> · Last updated <time dateTime="2025-01-01">January 2025</time>
           </p>
         </div>
       </section>
