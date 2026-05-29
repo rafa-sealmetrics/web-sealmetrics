@@ -8,11 +8,11 @@ import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { getVsData } from "@/components/sections/v3/VsData";
 
 export const metadata: Metadata = {
-  title: "Google Analytics Alternatives — SealMetrics",
-  description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+  title: "Consentless Analytics Alternative to Google Analytics — SealMetrics",
+  description: "SealMetrics captures 100% of sessions without cookies or consent banners — vs GA4's 40-60% modelled data. EU-hosted, zero sampling, GDPR-compliant.",
   openGraph: {
-    title: "Google Analytics Alternatives — SealMetrics",
-    description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+    title: "Consentless Analytics Alternative to Google Analytics — SealMetrics",
+    description: "SealMetrics captures 100% of sessions without cookies or consent banners — vs GA4's 40-60% modelled data. EU-hosted, zero sampling, GDPR-compliant.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
