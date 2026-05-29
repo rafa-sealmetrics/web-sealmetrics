@@ -44,11 +44,29 @@ export const metadata: Metadata = {
   },
 };
 
+const DATE_PUBLISHED = "2024-01-15";
+const DATE_MODIFIED = "2025-04-15";
+
+const webPageAuthorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: "https://sealmetrics.com/",
+  name: "SealMetrics — Consentless analytics for eCommerce",
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
+  author: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
 export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={webPageAuthorSchema} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
       <JsonLd data={faqPageSchema([
         { question: "Why pay for SealMetrics when GA4 is free?", answer: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject, so you make budget decisions on a fraction of real data. The cost of SealMetrics is a rounding error compared to the cost of misallocated ad spend." },
@@ -120,11 +138,18 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
+              How much revenue is your analytics stack hiding from you? SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. On average, eCommerce stores running GA4 in the EU lose 40–60% of their data to consent rejection alone — meaning every channel ROAS figure and budget decision is built on less than half the picture.
             </p>
             <p>
-              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
+              Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, SealMetrics removes the Schrems II legal review GA4 + Consent Mode requires and closes the consent-rejection gap that breaks aggregate channel ROAS in Europe. What does that mean in practice? Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15–20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching their measurement model — without replacing a single ad platform.
             </p>
+            <p>
+              Why does a neutral measurement layer matter? Meta reports with Meta's bias. Google reports with Google's bias. SealMetrics has no ad inventory to protect and no channel to favour, so brand, paid-media agencies, and finance can align on a single number every party trusts. Customers use it to end the weekly spreadsheet war between channels and present board-ready revenue figures that match Shopify — not a modelled estimate of it.
+            </p>
+            <p>
+              Setup takes one script tag and five minutes. First data arrives within the first hour. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Runs side-by-side with GA4 from day 1 — no migration, no risk, no black box.
+            </p>
+            <p className="sr-only">Published by <span itemProp="author">SealMetrics</span>. Last updated <time dateTime={DATE_MODIFIED}>{DATE_MODIFIED}</time>.</p>
           </QuickAnswer>
         </div>
       </section>

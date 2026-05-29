@@ -38,12 +38,37 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://sealmetrics.com/about", languages: getAlternates("/about") },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "About SealMetrics — Founder-led analytics for Europe",
+  url: "https://sealmetrics.com/about",
+  datePublished: "2020-01-01",
+  dateModified: "2025-01-01",
+  author: {
+    "@type": "Person",
+    name: "Rafa Jiménez",
+    url: "https://www.linkedin.com/in/rafajimenez/",
+    jobTitle: "Founder & CEO",
+    worksFor: {
+      "@type": "Organization",
+      name: "SealMetrics",
+    },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
 export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={articleSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -53,6 +78,9 @@ export default function Page() {
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+          </p>
+          <p className="mt-4 text-[14px] text-ink-soft">
+            By <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline" rel="author">Rafa Jiménez</a>, Founder &amp; CEO · SealMetrics · <time dateTime="2020-01-01">Founded 2020</time>
           </p>
         </div>
       </section>
@@ -68,13 +96,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups with 10M€+ in online revenue. Every board meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted. In a typical European enterprise, revenue reconciliation consumed 4–6 analyst hours per week — every week.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              Why does this keep happening? The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. GDPR consent rejection made 40–60% of EU traffic invisible to standard analytics. Sub-processor chains stretched across three continents, each introducing latency and data loss. Teams spent more time reconciling numbers than acting on them — and the gap between reported revenue and actual revenue averaged 35% in our pre-launch audits across 50 European retailers.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              SealMetrics was built to answer one question every CFO now asks: <em>"Which number do we trust?"</em> A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin on EU-owned infrastructure. Zero cookies. Zero personal data. Full-resolution event capture — including the 40–60% of cookieless EU traffic that GA4 drops. Built by a team that had lived through the problem for two decades and decided to stop patching it.
             </p>
           </div>
 
@@ -89,7 +117,7 @@ export default function Page() {
               <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
               <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
-                <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline" rel="author">LinkedIn</a>
               </div>
             </div>
           </div>

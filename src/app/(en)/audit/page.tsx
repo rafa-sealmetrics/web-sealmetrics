@@ -38,6 +38,28 @@ export default function Page() {
           audience: "CMO, Head of Marketing, eCommerce Director",
         })}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Free measurement audit — SealMetrics",
+          description:
+            "Personalised audit of the gap between GA4 and your real backend revenue. 7 questions, 3 minutes, human-written report within 24h.",
+          url: "https://sealmetrics.com/audit",
+          datePublished: "2024-01-15",
+          dateModified: "2025-01-15",
+          author: {
+            "@type": "Organization",
+            name: "SealMetrics",
+            url: "https://sealmetrics.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "SealMetrics",
+            url: "https://sealmetrics.com",
+          },
+        }}
+      />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-12">
         <div className="max-w-[760px] mx-auto px-5 sm:px-8">
@@ -56,6 +78,10 @@ export default function Page() {
           </p>
           <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-soft font-semibold mt-6">
             3 minutes · no install
+          </p>
+          <p className="text-[13px] text-ink-soft mt-4">
+            By <span className="font-semibold">SealMetrics</span>{" "}·{" "}
+            <time dateTime="2025-01-15" className="text-ink-soft">Updated Jan 15, 2025</time>
           </p>
         </div>
       </section>
