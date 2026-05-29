@@ -79,6 +79,12 @@ export default function Page() {
             <p>
               SealMetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
             </p>
+            <p>
+              La decisión de construir una herramienta propia llegó después de evaluar más de una docena de soluciones del mercado. Ninguna combinaba los tres requisitos que los clientes europeos necesitaban: cumplimiento RGPD sin fricciones, datos completos independientemente del consentimiento del usuario, y un modelo de atribución que marketing y finanzas pudieran compartir sin discutirlo. El resultado fue una arquitectura cookieless propia, auditada por despachos de privacidad en Alemania, Francia y España, y desplegada exclusivamente en infraestructura de la Unión Europea.
+            </p>
+            <p>
+              Hoy SealMetrics trabaja con equipos de entre 5 y 500 personas. Desde startups DTC que quieren entender su CAC real hasta grupos hoteleros que necesitan atribución multicanal sin exponer datos de huéspedes. El denominador común es siempre el mismo: equipos que han perdido la confianza en sus dashboards y quieren recuperarla sin sacrificar el cumplimiento normativo.
+            </p>
           </div>
 
           <div className="mt-10 p-8 bg-white border border-warm-100 rounded-xl flex gap-5 items-center">
@@ -121,6 +127,24 @@ export default function Page() {
                 <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-soft mt-3">{s.l}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Nuestra filosofía</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Privacidad y precisión <em>no son opuestos.</em></h2>
+          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              La industria lleva años presentando la privacidad como un coste: menos datos, menos precisión, menos conversiones atribuidas. SealMetrics parte de la hipótesis contraria. Cuando eliminas las cookies de terceros, los píxeles de seguimiento y las cadenas de sub-procesadores, no pierdes señal — eliminas el ruido. Los datos que quedan son más limpios, más consistentes y más accionables.
+            </p>
+            <p>
+              Nuestra arquitectura cookieless no es una respuesta reactiva al RGPD. Es una decisión de diseño tomada desde el primer día. Cada sesión se mide con técnicas de fingerprinting de primer nivel que no almacenan ningún dato personal, cumplen con las directrices del Comité Europeo de Protección de Datos y funcionan igual con o sin banner de consentimiento. El resultado es una cobertura del 95–100% del tráfico real frente al 40–60% que recogen herramientas tradicionales en mercados europeos con alta tasa de rechazo de cookies.
+            </p>
+            <p>
+              Creemos que los equipos de datos merecen una herramienta en la que puedan confiar sin necesitar a un abogado en cada reunión. Eso es lo que construimos.
+            </p>
           </div>
         </div>
       </section>
