@@ -19,12 +19,31 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://sealmetrics.com/es/about", languages: getAlternatesEs("/about") },
 };
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://sealmetrics.com/es/about",
+  "name": "Sobre SealMetrics — Analítica founder-led para Europa",
+  "description": "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  "author": {
+    "@type": "Person",
+    "name": "Rafa Jiménez",
+    "jobTitle": "Founder & CEO",
+    "url": "https://www.linkedin.com/in/rafajimenez/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SealMetrics"
+    }
+  }
+};
+
 export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Sobre nosotros" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Sobre nosotros", url: "/es/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={aboutPageSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -35,6 +54,7 @@ export default function Page() {
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             SealMetrics es una plataforma de analítica UE-founded y UE-hosted que sirve a 2.000+ clientes entre hoteles, eCommerce DTC, medios e instituciones públicas.
           </p>
+          <p className="mt-4 text-[14px] text-ink-soft">Por <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline font-medium">Rafa Jiménez</a>, Founder &amp; CEO · SealMetrics</p>
         </div>
       </section>
 
