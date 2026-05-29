@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 const platforms = [
-  { name: "Shopify", time: "5 min", desc: "One-click install on Shopify Plus. Theme.liquid snippet for Shopify Standard. Order data flows automatically." },
+  { name: "Shopify", time: "5 min", desc: "One-click install on Shopify Plus. Theme.liquid snippet for Shopify Standard. Order data flows automatically.", href: "/platforms/shopify" },
   { name: "Magento", time: "15 min", desc: "Native Magento 2 module via Composer. Works on Adobe Commerce and Magento Open Source." },
   { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it)." },
   { name: "PrestaShop", time: "15 min", desc: "PrestaShop 1.7 & 8.x module. Conversion tracking and full funnel out of the box." },
@@ -82,15 +82,30 @@ export default function Page() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {platforms.map((p) => (
-              <article key={p.name} className="bg-white border border-warm-100 rounded-xl p-6 flex flex-col">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em]">{p.name}</h3>
-                  <span className="inline-flex px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">{p.time}</span>
-                </div>
-                <p className="text-[13.5px] leading-[1.55] text-ink-soft">{p.desc}</p>
-              </article>
-            ))}
+            {platforms.map((p) => {
+              const card = (
+                <>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] group-hover:text-brand transition-colors">{p.name}</h3>
+                    <span className="inline-flex px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">{p.time}</span>
+                  </div>
+                  <p className="text-[13.5px] leading-[1.55] text-ink-soft">{p.desc}</p>
+                </>
+              );
+              return "href" in p && p.href ? (
+                <Link
+                  key={p.name}
+                  href={p.href as string}
+                  className="group bg-white border border-warm-100 rounded-xl p-6 flex flex-col no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
+                >
+                  {card}
+                </Link>
+              ) : (
+                <article key={p.name} className="bg-white border border-warm-100 rounded-xl p-6 flex flex-col">
+                  {card}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
