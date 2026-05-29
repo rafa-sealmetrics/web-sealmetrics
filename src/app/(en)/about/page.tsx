@@ -125,6 +125,39 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Our mission</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Why we built a <em>privacy-first analytics platform</em> for Europe.</h2>
+          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              European regulation changed the rules of measurement. GDPR, ePrivacy and national DPA enforcement meant that the cookie-based analytics stack that worked in 2015 was broken by 2020. Consent rejection rates of 40–70% became normal across France, Germany and Spain. GA4 filled the gaps with modelling. Teams lost confidence in their own dashboards.
+            </p>
+            <p>
+              SealMetrics was architected from day one to operate without cookies and without collecting personal data. There is nothing to consent to, so there is nothing to reject. Every visit is measured. Revenue attribution is complete. The legal position is defensible because the architecture is compliant by design — not by policy.
+            </p>
+            <p>
+              Our mission is straightforward: give every European digital team a number they can take to the board and defend. One source of truth for sessions, conversions and revenue — independent of consent, independent of browser changes, independent of third-party sub-processors outside the EU.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>FAQ</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Common questions <em>about SealMetrics.</em></h2>
+          <dl className="mt-10 space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-warm-100 pb-8">
+                <dt className="text-[18px] font-semibold text-ink leading-snug">{faq.question}</dt>
+                <dd className="mt-3 text-[17px] leading-[1.7] text-ink-2">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <FinalCtaSharedV3
         locale="en"
         titleEn={<>Talk directly to <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>the founder.</em></>}
