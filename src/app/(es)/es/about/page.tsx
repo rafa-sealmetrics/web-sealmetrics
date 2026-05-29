@@ -57,6 +57,9 @@ export default function Page() {
             <p>
               SealMetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
             </p>
+            <p>
+              La misión es concreta: que cualquier equipo europeo pueda abrir un dashboard el lunes por la mañana y confiar en lo que ve. Sin tener que cruzar tres fuentes. Sin que el departamento legal ponga objeciones. Sin perder la mitad del tráfico porque alguien rechazó una cookie. Datos limpios, accionables y defendibles ante cualquier auditoría.
+            </p>
           </div>
 
           <div className="mt-10 p-8 bg-white border border-warm-100 rounded-xl flex gap-5 items-center">
@@ -75,6 +78,26 @@ export default function Page() {
       </section>
 
       <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Nuestra filosofía</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>
+            Privacidad y precisión <em>no son conceptos opuestos.</em>
+          </h2>
+          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              Durante años el sector asumió que cumplir con el RGPD significaba sacrificar calidad de datos. Banners de consentimiento, tasas de aceptación del 40–60%, modelos de atribución rotos. SealMetrics parte de una premisa diferente: es posible medir con resolución completa sin tocar ningún dato personal.
+            </p>
+            <p>
+              Nuestra arquitectura no usa cookies de seguimiento, no almacena IPs, no construye perfiles de usuario y no transfiere datos fuera de la Unión Europea. El resultado es una analítica que el departamento legal aprueba el primer día — y que al mismo tiempo da a los equipos de marketing una visibilidad mayor que cualquier solución basada en consentimiento.
+            </p>
+            <p>
+              Creemos que la analítica debe ser una infraestructura de confianza dentro de la organización, no una fuente de fricción. Cuando mark, finanzas y agencia trabajan con el mismo número — y ese número resiste el escrutinio — las decisiones son más rápidas y los presupuestos se asignan mejor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
             <div>
