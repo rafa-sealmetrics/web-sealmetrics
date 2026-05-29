@@ -28,11 +28,11 @@ import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Consentless analytics for eCommerce",
+  title: "SealMetrics — Consentless Analytics for eCommerce",
   description:
     "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
   openGraph: {
-    title: "SealMetrics — Consentless analytics for eCommerce",
+    title: "SealMetrics — Consentless Analytics for eCommerce",
     description:
       "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
@@ -51,7 +51,7 @@ const webPageAuthorSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "url": "https://sealmetrics.com",
-  "name": "SealMetrics — Consentless analytics for eCommerce",
+  "name": "SealMetrics — Consentless Analytics for eCommerce",
   "datePublished": DATE_PUBLISHED,
   "dateModified": DATE_MODIFIED,
   "author": {
@@ -121,6 +121,7 @@ export default function Home() {
         spokenByRole: "DTC coffee brand",
         url: "/",
       })} />
+      <h1 className="sr-only">Consentless Analytics for eCommerce — SealMetrics</h1>
       <HeroV3 />
       <LogosStrip />
       <ProblemSection />
@@ -131,6 +132,17 @@ export default function Home() {
       <FourPillars />
       <Connectors />
       <PricingPLG />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">What is consentless analytics?</h2>
+          <p className="text-gray-700 mb-4">
+            Consentless analytics is a measurement approach that captures 100% of your website traffic without relying on cookies, consent banners, or statistical modelling. Unlike GA4, which loses 40–60% of data when EU visitors decline cookies, a consentless analytics platform observes every session and conversion by design — no opt-in required, no data gaps.
+          </p>
+          <p className="text-gray-700">
+            SealMetrics is built consentless by architecture: no cookies are set, no personal data is stored, and the entire infrastructure runs on EU-owned servers in Dublin, Ireland. This makes it fully compliant with GDPR, ePrivacy, and Schrems II without any additional consent layer — giving eCommerce teams accurate, board-ready numbers from day one.
+          </p>
+        </div>
+      </section>
       <FaqV3 />
       <FeatureLensAIV3 />
       <FinalUrgencyV3 />
