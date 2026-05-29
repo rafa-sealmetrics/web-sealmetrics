@@ -26,12 +26,49 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "About SealMetrics — Founder-led analytics for Europe",
+  url: "https://sealmetrics.com/about",
+  datePublished: "2020-01-01",
+  dateModified: "2025-01-01",
+  author: {
+    "@type": "Person",
+    name: "Rafa Jiménez",
+    url: "https://www.linkedin.com/in/rafajimenez/",
+    jobTitle: "Founder & CEO",
+    worksFor: {
+      "@type": "Organization",
+      name: "SealMetrics",
+    },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
+};
+
 export const metadata: Metadata = {
-  title: "About SealMetrics — Founder-led analytics for Europe",
-  description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+  title: "Consentless Analytics for Europe — About SealMetrics",
+  description: "SealMetrics: consentless analytics trusted by 2,000+ EU teams. No cookies, no personal data, 100% EU-hosted. See 40–60% more traffic than GA4. Founded 2020.",
   openGraph: {
-    title: "About SealMetrics — Founder-led analytics for Europe",
-    description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+    title: "Consentless Analytics for Europe — About SealMetrics",
+    description: "SealMetrics: consentless analytics trusted by 2,000+ EU teams. No cookies, no personal data, 100% EU-hosted. See 40–60% more traffic than GA4. Founded 2020.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -44,6 +81,8 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={faqSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -52,7 +91,10 @@ export default function Page() {
             Built so European teams <em>could trust their own data again.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+            SealMetrics is an EU-founded, EU-hosted analytics platform. We serve 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+          </p>
+          <p className="mt-4 text-[13px] text-ink-soft">
+            Founded <time dateTime="2020-01-01">2020</time> · Last updated <time dateTime="2025-01-01">January 2025</time>
           </p>
         </div>
       </section>
@@ -68,13 +110,22 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce. He worked as a digital marketer, then as an agency founder, then as an advisor to retail groups with 10M€+ in annual online revenue. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              In some organisations, reconciling those three figures took more analyst hours each month than acting on any of them.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. GDPR consent rules made 40–60% of EU traffic invisible to standard analytics. Sub-processor chains stretched across three continents. DPOs could not sign off on the legal exposure. Teams were measuring the tools, not the business.
+            </p>
+            <p>
+              SealMetrics answers one question boards actually ask: <em>how much revenue did we generate, and from which channel?</em> It is a neutral measurement layer — cookie-free, zero personal data, 100% EU-hosted in Dublin. Brand, finance and agencies can all rely on it at the same time. The result: one number every stakeholder trusts. No reconciliation meetings needed.
+            </p>
+            <p>
+              The architecture was designed from day one to be GDPR-compliant by default — not through consent banners or opt-out flows, but by never collecting personal data in the first place. No cookies. No fingerprinting. No IP storage. The result is a measurement layer that works regardless of consent status, giving European teams a complete picture of their traffic and revenue that cookie-dependent tools simply cannot provide.
+            </p>
+            <p>
+              Since launching in 2020, SealMetrics has grown entirely through word of mouth among European revenue teams. Hotels use it to attribute bookings across direct and OTA channels. DTC brands use it to measure true channel contribution without inflated last-click numbers. Media publishers use it to report audience reach to advertisers without compromising reader privacy. Public institutions use it to comply with national data sovereignty requirements while still making evidence-based decisions.
             </p>
           </div>
 
@@ -86,7 +137,9 @@ export default function Page() {
               RJ
             </div>
             <div>
-              <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
+              <div className="text-[17px] font-semibold text-ink" itemProp="author" itemScope itemType="https://schema.org/Person">
+                <span itemProp="name">Rafa Jiménez</span>
+              </div>
               <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
                 <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
@@ -104,7 +157,7 @@ export default function Page() {
               <h2 className="h-section mt-5">What we've <em>proved so far.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Not projections, not aspirations. What 2,000+ European teams use SealMetrics for today.
+              Not projections. Not aspirations. What 2,000+ European teams use SealMetrics for today.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -122,6 +175,58 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Our values</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>
+            The principles we <em>build and operate by.</em>
+          </h2>
+          <div className="mt-10 grid md:grid-cols-2 gap-8">
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">Privacy by architecture</h3>
+              <p className="text-[15px] leading-[1.65] text-ink-2">
+                We do not bolt on privacy as a compliance checkbox. The platform was designed without personal data collection from the first line of code. No cookies, no fingerprinting, no IP addresses stored. Privacy is structural — it cannot be accidentally disabled by a configuration change.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">European sovereignty</h3>
+              <p className="text-[15px] leading-[1.65] text-ink-2">
+                Every byte of customer data stays within the EU. Our infrastructure runs on EU-owned data centres in Dublin, Ireland. No data transfers to the US or third countries under Chapter V GDPR. Your DPO can sign off without exceptions or derogations.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">One source of truth</h3>
+              <p className="text-[15px] leading-[1.65] text-ink-2">
+                Reconciliation meetings destroy analyst productivity and erode trust in data teams. SealMetrics is built to be the neutral layer that brand, finance, and external agencies can all reference simultaneously — so your team spends time acting on data, not defending it.
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-warm-100 rounded-xl">
+              <h3 className="text-[17px] font-semibold text-ink mb-3">Founder accountability</h3>
+              <p className="text-[15px] leading-[1.65] text-ink-2">
+                No support ticket queue. No account manager carousel. Rafa runs every onboarding call personally and remains reachable by email for every customer. When something breaks at 2 am, you get the founder — not a chatbot.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>FAQ</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>
+            Common questions <em>about SealMetrics.</em>
+          </h2>
+          <dl className="mt-10 space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-warm-100 pb-8">
+                <dt className="text-[17px] font-semibold text-ink mb-3">{faq.question}</dt>
+                <dd className="text-[15px] leading-[1.65] text-ink-2">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
