@@ -52,7 +52,7 @@ export default function Page() {
             Built so European teams <em>could trust their own data again.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+            SealMetrics is an EU-founded, EU-hosted analytics platform. We serve 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
           </p>
         </div>
       </section>
@@ -68,13 +68,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce. First as a digital marketer. Then as an agency founder. Then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              The problem was never the analysts. It was the architecture. Every tool reported only for itself. Consent rejection made 40–60% of EU traffic invisible. Data passed through sub-processors across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              SealMetrics is built for the boardroom. It is a neutral layer that brand, finance and agencies can all rely on. Hosted in Dublin. Zero cookies. Zero personal data. Full data resolution. Built by a team that lived through the problem for two decades — and chose to fix it.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export default function Page() {
               <h2 className="h-section mt-5">What we've <em>proved so far.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Not projections, not aspirations. What 2,000+ European teams use SealMetrics for today.
+              Not projections. Not targets. These are the real results from 2,000+ European teams using SealMetrics today.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -129,7 +129,7 @@ export default function Page() {
         locale="en"
         titleEn={<>Talk directly to <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>the founder.</em></>}
         titleEs={<>Habla directamente con <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>el founder.</em></>}
-        ledeEn="30-minute walkthrough. Rafa personally runs every sales call. When something breaks, you email him — not a support ticket."
+        ledeEn="30-minute walkthrough. Rafa runs every sales call himself. If something breaks, you email him directly — not a support ticket."
         ledeEs="30 min de walkthrough. Rafa lleva personalmente cada llamada de ventas. Cuando algo falle, le escribes directamente — no a un ticket."
       />
     </>
