@@ -25,6 +25,8 @@ const aboutPageSchema = {
   headline: "Sobre SealMetrics — Analítica founder-led para Europa",
   description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
   url: "https://sealmetrics.com/es/about",
+  datePublished: "2024-01-15",
+  dateModified: "2025-01-15",
   author: {
     "@type": "Person",
     name: "Rafa Jiménez",
@@ -60,7 +62,7 @@ export default function Page() {
             SealMetrics es una plataforma de analítica UE-founded y UE-hosted que sirve a 2.000+ clientes entre hoteles, eCommerce DTC, medios e instituciones públicas.
           </p>
           <p className="mt-4 text-[13px] text-ink-soft">
-            Por <a href="https://www.linkedin.com/in/rafajimenez/" className="underline hover:text-ink" rel="author">Rafa Jiménez</a>, Founder &amp; CEO de SealMetrics
+            Por <a href="https://www.linkedin.com/in/rafajimenez/" className="underline hover:text-ink" rel="author">Rafa Jiménez</a>, Founder &amp; CEO de SealMetrics · <time dateTime="2025-01-15">Actualizado enero 2025</time>
           </p>
         </div>
       </section>
