@@ -27,11 +27,11 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "About SealMetrics — Founder-led analytics for Europe",
-  description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+  title: "Consentless Analytics for Europe — SealMetrics",
+  description: "SealMetrics measures 100% of EU traffic without cookies or consent banners. 2,000+ teams trust it. EU-hosted, GDPR-compliant by architecture.",
   openGraph: {
-    title: "About SealMetrics — Founder-led analytics for Europe",
-    description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+    title: "Consentless Analytics for Europe — SealMetrics",
+    description: "SealMetrics measures 100% of EU traffic without cookies or consent banners. 2,000+ teams trust it. EU-hosted, GDPR-compliant by architecture.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
