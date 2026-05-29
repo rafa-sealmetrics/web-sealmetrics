@@ -28,11 +28,11 @@ import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Consentless analytics for eCommerce",
+  title: "Consentless Analytics for eCommerce — 100% Traffic, No Cookies",
   description:
-    "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
+    "SealMetrics is consentless analytics that captures 100% of your traffic — no cookies, no consent banners, no modelling. GDPR-compliant by design. EU-hosted in Dublin. Recover the sales GA4 can't see.",
   openGraph: {
-    title: "SealMetrics — Consentless analytics for eCommerce",
+    title: "Consentless Analytics for eCommerce — 100% Traffic, No Cookies",
     description:
       "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
@@ -44,11 +44,31 @@ export const metadata: Metadata = {
   },
 };
 
+const webPageAuthorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: "https://sealmetrics.com/",
+  name: "Consentless Analytics for eCommerce — 100% Traffic, No Cookies",
+  datePublished: "2024-01-01",
+  dateModified: "2025-05-01",
+  author: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
 export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={webPageAuthorSchema} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
       <JsonLd data={faqPageSchema([
         { question: "Why pay for SealMetrics when GA4 is free?", answer: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject, so you make budget decisions on a fraction of real data. The cost of SealMetrics is a rounding error compared to the cost of misallocated ad spend." },
@@ -118,14 +138,52 @@ export default function Home() {
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <p className="sr-only">Published by <span itemProp="author">SealMetrics</span>. Last updated: <time dateTime="2025-05-01">May 2025</time>.</p>
           <QuickAnswer>
             <p>
-              SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
+              What does the average European eCommerce store actually lose to cookie rejection? Roughly 40–60% of its conversion data — the gap between what GA4 reports and what really happened. SealMetrics is consentless analytics built for that gap: a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer bolted on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the consent-rejection blind spot that breaks aggregate channel ROAS across Europe.
             </p>
             <p>
-              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
+              Ask your data a question — get a real answer. Customers use SealMetrics to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15–20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. How many more days can your business afford to optimise on incomplete data? Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
           </QuickAnswer>
+          <div className="mt-10 prose prose-sm max-w-none text-warm-700">
+            <h2 className="text-lg font-semibold text-warm-900 mb-3">Why consentless analytics matters for eCommerce</h2>
+            <p>
+              Cookie consent rates across the EU average between 40% and 60%, meaning that on a typical European online store, GA4 is flying blind on half of all sessions before a single product page loads. Every paid-media channel — Google Ads, Meta, TikTok, affiliates — receives credit only for the conversions GA4 can see, which systematically under-reports the channels that attract privacy-conscious shoppers. Budget decisions made on this data are not just inaccurate; they actively penalise the best-performing channels and reward the most intrusive ones.
+            </p>
+            <p>
+              SealMetrics resolves this at the architectural level. There are no cookies to reject, no fingerprints to block, and no personal data to store. Every visit — consenting or not — is measured with the same fidelity. The result is a traffic number that matches your server logs, a revenue number that matches your Shopify or Magento back-end, and a channel breakdown that finance and paid-media teams can both sign off on without negotiation.
+            </p>
+            <h2 className="text-lg font-semibold text-warm-900 mt-8 mb-3">How SealMetrics works without cookies</h2>
+            <p>
+              Traditional analytics tools attach a persistent identifier — a cookie — to each browser. When visitors decline the consent banner, that identifier is never written, and the session is either dropped entirely or fed into a statistical model that estimates what probably happened. Models are averages. Averages are wrong at the individual session level. Channel ROAS calculated from modelled data inherits every assumption baked into the model.
+            </p>
+            <p>
+              SealMetrics uses a cookieless, session-scoped methodology: each page-view is observed directly on the server side and enriched with deterministic signals — UTM parameters, referrer chain, entry page — that attribute the session to a channel without ever identifying the individual behind it. No IP addresses are stored. No cross-site profiles are built. The attribution is last-click at session level, giving paid-media teams the same granularity they had with cookies while meeting the legal standard that Schrems II and the ePrivacy Directive demand.
+            </p>
+            <h2 className="text-lg font-semibold text-warm-900 mt-8 mb-3">GDPR compliance by design, not by consent banner</h2>
+            <p>
+              Consent Mode V2 and cookie banners are a legal patch over a technical problem. They tell a regulator that you asked permission; they do not fix the data loss that occurs when permission is withheld. SealMetrics does not need to ask permission because it does not process personal data in the first place. There is no data subject to protect, no consent to collect, and no Data Processing Agreement that requires annual review by external counsel.
+            </p>
+            <p>
+              All data is processed and stored in Dublin, Ireland — inside the EU, on infrastructure owned by EU entities. There is no onward transfer to the United States, which means no Schrems II Standard Contractual Clauses, no Transfer Impact Assessments, and no exposure to U.S. government data requests under FISA 702. For eCommerce brands selling to German, French, or Spanish customers — where data-protection authorities are most active — this is not a minor compliance footnote; it is a material risk reduction.
+            </p>
+            <h2 className="text-lg font-semibold text-warm-900 mt-8 mb-3">Measuring the real cost of GA4 blind spots</h2>
+            <p>
+              The cost of incomplete analytics is not abstract. Consider a mid-market eCommerce brand spending €50,000 per month across Google, Meta, and affiliates. If GA4 captures 55% of sessions and attributes 55% of conversions, the reported ROAS for each channel is calculated on a denominator that excludes 45% of the evidence. Channels that over-index on privacy-conscious users — typically organic search, email, and direct — will appear weaker than they are. Channels that rely on third-party cookies and attract less privacy-aware users will appear stronger. The natural response — reallocating budget toward the channels that look stronger — compounds the error every month.
+            </p>
+            <p>
+              SealMetrics customers consistently find that, once full-traffic measurement is restored, the channels they were about to cut are the ones driving the most unattributed revenue. The calculator on this page lets you estimate the annual cost of that blind spot for your specific traffic volume and consent rate.
+            </p>
+            <h2 className="text-lg font-semibold text-warm-900 mt-8 mb-3">Implementation and migration</h2>
+            <p>
+              SealMetrics is a single JavaScript snippet — the same integration pattern as GA4 or any tag-manager-deployed tool. Median time from account creation to first data in dashboard is under ten minutes. The onboarding team configures goal funnels, channel groupings, and custom reports in the first week so that by the end of day one the numbers are already more complete than what GA4 has been showing for months.
+            </p>
+            <p>
+              There is no requirement to remove GA4. Most teams run both in parallel for 30 days, use the comparison to quantify exactly how large their previous blind spot was, and then present that number internally as the business case for the switch. After the parallel period, SealMetrics becomes the primary source of truth while GA4 is retained only where Google product integrations — Smart Bidding signals, Performance Max audience lists — depend on it.
+            </p>
+          </div>
         </div>
       </section>
       <StickyCtaBar locale="en" />

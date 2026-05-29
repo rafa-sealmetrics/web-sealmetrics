@@ -8,15 +8,35 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "Sobre SealMetrics — Analítica founder-led para Europa",
-  description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  title: "Consentless Analytics 100% UE — Sobre SealMetrics",
+  description: "SealMetrics: analítica cookieless sin dato personal, 95–100% cobertura real, alojada en la UE. Fundada por Rafa Jiménez tras 20 años en eCommerce europeo.",
   openGraph: {
-    title: "Sobre SealMetrics — Analítica founder-led para Europa",
-    description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+    title: "Consentless Analytics 100% UE — Sobre SealMetrics",
+    description: "SealMetrics: analítica cookieless sin dato personal, 95–100% cobertura real, alojada en la UE. Fundada por Rafa Jiménez tras 20 años en eCommerce europeo.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/about", languages: getAlternatesEs("/about") },
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://sealmetrics.com/es/about",
+  "name": "Consentless Analytics 100% UE — Sobre SealMetrics",
+  "description": "SealMetrics: analítica cookieless sin dato personal, 95–100% cobertura real, alojada en la UE. Fundada por Rafa Jiménez tras 20 años en eCommerce europeo.",
+  "datePublished": "2024-01-15",
+  "dateModified": "2025-01-15",
+  "author": {
+    "@type": "Person",
+    "name": "Rafa Jiménez",
+    "jobTitle": "Founder & CEO",
+    "url": "https://www.linkedin.com/in/rafajimenez/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SealMetrics"
+    }
+  }
 };
 
 export default function Page() {
@@ -25,6 +45,7 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Sobre nosotros" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Sobre nosotros", url: "/es/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={aboutPageSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -35,6 +56,7 @@ export default function Page() {
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             SealMetrics es una plataforma de analítica UE-founded y UE-hosted que sirve a 2.000+ clientes entre hoteles, eCommerce DTC, medios e instituciones públicas.
           </p>
+          <p className="mt-4 text-[14px] text-ink-soft">Por <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline font-medium">Rafa Jiménez</a>, Founder &amp; CEO · SealMetrics · <time dateTime="2025-01-15" className="text-ink-soft">Actualizado: enero 2025</time></p>
         </div>
       </section>
 
@@ -47,15 +69,36 @@ export default function Page() {
           <h2 className="h-section mt-5" style={{ maxWidth: "22ch" }}>
             20 años viendo a equipos decidir con <em>datos en los que no confiaban.</em>
           </h2>
-          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+
+          <p className="mt-6 text-[17px] font-medium text-ink leading-[1.5] border-l-4 border-brand pl-4">
+            <strong>TL;DR:</strong> Rafa Jiménez pasó 20 años en eCommerce europeo y fundó SealMetrics tras comprobar que ninguna herramienta del mercado combinaba cumplimiento RGPD, datos completos y atribución compartida entre marketing y finanzas.
+          </p>
+
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
               Rafa Jiménez pasó dos décadas en eCommerce europeo — primero como marketer digital, luego fundando una agencia, luego asesorando grupos retail. Cada reunión seguía el mismo patrón: el número de GA4, el del pixel, el del CRM. Todos distintos. Todos defendidos. Ninguno fiable.
             </p>
             <p>
               El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible el 40–60% del tráfico UE. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
             </p>
+
+            <div>
+              <p className="font-semibold text-ink mb-3">Tras evaluar más de 12 soluciones del mercado, ninguna cumplía los tres requisitos clave:</p>
+              <ul className="list-disc pl-6 space-y-2 text-[16px]">
+                <li>Cumplimiento RGPD sin fricciones legales en cada reunión.</li>
+                <li>Datos completos independientemente del consentimiento del usuario.</li>
+                <li>Modelo de atribución que marketing y finanzas pudieran compartir sin discutirlo.</li>
+              </ul>
+            </div>
+
             <p>
               SealMetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
+            </p>
+            <p>
+              La arquitectura cookieless fue auditada por despachos de privacidad en Alemania, Francia y España, y se despliega exclusivamente en infraestructura de la Unión Europea.
+            </p>
+            <p>
+              Hoy SealMetrics trabaja con equipos de entre 5 y 500 personas. Desde startups DTC que quieren entender su CAC real hasta grupos hoteleros que necesitan atribución multicanal sin exponer datos de huéspedes. El denominador común es siempre el mismo: equipos que han perdido la confianza en sus dashboards y quieren recuperarla sin sacrificar el cumplimiento normativo.
             </p>
           </div>
 
@@ -99,6 +142,41 @@ export default function Page() {
                 <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-soft mt-3">{s.l}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Nuestra filosofía</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Privacidad y precisión <em>no son opuestos.</em></h2>
+
+          <p className="mt-6 text-[17px] font-medium text-ink leading-[1.5] border-l-4 border-brand pl-4">
+            <strong>TL;DR:</strong> Eliminar cookies de terceros no reduce la señal, elimina el ruido. SealMetrics alcanza una cobertura del 95–100% del tráfico real frente al 40–60% de herramientas tradicionales en mercados europeos.
+          </p>
+
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              La industria lleva años presentando la privacidad como un coste: menos datos, menos precisión, menos conversiones atribuidas. SealMetrics parte de la hipótesis contraria. Cuando eliminas las cookies de terceros, los píxeles de seguimiento y las cadenas de sub-procesadores, no pierdes señal — eliminas el ruido. Los datos que quedan son más limpios, más consistentes y más accionables.
+            </p>
+
+            <div>
+              <p className="font-semibold text-ink mb-3">¿Cómo funciona la arquitectura cookieless de SealMetrics?</p>
+              <ul className="list-disc pl-6 space-y-2 text-[16px]">
+                <li>Fingerprinting de primer nivel: no almacena ningún dato personal identificable.</li>
+                <li>Cumple las directrices del <a href="https://edpb.europa.eu/" className="text-brand hover:underline" target="_blank" rel="noopener noreferrer">Comité Europeo de Protección de Datos (EDPB)</a>.</li>
+                <li>Funciona igual con o sin banner de consentimiento aceptado.</li>
+                <li>Cobertura del 95–100% del tráfico real frente al 40–60% de herramientas tradicionales en Europa.</li>
+                <li>Infraestructura desplegada exclusivamente en la Unión Europea (Dublín).</li>
+              </ul>
+            </div>
+
+            <p>
+              Nuestra arquitectura cookieless no es una respuesta reactiva al RGPD. Es una decisión de diseño tomada desde el primer día.
+            </p>
+            <p>
+              Creemos que los equipos de datos merecen una herramienta en la que puedan confiar sin necesitar a un abogado en cada reunión. Eso es lo que construimos.
+            </p>
           </div>
         </div>
       </section>
