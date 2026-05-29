@@ -44,11 +44,24 @@ export const metadata: Metadata = {
   },
 };
 
+const webPageAuthorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: "https://sealmetrics.com/",
+  name: "SealMetrics — Consentless analytics for eCommerce",
+  author: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
 export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={webPageAuthorSchema} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
       <JsonLd data={faqPageSchema([
         { question: "Why pay for SealMetrics when GA4 is free?", answer: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject, so you make budget decisions on a fraction of real data. The cost of SealMetrics is a rounding error compared to the cost of misallocated ad spend." },
@@ -125,6 +138,7 @@ export default function Home() {
             <p>
               Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
+            <p className="sr-only">Published by <span itemProp="author">SealMetrics</span></p>
           </QuickAnswer>
         </div>
       </section>
