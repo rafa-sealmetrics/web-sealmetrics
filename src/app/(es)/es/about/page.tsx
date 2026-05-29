@@ -19,12 +19,36 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://sealmetrics.com/es/about", languages: getAlternatesEs("/about") },
 };
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Sobre SealMetrics — Analítica founder-led para Europa",
+  description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  url: "https://sealmetrics.com/es/about",
+  author: {
+    "@type": "Person",
+    name: "Rafa Jiménez",
+    url: "https://www.linkedin.com/in/rafajimenez/",
+    jobTitle: "Founder & CEO",
+    worksFor: {
+      "@type": "Organization",
+      name: "SealMetrics",
+    },
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "SealMetrics",
+    url: "https://sealmetrics.com",
+  },
+};
+
 export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Sobre nosotros" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Sobre nosotros", url: "/es/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={aboutPageSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -34,6 +58,9 @@ export default function Page() {
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             SealMetrics es una plataforma de analítica UE-founded y UE-hosted que sirve a 2.000+ clientes entre hoteles, eCommerce DTC, medios e instituciones públicas.
+          </p>
+          <p className="mt-4 text-[13px] text-ink-soft">
+            Por <a href="https://www.linkedin.com/in/rafajimenez/" className="underline hover:text-ink" rel="author">Rafa Jiménez</a>, Founder &amp; CEO de SealMetrics
           </p>
         </div>
       </section>
@@ -67,7 +94,7 @@ export default function Page() {
               <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
               <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
-                <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline" rel="author">LinkedIn</a>
               </div>
             </div>
           </div>
