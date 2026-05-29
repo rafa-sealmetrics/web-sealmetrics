@@ -26,6 +26,23 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://sealmetrics.com/about",
+  "name": "About SealMetrics — Founder-led analytics for Europe",
+  "author": {
+    "@type": "Person",
+    "name": "Rafa Jiménez",
+    "url": "https://www.linkedin.com/in/rafajimenez/",
+    "jobTitle": "Founder & CEO",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SealMetrics"
+    }
+  }
+};
+
 export const metadata: Metadata = {
   title: "About SealMetrics — Founder-led analytics for Europe",
   description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
@@ -44,6 +61,7 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
       <JsonLd data={organizationSchema()} />
+      <JsonLd data={aboutPageSchema} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
@@ -86,7 +104,9 @@ export default function Page() {
               RJ
             </div>
             <div>
-              <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
+              <div className="text-[17px] font-semibold text-ink" itemProp="author" itemScope itemType="https://schema.org/Person">
+                <span itemProp="name">Rafa Jiménez</span>
+              </div>
               <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
                 <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
