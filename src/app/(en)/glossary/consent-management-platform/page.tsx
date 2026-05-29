@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -46,6 +47,17 @@ export default function ConsentManagementPlatformPage() {
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/blog/consent-banner-impact-on-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Consent Banners Destroy Your Analytics Data</Link> &middot; <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Security & Privacy Architecture</Link>
           </p>
+        </div>
+
+        <div className="mt-12">
+          <QuickAnswer>
+            <p>
+              A Consent Management Platform (CMP) is software that displays a cookie banner, captures the visitor&rsquo;s consent decision, and signals downstream tools (analytics, ad pixels, A/B testing) whether they may store cookies or read terminal-device information. Required under GDPR Art. 7 and ePrivacy Art. 5(3) for any tool that uses cookies, localStorage, or fingerprinting. In the EU, average rejection rates sit between 40% (B2B) and 60% (consumer B2C), reaching 65%+ in Germany.
+            </p>
+            <p>
+              The practical consequence: cookie-based analytics measure only the consenting fraction of visitors, creating a self-selected sample that biases every channel and conversion-rate decision built on it. Consentless architecture — no cookies, no identifiers, no terminal-device storage — sits outside the Art. 5(3) trigger and the GDPR material scope, so the CMP is not required for the analytics layer. Other tools (Meta pixel, Google Ads pixel) still need the banner if they remain in the stack.
+            </p>
+          </QuickAnswer>
         </div>
       </div>
     </article>

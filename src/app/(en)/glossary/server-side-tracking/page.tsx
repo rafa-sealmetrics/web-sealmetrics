@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -46,6 +47,17 @@ export default function ServerSideTrackingPage() {
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
           </p>
+        </div>
+
+        <div className="mt-12">
+          <QuickAnswer>
+            <p>
+              Server-side tracking processes analytics events on a server you control instead of inside the visitor&rsquo;s browser. A minimal client-side hook (or a server-to-server beacon for backend events like Shopify orders) ships the raw signal to your own endpoint; processing, enrichment and storage happen server-side. Because the request never leaves the first-party origin and no script is exposed to ad-blocker rule lists, the data path is resilient to ~40% client-side data loss caused by uBlock, Brave and the analytics block-lists shipped with iOS Safari content blockers.
+            </p>
+            <p>
+              Server-side does not automatically mean &ldquo;cookieless.&rdquo; A server-side tracker can still set a first-party cookie or generate a visitor ID — at which point it triggers ePrivacy Art. 5(3) and requires consent. SealMetrics is server-side AND cookieless: events are counted in aggregate with no per-visitor identifier, which is what makes the architecture both resilient and consent-free.
+            </p>
+          </QuickAnswer>
         </div>
       </div>
     </article>

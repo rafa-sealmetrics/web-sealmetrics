@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -46,6 +47,17 @@ export default function ITPPage() {
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
           </p>
+        </div>
+
+        <div className="mt-12">
+          <QuickAnswer>
+            <p>
+              Intelligent Tracking Prevention (ITP) is Apple Safari&rsquo;s machine-learning-driven privacy system that caps first-party analytics cookies at 7 days, drops third-party cookies entirely, and shortens cookie lifespan to 24 hours when the cookie is set via JavaScript on a page that arrived with a tracking query parameter. Firefox ships an equivalent feature called Enhanced Tracking Protection (ETP).
+            </p>
+            <p>
+              For analytics that depend on cookies to recognise returning visitors or stitch multi-day attribution, ITP makes accurate measurement effectively impossible on the 20%+ of EU traffic that uses Safari. Cookieless first-party server-side collection sets no cookie, so ITP and ETP have no effect — every visit is counted on the same anonymous-aggregate basis regardless of browser, regardless of how many days have passed.
+            </p>
+          </QuickAnswer>
         </div>
       </div>
     </article>

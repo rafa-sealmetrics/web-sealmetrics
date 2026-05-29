@@ -127,6 +127,46 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "Privacy",
     related: ["gdpr-analytics-compliance", "first-party-data-collection", "consent-management-platform"],
   },
+  {
+    slug: "attribution-window",
+    term: "Attribution Window",
+    shortDefinition:
+      "The time period after a marketing touchpoint during which a subsequent conversion is credited to that touchpoint. Windows vary by channel — Google Ads default is 30 days, Meta is 7 days, GA4 is 30/90 days depending on model.",
+    category: "Attribution",
+    related: ["attribution-model", "last-click-attribution", "multi-touch-attribution", "intelligent-tracking-prevention"],
+  },
+  {
+    slug: "last-click-attribution",
+    term: "Last-Click Attribution",
+    shortDefinition:
+      "An attribution model where 100% of the conversion credit goes to the final marketing touchpoint observed before the conversion event. SealMetrics applies last-click on 100% of data — aggregate, anonymous, at channel level.",
+    category: "Attribution",
+    related: ["attribution-model", "revenue-attribution", "attribution-window", "multi-touch-attribution"],
+  },
+  {
+    slug: "consent-mode-v2",
+    term: "Google Consent Mode v2",
+    shortDefinition:
+      "Google's framework that allows Analytics and Ads tags to load without storing cookies when the user has rejected consent — then statistically models the missing data. It is a modelling layer, not a measurement layer.",
+    category: "Privacy",
+    related: ["consent-management-platform", "gdpr-analytics-compliance", "data-loss-in-analytics", "cookieless-analytics"],
+  },
+  {
+    slug: "eprivacy-directive",
+    term: "ePrivacy Directive",
+    shortDefinition:
+      "EU Directive 2002/58/EC governing privacy in electronic communications, including the rule (Art. 5(3)) that consent is required before storing or accessing information on a user's terminal device. The legal basis for cookie consent banners.",
+    category: "Privacy",
+    related: ["gdpr-analytics-compliance", "consent-management-platform", "cookieless-analytics", "analytics-data-residency"],
+  },
+  {
+    slug: "legitimate-interest-analytics",
+    term: "Legitimate Interest (Analytics)",
+    shortDefinition:
+      "GDPR Article 6(1)(f) lawful basis: processing personal data is permitted when a controller has a legitimate purpose that does not override the data subject's rights. Sometimes invoked for analytics — but ePrivacy still requires consent for cookies.",
+    category: "Privacy",
+    related: ["gdpr-analytics-compliance", "consent-management-platform", "cookieless-analytics", "eprivacy-directive"],
+  },
 ];
 
 export function getRelatedTerms(slug: string): GlossaryTerm[] {

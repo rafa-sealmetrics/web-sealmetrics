@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -47,6 +48,17 @@ export default function FirstPartyDataCollectionPage() {
           <p className="text-[0.85rem] text-text-tertiary">
             Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
           </p>
+        </div>
+
+        <div className="mt-12">
+          <QuickAnswer>
+            <p>
+              First-party data collection routes analytics requests through your own domain (e.g. <code>pixel.yourdomain.com</code>) instead of a third-party host like <code>google-analytics.com</code>. To the browser, ad blocker rule lists and consent gates, the request is indistinguishable from any other resource on your site — so it is not stripped, not blocked, and not subject to third-party cookie restrictions imposed by Safari ITP or Firefox ETP.
+            </p>
+            <p>
+              For EU eCommerce, this matters because ad blockers silently drop ~40% of third-party analytics calls before they execute, and Safari caps third-party cookies entirely. First-party collection eliminates both loss vectors. Combined with no cookie or identifier stored on the device, it forms the architectural basis of consentless analytics — the same data path GDPR and the CNIL exemption criteria contemplate when describing analytics that do not require a consent banner.
+            </p>
+          </QuickAnswer>
         </div>
       </div>
     </article>
