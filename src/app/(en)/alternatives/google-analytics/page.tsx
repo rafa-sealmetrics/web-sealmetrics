@@ -45,7 +45,9 @@ export default function Page() {
       <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-05-29" />
       <section className="mx-auto max-w-3xl px-4 py-12">
         <h2 className="text-2xl font-bold mb-4">Why choose a consentless Google Analytics alternative?</h2>
-        <p>Google Analytics relies on consent banners and modelling to estimate traffic — meaning every user who rejects cookies becomes invisible. A consentless analytics approach captures every visit without relying on cookies or consent signals, giving you complete, unsampled data while remaining fully compliant with GDPR and ePrivacy regulations. SealMetrics is built consentless by design: no cookies, no consent mode, no data gaps.</p>
+        <p>Google Analytics uses consent banners to track users. When a visitor rejects cookies, GA loses that data. You get gaps and estimates — not real numbers.</p>
+        <p className="mt-4">A consentless analytics tool works differently. It captures every visit without cookies or consent signals. Your data is complete and unsampled.</p>
+        <p className="mt-4">SealMetrics is built consentless by design. No cookies. No consent mode. No data gaps. And it stays fully compliant with GDPR and ePrivacy rules.</p>
       </section>
       <LogosStrip />
       
