@@ -45,6 +45,26 @@ export default function Page() {
           audience: "CMO, Head of Marketing, Director eCommerce",
         })}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Auditoría gratuita de medición — SealMetrics",
+          description:
+            "Responde 7 preguntas en 3 minutos. Te enviamos un análisis personalizado del gap entre lo que mide GA4 y lo que realmente vende tu eCommerce.",
+          url: "https://sealmetrics.com/es/audit",
+          author: {
+            "@type": "Organization",
+            name: "SealMetrics",
+            url: "https://sealmetrics.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "SealMetrics",
+            url: "https://sealmetrics.com",
+          },
+        }}
+      />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-12">
         <div className="max-w-[760px] mx-auto px-5 sm:px-8">
@@ -62,6 +82,9 @@ export default function Page() {
           </p>
           <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-soft font-semibold mt-6">
             3 minutos · sin instalar nada
+          </p>
+          <p className="text-[13px] text-ink-soft mt-4">
+            Por el equipo de <span itemProp="author">SealMetrics</span>
           </p>
         </div>
       </section>
