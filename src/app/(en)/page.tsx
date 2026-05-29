@@ -49,6 +49,8 @@ const webPageAuthorSchema = {
   "@type": "WebPage",
   url: "https://sealmetrics.com/",
   name: "SealMetrics — Consentless analytics for eCommerce",
+  datePublished: "2024-01-01",
+  dateModified: "2025-05-01",
   author: {
     "@type": "Organization",
     name: "SealMetrics",
@@ -136,7 +138,7 @@ export default function Home() {
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
-          <p className="sr-only">Published by <span itemProp="author">SealMetrics</span></p>
+          <p className="sr-only">Published by <span itemProp="author">SealMetrics</span>. Last updated: <time dateTime="2025-05-01">May 2025</time>.</p>
           <QuickAnswer>
             <p>
               SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
