@@ -138,10 +138,16 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
+              What happens when 58% of your eCommerce data never reaches your analytics platform? You make channel budget decisions on incomplete numbers — overspending on underperforming channels and starving the ones that actually convert. SealMetrics is consentless analytics for European eCommerce: a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top.
             </p>
             <p>
-              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
+              How much revenue are consent banners costing you? In the EU, 40–60% of visitors reject cookies, which means GA4 + Consent Mode is blind to nearly half your traffic before a single session is recorded. SealMetrics is hosted exclusively in Dublin, Ireland on EU-owned infrastructure, removing the Schrems II review GA4 requires and closing the consent-rejection gap that breaks aggregate channel ROAS across Europe.
+            </p>
+            <p>
+              The results are measurable: Dreamplace Hotels recovered +30% more traffic versus Google Analytics and closed a 15–20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Ask your data a question — with SealMetrics, you get a real answer based on every observed data point, not a modelled estimate.
+            </p>
+            <p>
+              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
           </QuickAnswer>
           <p className="sr-only">Published by <span itemProp="author">SealMetrics</span>. Last updated: <time dateTime={DATE_MODIFIED}>{DATE_MODIFIED}</time>. First published: <time dateTime={DATE_PUBLISHED}>{DATE_PUBLISHED}</time>.</p>
