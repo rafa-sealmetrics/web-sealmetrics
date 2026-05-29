@@ -6,15 +6,15 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { AuditForm } from "@/components/audit/AuditForm";
 
 export const metadata: Metadata = {
-  title: "Free measurement audit — SealMetrics",
+  title: "Consentless Analytics Audit — Find Your Hidden Revenue | SealMetrics",
   description:
-    "Answer 7 questions in 3 minutes. We send you a personalised analysis of the gap between what GA4 measures and what your eCommerce actually sells.",
+    "Measure what GA4 misses. Our free consentless analytics audit reveals the revenue gap in 3 minutes — personalised, human-written report in 24h.",
   alternates: {
     canonical: "https://sealmetrics.com/audit",
     languages: getAlternates("/audit"),
   },
   openGraph: {
-    title: "Free measurement audit — SealMetrics",
+    title: "Consentless Analytics Audit — Find Your Hidden Revenue | SealMetrics",
     description:
       "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
     type: "website",
