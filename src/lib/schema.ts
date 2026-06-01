@@ -186,28 +186,6 @@ export function softwareApplicationSchema() {
       "LENS AI anomaly detection",
       "AI Agent Analytics",
     ],
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Growth",
-        price: String(PRICING.growth.monthly),
-        priceCurrency: "EUR",
-        priceValidUntil: "2026-12-31",
-        availability: "https://schema.org/InStock",
-        description: `${PRICING.growth.eventsMillions}M human events/month`,
-        url: `${SITE_URL}/pricing`,
-      },
-      {
-        "@type": "Offer",
-        name: "Scale",
-        price: String(PRICING.scale.monthly),
-        priceCurrency: "EUR",
-        priceValidUntil: "2026-12-31",
-        availability: "https://schema.org/InStock",
-        description: `${PRICING.scale.eventsMillions}M human events/month`,
-        url: `${SITE_URL}/pricing`,
-      },
-    ],
     provider: {
       "@type": "Organization",
       name: ORG_NAME,

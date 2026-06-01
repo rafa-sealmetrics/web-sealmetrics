@@ -3,34 +3,55 @@
 > Complete analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.
 
 ## What is SealMetrics?
-SealMetrics is an enterprise analytics platform for eCommerce that captures 100% of website traffic. It powers revenue decisions with LENS AI supervision and last-click revenue attribution. Data collection is cookieless and GDPR-compliant by architecture, with EU-only residency — so the 100% data capture holds without requiring consent banners.
+SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic and attributes revenue using last-click on the full dataset. Data collection is first-party server-side and GDPR-compliant by architecture, with EU-only residency in Dublin — so the 100% capture holds without a cookie banner. SealMetrics is aggregate, anonymous, event-level measurement: no cookies, no identifiers, no individual user tracking, no session reconstruction, no multi-touch attribution.
 
 ## Key facts
-- Captures 100% of visitors (vs ~13% for GA4 in the EU)
-- No cookies, no consent dependency
+- Captures 100% of visitors (vs ~13% for GA4 in the EU after sampling + consent rejection + ad blockers)
+- No cookies, no consent dependency, no identifiers stored on the device
 - First-party server-side data collection
-- EU-only data residency
+- EU-only data residency (Dublin, Ireland)
 - GDPR, ePrivacy, CCPA compliant by architecture
 - LENS AI anomaly detection with 60+ rules
-- Last-click revenue attribution on complete data
+- Last-click revenue attribution on complete data (SealMetrics does not do multi-touch attribution by design)
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
 - Pricing from €599/month (€499/mo billed annually)
 
+## Pillars (start here)
+- /complete-data — Why incomplete analytics data leads to wrong investment decisions; the 13%/87% framing
+- /cookieless-analytics — Definitive explainer: what cookieless analytics is, how it works, what it captures, what it doesn't
+- /consentless-analytics — Legal-grade explainer of analytics without consent under GDPR Art. 6(1)(f) and ePrivacy
+
 ## Core pages
 - /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
-- /how-it-works — Technical explanation of cookieless server-side collection
+- /how-it-works — Technical explanation of cookieless first-party server-side collection
 - /case-studies — Customer results and success stories
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
 - /pricing — Plans: Growth (€599/mo), Scale (€1,079/mo), Enterprise (custom)
-- /security — Privacy architecture, compliance, infrastructure security, trust model
+- /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
 - /demo — Request a personalized demo
 - /about — Company story, mission, EU-first philosophy
 - /audit — Free SealMetrics audit: we run your site through SealMetrics and surface the attribution gap live
+- /free-audit — Free audit intake form
 - /modern-analytics — What modern analytics looks like in 2026: complete data, AI supervision, EU-hosted
 - /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of SealMetrics
+
+## Compliance by country (DPO-ready pages)
+- /gdpr-analytics — Country compliance hub
+- /gdpr-analytics/france — CNIL exemption criteria; "analytics sans consentement france"
+- /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung"
+- /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
+
+## Platform integrations (install + dataLayer patterns)
+- /platforms/shopify — Cookieless analytics for Shopify; install + Order Webhook reconciliation
+- /platforms/woocommerce — Cookieless analytics for WooCommerce; install + Order Webhook reconciliation
+
+## Use cases (task-level pages)
+- /use-cases/revenue-attribution — Last-click revenue attribution on 100% of data (replaces broken multi-touch under ITP/consent)
+- /use-cases/conversion-tracking — Conversion tracking without cookies for eCommerce
+- /use-cases/ga4-migration — Migrating from GA4: parallel run, dashboards, training, what changes for the team
 
 ## Comparisons (enterprise analytics tier)
 - /vs — All vendor comparisons
@@ -38,15 +59,20 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 - /vs/ga360 — SealMetrics vs Google Analytics 360 ($150,000+/yr)
 - /vs/adobe-analytics — SealMetrics vs Adobe Analytics ($100,000+/yr)
 - /vs/piwik-pro — SealMetrics vs Piwik PRO (€30,000+/yr)
+- /vs/matomo — SealMetrics vs Matomo (managed-service + AI vs DIY-ops)
 - /data-loss-calculator — Interactive calculator showing how much data you lose with cookie-based analytics
 
 ## Alternatives (editorial comparisons)
 - /alternatives/google-analytics — 8 Google Analytics alternatives compared: data capture, GDPR compliance, pricing, features
 
+## Open — transparency hub
+- /open — Public transparency hub: how we run the company, the product, and our compliance posture (PostHog-style numbered chapters, EN-only)
+
 ## Customer case studies
 - /case-studies — All published case studies
 - /case-studies/palladium-hotel-group — Palladium Hotel Group: Toni Andújar (Digital & Direct Sales Director) on neutrality. 40% traffic with no attribution before, +165% Cost-per-Search on Display after
-- /case-studies/dreamplace-hotels — Dreamplace Hotels: Eduardo Martin (eCommerce) on paid-media reallocation. 15-20% more attributed sales, +30% more traffic vs Google Analytics
+- /case-studies/dreamplace-hotels — Dreamplace Hotels: Eduardo Martin (eCommerce) on paid-media reallocation. 15–20% more attributed sales, +30% more traffic vs Google Analytics
+- /case-studies/european-hotel-group — European hotel group (anonymized): EU-wide chain measuring 100% of bookings without a consent banner
 
 ## Role-specific pages
 - /for — Audiences and verticals index
@@ -56,12 +82,12 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 
 ## Industry-specific pages
 - /for/ecommerce — Analytics for ecommerce: revenue attribution, funnel analysis, complete conversion tracking
-- /for/hotels — Analytics for hospitality: booking funnels, seasonal patterns, multi-channel attribution
+- /for/hotels — Analytics for hospitality: booking funnels, seasonal patterns, direct-channel attribution
 - /for/agencies — Analytics for marketing agencies: multi-client reporting, white-label dashboards
-- /for/saas — Analytics for SaaS: trial conversion, feature adoption, churn prediction
+- /for/saas — Analytics for SaaS: trial conversion, feature adoption, retention measurement
 - /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
 - /for/finance — Analytics for financial services: compliance-first tracking, EU data residency
-- /for/education — Analytics for education: enrollment funnels, student engagement, GDPR compliance
+- /for/education — Analytics for education: enrollment funnels, engagement measurement, GDPR compliance
 - /for/healthcare — Analytics for healthcare: privacy-first aggregate event measurement, no patient identification
 
 ## Blog (latest articles)
@@ -70,11 +96,14 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 - /blog/cookieless-analytics-for-hotels — How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
 - /blog/cookieless-analytics-for-saas — PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026
 - /blog/consentless-analytics-for-dtc — How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
-- /blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking: GA4, GA360, Adobe, Piwik PRO, SealMetrics, Matomo, Amplitude, Mixpanel)
+- /blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking)
 - /blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Shows 13% of Your EU Traffic (the math behind the data loss cascade)
 - /blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
 - /blog/analytics-tools-external-domains — Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters
 - /blog/analytics-tools-data-sampling — Data Sampling Thresholds Compared: When Your Analytics Starts Guessing
+- /blog/analytics-tools-ad-blocker-test — Ad Blocker Test: Which Analytics Tools Get Blocked, Which Don't
+- /blog/analytics-tools-http-requests — HTTP Request Count by Analytics Tool: Performance Impact Compared
+- /blog/analytics-tools-lighthouse-scores — Lighthouse Score Impact of Every Major Analytics Tool
 - /blog/what-is-cookieless-tracking — What Is Cookieless Tracking? A Complete Guide for 2026
 - /blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics? Causes, Impact, and Solutions
 - /blog/ga4-alternatives-enterprise — 7 GA4 Alternatives for eCommerce Teams in 2026 (editorial listicle with pricing, data capture, EU compliance per tool)
@@ -89,28 +118,33 @@ SealMetrics is an enterprise analytics platform for eCommerce that captures 100%
 - /blog/cookieless-analytics-explained — Cookieless Analytics Explained: How to Measure Without Cookies
 - /blog/consent-banner-impact-on-analytics — How Consent Banners Destroy Your Analytics Data
 - /blog/ai-agent-traffic-analytics — AI Agent Traffic: The Invisible Channel Your Analytics Miss
-- /blog/multi-touch-attribution-complete-data — Why Multi-Touch Attribution Fails Without Complete Data
+- /blog/multi-touch-attribution-complete-data — Why Multi-Touch Attribution Fails Without Complete Data (and why SealMetrics uses last-click only)
 
 ## Glossary
-- /glossary — Full analytics glossary (15 terms)
+- /glossary — Full analytics glossary (20 terms)
 - /glossary/cookieless-analytics — What Is Cookieless Analytics
 - /glossary/data-sampling — What Is Data Sampling
 - /glossary/first-party-data-collection — First-Party Data Collection Explained
 - /glossary/consent-management-platform — Consent Management Platform (CMP)
+- /glossary/consent-mode-v2 — Google Consent Mode v2 Explained
+- /glossary/last-click-attribution — Last-Click Attribution Explained (the model SealMetrics uses on 100% of data)
 - /glossary/multi-touch-attribution — Multi-Touch Attribution Explained (why MTA fails without complete data — SealMetrics uses last-click only)
+- /glossary/attribution-model — Attribution Model Types
+- /glossary/attribution-window — Attribution Window Explained
 - /glossary/server-side-tracking — Server-Side Tracking Explained
 - /glossary/intelligent-tracking-prevention — Intelligent Tracking Prevention (ITP)
 - /glossary/data-loss-in-analytics — Data Loss in Analytics
 - /glossary/revenue-attribution — Revenue Attribution Explained
 - /glossary/gdpr-analytics-compliance — GDPR Analytics Compliance
+- /glossary/legitimate-interest-analytics — Legitimate Interest as a Legal Basis for Analytics
+- /glossary/eprivacy-directive — ePrivacy Directive Explained
 - /glossary/ad-blocker-analytics-impact — Ad Blocker Impact on Analytics
 - /glossary/bounce-rate — Bounce Rate Explained
-- /glossary/attribution-model — Attribution Model Types
 - /glossary/event-tracking — Event Tracking Explained
 - /glossary/analytics-data-residency — Analytics Data Residency
 
 ## Enterprise positioning
-SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution only (not multi-touch). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics).
+SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution on 100% of data (not multi-touch, not session-stitching, not customer-journey reconstruction — these are explicitly out of scope by architecture). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami, Cabin, Mixpanel, Amplitude) — different category.
 
 ## Legal & meta
 - /privacy — Privacy policy

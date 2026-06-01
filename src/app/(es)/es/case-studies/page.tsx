@@ -40,14 +40,6 @@ const cases = [
     cite: "Eduardo Martin · Analítica y Campañas · Dreamplace Hotels",
     href: "/es/case-studies/dreamplace-hotels",
   },
-  {
-    client: "Marca DTC de café",
-    sector: "eCommerce · DTC",
-    stat1: { n: "30–40%", l: "Infra-reportado por GA4" },
-    stat2: { n: "30 días", l: "Hasta fuente única de verdad" },
-    quote: "Hemos usado SealMetrics como 'vale, nos creemos este dato.' Es nuestra fuente única de verdad.",
-    cite: "Founder & CEO · marca DTC",
-  },
 ];
 
 export default function Page() {
@@ -85,7 +77,7 @@ export default function Page() {
             Equipos reales. Números reales. <em>Escritos honestos.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Caso destacado este mes: Palladium Hotel Group sobre por qué la neutralidad ganó al volumen reportado. El resto siguen anonimizados hasta autorización del cliente — los números son reales y verificados contra el CRM y reportes internos de cada cliente.
+            Casos destacados: Palladium Hotel Group sobre por qué la neutralidad ganó al volumen reportado, y Dreamplace Hotels sobre cómo cerrar el gap con el CRM. Los números son verificados contra el CRM y reportes internos de cada cliente. Dos nuevos casos con nombre se publican en Q3 2026.
           </p>
         </div>
       </section>

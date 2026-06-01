@@ -85,14 +85,8 @@ export default function HomeEs() {
       })} />
       <JsonLd data={quotationSchema({
         text: "Ya no es una herramienta que está al lado del proceso. Es la herramienta que nos da el dato real — y con la que tomamos decisiones.",
-        spokenBy: "Head of eCommerce",
-        spokenByRole: "Cadena hotelera · España",
-        url: "/es",
-      })} />
-      <JsonLd data={quotationSchema({
-        text: "Hemos usado SealMetrics como 'vale, nos creemos este dato.' Es nuestra fuente única de verdad.",
-        spokenBy: "Founder & CEO",
-        spokenByRole: "Marca DTC de café",
+        spokenBy: "Eduardo Martin",
+        spokenByRole: "Analytics & Campañas, Dreamplace Hotels",
         url: "/es",
       })} />
       <HeroV3Es />

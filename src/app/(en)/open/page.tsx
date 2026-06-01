@@ -13,11 +13,11 @@ import {
 export const metadata: Metadata = {
   title: "Open — How we measure at SealMetrics",
   description:
-    "How we measure, comply, and build SealMetrics. Eleven open chapters on our method, architecture, and operation.",
+    "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned, publishing as we write.",
   openGraph: {
     title: "Open — How we measure at SealMetrics",
     description:
-      "Eleven open chapters on how we measure, comply, and build SealMetrics.",
+      "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -34,7 +34,7 @@ export default function OpenIndexPage() {
     inLanguage: "en",
     author: { "@type": "Organization", name: "SealMetrics" },
     description:
-      "Eleven open chapters on how we measure, comply, and build SealMetrics.",
+      "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned, published as we write.",
     hasPart: publishedChapters.map((c) => ({
       "@type": "Chapter",
       name: c.title,
@@ -62,9 +62,9 @@ export default function OpenIndexPage() {
             <span className="italic-accent">in writing and in public</span>.
           </p>
           <p className="mt-8 text-[1rem] leading-[1.7] text-text-secondary max-w-[620px]">
-            Eleven chapters on our method, architecture, and operation. No
-            marketing pages, no vague promises. If you find anything inaccurate
-            or incomplete, write to us.
+            Eleven chapters planned on our method, architecture, and operation —
+            publishing as we write them. No marketing pages, no vague promises.
+            If you find anything inaccurate or incomplete, write to us.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.78rem] font-mono uppercase tracking-[0.08em] text-text-tertiary">
