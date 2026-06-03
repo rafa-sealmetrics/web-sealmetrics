@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { type QuizAnswers } from "@/lib/content/diagnostic";
 import { pushEvent } from "@/lib/analytics";
+import { buildSignupPayload } from "@/lib/signup/payload";
 
 interface DemoAccessCTAProps {
   answers: QuizAnswers;
@@ -30,6 +31,18 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
     if (!canSubmit) return;
 
     setStatus("submitting");
+
+    const signup = buildSignupPayload({
+      email: email.trim(),
+      name: name.trim(),
+      company: company.trim(),
+      source: "signup",
+      extraMetadata: {
+        form: "diagnostic_demo_access",
+        quiz_answers_json: JSON.stringify(answers),
+      },
+    });
+
     try {
       await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
         method: "POST",
@@ -40,6 +53,7 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
           company: company.trim(),
           source: "diagnostic_demo_access",
           quiz_answers: answers,
+          signup,
         }),
       });
       setStatus("success");

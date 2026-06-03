@@ -2,6 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
+import {
+  SignupQualifier,
+  EMPTY_QUALIFIER,
+  type QualifierState,
+} from "@/components/forms/SignupQualifier";
+import { buildSignupPayload } from "@/lib/signup/payload";
 
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/demo-request";
 
@@ -113,6 +119,7 @@ export function AccessForm() {
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [gdpr, setGdpr] = useState(false);
+  const [qualifier, setQualifier] = useState<QualifierState>(EMPTY_QUALIFIER);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -159,6 +166,28 @@ export function AccessForm() {
 
     setStatus({ kind: "submitting" });
 
+    const signup = buildSignupPayload({
+      email: email.trim(),
+      name: name.trim(),
+      company: company.trim(),
+      // demo-access prefers the validated hostname; SignupQualifier site_url
+      // overrides only if the user explicitly typed something there.
+      site_url: qualifier.site_url || `https://${host}`,
+      role: qualifier.role,
+      sector: qualifier.sector,
+      ads_spend_band: qualifier.ads_spend_band,
+      pain_score: qualifier.pain_score,
+      lost_tracking: qualifier.lost_tracking,
+      stakeholders: qualifier.stakeholders,
+      timeline: qualifier.timeline,
+      source: "signup",
+      extraMetadata: {
+        form: "demo-access",
+        locale: "en",
+        email_domain: dom,
+      },
+    });
+
     const payload = {
       name: name.trim(),
       company: company.trim(),
@@ -169,6 +198,7 @@ export function AccessForm() {
       locale: "en",
       source: typeof window !== "undefined" ? window.location.href : "",
       submittedAt: new Date().toISOString(),
+      signup,
     };
 
     pushEvent({ event: "demo_access_request", value: 1, email: payload.email });
@@ -338,6 +368,14 @@ export function AccessForm() {
           and consent to SealMetrics processing my data to send me demo credentials.
         </label>
       </div>
+
+      <SignupQualifier
+        value={qualifier}
+        onChange={setQualifier}
+        locale="en"
+        idPrefix="access"
+        hide={{ site_url: true }}
+      />
 
       {errorMsg && (
         <p className="text-[13px] text-red-alert leading-[1.5]" role="alert">

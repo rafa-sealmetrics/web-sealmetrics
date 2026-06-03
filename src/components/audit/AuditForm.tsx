@@ -2,8 +2,44 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
+import {
+  SignupQualifier,
+  EMPTY_QUALIFIER,
+  type QualifierState,
+} from "@/components/forms/SignupQualifier";
+import {
+  buildSignupPayload,
+  type AdsSpendEnum,
+  type SectorEnum,
+  type StakeholdersEnum,
+} from "@/lib/signup/payload";
 
 type Locale = "en" | "es";
+
+function mapAuditBusinessToSector(value?: string): SectorEnum | "" {
+  if (value === "ecommerce") return "ecom";
+  if (value === "hotel") return "hotel";
+  if (value === "travel" || value === "saas" || value === "other") return "other";
+  return "";
+}
+
+function mapAuditPaidSpendToAdsBand(value?: string): AdsSpendEnum | "" {
+  if (value === "gt100k") return "50k_200k";
+  if (value === "20k-100k") return "50k_200k";
+  if (value === "5k-20k") return "10k_50k";
+  if (value === "0-5k") return "lt_10k";
+  if (value === "no-paid") return "lt_10k";
+  return "";
+}
+
+function mapAuditPressureToStakeholders(value?: string): StakeholdersEnum | "" {
+  if (value === "nobody") return "solo";
+  if (value === "me") return "solo";
+  if (value === "team") return "marketing_team";
+  if (value === "board") return "committee";
+  if (value === "cfo-blocking") return "committee";
+  return "";
+}
 
 interface Option {
   value: string;
@@ -331,6 +367,7 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
     email: "",
     name: "",
   });
+  const [qualifier, setQualifier] = useState<QualifierState>(EMPTY_QUALIFIER);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [scoreTier, setScoreTier] = useState<"high" | "mid" | "low">("mid");
@@ -396,6 +433,38 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
     const tier: "high" | "mid" | "low" =
       normalized >= 8 ? "high" : normalized >= 5 ? "mid" : "low";
 
+    const businessAnswer = answers[1]?.value;
+    const paidSpendAnswer = answers[4]?.value;
+    const pressureAnswer = answers[6]?.value;
+    const roleAnswer = answers[3]?.value;
+
+    const signup = buildSignupPayload({
+      email: contact.email,
+      name: contact.name,
+      company: contact.company,
+      site_url: qualifier.site_url || contact.website,
+      role: qualifier.role || roleAnswer || "",
+      sector: qualifier.sector || mapAuditBusinessToSector(businessAnswer),
+      ads_spend_band:
+        qualifier.ads_spend_band || mapAuditPaidSpendToAdsBand(paidSpendAnswer),
+      pain_score: qualifier.pain_score,
+      lost_tracking: qualifier.lost_tracking,
+      stakeholders:
+        qualifier.stakeholders || mapAuditPressureToStakeholders(pressureAnswer),
+      timeline: qualifier.timeline,
+      source: "signup",
+      extraMetadata: {
+        form: "audit",
+        locale,
+        audit_tier: tier,
+        audit_score_raw: raw,
+        audit_score_normalized: normalized,
+        ga4_gap: answers[5]?.value,
+        revenue: answers[2]?.value,
+        role_internal: roleAnswer,
+      },
+    });
+
     const payload = {
       ...contact,
       answers,
@@ -404,8 +473,11 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
       tier,
       locale,
       submitted_at: new Date().toISOString(),
+      signup,
     };
 
+    // Existing endpoint (when configured) plus n8n fan-out so n8n can
+    // forward the embedded `signup` to /inbound/signup.
     const endpoint = process.env.NEXT_PUBLIC_AUDIT_ENDPOINT;
     if (endpoint) {
       try {
@@ -418,8 +490,18 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
       } catch {
         // Fail silently — the submission was captured client-side.
       }
-    } else if (typeof window !== "undefined") {
-      // Allow ops/admin to inspect submissions until backend is wired up.
+    }
+    try {
+      await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch {
+      // Webhook is fire-and-forget; ignore failures.
+    }
+    if (!endpoint && typeof window !== "undefined") {
       // eslint-disable-next-line no-console
       console.log("[SealMetrics audit submission]", payload);
     }
@@ -575,6 +657,21 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
               className="w-full px-4 py-3.5 rounded-[10px] border border-warm-100 bg-warm-50 text-[15px] text-ink placeholder:text-ink-soft focus:outline-none focus:border-ink focus:bg-white"
               autoComplete="name"
               required
+            />
+          </div>
+
+          <div className="mt-5">
+            <SignupQualifier
+              value={qualifier}
+              onChange={setQualifier}
+              locale={locale}
+              idPrefix="audit"
+              hide={{
+                site_url: true,
+                role: true,
+                sector: true,
+                ads_spend_band: true,
+              }}
             />
           </div>
         </div>

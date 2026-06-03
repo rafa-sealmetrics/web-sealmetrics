@@ -4,8 +4,52 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { scoreAnswers, type DemoAnswers } from "@/lib/demo-scoring";
 import { pushEvent } from "@/lib/analytics";
+import {
+  SignupQualifier,
+  EMPTY_QUALIFIER,
+  type QualifierState,
+} from "@/components/forms/SignupQualifier";
+import {
+  buildSignupPayload,
+  type AdsSpendEnum,
+  type SectorEnum,
+} from "@/lib/signup/payload";
 
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/webform-lead";
+
+// Map the existing demo qualification answers onto the /inbound/signup
+// enums. Lossy by design — the canonical signup buckets are coarser than
+// the demo ones, so we round to the closest match.
+function mapBusinessToSector(business?: string): SectorEnum | "" {
+  if (business === "ecommerce") return "ecom";
+  if (business === "hotel") return "hotel";
+  if (business === "travel" || business === "saas" || business === "other") return "other";
+  return "";
+}
+
+function mapPaidSpendToAdsBand(spend?: string): AdsSpendEnum | "" {
+  if (spend === "gt100k") return "50k_200k";
+  if (spend === "20k-100k") return "50k_200k";
+  if (spend === "5k-20k") return "10k_50k";
+  if (spend === "lt5k") return "lt_10k";
+  if (spend === "none") return "lt_10k";
+  return "";
+}
+
+function roleLabel(role?: string): string {
+  switch (role) {
+    case "decisor":
+      return "Decision-maker (CMO / CEO)";
+    case "recommends":
+      return "Recommender";
+    case "implements":
+      return "Implementer";
+    case "other":
+      return "Other";
+    default:
+      return "";
+  }
+}
 
 interface Question {
   id: keyof DemoAnswers;
@@ -93,6 +137,7 @@ export function DemoForm() {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [gdpr, setGdpr] = useState(false);
+  const [qualifier, setQualifier] = useState<QualifierState>(EMPTY_QUALIFIER);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -127,6 +172,33 @@ export function DemoForm() {
 
     const { raw, normalized, tier } = scoreAnswers(answers as DemoAnswers);
 
+    const signup = buildSignupPayload({
+      email,
+      name,
+      site_url: website,
+      role: qualifier.role || roleLabel(answers.role),
+      sector: qualifier.sector || mapBusinessToSector(answers.business),
+      ads_spend_band:
+        qualifier.ads_spend_band || mapPaidSpendToAdsBand(answers.paidSpend),
+      pain_score: qualifier.pain_score,
+      lost_tracking: qualifier.lost_tracking,
+      stakeholders: qualifier.stakeholders,
+      timeline: qualifier.timeline,
+      source: "signup",
+      extraMetadata: {
+        form: "demo",
+        locale: "en",
+        demo_tier: tier,
+        demo_score_raw: raw,
+        demo_score_normalized: normalized,
+        ga4_gap: answers.ga4Gap,
+        pressure: answers.pressure,
+        revenue: answers.revenue,
+        business: answers.business,
+        role_internal: answers.role,
+      },
+    });
+
     const payload = {
       name,
       email,
@@ -135,6 +207,7 @@ export function DemoForm() {
       source: typeof window !== "undefined" ? window.location.href : "",
       answers,
       score: { raw, normalized, tier },
+      signup,
     };
 
     pushEvent({ event: "demo_request", value: 1, email });
@@ -300,6 +373,19 @@ export function DemoForm() {
               and consent to SealMetrics processing my data to respond to my request.
             </label>
           </div>
+
+          <SignupQualifier
+            value={qualifier}
+            onChange={setQualifier}
+            locale="en"
+            idPrefix="demo"
+            hide={{
+              site_url: true,
+              role: true,
+              sector: true,
+              ads_spend_band: true,
+            }}
+          />
 
           {error && <p className="text-[13px] text-red-alert">{error}</p>}
 

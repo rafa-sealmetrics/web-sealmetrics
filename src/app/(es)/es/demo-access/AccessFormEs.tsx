@@ -2,6 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
+import {
+  SignupQualifier,
+  EMPTY_QUALIFIER,
+  type QualifierState,
+} from "@/components/forms/SignupQualifier";
+import { buildSignupPayload } from "@/lib/signup/payload";
 
 const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/demo-request";
 
@@ -65,6 +71,7 @@ export function AccessFormEs() {
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [gdpr, setGdpr] = useState(false);
+  const [qualifier, setQualifier] = useState<QualifierState>(EMPTY_QUALIFIER);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
   const microFired = useRef(false);
 
@@ -117,6 +124,26 @@ export function AccessFormEs() {
 
     setStatus({ kind: "submitting" });
 
+    const signup = buildSignupPayload({
+      email: email.trim(),
+      name: name.trim(),
+      company: company.trim(),
+      site_url: qualifier.site_url || `https://${host}`,
+      role: qualifier.role,
+      sector: qualifier.sector,
+      ads_spend_band: qualifier.ads_spend_band,
+      pain_score: qualifier.pain_score,
+      lost_tracking: qualifier.lost_tracking,
+      stakeholders: qualifier.stakeholders,
+      timeline: qualifier.timeline,
+      source: "signup",
+      extraMetadata: {
+        form: "demo-access",
+        locale: "es",
+        email_domain: dom,
+      },
+    });
+
     const payload = {
       name: name.trim(),
       company: company.trim(),
@@ -127,6 +154,7 @@ export function AccessFormEs() {
       locale: "es",
       source: typeof window !== "undefined" ? window.location.href : "",
       submittedAt: new Date().toISOString(),
+      signup,
     };
 
     pushEvent({ event: "demo_access_request", value: 1, email: payload.email });
@@ -270,6 +298,14 @@ export function AccessFormEs() {
           y consiento que SealMetrics procese mis datos para enviarme credenciales demo.
         </label>
       </div>
+
+      <SignupQualifier
+        value={qualifier}
+        onChange={setQualifier}
+        locale="es"
+        idPrefix="es-access"
+        hide={{ site_url: true }}
+      />
 
       {errorMsg && (
         <p className="text-[13px] text-red-alert leading-[1.5]" role="alert">
