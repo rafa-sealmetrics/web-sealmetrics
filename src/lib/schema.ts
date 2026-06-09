@@ -6,6 +6,17 @@ const BLOG_MODIFIED: Record<string, string> = blogModifiedRaw;
 const SITE_URL = "https://sealmetrics.com";
 const ORG_NAME = "SealMetrics";
 
+/**
+ * Build an absolute page URL with a trailing slash so JSON-LD page URLs match
+ * the site's rendered canonicals (Next.js `trailingSlash: true` appends "/" to
+ * every canonical, e.g. `/security` → `/security/`). Use ONLY for page/document
+ * URLs — never for assets (images), external links, or `#fragment` @ids.
+ */
+function pageHref(path = ""): string {
+  const clean = path.replace(/\/+$/, "");
+  return clean === "" ? `${SITE_URL}/` : `${SITE_URL}${clean}/`;
+}
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -14,7 +25,7 @@ export function organizationSchema() {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
         name: ORG_NAME,
-        url: SITE_URL,
+        url: pageHref(),
         logo: {
           "@type": "ImageObject",
           url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
@@ -29,7 +40,7 @@ export function organizationSchema() {
             "@type": "Person",
             name: "Rafa Jimenez",
             jobTitle: "Founder",
-            url: `${SITE_URL}/about`,
+            url: pageHref("/about"),
           },
         ],
         address: { "@type": "PostalAddress", addressCountry: "ES" },
@@ -68,14 +79,14 @@ export function organizationSchema() {
           {
             "@type": "ContactPoint",
             contactType: "sales",
-            url: `${SITE_URL}/demo`,
+            url: pageHref("/demo"),
             availableLanguage: ["English", "Spanish"],
             areaServed: "EU",
           },
           {
             "@type": "ContactPoint",
             contactType: "technical support",
-            url: `${SITE_URL}/security`,
+            url: pageHref("/security"),
             availableLanguage: ["English", "Spanish"],
           },
         ],
@@ -84,7 +95,7 @@ export function organizationSchema() {
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
         name: ORG_NAME,
-        url: SITE_URL,
+        url: pageHref(),
         inLanguage: ["en", "es"],
         publisher: { "@id": `${SITE_URL}/#organization` },
       },
@@ -96,7 +107,7 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    ...(pageUrl ? { url: `${SITE_URL}${pageUrl}` } : {}),
+    ...(pageUrl ? { url: pageHref(pageUrl) } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -115,7 +126,7 @@ export function breadcrumbSchema(
       ? "es"
       : "en");
   const rootLabel = inferredLocale === "es" ? "Inicio" : "Home";
-  const rootUrl = inferredLocale === "es" ? `${SITE_URL}/es` : SITE_URL;
+  const rootUrl = inferredLocale === "es" ? pageHref("/es") : pageHref();
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -125,7 +136,7 @@ export function breadcrumbSchema(
         "@type": "ListItem",
         position: i + 2,
         name: item.name,
-        item: `${SITE_URL}${item.url}`,
+        item: pageHref(item.url),
       })),
     ],
   };
@@ -144,7 +155,7 @@ export function verticalSoftwareApplicationSchema(props: {
     applicationCategory: "AnalyticsApplication",
     applicationSubCategory: `Analytics for ${props.vertical}`,
     operatingSystem: "Web",
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     description: props.description,
     audience: {
@@ -155,7 +166,7 @@ export function verticalSoftwareApplicationSchema(props: {
     provider: {
       "@type": "Organization",
       name: ORG_NAME,
-      url: SITE_URL,
+      url: pageHref(),
     },
     featureList: [
       `Cookieless analytics for ${props.vertical}`,
@@ -174,7 +185,7 @@ export function softwareApplicationSchema() {
     name: ORG_NAME,
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
-    url: SITE_URL,
+    url: pageHref(),
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     description:
       "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
@@ -189,7 +200,7 @@ export function softwareApplicationSchema() {
     provider: {
       "@type": "Organization",
       name: ORG_NAME,
-      url: SITE_URL,
+      url: pageHref(),
     },
   };
 }
@@ -214,10 +225,10 @@ export function articleSchema(props: {
     description: props.description,
     datePublished: props.datePublished,
     dateModified: props.dateModified || autoModified || props.datePublished,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}${props.url}`,
+      "@id": pageHref(props.url),
     },
     image: props.image || autoBlogOg || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     author: props.author
@@ -225,7 +236,7 @@ export function articleSchema(props: {
           "@type": "Person",
           name: props.author.name,
           ...(props.author.url
-            ? { url: `${SITE_URL}${props.author.url}` }
+            ? { url: pageHref(props.author.url) }
             : {}),
           ...(props.author.jobTitle
             ? { jobTitle: props.author.jobTitle }
@@ -233,7 +244,7 @@ export function articleSchema(props: {
           ...(props.author.name.toLowerCase().includes("rafa")
             ? {
                 sameAs: ["https://www.linkedin.com/in/rafajimenez/"],
-                worksFor: { "@type": "Organization", name: ORG_NAME, url: SITE_URL },
+                worksFor: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
               }
             : {}),
         }
@@ -261,18 +272,18 @@ export function definedTermSchema(props: {
     "@type": "DefinedTerm",
     name: props.name,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
       name: "Web Analytics Glossary",
-      url: `${SITE_URL}/glossary`,
+      url: pageHref("/glossary"),
     },
     ...(props.related?.length
       ? {
           subjectOf: props.related.map((r) => ({
             "@type": "DefinedTerm",
             name: r.name,
-            url: `${SITE_URL}${r.url}`,
+            url: pageHref(r.url),
           })),
         }
       : {}),
@@ -295,7 +306,7 @@ export function comparisonPageSchema(props: {
     "@type": "WebPage",
     name: props.name,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     ...(props.datePublished ? { datePublished: props.datePublished } : {}),
     ...(props.dateModified ? { dateModified: props.dateModified } : {}),
     ...(props.author
@@ -303,12 +314,12 @@ export function comparisonPageSchema(props: {
           author: {
             "@type": "Person",
             name: props.author.name,
-            url: `${SITE_URL}${props.author.url}`,
+            url: pageHref(props.author.url),
           },
           reviewedBy: {
             "@type": "Person",
             name: props.author.name,
-            url: `${SITE_URL}${props.author.url}`,
+            url: pageHref(props.author.url),
           },
         }
       : {}),
@@ -317,7 +328,7 @@ export function comparisonPageSchema(props: {
         "@type": "SoftwareApplication",
         name: ORG_NAME,
         applicationCategory: "AnalyticsApplication",
-        url: SITE_URL,
+        url: pageHref(),
       },
       ...(props.competitor
         ? [
@@ -358,7 +369,7 @@ export function collectionPageSchema(props: {
     "@type": "CollectionPage",
     name: props.name,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
   };
 }
 
@@ -371,7 +382,7 @@ export function speakableWebPageSchema(props: {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: props.name,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: props.selectors ?? [
@@ -394,7 +405,7 @@ export function itemListSchema(props: {
     "@type": "ItemList",
     name: props.name,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     numberOfItems: props.items.length,
     itemListElement: props.items.map((item, i) => ({
       "@type": "ListItem",
@@ -441,7 +452,7 @@ export function pricingSchema(
         priceValidUntil: "2026-12-31",
         availability: "https://schema.org/InStock",
         description: plan.description,
-        url: `${SITE_URL}${path}`,
+        url: pageHref(path),
         category: "SaaS / Analytics",
         eligibleRegion: [
           { "@type": "Place", name: "European Union" },
@@ -458,7 +469,7 @@ export function pricingSchema(
         seller: {
           "@type": "Organization",
           name: ORG_NAME,
-          url: SITE_URL,
+          url: pageHref(),
         },
       })),
     },
@@ -476,14 +487,14 @@ export function servicePageSchema(props: {
     "@type": "WebPage",
     name: props.name,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     ...(props.audience
       ? { audience: { "@type": "Audience", audienceType: props.audience } }
       : {}),
     provider: {
       "@type": "Organization",
       name: ORG_NAME,
-      url: SITE_URL,
+      url: pageHref(),
     },
   };
 }
@@ -509,14 +520,14 @@ export function statisticClaimSchema(props: {
     "@type": "CreativeWork",
     name: props.text,
     text: props.text,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     isBasedOn: {
       "@type": "CreativeWork",
       name: props.source,
       author: { "@type": "Organization", name: props.sourceAuthor },
       datePublished: props.sourceDate,
     },
-    publisher: { "@type": "Organization", name: ORG_NAME, url: SITE_URL },
+    publisher: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
     ...(props.numericValue !== undefined
       ? {
           mainEntity: {
@@ -549,7 +560,7 @@ export function reviewSchema(props: {
       "@type": "SoftwareApplication",
       name: ORG_NAME,
       applicationCategory: "AnalyticsApplication",
-      url: SITE_URL,
+      url: pageHref(),
     },
     ...(props.datePublished ? { datePublished: props.datePublished } : {}),
     reviewRating: {
@@ -577,10 +588,10 @@ export function quotationSchema(props: {
       name: props.spokenBy,
       ...(props.spokenByRole ? { jobTitle: props.spokenByRole } : {}),
     },
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     citation: {
       "@type": "CreativeWork",
-      author: { "@type": "Organization", name: ORG_NAME, url: SITE_URL },
+      author: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
     },
   };
 }
@@ -609,11 +620,11 @@ export function videoObjectSchema(props: {
     ...(props.embedUrl ? { embedUrl: props.embedUrl } : {}),
     ...(props.contentUrl ? { contentUrl: props.contentUrl } : {}),
     ...(props.inLanguage ? { inLanguage: props.inLanguage } : {}),
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     publisher: {
       "@type": "Organization",
       name: ORG_NAME,
-      url: SITE_URL,
+      url: pageHref(),
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
@@ -646,11 +657,11 @@ export function casePersonSchema(props: {
       name: props.worksForName,
       url: props.worksForUrl,
     },
-    url: `${SITE_URL}${props.caseUrl}`,
+    url: pageHref(props.caseUrl),
     subjectOf: {
       "@type": "CreativeWork",
       name: props.caseName,
-      url: `${SITE_URL}${props.caseUrl}`,
+      url: pageHref(props.caseUrl),
     },
   };
 }
@@ -671,7 +682,7 @@ export function personSchema(props: {
     name: props.name,
     jobTitle: props.jobTitle,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     ...(props.image ? { image: `${SITE_URL}${props.image}` } : {}),
     ...(props.knowsAbout ? { knowsAbout: props.knowsAbout } : {}),
     ...(props.sameAs ? { sameAs: props.sameAs } : {}),
@@ -686,7 +697,7 @@ export function personSchema(props: {
     worksFor: {
       "@type": "Organization",
       name: ORG_NAME,
-      url: SITE_URL,
+      url: pageHref(),
     },
   };
 }
@@ -701,13 +712,13 @@ export function webApplicationSchema(props: {
     "@type": "WebApplication",
     name: props.name,
     description: props.description,
-    url: `${SITE_URL}${props.url}`,
+    url: pageHref(props.url),
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
     provider: {
       "@type": "Organization",
       name: ORG_NAME,
-      url: SITE_URL,
+      url: pageHref(),
     },
     offers: {
       "@type": "Offer",
