@@ -53,6 +53,7 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.avif", type: "image/avif" },
       { url: "/favicon.webp", type: "image/webp" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
     ],
     apple: [
       { url: "/favicon.webp", sizes: "180x180", type: "image/webp" },

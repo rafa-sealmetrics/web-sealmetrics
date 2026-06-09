@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
+    languages: getAlternates("/blog/consent-banner-impact-on-analytics"),
     canonical:
       "https://sealmetrics.com/blog/consent-banner-impact-on-analytics",
   },
