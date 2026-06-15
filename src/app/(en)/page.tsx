@@ -111,6 +111,44 @@ export default function Home() {
               Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
             </p>
           </QuickAnswer>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm text-gray-700">
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2">What is consentless analytics?</h2>
+              <p>
+                Consentless analytics means tracking visitor behaviour without setting cookies or storing personal data. Because no personal data is processed, EU privacy law does not require a consent banner. Every session — including those from visitors who would have rejected cookies — is counted, giving you a complete, unsampled view of your traffic and conversions.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2">Why GA4 underreports in Europe</h2>
+              <p>
+                Google Analytics 4 relies on first-party cookies and, under GDPR, requires explicit consent before firing. Studies show 40–60% of European visitors decline or ignore consent banners. That means GA4 is blind to nearly half your audience. Budget decisions made on that partial data systematically over-invest in channels that happen to attract cookie-accepting users and under-invest in the rest.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2">How channel attribution works without cookies</h2>
+              <p>
+                SealMetrics reads UTM parameters and HTTP referrer headers at the moment of each request — no cookie is needed to carry that information across sessions. Combined with server-side event collection, this produces last-click attribution at the channel and campaign level that is consistent, reproducible and auditable, unlike probabilistic models or Google's Consent Mode data-fill estimations.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2">GDPR, ePrivacy and Schrems II compliance</h2>
+              <p>
+                Because SealMetrics does not set cookies and does not transfer personal data outside the EU, it falls outside the scope of the ePrivacy Directive's consent requirement and eliminates the Schrems II risk that comes with sending IP addresses and identifiers to US-based servers. Your legal team can verify compliance without a Data Transfer Impact Assessment.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2">Integrations and data portability</h2>
+              <p>
+                SealMetrics connects to Google Ads, Meta Ads, Microsoft Ads, Shopify and major ESPs via native integrations. Raw event data is exportable to BigQuery or via REST API so your data warehouse team can join SealMetrics revenue data with CRM, inventory and finance tables without vendor lock-in.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-semibold text-gray-900 mb-2">Implementation and onboarding</h2>
+              <p>
+                Installation is a single JavaScript snippet or a server-side tag in Google Tag Manager. The first events appear within minutes. SealMetrics engineers configure conversion goals, funnel steps and custom dimensions during a guided onboarding session in the first week. There is no need to remove GA4 — both tools run in parallel until your team is confident in the data.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <StickyCtaBar locale="en" />
