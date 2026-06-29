@@ -42,7 +42,7 @@ const faqsForSchema = [
   { question: "¿Qué pasa si supero mi límite de eventos?", answer: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos. Si superas 2+ meses seguidos, el plan se actualiza en el siguiente ciclo. Un mes de exceso al año es gratis." },
   { question: "¿Hay prueba gratuita?", answer: "Sí. Cada plan incluye 14 días gratis con acceso completo." },
   { question: "¿Todas las features están incluidas en cada plan?", answer: "Analítica core, tracking de conversiones, monitoring, API, MCP Server y export BigQuery están incluidos desde Growth. LENS AI y Agent Analytics son features premium disponibles en Scale+." },
-  { question: "¿Qué es el Agentic Package?", answer: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA (Claude Desktop, Codex o cualquier agente compatible con MCP). Tu agente crea la cuenta y genera el píxel — la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes, self-serve con solo documentación. Al superar 1M, se activa el plan Growth." },
+  { question: "¿Qué es el Agentic Package?", answer: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA (Claude Desktop, Codex o cualquier agente compatible con MCP). Tu agente crea la cuenta y genera el píxel — la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos en total (no al mes — un cupo único), self-serve con solo documentación. Al superar 1M, se activa el plan Growth." },
 ];
 
 export default function PricingPageEs() {
@@ -50,7 +50,7 @@ export default function PricingPageEs() {
     <>
       <Breadcrumbs items={[{ label: "Precios" }]} locale="es" />
       <JsonLd data={pricingSchema([
-        { name: "Agentic", price: "0", description: "1M eventos humanos/mes · gratis · configurado desde tu asistente de IA" },
+        { name: "Agentic", price: "0", description: "1M eventos humanos en total · gratis · configurado desde tu asistente de IA" },
         { name: "Growth", price: "499", description: "5M eventos humanos/mes · anual" },
         { name: "Scale", price: "899", description: "15M eventos humanos/mes · anual" },
       ], { locale: "es" })} />

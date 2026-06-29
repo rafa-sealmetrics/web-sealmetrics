@@ -14,7 +14,7 @@ const BAND_COPY = {
     tagline:
       "Created by your AI assistant. Set up SealMetrics directly from Claude or Codex — no sales, no setup call.",
     price: "Free",
-    priceSub: "Up to 1M human events / mo",
+    priceSub: "Up to 1M human events total",
     priceNote: "Then the Growth plan activates",
     bullets: [
       "Full dashboard, pixels & MCP",
@@ -30,7 +30,7 @@ const BAND_COPY = {
     tagline:
       "Creado por tu asistente de IA. Configura SealMetrics directamente desde Claude o Codex — sin ventas, sin llamada de setup.",
     price: "Gratis",
-    priceSub: "Hasta 1M de eventos humanos / mes",
+    priceSub: "Hasta 1M de eventos humanos en total",
     priceNote: "Después se activa el plan Growth",
     bullets: [
       "Dashboard, píxeles y MCP completos",
@@ -156,7 +156,7 @@ const SETUP_COPY = {
         p: "Drop the pixel on your site (or let your agent do it). Your dashboard fills with 100% cookieless data within minutes.",
       },
     ],
-    note: "Self-serve · docs only · free up to 1M human events",
+    note: "Self-serve · docs only · free up to 1M human events total",
   },
   es: {
     eyebrow: "Setup agentic",
@@ -180,7 +180,7 @@ const SETUP_COPY = {
         p: "Coloca el píxel en tu web (o deja que lo haga tu agente). Tu dashboard se llena de datos 100% sin cookies en minutos.",
       },
     ],
-    note: "Self-serve · solo docs · gratis hasta 1M de eventos humanos",
+    note: "Self-serve · solo docs · gratis hasta 1M de eventos humanos en total",
   },
 } as const;
 
