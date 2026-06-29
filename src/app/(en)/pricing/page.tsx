@@ -59,8 +59,8 @@ export default function PricingPage() {
       <PricingHeroV3 />
       <LogosStrip />
       <PricingPlansV3 locale="en" />
-      <AgenticSetupSteps locale="en" />
       <McpInstaller locale="en" />
+      <AgenticSetupSteps locale="en" />
       <PlanIncludesV3 />
       <TrafficCountingV3 />
       <PlanAdaptsV3 />

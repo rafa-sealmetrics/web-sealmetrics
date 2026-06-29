@@ -189,10 +189,7 @@ export function AgenticSetupSteps({ locale = "en" }: { locale?: Locale }) {
   const t = SETUP_COPY[locale];
 
   return (
-    <section
-      id="agentic-setup"
-      className="py-24 bg-white border-t border-warm-100 scroll-mt-24"
-    >
+    <section className="py-24 bg-white border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
           <div>
