@@ -15,11 +15,13 @@ import {
   PricingFinalCtaV3,
 } from "@/components/sections/v3/PricingV3Sections";
 import { PricingFaqV3 } from "@/components/sections/v3/PricingFaqV3";
+import { AgenticSetupSteps } from "@/components/sections/v3/AgenticPlanV3";
+import { McpInstaller } from "@/components/sections/v3/McpInstaller";
 
 export const metadata: Metadata = {
   title: "SealMetrics Pricing — Pay for humans, not bots",
   description:
-    "Complete analytics from €499/mo annual. Every feature in every plan. AI agents free. You only pay more if you grow. 14-day free trial.",
+    "Free Agentic tier up to 1M events, set up from your AI assistant. Paid plans from €499/mo annual — every feature, every plan. You only pay more if you grow.",
   openGraph: {
     title: "SealMetrics Pricing — Pay for humans, not bots",
     description:
@@ -39,6 +41,7 @@ const faqsForSchema = [
   { question: "What happens if I exceed my event limit?", answer: "Your tracking never stops. We never block, throttle or sample your data. If you exceed for 2+ consecutive months, your plan auto-upgrades at your next billing cycle. One overage month per year is free." },
   { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features." },
   { question: "Are all features included in every plan?", answer: "Core analytics, conversion tracking, monitoring, API, MCP Server and BigQuery export are included from Growth up. LENS AI and Agent Analytics are premium features available on Scale+. Plan differences are event volume, governance, support and the premium AI capabilities." },
+  { question: "What is the Agentic Package?", answer: "A free SealMetrics tier set up directly from your AI assistant (Claude Desktop, Codex or any MCP-capable agent). Your agent creates the account and generates the pixel — same complete cookieless analytics as Growth, free up to 1M human events per month, self-serve with documentation only. Above 1M events the Growth plan activates." },
 ];
 
 export default function PricingPage() {
@@ -46,6 +49,7 @@ export default function PricingPage() {
     <>
       <Breadcrumbs items={[{ label: "Pricing" }]} />
       <JsonLd data={pricingSchema([
+        { name: "Agentic", price: "0", description: "1M human events/mo · free · set up from your AI assistant" },
         { name: "Growth", price: "499", description: "5M human events/mo · annual billing" },
         { name: "Scale", price: "899", description: "15M human events/mo · annual billing" },
       ])} />
@@ -55,6 +59,8 @@ export default function PricingPage() {
       <PricingHeroV3 />
       <LogosStrip />
       <PricingPlansV3 locale="en" />
+      <AgenticSetupSteps locale="en" />
+      <McpInstaller locale="en" />
       <PlanIncludesV3 />
       <TrafficCountingV3 />
       <PlanAdaptsV3 />

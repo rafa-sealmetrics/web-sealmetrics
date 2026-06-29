@@ -72,6 +72,11 @@ export function PlanIncludesV3() {
 
   const differentiators = [
     {
+      from: "Agentic",
+      to: "Growth",
+      diff: "5M events · email & chat support · guided onboarding · billing dashboard — same complete data, no LLM required",
+    },
+    {
       from: "Growth",
       to: "Scale",
       diff: "15M events · LENS AI forecasting · Agent AI Analytics · Webhooks · Guided onboarding · Priority support",
@@ -264,6 +269,7 @@ export function PlanAdaptsV3() {
    ============================================ */
 interface ComparisonRow {
   feature: string;
+  agentic: string | boolean;
   growth: string | boolean;
   scale: string | boolean;
   enterprise: string | boolean;
@@ -277,87 +283,87 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Analytics core",
     rows: [
-      { feature: "Consentless tracking (GDPR)", growth: true, scale: true, enterprise: true },
-      { feature: "Real-time data (<2 min)", growth: true, scale: true, enterprise: true },
-      { feature: "Pageview & session tracking", growth: true, scale: true, enterprise: true },
-      { feature: "UTM & channel attribution", growth: true, scale: true, enterprise: true },
-      { feature: "Device & geo analytics", growth: true, scale: true, enterprise: true },
-      { feature: "Funnel analysis", growth: true, scale: true, enterprise: true },
-      { feature: "Data freshness", growth: "Before 6 AM daily", scale: "SLA 99.5%", enterprise: "Custom SLA" },
+      { feature: "Consentless tracking (GDPR)", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Real-time data (<2 min)", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Pageview & session tracking", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "UTM & channel attribution", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Device & geo analytics", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Funnel analysis", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Data freshness", agentic: "Before 6 AM daily", growth: "Before 6 AM daily", scale: "SLA 99.5%", enterprise: "Custom SLA" },
     ],
   },
   {
     category: "Agent analytics (coming soon)",
     rows: [
-      { feature: "AI agent detection", growth: false, scale: "Coming soon", enterprise: "Coming soon" },
-      { feature: "Agent scoring (300+ signals)", growth: false, scale: "Coming soon", enterprise: "Coming soon" },
-      { feature: "HTTP signatures (RFC 9421)", growth: false, scale: "Coming soon", enterprise: "Coming soon" },
-      { feature: "Provider detection (OpenAI, Anthropic…)", growth: false, scale: "Coming soon", enterprise: "Coming soon" },
+      { feature: "AI agent detection", agentic: false, growth: false, scale: "Coming soon", enterprise: "Coming soon" },
+      { feature: "Agent scoring (300+ signals)", agentic: false, growth: false, scale: "Coming soon", enterprise: "Coming soon" },
+      { feature: "HTTP signatures (RFC 9421)", agentic: false, growth: false, scale: "Coming soon", enterprise: "Coming soon" },
+      { feature: "Provider detection (OpenAI, Anthropic…)", agentic: false, growth: false, scale: "Coming soon", enterprise: "Coming soon" },
     ],
   },
   {
     category: "eCommerce",
     rows: [
-      { feature: "Conversion tracking", growth: true, scale: true, enterprise: true },
-      { feature: "Microconversion tracking", growth: true, scale: true, enterprise: true },
-      { feature: "Conversion properties", growth: true, scale: true, enterprise: true },
-      { feature: "Revenue attribution", growth: true, scale: true, enterprise: true },
+      { feature: "Conversion tracking", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Microconversion tracking", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Conversion properties", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Revenue attribution", agentic: true, growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "LENS AI (premium · Scale+)",
     rows: [
-      { feature: "Forecasting & prediction", growth: false, scale: true, enterprise: true },
-      { feature: "Anomaly detection", growth: false, scale: true, enterprise: true },
-      { feature: "Growth opportunities", growth: false, scale: true, enterprise: true },
-      { feature: "Weekly & monthly reporting", growth: false, scale: true, enterprise: true },
+      { feature: "Forecasting & prediction", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Anomaly detection", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Growth opportunities", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Weekly & monthly reporting", agentic: false, growth: false, scale: true, enterprise: true },
     ],
   },
   {
     category: "Monitoring & alerts",
     rows: [
-      { feature: "Critical alerts", growth: true, scale: true, enterprise: true },
-      { feature: "Business monitoring", growth: true, scale: true, enterprise: true },
-      { feature: "Risk management", growth: true, scale: true, enterprise: true },
-      { feature: "Custom alerts", growth: true, scale: true, enterprise: true },
+      { feature: "Critical alerts", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Business monitoring", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Risk management", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Custom alerts", agentic: true, growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "Data & API",
     rows: [
-      { feature: "Full API access", growth: true, scale: true, enterprise: true },
-      { feature: "MCP server", growth: true, scale: true, enterprise: true },
-      { feature: "CSV / JSON export", growth: true, scale: true, enterprise: true },
-      { feature: "BigQuery export", growth: true, scale: true, enterprise: true },
-      { feature: "Webhooks", growth: false, scale: true, enterprise: true },
+      { feature: "Full API access", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "MCP server", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "CSV / JSON export", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "BigQuery export", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Webhooks", agentic: false, growth: false, scale: true, enterprise: true },
     ],
   },
   {
     category: "Governance",
     rows: [
-      { feature: "Role-based access (RBAC)", growth: "Basic", scale: "Advanced", enterprise: "Full" },
-      { feature: "SSO / SAML", growth: false, scale: false, enterprise: true },
-      { feature: "Isolated processing", growth: false, scale: false, enterprise: true },
+      { feature: "Role-based access (RBAC)", agentic: "Basic", growth: "Basic", scale: "Advanced", enterprise: "Full" },
+      { feature: "SSO / SAML", agentic: false, growth: false, scale: false, enterprise: true },
+      { feature: "Isolated processing", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },
   {
     category: "Support",
     rows: [
-      { feature: "Email support", growth: true, scale: true, enterprise: true },
-      { feature: "Chat support", growth: true, scale: true, enterprise: true },
-      { feature: "Priority support", growth: false, scale: true, enterprise: true },
-      { feature: "Dedicated account manager", growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", growth: "Docs + videos", scale: "1 session", enterprise: "White-glove" },
-      { feature: "SLA", growth: "99%", scale: "99.5%", enterprise: "99.9%" },
+      { feature: "Email support", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Chat support", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Priority support", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Dedicated account manager", agentic: false, growth: false, scale: false, enterprise: true },
+      { feature: "Onboarding", agentic: "Docs only", growth: "Docs + videos", scale: "1 session", enterprise: "White-glove" },
+      { feature: "SLA", agentic: "—", growth: "99%", scale: "99.5%", enterprise: "99.9%" },
     ],
   },
   {
     category: "Infrastructure",
     rows: [
-      { feature: "Human events / month", growth: "5M", scale: "15M", enterprise: "Unlimited" },
-      { feature: "Websites", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
-      { feature: "Users", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
-      { feature: "Data retention", growth: "24 months", scale: "24 months", enterprise: "Custom" },
+      { feature: "Human events / month", agentic: "1M · free", growth: "5M", scale: "15M", enterprise: "Unlimited" },
+      { feature: "Websites", agentic: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
+      { feature: "Users & accounts", agentic: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
+      { feature: "Data retention", agentic: "24 months", growth: "24 months", scale: "24 months", enterprise: "Custom" },
     ],
   },
 ];
@@ -398,8 +404,12 @@ export function FullComparisonV3() {
         </div>
 
         <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
-          <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-bold">
+          <div className="grid grid-cols-[1.6fr_0.9fr_0.9fr_0.9fr_0.9fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-bold">
             <div className="p-5">Feature</div>
+            <div className="p-5 text-center text-ink">
+              Agentic
+              <span className="block text-[9px] text-brand tracking-[0.06em]">Free</span>
+            </div>
             <div className="p-5 text-center">Growth</div>
             <div
               className="p-5 text-center text-ink"
@@ -421,12 +431,15 @@ export function FullComparisonV3() {
                 return (
                   <div
                     key={row.feature}
-                    className={`grid grid-cols-[1.6fr_1fr_1fr_1fr] items-center ${
+                    className={`grid grid-cols-[1.6fr_0.9fr_0.9fr_0.9fr_0.9fr] items-center ${
                       isLast ? "" : "border-b border-warm-100"
                     }`}
                   >
                     <div className="p-4 md:p-5 text-[14px] text-ink-2 leading-[1.4]">
                       {row.feature}
+                    </div>
+                    <div className="p-4 md:p-5 text-center">
+                      <Cell value={row.agentic} />
                     </div>
                     <div className="p-4 md:p-5 text-center">
                       <Cell value={row.growth} />

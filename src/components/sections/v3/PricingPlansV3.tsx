@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { PRICING, fmtPrice, annualTotal } from "@/lib/content/pricing";
+import { AgenticPlanBand } from "@/components/sections/v3/AgenticPlanV3";
 
 type Locale = "en" | "es";
 
@@ -178,6 +179,9 @@ export function PricingPlansV3({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <section className="py-20 bg-white border-t border-warm-100">
+      {/* Free, LLM-provisioned entry tier */}
+      <AgenticPlanBand locale={locale} />
+
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         {/* Billing toggle */}
         <div className="flex justify-center mb-14">
