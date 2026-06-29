@@ -342,7 +342,10 @@ export function McpInstaller({ locale = "en" }: { locale?: Locale }) {
   const tab = t.tabs.find((x) => x.id === active) ?? t.tabs[0];
 
   return (
-    <section className="py-24 bg-warm-white border-t border-warm-100">
+    <section
+      id="agentic-setup"
+      className="py-24 bg-warm-white border-t border-warm-100 scroll-mt-24"
+    >
       <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
         <div className="max-w-[44rem] mb-10">
           <span className="eyebrow mb-5">{t.eyebrow}</span>

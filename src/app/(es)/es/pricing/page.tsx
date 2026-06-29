@@ -59,8 +59,8 @@ export default function PricingPageEs() {
       <PricingHeroV3Es />
       <LogosStripEs />
       <PricingPlansV3 locale="es" />
-      <AgenticSetupSteps locale="es" />
       <McpInstaller locale="es" />
+      <AgenticSetupSteps locale="es" />
       <PlanIncludesV3Es />
       <TrafficCountingV3Es />
       <PlanAdaptsV3Es />
