@@ -54,6 +54,7 @@ export function PlanIncludesV3Es() {
     "Datos frescos antes de las 6 AM",
   ];
   const diffs = [
+    { from: "Agentic", to: "Growth", diff: "5M eventos · soporte email y chat · onboarding guiado · panel de facturación — los mismos datos completos, sin necesidad de LLM" },
     { from: "Growth", to: "Scale", diff: "15M eventos · LENS AI forecasting · Agent AI Analytics · Webhooks · Onboarding guiado · Soporte prioritario" },
     { from: "Scale", to: "Enterprise", diff: "Eventos ilimitados · SSO / SAML · Account manager · Procesamiento aislado · SLA personalizado" },
   ];
@@ -204,94 +205,94 @@ export function PlanAdaptsV3Es() {
 }
 
 /* FULL COMPARISON · ES */
-interface ComparisonRow { feature: string; growth: string | boolean; scale: string | boolean; enterprise: string | boolean; }
+interface ComparisonRow { feature: string; agentic: string | boolean; growth: string | boolean; scale: string | boolean; enterprise: string | boolean; }
 interface ComparisonSection { category: string; rows: ComparisonRow[]; }
 
 const comparisonDataEs: ComparisonSection[] = [
   {
     category: "Analítica core",
     rows: [
-      { feature: "Tracking sin consentimiento (RGPD)", growth: true, scale: true, enterprise: true },
-      { feature: "Datos en tiempo real (<2 min)", growth: true, scale: true, enterprise: true },
-      { feature: "Páginas vistas y sesiones", growth: true, scale: true, enterprise: true },
-      { feature: "Atribución UTM y canal", growth: true, scale: true, enterprise: true },
-      { feature: "Analítica por dispositivo y geo", growth: true, scale: true, enterprise: true },
-      { feature: "Análisis de embudos", growth: true, scale: true, enterprise: true },
-      { feature: "Frescura de datos", growth: "Antes 6 AM diario", scale: "SLA 99,5%", enterprise: "SLA personalizado" },
+      { feature: "Tracking sin consentimiento (RGPD)", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Datos en tiempo real (<2 min)", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Páginas vistas y sesiones", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Atribución UTM y canal", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Analítica por dispositivo y geo", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Análisis de embudos", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Frescura de datos", agentic: "Antes 6 AM diario", growth: "Antes 6 AM diario", scale: "SLA 99,5%", enterprise: "SLA personalizado" },
     ],
   },
   {
     category: "Agent Analytics (próximamente)",
     rows: [
-      { feature: "Detección de agentes IA", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
-      { feature: "Scoring de agentes (300+ señales)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
-      { feature: "HTTP signatures (RFC 9421)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
-      { feature: "Detección de proveedor (OpenAI, Anthropic…)", growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "Detección de agentes IA", agentic: false, growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "Scoring de agentes (300+ señales)", agentic: false, growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "HTTP signatures (RFC 9421)", agentic: false, growth: false, scale: "Próximamente", enterprise: "Próximamente" },
+      { feature: "Detección de proveedor (OpenAI, Anthropic…)", agentic: false, growth: false, scale: "Próximamente", enterprise: "Próximamente" },
     ],
   },
   {
     category: "eCommerce",
     rows: [
-      { feature: "Tracking de conversiones", growth: true, scale: true, enterprise: true },
-      { feature: "Tracking de microconversiones", growth: true, scale: true, enterprise: true },
-      { feature: "Propiedades de conversión", growth: true, scale: true, enterprise: true },
-      { feature: "Atribución de ingresos", growth: true, scale: true, enterprise: true },
+      { feature: "Tracking de conversiones", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Tracking de microconversiones", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Propiedades de conversión", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Atribución de ingresos", agentic: true, growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "LENS AI (premium · Scale+)",
     rows: [
-      { feature: "Forecasting y predicción", growth: false, scale: true, enterprise: true },
-      { feature: "Detección de anomalías", growth: false, scale: true, enterprise: true },
-      { feature: "Oportunidades de crecimiento", growth: false, scale: true, enterprise: true },
-      { feature: "Reporting semanal y mensual", growth: false, scale: true, enterprise: true },
+      { feature: "Forecasting y predicción", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Detección de anomalías", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Oportunidades de crecimiento", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Reporting semanal y mensual", agentic: false, growth: false, scale: true, enterprise: true },
     ],
   },
   {
     category: "Monitoring & alertas",
     rows: [
-      { feature: "Alertas críticas", growth: true, scale: true, enterprise: true },
-      { feature: "Monitoring de negocio", growth: true, scale: true, enterprise: true },
-      { feature: "Gestión de riesgo", growth: true, scale: true, enterprise: true },
-      { feature: "Alertas personalizadas", growth: true, scale: true, enterprise: true },
+      { feature: "Alertas críticas", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Monitoring de negocio", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Gestión de riesgo", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Alertas personalizadas", agentic: true, growth: true, scale: true, enterprise: true },
     ],
   },
   {
     category: "Datos & API",
     rows: [
-      { feature: "Acceso API completo", growth: true, scale: true, enterprise: true },
-      { feature: "MCP server", growth: true, scale: true, enterprise: true },
-      { feature: "Export CSV / JSON", growth: true, scale: true, enterprise: true },
-      { feature: "Export BigQuery", growth: true, scale: true, enterprise: true },
-      { feature: "Webhooks", growth: false, scale: true, enterprise: true },
+      { feature: "Acceso API completo", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "MCP server", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Export CSV / JSON", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Export BigQuery", agentic: true, growth: true, scale: true, enterprise: true },
+      { feature: "Webhooks", agentic: false, growth: false, scale: true, enterprise: true },
     ],
   },
   {
     category: "Governance",
     rows: [
-      { feature: "Control de acceso por rol (RBAC)", growth: "Básico", scale: "Avanzado", enterprise: "Completo" },
-      { feature: "SSO / SAML", growth: false, scale: false, enterprise: true },
-      { feature: "Procesamiento aislado", growth: false, scale: false, enterprise: true },
+      { feature: "Control de acceso por rol (RBAC)", agentic: "Básico", growth: "Básico", scale: "Avanzado", enterprise: "Completo" },
+      { feature: "SSO / SAML", agentic: false, growth: false, scale: false, enterprise: true },
+      { feature: "Procesamiento aislado", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },
   {
     category: "Soporte",
     rows: [
-      { feature: "Soporte email", growth: true, scale: true, enterprise: true },
-      { feature: "Soporte chat", growth: true, scale: true, enterprise: true },
-      { feature: "Soporte prioritario", growth: false, scale: true, enterprise: true },
-      { feature: "Account manager dedicado", growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", growth: "Docs + vídeos", scale: "1 sesión", enterprise: "White-glove" },
-      { feature: "SLA", growth: "99%", scale: "99,5%", enterprise: "99,9%" },
+      { feature: "Soporte email", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Soporte chat", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Soporte prioritario", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Account manager dedicado", agentic: false, growth: false, scale: false, enterprise: true },
+      { feature: "Onboarding", agentic: "Solo docs", growth: "Docs + vídeos", scale: "1 sesión", enterprise: "White-glove" },
+      { feature: "SLA", agentic: "—", growth: "99%", scale: "99,5%", enterprise: "99,9%" },
     ],
   },
   {
     category: "Infraestructura",
     rows: [
-      { feature: "Eventos humanos / mes", growth: "5M", scale: "15M", enterprise: "Ilimitado" },
-      { feature: "Webs", growth: "Ilimitado", scale: "Ilimitado", enterprise: "Ilimitado" },
-      { feature: "Usuarios", growth: "Ilimitado", scale: "Ilimitado", enterprise: "Ilimitado" },
-      { feature: "Retención de datos", growth: "24 meses", scale: "24 meses", enterprise: "Personalizado" },
+      { feature: "Eventos humanos / mes", agentic: "1M · gratis", growth: "5M", scale: "15M", enterprise: "Ilimitado" },
+      { feature: "Webs", agentic: "Ilimitado", growth: "Ilimitado", scale: "Ilimitado", enterprise: "Ilimitado" },
+      { feature: "Usuarios y cuentas", agentic: "Ilimitado", growth: "Ilimitado", scale: "Ilimitado", enterprise: "Ilimitado" },
+      { feature: "Retención de datos", agentic: "24 meses", growth: "24 meses", scale: "24 meses", enterprise: "Personalizado" },
     ],
   },
 ];
@@ -321,8 +322,12 @@ export function FullComparisonV3Es() {
         </div>
 
         <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
-          <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-bold">
+          <div className="grid grid-cols-[1.6fr_0.9fr_0.9fr_0.9fr_0.9fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-bold">
             <div className="p-5">Feature</div>
+            <div className="p-5 text-center text-ink">
+              Agentic
+              <span className="block text-[9px] text-brand tracking-[0.06em]">Gratis</span>
+            </div>
             <div className="p-5 text-center">Growth</div>
             <div className="p-5 text-center text-ink" style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D", borderRight: "2px solid #2D8B6D" }}>
               Scale
@@ -337,8 +342,9 @@ export function FullComparisonV3Es() {
               {section.rows.map((row, i) => {
                 const isLast = i === section.rows.length - 1 && section === comparisonDataEs[comparisonDataEs.length - 1];
                 return (
-                  <div key={row.feature} className={`grid grid-cols-[1.6fr_1fr_1fr_1fr] items-center ${isLast ? "" : "border-b border-warm-100"}`}>
+                  <div key={row.feature} className={`grid grid-cols-[1.6fr_0.9fr_0.9fr_0.9fr_0.9fr] items-center ${isLast ? "" : "border-b border-warm-100"}`}>
                     <div className="p-4 md:p-5 text-[14px] text-ink-2 leading-[1.4]">{row.feature}</div>
+                    <div className="p-4 md:p-5 text-center"><CellEs value={row.agentic} /></div>
                     <div className="p-4 md:p-5 text-center"><CellEs value={row.growth} /></div>
                     <div className="p-4 md:p-5 text-center" style={{ background: "rgba(45,139,109,0.04)", borderLeft: "2px solid #2D8B6D", borderRight: "2px solid #2D8B6D" }}>
                       <CellEs value={row.scale} />

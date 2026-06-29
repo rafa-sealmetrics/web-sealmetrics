@@ -3,6 +3,7 @@ import Link from "next/link";
 import { HeroDashboard } from "./HeroDashboard";
 import { PRICING } from "@/lib/content/pricing";
 import { DualCTA } from "@/components/homepage/DualCTA";
+import { AgenticPlanBand } from "@/components/sections/v3/AgenticPlanV3";
 
 /* ============================================
    HERO · V3 centered with dashboard
@@ -1025,6 +1026,13 @@ export function PricingPLG({ locale = "en" }: { locale?: "en" | "es" }) {
             {c.lede}
           </p>
         </div>
+
+        {/* Free, LLM-provisioned entry tier */}
+        <AgenticPlanBand
+          locale={locale}
+          embedded
+          ctaHref={locale === "es" ? "/es/pricing#agentic-setup" : "/pricing#agentic-setup"}
+        />
 
         <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {plans.map((p) => (
