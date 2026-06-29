@@ -32,11 +32,11 @@ const ITEMS_EN = [
   },
   {
     q: "What is the Agentic Package?",
-    a: "A free SealMetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events per month. It's fully self-serve with documentation only — no email, chat or priority support. When you pass 1M events, the Growth plan activates.",
+    a: "A free SealMetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events in total — not per month. It's a one-time allowance: take a day, a month or a year to reach it. It's fully self-serve with documentation only — no email, chat or priority support. When you pass 1M events, the Growth plan activates.",
   },
   {
     q: "How do I create an account from an LLM?",
-    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel and content groups, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the 1M free limit is the total events across all your accounts.",
+    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel and content groups, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the 1M free limit is a one-time total (not monthly), counted across all your accounts.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -91,11 +91,11 @@ const ITEMS_ES = [
   },
   {
     q: "¿Qué es el Agentic Package?",
-    a: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes. Es totalmente self-serve con solo documentación — sin soporte email, chat ni prioritario. Al superar 1M de eventos, se activa el plan Growth.",
+    a: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos en total — no al mes. Es un cupo único: tarda un día, un mes o un año en alcanzarlo. Es totalmente self-serve con solo documentación — sin soporte email, chat ni prioritario. Al superar 1M de eventos, se activa el plan Growth.",
   },
   {
     q: "¿Cómo creo una cuenta desde un LLM?",
-    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking y los content groups, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el límite gratuito de 1M es el total de eventos de todas tus cuentas.",
+    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking y los content groups, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el límite gratuito de 1M es un total único (no mensual), contando todas tus cuentas.",
   },
   {
     q: "¿Puedo cambiar entre mensual y anual?",

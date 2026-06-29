@@ -41,7 +41,7 @@ const faqsForSchema = [
   { question: "What happens if I exceed my event limit?", answer: "Your tracking never stops. We never block, throttle or sample your data. If you exceed for 2+ consecutive months, your plan auto-upgrades at your next billing cycle. One overage month per year is free." },
   { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features." },
   { question: "Are all features included in every plan?", answer: "Core analytics, conversion tracking, monitoring, API, MCP Server and BigQuery export are included from Growth up. LENS AI and Agent Analytics are premium features available on Scale+. Plan differences are event volume, governance, support and the premium AI capabilities." },
-  { question: "What is the Agentic Package?", answer: "A free SealMetrics tier set up directly from your AI assistant (Claude Desktop, Codex or any MCP-capable agent). Your agent creates the account and generates the pixel — same complete cookieless analytics as Growth, free up to 1M human events per month, self-serve with documentation only. Above 1M events the Growth plan activates." },
+  { question: "What is the Agentic Package?", answer: "A free SealMetrics tier set up directly from your AI assistant (Claude Desktop, Codex or any MCP-capable agent). Your agent creates the account and generates the pixel — same complete cookieless analytics as Growth, free up to 1M human events in total (not per month — a one-time allowance), self-serve with documentation only. Above 1M events the Growth plan activates." },
 ];
 
 export default function PricingPage() {
@@ -49,7 +49,7 @@ export default function PricingPage() {
     <>
       <Breadcrumbs items={[{ label: "Pricing" }]} />
       <JsonLd data={pricingSchema([
-        { name: "Agentic", price: "0", description: "1M human events/mo · free · set up from your AI assistant" },
+        { name: "Agentic", price: "0", description: "1M human events total · free · set up from your AI assistant" },
         { name: "Growth", price: "499", description: "5M human events/mo · annual billing" },
         { name: "Scale", price: "899", description: "15M human events/mo · annual billing" },
       ])} />

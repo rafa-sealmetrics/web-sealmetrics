@@ -39,6 +39,7 @@ env = { SEALMETRICS_API_KEY = "${PLACEHOLDER_KEY}", SEALMETRICS_SITE_ID = "${PLA
 interface TabDef {
   id: TabId;
   label: string;
+  group: "new" | "current";
   badge?: string;
   node: boolean;
   desc: string;
@@ -57,6 +58,8 @@ const COPY: Record<
     copy: string;
     copied: string;
     download: string;
+    groupNew: string;
+    groupCurrent: string;
     tabs: TabDef[];
   }
 > = {
@@ -69,9 +72,12 @@ const COPY: Record<
     copy: "Copy",
     copied: "Copied",
     download: "Download the extension (.mcpb)",
+    groupNew: "New customers",
+    groupCurrent: "Current customers",
     tabs: [
       {
         id: "claude-desktop",
+        group: "new",
         label: "Claude Desktop",
         badge: "Recommended · no Node",
         node: false,
@@ -80,6 +86,7 @@ const COPY: Record<
       },
       {
         id: "claude-code",
+        group: "current",
         label: "Claude Code",
         node: true,
         kind: "code",
@@ -89,6 +96,7 @@ const COPY: Record<
       },
       {
         id: "codex",
+        group: "current",
         label: "Codex",
         node: true,
         kind: "code",
@@ -98,6 +106,7 @@ const COPY: Record<
       },
       {
         id: "cursor",
+        group: "current",
         label: "Cursor / others",
         node: true,
         kind: "code",
@@ -107,6 +116,7 @@ const COPY: Record<
       },
       {
         id: "scratch",
+        group: "new",
         label: "From scratch",
         node: true,
         kind: "code",
@@ -125,9 +135,12 @@ const COPY: Record<
     copy: "Copiar",
     copied: "Copiado",
     download: "Descargar la extensión (.mcpb)",
+    groupNew: "Clientes nuevos",
+    groupCurrent: "Clientes actuales",
     tabs: [
       {
         id: "claude-desktop",
+        group: "new",
         label: "Claude Desktop",
         badge: "Recomendada · sin Node",
         node: false,
@@ -136,6 +149,7 @@ const COPY: Record<
       },
       {
         id: "claude-code",
+        group: "current",
         label: "Claude Code",
         node: true,
         kind: "code",
@@ -145,6 +159,7 @@ const COPY: Record<
       },
       {
         id: "codex",
+        group: "current",
         label: "Codex",
         node: true,
         kind: "code",
@@ -154,6 +169,7 @@ const COPY: Record<
       },
       {
         id: "cursor",
+        group: "current",
         label: "Cursor y otros",
         node: true,
         kind: "code",
@@ -163,6 +179,7 @@ const COPY: Record<
       },
       {
         id: "scratch",
+        group: "new",
         label: "Desde cero",
         node: true,
         kind: "code",
@@ -341,6 +358,28 @@ export function McpInstaller({ locale = "en" }: { locale?: Locale }) {
 
   const tab = t.tabs.find((x) => x.id === active) ?? t.tabs[0];
 
+  const renderTab = (x: TabDef) => (
+    <button
+      key={x.id}
+      role="tab"
+      type="button"
+      aria-selected={x.id === active}
+      onClick={() => setActive(x.id)}
+      className={`px-4 py-2 rounded-full text-[13.5px] font-medium transition-colors ${
+        x.id === active
+          ? "bg-ink text-white"
+          : "bg-white border border-warm-100 text-ink-soft hover:text-ink hover:border-warm-200"
+      }`}
+    >
+      {x.label}
+    </button>
+  );
+
+  const groups: { label: string; key: "new" | "current" }[] = [
+    { label: t.groupNew, key: "new" },
+    { label: t.groupCurrent, key: "current" },
+  ];
+
   return (
     <section
       id="agentic-setup"
@@ -353,31 +392,22 @@ export function McpInstaller({ locale = "en" }: { locale?: Locale }) {
           <p className="text-[16px] leading-[1.6] text-ink-soft mt-5">{t.intro}</p>
         </div>
 
-        {/* Tabs */}
-        <div
-          role="tablist"
-          aria-label={t.title}
-          className="flex flex-wrap gap-2 mb-6"
-        >
-          {t.tabs.map((x) => {
-            const selected = x.id === active;
-            return (
-              <button
-                key={x.id}
-                role="tab"
-                type="button"
-                aria-selected={selected}
-                onClick={() => setActive(x.id)}
-                className={`px-4 py-2 rounded-full text-[13.5px] font-medium transition-colors ${
-                  selected
-                    ? "bg-ink text-white"
-                    : "bg-white border border-warm-100 text-ink-soft hover:text-ink hover:border-warm-200"
-                }`}
+        {/* Tabs, grouped by customer type */}
+        <div className="flex flex-col sm:flex-row gap-x-10 gap-y-5 mb-6">
+          {groups.map((g) => (
+            <div key={g.key}>
+              <span className="block font-mono text-[10.5px] font-semibold uppercase tracking-[0.1em] text-ink-soft mb-2.5">
+                {g.label}
+              </span>
+              <div
+                role="tablist"
+                aria-label={g.label}
+                className="flex flex-wrap gap-2"
               >
-                {x.label}
-              </button>
-            );
-          })}
+                {t.tabs.filter((x) => x.group === g.key).map(renderTab)}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Panel */}
