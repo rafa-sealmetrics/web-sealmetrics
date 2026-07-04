@@ -3,15 +3,15 @@ import { LogosStrip, PricingPLG, FinalUrgencyV3 } from "@/components/sections/v3
 import { AgenticSetupSteps } from "@/components/sections/v3/AgenticPlanV3";
 import { McpInstaller } from "@/components/sections/v3/McpInstaller";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
-import { AnnouncementBar, AnnouncementBarOffset } from "@/components/preview/AnnouncementBar";
-import { QuoteBlock } from "@/components/preview/HomeAmplitudeSections";
+import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
 import {
   HeroD,
   ConsentlessAnalytics,
   OneMinuteLede,
   PromoDaysRealTime,
   GrowthRiskCost,
-} from "@/components/preview/HomePromoSections";
+  QuoteBlock,
+} from "@/components/sections/v3/HomeDSections";
 
 export const metadata: Metadata = {
   title: "Preview D — Setup, real time & LENS home proposal",

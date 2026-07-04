@@ -3,10 +3,11 @@ import { DualCTA } from "@/components/homepage/DualCTA";
 import { HeroDashboard } from "@/components/sections/v3/HeroDashboard";
 
 /* ============================================================
-   OPTION D — benefit-led home built around three messages:
+   Homepage sections — benefit-led home built around three messages:
    1. Set up in ~1 minute (from your AI assistant)
    2. Real time — decide during your Promo Days, not the day after
    3. LENS AI — unblock growth, mitigate risk, reduce cost
+   Rendered by src/app/(en)/page.tsx (and /preview/home-power-d).
    ============================================================ */
 
 /* --- Hero --------------------------------------------------- */
@@ -305,6 +306,28 @@ export function OneMinuteLede() {
             .
           </p>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* --- Testimonial quote (Palladium) -------------------------- */
+export function QuoteBlock() {
+  return (
+    <section className="py-24 bg-warm-white border-t border-warm-100">
+      <div className="max-w-[1000px] mx-auto px-5 sm:px-10">
+        <blockquote className="border-l-2 pl-7 md:pl-10" style={{ borderColor: "#2E5C8A" }}>
+          <p className="text-[24px] md:text-[32px] font-medium text-ink leading-[1.3] tracking-[-0.02em] max-w-[26ch]">
+            The data SealMetrics delivers is agnostic, unbiased and neutral. <em className="italic-accent">There&rsquo;s no black box.</em>
+          </p>
+          <footer className="mt-7 flex items-center gap-3.5">
+            <span className="w-11 h-11 rounded-full bg-ink text-white font-semibold text-[14px] flex items-center justify-center shrink-0">TA</span>
+            <span className="text-[14px] leading-[1.4]">
+              <b className="text-ink font-semibold block">Toni Andújar</b>
+              <span className="text-ink-soft">Digital &amp; Direct Sales Director, Palladium Hotel Group</span>
+            </span>
+          </footer>
+        </blockquote>
       </div>
     </section>
   );

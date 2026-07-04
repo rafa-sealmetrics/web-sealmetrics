@@ -6,9 +6,10 @@ import { useState } from "react";
  * Scaleway-style super-header: a thin, full-width strip pinned above the nav.
  * Announces one thing, links out, and is dismissible.
  *
- * Rendered at the very top of the page as `fixed top-0`. The preview pages
- * ship a scoped `<style>` (via body:has(#sm-annbar)) that nudges the global
- * fixed header down by this bar's height so the two stack instead of overlap.
+ * Rendered at the very top of the page as `fixed top-0`. The host page also
+ * renders <AnnouncementBarOffset/>, a scoped `<style>` (via body:has(#sm-annbar))
+ * that nudges the global fixed header down by this bar's height so the two
+ * stack instead of overlap. Used by the homepage and the /preview/* pages.
  */
 export function AnnouncementBar() {
   const [open, setOpen] = useState(true);

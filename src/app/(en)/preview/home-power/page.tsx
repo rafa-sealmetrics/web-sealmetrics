@@ -8,7 +8,7 @@ import {
 } from "@/components/sections/v3/HomeV3";
 import { FaqV3 } from "@/components/sections/v3/FaqV3";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
-import { AnnouncementBar, AnnouncementBarOffset } from "@/components/preview/AnnouncementBar";
+import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
 import {
   HeroPower,
   PowerMatrix,
