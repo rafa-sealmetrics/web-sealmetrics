@@ -37,6 +37,14 @@ function getWhyDropdown(t: ReturnType<typeof getDictionary>["header"], locale: L
           { href: localizedHref("/cookieless-analytics", locale), label: t.cookielessAnalytics, desc: t.cookielessAnalyticsDesc },
           { href: localizedHref("/consentless-analytics", locale), label: t.consentlessAnalytics, desc: t.consentlessAnalyticsDesc },
           { href: localizedHref("/complete-data", locale), label: t.completeData, desc: t.completeDataDesc },
+          {
+            href: "/privacy-end-to-end",
+            label: locale === "es" ? "Privacidad de extremo a extremo" : "Privacy end to end",
+            desc:
+              locale === "es"
+                ? "Privado desde el hit hasta la IA privada."
+                : "Private from the first hit to private-AI processing.",
+          },
           { href: localizedHref("/how-it-works", locale), label: t.howItWorks, desc: t.howItWorksDesc },
         ],
       },
@@ -264,12 +272,6 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
 
           <a
             href="https://my.sealmetrics.com/register"
-            className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
-          >
-            {t.login}
-          </a>
-          <a
-            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
             {t.startTrial}
@@ -386,14 +388,6 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
                 )}
               </div>
             </div>
-
-            <a
-              href="https://my.sealmetrics.com/register"
-              className="py-2.5 text-text-secondary no-underline hover:text-text-primary"
-              onClick={() => setMobileOpen(false)}
-            >
-              {t.login}
-            </a>
 
             <a
               href="https://my.sealmetrics.com/register"

@@ -54,6 +54,9 @@ const COPY: Record<
     eyebrow: string;
     title: string;
     intro: string;
+    hostedTitle: string;
+    hostedDesc: string;
+    hostedUrl: string;
     nodeNote: string;
     copy: string;
     copied: string;
@@ -67,7 +70,11 @@ const COPY: Record<
     eyebrow: "Install the MCP",
     title: "Connect SealMetrics to your AI",
     intro:
-      "You'll need your read-only API key and your Site ID — find them under Settings → API Tokens in your dashboard. Except the Claude Desktop extension, every option requires Node.js.",
+      "Works with Claude, ChatGPT, Cursor, Codex, Claude Code and any MCP-capable agent. The fastest path needs no install and no account — the hosted MCP can create your account and run the full setup for you.",
+    hostedTitle: "Hosted MCP — no install, no account needed",
+    hostedDesc:
+      "Add this remote server in Claude, ChatGPT, Cursor, Codex or Claude Code. Ask it to get you started and it provisions your account, generates the pixel and completes setup — end to end.",
+    hostedUrl: "https://mcp.sealmetrics.com/mcp",
     nodeNote: "Requires Node.js",
     copy: "Copy",
     copied: "Copied",
@@ -130,7 +137,11 @@ const COPY: Record<
     eyebrow: "Instalar el MCP",
     title: "Conecta SealMetrics con tu IA",
     intro:
-      "Necesitas tu API key (read-only) y tu Site ID — los encuentras en Settings → API Tokens del dashboard. Salvo la extensión de Claude Desktop, las demás opciones requieren Node.js.",
+      "Funciona con Claude, ChatGPT, Cursor, Codex, Claude Code y cualquier agente compatible con MCP. La vía más rápida no requiere instalar nada ni tener cuenta — el MCP alojado puede crear tu cuenta y hacer el setup completo por ti.",
+    hostedTitle: "MCP alojado — sin instalar nada, sin cuenta previa",
+    hostedDesc:
+      "Añade este servidor remoto en Claude, ChatGPT, Cursor, Codex o Claude Code. Pídele que te ponga en marcha y aprovisiona tu cuenta, genera el píxel y completa el setup — de principio a fin.",
+    hostedUrl: "https://mcp.sealmetrics.com/mcp",
     nodeNote: "Requiere Node.js",
     copy: "Copiar",
     copied: "Copiado",
@@ -348,6 +359,42 @@ function CodeBlock({
   );
 }
 
+function HostedUrlBar({
+  url,
+  copyLabel,
+  copiedLabel,
+}: {
+  url: string;
+  copyLabel: string;
+  copiedLabel: string;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1600);
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
+
+  return (
+    <div className="flex items-center gap-2 bg-ink rounded-lg pl-4 pr-2 py-2 max-w-[34rem]">
+      <code className="font-mono text-[13px] text-white flex-1 truncate">{url}</code>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={copyLabel}
+        className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono text-[11px] font-semibold uppercase tracking-[0.06em] text-white/80 bg-white/10 hover:bg-white/20 transition-colors"
+      >
+        {copied ? copiedLabel : copyLabel}
+      </button>
+    </div>
+  );
+}
+
 export function McpInstaller({ locale = "en" }: { locale?: Locale }) {
   const t = COPY[locale];
   const [active, setActive] = useState<TabId>("claude-desktop");
@@ -386,10 +433,25 @@ export function McpInstaller({ locale = "en" }: { locale?: Locale }) {
       className="py-24 bg-warm-white border-t border-warm-100 scroll-mt-24"
     >
       <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
-        <div className="max-w-[44rem] mb-10">
+        <div className="max-w-[44rem] mb-8">
           <span className="eyebrow mb-5">{t.eyebrow}</span>
           <h2 className="h-section mt-5">{t.title}</h2>
           <p className="text-[16px] leading-[1.6] text-ink-soft mt-5">{t.intro}</p>
+        </div>
+
+        {/* Hosted MCP callout — the fastest, install-free path */}
+        <div className="max-w-[44rem] mb-10 rounded-xl border border-brand/40 bg-white p-6 md:p-7">
+          <div className="flex flex-wrap items-center gap-2.5 mb-2.5">
+            <span
+              className="font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-2 py-1 rounded text-white"
+              style={{ backgroundColor: "#2D8B6D" }}
+            >
+              Fastest
+            </span>
+            <h3 className="text-[17px] font-semibold text-ink tracking-[-0.01em]">{t.hostedTitle}</h3>
+          </div>
+          <p className="text-[14.5px] leading-[1.6] text-ink-soft mb-5 max-w-[58ch]">{t.hostedDesc}</p>
+          <HostedUrlBar url={t.hostedUrl} copyLabel={t.copy} copiedLabel={t.copied} />
         </div>
 
         {/* Tabs, grouped by customer type */}

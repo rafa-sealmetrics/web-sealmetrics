@@ -79,12 +79,12 @@ export function PlanIncludesV3() {
     {
       from: "Growth",
       to: "Scale",
-      diff: "15M events · LENS AI forecasting · Agent AI Analytics · Webhooks · Guided onboarding · Priority support",
+      diff: "15M events · LENS AI forecasting · Private AI (5M tokens) · Webhooks · Guided onboarding · Priority support",
     },
     {
       from: "Scale",
       to: "Enterprise",
-      diff: "Unlimited events · SSO / SAML · Account manager · Isolated processing · Custom SLA",
+      diff: "Unlimited events · Exclusive Private AI · Account manager · Isolated processing · Custom SLA",
     },
   ];
 
@@ -317,6 +317,9 @@ const comparisonData: ComparisonSection[] = [
       { feature: "Anomaly detection", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Growth opportunities", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Weekly & monthly reporting", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Bring your own AI keys (Anthropic / OpenAI / Gemini)", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Private AI on EU infrastructure (Gemma · Scaleway)", agentic: false, growth: false, scale: "5M tokens", enterprise: "Included" },
+      { feature: "Dedicated, non-shared Private AI instance", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },
   {
@@ -341,8 +344,6 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Governance",
     rows: [
-      { feature: "Role-based access (RBAC)", agentic: "Basic", growth: "Basic", scale: "Advanced", enterprise: "Full" },
-      { feature: "SSO / SAML", agentic: false, growth: false, scale: false, enterprise: true },
       { feature: "Isolated processing", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },

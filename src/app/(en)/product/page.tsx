@@ -10,6 +10,7 @@ import {
   ProblemNarrativeV3,
   FourPillarsV3,
   FeatureLensAIV3,
+  FeaturePrivateAIV3,
   FeatureAttributionV3,
   FeatureSuperAPIV3,
   NineReportsV3,
@@ -20,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "Product — SealMetrics · Complete analytics, no compromises",
   description:
-    "Consentless tracking, last-click revenue attribution, LENS AI supervision, SuperAPI and MCP server — all on 100% observed data. No sampling, no modelling.",
+    "Consentless tracking, last-click revenue attribution, LENS AI with private EU AI, SuperAPI and MCP server — all on 100% observed data. No sampling, no modelling.",
   openGraph: {
     title: "Product — SealMetrics · Complete analytics, no compromises",
     description:
@@ -57,6 +58,7 @@ export default function ProductPage() {
       <LogosStrip />
       <FourPillarsV3 />
       <FeatureLensAIV3 />
+      <FeaturePrivateAIV3 />
       <FeatureAttributionV3 />
       <FeatureSuperAPIV3 />
       <NineReportsV3 />
