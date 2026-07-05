@@ -9,7 +9,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip, PricingPLG, FinalUrgencyV3 } from "@/components/sections/v3/HomeV3";
+import { LogosStrip, PricingPLG, Connectors, FinalUrgencyV3 } from "@/components/sections/v3/HomeV3";
 import { InstallInSeconds } from "@/components/sections/v3/InstallInSeconds";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import {
@@ -90,6 +90,7 @@ export default function Home() {
       <GrowthRiskCost />
       <QuoteBlock />
       <PricingPLG />
+      <Connectors />
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
