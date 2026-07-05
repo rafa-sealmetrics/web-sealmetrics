@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 const ES_TRANSLATED_SLUGS = new Set([
+  "self-service-analytics-lens-ai",
   "cookieless-analytics-explained",
   "consent-banner-impact-on-analytics",
   "ga4-data-sampling-problem",
@@ -31,6 +32,12 @@ const ES_TRANSLATED_SLUGS = new Set([
 ]);
 
 const ES_TRANSLATIONS: Record<string, { title: string; description: string; category: string; readTime: string }> = {
+  "self-service-analytics-lens-ai": {
+    title: "Cómo SealMetrics habilita la analítica self-service con LENS AI",
+    description: "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. Cómo el dato cookieless completo más el MCP de SealMetrics permiten consultar tu propia analítica.",
+    category: "IA y Analítica",
+    readTime: "10 min",
+  },
   "cookieless-analytics-explained": {
     title: "Analítica cookieless explicada: cómo medir sin cookies",
     description: "Las cookies están desapareciendo. Cómo funciona la analítica cookieless, por qué captura más data y qué implica para RGPD.",

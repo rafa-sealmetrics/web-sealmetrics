@@ -24,6 +24,7 @@ const translatedPaths = new Set([
   "/alternatives/google-analytics",
   "/for",
   "/blog",
+  "/blog/self-service-analytics-lens-ai",
   "/blog/cookieless-analytics-explained",
   "/blog/consent-banner-impact-on-analytics",
   "/blog/ga4-data-sampling-problem",
