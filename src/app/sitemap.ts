@@ -66,9 +66,12 @@ function lastModFor(route: string): string {
   return today;
 }
 
+// Internal design proposals under /preview/* are noindex and never listed.
+const isExcluded = (r: string) => EXCLUDE.has(r) || r.startsWith("/preview");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const enRoutes = collectRoutes(EN_ROOT).filter((r) => !EXCLUDE.has(r));
-  const esRoutes = collectRoutes(ES_ROOT).filter((r) => !EXCLUDE.has(r));
+  const enRoutes = collectRoutes(EN_ROOT).filter((r) => !isExcluded(r));
+  const esRoutes = collectRoutes(ES_ROOT).filter((r) => !isExcluded(r));
 
   // Expand dynamic [slug] routes. /open/[slug] is EN-only today.
   for (const c of publishedChapters) {

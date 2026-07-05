@@ -55,8 +55,8 @@ export function PlanIncludesV3Es() {
   ];
   const diffs = [
     { from: "Agentic", to: "Growth", diff: "5M eventos · soporte email y chat · onboarding guiado · panel de facturación — los mismos datos completos, sin necesidad de LLM" },
-    { from: "Growth", to: "Scale", diff: "15M eventos · LENS AI forecasting · Agent AI Analytics · Webhooks · Onboarding guiado · Soporte prioritario" },
-    { from: "Scale", to: "Enterprise", diff: "Eventos ilimitados · SSO / SAML · Account manager · Procesamiento aislado · SLA personalizado" },
+    { from: "Growth", to: "Scale", diff: "15M eventos · LENS AI forecasting · Private AI (5M tokens) · Webhooks · Onboarding guiado · Soporte prioritario" },
+    { from: "Scale", to: "Enterprise", diff: "Eventos ilimitados · Private AI exclusiva · Account manager · Procesamiento aislado · SLA personalizado" },
   ];
 
   return (
@@ -246,6 +246,9 @@ const comparisonDataEs: ComparisonSection[] = [
       { feature: "Detección de anomalías", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Oportunidades de crecimiento", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Reporting semanal y mensual", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Trae tus API keys (Anthropic / OpenAI / Gemini)", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Private AI en infraestructura UE (Gemma · Scaleway)", agentic: false, growth: false, scale: "5M tokens", enterprise: "Incluida" },
+      { feature: "Instancia de Private AI dedicada, no compartida", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },
   {
@@ -270,8 +273,6 @@ const comparisonDataEs: ComparisonSection[] = [
   {
     category: "Governance",
     rows: [
-      { feature: "Control de acceso por rol (RBAC)", agentic: "Básico", growth: "Básico", scale: "Avanzado", enterprise: "Completo" },
-      { feature: "SSO / SAML", agentic: false, growth: false, scale: false, enterprise: true },
       { feature: "Procesamiento aislado", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },

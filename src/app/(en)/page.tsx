@@ -9,22 +9,19 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import {
-  HeroV3,
-  LogosStrip,
-  FeaturedCase,
-  ProblemSection,
-  SolutionStepsPLG,
-  Connectors,
-  FourPillars,
-  PricingPLG,
-  FinalUrgencyV3,
-} from "@/components/sections/v3/HomeV3";
-import { ComparatorGA4 } from "@/components/sections/v3/HomeV3Part2";
-import { FeatureLensAIV3 } from "@/components/sections/v3/ProductV3Sections";
-import { FaqV3 } from "@/components/sections/v3/FaqV3";
-import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
+import { LogosStrip, PricingPLG, FinalUrgencyV3 } from "@/components/sections/v3/HomeV3";
+import { AgenticSetupSteps } from "@/components/sections/v3/AgenticPlanV3";
+import { McpInstaller } from "@/components/sections/v3/McpInstaller";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
+import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
+import {
+  HeroD,
+  ConsentlessAnalytics,
+  OneMinuteLede,
+  PromoDaysRealTime,
+  GrowthRiskCost,
+  QuoteBlock,
+} from "@/components/sections/v3/HomeDSections";
 
 export const metadata: Metadata = {
   title: "SealMetrics — Consentless analytics for eCommerce",
@@ -88,18 +85,18 @@ export default function Home() {
         spokenByRole: "Analytics & Campaigns, Dreamplace Hotels",
         url: "/",
       })} />
-      <HeroV3 />
+      <AnnouncementBarOffset />
+      <AnnouncementBar />
+      <HeroD />
+      <ConsentlessAnalytics />
       <LogosStrip />
-      <ProblemSection />
-      <BlindnessCalculator />
-      <ComparatorGA4 />
-      <FeaturedCase />
-      <SolutionStepsPLG />
-      <FourPillars />
-      <Connectors />
+      <OneMinuteLede />
+      <AgenticSetupSteps />
+      <McpInstaller />
+      <PromoDaysRealTime />
+      <GrowthRiskCost />
+      <QuoteBlock />
       <PricingPLG />
-      <FaqV3 />
-      <FeatureLensAIV3 />
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">

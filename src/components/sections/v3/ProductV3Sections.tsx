@@ -309,6 +309,78 @@ function LensChatVisual() {
 }
 
 /* ============================================
+   FEATURE · PRIVATE AI
+   ============================================ */
+export function FeaturePrivateAIV3() {
+  return (
+    <FeatureBlock
+      tag="Private AI"
+      bgClass="bg-warm-white"
+      reversed
+      title={
+        <>
+          Your AI. <em>Your data stays yours.</em>
+        </>
+      }
+      lede="Every analytics AI on the market ships your numbers to a US cloud to answer your questions. LENS lets you choose who runs the model — including a private one, on European soil, that never trains a third-party algorithm."
+      bullets={[
+        "Bring your own keys — Anthropic, OpenAI or Gemini",
+        "Or LENS Private AI: an EU open-source model (Gemma, hosted in Paris)",
+        "Data never leaves the EU, never shared, never used for training",
+        "Enterprise: a dedicated instance, not shared with any other customer",
+      ]}
+      visual={<PrivateAIVisual />}
+    />
+  );
+}
+
+function PrivateAIVisual() {
+  return (
+    <div className="bg-ink text-white rounded-[20px] p-8 md:p-10 min-h-[380px] flex flex-col justify-center relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute pointer-events-none"
+        style={{
+          right: -80,
+          top: -80,
+          width: 240,
+          height: 240,
+          borderRadius: "50%",
+          background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)",
+        }}
+      />
+      <div className="relative">
+        <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-6" style={{ color: "#E8B84B" }}>
+          ● One AI · three ways to run it
+        </div>
+        <div className="flex flex-col gap-3">
+          {[
+            { tag: "Your keys", d: "BYOK — Anthropic, OpenAI, Gemini, or via mcp.sealmetrics.com" },
+            { tag: "Private AI", d: "EU open-source model (Gemma, Scaleway · Paris)", featured: true },
+            { tag: "Dedicated", d: "Your own instance — Enterprise only" },
+          ].map((c) => (
+            <div
+              key={c.tag}
+              className={`rounded-xl p-4 border ${
+                c.featured ? "bg-white/[0.08] border-white/20" : "bg-white/[0.03] border-white/10"
+              }`}
+            >
+              <div
+                className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.1em]"
+                style={{ color: c.featured ? "#E8B84B" : "rgba(255,255,255,0.5)" }}
+              >
+                {c.tag}
+              </div>
+              <div className="text-[13.5px] text-white/85 leading-[1.5] mt-1.5">{c.d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================
    FEATURE · ATTRIBUTION
    ============================================ */
 export function FeatureAttributionV3() {

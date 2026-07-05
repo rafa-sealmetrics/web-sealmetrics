@@ -56,7 +56,7 @@ const plansEn: Plan[] = [
     highlights: [
       "15M human events / month",
       "LENS AI forecasting · premium",
-      "Agent AI Analytics · soon",
+      "Private AI · 5M tokens included",
       "Webhooks + priority support",
     ],
     cta: "Start 14-day trial",
@@ -75,7 +75,7 @@ const plansEn: Plan[] = [
     events: "Unlimited human events/mo",
     highlights: [
       "Unlimited human events",
-      "SSO / SAML + RBAC (full)",
+      "Private AI — exclusive, not shared",
       "Isolated processing · 99.9% SLA",
       "Dedicated account manager",
     ],
@@ -119,7 +119,7 @@ const plansEs: Plan[] = [
     highlights: [
       "15M eventos humanos / mes",
       "LENS AI forecasting · premium",
-      "Agent AI Analytics · próx.",
+      "Private AI · 5M tokens incluidos",
       "Webhooks + soporte prioritario",
     ],
     cta: "Empezar prueba de 14 días",
@@ -138,7 +138,7 @@ const plansEs: Plan[] = [
     events: "Eventos humanos ilimitados/mes",
     highlights: [
       "Eventos humanos ilimitados",
-      "SSO / SAML + RBAC (completo)",
+      "Private AI — exclusiva, no compartida",
       "Procesamiento aislado · SLA 99,9%",
       "Account manager dedicado",
     ],

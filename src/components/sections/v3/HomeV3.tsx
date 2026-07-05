@@ -86,19 +86,25 @@ export function HeroV3() {
    Top row (first 5) visually larger — flagship clients.
    Bottom row slightly smaller.
    ============================================ */
-const LOGOS: { src: string; alt: string; h: number }[] = [
-  // Top row — flagship
-  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 50 },
-  { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 54 },
-  { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 44 },
-  { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 38 },
-  { src: "/logos/clients/desigual-dark.svg", alt: "Desigual", h: 38 },
-  // Bottom row — secondary
-  { src: "/logos/clients/unicef.svg", alt: "UNICEF", h: 36 },
-  { src: "/logos/clients/casabatllo.png", alt: "Casa Batlló", h: 44 },
-  { src: "/logos/clients/juguettos.png", alt: "Juguettos", h: 38 },
-  { src: "/logos/clients/3cat.png", alt: "3Cat", h: 36 },
+// Base logo height; per-logo `h` overrides it.
+// First row (flagship) renders 50% larger; Fundación Bankinter's faint
+// wordmark needs double height to read at equal visual weight.
+const LOGO_H = 40;
+const LOGOS: { src: string; alt: string; h?: number }[] = [
+  // First row — flagship, 50% larger
+  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 60 },
+  { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 60 },
+  { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 60 },
+  { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 60 },
+  // Following rows — base height
+  { src: "/logos/clients/desigual-dark.svg", alt: "Desigual" },
+  { src: "/logos/clients/unicef.svg", alt: "UNICEF" },
+  { src: "/logos/clients/casabatllo.png", alt: "Casa Batlló" },
+  { src: "/logos/clients/juguettos.png", alt: "Juguettos" },
+  { src: "/logos/clients/3cat.png", alt: "3Cat" },
   { src: "/logos/clients/fundacion-bankinter.png", alt: "Fundación Bankinter", h: 80 },
+  { src: "/logos/clients/dormideo.png", alt: "Dormideo" },
+  { src: "/logos/clients/incapto.svg", alt: "Incapto" },
 ];
 
 export function LogosStrip() {
@@ -110,7 +116,7 @@ export function LogosStrip() {
             className="font-semibold text-ink tracking-[-0.02em] leading-[1.2]"
             style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
           >
-            The <em className="italic-accent">single source of truth</em> European eCommerce signs against
+            The <em className="italic-accent">single source of truth</em> eCommerce signs against
           </h3>
           <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[68ch]">
             <b className="text-ink font-semibold">Dreamplace Hotels</b> recovered <b className="text-ink font-semibold">+30% more traffic</b> vs GA4 and closed a <b className="text-ink font-semibold">15–20% gap</b> in sales attribution against their CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recovered <b className="text-ink font-semibold">35% of unattributed bookings</b> and improved Display CPS by <b className="text-ink font-semibold">+165%</b>.
@@ -139,24 +145,21 @@ export function LogosSecondary() {
 
 function LogosGrid() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-12 items-center justify-items-center">
-      {LOGOS.map((logo, i) => {
-        const isTop = i < 5;
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center">
+      {LOGOS.map((logo) => {
+        const h = logo.h ?? LOGO_H;
         return (
           <div
             key={logo.alt}
-            className={`flex items-center justify-center transition-transform hover:scale-105 ${
-              isTop ? "min-h-20" : "min-h-12"
-            }`}
+            className="flex items-center justify-center min-h-20 transition-transform hover:scale-105"
           >
             <Picture
               src={logo.src}
               alt={logo.alt}
-              width={isTop ? 200 : 200}
-              height={logo.h}
+              width={220}
+              height={h}
               className="object-contain w-auto"
-              style={{ height: `${logo.h}px`, maxWidth: "220px" }}
-
+              style={{ height: `${h}px`, maxWidth: "200px" }}
             />
           </div>
         );
@@ -934,7 +937,7 @@ const PRICING_COPY = {
     enterpriseBlurb: "For portfolio brands or custom integration needs.",
     growthFeatures: (m: number) => [`${m}M human events / month`, "3 domains", "Full MCP + BigQuery + API", "GA4 side-by-side comparison", "Email support"],
     scaleFeatures: (m: number) => [`${m}M human events / month`, "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"],
-    enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "SSO, SAML, RBAC, audit logs", "99.9% SLA", "Dedicated account manager"],
+    enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "Private AI — exclusive, not shared", "99.9% SLA", "Dedicated account manager"],
     cta: "Start free 14 days",
     enterpriseCta: "Talk to us",
     quote: <>&ldquo;Recovered 35% of bookings without attribution.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
@@ -959,7 +962,7 @@ const PRICING_COPY = {
     enterpriseBlurb: "Para marcas portfolio o necesidades de integración custom.",
     growthFeatures: (m: number) => [`${m}M eventos humanos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Comparativa GA4 lado a lado", "Soporte por email"],
     scaleFeatures: (m: number) => [`${m}M eventos humanos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding con el founder"],
-    enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "SSO, SAML, RBAC, audit logs", "SLA 99,9%", "Account manager dedicado"],
+    enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "Private AI — exclusiva, no compartida", "SLA 99,9%", "Account manager dedicado"],
     cta: "Empieza gratis 14 días",
     enterpriseCta: "Habla con nosotros",
     quote: <>&ldquo;Recuperaron el 35% de las reservas sin atribución.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
