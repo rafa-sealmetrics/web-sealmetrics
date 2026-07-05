@@ -39,6 +39,21 @@ export function getBlogDateModified(slug: string, fallback: string): string {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "self-service-analytics-lens-ai",
+    title: "How SealMetrics Enables Self-Service Analytics With LENS AI",
+    description:
+      "Point an LLM at incomplete GA4 data and it invents answers. How complete cookieless data plus the SealMetrics MCP let teams query their own analytics — no analyst in the loop.",
+    date: "2026-07-05",
+    category: "AI & Analytics",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: [
+      "ai-agent-traffic-analytics",
+      "why-ga4-shows-13pct-eu-traffic",
+      "best-enterprise-analytics-platforms",
+    ],
+  },
+  {
     slug: "cookieless-analytics-for-ecommerce",
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
     description:
