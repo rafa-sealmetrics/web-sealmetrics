@@ -18,7 +18,7 @@ export function AnnouncementBar() {
   return (
     <div
       id="sm-annbar"
-      className="fixed top-0 left-0 right-0 z-[60] bg-brand text-white"
+      className="hidden sm:block fixed top-0 left-0 right-0 z-[60] bg-brand text-white"
     >
       <div className="max-w-[1280px] mx-auto flex items-center gap-4 h-9 pl-4 pr-2 sm:pl-6">
         {/* Announcement — left, truncates */}
@@ -91,14 +91,19 @@ export function AnnouncementBar() {
  * bar → header → content stack cleanly. Because #main-content shifts by exactly
  * the bar height, every page keeps the same header-to-content gap it already
  * had. Removed automatically when the bar is dismissed (element leaves the DOM).
+ *
+ * Gated to sm+ (min-width 640px): the bar is hidden on mobile (`hidden sm:block`),
+ * so the offset must not apply there or it would leave a 36px gap.
  */
 export function AnnouncementBarOffset() {
   return (
     <style
       dangerouslySetInnerHTML={{
         __html:
+          `@media(min-width:640px){` +
           `body:has(#sm-annbar) header.fixed{top:2.25rem}` +
-          `body:has(#sm-annbar) #main-content{padding-top:2.25rem}`,
+          `body:has(#sm-annbar) #main-content{padding-top:2.25rem}` +
+          `}`,
       }}
     />
   );
