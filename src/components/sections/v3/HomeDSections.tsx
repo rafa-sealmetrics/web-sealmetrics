@@ -123,7 +123,7 @@ export function ConsentlessAnalytics() {
 /* --- Message 2: Real-time Promo Days ------------------------ */
 export function PromoDaysRealTime() {
   return (
-    <section className="py-28 bg-white border-t border-warm-100">
+    <section className="py-28 bg-warm-white border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 grid md:grid-cols-[1fr_1fr] gap-12 md:gap-16 items-center">
         <div>
           <span className="eyebrow mb-5">Real time</span>
