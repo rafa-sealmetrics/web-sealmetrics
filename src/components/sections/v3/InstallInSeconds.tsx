@@ -12,15 +12,17 @@ import { useState } from "react";
 const HOSTED_MCP = "https://mcp.sealmetrics.com/mcp";
 const DOCS = "https://docs.sealmetrics.com";
 
-const TOOLS = [
-  "Claude",
-  "Claude Code",
-  "Cursor",
-  "Codex",
-  "Windsurf",
-  "Replit",
-  "GitHub Copilot",
-  "Any MCP tool",
+type Tool = { name: string; logo: string | null };
+
+const TOOLS: Tool[] = [
+  { name: "Claude", logo: "/logos/tools/claude.svg" },
+  { name: "ChatGPT", logo: "/logos/tools/openai.svg" },
+  { name: "Cursor", logo: "/logos/tools/cursor.svg" },
+  { name: "Claude Code", logo: "/logos/tools/claude.svg" },
+  { name: "Codex", logo: "/logos/tools/openai.svg" },
+  { name: "GitHub Copilot", logo: "/logos/tools/githubcopilot.svg" },
+  { name: "Windsurf", logo: "/logos/tools/windsurf.svg" },
+  { name: "Any MCP tool", logo: null },
 ];
 
 function connectPrompt(tool: string): string {
@@ -82,7 +84,7 @@ export function InstallInSeconds() {
 
         {/* Tool picker */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-          {TOOLS.map((name) => {
+          {TOOLS.map(({ name, logo }) => {
             const active = name === tool;
             return (
               <button
@@ -99,6 +101,25 @@ export function InstallInSeconds() {
                 {active && (
                   <span className="absolute top-3 right-3 w-2 h-2 rounded-full bg-brand" aria-hidden />
                 )}
+                <div className="flex items-center justify-center h-8 mb-3">
+                  {logo ? (
+                    <img
+                      src={logo}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="w-7 h-7 object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-ink-mute" aria-hidden>
+                      <circle cx="5" cy="12" r="2" />
+                      <circle cx="12" cy="12" r="2" />
+                      <circle cx="19" cy="12" r="2" />
+                    </svg>
+                  )}
+                </div>
                 <div className={`text-[15px] font-semibold ${active ? "text-ink" : "text-ink-2"}`}>
                   {name}
                 </div>
