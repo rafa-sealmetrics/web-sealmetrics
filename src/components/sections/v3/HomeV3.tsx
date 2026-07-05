@@ -1145,15 +1145,17 @@ export function PricingPLG({ locale = "en" }: { locale?: "en" | "es" }) {
 /* ============================================
    CONNECTORS · 2.4b · direct integrations
    ============================================ */
-const CONNECTORS: { name: string; src?: string; tag: "ecommerce" | "data" }[] = [
+// `h` overrides the default logo height (36px). WooCommerce's mark reads
+// small at 36px, so it renders 3x larger.
+const CONNECTORS: { name: string; src?: string; tag: "ecommerce" | "data"; h?: number }[] = [
   { name: "Shopify", src: "/logos/brands/shopify.svg", tag: "ecommerce" },
   { name: "WordPress", src: "/logos/brands/wordpress.svg", tag: "ecommerce" },
-  { name: "WooCommerce", src: "/logos/brands/woocommerce.svg", tag: "ecommerce" },
+  { name: "WooCommerce", src: "/logos/brands/woocommerce.svg", tag: "ecommerce", h: 108 },
   { name: "Magento", src: "/logos/brands/magento.svg", tag: "ecommerce" },
   { name: "PrestaShop", src: "/logos/brands/prestashop.svg", tag: "ecommerce" },
   { name: "BigCommerce", tag: "ecommerce" },
   { name: "BigQuery", src: "/logos/brands/bigquery.svg", tag: "data" },
-  { name: "Looker Studio", tag: "data" },
+  { name: "Data Studio", tag: "data" },
 ];
 
 const CONNECTORS_COPY = {
@@ -1202,9 +1204,9 @@ export function Connectors({ locale = "en" }: { locale?: "en" | "es" }) {
                   src={conn.src}
                   alt={conn.name}
                   width={140}
-                  height={36}
-                  className="object-contain"
-                  style={{ height: 36, maxWidth: 150 }}
+                  height={conn.h ?? 36}
+                  className="object-contain max-w-full"
+                  style={{ height: conn.h ?? 36, maxWidth: "100%" }}
                 />
               ) : (
                 <span
