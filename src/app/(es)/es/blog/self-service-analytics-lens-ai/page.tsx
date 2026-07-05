@@ -245,7 +245,7 @@ export default function Page() {
                 />
                 <div className="relative p-7 sm:p-9">
                   <div className="flex items-center gap-2 mb-6">
-                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Una pregunta real, de principio a fin</span>
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Ecommerce · una pregunta real, de principio a fin</span>
                   </div>
 
                   <p className="text-[0.95rem] leading-[1.6] mb-6">
@@ -268,6 +268,45 @@ export default function Page() {
               </div>
               <figcaption className="mt-3 text-[0.8rem] text-text-tertiary text-center">
                 Ejemplo ilustrativo. Las llamadas a herramientas y su orden son reales; los movimientos son representativos. No se escribió SQL, no se abrió ningún dashboard, no se interrumpió a ningún analista.
+              </figcaption>
+            </figure>
+
+            <p>
+              El método viaja a cualquier vertical — solo cambia el vocabulario. Aquí está el mismo bucle para un grupo hotelero que pregunta por reservas directas en lugar de conversión de checkout:
+            </p>
+
+            {/* ── Transcripción real: hoteles (slab oscuro) ── */}
+            <figure className="my-10 not-prose">
+              <div className="relative rounded-[20px] bg-ink text-warm-50 overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-[0.30] pointer-events-none"
+                  style={{ background: "radial-gradient(120% 90% at 85% 0%, rgba(232,184,75,0.4), transparent 60%)" }}
+                />
+                <div className="relative p-7 sm:p-9">
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Hoteles · el mismo bucle, reservas directas</span>
+                  </div>
+
+                  <p className="text-[0.95rem] leading-[1.6] mb-6">
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-amber mr-2">Tú</span>
+                    «Las reservas directas caen semana contra semana. ¿Es de canales o del sitio?»
+                  </p>
+
+                  <div className="font-mono text-[0.8rem] leading-[1.9] text-warm-50/85 space-y-1 border-l border-warm-50/15 pl-4 mb-6">
+                    <div><span className="text-brand">→ get_overview</span> · this_week vs previous <span className="text-warm-50/45">— sesiones estables, reservas a la baja</span></div>
+                    <div><span className="text-brand">→ get_channels</span> <span className="text-warm-50/45">— metabuscadores y paid aguantan; el directo cae</span></div>
+                    <div><span className="text-brand">→ get_landing_pages</span> <span className="text-warm-50/45">— el motor de reservas de un hotel pierde conversión</span></div>
+                    <div><span className="text-brand">→ get_conversions</span> <span className="text-warm-50/45">— la pérdida de revenue se concentra en ese hotel</span></div>
+                  </div>
+
+                  <p className="text-[0.95rem] leading-[1.65]">
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-brand mr-2">LENS AI</span>
+                    La demanda aguantó — metabuscadores y paid están estables, así que no es un problema de adquisición. La caída se concentra en la página de reservas de un hotel, donde la tasa de conversión cayó a mitad de semana mientras el resto del portfolio se mantuvo. Eso apunta a algo en el flujo de reservas de ese hotel — disponibilidad de tarifas, inventario o un paso roto —, no a tu mix de canales. Empieza por ese motor de reservas.
+                  </p>
+                </div>
+              </div>
+              <figcaption className="mt-3 text-[0.8rem] text-text-tertiary text-center">
+                Ilustrativo. Mismo método, un portfolio hotelero midiendo reservas directas — atribuidas a último clic, en agregado, sin journey por huésped.
               </figcaption>
             </figure>
 

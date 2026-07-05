@@ -246,7 +246,7 @@ export default function Page() {
                 />
                 <div className="relative p-7 sm:p-9">
                   <div className="flex items-center gap-2 mb-6">
-                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">A real question, start to finish</span>
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Ecommerce · a real question, start to finish</span>
                   </div>
 
                   <p className="text-[0.95rem] leading-[1.6] mb-6">
@@ -269,6 +269,45 @@ export default function Page() {
               </div>
               <figcaption className="mt-3 text-[0.8rem] text-text-tertiary text-center">
                 Illustrative worked example. The tool calls and their order are real; the movements are representative. No SQL was written, no dashboard opened, no analyst interrupted.
+              </figcaption>
+            </figure>
+
+            <p>
+              The method travels to any vertical — only the vocabulary changes. Here is the same loop for a hotel group asking about direct bookings instead of checkout conversions:
+            </p>
+
+            {/* ── Worked transcript: hotels (dark slab) ── */}
+            <figure className="my-10 not-prose">
+              <div className="relative rounded-[20px] bg-ink text-warm-50 overflow-hidden">
+                <div
+                  className="absolute inset-0 opacity-[0.30] pointer-events-none"
+                  style={{ background: "radial-gradient(120% 90% at 85% 0%, rgba(232,184,75,0.4), transparent 60%)" }}
+                />
+                <div className="relative p-7 sm:p-9">
+                  <div className="flex items-center gap-2 mb-6">
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Hotels · the same loop, direct bookings</span>
+                  </div>
+
+                  <p className="text-[0.95rem] leading-[1.6] mb-6">
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-amber mr-2">You</span>
+                    &ldquo;Direct bookings are down week over week. Is it our channels or the site?&rdquo;
+                  </p>
+
+                  <div className="font-mono text-[0.8rem] leading-[1.9] text-warm-50/85 space-y-1 border-l border-warm-50/15 pl-4 mb-6">
+                    <div><span className="text-brand">→ get_overview</span> · this_week vs previous <span className="text-warm-50/45">— sessions steady, bookings down</span></div>
+                    <div><span className="text-brand">→ get_channels</span> <span className="text-warm-50/45">— metasearch and paid referrals held; direct softened</span></div>
+                    <div><span className="text-brand">→ get_landing_pages</span> <span className="text-warm-50/45">— one property&apos;s booking-engine step lost conversion</span></div>
+                    <div><span className="text-brand">→ get_conversions</span> <span className="text-warm-50/45">— revenue loss concentrated in that property&apos;s rooms</span></div>
+                  </div>
+
+                  <p className="text-[0.95rem] leading-[1.65]">
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-brand mr-2">LENS AI</span>
+                    Demand held — metasearch and paid referrals are steady, so this isn&apos;t an acquisition problem. The drop is concentrated on one property&apos;s booking page, where the conversion rate fell mid-week while the rest of the portfolio held. That points to something in that property&apos;s booking flow — rate availability, inventory, or a broken step — not your channel mix. Check that booking engine first.
+                  </p>
+                </div>
+              </div>
+              <figcaption className="mt-3 text-[0.8rem] text-text-tertiary text-center">
+                Illustrative. Same method, a hotel portfolio measuring direct bookings — attributed last-click, in aggregate, with no per-guest journey.
               </figcaption>
             </figure>
 
