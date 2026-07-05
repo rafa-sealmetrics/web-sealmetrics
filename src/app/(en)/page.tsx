@@ -10,13 +10,11 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip, PricingPLG, FinalUrgencyV3 } from "@/components/sections/v3/HomeV3";
-import { AgenticSetupSteps } from "@/components/sections/v3/AgenticPlanV3";
-import { McpInstaller } from "@/components/sections/v3/McpInstaller";
+import { InstallInSeconds } from "@/components/sections/v3/InstallInSeconds";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import {
   HeroD,
   ConsentlessAnalytics,
-  OneMinuteLede,
   PromoDaysRealTime,
   GrowthRiskCost,
   QuoteBlock,
@@ -87,9 +85,7 @@ export default function Home() {
       <HeroD />
       <ConsentlessAnalytics />
       <LogosStrip />
-      <OneMinuteLede />
-      <AgenticSetupSteps />
-      <McpInstaller />
+      <InstallInSeconds />
       <PromoDaysRealTime />
       <GrowthRiskCost />
       <QuoteBlock />
