@@ -86,15 +86,19 @@ export function AnnouncementBar() {
 }
 
 /**
- * Scoped style: while the announcement bar is in the DOM, push the site's
- * fixed header down by the bar height (2.25rem / 36px) so it sits under the bar.
- * Removed automatically when the bar is dismissed (element leaves the DOM).
+ * Scoped style: while the announcement bar is in the DOM, push both the fixed
+ * header AND the page content down by the bar height (2.25rem / 36px) so the
+ * bar → header → content stack cleanly. Because #main-content shifts by exactly
+ * the bar height, every page keeps the same header-to-content gap it already
+ * had. Removed automatically when the bar is dismissed (element leaves the DOM).
  */
 export function AnnouncementBarOffset() {
   return (
     <style
       dangerouslySetInnerHTML={{
-        __html: `body:has(#sm-annbar) header.fixed { top: 2.25rem; }`,
+        __html:
+          `body:has(#sm-annbar) header.fixed{top:2.25rem}` +
+          `body:has(#sm-annbar) #main-content{padding-top:2.25rem}`,
       }}
     />
   );

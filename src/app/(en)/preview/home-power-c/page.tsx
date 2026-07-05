@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { LogosStrip, FinalUrgencyV3 } from "@/components/sections/v3/HomeV3";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
-import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
 import { QuoteBlock } from "@/components/sections/v3/HomeDSections";
 import { HeroPower, RealTimePower, PropertiesPower } from "@/components/preview/HomePowerSections";
 import {
@@ -25,8 +24,6 @@ export const metadata: Metadata = {
 export default function HomePowerPreviewC() {
   return (
     <>
-      <AnnouncementBarOffset />
-      <AnnouncementBar />
       <HeroPower variant="a" />
       <LogosStrip />
       <AiAskDemo />

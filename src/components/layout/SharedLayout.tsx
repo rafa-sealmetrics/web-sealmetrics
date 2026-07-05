@@ -1,6 +1,7 @@
 import { Onest, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
+import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
 import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
 import { ChatWidget } from "@/components/homepage/ChatWidget";
@@ -40,6 +41,8 @@ export function SharedLayout({
           {locale === "es" ? "Ir al contenido" : "Skip to content"}
         </a>
         <SealMetricsTracker />
+        <AnnouncementBarOffset />
+        <AnnouncementBar />
         <Header locale={locale} />
         <main id="main-content">{children}</main>
         <Footer locale={locale} />
