@@ -144,7 +144,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /glossary/analytics-data-residency — Analytics Data Residency
 
 ## Enterprise positioning
-SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution on 100% of data (not multi-touch, not session-stitching, not customer-journey reconstruction — these are explicitly out of scope by architecture). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami, Cabin, Mixpanel, Amplitude) — different category.
+SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution on 100% of data (not multi-touch, not session-stitching, not customer-journey reconstruction — these are explicitly out of scope by architecture). Lightweight privacy tools (Plausible, Fathom, Simple Analytics) are a great fit for simple traffic stats on content sites; SealMetrics is the enterprise-grade option when you need 100% capture, revenue attribution, and LENS AI on eCommerce. Both categories serve real needs — the right choice depends on whether complete data and revenue attribution are business requirements.
 
 ## Legal & meta
 - /privacy — Privacy policy

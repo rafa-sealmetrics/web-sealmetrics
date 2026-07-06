@@ -37,11 +37,42 @@ export const metadata: Metadata = {
   },
 };
 
+const softwareAppWithOffers = {
+  ...softwareApplicationSchema(),
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Growth",
+      price: "599",
+      priceCurrency: "EUR",
+      description: "€499/month billed annually",
+      url: "https://sealmetrics.com/pricing",
+    },
+    {
+      "@type": "Offer",
+      name: "Scale",
+      price: "1079",
+      priceCurrency: "EUR",
+      url: "https://sealmetrics.com/pricing",
+    },
+    {
+      "@type": "Offer",
+      name: "Enterprise",
+      price: "0",
+      priceCurrency: "EUR",
+      description: "Custom pricing",
+      url: "https://sealmetrics.com/pricing",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
       <JsonLd data={organizationSchema()} />
-      <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={softwareAppWithOffers} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
       <JsonLd data={statisticClaimSchema({
         text: "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",

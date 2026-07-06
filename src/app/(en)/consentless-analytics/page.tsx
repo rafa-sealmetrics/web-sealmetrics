@@ -58,6 +58,19 @@ const faqs = [
   },
 ];
 
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
+  })),
+};
+
 const authorities = [
   {
     country: "France",
@@ -129,6 +142,7 @@ export default function ConsentlessAnalyticsPillar() {
           },
         })}
       />
+      <JsonLd data={faqPageSchema} />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-12">

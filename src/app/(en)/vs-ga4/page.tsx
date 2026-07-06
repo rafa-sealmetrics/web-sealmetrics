@@ -47,6 +47,46 @@ const faqs = [
   { q: "What about GA4's free tier? Isn't the price a barrier?", a: "GA4 is free because you are the product — your data trains Google's ad models. SealMetrics starts at €499/mo annual. For a team spending €20K+/month in paid media, that's a rounding error compared to the cost of misallocated ad spend on incomplete data." },
 ];
 
+const buyerFaqs = [
+  {
+    q: "Is cookieless analytics legal under GDPR?",
+    a: "Yes. GDPR and ePrivacy regulate personal data, not aggregate counts. SealMetrics uses server-side event counting with no cookies, no fingerprinting and no personal identifier stored — so no consent banner is legally required. EU Data Protection Authorities have confirmed this architecture is out of scope for consent obligations.",
+  },
+  {
+    q: "How much traffic does GA4 miss in the EU?",
+    a: "Typically 40–60% of real EU visitors never appear in GA4 after consent rejection. Add ~25% blocked by ad blockers and Safari ITP, and standard GA4 reports can reflect as little as 13% of actual sessions. SealMetrics captures 100% of inbound traffic with no sampling or modelling.",
+  },
+  {
+    q: "Does switching to SealMetrics break my Google Ads campaigns?",
+    a: "No. Google Ads conversion tracking runs independently of your analytics tool. Most teams keep GA4 running purely as a Google Ads conduit while using SealMetrics for revenue and budget decisions. You get complete data without disrupting a single active campaign.",
+  },
+  {
+    q: "Where is SealMetrics data hosted?",
+    a: "All data is processed and stored in the EU (Dublin, Ireland), fully under EU jurisdiction. There is no Schrems II exposure because no data transfers to US servers. GA4, by contrast, routes data through Google's US infrastructure by default.",
+  },
+  {
+    q: "How long does it take to get decision-ready data with SealMetrics?",
+    a: "Under 30 minutes. Add one script tag, and your first channel-level traffic report is live immediately — no configuration wizards, no data-stream setup, no sampling thresholds. Most teams see their first meaningful gap versus GA4 within the first 24 hours.",
+  },
+  {
+    q: "What does SealMetrics cost compared to GA4 360?",
+    a: "SealMetrics starts at €499/month (annual). GA4 360 starts at ~$50,000/year. For mid-market teams not on 360, the comparison is SealMetrics vs GA4 free — where the real cost of GA4 is misallocated ad spend on incomplete data, not a licence fee.",
+  },
+];
+
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: buyerFaqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: a,
+    },
+  })),
+};
+
 export default function VsGA4Page() {
   return (
     <>
@@ -59,6 +99,7 @@ export default function VsGA4Page() {
         spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
         url: "/vs-ga4",
       })} />
+      <JsonLd data={faqPageSchema} />
 
       <VsGA4HeroV3 locale="en" />
       <div className="-mt-12 mb-2 max-w-[1200px] mx-auto px-5 sm:px-8">
@@ -85,6 +126,32 @@ export default function VsGA4Page() {
         titleEn={<>The <em>objections</em>, answered.</>}
         ledeEn="What CMOs and CTOs actually ask before replacing (or complementing) GA4."
       />
+
+      <section className="py-20 bg-warm-white border-t border-warm-100">
+        <div className="max-w-[860px] mx-auto px-5 sm:px-8">
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
+            Buyer questions, answered
+          </span>
+          <h2 className="text-[26px] sm:text-[32px] font-semibold tracking-[-0.02em] text-ink mt-3 mb-10 leading-[1.15]">
+            Everything buyers ask when comparing SealMetrics with GA4.
+          </h2>
+          <dl className="space-y-8">
+            {buyerFaqs.map(({ q, a }) => (
+              <div key={q}>
+                <dt>
+                  <h3 className="text-[18px] sm:text-[20px] font-semibold tracking-[-0.015em] text-ink leading-[1.3] mb-3">
+                    {q}
+                  </h3>
+                </dt>
+                <dd>
+                  <p className="text-[15.5px] leading-[1.65] text-ink-2">{a}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* Migration callout — Palladium Hotel Group switched from GA-stack to SealMetrics */}
       <section className="py-20 bg-warm-white border-t border-warm-100">
         <div className="max-w-[860px] mx-auto px-5 sm:px-8">
