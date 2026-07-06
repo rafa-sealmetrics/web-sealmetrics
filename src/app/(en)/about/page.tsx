@@ -27,11 +27,11 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "About SealMetrics — Founder-led analytics for Europe",
-  description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+  title: "Consentless Analytics for Europe — SealMetrics",
+  description: "SealMetrics measures 100% of EU traffic without cookies or consent banners. 2,000+ teams trust it. EU-hosted, GDPR-compliant by architecture.",
   openGraph: {
-    title: "About SealMetrics — Founder-led analytics for Europe",
-    description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
+    title: "Consentless Analytics for Europe — SealMetrics",
+    description: "SealMetrics measures 100% of EU traffic without cookies or consent banners. 2,000+ teams trust it. EU-hosted, GDPR-compliant by architecture.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -52,7 +52,7 @@ export default function Page() {
             Built so European teams <em>could trust their own data again.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+            SealMetrics is an EU-founded, EU-hosted analytics platform. We serve 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
           </p>
         </div>
       </section>
@@ -68,13 +68,13 @@ export default function Page() {
           </h2>
           <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
-              Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
+              Rafa Jiménez spent two decades in European eCommerce. First as a digital marketer. Then as an agency founder. Then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              The problem was never the analysts. It was the architecture. Every tool reported only for itself. Consent rejection made 40–60% of EU traffic invisible. Data passed through sub-processors across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              SealMetrics is built for the boardroom. It is a neutral layer that brand, finance and agencies can all rely on. Hosted in Dublin. Zero cookies. Zero personal data. Full data resolution. Built by a team that lived through the problem for two decades — and chose to fix it.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export default function Page() {
               <h2 className="h-section mt-5">What we've <em>proved so far.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Not projections, not aspirations. What 2,000+ European teams use SealMetrics for today.
+              Not projections. Not targets. These are the real results from 2,000+ European teams using SealMetrics today.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -125,11 +125,44 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Our mission</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Why we built a <em>privacy-first analytics platform</em> for Europe.</h2>
+          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              European regulation changed the rules of measurement. GDPR, ePrivacy and national DPA enforcement meant that the cookie-based analytics stack that worked in 2015 was broken by 2020. Consent rejection rates of 40–70% became normal across France, Germany and Spain. GA4 filled the gaps with modelling. Teams lost confidence in their own dashboards.
+            </p>
+            <p>
+              SealMetrics was architected from day one to operate without cookies and without collecting personal data. There is nothing to consent to, so there is nothing to reject. Every visit is measured. Revenue attribution is complete. The legal position is defensible because the architecture is compliant by design — not by policy.
+            </p>
+            <p>
+              Our mission is straightforward: give every European digital team a number they can take to the board and defend. One source of truth for sessions, conversions and revenue — independent of consent, independent of browser changes, independent of third-party sub-processors outside the EU.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>FAQ</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>Common questions <em>about SealMetrics.</em></h2>
+          <dl className="mt-10 space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-warm-100 pb-8">
+                <dt className="text-[18px] font-semibold text-ink leading-snug">{faq.question}</dt>
+                <dd className="mt-3 text-[17px] leading-[1.7] text-ink-2">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <FinalCtaSharedV3
         locale="en"
         titleEn={<>Talk directly to <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>the founder.</em></>}
         titleEs={<>Habla directamente con <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>el founder.</em></>}
-        ledeEn="30-minute walkthrough. Rafa personally runs every sales call. When something breaks, you email him — not a support ticket."
+        ledeEn="30-minute walkthrough. Rafa runs every sales call himself. If something breaks, you email him directly — not a support ticket."
         ledeEs="30 min de walkthrough. Rafa lleva personalmente cada llamada de ventas. Cuando algo falle, le escribes directamente — no a un ticket."
       />
     </>

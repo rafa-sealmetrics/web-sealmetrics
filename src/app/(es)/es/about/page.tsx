@@ -8,11 +8,11 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "Sobre SealMetrics — Analítica founder-led para Europa",
-  description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+  title: "Analítica sin cookies para Europa — SealMetrics",
+  description: "Analítica consentless 100% UE-hosted: visibilidad completa sin cookies, sin IPs, sin RGPD friction. 2.000+ equipos europeos ya confían en sus datos.",
   openGraph: {
-    title: "Sobre SealMetrics — Analítica founder-led para Europa",
-    description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
+    title: "Analítica sin cookies para Europa — SealMetrics",
+    description: "Analítica consentless 100% UE-hosted: visibilidad completa sin cookies, sin IPs, sin RGPD friction. 2.000+ equipos europeos ya confían en sus datos.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -47,15 +47,29 @@ export default function Page() {
           <h2 className="h-section mt-5" style={{ maxWidth: "22ch" }}>
             20 años viendo a equipos decidir con <em>datos en los que no confiaban.</em>
           </h2>
-          <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+          <p className="mt-6 text-[17px] font-medium text-ink leading-[1.5] border-l-4 border-brand pl-4">
+            <strong>TL;DR:</strong> Rafa Jiménez pasó dos décadas en eCommerce europeo y fundó SealMetrics para resolver el problema de datos inconsistentes que paralizaba las decisiones de negocio.
+          </p>
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
               Rafa Jiménez pasó dos décadas en eCommerce europeo — primero como marketer digital, luego fundando una agencia, luego asesorando grupos retail. Cada reunión seguía el mismo patrón: el número de GA4, el del pixel, el del CRM. Todos distintos. Todos defendidos. Ninguno fiable.
             </p>
             <p>
               El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible el 40–60% del tráfico UE. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
             </p>
+          </div>
+          <ul className="mt-8 space-y-3 text-[16px] leading-[1.6] text-ink-2 list-none">
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>20+ años</strong> de experiencia directa en eCommerce europeo antes de fundar SealMetrics.</span></li>
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>40–60% del tráfico UE</strong> quedaba invisible con las herramientas tradicionales basadas en consentimiento.</span></li>
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>Un único número</strong> que mark, finanzas y agencias puedan firmar, sin cruzar tres fuentes.</span></li>
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>Alojado en Dublín (UE)</strong>, cero cookies, cero dato personal, resolución completa.</span></li>
+          </ul>
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
             <p>
               SealMetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
+            </p>
+            <p>
+              La misión es concreta: que cualquier equipo europeo pueda abrir un dashboard el lunes por la mañana y confiar en lo que ve. Sin tener que cruzar tres fuentes. Sin que el departamento legal ponga objeciones. Sin perder la mitad del tráfico porque alguien rechazó una cookie. Datos limpios, accionables y defendibles ante cualquier auditoría.
             </p>
           </div>
 
@@ -75,6 +89,37 @@ export default function Page() {
       </section>
 
       <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <span className="eyebrow mb-5" style={{ display: "inline-flex" }}>Nuestra filosofía</span>
+          <h2 className="h-section mt-5" style={{ maxWidth: "28ch" }}>
+            Privacidad y precisión <em>no son conceptos opuestos.</em>
+          </h2>
+          <p className="mt-6 text-[17px] font-medium text-ink leading-[1.5] border-l-4 border-brand pl-4">
+            <strong>TL;DR:</strong> SealMetrics mide con resolución completa sin usar cookies ni datos personales, cumpliendo el RGPD desde el primer día sin sacrificar visibilidad.
+          </p>
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              Durante años el sector asumió que cumplir con el RGPD significaba sacrificar calidad de datos. Banners de consentimiento, tasas de aceptación del 40–60%, modelos de atribución rotos. SealMetrics parte de una premisa diferente: es posible medir con resolución completa sin tocar ningún dato personal.
+            </p>
+          </div>
+          <ul className="mt-8 space-y-3 text-[16px] leading-[1.6] text-ink-2 list-none">
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>Sin cookies de seguimiento</strong> — no se necesita consentimiento para el tracking principal.</span></li>
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>Sin almacenamiento de IPs</strong> ni construcción de perfiles de usuario.</span></li>
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>100% UE-hosted</strong> — ningún dato se transfiere fuera de la Unión Europea.</span></li>
+            <li className="flex gap-3 items-start"><span className="text-brand font-bold mt-0.5">→</span><span><strong>Mayor visibilidad</strong> que cualquier solución basada en consentimiento, aprobada por el departamento legal el día 1.</span></li>
+          </ul>
+          <div className="mt-8 space-y-6 text-[17px] leading-[1.7] text-ink-2">
+            <p>
+              Nuestra arquitectura no usa cookies de seguimiento, no almacena IPs, no construye perfiles de usuario y no transfiere datos fuera de la Unión Europea. El resultado es una analítica que el departamento legal aprueba el primer día — y que al mismo tiempo da a los equipos de marketing una visibilidad mayor que cualquier solución basada en consentimiento.
+            </p>
+            <p>
+              Creemos que la analítica debe ser una infraestructura de confianza dentro de la organización, no una fuente de fricción. Cuando mark, finanzas y agencia trabajan con el mismo número — y ese número resiste el escrutinio — las decisiones son más rápidas y los presupuestos se asignan mejor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-28 bg-warm-50 border-t border-warm-100">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
             <div>
