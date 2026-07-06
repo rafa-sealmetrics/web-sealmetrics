@@ -39,6 +39,21 @@ export function getBlogDateModified(slug: string, fallback: string): string {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "gdpr-eprivacy-analytics-legal-assessment",
+    title: "Is Your Analytics Actually GDPR-Compliant? A Legal Assessment",
+    description:
+      "GDPR and ePrivacy are two different laws, and analytics has to clear both to run without a consent banner. The legal test, plus a per-tool verdict for GA4, Matomo, Plausible, Piwik PRO and SealMetrics.",
+    date: "2026-07-06",
+    category: "Regulation",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: [
+      "gdpr-analytics-without-consent",
+      "why-ga4-shows-13pct-eu-traffic",
+      "best-enterprise-analytics-platforms",
+    ],
+  },
+  {
     slug: "self-service-analytics-lens-ai",
     title: "How SealMetrics Enables Self-Service Analytics With LENS AI",
     description:

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 const ES_TRANSLATED_SLUGS = new Set([
+  "gdpr-eprivacy-analytics-legal-assessment",
   "self-service-analytics-lens-ai",
   "cookieless-analytics-explained",
   "consent-banner-impact-on-analytics",
@@ -32,6 +33,12 @@ const ES_TRANSLATED_SLUGS = new Set([
 ]);
 
 const ES_TRANSLATIONS: Record<string, { title: string; description: string; category: string; readTime: string }> = {
+  "gdpr-eprivacy-analytics-legal-assessment": {
+    title: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
+    description: "RGPD y ePrivacy son dos leyes distintas, y la analítica tiene que superar las dos para funcionar sin banner. El test legal y el veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
+    category: "Regulación",
+    readTime: "9 min",
+  },
   "self-service-analytics-lens-ai": {
     title: "Cómo SealMetrics habilita la analítica self-service con LENS AI",
     description: "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. Cómo el dato cookieless completo más el MCP de SealMetrics permiten consultar tu propia analítica.",
@@ -107,7 +114,7 @@ export default function Page() {
             Calidad de datos, atribución, regulación de privacidad y el futuro de la medición. Escrito para líderes de marketing y analítica.
           </p>
           <p className="mt-6 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-            5 artículos disponibles en español · resto solo en inglés por ahora
+            7 artículos disponibles en español · resto solo en inglés por ahora
           </p>
         </div>
       </section>

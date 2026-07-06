@@ -71,7 +71,7 @@ export default function Page() {
               <h2 className="h-section mt-5">Todo el <em>papeleo.</em> Ninguna excusa.</h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Cada framework que tu equipo de compliance busca — arquitectural, contractual y pre-documentado para procurement review.
+              Cada framework que tu equipo de compliance busca — arquitectural, contractual y pre-documentado para procurement review. ¿No sabes dónde estás hoy? Haz un <Link href="/es/reg-gap-analysis" className="text-brand no-underline border-b border-warm-200 hover:border-brand">análisis de brechas regulatorias</Link> para ver dónde se queda corto tu stack actual.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
