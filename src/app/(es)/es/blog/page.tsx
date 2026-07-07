@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 const ES_TRANSLATED_SLUGS = new Set([
+  "gdpr-analytics-spain-faq",
   "gdpr-eprivacy-analytics-legal-assessment",
   "ga4-alternatives-enterprise",
   "self-service-analytics-lens-ai",
@@ -34,6 +35,12 @@ const ES_TRANSLATED_SLUGS = new Set([
 ]);
 
 const ES_TRANSLATIONS: Record<string, { title: string; description: string; category: string; readTime: string }> = {
+  "gdpr-analytics-spain-faq": {
+    title: "Analítica RGPD en España: las 7 preguntas que hacen las tiendas online",
+    description: "¿Necesita tu tienda un banner de cookies para la analítica? ¿Es legal GA4 en España? ¿Qué permite la AEPD y qué cuesta incumplir la LSSI? Respuestas directas.",
+    category: "Regulación",
+    readTime: "5 min",
+  },
   "gdpr-eprivacy-analytics-legal-assessment": {
     title: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
     description: "RGPD y ePrivacy son dos leyes distintas, y la analítica tiene que superar las dos para funcionar sin banner. El test legal y el veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
@@ -121,7 +128,7 @@ export default function Page() {
             Calidad de datos, atribución, regulación de privacidad y el futuro de la medición. Escrito para líderes de marketing y analítica.
           </p>
           <p className="mt-6 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-            8 artículos disponibles en español · resto solo en inglés por ahora
+            9 artículos disponibles en español · resto solo en inglés por ahora
           </p>
         </div>
       </section>

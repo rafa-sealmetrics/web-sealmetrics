@@ -39,6 +39,21 @@ export function getBlogDateModified(slug: string, fallback: string): string {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "gdpr-analytics-spain-faq",
+    title: "GDPR Analytics in Spain: 7 Questions Online Stores Ask",
+    description:
+      "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow, and what does LSSI non-compliance cost? Direct answers, one per question.",
+    date: "2026-07-07",
+    category: "Regulation",
+    readTime: "5 min",
+    author: AUTHORS.rafa,
+    related: [
+      "gdpr-eprivacy-analytics-legal-assessment",
+      "gdpr-analytics-without-consent",
+      "consent-banner-impact-on-analytics",
+    ],
+  },
+  {
     slug: "gdpr-eprivacy-analytics-legal-assessment",
     title: "Is Your Analytics Actually GDPR-Compliant? A Legal Assessment",
     description:

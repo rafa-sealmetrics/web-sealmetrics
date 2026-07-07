@@ -26,6 +26,7 @@ const translatedPaths = new Set([
   "/alternatives/google-analytics",
   "/for",
   "/blog",
+  "/blog/gdpr-analytics-spain-faq",
   "/blog/gdpr-eprivacy-analytics-legal-assessment",
   "/blog/ga4-alternatives-enterprise",
   "/blog/self-service-analytics-lens-ai",

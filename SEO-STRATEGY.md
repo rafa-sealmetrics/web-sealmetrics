@@ -321,7 +321,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 10 | 4 | connect ChatGPT/Claude to my analytics · MCP analytics | `/ai-analytics` FAQ + `/blog/self-service-analytics-lens-ai` | live |
 | 11 | 5 | CNIL-exempt analytics / analytics AEPD España | `/gdpr-analytics/france` + `/gdpr-analytics/spain` + CNIL post | live |
 | 12 | 5 | analytics compliance audit / análisis de brechas RGPD analítica | `/reg-gap-analysis` (EN+ES) | shipped 7 Jul |
-| 13 | 5 | analytics without consent for small business (ES focus — beat trustedshops.es) | ES blog cluster + `/es/reg-gap-analysis` | partial |
+| 13 | 5 | analytics without consent for small business (ES focus — beat trustedshops.es) | `/blog/gdpr-analytics-spain-faq` (EN+ES) + `/es/reg-gap-analysis` | shipped 7 Jul |
 
 ### Method (monthly, first week)
 
@@ -356,7 +356,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 
 ### Backlog (next actions, priority order)
 
-1. **ES Tier-5 micro-FAQs** — 3–5 short QuickAnswer-led glossary/blog additions targeting "analítica RGPD pequeños negocios", "cookies AEPD tienda online". Beats trustedshops.es (2 mentions) on specificity.
+1. ~~**ES Tier-5 micro-FAQs**~~ — DONE 7 Jul: `/blog/gdpr-analytics-spain-faq` (EN+ES) — 7 FAQs phrased as the literal Tier-5 prompts (banner necessity, AEPD guidance, GA4 legality, small-business tooling, cookieless conversions, LSSI fines, banner data loss), FAQPage schema, interlinked with `/gdpr-analytics/spain`. One post instead of 3–5 separate micro-pages to avoid thin-content risk; each FAQ is independently extractable.
 2. ~~**`llms.txt` refresh**~~ — DONE 7 Jul: 4 new assets added, Blog (ES) list rebuilt, dead `/gdpr-analytics` hub line removed.
 3. **Tier-4 citation seeding** — the OpenAI/Anthropic gap is domain-diversity: flowsery/bootstrap/zenovay are thin content. `/ai-analytics` + MCP docs should displace them once indexed; re-check Sept run.
 4. **Rule reminder** — competitor coverage is done inside posts with "different category" framing. Never a `/vs/plausible|fathom|umami` page (CLAUDE.md competitive positioning).
