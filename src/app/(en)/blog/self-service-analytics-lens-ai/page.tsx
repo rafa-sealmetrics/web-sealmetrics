@@ -378,6 +378,10 @@ export default function Page() {
                 <p className="text-[0.8rem] text-text-tertiary mt-1">First-party, cookieless collection and why the numbers reconcile.</p>
               </li>
               <li>
+                <Link href="/ai-analytics" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">AI Analytics — the pillar</Link>
+                <p className="text-[0.8rem] text-text-tertiary mt-1">Why AI analytics is only as trustworthy as the data beneath it — and the EU private-AI layer.</p>
+              </li>
+              <li>
                 <Link href="/glossary/cookieless-analytics" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless Analytics — definition</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">The concept the whole self-service story depends on.</p>
               </li>

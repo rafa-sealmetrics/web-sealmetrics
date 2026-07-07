@@ -71,7 +71,7 @@ export default function Page() {
               <h3 className="sr-only">How is SealMetrics GDPR-compliant by architecture?</h3>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Every framework your compliance team looks for — architectural, contractual and pre-documented for procurement review.
+              Every framework your compliance team looks for — architectural, contractual and pre-documented for procurement review. Not sure where you stand today? Run a <Link href="/reg-gap-analysis" className="text-brand no-underline border-b border-warm-200 hover:border-brand">regulatory gap analysis</Link> to find where your current stack falls short.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
