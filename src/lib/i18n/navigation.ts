@@ -17,6 +17,7 @@ const translatedPaths = new Set([
   "/vs",
   "/vs-ga4",
   "/modern-analytics",
+  "/ai-analytics",
   "/reg-gap-analysis",
   "/vs/ga360",
   "/vs/adobe-analytics",
