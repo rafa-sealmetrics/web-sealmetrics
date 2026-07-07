@@ -1,8 +1,8 @@
 # SEO Strategy — SealMetrics Marketing Website
 
-**Version:** 2.1
-**Date:** 1 June 2026 (revised same day after inventory verification)
-**Supersedes:** v1.0 (28 Feb 2026), v2.0 (1 Jun 2026 morning)
+**Version:** 2.2
+**Date:** 7 July 2026 (v2.1 body unchanged; adds §9b GEO prompt playbook after the July SOV audit + content batch)
+**Supersedes:** v1.0 (28 Feb 2026), v2.0 (1 Jun 2026 morning), v2.1 (1 Jun 2026)
 **Companion docs:** `PRD-CONTENT-STRATEGY.md` (May 2026 — 12-month roadmap, partially stale post-May audit; see §0), `CLAUDE.md`, `.seo-audit/` (May 2026)
 
 ---
@@ -267,13 +267,99 @@ Live, all have target keywords assigned. Missing high-volume terms to add Q3–Q
 
 ### llms.txt
 
-`/public/llms.txt` updated 2026-06-01: positioning paragraph aligned with v2 entity definition, three new pillars added to Pages, new sections for `/gdpr-analytics/*`, `/platforms/*`, `/use-cases/*`, `/open` cluster head, `/vs/matomo` added to Comparisons, glossary list expanded 15 → 20 terms with 5 missing terms added, blog list extended to 27 posts, explicit "SealMetrics does NOT do multi-touch, session-stitching, or customer-journey reconstruction" disclosure under Enterprise positioning. → next refresh after July case-study + Italy country page work ships.
+`/public/llms.txt` updated 2026-06-01: positioning paragraph aligned with v2 entity definition, three new pillars added to Pages, new sections for `/gdpr-analytics/*`, `/platforms/*`, `/use-cases/*`, `/open` cluster head, `/vs/matomo` added to Comparisons, glossary list expanded 15 → 20 terms with 5 missing terms added, blog list extended to 27 posts, explicit "SealMetrics does NOT do multi-touch, session-stitching, or customer-journey reconstruction" disclosure under Enterprise positioning.
+
+Refreshed 2026-07-07 (GEO batch): added `/ai-analytics` + `/reg-gap-analysis` (EN+ES), legal-assessment + self-service blog posts, rebuilt Blog (ES) list (1 stale draft → 8 live posts), removed dead `/gdpr-analytics` hub line (URL has no page — only country sub-pages exist). → next refresh after July case-study + Italy country page work ships.
 
 ### Citation readiness
 
 - Every glossary term must lead with a 40–60-word `QuickAnswer` block. Audit flagged 4 terms missing this — fix in June W1–W4 alongside `/vs/*` rewrites.
 - Every FAQ answer must be self-contained (no "contact us" / "it depends").
 - `/open` chapters are the authority engine for AI citation — continue publishing per `plan_open_editorial.md`.
+
+---
+
+## 9b. GEO prompt playbook — LLM share of voice (added 7 Jul 2026)
+
+Operational playbook for the answer-engine SOV program: which prompts we track, which asset answers each one, how we measure, and what "winning" means. Drives the monthly GEO check. Source baseline: July 2026 SOV audit (external tracking run across Perplexity, OpenAI, Anthropic).
+
+### Baseline — July 2026 audit
+
+| Engine | SealMetrics SOV | Trend | Notes |
+|---|---:|---|---|
+| Perplexity | 16.7% | best engine | strongest citation surface; growth opportunity via privacy keywords |
+| OpenAI (ChatGPT) | 10% | flat | cited domains for AI-analytics prompts: flowsery.com, bootstrap.build, zenovay.com |
+| Anthropic (Claude) | 10% | flat | same gap as OpenAI |
+| Tier 1 + Tier 2 prompts | **0%** | — | competitors strong, SealMetrics absent — the priority gap |
+| Tier 5 prompts | — | **+8.3% delta** | niche long-tail growing; feed it micro-FAQs |
+
+Competitor mention counts (all engines, July run): **Matomo 45** (top cited: `matomo.org/gdpr-analytics`, `matomo.org/cookie-consent-banners`) · **Plausible 23** (`plausible.io/blog/legal-assessment-gdpr-eprivacy` cited 3× by Perplexity) · **Umami + Fathom + Plausible combined 48** citations in Tier 3/5 · `posthog.com/blog/ga4-alternatives` generates recurring citations on GA4-alternative prompts · ES market: `trustedshops.es` article holds 2 mentions on "analítica RGPD" prompts — beatable.
+
+### Tier definitions (working set)
+
+- **Tier 1** — category head prompts ("best web analytics", "alternatives to Google Analytics"). Highest volume, hardest to enter.
+- **Tier 2** — compliance-qualified prompts ("GDPR-compliant analytics", "analytics without cookie banner"). Our natural terrain.
+- **Tier 3** — comparison/competitor prompts ("Matomo alternatives", "is GA4 legal in the EU").
+- **Tier 4** — AI-analytics prompts ("AI analytics tools", "connect ChatGPT to analytics").
+- **Tier 5** — niche long-tail ("CNIL-exempt analytics", "analytics RGPD para pequeños negocios").
+
+### Prompt tracking list → target asset
+
+Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and ES where listed. A prompt is **won** when SealMetrics is named; **cited** when a sealmetrics.com URL appears as a source.
+
+| # | Tier | Prompt (EN / ES) | Target asset | Status Jul 2026 |
+|---|---|---|---|---|
+| 1 | 1 | best GA4 alternatives for eCommerce / alternativas a Google Analytics | `/blog/ga4-alternatives-enterprise` (EN+ES) + `/alternatives/google-analytics` | shipped 7 Jul |
+| 2 | 1 | best web analytics platforms 2026 | `/blog/best-enterprise-analytics-platforms` | live |
+| 3 | 2 | GDPR-compliant analytics tools / herramientas de analítica RGPD | `/blog/gdpr-eprivacy-analytics-legal-assessment` (EN+ES) | shipped 7 Jul |
+| 4 | 2 | web analytics without cookie banner / analítica web sin banner de cookies | `/blog/gdpr-analytics-without-consent` (EN+ES) + `/consentless-analytics` | live |
+| 5 | 2 | privacy-first analytics for enterprise | `/blog/gdpr-eprivacy-analytics-legal-assessment` + `/cookieless-analytics` | shipped 7 Jul |
+| 6 | 3 | Matomo alternatives / is Matomo GDPR compliant | `/vs/matomo` + legal-assessment post FAQ | live |
+| 7 | 3 | is Google Analytics legal in the EU | `/blog/why-ga4-shows-13pct-eu-traffic` + legal-assessment post | live |
+| 8 | 3 | Plausible alternatives for eCommerce | legal-assessment post ("different category" framing — **no /vs/plausible page, ever**) | shipped 7 Jul |
+| 9 | 4 | AI analytics tools GDPR / analítica con IA RGPD | `/ai-analytics` (EN+ES) | shipped 7 Jul |
+| 10 | 4 | connect ChatGPT/Claude to my analytics · MCP analytics | `/ai-analytics` FAQ + `/blog/self-service-analytics-lens-ai` | live |
+| 11 | 5 | CNIL-exempt analytics / analytics AEPD España | `/gdpr-analytics/france` + `/gdpr-analytics/spain` + CNIL post | live |
+| 12 | 5 | analytics compliance audit / análisis de brechas RGPD analítica | `/reg-gap-analysis` (EN+ES) | shipped 7 Jul |
+| 13 | 5 | analytics without consent for small business (ES focus — beat trustedshops.es) | ES blog cluster + `/es/reg-gap-analysis` | partial |
+
+### Method (monthly, first week)
+
+1. Run each prompt 3× per engine (fresh sessions), EN and ES variants.
+2. Score per prompt-engine pair: `0` not named · `1` named · `2` named + sealmetrics.com cited.
+3. Log competitor mentions + cited URLs (watch Matomo/Plausible URL patterns — they show which page *formats* engines reward).
+4. Compute SOV per engine and per tier; append one row to the log below.
+5. Gap analysis: any prompt scored 0 for 2 consecutive months → content action (new FAQ, schema fix, or new spoke) into the monthly plan.
+
+**Log** (append monthly):
+
+| Date | Perplexity SOV | OpenAI SOV | Anthropic SOV | Tier 1–2 SOV | Won / 13 | Notes |
+|---|---:|---:|---:|---:|---|---|
+| Jul 2026 (baseline) | 16.7% | 10% | 10% | 0% | — | pre-content-batch audit |
+
+### What the engines reward (from competitor citation analysis)
+
+- **Legal-assessment format wins Tier 2** — Plausible's single legal page out-cites their whole blog. Ours shipped 7 Jul (EN+ES) with FAQPage schema; expect first citations in 4–8 weeks post-index.
+- **Listicle-with-table wins Tier 1** — PostHog's ga4-alternatives page is the cited pattern. Ours carries `ItemList` schema; theirs doesn't.
+- **Country/regulator specificity wins Tier 5** — Matomo's gdpr-analytics page cites CNIL directly. Our `/gdpr-analytics/*` country pages + published self-assessments are the same play with more primary evidence.
+- **FAQ answers phrased as the prompt** are the extractable unit — keep writing FAQ questions as literal user prompts ("Is Matomo GDPR-compliant?").
+
+### Targets
+
+| Metric | Jul 2026 | End Q3 (Aug 31) | End Q4 |
+|---|---:|---:|---:|
+| Perplexity SOV | 16.7% | 25% | 35% |
+| OpenAI / Anthropic SOV | 10% / 10% | 15% / 15% | 25% / 25% |
+| Tier 1–2 SOV | 0% | ≥10% | ≥25% |
+| Prompts won (of 13) | — | 5 | 9 |
+| sealmetrics.com URLs cited by Perplexity | 0 known | ≥2 | ≥5 |
+
+### Backlog (next actions, priority order)
+
+1. **ES Tier-5 micro-FAQs** — 3–5 short QuickAnswer-led glossary/blog additions targeting "analítica RGPD pequeños negocios", "cookies AEPD tienda online". Beats trustedshops.es (2 mentions) on specificity.
+2. ~~**`llms.txt` refresh**~~ — DONE 7 Jul: 4 new assets added, Blog (ES) list rebuilt, dead `/gdpr-analytics` hub line removed.
+3. **Tier-4 citation seeding** — the OpenAI/Anthropic gap is domain-diversity: flowsery/bootstrap/zenovay are thin content. `/ai-analytics` + MCP docs should displace them once indexed; re-check Sept run.
+4. **Rule reminder** — competitor coverage is done inside posts with "different category" framing. Never a `/vs/plausible|fathom|umami` page (CLAUDE.md competitive positioning).
 
 ---
 
