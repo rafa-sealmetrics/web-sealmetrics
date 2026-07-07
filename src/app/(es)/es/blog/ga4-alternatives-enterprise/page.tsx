@@ -8,20 +8,20 @@ import {
   itemListSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { RelatedReading } from "@/components/ui/RelatedReading";
 
 export const metadata: Metadata = {
-  title: "7 GA4 Alternatives for eCommerce Teams in 2026",
+  title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
   description:
-    "Compare 7 GA4 alternatives for eCommerce: pricing, data capture rates, EU compliance, and eCommerce features. From GA360 to cookieless platforms.",
+    "Compara 7 alternativas a GA4 para eCommerce: precio, tasa de captura de dato, cumplimiento UE y features de eCommerce. De GA360 a plataformas cookieless.",
   openGraph: {
-    title: "7 GA4 Alternatives for eCommerce Teams in 2026",
+    title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
     description:
-      "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
+      "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
     type: "article",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/ga4-alternatives-enterprise",
+    canonical: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise",
     languages: getAlternates("/blog/ga4-alternatives-enterprise"),
   },
 };
@@ -30,122 +30,99 @@ const alternatives = [
   {
     name: "Google Analytics 360 (GA360)",
     url: "https://marketingplatform.google.com/about/analytics-360/",
-    pricing: "$150,000+/yr",
-    dataCompleteness: "~30-35% in EU",
-    euCompliance: "US data processing, DPA required, consent mode v2",
-    ecommerceFeatures:
-      "Enhanced eCommerce, native Google Ads attribution, BigQuery export, unsampled reports (quota-limited)",
+    pricing: "$150.000+/año",
+    dataCompleteness: "~30-35% en UE",
     chooseIf:
-      "You have $150K+ analytics budget, your team lives in Looker Studio, and consent rates in your markets exceed 70%.",
+      "Tienes un presupuesto de analítica de más de 150K, tu equipo vive en Looker Studio y las tasas de consentimiento en tus mercados superan el 70%.",
   },
   {
     name: "Adobe Analytics",
     url: "https://business.adobe.com/products/analytics/adobe-analytics.html",
-    pricing: "$100,000+/yr",
-    dataCompleteness: "~30% in EU",
-    euCompliance: "Configurable, optional EU hosting, legal review required",
-    ecommerceFeatures:
-      "Deepest segmentation available, Analysis Workspace, calculated metrics, cross-product integration with Adobe Experience Cloud",
+    pricing: "$100.000+/año",
+    dataCompleteness: "~30% en UE",
     chooseIf:
-      "You already use Adobe Experience Cloud and have dedicated Adobe analysts who can leverage Analysis Workspace.",
+      "Ya usas Adobe Experience Cloud y tienes analistas dedicados de Adobe que saben exprimir Analysis Workspace.",
   },
   {
     name: "SealMetrics",
     url: "https://sealmetrics.com",
-    pricing: "From \u20ac599/mo (\u20ac5,988/yr)",
-    dataCompleteness: "100% in EU",
-    euCompliance:
-      "GDPR compliant by design — no PII collected, no cookies, no consent required, EU-only data residency",
-    ecommerceFeatures:
-      "Last-click revenue attribution on complete data, LENS AI with 60+ anomaly rules, AI agent analytics, zero data sampling",
+    pricing: "Desde 599 €/mes (5.988 €/año)",
+    dataCompleteness: "100% en UE",
     chooseIf:
-      "You need 100% data capture in the EU, accurate last-click revenue attribution, and enterprise analytics without six-figure pricing.",
+      "Necesitas captura del 100% del dato en la UE, atribución de revenue a último clic precisa y analítica enterprise sin precios de seis cifras.",
   },
   {
     name: "Piwik PRO",
     url: "https://piwikpro.com/",
-    pricing: "From ~\u20ac30,000/yr",
-    dataCompleteness: "~35% in EU",
-    euCompliance:
-      "EU-only hosting, bundled consent manager, strong in regulated sectors",
-    ecommerceFeatures:
-      "Standard eCommerce tracking, tag manager included, custom dimensions, no data sampling",
+    pricing: "Desde ~30.000 €/año",
+    dataCompleteness: "~35% en UE",
     chooseIf:
-      "Data sovereignty is non-negotiable, you operate in government or finance, and cookie-based collection is acceptable.",
+      "La soberanía del dato es innegociable, operas en administración pública o finanzas y la recogida basada en cookies es aceptable.",
   },
   {
     name: "Matomo",
     url: "https://matomo.org/",
-    pricing: "Free (self-hosted) / From \u20ac23/mo (cloud)",
-    dataCompleteness: "~40-60% (configurable cookieless mode)",
-    euCompliance:
-      "Full data ownership if self-hosted, cookieless mode available but limited",
-    ecommerceFeatures:
-      "eCommerce plugin (paid), goals, funnels, heatmaps (paid), large plugin ecosystem",
+    pricing: "Gratis (self-hosted) / Desde 23 €/mes (cloud)",
+    dataCompleteness: "~40-60% (modo cookieless configurable)",
     chooseIf:
-      "You have DevOps capacity, want open-source transparency, and can accept the trade-offs of Matomo's cookieless mode.",
+      "Tienes capacidad de DevOps, quieres transparencia open-source y puedes asumir las contrapartidas del modo cookieless de Matomo.",
   },
   {
     name: "Amplitude",
     url: "https://amplitude.com/",
-    pricing: "From ~$50,000/yr (enterprise)",
-    dataCompleteness: "Varies (cookie-dependent)",
-    euCompliance: "Standard DPA, US/EU hosting options",
-    ecommerceFeatures:
-      "Best-in-class product analytics: behavioral cohorts, funnel analysis, retention curves, experimentation platform",
+    pricing: "Desde ~$50.000/año (enterprise)",
+    dataCompleteness: "Variable (depende de cookies)",
     chooseIf:
-      "Your primary need is product analytics — feature adoption, user journey analysis — and web traffic is handled by a separate tool.",
+      "Tu necesidad principal es la analítica de producto —adopción de features, análisis de journey de usuario— y el tráfico web lo cubre otra herramienta.",
   },
   {
     name: "Mixpanel",
     url: "https://mixpanel.com/",
-    pricing: "Free tier / From ~$25,000/yr (enterprise)",
-    dataCompleteness: "Varies (cookie-dependent)",
-    euCompliance: "EU data residency option available",
-    ecommerceFeatures:
-      "Event-based tracking, funnels, retention reports, flow visualization, intuitive interface for non-technical teams",
+    pricing: "Plan gratuito / Desde ~$25.000/año (enterprise)",
+    dataCompleteness: "Variable (depende de cookies)",
     chooseIf:
-      "You need event-based product analytics with a lower barrier to entry than Amplitude and a generous free tier.",
+      "Necesitas analítica de producto basada en eventos con menos barrera de entrada que Amplitude y un plan gratuito generoso.",
   },
 ];
 
-export default function GA4AlternativesEnterprisePage() {
+export default function GA4AlternativesEnterpriseEsPage() {
   return (
     <>
       <Breadcrumbs
         items={[
-          { label: "Blog", href: "/blog" },
-          { label: "GA4 Alternatives for eCommerce" },
+          { label: "Blog", href: "/es/blog" },
+          { label: "Alternativas a GA4 para eCommerce" },
         ]}
+        locale="es"
       />
       <JsonLd
         data={articleSchema({
-          headline: "7 GA4 Alternatives for eCommerce Teams in 2026",
+          headline: "7 alternativas a GA4 para equipos de eCommerce en 2026",
           description:
-            "Compare 7 GA4 alternatives for eCommerce on pricing, data capture, EU compliance, and features.",
+            "Compara 7 alternativas a GA4 para eCommerce en precio, captura de dato, cumplimiento UE y features.",
           datePublished: "2026-03-02",
           dateModified: "2026-03-16",
-          url: "/blog/ga4-alternatives-enterprise",
-          category: "Comparisons",
+          url: "/es/blog/ga4-alternatives-enterprise",
+          category: "Comparativas",
           author: {
             name: "Rafa Jiménez",
-            url: "/about",
+            url: "/es/authors/rafa-jimenez",
             jobTitle: "Founder, SealMetrics",
           },
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Blog", url: "/blog" },
-          { name: "GA4 Alternatives for eCommerce", url: "/blog/ga4-alternatives-enterprise" },
+          { name: "Blog", url: "/es/blog" },
+          { name: "Alternativas a GA4 para eCommerce", url: "/es/blog/ga4-alternatives-enterprise" },
         ])}
       />
       <JsonLd
         data={itemListSchema({
-          name: "GA4 Alternatives for eCommerce Teams 2026",
+          name: "Alternativas a GA4 para equipos de eCommerce 2026",
           description:
-            "7 GA4 alternatives compared on data completeness, pricing, EU compliance, and eCommerce features.",
-          url: "/blog/ga4-alternatives-enterprise",
+            "7 alternativas a GA4 comparadas por completitud del dato, precio, cumplimiento UE y features de eCommerce.",
+          url: "/es/blog/ga4-alternatives-enterprise",
           items: alternatives.map((a, i) => ({
             name: a.name,
             url: a.url,
@@ -157,90 +134,91 @@ export default function GA4AlternativesEnterprisePage() {
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
-              Comparisons
+              Comparativas
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              7 GA4 Alternatives for eCommerce Teams in 2026
+              7 alternativas a GA4 para equipos de eCommerce en 2026
             </h1>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">March 2, 2026</time>
-              <span>10 min read</span>
-              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
+              <time className="font-mono">2 marzo 2026</time>
+              <span>10 min de lectura</span>
+              <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
             </div>
           </header>
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
-              Key Takeaways
+              Puntos clave
             </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
-                GA4 captures approximately 13% of actual EU eCommerce traffic
-                after accounting for consent rejection (35-55%), ad blockers
-                (40%+), and data sampling. Revenue attribution built on this data
-                is structurally incomplete.
+                GA4 captura aproximadamente el 13% del tráfico real de eCommerce
+                UE tras contar el rechazo de consentimiento (35-55%), los ad
+                blockers (40%+) y el muestreo de datos. La atribución de revenue
+                construida sobre ese dato es estructuralmente incompleta.
               </li>
               <li>
-                Enterprise alternatives split into two categories:
-                cookie-dependent platforms (GA360, Adobe, Piwik PRO) that
-                improve on GA4 but still lose 35-55% of EU traffic, and
-                cookieless platforms (SealMetrics) that capture 100%.
+                Las alternativas enterprise se dividen en dos categorías: las
+                plataformas dependientes de cookies (GA360, Adobe, Piwik PRO) que
+                mejoran a GA4 pero aún pierden 35-55% del tráfico UE, y las
+                plataformas cookieless (SealMetrics) que capturan el 100%.
               </li>
               <li>
-                Amplitude and Mixpanel are product analytics tools, not web
-                analytics replacements. They excel at in-app behavior but do not
-                measure traditional web metrics like traffic sources or campaign
-                attribution.
+                Amplitude y Mixpanel son herramientas de analítica de producto, no
+                sustitutos de analítica web. Destacan en el comportamiento in-app
+                pero no miden métricas web tradicionales como fuentes de tráfico o
+                atribución de campañas.
               </li>
               <li>
-                The total cost gap between platforms spans 25x or more. GA360
-                costs $150K+/yr for ~35% EU data capture. SealMetrics costs
-                {"\u20ac"}5,988/yr for 100% data capture. The relevant comparison
-                is cost per accurate data point.
+                La brecha de coste total entre plataformas es de 25x o más. GA360
+                cuesta más de $150K/año por ~35% de captura de dato UE. SealMetrics
+                cuesta {"€"}5.988/año por el 100% de captura. La comparación
+                relevante es el coste por dato preciso.
               </li>
             </ul>
           </div>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              GA4 works well for small and mid-sized websites with modest
-              reporting needs. It is free, well-documented, and deeply integrated
-              with Google Ads. But for eCommerce teams managing revenue
-              attribution, campaign optimization, and budget allocation across
-              European markets, GA4 creates a specific set of problems that no
-              amount of configuration can solve.
+              GA4 funciona bien para webs pequeñas y medianas con necesidades de
+              reporting modestas. Es gratis, está bien documentado y profundamente
+              integrado con Google Ads. Pero para equipos de eCommerce que
+              gestionan atribución de revenue, optimización de campañas y
+              asignación de presupuesto en mercados europeos, GA4 crea un conjunto
+              específico de problemas que ninguna configuración resuelve.
             </p>
 
             <p>
-              The core issue is structural. GA4 depends on cookies. Cookies
-              require{" "}
+              El problema de fondo es estructural. GA4 depende de cookies. Las
+              cookies requieren{" "}
               <Link
                 href="/glossary/consent-management-platform"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                consent
+                consentimiento
               </Link>
-              . In the EU, 35-55% of visitors reject cookies. Before{" "}
+              . En la UE, el 35-55% de los visitantes rechaza las cookies. Antes de
+              que el{" "}
               <Link
                 href="/glossary/data-sampling"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                data sampling
+                muestreo de datos
               </Link>{" "}
-              and ad blockers even enter the picture, GA4 has already lost a
-              third to half of your traffic. For eCommerce, that means revenue
-              attribution, conversion rates, and{" "}
+              y los ad blockers entren siquiera en escena, GA4 ya ha perdido de un
+              tercio a la mitad de tu tráfico. Para eCommerce, eso significa que la
+              atribución de revenue, las tasas de conversión y{" "}
               <Link
-                href="/glossary/data-loss-in-analytics"
+                href="/es/glossary/data-loss-in-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                every downstream metric
+                toda métrica derivada
               </Link>{" "}
-              is built on a fraction of reality.
+              se construyen sobre una fracción de la realidad.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              Quick comparison
+              Comparativa rápida
             </h2>
 
             <div className="overflow-x-auto my-6">
@@ -248,16 +226,16 @@ export default function GA4AlternativesEnterprisePage() {
                 <thead>
                   <tr className="border-b border-warm-200">
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
-                      Platform
+                      Plataforma
                     </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
-                      Pricing
+                      Precio
                     </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
-                      EU Data Capture
+                      Captura de dato UE
                     </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
-                      Choose If
+                      Elige si
                     </th>
                   </tr>
                 </thead>
@@ -285,7 +263,7 @@ export default function GA4AlternativesEnterprisePage() {
               </table>
             </div>
 
-            {/* Individual alternatives */}
+            {/* Alternativas individuales */}
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               1. Google Analytics 360
             </h2>
@@ -298,35 +276,35 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 GA360
               </a>{" "}
-              is the enterprise tier of Google Analytics. It addresses
-              GA4&rsquo;s most visible limitations: higher sampling thresholds,
-              native BigQuery export, guaranteed SLAs, and a dedicated account
-              manager. For organizations deeply invested in Google Ads and Looker
-              Studio, GA360 offers integration that no competitor matches.
+              es el tramo enterprise de Google Analytics. Aborda las limitaciones
+              más visibles de GA4: umbrales de muestreo más altos, export nativo a
+              BigQuery, SLAs garantizados y un account manager dedicado. Para
+              organizaciones muy invertidas en Google Ads y Looker Studio, GA360
+              ofrece una integración que ningún competidor iguala.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    $150,000+/yr
+                    $150.000+/año
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
                   <span className="font-mono text-text-primary">~30-35%</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    US processing, DPA required
+                    Procesamiento en EE. UU., DPA requerido
                   </span>
                 </div>
                 <div>
@@ -341,25 +319,25 @@ export default function GA4AlternativesEnterprisePage() {
             </div>
 
             <p>
-              The fundamental limitation remains: GA360 is cookie-dependent. In
-              European eCommerce, this means 35-55% data loss persists regardless
-              of spend. At $150K+ per year, the question is whether your budget
-              produces complete data or better estimates.
+              La limitación de fondo persiste: GA360 depende de cookies. En el
+              eCommerce europeo, eso significa que la pérdida de 35-55% de dato se
+              mantiene sin importar el gasto. A más de $150K al año, la pregunta es
+              si tu presupuesto produce dato completo o mejores estimaciones.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[0].chooseIf}
             </p>
 
             <p>
               <Link
-                href="/vs/ga360"
+                href="/es/vs/ga360"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Full SealMetrics vs GA360 comparison
+                Comparativa completa SealMetrics vs GA360
               </Link>
             </p>
 
@@ -375,34 +353,34 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 Adobe Analytics
               </a>{" "}
-              offers the deepest segmentation capabilities in the market.
-              Analysis Workspace is purpose-built for enterprise reporting, and
-              cross-product integration within Adobe Experience Cloud creates a
-              unified marketing intelligence layer.
+              ofrece las capacidades de segmentación más profundas del mercado.
+              Analysis Workspace está hecho a medida para el reporting enterprise, y
+              la integración entre productos de Adobe Experience Cloud crea una capa
+              unificada de inteligencia de marketing.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    $100,000+/yr
+                    $100.000+/año
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
                   <span className="font-mono text-text-primary">~30%</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Configurable, legal review needed
+                    Configurable, requiere revisión legal
                   </span>
                 </div>
                 <div>
@@ -410,32 +388,33 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Advanced segmentation, calculated metrics
+                    Segmentación avanzada, métricas calculadas
                   </span>
                 </div>
               </div>
             </div>
 
             <p>
-              The trade-offs are significant. Implementation takes 3-6 months
-              with specialized consultants. Pricing starts above $100K and scales
-              with server calls. And like every cookie-dependent platform, Adobe
-              faces the same 35-55% EU data gap.
+              Las contrapartidas son significativas. La implementación lleva de 3 a
+              6 meses con consultores especializados. El precio arranca por encima
+              de $100K y escala con las server calls. Y como toda plataforma
+              dependiente de cookies, Adobe se enfrenta a la misma brecha de 35-55%
+              de dato UE.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[1].chooseIf}
             </p>
 
             <p>
               <Link
-                href="/vs/adobe-analytics"
+                href="/es/vs/adobe-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Full SealMetrics vs Adobe Analytics comparison
+                Comparativa completa SealMetrics vs Adobe Analytics
               </Link>
             </p>
 
@@ -445,46 +424,46 @@ export default function GA4AlternativesEnterprisePage() {
 
             <p>
               <Link
-                href="/product"
+                href="/es/product"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 SealMetrics
               </Link>{" "}
-              takes a fundamentally different architectural approach. Instead of
-              collecting data through browser-side cookies and then mitigating
-              consent loss, SealMetrics uses{" "}
+              toma un enfoque de arquitectura fundamentalmente distinto. En lugar de
+              recoger dato con cookies de navegador y luego mitigar la pérdida por
+              consentimiento, SealMetrics usa{" "}
               <Link
-                href="/glossary/cookieless-analytics"
+                href="/es/glossary/cookieless-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                cookieless analytics
+                analítica cookieless
               </Link>{" "}
-              to capture 100% of traffic. No cookies are set. No personal data is
-              collected. No consent banner is required.
+              para capturar el 100% del tráfico. No se colocan cookies. No se recoge
+              dato personal. No se requiere banner de consentimiento.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    From {"\u20ac"}599/mo ({"\u20ac"}5,988/yr)
+                    Desde {"€"}599/mes ({"€"}5.988/año)
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
                   <span className="font-mono text-text-primary">100%</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    By design — no PII, EU-only
+                    Por diseño — sin PII, solo UE
                   </span>
                 </div>
                 <div>
@@ -492,49 +471,51 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Revenue attribution, LENS AI, agent analytics
+                    Atribución de revenue, LENS AI, analítica de agentes
                   </span>
                 </div>
               </div>
             </div>
 
             <p>
-              For EU eCommerce companies prioritizing data completeness,
-              SealMetrics offers enterprise-grade capabilities at a fraction of
-              legacy enterprise pricing. Last-click revenue attribution is built
-              on complete data — not estimates from a consented fraction. LENS AI monitors
-              60+ anomaly detection rules automatically. Agent analytics
-              separates AI bot traffic from human visitors. Data is processed and
-              stored exclusively in the EU.
+              Para empresas de eCommerce UE que priorizan la completitud del dato,
+              SealMetrics ofrece capacidades enterprise a una fracción del precio
+              enterprise heredado. La atribución de revenue a último clic se
+              construye sobre dato completo — no sobre estimaciones de una fracción
+              consentida. LENS AI supervisa más de 60 reglas de detección de
+              anomalías de forma automática. La analítica de agentes separa el
+              tráfico de bots de IA de los visitantes humanos. El dato se procesa y
+              almacena exclusivamente en la UE.
             </p>
 
             <p>
-              The platform is newer than Google or Adobe, with a smaller
-              ecosystem and no native Google Ads integration (data export
-              available). For teams whose primary need is accurate measurement of
-              EU eCommerce performance, the trade-off favors completeness.
+              La plataforma es más nueva que Google o Adobe, con un ecosistema más
+              pequeño y sin integración nativa con Google Ads (hay export de dato
+              disponible). Para equipos cuya necesidad principal es la medición
+              precisa del rendimiento de eCommerce UE, la contrapartida favorece la
+              completitud.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[2].chooseIf}
             </p>
 
             <p>
               <Link
-                href="/how-it-works"
+                href="/es/how-it-works"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                How SealMetrics works
+                Cómo funciona SealMetrics
               </Link>{" "}
               /{" "}
               <Link
-                href="/for/ecommerce"
+                href="/es/for/ecommerce"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                SealMetrics for eCommerce
+                SealMetrics para eCommerce
               </Link>
             </p>
 
@@ -550,35 +531,35 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 Piwik PRO
               </a>{" "}
-              is the strongest EU-native alternative for regulated industries.
-              Built in Poland with EU-only data hosting, it combines analytics
-              with a built-in tag manager and consent manager. For government,
-              finance, and healthcare, Piwik PRO&rsquo;s compliance posture is a
-              genuine differentiator.
+              es la alternativa UE-nativa más fuerte para sectores regulados.
+              Construida en Polonia con alojamiento de dato solo en la UE, combina
+              analítica con un tag manager y un gestor de consentimiento
+              integrados. Para administración pública, finanzas y sanidad, la
+              postura de cumplimiento de Piwik PRO es un diferenciador real.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    From ~{"\u20ac"}30,000/yr
+                    Desde ~{"€"}30.000/año
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
                   <span className="font-mono text-text-primary">~35%</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    EU-only hosting, consent manager bundled
+                    Alojamiento solo UE, gestor de consentimiento incluido
                   </span>
                 </div>
                 <div>
@@ -586,33 +567,33 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Standard tracking, no sampling
+                    Tracking estándar, sin muestreo
                   </span>
                 </div>
               </div>
             </div>
 
             <p>
-              Piwik PRO still depends on cookies. Despite privacy-first
-              positioning, the platform requires consent for tracking. In EU
-              markets, this means 35-55% of eCommerce traffic remains invisible.
-              AI-powered features are limited. Enterprise pricing starts around
-              {"\u20ac"}30,000 per year.
+              Piwik PRO sigue dependiendo de cookies. Pese a su posicionamiento
+              privacy-first, la plataforma requiere consentimiento para el tracking.
+              En mercados UE, eso significa que el 35-55% del tráfico de eCommerce
+              permanece invisible. Las features con IA son limitadas. El precio
+              enterprise arranca en torno a {"€"}30.000 al año.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[3].chooseIf}
             </p>
 
             <p>
               <Link
-                href="/vs/piwik-pro"
+                href="/es/vs/piwik-pro"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Full SealMetrics vs Piwik PRO comparison
+                Comparativa completa SealMetrics vs Piwik PRO
               </Link>
             </p>
 
@@ -628,25 +609,25 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 Matomo
               </a>{" "}
-              is the open-source option with a self-hosting path. For
-              organizations that want data to never leave their infrastructure,
-              Matomo provides that guarantee. A cookieless mode is available but
-              sacrifices visitor-level tracking and cross-session analysis.
+              es la opción open-source con vía de self-hosting. Para organizaciones
+              que quieren que el dato nunca salga de su infraestructura, Matomo da
+              esa garantía. Hay un modo cookieless disponible, pero sacrifica el
+              tracking a nivel de visitante y el análisis entre sesiones.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    Free / From {"\u20ac"}23/mo
+                    Gratis / Desde {"€"}23/mes
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
                     ~40-60%
@@ -654,10 +635,10 @@ export default function GA4AlternativesEnterprisePage() {
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Full ownership if self-hosted
+                    Propiedad total si es self-hosted
                   </span>
                 </div>
                 <div>
@@ -665,22 +646,23 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    eCommerce plugin, goals, funnels
+                    Plugin de eCommerce, objetivos, funnels
                   </span>
                 </div>
               </div>
             </div>
 
             <p>
-              Self-hosting requires DevOps resources for maintenance, scaling,
-              and security. Performance can degrade at high traffic volumes.
-              Enterprise eCommerce features require paid plugins. For teams with
-              the technical capacity, Matomo offers a flexible foundation.
+              El self-hosting requiere recursos de DevOps para mantenimiento,
+              escalado y seguridad. El rendimiento puede degradarse con altos
+              volúmenes de tráfico. Las features enterprise de eCommerce requieren
+              plugins de pago. Para equipos con capacidad técnica, Matomo ofrece una
+              base flexible.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[4].chooseIf}
             </p>
@@ -697,34 +679,34 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 Amplitude
               </a>{" "}
-              is a product analytics platform — not a web analytics replacement.
-              It excels at behavioral cohort analysis, feature adoption tracking,
-              and retention measurement. The experimentation platform is among
-              the strongest available.
+              es una plataforma de analítica de producto — no un sustituto de
+              analítica web. Destaca en el análisis de cohortes de comportamiento,
+              el seguimiento de adopción de features y la medición de retención. Su
+              plataforma de experimentación está entre las más fuertes disponibles.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    From ~$50,000/yr
+                    Desde ~$50.000/año
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">Varies</span>
+                  <span className="font-mono text-text-primary">Variable</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Standard DPA, US/EU hosting
+                    DPA estándar, alojamiento EE. UU./UE
                   </span>
                 </div>
                 <div>
@@ -732,22 +714,22 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Product analytics, not web analytics
+                    Analítica de producto, no analítica web
                   </span>
                 </div>
               </div>
             </div>
 
             <p>
-              For product teams measuring how users interact with software
-              features, Amplitude provides capabilities GA4 cannot match. But it
-              does not replace web analytics for marketing attribution, traffic
-              source analysis, or campaign measurement.
+              Para equipos de producto que miden cómo interactúan los usuarios con
+              las features del software, Amplitude ofrece capacidades que GA4 no
+              iguala. Pero no sustituye a la analítica web para atribución de
+              marketing, análisis de fuentes de tráfico o medición de campañas.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[5].chooseIf}
             </p>
@@ -764,34 +746,35 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 Mixpanel
               </a>{" "}
-              is an event-based analytics platform with an intuitive interface
-              that non-technical teams can use effectively. Funnel analysis,
-              retention reports, and flow visualization are well-designed.
-              EU data residency is available.
+              es una plataforma de analítica basada en eventos con una interfaz
+              intuitiva que los equipos no técnicos pueden usar con eficacia. El
+              análisis de funnels, los informes de retención y la visualización de
+              flujos están bien diseñados. Hay residencia de dato en la UE
+              disponible.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    Pricing:
+                    Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    Free / From ~$25,000/yr
+                    Gratis / Desde ~$25.000/año
                   </span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Data Capture:
+                    Captura UE:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">Varies</span>
+                  <span className="font-mono text-text-primary">Variable</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
-                    EU Compliance:
+                    Cumplimiento UE:
                   </span>{" "}
                   <span className="text-text-primary">
-                    EU residency option
+                    Opción de residencia UE
                   </span>
                 </div>
                 <div>
@@ -799,112 +782,114 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Event-based, funnels, retention
+                    Basado en eventos, funnels, retención
                   </span>
                 </div>
               </div>
             </div>
 
             <p>
-              Like Amplitude, Mixpanel is product analytics. The event-based
-              model requires careful implementation planning. Enterprise pricing
-              grows with tracked users. Best for teams needing event-based
-              analysis with a lower complexity threshold.
+              Como Amplitude, Mixpanel es analítica de producto. El modelo basado en
+              eventos requiere una planificación cuidadosa de la implementación. El
+              precio enterprise crece con los usuarios trackeados. Ideal para
+              equipos que necesitan análisis basado en eventos con un umbral de
+              complejidad menor.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose if:
+                Elige si:
               </strong>{" "}
               {alternatives[6].chooseIf}
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              How to choose the right alternative
+              Cómo elegir la alternativa correcta
             </h2>
 
             <p>
-              The decision for eCommerce teams comes down to three questions.
+              La decisión para los equipos de eCommerce se reduce a tres preguntas.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                How much of your revenue depends on EU traffic?
+                ¿Cuánto de tu revenue depende del tráfico UE?
               </strong>{" "}
-              If the majority of your customers are European, cookie-dependent
-              platforms will structurally misattribute revenue by 35-55%. This
-              affects campaign ROI calculations, budget allocation, and executive
-              reporting. Only cookieless platforms avoid this gap entirely.
+              Si la mayoría de tus clientes son europeos, las plataformas
+              dependientes de cookies atribuirán mal el revenue de forma estructural
+              en un 35-55%. Esto afecta al cálculo del ROI de campañas, a la
+              asignación de presupuesto y al reporting de dirección. Solo las
+              plataformas cookieless evitan esta brecha por completo.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Do you need web analytics or product analytics?
+                ¿Necesitas analítica web o analítica de producto?
               </strong>{" "}
-              Amplitude and Mixpanel measure in-app behavior. GA360, Adobe, Piwik
-              PRO, Matomo, and SealMetrics measure web traffic. Using one for the
-              other&rsquo;s purpose creates friction that configuration cannot
-              solve.
+              Amplitude y Mixpanel miden el comportamiento in-app. GA360, Adobe,
+              Piwik PRO, Matomo y SealMetrics miden el tráfico web. Usar una para el
+              propósito de la otra genera una fricción que la configuración no
+              resuelve.
             </p>
 
             <p>
               <strong className="font-semibold text-text-primary">
-                What is your total cost tolerance?
+                ¿Cuál es tu tolerancia de coste total?
               </strong>{" "}
-              Include the platform fee plus implementation, required consultants,
-              and the implicit cost of revenue misattribution from incomplete
-              data. Use the{" "}
+              Incluye la cuota de plataforma más la implementación, los consultores
+              necesarios y el coste implícito de la mala atribución de revenue por
+              dato incompleto. Usa la{" "}
               <Link
-                href="/data-loss-calculator"
+                href="/es/data-loss-calculator"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                data loss calculator
+                calculadora de pérdida de dato
               </Link>{" "}
-              to quantify what incomplete data costs your eCommerce operation.
+              para cuantificar cuánto le cuesta el dato incompleto a tu operación de
+              eCommerce.
             </p>
 
             <p>
-              The market has changed. Complete data, EU compliance, and
-              AI-powered analysis no longer require six-figure annual budgets.
-              The question is whether your analytics investment produces complete,
-              reliable data — or pays a premium for estimates.
+              El mercado ha cambiado. Dato completo, cumplimiento UE y análisis con
+              IA ya no requieren presupuestos anuales de seis cifras. La pregunta es
+              si tu inversión en analítica produce dato completo y fiable — o paga
+              una prima por estimaciones.
             </p>
           </div>
 
-          {/* Related */}
+          {/* Relacionados */}
           <div className="mt-16 pt-10 border-t border-warm-100">
             <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">
-              Related articles
+              Artículos relacionados
             </h3>
             <div className="space-y-3">
               <Link
                 href="/blog/best-enterprise-analytics-platforms"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                8 Best Enterprise Analytics Platforms in 2026
+                8 mejores plataformas de analítica enterprise en 2026
               </Link>
               <Link
-                href="/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/es/blog/why-ga4-shows-13pct-eu-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Why GA4 Shows 13% of Your EU Traffic
+                Por qué GA4 muestra el 13% de tu tráfico UE
               </Link>
               <Link
-                href="/blog/cookieless-analytics-explained"
+                href="/es/blog/cookieless-analytics-explained"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Cookieless Analytics Explained: How to Measure Without Cookies
+                Analítica cookieless explicada: cómo medir sin cookies
               </Link>
               <Link
-                href="/alternatives/google-analytics"
+                href="/es/alternatives/google-analytics"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Google Analytics Alternatives: 8 Tools Compared
+                Alternativas a Google Analytics: 8 herramientas comparadas
               </Link>
             </div>
           </div>
         </div>
-          <RelatedReading currentSlug="ga4-alternatives-enterprise" />
       </article>
     </>
   );
