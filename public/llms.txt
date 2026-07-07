@@ -36,10 +36,11 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /audit — Free SealMetrics audit: we run your site through SealMetrics and surface the attribution gap live
 - /free-audit — Free audit intake form
 - /modern-analytics — What modern analytics looks like in 2026: complete data, AI supervision, EU-hosted
+- /ai-analytics — AI analytics done right: complete cookieless data + semantic MCP + private AI hosted in the EU (LENS AI). Connect Claude/ChatGPT to your analytics
+- /reg-gap-analysis — Regulatory gap analysis for web analytics: GDPR, ePrivacy, AEPD, UK PECR — requirement-by-requirement audit with self-assessment
 - /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of SealMetrics
 
 ## Compliance by country (DPO-ready pages)
-- /gdpr-analytics — Country compliance hub
 - /gdpr-analytics/france — CNIL exemption criteria; "analytics sans consentement france"
 - /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung"
 - /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
@@ -92,6 +93,8 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 
 ## Blog (latest articles)
 - /blog — Full blog index
+- /blog/gdpr-eprivacy-analytics-legal-assessment — Is Your Analytics Actually GDPR-Compliant? A Legal Assessment (ePrivacy vs GDPR two-part test, per-tool verdicts: GA4, Matomo, Plausible, Piwik PRO, SealMetrics)
+- /blog/self-service-analytics-lens-ai — What It Takes to Make Self-Service Analytics Actually Work (complete data + semantic MCP + LENS AI)
 - /blog/cookieless-analytics-for-ecommerce — How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
 - /blog/cookieless-analytics-for-hotels — How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
 - /blog/cookieless-analytics-for-saas — PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026
@@ -185,6 +188,8 @@ About / extras (ES):
 - /es/about — Quiénes somos
 - /es/audit — Auditoría gratuita SealMetrics
 - /es/modern-analytics — Analítica moderna en 2026
+- /es/ai-analytics — Analítica con IA: dato cookieless completo + MCP semántico + IA privada en la UE (LENS AI)
+- /es/reg-gap-analysis — Análisis de brechas regulatorias: RGPD, ePrivacy, AEPD, PECR — auditoría requisito a requisito
 - /es/data-loss-calculator — Calculadora de pérdida de datos
 - /es/integrations — Integraciones
 - /es/platforms — Plataformas
@@ -205,7 +210,14 @@ Case studies (ES):
 
 Blog (ES):
 - /es/blog — Blog (ES)
-- /es/blog/ga4-google-ads-separation — GA4 y Google Ads: la separación
+- /es/blog/gdpr-eprivacy-analytics-legal-assessment — ¿Tu analítica cumple de verdad el RGPD? Un análisis legal (veredicto por herramienta)
+- /es/blog/ga4-alternatives-enterprise — 7 alternativas a GA4 para equipos de eCommerce en 2026
+- /es/blog/self-service-analytics-lens-ai — Analítica self-service con LENS AI
+- /es/blog/gdpr-analytics-without-consent — Analítica conforme con RGPD sin banners de consentimiento
+- /es/blog/why-ga4-shows-13pct-eu-traffic — Por qué GA4 muestra el 13% de tu tráfico UE
+- /es/blog/cookieless-analytics-explained — Analítica cookieless explicada: cómo medir sin cookies
+- /es/blog/consent-banner-impact-on-analytics — Cómo los banners de consentimiento destruyen tus datos
+- /es/blog/ga4-data-sampling-problem — Muestreo de datos en GA4: por qué tus números están mal
 
 Glossary (ES):
 - /es/glossary — Glosario completo
