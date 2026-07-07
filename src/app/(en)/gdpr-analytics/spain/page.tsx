@@ -293,6 +293,13 @@ export default function GdprAnalyticsSpainPage() {
                 Audit your stack requirement by requirement — and see where it falls out of compliance.
               </p>
             </Link>
+            <Link href="/blog/gdpr-analytics-spain-faq" className="group block border border-warm-100 rounded-xl p-7 bg-warm-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5">
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Blog</span>
+              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Spain FAQ — 7 direct answers</h3>
+              <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
+                Banner necessity, GA4 legality, LSSI fines — the questions online stores ask, also in Spanish.
+              </p>
+            </Link>
           </div>
         </div>
       </section>

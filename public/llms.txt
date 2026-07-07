@@ -93,6 +93,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 
 ## Blog (latest articles)
 - /blog — Full blog index
+- /blog/gdpr-analytics-spain-faq — GDPR Analytics in Spain: 7 Questions Online Stores Ask (AEPD guidance, GA4 legality, LSSI fines, banner data loss)
 - /blog/gdpr-eprivacy-analytics-legal-assessment — Is Your Analytics Actually GDPR-Compliant? A Legal Assessment (ePrivacy vs GDPR two-part test, per-tool verdicts: GA4, Matomo, Plausible, Piwik PRO, SealMetrics)
 - /blog/self-service-analytics-lens-ai — What It Takes to Make Self-Service Analytics Actually Work (complete data + semantic MCP + LENS AI)
 - /blog/cookieless-analytics-for-ecommerce — How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
@@ -210,6 +211,7 @@ Case studies (ES):
 
 Blog (ES):
 - /es/blog — Blog (ES)
+- /es/blog/gdpr-analytics-spain-faq — Analítica RGPD en España: las 7 preguntas que hacen las tiendas online (AEPD, GA4, sanciones LSSI)
 - /es/blog/gdpr-eprivacy-analytics-legal-assessment — ¿Tu analítica cumple de verdad el RGPD? Un análisis legal (veredicto por herramienta)
 - /es/blog/ga4-alternatives-enterprise — 7 alternativas a GA4 para equipos de eCommerce en 2026
 - /es/blog/self-service-analytics-lens-ai — Analítica self-service con LENS AI
