@@ -34,6 +34,14 @@ function getWhyDropdown(t: ReturnType<typeof getDictionary>["header"], locale: L
     groups: [
       {
         items: [
+          {
+            href: "/why-sealmetrics",
+            label: locale === "es" ? "Por qué SealMetrics" : "Why SealMetrics",
+            desc:
+              locale === "es"
+                ? "El argumento completo: mide el 100%, legalmente."
+                : "The full case: measure 100%, legally.",
+          },
           { href: localizedHref("/cookieless-analytics", locale), label: t.cookielessAnalytics, desc: t.cookielessAnalyticsDesc },
           { href: localizedHref("/consentless-analytics", locale), label: t.consentlessAnalytics, desc: t.consentlessAnalyticsDesc },
           { href: localizedHref("/complete-data", locale), label: t.completeData, desc: t.completeDataDesc },
