@@ -5,6 +5,7 @@ const translatedPaths = new Set([
   "/",
   "/pricing",
   "/product",
+  "/why-sealmetrics",
   "/how-it-works",
   "/demo",
   "/demo-access",

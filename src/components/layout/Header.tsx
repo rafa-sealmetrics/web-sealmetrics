@@ -35,7 +35,7 @@ function getWhyDropdown(t: ReturnType<typeof getDictionary>["header"], locale: L
       {
         items: [
           {
-            href: "/why-sealmetrics",
+            href: localizedHref("/why-sealmetrics", locale),
             label: locale === "es" ? "Por qué SealMetrics" : "Why SealMetrics",
             desc:
               locale === "es"
