@@ -188,6 +188,241 @@ function WhereDataDies() {
 }
 
 /* ============================================
+   DISTORSIÓN · la pérdida no es aleatoria
+   ============================================ */
+function ChannelDistortion() {
+  const ga4View: { label: string; share: string; width: number; alert?: boolean }[] = [
+    { label: "Paid Social", share: "14%", width: 18, alert: true },
+    { label: "Paid Search", share: "22%", width: 29 },
+    { label: "Búsqueda de marca", share: "34%", width: 45 },
+    { label: "Email / Directo", share: "30%", width: 40 },
+  ];
+  const realView: { label: string; share: string; width: number; hero?: boolean }[] = [
+    { label: "Paid Social", share: "35%", width: 90, hero: true },
+    { label: "Paid Search", share: "25%", width: 64 },
+    { label: "Búsqueda de marca", share: "20%", width: 52 },
+    { label: "Email / Directo", share: "20%", width: 52 },
+  ];
+  const steps: { n: string; big: string; cap: React.ReactNode; err?: boolean }[] = [
+    {
+      n: "01 · Gastas",
+      big: "50.000 €",
+      cap: (
+        <>
+          al mes en ads. Se cierran <strong className="font-semibold text-ink">1.000 ventas</strong> reales.
+        </>
+      ),
+    },
+    {
+      n: "02 · GA4 ve",
+      big: "≈420",
+      cap: "La fracción que aceptó cookies y sobrevivió a la prevención de rastreo — sesgada por canal.",
+    },
+    {
+      n: "03 · Decides",
+      big: "−40%",
+      cap: "Recortas social («parece flojo») y refuerzas marca («parece el héroe»).",
+      err: true,
+    },
+    {
+      n: "04 · Resultado",
+      big: "↓ ventas",
+      cap: "Acabas de recortar tu mejor canal de adquisición. Mismo gasto, menos revenue.",
+      err: true,
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-warm-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="max-w-[54ch] mb-12">
+          <span className="eyebrow mb-5">La forma de la pérdida</span>
+          <h2 className="h-section mt-5">
+            El 40–60% que falta <em>no se pierde por igual.</em>
+          </h2>
+          <p className="text-[17px] leading-[1.6] text-ink-soft mt-6">
+            Si perdieras la mitad de las conversiones al azar, verías una foto más pequeña
+            con las mismas proporciones — y decidirías igual. Pero la tasa de rechazo de
+            cookies cambia según el canal: el paid social en móvil rechaza mucho más que
+            una búsqueda de marca en desktop. GA4 no te da una foto pequeña.{" "}
+            <strong className="font-semibold text-ink">Te da una foto deformada.</strong>
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {/* Como lo ve GA4 */}
+          <article className="bg-white border border-warm-100 rounded-2xl p-7">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                Como lo ve GA4
+              </span>
+              <span
+                className="font-mono text-[10px] font-semibold uppercase tracking-[0.06em] rounded-full px-2.5 py-1"
+                style={{ backgroundColor: "rgba(181,66,59,0.08)", color: "var(--color-red-alert)" }}
+              >
+                Sesgado
+              </span>
+            </div>
+            <div className="grid gap-3.5">
+              {ga4View.map((r) => (
+                <div key={r.label} className="grid grid-cols-[150px_1fr_44px] items-center gap-3">
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.05em] text-ink-soft">{r.label}</span>
+                  <div className="h-5 rounded-[3px] bg-warm-100 overflow-hidden">
+                    <div
+                      className="h-full rounded-[3px]"
+                      style={{ width: `${r.width}%`, backgroundColor: "var(--color-warm-300)" }}
+                    />
+                  </div>
+                  <span
+                    className={`font-mono text-[12px] font-semibold tabular-nums text-right ${r.alert ? "text-red-alert" : "text-ink-2"}`}
+                  >
+                    {r.share}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[14px] leading-[1.55] text-ink-soft mt-6 pt-5 border-t border-warm-100">
+              Social parece el canal débil; marca y directo parecen los héroes.{" "}
+              <strong className="font-semibold text-red-alert">La decisión lógica: recortar social.</strong>
+            </p>
+          </article>
+
+          {/* La realidad */}
+          <article className="bg-white border border-brand/30 rounded-2xl p-7">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+                La realidad — 100% medido
+              </span>
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.06em] rounded-full px-2.5 py-1 bg-brand-soft/40 text-brand">
+                Completo
+              </span>
+            </div>
+            <div className="grid gap-3.5">
+              {realView.map((r) => (
+                <div key={r.label} className="grid grid-cols-[150px_1fr_44px] items-center gap-3">
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.05em] text-ink-soft">{r.label}</span>
+                  <div className="h-5 rounded-[3px] bg-warm-100 overflow-hidden">
+                    <div
+                      className="h-full rounded-[3px]"
+                      style={{
+                        width: `${r.width}%`,
+                        backgroundColor: r.hero ? "var(--color-brand)" : "var(--color-ink)",
+                      }}
+                    />
+                  </div>
+                  <span
+                    className={`font-mono text-[12px] font-semibold tabular-nums text-right ${r.hero ? "text-brand" : "text-ink-2"}`}
+                  >
+                    {r.share}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[14px] leading-[1.55] text-ink-soft mt-6 pt-5 border-t border-warm-100">
+              Social era tu mayor motor de adquisición. La búsqueda de marca era gente que{" "}
+              <strong className="font-semibold text-ink">ya venía a comprar.</strong>
+            </p>
+          </article>
+        </div>
+
+        <p className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-ink-soft mt-4">
+          Escenario ilustrativo — la desviación real depende de tu mix de canales. Mídela en tu propio tráfico.
+        </p>
+
+        {/* Ejemplo con números */}
+        <div className="mt-14 pt-12 border-t border-warm-100">
+          <h3 className="text-[22px] font-semibold text-ink tracking-[-0.01em] mb-10 max-w-[30ch]">
+            Mismo presupuesto. Menos ventas. Sin saber por qué.
+          </h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-y-8">
+            {steps.map((s, i) => (
+              <div key={s.n} className={`px-6 ${i === 0 ? "md:pl-0 pl-6 sm:pl-0" : ""} ${i > 0 ? "md:border-l border-warm-100" : ""} ${i % 2 === 1 ? "sm:border-l sm:border-warm-100 md:border-l" : ""}`}>
+                <div className={`font-mono text-[11px] font-bold uppercase tracking-[0.1em] ${s.err ? "text-red-alert" : "text-brand"}`}>
+                  {s.n}
+                </div>
+                <div
+                  className={`font-semibold tracking-[-0.03em] tabular-nums leading-none mt-3 mb-2.5 ${s.err ? "text-red-alert" : "text-ink"}`}
+                  style={{ fontSize: "clamp(28px, 3vw, 38px)" }}
+                >
+                  {s.big}
+                </div>
+                <p className="text-[13.5px] leading-[1.5] text-ink-soft">{s.cap}</p>
+              </div>
+            ))}
+          </div>
+          <p
+            className="text-ink font-medium leading-[1.35] max-w-[46ch] mt-12"
+            style={{ fontSize: "clamp(19px, 2.1vw, 26px)", letterSpacing: "-0.015em" }}
+          >
+            No pierdes dinero por gastar de más. Lo pierdes por{" "}
+            <em className="italic-accent">decidir sobre una foto deformada.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   OBJECIÓN DEL CFO · pull-quote editorial
+   ============================================ */
+function CfoObjection() {
+  return (
+    <section className="py-24 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="max-w-[54ch] mb-12">
+          <span className="eyebrow mb-5">La objeción legítima</span>
+          <h2 className="h-section mt-5">
+            «Ese revenue ya ocurrió.» <em>Cierto. Y no es el punto.</em>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 md:gap-16 items-start">
+          <figure className="border-l-2 pl-6 md:sticky md:top-24" style={{ borderColor: "#2E5C8A" }}>
+            <blockquote className="text-[22px] md:text-[26px] leading-[1.4] text-ink font-medium tracking-[-0.01em]">
+              «Esas ventas ya se cerraron. Ver el número completo no me hace vender más.»
+            </blockquote>
+            <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+              Lo que dirá tu CFO
+            </figcaption>
+          </figure>
+
+          <div className="grid gap-5">
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              Tiene razón en lo primero: SealMetrics no crea revenue nuevo.{" "}
+              <strong className="font-semibold text-ink">Ese revenue ya está.</strong> Lo que
+              recuperas es la capacidad de decidir bien sobre él.
+            </p>
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              Hoy, la foto deformada te empuja a recortar los canales cuyos compradores
+              rechazan cookies y a financiar los que solo parecen fuertes. Con el 100%
+              medido — y{" "}
+              <Link href="/glossary/last-click-attribution" className="text-brand no-underline border-b border-brand/30 hover:border-brand">
+                atribución last-click
+              </Link>{" "}
+              sobre el dataset completo — ese sabotaje silencioso desaparece.
+            </p>
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              Y en el próximo recorte de presupuesto: si solo puedes demostrar la mitad del
+              retorno, te recortan. Con el retorno completo atribuido,{" "}
+              <strong className="font-semibold text-ink">marketing lo defiende — o lo amplía.</strong>
+            </p>
+            <p
+              className="text-ink font-medium leading-[1.4] mt-3 pt-6 border-t border-warm-100"
+              style={{ fontSize: "clamp(19px, 2vw, 24px)", letterSpacing: "-0.015em" }}
+            >
+              Mismo presupuesto, <em className="italic-accent">más ventas.</em> O mismas
+              ventas, <em className="italic-accent">menos presupuesto.</em> La eficiencia
+              te la cobras tú.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
    CINCO RESULTADOS · bento con mini-visuales
    ============================================ */
 function MiniBar({ label, pct, color, textColor }: { label: string; pct: number; color: string; textColor: string }) {
@@ -780,6 +1015,8 @@ export default function WhySealMetricsPageEs() {
 
       <Hero />
       <WhereDataDies />
+      <ChannelDistortion />
+      <CfoObjection />
       <FiveOutcomes />
       <CmoOutcomes />
       <Mechanism />
@@ -820,7 +1057,10 @@ export default function WhySealMetricsPageEs() {
               de rastreo ocultan el 40–60% de las visitas a la analítica convencional, y las
               auditorías muestran que hasta el 35% de las conversiones registradas no pueden
               asignarse al canal que las generó — así que el ROAS del dashboard se calcula
-              sobre una fracción de la realidad. SealMetrics es analítica sin consentimiento
+              sobre una fracción de la realidad. Además, la pérdida no es aleatoria: la tasa
+              de rechazo de cookies varía por canal, de modo que los datos consentidos no
+              solo son incompletos sino sesgados — los canales cuyos compradores rechazan
+              más cookies parecen más débiles de lo que son. SealMetrics es analítica sin consentimiento
               y sin cookies que mide el 100% del tráfico y las ventas, aplica atribución
               last-click sobre el dataset completo, y añade embudos, analítica a nivel de
               SKU y desgloses por propiedad de producto (talla, color, modelo).
