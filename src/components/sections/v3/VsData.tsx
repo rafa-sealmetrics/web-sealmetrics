@@ -159,6 +159,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
     "adobe-analytics": {
       en: {
         competitor: "Adobe Analytics",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-adobe-analytics",
         hook: "Adobe Analytics is powerful for enterprise reporting but requires specialists, enterprise contracts and the same consent-dependent data capture. In 2026, power tools working on incomplete data are a liability.",
         eyebrow: "vs Adobe Analytics",
         h1: <>Enterprise power. <em>Zero enterprise overhead.</em></>,
@@ -201,29 +202,41 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "40–60%", label: "Still consent-gated", detail: "Cookie-dependent capture. Same EU gap as GA." },
         ],
         comparison: [
-          { category: "Pricing & time to value", rows: [
+          { category: "Pricing & time to value", block: "commercial", rows: [
             { feature: "Starting price", them: "$100,000/yr + implementation fees", us: "€499/mo · no hidden fees" },
             { feature: "Implementation time", them: "3–6 months typical", us: "1 week to decision-ready" },
             { feature: "Required specialists", them: "Adobe-certified analyst on team", us: "Self-serve · founder onboarding" },
           ]},
-          { category: "Data capture", rows: [
+          { category: "Data capture", block: "technical", rows: [
             { feature: "Cookie-dependent", them: "Yes · AppMeasurement library", us: "No · first-party server-side" },
             { feature: "EU consent rejection handling", them: "Banner-dependent", us: "Not applicable (no cookies)" },
             { feature: "Sampling", them: "Virtual Report Suites impact sampling", us: "Zero sampling" },
           ]},
-          { category: "Tracker performance (measured)", rows: [
+          { category: "Tracker performance (measured)", block: "technical", rows: [
             { feature: "Script weight on the wire (gzip)", them: "~170 KB · Launch + AppMeasurement", us: "1.1 KB · ~155× lighter" },
             { feature: "JavaScript parsed on the device", them: "~730 KB", us: "2.0 KB" },
             { feature: "Pageview hit secured", them: "~3.0 s · field-measured on a dual-vendor site", us: "~0.1–0.3 s · sendBeacon from the head" },
             { feature: "Hit transport", them: "Image GET · canceled if the visitor leaves early", us: "sendBeacon · survives page close" },
           ]},
-          { category: "Infrastructure", rows: [
+          { category: "Infrastructure", block: "technical", rows: [
             { feature: "Data residency", them: "Configurable but complex", us: "EU-only · Dublin" },
             { feature: "Schrems II", them: "Requires separate legal review", us: "Clean by architecture" },
           ]},
-          { category: "Modern stack", rows: [
+          { category: "Modern stack", block: "reporting", rows: [
             { feature: "MCP / AI-native", them: "Via separate Adobe Analytics AI", us: "Native MCP server" },
             { feature: "BigQuery export", them: "Via Customer Journey Analytics (premium)", us: "Included in all plans" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Implementation partners · consultant-led", us: "Founder-led · 15-minute install" },
+            { feature: "Support", them: "Tiered enterprise support plans", us: "Direct support on every plan" },
+            { feature: "Account management", them: "Enterprise account teams", us: "Dedicated manager on Enterprise" },
+          ]},
+          { category: "Reporting parity", block: "reporting", rows: [
+            { feature: "Prebuilt marketing reports", them: "Analysis Workspace — you build everything", us: "Channels, campaigns, funnels, pages — ready by default" },
+            { feature: "Deep segmentation", them: "Its real strength · analyst-driven", us: "Segments + property breakdowns · deep dives via BigQuery" },
+            { feature: "Calculated metrics", them: "Yes · in Workspace", us: "Via BigQuery export + MCP" },
+            { feature: "Report freshness", them: "Minutes to hours depending on report type", us: "Real-time · under 2 minutes" },
+            { feature: "Audience activation / remarketing", them: "Experience Cloud integration", us: "Not a remarketing tool — no personal identifiers by design" },
           ]},
         ],
         faqs: [
@@ -238,6 +251,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       },
       es: {
         competitor: "Adobe Analytics",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-adobe-analytics",
         hook: "Adobe Analytics es potente para reporting enterprise pero requiere especialistas, contratos enterprise y la misma captura de datos dependiente del consentimiento. En 2026, herramientas potentes sobre datos incompletos son una liability.",
         eyebrow: "vs Adobe Analytics",
         h1: <>Potencia enterprise. <em>Cero overhead enterprise.</em></>,
@@ -282,29 +296,41 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "40–60%", label: "Sigue con consentimiento", detail: "Captura dependiente de cookies. Mismo gap UE que GA." },
         ],
         comparison: [
-          { category: "Precio y tiempo al valor", rows: [
+          { category: "Precio y tiempo al valor", block: "commercial", rows: [
             { feature: "Precio de entrada", them: "100.000$/año + fees implementación", us: "€499/mes · sin fees ocultos" },
             { feature: "Tiempo implementación", them: "3–6 meses típicamente", us: "1 semana a decisiones" },
             { feature: "Especialistas requeridos", them: "Analista certificado Adobe", us: "Self-serve · onboarding founder" },
           ]},
-          { category: "Captura de datos", rows: [
+          { category: "Captura de datos", block: "technical", rows: [
             { feature: "Depende de cookies", them: "Sí · librería AppMeasurement", us: "No · first-party server-side" },
             { feature: "Manejo rechazo UE", them: "Dependiente de banner", us: "No aplica (sin cookies)" },
             { feature: "Muestreo", them: "Virtual Report Suites afectan muestreo", us: "Cero muestreo" },
           ]},
-          { category: "Rendimiento del tracker (medido)", rows: [
+          { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
             { feature: "Peso del script en red (gzip)", them: "~170 KB · Launch + AppMeasurement", us: "1,1 KB · ~155× más ligero" },
             { feature: "JavaScript parseado en el dispositivo", them: "~730 KB", us: "2,0 KB" },
             { feature: "Pageview asegurado", them: "~3,0 s · medido en campo en un sitio dual-vendor", us: "~0,1–0,3 s · sendBeacon desde el head" },
             { feature: "Transporte del hit", them: "Image GET · se cancela si el visitante se va", us: "sendBeacon · sobrevive al cierre" },
           ]},
-          { category: "Infraestructura", rows: [
+          { category: "Infraestructura", block: "technical", rows: [
             { feature: "Residencia", them: "Configurable pero compleja", us: "Solo UE · Dublín" },
             { feature: "Schrems II", them: "Requiere revisión legal aparte", us: "Limpio por arquitectura" },
           ]},
-          { category: "Stack moderno", rows: [
+          { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / IA nativa", them: "Vía Adobe Analytics AI aparte", us: "MCP server nativo" },
             { feature: "Export BigQuery", them: "Vía Customer Journey Analytics (premium)", us: "Incluido en todos los planes" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Partners de implementación · liderado por consultores", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Soporte", them: "Planes de soporte enterprise por tiers", us: "Soporte directo en todos los planes" },
+            { feature: "Account management", them: "Equipos de cuenta enterprise", us: "Manager dedicado en Enterprise" },
+          ]},
+          { category: "Paridad de reporting", block: "reporting", rows: [
+            { feature: "Informes de marketing listos", them: "Analysis Workspace — lo construyes todo tú", us: "Canales, campañas, funnels, páginas — listos por defecto" },
+            { feature: "Segmentación profunda", them: "Su verdadera fortaleza · liderada por analista", us: "Segmentos + breakdowns por propiedad · deep dives vía BigQuery" },
+            { feature: "Métricas calculadas", them: "Sí · en Workspace", us: "Vía export BigQuery + MCP" },
+            { feature: "Frescura del informe", them: "De minutos a horas según el tipo de informe", us: "Tiempo real · menos de 2 minutos" },
+            { feature: "Activación de audiencias / remarketing", them: "Integración Experience Cloud", us: "No es una herramienta de remarketing — sin identificadores personales por diseño" },
           ]},
         ],
         faqs: [

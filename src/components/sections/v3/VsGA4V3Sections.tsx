@@ -268,11 +268,21 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
 
 /* COMPARISON TABLE · feature-by-feature */
 interface Row { feature: string; ga4: string; seal: string; }
+type RowBlock = "technical" | "commercial" | "reporting";
+
+const GA4_BLOCKS = [
+  { id: "technical", en: "Technical & data capture", es: "Técnico y captura de datos" },
+  { id: "commercial", en: "Pricing & customer success", es: "Precio y customer success" },
+  { id: "reporting", en: "Reporting", es: "Reporting" },
+] as const;
+
+const GA4_TECH_REPORT_HREF = "https://docs.sealmetrics.com/guides/tracker-performance-report";
 
 export function VsGA4TableV3({ locale = "en" as Locale }) {
-  const rowsEn: { category: string; rows: Row[] }[] = [
+  const rowsEn: { category: string; block: RowBlock; rows: Row[] }[] = [
     {
       category: "Data capture",
+      block: "technical",
       rows: [
         { feature: "Consent required", ga4: "Yes · 40–60% reject", seal: "No · 100% captured" },
         { feature: "Ad blocker affected", ga4: "Yes · ~25% blocked", seal: "No · first-party" },
@@ -282,6 +292,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Tracker performance (measured)",
+      block: "technical",
       rows: [
         { feature: "Script weight on the wire (gzip)", ga4: "~171 KB · gtag.js", seal: "1.1 KB · ~155× lighter" },
         { feature: "JavaScript parsed on the device", ga4: "~512 KB", seal: "2.0 KB" },
@@ -291,6 +302,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Attribution",
+      block: "reporting",
       rows: [
         { feature: "Channel attribution", ga4: "Cookie-dependent", seal: "Session-level, consent-free" },
         { feature: "Direct/(none) bucket", ga4: "40–60% of sessions", seal: "Real share (typically <10%)" },
@@ -299,6 +311,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Infrastructure",
+      block: "technical",
       rows: [
         { feature: "Data residency", ga4: "US · Google infra", seal: "EU · Dublin, Ireland" },
         { feature: "Schrems II exposure", ga4: "Yes · ongoing challenge", seal: "Clean" },
@@ -307,6 +320,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Integrations",
+      block: "reporting",
       rows: [
         { feature: "Google Ads native", ga4: "Yes", seal: "Via BigQuery export" },
         { feature: "Meta / TikTok Ads", ga4: "Via external sync", seal: "Native + BigQuery" },
@@ -316,17 +330,37 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Pricing",
+      block: "commercial",
       rows: [
         { feature: "Price", ga4: "Free (your data trains ads)", seal: "From €499/mo annual" },
         { feature: "Per-event overage", ga4: "Hidden limits trigger sampling", seal: "No overage billing" },
         { feature: "Data retention", ga4: "14 months default", seal: "24 months included" },
       ],
     },
+    {
+      category: "Customer success",
+      block: "commercial",
+      rows: [
+        { feature: "Onboarding", ga4: "Self-serve or agency-led", seal: "Founder-led · 15-minute install" },
+        { feature: "Human support", ga4: "Community forums on the free tier", seal: "Direct support on every plan" },
+      ],
+    },
+    {
+      category: "Reporting parity",
+      block: "reporting",
+      rows: [
+        { feature: "Standard reports", ga4: "Reports + Explorations · 24–48 h processing lag", seal: "Decision-ready defaults · real-time" },
+        { feature: "Custom analysis", ga4: "Explorations · sampled at scale", seal: "Segments + property breakdowns · unsampled" },
+        { feature: "Data thresholding", ga4: "Rows hidden by privacy thresholds", seal: "None · aggregate by design" },
+        { feature: "Audiences & remarketing", ga4: "Yes · its real strength", seal: "Not a remarketing tool — no personal identifiers by design" },
+      ],
+    },
   ];
 
-  const rowsEs: { category: string; rows: Row[] }[] = [
+  const rowsEs: { category: string; block: RowBlock; rows: Row[] }[] = [
     {
       category: "Captura de datos",
+      block: "technical",
       rows: [
         { feature: "Consentimiento requerido", ga4: "Sí · 40–60% rechaza", seal: "No · 100% capturado" },
         { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "No · first-party" },
@@ -336,6 +370,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Rendimiento del tracker (medido)",
+      block: "technical",
       rows: [
         { feature: "Peso del script en red (gzip)", ga4: "~171 KB · gtag.js", seal: "1,1 KB · ~155× más ligero" },
         { feature: "JavaScript parseado en el dispositivo", ga4: "~512 KB", seal: "2,0 KB" },
@@ -345,6 +380,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Atribución",
+      block: "reporting",
       rows: [
         { feature: "Atribución de canal", ga4: "Depende de cookies", seal: "A nivel sesión, sin consentimiento" },
         { feature: "Bucket directo/(none)", ga4: "40–60% de sesiones", seal: "Porcentaje real (típicamente <10%)" },
@@ -353,6 +389,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Infraestructura",
+      block: "technical",
       rows: [
         { feature: "Residencia de datos", ga4: "US · infra Google", seal: "UE · Dublín, Irlanda" },
         { feature: "Exposición Schrems II", ga4: "Sí · challenge regulatorio", seal: "Limpio" },
@@ -361,6 +398,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Integraciones",
+      block: "reporting",
       rows: [
         { feature: "Google Ads nativo", ga4: "Sí", seal: "Vía export BigQuery" },
         { feature: "Meta / TikTok Ads", ga4: "Vía sync externo", seal: "Nativo + BigQuery" },
@@ -370,10 +408,29 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
     },
     {
       category: "Precio",
+      block: "commercial",
       rows: [
         { feature: "Precio", ga4: "Gratis (tus datos entrenan Ads)", seal: "Desde €499/mes anual" },
         { feature: "Overage por evento", ga4: "Límites ocultos disparan muestreo", seal: "Sin facturación por exceso" },
         { feature: "Retención de datos", ga4: "14 meses por defecto", seal: "24 meses incluidos" },
+      ],
+    },
+    {
+      category: "Customer success",
+      block: "commercial",
+      rows: [
+        { feature: "Onboarding", ga4: "Self-serve o vía agencia", seal: "Liderado por el founder · instalación en 15 min" },
+        { feature: "Soporte humano", ga4: "Foros de comunidad en el tier gratuito", seal: "Soporte directo en todos los planes" },
+      ],
+    },
+    {
+      category: "Paridad de reporting",
+      block: "reporting",
+      rows: [
+        { feature: "Informes estándar", ga4: "Reports + Explorations · 24–48 h de retraso de procesado", seal: "Listos por defecto · tiempo real" },
+        { feature: "Análisis custom", ga4: "Explorations · muestreado a escala", seal: "Segmentos + breakdowns por propiedad · sin muestreo" },
+        { feature: "Thresholding de datos", ga4: "Filas ocultas por umbrales de privacidad", seal: "Ninguno · agregado por diseño" },
+        { feature: "Audiencias y remarketing", ga4: "Sí · su verdadera fortaleza", seal: "No es una herramienta de remarketing — sin identificadores personales por diseño" },
       ],
     },
   ];
@@ -401,53 +458,90 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
           </p>
         </div>
 
-        <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
-          <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
-            <div className="p-5">{locale === "es" ? "Capacidad" : "Capability"}</div>
-            <div className="p-5">Google Analytics 4</div>
-            <div
-              className="p-5 text-ink"
-              style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
+        <nav
+          aria-label={locale === "es" ? "Secciones de la comparativa" : "Comparison sections"}
+          className="flex flex-wrap gap-2 mb-10"
+        >
+          {GA4_BLOCKS.map((b) => (
+            <a
+              key={b.id}
+              href={`#${b.id}`}
+              className="px-4 py-2 rounded-full border border-warm-200 bg-warm-50 font-mono text-[11px] uppercase tracking-[0.1em] font-semibold text-ink no-underline hover:border-ink transition-colors"
             >
-              SealMetrics
-            </div>
-          </div>
-          {data.map((section) => (
-            <Fragment key={section.category}>
-              <div className="px-5 py-3 bg-warm-white border-b border-warm-100 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink font-bold">
-                {section.category}
-              </div>
-              {section.rows.map((row, i) => {
-                const isLastOverall =
-                  i === section.rows.length - 1 && section === data[data.length - 1];
-                return (
-                  <div
-                    key={row.feature}
-                    className={`grid grid-cols-[1.4fr_1fr_1fr] items-center ${
-                      isLastOverall ? "" : "border-b border-warm-100"
-                    }`}
-                  >
-                    <div className="p-4 md:p-5 text-[14px] text-ink font-semibold leading-[1.4]">
-                      {row.feature}
-                    </div>
-                    <div className="p-4 md:p-5 text-[13.5px] text-ink-soft leading-[1.5]">
-                      {row.ga4}
-                    </div>
-                    <div
-                      className="p-4 md:p-5 text-[13.5px] text-ink leading-[1.5] font-medium"
-                      style={{
-                        background: "rgba(45,139,109,0.04)",
-                        borderLeft: "2px solid #2D8B6D",
-                      }}
-                    >
-                      {row.seal}
-                    </div>
-                  </div>
-                );
-              })}
-            </Fragment>
+              {locale === "es" ? b.es : b.en}
+            </a>
           ))}
-        </div>
+        </nav>
+        {GA4_BLOCKS.map((b) => {
+          const cats = data.filter((c) => c.block === b.id);
+          if (cats.length === 0) return null;
+          return (
+            <div key={b.id} id={b.id} className="scroll-mt-28 mb-14 last:mb-0">
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-ink mb-5">
+                {locale === "es" ? b.es : b.en}
+              </h3>
+              <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
+                <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
+                  <div className="p-5">{locale === "es" ? "Capacidad" : "Capability"}</div>
+                  <div className="p-5">Google Analytics 4</div>
+                  <div
+                    className="p-5 text-ink"
+                    style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
+                  >
+                    SealMetrics
+                  </div>
+                </div>
+                {cats.map((section) => (
+                  <Fragment key={section.category}>
+                    <div className="px-5 py-3 bg-warm-white border-b border-warm-100 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink font-bold">
+                      {section.category}
+                    </div>
+                    {section.rows.map((row, i) => {
+                      const isLastOverall =
+                        i === section.rows.length - 1 && section === cats[cats.length - 1];
+                      return (
+                        <div
+                          key={row.feature}
+                          className={`grid grid-cols-[1.4fr_1fr_1fr] items-center ${
+                            isLastOverall ? "" : "border-b border-warm-100"
+                          }`}
+                        >
+                          <div className="p-4 md:p-5 text-[14px] text-ink font-semibold leading-[1.4]">
+                            {row.feature}
+                          </div>
+                          <div className="p-4 md:p-5 text-[13.5px] text-ink-soft leading-[1.5]">
+                            {row.ga4}
+                          </div>
+                          <div
+                            className="p-4 md:p-5 text-[13.5px] text-ink leading-[1.5] font-medium"
+                            style={{
+                              background: "rgba(45,139,109,0.04)",
+                              borderLeft: "2px solid #2D8B6D",
+                            }}
+                          >
+                            {row.seal}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </Fragment>
+                ))}
+              </div>
+              {b.id === "technical" ? (
+                <p className="mt-4 text-[14px] text-ink-2">
+                  <a
+                    href={GA4_TECH_REPORT_HREF}
+                    className="text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
+                  >
+                    {locale === "es"
+                      ? "Lee el informe técnico completo (mediciones de campo) →"
+                      : "Read the full technical report (field measurements) →"}
+                  </a>
+                </p>
+              ) : null}
+            </div>
+          );
+        })}
 
         <div className="mt-6 p-6 bg-warm-50 border border-warm-100 rounded-xl text-center text-[15px] text-ink-2 leading-[1.55]">
           <b className="text-ink font-semibold">
