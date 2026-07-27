@@ -197,7 +197,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         gapStats: [
           { n: "$100K+", label: "Annual cost", detail: "Plus implementation consulting fees." },
           { n: "3–6 months", label: "Implementation", detail: "Typical time to first value." },
-          { n: "Specialist", label: "Required headcount", detail: "Teams need dedicated Adobe analyst." },
+          { n: "+25%", label: "Measured traffic gap", detail: "30-day parallel run on a European media site. Losses beyond consent: blockers + a ~3 s hit window." },
           { n: "40–60%", label: "Still consent-gated", detail: "Cookie-dependent capture. Same EU gap as GA." },
         ],
         comparison: [
@@ -210,6 +210,12 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Cookie-dependent", them: "Yes · AppMeasurement library", us: "No · first-party server-side" },
             { feature: "EU consent rejection handling", them: "Banner-dependent", us: "Not applicable (no cookies)" },
             { feature: "Sampling", them: "Virtual Report Suites impact sampling", us: "Zero sampling" },
+          ]},
+          { category: "Tracker performance (measured)", rows: [
+            { feature: "Script weight on the wire (gzip)", them: "~170 KB · Launch + AppMeasurement", us: "1.1 KB · ~155× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~730 KB", us: "2.0 KB" },
+            { feature: "Pageview hit secured", them: "~3.0 s · field-measured on a dual-vendor site", us: "~0.1–0.3 s · sendBeacon from the head" },
+            { feature: "Hit transport", them: "Image GET · canceled if the visitor leaves early", us: "sendBeacon · survives page close" },
           ]},
           { category: "Infrastructure", rows: [
             { feature: "Data residency", them: "Configurable but complex", us: "EU-only · Dublin" },
@@ -224,6 +230,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "Adobe has far more features. Are you comparing apples to apples?", a: "For most eCommerce teams, Adobe Analytics' depth is unused. The 80% of features you need — channel attribution, funnel analysis, campaign reporting, BigQuery export — SealMetrics covers with complete data and no specialists. If you genuinely need Adobe's segmentation depth, Customer Journey Analytics is where it happens; we'd recommend keeping it and adding SealMetrics for complete data capture." },
           { q: "Can SealMetrics coexist with Adobe Experience Cloud?", a: "Yes. SealMetrics operates independently. Many enterprise customers run both — Adobe for deep segmentation, SealMetrics for complete data capture and the truth number shared across agencies and finance." },
           { q: "What about Customer Journey Analytics?", a: "CJA is Adobe's newer tool for cross-channel stitching. It still depends on the same AppMeasurement collection layer — same consent rejection loss. SealMetrics provides complete capture; your CJA does more interesting analytics on complete data instead of incomplete." },
+          { q: "How much more traffic does SealMetrics actually measure vs Adobe?", a: "In a 30-day parallel run on a European media site (June 2026), SealMetrics measured +25% pageviews over Adobe Analytics — a stable ratio across the whole month, with Adobe firing without a consent gate. The gap comes from losses beyond consent: privacy filter lists blocking Adobe's collection endpoints, a pageview that fires ~3 seconds into the load (field-measured — any visit that bounces earlier never existed for Adobe), and an image-GET transport that is canceled when the visitor leaves. Where Adobe sits behind a consent banner, the gap grows further." },
           { q: "How hard is migration?", a: "No migration. Both tools run in parallel. Decide per use case where each serves best. Most teams move acquisition + attribution reporting to SealMetrics and keep Adobe for enterprise segmentation and email orchestration." },
         ],
         ctaTitle: <>Skip the <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>6-month implementation.</em></>,
@@ -271,7 +278,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         gapStats: [
           { n: "100K$+", label: "Coste anual", detail: "Más fees de consultoría de implementación." },
           { n: "3–6 meses", label: "Implementación", detail: "Tiempo típico al primer valor." },
-          { n: "Especialista", label: "Headcount requerido", detail: "Equipos necesitan analista Adobe dedicado." },
+          { n: "+25%", label: "Gap de tráfico medido", detail: "30 días en paralelo en un medio europeo. Pérdidas más allá del consentimiento: blockers + ventana de hit de ~3 s." },
           { n: "40–60%", label: "Sigue con consentimiento", detail: "Captura dependiente de cookies. Mismo gap UE que GA." },
         ],
         comparison: [
@@ -284,6 +291,12 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Depende de cookies", them: "Sí · librería AppMeasurement", us: "No · first-party server-side" },
             { feature: "Manejo rechazo UE", them: "Dependiente de banner", us: "No aplica (sin cookies)" },
             { feature: "Muestreo", them: "Virtual Report Suites afectan muestreo", us: "Cero muestreo" },
+          ]},
+          { category: "Rendimiento del tracker (medido)", rows: [
+            { feature: "Peso del script en red (gzip)", them: "~170 KB · Launch + AppMeasurement", us: "1,1 KB · ~155× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~730 KB", us: "2,0 KB" },
+            { feature: "Pageview asegurado", them: "~3,0 s · medido en campo en un sitio dual-vendor", us: "~0,1–0,3 s · sendBeacon desde el head" },
+            { feature: "Transporte del hit", them: "Image GET · se cancela si el visitante se va", us: "sendBeacon · sobrevive al cierre" },
           ]},
           { category: "Infraestructura", rows: [
             { feature: "Residencia", them: "Configurable pero compleja", us: "Solo UE · Dublín" },
@@ -298,6 +311,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "Adobe tiene muchas más features. ¿Comparación justa?", a: "Para la mayoría de equipos eCommerce, la profundidad de Adobe no se usa. El 80% de lo que necesitas — atribución canal, análisis funnel, reporting campaña, export BigQuery — SealMetrics lo cubre con datos completos y sin especialistas. Si realmente necesitas la profundidad de segmentación de Adobe, Customer Journey Analytics es donde ocurre; recomendamos mantenerlo y añadir SealMetrics para la captura completa." },
           { q: "¿Puede coexistir con Adobe Experience Cloud?", a: "Sí. SealMetrics opera independientemente. Muchos clientes enterprise corren ambos — Adobe para segmentación profunda, SealMetrics para captura completa y el número verdad compartido con agencias y finanzas." },
           { q: "¿Y Customer Journey Analytics?", a: "CJA es la herramienta más reciente de Adobe para stitching cross-canal. Sigue dependiendo de la misma capa AppMeasurement — misma pérdida por consentimiento. SealMetrics aporta captura completa; tu CJA hace analítica más interesante sobre datos completos en lugar de incompletos." },
+          { q: "¿Cuánto tráfico más mide realmente SealMetrics vs Adobe?", a: "En 30 días corriendo en paralelo en un medio europeo (junio 2026), SealMetrics midió un +25% de pageviews sobre Adobe Analytics — con ratio estable todo el mes y con Adobe disparando sin consent-gate. El gap viene de pérdidas más allá del consentimiento: listas de privacidad que bloquean los endpoints de recogida de Adobe, un pageview que dispara a ~3 segundos de la carga (medido en campo — toda visita que rebota antes nunca existió para Adobe) y un transporte image-GET que se cancela cuando el visitante se va. Donde Adobe va detrás de un banner de consentimiento, el gap crece aún más." },
           { q: "¿Qué tan difícil es migrar?", a: "Sin migración. Ambas corren en paralelo. Decides caso a caso dónde encaja cada una. La mayoría mueve reporting de adquisición + atribución a SealMetrics y mantienen Adobe para segmentación enterprise y orquestación email." },
         ],
         ctaTitle: <>Sáltate la <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>implementación de 6 meses.</em></>,

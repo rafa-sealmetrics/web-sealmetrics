@@ -281,6 +281,15 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       ],
     },
     {
+      category: "Tracker performance (measured)",
+      rows: [
+        { feature: "Script weight on the wire (gzip)", ga4: "~171 KB · gtag.js", seal: "1.1 KB · ~155× lighter" },
+        { feature: "JavaScript parsed on the device", ga4: "~512 KB", seal: "2.0 KB" },
+        { feature: "Pageview hit secured", ga4: "~0.5–0.7 s best case · only after consent", seal: "~0.1–0.3 s · sendBeacon from the head" },
+        { feature: "Visits lost before the hit fires", ga4: "~2–5% on mobile · grows on slow networks", seal: "Minimal · hit secured in the first ~0.3 s" },
+      ],
+    },
+    {
       category: "Attribution",
       rows: [
         { feature: "Channel attribution", ga4: "Cookie-dependent", seal: "Session-level, consent-free" },
@@ -323,6 +332,15 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
         { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "No · first-party" },
         { feature: "Cookies en el dispositivo", ga4: "Obligatorias", seal: "Ninguna" },
         { feature: "Muestreo a escala", ga4: "Sí · sobre cierto umbral", seal: "Nunca · resolución completa" },
+      ],
+    },
+    {
+      category: "Rendimiento del tracker (medido)",
+      rows: [
+        { feature: "Peso del script en red (gzip)", ga4: "~171 KB · gtag.js", seal: "1,1 KB · ~155× más ligero" },
+        { feature: "JavaScript parseado en el dispositivo", ga4: "~512 KB", seal: "2,0 KB" },
+        { feature: "Pageview asegurado", ga4: "~0,5–0,7 s mejor caso · solo tras consentimiento", seal: "~0,1–0,3 s · sendBeacon desde el head" },
+        { feature: "Visitas perdidas antes de disparar", ga4: "~2–5% en móvil · crece en redes lentas", seal: "Mínimas · hit asegurado en los primeros ~0,3 s" },
       ],
     },
     {
