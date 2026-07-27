@@ -712,6 +712,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
     "google-analytics": {
       en: {
         competitor: "Google Analytics",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
         hook: "Google Analytics remains the default, but the default is losing 40–60% of EU traffic. The honest alternative isn't 'another free tool' — it's complete data at enterprise reliability.",
         eyebrow: "Google Analytics alternatives",
         h1: <>Looking for a <em>GA alternative</em> that doesn't commoditize your data?</>,
@@ -754,24 +755,38 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "14 mo", label: "Default data retention", detail: "Can extend to 50 months — still fixed cap." },
         ],
         comparison: [
-          { category: "Data completeness", rows: [
+          { category: "Data completeness", block: "technical", rows: [
             { feature: "Cookie-free capture", them: "Consent Mode v2 (modelled)", us: "Native · no modelling" },
             { feature: "Ad blocker resilience", them: "Blocked (third-party script)", us: "First-party · invisible to blockers" },
             { feature: "Sampling at scale", them: "Yes", us: "Never" },
           ]},
-          { category: "Compliance", rows: [
+          { category: "Compliance", block: "technical", rows: [
             { feature: "GDPR posture", them: "Consent banner required", us: "GDPR by architecture" },
             { feature: "Schrems II", them: "Exposed", us: "Clean" },
             { feature: "Data residency", them: "US", us: "EU · Dublin" },
           ]},
-          { category: "Modern stack", rows: [
+          { category: "Modern stack", block: "reporting", rows: [
             { feature: "MCP for AI agents", them: "No", us: "Native" },
             { feature: "BigQuery export", them: "Yes (sampled above thresholds)", us: "Full resolution · all plans" },
             { feature: "Real-time latency", them: "Up to 48 hours", us: "< 2 minutes" },
           ]},
-          { category: "Commercial", rows: [
+          { category: "Commercial", block: "commercial", rows: [
             { feature: "Price", them: "Free (data trains Google ads)", us: "€499/mo from annual" },
             { feature: "Your data ownership", them: "Shared with Google ad models", us: "Yours only · no training for anyone" },
+          ]},
+          { category: "Tracker performance (measured)", block: "technical", rows: [
+            { feature: "Script weight on the wire (gzip)", them: "~171 KB · gtag.js", us: "1.1 KB · ~155× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~512 KB", us: "2.0 KB" },
+            { feature: "Pageview hit secured", them: "~0.5–0.7 s best case · only after consent", us: "~0.1–0.3 s · sendBeacon from the head" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Self-serve or agency-led", us: "Founder-led · 15-minute install" },
+            { feature: "Human support", them: "Community forums on the free tier", us: "Direct support on every plan" },
+          ]},
+          { category: "Reporting parity", block: "reporting", rows: [
+            { feature: "Standard reports", them: "Reports + Explorations · 24–48 h processing lag", us: "Decision-ready defaults · real-time" },
+            { feature: "Custom analysis", them: "Explorations · sampled at scale", us: "Segments + property breakdowns · unsampled" },
+            { feature: "Audiences & remarketing", them: "Yes · its real strength", us: "Not a remarketing tool — no personal identifiers by design" },
           ]},
         ],
         faqs: [
@@ -785,6 +800,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       },
       es: {
         competitor: "Google Analytics",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
         hook: "Google Analytics sigue siendo el default, pero el default está perdiendo 40–60% del tráfico UE. La alternativa honesta no es 'otra herramienta gratis' — es dato completo con fiabilidad enterprise.",
         eyebrow: "Alternativas a Google Analytics",
         h1: <>¿Buscando una <em>alternativa a GA</em> que no commoditice tus datos?</>,
@@ -828,24 +844,38 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "14 meses", label: "Retención por defecto", detail: "Ampliable a 50 meses — sigue siendo tope fijo." },
         ],
         comparison: [
-          { category: "Completitud de datos", rows: [
+          { category: "Completitud de datos", block: "technical", rows: [
             { feature: "Captura sin cookies", them: "Consent Mode v2 (modelado)", us: "Nativo · sin modelado" },
             { feature: "Resistencia a ad blockers", them: "Bloqueado (script third-party)", us: "First-party · invisible a bloqueadores" },
             { feature: "Muestreo a escala", them: "Sí", us: "Nunca" },
           ]},
-          { category: "Compliance", rows: [
+          { category: "Compliance", block: "technical", rows: [
             { feature: "Postura RGPD", them: "Banner de consentimiento requerido", us: "Fuera del scope material RGPD" },
             { feature: "Schrems II", them: "Expuesto", us: "Limpio" },
             { feature: "Residencia de datos", them: "US", us: "UE · Dublín" },
           ]},
-          { category: "Stack moderno", rows: [
+          { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP para agentes IA", them: "No", us: "Nativo" },
             { feature: "Export BigQuery", them: "Sí (muestreado sobre umbrales)", us: "Resolución completa · todos los planes" },
             { feature: "Latencia tiempo real", them: "Hasta 48h", us: "< 2 minutos" },
           ]},
-          { category: "Comercial", rows: [
+          { category: "Comercial", block: "commercial", rows: [
             { feature: "Precio", them: "Gratis (tus datos entrenan ads de Google)", us: "€499/mes desde anual" },
             { feature: "Propiedad de datos", them: "Compartidos con modelos de ads de Google", us: "Solo tuyos · sin training para nadie" },
+          ]},
+          { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
+            { feature: "Peso del script en red (gzip)", them: "~171 KB · gtag.js", us: "1,1 KB · ~155× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~512 KB", us: "2,0 KB" },
+            { feature: "Pageview asegurado", them: "~0,5–0,7 s mejor caso · solo tras consentimiento", us: "~0,1–0,3 s · sendBeacon desde el head" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Self-serve o vía agencia", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Soporte humano", them: "Foros de comunidad en el tier gratuito", us: "Soporte directo en todos los planes" },
+          ]},
+          { category: "Paridad de reporting", block: "reporting", rows: [
+            { feature: "Informes estándar", them: "Reports + Explorations · 24–48 h de retraso de procesado", us: "Listos por defecto · tiempo real" },
+            { feature: "Análisis custom", them: "Explorations · muestreado a escala", us: "Segmentos + breakdowns por propiedad · sin muestreo" },
+            { feature: "Audiencias y remarketing", them: "Sí · su verdadera fortaleza", us: "No es una herramienta de remarketing — sin identificadores personales por diseño" },
           ]},
         ],
         faqs: [
