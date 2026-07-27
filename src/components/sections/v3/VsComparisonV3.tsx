@@ -30,8 +30,10 @@ export interface VsData {
   tldr?: { answer: React.ReactNode; bullets: React.ReactNode[] };
   /** 4 stat cards — competitor pain points */
   gapStats: { n: string; label: string; detail: string }[];
-  /** Feature-by-feature comparison table */
-  comparison: { category: string; rows: { feature: string; them: string; us: string }[] }[];
+  /** Feature-by-feature comparison table. Optional `block` groups categories into anchored sections. */
+  comparison: { category: string; block?: "technical" | "commercial" | "reporting"; rows: { feature: string; them: string; us: string }[] }[];
+  /** Optional link to the full technical report on docs, rendered under the technical block. */
+  techReportHref?: string;
   /** FAQ */
   faqs: { q: string; a: string }[];
   /** Optional case-study callout rendered before final CTA. */
@@ -39,6 +41,89 @@ export interface VsData {
   ctaTitle: React.ReactNode;
   ctaLede: string;
   locale: Locale;
+}
+
+type VsCategory = VsData["comparison"][number];
+
+const VS_BLOCKS = [
+  { id: "technical", en: "Technical & data capture", es: "Técnico y captura de datos" },
+  { id: "commercial", en: "Pricing & customer success", es: "Precio y customer success" },
+  { id: "reporting", en: "Reporting", es: "Reporting" },
+] as const;
+
+function VsTableCard({ cats, competitor, locale }: { cats: VsCategory[]; competitor: string; locale: Locale }) {
+  return (
+    <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
+      <table className="w-full border-collapse table-fixed">
+        <caption className="sr-only">
+          {locale === "es"
+            ? `Comparativa feature por feature: SealMetrics vs ${competitor}`
+            : `Feature-by-feature comparison: SealMetrics vs ${competitor}`}
+        </caption>
+        <colgroup>
+          <col style={{ width: "44%" }} />
+          <col style={{ width: "28%" }} />
+          <col style={{ width: "28%" }} />
+        </colgroup>
+        <thead>
+          <tr className="border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
+            <th scope="col" className="p-5 text-left align-middle">
+              {locale === "es" ? "Capacidad" : "Capability"}
+            </th>
+            <th scope="col" className="p-5 text-left align-middle">
+              {competitor}
+            </th>
+            <th
+              scope="col"
+              className="p-5 text-left align-middle text-ink"
+              style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
+            >
+              SealMetrics
+            </th>
+          </tr>
+        </thead>
+        {cats.map((section) => (
+          <tbody key={section.category}>
+            <tr>
+              <th
+                scope="rowgroup"
+                colSpan={3}
+                className="px-5 py-3 bg-warm-white border-b border-warm-100 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink font-bold text-left"
+              >
+                {section.category}
+              </th>
+            </tr>
+            {section.rows.map((row, i) => {
+              const isLastOverall =
+                i === section.rows.length - 1 && section === cats[cats.length - 1];
+              return (
+                <tr
+                  key={row.feature}
+                  className={isLastOverall ? "" : "border-b border-warm-100"}
+                >
+                  <th scope="row" className="p-4 md:p-5 text-[14px] text-ink font-semibold leading-[1.4] text-left align-top">
+                    {row.feature}
+                  </th>
+                  <td className="p-4 md:p-5 text-[13.5px] text-ink-soft leading-[1.5] align-top">
+                    {row.them}
+                  </td>
+                  <td
+                    className="p-4 md:p-5 text-[13.5px] text-ink leading-[1.5] font-medium align-top"
+                    style={{
+                      background: "rgba(45,139,109,0.04)",
+                      borderLeft: "2px solid #2D8B6D",
+                    }}
+                  >
+                    {row.us}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        ))}
+      </table>
+    </div>
+  );
 }
 
 export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModified: string }) {
@@ -156,77 +241,50 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
             </p>
           </div>
 
-          <div className="bg-white border border-warm-100 rounded-xl overflow-hidden">
-            <table className="w-full border-collapse table-fixed">
-              <caption className="sr-only">
-                {locale === "es"
-                  ? `Comparativa feature por feature: SealMetrics vs ${competitor}`
-                  : `Feature-by-feature comparison: SealMetrics vs ${competitor}`}
-              </caption>
-              <colgroup>
-                <col style={{ width: "44%" }} />
-                <col style={{ width: "28%" }} />
-                <col style={{ width: "28%" }} />
-              </colgroup>
-              <thead>
-                <tr className="border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
-                  <th scope="col" className="p-5 text-left align-middle">
-                    {locale === "es" ? "Capacidad" : "Capability"}
-                  </th>
-                  <th scope="col" className="p-5 text-left align-middle">
-                    {competitor}
-                  </th>
-                  <th
-                    scope="col"
-                    className="p-5 text-left align-middle text-ink"
-                    style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
+          {data.comparison.some((c) => c.block) ? (
+            <>
+              <nav
+                aria-label={locale === "es" ? "Secciones de la comparativa" : "Comparison sections"}
+                className="flex flex-wrap gap-2 mb-10"
+              >
+                {VS_BLOCKS.map((b) => (
+                  <a
+                    key={b.id}
+                    href={`#${b.id}`}
+                    className="px-4 py-2 rounded-full border border-warm-200 bg-warm-50 font-mono text-[11px] uppercase tracking-[0.1em] font-semibold text-ink no-underline hover:border-ink transition-colors"
                   >
-                    SealMetrics
-                  </th>
-                </tr>
-              </thead>
-              {data.comparison.map((section) => (
-                <tbody key={section.category}>
-                  <tr>
-                    <th
-                      scope="rowgroup"
-                      colSpan={3}
-                      className="px-5 py-3 bg-warm-white border-b border-warm-100 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink font-bold text-left"
-                    >
-                      {section.category}
-                    </th>
-                  </tr>
-                  {section.rows.map((row, i) => {
-                    const isLastOverall =
-                      i === section.rows.length - 1 &&
-                      section === data.comparison[data.comparison.length - 1];
-                    return (
-                      <tr
-                        key={row.feature}
-                        className={isLastOverall ? "" : "border-b border-warm-100"}
-                      >
-                        <th scope="row" className="p-4 md:p-5 text-[14px] text-ink font-semibold leading-[1.4] text-left align-top">
-                          {row.feature}
-                        </th>
-                        <td className="p-4 md:p-5 text-[13.5px] text-ink-soft leading-[1.5] align-top">
-                          {row.them}
-                        </td>
-                        <td
-                          className="p-4 md:p-5 text-[13.5px] text-ink leading-[1.5] font-medium align-top"
-                          style={{
-                            background: "rgba(45,139,109,0.04)",
-                            borderLeft: "2px solid #2D8B6D",
-                          }}
+                    {locale === "es" ? b.es : b.en}
+                  </a>
+                ))}
+              </nav>
+              {VS_BLOCKS.map((b) => {
+                const cats = data.comparison.filter((c) => c.block === b.id);
+                if (cats.length === 0) return null;
+                return (
+                  <div key={b.id} id={b.id} className="scroll-mt-28 mb-14 last:mb-0">
+                    <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-ink mb-5">
+                      {locale === "es" ? b.es : b.en}
+                    </h3>
+                    <VsTableCard cats={cats} competitor={competitor} locale={locale} />
+                    {b.id === "technical" && data.techReportHref ? (
+                      <p className="mt-4 text-[14px] text-ink-2">
+                        <a
+                          href={data.techReportHref}
+                          className="text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
                         >
-                          {row.us}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              ))}
-            </table>
-          </div>
+                          {locale === "es"
+                            ? "Lee el informe técnico completo (mediciones de campo) →"
+                            : "Read the full technical report (field measurements) →"}
+                        </a>
+                      </p>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </>
+          ) : (
+            <VsTableCard cats={data.comparison} competitor={competitor} locale={locale} />
+          )}
 
           <div className="mt-6 p-6 bg-warm-50 border border-warm-100 rounded-xl text-center text-[15px] text-ink-2 leading-[1.55]">
             <b className="text-ink font-semibold">
