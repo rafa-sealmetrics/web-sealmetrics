@@ -247,7 +247,7 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
                 aria-label={locale === "es" ? "Secciones de la comparativa" : "Comparison sections"}
                 className="flex flex-wrap gap-2 mb-10"
               >
-                {VS_BLOCKS.map((b) => (
+                {VS_BLOCKS.filter((b) => data.comparison.some((c) => c.block === b.id)).map((b) => (
                   <a
                     key={b.id}
                     href={`#${b.id}`}

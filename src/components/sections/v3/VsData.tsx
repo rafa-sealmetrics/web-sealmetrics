@@ -8,6 +8,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
     ga360: {
       en: {
         competitor: "GA360",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
         hook: "GA360 starts at $150,000/year. Enterprise-grade pricing, but the same cookie and consent architecture as free GA4. Complete EU data still requires consent.",
         eyebrow: "vs Google Analytics 360",
         h1: <>Enterprise data <em>without the $150K invoice.</em></>,
@@ -51,24 +52,38 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "12 months", label: "Minimum contract", detail: "Annual lock-in. Negotiation via Google sales." },
         ],
         comparison: [
-          { category: "Pricing", rows: [
+          { category: "Pricing", block: "commercial", rows: [
             { feature: "Starting price", them: "$150,000/yr annual commit", us: "€499/mo · no annual commit" },
             { feature: "Billing model", them: "Enterprise sales negotiation", us: "Self-serve · transparent pricing" },
             { feature: "Contract length", them: "12-month minimum", us: "Monthly or annual (2 months free)" },
           ]},
-          { category: "Data capture", rows: [
+          { category: "Data capture", block: "technical", rows: [
             { feature: "Cookie-dependent", them: "Yes", us: "No · cookieless by design" },
             { feature: "Consent required", them: "Yes · 40–60% reject in EU", us: "No · 100% captured" },
             { feature: "Sampling", them: "Above thresholds", us: "Zero sampling" },
           ]},
-          { category: "Infrastructure", rows: [
+          { category: "Infrastructure", block: "technical", rows: [
             { feature: "Data residency", them: "US · Google infra", us: "EU · Dublin, Ireland" },
             { feature: "Schrems II", them: "Exposed", us: "Clean" },
             { feature: "BigQuery export", them: "Included (sampled above 10M/day)", us: "Full resolution · no limits" },
           ]},
-          { category: "AI & modern stack", rows: [
+          { category: "AI & modern stack", block: "reporting", rows: [
             { feature: "MCP server", them: "No", us: "Native" },
             { feature: "Real-time (<2 min)", them: "Partial", us: "Yes · all plans" },
+          ]},
+          { category: "Tracker performance (measured)", block: "technical", rows: [
+            { feature: "Script weight on the wire (gzip)", them: "~171 KB · same gtag.js as free GA4", us: "1.1 KB · ~155× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~512 KB", us: "2.0 KB" },
+            { feature: "Pageview hit secured", them: "~0.5–0.7 s best case · only after consent", us: "~0.1–0.3 s · sendBeacon from the head" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Google sales + certified partners", us: "Founder-led · 15-minute install" },
+            { feature: "Support", them: "Enterprise SLAs · via resellers", us: "Direct support on every plan" },
+          ]},
+          { category: "Reporting parity", block: "reporting", rows: [
+            { feature: "Standard reports", them: "Same GA4 interface · 24–48 h processing lag", us: "Decision-ready defaults · real-time" },
+            { feature: "Custom analysis", them: "Explorations · sampling relief only in BigQuery", us: "Segments + property breakdowns · unsampled" },
+            { feature: "Audiences & remarketing", them: "Yes · its real strength", us: "Not a remarketing tool — no personal identifiers by design" },
           ]},
         ],
         faqs: [
@@ -82,6 +97,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       },
       es: {
         competitor: "GA360",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
         hook: "GA360 arranca en 150.000$/año. Precio enterprise, misma arquitectura de cookies y consentimiento que GA4 gratis. Los datos UE completos siguen requiriendo consentimiento.",
         eyebrow: "vs Google Analytics 360",
         h1: <>Datos enterprise <em>sin la factura de 150K$.</em></>,
@@ -126,24 +142,38 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "12 meses", label: "Contrato mínimo", detail: "Lock-in anual. Negociación vía Google sales." },
         ],
         comparison: [
-          { category: "Precio", rows: [
+          { category: "Precio", block: "commercial", rows: [
             { feature: "Precio de entrada", them: "150.000$/año compromiso anual", us: "€499/mes · sin compromiso anual" },
             { feature: "Modelo facturación", them: "Negociación enterprise sales", us: "Self-serve · precio transparente" },
             { feature: "Duración contrato", them: "Mínimo 12 meses", us: "Mensual o anual (2 meses gratis)" },
           ]},
-          { category: "Captura de datos", rows: [
+          { category: "Captura de datos", block: "technical", rows: [
             { feature: "Depende de cookies", them: "Sí", us: "No · sin cookies por diseño" },
             { feature: "Consentimiento", them: "Sí · 40–60% rechaza en UE", us: "No · 100% capturado" },
             { feature: "Muestreo", them: "Sobre umbrales", us: "Cero muestreo" },
           ]},
-          { category: "Infraestructura", rows: [
+          { category: "Infraestructura", block: "technical", rows: [
             { feature: "Residencia de datos", them: "US · infra Google", us: "UE · Dublín, Irlanda" },
             { feature: "Schrems II", them: "Expuesto", us: "Limpio" },
             { feature: "Export BigQuery", them: "Incluido (muestreado sobre 10M/día)", us: "Resolución completa · sin límites" },
           ]},
-          { category: "IA y stack moderno", rows: [
+          { category: "IA y stack moderno", block: "reporting", rows: [
             { feature: "MCP server", them: "No", us: "Nativo" },
             { feature: "Tiempo real (<2 min)", them: "Parcial", us: "Sí · todos los planes" },
+          ]},
+          { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
+            { feature: "Peso del script en red (gzip)", them: "~171 KB · el mismo gtag.js que GA4 gratis", us: "1,1 KB · ~155× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~512 KB", us: "2,0 KB" },
+            { feature: "Pageview asegurado", them: "~0,5–0,7 s mejor caso · solo tras consentimiento", us: "~0,1–0,3 s · sendBeacon desde el head" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Google sales + partners certificados", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Soporte", them: "SLAs enterprise · vía resellers", us: "Soporte directo en todos los planes" },
+          ]},
+          { category: "Paridad de reporting", block: "reporting", rows: [
+            { feature: "Informes estándar", them: "Misma interfaz GA4 · 24–48 h de retraso", us: "Listos por defecto · tiempo real" },
+            { feature: "Análisis custom", them: "Explorations · alivio de muestreo solo en BigQuery", us: "Segmentos + breakdowns por propiedad · sin muestreo" },
+            { feature: "Audiencias y remarketing", them: "Sí · su verdadera fortaleza", us: "No es una herramienta de remarketing — sin identificadores personales por diseño" },
           ]},
         ],
         faqs: [
@@ -388,22 +418,31 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "Manual DPIA", label: "Per-cookie review", detail: "Cookie addition still triggers compliance scope." },
         ],
         comparison: [
-          { category: "Pricing", rows: [
+          { category: "Pricing", block: "commercial", rows: [
             { feature: "Entry plan", them: "Free (limited) / Enterprise from €30K/yr", us: "€499/mo from Growth" },
             { feature: "Implementation support", them: "Enterprise-only", us: "Founder-led on all plans" },
           ]},
-          { category: "Data capture", rows: [
+          { category: "Data capture", block: "technical", rows: [
             { feature: "Cookies", them: "Yes · opt-in required", us: "None" },
             { feature: "Consent banner needed", them: "Yes", us: "No · GDPR by architecture" },
             { feature: "EU traffic captured", them: "60% typical with banner", us: "100% captured" },
           ]},
-          { category: "Infrastructure", rows: [
+          { category: "Infrastructure", block: "technical", rows: [
             { feature: "Data residency", them: "EU (Germany options)", us: "EU (Dublin)" },
             { feature: "Schrems II", them: "Clean", us: "Clean" },
           ]},
-          { category: "Modern stack", rows: [
+          { category: "Modern stack", block: "reporting", rows: [
             { feature: "MCP / AI integration", them: "No native support", us: "Native MCP server" },
             { feature: "BigQuery export", them: "Enterprise add-on", us: "Included from Growth" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Guided on enterprise contracts", us: "Founder-led · 15-minute install" },
+            { feature: "Support", them: "Tiered · SLAs on enterprise", us: "Direct support on every plan" },
+          ]},
+          { category: "Reporting parity", block: "reporting", rows: [
+            { feature: "Prebuilt reports", them: "Full classic reporting UI · mature", us: "Decision-ready defaults · channels, funnels, pages" },
+            { feature: "Reporting in consentless mode", them: "Consentless mode drops visitor-level reports", us: "Full reporting · always cookieless" },
+            { feature: "Custom analysis", them: "Segments + custom reports", us: "Segments + property breakdowns · BigQuery for deep dives" },
           ]},
         ],
         faqs: [
@@ -459,22 +498,31 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "DPIA manual", label: "Revisión por cookie", detail: "Añadir cookie sigue disparando scope de compliance." },
         ],
         comparison: [
-          { category: "Precio", rows: [
+          { category: "Precio", block: "commercial", rows: [
             { feature: "Plan de entrada", them: "Free (limitado) / Enterprise desde 30K€/año", us: "€499/mes desde Growth" },
             { feature: "Soporte implementación", them: "Solo Enterprise", us: "Liderado por founder en todos los planes" },
           ]},
-          { category: "Captura de datos", rows: [
+          { category: "Captura de datos", block: "technical", rows: [
             { feature: "Cookies", them: "Sí · opt-in requerido", us: "Ninguna" },
             { feature: "Banner consentimiento", them: "Sí", us: "No · fuera del scope RGPD" },
             { feature: "Tráfico UE capturado", them: "60% típico con banner", us: "100% capturado" },
           ]},
-          { category: "Infraestructura", rows: [
+          { category: "Infraestructura", block: "technical", rows: [
             { feature: "Residencia", them: "UE (opciones Alemania)", us: "UE (Dublín)" },
             { feature: "Schrems II", them: "Limpio", us: "Limpio" },
           ]},
-          { category: "Stack moderno", rows: [
+          { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / integración IA", them: "Sin soporte nativo", us: "MCP server nativo" },
             { feature: "Export BigQuery", them: "Add-on enterprise", us: "Incluido desde Growth" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Guiado en contratos enterprise", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Soporte", them: "Por tiers · SLAs en enterprise", us: "Soporte directo en todos los planes" },
+          ]},
+          { category: "Paridad de reporting", block: "reporting", rows: [
+            { feature: "Informes listos", them: "UI de reporting clásica completa · madura", us: "Listos por defecto · canales, funnels, páginas" },
+            { feature: "Reporting en modo consentless", them: "El modo consentless pierde informes a nivel visitante", us: "Reporting completo · siempre sin cookies" },
+            { feature: "Análisis custom", them: "Segmentos + informes custom", us: "Segmentos + breakdowns por propiedad · BigQuery para deep dives" },
           ]},
         ],
         faqs: [
@@ -532,27 +580,36 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "No MCP", label: "No AI-native interface", detail: "No MCP server. No agent-ready API. Built before the AI shift." },
         ],
         comparison: [
-          { category: "Pricing & operations", rows: [
+          { category: "Pricing & operations", block: "commercial", rows: [
             { feature: "Entry cost", them: "Cloud from ~€23/mo · self-hosted 'free' + ops", us: "€499/mo · all-inclusive · no ops" },
             { feature: "Total cost of ownership (self-host)", them: "Server, ops, security, plugins, upgrades", us: "Zero infra cost · fully managed" },
             { feature: "Implementation support", them: "Community forum / paid consultancy", us: "Founder-led on all plans" },
           ]},
-          { category: "Data capture", rows: [
+          { category: "Data capture", block: "technical", rows: [
             { feature: "Default mode", them: "Cookies on · consent banner required", us: "Cookieless · no banner needed" },
             { feature: "Cookieless mode available", them: "Yes, but limited (no visitor profiles, fewer reports)", us: "Full functionality, always cookieless" },
             { feature: "EU traffic captured (typical)", them: "~60% with banner", us: "100% captured" },
             { feature: "Sampling at scale", them: "Performance-driven (self-host bottlenecks)", us: "Zero sampling" },
           ]},
-          { category: "Compliance", rows: [
+          { category: "Compliance", block: "technical", rows: [
             { feature: "GDPR posture", them: "Compliant if cookieless mode + DPIA + banner", us: "GDPR by architecture · no DPIA needed for visitor data" },
             { feature: "Data residency (Cloud)", them: "EU options · paid plans", us: "EU-only · Dublin · all plans" },
             { feature: "Schrems II", them: "Clean (Cloud EU)", us: "Clean" },
           ]},
-          { category: "Modern stack", rows: [
+          { category: "Modern stack", block: "reporting", rows: [
             { feature: "Native MCP / AI agents", them: "No", us: "Native MCP server" },
             { feature: "BigQuery / warehouse export", them: "Paid plugin or manual ETL", us: "Native · all plans · full resolution" },
             { feature: "Real-time latency", them: "Minutes (with extra plugins)", us: "< 2 minutes · default" },
             { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI · premium on Scale+" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Self-serve · docs + forum", us: "Founder-led · 15-minute install" },
+            { feature: "Support", them: "Paid support plans (Cloud)", us: "Direct support on every plan" },
+          ]},
+          { category: "Reporting parity", block: "reporting", rows: [
+            { feature: "Prebuilt reports", them: "Full classic reporting UI · mature", us: "Decision-ready defaults · channels, funnels, pages" },
+            { feature: "Reporting in cookieless mode", them: "Drops visitor profiles + several reports", us: "Full reporting · always cookieless" },
+            { feature: "Custom analysis", them: "Custom reports + segments (some behind plugins)", us: "Segments + property breakdowns · unsampled" },
           ]},
         ],
         faqs: [
@@ -609,27 +666,36 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "Sin MCP", label: "Sin interfaz IA-nativa", detail: "Sin MCP server. Sin API agent-ready. Construido antes del shift de IA." },
         ],
         comparison: [
-          { category: "Precio y operación", rows: [
+          { category: "Precio y operación", block: "commercial", rows: [
             { feature: "Coste de entrada", them: "Cloud desde ~23€/mes · self-hosted 'gratis' + ops", us: "€499/mes · todo incluido · sin ops" },
             { feature: "TCO (self-host)", them: "Servidor, ops, seguridad, plugins, upgrades", us: "Cero coste de infra · totalmente gestionado" },
             { feature: "Soporte implementación", them: "Foro comunidad / consultoría de pago", us: "Liderado por founder en todos los planes" },
           ]},
-          { category: "Captura de datos", rows: [
+          { category: "Captura de datos", block: "technical", rows: [
             { feature: "Modo por defecto", them: "Cookies on · banner requerido", us: "Sin cookies · sin banner" },
             { feature: "Modo cookieless disponible", them: "Sí, pero limitado (sin perfiles de visitante, menos reports)", us: "Funcionalidad completa, siempre sin cookies" },
             { feature: "Tráfico UE capturado (típico)", them: "~60% con banner", us: "100% capturado" },
             { feature: "Muestreo a escala", them: "Por rendimiento (cuellos de botella self-host)", us: "Cero muestreo" },
           ]},
-          { category: "Compliance", rows: [
+          { category: "Compliance", block: "technical", rows: [
             { feature: "Postura RGPD", them: "Compliant con modo cookieless + DPIA + banner", us: "RGPD por arquitectura · sin DPIA para datos de visitante" },
             { feature: "Residencia (Cloud)", them: "Opciones UE · planes de pago", us: "Solo UE · Dublín · todos los planes" },
             { feature: "Schrems II", them: "Limpio (Cloud UE)", us: "Limpio" },
           ]},
-          { category: "Stack moderno", rows: [
+          { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / agentes IA nativos", them: "No", us: "MCP server nativo" },
             { feature: "Export BigQuery / warehouse", them: "Plugin de pago o ETL manual", us: "Nativo · todos los planes · resolución completa" },
             { feature: "Latencia tiempo real", them: "Minutos (con plugins extra)", us: "< 2 minutos · por defecto" },
             { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI · premium en Scale+" },
+          ]},
+          { category: "Customer success", block: "commercial", rows: [
+            { feature: "Onboarding", them: "Self-serve · docs + foro", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Soporte", them: "Planes de soporte de pago (Cloud)", us: "Soporte directo en todos los planes" },
+          ]},
+          { category: "Paridad de reporting", block: "reporting", rows: [
+            { feature: "Informes listos", them: "UI de reporting clásica completa · madura", us: "Listos por defecto · canales, funnels, páginas" },
+            { feature: "Reporting en modo cookieless", them: "Pierde perfiles de visitante + varios informes", us: "Reporting completo · siempre sin cookies" },
+            { feature: "Análisis custom", them: "Informes custom + segmentos (algunos tras plugins)", us: "Segmentos + breakdowns por propiedad · sin muestreo" },
           ]},
         ],
         faqs: [
