@@ -28,7 +28,7 @@ const ITEMS_EN = [
   },
   {
     q: "Are all features really included in every plan?",
-    a: "Core analytics, conversion tracking, monitoring, API, MCP Server and BigQuery export are included from Growth up. LENS AI (forecasting, anomaly detection, growth opportunities) and Private AI are premium capabilities reserved for Scale+. Other differences between plans are event volume, isolated processing (Enterprise) and support level.",
+    a: "Core analytics, conversion tracking, monitoring, API, MCP Server, BigQuery export and LENS AI (forecasting, anomaly detection, growth opportunities) are included from Growth up — you connect your own AI key (BYOK: Anthropic, OpenAI or Gemini). Private AI, our managed EU-hosted model with no key needed, is included on Scale (5M tokens) and available as an add-on on any plan at €358.80 per 5M tokens; Enterprise gets a dedicated, non-shared instance. Other plan differences are event volume, isolated processing (Enterprise) and support level.",
   },
   {
     q: "What is the Agentic Package?",
@@ -87,7 +87,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Todas las features están incluidas en cada plan?",
-    a: "Analítica core, tracking de conversiones, monitoring, API, MCP Server y export a BigQuery están incluidos desde Growth. LENS AI (forecasting, detección de anomalías, oportunidades de crecimiento) y Private AI son capacidades premium reservadas a Scale+. Otras diferencias entre planes son volumen de eventos, procesamiento aislado (Enterprise) y nivel de soporte.",
+    a: "Analítica core, tracking de conversiones, monitoring, API, MCP Server, export a BigQuery y LENS AI (forecasting, detección de anomalías, oportunidades de crecimiento) están incluidos desde Growth — conectas tu propia API key (BYOK: Anthropic, OpenAI o Gemini). Private AI, nuestro modelo gestionado alojado en la UE y sin API key, viene incluida en Scale (5M tokens) y se puede contratar como add-on en cualquier plan por 358,80€ por 5M tokens; Enterprise incluye una instancia dedicada, no compartida. Otras diferencias entre planes son volumen de eventos, procesamiento aislado (Enterprise) y nivel de soporte.",
   },
   {
     q: "¿Qué es el Agentic Package?",

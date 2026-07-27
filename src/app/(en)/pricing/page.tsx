@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/pricing",
+    canonical: "https://sealmetrics.com/pricing/",
     languages: getAlternates("/pricing"),
   },
 };
@@ -40,7 +40,7 @@ const faqsForSchema = [
   { question: "Why is AI agent traffic free?", answer: "AI agents (ChatGPT, Claude, Perplexity) are a new category of traffic you need visibility into. We track them for free because understanding who reads your content with AI is a strategic advantage." },
   { question: "What happens if I exceed my event limit?", answer: "Your tracking never stops. We never block, throttle or sample your data. If you exceed for 2+ consecutive months, your plan auto-upgrades at your next billing cycle. One overage month per year is free." },
   { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features." },
-  { question: "Are all features included in every plan?", answer: "Core analytics, conversion tracking, monitoring, API, MCP Server and BigQuery export are included from Growth up. LENS AI and Agent Analytics are premium features available on Scale+. Plan differences are event volume, governance, support and the premium AI capabilities." },
+  { question: "Are all features included in every plan?", answer: "Yes for the analytics. Core analytics, conversion tracking, monitoring, API, MCP Server, BigQuery export and LENS AI (forecasting, anomaly detection, growth opportunities) are all included from Growth up — LENS AI runs on your own AI key (BYOK: Anthropic, OpenAI or Gemini). The only usage-based option is Private AI, our managed EU-hosted model with no key needed: included on Scale (5M tokens), available as an add-on on any plan at €358.80 per 5M tokens, and a dedicated non-shared instance on Enterprise. Other plan differences are event volume, governance and support." },
   { question: "What is the Agentic Package?", answer: "A free SealMetrics tier set up directly from your AI assistant (Claude Desktop, Codex or any MCP-capable agent). Your agent creates the account and generates the pixel — same complete cookieless analytics as Growth, free up to 1M human events in total (not per month — a one-time allowance), self-serve with documentation only. Above 1M events the Growth plan activates." },
 ];
 
@@ -71,7 +71,7 @@ export default function PricingPage() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              SealMetrics pricing is annual-billed enterprise analytics with no usage-based surprises. The Growth plan is €499/month billed annually (€599 monthly) for 5 million human events per month; the Scale plan is €899/month billed annually (€1,079 monthly) for 15 million events; Enterprise is custom for portfolio brands with unlimited events, isolated processing, an exclusive non-shared Private AI, a 99.9% SLA and a dedicated account manager. Every plan includes the same data architecture: 100% capture, last-click revenue attribution, EU-hosted in Dublin, GDPR-compliant by design, and the standard DPA.
+              SealMetrics pricing is annual-billed enterprise analytics with no usage-based surprises. The Growth plan is €499/month billed annually (€599 monthly) for 5 million human events per month; the Scale plan is €899/month billed annually (€1,079 monthly) for 15 million events; Enterprise is custom for portfolio brands with unlimited events, isolated processing, an exclusive non-shared Private AI, a 99.9% SLA and a dedicated account manager. Every plan includes the same data architecture: 100% capture, last-click revenue attribution, EU-hosted in Dublin, GDPR-compliant by design, and the standard DPA. LENS AI — forecasting, anomaly detection and growth opportunities — is included on every plan and runs on your own AI key (BYOK); Private AI, the managed EU-hosted model that needs no key, is included on Scale (5M tokens) and available as an add-on on any plan at €358.80 per 5M tokens.
             </p>
             <p>
               For an EU eCommerce team spending €20K+/month in paid media, the Growth plan represents under 2.5% of paid spend — typically less than the cost of a single mis-attributed campaign decision. Annual billing includes two months free against monthly. Free 14-day trial; no migration from GA4 required since both run in parallel.

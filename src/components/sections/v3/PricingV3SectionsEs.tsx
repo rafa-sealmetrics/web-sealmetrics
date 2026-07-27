@@ -55,7 +55,7 @@ export function PlanIncludesV3Es() {
   ];
   const diffs = [
     { from: "Agentic", to: "Growth", diff: "5M eventos · soporte email y chat · onboarding guiado · panel de facturación — los mismos datos completos, sin necesidad de LLM" },
-    { from: "Growth", to: "Scale", diff: "15M eventos · LENS AI forecasting · Private AI (5M tokens) · Webhooks · Onboarding guiado · Soporte prioritario" },
+    { from: "Growth", to: "Scale", diff: "15M eventos · Private AI gestionada (5M tokens, sin API key) · Webhooks · Onboarding guiado · Soporte prioritario" },
     { from: "Scale", to: "Enterprise", diff: "Eventos ilimitados · Private AI exclusiva · Account manager · Procesamiento aislado · SLA personalizado" },
   ];
 
@@ -240,14 +240,15 @@ const comparisonDataEs: ComparisonSection[] = [
     ],
   },
   {
-    category: "LENS AI (premium · Scale+)",
+    category: "LENS AI y Private AI",
     rows: [
-      { feature: "Forecasting y predicción", agentic: false, growth: false, scale: true, enterprise: true },
-      { feature: "Detección de anomalías", agentic: false, growth: false, scale: true, enterprise: true },
-      { feature: "Oportunidades de crecimiento", agentic: false, growth: false, scale: true, enterprise: true },
-      { feature: "Reporting semanal y mensual", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Forecasting y predicción", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Detección de anomalías", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Oportunidades de crecimiento", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Reporting semanal y mensual", agentic: false, growth: true, scale: true, enterprise: true },
       { feature: "Trae tus API keys (Anthropic / OpenAI / Gemini)", agentic: false, growth: true, scale: true, enterprise: true },
-      { feature: "Private AI en infraestructura UE (Gemma · Scaleway)", agentic: false, growth: false, scale: "5M tokens", enterprise: "Incluida" },
+      { feature: "Private AI gestionada en infraestructura UE (Gemma · Scaleway), sin API key", agentic: false, growth: "Add-on", scale: "5M tokens", enterprise: "Incluida" },
+      { feature: "Add-on de Private AI — 358,80€ / 5M tokens", agentic: false, growth: true, scale: true, enterprise: false },
       { feature: "Instancia de Private AI dedicada, no compartida", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },

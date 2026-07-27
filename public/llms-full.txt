@@ -61,11 +61,12 @@ CRM & Marketing: HubSpot, Salesforce, Klaviyo, Mailchimp, ActiveCampaign
 Data: BigQuery, Google Sheets, Webhooks, REST API, Zapier
 
 ## Pricing
-- Growth: €599/month (€499/mo annually) — 5M human events/mo, API, MCP, LENS AI, BigQuery
-- Scale: €1,079/month (€899/mo annually) — 15M human events/mo, adds Agent AI Analytics
-- Enterprise: custom pricing — unlimited events, SSO, dedicated support, custom SLA
-- API, MCP, LENS AI, and BigQuery included in all plans
-- Agent AI Analytics available from Scale plan
+- Agentic: free — up to 1M events total (one-time allowance), self-serve, set up from your AI assistant
+- Growth: €499/month billed annually (€599 monthly) — 5M human events/mo, API, MCP, LENS AI (BYOK), BigQuery
+- Scale: €899/month billed annually (€1,079 monthly) — 15M human events/mo, adds managed Private AI (5M tokens, no key needed)
+- Enterprise: custom pricing — unlimited events, dedicated non-shared Private AI, dedicated support, custom SLA
+- API, MCP, BigQuery and LENS AI included on all plans; LENS AI runs on your own AI key (BYOK: Anthropic, OpenAI, Gemini)
+- Private AI (managed EU-hosted model, no key needed): included on Scale (5M tokens), add-on €358.80 per 5M tokens on any plan, dedicated instance on Enterprise
 - Monthly billing, cancel anytime (annual billing saves 2 months)
 
 ## Competitive positioning

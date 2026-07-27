@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Calculator } from "./Calculator";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, webApplicationSchema } from "@/lib/schema";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
+import { breadcrumbSchema, webApplicationSchema, statisticClaimSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/data-loss-calculator",
+    canonical: "https://sealmetrics.com/data-loss-calculator/",
     languages: getAlternates("/data-loss-calculator"),
   },
 };
@@ -28,6 +30,15 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Data Loss Calculator" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Data Loss Calculator", url: "/data-loss-calculator" }])} />
       <JsonLd data={webApplicationSchema({ name: "Data Loss Calculator", description: "Calculate how much revenue is invisible to your current analytics setup.", url: "/data-loss-calculator" })} />
+      <JsonLd data={statisticClaimSchema({
+        text: "GA4 and Adobe Analytics load a heavy measurement tag that fires late in the page load, so roughly 15% of visitors leave before the analytics hit is sent — a loss additional to consent rejection, ad blockers and Safari ITP.",
+        source: "Google/Deloitte page-speed research ('Milliseconds Make Millions')",
+        sourceAuthor: "Google/Deloitte",
+        sourceDate: "2020",
+        url: "/data-loss-calculator",
+        numericValue: 15,
+        unit: "PERCENT",
+      })} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-10">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8 text-center">
@@ -46,6 +57,32 @@ export default function Page() {
       <section className="pb-28 bg-warm-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
           <Calculator />
+        </div>
+      </section>
+
+      <section className="bg-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer>
+            <p>
+              Cookie-based analytics like{" "}
+              <Link href="/vs-ga4">GA4</Link> lose the majority of European eCommerce traffic before
+              it is ever counted. Four cuts stack: 40–60% of visitors reject the consent banner,
+              20–30% run{" "}
+              <Link href="/glossary/ad-blocker-analytics-impact">ad blockers</Link>, Safari&rsquo;s
+              ITP caps first-party cookies at 7 days, and GA4 and Adobe&rsquo;s heavy measurement
+              tags load megabytes of JavaScript — so roughly 15% of visitors leave before the pixel
+              even fires. For a German store these compound to about 19% GA4 visibility: four in five
+              sales are invisible in the dashboard used to allocate paid-media budget. This is{" "}
+              <Link href="/glossary/data-loss-in-analytics">data loss in analytics</Link> made
+              concrete.
+            </p>
+            <p>
+              <Link href="/product">SealMetrics</Link> measures 100% of the same traffic with a
+              lightweight first-party server-side pixel — no cookies, no consent dependency, no
+              sampling — so revenue in the report matches Shopify. Enter your monthly visitors and
+              revenue above to see the exact amount your current setup hides each month.
+            </p>
+          </QuickAnswer>
         </div>
       </section>
 

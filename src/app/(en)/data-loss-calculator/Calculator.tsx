@@ -80,6 +80,21 @@ const COUNTRY_DATA: Record<CountryCode, CountryData> = {
 };
 
 /* ===========================================
+   Heavy-pixel abandonment
+   Weighty measurement tags (GA4, Adobe Analytics) load megabytes of
+   JavaScript and fire late in the page lifecycle. A share of visitors
+   leaves before the tag executes, so the hit is never sent — this loss
+   is independent of consent, ad blockers or Safari ITP, and it is the
+   same regardless of country because it is a property of the tag, not
+   the market. Grounded in page-speed abandonment research (Google/
+   Deloitte, "Milliseconds Make Millions"). SealMetrics ships a
+   lightweight first-party pixel that fires immediately, so it does not
+   pay this tax.
+   =========================================== */
+
+const HEAVY_PIXEL_ABANDON = 0.15;
+
+/* ===========================================
    Formatting helpers
    =========================================== */
 
@@ -143,7 +158,10 @@ export function Calculator() {
   const afterConsent = visitors * (1 - cd.consentRejection);
   const afterAdBlock = afterConsent * (1 - cd.adBlockerRate);
   const safariLoss = afterAdBlock * cd.safariShare * cd.safariItpDegradation;
-  const ga4Visible = Math.round(afterAdBlock - safariLoss);
+  const afterSafari = afterAdBlock - safariLoss;
+  // Heavy measurement tag fires late — a share of visitors leaves first.
+  const pixelWeightLoss = afterSafari * HEAVY_PIXEL_ABANDON;
+  const ga4Visible = Math.round(afterSafari - pixelWeightLoss);
   const invisibleVisitors = visitors - ga4Visible;
   const visibilityRate = visitors > 0 ? ga4Visible / visitors : 0;
 
@@ -249,9 +267,15 @@ export function Calculator() {
     },
     {
       label: "After Safari ITP",
+      value: Math.round(afterSafari),
+      pct: visitors > 0 ? (afterSafari / visitors) * 100 : 0,
+      note: `${Math.round(cd.safariShare * 100)}% Safari share, 7-day cookie cap`,
+    },
+    {
+      label: "After tag load",
       value: ga4Visible,
       pct: visitors > 0 ? visibilityRate * 100 : 0,
-      note: `${Math.round(cd.safariShare * 100)}% Safari share, 7-day cookie cap`,
+      note: `${Math.round(HEAVY_PIXEL_ABANDON * 100)}% leave before GA4/Adobe's heavy pixel fires`,
     },
   ];
 
@@ -390,7 +414,7 @@ export function Calculator() {
 
               <p className="text-[0.7rem] text-text-tertiary text-center leading-relaxed">
                 Loss rates from published research: Advance Metrics, CookieYes,
-                SEOSandwitch, Stape. No email required.
+                SEOSandwitch, Stape, Google/Deloitte page-speed. No email required.
               </p>
 
               {hasCalculated && (
@@ -660,9 +684,20 @@ export function Calculator() {
 
               {/* Funnel breakdown */}
               <div className="p-8 sm:p-10 border border-warm-100 rounded-[4px] bg-warm-white">
-                <h3 className="font-serif text-[1.15rem] text-text-primary mb-6">
+                <h3 className="font-serif text-[1.15rem] text-text-primary mb-3">
                   Where the data disappears
                 </h3>
+                <p className="text-[0.8rem] text-text-secondary mb-6 leading-relaxed max-w-[62ch]">
+                  Consent, ad blockers and Safari ITP are only part of it. The
+                  last cut is technical: GA4 and Adobe Analytics load a heavy
+                  measurement tag that fires late in the page, so another{" "}
+                  <span className="font-medium text-text-primary">
+                    {Math.round(HEAVY_PIXEL_ABANDON * 100)}%
+                  </span>{" "}
+                  of visitors leave before the hit is ever sent. SealMetrics
+                  uses a lightweight first-party pixel that fires immediately —
+                  it never pays this tax.
+                </p>
                 <div className="space-y-5">
                   {funnelSteps.map((step, i) => {
                     const isLast = i === funnelSteps.length - 1;

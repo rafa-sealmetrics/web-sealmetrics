@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/pricing",
+    canonical: "https://sealmetrics.com/es/pricing/",
     languages: getAlternatesEs("/pricing"),
   },
 };
@@ -41,7 +41,7 @@ const faqsForSchema = [
   { question: "¿Por qué el tráfico de agentes IA es gratis?", answer: "Los agentes IA (ChatGPT, Claude, Perplexity) son una categoría nueva de tráfico sobre la que necesitas visibilidad. Los trackeamos gratis." },
   { question: "¿Qué pasa si supero mi límite de eventos?", answer: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos. Si superas 2+ meses seguidos, el plan se actualiza en el siguiente ciclo. Un mes de exceso al año es gratis." },
   { question: "¿Hay prueba gratuita?", answer: "Sí. Cada plan incluye 14 días gratis con acceso completo." },
-  { question: "¿Todas las features están incluidas en cada plan?", answer: "Analítica core, tracking de conversiones, monitoring, API, MCP Server y export BigQuery están incluidos desde Growth. LENS AI y Agent Analytics son features premium disponibles en Scale+." },
+  { question: "¿Todas las features están incluidas en cada plan?", answer: "Sí en la analítica. Analítica core, tracking de conversiones, monitoring, API, MCP Server, export BigQuery y LENS AI (forecasting, detección de anomalías, oportunidades de crecimiento) están incluidos desde Growth — LENS AI funciona con tu propia API key (BYOK: Anthropic, OpenAI o Gemini). La única opción por uso es Private AI, nuestro modelo gestionado alojado en la UE y sin API key: incluida en Scale (5M tokens), disponible como add-on en cualquier plan por 358,80€ por 5M tokens, e instancia dedicada no compartida en Enterprise. Otras diferencias entre planes son volumen de eventos, governance y soporte." },
   { question: "¿Qué es el Agentic Package?", answer: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA (Claude Desktop, Codex o cualquier agente compatible con MCP). Tu agente crea la cuenta y genera el píxel — la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos en total (no al mes — un cupo único), self-serve con solo documentación. Al superar 1M, se activa el plan Growth." },
 ];
 
@@ -71,7 +71,7 @@ export default function PricingPageEs() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
             <p>
-              El precio de SealMetrics es analítica enterprise con facturación anual, sin sorpresas por uso. El plan Growth son 499€/mes anual (599€/mes mensual) por 5 millones de eventos humanos al mes; el Scale son 899€/mes anual (1.079€/mes mensual) por 15 millones; Enterprise es a medida para portfolios con eventos ilimitados, procesamiento aislado, una Private AI exclusiva no compartida, SLA del 99,9% y account manager dedicado. Todos los planes incluyen la misma arquitectura: 100% de captura, atribución last-click, alojado en Dublín, RGPD por diseño y DPA estándar.
+              El precio de SealMetrics es analítica enterprise con facturación anual, sin sorpresas por uso. El plan Growth son 499€/mes anual (599€/mes mensual) por 5 millones de eventos humanos al mes; el Scale son 899€/mes anual (1.079€/mes mensual) por 15 millones; Enterprise es a medida para portfolios con eventos ilimitados, procesamiento aislado, una Private AI exclusiva no compartida, SLA del 99,9% y account manager dedicado. Todos los planes incluyen la misma arquitectura: 100% de captura, atribución last-click, alojado en Dublín, RGPD por diseño y DPA estándar. LENS AI — forecasting, detección de anomalías y oportunidades de crecimiento — está incluida en todos los planes y funciona con tu propia API key (BYOK); Private AI, el modelo gestionado alojado en la UE que no necesita API key, viene incluida en Scale (5M tokens) y se puede contratar como add-on en cualquier plan por 358,80€ por 5M tokens.
             </p>
             <p>
               Para un equipo eCommerce UE con 20K€+/mes en paid media, el plan Growth representa menos del 2,5% del spend en paid — típicamente menos que el coste de una sola decisión mal atribuida. La facturación anual incluye dos meses gratis frente a la mensual. Trial de 14 días gratis; sin migración desde GA4 porque corren en paralelo.

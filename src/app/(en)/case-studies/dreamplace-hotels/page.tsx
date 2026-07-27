@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Dreamplace Hotels uses SealMetrics to allocate paid media budget. 15–20% more sales attribution vs the previous tool, and +30% more traffic vs Google Analytics.",
   alternates: {
-    canonical: "https://sealmetrics.com/case-studies/dreamplace-hotels",
+    canonical: "https://sealmetrics.com/case-studies/dreamplace-hotels/",
     languages: getAlternates("/case-studies/dreamplace-hotels"),
   },
   openGraph: {
@@ -75,7 +75,7 @@ export default function Page() {
           sourceAuthor: "Dreamplace Hotels",
           sourceDate: "2026-04-15",
           url: "/case-studies/dreamplace-hotels",
-          numericValue: 20,
+          numericValue: 17.5,
           unit: "PERCENT",
         })}
       />

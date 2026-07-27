@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Dreamplace Hotels asigna paid media con SealMetrics: 15–20% más atribución de venta y +30% más tráfico vs Google Analytics.",
   alternates: {
-    canonical: "https://sealmetrics.com/es/case-studies/dreamplace-hotels",
+    canonical: "https://sealmetrics.com/es/case-studies/dreamplace-hotels/",
     languages: getAlternatesEs("/case-studies/dreamplace-hotels"),
   },
   openGraph: {
@@ -79,7 +79,7 @@ export default function Page() {
           sourceAuthor: "Dreamplace Hotels",
           sourceDate: "2026-04-15",
           url: "/es/case-studies/dreamplace-hotels",
-          numericValue: 20,
+          numericValue: 17.5,
           unit: "PERCENT",
         })}
       />

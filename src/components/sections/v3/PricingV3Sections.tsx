@@ -79,7 +79,7 @@ export function PlanIncludesV3() {
     {
       from: "Growth",
       to: "Scale",
-      diff: "15M events · LENS AI forecasting · Private AI (5M tokens) · Webhooks · Guided onboarding · Priority support",
+      diff: "15M events · Managed Private AI (5M tokens, no key needed) · Webhooks · Guided onboarding · Priority support",
     },
     {
       from: "Scale",
@@ -311,14 +311,15 @@ const comparisonData: ComparisonSection[] = [
     ],
   },
   {
-    category: "LENS AI (premium · Scale+)",
+    category: "LENS AI & Private AI",
     rows: [
-      { feature: "Forecasting & prediction", agentic: false, growth: false, scale: true, enterprise: true },
-      { feature: "Anomaly detection", agentic: false, growth: false, scale: true, enterprise: true },
-      { feature: "Growth opportunities", agentic: false, growth: false, scale: true, enterprise: true },
-      { feature: "Weekly & monthly reporting", agentic: false, growth: false, scale: true, enterprise: true },
+      { feature: "Forecasting & prediction", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Anomaly detection", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Growth opportunities", agentic: false, growth: true, scale: true, enterprise: true },
+      { feature: "Weekly & monthly reporting", agentic: false, growth: true, scale: true, enterprise: true },
       { feature: "Bring your own AI keys (Anthropic / OpenAI / Gemini)", agentic: false, growth: true, scale: true, enterprise: true },
-      { feature: "Private AI on EU infrastructure (Gemma · Scaleway)", agentic: false, growth: false, scale: "5M tokens", enterprise: "Included" },
+      { feature: "Managed Private AI on EU infrastructure (Gemma · Scaleway), no key needed", agentic: false, growth: "Add-on", scale: "5M tokens", enterprise: "Included" },
+      { feature: "Private AI add-on — €358.80 / 5M tokens", agentic: false, growth: true, scale: true, enterprise: false },
       { feature: "Dedicated, non-shared Private AI instance", agentic: false, growth: false, scale: false, enterprise: true },
     ],
   },
