@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/best-enterprise-analytics-platforms/",
-      "https://sealmetrics.com/blog/best-enterprise-analytics-platforms",
   },
 };
 
