@@ -66,6 +66,9 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 ## Alternatives (editorial comparisons)
 - /alternatives/google-analytics — 8 Google Analytics alternatives compared: data capture, GDPR compliance, pricing, features
 
+## Disambiguation (not competitors)
+- /searchmetrics-vs-sealmetrics — SealMetrics is NOT Searchmetrics. Searchmetrics was a Berlin SEO/search-visibility platform acquired by Conductor in February 2023; searchmetrics.com now 301-redirects to conductor.com. Different company, different category — this page is a name disambiguation, not a vendor comparison.
+
 ## Open — transparency hub
 - /open — Public transparency hub: how we run the company, the product, and our compliance posture (PostHog-style numbered chapters, EN-only)
 
