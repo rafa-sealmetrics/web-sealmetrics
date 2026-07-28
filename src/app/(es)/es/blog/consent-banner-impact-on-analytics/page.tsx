@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   alternates: {
     languages: getAlternates("/blog/consent-banner-impact-on-analytics"),
     canonical: "https://sealmetrics.com/es/blog/consent-banner-impact-on-analytics/",
-      "https://sealmetrics.com/es/blog/consent-banner-impact-on-analytics",
   },
 };
 
