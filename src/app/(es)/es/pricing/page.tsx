@@ -21,7 +21,7 @@ import { McpInstaller } from "@/components/sections/v3/McpInstaller";
 export const metadata: Metadata = {
   title: "Precios SealMetrics — Paga por humanos, no por bots",
   description:
-    "Tier Agentic gratis hasta 1M eventos, configurado desde tu asistente de IA. Planes de pago desde €499/mes anual — todas las features en cada plan. Solo pagas más si creces.",
+    "Tier Agentic gratis hasta 1M eventos, vía tu asistente de IA. Planes desde €499/mes anual con todas las features. Solo pagas más si creces.",
   openGraph: {
     title: "Precios SealMetrics — Paga por humanos, no por bots",
     description:

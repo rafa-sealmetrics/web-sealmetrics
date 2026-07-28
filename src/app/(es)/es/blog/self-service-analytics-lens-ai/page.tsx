@@ -8,7 +8,7 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Analítica self-service con LENS AI",
   description:
-    "Apuntar un LLM a tu dato es la parte fácil. Aquí está la infraestructura que hace fiables sus respuestas — dato cookieless completo más el MCP de SealMetrics, integrado como LENS AI.",
+    "Apuntar un LLM a tu dato es lo fácil. La infraestructura que hace fiables sus respuestas: dato cookieless completo más el MCP de SealMetrics, como LENS AI.",
   openGraph: {
     title: "Qué hace falta para que la analítica self-service funcione de verdad",
     description:

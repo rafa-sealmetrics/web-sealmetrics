@@ -17,7 +17,7 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 export const metadata: Metadata = {
   title: "Analytics for Hotels — Direct-Booking | SealMetrics",
   description:
-    "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS. Cómo Palladium Hotel Group recuperó el 35% de reservas sin atribución y Dreamplace Hotels cerró un gap del 15-20% en ventas.",
+    "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS. Palladium recuperó el 35% de reservas sin atribuir; Dreamplace cerró un gap del 15-20%.",
   openGraph: {
     title: "Analytics for Hotels — Direct-Booking | SealMetrics",
     description:

@@ -8,7 +8,7 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Por qué GA4 muestra el 13% de tu tráfico UE",
   description:
-    "GA4 pierde dato en tres niveles: rechazo de consentimiento, ad blockers y restricciones de navegador. El resultado es ~13% del tráfico real UE. Aquí están las cuentas.",
+    "GA4 pierde dato por rechazo de consentimiento, ad blockers y restricciones de navegador. El resultado: ~13% del tráfico real UE. Aquí están las cuentas.",
   openGraph: {
     title: "Por qué GA4 muestra el 13% de tu tráfico UE",
     description:
@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   alternates: {
     languages: getAlternates("/blog/why-ga4-shows-13pct-eu-traffic"),
     canonical: "https://sealmetrics.com/es/blog/why-ga4-shows-13pct-eu-traffic/",
-      "https://sealmetrics.com/es/blog/why-ga4-shows-13pct-eu-traffic",
   },
 };
 

@@ -8,7 +8,7 @@ import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "¿Tu analítica cumple el RGPD? Análisis legal",
   description:
-    "Un análisis legal en lenguaje claro de la analítica web bajo RGPD y ePrivacy — con veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
+    "Análisis legal en lenguaje claro de la analítica web bajo RGPD y ePrivacy, con veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
   openGraph: {
     title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y SealMetrics",
     description:

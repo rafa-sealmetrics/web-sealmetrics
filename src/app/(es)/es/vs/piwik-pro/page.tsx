@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
@@ -57,6 +58,18 @@ export default function Page() {
       />
       <LogosStripEs />
       
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer label="Respuesta rápida">
+            <p>
+              SealMetrics vs Piwik PRO: Piwik PRO es una plataforma de analítica enterprise con sede en la UE y una governance de privacidad sólida, pero sigue siendo basada en cookies por defecto — así que depende de un banner de consentimiento y pierde el tráfico que lo rechaza. SealMetrics es cookieless por diseño: mide el 100% del tráfico entrante sin banner y atribuye cada conversión last-click sobre eventos observados, alojada en la UE (Dublín), desde 499€/mes con facturación anual.
+            </p>
+            <p>
+              Ambas son GDPR-first y alojadas en la UE, así que la decisión real es la completitud de la medición. En modo consentimiento, Piwik PRO mide solo la parte consentida — típicamente el 40–60% del tráfico UE — mientras SealMetrics mide el 100% completo porque no almacena datos personales y no necesita consentimiento. Para equipos que ya eligieron Piwik PRO por compliance, SealMetrics cierra el gap de pérdida de dato restante sin añadir dependencia de banner de cookies.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
     </>
   );
 }

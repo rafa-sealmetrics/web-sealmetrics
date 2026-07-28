@@ -18,7 +18,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Por qué SealMetrics — mide el 100% de tráfico y ventas",
   description:
-    "Los banners de cookies ocultan 40–60% de tus visitas. SealMetrics mide el 100% del tráfico y ventas, atribuye last-click sobre datos completos. Setup en 5 min.",
+    "Los banners de cookies ocultan 40–60% de tus visitas. SealMetrics mide el 100% del tráfico y ventas y atribuye last-click. Setup en 5 min.",
   openGraph: {
     title: "Por qué SealMetrics — mide el 100% de tráfico y ventas",
     description:
