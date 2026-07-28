@@ -12,7 +12,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Regulatory Gap Analysis for Web Analytics | GDPR",
   description:
-    "A requirement-by-requirement gap analysis of web analytics under GDPR, ePrivacy, AEPD and UK PECR — where typical stacks fall out of compliance and how to close each gap.",
+    "A requirement-by-requirement gap analysis of web analytics under GDPR, ePrivacy, AEPD and UK PECR — where stacks fall out of compliance and how to fix it.",
   openGraph: {
     title: "Regulatory Gap Analysis for Web Analytics — GDPR, ePrivacy, AEPD",
     description:

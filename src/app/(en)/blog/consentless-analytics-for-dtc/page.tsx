@@ -8,7 +8,7 @@ import { RelatedReading } from "@/components/ui/RelatedReading";
 export const metadata: Metadata = {
   title: "Consentless Analytics for DTC — 2026 Guide",
   description:
-    "Consentless analytics counts 100% of your DTC traffic without a cookie banner — anonymously, at channel level. How it works, why it's compliant, and what European DTC teams get from it.",
+    "Consentless analytics counts 100% of DTC traffic without a cookie banner — anonymously, at channel level. How it works, why it's compliant, what teams gain.",
   openGraph: {
     title: "Consentless Analytics for DTC — 2026 Guide",
     description:

@@ -9,7 +9,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is the ePrivacy Directive? — SealMetrics Glossary",
   description:
-    "Directive 2002/58/EC — the EU rule (Art. 5(3)) that consent is required before storing or accessing information on a user's device. The legal basis for cookie banners.",
+    "Directive 2002/58/EC — the EU rule (Art. 5(3)) requiring consent before storing or reading information on a device. The legal basis for cookie banners.",
   openGraph: {
     title: "What Is the ePrivacy Directive?",
     description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",

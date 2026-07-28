@@ -7,7 +7,7 @@ import { FreeAuditForm } from "./FreeAuditForm";
 export const metadata: Metadata = {
   title: "Free Pixel & GDPR Audit — SealMetrics",
   description:
-    "Get a free audit of your website's tracking implementation. We check pixel firing pre-consent, Consent Mode v2, and GDPR compliance signals. Report delivered by email in 2–3 minutes.",
+    "Free audit of your site's tracking: pixel firing pre-consent, Consent Mode v2 and GDPR compliance signals. Report delivered by email in 2–3 minutes.",
   openGraph: {
     title: "Free Pixel & GDPR Audit — SealMetrics",
     description:

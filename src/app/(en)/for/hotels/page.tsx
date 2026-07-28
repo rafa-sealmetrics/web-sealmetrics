@@ -17,7 +17,7 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 export const metadata: Metadata = {
   title: "Analytics for Hotels — Direct-Booking | SealMetrics",
   description:
-    "Cookieless analytics for hotels: match direct-booking attribution to your PMS. How Palladium Hotel Group recovered 35% of unattributed bookings and Dreamplace Hotels closed a 15-20% sales gap.",
+    "Cookieless analytics for hotels: match direct-booking attribution to your PMS. Palladium recovered 35% of lost bookings; Dreamplace closed a 15–20% gap.",
   openGraph: {
     title: "Analytics for Hotels — Direct-Booking | SealMetrics",
     description:

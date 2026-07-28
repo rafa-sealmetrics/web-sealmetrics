@@ -12,7 +12,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
   description:
-    "AI analytics you can trust: complete cookieless data, a semantic MCP, and private AI hosted in the EU. Ask Claude or ChatGPT your revenue questions — no cookies, no PII.",
+    "AI analytics you can trust: complete cookieless data, a semantic MCP and private EU-hosted AI. Ask Claude or ChatGPT revenue questions — no cookies, no PII.",
   openGraph: {
     title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
     description:

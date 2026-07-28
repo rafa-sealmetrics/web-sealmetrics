@@ -9,7 +9,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is Google Consent Mode v2? — SealMetrics Glossary",
   description:
-    "Consent Mode v2 lets Google tags load without cookies when consent is rejected — then statistically models the missing data. A modelling layer, not a measurement layer.",
+    "Consent Mode v2 lets Google tags load without cookies when consent is rejected, then models the missing data statistically. A modelling layer, not measurement.",
   openGraph: {
     title: "What Is Google Consent Mode v2?",
     description: "How Consent Mode v2 actually works, what it estimates rather than measures, and when modelling stops being the right answer.",

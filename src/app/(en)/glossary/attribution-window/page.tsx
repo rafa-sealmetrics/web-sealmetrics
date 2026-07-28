@@ -9,7 +9,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is an Attribution Window? — SealMetrics Glossary",
   description:
-    "The attribution window is the period after a marketing touchpoint during which a conversion is credited to it. Default values, EU implications and the ITP collapse.",
+    "The attribution window is the period after a touchpoint during which a conversion is credited to it. Default values, EU implications and the ITP collapse.",
   openGraph: {
     title: "What Is an Attribution Window?",
     description: "Default attribution windows by channel, why they collapse under Safari ITP, and the cookieless alternative.",

@@ -9,7 +9,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Legitimate Interest (Analytics) — SealMetrics Glossary",
   description:
-    "GDPR Art. 6(1)(f) lets a controller process data on legitimate-interest grounds. Why it doesn't override ePrivacy consent rules, and when it actually applies to analytics.",
+    "GDPR Art. 6(1)(f) allows processing on legitimate-interest grounds. Why it doesn't override ePrivacy consent rules, and when it applies to analytics.",
   openGraph: {
     title: "Legitimate Interest as a Basis for Analytics",
     description: "What legitimate interest covers and doesn't — the common confusion with ePrivacy and the cookie-consent rule.",

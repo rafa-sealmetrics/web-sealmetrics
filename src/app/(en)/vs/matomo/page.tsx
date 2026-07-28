@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
@@ -11,7 +12,7 @@ import { getVsData } from "@/components/sections/v3/VsData";
 export const metadata: Metadata = {
   title: "SealMetrics vs Matomo — Cookieless by design, no devops",
   description:
-    "Matomo is open-source and EU-friendly, but cookies are still default and self-hosting has real ops cost. SealMetrics is cookieless by design, fully managed, with a modern AI-native stack.",
+    "Matomo is open-source and EU-friendly, but cookies are default and self-hosting costs. SealMetrics is cookieless by design, fully managed and AI-native.",
   openGraph: {
     title: "SealMetrics vs Matomo — Cookieless by design, no devops",
     description:
@@ -64,6 +65,18 @@ export default function Page() {
         ]}
       />
       <LogosStrip />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer>
+            <p>
+              SealMetrics vs Matomo: Matomo is an open-source analytics platform, EU-friendly and self-hostable, but cookies remain the default and self-hosting carries real operational cost. SealMetrics is a fully managed, cookieless analytics platform that captures 100% of inbound traffic without a consent banner and attributes each conversion last-click on observed events, EU-hosted in Dublin, from &euro;499/month billed annually.
+            </p>
+            <p>
+              The trade-off is completeness and overhead. Matomo&rsquo;s cookieless configuration limits what it can measure and still leaves you running infrastructure, updates and scaling; its cookie mode needs a consent banner and loses rejected traffic. SealMetrics measures the full 100% with a lightweight first-party pixel, nothing to self-host, and a modern AI-native stack — LENS AI and an MCP server — on top of complete data.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
     </>
   );
 }

@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
@@ -56,6 +57,18 @@ export default function Page() {
       ]}
       />
       <LogosStrip />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer>
+            <p>
+              SealMetrics vs Piwik PRO: Piwik PRO is an EU-based enterprise analytics platform with strong privacy governance, but it is still cookie-based by default — so it depends on a consent banner and loses the traffic that rejects it. SealMetrics is cookieless by design: it captures 100% of inbound traffic without a consent banner and attributes each conversion last-click on observed events, EU-hosted in Dublin, from &euro;499/month billed annually.
+            </p>
+            <p>
+              Both are GDPR-focused and EU-hosted, so the real decision is measurement completeness. In consent mode, Piwik PRO measures only the consented share — typically 40&ndash;60% of EU traffic — while SealMetrics measures the full 100% because it stores zero personal data and needs no consent. For teams that already chose Piwik PRO for compliance, SealMetrics closes the remaining data-loss gap without adding cookie-banner dependency.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
       
     </>
   );
