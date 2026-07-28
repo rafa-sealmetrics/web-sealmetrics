@@ -191,12 +191,12 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             de analítica pueden usar para verificar el cumplimiento de estos
             criterios.{" "}
             <Link
-              href="/es/blog/cnil-self-assessment-published"
+              href="/blog/cnil-self-assessment-published"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               Cubrimos los detalles cuando se publicó el proceso
-            </Link>
-            . Aunque la guía CNIL es específica de Francia, se ha convertido en
+            </Link>{" "}
+            (en inglés). Aunque la guía CNIL es específica de Francia, se ha convertido en
             el benchmark de facto en la UE&mdash; otras DPA la referencian, y el
             Comité Europeo de Protección de Datos (EDPB) ha indicado alineación
             con sus principios.
@@ -277,13 +277,13 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
 
           <p>
             <Link
-              href="/es/blog/eu-digital-omnibus-marketer-guide-2026"
+              href="/blog/eu-digital-omnibus-marketer-guide-2026"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               Nuestra guía detallada cubre lo que el Omnibus implica para
               equipos de marketing
-            </Link>
-            . La idea clave: la dirección regulatoria en Europa va hacia
+            </Link>{" "}
+            (en inglés). La idea clave: la dirección regulatoria en Europa va hacia
             permitir explícitamente la analítica respetuosa con la privacidad,
             no hacia restringirla más.
           </p>
