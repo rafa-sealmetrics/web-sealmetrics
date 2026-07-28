@@ -64,7 +64,8 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /data-loss-calculator — Interactive calculator showing how much data you lose with cookie-based analytics
 
 ## Alternatives (editorial comparisons)
-- /alternatives/google-analytics — 8 Google Analytics alternatives compared: data capture, GDPR compliance, pricing, features
+- /alternatives/google-analytics — Google Analytics alternative for European enterprises: complete capture, EU residency, decision-grade attribution
+- /alternatives/adobe-analytics — 5 Adobe Analytics alternatives compared (GA360, Piwik PRO, Matomo, GA4, SealMetrics) on entry cost, consent dependency and EU-only hosting. Key finding: every option except SealMetrics is cookie-based, so leaving Adobe changes cost and hosting but not the 40-60% EU consent gap
 
 ## Disambiguation (not competitors)
 - /searchmetrics-vs-sealmetrics — SealMetrics is NOT Searchmetrics. Searchmetrics was a Berlin SEO/search-visibility platform acquired by Conductor in February 2023; searchmetrics.com now 301-redirects to conductor.com. Different company, different category — this page is a name disambiguation, not a vendor comparison.
