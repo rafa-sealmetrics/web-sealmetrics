@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/demo",
+    canonical: "https://sealmetrics.com/demo/",
     languages: getAlternates("/demo"),
   },
 };

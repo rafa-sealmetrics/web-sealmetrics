@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical:
+    canonical: "https://sealmetrics.com/blog/what-is-data-loss-in-analytics/",
       "https://sealmetrics.com/blog/what-is-data-loss-in-analytics",
   },
 };

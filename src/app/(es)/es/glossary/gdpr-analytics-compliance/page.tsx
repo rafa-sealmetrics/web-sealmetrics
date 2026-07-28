@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/glossary/gdpr-analytics-compliance",
+    canonical: "https://sealmetrics.com/es/glossary/gdpr-analytics-compliance/",
     languages: getAlternatesEs("/glossary/gdpr-analytics-compliance"),
   },
 };

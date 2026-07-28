@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: getAlternates("/blog/why-ga4-shows-13pct-eu-traffic"),
-    canonical:
+    canonical: "https://sealmetrics.com/es/blog/why-ga4-shows-13pct-eu-traffic/",
       "https://sealmetrics.com/es/blog/why-ga4-shows-13pct-eu-traffic",
   },
 };

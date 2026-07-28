@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "20+ años en analítica eCommerce europea. Founder de SealMetrics, marketer digital, fundador de agencia y arquitecto de analítica.",
   alternates: {
-    canonical: "https://sealmetrics.com/es/authors/rafa-jimenez",
+    canonical: "https://sealmetrics.com/es/authors/rafa-jimenez/",
     languages: getAlternatesEs("/authors/rafa-jimenez"),
   },
   openGraph: {

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/complete-data",
+    canonical: "https://sealmetrics.com/es/complete-data/",
     languages: getAlternatesEs("/complete-data"),
   },
 };

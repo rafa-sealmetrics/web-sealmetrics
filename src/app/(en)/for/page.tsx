@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/for", languages: getAlternates("/for") },
+  alternates: { canonical: "https://sealmetrics.com/for/", languages: getAlternates("/for") },
 };
 
 const roles = [

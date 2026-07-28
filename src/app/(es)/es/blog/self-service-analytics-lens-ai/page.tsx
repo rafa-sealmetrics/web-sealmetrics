@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/blog/self-service-analytics-lens-ai",
+    canonical: "https://sealmetrics.com/es/blog/self-service-analytics-lens-ai/",
     languages: getAlternates("/blog/self-service-analytics-lens-ai"),
   },
 };

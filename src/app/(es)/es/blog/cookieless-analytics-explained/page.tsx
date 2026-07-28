@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: getAlternates("/blog/cookieless-analytics-explained"),
-    canonical: "https://sealmetrics.com/es/blog/cookieless-analytics-explained",
+    canonical: "https://sealmetrics.com/es/blog/cookieless-analytics-explained/",
   },
 };
 

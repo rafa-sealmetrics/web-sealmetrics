@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical:
+    canonical: "https://sealmetrics.com/blog/multi-touch-attribution-complete-data/",
       "https://sealmetrics.com/blog/multi-touch-attribution-complete-data",
   },
 };

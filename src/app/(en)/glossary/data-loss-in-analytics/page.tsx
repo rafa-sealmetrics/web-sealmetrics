@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Data loss in analytics: the gap between real traffic and what tools report. Typically 70-87% in the EU.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/data-loss-in-analytics", languages: getAlternates("/glossary/data-loss-in-analytics") },
+  alternates: { canonical: "https://sealmetrics.com/glossary/data-loss-in-analytics/", languages: getAlternates("/glossary/data-loss-in-analytics") },
 };
 
 export default function DataLossPage() {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Server-side tracking processes analytics on the server, avoiding ad blockers and client-side limitations.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/server-side-tracking" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/server-side-tracking/" },
 };
 
 export default function ServerSideTrackingPage() {

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/vs-ga4",
+    canonical: "https://sealmetrics.com/es/vs-ga4/",
     languages: getAlternatesEs("/vs-ga4"),
   },
 };

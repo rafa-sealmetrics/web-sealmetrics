@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/vs", languages: getAlternates("/vs") },
+  alternates: { canonical: "https://sealmetrics.com/vs/", languages: getAlternates("/vs") },
 };
 
 const comparisons = [

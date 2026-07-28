@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "A CMP displays cookie consent banners and manages user preferences. 55% of EU visitors reject.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/consent-management-platform" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/consent-management-platform/" },
 };
 
 export default function ConsentManagementPlatformPage() {

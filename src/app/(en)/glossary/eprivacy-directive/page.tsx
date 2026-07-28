@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/eprivacy-directive" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/eprivacy-directive/" },
 };
 
 export default function EPrivacyDirectivePage() {

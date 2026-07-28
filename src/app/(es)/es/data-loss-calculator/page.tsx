@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/data-loss-calculator",
+    canonical: "https://sealmetrics.com/es/data-loss-calculator/",
     languages: getAlternatesEs("/data-loss-calculator"),
   },
 };

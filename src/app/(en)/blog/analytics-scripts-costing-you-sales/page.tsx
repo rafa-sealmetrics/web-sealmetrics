@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/analytics-scripts-costing-you-sales",
+    canonical: "https://sealmetrics.com/blog/analytics-scripts-costing-you-sales/",
   },
 };
 

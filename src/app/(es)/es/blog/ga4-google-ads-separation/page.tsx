@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/blog/ga4-google-ads-separation",
+    canonical: "https://sealmetrics.com/es/blog/ga4-google-ads-separation/",
   },
 };
 

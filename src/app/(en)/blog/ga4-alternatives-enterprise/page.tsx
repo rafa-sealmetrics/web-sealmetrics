@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/ga4-alternatives-enterprise",
+    canonical: "https://sealmetrics.com/blog/ga4-alternatives-enterprise/",
     languages: getAlternates("/blog/ga4-alternatives-enterprise"),
   },
 };

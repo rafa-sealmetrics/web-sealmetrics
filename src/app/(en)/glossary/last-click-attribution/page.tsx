@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Last-click attribution explained: how it differs from multi-touch, why it scales, and what it deliberately doesn't do.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/last-click-attribution" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/last-click-attribution/" },
 };
 
 export default function LastClickAttributionPage() {

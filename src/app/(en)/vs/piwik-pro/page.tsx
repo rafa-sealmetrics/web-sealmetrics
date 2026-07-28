@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/vs/piwik-pro", languages: getAlternates("/vs/piwik-pro") },
+  alternates: { canonical: "https://sealmetrics.com/vs/piwik-pro/", languages: getAlternates("/vs/piwik-pro") },
 };
 
 export default function Page() {

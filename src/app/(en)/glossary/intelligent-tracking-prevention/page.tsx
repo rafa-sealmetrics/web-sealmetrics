@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "ITP is Safari's privacy feature that limits cookie lifespan. Learn how it affects analytics.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/intelligent-tracking-prevention" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/" },
 };
 
 export default function ITPPage() {

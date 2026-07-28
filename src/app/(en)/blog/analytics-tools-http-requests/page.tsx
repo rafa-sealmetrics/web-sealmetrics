@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   robots: { index: false, follow: true },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/analytics-tools-http-requests",
+    canonical: "https://sealmetrics.com/blog/analytics-tools-http-requests/",
   },
 };
 

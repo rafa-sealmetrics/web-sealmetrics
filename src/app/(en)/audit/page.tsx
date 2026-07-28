@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Answer 7 questions in 3 minutes. We send you a personalised analysis of the gap between what GA4 measures and what your eCommerce actually sells.",
   alternates: {
-    canonical: "https://sealmetrics.com/audit",
+    canonical: "https://sealmetrics.com/audit/",
     languages: getAlternates("/audit"),
   },
   openGraph: {

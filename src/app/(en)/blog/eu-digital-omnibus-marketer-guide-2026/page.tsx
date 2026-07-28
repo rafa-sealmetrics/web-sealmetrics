@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026",
+    canonical: "https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026/",
   },
 };
 

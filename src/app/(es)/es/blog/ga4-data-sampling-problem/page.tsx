@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: getAlternates("/blog/ga4-data-sampling-problem"),
-    canonical: "https://sealmetrics.com/es/blog/ga4-data-sampling-problem",
+    canonical: "https://sealmetrics.com/es/blog/ga4-data-sampling-problem/",
   },
 };
 

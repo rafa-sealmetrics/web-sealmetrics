@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "What GDPR requires from web analytics: lawful basis, data minimization, and consent for cookies.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/gdpr-analytics-compliance", languages: getAlternates("/glossary/gdpr-analytics-compliance") },
+  alternates: { canonical: "https://sealmetrics.com/glossary/gdpr-analytics-compliance/", languages: getAlternates("/glossary/gdpr-analytics-compliance") },
 };
 
 export default function GDPRCompliancePage() {

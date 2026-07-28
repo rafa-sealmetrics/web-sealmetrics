@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/consentless-analytics",
+    canonical: "https://sealmetrics.com/es/consentless-analytics/",
     languages: getAlternatesEs("/consentless-analytics"),
   },
 };

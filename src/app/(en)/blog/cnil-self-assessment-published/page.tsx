@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/cnil-self-assessment-published",
+    canonical: "https://sealmetrics.com/blog/cnil-self-assessment-published/",
   },
 };
 

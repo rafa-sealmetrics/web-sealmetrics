@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Esta comparativa vive en /es/vs-ga4/. Te estamos redirigiendo.",
   robots: { index: false, follow: true },
-  alternates: { canonical: "https://sealmetrics.com/es/vs-ga4" },
+  alternates: { canonical: "https://sealmetrics.com/es/vs-ga4/" },
 };
 
 export default function Page() {

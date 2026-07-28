@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "What legitimate interest covers and doesn't — the common confusion with ePrivacy and the cookie-consent rule.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/legitimate-interest-analytics" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/legitimate-interest-analytics/" },
 };
 
 export default function LegitimateInterestAnalyticsPage() {

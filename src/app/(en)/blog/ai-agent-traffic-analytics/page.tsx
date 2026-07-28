@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/ai-agent-traffic-analytics",
+    canonical: "https://sealmetrics.com/blog/ai-agent-traffic-analytics/",
   },
 };
 

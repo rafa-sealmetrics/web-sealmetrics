@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects GA4 reporting.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/data-sampling" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/data-sampling/" },
 };
 
 export default function DataSamplingPage() {

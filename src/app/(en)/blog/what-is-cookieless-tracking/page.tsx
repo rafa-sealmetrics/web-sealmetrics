@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/what-is-cookieless-tracking",
+    canonical: "https://sealmetrics.com/blog/what-is-cookieless-tracking/",
   },
 };
 

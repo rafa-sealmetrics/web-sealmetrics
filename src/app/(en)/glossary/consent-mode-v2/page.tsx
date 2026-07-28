@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "How Consent Mode v2 actually works, what it estimates rather than measures, and when modelling stops being the right answer.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/consent-mode-v2" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/consent-mode-v2/" },
 };
 
 export default function ConsentModeV2Page() {

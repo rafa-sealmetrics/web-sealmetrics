@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Event tracking records user interactions beyond pageviews. Learn about GA4's event model and cookieless alternatives.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/event-tracking" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/event-tracking/" },
 };
 
 export default function EventTrackingPage() {

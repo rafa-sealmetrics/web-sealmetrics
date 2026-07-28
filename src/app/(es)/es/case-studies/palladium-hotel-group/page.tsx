@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Palladium Hotel Group usa SealMetrics como fuente única de verdad para marca, agencias y departamentos. El disparador: 40% de tráfico sin atribución.",
   alternates: {
-    canonical: "https://sealmetrics.com/es/case-studies/palladium-hotel-group",
+    canonical: "https://sealmetrics.com/es/case-studies/palladium-hotel-group/",
     languages: getAlternatesEs("/case-studies/palladium-hotel-group"),
   },
   openGraph: {

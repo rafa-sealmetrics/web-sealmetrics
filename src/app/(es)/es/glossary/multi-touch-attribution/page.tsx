@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/glossary/multi-touch-attribution",
+    canonical: "https://sealmetrics.com/es/glossary/multi-touch-attribution/",
     languages: getAlternatesEs("/glossary/multi-touch-attribution"),
   },
 };

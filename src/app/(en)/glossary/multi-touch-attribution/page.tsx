@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "An attribution model that requires per-user tracking. SealMetrics does last-click only, at channel level.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/multi-touch-attribution", languages: getAlternates("/glossary/multi-touch-attribution") },
+  alternates: { canonical: "https://sealmetrics.com/glossary/multi-touch-attribution/", languages: getAlternates("/glossary/multi-touch-attribution") },
 };
 
 export default function MultiTouchAttributionPage() {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/free-audit",
+    canonical: "https://sealmetrics.com/free-audit/",
   },
 };
 

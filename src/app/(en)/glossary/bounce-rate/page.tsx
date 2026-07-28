@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/bounce-rate" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/bounce-rate/" },
 };
 
 export default function BounceRatePage() {

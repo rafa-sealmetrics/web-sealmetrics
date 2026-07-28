@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/glossary/revenue-attribution",
+    canonical: "https://sealmetrics.com/es/glossary/revenue-attribution/",
     languages: getAlternatesEs("/glossary/revenue-attribution"),
   },
 };
