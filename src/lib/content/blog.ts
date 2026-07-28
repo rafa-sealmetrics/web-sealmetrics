@@ -39,6 +39,21 @@ export function getBlogDateModified(slug: string, fallback: string): string {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "is-adobe-analytics-gdpr-compliant",
+    title: "Is Adobe Analytics GDPR Compliant?",
+    description:
+      "Adobe Analytics can be deployed compliantly under GDPR — consent, a DPA, a transfer assessment and deliberate configuration. What that costs you is not legal, it is 40–60% of your EU visitors.",
+    date: "2026-07-28",
+    category: "Regulation",
+    readTime: "8 min",
+    author: AUTHORS.rafa,
+    related: [
+      "gdpr-eprivacy-analytics-legal-assessment",
+      "analytics-tools-external-domains",
+      "gdpr-analytics-without-consent",
+    ],
+  },
+  {
     slug: "gdpr-analytics-spain-faq",
     title: "GDPR Analytics in Spain: 7 Questions Online Stores Ask",
     description:
