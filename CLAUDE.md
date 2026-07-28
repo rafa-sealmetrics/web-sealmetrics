@@ -52,6 +52,7 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - Every page must have unique `title` (<60 chars) and `description` (<160 chars)
 - Every page must have `openGraph` metadata (title, description, type)
 - Include JSON-LD structured data appropriate to page type
+- Blog posts must declare `dateModified` explicitly in their `articleSchema({ ... })` call, and it must only be bumped for a real content revision — never for a lint pass, a canonical/metadata rewrite or a formatting sweep. It is a freshness claim to Google and AI engines, so it is author-set, not derived (`scripts/build-blog-modified.mjs` is a fallback only)
 - Internal links must be contextual (within text), not generic lists ("Related: X, Y, Z")
 - Blog posts link to pillar pages, never directly to /demo
 - Pillar pages (/product, /how-it-works, /security) link to /demo

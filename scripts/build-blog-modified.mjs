@@ -1,9 +1,22 @@
 #!/usr/bin/env node
 /**
  * Generates `src/lib/content/blog-modified.json` mapping each blog slug
- * to the ISO date of its most recent git commit. Used by articleSchema()
- * to populate `dateModified` so AI engines + Google know when the post
- * was last touched.
+ * to the ISO date of its most recent git commit.
+ *
+ * LAST-RESORT FALLBACK ONLY. `dateModified` is a freshness claim we make to
+ * Google and to AI engines, so it is declared explicitly by the author in
+ * each post's `articleSchema({ ... })` call, and that value always wins
+ * (see `articleSchema` in src/lib/schema.ts). This map is consulted only for
+ * a post that declares no `dateModified` of its own.
+ *
+ * The reason it cannot be the source of truth: git mtime cannot tell a real
+ * revision from a mechanical sweep. A site-wide lint pass, a prettier reflow
+ * or a one-character canonical rewrite bumps every file it touches, which
+ * would re-date dozens of unchanged posts at once and advertise them as
+ * freshly updated. That is exactly what commit c84633a did to 30 posts.
+ *
+ * So: when you genuinely revise a post, bump its `dateModified` by hand.
+ * Do not rely on this script to notice.
  *
  * Runs as a `prebuild` step. Falls back gracefully if git isn't available
  * (e.g., shallow CI clone): missing slugs simply use `datePublished`.

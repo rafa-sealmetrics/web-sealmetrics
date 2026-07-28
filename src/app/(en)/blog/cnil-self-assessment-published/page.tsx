@@ -24,7 +24,7 @@ export default function CnilAssessmentPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "CNIL Self-Assessment Published" }]} />
-      <JsonLd data={articleSchema({ headline: "We Published Our CNIL Self-Assessment", description: "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics.", datePublished: "2026-02-10", url: "/blog/cnil-self-assessment-published", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Published Our CNIL Self-Assessment", description: "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics.", datePublished: "2026-02-10", dateModified: "2026-05-28", url: "/blog/cnil-self-assessment-published", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "CNIL Self-Assessment Published", url: "/blog/cnil-self-assessment-published" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

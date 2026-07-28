@@ -59,6 +59,7 @@ export default function Page() {
           description:
             "How hotel groups count direct bookings at channel level without cookies or user-level tracking.",
           datePublished: "2026-04-24",
+          dateModified: "2026-05-28",
           url: "/blog/cookieless-analytics-for-hotels",
           category: "Hotels",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

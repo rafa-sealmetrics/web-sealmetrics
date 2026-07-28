@@ -26,7 +26,7 @@ export default function CookielessAnalyticsExplainedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics Explained" }]} />
-      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", url: "/blog/cookieless-analytics-explained", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", dateModified: "2026-05-28", url: "/blog/cookieless-analytics-explained", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics", url: "/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

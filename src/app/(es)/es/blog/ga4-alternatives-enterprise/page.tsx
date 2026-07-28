@@ -101,7 +101,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
           description:
             "Compara 7 alternativas a GA4 para eCommerce en precio, captura de dato, cumplimiento UE y features.",
           datePublished: "2026-03-02",
-          dateModified: "2026-03-16",
+          dateModified: "2026-07-07",
           url: "/es/blog/ga4-alternatives-enterprise",
           category: "Comparativas",
           author: {

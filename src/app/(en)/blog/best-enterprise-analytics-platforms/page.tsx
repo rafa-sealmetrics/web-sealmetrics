@@ -126,6 +126,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
           description:
             "Ranked comparison of enterprise analytics platforms for data capture, compliance, pricing, and AI features.",
           datePublished: "2026-03-16",
+          dateModified: "2026-05-04",
           url: "/blog/best-enterprise-analytics-platforms",
           category: "Comparisons",
           author: {

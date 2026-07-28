@@ -59,6 +59,7 @@ export default function Page() {
           description:
             "How European eCommerce teams count every conversion without cookies or user-level tracking.",
           datePublished: "2026-04-24",
+          dateModified: "2026-05-28",
           url: "/blog/cookieless-analytics-for-ecommerce",
           category: "eCommerce",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

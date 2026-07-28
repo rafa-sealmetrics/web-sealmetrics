@@ -59,6 +59,7 @@ export default function Page() {
           description:
             "How European SaaS teams count trial signups and paid conversions by channel without cookies.",
           datePublished: "2026-04-24",
+          dateModified: "2026-05-28",
           url: "/blog/cookieless-analytics-for-saas",
           category: "SaaS",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

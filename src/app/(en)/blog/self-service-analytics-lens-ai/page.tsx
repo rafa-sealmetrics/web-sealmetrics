@@ -127,6 +127,7 @@ export default function Page() {
           description:
             "Complete cookieless data plus a semantic MCP lets anyone query their own analytics in plain language, without an analyst in the loop.",
           datePublished: "2026-07-05",
+          dateModified: "2026-07-06",
           url: "/blog/self-service-analytics-lens-ai",
           category: "AI & Analytics",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

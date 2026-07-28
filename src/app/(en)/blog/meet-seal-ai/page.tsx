@@ -69,6 +69,7 @@ export default function MeetSealAiPage() {
           headline: TITLE,
           description: DESCRIPTION,
           datePublished: "2026-07-24",
+          dateModified: "2026-07-28",
           url: URL,
           category: "Product",
           author: {

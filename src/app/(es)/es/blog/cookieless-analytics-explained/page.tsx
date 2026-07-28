@@ -25,7 +25,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica cookieless explicada" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", datePublished: "2026-02-08", url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", datePublished: "2026-02-08", dateModified: "2026-05-06", url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica cookieless", url: "/es/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

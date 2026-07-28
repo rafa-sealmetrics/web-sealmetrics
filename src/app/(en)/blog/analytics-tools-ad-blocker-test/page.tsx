@@ -24,7 +24,7 @@ export default function AdBlockerTestPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Tested 9 Analytics Tools Against Ad Blockers" }]} />
-      <JsonLd data={articleSchema({ headline: "We Tested 9 Analytics Tools Against Every Major Ad Blocker", description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. GA4, Adobe, and PostHog are blocked by all five.", datePublished: "2026-03-07", url: "/blog/analytics-tools-ad-blocker-test", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Tested 9 Analytics Tools Against Every Major Ad Blocker", description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. GA4, Adobe, and PostHog are blocked by all five.", datePublished: "2026-03-07", dateModified: "2026-05-04", url: "/blog/analytics-tools-ad-blocker-test", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Tested 9 Analytics Tools Against Ad Blockers", url: "/blog/analytics-tools-ad-blocker-test" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

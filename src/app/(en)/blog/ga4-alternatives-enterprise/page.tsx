@@ -124,7 +124,7 @@ export default function GA4AlternativesEnterprisePage() {
           description:
             "Compare 7 GA4 alternatives for eCommerce on pricing, data capture, EU compliance, and features.",
           datePublished: "2026-03-02",
-          dateModified: "2026-03-16",
+          dateModified: "2026-05-04",
           url: "/blog/ga4-alternatives-enterprise",
           category: "Comparisons",
           author: {

@@ -26,7 +26,7 @@ export default function WhyGA4Shows13PctPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
-      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", dateModified: "2026-05-28", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic", url: "/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
