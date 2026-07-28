@@ -9,8 +9,10 @@ name: PR checks
 # llms.txt drift gate (scripts/audit-llms-txt.mjs).
 
 on:
+  # No `branches:` filter on purpose. That filter matches the *base* branch, so
+  # it would skip stacked PRs (one feature branch based on another) — exactly
+  # the PRs most likely to be built on something unverified.
   pull_request:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
