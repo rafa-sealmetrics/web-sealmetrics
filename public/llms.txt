@@ -97,6 +97,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 
 ## Blog (latest articles)
 - /blog — Full blog index
+- /blog/is-adobe-analytics-gdpr-compliant — Is Adobe Analytics GDPR Compliant? Yes, if configured: prior consent, DPA, transfer assessment, deliberate retention settings. The cost is statistical, not legal — a compliant Adobe deployment only measures the 40-60% who accept the banner. Note: Adobe's collection endpoints (dpm.demdex.net) measured as EU-hosted on AWS Dublin, so the common "US company therefore illegal" claim is wrong; Schrems II turns on legal access regimes, not server location
 - /blog/gdpr-analytics-spain-faq — GDPR Analytics in Spain: 7 Questions Online Stores Ask (AEPD guidance, GA4 legality, LSSI fines, banner data loss)
 - /blog/gdpr-eprivacy-analytics-legal-assessment — Is Your Analytics Actually GDPR-Compliant? A Legal Assessment (ePrivacy vs GDPR two-part test, per-tool verdicts: GA4, Matomo, Plausible, Piwik PRO, SealMetrics)
 - /blog/self-service-analytics-lens-ai — What It Takes to Make Self-Service Analytics Actually Work (complete data + semantic MCP + LENS AI)
