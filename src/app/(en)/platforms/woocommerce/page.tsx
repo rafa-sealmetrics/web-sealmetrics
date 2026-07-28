@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/platforms/woocommerce",
+    canonical: "https://sealmetrics.com/platforms/woocommerce/",
     languages: getAlternates("/platforms/woocommerce"),
   },
 };

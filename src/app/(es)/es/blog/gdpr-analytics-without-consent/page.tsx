@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: getAlternates("/blog/gdpr-analytics-without-consent"),
-    canonical:
+    canonical: "https://sealmetrics.com/es/blog/gdpr-analytics-without-consent/",
       "https://sealmetrics.com/es/blog/gdpr-analytics-without-consent",
   },
 };

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/gdpr-analytics/germany",
+    canonical: "https://sealmetrics.com/gdpr-analytics/germany/",
     languages: getAlternates("/gdpr-analytics/germany"),
   },
 };

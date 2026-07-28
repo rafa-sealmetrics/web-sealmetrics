@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "20+ years in European eCommerce analytics. Founder of SealMetrics, digital marketer, agency founder and analytics architect.",
   alternates: {
-    canonical: "https://sealmetrics.com/authors/rafa-jimenez",
+    canonical: "https://sealmetrics.com/authors/rafa-jimenez/",
     languages: getAlternates("/authors/rafa-jimenez"),
   },
   openGraph: {

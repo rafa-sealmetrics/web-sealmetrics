@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "View your analytics diagnostic result and see how much data your current setup may be missing.",
   robots: { index: false, follow: true },
-  alternates: { canonical: "https://sealmetrics.com/diagnostic-result" },
+  alternates: { canonical: "https://sealmetrics.com/diagnostic-result/" },
   openGraph: {
     title: "Diagnostic Results — SealMetrics",
     description:

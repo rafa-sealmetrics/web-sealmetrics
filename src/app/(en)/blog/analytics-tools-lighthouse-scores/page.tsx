@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   robots: { index: false, follow: true },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/analytics-tools-lighthouse-scores",
+    canonical: "https://sealmetrics.com/blog/analytics-tools-lighthouse-scores/",
   },
 };
 

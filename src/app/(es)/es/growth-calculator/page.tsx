@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/es/growth-calculator", languages: getAlternatesEs("/growth-calculator") },
+  alternates: { canonical: "https://sealmetrics.com/es/growth-calculator/", languages: getAlternatesEs("/growth-calculator") },
 };
 
 export default function Page() {

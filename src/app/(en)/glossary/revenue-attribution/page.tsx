@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Connecting revenue events to the marketing channels that drove them. Accuracy depends on observable data.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/revenue-attribution", languages: getAlternates("/glossary/revenue-attribution") },
+  alternates: { canonical: "https://sealmetrics.com/glossary/revenue-attribution/", languages: getAlternates("/glossary/revenue-attribution") },
 };
 
 export default function RevenueAttributionPage() {

@@ -3,11 +3,10 @@ import { DualCTA } from "@/components/homepage/DualCTA";
 import { HeroDashboard } from "@/components/sections/v3/HeroDashboard";
 
 /* ============================================================
-   Homepage sections — benefit-led home built around three messages:
-   1. Set up in ~1 minute (from your AI assistant)
-   2. Real time — decide during your Promo Days, not the day after
-   3. LENS AI — unblock growth, mitigate risk, reduce cost
-   Rendered by src/app/(en)/page.tsx (and /preview/home-power-d).
+   Homepage sections — benefit-first informational home that sells in
+   one page. Flow: what we do + benefit (hero) → who trusts us (logos)
+   → complete data = real ROAS → real-time → LENS AI → proof → install
+   → pricing. Rendered by src/app/(en)/page.tsx.
    ============================================================ */
 
 /* --- Hero --------------------------------------------------- */
@@ -17,30 +16,30 @@ export function HeroD() {
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center pb-16">
         <div className="inline-flex items-center gap-3 bg-white border border-warm-100 rounded-full px-4 py-1.5 text-[13px] text-ink-2 mb-10">
           <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
-            Set up in ~1 min
+            eCommerce analytics
           </span>
-          <a href="#agentic-setup" className="text-ink border-b border-warm-200 hover:border-ink">
-            Provisioned by your AI assistant — no sales call
-          </a>
+          <span className="text-ink-soft">
+            Cookieless · GDPR by architecture · EU-hosted in Dublin
+          </span>
         </div>
 
         <h1 className="h-display mx-auto">
-          Optimize real-time ROAS with <em className="italic-accent">private AI.</em>
+          See 100% of your sales — <em className="italic-accent">the revenue GA4 can&rsquo;t.</em>
         </h1>
 
         <p
           className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          Set up from your AI assistant in about a minute. Watch your Promo Days unfold live while
-          LENS private AI surfaces the growth, the risks and the wasted spend — with time still on
-          the clock to act.
+          SealMetrics is cookieless analytics for eCommerce. Measure every visit and every sale — no
+          cookies, no consent banner, no 40–60% blind spot — so your real ROAS, your channel
+          decisions and your board numbers finally match what actually happened.
         </p>
 
         <DualCTA locale="en" className="justify-center mt-7" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["~1 min setup", "Real-time dashboards", "Growth · risk · cost", "100% consentless data"].map((b) => (
+          {["100% of traffic measured", "No cookies · no consent banner", "GDPR by architecture", "Numbers that match Shopify"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -70,8 +69,11 @@ export function ConsentlessAnalytics() {
             <Link href="/consentless-analytics" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
               Consentless analytics
             </Link>{" "}
-            measures 100% of your sales without a consent banner — legally. GDPR by architecture,
-            privacy-first everywhere you sell, zero personal data stored. No cookies, no consent
+            measures 100% of your sales without a consent banner — legally.{" "}
+            <Link href="/security" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
+              GDPR by architecture
+            </Link>
+            , privacy-first everywhere you sell, zero personal data stored. No cookies, no consent
             wall, no 40–60% blind spot.
           </p>
           <p className="mt-4 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
@@ -235,7 +237,10 @@ export function GrowthRiskCost() {
             Unblock growth. Mitigate risk. <em>Cut cost.</em>
           </h2>
           <p className="text-[17px] leading-[1.6] text-white/70 max-w-[54ch]">
-            LENS reads 100% of your data and answers in plain language — the three questions that
+            <Link href="/ai-analytics" className="text-white font-medium border-b border-white/30 hover:border-white">
+              LENS
+            </Link>{" "}
+            reads 100% of your data and answers in plain language — the three questions that
             actually move the number. Ask it, or let it surface the answer before you think to ask.
           </p>
         </div>

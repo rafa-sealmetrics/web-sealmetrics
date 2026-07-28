@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/uk-pecr-analytics-exemption",
+    canonical: "https://sealmetrics.com/blog/uk-pecr-analytics-exemption/",
   },
 };
 

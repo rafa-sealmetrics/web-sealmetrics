@@ -8,14 +8,14 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 export const metadata: Metadata = {
   title: "¿Qué es la atribución multi-touch? — Glosario SealMetrics",
   description:
-    "La atribución multi-touch reparte el crédito de conversión entre touchpoints observados de un visitante identificado. Requiere tracking por usuario; SealMetrics usa last-click.",
+    "La atribución multi-touch reparte el crédito entre touchpoints de un visitante identificado. Requiere tracking por usuario; SealMetrics usa last-click.",
   openGraph: {
     title: "¿Qué es la atribución multi-touch?",
     description: "Modelo de atribución que requiere tracking por usuario. SealMetrics hace last-click a nivel de canal.",
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/glossary/multi-touch-attribution",
+    canonical: "https://sealmetrics.com/es/glossary/multi-touch-attribution/",
     languages: getAlternatesEs("/glossary/multi-touch-attribution"),
   },
 };

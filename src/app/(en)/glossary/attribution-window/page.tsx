@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Default attribution windows by channel, why they collapse under Safari ITP, and the cookieless alternative.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/attribution-window" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/attribution-window/" },
 };
 
 export default function AttributionWindowPage() {

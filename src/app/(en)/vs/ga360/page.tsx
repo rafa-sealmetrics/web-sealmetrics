@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/vs/ga360", languages: getAlternates("/vs/ga360") },
+  alternates: { canonical: "https://sealmetrics.com/vs/ga360/", languages: getAlternates("/vs/ga360") },
 };
 
 export default function Page() {

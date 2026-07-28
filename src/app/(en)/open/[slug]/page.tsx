@@ -40,7 +40,7 @@ export async function generateMetadata({
       images: ["https://sealmetrics.com/og-image.png"],
     },
     alternates: {
-      canonical: `https://sealmetrics.com/open/${chapter.slug}`,
+      canonical: `https://sealmetrics.com/open/${chapter.slug}/`,
     },
   };
 }
@@ -2567,8 +2567,8 @@ function ChapterSevenBody() {
       desc: "The starting point for teams replacing GA4 with full data.",
       highlights: [
         "5M human events / month",
+        "LENS AI · bring your own key",
         "MCP + BigQuery + Full API",
-        "Standard support",
       ],
       featured: false,
     },
@@ -2577,10 +2577,10 @@ function ChapterSevenBody() {
       annual: "€899",
       monthly: "€1,079",
       events: "15M",
-      desc: "Where most performance-driven teams settle. Adds the premium AI layer.",
+      desc: "Where most performance-driven teams settle. Adds managed Private AI.",
       highlights: [
         "15M human events / month",
-        "LENS AI forecasting · premium",
+        "Managed Private AI · 5M tokens",
         "Webhooks + priority support",
       ],
       featured: true,

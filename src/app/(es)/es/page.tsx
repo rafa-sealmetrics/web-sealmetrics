@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es",
+    canonical: "https://sealmetrics.com/es/",
     languages: getAlternatesEs("/"),
   },
 };

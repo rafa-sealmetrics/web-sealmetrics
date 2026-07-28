@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "First-party data collection gathers analytics through your own domain, avoiding ad blockers.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/first-party-data-collection" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/first-party-data-collection/" },
 };
 
 export default function FirstPartyDataCollectionPage() {

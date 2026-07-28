@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics", languages: getAlternates("/glossary/cookieless-analytics") },
+  alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics/", languages: getAlternates("/glossary/cookieless-analytics") },
 };
 
 export default function CookielessAnalyticsPage() {

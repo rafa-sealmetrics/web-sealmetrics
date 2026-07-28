@@ -12,7 +12,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Análisis de brechas RGPD para la analítica web",
   description:
-    "Un análisis de brechas de la analítica web requisito a requisito bajo RGPD, ePrivacy, AEPD y PECR — dónde fallan los stacks habituales y cómo cerrar cada brecha.",
+    "Análisis de brechas de la analítica web bajo RGPD, ePrivacy, AEPD y PECR — dónde fallan los stacks habituales y cómo cerrar cada brecha.",
   openGraph: {
     title: "Análisis de brechas regulatorias para la analítica web — RGPD, ePrivacy, AEPD",
     description:
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/reg-gap-analysis",
+    canonical: "https://sealmetrics.com/es/reg-gap-analysis/",
     languages: getAlternates("/reg-gap-analysis"),
   },
   keywords: [

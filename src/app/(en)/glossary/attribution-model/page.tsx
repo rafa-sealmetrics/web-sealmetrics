@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Attribution models determine how conversion credit is split across marketing touchpoints.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/attribution-model" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/attribution-model/" },
 };
 
 export default function AttributionModelPage() {

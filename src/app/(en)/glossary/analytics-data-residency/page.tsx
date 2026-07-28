@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Data residency defines where analytics data is stored. EU residency is key for GDPR compliance.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/analytics-data-residency" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/analytics-data-residency/" },
 };
 
 export default function AnalyticsDataResidencyPage() {

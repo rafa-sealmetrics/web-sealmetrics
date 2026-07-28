@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/es/vs/adobe-analytics", languages: getAlternatesEs("/vs/adobe-analytics") },
+  alternates: { canonical: "https://sealmetrics.com/es/vs/adobe-analytics/", languages: getAlternatesEs("/vs/adobe-analytics") },
 };
 
 export default function Page() {
@@ -57,6 +58,18 @@ export default function Page() {
       />
       <LogosStripEs />
       
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer label="Respuesta rápida">
+            <p>
+              SealMetrics vs Adobe Analytics: Adobe Analytics es una suite de analítica enterprise desde unos 100.000 $/año en contratos anuales, con una implementación pesada, hosting en EE. UU./híbrido y un banner de consentimiento en toda la UE. SealMetrics es una plataforma cookieless alojada en la UE que mide el 100% del tráfico entrante sin depender del consentimiento y atribuye cada conversión last-click sobre eventos observados — desde 499€/mes con facturación anual, sin compromiso anual.
+            </p>
+            <p>
+              Para el eCommerce UE la diferencia es completitud y compliance. Adobe sigue perdiendo el 40–60% del tráfico UE por rechazo de consentimiento y arrastra overhead Schrems II por sus flujos de datos a EE. UU., además de meses de implementación. SealMetrics se instala con un píxel, corre en paralelo desde el día uno, y su infraestructura solo en Dublín sin sub-procesadores fuera de la UE elimina la revisión de transferencias. Los equipos mantienen Adobe para análisis custom profundo donde lo necesitan y usan SealMetrics como el número de revenue completo y listo para el board.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
     </>
   );
 }

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Palladium Hotel Group used SealMetrics as the neutral source of truth brand, agencies and departments accept. The trigger: 40% of traffic had no attribution.",
   alternates: {
-    canonical: "https://sealmetrics.com/case-studies/palladium-hotel-group",
+    canonical: "https://sealmetrics.com/case-studies/palladium-hotel-group/",
     languages: getAlternates("/case-studies/palladium-hotel-group"),
   },
   openGraph: {

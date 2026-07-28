@@ -197,6 +197,15 @@ export function softwareApplicationSchema() {
       "LENS AI anomaly detection",
       "AI Agent Analytics",
     ],
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "EUR",
+      lowPrice: "0",
+      highPrice: String(PRICING.scale.monthly),
+      offerCount: 3,
+      availability: "https://schema.org/InStock",
+      url: pageHref("/pricing"),
+    },
     provider: {
       "@type": "Organization",
       name: ORG_NAME,
@@ -429,6 +438,10 @@ export function pricingSchema(
   const allPrices = [...planPrices, ...monthlyPrices];
   const lowPrice = allPrices.length ? Math.min(...allPrices).toString() : undefined;
   const highPrice = allPrices.length ? Math.max(...allPrices).toString() : undefined;
+  // Keep offers valid: one year out from build, never a hard-coded past date.
+  const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10);
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -449,7 +462,7 @@ export function pricingSchema(
         name: plan.name,
         price: plan.price,
         priceCurrency: "EUR",
-        priceValidUntil: "2026-12-31",
+        priceValidUntil,
         availability: "https://schema.org/InStock",
         description: plan.description,
         url: pageHref(path),
@@ -552,9 +565,9 @@ export function reviewSchema(props: {
     "@type": "Review",
     reviewBody: props.reviewBody,
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: props.authorName,
-      ...(props.authorRole ? { description: props.authorRole } : {}),
+      ...(props.authorRole ? { jobTitle: props.authorRole } : {}),
     },
     itemReviewed: {
       "@type": "SoftwareApplication",
@@ -563,12 +576,19 @@ export function reviewSchema(props: {
       url: pageHref(),
     },
     ...(props.datePublished ? { datePublished: props.datePublished } : {}),
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: props.ratingValue ?? 5,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    // Never synthesize a star rating. Only emit reviewRating when a real
+    // numeric rating was actually given by the customer — testimonials
+    // without a rating stay rating-less (avoids Google review-spam action).
+    ...(props.ratingValue !== undefined
+      ? {
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: props.ratingValue,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
   };
 }
 

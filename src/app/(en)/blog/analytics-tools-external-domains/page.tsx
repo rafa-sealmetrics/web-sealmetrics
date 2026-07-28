@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/blog/analytics-tools-external-domains",
+    canonical: "https://sealmetrics.com/blog/analytics-tools-external-domains/",
   },
 };
 

@@ -485,7 +485,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         caseStudy: {
           eyebrow: "Migró desde un stack EU basado en cookies",
           title: <>Cómo Dreamplace Hotels cambió <em className="italic-accent">configuración por claridad</em>.</>,
-          quote: "Nos da lo que siempre hemos necesitado: datos lo más reales posible, lo más cercanos a la realidad posible.",
+          quote: "Lo que nos aporta es lo que hemos necesitado siempre: el dato lo más real posible y lo más próximo a la realidad.",
           quoteAuthor: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
           body: "Dreamplace migró desde un stack EU basado en cookies a SealMetrics. Los ingresos agregados por canal empezaron a cuadrar con el PMS en la primera semana. La conversación de reporting pasó de \"qué número es real\" a qué canales realmente generaron las reservas — el propósito original de la analítica, restaurado.",
           href: "/es/case-studies/dreamplace-hotels",
@@ -600,7 +600,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Native MCP / AI agents", them: "No", us: "Native MCP server" },
             { feature: "BigQuery / warehouse export", them: "Paid plugin or manual ETL", us: "Native · all plans · full resolution" },
             { feature: "Real-time latency", them: "Minutes (with extra plugins)", us: "< 2 minutes · default" },
-            { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI · premium on Scale+" },
+            { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI on all plans (BYOK) · managed Private AI from Scale" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Self-serve · docs + forum", us: "Founder-led · 15-minute install" },
@@ -653,7 +653,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         caseStudy: {
           eyebrow: "Reemplazó un stack DIY de analítica",
           title: <>Cómo Dreamplace Hotels cambió <em className="italic-accent">DIY por claridad</em>.</>,
-          quote: "Nos da lo que siempre hemos necesitado: datos lo más reales posible, lo más cercanos a la realidad posible.",
+          quote: "Lo que nos aporta es lo que hemos necesitado siempre: el dato lo más real posible y lo más próximo a la realidad.",
           quoteAuthor: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
           body: "Dreamplace migró a SealMetrics desde un setup analítico DIY. Los ingresos agregados por canal empezaron a cuadrar con el PMS en la primera semana. Sin servidores que parchear, sin plugins que mantener, sin banner de cookies que defender — solo rendimiento de canal cuadrado con el ledger de reservas, desde el día uno.",
           href: "/es/case-studies/dreamplace-hotels",
@@ -686,7 +686,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "MCP / agentes IA nativos", them: "No", us: "MCP server nativo" },
             { feature: "Export BigQuery / warehouse", them: "Plugin de pago o ETL manual", us: "Nativo · todos los planes · resolución completa" },
             { feature: "Latencia tiempo real", them: "Minutos (con plugins extra)", us: "< 2 minutos · por defecto" },
-            { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI · premium en Scale+" },
+            { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI en todos los planes (BYOK) · Private AI gestionada desde Scale" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Self-serve · docs + foro", us: "Liderado por el founder · instalación en 15 min" },

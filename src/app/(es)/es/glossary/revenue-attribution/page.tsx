@@ -8,14 +8,14 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 export const metadata: Metadata = {
   title: "¿Qué es la atribución de ingresos? — Glosario SealMetrics",
   description:
-    "La atribución de ingresos asigna cada conversión a la fuente que la generó. Sobre datos completos last-click, es la métrica que más cuadra con el CRM en eCommerce UE.",
+    "La atribución de ingresos asigna cada conversión a la fuente que la generó. Sobre datos completos last-click, es la métrica que más cuadra con el CRM.",
   openGraph: {
     title: "¿Qué es la atribución de ingresos?",
     description: "Asigna cada conversión a su fuente. Sobre datos completos last-click es la métrica que más cuadra con el CRM.",
     type: "article",
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/glossary/revenue-attribution",
+    canonical: "https://sealmetrics.com/es/glossary/revenue-attribution/",
     languages: getAlternatesEs("/glossary/revenue-attribution"),
   },
 };

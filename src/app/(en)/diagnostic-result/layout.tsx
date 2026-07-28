@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "See your personalized analytics diagnostic results and discover how much data your current setup is missing.",
   robots: { index: false, follow: true },
   alternates: {
-    canonical: "https://sealmetrics.com/diagnostic-result",
+    canonical: "https://sealmetrics.com/diagnostic-result/",
   },
 };
 

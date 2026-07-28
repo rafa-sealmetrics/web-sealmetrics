@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "This comparison lives at /vs-ga4/. You are being redirected.",
   robots: { index: false, follow: true },
-  alternates: { canonical: "https://sealmetrics.com/vs-ga4" },
+  alternates: { canonical: "https://sealmetrics.com/vs-ga4/" },
   other: {
     "http-equiv:refresh": "0; url=/vs-ga4/",
   },

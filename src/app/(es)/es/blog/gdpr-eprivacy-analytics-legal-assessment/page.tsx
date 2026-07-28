@@ -8,7 +8,7 @@ import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "¿Tu analítica cumple el RGPD? Análisis legal",
   description:
-    "Un análisis legal en lenguaje claro de la analítica web bajo RGPD y ePrivacy — con veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
+    "Análisis legal en lenguaje claro de la analítica web bajo RGPD y ePrivacy, con veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
   openGraph: {
     title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y SealMetrics",
     description:
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment",
+    canonical: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment/",
     languages: getAlternates("/blog/gdpr-eprivacy-analytics-legal-assessment"),
   },
 };

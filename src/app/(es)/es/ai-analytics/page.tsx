@@ -12,7 +12,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 export const metadata: Metadata = {
   title: "Analítica con IA — IA privada sobre datos completos UE",
   description:
-    "Analítica con IA en la que puedes confiar: dato cookieless completo, un MCP semántico e IA privada alojada en la UE. Pregúntale a Claude o ChatGPT por tu revenue — sin cookies, sin PII.",
+    "Analítica con IA fiable: dato cookieless completo, MCP semántico e IA privada en la UE. Pregúntale a Claude o ChatGPT por tu revenue — sin cookies, sin PII.",
   openGraph: {
     title: "Analítica con IA — IA privada sobre datos completos y en la UE",
     description:
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/ai-analytics",
+    canonical: "https://sealmetrics.com/es/ai-analytics/",
     languages: getAlternates("/ai-analytics"),
   },
   keywords: [

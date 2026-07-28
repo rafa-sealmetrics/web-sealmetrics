@@ -20,6 +20,14 @@ const EXCLUDE = new Set<string>([
   "/demo-access",
   // Redirect stub: canonical lives at /vs-ga4/. See src/app/(en)/vs/ga4/page.tsx.
   "/vs/ga4",
+  // Redirect stubs (buildRedirectMetadata → robots noindex). Keeping them out
+  // of the sitemap avoids "Submitted URL marked noindex" in Search Console.
+  "/customers",
+  "/contact",
+  "/features",
+  "/partners",
+  "/pricing-plans",
+  "/case-studies/european-hotel-group",
 ]);
 
 // blog post slug → ISO date, used to emit accurate <lastmod>

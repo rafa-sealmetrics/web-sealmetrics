@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
     type: "article",
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact" },
+  alternates: { canonical: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/" },
 };
 
 export default function AdBlockerAnalyticsImpactPage() {

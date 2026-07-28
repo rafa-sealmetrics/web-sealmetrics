@@ -15,7 +15,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - Last-click revenue attribution on complete data (SealMetrics does not do multi-touch attribution by design)
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
-- Pricing from €599/month (€499/mo billed annually)
+- Free Agentic tier up to 1M events total (self-serve, set up from your AI assistant). Paid plans from €499/month billed annually (€599 monthly)
 
 ## Pillars (start here)
 - /complete-data — Why incomplete analytics data leads to wrong investment decisions; the 13%/87% framing
@@ -27,7 +27,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /how-it-works — Technical explanation of cookieless first-party server-side collection
 - /case-studies — Customer results and success stories
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
-- /pricing — Plans: Growth (€599/mo), Scale (€1,079/mo), Enterprise (custom)
+- /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup

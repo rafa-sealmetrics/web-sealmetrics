@@ -20,6 +20,9 @@ const translatedPaths = new Set([
   "/modern-analytics",
   "/ai-analytics",
   "/reg-gap-analysis",
+  "/complete-data",
+  "/consentless-analytics",
+  "/cookieless-analytics",
   "/vs/ga360",
   "/vs/adobe-analytics",
   "/vs/piwik-pro",
@@ -96,8 +99,11 @@ export function localizedHref(path: string, locale: Locale): string {
 export function getAlternates(path: string) {
   const clean = path.replace(/\/$/, "") || "/";
   if (!hasTranslation(clean)) return undefined;
-  const enUrl = `${SITE_URL}${clean === "/" ? "" : clean}`;
-  const esUrl = `${SITE_URL}/es${clean === "/" ? "" : clean}`;
+  // Trailing slash to match trailingSlash:true served URLs, the on-page
+  // canonical and the sitemap — otherwise hreflang is non-reciprocal.
+  const suffix = clean === "/" ? "/" : `${clean}/`;
+  const enUrl = `${SITE_URL}${suffix}`;
+  const esUrl = `${SITE_URL}/es${suffix}`;
   return {
     "en": enUrl,
     "es": esUrl,

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/es/vs", languages: getAlternatesEs("/vs") },
+  alternates: { canonical: "https://sealmetrics.com/es/vs/", languages: getAlternatesEs("/vs") },
 };
 
 const comparisons = [

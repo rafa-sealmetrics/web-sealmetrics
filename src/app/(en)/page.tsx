@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
-    canonical: "https://sealmetrics.com",
+    canonical: "https://sealmetrics.com/",
     languages: getAlternates("/"),
   },
 };
@@ -83,14 +83,14 @@ export default function Home() {
         url: "/",
       })} />
       <HeroD />
-      <ConsentlessAnalytics />
       <LogosStrip />
-      <InstallInSeconds />
+      <ConsentlessAnalytics />
       <PromoDaysRealTime />
       <GrowthRiskCost />
       <QuoteBlock />
-      <PricingPLG />
+      <InstallInSeconds />
       <Connectors />
+      <PricingPLG />
       <FinalUrgencyV3 />
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
