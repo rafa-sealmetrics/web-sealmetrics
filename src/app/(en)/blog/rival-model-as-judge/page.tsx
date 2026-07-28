@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
     type: "article",
   },
   alternates: {
+    languages: getAlternates("/blog/rival-model-as-judge"),
     canonical: `https://sealmetrics.com${URL}`,
   },
 };
