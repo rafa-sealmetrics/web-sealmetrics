@@ -336,7 +336,7 @@ export function FeaturedCaseEs() {
           <CaseCardEs
             client="Cadena hotelera · España"
             sector="Hoteles · eCommerce"
-            quote={<>Ya no es una herramienta que está al lado del proceso. Es <em className="italic-accent">la herramienta que nos da el dato real</em> — y con la que tomamos las decisiones.</>}
+            quote={<>Ya no es una herramienta que está al lado del proceso. Es <em className="italic-accent">la herramienta que nos da el dato real</em> — y con la que tomamos decisiones.</>}
             cite="Head of eCommerce · Cadena hotelera"
             stats={[
               { n: "+30%", l: "Más tráfico registrado vs GA4 al cerrar el gap de consentimiento" },

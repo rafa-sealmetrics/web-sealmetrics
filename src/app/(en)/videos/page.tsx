@@ -10,8 +10,8 @@ const videosForSchema = [
     name: "SealMetrics Platform Overview",
     description:
       "A complete tour of the SealMetrics dashboard — from traffic overview to AI insights.",
-    thumbnailUrl: "/og-image.png",
-    uploadDate: "2025-09-01",
+    thumbnailUrl: "/videos/platform-overview.jpg",
+    uploadDate: "2025-09-01T09:00:00+02:00",
     duration: "PT3M24S",
     embedUrl: "https://iframe.mediadelivery.net/embed/609541/e616aab7-d8cf-47d1-b250-517df6a8c593",
     inLanguage: "es",
@@ -21,8 +21,8 @@ const videosForSchema = [
     name: "Getting Started with SealMetrics",
     description:
       "How to create your account, add your site, and install the 846-byte tracking script in 5 minutes.",
-    thumbnailUrl: "/og-image.png",
-    uploadDate: "2025-09-15",
+    thumbnailUrl: "/videos/getting-started.jpg",
+    uploadDate: "2025-09-15T09:00:00+02:00",
     duration: "PT2M15S",
     embedUrl: "https://iframe.mediadelivery.net/embed/609541/c39d3844-8ef3-4362-8579-d71a6b832b0f",
     inLanguage: "es",
