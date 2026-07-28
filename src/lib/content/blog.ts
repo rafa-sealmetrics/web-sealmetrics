@@ -375,4 +375,37 @@ export const blogPosts: BlogPost[] = [
     author: AUTHORS.rafa,
     related: ["cnil-self-assessment-published", "uk-pecr-analytics-exemption", "cookieless-analytics-explained"],
   },
+  {
+    slug: "residency-is-not-sovereignty",
+    title: "Residency Is Not Sovereignty: The Question to Ask Your AI Analytics Vendor",
+    description:
+      "A European datacenter does not make your AI vendor European. The US CLOUD Act follows the company, not the server. How to tell the difference — and why it decides where your data can be reached.",
+    date: "2026-07-24",
+    category: "Privacy",
+    readTime: "6 min",
+    author: AUTHORS.rafa,
+    related: ["meet-seal-ai", "best-llm-for-data-analytics", "cookieless-analytics-explained"],
+  },
+  {
+    slug: "best-llm-for-data-analytics",
+    title: "The Best LLM for Data Analytics Isn't the One With the Highest Benchmark",
+    description:
+      "We ran 162 live queries across three open models against real analytics data to pick the AI inside SealMetrics. What decided it wasn't MMLU — it was tool-calling, grounding, and a security flaw that only showed up in one language.",
+    date: "2026-07-24",
+    category: "AI",
+    readTime: "7 min",
+    author: AUTHORS.rafa,
+    related: ["meet-seal-ai", "residency-is-not-sovereignty", "we-measured-every-analytics-script"],
+  },
+  {
+    slug: "meet-seal-ai",
+    title: "Meet Seal AI: The Analytics Assistant That Never Sends Your Data to the US",
+    description:
+      "Ask your analytics questions in plain language and get grounded answers — with inference that runs in the EU only, retains nothing, and trains no one's model. How Seal AI works and why it's private by architecture, not by promise.",
+    date: "2026-07-24",
+    category: "Product",
+    readTime: "5 min",
+    author: AUTHORS.rafa,
+    related: ["residency-is-not-sovereignty", "best-llm-for-data-analytics", "gdpr-analytics-without-consent"],
+  },
 ];
