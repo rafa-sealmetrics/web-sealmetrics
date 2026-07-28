@@ -4,6 +4,8 @@ Date: 2026-05-04
 Site: `https://sealmetrics.com` (post-Sprint 4 + post-Schema-Council build, 124 sitemap URLs)
 Standard: GEO best practices Feb 2026 — brand mentions weighted 3× backlinks for AI citation
 
+> **Amended 2026-07-28** — scores and counts below are the 2026-05-04 snapshot and have not been re-measured. Only the llms.txt sync claim was updated: it had silently drifted to 39 missing URLs before being reconciled and put behind a build gate. See *Finding 2* and *Source-of-truth files*.
+
 ---
 
 ## GEO Readiness Score: **69/100**
@@ -14,7 +16,7 @@ Standard: GEO best practices Feb 2026 — brand mentions weighted 3× backlinks 
 | Structural Readability | 20% | 16/20 | Clean H1→H2→H3, but only 8% of H2/H3 are question-style |
 | Multi-Modal Content | 15% | 8/15 | 17 pages with comparison tables; few embedded images, no charts, no video |
 | Authority & Brand Signals | 20% | 11/20 | On-page E-E-A-T strong; off-page (Wikipedia, Reddit, YouTube) weak/absent |
-| Technical Accessibility | 20% | 20/20 | Best-in-class: 100% SSR, 21-bot allowlist, llms.txt synced, schema validated |
+| Technical Accessibility | 20% | 20/20 | Best-in-class: 100% SSR, 21-bot allowlist, llms.txt sync enforced at build, schema validated |
 
 ---
 
@@ -35,7 +37,11 @@ Standard: GEO best practices Feb 2026 — brand mentions weighted 3× backlinks 
 
 1. **Crawler allowlist — 21 AI bots explicitly permitted** in `public/robots.txt`: GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, FacebookBot, Meta-ExternalAgent, Amazonbot, Diffbot, DuckAssistBot, cohere-ai, Mistral-AI-User, YouBot. Custom `LLMs-Txt:` declaration at the bottom is informative.
 
-2. **llms.txt + llms-full.txt present.** 124 entries; **0 drift vs sitemap** (verified by `scripts/audit-llms-txt.mjs`). Each URL has a hand-written one-line description AI engines can lift verbatim.
+2. **llms.txt + llms-full.txt present.** Every sitemap URL has a hand-written one-line description AI engines can lift verbatim, and **0 drift vs sitemap is now enforced at build time** — `scripts/audit-llms-txt.mjs` runs as npm `postbuild`, so `npm run build` (and therefore the deploy workflow) fails on a single missing or stale URL.
+
+   *Amended 2026-07-28.* This was originally recorded as an achieved state at 124 entries, but nothing enforced it: the linter only failed above 5 drift per bucket, and it was never wired into the build. By July it had drifted to **39 missing URLs** (`/open/*` chapters, the ES Seal AI series, and several core pages) while this document still read "0 drift". Reconciled to 210/210 and the threshold dropped to zero. Deliberately *not* listed: redirect stubs (`/contact`, `/customers`, `/features`, `/partners`, `/pricing-plans`, `/case-studies/european-hotel-group`) — they are `noindex` with canonicals elsewhere, so they are excluded in `src/app/sitemap.ts` rather than described here; describing an alias teaches AI engines to cite a redirect instead of the real page.
+
+   **Lesson for the rest of this document:** a metric recorded as "best-in-class" decays unless something fails loudly when it does. Prefer citing the enforcing mechanism over the measured value.
 
 3. **100% server-side rendering.** Static export means every word of the visible UI is in the initial HTML response. AI crawlers — none of which execute JS — see the full content. Sample: homepage HTML body contains 1,866 words of visible text. Blog posts contain the full article body in HTML.
 
@@ -158,8 +164,9 @@ Each block must:
 # AI crawler allowlist
 curl -s https://sealmetrics.com/robots.txt | grep -A1 "GPTBot\|ClaudeBot\|PerplexityBot"
 
-# llms.txt freshness
-node scripts/audit-llms-txt.mjs
+# llms.txt freshness — enforced automatically as postbuild; this is the manual re-check.
+# Reads out/sitemap.xml, so it needs a build first. Exits non-zero on any drift.
+npm run build
 
 # SSR check (must show real article text, not a JS shell)
 curl -s https://sealmetrics.com/blog/cookieless-analytics-explained/ | grep -oE '<h1[^>]*>[^<]+</h1>'
@@ -175,7 +182,7 @@ curl -s https://sealmetrics.com/blog/cookieless-analytics-explained/ | grep -oE 
 ## Source-of-truth files
 
 - `public/robots.txt` — 21-bot AI allowlist + `LLMs-Txt:` declaration
-- `public/llms.txt` — 124 entries, 0 drift vs sitemap (linter: `scripts/audit-llms-txt.mjs`)
+- `public/llms.txt` — one hand-written line per sitemap URL. 0 drift enforced by `scripts/audit-llms-txt.mjs`, wired as npm `postbuild`; adding a page fails the build until its line exists. Entry count intentionally not recorded here — it tracks the sitemap.
 - `public/llms-full.txt` — long-form companion document
 - `src/lib/schema.ts` — 18 active schema helpers (post-Schema-Council cleanup)
 - `src/components/ui/TldrBlock.tsx` — `data-speakable` on answer + bullets
