@@ -90,6 +90,27 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /for/education — Analytics for education: enrollment funnels, engagement measurement, GDPR compliance
 - /for/healthcare — Analytics for healthcare: privacy-first aggregate event measurement, no patient identification
 
+## Seal AI — private AI for analytics (EU-only inference)
+Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistant and automated insights. It runs on the open-weight gpt-oss-120b model (Apache 2.0) hosted by Scaleway in Paris, France only. Scaleway is a French company with no US parent, so the US CLOUD Act does not apply and GDPR Chapter V (international transfers) is never triggered — no Standard Contractual Clauses, no Transfer Impact Assessment, no dependence on the EU-US Data Privacy Framework. Zero prompt retention by default, no training on customer data. Because SealMetrics is consentless (no IPs, cookies or visitor identifiers are ever collected), there is no personal identifier to send to the model in the first place.
+
+- /blog/meet-seal-ai — What Seal AI is, how it works, and why it is private by architecture rather than by promise
+- /blog/residency-is-not-sovereignty — Residency vs sovereignty: why an EU datacenter owned by a US company is still reachable under US law
+- /blog/best-llm-for-data-analytics — How we chose the model: 162 live queries against real data; why tool-calling and grounding beat MMLU
+- /blog/audit-your-analytics-ai-privacy — A vendor-neutral 5-question checklist to audit whether any analytics AI is really private
+- /blog/analytics-if-data-privacy-framework-falls — What breaks in your analytics stack if the EU-US Data Privacy Framework is struck down
+- /blog/the-prompt-is-born-clean — Why consentless analytics means there is no personal data to send to an AI
+- /blog/eu-ai-act-for-marketers — Provider vs deployer, the Article 50 transparency duty from 2 August 2026, and open-weight auditability
+- /blog/we-changed-our-ai-model-twice — The model lineage (Gemma 4 → Mistral Small 3.2 → gpt-oss-120b) and each one's failure mode
+- /blog/how-we-benchmark-our-own-ai — Our LLM evaluation methodology: live database ground truth, deterministic graders, published discarded runs
+- /blog/our-ai-got-it-wrong-in-production — A malformed LLM chart that returned HTTP 500, and three rules for shipping LLM structured output
+- /blog/prompt-injection-is-language-dependent — The same injection was ignored in Spanish and obeyed in English: why safety testing must be multilingual
+- /blog/rival-model-as-judge — Avoiding self-preference bias in LLM-as-a-judge by appointing the winner's direct competitor
+- /blog/public-llm-benchmarks-vs-your-use-case — What MMLU and GPQA do not tell you, and how to read agentic benchmark footnotes
+- /blog/grounding-analytics-ai — Grounding: why an analytics AI should narrate retrieved data and never answer from memory
+- /blog/open-weights-exit-strategy — Open weights as vendor-lock-in insurance: pin the version, move hosts, or self-host
+- /blog/seal-ai-vs-bring-your-own-key — When to use the managed EU-only AI and when to bring your own provider key
+- /blog/three-questions-to-ask-seal-ai — Three worked examples of what to ask an analytics AI and how to verify the answer
+
 ## Blog (latest articles)
 - /blog — Full blog index
 - /blog/cookieless-analytics-for-ecommerce — How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
