@@ -25,6 +25,7 @@ export function organizationSchema() {
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
         name: ORG_NAME,
+        legalName: "Sealmetrics SL",
         url: pageHref(),
         logo: {
           "@type": "ImageObject",
@@ -43,7 +44,15 @@ export function organizationSchema() {
             url: pageHref("/about"),
           },
         ],
-        address: { "@type": "PostalAddress", addressCountry: "ES" },
+        vatID: "ESB70933239",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Carrer de Tirso de Molina, 36",
+          postalCode: "08940",
+          addressLocality: "Cornellà de Llobregat",
+          addressRegion: "Barcelona",
+          addressCountry: "ES",
+        },
         sameAs: [
           "https://www.linkedin.com/company/sealmetrics",
           "https://x.com/sealmetrics",
