@@ -4,7 +4,9 @@
  *   - URLs in sitemap but not in llms.txt (missing from AI surface)
  *   - URLs in llms.txt but not in sitemap (stale entries)
  *
- * Run after build: `node scripts/audit-llms-txt.mjs`. Non-zero exit if drift > 0.
+ * Wired into `postbuild`, so `npm run build` fails on any drift (missing or
+ * stale). Run standalone with `node scripts/audit-llms-txt.mjs` — it reads
+ * out/sitemap.xml, so it needs a build first.
  *
  * Why a linter, not auto-regeneration: llms.txt is editorial — each entry has
  * a hand-written description that AI engines lift verbatim. We want to surface
@@ -47,7 +49,15 @@ for (const u of missing) console.log(`  - ${u}`);
 console.log(`Stale in llms.txt (${stale.length}):`);
 for (const u of stale) console.log(`  - ${u}`);
 
-if (missing.length > 5 || stale.length > 5) {
-  console.error(`[audit-llms-txt] drift > 5 — please reconcile public/llms.txt`);
+const drift = missing.length + stale.length;
+if (drift > 0) {
+  console.error(
+    `\n[audit-llms-txt] ${drift} URL(s) drifted — reconcile public/llms.txt before shipping.\n` +
+      `  Missing: add a hand-written "- /route — description" line in the matching section.\n` +
+      `  Stale:   remove the line — or, if the route is a redirect stub or otherwise\n` +
+      `           shouldn't be crawled, add it to EXCLUDE in src/app/sitemap.ts instead.`
+  );
   process.exit(1);
 }
+
+console.log("[audit-llms-txt] 0 drift — llms.txt matches the sitemap.");

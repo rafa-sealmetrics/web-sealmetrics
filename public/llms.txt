@@ -23,12 +23,14 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /consentless-analytics — Legal-grade explainer of analytics without consent under GDPR Art. 6(1)(f) and ePrivacy
 
 ## Core pages
+- /why-sealmetrics — The case in one page: consent banners hide 40–60% of EU visits, tracking prevention erases conversions, and ROAS gets defended on what survived
 - /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
 - /how-it-works — Technical explanation of cookieless first-party server-side collection
 - /case-studies — Customer results and success stories
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
 - /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
+- /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no personal data, EU-hosted, and an AI that runs on European soil and never trains on your data
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
 - /demo — Request a personalized demo
@@ -71,13 +73,22 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /searchmetrics-vs-sealmetrics — SealMetrics is NOT Searchmetrics. Searchmetrics was a Berlin SEO/search-visibility platform acquired by Conductor in February 2023; searchmetrics.com now 301-redirects to conductor.com. Different company, different category — this page is a name disambiguation, not a vendor comparison.
 
 ## Open — transparency hub
-- /open — Public transparency hub: how we run the company, the product, and our compliance posture (PostHog-style numbered chapters, EN-only)
+Open is our public transparency hub: numbered chapters on how we run the company, the product, and our compliance posture. EN-only. The chapters below are the ones actually published — remaining chapters are still in draft and are deliberately not listed.
+
+- /open — Index of the transparency hub, organized in four parts: Why, How we measure, How we operate, Where we go
+- /open/why-we-exist — Chapter 1 (Manifesto): why European eCommerce ends up optimizing ad spend on top of 13% of its traffic, and what breaks when that gets normalized
+- /open/who-we-build-for — Chapter 2 (Audience): the operator we build for, the personas who push the change internally, and when we are not a fit
+- /open/what-complete-data-means — Chapter 3 (Definition): where the 13% comes from, sampling vs complete measurement, modeling vs measuring, and where SealMetrics sits
+- /open/architecture-and-performance — Chapter 5 (Infrastructure): where the pixel runs, the latency and client footprint it adds, how it scales, and what we don't measure
+- /open/gdpr-by-architecture — Chapter 6 (Compliance): how we meet GDPR, ePrivacy and Schrems II without creative legal interpretations — and what we explicitly do not claim
+- /open/how-we-price — Chapter 7 (Commercial): we charge for human events, not bots or AI agents; one architecture across plans; honest comparison against the enterprise tier we replace
+- /open/what-we-wont-do — Chapter 9 (Limits): no multi-touch attribution, no session reconstruction, no individual identification, no fingerprinting — why this is a position, not a limitation
+- /open/glossary — Chapter 11 (Reference): opinionated definitions of the terms used across Open, flagging where we use a word differently from the rest of the industry
 
 ## Customer case studies
 - /case-studies — All published case studies
 - /case-studies/palladium-hotel-group — Palladium Hotel Group: Toni Andújar (Digital & Direct Sales Director) on neutrality. 40% traffic with no attribution before, +165% Cost-per-Search on Display after
 - /case-studies/dreamplace-hotels — Dreamplace Hotels: Eduardo Martin (eCommerce) on paid-media reallocation. 15–20% more attributed sales, +30% more traffic vs Google Analytics
-- /case-studies/european-hotel-group — European hotel group (anonymized): EU-wide chain measuring 100% of bookings without a consent banner
 
 ## Role-specific pages
 - /for — Audiences and verticals index
@@ -166,6 +177,7 @@ Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistan
 - /glossary/data-loss-in-analytics — Data Loss in Analytics
 - /glossary/revenue-attribution — Revenue Attribution Explained
 - /glossary/gdpr-analytics-compliance — GDPR Analytics Compliance
+- /glossary/personal-data-in-analytics — Personal Data in Analytics: what makes an analytics dataset personal data under GDPR Art. 4(1), and why ePrivacy Art. 5(3) still applies when it isn't
 - /glossary/legitimate-interest-analytics — Legitimate Interest as a Legal Basis for Analytics
 - /glossary/eprivacy-directive — ePrivacy Directive Explained
 - /glossary/ad-blocker-analytics-impact — Ad Blocker Impact on Analytics
@@ -186,8 +198,14 @@ SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), 
 ## Spanish (ES) site
 SealMetrics is also available in Spanish. The Spanish surface mirrors the English site for core pages and persona/industry pages.
 
+Pillars (ES):
+- /es/complete-data — Datos completos: por qué la analítica incompleta produce decisiones equivocadas; el marco del 13%/87%
+- /es/cookieless-analytics — Analítica sin cookies explicada: qué es, por qué fallan las cookies en 2026, qué se mide y qué no
+- /es/consentless-analytics — Analítica sin consentimiento: la vía legal a la medición sin banner bajo RGPD y ePrivacy, con la exención CNIL y sus límites
+
 Core pages (ES):
 - /es/ — Homepage (ES)
+- /es/why-sealmetrics — Por qué SealMetrics: los banners ocultan 40–60% de las visitas UE y el ROAS se defiende sobre la fracción que sobrevivió
 - /es/product — Plataforma completa
 - /es/how-it-works — Cómo funciona la analítica sin cookies
 - /es/pricing — Precios
@@ -228,6 +246,7 @@ Comparisons (ES):
 - /es/vs/ga360 — SealMetrics vs GA360
 - /es/vs/adobe-analytics — SealMetrics vs Adobe Analytics
 - /es/vs/piwik-pro — SealMetrics vs Piwik PRO
+- /es/vs/matomo — SealMetrics vs Matomo: cookieless por diseño y gestionado, frente a cookies por defecto y coste real de self-hosting
 - /es/alternatives/google-analytics — Alternativas a Google Analytics
 
 Case studies (ES):
@@ -246,6 +265,26 @@ Blog (ES):
 - /es/blog/cookieless-analytics-explained — Analítica cookieless explicada: cómo medir sin cookies
 - /es/blog/consent-banner-impact-on-analytics — Cómo los banners de consentimiento destruyen tus datos
 - /es/blog/ga4-data-sampling-problem — Muestreo de datos en GA4: por qué tus números están mal
+- /es/blog/ga4-google-ads-separation — GA4 y Google Ads: Google elimina Google Signals como control de datos en junio 2026; impacto y riesgo legal para anunciantes europeos
+
+Seal AI (ES) — la serie sobre IA privada para analítica:
+- /es/blog/meet-seal-ai — Qué es Seal AI, cómo funciona y por qué es privada por arquitectura y no por promesa
+- /es/blog/residency-is-not-sovereignty — Residencia no es soberanía: la pregunta que hacerle a tu proveedor de analítica con IA
+- /es/blog/best-llm-for-data-analytics — El mejor LLM para analítica no es el que puntúa más alto: por qué mandan el tool-calling y el grounding
+- /es/blog/audit-your-analytics-ai-privacy — Checklist de 5 preguntas para auditar si la IA de tu analítica es realmente privada
+- /es/blog/analytics-if-data-privacy-framework-falls — Qué se rompe en tu stack de analítica si cae el Marco de Privacidad de Datos UE-EE. UU.
+- /es/blog/the-prompt-is-born-clean — El prompt nace limpio: sin consentimiento no hay dato personal que enviar al modelo
+- /es/blog/eu-ai-act-for-marketers — El Reglamento Europeo de IA sin jerga: proveedor vs responsable del despliegue y la obligación de transparencia del Art. 50
+- /es/blog/we-changed-our-ai-model-twice — Cambiamos de modelo dos veces en tres semanas: el linaje y el modo de fallo de cada uno
+- /es/blog/how-we-benchmark-our-own-ai — Nuestra metodología de evaluación de LLM: ground truth sobre datos reales y publicación de las tandas descartadas
+- /es/blog/our-ai-got-it-wrong-in-production — Nuestra IA se equivocó en producción y lo cazó nuestro propio test: tres reglas para salida estructurada de LLM
+- /es/blog/prompt-injection-is-language-dependent — La misma inyección se ignoró en español y se obedeció en inglés: por qué el testing de seguridad debe ser multilingüe
+- /es/blog/rival-model-as-judge — Por qué dejamos que un modelo rival puntúe nuestro benchmark: evitar el sesgo de autopreferencia
+- /es/blog/public-llm-benchmarks-vs-your-use-case — Lo que MMLU y GPQA no te dicen, y cómo leer las notas al pie de los benchmarks agénticos
+- /es/blog/grounding-analytics-ai — Grounding: por qué una IA de analítica debe consultar el dato y nunca responder de memoria
+- /es/blog/open-weights-exit-strategy — Pesos abiertos como seguro contra el lock-in: fijar la versión, cambiar de host o autoalojar
+- /es/blog/seal-ai-vs-bring-your-own-key — Seal AI o clave propia (BYOK): cuándo usar cada opción
+- /es/blog/three-questions-to-ask-seal-ai — Tres preguntas que hacerle hoy a tu IA de analítica y cómo verificar la respuesta
 
 Glossary (ES):
 - /es/glossary — Glosario completo
