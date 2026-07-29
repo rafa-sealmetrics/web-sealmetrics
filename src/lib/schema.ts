@@ -412,6 +412,34 @@ export function speakableWebPageSchema(props: {
   };
 }
 
+/**
+ * DefinedTermSet carrying every glossary definition inline, so AI engines can
+ * lift a definition from the index without following through to a term page.
+ * Terms without a dedicated page are included — the definition is the value,
+ * the URL is optional.
+ */
+export function definedTermSetSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+  terms: { term: string; shortDefinition: string; slug: string; hasPage?: boolean }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: props.name,
+    description: props.description,
+    url: pageHref(props.url),
+    hasDefinedTerm: props.terms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.term,
+      description: t.shortDefinition,
+      inDefinedTermSet: pageHref(props.url),
+      ...(t.hasPage ? { url: pageHref(`/glossary/${t.slug}`) } : {}),
+    })),
+  };
+}
+
 export function itemListSchema(props: {
   name: string;
   description: string;

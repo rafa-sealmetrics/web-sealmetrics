@@ -24,6 +24,15 @@ export const metadata: Metadata = {
 
 const categories = [...new Set(glossaryTerms.map((t) => t.category))];
 
+/** Glossary terms that have a Spanish page. The rest link to the English term. */
+const ES_TERM_PAGES = new Set([
+  "cookieless-analytics",
+  "data-loss-in-analytics",
+  "gdpr-analytics-compliance",
+  "multi-touch-attribution",
+  "revenue-attribution",
+]);
+
 export default function Page() {
   return (
     <>
@@ -37,7 +46,11 @@ export default function Page() {
           url: "/es/glossary",
           items: glossaryTerms.map((t) => ({
             name: t.term,
-            url: `https://sealmetrics.com/es/glossary/${t.slug}`,
+            // Only 5 terms have a Spanish page. Emitting a URL for the rest
+            // pointed the schema at pages that do not exist.
+            ...(ES_TERM_PAGES.has(t.slug)
+              ? { url: `https://sealmetrics.com/es/glossary/${t.slug}` }
+              : {}),
           })),
         })}
       />
@@ -63,16 +76,28 @@ export default function Page() {
             <div key={category} className="mb-16 last:mb-0">
               <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-ink-soft mb-6">{category}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {glossaryTerms.filter((t) => t.category === category).map((term) => (
-                  <Link
-                    key={term.slug}
-                    href={`/glossary/${term.slug}`}
-                    className="block p-5 bg-white border border-warm-100 rounded-xl no-underline group transition-all hover:border-warm-200 hover:-translate-y-0.5"
-                  >
-                    <h3 className="text-[16px] font-semibold tracking-[-0.015em] text-ink mb-2 group-hover:text-brand transition-colors">{term.term}</h3>
-                    <p className="text-[13.5px] leading-[1.5] text-ink-soft">{term.shortDefinition}</p>
-                  </Link>
-                ))}
+                {glossaryTerms.filter((t) => t.category === category).map((term) => {
+                  const body = (
+                    <>
+                      <h3 className="text-[16px] font-semibold tracking-[-0.015em] text-ink mb-2 group-hover:text-brand transition-colors">{term.term}</h3>
+                      <p className="text-[13.5px] leading-[1.5] text-ink-soft">{term.shortDefinition}</p>
+                    </>
+                  );
+                  // Index-only entries have no term page to link to.
+                  return term.hasPage ? (
+                    <Link
+                      key={term.slug}
+                      href={`/glossary/${term.slug}`}
+                      className="block p-5 bg-white border border-warm-100 rounded-xl no-underline group transition-all hover:border-warm-200 hover:-translate-y-0.5"
+                    >
+                      {body}
+                    </Link>
+                  ) : (
+                    <div key={term.slug} className="block p-5 bg-warm-white border border-warm-100 rounded-xl group">
+                      {body}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}

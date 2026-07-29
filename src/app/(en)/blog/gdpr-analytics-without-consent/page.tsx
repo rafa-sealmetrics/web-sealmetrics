@@ -71,7 +71,14 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p>
             Understanding how this works requires separating two
             distinct legal frameworks that are often conflated: GDPR
-            (which governs personal data processing) and the ePrivacy
+            (which governs{" "}
+            <Link
+              href="/glossary/personal-data-in-analytics"
+              className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+            >
+              personal data
+            </Link>{" "}
+            processing) and the ePrivacy
             Directive (which governs access to user devices). The full
             framework — including country-by-country authority guidance —
             lives on the{" "}
