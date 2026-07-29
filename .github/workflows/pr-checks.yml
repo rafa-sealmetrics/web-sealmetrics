@@ -1,0 +1,55 @@
+name: PR checks
+
+# Deploy runs only on push to main, so until this existed nothing built a
+# pull request. A syntax error (c84633a) and two months of llms.txt drift both
+# reached main that way — the deploy was the first thing to notice, after merge.
+#
+# This runs the same `npm run build` the deploy runs, so a PR that cannot build
+# is visible before it is merged rather than after. That includes the postbuild
+# llms.txt drift gate (scripts/audit-llms-txt.mjs).
+
+on:
+  # No `branches:` filter on purpose. That filter matches the *base* branch, so
+  # it would skip stacked PRs (one feature branch based on another) — exactly
+  # the PRs most likely to be built on something unverified.
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A new push to the same PR supersedes the previous run.
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Mirrors the deploy build exactly: prebuild (blog dates, OG images,
+      # image optimization) → next build → postbuild (llms.txt drift gate).
+      # Deliberately not `next build` alone, so the gate runs here too.
+      - run: npm run build
+
+      # prebuild regenerates src/lib/content/blog-modified.json. It is a
+      # tracked file, so a stale committed copy shows up as a dirty tree here.
+      # Warn only: the deploy regenerates it the same way, so this does not
+      # affect what ships — but a large diff is a signal worth seeing.
+      - name: Check for build-modified tracked files
+        if: always()
+        run: |
+          if ! git diff --quiet; then
+            echo "::warning::The build modified tracked files. Diff follows."
+            git diff --stat
+          fi
