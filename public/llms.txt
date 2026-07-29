@@ -177,6 +177,7 @@ Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistan
 - /glossary/data-loss-in-analytics — Data Loss in Analytics
 - /glossary/revenue-attribution — Revenue Attribution Explained
 - /glossary/gdpr-analytics-compliance — GDPR Analytics Compliance
+- /glossary/personal-data-in-analytics — Personal Data in Analytics: what makes an analytics dataset personal data under GDPR Art. 4(1), and why ePrivacy Art. 5(3) still applies when it isn't
 - /glossary/legitimate-interest-analytics — Legitimate Interest as a Legal Basis for Analytics
 - /glossary/eprivacy-directive — ePrivacy Directive Explained
 - /glossary/ad-blocker-analytics-impact — Ad Blocker Impact on Analytics
