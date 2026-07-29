@@ -8,7 +8,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 export const metadata: Metadata = {
   title: "Privacy end to end — SealMetrics",
   description:
-    "Private from the first hit to private-AI processing. No cookies, no personal data, EU-hosted — and an AI that runs on European soil and never trains on your data.",
+    "Private from the first hit to private-AI processing. No cookies, no personal data, EU-hosted — and an AI that runs in Europe and never trains on your data.",
   openGraph: {
     title: "Privacy end to end — SealMetrics",
     description:

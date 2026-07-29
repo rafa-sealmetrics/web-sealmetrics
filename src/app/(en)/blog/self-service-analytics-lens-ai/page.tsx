@@ -9,7 +9,7 @@ import { RelatedReading } from "@/components/ui/RelatedReading";
 export const metadata: Metadata = {
   title: "How SealMetrics Enables Self-Service Analytics",
   description:
-    "Pointing an LLM at your data is the easy part. Here is the infrastructure that makes its answers trustworthy — complete cookieless data plus the SealMetrics MCP, shipped as LENS AI.",
+    "Pointing an LLM at your data is easy. The hard part is trustworthy answers: complete cookieless data plus the SealMetrics MCP, shipped as LENS AI.",
   openGraph: {
     title: "What It Takes to Make Self-Service Analytics Actually Work",
     description:

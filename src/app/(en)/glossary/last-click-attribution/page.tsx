@@ -9,7 +9,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "What Is Last-Click Attribution? — SealMetrics Glossary",
   description:
-    "Last-click attribution credits 100% of a conversion to the final touchpoint observed before it. How it differs from multi-touch and why SealMetrics applies it to 100% of data.",
+    "Last-click attribution credits a conversion to the final touchpoint before it. How it differs from multi-touch and why SealMetrics uses it on 100% of data.",
   openGraph: {
     title: "What Is Last-Click Attribution?",
     description: "Last-click attribution explained: how it differs from multi-touch, why it scales, and what it deliberately doesn't do.",

@@ -5,6 +5,7 @@ import { TldrBlock } from "@/components/ui/TldrBlock";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import {
   VsGA4HeroV3,
   VsGA4GapStatsV3,
@@ -75,6 +76,18 @@ export default function VsGA4Page() {
         ]}
       />
       <LogosStrip />
+      <section className="bg-warm-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <QuickAnswer>
+            <p>
+              SealMetrics vs Google Analytics 4 (GA4): GA4 is Google&rsquo;s free analytics platform — US-hosted, cookie-based, sampled at scale, and dependent on a cookie consent banner across the EU. SealMetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without consent dependency and attributes each conversion last-click on observed events, from &euro;499/month billed annually.
+            </p>
+            <p>
+              For European eCommerce the gap is structural: GA4 loses 40&ndash;60% of EU traffic to consent rejection and reconstructs it with statistical modelling, while Safari&rsquo;s ITP and ad blockers erode more. SealMetrics measures the same traffic with a lightweight first-party pixel — no cookies, no sampling, no Schrems II review — so the revenue in the report matches Shopify. Most teams run both side by side for 30 days, reconcile against their CRM, then move revenue decisions to SealMetrics while keeping GA4 as a Google Ads conduit.
+            </p>
+          </QuickAnswer>
+        </div>
+      </section>
       <VsGA4GapStatsV3 locale="en" />
       <DashboardPatternsV3 locale="en" />
       <VsGA4TableV3 locale="en" />
