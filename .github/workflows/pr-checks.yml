@@ -28,9 +28,11 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # Action majors kept in lockstep with deploy.yml — this workflow is only
+      # a useful pre-merge signal if it builds the way the deploy builds.
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
