@@ -88,6 +88,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     related: ["consent-management-platform", "analytics-data-residency", "cookieless-analytics", "first-party-data-collection"],
   },
   {
+    slug: "personal-data-in-analytics",
+    term: "Personal Data in Analytics",
+    shortDefinition:
+      "Information in an analytics dataset relating to an identified or identifiable person under GDPR Art. 4(1). GDPR applies only to personal data, so analytics processing none falls outside its scope — but ePrivacy Art. 5(3) still governs storage on the device either way.",
+    category: "Privacy",
+    related: ["gdpr-analytics-compliance", "eprivacy-directive", "cookieless-analytics", "legitimate-interest-analytics"],
+  },
+  {
     slug: "ad-blocker-analytics-impact",
     term: "Ad Blocker Impact on Analytics",
     shortDefinition:
