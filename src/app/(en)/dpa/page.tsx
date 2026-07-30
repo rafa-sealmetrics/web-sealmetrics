@@ -88,8 +88,11 @@ export default function DpaPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Country-level geolocation (IP address is used for derivation
-                only and immediately discarded)
+                Country-level geolocation derived from the visitor&rsquo;s
+                browser timezone (Intl.DateTimeFormat), not from the IP
+                address. For accounts with bot/agent detection enabled, an
+                additional IP-based country lookup is performed transiently as
+                a detection signal; the IP address is never stored
               </li>
             </ul>
             <p className="mt-3">
@@ -143,10 +146,11 @@ export default function DpaPage() {
               5. Data retention and deletion
             </h2>
             <p>
-              Analytics data is retained for the duration of the service
-              agreement plus 30 days. Upon termination or request, all data is
-              permanently deleted within 30 days. The Client may export data at
-              any time via the API or BigQuery integration prior to deletion.
+              Analytics data is retained for a maximum of 24 months, enforced
+              automatically at the database level (TTL). Upon termination of
+              the service agreement or upon request, all data is permanently
+              deleted within 30 days. The Client may export data at any time
+              via the API or BigQuery integration prior to deletion.
             </p>
           </div>
 
