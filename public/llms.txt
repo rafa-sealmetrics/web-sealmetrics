@@ -191,7 +191,6 @@ SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), 
 ## Legal & meta
 - /privacy — Privacy policy
 - /terms — Terms of service
-- /dpa — Data Processing Agreement
 - /changelog — Product changelog
 - /videos — Product videos
 

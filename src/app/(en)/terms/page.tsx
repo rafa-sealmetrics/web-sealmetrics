@@ -193,7 +193,6 @@ export default function TermsPage() {
 
           <div className="mt-12 pt-8 border-t border-warm-100 flex flex-wrap gap-6 text-[0.85rem]">
             <Link href="/privacy" className="text-text-secondary no-underline hover:text-text-primary transition-colors">Privacy Policy</Link>
-            <Link href="/dpa" className="text-text-secondary no-underline hover:text-text-primary transition-colors">Data Processing Agreement</Link>
             <Link href="/security" className="text-text-secondary no-underline hover:text-text-primary transition-colors">Security Architecture</Link>
           </div>
         </div>

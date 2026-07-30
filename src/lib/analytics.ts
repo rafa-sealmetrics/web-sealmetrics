@@ -178,7 +178,7 @@ export function getContentGroup(pathname: string): string {
   if (path.startsWith("/glossary")) return "glossary";
   if (path === "/videos") return "videos";
   if (path === "/changelog") return "changelog";
-  if (path === "/privacy" || path === "/terms" || path === "/dpa") return "legal";
+  if (path === "/privacy" || path === "/terms") return "legal";
   // Landings de campaña (tráfico de pago). Agrupadas para poder aislar su
   // embudo del resto del site sin tocar esto por cada landing nueva.
   if (path.startsWith("/roas-real") || path.startsWith("/real-roas")) return "landing";
