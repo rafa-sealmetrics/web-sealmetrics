@@ -30,6 +30,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
 - /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
+- /trust — Trust Center: index of Sealmetrics legal and security documentation — public documents, request-only assessments, and change notifications
 - /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no personal data, EU-hosted, and an AI that runs on European soil and never trains on your data
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
@@ -209,6 +210,7 @@ Core pages (ES):
 - /es/how-it-works — Cómo funciona la analítica sin cookies
 - /es/pricing — Precios
 - /es/security — Seguridad y cumplimiento
+- /es/trust — Centro de confianza: documentación legal y de seguridad de Sealmetrics
 - /es/terms — Términos del servicio
 - /es/growth-calculator — Calculadora de crecimiento
 - /es/demo — Solicitar demo
