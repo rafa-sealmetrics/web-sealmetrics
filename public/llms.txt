@@ -209,6 +209,7 @@ Core pages (ES):
 - /es/how-it-works — Cómo funciona la analítica sin cookies
 - /es/pricing — Precios
 - /es/security — Seguridad y cumplimiento
+- /es/terms — Términos del servicio
 - /es/growth-calculator — Calculadora de crecimiento
 - /es/demo — Solicitar demo
 
