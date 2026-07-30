@@ -1,7 +1,3 @@
-import blogModifiedRaw from "./blog-modified.json";
-
-const BLOG_MODIFIED: Record<string, string> = blogModifiedRaw;
-
 export interface BlogAuthor {
   name: string;
   url?: string;
@@ -30,11 +26,6 @@ export interface BlogPost {
   author?: BlogAuthor;
   draft?: boolean;
   related?: string[];
-}
-
-/** Returns the ISO date the blog post was last touched in git, or `fallback` if not tracked. */
-export function getBlogDateModified(slug: string, fallback: string): string {
-  return BLOG_MODIFIED[slug] ?? fallback;
 }
 
 export const blogPosts: BlogPost[] = [
