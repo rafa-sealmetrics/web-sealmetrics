@@ -1,4 +1,5 @@
 import { Picture } from "@/components/ui/Picture";
+import { ClientLogosGrid } from "./ClientLogos";
 import Link from "next/link";
 import { HeroDashboard } from "./HeroDashboard";
 import { PRICING } from "@/lib/content/pricing";
@@ -81,31 +82,8 @@ export function HeroV3() {
   );
 }
 
-/* ============================================
-   LOGOS STRIP · reusable
-   Top row (first 5) visually larger — flagship clients.
-   Bottom row slightly smaller.
-   ============================================ */
-// Base logo height; per-logo `h` overrides it.
-// First row (flagship) renders 50% larger; Fundación Bankinter's faint
-// wordmark needs double height to read at equal visual weight.
-const LOGO_H = 40;
-const LOGOS: { src: string; alt: string; h?: number }[] = [
-  // First row — flagship, 50% larger
-  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 60 },
-  { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 60 },
-  { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 60 },
-  { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 60 },
-  // Following rows — base height
-  { src: "/logos/clients/desigual-dark.svg", alt: "Desigual" },
-  { src: "/logos/clients/unicef.svg", alt: "UNICEF" },
-  { src: "/logos/clients/casabatllo.png", alt: "Casa Batlló" },
-  { src: "/logos/clients/juguettos.png", alt: "Juguettos" },
-  { src: "/logos/clients/3cat.png", alt: "3Cat" },
-  { src: "/logos/clients/fundacion-bankinter.png", alt: "Fundación Bankinter", h: 80 },
-  { src: "/logos/clients/dormideo.png", alt: "Dormideo" },
-  { src: "/logos/clients/incapto.svg", alt: "Incapto" },
-];
+/* La lista de clientes y la rejilla viven en ClientLogos.tsx: una sola
+   fuente para ES e EN, que antes tenían censos distintos. */
 
 export function LogosStrip() {
   return (
@@ -122,7 +100,7 @@ export function LogosStrip() {
             <b className="text-ink font-semibold">Dreamplace Hotels</b> recovered <b className="text-ink font-semibold">+30% more traffic</b> vs GA4 and closed a <b className="text-ink font-semibold">15–20% gap</b> in sales attribution against their CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recovered <b className="text-ink font-semibold">35% of unattributed bookings</b> and improved Display CPS by <b className="text-ink font-semibold">+165%</b>.
           </p>
         </div>
-        <LogosGrid />
+        <ClientLogosGrid />
       </div>
     </section>
   );
@@ -137,36 +115,12 @@ export function LogosSecondary() {
         >
           Joining <em className="italic-accent">hotel groups, DTC brands and media companies</em> — hundreds of European teams measuring what actually happened.
         </p>
-        <LogosGrid />
+        <ClientLogosGrid />
       </div>
     </section>
   );
 }
 
-function LogosGrid() {
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-10 gap-y-12 items-center justify-items-center">
-      {LOGOS.map((logo) => {
-        const h = logo.h ?? LOGO_H;
-        return (
-          <div
-            key={logo.alt}
-            className="flex items-center justify-center min-h-20 transition-transform hover:scale-105"
-          >
-            <Picture
-              src={logo.src}
-              alt={logo.alt}
-              width={220}
-              height={h}
-              className="object-contain w-auto"
-              style={{ height: `${h}px`, maxWidth: "200px" }}
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 /* ============================================
    VALUE PROP · 4-minute strip

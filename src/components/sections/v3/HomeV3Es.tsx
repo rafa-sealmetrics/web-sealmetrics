@@ -1,4 +1,4 @@
-import { Picture } from "@/components/ui/Picture";
+import { ClientLogosGrid } from "./ClientLogos";
 import Link from "next/link";
 import { HeroDashboardEs } from "./HeroDashboardEs";
 
@@ -48,21 +48,8 @@ export function HeroV3Es() {
   );
 }
 
-/* LOGOS — top row flagship (larger), bottom row secondary */
-const LOGOS: { src: string; alt: string; h: number }[] = [
-  // Top row — flagship
-  { src: "/logos/clients/palladium-dark.svg", alt: "Palladium Hotel Group", h: 50 },
-  { src: "/logos/clients/dreamplace.svg", alt: "Dreamplace Hotels", h: 54 },
-  { src: "/logos/clients/acciona.svg", alt: "Acciona", h: 44 },
-  { src: "/logos/clients/crocs.svg", alt: "Crocs", h: 38 },
-  { src: "/logos/clients/desigual-dark.svg", alt: "Desigual", h: 38 },
-  // Bottom row
-  { src: "/logos/clients/unicef.svg", alt: "UNICEF", h: 36 },
-  { src: "/logos/clients/casabatllo.png", alt: "Casa Batlló", h: 44 },
-  { src: "/logos/clients/juguettos.png", alt: "Juguettos", h: 38 },
-  { src: "/logos/clients/3cat.png", alt: "3Cat", h: 36 },
-  { src: "/logos/clients/fundacion-bankinter.png", alt: "Fundación Bankinter", h: 80 },
-];
+/* La lista de clientes y la rejilla viven en ClientLogos.tsx: una sola
+   fuente para ES e EN, que antes tenían censos distintos. */
 
 export function LogosStripEs() {
   return (
@@ -79,7 +66,7 @@ export function LogosStripEs() {
             Equipos con <b className="text-ink">+5M€</b> anuales en paid media
           </p>
         </div>
-        <LogosGrid />
+        <ClientLogosGrid />
       </div>
     </section>
   );
@@ -94,39 +81,12 @@ export function LogosSecondaryEs() {
         >
           Uniéndote a <em className="italic-accent">grupos hoteleros, marcas DTC y medios</em> — 2.000+ equipos europeos que miden lo que realmente ocurrió.
         </p>
-        <LogosGrid />
+        <ClientLogosGrid />
       </div>
     </section>
   );
 }
 
-function LogosGrid() {
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-10 gap-y-12 items-center justify-items-center">
-      {LOGOS.map((logo, i) => {
-        const isTop = i < 5;
-        return (
-          <div
-            key={logo.alt}
-            className={`flex items-center justify-center transition-transform hover:scale-105 ${
-              isTop ? "min-h-20" : "min-h-12"
-            }`}
-          >
-            <Picture
-              src={logo.src}
-              alt={logo.alt}
-              width={isTop ? 200 : 200}
-              height={logo.h}
-              className="object-contain w-auto"
-              style={{ height: `${logo.h}px`, maxWidth: "220px" }}
-
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 /* VALUE PROP */
 export function ValueProp4MinEs() {
