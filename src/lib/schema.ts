@@ -1,7 +1,4 @@
 import { PRICING } from "./content/pricing";
-import blogModifiedRaw from "./content/blog-modified.json";
-
-const BLOG_MODIFIED: Record<string, string> = blogModifiedRaw;
 
 const SITE_URL = "https://sealmetrics.com";
 const ORG_NAME = "SealMetrics";
@@ -234,7 +231,6 @@ export function articleSchema(props: {
   author?: { name: string; url?: string; jobTitle?: string };
 }) {
   const blogSlugMatch = props.url.match(/^\/(?:es\/)?blog\/([^/]+)/);
-  const autoModified = blogSlugMatch ? BLOG_MODIFIED[blogSlugMatch[1]] : undefined;
   const autoBlogOg = blogSlugMatch ? `${SITE_URL}/og/blog/${blogSlugMatch[1]}.png` : undefined;
   return {
     "@context": "https://schema.org",
@@ -242,7 +238,10 @@ export function articleSchema(props: {
     headline: props.headline,
     description: props.description,
     datePublished: props.datePublished,
-    dateModified: props.dateModified || autoModified || props.datePublished,
+    // Author-declared only. A post that omits it falls back to its own
+    // publication date rather than to anything git-derived — a mechanical
+    // sweep must never be able to bump a freshness claim. See CLAUDE.md.
+    dateModified: props.dateModified || props.datePublished,
     url: pageHref(props.url),
     mainEntityOfPage: {
       "@type": "WebPage",
