@@ -103,12 +103,12 @@
     },
     "public/og-image.avif": {
       "source": "public/og-image.png",
-      "sourceHash": "f5eec95b8a9d3cd53f8a888fd0b384a5d7e795c5bb49f03ad4f1dfc53c74f5ba",
+      "sourceHash": "79d7af0f9aff7177e00a8a348a8630bf12ef7a72e7ac08a8df2549dca6a5755c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og-image.webp": {
       "source": "public/og-image.png",
-      "sourceHash": "f5eec95b8a9d3cd53f8a888fd0b384a5d7e795c5bb49f03ad4f1dfc53c74f5ba",
+      "sourceHash": "79d7af0f9aff7177e00a8a348a8630bf12ef7a72e7ac08a8df2549dca6a5755c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/ai-agent-traffic-analytics.avif": {
