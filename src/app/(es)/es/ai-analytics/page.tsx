@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
+import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
@@ -216,7 +216,7 @@ export default function AiAnalyticsEsPage() {
         ]}
       />
 
-      <LogosStrip />
+      <LogosStripEs />
 
       {/* SEIS PILARES */}
       <section className="py-24 border-t border-warm-100 bg-white">

@@ -10,7 +10,6 @@ import {
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import {
-  LogosStrip,
   ProblemSection,
   FeaturedCase,
   SolutionStepsPLG,
@@ -24,7 +23,7 @@ import { FeatureLensAIV3Es } from "@/components/sections/v3/ProductV3SectionsEs"
 import { FaqV3Es } from "@/components/sections/v3/FaqV3Es";
 import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
-import { HeroV3Es } from "@/components/sections/v3/HomeV3Es";
+import { HeroV3Es, LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 
 export const metadata: Metadata = {
   title: "SealMetrics — Analítica sin consentimiento para eCommerce",
@@ -90,7 +89,7 @@ export default function HomeEs() {
         url: "/es",
       })} />
       <HeroV3Es />
-      <LogosStrip />
+      <LogosStripEs />
       <ProblemSection locale="es" />
       <BlindnessCalculator locale="es" />
       <ComparatorGA4Es />
