@@ -1326,13 +1326,6 @@ function ChapterSixBody() {
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
         >
           /security
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/dpa"
-          className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
-        >
-          /dpa
         </Link>
         ; this is the reasoning behind them.
       </p>

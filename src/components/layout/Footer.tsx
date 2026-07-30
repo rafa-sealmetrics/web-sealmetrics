@@ -64,7 +64,6 @@ function getFooterColumns(t: ReturnType<typeof getDictionary>["footer"], locale:
         { label: t.about, href: localizedHref("/about", locale) },
         { label: t.privacy, href: localizedHref("/privacy", locale) },
         { label: t.terms, href: localizedHref("/terms", locale) },
-        { label: t.dpa, href: localizedHref("/dpa", locale) },
       ],
     },
   ];

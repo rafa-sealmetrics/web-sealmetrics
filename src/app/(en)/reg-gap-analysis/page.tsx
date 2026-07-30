@@ -320,11 +320,8 @@ export default function RegGapAnalysisPage() {
               <Link href="/security" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
                 security &amp; compliance
               </Link>{" "}
-              posture (EU hosting in Dublin, Schrems II, the TPSR package), the{" "}
-              <Link href="/dpa" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
-                DPA
-              </Link>{" "}
-              included as standard, and the underlying{" "}
+              posture (EU hosting in Dublin, Schrems II, the TPSR package), the DPA included as standard, and
+              the underlying{" "}
               <Link href="/cookieless-analytics" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
                 cookieless architecture
               </Link>{" "}
