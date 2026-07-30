@@ -11,6 +11,7 @@ const translatedPaths = new Set([
   "/demo-access",
   "/security",
   "/trust",
+  "/dpa",
   "/growth-calculator",
   "/data-loss-calculator",
   "/about",
