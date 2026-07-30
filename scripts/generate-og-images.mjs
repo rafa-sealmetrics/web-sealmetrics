@@ -174,12 +174,132 @@ function ogTemplate({ eyebrow, title }) {
   };
 }
 
-async function renderOg({ outFile, eyebrow, title, font }) {
+/**
+ * Site-wide default card (public/og-image.png), used by ~125 pages that do not
+ * have a per-page OG image. Kept as its own template because it carries a blurb
+ * and a stats row that the per-page cards do not — extending ogTemplate would
+ * have put the per-page renders at risk for no gain.
+ *
+ * The price lives here rather than in a hand-made raster: it had drifted to a
+ * tier that no longer exists (€199 against a real entry price of €499), and a
+ * baked-in figure nobody can grep is exactly how that happens.
+ */
+function ogSiteTemplate({ eyebrow, title, blurb, stats, note }) {
+  const text = (children, style) => ({ type: "div", props: { style, children } });
+  return {
+    type: "div",
+    props: {
+      style: {
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: "72px 88px",
+        backgroundColor: "#FAFAF7",
+        fontFamily: "Onest",
+      },
+      children: [
+        {
+          type: "div",
+          props: {
+            style: { display: "flex", flexDirection: "column" },
+            children: [
+              text(eyebrow, {
+                fontSize: 20,
+                fontWeight: 700,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "#6B6B5E",
+              }),
+              text(title, {
+                fontSize: 62,
+                fontWeight: 700,
+                letterSpacing: "-0.03em",
+                color: "#0E0E0C",
+                lineHeight: 1.06,
+                marginTop: 26,
+                maxWidth: 900,
+              }),
+              text(blurb, {
+                fontSize: 24,
+                color: "#6B6B5E",
+                lineHeight: 1.45,
+                marginTop: 26,
+                maxWidth: 860,
+              }),
+            ],
+          },
+        },
+        {
+          type: "div",
+          props: {
+            style: { display: "flex", flexDirection: "column" },
+            children: [
+              {
+                type: "div",
+                props: {
+                  style: { display: "flex", gap: "72px" },
+                  children: stats.map((s) => ({
+                    type: "div",
+                    props: {
+                      style: { display: "flex", flexDirection: "column" },
+                      children: [
+                        text(s.value, {
+                          fontSize: 44,
+                          fontWeight: 700,
+                          letterSpacing: "-0.03em",
+                          color: "#0E0E0C",
+                        }),
+                        text(s.label, {
+                          fontSize: 17,
+                          fontWeight: 700,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                          color: "#6B6B5E",
+                          marginTop: 6,
+                        }),
+                      ],
+                    },
+                  })),
+                },
+              },
+              {
+                type: "div",
+                props: {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    borderTop: "1px solid #E4E3DE",
+                    marginTop: 34,
+                    paddingTop: 26,
+                  },
+                  children: [
+                    text("SealMetrics", {
+                      fontSize: 26,
+                      fontWeight: 700,
+                      color: "#0E0E0C",
+                      letterSpacing: "-0.01em",
+                    }),
+                    text(note, { fontSize: 20, color: "#6B6B5E", letterSpacing: "0.02em" }),
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  };
+}
+
+async function renderTemplate({ outFile, node, font }) {
   if (existsSync(outFile)) {
     const m = statSync(outFile).mtimeMs;
     if (m >= scriptMtime) return false;
   }
-  const svg = await satori(ogTemplate({ eyebrow, title }), {
+  const svg = await satori(node, {
     width: 1200,
     height: 630,
     fonts: [{ name: "Onest", data: font, weight: 700, style: "normal" }],
@@ -187,6 +307,10 @@ async function renderOg({ outFile, eyebrow, title, font }) {
   const png = new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng();
   writeFileSync(outFile, png);
   return true;
+}
+
+async function renderOg({ outFile, eyebrow, title, font }) {
+  return renderTemplate({ outFile, node: ogTemplate({ eyebrow, title }), font });
 }
 
 const font = await ensureFont();
@@ -197,6 +321,29 @@ if (!font) {
 
 let generated = 0;
 let skipped = 0;
+
+// Site-wide default card. Copy kept as it was apart from the price (€199 → €499,
+// the real entry plan) and the eCommerce capitalisation the house style uses.
+{
+  const out = path.join(repoRoot, "public/og-image.png");
+  const made = await renderTemplate({
+    outFile: out,
+    node: ogSiteTemplate({
+      eyebrow: "sealmetrics.com",
+      title: "Decision Intelligence for eCommerce",
+      blurb:
+        "Cookieless analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance.",
+      stats: [
+        { value: "100%", label: "Data capture" },
+        { value: "0", label: "Cookies used" },
+        { value: "EU", label: "Data residency" },
+      ],
+      note: "Enterprise analytics from €499/mo",
+    }),
+    font,
+  });
+  if (made) generated++; else skipped++;
+}
 
 // Blog
 for (const post of parseBlogPosts()) {
