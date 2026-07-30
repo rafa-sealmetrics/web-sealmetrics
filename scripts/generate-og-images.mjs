@@ -322,17 +322,20 @@ if (!font) {
 let generated = 0;
 let skipped = 0;
 
-// Site-wide default card. Copy kept as it was apart from the price (€199 → €499,
-// the real entry plan) and the eCommerce capitalisation the house style uses.
+// Site-wide default card. Copy tracks the live home hero (HeroD in
+// HomeDSections.tsx) rather than being written here: the card had drifted to
+// "Decision Intelligence for Ecommerce", which predates the complete-data
+// repositioning, and a social preview quoting a headline the site no longer
+// uses is the same failure mode as the €199 price it also carried.
 {
   const out = path.join(repoRoot, "public/og-image.png");
   const made = await renderTemplate({
     outFile: out,
     node: ogSiteTemplate({
-      eyebrow: "sealmetrics.com",
-      title: "Decision Intelligence for eCommerce",
+      eyebrow: "eCommerce analytics",
+      title: "See 100% of your sales — the revenue GA4 can’t.",
       blurb:
-        "Cookieless analytics that captures 100% of your traffic. No consent banners, no data loss, full GDPR compliance.",
+        "Measure every visit and every sale — no cookies, no consent banner, no 40–60% blind spot.",
       stats: [
         { value: "100%", label: "Data capture" },
         { value: "0", label: "Cookies used" },
