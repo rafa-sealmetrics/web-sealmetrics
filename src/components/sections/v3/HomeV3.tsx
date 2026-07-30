@@ -1,86 +1,9 @@
 import { Picture } from "@/components/ui/Picture";
 import { ClientLogosGrid } from "./ClientLogos";
 import Link from "next/link";
-import { HeroDashboard } from "./HeroDashboard";
 import { PRICING } from "@/lib/content/pricing";
 import { DualCTA } from "@/components/homepage/DualCTA";
 import { AgenticPlanBand } from "@/components/sections/v3/AgenticPlanV3";
-
-/* ============================================
-   HERO · V3 centered with dashboard
-   ============================================ */
-export function HeroV3() {
-  return (
-    <section data-hero className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-0">
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center pb-16">
-        <div className="inline-flex items-center gap-3 bg-white border border-warm-100 rounded-full px-4 py-1.5 text-[13px] text-ink-2 mb-10">
-          <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
-            New · Case study
-          </span>
-          <a href="/case-studies/palladium-hotel-group/" className="text-ink border-b border-warm-200 hover:border-ink">
-            Palladium Hotel Group: 40% of traffic had no attribution → +165% Display CPS
-          </a>
-        </div>
-
-        <h1 className="h-display mx-auto">
-          Make decisions with <em className="italic-accent">data you trust</em> again.
-        </h1>
-
-        <p
-          className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
-          style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
-        >
-          SealMetrics captures 100% of your traffic, without cookies or consent. The complete data source that puts your marketing budget back on solid ground.
-        </p>
-
-        <p className="text-[13.5px] text-ink-soft mt-5">
-          Trusted by marketing teams analyzing <b className="font-semibold text-ink">500M+ events</b> across <b className="font-semibold text-ink">12 countries</b>
-        </p>
-
-        <DualCTA locale="en" className="justify-center mt-7" />
-
-        {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted · Dublin"].map((b) => (
-            <span key={b} className="inline-flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-              {b}
-            </span>
-          ))}
-        </div>
-
-        {/* Integration badges */}
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mt-7 opacity-70">
-          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft mr-1">
-            Integrates with
-          </span>
-          {[
-            { src: "/logos/brands/shopify.svg", alt: "Shopify", h: 26, maxW: 150 },
-            { src: "/logos/brands/woocommerce.svg", alt: "WooCommerce", h: 86, maxW: 240 },
-            { src: "/logos/brands/magento.svg", alt: "Magento", h: 26, maxW: 150 },
-            { src: "/logos/brands/prestashop.svg", alt: "PrestaShop", h: 26, maxW: 150 },
-            { src: "/logos/brands/bigquery.svg", alt: "BigQuery", h: 26, maxW: 150 },
-          ].map((logo) => (
-            <Picture
-              key={logo.alt}
-              src={logo.src}
-              alt={logo.alt}
-              width={240}
-              height={logo.h}
-              className="object-contain w-auto"
-              style={{ height: `${logo.h}px`, maxWidth: logo.maxW }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Dashboard mockup (interactive) */}
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-        <HeroDashboard />
-      </div>
-    </section>
-  );
-}
 
 /* La lista de clientes y la rejilla viven en ClientLogos.tsx: una sola
    fuente para ES e EN, que antes tenían censos distintos. */
