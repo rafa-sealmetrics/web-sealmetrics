@@ -126,6 +126,7 @@ export default function Page() {
           description:
             "El dato cookieless completo más un MCP semántico permiten que cualquiera consulte su propia analítica en lenguaje natural, sin un analista en medio.",
           datePublished: "2026-07-05",
+          dateModified: "2026-07-05",
           url: "/es/blog/self-service-analytics-lens-ai",
           category: "IA y Analítica",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

@@ -37,6 +37,7 @@ export default function GA4GoogleAdsSeparationPage() {
           description:
             "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Análisis del impacto real en datos y riesgo legal.",
           datePublished: "2026-04-16",
+          dateModified: "2026-05-04",
           url: "/es/blog/ga4-google-ads-separation",
           category: "Privacidad",
           author: {

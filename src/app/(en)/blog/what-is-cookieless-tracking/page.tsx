@@ -24,7 +24,7 @@ export default function WhatIsCookielessTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Cookieless Tracking?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?", url: "/blog/what-is-cookieless-tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

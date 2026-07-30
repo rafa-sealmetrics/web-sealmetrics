@@ -39,6 +39,7 @@ export default function Page() {
           description:
             "Adobe Analytics can be deployed in a GDPR-compliant way. What that requires in practice, and what the compliant configuration costs in data coverage.",
           datePublished: "2026-07-28",
+          dateModified: "2026-07-28",
           url: "/blog/is-adobe-analytics-gdpr-compliant",
           category: "Regulation",
           author: {

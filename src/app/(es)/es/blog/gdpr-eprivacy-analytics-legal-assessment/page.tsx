@@ -151,6 +151,7 @@ export default function Page() {
           description:
             "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
           datePublished: "2026-07-06",
+          dateModified: "2026-07-06",
           url: "/es/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulación",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

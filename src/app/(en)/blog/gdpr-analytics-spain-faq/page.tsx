@@ -71,6 +71,7 @@ export default function GdprAnalyticsSpainFaqPage() {
           description:
             "AEPD cookie guidance, consent banners, GA4 legality, LSSI fines, and measuring without cookies — direct answers for online stores operating in Spain.",
           datePublished: "2026-07-07",
+          dateModified: "2026-07-07",
           url: "/blog/gdpr-analytics-spain-faq",
           category: "Regulation",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

@@ -63,6 +63,7 @@ export default function Page() {
           headline: "Consentless Analytics for DTC — 2026 Guide",
           description: "Consentless analytics counts 100% of DTC traffic anonymously at channel level — no banner, no tracking.",
           datePublished: "2026-04-24",
+          dateModified: "2026-05-28",
           url: "/blog/consentless-analytics-for-dtc",
           category: "eCommerce",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

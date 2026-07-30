@@ -24,7 +24,7 @@ export default function AnalyticsScriptsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Scripts Costing You Sales" }]} />
-      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", dateModified: "2026-05-28", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Scripts Costing You Sales", url: "/blog/analytics-scripts-costing-you-sales" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

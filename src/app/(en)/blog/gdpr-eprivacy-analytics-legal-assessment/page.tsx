@@ -152,6 +152,7 @@ export default function Page() {
           description:
             "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and SealMetrics each land.",
           datePublished: "2026-07-06",
+          dateModified: "2026-07-06",
           url: "/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulation",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },

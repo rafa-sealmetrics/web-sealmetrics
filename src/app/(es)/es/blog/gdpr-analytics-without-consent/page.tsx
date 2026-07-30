@@ -25,7 +25,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica RGPD sin consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica conforme con RGPD sin banners de consentimiento: cómo funciona", description: "La analítica sin banners de consentimiento es legalmente posible bajo RGPD y ePrivacy.", datePublished: "2026-03-02", url: "/es/blog/gdpr-analytics-without-consent", category: "Regulación", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica conforme con RGPD sin banners de consentimiento: cómo funciona", description: "La analítica sin banners de consentimiento es legalmente posible bajo RGPD y ePrivacy.", datePublished: "2026-03-02", dateModified: "2026-07-28", url: "/es/blog/gdpr-analytics-without-consent", category: "Regulación", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica RGPD sin consentimiento", url: "/es/blog/gdpr-analytics-without-consent" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

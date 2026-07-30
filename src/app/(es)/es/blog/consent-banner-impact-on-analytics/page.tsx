@@ -25,7 +25,7 @@ export default function ConsentBannerImpactPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Impacto de los banners de consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", datePublished: "2026-01-25", url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", datePublished: "2026-01-25", dateModified: "2026-05-06", url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Impacto de los banners de consentimiento", url: "/es/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

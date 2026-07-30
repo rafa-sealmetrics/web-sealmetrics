@@ -24,7 +24,7 @@ export default function ExternalDomainsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools External Domains" }]} />
-      <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", datePublished: "2026-03-04", url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", datePublished: "2026-03-04", dateModified: "2026-05-04", url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools External Domains", url: "/blog/analytics-tools-external-domains" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
