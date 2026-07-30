@@ -16,15 +16,22 @@ export function HeroV3Es() {
           </a>
         </div>
 
+        {/* Posicionamiento alineado con el hero inglés vivo (HeroD en
+            HomeDSections.tsx). Antes decía «datos en los que confías», el marco
+            anterior al reposicionamiento a datos completos: la home inglesa se
+            movió y esta se quedó atrás. */}
         <h1 className="h-display mx-auto">
-          Vuelve a tomar decisiones con <em className="italic-accent">datos en los que confías.</em>
+          Ve el 100% de tus ventas — <em className="italic-accent">los ingresos que GA4 no ve.</em>
         </h1>
 
         <p
-          className="text-ink-soft mt-8 mx-auto max-w-[60ch] leading-[1.55]"
+          className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          SealMetrics mide el 100% de tu tráfico, sin cookies ni consentimiento. La fuente de datos completa para que tu presupuesto de marketing vuelva a estar respaldado por la realidad.
+          SealMetrics es analítica sin consentimiento para eCommerce. Mide cada visita y cada venta
+          — sin cookies, sin banner, sin el punto ciego del 40–60% — para que tu ROAS real, tus
+          decisiones de canal y los números que llevas al consejo cuadren por fin con lo que
+          ocurrió de verdad.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mt-9">

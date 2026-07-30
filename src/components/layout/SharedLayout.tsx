@@ -42,7 +42,7 @@ export function SharedLayout({
         </a>
         <SealMetricsTracker />
         <AnnouncementBarOffset />
-        <AnnouncementBar />
+        <AnnouncementBar locale={locale} />
         <Header locale={locale} />
         <main id="main-content">{children}</main>
         <Footer locale={locale} />

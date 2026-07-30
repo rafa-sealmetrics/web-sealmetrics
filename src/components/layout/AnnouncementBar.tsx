@@ -11,9 +11,33 @@ import { useState } from "react";
  * that nudges the global fixed header down by this bar's height so the two
  * stack instead of overlap. Used by the homepage and the /preview/* pages.
  */
-export function AnnouncementBar() {
+/* Copy por idioma. La barra vive en SharedLayout, así que sin esto el texto
+   inglés salía en las ~80 páginas españolas, no solo en la home. */
+const COPY = {
+  en: {
+    kicker: "Case study",
+    lead: " recovered 40% of unattributed traffic → +165% Display CPS.",
+    leadShort: " — 40% of traffic recovered.",
+    cta: "Read the case",
+    href: "/case-studies/palladium-hotel-group/",
+    dismiss: "Dismiss announcement",
+  },
+  es: {
+    kicker: "Caso de estudio",
+    lead: " recuperó el 40% del tráfico sin atribución → +165% de CPS en Display.",
+    leadShort: " — 40% del tráfico recuperado.",
+    cta: "Ver el caso",
+    href: "/es/case-studies/palladium-hotel-group/",
+    dismiss: "Cerrar el anuncio",
+  },
+} as const;
+
+export function AnnouncementBar({ locale = "en" }: { locale?: "en" | "es" }) {
   const [open, setOpen] = useState(true);
   if (!open) return null;
+
+  const t = COPY[locale];
+  const isEs = locale === "es";
 
   return (
     <div
@@ -23,20 +47,20 @@ export function AnnouncementBar() {
       <div className="max-w-[1280px] mx-auto flex items-center gap-4 h-9 pl-4 pr-2 sm:pl-6">
         {/* Announcement — left, truncates */}
         <a
-          href="/case-studies/palladium-hotel-group/"
+          href={t.href}
           className="group flex items-center gap-2 min-w-0 flex-1 text-white no-underline text-[12.5px] sm:text-[13px] font-medium tracking-[-0.005em] whitespace-nowrap"
         >
           <span className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-white/85 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-white/90" />
-            Case study
+            {t.kicker}
           </span>
           <span className="truncate">
             <b className="font-semibold">Palladium Hotel Group</b>
-            <span className="hidden sm:inline"> recovered 40% of unattributed traffic → +165% Display CPS.</span>
-            <span className="sm:hidden"> — 40% of traffic recovered.</span>
+            <span className="hidden sm:inline">{t.lead}</span>
+            <span className="sm:hidden">{t.leadShort}</span>
           </span>
           <span className="hidden sm:inline shrink-0 font-semibold border-b border-white/40 group-hover:border-white transition-colors">
-            Read the case&nbsp;→
+            {t.cta}&nbsp;→
           </span>
         </a>
 
@@ -58,23 +82,40 @@ export function AnnouncementBar() {
             Login
           </a>
           <span className="w-px h-3.5 bg-white/25" />
-          {/* Language switch EN / ES */}
+          {/* Selector EN / ES. Marca como activo el idioma real: estaba fijo en
+              EN, así que en las páginas españolas señalaba el idioma equivocado
+              y ofrecía saltar al que ya estabas viendo. */}
           <span className="flex items-center gap-1.5 font-mono text-[11px] tracking-[0.04em]">
-            <span className="text-white font-semibold" aria-current="true">EN</span>
+            {isEs ? (
+              <a
+                href="/"
+                className="text-white/60 hover:text-white no-underline transition-colors"
+                hrefLang="en"
+                aria-label="Switch to English"
+              >
+                EN
+              </a>
+            ) : (
+              <span className="text-white font-semibold" aria-current="true">EN</span>
+            )}
             <span className="text-white/30">/</span>
-            <a
-              href="/es"
-              className="text-white/60 hover:text-white no-underline transition-colors"
-              hrefLang="es"
-              aria-label="Cambiar a español"
-            >
-              ES
-            </a>
+            {isEs ? (
+              <span className="text-white font-semibold" aria-current="true">ES</span>
+            ) : (
+              <a
+                href="/es"
+                className="text-white/60 hover:text-white no-underline transition-colors"
+                hrefLang="es"
+                aria-label="Cambiar a español"
+              >
+                ES
+              </a>
+            )}
           </span>
           <button
             type="button"
             onClick={() => setOpen(false)}
-            aria-label="Dismiss announcement"
+            aria-label={t.dismiss}
             className="text-white/60 hover:text-white text-[16px] leading-none w-6 h-6 flex items-center justify-center"
           >
             ×
