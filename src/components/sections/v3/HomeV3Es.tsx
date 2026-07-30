@@ -62,15 +62,28 @@ export function LogosStripEs() {
   return (
     <section className="py-14 bg-warm-white border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-        <div className="flex justify-between items-baseline flex-wrap gap-4 mb-9">
-          <h3
-            className="font-semibold text-ink tracking-[-0.02em] leading-[1.2]"
-            style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
-          >
-            Fuente <em className="italic-accent">única de verdad</em> para marcas europeas
-          </h3>
-          <p className="font-mono text-[12px] text-ink-soft uppercase tracking-[0.1em] font-semibold">
-            Equipos con <b className="text-ink">+5M€</b> anuales en paid media
+        <div className="mb-9">
+          <div className="flex justify-between items-baseline flex-wrap gap-4">
+            <h3
+              className="font-semibold text-ink tracking-[-0.02em] leading-[1.2]"
+              style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
+            >
+              Fuente <em className="italic-accent">única de verdad</em> para marcas europeas
+            </h3>
+            <p className="font-mono text-[12px] text-ink-soft uppercase tracking-[0.1em] font-semibold">
+              Equipos con <b className="text-ink">+5M€</b> anuales en paid media
+            </p>
+          </div>
+          {/* La tira inglesa llevaba esta prueba y la española no. Cifras
+              canónicas: Dreamplace de su case study, Palladium del JSON-LD de
+              la home (35% son reservas, no tráfico — el 40% es el de tráfico). */}
+          <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[68ch]">
+            <b className="text-ink font-semibold">Dreamplace Hotels</b> recuperó un{" "}
+            <b className="text-ink font-semibold">+30% más de tráfico</b> frente a GA4 y cerró un
+            desfase del <b className="text-ink font-semibold">15–20%</b> en atribución de ventas
+            contra su CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recuperó
+            el <b className="text-ink font-semibold">35% de las reservas sin atribuir</b> y mejoró
+            el CPS en Display un <b className="text-ink font-semibold">+165%</b>.
           </p>
         </div>
         <ClientLogosGrid />
