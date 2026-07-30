@@ -81,7 +81,11 @@ ES-only routes: none (every ES route mirrors an EN route).
 ### Medium
 
 **M1 — Non-blog `lastmod` is build-time, not content-time**
-`sitemap.ts:64` falls back to `today` (build timestamp) for every route that isn't `/blog/*`. Glossary terms, `/for/*` pages, `/vs/*`, `/open/*` chapters, case studies and pillar pages all get `2026-05-28` regardless of when their content actually changed. Google increasingly weights lastmod for crawl scheduling and will start ignoring sitemaps that appear to lie. The blog already has `getBlogDateModified()` + `blog-modified.json` (git-based). Extend the same pattern to glossary/open/pillar pages, or read git log for each route at build time.
+`sitemap.ts:64` falls back to `today` (build timestamp) for every route that isn't `/blog/*`. Glossary terms, `/for/*` pages, `/vs/*`, `/open/*` chapters, case studies and pillar pages all get `2026-05-28` regardless of when their content actually changed. Google increasingly weights lastmod for crawl scheduling and will start ignoring sitemaps that appear to lie.
+
+> **Amended 2026-07-30.** This originally pointed at `getBlogDateModified()` + `blog-modified.json` as the pattern to extend. Both are gone: the helper was dead code and the map was unreachable once every post declared its own date, so all of it was deleted (#45, #53). The reason matters more than the removal — git mtime bumps on any commit that touches a file, so a lint pass or a canonical rewrite re-dates content that did not change. It had already done so to 30 posts.
+>
+> Note the irony of the sentence above: deriving `lastmod` from git mtime *is* how a sitemap starts to "appear to lie". Declare the date per registry entry instead — `glossary.ts` and `open.ts` are the natural homes.
 
 **M2 — `publishedChapters` filter and the `/open/glossary/` route**
 `/open/glossary/` appears in the sitemap as a static page (it has its own `page.tsx`). But it's listed as a "ready" item in the Open table of contents under `/open` while `openChapters` separately tracks a glossary chapter in `open.ts`. Confirm there's no duplicate (chapter slug `glossary` would also try to emit `/open/glossary/` via the `publishedChapters` loop, colliding with the static page). Quick fix: ensure no chapter has `slug: "glossary"` with `status: "ready"`, or have the static page win deterministically (it does today, but the `enRoutes.push(\`/open/${c.slug}\`)` would inject a duplicate if such a slug existed).
@@ -128,7 +132,7 @@ Correct — Google has ignored both for years. Not a finding, just confirming we
 
 ## Action checklist
 
-- [ ] M1 + L3: Replace `today` fallback with per-route git-based `lastmod` (extend the `blog-modified.json` pattern to all routes).
+- [ ] M1 + L3: Replace `today` fallback with an author-declared `lastmod` per registry entry. **Not** git-based — see the amendment under M1.
 - [ ] L1: Reconcile `blogPosts` registry vs `(en)/blog/` directory listing (currently 2 off).
 - [ ] L2: Identify the orphan glossary registry entry (16 in `glossary.ts` vs 15 pages on disk) and ship or remove.
 - [ ] M2: Add a defensive check in `sitemap.ts` so a chapter slug can't shadow a static route.

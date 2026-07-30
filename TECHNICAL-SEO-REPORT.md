@@ -65,7 +65,11 @@ Bing, Yandex, Naver support the IndexNow protocol for sub-minute indexing notifi
 Default is "index, follow" via Next 16, but Google's December 2025 guidance recommends explicit `<meta name="robots" content="index, follow">` in the initial response — no JS dependency. Today only the redirect stubs and noindex pages emit the tag. Add an explicit allow-tag via `metadata.robots` in the root layout.
 
 ### M2 — Per-page `lastmod` for static routes
-Today's sitemap uses `today` for all non-blog entries (build date). Over time Google discounts the signal. Mirror the `build-blog-modified.mjs` pattern for static page directories. ~30 min.
+Today's sitemap uses `today` for all non-blog entries (build date). Over time Google discounts the signal.
+
+> **Amended 2026-07-30.** This originally said to mirror the `build-blog-modified.mjs` pattern — deriving the date from git mtime. **Do not.** That script has been deleted (#53) precisely because git mtime cannot tell a real content revision from a mechanical sweep: a lint pass, a prettier reflow or a canonical rewrite bumps every file it touches. It had silently re-dated 30 blog posts (#45). `lastmod` is a crawl hint rather than a public freshness claim, so the stakes are lower than `dateModified` was — but the defect is identical, and a sitemap that bumps every route on a formatting commit is exactly the sitemap Google learns to ignore.
+>
+> The finding still stands. Declare the date instead of deriving it: `blogPosts` in `blog.ts` already carries `date`, and `glossary.ts` / `open.ts` are registries that could carry one the same way. Effort is higher than the 30 min below, because it means adding a field per entry rather than writing one script.
 
 ### M3 — Brotli not negotiated by GitHub Pages
 GitHub Pages serves gzip only. If Fastly fronts the origin (likely), enable brotli at the Fastly edge. ~10% additional payload reduction over gzip. Add to INFRA-RUNBOOK as a section 5.
@@ -184,7 +188,7 @@ Per Google's December 2025 JS SEO guidance:
 | 2 | `git push origin main` to ship the 6 commits | dev | 1 min |
 | 3 | Drop noModule legacy polyfill via Next 16 config | dev | 1-2h |
 | 4 | Implement IndexNow for Bing/Yandex/Naver | dev | 2h |
-| 5 | Per-page `lastmod` for static routes (mirror blog-modified.mjs) | dev | 30 min |
+| 5 | Per-page `lastmod` for static routes (author-declared per registry entry — **not** git mtime, see M2) | dev | ~2 h |
 
 After items 1+2, projected technical score: **75 → 92**.
 
