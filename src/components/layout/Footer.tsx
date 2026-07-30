@@ -40,6 +40,12 @@ function getFooterColumns(t: ReturnType<typeof getDictionary>["footer"], locale:
         { label: t.vsAdobe, href: localizedHref("/vs/adobe-analytics", locale) },
         { label: t.vsPiwik, href: localizedHref("/vs/piwik-pro", locale) },
         { label: t.dataLossCalc, href: localizedHref("/data-loss-calculator", locale) },
+        // Landings de campaña. Rutas literales y no traducidas por diccionario:
+        // los slugs difieren por idioma y no están en el registro de
+        // traducciones, así que localizedHref devolvería la ruta inglesa.
+        locale === "es"
+          ? { label: "Tu ROAS real", href: "/es/roas-real/" }
+          : { label: "Your real ROAS", href: "/real-roas/" },
       ],
     },
     {
