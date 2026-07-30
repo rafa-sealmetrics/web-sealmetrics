@@ -47,13 +47,14 @@ jobs:
       # Surfaces tracked files the build rewrites. Warn only: the deploy
       # rewrites them the same way, so this does not affect what ships.
       #
-      # Expect this to fire on committed AVIF/WebP under public/. optimize-
-      # images.mjs skips a target whose mtime is >= its source, but a fresh
-      # checkout writes every file at ~the same instant in arbitrary order, so
-      # some targets land marginally older than their source and get re-encoded.
-      # It is an mtime race, not a real content change — a locally cached
-      # checkout skips all of them. Worth fixing (hash the source instead of
-      # comparing mtimes) so this warning stays signal rather than noise.
+      # This should now be silent. The two known sources of expected churn are
+      # gone — blog-modified.json was deleted, and optimize-images.mjs decides
+      # freshness by source hash rather than mtime, so a fresh checkout no
+      # longer re-encodes images it should have skipped.
+      #
+      # So if it fires, treat it as real. The likely cause is a stale
+      # scripts/image-manifest.json: someone changed an image or an encoder
+      # setting and did not commit the regenerated outputs plus manifest.
       - name: Check for build-modified tracked files
         if: always()
         run: |
