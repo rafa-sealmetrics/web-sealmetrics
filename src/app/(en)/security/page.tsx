@@ -1,143 +1,380 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
-import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "Security & Compliance — SealMetrics",
-  description: "EU-hosted in Dublin. Zero personal data collection. GDPR-compliant by architecture, not by a compliance layer bolted on afterwards.",
+  title: "Security Overview — Sealmetrics",
+  description:
+    "How Sealmetrics protects analytics data: privacy-by-design architecture, encryption, per-account isolation, automatic retention TTLs and EU-only infrastructure.",
   openGraph: {
-    title: "Security & Compliance — SealMetrics",
-    description: "EU-hosted in Dublin. Zero personal data collection. GDPR-compliant by architecture, not by a compliance layer bolted on afterwards.",
+    title: "Security Overview — Sealmetrics",
+    description:
+      "Privacy-by-design architecture, encryption, per-account isolation, automatic retention TTLs and EU-only infrastructure.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/security/", languages: getAlternates("/security") },
+  alternates: {
+    canonical: "https://sealmetrics.com/security/",
+    languages: getAlternates("/security"),
+  },
 };
 
-const faqs = [
-  { q: "Where is data processed and stored?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU." },
-  { q: "How is SealMetrics GDPR-compliant by architecture?", a: "SealMetrics is designed to avoid personal-data collection: no cookies, no identifiers, no fingerprinting and no per-user profiling. Events are counted anonymously, processed in Dublin, and supported with DPA and TPSR documentation." },
-  { q: "Do you sign DPAs?", a: "Yes. Standard DPA with every plan. Enterprise plans support custom DPA negotiation for regulated industries." },
-  { q: "What security documentation can you provide?", a: "DPA, architecture diagrams and vendor security questionnaire (TPSR) available under NDA during procurement review." },
-  { q: "What happens in a security incident?", a: "Customers notified within 4 hours. Public report within 72 hours. Full post-mortem within 7 days. Status at status.sealmetrics.com." },
-  { q: "Vendor security questionnaires?", a: "Pre-built TPSR package with all questionnaires, certificates and architecture diagrams. Cuts vendor review from months to weeks." },
-];
+function H({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3 mt-10">
+      {children}
+    </h2>
+  );
+}
+function Tbl({ rows }: { rows: string[][] }) {
+  return (
+    <div className="overflow-x-auto my-4">
+      <table className="w-full text-[0.88rem] border border-warm-100">
+        <tbody>
+          {rows.map((r, i) => (
+            <tr
+              key={i}
+              className={
+                i === 0
+                  ? "bg-warm-white font-medium text-text-primary"
+                  : "border-t border-warm-100"
+              }
+            >
+              {r.map((c, j) => (
+                <td key={j} className="px-3 py-2 align-top">
+                  {c}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Security" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Security", url: "/security" }])} />
-      <JsonLd data={speakableWebPageSchema({ url: "/security", name: "Security — SealMetrics" })} />
+      <JsonLd
+        data={speakableWebPageSchema({
+          url: "/security",
+          name: "Security Overview — Sealmetrics",
+        })}
+      />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Security & compliance</span>
-          <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>Compliant <em>by architecture.</em></h1>
-          <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            EU-hosted in Dublin. Zero personal data collection. Zero sub-processors outside the EU. Your compliance team signs off in one meeting — not three.
+          <span
+            className="eyebrow mb-5"
+            style={{ display: "inline-flex", justifyContent: "center" }}
+          >
+            Trust Center
+          </span>
+          <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
+            Security <em>overview.</em>
+          </h1>
+          <p
+            className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
+            style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
+          >
+            The technical and organizational measures behind Sealmetrics&rsquo;
+            consentless analytics — written for technical evaluators, security
+            teams and DPOs.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-9">
-            <Link href="/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
-              Request compliance pack →
-            </Link>
-          </div>
         </div>
       </section>
 
       <TldrBlock
         answer={
-          <>SealMetrics is <strong>GDPR-compliant by architecture</strong> rather than by a consent layer added on top. The data path stores no cookies, no localStorage, no fingerprinting, no personal identifiers — every event is counted anonymously and aggregated at channel, campaign, landing page and country level before storage. All processing happens in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU, which keeps the deployment Schrems II clean and removes the third-country transfer review that GA4 + Consent Mode requires. Compliance documentation is pre-packaged: standard DPA with every plan, custom DPA negotiation on Enterprise, and a Third-Party Security Review (TPSR) bundle with architecture diagrams, sub-processor list and answers to every common procurement questionnaire. DPOs typically sign off in one meeting rather than three.</>
+          <>
+            Sealmetrics&rsquo; first security control is structural:{" "}
+            <strong>data that is never collected or persisted cannot leak</strong>.
+            The pixel uses no cookies or device storage, visitor IP addresses
+            have no column in any analytics database, and the country dimension
+            is derived from the browser timezone — not the IP. Everything else
+            follows the measures in Annex 2 of the{" "}
+            <a href="/dpa/" className="underline">DPA</a>: TLS 1.2+ in transit
+            (including AI inference), AES-256 at rest, per-account logical
+            isolation across all storage layers, RBAC with MFA and least
+            privilege, and retention enforced by automatic database-level TTLs
+            (14 days / 90 days / 24 months / 2 hours). Visitor data is processed
+            entirely within the EU.
+          </>
         }
         bullets={[
-          <>EU-hosted in Dublin, single region, no third-country transfers (Schrems II clean).</>,
-          <>Standard DPA with every plan; TPSR (Third-Party Security Review) package pre-built.</>,
-          <>Zero personal data stored — compliance team signs off in one meeting, not three.</>,
+          <>
+            No cookies, no device storage, no persisted IPs — verified against
+            the code served in production.
+          </>,
+          <>
+            Retention is fixed and enforced by automatic database TTLs, not
+            manual processes.
+          </>,
+          <>
+            EU-only visitor data flow (Ireland + Paris); the sole non-EEA
+            transfer is account-user service emails via Resend (USA, SCCs + DPF).
+          </>,
         ]}
       />
 
-      <section className="py-28 bg-warm-50 border-t border-warm-100">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-          <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
-            <div>
-              <span className="eyebrow mb-5">Compliance posture</span>
-              <h2 className="h-section mt-5">All the <em>paperwork.</em> None of the excuses.</h2>
-              <h3 className="sr-only">How is SealMetrics GDPR-compliant by architecture?</h3>
-            </div>
-            <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Every framework your compliance team looks for — architectural, contractual and pre-documented for procurement review. Not sure where you stand today? Run a <Link href="/reg-gap-analysis" className="text-brand no-underline border-b border-warm-200 hover:border-brand">regulatory gap analysis</Link> to find where your current stack falls short.
+      <section className="pt-12 pb-28 bg-white">
+        <div className="max-w-[800px] mx-auto px-5 sm:px-8">
+          <p className="text-[0.9rem] text-text-tertiary mb-10">
+            Version 1.0 · Last updated: July 30, 2026 ·{" "}
+            <a href="/es/security/" className="underline">
+              Versión en español
+            </a>{" "}
+            (the Spanish version of this document is the authoritative text;
+            this English version is provided for convenience)
+          </p>
+
+          <div className="space-y-4 text-[0.95rem] leading-[1.75] text-text-secondary">
+            <p>
+              This page is the security companion to the Sealmetrics Trust
+              Center. It summarizes the actual technical and organizational
+              measures protecting the service, consistent with Annex 2 (Art. 32
+              GDPR) of the{" "}
+              <a href="/dpa/" className="underline">
+                Data Processing Agreement
+              </a>
+              ; in case of discrepancy, the DPA prevails.
             </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { name: "GDPR", desc: "Compliant by architecture — no personal data collected." },
-              { name: "ePrivacy", desc: "No cookies, no localStorage — directive doesn't apply." },
-              { name: "Schrems II", desc: "Zero transfers outside EU. No SCCs needed." },
-              { name: "EU-hosted · Dublin", desc: "Single region. No failover to third countries." },
-              { name: "DPA included", desc: "Standard DPA with every plan. Custom DPA on Enterprise." },
-              { name: "TPSR package", desc: "Vendor security questionnaire pre-built for procurement review." },
-            ].map((c) => (
-              <article key={c.name} className="bg-white border border-warm-100 rounded-xl p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-2 h-2 rounded-full bg-brand" />
-                  <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em]">{c.name}</h3>
-                </div>
-                <p className="text-[13.5px] leading-[1.6] text-ink-soft">{c.desc}</p>
-              </article>
-            ))}
+
+            <H>1. Privacy-by-design architecture</H>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong className="text-text-primary">
+                  No cookies, no device storage.
+                </strong>{" "}
+                The measurement pixel uses no cookies, localStorage,
+                sessionStorage, IndexedDB or any other storage on the
+                visitor&rsquo;s device — verified against the code served in
+                production, not merely declared.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  No persisted IP addresses.
+                </strong>{" "}
+                The visitor&rsquo;s IP has no column in any analytics database:
+                the column was explicitly removed through a dedicated schema
+                migration as a minimization-by-design decision. IP use is
+                transient, in memory, during event processing.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  Country from timezone, not from IP.
+                </strong>{" "}
+                The geographic dimension in reports is derived from the browser
+                timezone via a static lookup table — the component resolving it
+                does not even receive the IP as a parameter.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  Ephemeral identifiers.
+                </strong>{" "}
+                The session identifier is computed in the browser from technical
+                characteristics, writing nothing to the device. Maximum
+                effective lifetime: 2 hours in the active session, 14 days in
+                the technical log. Reporting tables are 100% aggregated and do
+                not contain it.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  No direct visitor identifiers.
+                </strong>{" "}
+                No names, no emails, no cross-site identifiers; per-account
+                isolation in keys and tables. Campaign parameters (UTMs, click
+                IDs) are processed server-side within the EU, never extracted on
+                the device.
+              </li>
+            </ul>
+
+            <H>2. Encryption</H>
+            <Tbl
+              rows={[
+                ["Scope", "Measure"],
+                [
+                  "In transit",
+                  "TLS 1.2+ on all communications, including AI inference (Seal AI)",
+                ],
+                ["At rest", "AES-256 on the service databases"],
+                [
+                  "Backups",
+                  "Encrypted, 30-day retention with automatic rotation",
+                ],
+                [
+                  "Customer BYOK keys",
+                  "AES-256-GCM (authenticated encryption); API responses expose only the last 4 characters, never the encrypted material",
+                ],
+              ]}
+            />
+
+            <H>3. Isolation and access control</H>
+            <p>
+              Every table and key carries the account identifier, and queries
+              are validated against the requester&rsquo;s account: each
+              customer&rsquo;s data is collected, processed and stored
+              independently (multi-publisher independence, DPA clause 3.3).
+              Platform access uses role-based access control (organization and
+              site roles), MFA — available to users (TOTP) and required for
+              Sealmetrics personnel — the least-privilege principle with
+              confidentiality undertakings that survive the working
+              relationship, and logged administrative access. Customers can
+              additionally restrict API access with a per-account IP allowlist
+              and exclude their own IPs from measurement.
+            </p>
+
+            <H>4. Automatic retention</H>
+            <p>
+              Retention periods for analytics data are fixed, non-configurable
+              and applied via automatic database-level TTL — compliance does not
+              depend on manual processes. They meet the indicative 25-month
+              maximum of the AEPD audience-measurement guidance (January 2024).
+            </p>
+            <Tbl
+              rows={[
+                ["Data", "Period"],
+                [
+                  "Event-level technical log (user agent, full URLs)",
+                  "14 days",
+                ],
+                ["Hourly aggregates", "90 days"],
+                [
+                  "Daily aggregates, conversions and their properties",
+                  "24 months",
+                ],
+                ["Session state (operational memory)", "2 hours"],
+              ]}
+            />
+
+            <H>5. EU infrastructure</H>
+            <Tbl
+              rows={[
+                ["Component", "Provider", "Location"],
+                [
+                  "Service infrastructure and databases",
+                  "Noraina Limited",
+                  "Ireland (EU)",
+                ],
+                [
+                  "AI inference (Seal AI, default provider)",
+                  "Scaleway SAS (Iliad group)",
+                  "Paris, France (EU) — zero data retention: the inference provider retains no prompts or responses",
+                ],
+                [
+                  "Monitoring (metrics and alerts)",
+                  "Self-hosted on own infrastructure",
+                  "EU — no sub-processor",
+                ],
+              ]}
+            />
+            <p>
+              The visitor data flow is entirely within the EU and does not rely
+              on the EU-US Data Privacy Framework or SCCs.{" "}
+              <strong className="text-text-primary">
+                Sole transfer outside the EEA:
+              </strong>{" "}
+              service emails (verifications, alerts, reports with aggregated
+              metrics) to the account&rsquo;s users via Resend, Inc. (USA),
+              covered by SCCs and its EU-US DPF certification — affecting no
+              visitor data. Full sub-processor list:{" "}
+              <a href="/dpa/" className="underline">
+                sealmetrics.com/dpa
+              </a>
+              .
+            </p>
+
+            <H>6. Secrets management and supply chain</H>
+            <p>
+              Platform keys live exclusively in secret managers — never in code
+              or repositories. Content logging is prohibited across the AI
+              chain: Seal AI prompts and responses are not written to logs, and
+              Sealmetrics persists only token counters for billing and capacity.
+              Third-party dependency install scripts are blocked by default with
+              an explicit allowlist, reducing the supply-chain attack surface.
+              The pixel is protected against data injection with HMAC-signed
+              expiring tokens, domain validation and inter-service message
+              signing.
+            </p>
+
+            <H>7. Incident and breach management</H>
+            <p>
+              Sealmetrics maintains a documented breach-management procedure
+              (classification, containment, analysis, communication). Customers
+              are notified{" "}
+              <strong className="text-text-primary">without undue delay</strong>{" "}
+              once Sealmetrics becomes aware of a breach affecting Service Data
+              — mindful of the customer&rsquo;s 72-hour window towards the
+              supervisory authority (DPA clause 4.5) — with the Art. 33(3) GDPR
+              particulars as available, in phases where necessary. An internal
+              breach register is kept per Art. 33(5) GDPR, retained 5 years from
+              closure.
+            </p>
+
+            <H>8. Compliance</H>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong className="text-text-primary">GDPR:</strong> Sealmetrics
+                processes analytics data under an Art. 28-compliant{" "}
+                <a href="/dpa/" className="underline">
+                  DPA
+                </a>{" "}
+                with commitments of no data reuse, purpose restriction and
+                multi-publisher independence.
+              </li>
+              <li>
+                <strong className="text-text-primary">AEPD criteria:</strong>{" "}
+                designed in accordance with the AEPD guidance on cookies for
+                audience-measurement tools (January 2024), including the
+                contractual guarantees of its section III.C.
+              </li>
+              <li>
+                <strong className="text-text-primary">Current DPIA</strong>,
+                reviewed after significant architecture changes, plus periodic
+                internal audits verifying actual code behavior against public
+                documentation.
+              </li>
+              <li>
+                <strong className="text-text-primary">
+                  Configuration assessment on request:
+                </strong>{" "}
+                customers may request the documented assessment of the service
+                configuration against the AEPD guidance (DPA clause 3.5),
+                updated at least annually. Customer audit rights per DPA clause
+                4.7.
+              </li>
+            </ul>
+            <p>
+              Sealmetrics does not currently hold formal third-party
+              certifications (e.g. ISO 27001 or SOC 2); the assurances on this
+              page rest on the contractual measures of the DPA and the internal
+              technical verification described above.
+            </p>
+
+            <p className="pt-6 border-t border-warm-100 text-[0.85rem] text-text-tertiary">
+              Related:{" "}
+              <a href="/privacy/" className="underline">
+                Privacy Policy
+              </a>{" "}
+              ·{" "}
+              <a href="/dpa/" className="underline">
+                DPA
+              </a>{" "}
+              ·{" "}
+              <a href="/terms/" className="underline">
+                Terms of Service
+              </a>
+              . Security or privacy inquiries: privacy@sealmetrics.com.
+            </p>
           </div>
         </div>
       </section>
-
-      <section className="py-28 bg-white border-t border-warm-100">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
-          <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
-            <div>
-              <span className="eyebrow mb-5">Data flow</span>
-              <h2 className="h-section mt-5">From visitor to dashboard. <em>All inside Ireland.</em></h2>
-              <h3 className="sr-only">Where does SealMetrics process and store data?</h3>
-            </div>
-            <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Every byte of data stays within the EU. No third-country transfers, no sub-processors, no hidden dependencies.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-            {[
-              { n: "01 · Collect", t: "First-party pixel", p: "Your domain. No cookies. No localStorage. No identifiers. Zero personal data on the device." },
-              { n: "02 · Transit", t: "Encrypted TLS 1.3", p: "Direct-to-server with PFS. No third-party CDN for analytics traffic." },
-              { n: "03 · Process", t: "EU-only servers", p: "Dublin region. Isolated VPC. Anonymous event counting with no personal identifiers ever stored." },
-              { n: "04 · Store", t: "Encrypted at rest", p: "AES-256. Dublin region. 24-month retention. No third-country replication." },
-            ].map((s) => (
-              <div key={s.n} className="bg-warm-50 border border-warm-100 rounded-xl p-6">
-                <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand mb-3">{s.n}</div>
-                <h4 className="text-[17px] font-semibold tracking-[-0.015em] text-ink mb-2">{s.t}</h4>
-                <p className="text-[13.5px] leading-[1.55] text-ink-soft">{s.p}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <FaqAccordionV3
-        locale="en"
-        items={faqs}
-        eyebrow="FAQ"
-        titleEn={<>The <em>compliance questions</em>, answered.</>}
-        ledeEn="What DPOs, CISOs and procurement teams ask. If your team has something else, we'll answer it in the walkthrough."
-      />
-      <FinalCtaSharedV3
-        locale="en"
-        titleEn={<>Get the <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>full compliance pack.</em></>}
-        titleEs={<>Recibe el <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>pack compliance completo.</em></>}
-        ledeEn="30 minutes with our compliance lead. Architecture, DPA, Schrems II stance, TPSR — walked through with your legal team."
-        ledeEs="30 min con nuestro lead de compliance. Arquitectura, DPA, postura Schrems II, TPSR — revisado con tu equipo legal."
-      />
     </>
   );
 }
