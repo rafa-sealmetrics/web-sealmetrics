@@ -185,13 +185,15 @@ Recommendation: 1 post per week → done by 2026-06-07. Each post lifts the clus
 
 Postponed to **Sprint 4 (S4.X)**. The work plan when picked up:
 
+> **Shipped — plan below is a historical record.** `scripts/generate-og-images.mjs` runs in `prebuild`, `articleSchema` derives the per-post OG path from the slug, and `public/og/blog/<slug>.png` exists for every post. Step 3 as written is also stale: the `blog-modified.json` step it anchors to was deleted in #53, so OG generation is now the first step in `prebuild`.
+
 1. `npm install --save-dev satori @resvg/resvg-js` (or use built-in `next/og`)
 2. Create `scripts/generate-og-images.mjs`:
    - Read `src/lib/content/blog.ts` via a small JSON-export step in prebuild
    - For each `{ slug, title, category, author, date }`, render an OG SVG via satori (1200×630)
    - Convert SVG → PNG via @resvg/resvg-js
    - Write `/public/og/blog/<slug>.png`
-3. Wire into `prebuild` after `blog-modified.json` step
+3. ~~Wire into `prebuild` after `blog-modified.json` step~~ — that step no longer exists (#53); OG generation is now first in `prebuild`
 4. Update `articleSchema()` to set `image: \`${SITE_URL}/og/blog/${slug}.png\`` when slug is detected
 5. Update each post's `metadata.openGraph.images` to point at the per-post file
 

@@ -149,7 +149,7 @@ Full report: [`sitemap.md`](./sitemap.md) — 9.5KB.
 - Dynamic-route expansion works: `/open/[slug]` correctly expands 8 published chapters from `publishedChapters`, drafts excluded. Blog (27), glossary (15), case-studies (3), `/for/*` (9) are not dynamic — each has its own `page.tsx` and is picked up by the filesystem walker.
 
 ### Medium
-- **All non-blog routes use build-time `today` as `lastmod`.** Extend the `blog-modified.json` git-based pattern to glossary, /open/, and pillar pages.
+- **All non-blog routes use build-time `today` as `lastmod`.** Add an author-declared date per entry in `glossary.ts` / `open.ts`. **Not** the old `blog-modified.json` git-mtime pattern — deleted in #53, because git mtime bumps on any commit touching a file, so a lint pass re-dates content that did not change.
 
 ### Low
 - **Registry-vs-filesystem drift**: `blog.ts` has 25 publishable posts but 27 `page.tsx` folders exist (2 leaked drafts). `glossary.ts` has 16 entries but only 15 pages on disk (1 orphan term).

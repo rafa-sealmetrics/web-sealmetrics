@@ -200,7 +200,9 @@ Two games, two metrics. Measuring them together is what made "position 8, zero c
 
 1. **German-language site — yes or no.** 921 impressions, second EU market, no content on its DPA. Opens i18n permanently. *This is a product decision, not a content one.*
 2. **Verticals consolidation** (`SEO-STRATEGY.md` §6, overdue since 30 June). Data supports folding Finance/Healthcare/Education into `/for/regulated-industries`.
-3. **`dateModified` hygiene.** `blog-modified.json` derives from git mtime, so a lint-only commit bumps a post's freshness signal. Worth deciding whether that field should be hand-curated.
+3. ~~**`dateModified` hygiene.** `blog-modified.json` derives from git mtime, so a lint-only commit bumps a post's freshness signal. Worth deciding whether that field should be hand-curated.~~
+
+   **Resolved 2026-07-30.** This call was right, and it landed before the failure it predicted got worse. The trailing-slash sweep then re-dated 30 unchanged posts, exactly as described. Decision: hand-curated. Every post now declares `dateModified` in its own `articleSchema({ ... })` call, 30 false dates were corrected (#45), and the git-derived map was deleted rather than left as a fallback (#53). `CLAUDE.md` carries the rule.
 
 ---
 

@@ -140,7 +140,9 @@ After `git push origin main`:
 
 ### Medium (do during normal maintenance)
 2. **Add Spanish blog content (S3 backlog).** Once content team translates the top 5 blog posts (briefs in `BLOG-EXPANSION-BRIEFS.md`), add a parallel `esOnlyPaths` or convert existing blog entries to bilingual. The current pattern scales cleanly.
-3. **Per-page `lastmod` for static routes.** Today's build uses `today` for non-blog entries — over time Google will discount the signal because every entry bumps to the deploy date. Solution: pre-compute per-route mtime via a Node script (mirroring what `build-blog-modified.mjs` does for posts) and inject into the sitemap generator. ~30 min.
+3. **Per-page `lastmod` for static routes.** Today's build uses `today` for non-blog entries — over time Google will discount the signal because every entry bumps to the deploy date.
+
+   > **Amended 2026-07-30.** The original solution here was to pre-compute per-route mtime via a Node script mirroring `build-blog-modified.mjs`. That script has since been deleted (#53), because git mtime cannot distinguish a real revision from a mechanical sweep — it had already re-dated 30 blog posts off a canonical-formatting commit (#45). Declare the date per registry entry instead of deriving it from git. The finding stands; the mechanism does not. ~2 h.
 
 ### Low (backlog)
 4. Consider splitting into category-specific sitemaps (`sitemap-pages.xml`, `sitemap-blog.xml`, `sitemap-glossary.xml`) only if URL count grows beyond ~5,000. At 129 URLs this is overkill.

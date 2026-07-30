@@ -44,7 +44,7 @@ Priorities are estimated to lift the health score by ~20 points if all Critical 
 
 | # | Issue | Fix | Effort |
 |---|---|---|---|
-| M1 | All non-blog `lastmod` values are build-time `today` | Extend the `blog-modified.json` git-based pattern to glossary, `/open/`, and pillar pages in `src/app/sitemap.ts` | 2 h |
+| M1 | All non-blog `lastmod` values are build-time `today` | Add an author-declared date per entry in `glossary.ts` / `open.ts` and read it in `src/app/sitemap.ts`. **Not** the old `blog-modified.json` git-mtime pattern — deleted in #53 because a mechanical sweep re-dates unchanged content | 2 h |
 | M2 | CTA copy inconsistent ("Start FREE Trial" vs "Start free trial") | Canonicalise to one casing (CLAUDE.md says action-specific: "Book a Demo"); update header + every hero | 30 min |
 | M3 | "Most" appears 30+ times as vague qualifier across marketing copy | Find/replace with specific numbers; remove where no number is defensible | 2 h |
 | M4 | "The best" appears 2× as ungrounded superlative | Replace with data-backed claim or remove | 10 min |
