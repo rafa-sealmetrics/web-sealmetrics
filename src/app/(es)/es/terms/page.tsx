@@ -157,7 +157,7 @@ export default function TermsEsPage() {
               ],
               [
                 "Plan",
-                "El nivel de servicio contratado (Free, Pro, Business, Enterprise)",
+                "El nivel de servicio contratado (Agentic, Growth, Scale, Enterprise)",
               ],
               [
                 "Período de Facturación",
@@ -226,14 +226,18 @@ export default function TermsEsPage() {
           <H>5. Planes y precios</H>
           <p>
             Planes disponibles:{" "}
-            <strong className="text-text-primary">Free</strong> (plan gratuito
-            con funcionalidades básicas y límites de uso),{" "}
-            <strong className="text-text-primary">Pro</strong> (pequeñas
-            empresas, funcionalidades avanzadas),{" "}
-            <strong className="text-text-primary">Business</strong> (empresas
-            medianas, LENS y soporte prioritario) y{" "}
+            <strong className="text-text-primary">Agentic</strong> (gratuito,
+            autoservicio, con límite total de eventos humanos),{" "}
+            <strong className="text-text-primary">Growth</strong> (límite
+            mensual de eventos humanos; MCP, BigQuery, API completa y LENS con
+            clave propia),{" "}
+            <strong className="text-text-primary">Scale</strong> (mayor
+            límite; IA privada gestionada con tokens incluidos, webhooks y
+            soporte prioritario) y{" "}
             <strong className="text-text-primary">Enterprise</strong> (plan
-            personalizado para grandes empresas). Los detalles actualizados de
+            anual personalizado: eventos ilimitados, IA privada exclusiva,
+            procesamiento aislado). Existe un add-on de Private AI para los
+            planes que no lo incluyen. Los detalles actualizados de
             cada Plan están en sealmetrics.com/pricing.
           </p>
           <p>
@@ -434,7 +438,7 @@ export default function TermsEsPage() {
               arquitectura de seguridad
             </a>
             ). En caso de brecha de seguridad, le notificaremos sin dilación
-            indebida (máximo 48 horas), proporcionaremos información para
+            indebida, proporcionaremos información para
             cumplir sus obligaciones RGPD y colaboraremos en la gestión del
             incidente.
           </p>
@@ -460,7 +464,7 @@ export default function TermsEsPage() {
             Objetivo de disponibilidad:{" "}
             <strong className="text-text-primary">99.9%</strong> (excluido
             mantenimiento programado). Los mantenimientos programados se
-            notifican con al menos 24 horas de antelación; los mantenimientos
+            notifican con antelación razonable; los mantenimientos
             de emergencia pueden realizarse sin previo aviso. Para planes
             Business y Enterprise pueden aplicar SLAs específicos (compromisos
             de disponibilidad, créditos por incumplimiento, tiempos de
@@ -468,11 +472,11 @@ export default function TermsEsPage() {
           </p>
           <Tbl
             rows={[
-              ["Plan", "Canal", "Tiempo de respuesta"],
-              ["Free", "Documentación, comunidad", "Best effort"],
-              ["Pro", "Email", "48 horas hábiles"],
-              ["Business", "Email, chat", "24 horas hábiles"],
-              ["Enterprise", "Email, chat, teléfono", "4 horas (crítico)"],
+              ["Plan", "Canal"],
+              ["Agentic", "Documentación (autoservicio)"],
+              ["Growth", "Email"],
+              ["Scale", "Email, soporte prioritario"],
+              ["Enterprise", "Email, gestor de cuenta dedicado"],
             ]}
           />
           <p>
@@ -574,7 +578,7 @@ export default function TermsEsPage() {
 
           <H>16. Duración y terminación</H>
           <p>
-            El Plan Free tiene duración indefinida hasta su terminación por
+            El Plan Agentic tiene duración indefinida hasta su terminación por
             cualquiera de las partes; los planes de pago duran el período
             contratado (mensual/anual) y se renuevan automáticamente por
             períodos iguales salvo que el Cliente cancele antes del fin del

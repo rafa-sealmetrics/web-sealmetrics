@@ -172,7 +172,7 @@ export default function TermsPage() {
                 ],
                 [
                   "Plan",
-                  "The contracted service tier (Free, Pro, Business, Enterprise)",
+                  "The contracted service tier (Agentic, Growth, Scale, Enterprise)",
                 ],
                 [
                   "Billing Period",
@@ -237,14 +237,19 @@ export default function TermsPage() {
 
             <H>5. Plans and pricing</H>
             <p>
-              Available plans: <strong className="text-text-primary">Free</strong>{" "}
-              (free plan with basic functionalities and usage limits),{" "}
-              <strong className="text-text-primary">Pro</strong> (small
-              businesses, advanced functionalities),{" "}
-              <strong className="text-text-primary">Business</strong>{" "}
-              (medium-sized companies, LENS and priority support) and{" "}
-              <strong className="text-text-primary">Enterprise</strong>{" "}
-              (customized plan for large companies). Up-to-date details of
+              Available plans:{" "}
+              <strong className="text-text-primary">Agentic</strong> (free,
+              self-serve, total human-events cap),{" "}
+              <strong className="text-text-primary">Growth</strong> (monthly
+              human-events cap; MCP, BigQuery, full API, LENS with your own
+              key),{" "}
+              <strong className="text-text-primary">Scale</strong> (higher cap;
+              managed private AI with tokens included, webhooks, priority
+              support) and{" "}
+              <strong className="text-text-primary">Enterprise</strong>
+              {" "}(custom annual plan: unlimited events, exclusive private AI,
+              isolated processing). A Private AI add-on is available for plans
+              that do not include it. Up-to-date details of
               each Plan are available at sealmetrics.com/pricing.
             </p>
             <p>
@@ -445,7 +450,7 @@ export default function TermsPage() {
                 security architecture
               </a>
               ). In the event of a security breach, we will notify you
-              without undue delay (48 hours maximum), provide information to
+              without undue delay , provide information to
               enable you to comply with your GDPR obligations, and cooperate
               in the management of the incident.
             </p>
@@ -470,8 +475,7 @@ export default function TermsPage() {
             <p>
               Availability target:{" "}
               <strong className="text-text-primary">99.9%</strong> (excluding
-              scheduled maintenance). Scheduled maintenance is notified at
-              least 24 hours in advance; emergency maintenance may be
+              scheduled maintenance). Scheduled maintenance is notified with reasonable notice; emergency maintenance may be
               performed without prior notice. For Business and Enterprise
               plans, specific SLAs may apply (availability commitments,
               credits for non-compliance, support response times),
@@ -479,11 +483,11 @@ export default function TermsPage() {
             </p>
             <Tbl
               rows={[
-                ["Plan", "Channel", "Response time"],
-                ["Free", "Documentation, community", "Best effort"],
-                ["Pro", "Email", "48 business hours"],
-                ["Business", "Email, chat", "24 business hours"],
-                ["Enterprise", "Email, chat, phone", "4 hours (critical)"],
+                ["Plan", "Channel"],
+                ["Agentic", "Documentation (self-serve)"],
+                ["Growth", "Email"],
+                ["Scale", "Email, priority support"],
+                ["Enterprise", "Email, dedicated account manager"],
               ]}
             />
             <p>
@@ -583,7 +587,7 @@ export default function TermsPage() {
 
             <H>16. Term and termination</H>
             <p>
-              The Free Plan runs indefinitely until terminated by either
+              The Agentic Plan runs indefinitely until terminated by either
               party; paid plans run for the contracted period
               (monthly/annual) and renew automatically for equal periods
               unless the Client cancels before the end of the period or
