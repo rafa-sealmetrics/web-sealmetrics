@@ -28,6 +28,9 @@ const EXCLUDE = new Set<string>([
   "/partners",
   "/pricing-plans",
   "/case-studies/european-hotel-group",
+  // El DPA dejó de ser público; la ruta sobrevive solo como redirección a
+  // /privacy para no dejar en 404 las URLs ya indexadas.
+  "/dpa",
   // Landings de campaña (noindex, follow). Hoy viven en los grupos (lp) y
   // (lp-en), que no se escanean; esto es un cinturón por si vuelven a un
   // grupo indexado.
