@@ -94,4 +94,5 @@ Disallow: /api/
 Sitemap: https://sealmetrics.com/sitemap.xml
 
 # LLM discoverability — see https://llmstxt.org
-LLMs-Txt: https://sealmetrics.com/llms.txt
+# (not a robots.txt directive; llms.txt is also linked from <head> and sitemap)
+# https://sealmetrics.com/llms.txt

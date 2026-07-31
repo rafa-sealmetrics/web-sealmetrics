@@ -49,7 +49,9 @@ export function StickyCtaBar({ locale = "en" }: { locale?: "en" | "es" }) {
 
   return (
     <div
-      aria-hidden={!visible}
+      // `inert` (not aria-hidden) so the off-screen bar is unreachable by
+      // keyboard too — aria-hidden alone leaves its links in the tab order.
+      inert={!visible}
       className="fixed bottom-0 left-0 right-0 z-40 bg-warm-white/85 backdrop-blur-md border-t border-warm-100 shadow-[0_-4px_24px_-12px_rgba(14,14,12,0.18)] py-3 px-4 transition-transform duration-300"
       style={{ transform: visible ? "translateY(0)" : "translateY(110%)" }}
     >
