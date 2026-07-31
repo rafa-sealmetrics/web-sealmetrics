@@ -17,8 +17,8 @@ export function LandingHeader({ ctaHref, ctaLabel }: { ctaHref: string; ctaLabel
         <Picture
           src="/logos/logo-sealmetrics-negro.png"
           alt="SealMetrics"
-          width={160}
-          height={32}
+          width={167}
+          height={28}
           className="h-7 w-auto"
           loading="eager"
           fetchPriority="high"

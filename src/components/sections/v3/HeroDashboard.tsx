@@ -139,7 +139,7 @@ export function HeroDashboard() {
             <Picture
               src="/logos/logo-sealmetrics-negro.png"
               alt="SealMetrics"
-              width={120}
+              width={108}
               height={18}
               className="h-[18px] w-auto"
             />
@@ -206,10 +206,10 @@ export function HeroDashboard() {
         {/* Main */}
         <div className="p-6 md:p-7 flex flex-col gap-[18px]">
           <div className="flex items-center justify-between flex-wrap gap-3">
-            <h3 className="text-[17px] font-semibold tracking-[-0.02em]">
+            <h2 className="text-[17px] font-semibold tracking-[-0.02em]">
               {view.title}{" "}
               <span className="text-ink-soft font-medium">· last 30 days</span>
-            </h3>
+            </h2>
             <div className="flex gap-1.5">
               <span className="px-2.5 py-1 bg-white border border-brand-soft rounded text-[10px] font-mono font-semibold uppercase tracking-[0.04em] text-brand">
                 ● EU-hosted

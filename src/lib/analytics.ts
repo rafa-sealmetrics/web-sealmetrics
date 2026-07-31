@@ -53,10 +53,7 @@ function whenReady(fn: () => void): void {
   }
 }
 
-// (Re)load the pixel for `group`, which registers a pageview. Called on every
-// route change by SealMetricsTracker.
-export function pageview(group?: string): void {
-  if (typeof document === "undefined") return;
+function injectPixel(group?: string): void {
   document.getElementById(PIXEL_SCRIPT_ID)?.remove();
 
   const params = new URLSearchParams({ id: SEALMETRICS_ID });
@@ -68,6 +65,27 @@ export function pageview(group?: string): void {
   script.src = `${SEALMETRICS_PIXEL_HOST}/t.js?${params.toString()}`;
   script.onload = flushQueue;
   document.head.appendChild(script);
+}
+
+// The pixel lives on its own origin, so the first hit costs a DNS + TCP + TLS
+// handshake. Racing that against the initial render pushes LCP out for no gain:
+// nothing above the fold depends on it. So the first pageview waits for `load`
+// (already fired = fire now), and every later route change fires immediately.
+let firstPageviewSent = false;
+
+// (Re)load the pixel for `group`, which registers a pageview. Called on every
+// route change by SealMetricsTracker.
+export function pageview(group?: string): void {
+  if (typeof document === "undefined") return;
+
+  if (firstPageviewSent || document.readyState === "complete") {
+    firstPageviewSent = true;
+    injectPixel(group);
+    return;
+  }
+
+  firstPageviewSent = true;
+  window.addEventListener("load", () => injectPixel(group), { once: true });
 }
 
 // ---------------------------------------------------------------------------
