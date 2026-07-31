@@ -92,7 +92,13 @@ Every origin the site loads a **subresource** from, and the directive that must 
 
 `form-action 'self'` is correct as drafted: every form submits via `onSubmit` + `fetch()`, so no native cross-origin form post exists. The `www.youtube.com` entries in `frame-src` are unused today (YouTube appears only as a `sameAs` in `lib/schema.ts`) and are left in place as harmless headroom.
 
-**Re-run this inventory whenever a new external origin is introduced.** Grep the source for `fetch(`, `<iframe`, and `script.src =` and check each literal origin against `vercel.json`. There is no automated gate for this yet — unlike the `llms.txt` drift gate in `scripts/audit-llms-txt.mjs`, which exists precisely because manual discipline failed twice.
+**This inventory is enforced by `scripts/audit-csp.mjs`**, wired into `postbuild` alongside the `llms.txt` drift gate. `npm run build` fails if the source loads a subresource from an origin that is not allowlisted under the matching directive, naming the file, the line and the directive it belongs in. Run it standalone with `node scripts/audit-csp.mjs` — it reads source, so it needs no build.
+
+The gate was verified against all four bugs above: removing any one of them from `vercel.json` fails the build and names the correct directive. It also catches a newly introduced origin, which is the case that actually matters going forward — the four bugs are already fixed, but the fifth one has not been written yet.
+
+It resolves origins through module-level consts, template literals and `process.env` values read from `.env.production`, because the two origins that were actually broken (`pixel-pre` via `SEALMETRICS_PIXEL_HOST`, `pixel-auditor` via `API_BASE`) are both reached that way. A first cut that only matched literal URLs passed cleanly against the broken policy — worth remembering before trusting any future version of this check.
+
+What it deliberately does not check: `img-src` (allowlisted as `https:`, so anything passes) and plain navigations — an `<a href>` or `<a download>` to another origin is not a subresource. Origins loaded by a dependency rather than our own source (Turnstile) or injected via env vars are listed in the script's `KEEP` map, each with a stated reason.
 
 ---
 
