@@ -59,7 +59,9 @@ Why: headers and cache config live in `vercel.json` (in-repo, code-reviewed, rev
 ## Pre-flip checklist (locked from PRD §15b)
 
 1. **Vercel account + project provisioned.** Connect to GitHub repo. Verify `out/` directory output works (current `next.config.ts` already exports static). DONE pre-flip: `vercel.json` drafted in-repo for review (1 Jun).
+   - **CSP audit + correction — 31 Jul 2026.** The drafted CSP was checked against every origin the site actually loads a subresource from. Four were missing; all four are now allowlisted. Had the policy been promoted to enforcing as drafted, it would have blocked the analytics pixel, the entire lead-capture funnel and every video embed. See "CSP origin inventory" below.
 2. **Run side-by-side on a Vercel preview domain** (e.g., `sealmetrics-preview.vercel.app`). Smoke-test homepage, `/pricing`, `/vs-ga4`, `/blog/[any]`, `/glossary/[any]`, `/open/[any]`, `/case-studies/palladium-hotel-group`, `/demo`. Confirm headers + cache via curl. Confirm CSP-Report-Only emits no console errors on production-equivalent pages.
+   - Smoke-test the four corrected origins explicitly, since a Report-Only violation is easy to miss in a console: `/demo` and `/demo-access` (n8n webhook), `/free-audit` (pixel-auditor), `/videos` and `/demo/thank-you` (mediadelivery iframe), and any page (pixel `t.js` loads). Each must produce **zero** `report-only` violations before step 7.
 3. **Lower TTL on apex + www to 300 seconds** one week before the flip. GoDaddy DNS panel. Verify with `dig sealmetrics.com A` showing new TTL.
 4. **Pick maintenance window**: Saturday morning EU time (06:00 CET), Q3 2026. Lowest paid-media activity, lowest organic Saturday traffic.
 5. **Flip the two records** (apex A → Vercel IP `76.76.21.21`; `www` CNAME → `cname.vercel-dns.com`). Document the previous values for instant rollback.
@@ -75,12 +77,44 @@ Why: headers and cache config live in `vercel.json` (in-repo, code-reviewed, rev
 
 ---
 
+## CSP origin inventory (audited 31 Jul 2026)
+
+Every origin the site loads a **subresource** from, and the directive that must cover it. Editorial links in copy (eur-lex, cnil.fr, matomo.org, cal.com…) are navigations, not subresources, and need no directive — the same is true of the `.mcpb` download on `/install`, which is an `<a download>`.
+
+| Origin | Directive | Used by | Status before audit |
+|---|---|---|---|
+| `pixel-pre.sealmetrics.com` | `script-src` | `lib/analytics.ts` injects `t.js` | **MISSING** — was only in `connect-src`, which governs fetch/XHR, not script loading |
+| `n8n.sealmetrics.com` | `connect-src` | `/demo`, `/demo-access` (EN+ES), data-loss calculator, audit form | **MISSING** |
+| `pixel-auditor.sealmetrics.net` | `connect-src` | `/free-audit` via `NEXT_PUBLIC_PIXEL_AUDITOR_API` (note: `.net`, not `.com`) | **MISSING** |
+| `iframe.mediadelivery.net` | `frame-src` | `/videos`, `/demo/thank-you` (EN+ES) | **MISSING** |
+| `challenges.cloudflare.com` | `script-src`, `connect-src`, `frame-src` | Turnstile on forms | present |
+| `api.sealmetrics.com` | `connect-src` | audit endpoint | present |
+
+`form-action 'self'` is correct as drafted: every form submits via `onSubmit` + `fetch()`, so no native cross-origin form post exists. The `www.youtube.com` entries in `frame-src` are unused today (YouTube appears only as a `sameAs` in `lib/schema.ts`) and are left in place as harmless headroom.
+
+**Re-run this inventory whenever a new external origin is introduced.** Grep the source for `fetch(`, `<iframe`, and `script.src =` and check each literal origin against `vercel.json`. There is no automated gate for this yet — unlike the `llms.txt` drift gate in `scripts/audit-llms-txt.mjs`, which exists precisely because manual discipline failed twice.
+
+---
+
+## Verified production header state (31 Jul 2026, GitHub Pages)
+
+Measured with `curl -sI https://sealmetrics.com/`:
+
+```
+server: GitHub.com · via: 1.1 varnish
+cache-control: max-age=600          ← including /_next/static/*.js, which are content-hashed and immutable
+```
+
+**Zero security headers are served.** No HSTS, no `X-Frame-Options`, no `X-Content-Type-Options`, no `Referrer-Policy`, no `Permissions-Policy`, no CSP. Everything in `vercel.json` is inert until the flip — the file is a staged artifact, not live config. This is the concrete evidence behind the "security-header credibility gap" named at the top of this doc.
+
+---
+
 ## Risk register
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
 | DNS misconfiguration flips wrong subdomain | Low | Catastrophic (pixel offline) | GoDaddy panel changes apex/www only. Both changes recorded with prior values. NS not touched. |
-| CSP breaks an interactive feature | Medium | Console errors, minor degradation | `Content-Security-Policy-Report-Only` for the first 7 days. Promote to enforcing only after a clean week. |
+| CSP breaks an interactive feature | ~~Medium~~ **Was certain** | ~~Console errors, minor degradation~~ **Severe: analytics + lead capture + video all dead** | Impact was understated until the 31 Jul origin audit. The drafted policy omitted four origins the site loads from, so promoting it to enforcing would not have degraded a feature — it would have silently killed the pixel, every lead form and every video embed. Origins now allowlisted; step 2 smoke-tests each one. `Report-Only` for the first 7 days still applies as the backstop. |
 | Vercel build differs from local `next build` | Low | Preview catches it | Side-by-side preview deploy validated before flip. |
 | Email deliverability impact | Very low | High | MX, SPF, DKIM, DMARC are all on other records or other subdomains. Untouched by the apex A flip. |
 | Vercel rate-limit / cost spike | Low | Cost | Pro plan covers ~1TB bandwidth/mo. Current marketing-site bandwidth well under. Set up usage alerting. |
