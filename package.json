@@ -7,7 +7,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/optimize-images.mjs",
     "build": "next build",
-    "postbuild": "node scripts/audit-llms-txt.mjs",
+    "postbuild": "node scripts/audit-llms-txt.mjs && node scripts/audit-csp.mjs",
     "start": "next start",
     "lint": "next lint"
   },
