@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Test de bloqueo Brave — temporal</title>
+<style>
+  body{font:15px/1.5 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}
+  h1{font-size:20px} h2{font-size:15px;margin-top:28px}
+  table{border-collapse:collapse;width:100%;margin-top:12px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e3e3;vertical-align:top}
+  th{font-weight:600;background:#fafafa}
+  code{background:#f4f4f4;padding:1px 5px;border-radius:3px;font-size:13px}
+  .ok{color:#0a7f3f;font-weight:600} .no{color:#c00;font-weight:600} .wait{color:#888}
+  .note{background:#fffbe6;border:1px solid #f0e0a0;padding:12px 14px;border-radius:6px;margin-top:24px;font-size:14px}
+  #verdict{margin-top:20px;padding:14px;border-radius:6px;font-weight:600}
+</style>
+</head>
+<body>
+<h1>Test de bloqueo de Brave</h1>
+<p>Página temporal. Carga cuatro recursos y muestra cuáles ha ejecutado el navegador.
+Sirve para saber si Brave con <strong>Shields en agresivo</strong> bloquea según la forma del path
+en un dominio público con HTTPS.</p>
+
+<p><strong>Cómo usarla:</strong> ábrela dos veces, una con Shields en <em>estándar</em> y otra en
+<em>agresivo</em> (el león de la barra de direcciones), y compara. Recarga con Cmd+Shift+R para
+evitar caché.</p>
+
+<table>
+  <thead><tr><th>Recurso</th><th>Qué prueba</th><th>Resultado</th></tr></thead>
+  <tbody>
+    <tr><td><code>/brave-test/control.js</code></td><td>Control: path sin relación con analítica</td><td id="r-control" class="wait">cargando…</td></tr>
+    <tr><td><code>/smx/t.js</code></td><td>Path neutro, mismo origen (el que usan Magento, PrestaShop, Drupal)</td><td id="r-neutral" class="wait">cargando…</td></tr>
+    <tr><td><code>/wp-json/sealmetrics/v1/t.js</code></td><td>Path con marca, mismo origen (el que usan WordPress y WooCommerce)</td><td id="r-branded" class="wait">cargando…</td></tr>
+    <tr><td><code>pixel-pre.sealmetrics.com/t.js?auto=0</code></td><td>Cross-origin al host del pixel (tracker real con el pageview desactivado)</td><td id="r-cross" class="wait">cargando…</td></tr>
+  </tbody>
+</table>
+
+<div id="verdict"></div>
+
+<div class="note">
+  <strong>Cómo leerlo.</strong> Si el control falla, el test no vale: hay un problema de red o de
+  despliegue, no de Brave. Si el control pasa y falla alguno de los otros, el bloqueo es real y
+  sabemos exactamente qué forma de URL lo dispara. El recurso cross-origin carga el tracker real
+  con <code>auto=0&amp;spa=0</code>: es JavaScript válido servido por el pixel, pero con el pageview
+  automático desactivado, así que no ensucia la cuenta de PRE con visitas falsas.
+</div>
+
+<script>
+(function () {
+  // Tracker real con auto=0&spa=0: JS ejecutable servido por el host del pixel,
+  // sin disparar el pageview automatico (no contamina la cuenta de PRE).
+  // No usar /livez: va con text/plain + nosniff y el navegador se negaria a
+  // ejecutarlo, dando un falso "bloqueado".
+  var CROSS = 'https://pixel-pre.sealmetrics.com/t.js?id=sealmetrics2&auto=0&spa=0';
+  var cb = '?cb=' + Date.now();
+  var state = { control: null, neutral: null, branded: null, cross: null };
+
+  function paint(key, ok) {
+    state[key] = ok;
+    var el = document.getElementById('r-' + key);
+    el.className = ok ? 'ok' : 'no';
+    el.textContent = ok ? 'PASA' : 'BLOQUEADO / falla';
+    verdict();
+  }
+
+  function verdict() {
+    var done = Object.keys(state).every(function (k) { return state[k] !== null; });
+    if (!done) return;
+    var v = document.getElementById('verdict');
+    if (!state.control) {
+      v.style.background = '#fdecea';
+      v.textContent = 'Test no válido: el control ha fallado. Revisa el despliegue o la red antes de sacar conclusiones.';
+      return;
+    }
+    if (state.neutral && state.branded && state.cross) {
+      v.style.background = '#e6f6ec';
+      v.textContent = 'Todo pasa. Con esta configuración de Shields, Brave no bloquea ninguna de las formas de URL en un dominio real.';
+      return;
+    }
+    var caidos = [];
+    if (!state.neutral) caidos.push('el path neutro /smx/');
+    if (!state.branded) caidos.push('el path con marca /wp-json/sealmetrics/');
+    if (!state.cross) caidos.push('el host del pixel (cross-origin)');
+    v.style.background = '#fdecea';
+    v.textContent = 'Bloqueo confirmado en: ' + caidos.join(', ') + '. El control pasó, así que no es un problema de red.';
+  }
+
+  function probe(key, url) {
+    var s = document.createElement('script');
+    s.src = url + (url.indexOf('?') === -1 ? cb : '&cb=' + Date.now());
+    s.onload = function () { paint(key, true); };
+    s.onerror = function () { paint(key, false); };
+    document.head.appendChild(s);
+    // Red de seguridad: un bloqueo silencioso que no dispare ningun evento
+    setTimeout(function () { if (state[key] === null) paint(key, false); }, 8000);
+  }
+
+  probe('control', '/brave-test/control.js');
+  probe('neutral', '/smx/t.js');
+  probe('branded', '/wp-json/sealmetrics/v1/t.js');
+  probe('cross', CROSS);
+})();
+</script>
+</body>
+</html>
