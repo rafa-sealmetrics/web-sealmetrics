@@ -154,8 +154,7 @@ export default function TrustPage() {
             </p>
             <ul className="list-disc pl-5 space-y-2 mt-3">
               <li>
-                Full Data Protection Impact Assessment (DPIA) — a public
-                executive summary is coming soon.
+                Full Data Protection Impact Assessment (DPIA).
               </li>
               <li>
                 Legitimate interest assessment (LIA) for the attribution
