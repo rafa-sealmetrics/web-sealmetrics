@@ -358,7 +358,7 @@ export function AccessForm() {
         >
           I agree to the{" "}
           <a
-            href="https://legal.sealmetrics.com/privacy-notice"
+            href="/privacy"
             target="_blank"
             rel="noopener noreferrer"
             className="text-ink underline hover:text-brand transition-colors"
