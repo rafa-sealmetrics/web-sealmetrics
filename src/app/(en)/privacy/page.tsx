@@ -126,8 +126,9 @@ export default function PrivacyPage() {
               visitor&rsquo;s browser from general device characteristics. It is
               not unique to a person &mdash; many different visitors can produce
               the same value &mdash; so it cannot identify an individual. It is
-              never stored on the visitor&rsquo;s device and it is isolated per
-              site. SealMetrics does not use it to correlate visits over time:
+              never stored on the visitor&rsquo;s device, and each client
+              site&rsquo;s data is processed in isolation. SealMetrics does not
+              use it to correlate visits over time:
               each new entrance is counted as new, independent data, and no
               visitor history or profile is built across sessions.
             </p>
