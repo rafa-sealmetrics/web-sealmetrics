@@ -34,8 +34,8 @@ export default function PrivacyPage() {
 
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
-            <strong className="text-text-primary">Last updated:</strong> May 1,
-            2026
+            <strong className="text-text-primary">Last updated:</strong> August
+            5, 2026
           </p>
 
           <div>
@@ -117,6 +117,30 @@ export default function PrivacyPage() {
               matching, (ii) the GeoLite2 lookup described above when applicable,
               and (iii) operational logging with limited retention. The IP is
               never available to Clients in their reports.
+            </p>
+            <p className="mt-3">
+              <strong className="text-text-primary">
+                On session identifiers:
+              </strong>{" "}
+              SealMetrics uses a short-lived session identifier computed in the
+              visitor&rsquo;s browser from general device characteristics. It is
+              not unique to a person &mdash; many different visitors can produce
+              the same value &mdash; so it cannot identify an individual. It is
+              never stored on the visitor&rsquo;s device, and each client
+              site&rsquo;s data is processed in isolation. SealMetrics does not
+              use it to correlate visits over time:
+              each new entrance is counted as new, independent data, and no
+              visitor history or profile is built across sessions.
+            </p>
+            <p className="mt-3">
+              <strong className="text-text-primary">
+                On advertising click identifiers:
+              </strong>{" "}
+              when a visitor lands from an ad, the click identifier present in
+              the landing URL (e.g. gclid, msclkid) is processed solely to
+              determine the source of the click for attribution. It is not used
+              to identify the visitor and is not displayed in analytics
+              reports.
             </p>
             <p className="mt-3">
               <strong className="text-text-primary">

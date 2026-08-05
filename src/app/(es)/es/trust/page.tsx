@@ -142,8 +142,7 @@ export default function TrustEsPage() {
           </p>
           <ul className="list-disc pl-5 space-y-2 mt-3">
             <li>
-              Evaluación de impacto (DPIA) completa — próximamente se publicará
-              un resumen ejecutivo.
+              Evaluación de impacto (DPIA) completa.
             </li>
             <li>
               Evaluación de interés legítimo (LIA) de la capa de atribución.
