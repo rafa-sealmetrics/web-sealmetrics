@@ -353,6 +353,25 @@ export default function TermsEsPage() {
             tomar acciones legales si procede y reportar a las autoridades si
             es requerido por ley.
           </p>
+          <p>
+            En espejo de la cláusula 5.2 del{" "}
+            <a href="/es/dpa/" className="underline">
+              DPA
+            </a>
+            , usted se obliga a no enviar datos personales al Servicio a
+            través de las propiedades de conversión, los parámetros de URL,
+            los nombres de campaña ni cualquier otro campo de libre
+            configuración del tracker (p. ej. emails, teléfonos, documentos
+            de identidad). Sealmetrics podrá eliminar la información
+            detectada en contravención de esta cláusula y, en caso de
+            incumplimiento persistente, suspender el envío de datos del sitio
+            afectado.
+          </p>
+          <p>
+            Al conectar claves de proveedores de IA o destinos de exportación
+            propios (BYOK), usted asume las salvaguardas correspondientes
+            conforme a la cláusula 6 del DPA y al documento de frontera BYOK.
+          </p>
 
           <H>9. Propiedad intelectual</H>
           <p>

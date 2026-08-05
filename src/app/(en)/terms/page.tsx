@@ -366,6 +366,23 @@ export default function TermsPage() {
               action where appropriate, and report to the authorities where
               required by law.
             </p>
+            <p>
+              Mirroring clause 5.2 of the{" "}
+              <a href="/dpa/" className="underline">
+                DPA
+              </a>
+              , you agree not to send personal data to the Service through
+              conversion properties, URL parameters, campaign names or any
+              other freely configurable tracker field (e.g. emails, phone
+              numbers, identity documents). Sealmetrics may delete any such
+              detected information and, in the event of persistent
+              non-compliance, suspend data ingestion for the affected site.
+            </p>
+            <p>
+              By connecting your own AI-provider keys or export destinations
+              (BYOK), you assume the corresponding safeguards under clause 6
+              of the DPA and the BYOK boundary document.
+            </p>
 
             <H>9. Intellectual property</H>
             <p>
