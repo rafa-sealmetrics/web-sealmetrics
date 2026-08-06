@@ -481,6 +481,16 @@
       "sourceHash": "461372cbc8d74f578faf5a7e2b12d84b41830e553c0afb64c7d744f2a20feefe",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/self-service-analytics-for-marketing-teams.avif": {
+      "source": "public/og/blog/self-service-analytics-for-marketing-teams.png",
+      "sourceHash": "c383e441b20a3fd9998b7eb3e06666d8d2985930899f0bcf3e9fc5a06333313b",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/self-service-analytics-for-marketing-teams.webp": {
+      "source": "public/og/blog/self-service-analytics-for-marketing-teams.png",
+      "sourceHash": "c383e441b20a3fd9998b7eb3e06666d8d2985930899f0bcf3e9fc5a06333313b",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/self-service-analytics-lens-ai.avif": {
       "source": "public/og/blog/self-service-analytics-lens-ai.png",
       "sourceHash": "c84b9ae811e1653042ba0ab9c4417886735ec1fc184954b6f4f6c3ced1823d74",

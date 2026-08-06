@@ -135,6 +135,7 @@ Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/gdpr-analytics-spain-faq — GDPR Analytics in Spain: 7 Questions Online Stores Ask (AEPD guidance, GA4 legality, LSSI fines, banner data loss)
 - /blog/gdpr-eprivacy-analytics-legal-assessment — Is Your Analytics Actually GDPR-Compliant? A Legal Assessment (ePrivacy vs GDPR two-part test, per-tool verdicts: GA4, Matomo, Plausible, Piwik PRO, SealMetrics)
 - /blog/self-service-analytics-lens-ai — What It Takes to Make Self-Service Analytics Actually Work (complete data + semantic MCP + LENS AI)
+- /blog/self-service-analytics-for-marketing-teams — Self-service analytics for marketing teams: 100% of traffic without consent, 47 named read-only tools instead of SQL, BYOK or private AI
 - /blog/cookieless-analytics-for-ecommerce — How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
 - /blog/cookieless-analytics-for-hotels — How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
 - /blog/cookieless-analytics-for-saas — PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026

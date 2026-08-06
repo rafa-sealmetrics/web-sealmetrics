@@ -30,6 +30,21 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "self-service-analytics-for-marketing-teams",
+    title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
+    description:
+      "A marketing team gets a correct answer without opening a ticket. 100% of traffic measured without consent, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
+    date: "2026-08-06",
+    category: "AI & Analytics",
+    readTime: "8 min",
+    author: AUTHORS.rafa,
+    related: [
+      "self-service-analytics-lens-ai",
+      "ai-agent-traffic-analytics",
+      "why-ga4-shows-13pct-eu-traffic",
+    ],
+  },
+  {
     slug: "best-web-analytics-tool",
     title: "The Best Web Analytics Tool: 12 Requirements That Decide It",
     description:
