@@ -41,6 +41,7 @@ const translatedPaths = new Set([
   "/blog/ga4-data-sampling-problem",
   "/blog/why-ga4-shows-13pct-eu-traffic",
   "/blog/gdpr-analytics-without-consent",
+  "/blog/best-web-analytics-tool",
   // Seal AI series (17 posts, EN + ES)
   "/blog/meet-seal-ai",
   "/blog/residency-is-not-sovereignty",

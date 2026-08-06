@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 const ES_TRANSLATED_SLUGS = new Set([
+  "best-web-analytics-tool",
   "gdpr-analytics-spain-faq",
   "gdpr-eprivacy-analytics-legal-assessment",
   "ga4-alternatives-enterprise",
@@ -35,6 +36,12 @@ const ES_TRANSLATED_SLUGS = new Set([
 ]);
 
 const ES_TRANSLATIONS: Record<string, { title: string; description: string; category: string; readTime: string }> = {
+  "best-web-analytics-tool": {
+    title: "La mejor herramienta de analítica web: los 12 requisitos que de verdad deciden",
+    description: "No es una lista de proveedores. Los 12 requisitos técnicos que debe cumplir una plataforma — peso del píxel, tiempo real, 100% del dato, API, MCP — y cómo verificarlos.",
+    category: "Comparativas",
+    readTime: "12 min",
+  },
   "gdpr-analytics-spain-faq": {
     title: "Analítica RGPD en España: las 7 preguntas que hacen las tiendas online",
     description: "¿Necesita tu tienda un banner de cookies para la analítica? ¿Es legal GA4 en España? ¿Qué permite la AEPD y qué cuesta incumplir la LSSI? Respuestas directas.",

@@ -201,6 +201,16 @@
       "sourceHash": "d8c80551ed74a62d57a94e0821fa909447c6fe82225962d62118ec5e9dbb16ac",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/best-web-analytics-tool.avif": {
+      "source": "public/og/blog/best-web-analytics-tool.png",
+      "sourceHash": "f0e7902393bb85465a7d560b605a94a7e81a47bea6327d5cc1ca405eec9cfad4",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/best-web-analytics-tool.webp": {
+      "source": "public/og/blog/best-web-analytics-tool.png",
+      "sourceHash": "f0e7902393bb85465a7d560b605a94a7e81a47bea6327d5cc1ca405eec9cfad4",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/cnil-self-assessment-published.avif": {
       "source": "public/og/blog/cnil-self-assessment-published.png",
       "sourceHash": "90dab63dddf1367c18abb083f5ed6f4e1c674becf6622cec66c8ef8697baba92",
