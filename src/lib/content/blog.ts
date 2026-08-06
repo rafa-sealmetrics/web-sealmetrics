@@ -30,6 +30,21 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "best-web-analytics-tool",
+    title: "The Best Web Analytics Tool: 12 Requirements That Decide It",
+    description:
+      "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of the data, API, MCP — and how to test each one.",
+    date: "2026-08-06",
+    category: "Comparisons",
+    readTime: "12 min",
+    author: AUTHORS.rafa,
+    related: [
+      "best-enterprise-analytics-platforms",
+      "we-measured-every-analytics-script",
+      "ga4-data-sampling-problem",
+    ],
+  },
+  {
     slug: "is-adobe-analytics-gdpr-compliant",
     title: "Is Adobe Analytics GDPR Compliant?",
     description:

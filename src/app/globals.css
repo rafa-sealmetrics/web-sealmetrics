@@ -274,6 +274,28 @@ body {
 }
 
 /* ============================================
+   HORIZONTAL SCROLL AFFORDANCE (wide tables)
+   ============================================ */
+
+/* Edge shadows that show only on the side that still has content, and fade
+   out once you reach that edge. The two solid gradients scroll with the
+   content (background-attachment: local) and mask the shadows at the ends;
+   the two radial gradients stay pinned to the container.
+   Pure CSS — keeps the table in a server component. */
+.scroll-shadow-x {
+  overflow-x: auto;
+  background-image:
+    linear-gradient(to right, var(--color-white) 40%, rgba(255, 255, 255, 0)),
+    linear-gradient(to left, var(--color-white) 40%, rgba(255, 255, 255, 0)),
+    radial-gradient(farthest-side at 0 50%, rgba(14, 14, 12, 0.16), rgba(14, 14, 12, 0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(14, 14, 12, 0.16), rgba(14, 14, 12, 0));
+  background-position: left center, right center, left center, right center;
+  background-repeat: no-repeat;
+  background-size: 44px 100%, 44px 100%, 16px 100%, 16px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+/* ============================================
    TEXT ROTATION ANIMATION
    ============================================ */
 
