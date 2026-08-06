@@ -244,7 +244,7 @@ export default function DpaEsPage() {
           <Tbl
             rows={[
               ["Datos", "Conservación (TTL automático)"],
-              ["Registro técnico a nivel de evento (user agent, URLs completas)", "14 días"],
+              ["Registro técnico a nivel de evento (user agent, URLs completas)", "1 día"],
               ["Agregados horarios", "90 días"],
               ["Agregados diarios, conversiones y propiedades", "24 meses"],
               ["Estado de sesión (memoria operativa)", "2 horas"],
