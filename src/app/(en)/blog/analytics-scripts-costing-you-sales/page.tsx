@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Heavy scripts, consent banners, and ad blockers create a compound effect that costs you conversions.",
     type: "article",
+    url: "https://sealmetrics.com/blog/analytics-scripts-costing-you-sales/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/analytics-scripts-costing-you-sales.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "How Analytics Scripts Are Costing You Sales",
+    description: "Heavy scripts, consent banners, and ad blockers create a compound effect that costs you conversions.",
+    images: ["https://sealmetrics.com/og/blog/analytics-scripts-costing-you-sales.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/analytics-scripts-costing-you-sales/",

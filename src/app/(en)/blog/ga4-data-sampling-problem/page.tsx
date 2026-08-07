@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     description:
       "GA4 applies data sampling at high traffic volumes. Here is how it affects your data and decisions.",
     type: "article",
+    url: "https://sealmetrics.com/blog/ga4-data-sampling-problem/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/ga4-data-sampling-problem.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong",
+    description: "GA4 applies data sampling at high traffic volumes. Here is how it affects your data and decisions.",
+    images: ["https://sealmetrics.com/og/blog/ga4-data-sampling-problem.png"],
   },
   alternates: {
     languages: getAlternates("/blog/ga4-data-sampling-problem"),

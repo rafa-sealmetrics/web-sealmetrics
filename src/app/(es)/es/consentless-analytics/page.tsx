@@ -25,6 +25,15 @@ export const metadata: Metadata = {
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/consentless-analytics/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica sin consentimiento — legal por arquitectura",
+    description: "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La ruta arquitectónica, la guía de autoridades, los límites.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/consentless-analytics/",

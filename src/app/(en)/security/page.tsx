@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Privacy-by-design architecture, encryption, per-account isolation, automatic retention TTLs and EU-only infrastructure.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/security/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Security Overview — Sealmetrics",
+    description: "Privacy-by-design architecture, encryption, per-account isolation, automatic retention TTLs and EU-only infrastructure.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/security/",

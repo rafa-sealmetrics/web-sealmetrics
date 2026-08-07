@@ -25,6 +25,16 @@ export const metadata: Metadata = {
       "Last-click attribution on 100% of data. The architecture, the trade-offs, and why CFOs accept it.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/use-cases/revenue-attribution/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Revenue attribution without cookies",
+    description: "Last-click attribution on 100% of data. The architecture, the trade-offs, and why CFOs accept it.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/use-cases/revenue-attribution/",

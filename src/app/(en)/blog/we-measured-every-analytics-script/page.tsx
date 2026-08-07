@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Real measurements of analytics script sizes from production CDNs. The results are stark.",
     type: "article",
+    url: "https://sealmetrics.com/blog/we-measured-every-analytics-script/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/we-measured-every-analytics-script.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "We Measured Every Analytics Script. Here Is What We Found.",
+    description: "Real measurements of analytics script sizes from production CDNs. The results are stark.",
+    images: ["https://sealmetrics.com/og/blog/we-measured-every-analytics-script.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/we-measured-every-analytics-script/",

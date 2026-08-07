@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Editorial ranking of enterprise analytics platforms compared on data capture, compliance, pricing, and AI features.",
     type: "article",
+    url: "https://sealmetrics.com/blog/best-enterprise-analytics-platforms/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/best-enterprise-analytics-platforms.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "8 Best Enterprise Analytics Platforms in 2026",
+    description: "Editorial ranking of enterprise analytics platforms compared on data capture, compliance, pricing, and AI features.",
+    images: ["https://sealmetrics.com/og/blog/best-enterprise-analytics-platforms.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/best-enterprise-analytics-platforms/",

@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow? Direct answers, one per question.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/gdpr-analytics-spain-faq/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GDPR Analytics in Spain: 7 Questions Online Stores Ask",
+    description: "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow? Direct answers, one per question.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/gdpr-analytics-spain-faq/",

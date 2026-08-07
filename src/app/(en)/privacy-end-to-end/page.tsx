@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/privacy-end-to-end/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Privacy end to end — SealMetrics",
+    description: "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/privacy-end-to-end/",

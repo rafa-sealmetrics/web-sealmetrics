@@ -4,6 +4,40 @@ Disallow: /api/
 Disallow: /demo/thank-you
 
 # ============================================================
+# Markdown twins (/path.md) — documented policy, not an accident
+# ============================================================
+# Every indexable HTML page is mirrored as a clean Markdown document at the
+# same path with a .md suffix (see /llms-md-index.txt). They exist so AI
+# agents can read the content without parsing our markup.
+#
+# The site is a static export on GitHub Pages, so we cannot serve
+# `Vary: Accept` content negotiation or an X-Robots-Tag header on those files.
+# Instead: classic search crawlers are told not to index them (the HTML is
+# canonical and must stay the only indexable copy), while AI crawlers are
+# explicitly allowed to fetch them. Removing these Disallow lines would let
+# duplicate plain-text copies of every page compete in the search index.
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /*.md$
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /*.md$
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+Disallow: /*.md$
+
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+Disallow: /*.md$
+
+# ============================================================
 # AI / LLM crawlers — allow full public content for citation
 # ============================================================
 
@@ -96,3 +130,9 @@ Sitemap: https://sealmetrics.com/sitemap.xml
 # LLM discoverability — see https://llmstxt.org
 # (not a robots.txt directive; llms.txt is also linked from <head> and sitemap)
 # https://sealmetrics.com/llms.txt
+# https://sealmetrics.com/llms-full.txt
+#
+# Markdown twin of every indexable page, one URL per line:
+# https://sealmetrics.com/llms-md-index.txt
+# Each HTML page also advertises its own twin via
+# <link rel="alternate" type="text/markdown" href="…">.

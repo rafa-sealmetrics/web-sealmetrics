@@ -15,6 +15,16 @@ export const metadata: Metadata = {
     description: "¿Buscando una alternativa a GA que no commoditice tus datos? SealMetrics es otra categoría: completo, UE-hosted, grado enterprise.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/alternatives/google-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Alternativas a Google Analytics — SealMetrics",
+    description: "¿Buscando una alternativa a GA que no commoditice tus datos? SealMetrics es otra categoría: completo, UE-hosted, grado enterprise.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/alternatives/google-analytics/", languages: getAlternatesEs("/alternatives/google-analytics") },
 };

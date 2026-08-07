@@ -6,13 +6,24 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
-  title: "¿Qué es la pérdida de datos en analítica? — Glosario SealMetrics",
+  title: "¿Qué es la pérdida de datos en analítica? — Glosario",
   description:
     "La pérdida de datos en analítica es la brecha entre tráfico real y tráfico medido por las herramientas con cookies. En la UE alcanza típicamente el 60-87%.",
   openGraph: {
     title: "¿Qué es la pérdida de datos en analítica?",
     description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
     type: "article",
+    url: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "¿Qué es la pérdida de datos en analítica?",
+    description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
@@ -24,7 +35,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glosario", href: "/es/glossary" }, { label: "Pérdida de datos en analítica" }]} locale="es" />
-      <JsonLd data={definedTermSchema({ name: "Pérdida de datos en analítica", description: "La brecha entre tráfico real y tráfico observable por las herramientas con cookies.", url: "/es/glossary/data-loss-in-analytics", related: [{ name: "Plataforma de gestión de consentimiento", url: "/es/glossary/consent-management-platform" }, { name: "Impacto del bloqueador en analítica", url: "/es/glossary/ad-blocker-analytics-impact" }, { name: "Intelligent Tracking Prevention", url: "/es/glossary/intelligent-tracking-prevention" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Pérdida de datos en analítica", description: "La brecha entre tráfico real y tráfico observable por las herramientas con cookies.", url: "/es/glossary/data-loss-in-analytics", related: [{ name: "Plataforma de gestión de consentimiento", url: "/glossary/consent-management-platform" }, { name: "Impacto del bloqueador en analítica", url: "/glossary/ad-blocker-analytics-impact" }, { name: "Intelligent Tracking Prevention", url: "/glossary/intelligent-tracking-prevention" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glosario", url: "/es/glossary" }, { name: "Pérdida de datos en analítica", url: "/es/glossary/data-loss-in-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">

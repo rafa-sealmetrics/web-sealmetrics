@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     title: "Cumplimiento RGPD en analítica",
     description: "Qué exige el RGPD a la analítica web y cómo la arquitectura sin cookies cambia el problema.",
     type: "article",
+    url: "https://sealmetrics.com/es/glossary/gdpr-analytics-compliance/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cumplimiento RGPD en analítica",
+    description: "Qué exige el RGPD a la analítica web y cómo la arquitectura sin cookies cambia el problema.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/gdpr-analytics-compliance/",
@@ -24,7 +35,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glosario", href: "/es/glossary" }, { label: "Cumplimiento RGPD analítica" }]} locale="es" />
-      <JsonLd data={definedTermSchema({ name: "Cumplimiento RGPD en analítica", description: "Cumplir los requisitos del RGPD para la recolección y tratamiento de datos en analítica web.", url: "/es/glossary/gdpr-analytics-compliance", related: [{ name: "Plataforma de gestión de consentimiento", url: "/es/glossary/consent-management-platform" }, { name: "Residencia de datos analítica", url: "/es/glossary/analytics-data-residency" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }, { name: "Recolección first-party", url: "/es/glossary/first-party-data-collection" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Cumplimiento RGPD en analítica", description: "Cumplir los requisitos del RGPD para la recolección y tratamiento de datos en analítica web.", url: "/es/glossary/gdpr-analytics-compliance", related: [{ name: "Plataforma de gestión de consentimiento", url: "/glossary/consent-management-platform" }, { name: "Residencia de datos analítica", url: "/glossary/analytics-data-residency" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }, { name: "Recolección first-party", url: "/glossary/first-party-data-collection" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glosario", url: "/es/glossary" }, { name: "Cumplimiento RGPD analítica", url: "/es/glossary/gdpr-analytics-compliance" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -55,7 +66,7 @@ export default function Page() {
             ))}
           </ul>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La capa ePrivacy</h2>
-          <p>Más allá del RGPD, la Directiva ePrivacy (Art. 5(3)) exige consentimiento antes de acceder o almacenar información en el dispositivo del usuario — lo que incluye colocar cookies. Por eso las <Link href="/es/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">plataformas de gestión de consentimiento</Link> son obligatorias para la analítica con cookies.</p>
+          <p>Más allá del RGPD, la Directiva ePrivacy (Art. 5(3)) exige consentimiento antes de acceder o almacenar información en el dispositivo del usuario — lo que incluye colocar cookies. Por eso las <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">plataformas de gestión de consentimiento</Link> son obligatorias para la analítica con cookies.</p>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cumplimiento por arquitectura</h2>
           <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> aborda el cumplimiento de otra manera. Al no recoger dato personal y no almacenar nada en el dispositivo del visitante, el requisito de consentimiento bajo ePrivacy no aplica y las obligaciones RGPD son mínimas. Es coherente con la guía de la CNIL (Francia), DSK (Alemania) y otras autoridades UE sobre exenciones de medición de audiencia.</p>
         </div>

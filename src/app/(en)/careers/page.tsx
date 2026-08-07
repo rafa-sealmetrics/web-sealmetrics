@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "Apply with public links — LinkedIn, GitHub, your published work. No CV uploads, no personal data forms.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/careers/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Work With Us — SealMetrics",
+    description: "Apply with public links — LinkedIn, GitHub, your published work. No CV uploads, no personal data forms.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/careers/",

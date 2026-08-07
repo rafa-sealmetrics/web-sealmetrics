@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Cómo funciona la analítica sin cookies, por qué captura más datos y qué implica para compliance.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/cookieless-analytics-explained/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/cookieless-analytics-explained.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica cookieless explicada",
+    description: "Cómo funciona la analítica sin cookies, por qué captura más datos y qué implica para compliance.",
+    images: ["https://sealmetrics.com/og/blog/cookieless-analytics-explained.png"],
   },
   alternates: {
     languages: getAlternates("/blog/cookieless-analytics-explained"),

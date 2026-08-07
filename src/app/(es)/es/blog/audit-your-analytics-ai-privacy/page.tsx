@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Cinco preguntas que cualquier marketer o DPO puede plantear a un proveedor de analítica con IA: quién es dueño de la inferencia, dónde se ejecuta, qué se conserva, qué entrena y si puedes marcharte. Con las respuestas que deberían tranquilizarte y las que no.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Audita la privacidad de la IA de tu analítica",
+  description: "Cinco preguntas para tu proveedor de analítica con IA: quién es dueño de la inferencia, dónde se ejecuta, qué se conserva, qué entrena y si puedes marcharte.",
   openGraph: {
     title: "Audita la IA de tu analítica: checklist de privacidad en 5 preguntas",
     description:
       "Un checklist neutral para comprobar si una función de analítica con IA es realmente privada: propiedad, ubicación, retención, entrenamiento y salida.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/audit-your-analytics-ai-privacy/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/audit-your-analytics-ai-privacy.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Audita la IA de tu analítica: checklist de privacidad en 5 preguntas",
+    description: "Un checklist neutral para comprobar si una función de analítica con IA es realmente privada: propiedad, ubicación, retención, entrenamiento y salida.",
+    images: ["https://sealmetrics.com/og/blog/audit-your-analytics-ai-privacy.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -535,6 +547,7 @@ export default function AuditYourAnalyticsAiPrivacyPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

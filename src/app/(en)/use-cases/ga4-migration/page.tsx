@@ -25,6 +25,16 @@ export const metadata: Metadata = {
       "Parallel-run plan, not rip-and-replace. What you keep, what you replace, and how to make the decision in 30 days.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/use-cases/ga4-migration/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GA4 migration — the honest guide for EU eCommerce",
+    description: "Parallel-run plan, not rip-and-replace. What you keep, what you replace, and how to make the decision in 30 days.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/use-cases/ga4-migration/",

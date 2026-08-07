@@ -28,6 +28,16 @@ export const metadata: Metadata = {
       "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day free trial.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/pricing/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics Pricing — Pay for humans, not bots",
+    description: "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day free trial.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/pricing/",

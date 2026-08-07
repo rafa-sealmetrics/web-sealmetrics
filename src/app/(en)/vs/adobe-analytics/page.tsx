@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     description: "Adobe Analytics costs $100K+ and requires specialists. SealMetrics delivers complete data without consultants.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/vs/adobe-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics vs Adobe Analytics — Enterprise alternative",
+    description: "Adobe Analytics costs $100K+ and requires specialists. SealMetrics delivers complete data without consultants.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/adobe-analytics/", languages: getAlternates("/vs/adobe-analytics") },
 };

@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     title: "What Is Multi-Touch Attribution?",
     description: "An attribution model that requires per-user tracking. SealMetrics does last-click only, at channel level.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/multi-touch-attribution/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Multi-Touch Attribution?",
+    description: "An attribution model that requires per-user tracking. SealMetrics does last-click only, at channel level.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/multi-touch-attribution/", languages: getAlternates("/glossary/multi-touch-attribution") },
 };

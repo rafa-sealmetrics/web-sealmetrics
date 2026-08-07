@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { ThankYouFallback } from "@/components/ui/ThankYouFallback";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -13,6 +14,16 @@ export const metadata: Metadata = {
     title: "Gracias — SealMetrics",
     description: "Tu solicitud de audit ha sido recibida. Respondemos en un día laborable.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/demo/thank-you/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Gracias — SealMetrics",
+    description: "Tu solicitud de audit ha sido recibida. Respondemos en un día laborable.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/demo/thank-you/" },
@@ -31,7 +42,7 @@ export default function ThankYouPageEs() {
       />
       <JsonLd data={breadcrumbSchema([{ name: "Pide una demo", url: "/es/demo" }, { name: "Gracias", url: "/es/demo/thank-you" }], "es")} />
       <section className="pt-12 pb-28 bg-warm-white min-h-[70vh]">
-        <Suspense fallback={<div className="max-w-[640px] mx-auto px-5 sm:px-8" />}>
+        <Suspense fallback={<ThankYouFallback locale="es" />}>
           <ThankYouVariantsEs />
         </Suspense>
       </section>

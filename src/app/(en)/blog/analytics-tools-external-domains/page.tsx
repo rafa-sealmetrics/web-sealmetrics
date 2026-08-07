@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "We mapped every domain contacted by 9 analytics tools. Each one is a performance cost, a privacy risk, and a legal surface.",
     type: "article",
+    url: "https://sealmetrics.com/blog/analytics-tools-external-domains/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/analytics-tools-external-domains.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.",
+    description: "We mapped every domain contacted by 9 analytics tools. Each one is a performance cost, a privacy risk, and a legal surface.",
+    images: ["https://sealmetrics.com/og/blog/analytics-tools-external-domains.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/analytics-tools-external-domains/",

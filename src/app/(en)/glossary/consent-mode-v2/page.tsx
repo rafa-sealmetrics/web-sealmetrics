@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "What Is Google Consent Mode v2?",
     description: "How Consent Mode v2 actually works, what it estimates rather than measures, and when modelling stops being the right answer.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/consent-mode-v2/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Google Consent Mode v2?",
+    description: "How Consent Mode v2 actually works, what it estimates rather than measures, and when modelling stops being the right answer.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/consent-mode-v2/" },
 };

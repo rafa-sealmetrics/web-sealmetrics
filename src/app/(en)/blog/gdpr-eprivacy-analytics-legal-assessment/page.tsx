@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where each major tool lands.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/gdpr-eprivacy-analytics-legal-assessment/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Is Your Analytics GDPR-Compliant? A Legal Assessment of GA4, Matomo, Plausible and SealMetrics",
+    description: "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where each major tool lands.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/gdpr-eprivacy-analytics-legal-assessment/",

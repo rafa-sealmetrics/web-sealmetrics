@@ -13,16 +13,25 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analytics for eCommerce — Full Attribution | SealMetrics",
+  title: "Analítica para eCommerce — atribución completa | SealMetrics",
   description:
     "Analítica sin cookies para eCommerce: 100% del tráfico capturado, atribución last-click, sin banner y alojado en Dublín. Desde 499 EUR/mes.",
   openGraph: {
-    title: "Analytics for eCommerce — Full Attribution | SealMetrics",
+    title: "Analítica para eCommerce — atribución completa | SealMetrics",
     description:
       "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Captura el 100% del tráfico UE y cuadra con tu CRM de Shopify/Magento.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/for/ecommerce/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica para eCommerce — atribución completa | SealMetrics",
+    description: "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Captura el 100% del tráfico UE y cuadra con tu CRM de Shopify/Magento.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/ecommerce/",

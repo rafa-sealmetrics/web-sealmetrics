@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "open-weights-exit-strategy";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "With a closed API you rent behaviour you cannot inspect, that can change under you silently, at prices set unilaterally. Open weights are not an ideology — they are the ability to leave, and a privacy guarantee you cannot walk away from is not a guarantee.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Open Weights as an Exit Strategy From Your AI Vendor",
+  description: "A closed API rents you behaviour you cannot inspect, at prices set unilaterally. Open weights are not ideology — they are the ability to leave.",
   openGraph: {
     title: "Open Weights as an Exit Strategy",
     description:
       "Open-weight vs proprietary LLMs for business: pinning versions, avoiding vendor lock-in, and keeping the option to move hosts without changing the product.",
     type: "article",
+    url: "https://sealmetrics.com/blog/open-weights-exit-strategy/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/open-weights-exit-strategy.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Open Weights as an Exit Strategy",
+    description: "Open-weight vs proprietary LLMs for business: pinning versions, avoiding vendor lock-in, and keeping the option to move hosts without changing the product.",
+    images: ["https://sealmetrics.com/og/blog/open-weights-exit-strategy.png"],
   },
   alternates: {
     languages: getAlternates("/blog/open-weights-exit-strategy"),
@@ -389,6 +401,8 @@ export default function OpenWeightsExitStrategyPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

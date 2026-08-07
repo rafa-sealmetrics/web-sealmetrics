@@ -13,16 +13,25 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analytics for Media & Publishers | SealMetrics",
+  title: "Analítica para medios y editores | SealMetrics",
   description:
     "Analítica sin cookies para editores: captura lectores que ad blockers esconden a GA4. Audiencia, engagement y atribución first-party en la UE.",
   openGraph: {
-    title: "Analytics for Media & Publishers | SealMetrics",
+    title: "Analítica para medios y editores | SealMetrics",
     description:
       "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/for/media/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica para medios y editores | SealMetrics",
+    description: "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/media/",
@@ -99,7 +108,7 @@ export default function Page() {
         titleEs="Roles e industrias relacionadas"
         pages={[
           {
-            href: "/glossary/ad-blocker-analytics-impact",
+            href: "/es/glossary/ad-blocker-analytics-impact",
             title: "Impacto de ad-blockers en analítica",
             desc: "Cómo afectan los ad-blockers a la medición en sitios de medios.",
           },

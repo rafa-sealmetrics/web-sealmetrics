@@ -13,12 +13,15 @@ export function LogosStrip() {
     <section className="py-14 bg-warm-white border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="mb-9">
-          <h3
+          {/* h2: this is a top-level <section> heading reused across /about,
+              /how-it-works, /pricing and others, where it lands directly under
+              the page h1. As an h3 it skipped a level on every one of them. */}
+          <h2
             className="font-semibold text-ink tracking-[-0.02em] leading-[1.2]"
             style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
           >
             The <em className="italic-accent">single source of truth</em> eCommerce signs against
-          </h3>
+          </h2>
           <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[68ch]">
             <b className="text-ink font-semibold">Dreamplace Hotels</b> recovered <b className="text-ink font-semibold">+30% more traffic</b> vs GA4 and closed a <b className="text-ink font-semibold">15–20% gap</b> in sales attribution against their CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recovered <b className="text-ink font-semibold">35% of unattributed bookings</b> and improved Display CPS by <b className="text-ink font-semibold">+165%</b>.
           </p>

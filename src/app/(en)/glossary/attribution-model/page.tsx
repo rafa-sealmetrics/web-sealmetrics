@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is an Attribution Model? — SealMetrics Glossary",
@@ -13,8 +14,24 @@ export const metadata: Metadata = {
     title: "What Is an Attribution Model?",
     description: "Attribution models determine how conversion credit is split across marketing touchpoints.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/attribution-model/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/attribution-model/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is an Attribution Model?",
+    description: "Attribution models determine how conversion credit is split across marketing touchpoints.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/attribution-model/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/attribution-model"),
+  },
 };
 
 export default function AttributionModelPage() {

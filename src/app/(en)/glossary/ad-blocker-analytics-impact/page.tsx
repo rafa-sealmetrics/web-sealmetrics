@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "Ad Blocker Impact on Analytics — SealMetrics",
@@ -13,8 +14,24 @@ export const metadata: Metadata = {
     title: "What Is Ad Blocker Impact on Analytics?",
     description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Ad Blocker Impact on Analytics?",
+    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/ad-blocker-analytics-impact"),
+  },
 };
 
 export default function AdBlockerAnalyticsImpactPage() {

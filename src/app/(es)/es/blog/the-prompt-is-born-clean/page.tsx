@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Casi todo el trabajo de privacidad en IA es control de daños sobre datos que ya eran personales de origen. Si tu analítica nunca recogió una IP, una cookie ni un identificador de visitante, no hay nada personal que enmascarar antes de que el modelo lo vea.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "El prompt nace limpio: IA privada sin consentimiento",
+  description: "Casi toda la privacidad en IA es control de daños sobre datos ya personales. Si nunca recogiste IP ni cookie, no hay nada que enmascarar ante el modelo.",
   openGraph: {
     title: "El prompt nace limpio",
     description:
       "Enmascarar datos, firmar contratos y fijar plazos de retención es limpiar después. La analítica sin consentimiento elimina el problema antes: no hay identificador de visitante que enviar al modelo.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/the-prompt-is-born-clean/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/the-prompt-is-born-clean.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "El prompt nace limpio",
+    description: "Enmascarar datos, firmar contratos y fijar plazos de retención es limpiar después. La analítica sin consentimiento elimina el problema antes: no hay identificador de visitante que enviar al modelo.",
+    images: ["https://sealmetrics.com/og/blog/the-prompt-is-born-clean.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -401,6 +413,7 @@ export default function ThePromptIsBornCleanPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

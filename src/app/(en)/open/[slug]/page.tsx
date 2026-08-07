@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import { OpenChapterSidebar } from "@/components/open/OpenChapterSidebar";
 import { OpenChapterTOC } from "@/components/open/OpenChapterTOC";
 import {
@@ -37,6 +38,19 @@ export async function generateMetadata({
       title: `${chapter.title} — Open`,
       description: chapter.summary,
       type: "article",
+      // url/siteName/locale are NOT inherited from the layout: Next.js
+      // replaces the parent `openGraph` object wholesale when a page declares
+      // its own. Every field this page needs has to be spelled out here.
+      url: `https://sealmetrics.com/open/${chapter.slug}/`,
+      siteName: "SealMetrics",
+      locale: "en_US",
+      images: ["https://sealmetrics.com/og-image.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@sealmetrics",
+      title: `${chapter.title} — Open`,
+      description: chapter.summary,
       images: ["https://sealmetrics.com/og-image.png"],
     },
     alternates: {
@@ -74,6 +88,15 @@ export default async function OpenChapterPage({ params }: PageProps) {
   return (
     <>
       <JsonLd data={articleSchema} />
+      {/* Mirrors the visible breadcrumbs below. They were rendered for readers
+          but never emitted as structured data, so the chapters were the only
+          section of the site with no BreadcrumbList. */}
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Open", url: "/open" },
+          { name: chapter.title, url: `/open/${chapter.slug}` },
+        ])}
+      />
       <Breadcrumbs
         items={[
           { label: "Open", href: "/open" },

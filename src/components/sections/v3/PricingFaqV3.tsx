@@ -180,9 +180,11 @@ export function PricingFaqV3({ locale = "en" }: { locale?: Locale }) {
                   }`}
                 >
                   <div className="flex justify-between items-center gap-6">
-                    <h4 className={`text-[16px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>
+                    {/* h3 under the section h2. Pricing objections are the
+                        passages buyers and AI engines quote most. */}
+                    <h3 className={`text-[16px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>
                       {item.q}
-                    </h4>
+                    </h3>
                     <span
                       className={`w-7 h-7 rounded-md flex items-center justify-center text-[18px] font-normal shrink-0 transition-transform ${
                         isOpen ? "bg-brand text-white rotate-45" : "bg-warm-50 text-ink-soft"
@@ -191,11 +193,14 @@ export function PricingFaqV3({ locale = "en" }: { locale?: Locale }) {
                       +
                     </span>
                   </div>
-                  {isOpen && (
-                    <p className="mt-3.5 text-[14.5px] leading-[1.65] text-white/80 max-w-[62ch]">
-                      {item.a}
-                    </p>
-                  )}
+                  {/* Always in the DOM, hidden when collapsed — the pricing
+                      answers were absent from the served HTML entirely. */}
+                  <p
+                    hidden={!isOpen}
+                    className="mt-3.5 text-[14.5px] leading-[1.65] text-white/80 max-w-[62ch]"
+                  >
+                    {item.a}
+                  </p>
                 </button>
               );
             })}

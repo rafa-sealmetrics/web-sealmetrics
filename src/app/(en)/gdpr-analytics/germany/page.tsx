@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "The §25 TTDSG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/gdpr-analytics/germany/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GDPR analytics in Germany — §25 TTDSG and the DSK position",
+    description: "The §25 TTDSG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/gdpr-analytics/germany/",

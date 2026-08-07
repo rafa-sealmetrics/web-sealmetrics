@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "WordPress plugin install, WooCommerce hook coverage, and the order_id reconciliation pattern for finance teams.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/platforms/woocommerce/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "WooCommerce analytics without cookies — SealMetrics plugin",
+    description: "WordPress plugin install, WooCommerce hook coverage, and the order_id reconciliation pattern for finance teams.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/platforms/woocommerce/",

@@ -75,9 +75,11 @@ export function FaqAccordionV3({
                   }`}
                 >
                   <div className="flex justify-between items-center gap-6">
-                    <h4 className={`text-[16px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>
+                    {/* h3 under the section h2 — question-shaped headings are
+                        what AI engines lift with the paragraph below them. */}
+                    <h3 className={`text-[16px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>
                       {item.q}
-                    </h4>
+                    </h3>
                     <span
                       className={`w-7 h-7 rounded-md flex items-center justify-center text-[18px] font-normal shrink-0 transition-transform ${
                         isOpen ? "bg-brand text-white rotate-45" : "bg-warm-50 text-ink-soft"
@@ -86,14 +88,16 @@ export function FaqAccordionV3({
                       +
                     </span>
                   </div>
-                  {isOpen && (
-                    <p
-                      data-speakable
-                      className="faq-answer mt-3.5 text-[14.5px] leading-[1.65] text-white/80 max-w-[62ch]"
-                    >
-                      {item.a}
-                    </p>
-                  )}
+                  {/* Always in the DOM, hidden when collapsed. It carries
+                      data-speakable, so rendering it only on click meant the
+                      speakable selector pointed at nothing in the served HTML. */}
+                  <p
+                    hidden={!isOpen}
+                    data-speakable
+                    className="faq-answer mt-3.5 text-[14.5px] leading-[1.65] text-white/80 max-w-[62ch]"
+                  >
+                    {item.a}
+                  </p>
                 </button>
               );
             })}

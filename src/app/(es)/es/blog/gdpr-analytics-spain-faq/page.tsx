@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "¿Necesita tu tienda online un banner de cookies para la analítica? ¿Es legal GA4 en España? ¿Qué permite la AEPD? Respuestas directas, una por pregunta.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/blog/gdpr-analytics-spain-faq/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica RGPD en España: las 7 preguntas que hacen las tiendas online",
+    description: "¿Necesita tu tienda online un banner de cookies para la analítica? ¿Es legal GA4 en España? ¿Qué permite la AEPD? Respuestas directas, una por pregunta.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/gdpr-analytics-spain-faq/",

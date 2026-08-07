@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/integrations/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Integraciones — SealMetrics",
+    description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/integrations/", languages: getAlternatesEs("/integrations") },
 };
@@ -50,7 +60,7 @@ export default function Page() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {groups.map((g) => (
               <article key={g.title} className="bg-white border border-warm-100 rounded-xl p-7">
-                <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] mb-4">{g.title}</h3>
+                <h2 className="text-[17px] font-semibold text-ink tracking-[-0.015em] mb-4">{g.title}</h2>
                 <ul className="flex flex-col gap-2">
                   {g.items.map((i) => (
                     <li key={i} className="flex items-center gap-2.5 text-[14px] text-ink-2">

@@ -13,6 +13,16 @@ export const metadata: Metadata = {
     description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/platforms/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Plataformas — SealMetrics",
+    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/platforms/", languages: getAlternatesEs("/platforms") },
 };

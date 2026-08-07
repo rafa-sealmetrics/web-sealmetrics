@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is First-Party Data Collection? — SealMetrics Glossary",
@@ -14,8 +15,24 @@ export const metadata: Metadata = {
     title: "What Is First-Party Data Collection?",
     description: "First-party data collection gathers analytics through your own domain, avoiding ad blockers.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/first-party-data-collection/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/first-party-data-collection/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is First-Party Data Collection?",
+    description: "First-party data collection gathers analytics through your own domain, avoiding ad blockers.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/first-party-data-collection/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/first-party-data-collection"),
+  },
 };
 
 export default function FirstPartyDataCollectionPage() {

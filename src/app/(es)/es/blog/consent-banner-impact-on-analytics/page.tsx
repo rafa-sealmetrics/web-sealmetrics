@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Cómo los banners de consentimiento destruyen tus datos de analítica",
+  title: "Cómo los banners de consentimiento destruyen tus datos",
   description:
     "55% de los visitantes UE rechaza las cookies. 65% acepta solo después del landing. Impacto real en atribución, conversiones y reporting de revenue.",
   openGraph: {
@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "55% de visitantes UE rechaza cookies. Aquí está el impacto real sobre tu analítica.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/consent-banner-impact-on-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cómo los banners de consentimiento destruyen tus datos de analítica",
+    description: "55% de visitantes UE rechaza cookies. Aquí está el impacto real sobre tu analítica.",
+    images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
   },
   alternates: {
     languages: getAlternates("/blog/consent-banner-impact-on-analytics"),

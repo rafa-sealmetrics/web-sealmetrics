@@ -25,6 +25,15 @@ export const metadata: Metadata = {
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/complete-data/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Datos completos — analítica que captura el 100% del tráfico",
+    description: "Por qué la analítica incompleta produce decisiones equivocadas, qué significan los datos completos arquitectónicamente y los números que cambian.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/complete-data/",

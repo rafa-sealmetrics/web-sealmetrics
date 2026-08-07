@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "eu-ai-act-for-marketers";
 const URL = `/blog/${SLUG}`;
@@ -20,12 +21,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Most marketing teams are deployers of limited-risk AI, not providers. That means one main obligation: Article 50 transparency from 2 August 2026.",
   openGraph: {
     title: "The EU AI Act for Marketers, Without the Jargon",
     description:
       "Provider or deployer? What Article 50 transparency actually requires, what lands on the model publisher instead, and a checklist for 2 August 2026.",
     type: "article",
+    url: "https://sealmetrics.com/blog/eu-ai-act-for-marketers/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/eu-ai-act-for-marketers.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "The EU AI Act for Marketers, Without the Jargon",
+    description: "Provider or deployer? What Article 50 transparency actually requires, what lands on the model publisher instead, and a checklist for 2 August 2026.",
+    images: ["https://sealmetrics.com/og/blog/eu-ai-act-for-marketers.png"],
   },
   alternates: {
     languages: getAlternates("/blog/eu-ai-act-for-marketers"),
@@ -397,6 +409,8 @@ export default function EuAiActForMarketersPage() {
               professional before relying on any of it.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

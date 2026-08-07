@@ -19,6 +19,16 @@ export const metadata: Metadata = {
       "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/audit/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Free measurement audit — SealMetrics",
+    description: "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
 };
 

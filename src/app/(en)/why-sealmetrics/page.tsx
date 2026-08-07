@@ -25,6 +25,16 @@ export const metadata: Metadata = {
       "The consent banner hides your visitors, tracking prevention erases your conversions, and the ROAS you defend is built on the fraction that survived. Here's the fix.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/why-sealmetrics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Why SealMetrics — measure 100% of traffic and sales",
+    description: "The consent banner hides your visitors, tracking prevention erases your conversions, and the ROAS you defend is built on the fraction that survived. Here's the fix.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/why-sealmetrics/",
@@ -581,7 +591,7 @@ function FiveOutcomes() {
               </h3>
             </div>
             <div className="bg-ink rounded-lg px-4 py-3.5 font-mono text-[12px] text-white/85 leading-snug overflow-x-auto whitespace-nowrap">
-              {"<script src=\"//app.sealmetrics.com/…\">"}
+              <code>{"<script src=\"//app.sealmetrics.com/…\">"}</code>
             </div>
             <p className="text-[14px] leading-[1.55] text-ink-soft mt-auto">
               One tag — or{" "}

@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Acuerdo de Encargo de Tratamiento (DPA) — Sealmetrics",
   description:
     "DPA de Sealmetrics (DPA-2026-v2.0). Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% UE, subencargados y medidas de seguridad.",
+  openGraph: {
+    title: "Acuerdo de Encargo de Tratamiento (DPA)",
+    description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
+    url: "https://sealmetrics.com/es/dpa/",
+    siteName: "SealMetrics",
+    type: "website",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Acuerdo de Encargo de Tratamiento (DPA)",
+    description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/dpa/",
     languages: { en: "https://sealmetrics.com/dpa/" },
@@ -46,6 +65,9 @@ function Tbl({ rows }: { rows: string[][] }) {
 
 export default function DpaEsPage() {
   return (
+    <>
+      <Breadcrumbs items={[{ label: "DPA" }]} locale="es" />
+      <JsonLd data={breadcrumbSchema([{ name: "DPA", url: "/es/dpa" }], "es")} />
     <section className="pt-12 pb-28 bg-white">
       <div className="max-w-[800px] mx-auto px-5 sm:px-8">
         <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
@@ -319,5 +341,6 @@ export default function DpaEsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

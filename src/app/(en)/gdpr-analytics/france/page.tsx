@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "The CNIL exemption for analytics: 5 criteria, 14 technical points, and the architectures that meet them by design.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/gdpr-analytics/france/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GDPR analytics in France — CNIL exemption explained",
+    description: "The CNIL exemption for analytics: 5 criteria, 14 technical points, and the architectures that meet them by design.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/gdpr-analytics/france/",

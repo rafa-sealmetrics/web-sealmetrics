@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "COM(2025) 837 could eliminate cookie banners for first-party analytics. Here is what changed.",
     type: "article",
+    url: "https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/eu-digital-omnibus-cookie-banners-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "EU Digital Omnibus: Cookie Banners & Analytics",
+    description: "COM(2025) 837 could eliminate cookie banners for first-party analytics. Here is what changed.",
+    images: ["https://sealmetrics.com/og/blog/eu-digital-omnibus-cookie-banners-analytics.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics/",

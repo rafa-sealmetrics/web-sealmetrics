@@ -117,7 +117,7 @@ export function FourPillarsV3Es() {
           {pillars.map((p) => (
             <div key={p.title} className="bg-white p-8 min-h-[200px] flex flex-col">
               <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-brand mb-4">{p.n}</div>
-              <h4 className="text-[20px] font-semibold tracking-[-0.02em] leading-[1.25] mb-2 text-ink">{p.title}</h4>
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] leading-[1.25] mb-2 text-ink">{p.title}</h3>
               <p className="text-[14px] leading-[1.55] text-ink-soft">{p.p}</p>
             </div>
           ))}
@@ -183,7 +183,7 @@ function LensChatVisualEs() {
       <div aria-hidden className="absolute pointer-events-none" style={{ right: -80, top: -80, width: 240, height: 240, borderRadius: "50%", background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)" }} />
       <div className="relative">
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-4" style={{ color: "#E8B84B" }}>● LENS AI · en vivo</div>
-        <h5 className="text-[20px] font-semibold mb-6 leading-[1.3]">¿Qué pasó con paid social ayer?</h5>
+        <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">¿Qué pasó con paid social ayer?</h4>
         <div className="flex flex-col gap-2.5">
           <div className="self-end max-w-[85%] bg-white/10 text-white px-4 py-3 rounded-[14px] rounded-br-[4px] text-[13px] leading-[1.45]">
             ¿Por qué cayó paid social un 22%?
@@ -239,7 +239,7 @@ function AttributionBarsVisualEs() {
       <div aria-hidden className="absolute pointer-events-none" style={{ right: -80, top: -80, width: 240, height: 240, borderRadius: "50%", background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)" }} />
       <div className="relative">
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-3" style={{ color: "#E8B84B" }}>● Ingresos / últimos 30 días</div>
-        <h5 className="text-[22px] font-semibold mb-6 leading-[1.3] tabular-nums">€1.284.430 atribuidos</h5>
+        <h4 className="text-[22px] font-semibold mb-6 leading-[1.3] tabular-nums">€1.284.430 atribuidos</h4>
         <div className="flex flex-col gap-3 font-mono text-[12px]">
           {bars.map((b) => (
             <div key={b.label} className="grid grid-cols-[88px_1fr_80px] items-center gap-3">
@@ -280,7 +280,7 @@ function SuperApiVisualEs() {
       <div aria-hidden className="absolute pointer-events-none" style={{ left: -60, bottom: -60, width: 220, height: 220, borderRadius: "50%", background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)" }} />
       <div className="relative">
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-3" style={{ color: "#E8B84B" }}>● SuperAPI · query</div>
-        <h5 className="text-[20px] font-semibold mb-6 leading-[1.3]">Una consulta, resolución completa</h5>
+        <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">Una consulta, resolución completa</h4>
         <pre className="font-mono text-[12.5px] leading-[1.8] text-white/90 whitespace-pre-wrap overflow-x-auto">
 <span className="text-white/45">{`-- Últimos 7 días, ingresos atribuidos por canal`}</span>{"\n"}
 <span style={{ color: "#E8B84B" }}>SELECT</span>{" "}channel,{"\n"}
@@ -328,10 +328,10 @@ export function NineReportsV3Es() {
           {reports.map((r) => (
             <article key={r.title} className="bg-white border border-warm-100 rounded-xl p-6 transition-all hover:border-warm-200 hover:-translate-y-0.5">
               <div className="font-mono text-[11px] text-ink-mute tracking-[0.08em] mb-3">{r.n}</div>
-              <h4 className="text-[17px] font-semibold tracking-[-0.02em] text-ink leading-[1.3] mb-1.5 flex items-center gap-2 flex-wrap">
+              <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-ink leading-[1.3] mb-1.5 flex items-center gap-2 flex-wrap">
                 {r.title}
                 {r.soon && <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.06em] px-2 py-0.5 rounded" style={{ background: "#E8E2F5", color: "#2B2A28" }}>Próx.</span>}
-              </h4>
+              </h3>
               <p className="text-[13.5px] text-ink-soft leading-[1.55]">{r.p}</p>
             </article>
           ))}

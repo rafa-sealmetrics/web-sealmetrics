@@ -11,6 +11,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "public-llm-benchmarks-vs-your-use-case";
 const URL = `/blog/${SLUG}`;
@@ -20,12 +21,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "MMLU measures knowledge in isolation. Your product needs tool-calling and grounding under load. How to read the public numbers and test on your own.",
   openGraph: {
     title: TITLE,
     description:
       "What MMLU, GPQA, tau-bench and BFCL really measure — and the footnotes that make cross-model comparisons misleading.",
     type: "article",
+    url: "https://sealmetrics.com/blog/public-llm-benchmarks-vs-your-use-case/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/public-llm-benchmarks-vs-your-use-case.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: TITLE,
+    description: "What MMLU, GPQA, tau-bench and BFCL really measure — and the footnotes that make cross-model comparisons misleading.",
+    images: ["https://sealmetrics.com/og/blog/public-llm-benchmarks-vs-your-use-case.png"],
   },
   alternates: {
     languages: getAlternates("/blog/public-llm-benchmarks-vs-your-use-case"),
@@ -502,6 +514,8 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is a Consent Management Platform (CMP)?",
@@ -14,8 +15,24 @@ export const metadata: Metadata = {
     title: "What Is a Consent Management Platform (CMP)?",
     description: "A CMP displays cookie consent banners and manages user preferences. 55% of EU visitors reject.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/consent-management-platform/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/consent-management-platform/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is a Consent Management Platform (CMP)?",
+    description: "A CMP displays cookie consent banners and manages user preferences. 55% of EU visitors reject.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/consent-management-platform/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/consent-management-platform"),
+  },
 };
 
 export default function ConsentManagementPlatformPage() {

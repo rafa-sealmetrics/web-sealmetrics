@@ -157,9 +157,9 @@ export function FourPillarsV3() {
               <div className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] text-brand mb-4">
                 {p.n}
               </div>
-              <h4 className="text-[20px] font-semibold tracking-[-0.02em] leading-[1.25] mb-2 text-ink">
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] leading-[1.25] mb-2 text-ink">
                 {p.title}
-              </h4>
+              </h3>
               <p className="text-[14px] leading-[1.55] text-ink-soft">{p.p}</p>
             </div>
           ))}
@@ -277,9 +277,9 @@ function LensChatVisual() {
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-4" style={{ color: "#E8B84B" }}>
           ● LENS AI · live
         </div>
-        <h5 className="text-[20px] font-semibold mb-6 leading-[1.3]">
+        <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">
           What happened to paid social yesterday?
-        </h5>
+        </h4>
         <div className="flex flex-col gap-2.5">
           <div className="self-end max-w-[85%] bg-white/10 text-white px-4 py-3 rounded-[14px] rounded-br-[4px] text-[13px] leading-[1.45]">
             Why did paid social drop 22%?
@@ -434,9 +434,9 @@ function AttributionBarsVisual() {
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-3" style={{ color: "#E8B84B" }}>
           ● Revenue / last 30 days
         </div>
-        <h5 className="text-[22px] font-semibold mb-6 leading-[1.3] tabular-nums">
+        <h4 className="text-[22px] font-semibold mb-6 leading-[1.3] tabular-nums">
           €1,284,430 attributed
-        </h5>
+        </h4>
         <div className="flex flex-col gap-3 font-mono text-[12px]">
           {bars.map((b) => (
             <div
@@ -506,9 +506,9 @@ function SuperApiVisual() {
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-3" style={{ color: "#E8B84B" }}>
           ● SuperAPI · query
         </div>
-        <h5 className="text-[20px] font-semibold mb-6 leading-[1.3]">
+        <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">
           One query, full resolution
-        </h5>
+        </h4>
         <pre className="font-mono text-[12.5px] leading-[1.8] text-white/90 whitespace-pre-wrap overflow-x-auto">
 <span className="text-white/45">{`-- Last 7 days, attributed revenue by channel`}</span>{"\n"}
 <span style={{ color: "#E8B84B" }}>SELECT</span>{" "}channel,{"\n"}
@@ -564,7 +564,7 @@ export function NineReportsV3() {
               <div className="font-mono text-[11px] text-ink-mute tracking-[0.08em] mb-3">
                 {r.n}
               </div>
-              <h4 className="text-[17px] font-semibold tracking-[-0.02em] text-ink leading-[1.3] mb-1.5 flex items-center gap-2 flex-wrap">
+              <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-ink leading-[1.3] mb-1.5 flex items-center gap-2 flex-wrap">
                 {r.title}
                 {r.soon && (
                   <span
@@ -574,7 +574,7 @@ export function NineReportsV3() {
                     Soon
                   </span>
                 )}
-              </h4>
+              </h3>
               <p className="text-[13.5px] text-ink-soft leading-[1.55]">{r.p}</p>
             </article>
           ))}

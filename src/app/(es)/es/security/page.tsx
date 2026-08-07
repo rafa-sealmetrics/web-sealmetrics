@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Privacidad por diseño, cifrado, aislamiento por cuenta, retención automática por TTL e infraestructura 100% UE.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/security/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Visión General de Seguridad — Sealmetrics",
+    description: "Privacidad por diseño, cifrado, aislamiento por cuenta, retención automática por TTL e infraestructura 100% UE.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/security/",

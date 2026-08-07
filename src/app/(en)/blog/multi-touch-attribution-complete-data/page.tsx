@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Attribution models built on 13% of data produce misleading results. Here is why complete data changes everything.",
     type: "article",
+    url: "https://sealmetrics.com/blog/multi-touch-attribution-complete-data/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/multi-touch-attribution-complete-data.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Why Multi-Touch Attribution Fails Without Complete Data",
+    description: "Attribution models built on 13% of data produce misleading results. Here is why complete data changes everything.",
+    images: ["https://sealmetrics.com/og/blog/multi-touch-attribution-complete-data.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/multi-touch-attribution-complete-data/",

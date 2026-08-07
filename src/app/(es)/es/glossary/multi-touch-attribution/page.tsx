@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     title: "¿Qué es la atribución multi-touch?",
     description: "Modelo de atribución que requiere tracking por usuario. SealMetrics hace last-click a nivel de canal.",
     type: "article",
+    url: "https://sealmetrics.com/es/glossary/multi-touch-attribution/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "¿Qué es la atribución multi-touch?",
+    description: "Modelo de atribución que requiere tracking por usuario. SealMetrics hace last-click a nivel de canal.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/multi-touch-attribution/",
@@ -24,7 +35,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glosario", href: "/es/glossary" }, { label: "Atribución multi-touch" }]} locale="es" />
-      <JsonLd data={definedTermSchema({ name: "Atribución multi-touch", description: "Modelo de atribución que reparte el crédito de conversión entre múltiples touchpoints.", url: "/es/glossary/multi-touch-attribution", related: [{ name: "Modelo de atribución", url: "/es/glossary/attribution-model" }, { name: "Atribución de ingresos", url: "/es/glossary/revenue-attribution" }, { name: "Tracking de eventos", url: "/es/glossary/event-tracking" }, { name: "Pérdida de datos en analítica", url: "/es/glossary/data-loss-in-analytics" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Atribución multi-touch", description: "Modelo de atribución que reparte el crédito de conversión entre múltiples touchpoints.", url: "/es/glossary/multi-touch-attribution", related: [{ name: "Modelo de atribución", url: "/glossary/attribution-model" }, { name: "Atribución de ingresos", url: "/es/glossary/revenue-attribution" }, { name: "Tracking de eventos", url: "/glossary/event-tracking" }, { name: "Pérdida de datos en analítica", url: "/es/glossary/data-loss-in-analytics" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glosario", url: "/es/glossary" }, { name: "Atribución multi-touch", url: "/es/glossary/multi-touch-attribution" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -41,7 +52,7 @@ export default function Page() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Modelos comunes</h2>
           <p>Tiene varias variantes: lineal (crédito igual a todos los touchpoints), time-decay (más crédito a los recientes), basado en posición (40% primero, 40% último, 20% intermedios) y data-driven (pesos determinados por ML). Todas comparten un requisito: visibilidad sobre cada touchpoint del mismo visitante identificado — es decir, debe existir un identificador persistente por usuario.</p>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">El problema de la completitud</h2>
-          <p>La atribución multi-touch es tan precisa como los datos que la alimentan. Cuando la analítica con cookies pierde el 87% de las interacciones por <Link href="/es/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">rechazo de consentimiento</Link>, bloqueadores y restricciones de navegador, el modelo reparte crédito sobre un fragmento del dato observado.</p>
+          <p>La atribución multi-touch es tan precisa como los datos que la alimentan. Cuando la analítica con cookies pierde el 87% de las interacciones por <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">rechazo de consentimiento</Link>, bloqueadores y restricciones de navegador, el modelo reparte crédito sobre un fragmento del dato observado.</p>
           <p>Esto infravalora sistemáticamente los canales top-of-funnel (orgánico, social, display) porque los primeros touchpoints son los que más se pierden cuando las cookies aún no están activas.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué SealMetrics no hace atribución multi-touch</h2>

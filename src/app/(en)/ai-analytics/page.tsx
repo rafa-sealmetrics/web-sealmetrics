@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       "Point an LLM at incomplete GA4 data and it invents answers. SealMetrics is AI analytics done right: complete data, a semantic MCP, and private AI in the EU.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/ai-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",

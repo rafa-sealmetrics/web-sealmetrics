@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Un modelo devolvió un gráfico cuya clave del eje Y era una lista en lugar de un string. La validación estricta del esquema lo rechazó y toda la respuesta del chat se cayó con un HTTP 500, por un gráfico decorativo. El bug, el arreglo en dos capas y tres reglas para quien publique salida estructurada de un LLM.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Nuestra IA falló en producción y lo cazó un test",
+  description: "Una clave mal formada en un gráfico tumbó toda la respuesta del chat con un HTTP 500. El bug, el arreglo en dos capas y tres reglas para salida estructurada.",
   openGraph: {
     title: "Nuestra IA se equivocó en producción",
     description:
       "Un campo mal formado en un gráfico tumbó una respuesta entera. Lo que encontramos en 1 de 162 consultas del benchmark, cómo lo arreglamos en dos capas y qué nos enseñó sobre la salida estructurada de los LLM.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/our-ai-got-it-wrong-in-production/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/our-ai-got-it-wrong-in-production.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Nuestra IA se equivocó en producción",
+    description: "Un campo mal formado en un gráfico tumbó una respuesta entera. Lo que encontramos en 1 de 162 consultas del benchmark, cómo lo arreglamos en dos capas y qué nos enseñó sobre la salida estructurada de los LLM.",
+    images: ["https://sealmetrics.com/og/blog/our-ai-got-it-wrong-in-production.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -404,6 +416,7 @@ export default function OurAiGotItWrongInProductionPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

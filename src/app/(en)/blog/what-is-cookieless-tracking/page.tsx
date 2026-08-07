@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "How cookieless tracking works, why cookies fail, and what it means for marketing teams in 2026.",
     type: "article",
+    url: "https://sealmetrics.com/blog/what-is-cookieless-tracking/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/what-is-cookieless-tracking.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Cookieless Tracking?",
+    description: "How cookieless tracking works, why cookies fail, and what it means for marketing teams in 2026.",
+    images: ["https://sealmetrics.com/og/blog/what-is-cookieless-tracking.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/what-is-cookieless-tracking/",

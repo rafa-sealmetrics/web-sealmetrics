@@ -40,9 +40,17 @@ jobs:
       - run: npm ci
 
       # Mirrors the deploy build exactly: prebuild (OG images, image
-      # optimization) → next build → postbuild (llms.txt drift gate).
-      # Deliberately not `next build` alone, so the gate runs here too.
+      # optimization) → next build → postbuild (llms.txt drift gate, CSP gate,
+      # Markdown twin generation, SEO/GEO audit gate).
+      # Deliberately not `next build` alone, so the gates run here too.
       - run: npm run build
+
+      # Asserts on the built output: sitemap integrity, metadata uniqueness,
+      # canonicals, Open Graph completeness, one h1 per page, FAQ schema that
+      # matches visible text, Markdown twin quality, robots.txt AI policy.
+      # `npm run build` already fails on these via scripts/seo-audit.mjs; this
+      # step reports them per-rule so a failure names the regression.
+      - run: npm test
 
       # Surfaces tracked files the build rewrites. Warn only: the deploy
       # rewrites them the same way, so this does not affect what ships.

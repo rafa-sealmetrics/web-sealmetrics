@@ -28,6 +28,16 @@ export const metadata: Metadata = {
       "A full analytics stack for eCommerce teams. Consentless, 100% observed, EU-hosted. LENS AI + SuperAPI + MCP native.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/product/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Product — SealMetrics · Complete analytics, no compromises",
+    description: "A full analytics stack for eCommerce teams. Consentless, 100% observed, EU-hosted. LENS AI + SuperAPI + MCP native.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/product/",

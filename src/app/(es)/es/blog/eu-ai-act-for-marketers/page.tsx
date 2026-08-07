@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -19,12 +20,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Los equipos de marketing suelen ser responsables del despliegue de IA de riesgo limitado, no proveedores: una obligación, la transparencia del artículo 50.",
   openGraph: {
     title: "El Reglamento Europeo de IA para marketers, sin jerga",
     description:
       "¿Proveedor o responsable del despliegue? Qué exige realmente la transparencia del artículo 50, qué recae en quien publica el modelo y un checklist para el 2 de agosto de 2026.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/eu-ai-act-for-marketers/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/eu-ai-act-for-marketers.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "El Reglamento Europeo de IA para marketers, sin jerga",
+    description: "¿Proveedor o responsable del despliegue? Qué exige realmente la transparencia del artículo 50, qué recae en quien publica el modelo y un checklist para el 2 de agosto de 2026.",
+    images: ["https://sealmetrics.com/og/blog/eu-ai-act-for-marketers.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -459,6 +471,7 @@ export default function EuAiActForMarketersPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

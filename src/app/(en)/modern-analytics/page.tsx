@@ -20,6 +20,9 @@ export const metadata: Metadata = {
       "The end of cookie-based analytics. Clean data, no sampling, AI-ready via MCP. See the gap.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/modern-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",

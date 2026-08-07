@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "When does your analytics tool stop counting and start estimating? We compared sampling thresholds across 10 platforms.",
     type: "article",
+    url: "https://sealmetrics.com/blog/analytics-tools-data-sampling/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/analytics-tools-data-sampling.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Data Sampling Thresholds Compared: 10 Analytics Tools",
+    description: "When does your analytics tool stop counting and start estimating? We compared sampling thresholds across 10 platforms.",
+    images: ["https://sealmetrics.com/og/blog/analytics-tools-data-sampling.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/analytics-tools-data-sampling/",

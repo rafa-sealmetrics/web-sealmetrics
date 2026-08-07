@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "What cookieless analytics is, why cookies fail in 2026, what you measure, and where it fits in your stack.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/cookieless-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cookieless analytics, explained",
+    description: "What cookieless analytics is, why cookies fail in 2026, what you measure, and where it fits in your stack.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/cookieless-analytics/",

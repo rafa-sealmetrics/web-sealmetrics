@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "seal-ai-vs-bring-your-own-key";
 const URL = `/blog/${SLUG}`;
@@ -20,12 +21,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Seal AI: nothing to configure, EU-only inference, zero retention. Bring-your-own-key: model choice, plus the transfer analysis and cost. How to pick.",
   openGraph: {
     title: "Seal AI vs Bring-Your-Own-Key",
     description:
       "Managed EU-only AI or your own OpenAI, Anthropic, Gemini or DeepSeek key? What each option actually costs you, and how to choose.",
     type: "article",
+    url: "https://sealmetrics.com/blog/seal-ai-vs-bring-your-own-key/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/seal-ai-vs-bring-your-own-key.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Seal AI vs Bring-Your-Own-Key",
+    description: "Managed EU-only AI or your own OpenAI, Anthropic, Gemini or DeepSeek key? What each option actually costs you, and how to choose.",
+    images: ["https://sealmetrics.com/og/blog/seal-ai-vs-bring-your-own-key.png"],
   },
   alternates: {
     languages: getAlternates("/blog/seal-ai-vs-bring-your-own-key"),
@@ -407,6 +419,8 @@ export default function SealAiVsByokPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

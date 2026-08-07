@@ -15,6 +15,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/vs/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics vs alternativas",
+    description: "Comparativas feature a feature contra cada plataforma analytics.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/", languages: getAlternatesEs("/vs") },
 };

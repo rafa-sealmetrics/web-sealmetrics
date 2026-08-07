@@ -8,13 +8,22 @@ import { CareersForm } from "@/components/forms/CareersForm";
 
 export const metadata: Metadata = {
   title: "Trabaja con nosotros — SealMetrics",
-  description:
-    "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales. Elige equipo y enséñanos lo que has hecho.",
+  description: "Candidatura con enlaces públicos: LinkedIn, GitHub, tu trabajo publicado. Sin CV ni formularios de datos personales. Elige equipo y enséñanos lo que has hecho.",
   openGraph: {
     title: "Trabaja con nosotros — SealMetrics",
     description:
       "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/careers/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Trabaja con nosotros — SealMetrics",
+    description: "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

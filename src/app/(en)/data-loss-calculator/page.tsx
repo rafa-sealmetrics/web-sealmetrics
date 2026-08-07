@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     description: "See the exact revenue your analytics is missing.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/data-loss-calculator/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Data Loss Calculator — SealMetrics",
+    description: "See the exact revenue your analytics is missing.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/data-loss-calculator/",

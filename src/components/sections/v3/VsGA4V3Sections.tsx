@@ -607,9 +607,9 @@ export function RunBothV3({ locale = "en" as Locale }) {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-3">
                 {p.n}
               </span>
-              <h4 className="text-[19px] font-semibold tracking-[-0.02em] leading-[1.2] mb-2.5 text-ink">
+              <h3 className="text-[19px] font-semibold tracking-[-0.02em] leading-[1.2] mb-2.5 text-ink">
                 {p.t}
-              </h4>
+              </h3>
               <p className="text-[13.5px] leading-[1.6] text-ink-soft">{p.p}</p>
             </article>
           ))}

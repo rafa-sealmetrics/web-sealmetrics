@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "three-questions-to-ask-seal-ai";
 const URL = `/blog/${SLUG}`;
@@ -20,12 +21,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Three worked examples for an AI analytics assistant: a period comparison, a drill-down with reasoning, and an engagement question — and how to check each.",
   openGraph: {
     title: "Three Questions to Ask Your Analytics AI Today",
     description:
       "What can you actually ask an AI analytics assistant? Three questions worth trying, and how to read the answers.",
     type: "article",
+    url: "https://sealmetrics.com/blog/three-questions-to-ask-seal-ai/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/three-questions-to-ask-seal-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Three Questions to Ask Your Analytics AI Today",
+    description: "What can you actually ask an AI analytics assistant? Three questions worth trying, and how to read the answers.",
+    images: ["https://sealmetrics.com/og/blog/three-questions-to-ask-seal-ai.png"],
   },
   alternates: {
     languages: getAlternates("/blog/three-questions-to-ask-seal-ai"),
@@ -357,6 +369,8 @@ export default function ThreeQuestionsToAskSealAiPage() {
               is the short introduction.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -20,12 +21,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Los jueces LLM favorecen a su propia familia. Nombramos juez al candidato perdedor, a temperatura cero, y dejamos la puntuación objetiva en código.",
   openGraph: {
     title: "Por qué dejamos que un modelo rival puntúe nuestro benchmark",
     description:
       "El sesgo de autopreferencia existe. La solución no es un prompt mejor: es un juez con motivos para bajarte la nota y evaluadores deterministas haciendo el trabajo objetivo.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/rival-model-as-judge/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/rival-model-as-judge.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Por qué dejamos que un modelo rival puntúe nuestro benchmark",
+    description: "El sesgo de autopreferencia existe. La solución no es un prompt mejor: es un juez con motivos para bajarte la nota y evaluadores deterministas haciendo el trabajo objetivo.",
+    images: ["https://sealmetrics.com/og/blog/rival-model-as-judge.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -444,6 +456,7 @@ export default function RivalModelAsJudgePageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

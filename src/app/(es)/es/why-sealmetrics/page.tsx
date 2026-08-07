@@ -26,6 +26,15 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/why-sealmetrics/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Por qué SealMetrics — mide el 100% de tráfico y ventas",
+    description: "El banner de consentimiento oculta tus visitas, la prevención de rastreo borra tus conversiones y el ROAS que defiendes se calcula sobre la fracción que sobrevivió.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/why-sealmetrics/",
@@ -581,7 +590,7 @@ function FiveOutcomes() {
               </h3>
             </div>
             <div className="bg-ink rounded-lg px-4 py-3.5 font-mono text-[12px] text-white/85 leading-snug overflow-x-auto whitespace-nowrap">
-              {"<script src=\"//app.sealmetrics.com/…\">"}
+              <code>{"<script src=\"//app.sealmetrics.com/…\">"}</code>
             </div>
             <p className="text-[14px] leading-[1.55] text-ink-soft mt-auto">
               Un tag — o{" "}

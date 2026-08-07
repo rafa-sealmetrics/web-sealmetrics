@@ -10,6 +10,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "the-prompt-is-born-clean";
 const URL = `/blog/${SLUG}`;
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Most AI privacy work is damage limitation on data that was personal to begin with. If your analytics never collected an IP, a cookie or a visitor identifier, there is nothing personal to redact before the model sees it.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Why Consentless Analytics Makes Private AI Simple",
+  description: "Most AI privacy work is damage limitation on data that was personal to begin with. If analytics never collected an IP or cookie, there is nothing to redact.",
   openGraph: {
     title: "The Prompt Is Born Clean",
     description:
       "Redaction, DPAs and retention policies are cleanup. Consentless analytics removes the mess upstream: there is no visitor identifier to send to the model.",
     type: "article",
+    url: "https://sealmetrics.com/blog/the-prompt-is-born-clean/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/the-prompt-is-born-clean.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "The Prompt Is Born Clean",
+    description: "Redaction, DPAs and retention policies are cleanup. Consentless analytics removes the mess upstream: there is no visitor identifier to send to the model.",
+    images: ["https://sealmetrics.com/og/blog/the-prompt-is-born-clean.png"],
   },
   alternates: {
     languages: getAlternates("/blog/the-prompt-is-born-clean"),
@@ -352,6 +364,8 @@ export default function ThePromptIsBornCleanPage() {
               subpoenaed, or turn up in a training set by accident.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

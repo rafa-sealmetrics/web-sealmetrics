@@ -19,6 +19,17 @@ export const metadata: Metadata = {
     description:
       "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
     type: "article",
+    url: "https://sealmetrics.com/blog/ga4-alternatives-enterprise/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/ga4-alternatives-enterprise.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "7 GA4 Alternatives for eCommerce Teams in 2026",
+    description: "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
+    images: ["https://sealmetrics.com/og/blog/ga4-alternatives-enterprise.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/ga4-alternatives-enterprise/",

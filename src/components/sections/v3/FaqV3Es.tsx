@@ -71,12 +71,15 @@ export function FaqV3Es() {
                   }`}
                 >
                   <div className="flex justify-between items-center gap-6">
-                    <h4 className={`text-[17px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>{item.q}</h4>
+                    {/* h3 bajo el h2 de sección: los motores de IA extraen el
+                        encabezado en forma de pregunta junto al párrafo que le
+                        sigue. El tamaño va en la clase, no cambia nada visual. */}
+                    <h3 className={`text-[17px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>{item.q}</h3>
                     <span className={`w-7 h-7 rounded-md flex items-center justify-center text-[18px] font-normal shrink-0 transition-transform ${isOpen ? "bg-brand text-white rotate-45" : "bg-warm-50 text-ink-soft"}`}>+</span>
                   </div>
-                  {isOpen && (
-                    <p className="mt-3.5 text-[14.5px] leading-[1.6] text-white/75 max-w-[62ch]">{item.a}</p>
-                  )}
+                  {/* Siempre en el DOM, oculta al plegar. Renderizarla solo al
+                      abrir dejaba las respuestas fuera del HTML servido. */}
+                  <p hidden={!isOpen} className="mt-3.5 text-[14.5px] leading-[1.6] text-white/75 max-w-[62ch]">{item.a}</p>
                 </button>
               );
             })}
