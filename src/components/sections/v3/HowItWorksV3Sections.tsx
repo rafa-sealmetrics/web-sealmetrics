@@ -86,10 +86,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "01 · Collect",
           title: "846-byte first-party pixel",
-          p: "A tiny JavaScript tag runs on your domain — not ours. Ad blockers target third-party analytics; ours is invisible to them because it's you. No cookies are written. No local storage. No fingerprinting.",
+          p: "A tiny JavaScript tag, 846 bytes at its minimum and 1.1 KB on the wire in full. It ships from t.sealmetrics.com by default, and you can switch it to a subdomain of your own — first-party mode — so ad-blocker lists that target third-party analytics domains have nothing to match. No cookies are written. No local storage. No fingerprinting.",
           bullet: [
-            "First-party from day one",
-            "~100× smaller than GA4's tag",
+            "Optional first-party mode on your own subdomain",
+            "1.1 KB on the wire · ~155× lighter than GA4",
             "Works with any CMS or framework",
             "5-minute install · one script tag",
           ],
@@ -108,10 +108,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "03 · Store",
           title: "EU-hosted · Dublin, Ireland",
-          p: "All data lives exclusively on EU infrastructure. No transfers outside the EU, no sub-processors in third countries, no reliance on Standard Contractual Clauses. GDPR-compliant by architecture, not by a legal layer bolted on afterwards.",
+          p: "Visitor data lives exclusively on EU infrastructure — no transfers outside the EU, no sub-processors in third countries, no reliance on Standard Contractual Clauses. The single non-EEA transfer anywhere in the service is account-user service email via Resend (USA, SCCs + EU-US DPF), which touches no visitor data. GDPR-compliant by architecture, not by a legal layer bolted on afterwards.",
           bullet: [
             "Dublin, Ireland — Schrems II clean",
-            "No third-country sub-processors",
+            "No third-country sub-processors in the visitor data path",
             "24 months data retention included",
             "GDPR · ePrivacy · Schrems II clean",
           ],
@@ -131,10 +131,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "01 · Captura",
           title: "Pixel first-party de 846 bytes",
-          p: "Un script JavaScript diminuto corre sobre tu dominio — no sobre el nuestro. Los bloqueadores atacan analíticas de terceros; el nuestro es invisible porque eres tú. Sin cookies. Sin localStorage. Sin fingerprinting.",
+          p: "Un script JavaScript diminuto: 846 bytes en su versión mínima y 1,1 KB en red al completo. Por defecto se sirve desde t.sealmetrics.com, y puedes moverlo a un subdominio tuyo — modo first-party — para que las listas de bloqueadores que atacan dominios de analítica de terceros no tengan nada que bloquear. Sin cookies. Sin localStorage. Sin fingerprinting.",
           bullet: [
-            "First-party desde el día uno",
-            "~100× más ligero que el tag de GA4",
+            "Modo first-party opcional en tu propio subdominio",
+            "1,1 KB en red · ~155× más ligero que GA4",
             "Funciona con cualquier CMS o framework",
             "Instalación en 5 min · un solo script",
           ],
@@ -153,10 +153,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "03 · Almacena",
           title: "Alojado en UE · Dublín, Irlanda",
-          p: "Todos los datos viven exclusivamente en infraestructura UE. Sin transferencias fuera de UE, sin sub-procesadores en terceros países, sin dependencia de Cláusulas Contractuales Tipo. RGPD por arquitectura, no por una capa legal añadida después.",
+          p: "El dato de visitante vive exclusivamente en infraestructura UE — sin transferencias fuera de UE, sin sub-procesadores en terceros países, sin dependencia de Cláusulas Contractuales Tipo. La única transferencia fuera del EEE en todo el servicio son los emails de servicio a usuarios de la cuenta vía Resend (EE. UU., CCT + EU-US DPF), que no tocan dato de visitante. RGPD por arquitectura, no por una capa legal añadida después.",
           bullet: [
             "Dublín, Irlanda — Schrems II limpio",
-            "Sin sub-procesadores en terceros países",
+            "Sin sub-procesadores en terceros países en la ruta del dato de visitante",
             "24 meses de retención incluidos",
             "RGPD · ePrivacy · Schrems II limpio",
           ],

@@ -16,11 +16,11 @@ const ITEMS_EN = [
   },
   {
     q: "What happens if I exceed my event limit?",
-    a: "Your tracking never stops. We never block, throttle or sample your data. At 80% usage you get an informational email. At 100% a badge appears in your dashboard. If you exceed for 2+ consecutive months, your plan auto-upgrades at your next billing cycle. One overage month per year is free.",
+    a: "Your tracking never stops. We never block, throttle or sample your data. At 80% usage you get an informational email. At 100% a badge appears in your dashboard. If you exceed for 2 consecutive months that aren't forgiven, Growth moves up to Scale automatically at your next billing cycle. Scale is never auto-upgraded — we email you to discuss Enterprise instead. One overage month per year is free.",
   },
   {
     q: "Will I ever be auto-upgraded without warning?",
-    a: "You'll always receive an email before any plan change. Auto-upgrades only happen after 2+ consecutive months above 120% of your limit, and apply at the start of your next billing cycle — never mid-cycle. Annual customers are adjusted only at renewal. Never on a single spike.",
+    a: "You'll always receive an email before any plan change. The only automatic move is Growth to Scale, after 2 consecutive months over your limit, applied at the start of your next billing cycle — never mid-cycle. Annual customers are adjusted only at renewal, and accounts billed through the Shopify App Store are never upgraded automatically: you approve the new plan from Shopify Admin. Never on a single spike.",
   },
   {
     q: "What if my traffic decreases? Can I downgrade?",
@@ -28,15 +28,15 @@ const ITEMS_EN = [
   },
   {
     q: "Are all features really included in every plan?",
-    a: "Core analytics, conversion tracking, monitoring, API, MCP Server, BigQuery export and LENS AI (forecasting, anomaly detection, growth opportunities) are included from Growth up — you connect your own AI key (BYOK: Anthropic, OpenAI or Gemini). Private AI, our managed EU-hosted model with no key needed, is included on Scale (5M tokens) and available as an add-on on any plan at €358.80 per 5M tokens; Enterprise gets a dedicated, non-shared instance. Other plan differences are event volume, isolated processing (Enterprise) and support level.",
+    a: "Core analytics, conversion tracking, API, MCP Server, BigQuery export and LENS AI — ask your data in plain language and turn the answer into a report — are included from Growth up, running on your own AI key (BYOK: Anthropic, OpenAI, Gemini or DeepSeek). Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today. Private AI, our managed EU-hosted model with no key needed, is a paid add-on on Growth and included on Scale and Enterprise (5M tokens/month), with extra 5M-token packs at €358.80 each; Enterprise gets a dedicated, non-shared instance. Other plan differences are event volume, webhooks and audit logs (Scale up), isolated processing (Enterprise) and support level.",
   },
   {
     q: "What is the Agentic Package?",
-    a: "A free SealMetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events in total — not per month. It's a one-time allowance: take a day, a month or a year to reach it. It's fully self-serve with documentation only — no email, chat or priority support. When you pass 1M events, the Growth plan activates.",
+    a: "A free SealMetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events per month. It's fully self-serve with documentation only and no credit card — no email, chat or priority support. When you pass 1M events in a month, the Growth plan activates.",
   },
   {
     q: "How do I create an account from an LLM?",
-    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel and content groups, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the 1M free limit is a one-time total (not monthly), counted across all your accounts.",
+    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel and content groups, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the free tier covers up to 1M human events per month.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -44,7 +44,7 @@ const ITEMS_EN = [
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. Every plan includes a 14-day free trial with full access to all features. You'll see your real data within minutes of installing our script.",
+    a: "Yes. Every plan includes a 14-day free trial with full access to all features. You add a payment method when you start and are not charged until the trial ends — cancel before then and you pay nothing. You'll see your real data within minutes of installing our script. The Agentic Package, set up from your AI assistant, needs no card at all.",
   },
   {
     q: "Unlimited websites and users?",
@@ -75,11 +75,11 @@ const ITEMS_ES = [
   },
   {
     q: "¿Qué pasa si supero mi límite de eventos?",
-    a: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos tus datos. Al 80% recibes un email informativo. Al 100% aparece un badge en tu dashboard. Si superas el límite 2+ meses seguidos, el plan se actualiza en el siguiente ciclo. Un mes de exceso al año es gratis.",
+    a: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos tus datos. Al 80% recibes un email informativo. Al 100% aparece un badge en tu dashboard. Si superas el límite 2 meses seguidos sin perdonar, Growth pasa a Scale automáticamente en el siguiente ciclo. Scale nunca sube solo — te escribimos para hablar de Enterprise. Un mes de exceso al año es gratis.",
   },
   {
     q: "¿Me subirán de plan sin avisar?",
-    a: "Siempre recibirás un email antes de cualquier cambio. Los auto-upgrades solo ocurren tras 2+ meses seguidos por encima del 120% de tu límite, y se aplican al inicio del siguiente ciclo — nunca a mitad. Planes anuales solo se ajustan en la renovación. Nunca por un único pico.",
+    a: "Siempre recibirás un email antes de cualquier cambio. El único movimiento automático es de Growth a Scale, tras 2 meses seguidos por encima de tu límite, y se aplica al inicio del siguiente ciclo — nunca a mitad. Los planes anuales solo se ajustan en la renovación, y las cuentas facturadas vía Shopify App Store nunca suben solas: apruebas el plan nuevo desde tu Shopify Admin. Nunca por un único pico.",
   },
   {
     q: "¿Puedo bajar de plan si mi tráfico baja?",
@@ -87,15 +87,15 @@ const ITEMS_ES = [
   },
   {
     q: "¿Todas las features están incluidas en cada plan?",
-    a: "Analítica core, tracking de conversiones, monitoring, API, MCP Server, export a BigQuery y LENS AI (forecasting, detección de anomalías, oportunidades de crecimiento) están incluidos desde Growth — conectas tu propia API key (BYOK: Anthropic, OpenAI o Gemini). Private AI, nuestro modelo gestionado alojado en la UE y sin API key, viene incluida en Scale (5M tokens) y se puede contratar como add-on en cualquier plan por 358,80€ por 5M tokens; Enterprise incluye una instancia dedicada, no compartida. Otras diferencias entre planes son volumen de eventos, procesamiento aislado (Enterprise) y nivel de soporte.",
+    a: "Analítica core, tracking de conversiones, API, MCP Server, export a BigQuery y LENS AI — pregunta a tus datos en lenguaje natural y convierte la respuesta en un informe — están incluidos desde Growth, funcionando con tu propia API key (BYOK: Anthropic, OpenAI, Gemini o DeepSeek). La detección automática de anomalías por reglas, el forecasting y las oportunidades de crecimiento están en el roadmap, no activos hoy. Private AI, nuestro modelo gestionado alojado en la UE y sin API key, es un add-on de pago en Growth y viene incluida en Scale y Enterprise (5M tokens/mes), con packs extra de 5M tokens a 358,80€ cada uno; Enterprise incluye una instancia dedicada, no compartida. Otras diferencias entre planes son volumen de eventos, webhooks y logs de auditoría (desde Scale), procesamiento aislado (Enterprise) y nivel de soporte.",
   },
   {
     q: "¿Qué es el Agentic Package?",
-    a: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos en total — no al mes. Es un cupo único: tarda un día, un mes o un año en alcanzarlo. Es totalmente self-serve con solo documentación — sin soporte email, chat ni prioritario. Al superar 1M de eventos, se activa el plan Growth.",
+    a: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes. Es totalmente self-serve con solo documentación y sin tarjeta — sin soporte email, chat ni prioritario. Al superar 1M de eventos en un mes, se activa el plan Growth.",
   },
   {
     q: "¿Cómo creo una cuenta desde un LLM?",
-    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking y los content groups, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el límite gratuito de 1M es un total único (no mensual), contando todas tus cuentas.",
+    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking y los content groups, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el tier gratuito cubre hasta 1M de eventos humanos al mes.",
   },
   {
     q: "¿Puedo cambiar entre mensual y anual?",
@@ -103,7 +103,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Hay prueba gratuita?",
-    a: "Sí. Cada plan incluye 14 días gratis con acceso completo a todas las features. Verás tus datos reales a los pocos minutos de instalar el script.",
+    a: "Sí. Cada plan incluye 14 días gratis con acceso completo a todas las features. Añades método de pago al empezar y no se te cobra hasta que acaba la prueba — si cancelas antes, no pagas nada. Verás tus datos reales a los pocos minutos de instalar el script. El Agentic Package, que configuras desde tu asistente de IA, no pide tarjeta.",
   },
   {
     q: "¿Webs y usuarios ilimitados?",

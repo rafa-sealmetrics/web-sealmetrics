@@ -96,7 +96,7 @@ export function FourPillarsV3Es() {
   const pillars = [
     { n: "01 · Captura", title: "Tracking sin consentimiento", p: "First-party, sin cookies, RGPD-safe. 100% del tráfico — no una fracción." },
     { n: "02 · Atribuye", title: "Atribución de ingresos", p: "Cada euro enlazado a canal, campaña y creatividad. Last-click sobre datos completos." },
-    { n: "03 · Entiende", title: "LENS AI", p: "Detección de anomalías, forecast, oportunidades de crecimiento — en lenguaje natural." },
+    { n: "03 · Entiende", title: "LENS AI", p: "Pregunta a tus datos y crea informes — en lenguaje natural." },
     { n: "04 · Activa", title: "API · MCP · BigQuery", p: "Envía datos reales a warehouses, agentes IA y BI — desde el día uno." },
   ];
   return (
@@ -165,12 +165,12 @@ export function FeatureLensAIV3Es() {
     <FeatureBlockEs
       tag="LENS AI"
       title={<>Haz una pregunta a tus datos.<br />Obtén una <em>respuesta real.</em></>}
-      lede="60+ reglas de anomalía corren contra tus datos a resolución completa cada hora. LENS AI vigila ingresos, embudo y canales en segundo plano — y te muestra qué cambió, en lenguaje natural."
+      lede="LENS AI lee tus datos a resolución completa y responde en lenguaje natural. Pregúntale por qué se movieron los ingresos, qué canal lo sostuvo o qué hizo una landing la semana pasada — y convierte la respuesta en un informe que puedas enviar."
       bullets={[
-        "Pronostica ingresos, sesiones, conversión",
-        "Detecta anomalías antes del standup del lunes",
-        "Sugiere oportunidades de crecimiento por canal",
-        "Reportes automáticos semanales y mensuales",
+        "Pregunta lo que quieras sobre ingresos, embudo y canales",
+        "Respuestas ancladas en tus propios números, nunca inventadas",
+        "Convierte cualquier respuesta en un informe compartible",
+        "Informes semanales y mensuales en tu inbox",
       ]}
       visual={<LensChatVisualEs />}
     />
@@ -191,7 +191,7 @@ function LensChatVisualEs() {
           <div className="self-start max-w-[90%] px-4 py-3 rounded-[14px] rounded-bl-[4px] text-[13px] leading-[1.5] font-medium" style={{ background: "#E8B84B", color: "#0E0E0C" }}>
             El CPC de Meta subió 31% en la campaña <b>Summer Sale</b> después de las 16h. El ROAS bajó de 4,2 → 2,8. 3 ad sets responsables.
             <span className="block mt-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.06em] text-brand">
-              Anomalía · alta confianza · detección 03:00
+              Anclado en tus datos · últimos 7 días
             </span>
           </div>
           <div className="self-end max-w-[85%] bg-white/10 text-white px-4 py-3 rounded-[14px] rounded-br-[4px] text-[13px] leading-[1.45]">
@@ -306,7 +306,7 @@ export function NineReportsV3Es() {
     { n: "05", title: "Atribución", p: "Ingresos last-click por canal, campaña y creatividad." },
     { n: "06", title: "eCommerce", p: "Productos, carritos, AOV, ingresos — resolución completa." },
     { n: "07", title: "Portfolio", p: "Rollup multi-site para grupos retail y agencias." },
-    { n: "08", title: "LENS AI", p: "Anomalías, forecast y oportunidades en lenguaje natural." },
+    { n: "08", title: "LENS AI", p: "Pregunta a tus datos y crea informes en lenguaje natural." },
     { n: "09", title: "Agent Analytics", p: "GPT, Claude, Perplexity — tratados como sesiones reales.", soon: true },
   ];
   return (
@@ -343,12 +343,12 @@ export function NineReportsV3Es() {
 
 /* INTEGRATIONS ES */
 export function IntegrationsStripV3Es() {
-  const pills = ["Google Ads", "Meta Ads", "TikTok Ads", "Shopify", "WooCommerce", "Magento", "PrestaShop", "BigQuery", "Snowflake", "Looker", "Klaviyo", "HubSpot", "Segment", "Zapier", "Webhooks"];
+  const pills = ["Shopify", "WooCommerce", "Magento 2", "PrestaShop", "OpenCart", "WordPress", "Drupal", "Joomla", "Webflow", "Wix", "Squarespace", "Next.js", "React", "Nuxt 3", "Google Tag Manager", "BigQuery", "Looker Studio", "MCP server", "Webhooks"];
   return (
     <section className="py-28 bg-warm-50 border-t border-warm-100 text-center">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>
-          25+ integraciones nativas
+          Integraciones nativas
         </span>
         <h2 className="h-section mt-5 mx-auto" style={{ maxWidth: "20ch" }}>
           Encaja en el stack <em>que ya usas.</em>
@@ -380,7 +380,7 @@ export function ProductFinalCtaV3Es() {
             La plataforma de analítica que <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>los equipos eCommerce merecen.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Empieza la prueba gratis de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Sin tarjeta. Sin llamada.
+            Empieza la prueba gratis de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a href="https://my.sealmetrics.com/register" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">

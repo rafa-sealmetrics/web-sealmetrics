@@ -78,12 +78,12 @@ const VIEWS: Record<ViewId, ViewConfig> = {
     id: "lens",
     label: "LENS AI",
     group: "optimise",
-    title: "Anomaly detection",
+    title: "Ask your data",
     kpis: [
-      { l: "Anomalies · 7 days", v: "2", d: "Both resolved" },
-      { l: "MTTR", v: "24 min", d: "▼ from 14 hrs" },
-      { l: "Revenue saved", v: "€48K", d: "▲ caught at 03:14", hl: true },
-      { l: "False positives", v: "0", d: "✓ tuned" },
+      { l: "Questions answered", v: "34", d: "Last 7 days" },
+      { l: "Time to answer", v: "24 s", d: "▼ from 14 hrs" },
+      { l: "Revenue explained", v: "€48K", d: "▲ drop found at 03:14", hl: true },
+      { l: "Reports built", v: "6", d: "✓ in plain language" },
     ],
     chart: <ChartAnomaly />,
   },
@@ -108,7 +108,7 @@ const VIEWS: Record<ViewId, ViewConfig> = {
     kpis: [
       { l: "Events / second", v: "1.2K", d: "Live stream" },
       { l: "Export latency", v: "< 2s", d: "BigQuery sync" },
-      { l: "Rate limit", v: "None", d: "▲ no quotas", hl: true },
+      { l: "Rate limit", v: "240/min", d: "480/min on Scale", hl: true },
       { l: "Sampling", v: "0%", d: "every event" },
     ],
     chart: <ChartApiCode />,
@@ -468,7 +468,7 @@ function ChartAnomaly() {
     <>
       <div className="text-[12px] font-semibold mb-4">
         Conversions · 48h window{" "}
-        <span className="text-ink-soft font-medium">· anomaly at 03:14</span>
+        <span className="text-ink-soft font-medium">· drop at 03:14</span>
       </div>
       <svg viewBox="0 0 760 220" preserveAspectRatio="none" className="flex-1 w-full" aria-hidden="true">
         <defs>
@@ -496,7 +496,7 @@ function ChartAnomaly() {
         <line x1="400" y1="0" x2="400" y2="200" stroke="#B5423B" strokeWidth="1" strokeDasharray="3 3" />
         <circle cx="400" cy="185" r="6" fill="#B5423B" />
         <text x="410" y="178" fontFamily="JetBrains Mono" fontSize="11" fill="#B5423B" fontWeight="600">
-          03:14 · ANOMALY
+          03:14 · DROP
         </text>
         <line x1="500" y1="0" x2="500" y2="200" stroke="#2D8B6D" strokeWidth="1" strokeDasharray="3 3" />
         <circle cx="500" cy="48" r="6" fill="#2D8B6D" />
@@ -551,7 +551,7 @@ function ChartApiCode() {
     <>
       <div className="text-[12px] font-semibold mb-4">
         SuperAPI endpoints{" "}
-        <span className="text-ink-soft font-medium">· no quotas, no sampling</span>
+        <span className="text-ink-soft font-medium">· no sampling, no thresholds</span>
       </div>
       <div className="flex-1 bg-ink text-white rounded-lg p-5 font-mono text-[12.5px] leading-[1.9] relative">
         <div className="absolute top-3 left-3 flex gap-1.5">

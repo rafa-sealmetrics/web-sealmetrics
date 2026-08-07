@@ -920,7 +920,7 @@ function PrivateAI() {
                 <div className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold mb-2">
                   LENS private AI
                 </div>
-                <div className="text-[19px] font-semibold text-ink">Gemma · Paris</div>
+                <div className="text-[19px] font-semibold text-ink">gpt-oss-120b · Paris</div>
               </div>
             </div>
           </div>
@@ -942,7 +942,7 @@ function PrivateAI() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
-          {["LENS private AI", "BYOK · Anthropic / OpenAI / Gemini", "MCP · 40+ read-only tools"].map((c) => (
+          {["LENS private AI", "BYOK · Anthropic / OpenAI / Gemini / DeepSeek", "MCP · 47 read-only tools"].map((c) => (
             <span key={c} className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 bg-white border border-warm-100 rounded-full px-4 py-1.5">
               {c}
             </span>
@@ -1063,7 +1063,7 @@ export default function WhySealMetricsPage() {
             <p>
               It is GDPR-compliant by architecture — no cookies, no identifiers, no personal
               data — hosted exclusively in Dublin, Ireland. The AI layer runs as LENS private
-              AI (open-source Gemma model hosted by Scaleway in Paris) or with your own
+              AI (open-weight gpt-oss-120b model hosted by Scaleway in Paris) or with your own
               Anthropic, OpenAI or Gemini key, and your data never trains third-party models.
               Setup is one script tag or automatic via the SealMetrics MCP, in about 5
               minutes, running side-by-side with GA4. Palladium Hotel Group's audit found 40%

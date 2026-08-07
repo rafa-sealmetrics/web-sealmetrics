@@ -47,7 +47,7 @@ export default function ProductPage() {
       <ProblemNarrativeV3 />
       <TldrBlock
         answer={
-          <>SealMetrics is a <strong>cookieless, first-party analytics platform</strong> for European eCommerce teams. It captures 100% of traffic without consent banners, attributes revenue last-click on complete data, and runs AI anomaly detection (LENS) on top — all hosted in Dublin under GDPR-by-architecture.</>
+          <>SealMetrics is a <strong>cookieless, first-party analytics platform</strong> for European eCommerce teams. It captures 100% of traffic without consent banners, attributes revenue last-click on complete data, and lets you ask that data questions in plain language with LENS AI — all hosted in Dublin under GDPR-by-architecture.</>
         }
         bullets={[
           <>Four layers: Capture (consentless) · Attribute (last-click, 100% data) · Understand (LENS AI) · Activate (API + MCP + BigQuery).</>,

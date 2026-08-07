@@ -38,7 +38,7 @@ const STEPS = [
   {
     n: "03",
     title: "Private AI",
-    p: "LENS analyses your data on an open-source model (Gemma) hosted in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model. Enterprise can run a dedicated, non-shared instance.",
+    p: "LENS analyses your data on an open-weight model (gpt-oss-120b, Apache 2.0) hosted in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model. Enterprise can run a dedicated, non-shared instance.",
     tags: ["EU AI · Paris", "Never shared", "Never trains third parties"],
   },
 ];

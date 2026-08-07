@@ -102,7 +102,7 @@ const faqs = [
   {
     question: "Where does the AI run, and does my data leave the EU?",
     answer:
-      "With LENS private AI, inference runs on an open-source model (Gemma) hosted by Scaleway in Paris, and your analytics data stays in Dublin — both in the EU. Your data is never shared with any third party and never used to train third-party models. You can also bring your own key (Anthropic, OpenAI or Gemini) or connect the hosted MCP at mcp.sealmetrics.com from your own client.",
+      "With LENS private AI, inference runs on an open-weight model (gpt-oss-120b) hosted by Scaleway in Paris, and your analytics data stays in Dublin — both in the EU. Your data is never shared with any third party and never used to train third-party models. You can also bring your own key (Anthropic, OpenAI or Gemini) or connect the hosted MCP at mcp.sealmetrics.com from your own client.",
   },
   {
     question: "Does this replace my data analyst?",
@@ -329,7 +329,7 @@ export default function Page() {
               <li><strong>Provenance you can trace.</strong> Every answer resolves to a named tool over an explicit period in your account timezone — so you can always see which metric produced it, and attribution is <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click at the event level</Link>.</li>
             </ul>
             <p>
-              And the model runs where your compliance team wants it to. With <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">LENS private AI</Link>, inference runs on an open-source model (Gemma) hosted by Scaleway in Paris while your analytics data stays in Dublin — both EU, never shared, never used to train third-party models. Prefer your own stack? Bring your own Anthropic, OpenAI or Gemini key, or connect the hosted MCP at <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">mcp.sealmetrics.com</code> from any compatible client. The data foundation is identical either way; you&apos;re only choosing the algorithm.
+              And the model runs where your compliance team wants it to. With <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">LENS private AI</Link>, inference runs on an open-weight model (gpt-oss-120b) hosted by Scaleway in Paris while your analytics data stays in Dublin — both EU, never shared, never used to train third-party models. Prefer your own stack? Bring your own Anthropic, OpenAI or Gemini key, or connect the hosted MCP at <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">mcp.sealmetrics.com</code> from any compatible client. The data foundation is identical either way; you&apos;re only choosing the algorithm.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">

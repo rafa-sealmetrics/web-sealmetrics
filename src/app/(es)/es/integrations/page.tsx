@@ -8,10 +8,10 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Integraciones — SealMetrics",
-  description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
+  description: "Módulos nativos para eCommerce, CMS, frameworks y tag managers. Conector BigQuery, MCP server para agentes IA, webhooks y API REST completa.",
   openGraph: {
     title: "Integraciones — SealMetrics",
-    description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
+    description: "Módulos nativos para eCommerce, CMS, frameworks y tag managers. Conector BigQuery, MCP server para agentes IA y API REST completa.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
   },
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 };
 
 const groups = [
-  { title: "Plataformas publicitarias", items: ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "Microsoft Ads"] },
-  { title: "eCommerce", items: ["Shopify", "WooCommerce", "Magento", "PrestaShop", "BigCommerce", "Salesforce Commerce Cloud"] },
-  { title: "Data warehouses", items: ["BigQuery", "Snowflake", "Databricks", "Redshift"] },
-  { title: "BI tools", items: ["Looker Studio", "Power BI", "Tableau", "Metabase"] },
-  { title: "CRM & email", items: ["HubSpot", "Salesforce", "Klaviyo", "Mailchimp"] },
-  { title: "Developer", items: ["REST API", "Streaming API", "Webhooks", "MCP server", "Segment", "Zapier"] },
+  { title: "eCommerce", items: ["Shopify", "WooCommerce", "Magento 2", "PrestaShop", "OpenCart"] },
+  { title: "CMS", items: ["WordPress", "Drupal", "Joomla"] },
+  { title: "Constructores web", items: ["Webflow", "Wix", "Squarespace"] },
+  { title: "Frameworks", items: ["Next.js", "React", "Nuxt 3"] },
+  { title: "Gestión de tags", items: ["Google Tag Manager", "Plantilla de contenedor GTM", "Plantilla de tag GTM"] },
+  { title: "Datos e IA", items: ["Conector BigQuery", "Looker Studio", "MCP server", "Paquete agéntico Claude y Codex", "API REST", "Webhooks"] },
 ];
 
 export default function Page() {
@@ -35,12 +35,12 @@ export default function Page() {
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>25+ integraciones nativas</span>
+          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Integraciones nativas</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Encaja en el <em>stack que ya usas.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Plataformas publicitarias, CMSs eCommerce, warehouses, BI, CRMs. Más API REST + streaming, webhooks y un MCP server para agentes IA.
+            Módulos nativos para eCommerce, CMS, constructores web, frameworks y tag managers. Más conector BigQuery, webhooks, API REST completa y un MCP server para agentes IA.
           </p>
         </div>
       </section>
@@ -73,10 +73,10 @@ export default function Page() {
                 Developer-first
               </span>
               <h3 className="font-semibold text-ink tracking-[-0.03em] leading-[1.05]" style={{ fontSize: "clamp(30px, 3.6vw, 44px)" }}>
-                API completa, <em>MCP nativo,</em> sin cuotas.
+                API completa, <em>MCP nativo,</em> sin muestreo.
               </h3>
               <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
-                Cobertura REST + streaming de cada evento, cada propiedad. Webhooks para operaciones en tiempo real. MCP server para que Claude, ChatGPT o tu propio copilot consulten directamente.
+                Cobertura REST de cada métrica, cada propiedad, a resolución completa. Webhooks para señales de operación desde el plan Scale. MCP server para que Claude, ChatGPT o tu propio copilot consulten directamente.
               </p>
               <div className="mt-6 flex gap-3 flex-wrap">
                 <Link href="/es/product" className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white rounded-md text-[14px] font-semibold no-underline hover:bg-brand transition-colors">
@@ -94,12 +94,12 @@ export default function Page() {
                 <span className="w-2 h-2 rounded-full bg-[#28CA42]" />
               </div>
               <div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/events</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/conversions</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/channels</div>
+                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/overview</div>
+                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/conversions</div>
+                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/sources</div>
                 <div><span style={{ color: "#E8B84B" }}>POST</span> /api/v1/webhooks</div>
-                <div><span style={{ color: "#E8B84B" }}>MCP</span> claude://sealmetrics</div>
-                <div className="mt-3 text-white/45">// sin cuotas · sin muestreo · resolución completa</div>
+                <div><span style={{ color: "#E8B84B" }}>MCP</span> mcp.sealmetrics.com/mcp</div>
+                <div className="mt-3 text-white/45">// sin muestreo · sin umbrales · resolución completa</div>
               </div>
             </div>
           </div>

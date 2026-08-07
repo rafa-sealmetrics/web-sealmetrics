@@ -600,7 +600,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Native MCP / AI agents", them: "No", us: "Native MCP server" },
             { feature: "BigQuery / warehouse export", them: "Paid plugin or manual ETL", us: "Native · all plans · full resolution" },
             { feature: "Real-time latency", them: "Minutes (with extra plugins)", us: "< 2 minutes · default" },
-            { feature: "Anomaly detection / forecasts", them: "Premium plugin", us: "LENS AI on all plans (BYOK) · managed Private AI from Scale" },
+            { feature: "Ask-your-data AI assistant", them: "Premium plugin", us: "LENS AI on all plans (BYOK) · managed Private AI from Scale" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Self-serve · docs + forum", us: "Founder-led · 15-minute install" },
@@ -686,7 +686,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "MCP / agentes IA nativos", them: "No", us: "MCP server nativo" },
             { feature: "Export BigQuery / warehouse", them: "Plugin de pago o ETL manual", us: "Nativo · todos los planes · resolución completa" },
             { feature: "Latencia tiempo real", them: "Minutos (con plugins extra)", us: "< 2 minutos · por defecto" },
-            { feature: "Detección de anomalías / forecasts", them: "Plugin premium", us: "LENS AI en todos los planes (BYOK) · Private AI gestionada desde Scale" },
+            { feature: "Asistente IA sobre tus datos", them: "Plugin premium", us: "LENS AI en todos los planes (BYOK) · Private AI gestionada desde Scale" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Self-serve · docs + foro", us: "Liderado por el founder · instalación en 15 min" },

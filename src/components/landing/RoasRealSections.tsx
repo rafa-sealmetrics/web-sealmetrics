@@ -549,7 +549,7 @@ const SPECS = [
     items: [
       { v: "1,1 KB", l: "Un solo paquete TCP. Sin dependencias, sin tag manager necesario." },
       { v: "Tiempo real", l: "No en un informe: en toda la plataforma. Sabes al segundo cuándo se procesó el último hit." },
-      { v: "También en Black Friday", l: "Tiempo real garantizado por SLA en el pico. Optimizas a las 10:01 de la mañana, no al día siguiente." },
+      { v: "También en Black Friday", l: "Sin muestreo ni throttling en el pico, y el SLA garantiza el día completo antes de las 6 AM. Optimizas a las 10:01 de la mañana, no al día siguiente." },
     ],
   },
   {

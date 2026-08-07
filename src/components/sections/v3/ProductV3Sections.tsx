@@ -126,7 +126,7 @@ export function FourPillarsV3() {
     {
       n: "03 · Understand",
       title: "LENS AI",
-      p: "Anomaly detection, forecasts, growth ops — in natural language.",
+      p: "Ask your data anything and build reports — in natural language.",
     },
     {
       n: "04 · Activate",
@@ -244,12 +244,12 @@ export function FeatureLensAIV3() {
           Get a <em>real answer.</em>
         </>
       }
-      lede="60+ anomaly rules run against your full-resolution data every hour. LENS AI watches revenue, funnel and channels in the background — and surfaces what changed, in plain language."
+      lede="LENS AI reads your full-resolution data and answers in plain language. Ask why revenue moved, which channel carried it, what a landing page did last week — and turn the answer into a report you can send."
       bullets={[
-        "Forecasts revenue, sessions, conversion rate",
-        "Detects anomalies before they hit Monday standup",
-        "Suggests growth opportunities by channel",
-        "Weekly & monthly auto-reports, in your inbox",
+        "Ask anything about revenue, funnel and channels",
+        "Answers grounded in your own numbers, never invented",
+        "Turn any answer into a shareable report",
+        "Weekly & monthly reports, in your inbox",
       ]}
       visual={<LensChatVisual />}
     />
@@ -290,7 +290,7 @@ function LensChatVisual() {
           >
             Meta CPC rose 31% on the <b>Summer Sale</b> campaign after 4 PM. ROAS dropped from 4.2 → 2.8. 3 ad sets responsible.
             <span className="block mt-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.06em] text-brand">
-              Anomaly · high confidence · 3 AM detection
+              Grounded in your data · last 7 days
             </span>
           </div>
           <div className="self-end max-w-[85%] bg-white/10 text-white px-4 py-3 rounded-[14px] rounded-br-[4px] text-[13px] leading-[1.45]">
@@ -325,7 +325,7 @@ export function FeaturePrivateAIV3() {
       lede="Every analytics AI on the market ships your numbers to a US cloud to answer your questions. LENS lets you choose who runs the model — including a private one, on European soil, that never trains a third-party algorithm."
       bullets={[
         "Bring your own keys — Anthropic, OpenAI or Gemini",
-        "Or LENS Private AI: an EU open-source model (Gemma, hosted in Paris)",
+        "Or LENS Private AI: an EU-hosted open-weight model (gpt-oss-120b, Paris)",
         "Data never leaves the EU, never shared, never used for training",
         "Enterprise: a dedicated instance, not shared with any other customer",
       ]}
@@ -356,7 +356,7 @@ function PrivateAIVisual() {
         <div className="flex flex-col gap-3">
           {[
             { tag: "Your keys", d: "BYOK — Anthropic, OpenAI, Gemini, or via mcp.sealmetrics.com" },
-            { tag: "Private AI", d: "EU open-source model (Gemma, Scaleway · Paris)", featured: true },
+            { tag: "Private AI", d: "EU open-weight model (gpt-oss-120b, Scaleway · Paris)", featured: true },
             { tag: "Dedicated", d: "Your own instance — Enterprise only" },
           ].map((c) => (
             <div
@@ -536,7 +536,7 @@ export function NineReportsV3() {
     { n: "05", title: "Attribution", p: "Last-click revenue by channel, campaign and creative." },
     { n: "06", title: "eCommerce", p: "Products, baskets, AOV, revenue — full resolution." },
     { n: "07", title: "Portfolio", p: "Multi-site rollup for retail groups & agencies." },
-    { n: "08", title: "LENS AI", p: "Anomalies, forecasts and growth ops in natural language." },
+    { n: "08", title: "LENS AI", p: "Ask your data and build reports in natural language." },
     { n: "09", title: "Agent Analytics", p: "GPT, Claude, Perplexity — treated as real sessions.", soon: true },
   ];
   return (
@@ -589,20 +589,24 @@ export function NineReportsV3() {
    ============================================ */
 export function IntegrationsStripV3() {
   const pills = [
-    "Google Ads",
-    "Meta Ads",
-    "TikTok Ads",
     "Shopify",
     "WooCommerce",
-    "Magento",
+    "Magento 2",
     "PrestaShop",
+    "OpenCart",
+    "WordPress",
+    "Drupal",
+    "Joomla",
+    "Webflow",
+    "Wix",
+    "Squarespace",
+    "Next.js",
+    "React",
+    "Nuxt 3",
+    "Google Tag Manager",
     "BigQuery",
-    "Snowflake",
-    "Looker",
-    "Klaviyo",
-    "HubSpot",
-    "Segment",
-    "Zapier",
+    "Looker Studio",
+    "MCP server",
     "Webhooks",
   ];
   return (
@@ -612,7 +616,7 @@ export function IntegrationsStripV3() {
           className="eyebrow mb-5"
           style={{ display: "inline-flex", justifyContent: "center" }}
         >
-          25+ native integrations
+          Native integrations
         </span>
         <h2 className="h-section mt-5 mx-auto" style={{ maxWidth: "20ch" }}>
           Plug into the stack <em>you already run.</em>
@@ -672,7 +676,7 @@ export function ProductFinalCtaV3() {
             The analytics platform <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>eCommerce teams deserve.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Start the free 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. No credit card. No call required.
+            Start the free 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. You add a card to start, and pay nothing if you cancel before day 14. No call required.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a

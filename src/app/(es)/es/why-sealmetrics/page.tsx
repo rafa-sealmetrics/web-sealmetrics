@@ -921,7 +921,7 @@ function PrivateAI() {
                 <div className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-soft font-semibold mb-2">
                   LENS IA privada
                 </div>
-                <div className="text-[19px] font-semibold text-ink">Gemma · París</div>
+                <div className="text-[19px] font-semibold text-ink">gpt-oss-120b · París</div>
               </div>
             </div>
           </div>
@@ -943,7 +943,7 @@ function PrivateAI() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
-          {["LENS IA privada", "BYOK · Anthropic / OpenAI / Gemini", "MCP · 40+ herramientas read-only"].map((c) => (
+          {["LENS IA privada", "BYOK · Anthropic / OpenAI / Gemini / DeepSeek", "MCP · 47 herramientas read-only"].map((c) => (
             <span key={c} className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 bg-white border border-warm-100 rounded-full px-4 py-1.5">
               {c}
             </span>
@@ -1068,7 +1068,7 @@ export default function WhySealMetricsPageEs() {
             <p>
               Cumple el RGPD por arquitectura — sin cookies, sin identificadores, sin datos
               personales — y se aloja exclusivamente en Dublín, Irlanda. La capa de IA
-              funciona como LENS IA privada (modelo open-source Gemma alojado por Scaleway
+              funciona como LENS IA privada (modelo open-weight gpt-oss-120b alojado por Scaleway
               en París) o con tu propia clave de Anthropic, OpenAI o Gemini, y tus datos
               nunca entrenan modelos de terceros. El setup es un script o automático vía el
               MCP de SealMetrics, en unos 5 minutos, en paralelo con GA4. La auditoría de

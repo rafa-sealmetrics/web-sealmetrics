@@ -48,7 +48,7 @@ export default function ProductPageEs() {
       <TldrBlock
         label="En resumen"
         answer={
-          <>SealMetrics es una <strong>plataforma de analítica first-party sin cookies</strong> para equipos eCommerce europeos. Captura el 100% del tráfico sin banner de consentimiento, atribuye ingresos last-click sobre datos completos y ejecuta detección de anomalías con IA (LENS) — todo alojado en Dublín bajo RGPD por arquitectura.</>
+          <>SealMetrics es una <strong>plataforma de analítica first-party sin cookies</strong> para equipos eCommerce europeos. Captura el 100% del tráfico sin banner de consentimiento, atribuye ingresos last-click sobre datos completos y te deja preguntar a ese dato en lenguaje natural con LENS AI — todo alojado en Dublín bajo RGPD por arquitectura.</>
         }
         bullets={[
           <>Cuatro capas: Captura (sin consentimiento) · Atribución (last-click, 100% datos) · Comprensión (LENS AI) · Activación (API + MCP + BigQuery).</>,

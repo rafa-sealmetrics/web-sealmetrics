@@ -727,7 +727,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
     body: "Every day without SealMetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
-    foot: "14-day free trial · No credit card · 4-minute setup",
+    foot: "14-day free trial · Cancel before day 14, pay nothing · 4-minute setup",
   },
   es: {
     eyebrow: "La sangría es diaria",
@@ -735,7 +735,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
     body: "Cada día sin SealMetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
-    foot: "14 días gratis · Sin tarjeta · Setup en 4 minutos",
+    foot: "14 días gratis · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
   },
 } as const;
 
@@ -806,7 +806,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Billed annually · ${total}/yr`,
     monthlyAlt: (m: string) => `or ${m}/mo billed monthly`,
     lessThanLost: <>Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.</>,
-    trial: "14-day free trial · No credit card",
+    trial: "14-day free trial · Cancel before day 14, pay nothing",
     customLabel: "Custom",
     customSub: "Annual or custom terms",
     growthBlurb: "For teams that want to see their real data.",
@@ -831,7 +831,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Anual · ${total}/año`,
     monthlyAlt: (m: string) => `o ${m}/mes con facturación mensual`,
     lessThanLost: <>Menos que lo que pierdes en <em className="italic-accent">un solo día</em> de datos incompletos.</>,
-    trial: "14 días gratis · Sin tarjeta",
+    trial: "14 días gratis · Cancela antes del día 14 y no pagas",
     customLabel: "A medida",
     customSub: "Anual o términos custom",
     growthBlurb: "Para equipos que quieren ver su dato real.",
@@ -1030,7 +1030,7 @@ const CONNECTORS: { name: string; src?: string; tag: "ecommerce" | "data"; h?: n
   { name: "WooCommerce", src: "/logos/brands/woocommerce.svg", tag: "ecommerce", h: 108 },
   { name: "Magento", src: "/logos/brands/magento.svg", tag: "ecommerce" },
   { name: "PrestaShop", src: "/logos/brands/prestashop.svg", tag: "ecommerce" },
-  { name: "BigCommerce", tag: "ecommerce" },
+  { name: "OpenCart", tag: "ecommerce" },
   { name: "BigQuery", src: "/logos/brands/bigquery.svg", tag: "data" },
   { name: "Data Studio", tag: "data" },
 ];

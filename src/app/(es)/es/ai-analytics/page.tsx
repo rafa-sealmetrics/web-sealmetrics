@@ -52,15 +52,15 @@ const faqs = [
   },
   {
     q: "¿Existe una herramienta de analítica con IA conforme con el RGPD?",
-    a: "Sí. SealMetrics es analítica con IA conforme con el RGPD por arquitectura: la capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-source (Gemma) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
+    a: "Sí. SealMetrics es analítica con IA conforme con el RGPD por arquitectura: la capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
   },
   {
     q: "¿Puedo conectar ChatGPT o Claude a mi analítica?",
-    a: "Sí. SealMetrics incluye un servidor Model Context Protocol (MCP) con más de 40 herramientas de solo lectura. Conéctalo desde Claude, ChatGPT, Cursor o Claude Code en mcp.sealmetrics.com y pregunta directamente a tu analítica — revenue por canal, conversiones, rendimiento de landing pages, desperdicio de campañas. Cada herramienta mapea un concepto de negocio a una métrica canónica, así que el modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Puedes usar la IA privada de SealMetrics o traer tu propia clave de Anthropic, OpenAI o Gemini — eliges el algoritmo, no el dato.",
+    a: "Sí. SealMetrics incluye un servidor Model Context Protocol (MCP) con 47 herramientas de solo lectura. Conéctalo desde Claude, ChatGPT, Cursor o Claude Code en mcp.sealmetrics.com y pregunta directamente a tu analítica — revenue por canal, conversiones, rendimiento de landing pages, desperdicio de campañas. Cada herramienta mapea un concepto de negocio a una métrica canónica, así que el modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Puedes usar la IA privada de SealMetrics o traer tu propia clave de Anthropic, OpenAI, Gemini o DeepSeek — eliges el algoritmo, no el dato.",
   },
   {
     q: "¿Qué es la IA privada para analítica?",
-    a: "IA privada significa que el modelo de lenguaje que lee tu dato corre sobre infraestructura de la que controlas los límites, no sobre un endpoint público compartido. Con SealMetrics LENS private AI, la inferencia corre sobre un modelo Gemma open-source alojado por Scaleway en París — dentro de la UE, nunca compartido con terceros, nunca usado para entrenar modelos externos. Los planes Enterprise y Corporate pueden tener una instancia dedicada y no compartida. Está disponible y se puede contratar ahora, no es una beta.",
+    a: "IA privada significa que el modelo de lenguaje que lee tu dato corre sobre infraestructura de la que controlas los límites, no sobre un endpoint público compartido. Con SealMetrics LENS private AI, la inferencia corre sobre el modelo open-weight gpt-oss-120b alojado por Scaleway en París — dentro de la UE, nunca compartido con terceros, nunca usado para entrenar modelos externos. Enterprise puede tener una instancia dedicada y no compartida — solo por contacto comercial. Está disponible y se puede contratar ahora, no es una beta.",
   },
   {
     q: "¿En qué se diferencia esto de poner ChatGPT encima de GA4?",
@@ -83,14 +83,14 @@ const pillars = [
   {
     eyebrow: "La interfaz",
     title: "Un MCP semántico",
-    body: "Más de 40 herramientas de solo lectura con nombre, cada una mapeando un concepto de negocio a una métrica canónica. El modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Nada que malinterpretar.",
+    body: "47 herramientas de solo lectura con nombre, cada una mapeando un concepto de negocio a una métrica canónica. El modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Nada que malinterpretar.",
     metric: "40+ herramientas",
     metricLabel: "vía MCP de fábrica",
   },
   {
     eyebrow: "El algoritmo",
     title: "IA privada, en la UE",
-    body: "LENS private AI ejecuta la inferencia sobre un modelo open-source (Gemma) alojado por Scaleway en París, mientras tu dato permanece en Dublín. Nunca sale de la UE, nunca se comparte, nunca entrena modelos de terceros.",
+    body: "LENS private AI ejecuta la inferencia sobre un modelo open-weight (gpt-oss-120b) alojado por Scaleway en París, mientras tu dato permanece en Dublín. Nunca sale de la UE, nunca se comparte, nunca entrena modelos de terceros.",
     metric: "Solo UE",
     metricLabel: "inferencia + almacenamiento",
   },
@@ -321,7 +321,7 @@ export default function AiAnalyticsEsPage() {
               <Link href="/es/glossary/cookieless-analytics" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
                 analítica cookieless
               </Link>
-              . La inferencia corre sobre un modelo open-source (Gemma) alojado por Scaleway en París; tu
+              . La inferencia corre sobre un modelo open-weight (gpt-oss-120b) alojado por Scaleway en París; tu
               dato analítico permanece en Dublín. Ambos en la UE — nunca compartido, nunca usado para
               entrenar modelos de terceros. ¿Prefieres tu propia stack? Usa tu clave de Anthropic, OpenAI o
               Gemini.
@@ -329,10 +329,10 @@ export default function AiAnalyticsEsPage() {
             <ul className="mt-7 space-y-3">
               {[
                 "Conecta Claude, ChatGPT, Cursor o Claude Code vía MCP en mcp.sealmetrics.com",
-                "Más de 40 herramientas de solo lectura: overview, canales, conversiones, funnels, landing pages, propiedades",
-                "IA privada sobre Gemma / Scaleway (París) o trae tu propia clave de modelo — eliges el algoritmo",
-                "Enterprise y Corporate pueden tener una instancia de IA privada dedicada y no compartida",
-                "El dato está completo antes de las 6 AM cada mañana; los dashboards se actualizan en vivo cuando importa, como un pico de promo",
+                "47 herramientas de solo lectura: overview, canales, conversiones, funnels, landing pages, propiedades",
+                "IA privada sobre gpt-oss-120b / Scaleway (París) o trae tu propia clave de modelo — eliges el algoritmo",
+                "Enterprise puede tener una instancia de IA privada dedicada y no compartida (por comercial)",
+                "Los hits llegan al informe normalmente en menos de 2 minutos, y el SLA garantiza el día completo antes de las 6 AM",
               ].map((line) => (
                 <li key={line} className="flex gap-3 text-[15px] leading-[1.55] text-ink-soft">
                   <span className="text-brand font-bold mt-0.5" aria-hidden>

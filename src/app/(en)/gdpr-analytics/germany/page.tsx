@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: "Do I still need a Datenschutzerklärung?",
-    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (25 months by default for SealMetrics), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TTDSG exemption). A template ships with the TPSR package.",
+    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (24 months for SealMetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TTDSG exemption). A template ships with the TPSR package.",
   },
   {
     q: "What's the position on the new Digital Omnibus 2026?",
