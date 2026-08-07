@@ -36,6 +36,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
 - /demo — Request a personalized demo
 - /about — Company story, mission, EU-first philosophy
+- /careers — Work with us: apply with public links (LinkedIn, GitHub), no CV uploads, no personal data forms
 - /audit — Free SealMetrics audit: we run your site through SealMetrics and surface the attribution gap live
 - /free-audit — Free audit intake form
 - /modern-analytics — What modern analytics looks like in 2026: complete data, AI supervision, EU-hosted
@@ -235,6 +236,7 @@ Industry-specific (ES):
 
 About / extras (ES):
 - /es/about — Quiénes somos
+- /es/careers — Trabaja con nosotros: candidatura con enlaces públicos, sin CV ni datos personales
 - /es/audit — Auditoría gratuita SealMetrics
 - /es/modern-analytics — Analítica moderna en 2026
 - /es/ai-analytics — Analítica con IA: dato cookieless completo + MCP semántico + IA privada en la UE (LENS AI)

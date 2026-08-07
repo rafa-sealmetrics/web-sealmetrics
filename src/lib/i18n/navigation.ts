@@ -15,6 +15,7 @@ const translatedPaths = new Set([
   "/growth-calculator",
   "/data-loss-calculator",
   "/about",
+  "/careers",
   "/integrations",
   "/platforms",
   "/vs",
