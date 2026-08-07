@@ -605,7 +605,7 @@ export function IntegrationsStripV3() {
     "Nuxt 3",
     "Google Tag Manager",
     "BigQuery",
-    "Looker Studio",
+    "Data Studio",
     "MCP server",
     "Webhooks",
   ];

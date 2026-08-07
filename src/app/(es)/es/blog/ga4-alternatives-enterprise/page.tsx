@@ -33,7 +33,7 @@ const alternatives = [
     pricing: "$150.000+/año",
     dataCompleteness: "~30-35% en UE",
     chooseIf:
-      "Tienes un presupuesto de analítica de más de 150K, tu equipo vive en Looker Studio y las tasas de consentimiento en tus mercados superan el 70%.",
+      "Tienes un presupuesto de analítica de más de 150K, tu equipo vive en Data Studio y las tasas de consentimiento en tus mercados superan el 70%.",
   },
   {
     name: "Adobe Analytics",
@@ -279,7 +279,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               es el tramo enterprise de Google Analytics. Aborda las limitaciones
               más visibles de GA4: umbrales de muestreo más altos, export nativo a
               BigQuery, SLAs garantizados y un account manager dedicado. Para
-              organizaciones muy invertidas en Google Ads y Looker Studio, GA360
+              organizaciones muy invertidas en Google Ads y Data Studio, GA360
               ofrece una integración que ningún competidor iguala.
             </p>
 

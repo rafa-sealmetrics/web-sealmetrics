@@ -47,7 +47,7 @@ const groups = [
   { title: "Website builders", items: ["Webflow", "Wix", "Squarespace"] },
   { title: "Frameworks", items: ["Next.js", "React", "Nuxt 3"] },
   { title: "Tag management", items: ["Google Tag Manager", "GTM container template", "GTM tag template"] },
-  { title: "Data & AI", items: ["BigQuery connector", "Looker Studio", "MCP server", "Claude & Codex agentic package", "REST API", "Webhooks"] },
+  { title: "Data & AI", items: ["BigQuery connector", "Data Studio", "MCP server", "Claude & Codex agentic package", "REST API", "Webhooks"] },
 ];
 
 export default function Page() {

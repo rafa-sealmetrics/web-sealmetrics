@@ -572,7 +572,7 @@ const SPECS = [
     h: "Salida",
     items: [
       { v: "API robusta", l: "Todo lo que ves en la interfaz está disponible por API. Sin excepciones." },
-      { v: "BigQuery · Looker Studio", l: "Conector nativo. Seleccionas la cuenta y sincroniza." },
+      { v: "BigQuery · Data Studio", l: "Conector nativo. Seleccionas la cuenta y sincroniza." },
       { v: "MCP + LENS", l: "Conecta tus datos a Claude, ChatGPT o Cursor. O usa LENS, nuestra IA privada, y que el dato no salga de aquí." },
     ],
   },

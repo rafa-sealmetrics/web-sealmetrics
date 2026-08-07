@@ -343,7 +343,7 @@ export function NineReportsV3Es() {
 
 /* INTEGRATIONS ES */
 export function IntegrationsStripV3Es() {
-  const pills = ["Shopify", "WooCommerce", "Magento 2", "PrestaShop", "OpenCart", "WordPress", "Drupal", "Joomla", "Webflow", "Wix", "Squarespace", "Next.js", "React", "Nuxt 3", "Google Tag Manager", "BigQuery", "Looker Studio", "MCP server", "Webhooks"];
+  const pills = ["Shopify", "WooCommerce", "Magento 2", "PrestaShop", "OpenCart", "WordPress", "Drupal", "Joomla", "Webflow", "Wix", "Squarespace", "Next.js", "React", "Nuxt 3", "Google Tag Manager", "BigQuery", "Data Studio", "MCP server", "Webhooks"];
   return (
     <section className="py-28 bg-warm-50 border-t border-warm-100 text-center">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
