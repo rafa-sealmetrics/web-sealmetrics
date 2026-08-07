@@ -14,6 +14,16 @@ export const metadata: Metadata = {
       "Google elimina Google Signals como control de datos GA4 a Google Ads. Qué significa para tu privacidad y tus campañas.",
     type: "article",
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/blog/ga4-google-ads-separation/",
+    siteName: "SealMetrics",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GA4 y Google Ads: la separacion que nadie vio venir",
+    description: "Google elimina Google Signals como control de datos GA4 a Google Ads. Qué significa para tu privacidad y tus campañas.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/ga4-google-ads-separation/",
@@ -149,7 +159,7 @@ export default function GA4GoogleAdsSeparationPage() {
                 &mdash; <strong className="text-text-primary">Consent Mode</strong>: una
                 senyal que el{" "}
                 <Link
-                  href="/glossary/consent-management-platform"
+                  href="/es/glossary/consent-management-platform"
                   className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
                 >
                   CMP (banner de consentimiento)

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Ejecutamos 162 consultas en vivo con tres modelos abiertos sobre datos de analítica reales para elegir la IA que va dentro de SealMetrics. Lo que lo decidió no fue MMLU: fue el tool-calling, el grounding y un fallo de seguridad que solo apareció en un idioma.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "El mejor LLM para analítica no es el de mejor benchmark",
+  description: "162 consultas en vivo con tres modelos abiertos sobre datos reales. Lo decisivo no fue MMLU: fue el tool-calling, el grounding y un fallo en un solo idioma.",
   openGraph: {
     title: "El mejor LLM para analítica de datos no es el que te imaginas",
     description:
       "162 consultas en vivo, datos reales y una verdad de referencia sacada de la base de datos. Así elegimos de verdad el modelo que va dentro de SealMetrics.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/best-llm-for-data-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "El mejor LLM para analítica de datos no es el que te imaginas",
+    description: "162 consultas en vivo, datos reales y una verdad de referencia sacada de la base de datos. Así elegimos de verdad el modelo que va dentro de SealMetrics.",
+    images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -339,6 +351,7 @@ export default function BestLlmForAnalyticsPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getRelatedTerms } from "@/lib/content/glossary";
+import { glossaryHref } from "@/lib/content/glossary-es";
 
 /**
  * Renders the "Related concepts" block for a glossary term.
@@ -16,7 +17,6 @@ export function RelatedGlossaryTerms({
   if (!related.length) return null;
 
   const heading = locale === "es" ? "Conceptos relacionados" : "Related concepts";
-  const prefix = locale === "es" ? "/es/glossary" : "/glossary";
 
   return (
     <div className="mt-16 pt-10 border-t border-warm-100">
@@ -27,7 +27,9 @@ export function RelatedGlossaryTerms({
         {related.map((t) => (
           <li key={t.slug}>
             <Link
-              href={`${prefix}/${t.slug}`}
+              // Not every term is translated: glossaryHref falls back to the
+              // English page rather than linking a Spanish URL that 404s.
+              href={glossaryHref(t.slug, locale)}
               className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
             >
               <span className="font-medium text-text-primary">{t.term}</span>

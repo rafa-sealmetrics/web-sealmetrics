@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner de consentimiento. Aquí está el test legal y dónde cae cada herramienta.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y SealMetrics",
+    description: "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner de consentimiento. Aquí está el test legal y dónde cae cada herramienta.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment/",

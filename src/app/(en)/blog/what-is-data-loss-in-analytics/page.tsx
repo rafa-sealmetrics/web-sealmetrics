@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "The 4 causes of analytics data loss and how they compound to 87% missing traffic in the EU.",
     type: "article",
+    url: "https://sealmetrics.com/blog/what-is-data-loss-in-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/what-is-data-loss-in-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Data Loss in Analytics?",
+    description: "The 4 causes of analytics data loss and how they compound to 87% missing traffic in the EU.",
+    images: ["https://sealmetrics.com/og/blog/what-is-data-loss-in-analytics.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/what-is-data-loss-in-analytics/",

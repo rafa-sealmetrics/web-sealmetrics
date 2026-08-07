@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Un modelo que ignora una instrucción inyectada en español puede obedecer esa misma instrucción en inglés. Lo encontramos en nuestro propio benchmark, y es la razón por la que una evaluación monolingüe no puede certificar que un modelo sea seguro.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "El fallo de seguridad que solo aparece en dos idiomas",
+  description: "Un modelo que ignora una instrucción inyectada en español puede obedecerla en inglés. Una evaluación monolingüe no puede certificar que sea seguro.",
   openGraph: {
     title: "La resistencia al prompt injection depende del idioma",
     description:
       "El mismo ataque, el mismo modelo, dos idiomas, dos resultados. Por qué las evaluaciones de seguridad tienen que ser multilingües, y cómo montar una.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/prompt-injection-is-language-dependent/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/prompt-injection-is-language-dependent.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "La resistencia al prompt injection depende del idioma",
+    description: "El mismo ataque, el mismo modelo, dos idiomas, dos resultados. Por qué las evaluaciones de seguridad tienen que ser multilingües, y cómo montar una.",
+    images: ["https://sealmetrics.com/og/blog/prompt-injection-is-language-dependent.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -436,6 +448,7 @@ export default function PromptInjectionIsLanguageDependentPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

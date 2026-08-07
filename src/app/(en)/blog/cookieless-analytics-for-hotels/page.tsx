@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/cookieless-analytics-for-hotels/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cookieless Analytics for Hotels — 2026 Guide",
+    description: "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/cookieless-analytics-for-hotels/",

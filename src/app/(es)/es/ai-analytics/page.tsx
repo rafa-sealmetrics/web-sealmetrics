@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. SealMetrics es analítica con IA bien hecha: dato completo, un MCP semántico e IA privada en la UE.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/ai-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",

@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     description:
       "Compliance is a property of your deployment, not of the tool. What Adobe requires, and the coverage you pay for it.",
     type: "article",
+    url: "https://sealmetrics.com/blog/is-adobe-analytics-gdpr-compliant/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/is-adobe-analytics-gdpr-compliant.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Is Adobe Analytics GDPR Compliant?",
+    description: "Compliance is a property of your deployment, not of the tool. What Adobe requires, and the coverage you pay for it.",
+    images: ["https://sealmetrics.com/og/blog/is-adobe-analytics-gdpr-compliant.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/is-adobe-analytics-gdpr-compliant",

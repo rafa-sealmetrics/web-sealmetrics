@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     title: "¿Qué es la analítica sin cookies?",
     description: "Analítica que captura el 100% del tráfico sin cookies, sin consentimiento, sin per-user tracking.",
     type: "article",
+    url: "https://sealmetrics.com/es/glossary/cookieless-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "¿Qué es la analítica sin cookies?",
+    description: "Analítica que captura el 100% del tráfico sin cookies, sin consentimiento, sin per-user tracking.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/cookieless-analytics/",
@@ -24,7 +35,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glosario", href: "/es/glossary" }, { label: "Analítica sin cookies" }]} locale="es" />
-      <JsonLd data={definedTermSchema({ name: "Analítica sin cookies", description: "Analítica web que mide datos sin usar cookies del navegador.", url: "/es/glossary/cookieless-analytics", related: [{ name: "Recolección de datos first-party", url: "/es/glossary/first-party-data-collection" }, { name: "Tracking server-side", url: "/es/glossary/server-side-tracking" }, { name: "Cumplimiento RGPD analítica", url: "/es/glossary/gdpr-analytics-compliance" }, { name: "Pérdida de datos en analítica", url: "/es/glossary/data-loss-in-analytics" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Analítica sin cookies", description: "Analítica web que mide datos sin usar cookies del navegador.", url: "/es/glossary/cookieless-analytics", related: [{ name: "Recolección de datos first-party", url: "/glossary/first-party-data-collection" }, { name: "Tracking server-side", url: "/glossary/server-side-tracking" }, { name: "Cumplimiento RGPD analítica", url: "/es/glossary/gdpr-analytics-compliance" }, { name: "Pérdida de datos en analítica", url: "/es/glossary/data-loss-in-analytics" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glosario", url: "/es/glossary" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">
@@ -41,10 +52,10 @@ export default function Page() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo funciona</h2>
           <p>
-            Las herramientas tradicionales (como GA4) dependen de cookies — pequeños archivos almacenados en el navegador del visitante — para identificar visitantes recurrentes, rastrear sesiones y construir journeys por usuario. La analítica sin cookies sustituye este mecanismo por <Link href="/es/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección first-party</Link> que opera sin ningún identificador en el dispositivo del visitante.
+            Las herramientas tradicionales (como GA4) dependen de cookies — pequeños archivos almacenados en el navegador del visitante — para identificar visitantes recurrentes, rastrear sesiones y construir journeys por usuario. La analítica sin cookies sustituye este mecanismo por <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección first-party</Link> que opera sin ningún identificador en el dispositivo del visitante.
           </p>
           <p>
-            En vez de almacenar identificadores, cuenta eventos en el lado servidor — pageviews, conversiones, totales de ingresos — agrupados por canal, campaña, landing y país. El path de datos es first-party (de tu dominio a tu servidor), por lo que no se ve afectado por bloqueadores de anuncios, ni por restricciones de cookies como <Link href="/es/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, ni depende de banners de consentimiento.
+            En vez de almacenar identificadores, cuenta eventos en el lado servidor — pageviews, conversiones, totales de ingresos — agrupados por canal, campaña, landing y país. El path de datos es first-party (de tu dominio a tu servidor), por lo que no se ve afectado por bloqueadores de anuncios, ni por restricciones de cookies como <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, ni depende de banners de consentimiento.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que este enfoque no hace</h2>

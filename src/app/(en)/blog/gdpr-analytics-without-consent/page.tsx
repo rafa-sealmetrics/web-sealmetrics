@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     description:
       "Under specific conditions, GDPR and ePrivacy allow analytics without consent. Here is how.",
     type: "article",
+    url: "https://sealmetrics.com/blog/gdpr-analytics-without-consent/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/gdpr-analytics-without-consent.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GDPR-Compliant Analytics Without Consent Banners",
+    description: "Under specific conditions, GDPR and ePrivacy allow analytics without consent. Here is how.",
+    images: ["https://sealmetrics.com/og/blog/gdpr-analytics-without-consent.png"],
   },
   alternates: {
     languages: getAlternates("/blog/gdpr-analytics-without-consent"),

@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "AI agents are sending traffic to your site. Your analytics classify it as direct or unknown.",
     type: "article",
+    url: "https://sealmetrics.com/blog/ai-agent-traffic-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/ai-agent-traffic-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "AI Agent Traffic: The Invisible Channel Your Analytics Miss",
+    description: "AI agents are sending traffic to your site. Your analytics classify it as direct or unknown.",
+    images: ["https://sealmetrics.com/og/blog/ai-agent-traffic-analytics.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/ai-agent-traffic-analytics/",

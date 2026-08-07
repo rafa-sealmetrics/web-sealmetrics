@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import {
   openChapters,
   openParts,
@@ -19,6 +20,16 @@ export const metadata: Metadata = {
     description:
       "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/open/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Open — How we measure at SealMetrics",
+    description: "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
@@ -46,6 +57,9 @@ export default function OpenIndexPage() {
   return (
     <>
       <JsonLd data={bookSchema} />
+      {/* Mirrors the visible breadcrumbs. Without it /open was the only hub on
+          the site with no BreadcrumbList. */}
+      <JsonLd data={breadcrumbSchema([{ name: "Open", url: "/open" }])} />
       <Breadcrumbs items={[{ label: "Open" }]} locale="en" />
 
       {/* ============================================

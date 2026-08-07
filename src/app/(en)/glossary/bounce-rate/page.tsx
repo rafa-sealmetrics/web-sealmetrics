@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     title: "What Is Bounce Rate?",
     description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/bounce-rate/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Bounce Rate?",
+    description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/bounce-rate/" },
 };

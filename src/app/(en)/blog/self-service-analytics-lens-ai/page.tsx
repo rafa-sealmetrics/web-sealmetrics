@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How SealMetrics ships self-service analytics as LENS AI.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/self-service-analytics-lens-ai/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What It Takes to Make Self-Service Analytics Actually Work",
+    description: "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How SealMetrics ships self-service analytics as LENS AI.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/self-service-analytics-lens-ai/",

@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "AEPD 2024 cookies guide, LSSI-CE Art. 22.2, and the conditions for anonymous audience measurement without consent.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/gdpr-analytics/spain/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GDPR analytics in Spain — AEPD cookies guide explained",
+    description: "AEPD 2024 cookies guide, LSSI-CE Art. 22.2, and the conditions for anonymous audience measurement without consent.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/gdpr-analytics/spain/",

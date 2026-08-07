@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     title: "¿Qué es la atribución de ingresos?",
     description: "Asigna cada conversión a su fuente. Sobre datos completos last-click es la métrica que más cuadra con el CRM.",
     type: "article",
+    url: "https://sealmetrics.com/es/glossary/revenue-attribution/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "¿Qué es la atribución de ingresos?",
+    description: "Asigna cada conversión a su fuente. Sobre datos completos last-click es la métrica que más cuadra con el CRM.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/revenue-attribution/",
@@ -24,7 +35,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Glosario", href: "/es/glossary" }, { label: "Atribución de ingresos" }]} locale="es" />
-      <JsonLd data={definedTermSchema({ name: "Atribución de ingresos", description: "Asignación de cada conversión a la fuente de tráfico que la generó.", url: "/es/glossary/revenue-attribution", related: [{ name: "Modelo de atribución", url: "/es/glossary/attribution-model" }, { name: "Atribución multi-touch", url: "/es/glossary/multi-touch-attribution" }, { name: "Tracking de eventos", url: "/es/glossary/event-tracking" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }] })} />
+      <JsonLd data={definedTermSchema({ name: "Atribución de ingresos", description: "Asignación de cada conversión a la fuente de tráfico que la generó.", url: "/es/glossary/revenue-attribution", related: [{ name: "Modelo de atribución", url: "/glossary/attribution-model" }, { name: "Atribución multi-touch", url: "/es/glossary/multi-touch-attribution" }, { name: "Tracking de eventos", url: "/glossary/event-tracking" }, { name: "Analítica sin cookies", url: "/es/glossary/cookieless-analytics" }] })} />
       <JsonLd data={breadcrumbSchema([{ name: "Glosario", url: "/es/glossary" }, { name: "Atribución de ingresos", url: "/es/glossary/revenue-attribution" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[720px] mx-auto px-5 sm:px-8">

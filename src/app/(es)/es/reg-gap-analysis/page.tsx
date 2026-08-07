@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       "Mapea tu stack de analítica contra cada requisito que debe cumplir, encuentra las brechas y ve cómo una arquitectura cookieless las cierra.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/reg-gap-analysis/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",

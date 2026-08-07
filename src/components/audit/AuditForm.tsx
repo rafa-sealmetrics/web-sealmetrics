@@ -569,12 +569,12 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
             {t.qOf(currentQuestion.id, TOTAL_QUESTIONS)}
             {currentQuestion.numLabel ? ` — ${currentQuestion.numLabel}` : ""}
           </div>
-          <h3
+          <h2
             className="font-semibold text-ink leading-[1.3] tracking-[-0.015em] mb-2"
             style={{ fontSize: "clamp(19px, 1.8vw, 23px)" }}
           >
             {currentQuestion.text}
-          </h3>
+          </h2>
           <p className="text-[14px] text-ink-soft leading-[1.55] mb-6">
             {currentQuestion.helper}
           </p>

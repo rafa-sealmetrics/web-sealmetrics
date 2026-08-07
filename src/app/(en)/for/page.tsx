@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     description: "Dedicated pages for each role and industry.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/for/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics for every team",
+    description: "Dedicated pages for each role and industry.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/for/", languages: getAlternates("/for") },
 };

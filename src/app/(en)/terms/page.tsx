@@ -6,13 +6,22 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Terms of Service — Sealmetrics",
-  description:
-    "Sealmetrics Terms of Service (v2.0). Conditions for using the Sealmetrics web analytics platform: plans, billing, acceptable use, data ownership, liability and termination.",
+  description: "Sealmetrics Terms of Service (v2.0): plans, billing, acceptable use, data ownership, liability and termination.",
   openGraph: {
     title: "Terms of Service — Sealmetrics",
     description:
       "Conditions for using the Sealmetrics web analytics platform: plans, billing, acceptable use, data ownership, liability and termination.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/terms/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Terms of Service — Sealmetrics",
+    description: "Conditions for using the Sealmetrics web analytics platform: plans, billing, acceptable use, data ownership, liability and termination.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

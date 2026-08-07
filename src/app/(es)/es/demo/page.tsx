@@ -16,6 +16,15 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/demo/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Pide una demo — SealMetrics",
+    description: "30 min con el founder. Ve tu gap de datos en directo.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/demo/",
@@ -52,7 +61,7 @@ export default function DemoPageEs() {
                   <div key={item.t} className="flex gap-4 pb-4 border-b border-warm-100 last:border-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0" />
                     <div>
-                      <h3 className="text-[16px] font-semibold text-ink tracking-[-0.01em] mb-1">{item.t}</h3>
+                      <p className="text-[16px] font-semibold text-ink tracking-[-0.01em] mb-1">{item.t}</p>
                       <p className="text-[14px] text-ink-soft leading-[1.55]">{item.d}</p>
                     </div>
                   </div>

@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     title: "GDPR Analytics Compliance",
     description: "What GDPR requires from web analytics: lawful basis, data minimization, and consent for cookies.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/gdpr-analytics-compliance/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "GDPR Analytics Compliance",
+    description: "What GDPR requires from web analytics: lawful basis, data minimization, and consent for cookies.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/gdpr-analytics-compliance/", languages: getAlternates("/glossary/gdpr-analytics-compliance") },
 };

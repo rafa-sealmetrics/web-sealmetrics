@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "What Is an Attribution Window?",
     description: "Default attribution windows by channel, why they collapse under Safari ITP, and the cookieless alternative.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/attribution-window/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is an Attribution Window?",
+    description: "Default attribution windows by channel, why they collapse under Safari ITP, and the cookieless alternative.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/attribution-window/" },
 };

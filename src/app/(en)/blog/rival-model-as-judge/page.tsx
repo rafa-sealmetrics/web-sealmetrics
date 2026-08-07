@@ -12,6 +12,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "rival-model-as-judge";
 const URL = `/blog/${SLUG}`;
@@ -21,12 +22,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "LLM judges favour their own family. So we appointed the losing candidate as judge, at temperature zero, and kept objective scoring in deterministic code.",
   openGraph: {
     title: "Why We Let a Rival Model Grade Our AI Benchmark",
     description:
       "Self-preference bias is real. The fix is not a better prompt — it is a judge with an incentive to mark you down, and deterministic graders doing the objective work.",
     type: "article",
+    url: "https://sealmetrics.com/blog/rival-model-as-judge/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/rival-model-as-judge.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Why We Let a Rival Model Grade Our AI Benchmark",
+    description: "Self-preference bias is real. The fix is not a better prompt — it is a judge with an incentive to mark you down, and deterministic graders doing the objective work.",
+    images: ["https://sealmetrics.com/og/blog/rival-model-as-judge.png"],
   },
   alternates: {
     languages: getAlternates("/blog/rival-model-as-judge"),
@@ -386,6 +398,8 @@ export default function RivalModelAsJudgePage() {
               , including the first full run we threw away as invalid.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

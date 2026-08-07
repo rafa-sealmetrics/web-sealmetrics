@@ -25,6 +25,15 @@ export const metadata: Metadata = {
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/cookieless-analytics/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica sin cookies, explicada",
+    description: "Qué es, por qué fallan las cookies en 2026, qué se mide y dónde encaja en tu stack.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/cookieless-analytics/",

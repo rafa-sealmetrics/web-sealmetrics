@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "La trazabilidad completa del modelo que hay detrás de Seal AI: por qué Gemma 4 falló en el tool-calling, por qué Mistral Small 3.2 acabó con los bucles pero no con las respuestas pobres, y por qué ganó gpt-oss-120b. Dos cambios en tres semanas no son inestabilidad: son la prueba de que alguien está midiendo.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Cambiamos de modelo de IA dos veces en tres semanas",
+  description: "Por qué Gemma 4 falló en tool-calling, por qué Mistral Small 3.2 acabó con los bucles pero no con las respuestas, y por qué ganó gpt-oss-120b.",
   openGraph: {
     title: "Cambiamos de modelo de IA dos veces en tres semanas",
     description:
       "Gemma 4, Mistral Small 3.2, gpt-oss-120b — cómo falló realmente cada uno, y por qué cada cambio salió de la evidencia en producción y no de una nota de prensa.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/we-changed-our-ai-model-twice/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/we-changed-our-ai-model-twice.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cambiamos de modelo de IA dos veces en tres semanas",
+    description: "Gemma 4, Mistral Small 3.2, gpt-oss-120b — cómo falló realmente cada uno, y por qué cada cambio salió de la evidencia en producción y no de una nota de prensa.",
+    images: ["https://sealmetrics.com/og/blog/we-changed-our-ai-model-twice.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -433,6 +445,7 @@ export default function WeChangedOurAiModelTwicePageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

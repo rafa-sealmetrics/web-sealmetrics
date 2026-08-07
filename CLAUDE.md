@@ -50,8 +50,12 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 ## SEO Rules (apply to every page)
 
 - Every page must have unique `title` (<60 chars) and `description` (<160 chars)
-- Every page must have `openGraph` metadata (title, description, type)
+- **`openGraph` must be complete on every page: `title`, `description`, `url`, `siteName`, `locale`, `type`, `images`.** Next.js REPLACES the layout's `openGraph` object when a page declares its own — it does not deep-merge. A page that sets only `{title, description, type}` silently ships with no `og:url`, no `og:site_name` and no `og:image`
+- **Every page must declare its own `twitter` block.** Same reason in reverse: a page that omits it inherits the layout's verbatim, so hundreds of pages end up sharing one Twitter card
 - Include JSON-LD structured data appropriate to page type
+- **`FAQPage` JSON-LD requires the questions and answers to be rendered visibly on the page** — use `<FaqSection items={FAQ} />` (`src/components/ui/FaqSection.tsx`). Schema-only FAQ violates Google's structured data policy and cannot be cited by AI engines
+- **Never hand-maintain an exclusion list for the sitemap.** Indexability is derived from each page's own `robots` metadata in `src/lib/seo/routes.ts`. To keep a page out of the sitemap, mark it `noindex` — do not add it to a list
+- `npm run build` fails on any SEO/GEO regression via `scripts/seo-audit.mjs`; `npm test` reports the same rules per-rule. Run both before opening a PR
 - Blog posts must declare `dateModified` explicitly in their `articleSchema({ ... })` call, and it must only be bumped for a real content revision — never for a lint pass, a canonical/metadata rewrite or a formatting sweep. It is a freshness claim to Google and AI engines, so it is author-set and never derived: there is no git-based fallback, and a post that omits it falls back to its own `datePublished`
 - Internal links must be contextual (within text), not generic lists ("Related: X, Y, Z")
 - Blog posts link to pillar pages, never directly to /demo
@@ -60,6 +64,20 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - First mention of a key concept links to its glossary page
 - Comparisons (/vs/*) link to each other in a "Other comparisons" footer section
 - See `SEO-STRATEGY.md` for full cluster map and keyword targets
+
+## Deployment reality (read before trusting any config)
+
+- Production is **GitHub Pages** (`.github/workflows/deploy.yml`), a static-export deploy with **no custom headers**
+- **`vercel.json` is staged, not served.** Its HSTS, CSP, X-Frame-Options, Referrer-Policy and cache rules reach nobody today. They are a reviewed draft for the migration in `INFRA-MIGRATION.md`, kept honest by `scripts/audit-csp.mjs`. Do not cite them as a live security posture, and do not delete the file — the CSP gate lints against it
+- Consequences that are not bugs: redirects are `<meta http-equiv="refresh">` stubs, not 301s; there is no `X-Robots-Tag`; there is no `Vary: Accept` content negotiation. Each has a documented workaround in this file
+
+## GEO Rules (machine-readable surface)
+
+- `public/llms.txt` is editorial and hand-written; `scripts/audit-llms-txt.mjs` fails the build if it drifts from the sitemap. Adding a page means adding a hand-written line
+- Every indexable page gets a Markdown twin at `/<route>.md`, generated from the rendered HTML by `scripts/generate-markdown.mjs`. Never write one by hand — generating from the HTML is what stops it drifting from what a human reads
+- Content negotiation (`Accept: text/markdown` + `Vary: Accept`) is **not possible** on this stack: static export on GitHub Pages, no server or edge we control. Static `.md` twins are the deliberate substitute
+- `.md` twins are `Disallow`ed for Googlebot/Bingbot and `Allow`ed for AI crawlers, so they cannot compete with the HTML in the search index. Do not remove those robots.txt rules
+- State the limits, not just the strengths: what SealMetrics does not do, who it is not for. Models recommend more accurately when the boundaries are explicit — `/use-cases` and `llms.txt` both do this deliberately
 
 ## Competitive Positioning
 

@@ -9,12 +9,22 @@ import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 
 export const metadata: Metadata = {
-  title: "Analytics for DPOs — GDPR by Architecture | SealMetrics",
+  title: "Analítica para DPOs — RGPD por arquitectura | SealMetrics",
   description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analytics for DPOs — GDPR by Architecture | SealMetrics",
+    title: "Analítica para DPOs — RGPD por arquitectura | SealMetrics",
     description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/for/dpo/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica para DPOs — RGPD por arquitectura | SealMetrics",
+    description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

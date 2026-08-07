@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -19,12 +20,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Seal AI: nada que configurar, inferencia solo en la UE, cero retención. BYOK: eliges modelo y asumes el análisis de transferencia y el coste. Cómo elegir.",
   openGraph: {
     title: "Seal AI o clave propia (BYOK)",
     description:
       "¿IA gestionada solo en la UE o tu propia clave de OpenAI, Anthropic, Gemini o DeepSeek? Qué te cuesta realmente cada opción y cómo elegir.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/seal-ai-vs-bring-your-own-key/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/seal-ai-vs-bring-your-own-key.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Seal AI o clave propia (BYOK)",
+    description: "¿IA gestionada solo en la UE o tu propia clave de OpenAI, Anthropic, Gemini o DeepSeek? Qué te cuesta realmente cada opción y cómo elegir.",
+    images: ["https://sealmetrics.com/og/blog/seal-ai-vs-bring-your-own-key.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -445,6 +457,7 @@ export default function SealAiVsByokPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

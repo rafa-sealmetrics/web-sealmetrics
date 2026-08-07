@@ -22,6 +22,16 @@ export const metadata: Metadata = {
       "Consentless analytics built for European media companies. Audience measurement, subscription funnels and ad-revenue attribution without cookies.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/for/media/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analytics for Media & Publishers | SealMetrics",
+    description: "Consentless analytics built for European media companies. Audience measurement, subscription funnels and ad-revenue attribution without cookies.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/media/",

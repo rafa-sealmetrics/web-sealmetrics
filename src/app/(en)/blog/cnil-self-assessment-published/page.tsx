@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics in France.",
     type: "article",
+    url: "https://sealmetrics.com/blog/cnil-self-assessment-published/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/cnil-self-assessment-published.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "We Published Our CNIL Self-Assessment",
+    description: "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics in France.",
+    images: ["https://sealmetrics.com/og/blog/cnil-self-assessment-published.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/cnil-self-assessment-published/",

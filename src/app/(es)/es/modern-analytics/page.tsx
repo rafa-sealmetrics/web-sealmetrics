@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       "El fin de la analítica basada en cookies. Datos limpios, sin sampling, lista para IA vía MCP. Comprueba la diferencia.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/modern-analytics/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",

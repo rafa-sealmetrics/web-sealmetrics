@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     description:
       "GA4 loses EU traffic at three structural levels. Here is the cascade that leaves you with 13%.",
     type: "article",
+    url: "https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/why-ga4-shows-13pct-eu-traffic.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Why GA4 Shows 13% of Your EU Traffic",
+    description: "GA4 loses EU traffic at three structural levels. Here is the cascade that leaves you with 13%.",
+    images: ["https://sealmetrics.com/og/blog/why-ga4-shows-13pct-eu-traffic.png"],
   },
   alternates: {
     languages: getAlternates("/blog/why-ga4-shows-13pct-eu-traffic"),

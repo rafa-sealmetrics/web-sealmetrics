@@ -37,7 +37,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/roas-real/",
+    siteName: "SealMetrics",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Tu ROAS real es mayor del que crees",
+    description: "Entre el 25% y el 45% de tus ventas nunca llegan a tu herramienta de analítica. Ocurrieron, las cobraste, y el informe con el que decides no las cuenta.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: { canonical: "https://sealmetrics.com/es/roas-real/" },
 };
 
 export default function RoasRealPage() {

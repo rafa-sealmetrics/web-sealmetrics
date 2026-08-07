@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "What Is Revenue Attribution?",
     description: "Connecting revenue events to the marketing channels that drove them. Accuracy depends on observable data.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/revenue-attribution/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Revenue Attribution?",
+    description: "Connecting revenue events to the marketing channels that drove them. Accuracy depends on observable data.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/revenue-attribution/", languages: getAlternates("/glossary/revenue-attribution") },
 };

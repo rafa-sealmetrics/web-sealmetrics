@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     description: "Piwik PRO está alojado en UE pero sigue con cookies. SealMetrics resuelve la arquitectura de raíz, no solo el hosting.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/vs/piwik-pro/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics vs Piwik PRO — Hosting UE más captura completa",
+    description: "Piwik PRO está alojado en UE pero sigue con cookies. SealMetrics resuelve la arquitectura de raíz, no solo el hosting.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/piwik-pro/", languages: getAlternatesEs("/vs/piwik-pro") },
 };

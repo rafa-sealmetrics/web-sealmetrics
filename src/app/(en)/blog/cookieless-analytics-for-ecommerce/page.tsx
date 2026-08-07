@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Aggregate, anonymous event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cookieless Analytics for eCommerce: The 2026 Guide",
+    description: "Aggregate, anonymous event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",

@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "What Is Data Loss in Analytics?",
     description: "Data loss in analytics: the gap between real traffic and what tools report. Typically 70-87% in the EU.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/data-loss-in-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Data Loss in Analytics?",
+    description: "Data loss in analytics: the gap between real traffic and what tools report. Typically 70-87% in the EU.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/data-loss-in-analytics/", languages: getAlternates("/glossary/data-loss-in-analytics") },
 };

@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "Un chatbot responde con lo que memorizó. Un asistente de analítica debe responder solo con datos consultados en el momento. Esa diferencia es una arquitectura, no un prompt — y es la razón por la que un modelo con poca memoria factual puede ser el adecuado para leer tus números.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Grounding: la IA de analítica consulta, no memoriza",
+  description: "Un chatbot responde con lo que memorizó. Un asistente de analítica debe responder solo con datos consultados en el momento. Eso es arquitectura, no prompt.",
   openGraph: {
     title: "Grounding: por qué una buena IA de analítica no debe saber nada",
     description:
       "Cómo el grounding evita las alucinaciones de la IA en analítica: el modelo narra números que acaba de consultar, en lugar de recordar números que nunca tuvo.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/grounding-analytics-ai/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/grounding-analytics-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Grounding: por qué una buena IA de analítica no debe saber nada",
+    description: "Cómo el grounding evita las alucinaciones de la IA en analítica: el modelo narra números que acaba de consultar, en lugar de recordar números que nunca tuvo.",
+    images: ["https://sealmetrics.com/og/blog/grounding-analytics-ai.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -450,6 +462,7 @@ export default function GroundingAnalyticsAiPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

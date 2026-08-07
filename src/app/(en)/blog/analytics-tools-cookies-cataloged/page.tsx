@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "A full cookie audit of 9 analytics tools. Names, domains, types, sizes, and expiry dates — documented from DevTools.",
     type: "article",
+    url: "https://sealmetrics.com/blog/analytics-tools-cookies-cataloged/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/analytics-tools-cookies-cataloged.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Every Cookie Set by Every Major Analytics Tool, Cataloged",
+    description: "A full cookie audit of 9 analytics tools. Names, domains, types, sizes, and expiry dates — documented from DevTools.",
+    images: ["https://sealmetrics.com/og/blog/analytics-tools-cookies-cataloged.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/analytics-tools-cookies-cataloged/",

@@ -15,6 +15,16 @@ export const metadata: Metadata = {
     description: "A–Z definitions of web analytics, GDPR, attribution and eCommerce measurement terms, written for European marketing and data leaders.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/glossary/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analytics Glossary — Web, GDPR & Attribution Terms",
+    description: "A–Z definitions of web analytics, GDPR, attribution and eCommerce measurement terms, written for European marketing and data leaders.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/",

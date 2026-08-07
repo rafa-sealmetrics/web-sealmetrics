@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -19,12 +20,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "Tres ejemplos resueltos con un asistente de analítica: comparación de periodos, desglose con razonamiento y una pregunta de interacción. Y cómo verificarlos.",
   openGraph: {
     title: "Tres preguntas que hacerle hoy a tu IA de analítica",
     description:
       "¿Qué se le puede preguntar de verdad a un asistente de analítica con IA? Tres preguntas que merece la pena probar y cómo leer las respuestas.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/three-questions-to-ask-seal-ai/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/three-questions-to-ask-seal-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Tres preguntas que hacerle hoy a tu IA de analítica",
+    description: "¿Qué se le puede preguntar de verdad a un asistente de analítica con IA? Tres preguntas que merece la pena probar y cómo leer las respuestas.",
+    images: ["https://sealmetrics.com/og/blog/three-questions-to-ask-seal-ai.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -389,6 +401,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

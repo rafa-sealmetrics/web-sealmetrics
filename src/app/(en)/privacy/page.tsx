@@ -14,6 +14,16 @@ export const metadata: Metadata = {
       "How SealMetrics handles data, what we collect, and how we protect your information.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/privacy/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Privacy Policy — SealMetrics",
+    description: "How SealMetrics handles data, what we collect, and how we protect your information.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/privacy/",

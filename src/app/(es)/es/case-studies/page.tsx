@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     description: "Cómo equipos eCommerce europeos convirtieron SealMetrics en fuente única de verdad para marca, agencias y departamentos. Caso: Palladium Hotel Group.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/case-studies/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Casos de estudio — SealMetrics",
+    description: "Cómo equipos eCommerce europeos convirtieron SealMetrics en fuente única de verdad para marca, agencias y departamentos. Caso: Palladium Hotel Group.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/case-studies/",

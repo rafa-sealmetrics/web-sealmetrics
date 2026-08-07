@@ -40,6 +40,16 @@ export const metadata: Metadata = {
       "Product demos and tutorials to help you get the most out of SealMetrics.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/videos/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Videos — SealMetrics",
+    description: "Product demos and tutorials to help you get the most out of SealMetrics.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/videos/",

@@ -19,6 +19,16 @@ export const metadata: Metadata = {
       "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
+    description: "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise/",
@@ -192,7 +202,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               El problema de fondo es estructural. GA4 depende de cookies. Las
               cookies requieren{" "}
               <Link
-                href="/glossary/consent-management-platform"
+                href="/es/glossary/consent-management-platform"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 consentimiento
@@ -200,7 +210,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               . En la UE, el 35-55% de los visitantes rechaza las cookies. Antes de
               que el{" "}
               <Link
-                href="/glossary/data-sampling"
+                href="/es/glossary/data-sampling"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 muestreo de datos

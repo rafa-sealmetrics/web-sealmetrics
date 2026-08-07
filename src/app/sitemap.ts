@@ -1,70 +1,15 @@
 import type { MetadataRoute } from "next";
-import fs from "node:fs";
-import path from "node:path";
 import { blogPosts } from "@/lib/content/blog";
 import { publishedChapters } from "@/lib/content/open";
+import { EN_ROOT, ES_ROOT, sitemapRoutes } from "@/lib/seo/routes";
 
 export const dynamic = "force-static";
 
 const SITE = "https://sealmetrics.com";
 const today = new Date().toISOString().split("T")[0];
 
-const EN_ROOT = path.join(process.cwd(), "src", "app", "(en)");
-const ES_ROOT = path.join(process.cwd(), "src", "app", "(es)", "es");
-
-// Routes that should NOT appear in the sitemap
-// (thank-you, gated, ephemeral result pages, and redirect stubs).
-const EXCLUDE = new Set<string>([
-  "/demo/thank-you",
-  "/diagnostic-result",
-  "/demo-access",
-  // Redirect stub: canonical lives at /vs-ga4/. See src/app/(en)/vs/ga4/page.tsx.
-  "/vs/ga4",
-  // Redirect stubs (buildRedirectMetadata → robots noindex). Keeping them out
-  // of the sitemap avoids "Submitted URL marked noindex" in Search Console.
-  "/customers",
-  "/contact",
-  "/features",
-  "/partners",
-  "/pricing-plans",
-  "/case-studies/european-hotel-group",
-  // El DPA dejó de ser público; la ruta sobrevive solo como redirección a
-  // /privacy para no dejar en 404 las URLs ya indexadas.
-  "/dpa",
-  // Landings de campaña (noindex, follow). Hoy viven en los grupos (lp) y
-  // (lp-en), que no se escanean; esto es un cinturón por si vuelven a un
-  // grupo indexado.
-  "/roas-real",
-  "/real-roas",
-]);
-
 // blog post slug → ISO date, used to emit accurate <lastmod>
 const blogDates = new Map(blogPosts.map((p) => [p.slug, p.date]));
-
-/**
- * Walk a route-group directory and return every route with a page file.
- * Skips dynamic ([slug]), parallel (@x) and private (_x) segments —
- * dynamic routes are expanded explicitly below from their content registry.
- *   "/page.tsx"         → "/"
- *   "/blog/foo/page.tsx" → "/blog/foo"
- */
-function collectRoutes(dir: string, prefix = ""): string[] {
-  const out: string[] = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (
-      entry.isFile() &&
-      (entry.name === "page.tsx" || entry.name === "page.ts")
-    ) {
-      out.push(prefix === "" ? "/" : prefix);
-      continue;
-    }
-    if (!entry.isDirectory()) continue;
-    const n = entry.name;
-    if (n.startsWith("[") || n.startsWith("@") || n.startsWith("_")) continue;
-    out.push(...collectRoutes(path.join(dir, n), `${prefix}/${n}`));
-  }
-  return out;
-}
 
 function enUrl(p: string): string {
   return p === "/" ? `${SITE}/` : `${SITE}${p}/`;
@@ -82,20 +27,20 @@ function lastModFor(route: string): string {
   return today;
 }
 
-// Internal design proposals under /preview/* are noindex and never listed.
-const isExcluded = (r: string) => EXCLUDE.has(r) || r.startsWith("/preview");
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const enRoutes = collectRoutes(EN_ROOT).filter((r) => !isExcluded(r));
-  const esRoutes = collectRoutes(ES_ROOT).filter((r) => !isExcluded(r));
+  // Indexability is derived from each page's own `robots` metadata — see
+  // src/lib/seo/routes.ts. Adding a `noindex` page can no longer leak it into
+  // the sitemap, and removing one no longer requires editing two places.
+  const enRoutes = sitemapRoutes(EN_ROOT);
+  const esRoutes = sitemapRoutes(ES_ROOT);
 
   // Expand dynamic [slug] routes. /open/[slug] is EN-only today.
   for (const c of publishedChapters) {
     enRoutes.push(`/open/${c.slug}`);
   }
 
-  const enSet = new Set(enRoutes);
   const esSet = new Set(esRoutes);
+  const enSet = new Set(enRoutes);
 
   const entries: MetadataRoute.Sitemap = [];
 

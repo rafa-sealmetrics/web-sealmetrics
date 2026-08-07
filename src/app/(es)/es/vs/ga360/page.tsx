@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     description: "GA360 cuesta 150K$+/año y sigue perdiendo 40-60% del tráfico UE. SealMetrics da dato completo desde 499€/mes.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/vs/ga360/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics vs GA360 — Datos enterprise por menos",
+    description: "GA360 cuesta 150K$+/año y sigue perdiendo 40-60% del tráfico UE. SealMetrics da dato completo desde 499€/mes.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/ga360/", languages: getAlternatesEs("/vs/ga360") },
 };

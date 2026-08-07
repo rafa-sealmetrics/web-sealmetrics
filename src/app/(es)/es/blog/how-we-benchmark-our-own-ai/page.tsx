@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Una metodología copiable para evaluar un LLM sobre tu propio producto: stack real, verdad de referencia calculada en vivo desde la base de datos, evaluadores deterministas antes que cualquier juez LLM, trampas adversarias, intervalos de confianza de Wilson — y la tanda que descartamos, publicada entera.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Cómo hacemos el benchmark de nuestra propia IA",
+  description: "Metodología copiable para evaluar un LLM sobre tu producto: verdad de referencia en vivo, evaluadores deterministas antes que jueces LLM, y la tanda descartada.",
   openGraph: {
     title: "Cómo hacemos el benchmark de nuestra propia IA",
     description:
       "Endpoint real, verdad de referencia en vivo, evaluadores deterministas, trampas adversarias, intervalos de confianza — y la tanda descartada que publicamos igualmente. Una metodología que otros equipos pueden copiar.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/how-we-benchmark-our-own-ai/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/how-we-benchmark-our-own-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cómo hacemos el benchmark de nuestra propia IA",
+    description: "Endpoint real, verdad de referencia en vivo, evaluadores deterministas, trampas adversarias, intervalos de confianza — y la tanda descartada que publicamos igualmente. Una metodología que otros equipos pueden copiar.",
+    images: ["https://sealmetrics.com/og/blog/how-we-benchmark-our-own-ai.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -528,6 +540,7 @@ export default function HowWeBenchmarkOurOwnAiPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

@@ -9,13 +9,22 @@ const URL = "/blog/self-service-analytics-for-marketing-teams";
 
 export const metadata: Metadata = {
   title: "Self-Service Analytics for Marketing Teams",
-  description:
-    "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 47 named tools instead of SQL, and BYOK or private AI. How SealMetrics does it.",
+  description: "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 47 named tools instead of SQL, and BYOK or private AI.",
   openGraph: {
     title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
     description:
       "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     type: "article",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
+    description: "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

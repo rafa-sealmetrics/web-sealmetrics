@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/growth-calculator/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Growth Calculator — SealMetrics",
+    description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/growth-calculator/", languages: getAlternates("/growth-calculator") },
 };

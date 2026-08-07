@@ -8,12 +8,22 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "Blog — SealMetrics",
+  title: "Blog de analítica sin cookies — SealMetrics",
   description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
   openGraph: {
-    title: "Blog — SealMetrics",
+    title: "Blog de analítica sin cookies — SealMetrics",
     description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/blog/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Blog de analítica sin cookies — SealMetrics",
+    description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

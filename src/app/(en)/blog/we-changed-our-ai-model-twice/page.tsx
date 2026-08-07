@@ -11,6 +11,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "we-changed-our-ai-model-twice";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "The full lineage of the model behind Seal AI: why Gemma 4 failed at function calling, why Mistral Small 3.2 fixed the loops but not the output, and why gpt-oss-120b won. Two swaps in three weeks isn't instability — it's what measuring looks like.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "We Changed Our AI Model Twice in Three Weeks",
+  description: "Why Gemma 4 failed at function calling, why Mistral Small 3.2 fixed the loops but not the output, and why gpt-oss-120b won. Two swaps in three weeks.",
   openGraph: {
     title: "We Changed Our AI Model Twice in Three Weeks",
     description:
       "Gemma 4, Mistral Small 3.2, gpt-oss-120b — each model's real failure mode, and why every swap came from production evidence instead of a press release.",
     type: "article",
+    url: "https://sealmetrics.com/blog/we-changed-our-ai-model-twice/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/we-changed-our-ai-model-twice.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "We Changed Our AI Model Twice in Three Weeks",
+    description: "Gemma 4, Mistral Small 3.2, gpt-oss-120b — each model's real failure mode, and why every swap came from production evidence instead of a press release.",
+    images: ["https://sealmetrics.com/og/blog/we-changed-our-ai-model-twice.png"],
   },
   alternates: {
     languages: getAlternates("/blog/we-changed-our-ai-model-twice"),
@@ -375,6 +387,8 @@ export default function WeChangedOurAiModelTwicePage() {
               for what the assistant actually does.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

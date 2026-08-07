@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "View your analytics diagnostic result and see how much data your current setup may be missing.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/diagnostic-result/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Diagnostic Results — SealMetrics",
+    description: "View your analytics diagnostic result and see how much data your current setup may be missing.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
 };
 

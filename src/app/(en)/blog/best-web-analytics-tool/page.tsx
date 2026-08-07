@@ -24,13 +24,23 @@ import {
 
 export const metadata: Metadata = {
   title: "The Best Web Analytics Tool: 12 Requirements",
-  description:
-    "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of the data, API, MCP — and how to test each one.",
+  description: "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of data, API, MCP — and how to test each.",
   openGraph: {
     title: "The Best Web Analytics Tool: 12 Requirements That Decide It",
     description:
       "The specification a platform has to meet before it deserves to be called the best. Each requirement with the failure it prevents and a test you can run in the demo.",
     type: "article",
+    url: "https://sealmetrics.com/blog/best-web-analytics-tool/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/best-web-analytics-tool.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "The Best Web Analytics Tool: 12 Requirements That Decide It",
+    description: "The specification a platform has to meet before it deserves to be called the best. Each requirement with the failure it prevents and a test you can run in the demo.",
+    images: ["https://sealmetrics.com/og/blog/best-web-analytics-tool.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/best-web-analytics-tool/",

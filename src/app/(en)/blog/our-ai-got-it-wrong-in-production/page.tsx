@@ -11,6 +11,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "our-ai-got-it-wrong-in-production";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "A model returned a chart whose y-axis key was a list instead of a string. Strict schema validation rejected it and the entire chat response failed with a 500 — over a decorative chart. The bug, the two-layer fix, and three rules for anyone shipping LLM structured output.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Our AI Got It Wrong in Production. A Test Caught It",
+  description: "A malformed chart key made an entire chat response fail with a 500. The bug, the two-layer fix, and three rules for shipping LLM structured output.",
   openGraph: {
     title: "Our AI Got It Wrong in Production",
     description:
       "One malformed chart field took down a whole answer. What we found in 1 of 162 benchmark queries, how we fixed it in two layers, and the rules it taught us about LLM structured output.",
     type: "article",
+    url: "https://sealmetrics.com/blog/our-ai-got-it-wrong-in-production/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/our-ai-got-it-wrong-in-production.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Our AI Got It Wrong in Production",
+    description: "One malformed chart field took down a whole answer. What we found in 1 of 162 benchmark queries, how we fixed it in two layers, and the rules it taught us about LLM structured output.",
+    images: ["https://sealmetrics.com/og/blog/our-ai-got-it-wrong-in-production.png"],
   },
   alternates: {
     languages: getAlternates("/blog/our-ai-got-it-wrong-in-production"),
@@ -348,6 +360,8 @@ export default function OurAiGotItWrongInProductionPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

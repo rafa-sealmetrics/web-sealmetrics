@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Un centro de datos europeo no convierte a tu proveedor de IA en europeo. El CLOUD Act estadounidense sigue a la empresa, no al servidor. Así se distingue lo uno de lo otro, y por qué eso decide hasta dónde se puede llegar a tus datos.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Residencia no es soberanía: la pregunta a tu proveedor",
+  description: "Un centro de datos europeo no convierte a tu proveedor de IA en europeo. El CLOUD Act sigue a la empresa, no al servidor. Así se distingue lo uno de lo otro.",
   openGraph: {
     title: "Residencia no es soberanía",
     description:
       "Una región europea no pone tus datos fuera del alcance legal de Estados Unidos. La diferencia, y cómo auditar a tu proveedor de analítica con IA.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/residency-is-not-sovereignty/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/residency-is-not-sovereignty.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Residencia no es soberanía",
+    description: "Una región europea no pone tus datos fuera del alcance legal de Estados Unidos. La diferencia, y cómo auditar a tu proveedor de analítica con IA.",
+    images: ["https://sealmetrics.com/og/blog/residency-is-not-sovereignty.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -343,6 +355,7 @@ export default function ResidencyIsNotSovereigntyPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

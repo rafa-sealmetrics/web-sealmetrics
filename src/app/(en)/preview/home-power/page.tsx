@@ -19,8 +19,25 @@ import {
 
 export const metadata: Metadata = {
   title: "Preview A — Power home proposal",
-  description: "Internal design proposal. Not for indexing.",
+  description: "Internal design proposal A for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "Preview A — Power home proposal",
+    description: "Internal design proposal A for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+    url: "https://sealmetrics.com/preview/home-power/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Preview A — Power home proposal",
+    description: "Internal design proposal A for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: { canonical: "https://sealmetrics.com/preview/home-power/" },
 };
 
 /* Variant A (recommended): category-of-one stack claim leads.

@@ -50,8 +50,6 @@ const UTM_KEYS = [
   "msclkid",
 ] as const;
 
-const STORAGE_KEY = "sm_first_touch_v1";
-
 interface FirstTouch {
   utm: Record<string, string>;
   referrer: string;
@@ -59,15 +57,23 @@ interface FirstTouch {
   captured_at: string;
 }
 
+/**
+ * In-memory only. This used to live in `sessionStorage`, which this project
+ * does not allow anywhere — and which is especially hard to defend on a site
+ * whose /security page tells visitors we write nothing to their device.
+ *
+ * A module-level variable survives client-side navigation, which is the case
+ * that mattered: the visitor lands on /?utm_source=…, browses to /demo and
+ * submits, and the UTMs still travel with the form. What it does not survive
+ * is a hard reload or a new tab — there, first touch is re-captured from that
+ * URL instead. That is the deliberate trade: slightly less attribution
+ * fidelity in exchange for writing nothing to the device.
+ */
+let firstTouch: FirstTouch | null = null;
+
 function readFirstTouch(): FirstTouch | null {
   if (typeof window === "undefined") return null;
-  try {
-    const stored = window.sessionStorage.getItem(STORAGE_KEY);
-    if (stored) return JSON.parse(stored) as FirstTouch;
-  } catch {
-    // sessionStorage blocked (incognito quotas etc.) — continue.
-  }
-  return null;
+  return firstTouch;
 }
 
 function captureFirstTouch(): FirstTouch {
@@ -77,18 +83,13 @@ function captureFirstTouch(): FirstTouch {
     const v = url.searchParams.get(key);
     if (v) utm[key] = v;
   }
-  const ft: FirstTouch = {
+  firstTouch = {
     utm,
     referrer: document.referrer || "",
     landing_url: window.location.href,
     captured_at: new Date().toISOString(),
   };
-  try {
-    window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ft));
-  } catch {
-    // best-effort
-  }
-  return ft;
+  return firstTouch;
 }
 
 // Call once per session (e.g. from a top-level Layout effect) so UTMs from

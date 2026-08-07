@@ -1,9 +1,27 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Centro de confianza — Sealmetrics",
-  description:
-    "Dónde vive la documentación legal y de seguridad de Sealmetrics: DPA, Términos del Servicio, Seguridad, Política de Privacidad, documentación de cumplimiento y documentos previa solicitud.",
+  description: "Dónde vive la documentación legal y de seguridad de Sealmetrics: DPA, Términos, Seguridad, Política de Privacidad y documentos previa solicitud.",
+  openGraph: {
+    title: "Centro de confianza — Sealmetrics",
+    description: "Dónde vive la documentación legal y de seguridad: DPA, Términos, Seguridad, Privacidad y documentos previa solicitud.",
+    url: "https://sealmetrics.com/es/trust/",
+    siteName: "SealMetrics",
+    type: "website",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Centro de confianza — Sealmetrics",
+    description: "Dónde vive la documentación legal y de seguridad: DPA, Términos, Seguridad, Privacidad y documentos previa solicitud.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/trust/",
     languages: { en: "https://sealmetrics.com/trust/" },
@@ -67,6 +85,9 @@ function DocCard({
 
 export default function TrustEsPage() {
   return (
+    <>
+      <Breadcrumbs items={[{ label: "Centro de confianza" }]} locale="es" />
+      <JsonLd data={breadcrumbSchema([{ name: "Centro de confianza", url: "/es/trust" }], "es")} />
     <section className="pt-12 pb-28 bg-white">
       <div className="max-w-[800px] mx-auto px-5 sm:px-8">
         <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
@@ -169,5 +190,6 @@ export default function TrustEsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

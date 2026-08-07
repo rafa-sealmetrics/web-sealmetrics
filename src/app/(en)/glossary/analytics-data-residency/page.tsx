@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is Analytics Data Residency? — SealMetrics Glossary",
@@ -13,8 +14,24 @@ export const metadata: Metadata = {
     title: "What Is Analytics Data Residency?",
     description: "Data residency defines where analytics data is stored. EU residency is key for GDPR compliance.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/analytics-data-residency/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/analytics-data-residency/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Analytics Data Residency?",
+    description: "Data residency defines where analytics data is stored. EU residency is key for GDPR compliance.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/analytics-data-residency/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/analytics-data-residency"),
+  },
 };
 
 export default function AnalyticsDataResidencyPage() {

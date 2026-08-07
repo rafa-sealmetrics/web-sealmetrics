@@ -36,6 +36,15 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics — Analítica sin consentimiento para eCommerce",
+    description: "Mide el 100% de tu tráfico. Sin cookies. Sin modelos. Presenta números board-ready que cuadran con Shopify. Alojado en Dublín.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/",
