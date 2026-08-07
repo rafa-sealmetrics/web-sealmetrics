@@ -213,7 +213,7 @@ export default function ConversionTrackingPage() {
               <h3 className="text-[17px] font-semibold text-ink mb-2">eCommerce purchase events</h3>
               <p className="text-[15px] leading-[1.7] text-ink-soft">
                 Native coverage on Shopify, WooCommerce, Magento,
-                PrestaShop, BigCommerce, Salesforce Commerce Cloud.
+                PrestaShop, OpenCart.
                 <code className="font-mono text-[13px]">order_placed</code>{" "}
                 fires server-side on the order-confirmation hook with
                 revenue, currency, line items and{" "}

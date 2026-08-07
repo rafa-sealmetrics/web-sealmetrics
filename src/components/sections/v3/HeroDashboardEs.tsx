@@ -78,12 +78,12 @@ const VIEWS: Record<ViewId, ViewConfig> = {
     id: "lens",
     label: "LENS AI",
     group: "optimise",
-    title: "Detección de anomalías",
+    title: "Pregunta a tus datos",
     kpis: [
-      { l: "Anomalías · 7 días", v: "2", d: "Ambas resueltas" },
-      { l: "MTTR", v: "24 min", d: "▼ desde 14 h" },
-      { l: "Ingresos salvados", v: "€48K", d: "▲ detectado 03:14", hl: true },
-      { l: "Falsos positivos", v: "0", d: "✓ afinado" },
+      { l: "Preguntas resueltas", v: "34", d: "Últimos 7 días" },
+      { l: "Tiempo de respuesta", v: "24 s", d: "▼ desde 14 h" },
+      { l: "Ingresos explicados", v: "€48K", d: "▲ caída vista a las 03:14", hl: true },
+      { l: "Informes creados", v: "6", d: "✓ en lenguaje natural" },
     ],
     chart: <ChartAnomaly />,
   },
@@ -108,7 +108,7 @@ const VIEWS: Record<ViewId, ViewConfig> = {
     kpis: [
       { l: "Eventos / segundo", v: "1,2K", d: "Stream en vivo" },
       { l: "Latencia export", v: "< 2s", d: "Sync BigQuery" },
-      { l: "Rate limit", v: "Ninguno", d: "▲ sin cuotas", hl: true },
+      { l: "Rate limit", v: "240/min", d: "480/min en Scale", hl: true },
       { l: "Muestreo", v: "0%", d: "todo evento" },
     ],
     chart: <ChartApiCode />,
@@ -399,7 +399,7 @@ function ChartAnomaly() {
   return (
     <>
       <div className="text-[12px] font-semibold mb-4">
-        Conversiones · ventana 48h <span className="text-ink-soft font-medium">· anomalía a las 03:14</span>
+        Conversiones · ventana 48h <span className="text-ink-soft font-medium">· caída a las 03:14</span>
       </div>
       <svg viewBox="0 0 760 220" preserveAspectRatio="none" className="flex-1 w-full" aria-hidden="true">
         <defs>
@@ -417,7 +417,7 @@ function ChartAnomaly() {
         <path d="M0,90 L50,85 L100,88 L150,82 L200,80 L250,75 L300,78 L350,70 L400,185 L430,178 L460,172 L500,48 L550,50 L600,44 L650,40 L700,38 L760,35" fill="none" stroke="#0E0E0C" strokeWidth="2.2" strokeLinejoin="round" />
         <line x1="400" y1="0" x2="400" y2="200" stroke="#B5423B" strokeWidth="1" strokeDasharray="3 3" />
         <circle cx="400" cy="185" r="6" fill="#B5423B" />
-        <text x="410" y="178" fontFamily="JetBrains Mono" fontSize="11" fill="#B5423B" fontWeight="600">03:14 · ANOMALÍA</text>
+        <text x="410" y="178" fontFamily="JetBrains Mono" fontSize="11" fill="#B5423B" fontWeight="600">03:14 · CAÍDA</text>
         <line x1="500" y1="0" x2="500" y2="200" stroke="#2D8B6D" strokeWidth="1" strokeDasharray="3 3" />
         <circle cx="500" cy="48" r="6" fill="#2D8B6D" />
         <text x="510" y="42" fontFamily="JetBrains Mono" fontSize="11" fill="#2D8B6D" fontWeight="600">03:38 · RESUELTA</text>
@@ -460,7 +460,7 @@ function ChartApiCode() {
   return (
     <>
       <div className="text-[12px] font-semibold mb-4">
-        Endpoints SuperAPI <span className="text-ink-soft font-medium">· sin cuotas, sin muestreo</span>
+        Endpoints SuperAPI <span className="text-ink-soft font-medium">· sin muestreo, sin umbrales</span>
       </div>
       <div className="flex-1 bg-ink text-white rounded-lg p-5 font-mono text-[12.5px] leading-[1.9] relative">
         <div className="absolute top-3 left-3 flex gap-1.5">

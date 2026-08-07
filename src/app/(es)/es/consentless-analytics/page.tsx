@@ -415,7 +415,7 @@ export default function ConsentlessAnalyticsPillarEs() {
               { name: "Paquete TPSR", detail: "Documento de revisión de transferencia, privacidad y seguridad. Cubre flujos de datos, sub-procesadores (cero fuera de la UE), retención, cifrado en reposo y en tránsito, control de accesos y procedimiento de brecha." },
               { name: "Lista de sub-procesadores", detail: "Lista completa de sub-procesadores con sus roles, jurisdicciones y DPAs se incluye en el paquete TPSR. UE-only por política." },
               { name: "Hosting y residencia", detail: "Todo el procesamiento en Dublín, Irlanda, sobre infraestructura europea. Sin sub-procesadores estadounidenses en la ruta de datos analíticos. Evaluación de transferencia Schrems II innecesaria — no hay transferencia." },
-              { name: "Retención", detail: "Configurable por cliente. Por defecto: conteos agregados retenidos 25 meses. No se almacenan datos crudos a nivel individual más allá de la ventana de agregación al milisegundo." },
+              { name: "Retención", detail: "Fija e idéntica para todos los planes, aplicada por TTL automático de base de datos: log técnico a nivel de evento 14 días, agregados horarios 90 días, agregados diarios y conversiones 24 meses. No se almacenan datos crudos a nivel individual más allá de la ventana de agregación al milisegundo." },
             ].map((row) => (
               <div key={row.name} className="flex gap-5 pb-5 border-b border-warm-100 last:border-0">
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand whitespace-nowrap pt-1 min-w-[120px]">{row.name}</span>

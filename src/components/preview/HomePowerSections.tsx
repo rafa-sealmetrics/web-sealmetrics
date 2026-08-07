@@ -442,7 +442,7 @@ export function LensTriadSlab() {
             {
               tag: "Private AI",
               title: "LENS Private AI",
-              body: "An open-source model (Google Gemma) served from Scaleway — a French cloud, in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model.",
+              body: "An open-weight model (gpt-oss-120b, Apache 2.0) served from Scaleway — a French cloud, in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model.",
               foot: "Scale includes 5M tokens/mo",
               featured: true,
             },

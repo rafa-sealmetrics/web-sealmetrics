@@ -550,7 +550,7 @@ const SPECS = [
     items: [
       { v: "1.1 KB", l: "A single TCP packet. No dependencies, no tag manager required." },
       { v: "Real time", l: "Not in one report: across the whole platform. You know to the second when the last hit was processed." },
-      { v: "Black Friday too", l: "Real time guaranteed by SLA at peak. You optimise at 10:01 in the morning, not the next day." },
+      { v: "Black Friday too", l: "No sampling and no throttling at peak, and the SLA guarantees the day is complete before 6 AM. You optimise at 10:01 in the morning, not the next day." },
     ],
   },
   {
@@ -573,7 +573,7 @@ const SPECS = [
     h: "Output",
     items: [
       { v: "Robust API", l: "Everything you see in the interface is available over the API. No exceptions." },
-      { v: "BigQuery · Looker Studio", l: "Native connector. Pick the account and it syncs." },
+      { v: "BigQuery · Data Studio", l: "Native connector. Pick the account and it syncs." },
       { v: "MCP + LENS", l: "Connect your data to Claude, ChatGPT or Cursor. Or use LENS, our private AI, and keep the data here." },
     ],
   },

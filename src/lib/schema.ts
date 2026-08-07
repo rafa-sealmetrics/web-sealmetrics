@@ -200,7 +200,7 @@ export function softwareApplicationSchema() {
       "100% traffic data capture",
       "GDPR/ePrivacy compliant by design",
       "Revenue attribution",
-      "LENS AI anomaly detection",
+      "LENS AI — ask your data in plain language",
       "AI Agent Analytics",
     ],
     offers: {

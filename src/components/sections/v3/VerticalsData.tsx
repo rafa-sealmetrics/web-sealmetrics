@@ -270,8 +270,8 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         quote: { text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
         faqs: [
           { q: "Can SealMetrics track bookings across multiple properties?", a: "Yes. Multi-site portfolio view is included in every plan. Each property runs its own tracking, data rolls up at brand/group level. Perfect for corporate hotel groups with 5+ properties." },
-          { q: "How do you handle OTA attribution?", a: "SealMetrics captures the first observed touchpoint on your own site — including meta-search landings from Booking.com, Expedia, Trivago. Your OTA reports stay for their channel; SealMetrics gives you direct-booking attribution your OTA can't touch." },
-          { q: "Does it integrate with my PMS or booking engine?", a: "Yes. Native integrations with major PMSs (Mews, Cloudbeds, Opera). For others, our REST API captures any conversion event from your booking engine. Revenue data flows back automatically." },
+          { q: "How do you handle OTA attribution?", a: "SealMetrics attributes last-click to the session in which the booking happens on your own site — including meta-search arrivals from Booking.com, Expedia or Trivago. Your OTA reports stay for their channel; SealMetrics gives you direct-booking attribution your OTA can't touch." },
+          { q: "Does it integrate with my PMS or booking engine?", a: "Through the tracker and the API. Booking-engine conversions are sent as conversion events with their revenue, and the REST API and webhooks let you reconcile against your PMS. There is no PMS-specific plugin — the integration is the standard event contract, which works with Mews, Cloudbeds, Opera or anything else." },
           faqMigration.en,
           faqSetup.en,
           faqGDPR.en,
@@ -298,8 +298,8 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         quote: { text: "El dato que entrega SealMetrics es agnóstico, sin sesgo y neutral. No hay caja negra.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
         faqs: [
           { q: "¿Puede SealMetrics trackear reservas en varias propiedades?", a: "Sí. La vista portfolio multi-site está incluida en todos los planes. Cada propiedad corre su propio tracking, los datos se consolidan a nivel marca/grupo. Perfecto para grupos hoteleros con 5+ propiedades." },
-          { q: "¿Cómo manejáis la atribución OTA?", a: "SealMetrics captura el primer touchpoint observado en tu propia web — incluyendo landings desde meta-search de Booking.com, Expedia, Trivago. Tus reportes OTA se quedan para su canal; SealMetrics te da la atribución de reserva directa que el OTA no puede tocar." },
-          { q: "¿Integra con mi PMS o booking engine?", a: "Sí. Integraciones nativas con PMSs principales (Mews, Cloudbeds, Opera). Para otros, nuestra REST API captura cualquier evento de conversión desde tu booking engine. Los datos de ingresos fluyen automáticamente." },
+          { q: "¿Cómo manejáis la atribución OTA?", a: "SealMetrics atribuye a último clic la sesión en la que ocurre la reserva en tu propia web — incluyendo llegadas desde meta-search de Booking.com, Expedia o Trivago. Tus reportes OTA se quedan para su canal; SealMetrics te da la atribución de reserva directa que el OTA no puede tocar." },
+          { q: "¿Integra con mi PMS o booking engine?", a: "A través del tracker y la API. Las conversiones del booking engine se envían como eventos de conversión con su revenue, y la API REST y los webhooks te permiten cuadrarlo contra tu PMS. No hay plugin específico de PMS — la integración es el contrato de eventos estándar, que funciona con Mews, Cloudbeds, Opera o cualquier otro." },
           faqMigration.es,
           faqSetup.es,
           faqGDPR.es,
@@ -322,7 +322,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "+40%", label: "Signups observed", detail: "Consent rejection and ad blockers no longer a gap." },
           { n: "100%", label: "Activation tracked", detail: "Every product event captured, no sampling at any scale." },
-          { n: "Cohort", label: "True PLG attribution", detail: "Product-led vs marketing-led revenue cleanly separated." },
+          { n: "Split", label: "True PLG attribution", detail: "Product-led vs marketing-led revenue cleanly separated." },
           { n: "MCP", label: "Native AI access", detail: "LLM agents query your analytics for product insights." },
         ],
         faqs: [
@@ -349,7 +349,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "+40%", label: "Signups observados", detail: "Consent rejection y ad blockers dejan de ser un gap." },
           { n: "100%", label: "Activación tracked", detail: "Cada evento de producto capturado, sin muestreo a ninguna escala." },
-          { n: "Cohort", label: "Atribución PLG real", detail: "Product-led vs marketing-led separados limpiamente." },
+          { n: "Split", label: "Atribución PLG real", detail: "Product-led vs marketing-led separados limpiamente." },
           { n: "MCP", label: "Acceso IA nativo", detail: "Agentes LLM consultan tu analítica para insights de producto." },
         ],
         faqs: [
@@ -386,7 +386,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { q: "Can I manage multiple clients from one account?", a: "Yes. Agency-mode workspace lets you manage 10+ client accounts from a single login. Each client stays fully isolated — data, users, billing. You see your portfolio; they see their own dashboard." },
           { q: "Do clients need to pay separately?", a: "Depends on your model. Some agencies bill clients for SealMetrics as a pass-through. Others fold it into retainer and take it from the onboarding cost savings. Enterprise plans support reseller agreements with custom margin." },
           { q: "Does SealMetrics work for white-label reporting?", a: "Yes. BigQuery export + full API = you build whatever client-facing dashboard you want, branded however you want. SealMetrics stays in your backend; your client sees your UI." },
-          { q: "What about Looker Studio / Power BI dashboards?", a: "Native BigQuery export means any BI tool (Looker Studio, Power BI, Tableau, Metabase) connects directly. No ETL, no sampled exports, no quota issues." },
+          { q: "What about Data Studio / Power BI dashboards?", a: "Native BigQuery export means any BI tool (Data Studio, Power BI, Tableau, Metabase) connects directly. No ETL, no sampled exports, no quota issues." },
           faqMigration.en,
           faqGDPR.en,
         ],
@@ -414,7 +414,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { q: "¿Puedo gestionar varios clientes desde una cuenta?", a: "Sí. El workspace en modo agencia permite gestionar 10+ cuentas cliente desde un login. Cada cliente queda totalmente aislado — datos, usuarios, facturación. Tú ves tu portfolio; ellos ven su propio dashboard." },
           { q: "¿Los clientes pagan aparte?", a: "Depende de tu modelo. Algunas agencias facturan SealMetrics al cliente como pass-through. Otras lo incluyen en el retainer y lo compensan con ahorro de onboarding. Los planes Enterprise soportan acuerdos de reseller con margen custom." },
           { q: "¿SealMetrics sirve para reporting white-label?", a: "Sí. Export BigQuery + API completa = construyes el dashboard cliente que quieras, con la marca que quieras. SealMetrics queda en tu backend; tu cliente ve tu UI." },
-          { q: "¿Y dashboards en Looker Studio / Power BI?", a: "Export nativo BigQuery = cualquier herramienta BI (Looker Studio, Power BI, Tableau, Metabase) conecta directo. Sin ETL, sin exports muestreados, sin problemas de cuota." },
+          { q: "¿Y dashboards en Data Studio / Power BI?", a: "Export nativo BigQuery = cualquier herramienta BI (Data Studio, Power BI, Tableau, Metabase) conecta directo. Sin ETL, sin exports muestreados, sin problemas de cuota." },
           faqMigration.es,
           faqGDPR.es,
         ],
@@ -436,7 +436,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "+50–80%", label: "Audience recovered", detail: "Ad blocker readers now visible for the first time." },
           { n: "100%", label: "Paywall funnel", detail: "Every read → hit → subscribe attributed to originating channel." },
-          { n: "Cohort", label: "Newsletter attribution", detail: "Subscribers tracked from first newsletter touch to conversion." },
+          { n: "Email", label: "Newsletter attribution", detail: "Subscriptions attributed last-click to the newsletter session that produced them." },
           { n: "Real-time", label: "Yield optimization", detail: "Programmatic decisions on complete, not sampled, data." },
         ],
         faqs: [
@@ -463,7 +463,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "+50–80%", label: "Audiencia recuperada", detail: "Lectores con ad blocker visibles por primera vez." },
           { n: "100%", label: "Funnel paywall", detail: "Cada lectura → hit → suscripción atribuida al canal origen." },
-          { n: "Cohort", label: "Atribución newsletter", detail: "Suscriptores trackeados desde primer touch de newsletter hasta conversión." },
+          { n: "Email", label: "Atribución newsletter", detail: "Suscripciones atribuidas a último clic a la sesión de newsletter que las produjo." },
           { n: "Tiempo real", label: "Optimización yield", detail: "Decisiones programáticas sobre datos completos, no muestreados." },
         ],
         faqs: [
@@ -538,7 +538,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
       en: {
         eyebrow: "For healthcare",
         h1: <>Analytics with <em>zero patient data exposure.</em></>,
-        lede: "Patient journeys, appointment bookings, consultation funnels — all trackable without personal data, without cookies, without HIPAA/GDPR risk. Because we collect nothing personal.",
+        lede: "Appointment bookings, consultation funnels, treatment-page performance — all measurable in aggregate without personal data, without cookies, without HIPAA/GDPR risk. Because we collect nothing personal and never follow an individual.",
         pains: [
           { title: "GA4 + healthcare = legal nightmare", desc: "Personal data on a patient-facing site is a HIPAA/GDPR incident waiting. Every pixel, every cookie, is exposure." },
           { title: "You disabled GA on patient pages", desc: "You have analytics on public marketing pages, nothing on patient portals. You're flying blind on the conversion half of your funnel." },
@@ -565,7 +565,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
       es: {
         eyebrow: "Para salud",
         h1: <>Analítica con <em>cero exposición de dato sanitario.</em></>,
-        lede: "Journeys de paciente, reservas de cita, funnels de consulta — todo trackeable sin datos personales, sin cookies, sin riesgo HIPAA/RGPD. Porque no recopilamos nada personal.",
+        lede: "Reservas de cita, funnels de consulta, rendimiento de páginas de tratamiento — todo medible en agregado sin datos personales, sin cookies, sin riesgo HIPAA/RGPD. Porque no recopilamos nada personal ni seguimos a ningún individuo.",
         pains: [
           { title: "GA4 + salud = pesadilla legal", desc: "Datos personales en un sitio patient-facing es un incidente HIPAA/RGPD esperando. Cada pixel, cada cookie, es exposición." },
           { title: "Desactivaste GA en páginas de paciente", desc: "Tienes analítica en páginas de marketing público, nada en portales de paciente. Vuelas a ciegas en la mitad del funnel de conversión." },
