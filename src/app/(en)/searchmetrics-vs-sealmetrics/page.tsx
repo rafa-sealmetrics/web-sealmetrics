@@ -239,12 +239,31 @@ export default function SearchmetricsVsSealMetricsPage() {
             analytics that still reports the traffic your consent banner turns
             away, that is the thing we built.
           </p>
-          <Link
-            href="/demo"
-            className="inline-block px-7 py-3.5 bg-ink text-white text-[0.95rem] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
-          >
-            Book a Demo
-          </Link>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <Link
+              href="/demo"
+              className="inline-block px-7 py-3.5 bg-ink text-white text-[0.95rem] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+            >
+              Book a Demo
+            </Link>
+            <Link
+              href="/pricing"
+              className="text-[0.95rem] text-text-body no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors w-fit"
+            >
+              See pricing — from €499/mo
+            </Link>
+          </div>
+          <p className="text-[0.9rem] leading-[1.7] text-text-secondary mt-6">
+            Not sure yet? Start with{" "}
+            <Link href="/complete-data" className="underline">
+              what complete data means
+            </Link>{" "}
+            or the{" "}
+            <Link href="/vs-ga4" className="underline">
+              side-by-side against GA4
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </>

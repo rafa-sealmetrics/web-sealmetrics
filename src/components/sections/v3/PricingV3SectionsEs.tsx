@@ -6,12 +6,9 @@ export function PricingHeroV3Es() {
   return (
     <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-        <div className="inline-flex items-center gap-3 bg-white border border-warm-100 rounded-full px-4 py-1.5 text-[13px] text-ink-2 mb-8">
-          <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
-            Nuevo
-          </span>
-          <span>Tracking de agentes IA · próximamente · gratis en todos los planes</span>
-        </div>
+        {/* Sin badges de roadmap en el hero de precios: la página del dinero
+            vende lo que está vivo hoy. El tracking de agentes IA sigue en la
+            tabla comparativa, marcado "próximamente". */}
         <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
           Precios
         </span>

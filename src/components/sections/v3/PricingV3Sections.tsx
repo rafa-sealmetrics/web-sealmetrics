@@ -8,12 +8,9 @@ export function PricingHeroV3() {
   return (
     <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-        <div className="inline-flex items-center gap-3 bg-white border border-warm-100 rounded-full px-4 py-1.5 text-[13px] text-ink-2 mb-8">
-          <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
-            New
-          </span>
-          <span>AI agent traffic tracking · coming soon · free on every plan</span>
-        </div>
+        {/* No roadmap badges in the pricing hero: the money page sells what is
+            live today. AI-agent tracking stays in the comparison table below,
+            clearly marked "Coming soon". */}
         <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
           Pricing
         </span>

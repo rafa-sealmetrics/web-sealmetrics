@@ -143,10 +143,11 @@ interface CommercialModuleProps {
 - Integrar los 2 casos de ecommerce nuevos (esperados septiembre 2026 — ver `project_ecommerce_case_studies_pipeline.md`): sustituir testimonio anónimo de `/demo`, reforzar `/for/ecommerce`, `/vs-ga4`, home.
 
 ### P2 — refinamiento (mes 2-3)
-- `/pricing`: separar badge de roadmap.
-- `/searchmetrics-vs-sealmetrics`: segunda vía de conversión.
-- `/open`: formalizar regla de enlace por tono y aplicarla a capítulos 1, 2, 11.
-- Housekeeping menor: actualizar precios obsoletos en `PRD.md`, homogeneizar `/vs/ga4` vs `/vs-ga4`, limpiar variantes de home sin usar (`HomeV3Part2.tsx`).
+- `/pricing`: separar badge de roadmap. ✅
+- `/searchmetrics-vs-sealmetrics`: segunda vía de conversión. ✅
+- `/open`: formalizar regla de enlace por tono y aplicarla a capítulos 1, 2, 11. ✅
+- Housekeeping menor: actualizar precios obsoletos en `PRD.md` ✅, limpiar variantes de home sin usar (`HomeV3Part2.tsx` eliminado; `HomeV3EsPart2.tsx` se mantiene — la home ES importa `ComparatorGA4Es` de ahí) ✅.
+- **Homogeneizar `/vs/ga4` vs `/vs-ga4`: DEFERIDO deliberadamente.** En GitHub Pages los redirects son stubs `<meta refresh>`, no 301 — mover la URL canónica de la página de comparación más fuerte del sitio perdería equity sin redirect real. Reevaluar solo tras la migración de infra (`INFRA-MIGRATION.md`), donde un 301 de verdad es posible.
 
 ---
 

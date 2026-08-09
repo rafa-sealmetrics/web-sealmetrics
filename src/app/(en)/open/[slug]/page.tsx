@@ -226,6 +226,56 @@ export default async function OpenChapterPage({ params }: PageProps) {
         </div>
       </div>
 
+      {/* Manifesto-tone chapters (01, 02, 11) skip the demo slab on purpose,
+          but must not dead-end: they hand off laterally to the pillar that
+          continues their argument. Rule: manifesto content links to pillars,
+          proof/mechanism content links to /demo. */}
+      {[1, 2, 11].includes(chapter.number) && (
+        <section className="bg-warm-white border-t border-warm-100">
+          <div className="max-w-[1200px] mx-auto px-5 sm:px-8 py-14">
+            <p className="text-[1.05rem] leading-[1.7] text-text-body max-w-[62ch]">
+              {chapter.number === 1 && (
+                <>
+                  This is why SealMetrics exists. What that means in practice
+                  starts with{" "}
+                  <Link href="/complete-data" className="underline">
+                    complete data
+                  </Link>{" "}
+                  — and who it&apos;s for is chapter two.
+                </>
+              )}
+              {chapter.number === 2 && (
+                <>
+                  If your team is in here, the pages written for your role say
+                  it concretely:{" "}
+                  <Link href="/for/cmo" className="underline">
+                    for CMOs
+                  </Link>
+                  ,{" "}
+                  <Link href="/for/cto" className="underline">
+                    for CTOs
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/for/ecommerce" className="underline">
+                    for eCommerce teams
+                  </Link>
+                  .
+                </>
+              )}
+              {chapter.number === 11 && (
+                <>
+                  Every term here has a longer, citable entry in the{" "}
+                  <Link href="/glossary" className="underline">
+                    full glossary
+                  </Link>
+                  .
+                </>
+              )}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Dark slab CTA (excludes chapters 01, 02, and 11) */}
       {![1, 2, 11].includes(chapter.number) && (
         <section className="bg-ink text-dark-text section-dark relative overflow-hidden">
