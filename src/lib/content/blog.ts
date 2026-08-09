@@ -289,7 +289,7 @@ export const blogPosts: BlogPost[] = [
     slug: "we-measured-every-analytics-script",
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
-      "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 132x heavier than SealMetrics, which came out the lightest of the nine.",
+      "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 132x heavier than SealMetrics, which came out the lightest of the ten.",
     date: "2026-02-20",
     category: "Performance",
     readTime: "4 min",
