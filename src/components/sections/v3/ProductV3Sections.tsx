@@ -473,10 +473,10 @@ export function FeatureSuperAPIV3() {
           Your data, <em>everywhere.</em>
         </>
       }
-      lede="Full-resolution data piped wherever you need it. Native BigQuery export. REST + streaming API. And an MCP server so AI agents — Claude, ChatGPT, custom copilots — can query your analytics directly."
+      lede="Full-resolution data piped wherever you need it. Native BigQuery export. Full REST API. And an MCP server so AI agents — Claude, ChatGPT, custom copilots — can query your analytics directly."
       bullets={[
         "BigQuery native export (no ETL)",
-        "REST & streaming API with full coverage",
+        "REST API with full coverage of every metric and property",
         "MCP server for AI agents",
         "Webhooks for real-time ops",
       ]}
@@ -529,15 +529,15 @@ function SuperApiVisual() {
    ============================================ */
 export function NineReportsV3() {
   const reports = [
-    { n: "01", title: "Audience", p: "Aggregate visit counts by source, device, geo and referrer — no identifiers." },
-    { n: "02", title: "Acquisition", p: "Channel & campaign totals on 100% of traffic." },
-    { n: "03", title: "Behavior", p: "Pageviews, events, engagement counts — every pageview logged anonymously." },
-    { n: "04", title: "Funnel", p: "Step-level drop-off with no sampling thresholds." },
-    { n: "05", title: "Attribution", p: "Last-click revenue by channel, campaign and creative." },
-    { n: "06", title: "eCommerce", p: "Products, baskets, AOV, revenue — full resolution." },
-    { n: "07", title: "Portfolio", p: "Multi-site rollup for retail groups & agencies." },
-    { n: "08", title: "LENS AI", p: "Ask your data and build reports in natural language." },
-    { n: "09", title: "Agent Analytics", p: "GPT, Claude, Perplexity — treated as real sessions.", soon: true },
+    { n: "01", title: "Overview", p: "Headline totals with the last-hit timestamp — no identifiers anywhere." },
+    { n: "02", title: "Evolution", p: "Metrics over time, period against period." },
+    { n: "03", title: "Sources", p: "Channel, campaign and referrer totals on 100% of traffic." },
+    { n: "04", title: "Pages", p: "Pageviews and landing pages, with content grouping." },
+    { n: "05", title: "Conversions", p: "Conversions, microconversions and last-click revenue by channel." },
+    { n: "06", title: "Funnel", p: "Step-level drop-off with no sampling thresholds." },
+    { n: "07", title: "Geography", p: "Country-level breakdown, derived from timezone — never from IP." },
+    { n: "08", title: "Devices", p: "Device type, browser and operating system totals." },
+    { n: "09", title: "Properties", p: "Your own event properties — products, baskets, AOV — at full resolution." },
   ];
   return (
     <section className="py-28 bg-white border-t border-warm-100">
@@ -550,7 +550,7 @@ export function NineReportsV3() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Nine reports covering the full surface of eCommerce analytics — from acquisition to attribution, funnel to portfolio. All on the same full-resolution data pipeline.
+            Nine reports covering the full surface of eCommerce analytics — from sources to conversions, funnel to properties. All on the same full-resolution data pipeline. LENS AI sits on top of them as a conversational assistant, not a tenth report.
           </p>
         </div>
 
@@ -566,14 +566,6 @@ export function NineReportsV3() {
               </div>
               <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-ink leading-[1.3] mb-1.5 flex items-center gap-2 flex-wrap">
                 {r.title}
-                {r.soon && (
-                  <span
-                    className="font-mono text-[10px] font-semibold uppercase tracking-[0.06em] px-2 py-0.5 rounded"
-                    style={{ background: "#E8E2F5", color: "#2B2A28" }}
-                  >
-                    Soon
-                  </span>
-                )}
               </h3>
               <p className="text-[13.5px] text-ink-soft leading-[1.55]">{r.p}</p>
             </article>

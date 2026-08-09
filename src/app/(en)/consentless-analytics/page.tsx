@@ -97,7 +97,7 @@ const authorities = [
     country: "United Kingdom",
     body: "ICO (PECR)",
     summary:
-      "PECR Regulation 6(4) carves out cookies and similar technologies \"strictly necessary\" or used for analytics that do not identify users. Aligned post-Brexit with EDPB reasoning.",
+      "Section 99 of the Data (Use and Access) Act 2025 amends PECR Regulation 6 to permit storing or accessing information on a user's device without consent when the sole purpose is compiling statistics. In force since 5 February 2026.",
   },
   {
     country: "Netherlands",
@@ -518,7 +518,7 @@ export default function ConsentlessAnalyticsPillar() {
               {
                 name: "TPSR package",
                 detail:
-                  "Transfer, Privacy and Security Review document. Covers data flows, sub-processors (zero outside the EU), retention, encryption at rest and in transit, access controls, breach procedure.",
+                  "Transfer, Privacy and Security Review document. Covers data flows, sub-processors (none outside the EU on visitor data), retention, encryption at rest and in transit, access controls, breach procedure.",
               },
               {
                 name: "Sub-processor list",
@@ -593,7 +593,7 @@ export default function ConsentlessAnalyticsPillar() {
                 href: "/blog/uk-pecr-analytics-exemption",
                 tag: "UK · PECR",
                 title: "UK PECR analytics exemption",
-                lede: "Post-Brexit position. ICO guidance. Reg. 6(4) walkthrough for a UK-only deployment.",
+                lede: "Post-Brexit position. ICO guidance. DUAA 2025 walkthrough for a UK-only deployment.",
               },
               {
                 href: "/blog/eu-digital-omnibus-cookie-banners-analytics",

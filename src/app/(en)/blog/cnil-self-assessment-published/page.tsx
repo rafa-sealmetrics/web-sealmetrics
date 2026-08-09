@@ -106,7 +106,8 @@ export default function CnilAssessmentPage() {
             <p>
               — CNIL requires last-octet IP removal.{" "}
               <span className="font-medium text-text-primary">
-                We do not collect IP addresses at all.
+                We never store IP addresses — they are used transiently in
+                memory during request handling and then discarded.
               </span>
             </p>
             <p>

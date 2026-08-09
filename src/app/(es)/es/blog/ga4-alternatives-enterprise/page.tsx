@@ -56,7 +56,7 @@ const alternatives = [
   {
     name: "SealMetrics",
     url: "https://sealmetrics.com",
-    pricing: "Desde 599 €/mes (5.988 €/año)",
+    pricing: "Desde 499 €/mes con facturación anual (5.988 €/año)",
     dataCompleteness: "100% en UE",
     chooseIf:
       "Necesitas captura del 100% del dato en la UE, atribución de revenue a último clic precisa y analítica enterprise sin precios de seis cifras.",
@@ -459,7 +459,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                     Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    Desde {"€"}599/mes ({"€"}5.988/año)
+                    Desde {"€"}499/mes con facturación anual ({"€"}5.988/año)
                   </span>
                 </div>
                 <div>
@@ -481,7 +481,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Atribución de revenue, LENS AI, analítica de agentes
+                    Atribución de revenue, LENS AI, analítica de agentes (en desarrollo)
                   </span>
                 </div>
               </div>
@@ -493,7 +493,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               enterprise heredado. La atribución de revenue a último clic se
               construye sobre dato completo — no sobre estimaciones de una fracción
               consentida. LENS AI responde preguntas sobre tu analítica en
-              lenguaje natural, ancladas en tu dato completo. La analítica de agentes separa el
+              lenguaje natural, ancladas en tu dato completo. La analítica de agentes, en desarrollo, separará el
               tráfico de bots de IA de los visitantes humanos. El dato se procesa y
               almacena exclusivamente en la UE.
             </p>

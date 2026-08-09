@@ -36,7 +36,7 @@ const ITEMS_EN = [
   },
   {
     q: "How do I create an account from an LLM?",
-    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel and content groups, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the free tier covers up to 1M human events per month.",
+    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the free tier covers up to 1M human events per month.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -95,7 +95,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Cómo creo una cuenta desde un LLM?",
-    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking y los content groups, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el tier gratuito cubre hasta 1M de eventos humanos al mes.",
+    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el tier gratuito cubre hasta 1M de eventos humanos al mes.",
   },
   {
     q: "¿Puedo cambiar entre mensual y anual?",

@@ -42,8 +42,8 @@ const STEPS = [
   {
     n: "02",
     title: "Processing",
-    p: "Events are processed and stored exclusively in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU. GDPR by architecture, ePrivacy, Schrems II clean.",
-    tags: ["EU-hosted · Dublin", "Zero non-EU sub-processors", "DPA included"],
+    p: "Events are processed and stored exclusively in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU in the visitor data path. GDPR by architecture, ePrivacy, Schrems II clean.",
+    tags: ["EU-hosted · Dublin", "No non-EU sub-processors on visitor data", "DPA included"],
   },
   {
     n: "03",

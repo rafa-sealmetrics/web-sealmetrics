@@ -262,10 +262,10 @@ export function FeatureSuperAPIV3Es() {
     <FeatureBlockEs
       tag="SuperAPI · MCP · BigQuery"
       title={<>Tus datos, <em>en todas partes.</em></>}
-      lede="Datos a resolución completa enviados donde los necesites. Export nativo a BigQuery. API REST + streaming. Y un MCP server para que los agentes IA — Claude, ChatGPT, copilots propios — consulten tu analítica directamente."
+      lede="Datos a resolución completa enviados donde los necesites. Export nativo a BigQuery. API REST completa. Y un MCP server para que los agentes IA — Claude, ChatGPT, copilots propios — consulten tu analítica directamente."
       bullets={[
         "Export nativo a BigQuery (sin ETL)",
-        "API REST y streaming con cobertura completa",
+        "API REST con cobertura completa de cada métrica y propiedad",
         "MCP server para agentes IA",
         "Webhooks para operaciones en tiempo real",
       ]}
@@ -299,15 +299,15 @@ function SuperApiVisualEs() {
 /* NINE REPORTS ES */
 export function NineReportsV3Es() {
   const reports = [
-    { n: "01", title: "Audiencia", p: "Conteos agregados de visitas por fuente, dispositivo, geo y referrer — sin identificadores." },
-    { n: "02", title: "Adquisición", p: "Totales por canal y campaña sobre el 100% del tráfico." },
-    { n: "03", title: "Comportamiento", p: "Pageviews, eventos, engagement — cada pageview registrado de forma anónima." },
-    { n: "04", title: "Embudo", p: "Drop-off por paso sin umbrales de muestreo." },
-    { n: "05", title: "Atribución", p: "Ingresos last-click por canal, campaña y creatividad." },
-    { n: "06", title: "eCommerce", p: "Productos, carritos, AOV, ingresos — resolución completa." },
-    { n: "07", title: "Portfolio", p: "Rollup multi-site para grupos retail y agencias." },
-    { n: "08", title: "LENS AI", p: "Pregunta a tus datos y crea informes en lenguaje natural." },
-    { n: "09", title: "Agent Analytics", p: "GPT, Claude, Perplexity — tratados como sesiones reales.", soon: true },
+    { n: "01", title: "Overview", p: "Totales de cabecera con la marca del último hit — sin identificadores." },
+    { n: "02", title: "Evolución", p: "Métricas en el tiempo, periodo contra periodo." },
+    { n: "03", title: "Fuentes", p: "Totales por canal, campaña y referrer sobre el 100% del tráfico." },
+    { n: "04", title: "Páginas", p: "Pageviews y landing pages, con content grouping." },
+    { n: "05", title: "Conversiones", p: "Conversiones, microconversiones e ingresos last-click por canal." },
+    { n: "06", title: "Embudo", p: "Drop-off por paso sin umbrales de muestreo." },
+    { n: "07", title: "Geografía", p: "Desglose por país, derivado del timezone — nunca de la IP." },
+    { n: "08", title: "Dispositivos", p: "Totales por tipo de dispositivo, navegador y sistema operativo." },
+    { n: "09", title: "Propiedades", p: "Tus propias propiedades de evento — productos, carritos, AOV — a resolución completa." },
   ];
   return (
     <section className="py-28 bg-white border-t border-warm-100">
@@ -320,7 +320,7 @@ export function NineReportsV3Es() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Nueve reportes que cubren la superficie completa de la analítica eCommerce — de adquisición a atribución, embudo a portfolio. Todos sobre el mismo pipeline de datos a resolución completa.
+            Nueve reportes que cubren la superficie completa de la analítica eCommerce — de fuentes a conversiones, embudo a propiedades. Todos sobre el mismo pipeline de datos a resolución completa. LENS AI se sitúa encima como asistente conversacional, no como un décimo reporte.
           </p>
         </div>
 
@@ -330,7 +330,6 @@ export function NineReportsV3Es() {
               <div className="font-mono text-[11px] text-ink-mute tracking-[0.08em] mb-3">{r.n}</div>
               <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-ink leading-[1.3] mb-1.5 flex items-center gap-2 flex-wrap">
                 {r.title}
-                {r.soon && <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.06em] px-2 py-0.5 rounded" style={{ background: "#E8E2F5", color: "#2B2A28" }}>Próx.</span>}
               </h3>
               <p className="text-[13.5px] text-ink-soft leading-[1.55]">{r.p}</p>
             </article>

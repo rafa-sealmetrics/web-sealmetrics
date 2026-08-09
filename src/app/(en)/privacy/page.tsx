@@ -180,9 +180,15 @@ export default function PrivacyPage() {
               5. Data storage and residency
             </h2>
             <p>
-              All data is processed and stored exclusively in EU data centers.
-              There are no data transfers outside the European Economic Area. We
-              do not use sub-processors located outside the EU.
+              Visitor analytics data is processed and stored exclusively in EU
+              data centers, with no sub-processors outside the EU in that data
+              path. The sole transfer outside the European Economic Area is
+              service email to the account&rsquo;s own users (verifications,
+              alerts, reports) via Resend, Inc. (USA), covered by Standard
+              Contractual Clauses and its EU-US Data Privacy Framework
+              certification. It involves no visitor data. The full
+              sub-processor list is Annex 3 of the{" "}
+              <a href="/dpa/" className="underline">DPA</a>.
             </p>
           </div>
 

@@ -94,7 +94,7 @@ const requirements = [
     id: "req-6",
     title: "Robust API",
     bar: "Full report coverage, scoped keys, raw rows, webhooks, native warehouse export",
-    seal: "REST and streaming API, raw-row endpoints, webhooks with delivery logs, native BigQuery export with no ETL",
+    seal: "REST API, raw-row endpoints, webhooks with delivery logs, native BigQuery export with no ETL",
     score: 2,
   },
   {

@@ -62,7 +62,7 @@ export default function AIAgentTrafficPage() {
             <li>AI agents (GPT, Claude, Perplexity, Google AI Overviews) are sending 7-22% of sessions to content-rich sites, but traditional analytics classifies this traffic as "direct" or "unassigned."</li>
             <li>AI crawlers do not execute JavaScript and often omit referrer headers — client-side analytics like GA4 cannot detect these visits at all.</li>
             <li>For a site with 500,000 monthly sessions, 35,000 to 100,000 AI-influenced sessions per month may be invisible to or misclassified by traditional analytics.</li>
-            <li>SealMetrics Agent Analytics identifies each AI agent type (GPT, Claude, Perplexity) as a distinct source with pages visited, time on site, and downstream conversions.</li>
+            <li>SealMetrics Agent Analytics — in development, not yet live — will identify each AI agent type (GPT, Claude, Perplexity) as a distinct source, tracked separately from human traffic and never billed against your event limit.</li>
           </ul>
         </div>
 
@@ -184,11 +184,13 @@ export default function AIAgentTrafficPage() {
           </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How SealMetrics tracks AI agent traffic
+            How SealMetrics will track AI agent traffic
           </h2>
 
           <p>
-            SealMetrics Agent Analytics identifies AI agent sessions through{" "}
+            SealMetrics Agent Analytics is in development and not yet
+            available on accounts. When it ships, it will identify AI agent
+            sessions through{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party</Link>{" "}
             detection — analyzing request patterns, user agent
             strings, and behavioral signatures that distinguish AI agents from
@@ -196,10 +198,9 @@ export default function AIAgentTrafficPage() {
           </p>
 
           <p>
-            Each AI agent type (GPT, Claude, Perplexity, Google AI Overview) is
-            tracked as a distinct source with its own session data: pages
-            visited, time on site, and downstream conversions. This data appears
-            alongside your human traffic in a dedicated Agent Analytics report.
+            Each AI agent type (GPT, Claude, Perplexity, Google AI Overview) will
+            be tracked as a distinct source, shown alongside your human traffic
+            in its own report — and excluded from your billable event count.
           </p>
 
           <p>
