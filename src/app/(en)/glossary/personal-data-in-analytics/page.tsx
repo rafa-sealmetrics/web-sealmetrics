@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     description:
       "The Article 4(1) test, the Recital 26 anonymity bar, and the ePrivacy trap that catches analytics collecting no personal data at all.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/personal-data-in-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Personal Data in Analytics: When GDPR Applies",
+    description: "The Article 4(1) test, the Recital 26 anonymity bar, and the ePrivacy trap that catches analytics collecting no personal data at all.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/personal-data-in-analytics",

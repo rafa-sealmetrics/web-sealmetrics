@@ -14,8 +14,25 @@ import {
 
 export const metadata: Metadata = {
   title: "Preview C — Amplitude-structured home proposal",
-  description: "Internal design proposal. Not for indexing.",
+  description: "Internal design proposal C for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "Preview C — Power home proposal",
+    description: "Internal design proposal C for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+    url: "https://sealmetrics.com/preview/home-power-c/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Preview C — Power home proposal",
+    description: "Internal design proposal C for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: { canonical: "https://sealmetrics.com/preview/home-power-c/" },
 };
 
 /* Variant C: Amplitude's block sequence, SealMetrics content + design.

@@ -19,6 +19,16 @@ export const metadata: Metadata = {
       "El default de Matomo son cookies + banner. SealMetrics es cookieless en todo el producto, alojado en UE, con MCP y BigQuery nativos — sin devops.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/vs/matomo/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics vs Matomo — Sin cookies por diseño, sin devops",
+    description: "El default de Matomo son cookies + banner. SealMetrics es cookieless en todo el producto, alojado en UE, con MCP y BigQuery nativos — sin devops.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/vs/matomo/",

@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/pricing/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Precios SealMetrics — Paga por humanos, no por bots",
+    description: "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. 14 días gratis.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/pricing/",

@@ -15,6 +15,16 @@ export const metadata: Metadata = {
     description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Blog — SealMetrics",
+    description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/",

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Pregunta a tu analítica en lenguaje natural y recibe respuestas ancladas en tus datos, con una inferencia que se ejecuta solo en la UE, no guarda nada y no entrena el modelo de nadie. Así funciona Seal AI y por qué es privada por arquitectura, no por promesa.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Seal AI: analítica con IA que no sale de la UE",
+  description: "Pregunta a tu analítica en lenguaje natural y recibe respuestas ancladas en tus datos, con inferencia solo en la UE, sin retención y sin entrenar a nadie.",
   openGraph: {
     title: "Seal AI: la IA de analítica privada que solo se ejecuta en la UE",
     description:
       "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que nunca sale de la UE y que no retiene nada.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/meet-seal-ai/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Seal AI: la IA de analítica privada que solo se ejecuta en la UE",
+    description: "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que nunca sale de la UE y que no retiene nada.",
+    images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -317,6 +329,7 @@ export default function MeetSealAiPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

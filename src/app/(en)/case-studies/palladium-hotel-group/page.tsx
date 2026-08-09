@@ -26,6 +26,16 @@ export const metadata: Metadata = {
       "Why Palladium Hotel Group chose neutrality over volume reported. 40% traffic with no attribution. 35% of bookings unattributed. +165% Cost-per-Search on Display.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/case-studies/palladium-hotel-group/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Palladium Hotel Group — A single source of truth all stakeholders accept",
+    description: "Why Palladium Hotel Group chose neutrality over volume reported. 40% traffic with no attribution. 35% of bookings unattributed. +165% Cost-per-Search on Display.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
 };
 
@@ -631,9 +641,9 @@ export default function Page() {
                 className="bg-warm-50 border border-warm-100 rounded-xl p-7"
               >
                 <div className="text-brand text-[18px] mb-2">→</div>
-                <h4 className="text-[18px] font-semibold text-ink tracking-[-0.015em] mb-2">
+                <h3 className="text-[18px] font-semibold text-ink tracking-[-0.015em] mb-2">
                   {b.t}
-                </h4>
+                </h3>
                 <p
                   className="text-[15px] leading-[1.6] text-ink-2"
                   dangerouslySetInnerHTML={{ __html: b.d }}

@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "Legitimate Interest as a Basis for Analytics",
     description: "What legitimate interest covers and doesn't — the common confusion with ePrivacy and the cookie-consent rule.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/legitimate-interest-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Legitimate Interest as a Basis for Analytics",
+    description: "What legitimate interest covers and doesn't — the common confusion with ePrivacy and the cookie-consent rule.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/legitimate-interest-analytics/" },
 };

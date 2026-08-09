@@ -13,6 +13,16 @@ export const metadata: Metadata = {
     description: "Product updates and new features from SealMetrics.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/changelog/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Changelog — SealMetrics",
+    description: "Product updates and new features from SealMetrics.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/changelog/",

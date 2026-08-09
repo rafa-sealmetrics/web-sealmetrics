@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     description: "¿Cuánto ingreso podrías escalar con datos completos? Mete tus números y ve el potencial de crecimiento que tu analítica actual no puede mostrarte.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/growth-calculator/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Calculadora de crecimiento — SealMetrics",
+    description: "¿Cuánto ingreso podrías escalar con datos completos? Mete tus números y ve el potencial de crecimiento que tu analítica actual no puede mostrarte.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/es/growth-calculator/", languages: getAlternatesEs("/growth-calculator") },
 };

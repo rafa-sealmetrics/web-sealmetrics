@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, itemListSchema, collectionPageSchema, reviewSchema } from "@/lib/schema";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "Case Studies — SealMetrics",
@@ -13,8 +14,23 @@ export const metadata: Metadata = {
     description: "How European eCommerce teams turned SealMetrics into the single source of truth brand, agencies and departments accept. Real numbers, named clients.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/case-studies/",
+    siteName: "SealMetrics",
+    locale: "en_US",
   },
-  alternates: { canonical: "https://sealmetrics.com/case-studies/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Case Studies — SealMetrics",
+    description: "How European eCommerce teams turned SealMetrics into the single source of truth brand, agencies and departments accept. Real numbers, named clients.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/case-studies/",
+    // /es/case-studies/ already pointed here. Without the return link the
+    // hreflang pair is one-sided and Google ignores it entirely.
+    languages: getAlternates("/case-studies"),
+  },
 };
 
 const cases = [

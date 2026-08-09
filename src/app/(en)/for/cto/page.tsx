@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     description: getVerticalData("cto", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/for/cto/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analytics for CTOs — Architecture & Setup | SealMetrics",
+    description: getVerticalData("cto", "en").lede.slice(0, 155) + "…",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/cto/",

@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "Setup patterns, event taxonomy, and what to keep alongside (Meta/Google pixels) — without breaking the measurement layer.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/use-cases/conversion-tracking/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Conversion tracking without cookies",
+    description: "Setup patterns, event taxonomy, and what to keep alongside (Meta/Google pixels) — without breaking the measurement layer.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/use-cases/conversion-tracking/",

@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements Mixpanel/Amplitude. BigQuery export included.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/cookieless-analytics-for-saas/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Cookieless Analytics for SaaS — 2026 Guide",
+    description: "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements Mixpanel/Amplitude. BigQuery export included.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/cookieless-analytics-for-saas/",

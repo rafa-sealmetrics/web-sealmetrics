@@ -10,6 +10,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "analytics-if-data-privacy-framework-falls";
 const URL = `/blog/${SLUG}`;
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "The Data Privacy Framework survived its first challenge, faces a pending appeal at the CJEU and a fresh one announced in 2026. Here is which analytics and AI setups would need re-papering overnight — and which never depended on it.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Analytics if the EU-US Data Privacy Framework Falls",
+  description: "The Data Privacy Framework faces a pending CJEU appeal. Which analytics and AI setups would need re-papering overnight — and which never depended on it.",
   openGraph: {
     title: "If the EU-US Data Privacy Framework Falls",
     description:
       "The DPF's legal status right now, the Safe Harbor and Privacy Shield precedent, and which analytics stacks are structurally immune to the outcome.",
     type: "article",
+    url: "https://sealmetrics.com/blog/analytics-if-data-privacy-framework-falls/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/analytics-if-data-privacy-framework-falls.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "If the EU-US Data Privacy Framework Falls",
+    description: "The DPF's legal status right now, the Safe Harbor and Privacy Shield precedent, and which analytics stacks are structurally immune to the outcome.",
+    images: ["https://sealmetrics.com/og/blog/analytics-if-data-privacy-framework-falls.png"],
   },
   alternates: {
     languages: getAlternates("/blog/analytics-if-data-privacy-framework-falls"),
@@ -366,6 +378,8 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPage() {
               transfer to defend. Case law changes. Architecture does not.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

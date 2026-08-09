@@ -11,7 +11,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - First-party server-side data collection
 - EU-only data residency (Dublin, Ireland)
 - GDPR, ePrivacy, CCPA compliant by architecture
-- LENS AI anomaly detection with 60+ rules
+- LENS AI: ask your analytics in plain language and turn the answer into a report. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today
 - Last-click revenue attribution on complete data (SealMetrics does not do multi-touch attribution by design)
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
@@ -31,6 +31,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
 - /trust — Trust Center: index of Sealmetrics legal and security documentation — public documents, request-only assessments, and change notifications
+- /dpa — Data Processing Agreement (DPA-2026-v2.0): GDPR Art. 28 terms, AEPD audience-measurement guarantees, EU-only processing, sub-processor list and security measures. Spanish version at /es/dpa
 - /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no personal data, EU-hosted, and an AI that runs on European soil and never trains on your data
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
@@ -45,6 +46,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of SealMetrics
 
 ## Compliance by country (DPO-ready pages)
+- /gdpr-analytics — Hub: why ePrivacy transposition makes the consent question national, and which regulators published auditable criteria
 - /gdpr-analytics/france — CNIL exemption criteria; "analytics sans consentement france"
 - /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung"
 - /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
@@ -54,6 +56,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /platforms/woocommerce — Cookieless analytics for WooCommerce; install + Order Webhook reconciliation
 
 ## Use cases (task-level pages)
+- /use-cases — Hub: the three measurement jobs SealMetrics is hired for, and the per-user analysis it deliberately does not do
 - /use-cases/revenue-attribution — Last-click revenue attribution on 100% of data (replaces broken multi-touch under ITP/consent)
 - /use-cases/conversion-tracking — Conversion tracking without cookies for eCommerce
 - /use-cases/ga4-migration — Migrating from GA4: parallel run, dashboards, training, what changes for the team
@@ -146,9 +149,6 @@ Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
 - /blog/analytics-tools-external-domains — Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters
 - /blog/analytics-tools-data-sampling — Data Sampling Thresholds Compared: When Your Analytics Starts Guessing
-- /blog/analytics-tools-ad-blocker-test — Ad Blocker Test: Which Analytics Tools Get Blocked, Which Don't
-- /blog/analytics-tools-http-requests — HTTP Request Count by Analytics Tool: Performance Impact Compared
-- /blog/analytics-tools-lighthouse-scores — Lighthouse Score Impact of Every Major Analytics Tool
 - /blog/what-is-cookieless-tracking — What Is Cookieless Tracking? A Complete Guide for 2026
 - /blog/what-is-data-loss-in-analytics — What Is Data Loss in Analytics? Causes, Impact, and Solutions
 - /blog/ga4-alternatives-enterprise — 7 GA4 Alternatives for eCommerce Teams in 2026 (editorial listicle with pricing, data capture, EU compliance per tool)
@@ -215,6 +215,7 @@ Core pages (ES):
 - /es/security — Seguridad y cumplimiento
 - /es/trust — Centro de confianza: documentación legal y de seguridad de Sealmetrics
 - /es/terms — Términos del servicio
+- /es/dpa — Acuerdo de Encargo de Tratamiento (DPA-2026-v2.0): Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad
 - /es/growth-calculator — Calculadora de crecimiento
 - /es/demo — Solicitar demo
 
@@ -300,6 +301,15 @@ Glossary (ES):
 - /es/glossary/multi-touch-attribution — Atribución multi-touch
 - /es/glossary/data-loss-in-analytics — Pérdida de datos en analítica
 - /es/glossary/revenue-attribution — Atribución de ingresos
+- /es/glossary/consent-management-platform — Qué es una CMP y por qué el 55% de rechazo en la UE sesga la analítica con cookies
+- /es/glossary/first-party-data-collection — Recolección first-party: por qué una petición a tu propio dominio esquiva bloqueadores y restricciones de cookies de terceros
+- /es/glossary/server-side-tracking — Tracking server-side: procesar eventos en tu servidor; server-side no implica automáticamente sin cookies
+- /es/glossary/intelligent-tracking-prevention — ITP de Safari: cookies first-party limitadas a 7 días, terceros bloqueadas; por qué no afecta a la medición sin cookies
+- /es/glossary/ad-blocker-analytics-impact — Más del 40% de usuarios europeos con bloqueador; el mayor vector individual de dato ausente
+- /es/glossary/data-sampling — Muestreo: cuándo GA4 extrapola desde un subconjunto y qué error introduce en las decisiones
+- /es/glossary/event-tracking — Tracking de eventos, el modelo de GA4 y su punto de fallo: si el script no se ejecuta, no hay ningún evento
+- /es/glossary/attribution-model — First-touch, last-touch, lineal, time-decay y data-driven; por qué todos necesitan el dato completo
+- /es/glossary/analytics-data-residency — Residencia del dato: qué marco legal aplica, Schrems II y por qué la residencia UE elimina la cuestión de la transferencia
 
 ## Contact
 - Demo: https://sealmetrics.com/demo

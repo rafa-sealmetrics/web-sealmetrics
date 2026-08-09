@@ -27,6 +27,16 @@ export const metadata: Metadata = {
       "15–20% more sales attribution, closing the gap to CRM. +30% more traffic vs Google Analytics. Meta and Google as the first channels. Case study with Eduardo Martin.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/case-studies/dreamplace-hotels/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Dreamplace Hotels — Decide paid media on real data, not on what each platform reports",
+    description: "15–20% more sales attribution, closing the gap to CRM. +30% more traffic vs Google Analytics. Meta and Google as the first channels. Case study with Eduardo Martin.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
 };
 

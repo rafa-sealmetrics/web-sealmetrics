@@ -241,6 +241,10 @@ export function VideoGrid() {
     <>
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
+          {/* The grid had no heading at all, so the card titles below sat as
+              h3 directly under the page h1. This names the section and
+              restores the outline. */}
+          <h2 className="headline-section mb-8">Product demos and tutorials</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[800px]">
             {videos.map((video) => (
               <VideoCard

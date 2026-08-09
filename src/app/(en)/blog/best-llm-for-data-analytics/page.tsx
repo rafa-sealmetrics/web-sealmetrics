@@ -11,6 +11,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "best-llm-for-data-analytics";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "We ran 162 live queries across three open models against real analytics data to pick the AI inside SealMetrics. What decided it wasn't MMLU — it was tool-calling, grounding, and a security flaw that only showed up in one language.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "The Best LLM for Data Analytics Isn't the Top Scorer",
+  description: "We ran 162 live queries across three open models on real analytics data. What decided it wasn't MMLU: tool-calling, grounding, and a language-specific flaw.",
   openGraph: {
     title: "The Best LLM for Data Analytics Isn't the One You'd Guess",
     description:
       "162 live queries, real data, ground truth from the database. How we actually chose the model inside SealMetrics.",
     type: "article",
+    url: "https://sealmetrics.com/blog/best-llm-for-data-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "The Best LLM for Data Analytics Isn't the One You'd Guess",
+    description: "162 live queries, real data, ground truth from the database. How we actually chose the model inside SealMetrics.",
+    images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
   },
   alternates: {
     languages: getAlternates("/blog/best-llm-for-data-analytics"),
@@ -301,6 +313,8 @@ export default function BestLlmForAnalyticsPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

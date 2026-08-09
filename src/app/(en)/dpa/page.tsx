@@ -5,13 +5,22 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Data Processing Agreement — Sealmetrics",
-  description:
-    "Sealmetrics Data Processing Agreement (DPA-2026-v2.0). Article 28 GDPR, AEPD audience-measurement guarantees, EU-only processing, sub-processors and security measures.",
+  description: "Sealmetrics DPA (2026-v2.0): Article 28 GDPR, AEPD audience-measurement guarantees, EU-only processing, sub-processors and security measures.",
   openGraph: {
     title: "Data Processing Agreement — Sealmetrics",
     description:
       "Article 28 GDPR DPA: AEPD audience-measurement guarantees, EU-only processing, sub-processors and security measures.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/dpa/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Data Processing Agreement — Sealmetrics",
+    description: "Article 28 GDPR DPA: AEPD audience-measurement guarantees, EU-only processing, sub-processors and security measures.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

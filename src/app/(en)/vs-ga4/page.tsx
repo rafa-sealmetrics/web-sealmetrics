@@ -31,6 +31,16 @@ export const metadata: Metadata = {
     description: "Feature-by-feature comparison. Honest.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/vs-ga4/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
+    description: "Feature-by-feature comparison. Honest.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/vs-ga4/",

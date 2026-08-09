@@ -23,13 +23,22 @@ import {
 
 export const metadata: Metadata = {
   title: "La mejor herramienta de analítica web: 12 requisitos",
-  description:
-    "No es una lista de proveedores. Los 12 requisitos técnicos que debe cumplir una plataforma de analítica web — peso del píxel, tiempo real, 100% del dato, API, MCP — y cómo verificarlos.",
+  description: "No es una lista de proveedores. Los 12 requisitos técnicos de una plataforma de analítica web — píxel, tiempo real, 100% del dato, API, MCP — y cómo probarlos.",
   openGraph: {
     title: "La mejor herramienta de analítica web: los 12 requisitos",
     description:
       "La especificación que una plataforma tiene que cumplir antes de merecer ese nombre. Cada requisito con el fallo que previene y una prueba que puedes ejecutar en la demo.",
     type: "article",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/blog/best-web-analytics-tool/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "La mejor herramienta de analítica web: los 12 requisitos",
+    description: "La especificación que una plataforma tiene que cumplir antes de merecer ese nombre. Cada requisito con el fallo que previene y una prueba que puedes ejecutar en la demo.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
@@ -579,7 +588,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 preagregados que solo soportan las combinaciones que alguien
                 anticipó, límites de cardinalidad que meten tu cola larga en
                 «(other)»,{" "}
-                <Link href="/glossary/data-sampling" className={linkClass}>
+                <Link href="/es/glossary/data-sampling" className={linkClass}>
                   muestreo
                 </Link>{" "}
                 por encima de cierto volumen de filas y un esquema fijo que no
@@ -632,7 +641,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 Microconversiones como concepto nativo, no como un apaño sobre
                 pageviews. Valor en divisa asociable a cualquier evento. Ingesta
                 cliente y{" "}
-                <Link href="/glossary/server-side-tracking" className={linkClass}>
+                <Link href="/es/glossary/server-side-tracking" className={linkClass}>
                   servidor
                 </Link>{" "}
                 mediante un endpoint HTTP documentado, para que los eventos que
@@ -840,7 +849,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
               <Chip tone="req">El requisito</Chip>
               <p>
                 El{" "}
-                <Link href="/glossary/attribution-model" className={linkClass}>
+                <Link href="/es/glossary/attribution-model" className={linkClass}>
                   modelo de atribución
                 </Link>{" "}
                 tiene que estar enunciado con claridad, aplicarse de forma

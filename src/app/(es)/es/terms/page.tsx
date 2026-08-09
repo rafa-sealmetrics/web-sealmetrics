@@ -1,9 +1,27 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Términos del Servicio — Sealmetrics",
-  description:
-    "Términos del Servicio de Sealmetrics (v2.0). Condiciones de uso de la plataforma de analítica web: planes, facturación, uso aceptable, propiedad de los datos, responsabilidad y terminación.",
+  description: "Términos del Servicio de Sealmetrics (v2.0): planes, facturación, uso aceptable, propiedad de los datos, responsabilidad y terminación.",
+  openGraph: {
+    title: "Términos del Servicio — Sealmetrics",
+    description: "Condiciones de uso de la plataforma: planes, facturación, uso aceptable, propiedad de los datos, responsabilidad y terminación.",
+    url: "https://sealmetrics.com/es/terms/",
+    siteName: "SealMetrics",
+    type: "website",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Términos del Servicio — Sealmetrics",
+    description: "Condiciones de uso de la plataforma: planes, facturación, uso aceptable, propiedad de los datos, responsabilidad y terminación.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
   alternates: {
     canonical: "https://sealmetrics.com/es/terms/",
     languages: { en: "https://sealmetrics.com/terms/" },
@@ -53,6 +71,9 @@ function Tbl({ rows }: { rows: string[][] }) {
 
 export default function TermsEsPage() {
   return (
+    <>
+      <Breadcrumbs items={[{ label: "Términos del Servicio" }]} locale="es" />
+      <JsonLd data={breadcrumbSchema([{ name: "Términos del Servicio", url: "/es/terms" }], "es")} />
     <section className="pt-12 pb-28 bg-white">
       <div className="max-w-[800px] mx-auto px-5 sm:px-8">
         <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-6">
@@ -771,5 +792,6 @@ export default function TermsEsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     description:
       "Find out if your GA4, Meta, TikTok, and Google Ads pixels fire before consent. Free audit, full PDF report by email.",
     type: "website",
+    url: "https://sealmetrics.com/free-audit/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Free Pixel & GDPR Audit — SealMetrics",
+    description: "Find out if your GA4, Meta, TikTok, and Google Ads pixels fire before consent. Free audit, full PDF report by email.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/free-audit/",

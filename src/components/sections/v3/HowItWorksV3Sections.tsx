@@ -276,9 +276,9 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
               <span className="inline-flex self-start px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded mt-2">
                 {s.time}
               </span>
-              <h4 className="text-[18px] font-semibold tracking-[-0.015em] mt-auto mb-2 leading-[1.2]">
+              <h3 className="text-[18px] font-semibold tracking-[-0.015em] mt-auto mb-2 leading-[1.2]">
                 {s.t}
-              </h4>
+              </h3>
               <p className="text-[13.5px] leading-[1.55] text-ink-soft">{s.p}</p>
             </article>
           ))}

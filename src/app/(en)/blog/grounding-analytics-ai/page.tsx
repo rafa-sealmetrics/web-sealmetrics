@@ -12,6 +12,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "grounding-analytics-ai";
 const URL = `/blog/${SLUG}`;
@@ -21,12 +22,23 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   title: TITLE,
-  description: DESCRIPTION,
+  description: "A chatbot answers from memory. An analytics assistant must answer only from data fetched at query time. That difference is an architecture, not a prompt.",
   openGraph: {
     title: "Grounding: Why a Good Analytics AI Shouldn't 'Know' Anything",
     description:
       "How grounding stops AI hallucination in analytics — the model narrates numbers it just fetched, instead of recalling numbers it never had.",
     type: "article",
+    url: "https://sealmetrics.com/blog/grounding-analytics-ai/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/grounding-analytics-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Grounding: Why a Good Analytics AI Shouldn't 'Know' Anything",
+    description: "How grounding stops AI hallucination in analytics — the model narrates numbers it just fetched, instead of recalling numbers it never had.",
+    images: ["https://sealmetrics.com/og/blog/grounding-analytics-ai.png"],
   },
   alternates: {
     languages: getAlternates("/blog/grounding-analytics-ai"),
@@ -409,6 +421,8 @@ export default function GroundingAnalyticsAiPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "MMLU mide conocimiento en aislamiento. Tu producto necesita tool-calling, seguimiento de instrucciones y grounding bajo carga real. Qué miden de verdad las cifras públicas, cómo leer su letra pequeña y un método en cinco pasos para probar un modelo sobre tu propia carga de trabajo.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Los benchmarks públicos no eligen tu modelo",
+  description: "MMLU mide conocimiento aislado. Tu producto necesita tool-calling y grounding bajo carga. Qué miden las cifras públicas y cómo probar con tu propio caso.",
   openGraph: {
     title: TITLE,
     description:
       "Qué miden realmente MMLU, GPQA, tau-bench y BFCL, y la letra pequeña que vuelve engañosas las comparaciones entre modelos.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/public-llm-benchmarks-vs-your-use-case/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/public-llm-benchmarks-vs-your-use-case.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: TITLE,
+    description: "Qué miden realmente MMLU, GPQA, tau-bench y BFCL, y la letra pequeña que vuelve engañosas las comparaciones entre modelos.",
+    images: ["https://sealmetrics.com/og/blog/public-llm-benchmarks-vs-your-use-case.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -573,6 +585,7 @@ export default function PublicLlmBenchmarksVsYourUseCasePageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

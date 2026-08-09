@@ -21,6 +21,16 @@ export const metadata: Metadata = {
       "20+ years in European eCommerce analytics. Founder of SealMetrics.",
     type: "profile",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/authors/rafa-jimenez/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Rafa Jiménez — Founder & CEO of SealMetrics",
+    description: "20+ years in European eCommerce analytics. Founder of SealMetrics.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
 };
 

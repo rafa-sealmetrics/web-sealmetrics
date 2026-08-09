@@ -64,12 +64,15 @@ export function LogosStripEs() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="mb-9">
           <div className="flex justify-between items-baseline flex-wrap gap-4">
-            <h3
+            {/* h2: encabezado de <section> de primer nivel, reutilizado en
+                /es/about, /es/how-it-works, /es/pricing y otras, donde cae
+                justo bajo el h1 de la página. Como h3 saltaba un nivel. */}
+            <h2
               className="font-semibold text-ink tracking-[-0.02em] leading-[1.2]"
               style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
             >
               Fuente <em className="italic-accent">única de verdad</em> para marcas europeas
-            </h3>
+            </h2>
             <p className="font-mono text-[12px] text-ink-soft uppercase tracking-[0.1em] font-semibold">
               Equipos con <b className="text-ink">+5M€</b> anuales en paid media
             </p>

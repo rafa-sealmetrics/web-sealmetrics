@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "meet-seal-ai";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "Ask your analytics questions in plain language and get grounded answers — with inference that runs in the EU only, retains nothing, and trains no one's model. Here's how Seal AI works and why it's private by architecture, not by promise.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Meet Seal AI: Analytics Answers That Never Leave the EU",
+  description: "Ask your analytics in plain language and get grounded answers, from inference that runs in the EU only, retains nothing and trains no one's model.",
   openGraph: {
     title: "Meet Seal AI: Private, EU-Only Analytics AI",
     description:
       "Plain-language answers about your analytics, with inference that never leaves the EU and retains nothing.",
     type: "article",
+    url: "https://sealmetrics.com/blog/meet-seal-ai/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Meet Seal AI: Private, EU-Only Analytics AI",
+    description: "Plain-language answers about your analytics, with inference that never leaves the EU and retains nothing.",
+    images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
   },
   alternates: {
     languages: getAlternates("/blog/meet-seal-ai"),
@@ -276,6 +288,8 @@ export default function MeetSealAiPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

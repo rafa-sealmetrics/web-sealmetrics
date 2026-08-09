@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Bajo condiciones específicas, RGPD y ePrivacy permiten analítica sin consentimiento. Aquí está cómo.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/gdpr-analytics-without-consent/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/gdpr-analytics-without-consent.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analítica conforme con RGPD sin banners de consentimiento",
+    description: "Bajo condiciones específicas, RGPD y ePrivacy permiten analítica sin consentimiento. Aquí está cómo.",
+    images: ["https://sealmetrics.com/og/blog/gdpr-analytics-without-consent.png"],
   },
   alternates: {
     languages: getAlternates("/blog/gdpr-analytics-without-consent"),

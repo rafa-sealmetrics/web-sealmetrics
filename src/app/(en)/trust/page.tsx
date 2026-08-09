@@ -5,13 +5,22 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Trust Center — Sealmetrics",
-  description:
-    "Where Sealmetrics' legal and security documentation lives: DPA, Terms of Service, Security overview, Privacy Policy, compliance documentation, and documents available on request.",
+  description: "Where Sealmetrics' legal and security documentation lives: DPA, Terms, Security overview, Privacy Policy, and documents available on request.",
   openGraph: {
     title: "Trust Center — Sealmetrics",
     description:
       "Sealmetrics legal and security documentation: DPA, Terms, Security, Privacy, compliance docs, and request-only assessments.",
     type: "website",
+    images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/trust/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Trust Center — Sealmetrics",
+    description: "Sealmetrics legal and security documentation: DPA, Terms, Security, Privacy, compliance docs, and request-only assessments.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {

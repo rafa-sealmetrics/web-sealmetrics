@@ -15,6 +15,16 @@ export const metadata: Metadata = {
     description: "30-minute walkthrough with the founder. See your own data gap live.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/demo/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Book a Demo — SealMetrics",
+    description: "30-minute walkthrough with the founder. See your own data gap live.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/demo/",
@@ -67,9 +77,8 @@ export default function DemoPage() {
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-brand mt-2 shrink-0" />
                     <div>
-                      <h3 className="text-[16px] font-semibold text-ink tracking-[-0.01em] mb-1">
-                        {item.t}
-                      </h3>
+                      <p className="text-[16px] font-semibold text-ink tracking-[-0.01em] mb-1">
+                        {item.t}</p>
                       <p className="text-[14px] text-ink-soft leading-[1.55]">{item.d}</p>
                     </div>
                   </div>

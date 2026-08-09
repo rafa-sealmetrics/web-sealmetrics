@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "Why incomplete analytics produces wrong investment decisions, what complete data means architecturally, and the numbers that change when you switch.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/complete-data/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Complete data — analytics that captures 100% of traffic",
+    description: "Why incomplete analytics produces wrong investment decisions, what complete data means architecturally, and the numbers that change when you switch.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/complete-data/",

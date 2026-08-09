@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "What Is Last-Click Attribution?",
     description: "Last-click attribution explained: how it differs from multi-touch, why it scales, and what it deliberately doesn't do.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/last-click-attribution/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Last-Click Attribution?",
+    description: "Last-click attribution explained: how it differs from multi-touch, why it scales, and what it deliberately doesn't do.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/last-click-attribution/" },
 };

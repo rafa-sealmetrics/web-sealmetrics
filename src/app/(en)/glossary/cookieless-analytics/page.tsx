@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     title: "What Is Cookieless Analytics?",
     description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/cookieless-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Cookieless Analytics?",
+    description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics/", languages: getAlternates("/glossary/cookieless-analytics") },
 };

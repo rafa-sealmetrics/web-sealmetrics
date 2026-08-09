@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "Shopify Plus one-click install, Shopify Standard theme snippet, dataLayer event coverage, and order reconciliation patterns.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/platforms/shopify/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Shopify analytics without cookies — SealMetrics integration",
+    description: "Shopify Plus one-click install, Shopify Standard theme snippet, dataLayer event coverage, and order reconciliation patterns.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/platforms/shopify/",

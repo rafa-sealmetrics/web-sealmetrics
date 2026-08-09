@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is Intelligent Tracking Prevention (ITP)?",
@@ -14,8 +15,24 @@ export const metadata: Metadata = {
     title: "What Is Intelligent Tracking Prevention (ITP)?",
     description: "ITP is Safari's privacy feature that limits cookie lifespan. Learn how it affects analytics.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Intelligent Tracking Prevention (ITP)?",
+    description: "ITP is Safari's privacy feature that limits cookie lifespan. Learn how it affects analytics.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/intelligent-tracking-prevention"),
+  },
 };
 
 export default function ITPPage() {

@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what SealMetrics actually measures.",
     type: "article",
+    url: "https://sealmetrics.com/searchmetrics-vs-sealmetrics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Searchmetrics vs SealMetrics — Different Companies",
+    description: "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what SealMetrics actually measures.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/searchmetrics-vs-sealmetrics",

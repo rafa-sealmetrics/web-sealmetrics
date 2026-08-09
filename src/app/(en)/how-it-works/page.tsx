@@ -24,6 +24,16 @@ export const metadata: Metadata = {
       "Three layers. One pipeline. How SealMetrics counts 100% of your traffic anonymously, without cookies or user tracking.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/how-it-works/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "How SealMetrics Works — First-party, Cookieless, EU-hosted",
+    description: "Three layers. One pipeline. How SealMetrics counts 100% of your traffic anonymously, without cookies or user tracking.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/how-it-works/",

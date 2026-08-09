@@ -19,6 +19,17 @@ export const metadata: Metadata = {
     description:
       "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
     type: "article",
+    url: "https://sealmetrics.com/blog/ga4-alternatives-enterprise/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/ga4-alternatives-enterprise.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "7 GA4 Alternatives for eCommerce Teams in 2026",
+    description: "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
+    images: ["https://sealmetrics.com/og/blog/ga4-alternatives-enterprise.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/ga4-alternatives-enterprise/",
@@ -57,7 +68,7 @@ const alternatives = [
     euCompliance:
       "GDPR compliant by design — no PII collected, no cookies, no consent required, EU-only data residency",
     ecommerceFeatures:
-      "Last-click revenue attribution on complete data, LENS AI with 60+ anomaly rules, AI agent analytics, zero data sampling",
+      "Last-click revenue attribution on complete data, LENS AI natural-language querying, AI agent analytics, zero data sampling",
     chooseIf:
       "You need 100% data capture in the EU, accurate last-click revenue attribution, and enterprise analytics without six-figure pricing.",
   },
@@ -502,8 +513,8 @@ export default function GA4AlternativesEnterprisePage() {
               For EU eCommerce companies prioritizing data completeness,
               SealMetrics offers enterprise-grade capabilities at a fraction of
               legacy enterprise pricing. Last-click revenue attribution is built
-              on complete data — not estimates from a consented fraction. LENS AI monitors
-              60+ anomaly detection rules automatically. Agent analytics
+              on complete data — not estimates from a consented fraction. LENS AI answers
+              analytics questions in plain language, grounded in your complete data. Agent analytics
               separates AI bot traffic from human visitors. Data is processed and
               stored exclusively in the EU.
             </p>

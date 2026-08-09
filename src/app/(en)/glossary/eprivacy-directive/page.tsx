@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     title: "What Is the ePrivacy Directive?",
     description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/eprivacy-directive/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is the ePrivacy Directive?",
+    description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/eprivacy-directive/" },
 };

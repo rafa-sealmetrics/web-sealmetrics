@@ -27,6 +27,15 @@ export const metadata: Metadata = {
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
+    url: "https://sealmetrics.com/es/case-studies/dreamplace-hotels/",
+    siteName: "SealMetrics",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Dreamplace Hotels — Decidir paid media con el dato real, no con el que reporta cada plataforma",
+    description: "15–20% más atribución de venta acercándose al CRM. +30% más tráfico vs Google Analytics. Meta y Google como foco. Caso de estudio con Eduardo Martin.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
 };
 

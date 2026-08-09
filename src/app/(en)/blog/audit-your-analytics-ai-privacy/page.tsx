@@ -10,6 +10,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "audit-your-analytics-ai-privacy";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "Five questions any marketer or DPO can put to an AI analytics vendor — who owns the inference, where it runs, what is retained, what trains, and whether you can leave. With the answers that should reassure you and the ones that should not.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Audit Your Analytics AI: 5 Questions on Real Privacy",
+  description: "Five questions to put to any AI analytics vendor: who owns the inference, where it runs, what is retained, what trains, and whether you can leave.",
   openGraph: {
     title: "Audit Your Analytics AI: A 5-Question Privacy Checklist",
     description:
       "A vendor-neutral checklist for testing whether an AI analytics feature is genuinely private — ownership, location, retention, training and exit.",
     type: "article",
+    url: "https://sealmetrics.com/blog/audit-your-analytics-ai-privacy/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/audit-your-analytics-ai-privacy.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Audit Your Analytics AI: A 5-Question Privacy Checklist",
+    description: "A vendor-neutral checklist for testing whether an AI analytics feature is genuinely private — ownership, location, retention, training and exit.",
+    images: ["https://sealmetrics.com/og/blog/audit-your-analytics-ai-privacy.png"],
   },
   alternates: {
     languages: getAlternates("/blog/audit-your-analytics-ai-privacy"),
@@ -477,6 +489,8 @@ export default function AuditYourAnalyticsAiPrivacyPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

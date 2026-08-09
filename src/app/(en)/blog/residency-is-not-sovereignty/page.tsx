@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "residency-is-not-sovereignty";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "A European datacenter does not make your AI vendor European. The US CLOUD Act follows the company, not the server. Here is how to tell the difference — and why it decides where your data can be reached.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Residency Is Not Sovereignty: Ask Your AI Vendor This",
+  description: "A European datacenter does not make your AI vendor European. The US CLOUD Act follows the company, not the server. How to tell the difference.",
   openGraph: {
     title: "Residency Is Not Sovereignty",
     description:
       "A European region does not put your data beyond US legal reach. The difference — and how to audit your AI analytics vendor for it.",
     type: "article",
+    url: "https://sealmetrics.com/blog/residency-is-not-sovereignty/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/residency-is-not-sovereignty.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Residency Is Not Sovereignty",
+    description: "A European region does not put your data beyond US legal reach. The difference — and how to audit your AI analytics vendor for it.",
+    images: ["https://sealmetrics.com/og/blog/residency-is-not-sovereignty.png"],
   },
   alternates: {
     languages: getAlternates("/blog/residency-is-not-sovereignty"),
@@ -299,6 +311,8 @@ export default function ResidencyIsNotSovereigntyPage() {
               answer goes wrong.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

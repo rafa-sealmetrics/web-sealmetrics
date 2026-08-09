@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Consentless Analytics for DTC — 2026 Guide",
+    description: "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",

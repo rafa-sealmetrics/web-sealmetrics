@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Editorial ranking of enterprise analytics platforms compared on data capture, compliance, pricing, and AI features.",
     type: "article",
+    url: "https://sealmetrics.com/blog/best-enterprise-analytics-platforms/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/best-enterprise-analytics-platforms.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "8 Best Enterprise Analytics Platforms in 2026",
+    description: "Editorial ranking of enterprise analytics platforms compared on data capture, compliance, pricing, and AI features.",
+    images: ["https://sealmetrics.com/og/blog/best-enterprise-analytics-platforms.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/best-enterprise-analytics-platforms/",
@@ -60,7 +71,7 @@ const platforms = [
     pricing: "From \u20ac5,988/yr",
     euDataCapture: "100%",
     strengths:
-      "Cookieless architecture captures 100% of traffic without consent banners. EU-only data residency. Zero data sampling at any volume. LENS AI monitors 60+ anomaly rules automatically. Last-click revenue attribution built on complete data. Agent analytics tracks AI bot traffic separately.",
+      "Cookieless architecture captures 100% of traffic without consent banners. EU-only data residency. Zero data sampling at any volume. LENS AI answers analytics questions in plain language, grounded in your complete data. Last-click revenue attribution built on complete data. Agent analytics tracks AI bot traffic separately.",
     limitations:
       "Smaller ecosystem than Google or Adobe. No native Google Ads integration (data export available). Newer platform with a growing feature set. Best suited for EU-focused operations.",
     bestFor: "EU eCommerce teams that need complete data, GDPR compliance by design, and enterprise analytics without enterprise pricing.",
@@ -491,8 +502,8 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <p>
               For EU eCommerce companies prioritizing data completeness,
               SealMetrics offers enterprise-grade capabilities at a fraction of
-              legacy enterprise pricing. LENS AI monitors 60+ anomaly detection
-              rules automatically. Last-click revenue attribution is built on
+              legacy enterprise pricing. LENS AI answers analytics questions in
+              plain language, grounded in your own numbers. Last-click revenue attribution is built on
               complete data — not estimates from a consented fraction. Agent analytics
               separates AI bot traffic from human visitors. Data is processed and
               stored exclusively in the EU.

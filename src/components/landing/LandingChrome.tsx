@@ -39,7 +39,9 @@ export function LandingHeader({ ctaHref, ctaLabel }: { ctaHref: string; ctaLabel
    política de privacidad accesible. */
 const FOOTER = {
   es: {
-    privacy: { label: "Privacidad", href: "/es/privacy/" },
+    // No hay /es/privacy/: la política vive solo en /privacy/. Apuntar al ES
+    // inexistente devolvía un 404 justo en el enlace que Ads y Meta exigen.
+    privacy: { label: "Privacidad", href: "/privacy/" },
     terms: { label: "Términos", href: "/es/terms/" },
     badges: "RGPD · ePrivacy · LSSI-CE",
   },

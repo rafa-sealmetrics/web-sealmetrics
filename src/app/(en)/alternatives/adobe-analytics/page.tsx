@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "GA360, Piwik PRO, Matomo, GA4 and SealMetrics compared against Adobe on cost, EU capture and consent dependency.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/alternatives/adobe-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Adobe Analytics Alternatives — 5 Compared (2026)",
+    description: "GA360, Piwik PRO, Matomo, GA4 and SealMetrics compared against Adobe on cost, EU capture and consent dependency.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/alternatives/adobe-analytics",

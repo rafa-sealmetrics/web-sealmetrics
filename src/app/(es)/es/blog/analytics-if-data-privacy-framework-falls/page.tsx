@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "El Marco de Privacidad de Datos superó su primer recurso, tiene un recurso de casación pendiente ante el TJUE y otra impugnación anunciada en 2026. Estas son las configuraciones de analítica e IA que habría que volver a documentar de la noche a la mañana y las que nunca dependieron de él.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Tu analítica si cae el Marco de Privacidad UE-EE. UU.",
+  description: "El Marco de Privacidad de Datos tiene un recurso pendiente ante el TJUE. Qué configuraciones de analítica e IA habría que rehacer, y cuáles no dependen de él.",
   openGraph: {
     title: "Si cae el Marco de Privacidad de Datos UE-EE. UU.",
     description:
       "La situación jurídica actual del DPF, el precedente de Safe Harbor y Privacy Shield, y qué stacks de analítica son estructuralmente inmunes al resultado.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/analytics-if-data-privacy-framework-falls/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/analytics-if-data-privacy-framework-falls.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Si cae el Marco de Privacidad de Datos UE-EE. UU.",
+    description: "La situación jurídica actual del DPF, el precedente de Safe Harbor y Privacy Shield, y qué stacks de analítica son estructuralmente inmunes al resultado.",
+    images: ["https://sealmetrics.com/og/blog/analytics-if-data-privacy-framework-falls.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -427,6 +439,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

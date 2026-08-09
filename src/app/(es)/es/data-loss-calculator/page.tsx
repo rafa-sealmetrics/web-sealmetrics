@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/data-loss-calculator/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Calculadora de pérdida de datos — SealMetrics",
+    description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/data-loss-calculator/",

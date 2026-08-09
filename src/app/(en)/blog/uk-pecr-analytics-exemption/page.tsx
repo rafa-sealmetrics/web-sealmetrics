@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "The DUAA 2025 changes UK analytics consent requirements. Here is how SealMetrics qualifies.",
     type: "article",
+    url: "https://sealmetrics.com/blog/uk-pecr-analytics-exemption/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/uk-pecr-analytics-exemption.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "UK Analytics Exemption — PECR Self-Assessment",
+    description: "The DUAA 2025 changes UK analytics consent requirements. Here is how SealMetrics qualifies.",
+    images: ["https://sealmetrics.com/og/blog/uk-pecr-analytics-exemption.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/uk-pecr-analytics-exemption/",

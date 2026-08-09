@@ -1,5 +1,17 @@
 #!/usr/bin/env node
 /**
+ * STATUS: the headers in `vercel.json` are STAGED, NOT SERVED.
+ *
+ * Production is GitHub Pages (.github/workflows/deploy.yml), which serves no
+ * custom headers at all. So HSTS, X-Frame-Options, X-Content-Type-Options,
+ * Referrer-Policy, Permissions-Policy and this CSP exist in the repo and reach
+ * nobody. They are a reviewed, drift-checked draft for the Vercel migration in
+ * INFRA-MIGRATION.md — not a live security posture.
+ *
+ * This matters because a repo audit that finds these headers and ticks the box
+ * would be wrong, and the site is sold on privacy engineering. This script
+ * prints the status on every build so the gap cannot be forgotten quietly.
+ *
  * Lints the CSP in `vercel.json` against the origins the source actually loads
  * subresources from. Reports:
  *   - origins loaded in code but missing from the matching directive (fails)
@@ -260,3 +272,8 @@ if (missing.size > 0) {
 }
 
 console.log("\n[audit-csp] 0 drift — every loaded origin is allowlisted under the right directive.");
+console.log(
+  "[audit-csp] NOTE: vercel.json headers are STAGED, NOT SERVED — production is\n" +
+    "            GitHub Pages, which sends no custom headers. HSTS, CSP, X-Frame-Options\n" +
+    "            and Referrer-Policy are not live. See INFRA-MIGRATION.md."
+);

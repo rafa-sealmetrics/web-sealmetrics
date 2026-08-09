@@ -15,6 +15,16 @@ export const metadata: Metadata = {
       "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/demo-access/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Acceso a la cuenta demo — SealMetrics",
+    description: "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/demo-access/",

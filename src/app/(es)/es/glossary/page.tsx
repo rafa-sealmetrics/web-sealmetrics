@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { glossaryTerms } from "@/lib/content/glossary";
+import { ES_TERM_SLUGS, glossaryHref } from "@/lib/content/glossary-es";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionPageSchema, breadcrumbSchema, itemListSchema } from "@/lib/schema";
@@ -15,6 +16,16 @@ export const metadata: Metadata = {
     description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/es/glossary/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Glosario de analítica — SealMetrics",
+    description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/",
@@ -24,14 +35,9 @@ export const metadata: Metadata = {
 
 const categories = [...new Set(glossaryTerms.map((t) => t.category))];
 
-/** Glossary terms that have a Spanish page. The rest link to the English term. */
-const ES_TERM_PAGES = new Set([
-  "cookieless-analytics",
-  "data-loss-in-analytics",
-  "gdpr-analytics-compliance",
-  "multi-touch-attribution",
-  "revenue-attribution",
-]);
+// Which terms have a Spanish page now lives in src/lib/content/glossary-es.ts,
+// shared with RelatedGlossaryTerms and the ES term pages. Three local copies of
+// this list is how 21 links to non-existent Spanish URLs shipped.
 
 export default function Page() {
   return (
@@ -46,10 +52,10 @@ export default function Page() {
           url: "/es/glossary",
           items: glossaryTerms.map((t) => ({
             name: t.term,
-            // Only 5 terms have a Spanish page. Emitting a URL for the rest
-            // pointed the schema at pages that do not exist.
-            ...(ES_TERM_PAGES.has(t.slug)
-              ? { url: `https://sealmetrics.com/es/glossary/${t.slug}` }
+            // Only terms with a page get a URL — a term that exists only as an
+            // index entry would otherwise point the schema at a 404.
+            ...(t.hasPage
+              ? { url: `https://sealmetrics.com${glossaryHref(t.slug, "es")}` }
               : {}),
           })),
         })}
@@ -65,7 +71,8 @@ export default function Page() {
             Definiciones escritas para líderes de marketing y data. Cortas. Con opinión. Honestas sobre qué importa y qué no.
           </p>
           <p className="mt-6 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-            Definiciones disponibles solo en inglés por ahora · traducciones en curso
+            {ES_TERM_SLUGS.size} de {glossaryTerms.filter((t) => t.hasPage).length} definiciones en
+            español · el resto abre la versión en inglés
           </p>
         </div>
       </section>
@@ -87,7 +94,7 @@ export default function Page() {
                   return term.hasPage ? (
                     <Link
                       key={term.slug}
-                      href={`/glossary/${term.slug}`}
+                      href={glossaryHref(term.slug, "es")}
                       className="block p-5 bg-white border border-warm-100 rounded-xl no-underline group transition-all hover:border-warm-200 hover:-translate-y-0.5"
                     >
                       {body}

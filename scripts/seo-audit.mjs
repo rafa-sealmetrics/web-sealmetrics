@@ -1,0 +1,440 @@
+#!/usr/bin/env node
+/**
+ * SEO/GEO regression gate. Parses every page in out/ and fails the build on
+ * any rule in RULES that is violated.
+ *
+ * Wired into `postbuild`, so `npm run build` — and therefore the PR check and
+ * the deploy — refuse a regression. Also exposed as `npm run seo:audit` and
+ * consumed by tests/seo.test.mjs, which asserts against the same JSON report
+ * rather than re-implementing the parsing.
+ *
+ * Every rule here corresponds to a defect that was actually shipped to
+ * production at least once. `--json` prints the machine-readable report.
+ */
+import { readFileSync, existsSync, readdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(here, "..");
+const OUT = path.join(repoRoot, "out");
+const SITE = "https://sealmetrics.com";
+const JSON_MODE = process.argv.includes("--json");
+
+if (!existsSync(OUT)) {
+  console.error("[seo-audit] out/ missing — run `npm run build` first.");
+  process.exit(1);
+}
+
+/* --------------------------------------------------------------- parsing */
+
+function walk(dir, acc = []) {
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walk(p, acc);
+    else if (e.name.endsWith(".html")) acc.push(p);
+  }
+  return acc;
+}
+
+const decode = (s) =>
+  s == null
+    ? s
+    : s
+        .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+        .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, '"')
+        .replace(/&nbsp;/g, " ");
+
+const one = (html, re) => html.match(re)?.[1] ?? null;
+const all = (html, re) => [...html.matchAll(re)];
+const metaName = (html, n) =>
+  one(html, new RegExp(`<meta name="${n}" content="([^"]*)"`, "i"));
+const metaProp = (html, p) =>
+  one(html, new RegExp(`<meta property="${p}" content="([^"]*)"`, "i"));
+
+function parsePage(file) {
+  const html = readFileSync(file, "utf8");
+  let route = "/" + path.relative(OUT, file).replace(/\\/g, "/");
+  route = route.replace(/index\.html$/, "").replace(/\.html$/, "/");
+  if (!route.endsWith("/")) route += "/";
+
+  const jsonld = all(
+    html,
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g
+  ).map((m) => {
+    try {
+      return JSON.parse(m[1]);
+    } catch (err) {
+      return { __invalid__: String(err.message).slice(0, 120) };
+    }
+  });
+
+  const visibleText = decode(
+    html
+      .replace(/<script[\s\S]*?<\/script>/g, " ")
+      .replace(/<style[\s\S]*?<\/style>/g, " ")
+      .replace(/<[^>]+>/g, " ")
+  ).replace(/\s+/g, " ");
+
+  return {
+    file,
+    route,
+    html,
+    visibleText,
+    title: decode(one(html, /<title>([\s\S]*?)<\/title>/)),
+    description: decode(metaName(html, "description")),
+    canonical: one(html, /<link rel="canonical" href="([^"]*)"/),
+    robots: metaName(html, "robots") ?? "",
+    lang: one(html, /<html lang="([^"]*)"/),
+    og: {
+      title: metaProp(html, "og:title"),
+      description: metaProp(html, "og:description"),
+      url: metaProp(html, "og:url"),
+      type: metaProp(html, "og:type"),
+      image: metaProp(html, "og:image"),
+      siteName: metaProp(html, "og:site_name"),
+    },
+    twitterCard: metaName(html, "twitter:card"),
+    twitterTitle: metaName(html, "twitter:title"),
+    h1s: all(html, /<h1[^>]*>([\s\S]*?)<\/h1>/g).map((m) =>
+      decode(m[1].replace(/<[^>]+>/g, "")).trim()
+    ),
+    imgs: all(html, /<img\b[^>]*>/g).map((m) => m[0]),
+    jsonld,
+    types: jsonld
+      .flatMap((j) => (j["@graph"] ? j["@graph"].map((g) => g["@type"]) : [j["@type"]]))
+      .filter(Boolean),
+    markdownLink: one(html, /<link rel="alternate" type="text\/markdown" href="([^"]*)"/),
+    links: [
+      ...new Set(
+        all(html, /<a\b[^>]+href="([^"]+)"/g)
+          .map((m) => m[1])
+          .filter((h) => h.startsWith("/"))
+          .map((h) => h.split("#")[0].split("?")[0])
+      ),
+    ],
+  };
+}
+
+const pages = walk(OUT)
+  .filter((f) => !/\/(404|_not-found)(\/index)?\.html$/.test(f.replace(/\\/g, "/")))
+  .map(parsePage);
+
+const smPath = path.join(OUT, "sitemap.xml");
+const sitemapUrls = existsSync(smPath)
+  ? all(readFileSync(smPath, "utf8"), /<loc>([^<]+)<\/loc>/g).map((m) => m[1])
+  : [];
+const sitemapRoutes = new Set(sitemapUrls.map((u) => u.replace(SITE, "")));
+const builtRoutes = new Set(pages.map((p) => p.route));
+const indexable = pages.filter((p) => !/noindex/i.test(p.robots));
+
+/* ----------------------------------------------------------------- rules */
+
+const failures = [];
+const fail = (rule, detail) => failures.push({ rule, detail });
+
+// Warnings are reported but do not fail the build. They are for things that
+// are worth fixing but where a bad automated fix is worse than the problem —
+// rewriting 43 meta descriptions badly costs more than leaving them long.
+const warnings = [];
+const warn = (rule, detail) => warnings.push({ rule, detail });
+
+// 1. A noindex page must never appear in the sitemap.
+for (const p of pages) {
+  if (/noindex/i.test(p.robots) && sitemapRoutes.has(p.route)) {
+    fail("noindex-in-sitemap", `${p.route} is "${p.robots}" but is listed in sitemap.xml`);
+  }
+}
+
+// 2. Every sitemap URL must resolve to a page that was actually built.
+for (const r of sitemapRoutes) {
+  if (!builtRoutes.has(r)) fail("sitemap-dead-url", `${r} is in sitemap.xml but no HTML was built`);
+}
+
+// 3. Every indexable page must be in the sitemap.
+for (const p of indexable) {
+  if (!sitemapRoutes.has(p.route)) {
+    fail("indexable-missing-from-sitemap", `${p.route} is indexable but absent from sitemap.xml`);
+  }
+}
+
+// 4. Unique, present title and description on every indexable page.
+const byTitle = new Map();
+const byDesc = new Map();
+for (const p of indexable) {
+  if (!p.title) fail("missing-title", p.route);
+  else {
+    if (!byTitle.has(p.title)) byTitle.set(p.title, []);
+    byTitle.get(p.title).push(p.route);
+  }
+  if (!p.description) fail("missing-description", p.route);
+  else {
+    if (!byDesc.has(p.description)) byDesc.set(p.description, []);
+    byDesc.get(p.description).push(p.route);
+  }
+}
+for (const [t, rs] of byTitle) {
+  if (rs.length > 1) fail("duplicate-title", `"${t}" on ${rs.join(", ")}`);
+}
+for (const [d, rs] of byDesc) {
+  if (rs.length > 1) fail("duplicate-description", `"${d.slice(0, 60)}…" on ${rs.join(", ")}`);
+}
+
+// 5. Absolute, self-consistent canonical on every page.
+for (const p of pages) {
+  if (!p.canonical) {
+    fail("missing-canonical", p.route);
+    continue;
+  }
+  if (!p.canonical.startsWith(SITE)) fail("relative-canonical", `${p.route} → ${p.canonical}`);
+  if (!p.canonical.endsWith("/")) fail("canonical-no-trailing-slash", `${p.route} → ${p.canonical}`);
+  const target = p.canonical.replace(SITE, "");
+  if (!builtRoutes.has(target)) fail("canonical-to-404", `${p.route} → ${p.canonical}`);
+}
+
+// 6. Complete Open Graph. Missing og:url/og:site_name is what Next.js silently
+//    does when a page overrides the layout's openGraph object.
+for (const p of pages) {
+  for (const [k, v] of Object.entries(p.og)) {
+    if (!v) fail("incomplete-open-graph", `${p.route} missing og:${k}`);
+  }
+  if (p.og.url && p.canonical && p.og.url !== p.canonical) {
+    fail("og-url-mismatch", `${p.route} og:url=${p.og.url} canonical=${p.canonical}`);
+  }
+}
+
+// 7. Twitter card present, and not the same card on every page.
+const byTwTitle = new Map();
+for (const p of pages) {
+  if (!p.twitterCard) fail("missing-twitter-card", p.route);
+  if (p.twitterTitle) {
+    if (!byTwTitle.has(p.twitterTitle)) byTwTitle.set(p.twitterTitle, []);
+    byTwTitle.get(p.twitterTitle).push(p.route);
+  }
+}
+for (const [t, rs] of byTwTitle) {
+  if (rs.length > 3) {
+    fail("shared-twitter-card", `${rs.length} pages share twitter:title "${t}" (layout inheritance)`);
+  }
+}
+
+// 8. Exactly one h1.
+for (const p of pages) {
+  if (p.h1s.length === 0) fail("missing-h1", p.route);
+  else if (p.h1s.length > 1) fail("multiple-h1", `${p.route} has ${p.h1s.length}`);
+}
+
+// 9. html lang, matching the locale of the route.
+for (const p of pages) {
+  const expected = p.route.startsWith("/es/") ? "es" : "en";
+  if (!p.lang) fail("missing-lang", p.route);
+  else if (p.lang !== expected) fail("wrong-lang", `${p.route} lang="${p.lang}" expected "${expected}"`);
+}
+
+// 10. JSON-LD must parse.
+for (const p of pages) {
+  for (const j of p.jsonld) {
+    if (j.__invalid__) fail("invalid-jsonld", `${p.route}: ${j.__invalid__}`);
+  }
+}
+
+// 11. FAQPage schema must correspond to questions visible on the page.
+//     Google's structured data policy requires it, and an AI engine cannot
+//     cite a passage that only exists inside a script tag.
+for (const p of pages) {
+  const faq = p.jsonld.find((j) => j["@type"] === "FAQPage");
+  if (!faq) continue;
+  for (const q of faq.mainEntity ?? []) {
+    const probe = decode(q.name).replace(/\s+/g, " ").slice(0, 30);
+    if (!p.visibleText.includes(probe)) {
+      fail("faq-schema-not-visible", `${p.route}: "${q.name}" is in JSON-LD but not in the page text`);
+    }
+  }
+}
+
+// 12. Breadcrumb schema must not point at URLs that 404.
+for (const p of pages) {
+  const bc = p.jsonld.find((j) => j["@type"] === "BreadcrumbList");
+  if (!bc) continue;
+  for (const item of bc.itemListElement ?? []) {
+    const url = typeof item.item === "string" ? item.item : item.item?.["@id"];
+    if (!url || !url.startsWith(SITE)) continue;
+    if (!builtRoutes.has(url.replace(SITE, ""))) {
+      fail("breadcrumb-to-404", `${p.route} breadcrumb → ${url}`);
+    }
+  }
+}
+
+// 13. No broken internal links.
+const ASSET = /\.(png|jpe?g|svg|webp|avif|ico|txt|xml|pdf|webmanifest|mp4|md)$/;
+for (const p of pages) {
+  for (const l of p.links) {
+    if (ASSET.test(l) || l.startsWith("/_next/")) continue;
+    const norm = l.endsWith("/") ? l : l + "/";
+    if (!builtRoutes.has(norm)) fail("broken-internal-link", `${p.route} → ${l}`);
+  }
+}
+
+// 14. Informative images need alt text.
+for (const p of pages) {
+  for (const tag of p.imgs) {
+    if (!/\salt=/.test(tag)) fail("image-without-alt", `${p.route}: ${tag.slice(0, 90)}`);
+  }
+}
+
+// 15. Every indexable page has a Markdown twin, and no noindex page does.
+for (const p of pages) {
+  const mdPath =
+    p.route === "/"
+      ? path.join(OUT, "index.md")
+      : path.join(OUT, p.route.replace(/^\/|\/$/g, "") + ".md");
+  const hasMd = existsSync(mdPath);
+  const isNoindex = /noindex/i.test(p.robots);
+  if (!isNoindex && !hasMd) fail("missing-markdown-twin", p.route);
+  if (isNoindex && hasMd) fail("markdown-twin-for-noindex", p.route);
+  if (!isNoindex && hasMd) {
+    const md = readFileSync(mdPath, "utf8");
+    if (!md.startsWith("---\n")) fail("markdown-without-frontmatter", p.route);
+    const body = md.split(/^---$/m).slice(2).join("").trim();
+    if (body.replace(/[^\p{L}\p{N}]/gu, "").length < 200) {
+      fail("markdown-twin-empty", `${p.route} body is under 200 significant chars`);
+    }
+    // Strip fenced and inline code first: pages that document the tracking
+    // snippet legitimately contain a `<script src="…">` sample, and that is
+    // content, not leaked markup.
+    const prose = body
+      .replace(/```[\s\S]*?```/g, "")
+      .replace(/`[^`\n]*`/g, "");
+    if (/<\/?(div|span|script|nav|footer|header|section)\b/i.test(prose)) {
+      fail("markdown-twin-has-markup", `${p.route} still contains HTML tags outside code blocks`);
+    }
+    if (!p.markdownLink) fail("markdown-twin-not-linked", `${p.route} has a twin but no rel=alternate link`);
+  }
+}
+
+// 16. hreflang must be reciprocal and resolve. A one-sided annotation is
+//     silently ignored by Google, which is worse than none: it looks correct
+//     in the HTML while doing nothing.
+const byRoute = new Map(pages.map((p) => [p.route, p]));
+for (const p of pages) {
+  const alts = [...p.html.matchAll(/rel="alternate" hrefLang="([^"]*)" href="([^"]*)"/gi)];
+  for (const [, lang, href] of alts) {
+    if (lang.toLowerCase() === "x-default") continue;
+    const target = href.replace(SITE, "");
+    const tp = byRoute.get(target);
+    if (!tp) {
+      fail("hreflang-to-404", `${p.route} hreflang="${lang}" → ${href} was not built`);
+      continue;
+    }
+    const returns = [...tp.html.matchAll(/rel="alternate" hrefLang="[^"]*" href="([^"]*)"/gi)].some(
+      (m) => m[1].replace(SITE, "") === p.route
+    );
+    if (!returns) {
+      fail("hreflang-not-reciprocal", `${p.route} → ${target} declares no return link`);
+    }
+  }
+}
+
+// 17. Markdown URLs must never enter the sitemap.
+for (const u of sitemapUrls) {
+  if (u.endsWith(".md")) fail("markdown-in-sitemap", u);
+}
+
+/* -------------------------------------------------------------- warnings */
+
+for (const p of indexable) {
+  // Google truncates around 60/160. Over is a display problem, not an
+  // indexing one — worth tracking, not worth a bad automated rewrite.
+  if (p.title && p.title.length > 60) warn("title-over-60-chars", `${p.route} (${p.title.length})`);
+  if (p.description && p.description.length > 160)
+    warn("description-over-160-chars", `${p.route} (${p.description.length})`);
+  if (p.description && p.description.length < 70)
+    warn("description-under-70-chars", `${p.route} (${p.description.length})`);
+
+  // Heading level skipped (h2 → h4). Screen-reader navigation and passage
+  // extraction both read the hierarchy.
+  const levels = [...p.html.matchAll(/<h([1-6])[\s>]/g)].map((m) => Number(m[1]));
+  let prev = 0;
+  for (const l of levels) {
+    if (prev && l > prev + 1) {
+      warn("heading-level-skipped", `${p.route} (h${prev} → h${l})`);
+      break;
+    }
+    prev = l;
+  }
+
+  if (!p.types.includes("BreadcrumbList") && p.route !== "/" && p.route !== "/es/") {
+    warn("no-breadcrumb-schema", p.route);
+  }
+  if (p.jsonld.length === 0) warn("no-structured-data", p.route);
+}
+
+/* ---------------------------------------------------------------- report */
+
+const grouped = new Map();
+for (const f of failures) {
+  if (!grouped.has(f.rule)) grouped.set(f.rule, []);
+  grouped.get(f.rule).push(f.detail);
+}
+
+const report = {
+  pages: pages.length,
+  indexable: indexable.length,
+  sitemapUrls: sitemapUrls.length,
+  markdownTwins: pages.filter(
+    (p) =>
+      !/noindex/i.test(p.robots) &&
+      existsSync(
+        p.route === "/"
+          ? path.join(OUT, "index.md")
+          : path.join(OUT, p.route.replace(/^\/|\/$/g, "") + ".md")
+      )
+  ).length,
+  failures: failures.length,
+  byRule: Object.fromEntries([...grouped].map(([k, v]) => [k, v.length])),
+  warnings: warnings.length,
+  warningsByRule: Object.fromEntries(
+    [...warnings.reduce((m, w) => m.set(w.rule, (m.get(w.rule) ?? 0) + 1), new Map())]
+  ),
+};
+
+writeFileSync(
+  path.join(OUT, "seo-audit-report.json"),
+  JSON.stringify({ ...report, details: failures, warningDetails: warnings }, null, 2)
+);
+
+if (JSON_MODE) {
+  console.log(JSON.stringify(report, null, 2));
+} else {
+  console.log(
+    `[seo-audit] ${report.pages} pages · ${report.indexable} indexable · ` +
+      `${report.sitemapUrls} sitemap URLs · ${report.markdownTwins} markdown twins`
+  );
+  if (warnings.length) {
+    const byWarn = new Map();
+    for (const w of warnings) {
+      if (!byWarn.has(w.rule)) byWarn.set(w.rule, []);
+      byWarn.get(w.rule).push(w.detail);
+    }
+    console.log(`[seo-audit] ${warnings.length} warning(s) (not blocking):`);
+    for (const [rule, ds] of [...byWarn].sort((a, b) => b[1].length - a[1].length)) {
+      console.log(`    ${rule}: ${ds.length}  e.g. ${ds[0]}`);
+    }
+  }
+  if (failures.length === 0) {
+    console.log("[seo-audit] 0 violations — all rules pass.");
+  } else {
+    for (const [rule, details] of [...grouped].sort((a, b) => b[1].length - a[1].length)) {
+      console.error(`\n  ${rule} (${details.length})`);
+      for (const d of details.slice(0, 10)) console.error(`    - ${d}`);
+      if (details.length > 10) console.error(`    … +${details.length - 10} more`);
+    }
+    console.error(`\n[seo-audit] ${failures.length} violation(s) across ${grouped.size} rule(s).`);
+  }
+}
+
+process.exit(failures.length ? 1 : 0);

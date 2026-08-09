@@ -15,6 +15,17 @@ export const metadata: Metadata = {
     description:
       "55% of EU visitors reject cookies. Here is the real impact on your analytics.",
     type: "article",
+    url: "https://sealmetrics.com/blog/consent-banner-impact-on-analytics/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "How Consent Banners Destroy Your Analytics Data",
+    description: "55% of EU visitors reject cookies. Here is the real impact on your analytics.",
+    images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
   },
   alternates: {
     languages: getAlternates("/blog/consent-banner-impact-on-analytics"),

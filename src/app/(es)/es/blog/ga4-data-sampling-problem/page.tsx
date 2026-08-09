@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "GA4 aplica muestreo de datos a volúmenes altos. Aquí está el impacto en tus datos y decisiones.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/ga4-data-sampling-problem/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/ga4-data-sampling-problem.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Muestreo de datos en GA4: por qué tus números de tráfico están mal",
+    description: "GA4 aplica muestreo de datos a volúmenes altos. Aquí está el impacto en tus datos y decisiones.",
+    images: ["https://sealmetrics.com/og/blog/ga4-data-sampling-problem.png"],
   },
   alternates: {
     languages: getAlternates("/blog/ga4-data-sampling-problem"),

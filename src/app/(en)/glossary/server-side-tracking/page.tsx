@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "What Is Server-Side Tracking? — SealMetrics Glossary",
@@ -14,8 +15,24 @@ export const metadata: Metadata = {
     title: "What Is Server-Side Tracking?",
     description: "Server-side tracking processes analytics on the server, avoiding ad blockers and client-side limitations.",
     type: "article",
+    url: "https://sealmetrics.com/glossary/server-side-tracking/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
-  alternates: { canonical: "https://sealmetrics.com/glossary/server-side-tracking/" },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "What Is Server-Side Tracking?",
+    description: "Server-side tracking processes analytics on the server, avoiding ad blockers and client-side limitations.",
+    images: ["https://sealmetrics.com/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://sealmetrics.com/glossary/server-side-tracking/",
+    // The Spanish page points here; without the return link the hreflang
+    // pair is one-sided and Google discards it.
+    languages: getAlternates("/glossary/server-side-tracking"),
+  },
 };
 
 export default function ServerSideTrackingPage() {

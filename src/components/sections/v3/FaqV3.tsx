@@ -76,9 +76,13 @@ export function FaqV3() {
                   }`}
                 >
                   <div className="flex justify-between items-center gap-6">
-                    <h4 className={`text-[17px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>
+                    {/* h3, not h4: the section title above is an h2, and AI
+                        engines lift a question-shaped heading together with the
+                        paragraph that follows it. The size lives in the class,
+                        so nothing moves visually. */}
+                    <h3 className={`text-[17px] font-semibold tracking-[-0.015em] ${isOpen ? "text-white" : "text-ink"}`}>
                       {item.q}
-                    </h4>
+                    </h3>
                     <span
                       className={`w-7 h-7 rounded-md flex items-center justify-center text-[18px] font-normal shrink-0 transition-transform ${
                         isOpen ? "bg-brand text-white rotate-45" : "bg-warm-50 text-ink-soft"
@@ -87,11 +91,17 @@ export function FaqV3() {
                       +
                     </span>
                   </div>
-                  {isOpen && (
-                    <p className="mt-3.5 text-[14.5px] leading-[1.6] text-white/75 max-w-[62ch]">
-                      {item.a}
-                    </p>
-                  )}
+                  {/* Always rendered, hidden when collapsed. Conditional
+                      rendering kept the answers out of the served HTML
+                      entirely, so no crawler or AI engine could read the most
+                      citable passages on the page. `hidden` keeps them in the
+                      markup at zero visual cost. */}
+                  <p
+                    hidden={!isOpen}
+                    className="mt-3.5 text-[14.5px] leading-[1.6] text-white/75 max-w-[62ch]"
+                  >
+                    {item.a}
+                  </p>
                 </button>
               );
             })}

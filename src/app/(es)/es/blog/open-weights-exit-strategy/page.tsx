@@ -3,6 +3,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { FaqSection } from "@/components/ui/FaqSection";
 import {
   articleSchema,
   breadcrumbSchema,
@@ -18,13 +19,24 @@ const DESCRIPTION =
   "Con una API cerrada alquilas un comportamiento que no puedes inspeccionar, que puede cambiar bajo tus pies sin avisar y a un precio que fija otro. Los pesos abiertos no son una ideología: son la capacidad de irte. Y una garantía de privacidad de la que no puedes marcharte no es una garantía.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "Pesos abiertos: tu estrategia de salida en IA",
+  description: "Con una API cerrada alquilas un comportamiento que no puedes inspeccionar y a un precio que fija otro. Los pesos abiertos son la capacidad de irte.",
   openGraph: {
     title: "Pesos abiertos como estrategia de salida",
     description:
       "Modelos de pesos abiertos frente a LLM propietarios en la empresa: fijar versiones, evitar la dependencia del proveedor (lock-in) y poder cambiar de host sin cambiar el producto.",
     type: "article",
+    url: "https://sealmetrics.com/es/blog/open-weights-exit-strategy/",
+    siteName: "SealMetrics",
+    locale: "es_ES",
+    images: ["https://sealmetrics.com/og/blog/open-weights-exit-strategy.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Pesos abiertos como estrategia de salida",
+    description: "Modelos de pesos abiertos frente a LLM propietarios en la empresa: fijar versiones, evitar la dependencia del proveedor (lock-in) y poder cambiar de host sin cambiar el producto.",
+    images: ["https://sealmetrics.com/og/blog/open-weights-exit-strategy.png"],
   },
   alternates: {
     languages: getAlternates(`/blog/${SLUG}`),
@@ -431,6 +443,7 @@ export default function OpenWeightsExitStrategyPageEs() {
               </div>
             </div>
           </section>
+          <FaqSection items={FAQ} locale="es" />
         </div>
       </article>
     </>

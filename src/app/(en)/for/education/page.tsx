@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
+    url: "https://sealmetrics.com/for/education/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Analytics for Education — GDPR Funnels | SealMetrics",
+    description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
+    images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/education/",

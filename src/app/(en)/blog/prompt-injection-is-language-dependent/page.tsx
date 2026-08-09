@@ -11,6 +11,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "prompt-injection-is-language-dependent";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "A model that ignores an injected instruction in Spanish can obey the same instruction in English. We found it in our own benchmark — and it is the reason a monolingual evaluation cannot certify a model as safe.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "The AI Security Flaw That Only Appears in Two Languages",
+  description: "A model that ignores an injected instruction in Spanish can obey it in English. A monolingual evaluation cannot certify a model as safe.",
   openGraph: {
     title: "Prompt Injection Resistance Is Language-Dependent",
     description:
       "The same attack, the same model, two languages, two outcomes. Why safety evaluations have to be multilingual — and how to run one.",
     type: "article",
+    url: "https://sealmetrics.com/blog/prompt-injection-is-language-dependent/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/prompt-injection-is-language-dependent.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "Prompt Injection Resistance Is Language-Dependent",
+    description: "The same attack, the same model, two languages, two outcomes. Why safety evaluations have to be multilingual — and how to run one.",
+    images: ["https://sealmetrics.com/og/blog/prompt-injection-is-language-dependent.png"],
   },
   alternates: {
     languages: getAlternates("/blog/prompt-injection-is-language-dependent"),
@@ -377,6 +389,8 @@ export default function PromptInjectionIsLanguageDependentPage() {
               , including the runs we discarded.
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>

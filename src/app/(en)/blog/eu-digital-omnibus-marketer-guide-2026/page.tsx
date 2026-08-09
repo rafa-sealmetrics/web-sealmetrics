@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     description:
       "Cookie banners could vanish for 60% of websites. Complete guide to COM(2025) 837.",
     type: "article",
+    url: "https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/eu-digital-omnibus-marketer-guide-2026.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "The EU Digital Omnibus Explained: Marketer Guide 2026",
+    description: "Cookie banners could vanish for 60% of websites. Complete guide to COM(2025) 837.",
+    images: ["https://sealmetrics.com/og/blog/eu-digital-omnibus-marketer-guide-2026.png"],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026/",

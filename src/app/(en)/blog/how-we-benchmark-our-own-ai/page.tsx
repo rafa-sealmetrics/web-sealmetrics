@@ -11,6 +11,7 @@ import {
   statisticClaimSchema,
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const SLUG = "how-we-benchmark-our-own-ai";
 const URL = `/blog/${SLUG}`;
@@ -19,13 +20,24 @@ const DESCRIPTION =
   "A copyable methodology for evaluating an LLM on your own product: real stack, ground truth computed live from the database, deterministic graders before any LLM judge, adversarial traps, Wilson confidence intervals — and full disclosure of the run we discarded.";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+  title: "How We Benchmark Our Own AI, Including the Runs We Binned",
+  description: "A copyable method for evaluating an LLM on your own product: live ground truth, deterministic graders before any LLM judge, and the run we threw away.",
   openGraph: {
     title: "How We Benchmark Our Own AI",
     description:
       "Real endpoint, live ground truth, deterministic graders, adversarial traps, confidence intervals — and the discarded run we published anyway. A methodology other teams can copy.",
     type: "article",
+    url: "https://sealmetrics.com/blog/how-we-benchmark-our-own-ai/",
+    siteName: "SealMetrics",
+    locale: "en_US",
+    images: ["https://sealmetrics.com/og/blog/how-we-benchmark-our-own-ai.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "How We Benchmark Our Own AI",
+    description: "Real endpoint, live ground truth, deterministic graders, adversarial traps, confidence intervals — and the discarded run we published anyway. A methodology other teams can copy.",
+    images: ["https://sealmetrics.com/og/blog/how-we-benchmark-our-own-ai.png"],
   },
   alternates: {
     languages: getAlternates("/blog/how-we-benchmark-our-own-ai"),
@@ -465,6 +477,8 @@ export default function HowWeBenchmarkOurOwnAiPage() {
               .
             </p>
           </div>
+
+          <FaqSection items={FAQ} locale="en" />
 
           <RelatedReading currentSlug={SLUG} />
         </div>
