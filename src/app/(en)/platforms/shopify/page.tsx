@@ -17,11 +17,11 @@ const DATE_MODIFIED = "2026-05-29";
 export const metadata: Metadata = {
   title: "Shopify analytics without cookies — SealMetrics integration",
   description:
-    "Install SealMetrics on Shopify in 5 minutes. Cookieless, reconciles with Shopify orders to within 15–20%, no consent banner required for the analytics layer.",
+    "Install SealMetrics on Shopify via the Pixel app and a theme app embed. Cookieless, purchases confirmed server-side, no consent banner required for the analytics layer.",
   openGraph: {
     title: "Shopify analytics without cookies — SealMetrics integration",
     description:
-      "Shopify Plus one-click install, Shopify Standard theme snippet, dataLayer event coverage, and order reconciliation patterns.",
+      "The SealMetrics Pixel app plus a Theme App Extension, connected from your dashboard. Full e-commerce funnel coverage, purchases confirmed server-side via webhook.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/platforms/shopify/",
@@ -42,22 +42,21 @@ export const metadata: Metadata = {
 };
 
 const events = [
-  { name: "page_viewed", maps: "Native Shopify event", note: "Pageview with channel and landing-page metadata." },
-  { name: "product_viewed", maps: "view_item (GA4 equivalent)", note: "Product page load. Variant ID, price, category captured." },
-  { name: "product_added_to_cart", maps: "add_to_cart", note: "Add-to-cart event with quantity and variant." },
-  { name: "checkout_started", maps: "begin_checkout", note: "First step of the Shopify checkout funnel." },
-  { name: "checkout_completed", maps: "purchase", note: "Order confirmation. Revenue, currency, order ID, line items." },
-  { name: "search_submitted", maps: "search", note: "On-site search query (term only — no PII)." },
+  { name: "pageview", maps: "Automatic", note: "Fires on every page load via the SealMetrics tracker." },
+  { name: "view_product", maps: "view_item (GA4 equivalent)", note: "Product page load. Product name, SKU, price, currency, ID." },
+  { name: "add_to_cart", maps: "add_to_cart", note: "Intercepts /cart/add requests. Product, price, quantity, currency." },
+  { name: "initiate_checkout", maps: "begin_checkout", note: "Fires once per checkout attempt — cart submit, checkout button, or Buy Now." },
+  { name: "purchase", maps: "purchase", note: "Confirmed server-side via Shopify's orders/create webhook. Revenue, currency, line items." },
 ];
 
 const faqs = [
   {
     q: "Does SealMetrics work on Shopify Standard or only Plus?",
-    a: "Both. Shopify Plus customers get the one-click app install (via the Shopify App Store). Shopify Standard customers add a theme.liquid snippet — 5 lines of code, pasted once into the <head> section of theme.liquid. The order events flow through Shopify's Customer Events API in both cases. No difference in coverage between the two plans.",
+    a: "Any Shopify plan that allows app embeds — there's no Plus/Standard distinction. You connect the SealMetrics Pixel app from your SealMetrics dashboard (OAuth), then enable the \"Sealmetrics Analytics\" app embed in your theme and paste your Account ID. Same install, same event coverage, on every plan.",
   },
   {
     q: "How does it reconcile with Shopify Analytics?",
-    a: "Aggregate channel revenue reported by SealMetrics typically lands within 15–20% of Shopify Analytics totals — the gap is shipping discounts, taxes and gift-card credits handled differently between the two systems. For per-order reconciliation, the order_id matches exactly: every order recorded in Shopify is recorded in SealMetrics with the same identifier, so finance can join the two datasets in BigQuery without ambiguity.",
+    a: "Aggregate channel revenue reported by SealMetrics typically lands within 15–20% of Shopify Analytics totals — the gap is shipping, discounts, taxes and gift-card credits handled differently between the two systems. SealMetrics does not store the Shopify order ID externally, by design, so reconciliation is at the aggregate/channel level, not a row-by-row join.",
   },
   {
     q: "Does it replace Shopify's native analytics?",
@@ -68,12 +67,12 @@ const faqs = [
     a: "Run both in parallel. GA4 keeps firing for Google Ads conversion import and for any GTM container you already have. SealMetrics installs alongside without touching GA4. After 30 days, most teams move strategic decisions to SealMetrics and keep GA4 as the Google Ads conduit. The full migration plan lives on /use-cases/ga4-migration.",
   },
   {
-    q: "Does it work with checkout.shopify.com (Shopify-hosted checkout)?",
-    a: "Yes. The Shopify-hosted checkout pages emit Customer Events that SealMetrics consumes server-to-server. No script needs to load on checkout.shopify.com itself. Conversion events are captured at the order confirmation step regardless of the checkout host.",
+    q: "Does it track the purchase on checkout.shopify.com (Shopify-hosted checkout)?",
+    a: "Yes. The purchase itself is confirmed server-side: when an order is placed, Shopify sends an orders/create webhook to SealMetrics with the revenue, currency and line items. No script needs to load on checkout.shopify.com at all — the browser-side loader only needs to see the funnel up to initiate_checkout.",
   },
   {
     q: "What about Shopify Markets and multi-currency?",
-    a: "Multi-currency stores are supported. Revenue is recorded in the original transaction currency and converted to a reporting currency (configurable per workspace) using daily ECB rates. Shopify Markets storefronts behave as separate properties or as one rolled-up property depending on how the install is configured.",
+    a: "Multi-currency stores are supported. Revenue is recorded in the original transaction currency and converted to a reporting currency using daily ECB rates. Shopify Markets storefronts behave as separate properties or as one rolled-up property depending on how the account is configured.",
   },
 ];
 
@@ -98,7 +97,7 @@ export default function ShopifyPlatformPage() {
           headline:
             "Shopify analytics without cookies — install, events, and order reconciliation",
           description:
-            "Install SealMetrics on Shopify Plus or Standard in under 15 minutes. Cookieless capture, full Customer Events coverage, order reconciliation within 15–20% of Shopify Analytics.",
+            "Install SealMetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full e-commerce funnel coverage, aggregate reconciliation within 15–20% of Shopify Analytics.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/platforms/shopify",
@@ -120,17 +119,17 @@ export default function ShopifyPlatformPage() {
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Shopify analytics.{" "}
             <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              Five minutes. No banner.
+              No banner.
             </em>
           </h1>
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
-            One-click on Shopify Plus, a theme snippet on Shopify
-            Standard. Native Customer Events coverage from pageview
-            to order confirmation. Aggregate channel revenue
-            reconciled to the Shopify backend within 15–20%.
+            One app, one theme embed, any Shopify plan. Full
+            e-commerce funnel coverage from pageview to order
+            confirmation. Aggregate channel revenue reconciled to
+            the Shopify backend within 15–20%.
           </p>
         </div>
       </section>
@@ -138,25 +137,27 @@ export default function ShopifyPlatformPage() {
       <TldrBlock
         answer={
           <>
-            SealMetrics installs on Shopify in five minutes — one
-            click on Shopify Plus via the App Store, or a 5-line
-            theme.liquid snippet on Shopify Standard. The tag is
-            cookieless and first-party (no consent banner required
-            for analytics), and consumes Shopify&rsquo;s Customer
-            Events API to capture the full funnel: pageview,
-            product_viewed, add_to_cart, checkout_started,
-            checkout_completed. Aggregate channel revenue
-            reconciles with Shopify Analytics totals within 15–20%
-            (the gap is taxes, discounts and gift cards handled
-            differently between systems). Order-level reconciliation
-            uses the same order_id, so finance can join both
-            datasets in BigQuery without ambiguity.
+            SealMetrics connects to Shopify through the SealMetrics
+            Pixel app (OAuth, from your SealMetrics dashboard) and a
+            Theme App Extension you enable as an app embed — the
+            same install on any Shopify plan, no Plus/Standard split.
+            The tag is cookieless and first-party (no consent banner
+            required for analytics) and covers the full funnel:
+            pageview, view_product, add_to_cart, initiate_checkout —
+            with the purchase confirmed server-side via
+            Shopify&rsquo;s orders/create webhook, not from the
+            browser. Aggregate channel revenue reconciles with
+            Shopify Analytics totals within 15–20% (the gap is
+            taxes, discounts and gift cards handled differently
+            between systems); SealMetrics does not store the
+            Shopify order ID externally, so reconciliation is at
+            the aggregate level, not a row-by-row join.
           </>
         }
         bullets={[
-          <><strong>5-minute install</strong> — App Store on Plus, theme snippet on Standard.</>,
-          <><strong>Full Customer Events coverage</strong> from pageview to checkout_completed.</>,
-          <><strong>Order reconciliation</strong> within 15–20% of Shopify Analytics aggregates.</>,
+          <><strong>One install path</strong> — Pixel app + theme app embed, every Shopify plan.</>,
+          <><strong>Full funnel coverage</strong> from pageview to a server-confirmed purchase.</>,
+          <><strong>Aggregate reconciliation</strong> within 15–20% of Shopify Analytics totals.</>,
           <><strong>No banner</strong> required for the analytics layer — cookieless first-party server-side.</>,
         ]}
       />
@@ -166,57 +167,45 @@ export default function ShopifyPlatformPage() {
         <div className="max-w-[840px] mx-auto px-5 sm:px-8">
           <h2 className="h-section">Install on Shopify</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
-            Two install paths depending on plan. Both cover the same
-            event surface; the difference is whether Shopify lets you
-            install apps or only edit theme code.
+            One install path for every Shopify plan that allows app
+            embeds — no distinction between Plus and Standard.
           </p>
 
           <div className="mt-10 space-y-6">
             <div className="border border-warm-100 rounded-2xl p-7 bg-warm-white">
               <div className="flex items-baseline gap-3 mb-3">
-                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Path A — Shopify Plus</span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft">5 min</span>
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Step 1 — Connect the app</span>
               </div>
               <ol className="mt-3 list-decimal pl-5 space-y-2 text-[15px] leading-[1.7] text-ink">
-                <li>Install the SealMetrics app from the Shopify App Store.</li>
-                <li>Authorise the Customer Events API scopes (read-only).</li>
-                <li>Configure the workspace ID — taken from the SealMetrics dashboard. Done.</li>
+                <li>In the SealMetrics dashboard, go to Settings → Integrations → Shopify.</li>
+                <li>Select the site you want to connect and enter your Shopify domain.</li>
+                <li>Click <strong>Connect Shopify</strong> and authorize the SealMetrics Pixel app — this registers the conversion webhook automatically.</li>
               </ol>
-              <p className="mt-4 text-[14.5px] leading-[1.65] text-ink-soft">
-                The app installs the pixel automatically, subscribes
-                to the Customer Events that map to the SealMetrics
-                event vocabulary, and starts ingesting within
-                seconds. No theme edits required.
-              </p>
             </div>
 
             <div className="border border-warm-100 rounded-2xl p-7 bg-warm-white">
               <div className="flex items-baseline gap-3 mb-3">
-                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Path B — Shopify Standard</span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft">10 min</span>
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Step 2 — Activate the tracker</span>
               </div>
               <ol className="mt-3 list-decimal pl-5 space-y-2 text-[15px] leading-[1.7] text-ink">
-                <li>Open Online Store → Themes → Edit code → <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded">theme.liquid</code>.</li>
-                <li>Paste the snippet (below) just before the closing <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded">&lt;/head&gt;</code> tag.</li>
-                <li>Save. Verify event firing in the SealMetrics debugger.</li>
+                <li>Copy your <strong>Account ID</strong> from the connected Shopify card in the dashboard.</li>
+                <li>In Shopify, open the theme editor → Theme → App embeds, and enable <strong>Sealmetrics Analytics</strong>.</li>
+                <li>Paste your Account ID into the embed&rsquo;s field and save.</li>
               </ol>
 
+              <p className="mt-4 text-[14.5px] leading-[1.65] text-ink-soft">
+                The embed loads the SealMetrics loader by account:
+              </p>
+
               <pre className="mt-5 p-5 bg-ink text-warm-50 rounded-xl text-[12.5px] leading-[1.6] overflow-x-auto font-mono">
-{`<!-- SealMetrics — cookieless analytics -->
-<script src="https://pixel.YOURDOMAIN.com/sm.js" async></script>
-<script>
-  window.sm = window.sm || function(){(sm.q=sm.q||[]).push(arguments)};
-  sm('init', 'YOUR_WORKSPACE_ID');
-</script>`}
+{`<script async src="https://t.sealmetrics.com/shopify-loader.js?account=YOUR_ACCOUNT_ID"></script>`}
               </pre>
 
               <p className="mt-4 text-[14.5px] leading-[1.65] text-ink-soft">
-                Replace <code className="font-mono">YOURDOMAIN.com</code>{" "}
-                with the CNAME you configured under your own domain
-                (pixel.yourdomain.com), and{" "}
-                <code className="font-mono">YOUR_WORKSPACE_ID</code>{" "}
-                with the value from the SealMetrics dashboard. That
-                is the entire client-side install.
+                The loader injects the tracker, writes SealMetrics
+                session attributes to the cart, and sets up the
+                microconversion listeners below. No shopper-facing
+                UI is rendered — the tracker is invisible by design.
               </p>
             </div>
           </div>
@@ -226,12 +215,11 @@ export default function ShopifyPlatformPage() {
       {/* EVENTS CAPTURED */}
       <section className="py-20 bg-warm-white border-t border-warm-100">
         <div className="max-w-[960px] mx-auto px-5 sm:px-8">
-          <h2 className="h-section">Customer Events captured</h2>
+          <h2 className="h-section">Events captured</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
-            SealMetrics subscribes to Shopify&rsquo;s standard
-            Customer Events surface. No custom event configuration
-            required — the events below flow automatically from day
-            one.
+            No custom event configuration required — the events
+            below flow automatically once the app embed is active
+            and the conversion webhook is registered.
           </p>
 
           <div className="mt-10 overflow-x-auto">
@@ -257,10 +245,11 @@ export default function ShopifyPlatformPage() {
 
           <p className="mt-8 text-[14.5px] leading-[1.65] text-ink-soft">
             All events are aggregate-anonymous: no customer email, no
-            checkout email, no IP address, no fingerprint stored.
-            What is captured is what is needed for channel attribution
-            and revenue reporting — order ID, line items, revenue,
-            currency, channel and landing page.
+            checkout email, no IP address, no fingerprint stored, and
+            the order ID is not stored externally. What is captured is
+            what is needed for channel attribution and revenue
+            reporting — line items, revenue, currency, channel and
+            landing page.
           </p>
         </div>
       </section>
@@ -289,15 +278,14 @@ export default function ShopifyPlatformPage() {
             </div>
 
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
-              <h3 className="text-[16px] font-semibold text-ink mb-3">Order-by-order</h3>
+              <h3 className="text-[16px] font-semibold text-ink mb-3">Why not order-by-order</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Every order recorded in Shopify is recorded in
-                SealMetrics with the same <code className="font-mono text-[13px]">order_id</code>.
-                Finance can join the SealMetrics dataset and the
-                Shopify dataset in BigQuery on{" "}
-                <code className="font-mono text-[13px]">order_id</code>{" "}
-                with no ambiguity — and audit per-channel
-                attribution against per-order reality.
+                SealMetrics does not store the Shopify order ID
+                externally — that&rsquo;s deliberate, part of the
+                same privacy-first design that keeps the analytics
+                layer cookieless. Reconciliation happens at the
+                aggregate/channel level instead, which is also
+                where the marketing decisions actually get made.
               </p>
             </div>
           </div>
@@ -382,22 +370,22 @@ export default function ShopifyPlatformPage() {
         locale="en"
         titleEn={
           <>
-            Install in <em
+            Connect the app. <em
               className="italic font-medium"
               style={{ color: "#E8B84B", fontStyle: "italic" }}
             >
-              five minutes
-            </em>. See real channel revenue this week.
+              See real channel revenue
+            </em> this week.
           </>
         }
         titleEs={
           <>
-            Instala en <em
+            Conecta la app. <em
               className="italic font-medium"
               style={{ color: "#E8B84B", fontStyle: "italic" }}
             >
-              cinco minutos
-            </em>. Ve los ingresos reales por canal esta semana.
+              Ve los ingresos reales por canal
+            </em> esta semana.
           </>
         }
         ledeEn="Book 30 minutes with the founder. We install on your Shopify store live, run the first reconciliation against your CRM, and you keep the dashboard."

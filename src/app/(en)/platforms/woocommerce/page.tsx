@@ -17,11 +17,11 @@ const DATE_MODIFIED = "2026-05-29";
 export const metadata: Metadata = {
   title: "WooCommerce analytics without cookies — SealMetrics plugin",
   description:
-    "Install SealMetrics on WooCommerce in 10 minutes. Cookieless, reconciles with WooCommerce orders, no consent banner required for the analytics layer.",
+    "Install the SealMetrics WooCommerce plugin from a ZIP download. Cookieless, no order IDs stored externally, no consent banner required for the analytics layer.",
   openGraph: {
     title: "WooCommerce analytics without cookies — SealMetrics plugin",
     description:
-      "WordPress plugin install, WooCommerce hook coverage, and the order_id reconciliation pattern for finance teams.",
+      "WordPress plugin install from a GitHub release, full e-commerce funnel coverage, aggregate reconciliation for finance teams.",
     type: "article",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/platforms/woocommerce/",
@@ -42,12 +42,11 @@ export const metadata: Metadata = {
 };
 
 const events = [
-  { name: "page_viewed", hook: "wp_head", note: "Pageview with channel, landing-page and UTM metadata." },
-  { name: "product_viewed", hook: "woocommerce_after_single_product", note: "Product page. Variant ID, price, category captured." },
-  { name: "product_added_to_cart", hook: "woocommerce_add_to_cart", note: "Cart add. Quantity, variant, line value." },
-  { name: "checkout_started", hook: "woocommerce_before_checkout_form", note: "Begin checkout step. Cart contents, total." },
-  { name: "order_placed", hook: "woocommerce_thankyou", note: "Order confirmation. Revenue, currency, order ID, line items, status." },
-  { name: "search_submitted", hook: "pre_get_posts", note: "On-site product search. Term only, no PII." },
+  { name: "pageview", hook: "Automatic", note: "All pages, with content grouping." },
+  { name: "view_item", hook: "woocommerce_after_single_product", note: "Product page. Product name, SKU, price, currency, category, brand." },
+  { name: "add_to_cart", hook: "woocommerce_add_to_cart", note: "Cart add. Quantity, variant attributes, line value." },
+  { name: "begin_checkout", hook: "woocommerce_before_checkout_form", note: "Begin checkout step. Cart total, currency, item count." },
+  { name: "purchase", hook: "woocommerce_thankyou", note: "Order confirmation. Revenue, currency, payment method, coupon, items array." },
 ];
 
 const faqs = [
@@ -57,7 +56,7 @@ const faqs = [
   },
   {
     q: "Does it support WooCommerce Subscriptions and Bookings?",
-    a: "Yes. The plugin subscribes to the WooCommerce subscription_payment_complete and booking_completed hooks. Recurring revenue is recorded with the original order_id chain so finance can see lifetime channel attribution per customer in BigQuery (aggregate, not per-individual).",
+    a: "The plugin tracks the standard WooCommerce purchase event on order confirmation, which covers the initial subscription or booking order. It does not have dedicated hooks for recurring renewal payments — for full subscription lifecycle reporting, pair it with your subscription platform's own dashboard.",
   },
   {
     q: "Does it work with WPML or Polylang for multilingual stores?",
@@ -98,7 +97,7 @@ export default function WooCommercePlatformPage() {
           headline:
             "WooCommerce analytics without cookies — install, hooks, and order reconciliation",
           description:
-            "Install SealMetrics on WooCommerce in 10 minutes. Cookieless capture, full WooCommerce hook coverage, order_id reconciliation for finance teams.",
+            "Install the SealMetrics WooCommerce plugin from a GitHub release ZIP. Cookieless capture, full WooCommerce hook coverage, aggregate reconciliation for finance teams.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/platforms/woocommerce",
@@ -115,14 +114,14 @@ export default function WooCommercePlatformPage() {
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             WooCommerce analytics.{" "}
             <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              Ten minutes. No banner.
+              No banner.
             </em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             A WordPress plugin that hooks into the WooCommerce action
             surface — from pageview through order confirmation —
-            without writing a cookie. Order data reconciles with the
-            WooCommerce backend on the same order_id.
+            without writing a cookie. Revenue reconciles with the
+            WooCommerce backend at the channel level.
           </p>
         </div>
       </section>
@@ -131,24 +130,24 @@ export default function WooCommercePlatformPage() {
         answer={
           <>
             SealMetrics for WooCommerce installs as a standard
-            WordPress plugin in 10 minutes. It subscribes to the
-            WooCommerce action hooks — <code>woocommerce_add_to_cart</code>,
+            WordPress plugin from a downloaded ZIP file. It
+            subscribes to the WooCommerce action hooks —
+            {" "}<code>woocommerce_add_to_cart</code>,
             {" "}<code>woocommerce_before_checkout_form</code>,
             {" "}<code>woocommerce_thankyou</code> — and records each
             event as an aggregate, anonymous count with channel and
             campaign metadata. No cookie is set. No customer email is
             collected. No banner is required for the analytics layer.
-            Every order recorded in WooCommerce is recorded in
-            SealMetrics with the same <code>order_id</code>, so
-            finance can join both datasets in BigQuery without
-            ambiguity.
+            SealMetrics does not store the WooCommerce order ID
+            externally, so reconciliation with your WooCommerce
+            reports happens at the aggregate/channel level.
           </>
         }
         bullets={[
-          <><strong>10-minute install</strong> — standard WordPress plugin, zero config.</>,
-          <><strong>Full WooCommerce hook coverage</strong> from product_viewed to order_placed.</>,
-          <><strong>order_id reconciliation</strong> — finance can join SealMetrics + WooCommerce datasets natively.</>,
-          <><strong>WPML / Polylang compatible</strong>, supports Subscriptions and Bookings.</>,
+          <><strong>Plugin install</strong> — WordPress ZIP upload, zero build tooling.</>,
+          <><strong>Full WooCommerce hook coverage</strong> from view_item to purchase.</>,
+          <><strong>Channel-level reconciliation</strong> against your WooCommerce reports.</>,
+          <><strong>WPML / Polylang compatible</strong>.</>,
         ]}
       />
 
@@ -163,22 +162,21 @@ export default function WooCommercePlatformPage() {
           </p>
 
           <ol className="mt-10 space-y-5 text-[15.5px] leading-[1.7] text-ink list-decimal pl-6">
-            <li>WordPress admin → Plugins → Add New → search &ldquo;SealMetrics&rdquo; → Install &amp; Activate.</li>
-            <li>Open the SealMetrics settings panel. Paste your workspace ID (taken from the SealMetrics dashboard).</li>
+            <li>Download the plugin ZIP from SealMetrics&rsquo; GitHub releases.</li>
+            <li>WordPress admin → Plugins → Add New → Upload Plugin → select the ZIP → Install Now → Activate.</li>
+            <li>Go to Settings → SealMetrics and paste your Account ID (from the SealMetrics dashboard).</li>
             <li>
-              Configure the pixel CNAME under your own domain
-              (<code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded">pixel.yourdomain.com</code>) —
-              this keeps the request first-party and invisible to ad blockers.
+              Optionally set a custom pixel domain under your own
+              domain for first-party tracking — this keeps the
+              request invisible to ad blockers.
             </li>
             <li>Save. The plugin starts ingesting on the next pageview. Verify in the SealMetrics debugger.</li>
           </ol>
 
           <p className="mt-8 text-[14.5px] leading-[1.65] text-ink-soft">
-            For non-managed WordPress (self-hosted, WP Engine,
-            WP-CLI), the plugin is also available via direct download
-            and via <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded">wp plugin install sealmetrics</code>.
-            Multisite networks are supported with per-site or
-            network-wide activation.
+            Requires WordPress 5.8+, WooCommerce 6.0+ and PHP 7.4+.
+            The plugin is distributed as a GitHub release ZIP, not
+            through the WordPress.org plugin directory.
           </p>
         </div>
       </section>
@@ -245,13 +243,14 @@ export default function WooCommercePlatformPage() {
             </div>
 
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
-              <h3 className="text-[16px] font-semibold text-ink mb-3">Order-by-order</h3>
+              <h3 className="text-[16px] font-semibold text-ink mb-3">Why not order-by-order</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Every WooCommerce order is recorded in SealMetrics
-                with the same <code className="font-mono text-[13px]">order_id</code>{" "}
-                from the wp_posts table. Finance joins both datasets
-                in BigQuery on <code className="font-mono text-[13px]">order_id</code>{" "}
-                — no ambiguity, no fuzzy matching.
+                SealMetrics does not store the WooCommerce order ID
+                externally — that&rsquo;s deliberate, part of the
+                same privacy-first design that keeps the analytics
+                layer cookieless. Reconciliation happens at the
+                aggregate/channel level instead, which is also
+                where the marketing decisions actually get made.
               </p>
             </div>
           </div>
@@ -328,12 +327,12 @@ export default function WooCommercePlatformPage() {
         locale="en"
         titleEn={
           <>
-            Install in <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>ten minutes</em>. See real channel revenue this week.
+            Install the plugin. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>See real channel revenue</em> this week.
           </>
         }
         titleEs={
           <>
-            Instala en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>diez minutos</em>. Ve ingresos reales por canal esta semana.
+            Instala el plugin. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Ve ingresos reales por canal</em> esta semana.
           </>
         }
         ledeEn="Book 30 minutes with the founder. We install on your WooCommerce store live, hook into the right actions, and run the first reconciliation against your CRM."
