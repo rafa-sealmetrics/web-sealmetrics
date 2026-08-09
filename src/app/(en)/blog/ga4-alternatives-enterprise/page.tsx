@@ -63,7 +63,7 @@ const alternatives = [
   {
     name: "SealMetrics",
     url: "https://sealmetrics.com",
-    pricing: "From \u20ac599/mo (\u20ac5,988/yr)",
+    pricing: "From \u20ac499/mo billed annually (\u20ac5,988/yr)",
     dataCompleteness: "100% in EU",
     euCompliance:
       "GDPR compliant by design — no PII collected, no cookies, no consent required, EU-only data residency",
@@ -481,7 +481,7 @@ export default function GA4AlternativesEnterprisePage() {
                     Pricing:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    From {"\u20ac"}599/mo ({"\u20ac"}5,988/yr)
+                    From {"\u20ac"}499/mo billed annually ({"\u20ac"}5,988/yr)
                   </span>
                 </div>
                 <div>

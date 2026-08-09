@@ -52,7 +52,7 @@ const criteria = [
     n: "02",
     title: "No personal data processed",
     requirement: "AEPD aligns with the EDPB Opinion 5/2019: if the processing does not relate to an identified or identifiable person, GDPR material scope does not apply.",
-    us: "No IP address collected. No User-Agent fingerprint stored. No identifier generated. The events are channel-level aggregates from the moment they hit the server.",
+    us: "No IP address stored — used transiently in memory, then discarded. No User-Agent fingerprint stored. No identifier generated. The events are channel-level aggregates from the moment they hit the server.",
   },
   {
     n: "03",

@@ -52,7 +52,7 @@ const criteria = [
     n: "02",
     title: "No personal-data processing",
     requirement: "DSK orientation paper: if no personal data is processed, GDPR's material scope does not apply.",
-    us: "Aggregate channel counts only. No IP address collected, no identifier created, no per-visitor profile. Nothing relating to an identifiable person.",
+    us: "Aggregate channel counts only. No IP address stored, no identifier created, no per-visitor profile. Nothing relating to an identifiable person.",
   },
   {
     n: "03",

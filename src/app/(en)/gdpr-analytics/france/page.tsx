@@ -58,7 +58,7 @@ const criteria = [
     n: "03",
     title: "IP anonymisation or non-collection",
     cnil: "Last octet of IP addresses must be removed before processing (or IPs not collected at all).",
-    us: "We do not collect IP addresses at all. The CNIL requirement is met by exceeding it.",
+    us: "No IP address is ever stored — it has no column in any analytics database. The IP is used transiently in memory during request handling and then discarded. The CNIL requirement is met by exceeding it.",
   },
   {
     n: "04",
@@ -261,7 +261,8 @@ export default function GdprAnalyticsFrancePage() {
             </p>
             <p className="text-ink">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand">SealMetrics:</span>{" "}
-              We do not collect IP addresses at all.
+              No IP address is ever stored — it is used transiently in memory
+              during request handling and then discarded.
             </p>
             <hr className="border-warm-100" />
             <p className="text-ink-soft">

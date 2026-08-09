@@ -97,7 +97,7 @@ const authorities = [
     country: "Reino Unido",
     body: "ICO (PECR)",
     summary:
-      "PECR Regulación 6(4) excluye cookies «estrictamente necesarias» o usadas para analítica que no identifica usuarios. Tras el Brexit, alineada con el razonamiento del EDPB.",
+      "La Sección 99 de la Data (Use and Access) Act 2025 modifica la Regulación 6 de PECR para permitir almacenar o acceder a información en el dispositivo del usuario sin consentimiento cuando la única finalidad es compilar estadísticas. En vigor desde el 5 de febrero de 2026.",
   },
   {
     country: "Países Bajos",
