@@ -11,6 +11,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "three-questions-to-ask-seal-ai";
 const URL = `/es/blog/${SLUG}`;
@@ -284,6 +285,11 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
               en una página de categoría es una señal.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Ya tienes tus propias tres preguntas? Hazlas en una demo contra tu tráfico real y compara lo que responde Seal AI con lo que tardaría tu equipo en sacarlas a mano."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Cómo preguntar mejor
             </h2>
@@ -366,6 +372,11 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
               tienes la introducción breve.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Quieres pasar de las preguntas de ejemplo a las tuyas? Reserva una demo y lanza tus tres preguntas sobre tu propio dato, con los datos del día listos antes de las 6 AM."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

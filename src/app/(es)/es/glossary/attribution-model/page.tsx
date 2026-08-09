@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es un modelo de atribución? — Glosario",
@@ -72,6 +73,8 @@ export default function AttributionModelEsPage() {
             SealMetrics no aplica modelos <Link href={glossaryHref("multi-touch-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch</Link>: hace <Link href={glossaryHref("revenue-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución de ingresos last-click</Link> sobre el 100% del dato observado, de forma anónima y a nivel de canal. Es una decisión de arquitectura, no una limitación temporal: no se reconstruyen recorridos por usuario porque no se identifica a ningún usuario.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="SealMetrics usa un solo modelo: last-click sobre el 100% de tu tráfico. Mira lo que cuenta un modelo completo frente a datos modelados." />
 
         <RelatedGlossaryTerms slug="attribution-model" locale="es" />
 

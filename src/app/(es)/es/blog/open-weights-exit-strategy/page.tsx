@@ -11,6 +11,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "open-weights-exit-strategy";
 const URL = `/es/blog/${SLUG}`;
@@ -273,6 +274,11 @@ export default function OpenWeightsExitStrategyPageEs() {
               </li>
             </ul>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Podrías cambiar de proveedor de IA sin cambiar de analítica? En una demo ves cómo LENS corre sobre pesos abiertos — gpt-oss-120b en Scaleway París — y qué pasaría si mañana quisieras llevártelo."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Nuestro montaje, en concreto
             </h2>
@@ -408,6 +414,11 @@ export default function OpenWeightsExitStrategyPageEs() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Le has hecho ya a tu proveedor la pregunta de la salida? Háznosla a nosotros en una demo: modelo abierto, tu clave de Anthropic, OpenAI, Gemini o DeepSeek si la prefieres, y tu dato siempre en la UE."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

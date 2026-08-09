@@ -4,6 +4,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Analítica RGPD en España: FAQ para tiendas online",
@@ -133,6 +134,11 @@ export default function GdprAnalyticsSpainFaqEsPage() {
               Información general sobre cómo las normas españolas y de la UE aplican a la analítica web, no asesoramiento legal. Confirma tu configuración concreta con tu DPO o asesoría.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Tu caso no encaja del todo en estas siete respuestas? Tráelo a una demo y ve cómo mediría tu tienda sin banner: dato anónimo y agregado, alojado en la UE."
+          />
 
           <div className="mt-16 pt-10 border-t border-warm-100">
             <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

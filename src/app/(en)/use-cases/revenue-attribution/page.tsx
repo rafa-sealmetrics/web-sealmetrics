@@ -11,6 +11,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -319,6 +320,11 @@ export default function RevenueAttributionPage() {
 
       <section className="py-20 bg-warm-white border-t border-warm-100">
         <div className="max-w-[960px] mx-auto px-5 sm:px-8">
+          <CommercialModule
+            hook="Want this reconciliation on your own ledger? We run last-click on your traffic and join it against your CRM — live, in 30 minutes."
+            className="mb-12"
+          />
+
           <h2 className="h-section text-center">Related reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12">
             <Link href="/complete-data" className="group block border border-warm-100 rounded-xl p-7 bg-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5">

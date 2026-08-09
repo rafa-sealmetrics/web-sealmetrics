@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "residency-is-not-sovereignty";
 const URL = `/blog/${SLUG}`;
@@ -235,6 +236,10 @@ export default function ResidencyIsNotSovereigntyPage() {
               guarantee.
             </p>
 
+            <CommercialModule
+              hook="Residency you can verify: inference on Scaleway Paris, an EU provider — not an EU region of a US cloud. Check each link of the chain in a demo."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               The architecture that sidesteps the whole debate
             </h2>
@@ -311,6 +316,10 @@ export default function ResidencyIsNotSovereigntyPage() {
               answer goes wrong.
             </p>
           </div>
+
+          <CommercialModule
+            hook="The three audit questions above apply to us too. Put them to SealMetrics in a demo and compare the answers with your current vendor's."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

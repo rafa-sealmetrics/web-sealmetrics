@@ -10,6 +10,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "analytics-if-data-privacy-framework-falls";
 const URL = `/es/blog/${SLUG}`;
@@ -279,6 +280,11 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
               anteriores fueron tan dolorosas.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Tu medición depende de que el Marco de Privacidad de Datos sobreviva a la próxima sentencia? Ve en una demo cómo sería medir sin transferencias a EE. UU. que defender: dato anónimo, agregado y procesado en la UE."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Qué configuraciones son estructuralmente inmunes
             </h2>
@@ -404,6 +410,11 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
               arquitectura no.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Cuánto tendrías que re-documentar si el Marco cae mañana? En una demo ves tu propia medición sobre una arquitectura a la que la sentencia le da igual — 100% de captura, todo en la UE."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

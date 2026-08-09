@@ -10,6 +10,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "audit-your-analytics-ai-privacy";
 const URL = `/es/blog/${SLUG}`;
@@ -331,6 +332,11 @@ export default function AuditYourAnalyticsAiPrivacyPageEs() {
               convierte una afirmación en prueba.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Quieres oír estas cinco respuestas en directo en lugar de leerlas en un PDF? Haznos las cinco preguntas del checklist en una demo: modelo abierto gpt-oss-120b en Scaleway París, dato en Dublín, nada entrena modelos de terceros."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Cómo suena una buena respuesta y cómo suena una evasiva
             </h2>
@@ -512,6 +518,11 @@ export default function AuditYourAnalyticsAiPrivacyPageEs() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Vas a pasarle este checklist a tu proveedor actual? Pásanoslo a nosotros primero en una demo y compara las respuestas sobre tu propio caso."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

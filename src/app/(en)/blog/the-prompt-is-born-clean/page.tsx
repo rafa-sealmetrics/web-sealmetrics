@@ -11,6 +11,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "the-prompt-is-born-clean";
 const URL = `/blog/${SLUG}`;
@@ -214,6 +215,10 @@ export default function ThePromptIsBornCleanPage() {
               collected has no failure mode.
             </p>
 
+            <CommercialModule
+              hook="The prompt cannot leak what the database never stored. See exactly what LENS sends to the model — field by field — in a demo."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               What is actually in the prompt
             </h2>
@@ -364,6 +369,10 @@ export default function ThePromptIsBornCleanPage() {
               subpoenaed, or turn up in a training set by accident.
             </p>
           </div>
+
+          <CommercialModule
+            hook="Privacy by architecture beats privacy by promise: no personal data in, none out, inference on Scaleway Paris. Audit the whole path in 30 minutes."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

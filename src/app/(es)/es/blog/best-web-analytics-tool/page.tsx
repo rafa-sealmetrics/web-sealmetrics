@@ -20,6 +20,7 @@ import {
   ScorePill,
   ScrollableTable,
 } from "@/components/ui/RequirementBlocks";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "La mejor herramienta de analítica web: 12 requisitos",
@@ -1060,6 +1061,11 @@ export default function MejorHerramientaAnaliticaWebPage() {
               el gasto. Las decisiones lo son.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Cuántos de estos criterios supera tu herramienta actual? Trae la lista a una demo y puntúa a SealMetrics en directo sobre tu propio caso."
+            />
+
             <h2 className={h2Class}>
               Cómo puntúa SealMetrics contra esta lista
             </h2>
@@ -1205,6 +1211,11 @@ export default function MejorHerramientaAnaliticaWebPage() {
               ))}
             </div>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa SealMetrics sobre tu propio dominio: 100% de captura, sin banner y last-click sobre todo el dato."
+          />
 
           <ComparisonLinks locale="es" />
 

@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is a Consent Management Platform (CMP)?",
@@ -59,6 +60,8 @@ export default function ConsentManagementPlatformPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The alternative</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not require a CMP for its operation because it does not use cookies or collect personal data. This eliminates the consent rejection data loss vector entirely while maintaining full <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link>.</p>
         </div>
+        <CommercialModule hook="A CMP decides what your analytics sees. SealMetrics stores nothing on the device, so nothing needs asking — see your numbers without a consent gate in front." />
+
         <RelatedGlossaryTerms slug="consent-management-platform" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

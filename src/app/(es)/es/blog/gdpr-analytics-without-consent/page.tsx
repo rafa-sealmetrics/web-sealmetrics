@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Analítica conforme con RGPD sin banners de consentimiento",
@@ -212,6 +213,11 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             con sus principios.
           </p>
 
+          <CommercialModule
+            locale="es"
+            hook="¿Tu analítica actual superaría los criterios de exención de la CNIL? En una demo repasamos requisito a requisito cómo los cumple SealMetrics midiendo tu propio tráfico."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Requisitos técnicos para analítica sin consentimiento
           </h2>
@@ -365,6 +371,11 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          locale="es"
+          hook="¿Cuánto dato recuperarías midiendo sin banner? Entre el 40% y el 60% de tus visitantes rechaza el consentimiento — ve en una demo tus informes con el 100% de las visitas."
+        />
 
         <div className="mt-16 pt-10 border-t border-warm-100">
           <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

@@ -11,6 +11,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "seal-ai-vs-bring-your-own-key";
 const URL = `/es/blog/${SLUG}`;
@@ -329,6 +330,11 @@ export default function SealAiVsByokPageEs() {
               una opción con deberes.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Aún dudas entre la opción por defecto y tu propia clave? En una demo ves las dos corriendo sobre tu tráfico: gpt-oss-120b en Scaleway París, o tu clave de Anthropic, OpenAI, Gemini o DeepSeek."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Cara a cara
             </h2>
@@ -422,6 +428,11 @@ export default function SealAiVsByokPageEs() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Empezar con Seal AI y pasar a tu propia clave más adelante? Ve en una demo cómo se cambia sin migración — la base de dato es la misma en ambos caminos."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

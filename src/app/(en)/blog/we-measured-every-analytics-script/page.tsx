@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "We Measured Every Analytics Script. Here Is What We Found.",
@@ -202,6 +203,10 @@ export default function MeasuredScriptsPage() {
             than SealMetrics. Adobe Analytics is 60x heavier.
           </p>
 
+          <CommercialModule
+            hook="GA4 is 52x heavier than the 2.5 KB SealMetrics script in this test. Weigh your own stack on your own pages and compare."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             What these numbers actually mean
           </h2>
@@ -287,6 +292,10 @@ export default function MeasuredScriptsPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="Script weight is a tax every visitor pays on every pageview. See what measurement at 2.5 KB changes in your Core Web Vitals."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Data Loss in Analytics? Causes, Impact, Solutions",
@@ -199,6 +200,10 @@ export default function WhatIsDataLossInAnalyticsPage() {
             reduced data set, this further degrades accuracy.
           </p>
 
+          <CommercialModule
+            hook="Four causes, one compounding gap — consent rejection alone removes 40–60% of visitors. Quantify the loss on your own site, live."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Quantifying the damage
           </h2>
@@ -382,6 +387,10 @@ export default function WhatIsDataLossInAnalyticsPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="Data loss is invisible in the tool that suffers it. Run SealMetrics in parallel for a month and measure the gap against your current numbers."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

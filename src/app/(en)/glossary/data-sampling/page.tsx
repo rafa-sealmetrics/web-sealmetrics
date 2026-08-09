@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Data Sampling in Analytics? — SealMetrics Glossary",
@@ -73,6 +74,8 @@ export default function DataSamplingPage() {
             <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like SealMetrics record every session individually with no sampling applied. When you see 72,847 visitors, that number represents 72,847 actual sessions — not a statistical estimate.
           </p>
         </div>
+
+        <CommercialModule hook="SealMetrics never samples — every report is computed on every session, not a statistical estimate. See your own reports at full resolution." />
 
         <RelatedGlossaryTerms slug="data-sampling" />
 

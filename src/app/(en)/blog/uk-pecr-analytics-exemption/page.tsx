@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "UK Analytics Exemption — PECR Self-Assessment",
@@ -199,6 +200,10 @@ export default function UkPecrPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="We published our self-assessment against the UK exemption above. Test it against your own PECR reading — with our team in the room."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

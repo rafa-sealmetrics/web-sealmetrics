@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Revenue Attribution? — SealMetrics Glossary",
@@ -64,6 +65,8 @@ export default function RevenueAttributionPage() {
 
           <p>Because every pageview is captured through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, last-click attribution reflects the full observed traffic — not the cookie-accepting minority.</p>
         </div>
+        <CommercialModule hook="See your revenue attributed last-click across 100% of orders — not the consented fraction." />
+
         <RelatedGlossaryTerms slug="revenue-attribution" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

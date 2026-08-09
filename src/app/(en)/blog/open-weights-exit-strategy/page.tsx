@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "open-weights-exit-strategy";
 const URL = `/blog/${SLUG}`;
@@ -236,6 +237,10 @@ export default function OpenWeightsExitStrategyPage() {
               .
             </p>
 
+            <CommercialModule
+              hook="This is why LENS runs open-weights gpt-oss-120b on Scaleway Paris — the model cannot be deprecated out from under you. Ask us the exit question directly."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               What open weights actually buy you
             </h2>
@@ -401,6 +406,10 @@ export default function OpenWeightsExitStrategyPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="An exit strategy you cannot test is not one. BYOK — Anthropic, OpenAI, Gemini or DeepSeek — is the tested exit. See the switch in a demo."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

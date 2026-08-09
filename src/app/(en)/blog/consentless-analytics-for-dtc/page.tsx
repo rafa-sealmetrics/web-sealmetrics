@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Consentless Analytics for DTC — 2026 Guide",
@@ -192,6 +193,10 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule
+            hook="Consentless means the banner stops deciding what your dashboard sees. Measure your DTC funnel on every visit, including the 40–60% who reject the banner."
+          />
 
           <RelatedReading currentSlug="consentless-analytics-for-dtc" />
 

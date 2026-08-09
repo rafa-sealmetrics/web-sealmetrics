@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics for Hotels — 2026 Guide",
@@ -200,6 +201,10 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule
+            hook="Direct bookings are where the 40–60% consent gap hurts most. See your booking funnel measured on every visit — banner or no banner."
+          />
 
           <RelatedReading currentSlug="cookieless-analytics-for-hotels" />
 

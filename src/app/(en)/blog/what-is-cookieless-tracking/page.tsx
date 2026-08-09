@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Cookieless Tracking? A Complete Guide for 2026",
@@ -244,6 +245,10 @@ export default function WhatIsCookielessTrackingPage() {
             shows the exact cascade for your traffic profile.
           </p>
 
+          <CommercialModule
+            hook="Cookieless is not a workaround — it is measurement that never needed the banner. See the difference on your own traffic, side by side with GA4."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Is cookieless tracking GDPR compliant?
           </h2>
@@ -366,6 +371,10 @@ export default function WhatIsCookielessTrackingPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="The practical question is not the definition — it is how many conversions the cookie path costs you. 40–60% of visitors never consent. Measure your gap."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

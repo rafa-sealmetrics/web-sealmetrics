@@ -11,6 +11,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "analytics-if-data-privacy-framework-falls";
 const URL = `/blog/${SLUG}`;
@@ -268,6 +269,10 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPage() {
               why the previous rounds were so painful.
             </p>
 
+            <CommercialModule
+              hook="If your analytics never exports personal data, there is nothing to re-paper. See what a structurally immune setup looks like before the next Schrems."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Which setups are structurally immune
             </h2>
@@ -378,6 +383,10 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPage() {
               transfer to defend. Case law changes. Architecture does not.
             </p>
           </div>
+
+          <CommercialModule
+            hook="Aggregate-only, EU-hosted measurement does not care which framework survives. Check your own stack against that bar in a 30-minute review."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

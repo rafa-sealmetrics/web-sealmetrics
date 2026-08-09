@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaqAccordionV3 } from "./FaqAccordionV3";
 import { FinalCtaSharedV3 } from "./FinalCtaSharedV3";
+import { PRICING, fmtPrice } from "@/lib/content/pricing";
 
 type Locale = "en" | "es";
 
@@ -36,10 +37,15 @@ export function VerticalPageV3({
 }) {
   const { locale } = data;
   const demoHref = locale === "es" ? "/es/demo" : "/demo";
+  const pricingHref = locale === "es" ? "/es/pricing" : "/pricing";
+  const anchorPrice = fmtPrice(PRICING.growth.annual, locale);
+  // Price anchor in the hero: against GA360/Adobe's opaque "contact sales",
+  // showing the number early is the competitive advantage — see
+  // PRD-CONVERSION-REDESIGN.md §3 finding 7.
   const micro =
     locale === "es"
-      ? "14 días gratis · Alojado en UE"
-      : "14-day free trial · EU-hosted";
+      ? `Desde ${anchorPrice}/mes facturación anual · Prueba de 14 días · Alojado en UE`
+      : `From ${anchorPrice}/mo billed annually · 14-day trial · EU-hosted`;
 
   return (
     <>
@@ -61,22 +67,14 @@ export function VerticalPageV3({
           >
             {data.lede}
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-9">
-            <Link
-              href={demoHref}
-              className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-            >
-              {locale === "es" ? "Reserva una demo" : "Book a demo"} →
+          {/* No CTA pair here on purpose: persona pages build the case first
+              (pains → outcomes) and ask after — CLAUDE.md rule 16. The header
+              carries the persistent "Book a Demo"; the hero keeps only the
+              price anchor. First on-page CTA lives right after Outcomes. */}
+          <p className="mt-8 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
+            <Link href={pricingHref} className="text-ink-soft no-underline border-b border-warm-200 pb-0.5 hover:text-ink transition-colors">
+              {micro}
             </Link>
-            <a
-              href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
-            >
-              {locale === "es" ? "Prueba de 14 días" : "Start 14-day trial"}
-            </a>
-          </div>
-          <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-            {micro}
           </p>
         </div>
       </section>
@@ -161,6 +159,28 @@ export function VerticalPageV3({
                 </p>
               </article>
             ))}
+          </div>
+
+          {/* First on-page CTA — placed after the outcomes, where the case
+              has been made, per CLAUDE.md rule 16. */}
+          <div className="mt-12 flex flex-col items-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link
+                href={demoHref}
+                className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+              >
+                {locale === "es" ? "Reserva una demo" : "Book a demo"} →
+              </Link>
+              <a
+                href="https://my.sealmetrics.com/register"
+                className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
+              >
+                {locale === "es" ? "Prueba de 14 días" : "Start 14-day trial"}
+              </a>
+            </div>
+            <p className="font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
+              {micro}
+            </p>
           </div>
         </div>
       </section>

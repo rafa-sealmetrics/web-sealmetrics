@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Impacto del bloqueador en la analítica — Glosario",
@@ -72,6 +73,8 @@ export default function AdBlockerAnalyticsImpactEsPage() {
             Los bloqueadores apuntan a scripts de terceros. La <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link> funciona distinto: el endpoint de medición vive en tu propio dominio, lo que lo hace indistinguible del resto de la funcionalidad del sitio. Combinada con <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, captura el 100% de la actividad con independencia del bloqueador.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="Los bloqueadores no ven el conteo first-party de SealMetrics. Mira cómo queda tu tráfico cuando nada lo recorta." />
 
         <RelatedGlossaryTerms slug="ad-blocker-analytics-impact" locale="es" />
 

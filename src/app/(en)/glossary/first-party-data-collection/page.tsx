@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is First-Party Data Collection? — SealMetrics Glossary",
@@ -60,6 +61,8 @@ export default function FirstPartyDataCollectionPage() {
           <p>Approximately 40% of EU users run ad blockers that specifically target third-party analytics requests. First-party data collection bypasses this entirely — not through deception, but by fundamentally changing the data path to be genuinely first-party.</p>
           <p>Combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, first-party collection eliminates two of the three major <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link> vectors: ad blocker blocking and browser cookie restrictions.</p>
         </div>
+        <CommercialModule hook="SealMetrics is first-party by design: your domain, your data, EU-hosted in Dublin. See what that changes in your numbers." />
+
         <RelatedGlossaryTerms slug="first-party-data-collection" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

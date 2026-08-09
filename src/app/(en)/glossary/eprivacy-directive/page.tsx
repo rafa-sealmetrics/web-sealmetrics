@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is the ePrivacy Directive? — SealMetrics Glossary",
@@ -73,6 +74,8 @@ export default function EPrivacyDirectivePage() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The 2026 ePrivacy Regulation</h2>
             <p>The proposed ePrivacy Regulation (intended to replace the Directive) has been in draft since 2017. The Digital Omnibus 2026 brought some of its enforcement clarifications into force via amendments to GDPR — including formalised reject-all banner parity and harmonised dark-pattern enforcement. The carve-out for anonymous, non-tracking analytics survived intact.</p>
           </div>
+          <CommercialModule hook="ePrivacy is why the banners exist. SealMetrics stores nothing on the device — see analytics that doesn't need the banner to measure." />
+
           <RelatedGlossaryTerms slug="eprivacy-directive" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">

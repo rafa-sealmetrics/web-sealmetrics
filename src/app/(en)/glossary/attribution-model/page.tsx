@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is an Attribution Model? — SealMetrics Glossary",
@@ -121,6 +122,8 @@ export default function AttributionModelPage() {
             Note: GA4 deprecated all models except data-driven and last-click in November 2023. Data-driven attribution requires sufficient conversion volume and &mdash; critically &mdash; complete data to produce reliable results.
           </p>
         </div>
+
+        <CommercialModule hook="SealMetrics runs one model — last-click on 100% of your traffic. See what a single, complete model tells you that blended data can't." />
 
         <RelatedGlossaryTerms slug="attribution-model" />
 

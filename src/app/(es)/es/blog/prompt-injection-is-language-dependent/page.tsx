@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "prompt-injection-is-language-dependent";
 const URL = `/es/blog/${SLUG}`;
@@ -289,6 +290,11 @@ export default function PromptInjectionIsLanguageDependentPageEs() {
               atacantes, lo que has certificado es una vulnerabilidad.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Tu asistente de IA resiste una inyección de prompt en un idioma distinto del inglés? En una demo ves las defensas deterministas que rodean a LENS antes y después del modelo."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Por qué esto importa especialmente en analítica
             </h2>
@@ -405,6 +411,11 @@ export default function PromptInjectionIsLanguageDependentPageEs() {
               , incluidas las tandas que descartamos.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Quieres intentar tu propia inyección? Trae tus prompts a una demo y pruébalos contra LENS: el dato llega limpio al prompt y la salida se valida antes de mostrarse."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "prompt-injection-is-language-dependent";
 const URL = `/blog/${SLUG}`;
@@ -247,6 +248,10 @@ export default function PromptInjectionIsLanguageDependentPage() {
               is the asymmetry itself.
             </p>
 
+            <CommercialModule
+              hook="We ran this trap against our own stack before publishing it. Ask in a demo how LENS handles hostile input — in English and in your language."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Why safety is uneven across languages
             </h2>
@@ -389,6 +394,10 @@ export default function PromptInjectionIsLanguageDependentPage() {
               , including the runs we discarded.
             </p>
           </div>
+
+          <CommercialModule
+            hook="Security claims should survive a non-English test. Ask us to demonstrate ours in the language your team actually works in."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

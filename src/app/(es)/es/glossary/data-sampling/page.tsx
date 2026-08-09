@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es el muestreo de datos? — Glosario SealMetrics",
@@ -69,6 +70,8 @@ export default function DataSamplingEsPage() {
             Las plataformas de <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> como SealMetrics registran cada sesión individualmente y sin aplicar muestreo. Cuando ves 72.847 visitantes, esa cifra representa 72.847 sesiones reales, no una estimación estadística.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="SealMetrics nunca muestrea: cada informe se calcula sobre cada sesión, no sobre una estimación estadística. Mira tus informes a resolución completa." />
 
         <RelatedGlossaryTerms slug="data-sampling" locale="es" />
 

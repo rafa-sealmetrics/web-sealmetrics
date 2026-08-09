@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Intelligent Tracking Prevention (ITP)?",
@@ -59,6 +60,8 @@ export default function ITPPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why first-party measurement is unaffected</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not store cookies on the visitor&rsquo;s device, so ITP and ETP have no effect on data collection. The <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless</Link> approach captures sessions regardless of browser privacy features.</p>
         </div>
+        <CommercialModule hook="ITP can't expire what was never stored. See your Safari traffic counted in full, cookie-free." />
+
         <RelatedGlossaryTerms slug="intelligent-tracking-prevention" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

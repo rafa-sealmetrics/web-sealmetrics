@@ -13,6 +13,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "grounding-analytics-ai";
 const URL = `/blog/${SLUG}`;
@@ -269,6 +270,10 @@ export default function GroundingAnalyticsAiPage() {
               and the plumbing is what makes the answer true.
             </p>
 
+            <CommercialModule
+              hook="Grounded means every number comes from your database, not the model's memory. Ask LENS a question in a demo and trace where the answer came from."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               The payoff: a &quot;bad&quot; model can be the right model
             </h2>
@@ -421,6 +426,10 @@ export default function GroundingAnalyticsAiPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="A grounded assistant is only as good as the data underneath — LENS queries 100% of your traffic. Test it on the question your team argued about last week."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

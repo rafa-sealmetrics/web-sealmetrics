@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "EU Digital Omnibus: Marketer Guide 2026",
@@ -247,6 +248,10 @@ export default function OmnibusGuidePage() {
             annually sector-wide.
           </p>
 
+          <CommercialModule
+            hook="Whatever the final text says, consent-free measurement is unaffected — there is nothing to re-paper. See how consentless analytics sidesteps the timeline."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Timeline
           </h2>
@@ -458,6 +463,10 @@ export default function OmnibusGuidePage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="You can wait for the final text, or measure completely now. A 15-minute setup shows what your consent-gated analytics is missing today."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

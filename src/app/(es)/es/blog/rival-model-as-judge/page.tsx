@@ -12,6 +12,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "rival-model-as-judge";
 const URL = `/es/blog/${SLUG}`;
@@ -304,6 +305,11 @@ export default function RivalModelAsJudgePageEs() {
               determinista. Nunca como el veredicto.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Cuánto trabajo le dejas al juez en tu evaluación de IA? En una demo ves las comprobaciones deterministas que LENS ejecuta antes de que ningún modelo opine sobre tus cifras."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Paso dos: nombrar un juez con motivos
             </h2>
@@ -412,6 +418,11 @@ export default function RivalModelAsJudgePageEs() {
               inválida.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Evaluando la fiabilidad de un asistente de IA para tu equipo? Compara en una demo las respuestas de LENS con tus propias cifras — el evaluador más barato sigue siendo tu dato real."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Cookieless Analytics? — SealMetrics Glossary",
@@ -75,6 +76,8 @@ export default function CookielessAnalyticsPage() {
             Cookieless analytics achieves <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link> by architecture: no personal data is collected, no cookies are stored, and no consent is required for the analytics to function. This is consistent with CNIL (French DPA) exemption criteria for audience measurement tools.
           </p>
         </div>
+
+        <CommercialModule hook="This is what SealMetrics does all day: cookieless counting of 100% of visits. See it running on your own traffic." />
 
         <RelatedGlossaryTerms slug="cookieless-analytics" />
 

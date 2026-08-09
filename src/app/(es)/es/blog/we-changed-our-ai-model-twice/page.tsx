@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "we-changed-our-ai-model-twice";
 const URL = `/es/blog/${SLUG}`;
@@ -290,6 +291,11 @@ export default function WeChangedOurAiModelTwicePageEs() {
               una no-respuesta de dos líneas.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Tu proveedor de IA te cuenta por qué eligió su modelo — y qué descartó por el camino? En una demo ves la elección actual, gpt-oss-120b en Scaleway París, respondiendo sobre tu propio tráfico."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Elección tres: gpt-oss-120b
             </h2>
@@ -401,6 +407,11 @@ export default function WeChangedOurAiModelTwicePageEs() {
               para ver qué hace realmente el asistente.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Y si el modelo vuelve a cambiar? En una demo ves por qué da igual: la superficie de dato es la misma, la evaluación se repite y puedes traer tu propia clave si lo prefieres."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

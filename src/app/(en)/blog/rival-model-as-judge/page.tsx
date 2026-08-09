@@ -13,6 +13,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "rival-model-as-judge";
 const URL = `/blog/${SLUG}`;
@@ -245,6 +246,10 @@ export default function RivalModelAsJudgePage() {
               structurally.
             </p>
 
+            <CommercialModule
+              hook="We run this exact grading setup against LENS. Ask to see the results in a demo — including the runs we threw away."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Step one: give the judge almost nothing to do
             </h2>
@@ -398,6 +403,10 @@ export default function RivalModelAsJudgePage() {
               , including the first full run we threw away as invalid.
             </p>
           </div>
+
+          <CommercialModule
+            hook="An honest judge setup is the difference between a demo trick and a tool you can trust. Bring your hardest analytics question and grade LENS yourself."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

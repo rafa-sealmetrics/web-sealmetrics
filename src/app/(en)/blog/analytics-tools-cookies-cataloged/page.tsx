@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Every Cookie Set by Every Major Analytics Tool, Cataloged",
@@ -413,6 +414,10 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             Safari and Firefox already block these third-party cookies by default.
           </p>
 
+          <CommercialModule
+            hook="Every cookie in the catalog above is a consent obligation. SealMetrics sets zero — see what a cookie-free count looks like on your own traffic."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Why cookies equal consent equal data loss
           </h2>
@@ -612,6 +617,10 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="Zero cookies means no banner gating your measurement. Run SealMetrics in parallel and compare the counts against your consent-gated tool."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

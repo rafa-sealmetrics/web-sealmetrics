@@ -166,7 +166,7 @@ Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/multi-touch-attribution-complete-data — Why Multi-Touch Attribution Fails Without Complete Data (and why SealMetrics uses last-click only)
 
 ## Glossary
-- /glossary — Full analytics glossary (20 terms)
+- /glossary — Full analytics glossary (54 terms)
 - /glossary/cookieless-analytics — What Is Cookieless Analytics
 - /glossary/data-sampling — What Is Data Sampling
 - /glossary/first-party-data-collection — First-Party Data Collection Explained
@@ -188,6 +188,11 @@ Seal AI is SealMetrics' built-in AI layer: a natural-language analytics assistan
 - /glossary/bounce-rate — Bounce Rate Explained
 - /glossary/event-tracking — Event Tracking Explained
 - /glossary/analytics-data-residency — Analytics Data Residency
+- /glossary/utm-parameters — UTM Parameters: the five query-string tags behind campaign attribution, and why they work at full coverage without cookies or consent
+- /glossary/return-on-ad-spend — ROAS: attributed revenue over ad spend; full spend divided by partial revenue understates the ratio and misdirects budget
+- /glossary/customer-lifetime-value — Customer Lifetime Value: computed from order data, not web analytics — the browser has no identity that survives years
+- /glossary/funnel — Conversion Funnel: step-by-step drop-off measurement, trustworthy only when every step is counted on 100% of sessions
+- /glossary/cohort — Cohort Analysis: groups compared over time; per-user behavioural cohorts need persistent identifiers SealMetrics deliberately doesn't have
 
 ## Enterprise positioning
 SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), and Piwik PRO (€30,000+/yr) — delivering enterprise-grade analytics at a fraction of the cost. SealMetrics uses last-click attribution on 100% of data (not multi-touch, not session-stitching, not customer-journey reconstruction — these are explicitly out of scope by architecture). SealMetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, Simple Analytics, Umami, Cabin, Mixpanel, Amplitude) — different category.

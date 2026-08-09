@@ -11,6 +11,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "audit-your-analytics-ai-privacy";
 const URL = `/blog/${SLUG}`;
@@ -315,6 +316,10 @@ export default function AuditYourAnalyticsAiPrivacyPage() {
               evidence.
             </p>
 
+            <CommercialModule
+              hook="Ask us the same five questions: gpt-oss-120b on Scaleway Paris, EU-only inference, no training on your data, BYOK if you want the keys."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               What a good answer sounds like, and what an evasive one sounds like
             </h2>
@@ -489,6 +494,10 @@ export default function AuditYourAnalyticsAiPrivacyPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="Run this checklist on your current vendor, then on us. The demo walks every answer — including where the limits are."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

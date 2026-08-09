@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es la atribución de ingresos? — Glosario SealMetrics",
@@ -76,6 +77,8 @@ export default function Page() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo se reconcilia con tu CRM</h2>
           <p>Los totales agregados por canal cuadran con los pedidos exportados de Shopify/WooCommerce/Magento o con las reservas de un PMS hotelero dentro del 15-20% — el rango residual procede de devoluciones, cancelaciones y pedidos que entran fuera del flujo web (call center, B2B, etc.). Es el grado de cuadre que tu CFO acepta como base para decisiones de presupuesto.</p>
         </div>
+
+        <CommercialModule locale="es" hook="Mira tus ingresos atribuidos last-click sobre el 100% de los pedidos, no sobre la fracción consentida." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

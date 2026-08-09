@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es la atribución multi-touch? — Glosario SealMetrics",
@@ -60,6 +61,9 @@ export default function Page() {
           <p>SealMetrics está diseñada como medición de eventos agregada y anónima. Nunca se crea un identificador por usuario, así que no hay base para enlazar touchpoints de la misma persona entre sesiones. La <Link href="/es/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución</Link> es last-click sobre el evento de conversión observado: la fuente registrada en la pageview donde se dispara la conversión recibe el crédito. Los totales por canal se acumulan desde esos eventos.</p>
           <p>El trade-off es deliberado: renuncias al reparto de crédito modelado entre touchpoints y a cambio obtienes totales agregados por canal sobre el 100% del tráfico, sin dependencia de consentimiento.</p>
         </div>
+
+        <CommercialModule locale="es" hook="No hacemos multi-touch — deliberadamente. Mira lo que el last-click sobre datos completos te dice y los modelos no." />
+
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto SealMetrics</Link>

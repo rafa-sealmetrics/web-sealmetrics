@@ -4,6 +4,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Analítica self-service con LENS AI",
@@ -240,6 +241,11 @@ export default function Page() {
               </table>
             </div>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Tu equipo espera días por informes que en el fondo son tres consultas? En una demo ves a LENS responder esas preguntas sobre tu propio tráfico, sin tocar SQL."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               Capa 03 — El flujo de un analista senior, codificado
             </h2>
@@ -371,6 +377,11 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Cuántas preguntas de «sácame los números» encola tu analista cada semana? Trae tres a una demo y ve a LENS resolverlas sobre tu dato real, con los datos del día listos antes de las 6 AM."
+          />
 
           <div className="mt-16 pt-10 border-t border-warm-100">
             <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

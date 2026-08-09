@@ -11,6 +11,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "residency-is-not-sovereignty";
 const URL = `/es/blog/${SLUG}`;
@@ -242,6 +243,11 @@ export default function ResidencyIsNotSovereigntyPageEs() {
               legal con ese historial es una apuesta, no una garantía.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Tu proveedor de IA te vende «región UE» como si fuera soberanía? En una demo ves la diferencia sobre tu propio caso: gpt-oss-120b operado por Scaleway en París y el dato analítico en Dublín, sin matriz extranjera en la cadena."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               La arquitectura que se salta todo el debate
             </h2>
@@ -320,6 +326,11 @@ export default function ResidencyIsNotSovereigntyPageEs() {
               no puede ser justo el sitio donde esa respuesta falla.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Le has preguntado a tu proveedor quién puede recibir una orden de entrega de tus datos? Haznos las tres preguntas de la auditoría en una demo y compara las respuestas."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

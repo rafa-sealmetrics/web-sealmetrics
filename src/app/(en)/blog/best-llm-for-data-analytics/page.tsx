@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "best-llm-for-data-analytics";
 const URL = `/blog/${SLUG}`;
@@ -224,6 +225,10 @@ export default function BestLlmForAnalyticsPage() {
               data to test for prompt injection.
             </p>
 
+            <CommercialModule
+              hook="The test that matters runs on your workload. Ours ended in gpt-oss-120b on Scaleway Paris — ask it your own questions and score the answers."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               What the numbers said
             </h2>
@@ -313,6 +318,10 @@ export default function BestLlmForAnalyticsPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="Best LLM is a property of your use case, not a leaderboard. See how a model chosen on analytics workloads answers on real traffic."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

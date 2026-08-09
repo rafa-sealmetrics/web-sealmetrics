@@ -4,6 +4,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Tu analítica cumple el RGPD? Análisis legal",
@@ -272,6 +273,11 @@ export default function Page() {
               Los reguladores han ido convergiendo justo en esta lectura. La CNIL francesa mantiene una exención para la analítica que cumple un conjunto de criterios técnicos — la base de la <Link href="/es/blog/gdpr-analytics-without-consent" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin banners que ya explicamos</Link>. La DUAA 2025 del Reino Unido introdujo una exención de analítica viva bajo PECR. Y el propuesto EU Digital Omnibus (COM(2025) 837) trasladaría las reglas de consentimiento de cookies al RGPD y daría a la analítica first-party un encaje legal explícito — todavía una propuesta, pero una dirección clara. Cada una de estas premia la misma arquitectura: sin almacenamiento en el dispositivo, sin dato personal.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Sabes ya si tu herramienta supera el test libre de consentimiento? En una demo aplicamos las dos preguntas — ¿almacena en el dispositivo?, ¿trata datos personales? — a tu configuración actual."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               Dónde cae cada herramienta
             </h2>
@@ -362,6 +368,11 @@ export default function Page() {
               Este artículo es información general sobre cómo la ley de protección de datos aplica a la analítica web, no asesoramiento legal. Para tu despliegue concreto, confírmalo con tu DPO o asesoría.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Tu «conforme con el RGPD» significa lícito sin banner o solo lícito pidiendo permiso? Compruébalo en una demo sobre tu propio sitio: medición anónima, agregada y sin nada en el dispositivo."
+          />
 
           <div className="mt-16 pt-10 border-t border-warm-100">
             <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

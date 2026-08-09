@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "seal-ai-vs-bring-your-own-key";
 const URL = `/blog/${SLUG}`;
@@ -273,6 +274,10 @@ export default function SealAiVsByokPage() {
               to send to a model in the first place. The prompt is born clean.
             </p>
 
+            <CommercialModule
+              hook="The default is gpt-oss-120b on Scaleway Paris, no training on your data. BYOK adds Anthropic, OpenAI, Gemini or DeepSeek under your own keys."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Bring-your-own-key: what you gain, what you take on
             </h2>
@@ -419,6 +424,10 @@ export default function SealAiVsByokPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="You can start on the default and move to your own keys later. Walk through both routes in a demo with your actual constraints on the table."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

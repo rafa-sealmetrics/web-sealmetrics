@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "three-questions-to-ask-seal-ai";
 const URL = `/blog/${SLUG}`;
@@ -250,6 +251,10 @@ export default function ThreeQuestionsToAskSealAiPage() {
               if it only gives you percentages, ask for the absolute numbers.
             </p>
 
+            <CommercialModule
+              hook="Two questions in — the third works best on your own numbers. Book a demo and put all three to LENS live."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               3. The engagement question
             </h2>
@@ -369,6 +374,10 @@ export default function ThreeQuestionsToAskSealAiPage() {
               is the short introduction.
             </p>
           </div>
+
+          <CommercialModule
+            hook="These three questions are the fastest honest test of any analytics AI. Put them to LENS on a live account and see where it declines to guess."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

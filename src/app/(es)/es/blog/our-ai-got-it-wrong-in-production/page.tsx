@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "our-ai-got-it-wrong-in-production";
 const URL = `/es/blog/${SLUG}`;
@@ -278,6 +279,11 @@ export default function OurAiGotItWrongInProductionPageEs() {
               de tumbar una respuesta entera por un elemento opcional.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Sabrías detectar un bug así en tu propio asistente de IA? En una demo ves las validaciones deterministas que ejecuta LENS antes de enseñarte una sola cifra."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               El arreglo en dos capas
             </h2>
@@ -372,6 +378,11 @@ export default function OurAiGotItWrongInProductionPageEs() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Confiarías en una IA que no publica sus propios fallos? Pon a LENS a prueba en una demo sobre tu tráfico real y compara sus respuestas con tus cifras."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

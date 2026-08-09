@@ -11,6 +11,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "meet-seal-ai";
 const URL = `/es/blog/${SLUG}`;
@@ -213,6 +214,11 @@ export default function MeetSealAiPageEs() {
               base de datos.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Quieres ver a Seal AI responder sobre tu tráfico y no sobre capturas de pantalla? En una demo le haces tus propias preguntas, con los datos del día listos antes de las 6 AM y sin que tu dato salga de la UE."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Por qué es privada por arquitectura
             </h2>
@@ -303,6 +309,11 @@ export default function MeetSealAiPageEs() {
               (en inglés).
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Tres preguntas que quieres hacerle a tu propia analítica? Tráelas a una demo y ve a Seal AI contestarlas sobre tu dato real — gpt-oss-120b en Scaleway París, o tu propia clave de Anthropic, OpenAI, Gemini o DeepSeek."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Muestreo de datos en GA4: por qué tus números están mal",
@@ -198,6 +199,11 @@ export default function GA4DataSamplingPageEs() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          locale="es"
+          hook="¿Tus informes de GA4 llevan el aviso de muestreo? Ve tus propios datos a resolución completa en una demo: SealMetrics calcula sobre el 100% de los eventos, nunca sobre una muestra."
+        />
 
         <div className="mt-16 pt-10 border-t border-warm-100">
           <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

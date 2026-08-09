@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Legitimate Interest (Analytics) — SealMetrics Glossary",
@@ -73,6 +74,8 @@ export default function LegitimateInterestAnalyticsPage() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Authority guidance</h2>
             <p>The CNIL, German DSK, AEPD, Italian Garante and UK ICO have all published guidance accepting legitimate interest for analytics — provided the architecture meets the exemption criteria (no per-user identification, no cross-site tracking, aggregate reporting, EU-only processing). The convergence makes legitimate interest the cleaner-than-consent path for analytics that is built correctly.</p>
           </div>
+          <CommercialModule hook="Skip the legal-basis debate: SealMetrics collects no personal data, so no basis is needed. See how that works on your own site." />
+
           <RelatedGlossaryTerms slug="legitimate-interest-analytics" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">

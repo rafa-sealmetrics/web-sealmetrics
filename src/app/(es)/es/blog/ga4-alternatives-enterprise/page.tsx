@@ -8,6 +8,7 @@ import {
   itemListSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
@@ -427,6 +428,11 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 Comparativa completa SealMetrics vs Adobe Analytics
               </Link>
             </p>
+
+            <CommercialModule
+              locale="es"
+              hook="¿Comparando alternativas sobre folletos de proveedor? Ve la siguiente de esta lista — SealMetrics — corriendo sobre tu propio tráfico en una demo."
+            />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               3. SealMetrics
@@ -866,6 +872,11 @@ export default function GA4AlternativesEnterpriseEsPage() {
               una prima por estimaciones.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Migrando de GA4 este trimestre? Compara tus números de GA4 con el 100% de captura de SealMetrics sobre tu propio tráfico en una demo — 499 €/mes frente a los seis dígitos de GA360 o Adobe."
+          />
 
           {/* Relacionados */}
           <div className="mt-16 pt-10 border-t border-warm-100">

@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "how-we-benchmark-our-own-ai";
 const URL = `/blog/${SLUG}`;
@@ -247,6 +248,10 @@ export default function HowWeBenchmarkOurOwnAiPage() {
               regenerated each time, so the same scenarios stay valid next month.
             </p>
 
+            <CommercialModule
+              hook="This benchmark is why LENS runs gpt-oss-120b — it won on our stack, live database and all. Ask it your own questions and grade the answers yourself."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               3. Deterministic graders first, judge last
             </h2>
@@ -477,6 +482,10 @@ export default function HowWeBenchmarkOurOwnAiPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="The honest benchmark is the one run on your data. Bring three hard questions from your own reports to a 30-minute demo."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

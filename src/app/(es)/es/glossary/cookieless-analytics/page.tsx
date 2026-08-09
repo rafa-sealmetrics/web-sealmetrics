@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es la analítica sin cookies? — Glosario SealMetrics",
@@ -74,6 +75,8 @@ export default function Page() {
             Logra <Link href="/es/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cumplimiento RGPD por arquitectura</Link>: no se recoge dato personal, no se almacenan cookies y no se requiere consentimiento para que la analítica funcione. Es consistente con los criterios de exención de la CNIL (autoridad francesa) para herramientas de medición de audiencia.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="Esto es exactamente lo que hace SealMetrics: contar el 100% de las visitas sin cookies. Míralo funcionando sobre tu propio tráfico." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

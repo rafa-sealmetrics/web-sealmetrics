@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "eu-ai-act-for-marketers";
 const URL = `/blog/${SLUG}`;
@@ -236,6 +237,10 @@ export default function EuAiActForMarketersPage() {
               team using an analytics assistant, they generally do not.
             </p>
 
+            <CommercialModule
+              hook="Deployer obligations are lighter when the vendor is transparent: LENS runs open-weights gpt-oss-120b on Scaleway Paris. Ask us what your file needs."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               The obligation that does land on you: Article 50
             </h2>
@@ -409,6 +414,10 @@ export default function EuAiActForMarketersPage() {
               professional before relying on any of it.
             </p>
           </div>
+
+          <CommercialModule
+            hook="Your AI Act position is easier to defend when the model is open weights and inference stays in the EU. Get the vendor answers you are entitled to, live."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

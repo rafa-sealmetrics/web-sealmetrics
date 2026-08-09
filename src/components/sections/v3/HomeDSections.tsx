@@ -347,3 +347,79 @@ export function QuoteBlock() {
     </section>
   );
 }
+
+/* --- CFO objection + legal mechanism (condensed from /why-sealmetrics) ---
+   The homepage stacked benefits but never rebutted an objection or explained
+   why 100% capture is legal — the two moves that close a skeptical CMO/CFO.
+   The full argument lives on /why-sealmetrics; this is the short form. */
+export function CfoObjectionHome() {
+  const steps = [
+    { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
+    { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
+    { n: "03", t: "Nothing to consent to", d: "No profile to object to. 100% capture and privacy are the same design." },
+  ];
+
+  return (
+    <section className="py-28 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 md:gap-16 items-start mb-16">
+          <figure className="border-l-2 pl-6" style={{ borderColor: "#2E5C8A" }}>
+            <blockquote className="text-[22px] md:text-[26px] leading-[1.4] text-ink font-medium tracking-[-0.01em]">
+              &ldquo;Those sales already closed. Seeing the full number doesn&apos;t make me
+              sell more.&rdquo;
+            </blockquote>
+            <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+              What your CFO will say
+            </figcaption>
+          </figure>
+          <div className="grid gap-4">
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              They&apos;re right — SealMetrics doesn&apos;t create new revenue.{" "}
+              <strong className="font-semibold text-ink">That revenue already exists.</strong>{" "}
+              What you recover is the ability to decide well on top of it: today the
+              distorted picture pushes you to cut the channels whose buyers reject
+              cookies and fund the ones that only look strong.
+            </p>
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              Same budget, <em className="italic-accent">more sales.</em> Or same sales,{" "}
+              <em className="italic-accent">less budget.</em>{" "}
+              <Link href="/why-sealmetrics" className="text-brand font-medium border-b border-brand/30 hover:border-brand no-underline">
+                Read the full argument →
+              </Link>
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-[52ch] mb-10">
+          <h2 className="h-section">
+            &ldquo;Measure 100%, legally?&rdquo; <em>Here&apos;s how.</em>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 items-stretch">
+          {steps.map((s, i) => (
+            <div key={s.n} className="contents">
+              {i > 0 && (
+                <div className="hidden md:flex items-center justify-center text-warm-300 text-[22px]" aria-hidden>
+                  →
+                </div>
+              )}
+              <article className="bg-warm-50 border border-warm-100 rounded-xl p-7">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand">{s.n}</span>
+                <h3 className="text-[19px] font-semibold text-ink leading-[1.3] mt-2.5 mb-2">{s.t}</h3>
+                <p className="text-[14px] leading-[1.55] text-ink-soft">{s.d}</p>
+              </article>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
+          {["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"].map((b) => (
+            <span key={b} className="inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+              {b}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

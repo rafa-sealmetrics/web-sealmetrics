@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Bounce Rate? — SealMetrics Glossary",
@@ -84,6 +85,8 @@ export default function BounceRatePage() {
             Complete data collection, through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, ensures bounce rate is calculated across 100% of sessions &mdash; not an unrepresentative fraction.
           </p>
         </div>
+
+        <CommercialModule hook="A bounce rate computed on the ~13% of traffic that consents skews hard. See yours measured across every visit." />
 
         <RelatedGlossaryTerms slug="bounce-rate" />
 

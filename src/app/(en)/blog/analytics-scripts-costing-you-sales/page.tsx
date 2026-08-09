@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "How Analytics Scripts Are Costing You Sales",
@@ -253,6 +254,10 @@ export default function AnalyticsScriptsPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="Speed, banners and blocked scripts compound into one number: sales your analytics never saw. Measure the compound effect on your own site."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

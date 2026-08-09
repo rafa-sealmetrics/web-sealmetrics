@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Data Sampling Thresholds Compared: 10 Analytics Tools",
@@ -202,6 +203,10 @@ export default function DataSamplingComparedPage() {
             options exist to avoid it.
           </p>
 
+          <CommercialModule
+            hook="The SealMetrics row reads Never — no sampling by design, at any volume. Check whether your own GA4 reports are already estimates."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             GA4&apos;s sampling problem in detail
           </h2>
@@ -376,6 +381,10 @@ export default function DataSamplingComparedPage() {
             to sampling and consent gaps today.
           </p>
         </div>
+
+        <CommercialModule
+          hook="Sampling is silent: the report looks the same, the numbers are not. Run an unsampled month in parallel and see which decisions change."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

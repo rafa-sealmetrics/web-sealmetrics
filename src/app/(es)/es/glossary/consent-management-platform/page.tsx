@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es una CMP? — Glosario SealMetrics",
@@ -65,6 +66,8 @@ export default function ConsentManagementPlatformEsPage() {
             La <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> no necesita una CMP para funcionar, porque no usa cookies ni recoge datos personales. Eso elimina por completo el vector de pérdida por rechazo de consentimiento manteniendo el <Link href={glossaryHref("gdpr-analytics-compliance", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cumplimiento del RGPD</Link>.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="Un CMP decide qué ve tu analítica. SealMetrics no guarda nada en el dispositivo, así que no hay nada que pedir — mira tus cifras sin puerta de consentimiento delante." />
 
         <RelatedGlossaryTerms slug="consent-management-platform" locale="es" />
 
