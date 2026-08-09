@@ -98,7 +98,7 @@ export default function Page() {
         bullets={[
           <>Captures the 40–60% of EU visitors GA4 loses to consent rejection.</>,
           <>Reconciles to within 15–20% of your actual CRM revenue — defensible in a board meeting.</>,
-          <>Works natively with Shopify Plus, WooCommerce, Magento, PrestaShop and BigCommerce.</>,
+          <>Works natively with Shopify Plus, WooCommerce, Magento 2, PrestaShop and OpenCart.</>,
         ]}
       />
 

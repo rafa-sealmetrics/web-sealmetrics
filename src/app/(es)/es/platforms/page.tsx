@@ -7,10 +7,10 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Plataformas — SealMetrics",
-  description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
+  description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
   openGraph: {
     title: "Plataformas — SealMetrics",
-    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
+    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/es/platforms/",
@@ -32,8 +32,8 @@ const platforms = [
   { name: "Magento", time: "15 min", desc: "Módulo Magento 2 nativo vía Composer. Funciona en Adobe Commerce y Magento Open Source." },
   { name: "WooCommerce", time: "10 min", desc: "Plugin WordPress oficial. Cero config. Respeta tu consentimiento actual (pero no lo necesita)." },
   { name: "PrestaShop", time: "15 min", desc: "Módulo PrestaShop 1.7 & 8.x. Tracking de conversiones y funnel completo out-of-the-box." },
-  { name: "BigCommerce", time: "10 min", desc: "App nativa en el marketplace de BigCommerce. SSO, eventos de producto, atribución de ingresos." },
-  { name: "Salesforce Commerce Cloud", time: "30 min", desc: "Cartridge Commerce Cloud. Funciona con storefronts SFRA y SiteGenesis." },
+  { name: "OpenCart", time: "15 min", desc: "Extensión para tiendas OpenCart 3.x y 4.x. Eventos de conversión e ingresos desde el primer día." },
+  { name: "Squarespace", time: "10 min", desc: "Code injection en los ajustes del sitio. Compatible con Squarespace Commerce." },
   { name: "WordPress", time: "5 min", desc: "Plugin WordPress. Trackea pageviews, formularios, CTAs. Funciona con cualquier page builder." },
   { name: "Webflow", time: "10 min", desc: "Custom code embed en project settings. Funciona con CMS collections y e-commerce." },
   { name: "Wix", time: "10 min", desc: "Custom code en site settings. Compatible con Wix Stores y Wix Bookings." },
@@ -55,7 +55,7 @@ export default function Page() {
             Nativo en <em>cada plataforma eCommerce.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, Salesforce Commerce Cloud, WordPress, Webflow, Wix, Drupal, Joomla — más cualquier framework headless vía un script.
+            Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal, Joomla — más cualquier framework headless vía un script.
           </p>
         </div>
       </section>

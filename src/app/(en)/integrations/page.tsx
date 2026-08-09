@@ -7,15 +7,15 @@ import { breadcrumbSchema } from "@/lib/schema";
 const faqs = [
   {
     question: "Does SealMetrics connect to Google Ads for conversion import?",
-    answer: "Yes, via BigQuery export and REST API. Most teams keep GA4 running alongside SealMetrics for native Google Ads conversion import — SealMetrics becomes the source of truth for decisions, GA4 stays as the Google Ads conduit.",
+    answer: "SealMetrics tracks Google Ads campaigns end-to-end via UTM parameters and click IDs and reports ROAS on them. It does not push audiences back to Google Ads for automated bidding — that needs GA4 with consented users. Most teams keep GA4 as the Ads conduit and use SealMetrics as the source of truth for decisions.",
   },
   {
     question: "Which eCommerce CMS does SealMetrics work with?",
-    answer: "Shopify, WooCommerce, Magento, PrestaShop, BigCommerce and Salesforce Commerce Cloud have native integrations. Any other CMS works with the standard JavaScript tag.",
+    answer: "WooCommerce, Magento 2, PrestaShop, OpenCart and Shopify have native modules. WordPress, Drupal, Joomla, Webflow, Wix, Squarespace, Next.js, React and Nuxt have documented integrations. Any other CMS works with the standard JavaScript tag or GTM.",
   },
   {
-    question: "Can I export data to BigQuery or Snowflake?",
-    answer: "Yes. Full-resolution export to BigQuery, Snowflake, Databricks and Redshift is included from the Growth plan up — no ETL, no sampling, no thresholds.",
+    question: "Can I export data to BigQuery or another warehouse?",
+    answer: "BigQuery has a native connector included from the Growth plan up — full resolution, no ETL, no sampling, no thresholds. For Snowflake, Databricks, Redshift or any other destination, pull the same full-resolution data through the REST API and load it yourself.",
   },
   {
     question: "What is the MCP server?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Are there webhooks for real-time events?",
-    answer: "Yes. Webhooks fire on real-time events (conversions, micro-conversions, anomaly alerts) so you can pipe signals into ops tools, Slack or your own automations.",
+    answer: "Yes, from the Scale plan up. Webhooks fire on conversions, micro-conversions and LENS alerts so you can pipe signals into ops tools, Slack or your own automations.",
   },
 ];
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -31,10 +31,10 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Integrations — SealMetrics",
-  description: "25+ native integrations: ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus MCP server for AI agents and full REST API.",
+  description: "Native modules for eCommerce, CMS, frameworks and tag managers. BigQuery connector, MCP server for AI agents, webhooks and full REST API.",
   openGraph: {
     title: "Integrations — SealMetrics",
-    description: "25+ native integrations: ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus MCP server for AI agents and full REST API.",
+    description: "Native modules for eCommerce, CMS, frameworks and tag managers. BigQuery connector, MCP server for AI agents and full REST API.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/integrations/",
@@ -52,12 +52,12 @@ export const metadata: Metadata = {
 };
 
 const groups = [
-  { title: "Ad platforms", items: ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "Microsoft Ads"] },
-  { title: "eCommerce", items: ["Shopify", "WooCommerce", "Magento", "PrestaShop", "BigCommerce", "Salesforce Commerce Cloud"] },
-  { title: "Data warehouses", items: ["BigQuery", "Snowflake", "Databricks", "Redshift"] },
-  { title: "BI tools", items: ["Looker Studio", "Power BI", "Tableau", "Metabase"] },
-  { title: "CRM & email", items: ["HubSpot", "Salesforce", "Klaviyo", "Mailchimp"] },
-  { title: "Developer", items: ["REST API", "Streaming API", "Webhooks", "MCP server", "Segment", "Zapier"] },
+  { title: "eCommerce", items: ["Shopify", "WooCommerce", "Magento 2", "PrestaShop", "OpenCart"] },
+  { title: "CMS", items: ["WordPress", "Drupal", "Joomla"] },
+  { title: "Website builders", items: ["Webflow", "Wix", "Squarespace"] },
+  { title: "Frameworks", items: ["Next.js", "React", "Nuxt 3"] },
+  { title: "Tag management", items: ["Google Tag Manager", "GTM container template", "GTM tag template"] },
+  { title: "Data & AI", items: ["BigQuery connector", "Data Studio", "MCP server", "Claude & Codex agentic package", "REST API", "Webhooks"] },
 ];
 
 export default function Page() {
@@ -68,12 +68,12 @@ export default function Page() {
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>25+ native integrations</span>
+          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Native integrations</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Plug into <em>the stack you already run.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus REST + streaming API, webhooks and an MCP server for AI agents.
+            Native modules for eCommerce, CMS, website builders, frameworks and tag managers. Plus a BigQuery connector, webhooks, a full REST API and an MCP server for AI agents.
           </p>
         </div>
       </section>
@@ -106,10 +106,10 @@ export default function Page() {
                 Developer-first
               </span>
               <h3 className="font-semibold text-ink tracking-[-0.03em] leading-[1.05]" style={{ fontSize: "clamp(30px, 3.6vw, 44px)" }}>
-                Full API, <em>native MCP,</em> no quotas.
+                Full API, <em>native MCP,</em> no sampling.
               </h3>
               <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
-                REST + streaming coverage of every event, every property. Webhooks for real-time ops. MCP server so Claude, ChatGPT or your own copilot can query directly.
+REST coverage of every metric, every property, at full resolution. Webhooks for ops signals from the Scale plan up. MCP server so Claude, ChatGPT or your own copilot can query directly.
               </p>
               <div className="mt-6 flex gap-3 flex-wrap">
                 <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white rounded-md text-[14px] font-semibold no-underline hover:bg-brand transition-colors">
@@ -127,12 +127,12 @@ export default function Page() {
                 <span className="w-2 h-2 rounded-full bg-[#28CA42]" />
               </div>
               <div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/events</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/conversions</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/channels</div>
+                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/overview</div>
+                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/conversions</div>
+                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/sources</div>
                 <div><span style={{ color: "#E8B84B" }}>POST</span> /api/v1/webhooks</div>
-                <div><span style={{ color: "#E8B84B" }}>MCP</span> claude://sealmetrics</div>
-                <div className="mt-3 text-white/45">// no quotas · no sampling · full resolution</div>
+                <div><span style={{ color: "#E8B84B" }}>MCP</span> mcp.sealmetrics.com/mcp</div>
+                <div className="mt-3 text-white/45">// no sampling · no thresholds · full resolution</div>
               </div>
             </div>
           </div>

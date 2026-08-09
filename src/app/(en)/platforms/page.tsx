@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 const faqs = [
   {
     question: "Which eCommerce platforms does SealMetrics support?",
-    answer: "SealMetrics has native integrations for Shopify, Magento 2 (Adobe Commerce), WooCommerce, PrestaShop 1.7/8.x, BigCommerce and Salesforce Commerce Cloud (SFRA + SiteGenesis). Any custom or headless framework (Next.js, Nuxt, Astro, Remix) works via a standard JavaScript tag.",
+    answer: "SealMetrics has native integrations for Shopify, Magento 2 (Adobe Commerce), WooCommerce, PrestaShop 1.7/8.x and OpenCart 3.x/4.x. Any custom or headless framework (Next.js, Nuxt, React, Astro, Remix) works via a standard JavaScript tag.",
   },
   {
     question: "How long does it take to install SealMetrics on Shopify?",
@@ -27,10 +27,10 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Platforms — SealMetrics",
-  description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
+  description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
   openGraph: {
     title: "Platforms — SealMetrics",
-    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
+    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/platforms/",
@@ -52,8 +52,8 @@ const platforms = [
   { name: "Magento", time: "15 min", desc: "Native Magento 2 module via Composer. Works on Adobe Commerce and Magento Open Source." },
   { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it).", href: "/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "PrestaShop 1.7 & 8.x module. Conversion tracking and full funnel out of the box." },
-  { name: "BigCommerce", time: "10 min", desc: "Native app in the BigCommerce marketplace. SSO, product events, revenue attribution." },
-  { name: "Salesforce Commerce Cloud", time: "30 min", desc: "Commerce Cloud cartridge. Works with SFRA and SiteGenesis storefronts." },
+  { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 3.x and 4.x stores. Conversion and revenue events out of the box." },
+  { name: "Squarespace", time: "10 min", desc: "Code injection in site settings. Works with Squarespace Commerce." },
   { name: "WordPress", time: "5 min", desc: "WordPress plugin. Tracks page views, forms, CTAs. Works alongside any page builder." },
   { name: "Webflow", time: "10 min", desc: "Custom code embed in project settings. Works with CMS collections and e-commerce." },
   { name: "Wix", time: "10 min", desc: "Custom code in site settings. Compatible with Wix Stores and Wix Bookings." },
@@ -75,7 +75,7 @@ export default function Page() {
             Native on <em>every eCommerce platform.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, Salesforce Commerce Cloud, WordPress, Webflow, Wix, Drupal, Joomla — plus any headless framework via one script tag.
+            Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal, Joomla — plus any headless framework via one script tag.
           </p>
         </div>
       </section>

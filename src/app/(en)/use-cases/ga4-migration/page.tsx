@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Do I have to remove GA4?",
-    a: "No. Most teams keep GA4 running indefinitely. GA4 is the conduit Google requires for Google Ads conversion import and the easiest path to Search Console / Looker Studio joins. What changes is what you decide on. After 30 days of parallel running, most customers shift revenue and channel-mix decisions to SealMetrics and let GA4 handle the Google-Ads side. Two tools, two purposes.",
+    a: "No. Most teams keep GA4 running indefinitely. GA4 is the conduit Google requires for Google Ads conversion import and the easiest path to Search Console / Data Studio joins. What changes is what you decide on. After 30 days of parallel running, most customers shift revenue and channel-mix decisions to SealMetrics and let GA4 handle the Google-Ads side. Two tools, two purposes.",
   },
   {
     q: "How long does the migration actually take?",
@@ -225,7 +225,7 @@ export default function Ga4MigrationPage() {
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Marketing wants to query channel performance through
                 ChatGPT, Claude or an internal agent. GA4&rsquo;s
-                Looker-Studio path is brittle for agents; the BigQuery
+                Data-Studio path is brittle for agents; the BigQuery
                 export is sampled above thresholds. SealMetrics ships a
                 native MCP server, full-resolution BigQuery, and answers
                 that an agent can quote without a wrapper.
@@ -332,7 +332,7 @@ export default function Ga4MigrationPage() {
                 {[
                   "Google Ads conversion import (the bidding signal).",
                   "Search Console keyword joining (organic search query data).",
-                  "Looker Studio dashboards that already depend on the GA4 dataset.",
+                  "Data Studio dashboards that already depend on the GA4 dataset.",
                   "Historical comparisons (year-over-year against pre-migration GA4 data).",
                 ].map((s) => (
                   <li key={s} className="flex gap-3">

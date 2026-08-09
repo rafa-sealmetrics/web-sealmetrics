@@ -342,7 +342,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 GA4
               </a>{" "}
               is the default starting point for most organizations. It is free,
-              well-integrated with Google Ads and Looker Studio, and benefits
+              well-integrated with Google Ads and Data Studio, and benefits
               from the largest analytics community in the world. For teams that
               primarily operate outside the EU, GA4 provides a capable analytics
               foundation at zero cost.
@@ -400,7 +400,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <p>
               For organizations deeply embedded in the Google Marketing
               Platform — running Google Ads at scale, using DV360, building
-              reports in Looker Studio — GA360 offers integration that no
+              reports in Data Studio — GA360 offers integration that no
               competitor can match. The BigQuery export pipeline enables advanced
               analysis that goes well beyond the GA interface.
             </p>

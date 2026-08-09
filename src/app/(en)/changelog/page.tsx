@@ -31,52 +31,62 @@ export const metadata: Metadata = {
 
 const entries = [
   {
+    date: "July 2026",
+    updates: [
+      {
+        title: "Seal AI Private — EU-hosted AI with token packs",
+        type: "New",
+        desc: "Seal AI Private is generally available: the managed AI provider behind LENS, processed entirely in the EU (Paris) with no prompt retention and no API key to manage. A paid add-on on Growth, included on Scale and Enterprise, with 5M tokens per calendar month for the whole organisation and email alerts at 80% and 100%. Extra 5M-token packs cost €358.80 each, never expire, and are consumed only after the monthly quota. When the quota runs out, any user can fall back to their own Anthropic, OpenAI, Gemini or DeepSeek key.",
+      },
+      {
+        title: "Sources report — referral traffic grouped by domain, GA4-style",
+        type: "Improved",
+        desc: "The Sources tab now shows referral traffic as source domains (reddit.com / referrer), unifying historical data under the same convention. The Referrers tab keeps its URL-level detail, one row per referring URL. In the API, referral rows now appear in /stats/sources as domains and are excluded from /stats/terms.",
+      },
+      {
+        title: "Custom Channel Grouping — from the dashboard, CSV or MCP",
+        type: "New",
+        desc: "Define your own marketing channels on top of (or overriding) the GA4-style defaults, with a drafts → test → publish workflow. Rule form with a \u201CTest a visit\u201D tester that runs the same engine as the pixel, an Override button on default channels, CSV/JSON import and export, and MCP tools for AI-assisted rule authoring. Every write tool is draft-only by design — publishing is always a human action. New rules take effect in about 5 minutes and never rewrite historical data.",
+      },
+      {
+        title: "Channel classification — more accurate Direct and Referral",
+        type: "Improved",
+        desc: "Default classification rules for Direct (no referrer, no campaign parameters) and Referral (external sites without UTM tagging) were refined to match the GA4-style conventions the tracker already used internally. From July 20, 2026 a portion of traffic previously reported as Unassigned appears as Direct or Referral. New traffic only — historical rows keep their classification, and custom channel rules keep priority.",
+      },
+    ],
+  },
+  {
+    date: "June 2026",
+    updates: [
+      {
+        title: "Bot-blocking algorithm update — fewer false positives",
+        type: "Improved",
+        desc: "Deployed June 2, 2026 at 20:00 CET. The bot-blocking algorithm no longer filters out legitimate human traffic that was previously misidentified as automated. Accounts affected by the old behaviour see a recovery in reported human traffic from that timestamp onward.",
+      },
+    ],
+  },
+  {
+    date: "May 2026",
+    updates: [
+      {
+        title: "Attribution: internal hits with UTMs no longer open a new session",
+        type: "Improved",
+        desc: "From May 25, 2026, when a hit carries UTM parameters and the referrer is your own domain, the referrer wins: the hit is counted as a pageview inside the existing session and the UTMs are ignored. Session counts stop being inflated by UTM-tagged internal links, and campaign sources reflect genuine external entries only. Historical data is unchanged.",
+      },
+      {
+        title: "API: /exports/* and /batch returning 403 with API keys — fixed",
+        type: "Fixed",
+        desc: "A permission check on /exports/* and /batch required a scope API keys don't carry, returning 403 insufficient_scope for valid keys. Fixed in production, no action required — existing API keys now work on these routes unchanged.",
+      },
+    ],
+  },
+  {
     date: "February 2026",
     updates: [
       {
-        title: "Agent Analytics: AI traffic identification",
-        type: "Coming Soon",
-        desc: "Identify and track visits from GPT, Claude, Perplexity, and Google AI Overviews as distinct sessions. See which pages AI agents visit, how long they stay, and whether AI-referred visitors convert.",
-      },
-      {
-        title: "LENS AI: natural language queries",
-        type: "New",
-        desc: "Ask business questions in plain language and get answers from your complete data. LENS now supports conversational queries alongside its 60+ automated anomaly detection rules.",
-      },
-    ],
-  },
-  {
-    date: "January 2026",
-    updates: [
-      {
-        title: "Revenue Attribution report redesign",
-        type: "Improved",
-        desc: "Redesigned revenue attribution interface with clearer channel-level visualization. See channel, campaign, and creative-level contribution to revenue with one-click drill-down.",
-      },
-      {
-        title: "Webhook event forwarding",
-        type: "New",
-        desc: "Forward real-time analytics events to your own infrastructure via webhooks. Configure event filters and transformation rules in the dashboard.",
-      },
-      {
-        title: "Dashboard performance improvements",
-        type: "Improved",
-        desc: "Reduced dashboard load times by 40% for accounts with more than 5M monthly events. Report rendering is now near-instant for standard date ranges.",
-      },
-    ],
-  },
-  {
-    date: "December 2025",
-    updates: [
-      {
-        title: "LENS AI: 12 new anomaly detection rules",
-        type: "New",
-        desc: "Added detection rules for sudden conversion rate drops, traffic source shifts, page load time degradation, and unusual geographic traffic patterns. Total rule count: 60+.",
-      },
-      {
-        title: "Shopify integration v2",
-        type: "Improved",
-        desc: "Updated Shopify integration with support for checkout extensibility, subscription revenue tracking, and automatic product catalog synchronization.",
+        title: "SealMetrics V2 is here",
+        type: "Launch",
+        desc: "The most significant update since we started, rebuilt from the ground up: a faster, cleaner dashboard; smarter attribution; compliance ready for GDPR, CNIL, UK PECR and the upcoming EU Digital Omnibus; a new, better-documented API; and a lighter tracking script with better SPA support. V2 is the default for all accounts — data, settings and tracking code keep working.",
       },
     ],
   },
@@ -84,24 +94,29 @@ const entries = [
     date: "November 2025",
     updates: [
       {
-        title: "Custom report builder",
-        type: "New",
-        desc: "Build custom reports combining any metrics and dimensions. Save, share with team members, and schedule automated email delivery.",
+        title: "Robot user-agent database expanded",
+        type: "Improved",
+        desc: "Added 158 new robot-related user agents on Nov 21, improving detection of automated traffic and precision when separating real users from bots.",
       },
       {
-        title: "Data retention controls",
+        title: "Legal approval for IP-based bot filtering",
         type: "New",
-        desc: "Configure data retention periods per account. Set automatic data deletion schedules to match your organization's data governance policies.",
+        desc: "After legal review, incoming hits are checked against our bot IP database: a match is excluded from your analytics, a non-match is registered as human traffic without the IP being stored. No human IP is ever retained, tracked or exposed. Precision without crossing the privacy line.",
       },
-    ],
-  },
-  {
-    date: "October 2025",
-    updates: [
       {
-        title: "SealMetrics launch",
-        type: "Launch",
-        desc: "First public release of SealMetrics. Cookieless analytics with 100% traffic capture, 9 report types, LENS AI anomaly detection, and revenue attribution. Starting at €599/month.",
+        title: "Facebook traffic classification fix",
+        type: "Fixed",
+        desc: "Visits carrying only fbclid and no UTM parameters were being categorised as facebook-ads. From Nov 17 at 19:00 UTC they are classified as Facebook Organic, and only traffic with proper UTM campaign parameters counts as Facebook Ads. Expect a slight increase in organic Facebook traffic from that timestamp; historical data is unchanged.",
+      },
+      {
+        title: "Facebook Ads attribution — fbclid no longer used",
+        type: "Improved",
+        desc: "Breaking change from Nov 13 at 19:00 UTC: the fbclid parameter is no longer used to identify Facebook Ads traffic, because it is neither reliable nor consistent. Facebook Ads attribution now requires properly configured UTM tags (utm_source=facebook, utm_medium=paid or equivalent). Audit your active campaigns and add UTMs to keep full visibility.",
+      },
+      {
+        title: "2.5× faster data processing",
+        type: "Improved",
+        desc: "Increased core capacity in the processing infrastructure on Nov 10 at 22:00 UTC. Data now processes 2.5 times faster: quicker dashboard loading, live data updates and instant report generation.",
       },
     ],
   },
@@ -115,6 +130,8 @@ function typeBadgeColor(type: string): string {
       return "text-blue-accent";
     case "Launch":
       return "text-text-primary";
+    case "Fixed":
+      return "text-red-alert";
     default:
       return "text-text-tertiary";
   }

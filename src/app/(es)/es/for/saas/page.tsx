@@ -97,7 +97,7 @@ export default function Page() {
         bullets={[
           <>Atribución de trial-signup sobre el 100% del tráfico UE (sin gap de consentimiento, sin tracking por usuario).</>,
           <>Separación limpia entre analítica anónima de web de marketing y analítica autenticada de producto (Mixpanel, Amplitude).</>,
-          <>Export nativo a BigQuery / Snowflake para unir datos agregados por canal con tus tablas autenticadas de usuarios.</>,
+          <>Conector nativo a BigQuery — o la API REST a resolución completa — para unir datos agregados por canal con tus tablas autenticadas de usuarios.</>,
         ]}
       />
 

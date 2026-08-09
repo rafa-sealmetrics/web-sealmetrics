@@ -111,7 +111,7 @@ const faqs = [
   {
     question: "¿Dónde corre la IA y sale mi dato de la UE?",
     answer:
-      "Con LENS private AI, la inferencia corre sobre un modelo open-source (Gemma) alojado por Scaleway en París, y tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca se comparte con terceros ni se usa para entrenar modelos de terceros. También puedes usar tu propia clave (Anthropic, OpenAI o Gemini) o conectar el MCP alojado en mcp.sealmetrics.com desde tu propio cliente.",
+      "Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b) alojado por Scaleway en París, y tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca se comparte con terceros ni se usa para entrenar modelos de terceros. También puedes usar tu propia clave (Anthropic, OpenAI o Gemini) o conectar el MCP alojado en mcp.sealmetrics.com desde tu propio cliente.",
   },
   {
     question: "¿Esto sustituye a mi analista de datos?",
@@ -338,7 +338,7 @@ export default function Page() {
               <li><strong>Procedencia que puedes rastrear.</strong> Cada respuesta se resuelve a una herramienta con nombre sobre un periodo explícito en la zona horaria de tu cuenta — así que siempre puedes ver qué métrica la produjo, y la atribución es a <Link href="/es/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">último clic, a nivel de evento</Link>.</li>
             </ul>
             <p>
-              Y el modelo corre donde tu equipo de compliance quiere. Con <Link href="/es/product" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">LENS private AI</Link>, la inferencia corre sobre un modelo open-source (Gemma) alojado por Scaleway en París mientras tu dato analítico permanece en Dublín — ambos UE, nunca compartido, nunca usado para entrenar modelos de terceros. ¿Prefieres tu propia stack? Usa tu clave de Anthropic, OpenAI o Gemini, o conecta el MCP alojado en <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">mcp.sealmetrics.com</code> desde cualquier cliente compatible. La base de dato es idéntica en ambos casos; solo estás eligiendo el algoritmo.
+              Y el modelo corre donde tu equipo de compliance quiere. Con <Link href="/es/product" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">LENS private AI</Link>, la inferencia corre sobre un modelo open-weight (gpt-oss-120b) alojado por Scaleway en París mientras tu dato analítico permanece en Dublín — ambos UE, nunca compartido, nunca usado para entrenar modelos de terceros. ¿Prefieres tu propia stack? Usa tu clave de Anthropic, OpenAI o Gemini, o conecta el MCP alojado en <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">mcp.sealmetrics.com</code> desde cualquier cliente compatible. La base de dato es idéntica en ambos casos; solo estás eligiendo el algoritmo.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">

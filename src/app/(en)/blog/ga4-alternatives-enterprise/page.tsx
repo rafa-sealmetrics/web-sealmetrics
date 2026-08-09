@@ -47,7 +47,7 @@ const alternatives = [
     ecommerceFeatures:
       "Enhanced eCommerce, native Google Ads attribution, BigQuery export, unsampled reports (quota-limited)",
     chooseIf:
-      "You have $150K+ analytics budget, your team lives in Looker Studio, and consent rates in your markets exceed 70%.",
+      "You have $150K+ analytics budget, your team lives in Data Studio, and consent rates in your markets exceed 70%.",
   },
   {
     name: "Adobe Analytics",
@@ -312,7 +312,7 @@ export default function GA4AlternativesEnterprisePage() {
               is the enterprise tier of Google Analytics. It addresses
               GA4&rsquo;s most visible limitations: higher sampling thresholds,
               native BigQuery export, guaranteed SLAs, and a dedicated account
-              manager. For organizations deeply invested in Google Ads and Looker
+              manager. For organizations deeply invested in Google Ads and Data Studio
               Studio, GA360 offers integration that no competitor matches.
             </p>
 
