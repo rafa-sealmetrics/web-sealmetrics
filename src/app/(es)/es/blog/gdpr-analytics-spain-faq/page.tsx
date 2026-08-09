@@ -51,7 +51,7 @@ const faqs = [
   {
     question: "¿Qué analítica RGPD puede usar un pequeño negocio?",
     answer:
-      "Depende de lo que decidas con el dato. Para una web pequeña sin inversión publicitaria, una herramienta ligera privacy-first (Plausible, Fathom, Umami — desde unos 9 €/mes) cumple y es suficiente. Cuando inviertes en campañas y asignas presupuesto con el dato — típicamente a partir de unos miles de euros al mes en ads — el 35-55% de tráfico que pierde una herramienta con banner cuesta más que la propia analítica: ahí una plataforma cookieless con atribución de revenue como SealMetrics (desde 599 €/mes) se paga sola.",
+      "Depende de lo que decidas con el dato. Para una web pequeña sin inversión publicitaria, una herramienta ligera privacy-first (Plausible, Fathom, Umami — desde unos 9 €/mes) cumple y es suficiente. Cuando inviertes en campañas y asignas presupuesto con el dato — típicamente a partir de unos miles de euros al mes en ads — el 40-60% de tráfico que pierde una herramienta con banner cuesta más que la propia analítica: ahí una plataforma cookieless con atribución de revenue como SealMetrics (desde 599 €/mes) se paga sola.",
   },
   {
     question: "¿Puedo medir conversiones y campañas sin cookies?",
@@ -126,7 +126,7 @@ export default function GdprAnalyticsSpainFaqEsPage() {
               El patrón detrás de las siete respuestas
             </h2>
             <p>
-              Todas las respuestas se reducen al mismo test en dos partes: ¿la herramienta almacena algo en el dispositivo del visitante? y ¿trata datos personales? Falla cualquiera de las dos y necesitas banner — con la pérdida del 35-55% del dato que trae consigo. Supera las dos, como hace la medición anónima y agregada bajo la guía de la AEPD, y no se requiere banner para la analítica. Si quieres auditar tu stack actual contra todos los requisitos — no solo los españoles — recorre el <Link href="/es/reg-gap-analysis" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">análisis de brechas regulatorias</Link>, y cuantifica lo que te cuesta el banner con la <Link href="/es/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">calculadora de pérdida de datos</Link>.
+              Todas las respuestas se reducen al mismo test en dos partes: ¿la herramienta almacena algo en el dispositivo del visitante? y ¿trata datos personales? Falla cualquiera de las dos y necesitas banner — con la pérdida del 40-60% del dato que trae consigo. Supera las dos, como hace la medición anónima y agregada bajo la guía de la AEPD, y no se requiere banner para la analítica. Si quieres auditar tu stack actual contra todos los requisitos — no solo los españoles — recorre el <Link href="/es/reg-gap-analysis" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">análisis de brechas regulatorias</Link>, y cuantifica lo que te cuesta el banner con la <Link href="/es/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">calculadora de pérdida de datos</Link>.
             </p>
 
             <p className="text-[0.85rem] text-text-tertiary mt-10 italic">

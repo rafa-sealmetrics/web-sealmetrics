@@ -564,7 +564,7 @@ const STEPS_COPY = {
     bodies: [
       "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
       "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant.",
-      "See the 35-55% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
+      "See the 40-60% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
     ],
     primaryCta: "Start your 14-day free trial",
     secondaryCta: "See your GA4 gap first",
@@ -580,7 +580,7 @@ const STEPS_COPY = {
     bodies: [
       "Activa nuestro módulo en tu CMS o pega el pixel vía Tag Manager. Sin ticket de ingeniería, sin deployment.",
       "Visitas, productos, add-to-cart, checkout, compra — todo fluyendo a tu dashboard desde el primer segundo. 100% del tráfico, RGPD-compliant.",
-      "Ve el 35-55% que GA4 te oculta. Reasigna paid media sobre datos que cuadran con Shopify. Defiende cada euro frente a finanzas.",
+      "Ve el 40-60% que GA4 te oculta. Reasigna paid media sobre datos que cuadran con Shopify. Defiende cada euro frente a finanzas.",
     ],
     primaryCta: "Empieza tu trial de 14 días",
     secondaryCta: "Ver tu gap GA4 primero",
