@@ -492,8 +492,8 @@ export default function GA4AlternativesEnterpriseEsPage() {
               SealMetrics ofrece capacidades enterprise a una fracción del precio
               enterprise heredado. La atribución de revenue a último clic se
               construye sobre dato completo — no sobre estimaciones de una fracción
-              consentida. LENS AI supervisa más de 60 reglas de detección de
-              anomalías de forma automática. La analítica de agentes separa el
+              consentida. LENS AI responde preguntas sobre tu analítica en
+              lenguaje natural, ancladas en tu dato completo. La analítica de agentes separa el
               tráfico de bots de IA de los visitantes humanos. El dato se procesa y
               almacena exclusivamente en la UE.
             </p>
