@@ -47,12 +47,12 @@ const faqs = [
   {
     question: "Is Google Analytics 4 legal in Spain?",
     answer:
-      "Yes, with consent. GA4 sets cookies and processes personal data (client ID, IP-derived location), so it requires a banner and prior consent under the LSSI-CE and GDPR. The practical consequence: 35-55% of visitors reject the banner, and after ad blockers and browser restrictions GA4 ends up showing roughly 13% of real EU traffic. Legal with consent, yes; complete, no.",
+      "Yes, with consent. GA4 sets cookies and processes personal data (client ID, IP-derived location), so it requires a banner and prior consent under the LSSI-CE and GDPR. The practical consequence: 40-60% of visitors reject the banner, and after ad blockers and browser restrictions GA4 ends up showing roughly 13% of real EU traffic. Legal with consent, yes; complete, no.",
   },
   {
     question: "Which GDPR-compliant analytics can a small business use?",
     answer:
-      "It depends on what the data decides. For a small site with no ad spend, a lightweight privacy-first tool (Plausible, Fathom, Umami — from around €9/month) is compliant and sufficient. Once you invest in campaigns and allocate budget on the data — typically from a few thousand euros a month in ads — the 35-55% of traffic a banner-gated tool loses costs more than the analytics: that is where a cookieless platform with revenue attribution like SealMetrics (from €599/month) pays for itself.",
+      "It depends on what the data decides. For a small site with no ad spend, a lightweight privacy-first tool (Plausible, Fathom, Umami — from around €9/month) is compliant and sufficient. Once you invest in campaigns and allocate budget on the data — typically from a few thousand euros a month in ads — the 40-60% of traffic a banner-gated tool loses costs more than the analytics: that is where a cookieless platform with revenue attribution like SealMetrics (from €599/month) pays for itself.",
   },
   {
     question: "Can I measure conversions and campaigns without cookies?",
@@ -127,7 +127,7 @@ export default function GdprAnalyticsSpainFaqPage() {
               The pattern behind the seven answers
             </h2>
             <p>
-              Every answer reduces to the same two-part test: does the tool store anything on the visitor&apos;s device, and does it process personal data? Fail either and you need a banner — with the 35-55% data loss it brings. Pass both, as anonymous aggregate measurement does under the AEPD guidance, and no banner is required for analytics. If you want to audit your current stack against every requirement — not just the Spanish ones — run through the <Link href="/reg-gap-analysis" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">regulatory gap analysis</Link>, and quantify what the banner is costing you with the <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data-loss calculator</Link>.
+              Every answer reduces to the same two-part test: does the tool store anything on the visitor&apos;s device, and does it process personal data? Fail either and you need a banner — with the 40-60% data loss it brings. Pass both, as anonymous aggregate measurement does under the AEPD guidance, and no banner is required for analytics. If you want to audit your current stack against every requirement — not just the Spanish ones — run through the <Link href="/reg-gap-analysis" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">regulatory gap analysis</Link>, and quantify what the banner is costing you with the <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data-loss calculator</Link>.
             </p>
 
             <p className="text-[0.85rem] text-text-tertiary mt-10 italic">

@@ -187,14 +187,14 @@ export default function GA4AlternativesEnterprisePage() {
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
                 GA4 captures approximately 13% of actual EU eCommerce traffic
-                after accounting for consent rejection (35-55%), ad blockers
+                after accounting for consent rejection (40-60%), ad blockers
                 (40%+), and data sampling. Revenue attribution built on this data
                 is structurally incomplete.
               </li>
               <li>
                 Enterprise alternatives split into two categories:
                 cookie-dependent platforms (GA360, Adobe, Piwik PRO) that
-                improve on GA4 but still lose 35-55% of EU traffic, and
+                improve on GA4 but still lose 40-60% of EU traffic, and
                 cookieless platforms (SealMetrics) that capture 100%.
               </li>
               <li>
@@ -231,7 +231,7 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 consent
               </Link>
-              . In the EU, 35-55% of visitors reject cookies. Before{" "}
+              . In the EU, 40-60% of visitors reject cookies. Before{" "}
               <Link
                 href="/glossary/data-sampling"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -353,7 +353,7 @@ export default function GA4AlternativesEnterprisePage() {
 
             <p>
               The fundamental limitation remains: GA360 is cookie-dependent. In
-              European eCommerce, this means 35-55% data loss persists regardless
+              European eCommerce, this means 40-60% data loss persists regardless
               of spend. At $150K+ per year, the question is whether your budget
               produces complete data or better estimates.
             </p>
@@ -431,7 +431,7 @@ export default function GA4AlternativesEnterprisePage() {
               The trade-offs are significant. Implementation takes 3-6 months
               with specialized consultants. Pricing starts above $100K and scales
               with server calls. And like every cookie-dependent platform, Adobe
-              faces the same 35-55% EU data gap.
+              faces the same 40-60% EU data gap.
             </p>
 
             <p>
@@ -606,7 +606,7 @@ export default function GA4AlternativesEnterprisePage() {
             <p>
               Piwik PRO still depends on cookies. Despite privacy-first
               positioning, the platform requires consent for tracking. In EU
-              markets, this means 35-55% of eCommerce traffic remains invisible.
+              markets, this means 40-60% of eCommerce traffic remains invisible.
               AI-powered features are limited. Enterprise pricing starts around
               {"\u20ac"}30,000 per year.
             </p>
@@ -843,7 +843,7 @@ export default function GA4AlternativesEnterprisePage() {
                 How much of your revenue depends on EU traffic?
               </strong>{" "}
               If the majority of your customers are European, cookie-dependent
-              platforms will structurally misattribute revenue by 35-55%. This
+              platforms will structurally misattribute revenue by 40-60%. This
               affects campaign ROI calculations, budget allocation, and executive
               reporting. Only cookieless platforms avoid this gap entirely.
             </p>
