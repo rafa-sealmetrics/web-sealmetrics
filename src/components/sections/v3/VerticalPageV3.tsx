@@ -62,18 +62,18 @@ export function VerticalPageV3({
             {data.lede}
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-9">
-            <a
-              href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-            >
-              {locale === "es" ? "Empieza gratis" : "Start FREE Trial"} →
-            </a>
             <Link
               href={demoHref}
+              className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+            >
+              {locale === "es" ? "Reserva una demo" : "Book a demo"} →
+            </Link>
+            <a
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
             >
-              {locale === "es" ? "Reserva una demo" : "Book a demo"}
-            </Link>
+              {locale === "es" ? "Prueba de 14 días" : "Start 14-day trial"}
+            </a>
           </div>
           <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
             {micro}

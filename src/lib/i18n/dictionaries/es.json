@@ -53,7 +53,7 @@
     "changelogDesc": "Actualizaciones del producto",
     "login": "Acceder",
     "bookDemo": "Solicitar Demo",
-    "startTrial": "Empieza gratis",
+    "startTrial": "Prueba de 14 días",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú"
   },
@@ -101,7 +101,7 @@
   },
   "common": {
     "bookDemo": "Solicitar Demo",
-    "startTrial": "Prueba Gratuita",
+    "startTrial": "Prueba de 14 días",
     "home": "Inicio"
   }
 }

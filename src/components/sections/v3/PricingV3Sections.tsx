@@ -30,18 +30,18 @@ export function PricingHeroV3() {
           Every plan includes complete analytics on 100% of your traffic — no sampling, no modelled estimates, no feature walls. You only pay more when you actually grow.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a
-            href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-          >
-            Start FREE Trial <span>→</span>
-          </a>
           <Link
             href="/demo"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+          >
+            Book a demo <span>→</span>
+          </Link>
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Book a demo
-          </Link>
+            Start 14-day trial
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
           14-day free trial
@@ -512,16 +512,16 @@ export function PricingFinalCtaV3() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a
-              href="https://my.sealmetrics.com/register"
+              href="https://cal.com/sealmetrics"
               className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
             >
-              Start FREE Trial →
+              Book a walkthrough with Rafa →
             </a>
             <a
-              href="https://cal.com/sealmetrics"
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
             >
-              Book a walkthrough with Rafa
+              Start 14-day trial
             </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">

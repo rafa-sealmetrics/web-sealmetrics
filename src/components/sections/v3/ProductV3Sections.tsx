@@ -23,18 +23,18 @@ export function ProductHeroV3() {
           A full analytics stack built for eCommerce teams: consentless tracking, revenue attribution, LENS AI, SuperAPI and MCP server — all on the same full-resolution data. No sampling. No modelling.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a
-            href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-          >
-            Start FREE Trial <span>→</span>
-          </a>
           <Link
             href="/demo"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+          >
+            Book a demo <span>→</span>
+          </Link>
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Book a demo
-          </Link>
+            Start 14-day trial
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
           14-day free trial
@@ -275,7 +275,7 @@ function LensChatVisual() {
       />
       <div className="relative">
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-4" style={{ color: "#E8B84B" }}>
-          ● LENS AI · live
+          ● LENS AI
         </div>
         <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">
           What happened to paid social yesterday?
@@ -303,6 +303,9 @@ function LensChatVisual() {
             Opening Attribution → Meta → Summer Sale…
           </div>
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative conversation — not a live account.
+        </p>
       </div>
     </div>
   );
@@ -456,6 +459,9 @@ function AttributionBarsVisual() {
             </div>
           ))}
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative example — not a live account.
+        </p>
       </div>
     </div>
   );
@@ -519,6 +525,9 @@ function SuperApiVisual() {
 <span style={{ color: "#E8B84B" }}>ORDER BY</span> attributed <span style={{ color: "#E8B84B" }}>DESC</span>;{"\n"}{"\n"}
 <span className="text-white/45">{`→ 1.2M rows · 340ms · full resolution`}</span>
         </pre>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative query — not a live account.
+        </p>
       </div>
     </div>
   );
@@ -671,18 +680,18 @@ export function ProductFinalCtaV3() {
             Start the free 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. You add a card to start, and pay nothing if you cancel before day 14. No call required.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <a
-              href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
-            >
-              Start FREE Trial →
-            </a>
             <Link
               href="/demo"
+              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+            >
+              Book a demo →
+            </Link>
+            <a
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
             >
-              Book a demo
-            </Link>
+              Start 14-day trial
+            </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
             14-day free trial · EU-hosted · Consentless by design

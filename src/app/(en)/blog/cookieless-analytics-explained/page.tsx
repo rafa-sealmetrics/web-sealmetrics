@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics: How to Measure Without Cookies",
@@ -210,6 +211,8 @@ export default function CookielessAnalyticsExplainedPage() {
             </table>
           </div>
 
+          <CommercialModule hook="See cookieless measurement running on a real store — your own, in a 30-minute walkthrough." />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Privacy compliance without compromise
           </h2>
@@ -266,6 +269,8 @@ export default function CookielessAnalyticsExplainedPage() {
             .
           </p>
         </div>
+
+        <CommercialModule hook="You know how cookieless analytics works. The demo shows what it captures on your site that your current setup doesn't." />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

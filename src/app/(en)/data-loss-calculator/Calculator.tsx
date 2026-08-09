@@ -427,7 +427,7 @@ export function Calculator() {
                     href="https://my.sealmetrics.com/register"
                     className="block w-full py-3 text-center text-[0.9rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors mb-2"
                   >
-                    Start FREE Trial &mdash; see your exact numbers
+                    Start 14-day trial &mdash; see your exact numbers
                   </a>
                   <p className="text-[0.72rem] text-text-tertiary text-center">
                     14-day free trial · Cancel before day 14, pay nothing · 4-minute setup.

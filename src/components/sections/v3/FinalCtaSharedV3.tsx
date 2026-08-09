@@ -26,13 +26,16 @@ export function FinalCtaSharedV3({
   ledeEs,
   primaryHref,
   secondaryHref,
-  primaryTextEn = "Start FREE Trial →",
-  primaryTextEs = "Empieza gratis →",
-  secondaryTextEn = "Book a demo",
-  secondaryTextEs = "Reserva una demo",
+  // Demo is the primary path (assisted sale for the 10M€+ ICP); the trial is
+  // the secondary path for technical evaluators and is labelled "14-day
+  // trial", not "free", because registration takes a payment method up front.
+  primaryTextEn = "Book a demo →",
+  primaryTextEs = "Reserva una demo →",
+  secondaryTextEn = "Start 14-day trial",
+  secondaryTextEs = "Prueba de 14 días",
 }: Props) {
-  const resolvedPrimaryHref = primaryHref ?? REGISTER_URL;
-  const resolvedSecondaryHref = secondaryHref ?? (locale === "es" ? "/es/demo" : "/demo");
+  const resolvedPrimaryHref = primaryHref ?? (locale === "es" ? "/es/demo" : "/demo");
+  const resolvedSecondaryHref = secondaryHref ?? REGISTER_URL;
   const isExternalPrimary = resolvedPrimaryHref.startsWith("http");
   const isExternalSecondary = resolvedSecondaryHref.startsWith("http");
 

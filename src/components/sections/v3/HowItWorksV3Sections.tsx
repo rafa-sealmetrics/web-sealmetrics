@@ -8,7 +8,7 @@ const COPY = {
     h1Pre: "A different approach to ",
     h1Em: "measurement.",
     lede: "Traditional analytics lose most of your data before it's even recorded. SealMetrics was built from scratch to solve this — without cookies, without consent dependency, and without compromising privacy.",
-    ctaDemo: "Start FREE Trial",
+    ctaDemo: "Start 14-day trial",
     ctaPricing: "Book a demo",
     microTrust: "5-minute setup · No cookies · EU-hosted by design",
   },
@@ -17,7 +17,7 @@ const COPY = {
     h1Pre: "Un enfoque distinto a la ",
     h1Em: "medición.",
     lede: "La analítica tradicional pierde la mayoría de tus datos antes de registrarlos. SealMetrics se construyó desde cero para resolverlo — sin cookies, sin consentimiento y sin comprometer la privacidad.",
-    ctaDemo: "Empieza gratis",
+    ctaDemo: "Prueba de 14 días",
     ctaPricing: "Reserva una demo",
     microTrust: "Setup en 5 min · Sin cookies · Alojado en UE por diseño",
   },
@@ -47,18 +47,18 @@ export function HowItWorksHeroV3({ locale = "en" as Locale }) {
           {t.lede}
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a
-            href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-          >
-            {t.ctaDemo} →
-          </a>
           <Link
             href={locale === "es" ? "/es/demo" : "/demo"}
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+          >
+            {t.ctaPricing} →
+          </Link>
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            {t.ctaPricing}
-          </Link>
+            {t.ctaDemo}
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
           {t.microTrust}

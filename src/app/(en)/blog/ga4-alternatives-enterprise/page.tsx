@@ -9,6 +9,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "7 GA4 Alternatives for eCommerce Teams in 2026",
@@ -549,6 +550,10 @@ export default function GA4AlternativesEnterprisePage() {
               </Link>
             </p>
 
+            <CommercialModule
+              hook="Comparing alternatives on vendor claims? Run SealMetrics next to GA4 on your own traffic and compare on your own numbers instead."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               4. Piwik PRO
             </h2>
@@ -881,6 +886,10 @@ export default function GA4AlternativesEnterprisePage() {
               reliable data — or pays a premium for estimates.
             </p>
           </div>
+
+          <CommercialModule
+            hook="You've read the comparison on market data. The 30-minute version runs on yours — your channels, your revenue, your gap vs GA4."
+          />
 
           {/* Related */}
           <div className="mt-16 pt-10 border-t border-warm-100">

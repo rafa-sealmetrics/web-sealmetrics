@@ -99,22 +99,60 @@ export default function DemoPageEs() {
               </div>
             </div>
 
+            {/* Reserva directa primero; el formulario de cualificación pasa a
+                ser la vía opcional. La página promete 30 minutos en directo —
+                lo primero que ofrece debe ser un calendario, no una espera. */}
             <div className="lg:sticky lg:top-24">
-              <div className="mb-5">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
-                  Contacta con nosotros
+              <div className="p-6 bg-ink text-white rounded-xl">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-amber">
+                  Reserva directa
                 </span>
                 <h2
-                  className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-2"
+                  className="font-semibold text-white leading-[1.15] tracking-[-0.02em] mt-2"
                   style={{ fontSize: "clamp(22px, 2.4vw, 28px)" }}
                 >
-                  Cuéntanos tu setup — <em className="italic-accent">respondemos en 24h.</em>
+                  Elige hora — <em>ahora mismo.</em>
                 </h2>
+                <p className="text-[14px] text-white/70 leading-[1.55] mt-2 mb-5">
+                  30 minutos con el founder, sobre tu propio tráfico. Sin
+                  formulario de cualificación, sin esperar respuesta.
+                </p>
+                <a
+                  href="https://cal.com/sealmetrics"
+                  className="inline-flex w-full items-center justify-center gap-2 bg-white text-ink px-6 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+                >
+                  Reserva un walkthrough con Rafa →
+                </a>
+                <p className="font-mono text-[10.5px] text-white/50 uppercase tracking-[0.08em] font-semibold mt-3 text-center">
+                  Reserva instantánea · 30 min · sin compromiso
+                </p>
+              </div>
+
+              <div className="mt-7 mb-5">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                  ¿Prefieres una sesión a medida?
+                </span>
+                <h3
+                  className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-2"
+                  style={{ fontSize: "clamp(19px, 2vw, 24px)" }}
+                >
+                  Cuéntanos tu setup — <em className="italic-accent">preparamos tu audit antes.</em>
+                </h3>
                 <p className="text-[14px] text-ink-soft leading-[1.55] mt-2">
-                  6 preguntas rápidas. Las usamos para adaptar el audit a tus números reales, no a un deck genérico.
+                  6 preguntas rápidas y llegamos a la llamada con tus números
+                  reales delante, no con un deck genérico. Respondemos en un día
+                  laborable.
                 </p>
               </div>
               <DemoFormEs />
+
+              <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-5">
+                ¿Prefieres explorar por tu cuenta antes de hablar?{" "}
+                <Link href="/es/demo-access" className="text-ink underline">
+                  Accede a la cuenta demo
+                </Link>{" "}
+                — credenciales por email, dirección corporativa requerida.
+              </p>
             </div>
           </div>
         </div>

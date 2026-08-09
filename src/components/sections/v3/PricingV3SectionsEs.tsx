@@ -22,12 +22,12 @@ export function PricingHeroV3Es() {
           Cada plan incluye analítica completa sobre el 100% de tu tráfico — sin muestreo, sin estimaciones modeladas, sin muros de features. Solo pagas más cuando realmente creces.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
-            Empieza gratis <span>→</span>
-          </a>
-          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-            Reserva una demo
+          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
+            Reserva una demo <span>→</span>
           </Link>
+          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
+            Prueba de 14 días
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
           14 días gratis

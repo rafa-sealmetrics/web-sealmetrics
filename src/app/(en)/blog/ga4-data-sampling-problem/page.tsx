@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "GA4 Data Sampling: Why Your Numbers Are Wrong",
@@ -132,6 +133,10 @@ export default function GA4DataSamplingPage() {
             </p>
           </div>
 
+        <CommercialModule
+          hook="Hitting GA4's sampling thresholds? See your own reports unsampled — SealMetrics runs on 100% of events at any volume."
+        />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Sampling is only part of the problem
           </h2>
@@ -210,6 +215,10 @@ export default function GA4DataSamplingPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="If your Black Friday reports are sampled, the decisions made on them are too. Run an unsampled parallel month and compare."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

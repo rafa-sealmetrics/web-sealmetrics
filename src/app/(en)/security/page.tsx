@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
@@ -381,6 +382,48 @@ export default function Page() {
                 Terms of Service
               </a>
               . Security or privacy inquiries: privacy@sealmetrics.com.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA — this page receives DPOs and CTOs mid-procurement; an
+          email address alone is not a next step. */}
+      <section className="py-16 bg-white border-t border-warm-100">
+        <div className="max-w-[900px] mx-auto px-5 sm:px-10">
+          <div className="bg-ink text-white rounded-[20px] px-10 py-12 text-center">
+            <h2 className="text-white font-semibold leading-[1.15] tracking-[-0.02em] text-[28px] sm:text-[34px] mx-auto max-w-[24ch]">
+              Does this pass your security review?
+            </h2>
+            <p className="text-white/70 text-[15px] leading-[1.55] mt-4 mb-7 mx-auto max-w-[52ch]">
+              Walk through this document with the person who signs the DPA —
+              retention TTLs, sub-processors, the AEPD assessment. 30 minutes,
+              answered at the source.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <Link
+                href="/demo"
+                className="inline-flex items-center justify-center gap-2 bg-white text-ink px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+              >
+                Book a security walkthrough →
+              </Link>
+              <Link
+                href="/for/dpo"
+                className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
+              >
+                Read the DPO briefing
+              </Link>
+            </div>
+            <p className="text-[13px] text-white/50 mt-6">
+              Evaluating as an engineer?{" "}
+              <Link href="/for/cto" className="text-white/80 underline">
+                The CTO page
+              </Link>{" "}
+              covers the pixel, API and BigQuery schema. Full posture on the{" "}
+              <Link href="/trust" className="text-white/80 underline">
+                Trust Center
+              </Link>
+              .
             </p>
           </div>
         </div>

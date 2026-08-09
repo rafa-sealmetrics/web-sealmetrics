@@ -116,6 +116,9 @@ export function ConsentlessAnalytics() {
             You weren&rsquo;t under-performing — you were under-measuring. The budget you&rsquo;d have
             cut was your best-converting channel.
           </div>
+          <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-mute">
+            Illustrative scenario — your real gap depends on your consent rate. Measure it on your own traffic.
+          </div>
         </div>
       </div>
     </section>
@@ -187,6 +190,9 @@ export function PromoDaysRealTime() {
           <div className="mt-8 pt-6 border-t border-warm-100 text-[13px] leading-[1.5] text-ink-soft">
             Decision at 13:00: kill DemandGen, move budget to PMax_Catalog. Not a post-mortem
             tomorrow — a fix today.
+          </div>
+          <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-mute">
+            Illustrative example — not a live account.
           </div>
         </div>
       </div>
@@ -274,6 +280,10 @@ export function GrowthRiskCost() {
             </article>
           ))}
         </div>
+
+        <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative Q&amp;A — example conversations, not a live account.
+        </p>
 
         <div className="mt-10">
           <a

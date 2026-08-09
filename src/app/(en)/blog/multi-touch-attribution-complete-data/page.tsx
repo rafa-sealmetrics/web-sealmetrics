@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Multi-Touch Attribution Fails Without Complete Data",
@@ -163,6 +164,8 @@ export default function MultiTouchAttributionPage() {
             ))}
           </ul>
 
+          <CommercialModule hook="Last-click on 100% of data vs modelled multi-touch on a fraction — see the difference on your own channel mix." />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Google&rsquo;s data-driven attribution is not the answer
           </h2>
@@ -222,6 +225,8 @@ export default function MultiTouchAttributionPage() {
             .
           </p>
         </div>
+
+        <CommercialModule hook="We don't do multi-touch — deliberately. See what last-click on complete data tells you that models can't." />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

@@ -2,9 +2,13 @@ import Link from "next/link";
 
 type Locale = "en" | "es";
 
+// Primary is the assisted path (demo): the ICP is a CMO/eCommerce manager at a
+// 10M€+ company who buys assisted, not self-serve. The trial stays as the
+// secondary path for technical evaluators — and is labelled "14-day trial",
+// not "free", because registration takes a payment method up front.
 const COPY = {
-  en: { primary: "Start free trial", secondary: "Book a demo" },
-  es: { primary: "Empieza gratis", secondary: "Reserva una demo" },
+  en: { primary: "Book a demo", secondary: "Start 14-day trial" },
+  es: { primary: "Reserva una demo", secondary: "Prueba de 14 días" },
 } as const;
 
 export function DualCTA({
@@ -35,18 +39,18 @@ export function DualCTA({
 
   return (
     <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
-      <a
-        href="https://my.sealmetrics.com/register"
+      <Link
+        href={demoHref}
         className={`inline-flex items-center justify-center gap-2 rounded-md font-semibold no-underline transition-colors ${sizeClasses} ${primary}`}
       >
         {c.primary} <span>→</span>
-      </a>
-      <Link
-        href={demoHref}
+      </Link>
+      <a
+        href="https://my.sealmetrics.com/register"
         className={`inline-flex items-center justify-center gap-2 rounded-md font-semibold no-underline transition-colors ${sizeClasses} ${secondary}`}
       >
         {c.secondary}
-      </Link>
+      </a>
     </div>
   );
 }

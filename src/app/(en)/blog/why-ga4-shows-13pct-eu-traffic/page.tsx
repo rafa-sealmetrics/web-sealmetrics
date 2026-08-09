@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Why GA4 Shows 13% of Your EU Traffic",
@@ -208,6 +209,10 @@ export default function WhyGA4Shows13PctPage() {
             After this second layer: 45 visitors become approximately 27.
           </p>
 
+        <CommercialModule
+          hook="Want to know your site's real percentage? A 30-minute walkthrough runs your traffic through the gap calculator, live."
+        />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Layer 3: Browser restrictions erode the rest
           </h2>
@@ -377,6 +382,10 @@ export default function WhyGA4Shows13PctPage() {
             not the only difference.
           </p>
         </div>
+
+        <CommercialModule
+          hook="13% is the EU average, not your number. Measure yours — side by side with GA4, on your own traffic."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics for eCommerce: The 2026 Guide",
@@ -163,6 +164,8 @@ export default function Page() {
               <li><strong>CFO-defensible numbers.</strong> Because the architecture is provable (no PII, no identifiers) and aggregate revenue reconciles with the backend, finance can sign off on the channel mix without a three-hour meeting.</li>
             </ul>
 
+            <CommercialModule hook="Pixel says 340, Shopify says 180? The demo reconciles your numbers against your backend, live." />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               What you give up — on purpose
             </h2>
@@ -215,6 +218,8 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule hook="See your pixel, your backend and SealMetrics on the same screen — the reconciliation your CFO keeps asking for." />
 
           <RelatedReading currentSlug="cookieless-analytics-for-ecommerce" />
 
