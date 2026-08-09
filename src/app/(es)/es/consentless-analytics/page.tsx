@@ -421,7 +421,7 @@ export default function ConsentlessAnalyticsPillarEs() {
           <div className="mt-10 space-y-5">
             {[
               { name: "DPA", detail: "Data Processing Agreement, Art. 28 RGPD compliant, firmado por SealMetrics S.L. como encargado. Pre-rellenado, listo para contraseñar." },
-              { name: "Paquete TPSR", detail: "Documento de revisión de transferencia, privacidad y seguridad. Cubre flujos de datos, sub-procesadores (cero fuera de la UE), retención, cifrado en reposo y en tránsito, control de accesos y procedimiento de brecha." },
+              { name: "Paquete TPSR", detail: "Documento de revisión de transferencia, privacidad y seguridad. Cubre flujos de datos, sub-procesadores (ninguno fuera de la UE sobre dato de visitante), retención, cifrado en reposo y en tránsito, control de accesos y procedimiento de brecha." },
               { name: "Lista de sub-procesadores", detail: "Lista completa de sub-procesadores con sus roles, jurisdicciones y DPAs se incluye en el paquete TPSR. UE-only por política." },
               { name: "Hosting y residencia", detail: "Todo el procesamiento en Dublín, Irlanda, sobre infraestructura europea. Sin sub-procesadores estadounidenses en la ruta de datos analíticos. Evaluación de transferencia Schrems II innecesaria — no hay transferencia." },
               { name: "Retención", detail: "Fija e idéntica para todos los planes, aplicada por TTL automático de base de datos: log técnico a nivel de evento 14 días, agregados horarios 90 días, agregados diarios y conversiones 24 meses. No se almacenan datos crudos a nivel individual más allá de la ventana de agregación al milisegundo." },

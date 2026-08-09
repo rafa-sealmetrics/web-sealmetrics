@@ -74,7 +74,7 @@ export function PlanIncludesV3() {
     {
       from: "Agentic",
       to: "Growth",
-      diff: "5M events · email & chat support · guided onboarding · billing dashboard — same complete data, no LLM required",
+      diff: "5M events · email support · billing dashboard — same complete data, no LLM required",
     },
     {
       from: "Growth",
@@ -360,7 +360,7 @@ const comparisonData: ComparisonSection[] = [
       { feature: "Chat support", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Priority support", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Dedicated account manager", agentic: false, growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", agentic: "Docs only", growth: "Docs + videos", scale: "1 session", enterprise: "White-glove" },
+      { feature: "Onboarding", agentic: "Docs only", growth: "Self-service docs", scale: "1 session", enterprise: "White-glove" },
       { feature: "Uptime SLA", agentic: "—", growth: "99%", scale: "99.5%", enterprise: "99.9%" },
     ],
   },

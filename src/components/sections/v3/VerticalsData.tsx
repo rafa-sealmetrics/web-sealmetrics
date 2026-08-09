@@ -144,7 +144,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         pains: [
           { title: "Consent Mode v2 doesn't solve Schrems II", desc: "Even consented data flows to US infrastructure. CNIL and other DPAs are still challenging GA. The legal exposure doesn't go away with a banner." },
           { title: "Every cookie added = new DPIA", desc: "Analytics changes force compliance reviews. SealMetrics uses zero cookies, so scope stays clean forever." },
-          { title: "Sub-processor reviews every quarter", desc: "Google Analytics alone lists 30+ sub-processors across the world. SealMetrics has zero sub-processors outside the EU." },
+          { title: "Sub-processor reviews every quarter", desc: "Google Analytics alone lists 30+ sub-processors across the world. SealMetrics has none outside the EU on visitor data." },
           { title: "\"We think it's compliant\" — not defendable", desc: "With GA4 + consent mode you rely on interpretation. With SealMetrics there's nothing to interpret — no personal data, no consent requirement, no transfer." },
         ],
         outcomes: [
@@ -156,7 +156,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "How is SealMetrics GDPR-compliant by architecture?", a: "SealMetrics avoids personal-data collection by design — no cookies, no localStorage, no fingerprinting, no identifiers, no per-user profiling. Events are counted anonymously and aggregated into channel totals, with EU-hosted processing in Dublin and DPA/TPSR documentation available for procurement review." },
           { q: "Do I still need to mention SealMetrics in my privacy policy?", a: "Best practice is yes — transparency is always good. But it's not legally required since we don't process personal data. We provide a ready-to-paste privacy policy paragraph you can use." },
-          { q: "Where is data hosted?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU. All data processing and storage happens in Ireland end-to-end." },
+          { q: "Where is data hosted?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU in the visitor data path. All data processing and storage happens in Ireland end-to-end." },
           { q: "What about Schrems II?", a: "Schrems II invalidated Privacy Shield and created compliance risk for EU-US data transfers. SealMetrics has no data transfers outside the EU — Schrems II doesn't apply to our processing. Your legal team has one less framework to worry about." },
           { q: "Do you sign a DPA?", a: "Yes. Standard DPA included with every plan. Enterprise plans include custom DPA negotiation if needed for specific regulated industries (healthcare, finance, public sector)." },
           { q: "What security documentation can you provide?", a: "DPA, security architecture diagrams and a pre-built vendor security questionnaire (TPSR package) covering infrastructure, data handling, incident response and access controls. All available under NDA during procurement review." },
@@ -171,7 +171,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         pains: [
           { title: "Consent Mode v2 no resuelve Schrems II", desc: "Incluso los datos consentidos fluyen a infra US. CNIL y otros DPAs siguen challengeando GA. La exposición legal no desaparece con un banner." },
           { title: "Cada cookie añadida = nuevo DPIA", desc: "Los cambios de analítica fuerzan revisiones de compliance. SealMetrics usa cero cookies, el scope permanece limpio siempre." },
-          { title: "Revisión de sub-procesadores cada trimestre", desc: "Solo Google Analytics lista 30+ sub-procesadores en el mundo. SealMetrics tiene cero sub-procesadores fuera de UE." },
+          { title: "Revisión de sub-procesadores cada trimestre", desc: "Solo Google Analytics lista 30+ sub-procesadores en el mundo. SealMetrics no tiene ninguno fuera de UE sobre dato de visitante." },
           { title: "\"Creemos que cumple\" — no defendible", desc: "Con GA4 + consent mode dependes de interpretación. Con SealMetrics no hay nada que interpretar — sin dato personal, sin consentimiento, sin transferencia." },
         ],
         outcomes: [
@@ -183,7 +183,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "¿Cómo cumple SealMetrics RGPD por arquitectura?", a: "RGPD aplica al tratamiento de datos personales. SealMetrics no trata datos personales — sin cookies, sin localStorage, sin fingerprinting, sin identificadores, sin perfilado por usuario. Los eventos se cuentan de forma anónima y se agregan en totales por canal. Nada en el modelo de datos puede identificar a una persona física. Esta arquitectura es la base del cumplimiento — DPA, TPSR y diagramas disponibles para tu DPO." },
           { q: "¿Tengo que mencionar SealMetrics en mi política de privacidad?", a: "Best practice sí — la transparencia es siempre recomendable. Pero no es legalmente obligatorio ya que no tratamos datos personales. Proporcionamos un párrafo listo para pegar en tu política." },
-          { q: "¿Dónde se alojan los datos?", a: "Dublín, Irlanda. Región UE única. Sin failover a terceros países. Sin sub-procesadores fuera de UE. Todo el procesamiento y almacenamiento ocurre en Irlanda, de extremo a extremo." },
+          { q: "¿Dónde se alojan los datos?", a: "Dublín, Irlanda. Región UE única. Sin failover a terceros países. Sin sub-procesadores fuera de UE en la ruta del dato de visitante. Todo el procesamiento y almacenamiento ocurre en Irlanda, de extremo a extremo." },
           { q: "¿Y Schrems II?", a: "Schrems II invalidó Privacy Shield y creó riesgo de compliance para transferencias UE-US. SealMetrics no tiene transferencias fuera de UE — Schrems II no aplica. Tu equipo legal tiene un framework menos del que preocuparse." },
           { q: "¿Firmáis DPA?", a: "Sí. DPA estándar incluido en cada plan. El plan Enterprise permite negociación de DPA custom si lo necesitas para industrias reguladas específicas (salud, financiero, sector público)." },
           { q: "¿Qué documentación de seguridad proporcionáis?", a: "DPA, diagramas de arquitectura de seguridad y un cuestionario de seguridad vendor pre-construido (paquete TPSR) que cubre infraestructura, tratamiento de datos, respuesta ante incidentes y controles de acceso. Todo disponible bajo NDA durante procurement review." },
@@ -482,7 +482,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
       en: {
         eyebrow: "For finance & banking",
         h1: <>Analytics with <em>bank-grade compliance.</em></>,
-        lede: "Zero cookies, EU-hosted in Dublin, no sub-processors outside the EU. Analytics your compliance team can sign off in one meeting — not three.",
+        lede: "Zero cookies, EU-hosted in Dublin, no sub-processors outside the EU on visitor data. Analytics your compliance team can sign off in one meeting — not three.",
         pains: [
           { title: "Analytics vendor review takes 4 months", desc: "GA4 → Consent Mode → Schrems II → DPIA → sub-processor review → fail. Every analytics tool starts this loop. SealMetrics ends it." },
           { title: "Every campaign change needs legal review", desc: "New UTM? New pixel event? Compliance wants DPIA. With SealMetrics there's nothing to review — zero personal data means zero ongoing assessments." },
@@ -509,7 +509,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
       es: {
         eyebrow: "Para finanzas y banca",
         h1: <>Analítica con <em>compliance grado bancario.</em></>,
-        lede: "Cero cookies, alojado en UE en Dublín, sin sub-procesadores fuera de UE. Analítica que tu equipo de compliance firma en una reunión — no tres.",
+        lede: "Cero cookies, alojado en UE en Dublín, sin sub-procesadores fuera de UE sobre dato de visitante. Analítica que tu equipo de compliance firma en una reunión — no tres.",
         pains: [
           { title: "Revisión de vendor analytics toma 4 meses", desc: "GA4 → Consent Mode → Schrems II → DPIA → revisión sub-procesadores → fail. Toda herramienta arranca este loop. SealMetrics lo termina." },
           { title: "Cada cambio de campaña requiere revisión legal", desc: "¿UTM nuevo? ¿Evento de pixel nuevo? Compliance pide DPIA. Con SealMetrics no hay nada que revisar — cero datos personales significa cero evaluaciones continuas." },
@@ -518,7 +518,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "1", label: "Reunión de review", detail: "Arquitectura, DPA, Schrems II — una reunión, hecho." },
-          { n: "Dublín", label: "Infra solo UE", detail: "Sin transferencias US, sin sub-procesadores en terceros países, nunca." },
+          { n: "Dublín", label: "Infra solo UE", detail: "Sin transferencias US ni sub-procesadores en terceros países en la ruta del dato de visitante." },
           { n: "0", label: "Datos personales", detail: "Sin cookies, sin identificadores, sin fingerprinting. RGPD por arquitectura." },
           { n: "Total", label: "Audit trail integrado", detail: "Cada acceso a datos logueado. Trails regulator-ready a demanda." },
         ],

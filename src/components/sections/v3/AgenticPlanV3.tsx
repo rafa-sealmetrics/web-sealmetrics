@@ -148,7 +148,7 @@ const SETUP_COPY = {
       {
         n: "02",
         title: "Ask it to create your account",
-        p: "Your agent provisions a SealMetrics account and generates your tracking pixel and content groups — all through the MCP.",
+        p: "Your agent provisions a SealMetrics account and generates your tracking pixel — all through the MCP.",
       },
       {
         n: "03",
@@ -172,7 +172,7 @@ const SETUP_COPY = {
       {
         n: "02",
         title: "Pídele que cree tu cuenta",
-        p: "Tu agente aprovisiona una cuenta de SealMetrics y genera tu píxel de tracking y los content groups — todo a través del MCP.",
+        p: "Tu agente aprovisiona una cuenta de SealMetrics y genera tu píxel de tracking — todo a través del MCP.",
       },
       {
         n: "03",

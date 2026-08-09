@@ -54,7 +54,7 @@ export function PlanIncludesV3Es() {
     "Datos frescos antes de las 6 AM",
   ];
   const diffs = [
-    { from: "Agentic", to: "Growth", diff: "5M eventos · soporte email y chat · onboarding guiado · panel de facturación — los mismos datos completos, sin necesidad de LLM" },
+    { from: "Agentic", to: "Growth", diff: "5M eventos · soporte email · panel de facturación — los mismos datos completos, sin necesidad de LLM" },
     { from: "Growth", to: "Scale", diff: "15M eventos · Private AI gestionada (5M tokens, sin API key) · Webhooks · Onboarding guiado · Soporte prioritario" },
     { from: "Scale", to: "Enterprise", diff: "Eventos ilimitados · Private AI exclusiva · Account manager · Procesamiento aislado · SLA personalizado" },
   ];
@@ -289,7 +289,7 @@ const comparisonDataEs: ComparisonSection[] = [
       { feature: "Soporte chat", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Soporte prioritario", agentic: false, growth: false, scale: true, enterprise: true },
       { feature: "Account manager dedicado", agentic: false, growth: false, scale: false, enterprise: true },
-      { feature: "Onboarding", agentic: "Solo docs", growth: "Docs + vídeos", scale: "1 sesión", enterprise: "White-glove" },
+      { feature: "Onboarding", agentic: "Solo docs", growth: "Docs self-service", scale: "1 sesión", enterprise: "White-glove" },
       { feature: "SLA de uptime", agentic: "—", growth: "99%", scale: "99,5%", enterprise: "99,9%" },
     ],
   },

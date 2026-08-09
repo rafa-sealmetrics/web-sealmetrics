@@ -518,7 +518,7 @@ export default function ConsentlessAnalyticsPillar() {
               {
                 name: "TPSR package",
                 detail:
-                  "Transfer, Privacy and Security Review document. Covers data flows, sub-processors (zero outside the EU), retention, encryption at rest and in transit, access controls, breach procedure.",
+                  "Transfer, Privacy and Security Review document. Covers data flows, sub-processors (none outside the EU on visitor data), retention, encryption at rest and in transit, access controls, breach procedure.",
               },
               {
                 name: "Sub-processor list",
