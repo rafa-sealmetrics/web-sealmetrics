@@ -211,7 +211,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         quote: { text: "We've used SealMetrics as 'OK, we believe this data.' It's now our single source of truth.", cite: "Founder & CEO · DTC brand" },
         faqs: [
-          { q: "Does SealMetrics integrate with Shopify?", a: "Yes, natively. One-click install on Shopify Plus. For Shopify Standard, add one script via the theme customizer. Full order data flows automatically — no manual SKU mapping." },
+          { q: "Does SealMetrics integrate with Shopify?", a: "Yes, natively — the same install on any Shopify plan, no Plus/Standard split. Connect the Pixel app from your dashboard, enable the theme app embed, and the full e-commerce funnel flows automatically. No manual SKU mapping." },
           { q: "Can I use this alongside Meta pixel and Google Ads pixel?", a: "Yes. SealMetrics doesn't replace ad pixels — it's a neutral measurement layer. Keep your ad pixels for platform optimization. Use SealMetrics for attribution truth." },
           { q: "What about my DTC checkout on a custom domain?", a: "Works everywhere. First-party pixel runs on your own domain — custom, subdomain, checkout.yourshop.com, anywhere. No CORS issues, no cookie domain configuration." },
           faqMigration.en,
@@ -239,7 +239,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         quote: { text: "Hemos usado SealMetrics como 'vale, nos creemos este dato.' Es nuestra fuente única de verdad.", cite: "Founder & CEO · marca DTC" },
         faqs: [
-          { q: "¿SealMetrics integra con Shopify?", a: "Sí, nativamente. Instalación en un click en Shopify Plus. Para Shopify Standard, añade un script vía el customizer de tema. Los datos de orden fluyen automáticamente — sin mapeo manual de SKUs." },
+          { q: "¿SealMetrics integra con Shopify?", a: "Sí, nativamente — la misma instalación en cualquier plan de Shopify, sin distinción Plus/Standard. Conecta la app Pixel desde tu dashboard, activa el app embed del tema, y el funnel de eCommerce completo fluye automáticamente. Sin mapeo manual de SKUs." },
           { q: "¿Lo puedo usar junto a pixel de Meta y Google Ads?", a: "Sí. SealMetrics no reemplaza los pixels publicitarios — es una capa neutral de medición. Mantén tus pixels para optimización de plataforma. Usa SealMetrics para la verdad de atribución." },
           { q: "¿Y mi checkout DTC en un dominio custom?", a: "Funciona en todas partes. El pixel first-party corre en tu propio dominio — custom, subdominio, checkout.tutienda.com, donde sea. Sin problemas de CORS, sin configuración de dominio de cookies." },
           faqMigration.es,
@@ -328,7 +328,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "Can I track complex product events — feature usage, API calls, activation metrics?", a: "Yes. Full event API lets you track any custom event with any payload. Activation, engagement, feature adoption — all first-class events in SealMetrics, not bolted on as 'custom events' with limitations." },
           { q: "Does this work with my customer data platform (Segment, Rudderstack)?", a: "Yes. SealMetrics can source data from your CDP, and export back to it. Your single-source-of-truth architecture stays intact — SealMetrics adds the consent-free layer on top." },
-          { q: "What about our enterprise sales motion?", a: "First-party tracking captures technical buyers who run ad blockers. Pair with your CRM — SealMetrics identifies the accounts visiting your pricing page even when GA4 shows \"direct\". No more black-box enterprise attribution." },
+          { q: "What about our enterprise sales motion?", a: "First-party tracking captures technical buyers who run ad blockers — visits GA4 shows as \"direct\" or misses entirely. SealMetrics gives you the complete, channel-level picture of traffic and conversions on your pricing page, aggregate and consent-free — not an account-by-account identity match. No more black-box enterprise attribution." },
           faqMigration.en,
           faqSetup.en,
           faqGDPR.en,
@@ -355,7 +355,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "¿Puedo trackear eventos de producto complejos — uso de features, llamadas API, métricas de activación?", a: "Sí. API completa de eventos permite trackear cualquier evento custom con cualquier payload. Activación, engagement, adopción de features — todos first-class en SealMetrics, no añadidos como 'custom events' con limitaciones." },
           { q: "¿Funciona con mi customer data platform (Segment, Rudderstack)?", a: "Sí. SealMetrics puede consumir datos desde tu CDP, y exportar de vuelta. Tu arquitectura single-source-of-truth se mantiene — SealMetrics añade la capa sin consentimiento encima." },
-          { q: "¿Y nuestra motion de ventas enterprise?", a: "El tracking first-party captura buyers técnicos que corren ad blockers. Combina con tu CRM — SealMetrics identifica las cuentas visitando tu pricing incluso cuando GA4 muestra \"directo\". Fin de la atribución enterprise en caja negra." },
+          { q: "¿Y nuestra motion de ventas enterprise?", a: "El tracking first-party captura buyers técnicos que corren ad blockers — visitas que GA4 muestra como \"directo\" o directamente pierde. SealMetrics te da la foto completa a nivel de canal del tráfico y conversiones en tu página de precios, agregada y sin consentimiento — no una identificación cuenta por cuenta. Fin de la atribución enterprise en caja negra." },
           faqMigration.es,
           faqSetup.es,
           faqGDPR.es,
@@ -442,7 +442,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "Does SealMetrics really work with ad blocker audiences?", a: "Yes. Because the pixel is first-party — running on your own domain — ad blockers don't see it as analytics. uBlock, AdGuard, Brave's shields, Safari ITP — none of them block first-party tracking on your own domain." },
           { q: "Can I integrate with my ad server or SSP?", a: "Yes. Full API access and BigQuery export. Pipe SealMetrics data into Google Ad Manager, Prebid, or any custom yield logic. Or pull GAM data into SealMetrics for joined analytics." },
-          { q: "Does it support paywall analytics?", a: "Yes. Custom events + user identification (via your logged-in ID, hashed) = full subscriber funnel from anonymous read to paid account. All first-party, all consent-independent for the anonymous portion." },
+          { q: "Does it support paywall analytics?", a: "Yes. Custom events at each step — anonymous read, paywall hit, subscription — give you the aggregate funnel: how many readers hit the wall, how many convert, by channel. It's session-scoped, not a per-person journey — SealMetrics never creates a persistent identifier to follow an individual reader across visits. All first-party, all consent-independent." },
           faqMigration.en,
           faqSetup.en,
           faqGDPR.en,
@@ -469,7 +469,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "¿SealMetrics realmente funciona con audiencias que usan ad blockers?", a: "Sí. Como el pixel es first-party — corre en tu propio dominio — los ad blockers no lo ven como analítica. uBlock, AdGuard, shields de Brave, ITP de Safari — ninguno bloquea tracking first-party en tu propio dominio." },
           { q: "¿Integra con mi ad server o SSP?", a: "Sí. Acceso API completo y export BigQuery. Envía datos de SealMetrics a Google Ad Manager, Prebid, o cualquier lógica de yield custom. O tira datos de GAM a SealMetrics para analítica unificada." },
-          { q: "¿Soporta analítica de paywall?", a: "Sí. Eventos custom + identificación de usuario (vía tu ID logueado, hasheado) = funnel completo de suscriptor desde lectura anónima hasta cuenta pagada. Todo first-party, todo sin consentimiento para la parte anónima." },
+          { q: "¿Soporta analítica de paywall?", a: "Sí. Eventos custom en cada paso — lectura anónima, hit del paywall, suscripción — te dan el funnel agregado: cuántos lectores llegan al muro, cuántos convierten, por canal. Es a nivel de sesión, no un journey por persona — SealMetrics nunca crea un identificador persistente para seguir a un lector individual entre visitas. Todo first-party, todo sin consentimiento." },
           faqMigration.es,
           faqSetup.es,
           faqGDPR.es,
