@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Lints `public/llms.txt` against `out/sitemap.xml`. Reports:
+ * Lints the generated `out/llms.txt` against `out/sitemap.xml`. Reports:
  *   - URLs in sitemap but not in llms.txt (missing from AI surface)
  *   - URLs in llms.txt but not in sitemap (stale entries)
  *
@@ -19,7 +19,7 @@ import { fileURLToPath } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..");
 const sitemapPath = path.join(repoRoot, "out/sitemap.xml");
-const llmsPath = path.join(repoRoot, "public/llms.txt");
+const llmsPath = path.join(repoRoot, "out/llms.txt");
 
 if (!existsSync(sitemapPath)) {
   console.error("[audit-llms-txt] out/sitemap.xml missing — run `npm run build` first.");
@@ -36,7 +36,10 @@ const sitemapUrls = new Set(
 );
 
 const llmsUrls = new Set(
-  Array.from(llms.matchAll(/^- (\/[^\s—]+)/gm)).map((m) => m[1].replace(/\/$/, ""))
+  Array.from(llms.matchAll(/\]\(https:\/\/sealmetrics\.com([^\s)]+\.md)\)/g)).map((m) => {
+    const route = m[1].replace(/\.md$/, "");
+    return (route === "/index" ? "/" : route).replace(/\/$/, "");
+  })
 );
 
 const missing = [...sitemapUrls].filter((u) => !llmsUrls.has(u)).sort();
@@ -53,7 +56,7 @@ const drift = missing.length + stale.length;
 if (drift > 0) {
   console.error(
     `\n[audit-llms-txt] ${drift} URL(s) drifted — reconcile public/llms.txt before shipping.\n` +
-      `  Missing: add a hand-written "- /route — description" line in the matching section.\n` +
+      `  Missing: add a curated "- /route — description" line in the matching section.\n` +
       `  Stale:   remove the line — or, if the route is a redirect stub or otherwise\n` +
       `           shouldn't be crawled, add it to EXCLUDE in src/app/sitemap.ts instead.`
   );

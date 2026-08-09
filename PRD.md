@@ -1,5 +1,7 @@
 # PRD — SealMetrics Marketing Website
 
+> The machine-readable content, Markdown, `llms.txt`, manifest, security, evaluation, and continuous automation requirements live in [`PRD-KNOWLEDGE-LAYER.md`](./PRD-KNOWLEDGE-LAYER.md) and [`PRD-KNOWLEDGE-LAYER-AUTOMATION.md`](./PRD-KNOWLEDGE-LAYER-AUTOMATION.md). Those documents are part of this product specification and must be applied to every new page.
+
 **Versión:** 1.1
 **Fecha:** 28 febrero 2026
 **Estado:** En desarrollo

@@ -216,6 +216,30 @@ function mainContent(html) {
   return html.slice(from, end);
 }
 
+function contentTypeFor(route) {
+  if (route.startsWith("/blog")) return "blog";
+  if (route.startsWith("/glossary")) return "glossary";
+  if (route.startsWith("/vs") || route.startsWith("/alternatives")) return "comparison";
+  if (route.startsWith("/security") || route.startsWith("/trust") || route.startsWith("/privacy") || route === "/terms/") return "trust-and-legal";
+  if (route.startsWith("/platforms") || route.startsWith("/integrations")) return "implementation";
+  if (route.startsWith("/for")) return "audience";
+  if (route.startsWith("/case-studies")) return "case-study";
+  return "product";
+}
+
+function ownerFor(type) {
+  if (type === "trust-and-legal") return "legal";
+  if (type === "implementation") return "engineering";
+  if (type === "blog" || type === "glossary") return "content";
+  return "web";
+}
+
+function priorityFor(route, type) {
+  if (type === "trust-and-legal" || type === "implementation") return "critical";
+  if (["/", "/product/", "/pricing/", "/how-it-works/", "/security/"].includes(route)) return "critical";
+  return "useful";
+}
+
 /* -------------------------------------------------------------------- main */
 
 const files = walk(OUT).sort();
@@ -264,6 +288,10 @@ for (const file of files) {
     html.match(/"dateModified"\s*:\s*"([^"]+)"/)?.[1] ??
     html.match(/"datePublished"\s*:\s*"([^"]+)"/)?.[1] ??
     null;
+  const contentType = contentTypeFor(route);
+  const owner = ownerFor(contentType);
+  const llmPriority = priorityFor(route, contentType);
+  const lastVerified = modified ? modified.slice(0, 10) : new Date().toISOString().slice(0, 10);
 
   const mdPath =
     route === "/"
@@ -275,9 +303,13 @@ for (const file of files) {
     "---",
     `title: ${JSON.stringify(title)}`,
     description ? `description: ${JSON.stringify(description)}` : null,
-    `canonical_url: ${canonical}`,
-    `lang: ${lang}`,
+    `canonical_url: ${JSON.stringify(canonical)}`,
+    `lang: ${JSON.stringify(lang)}`,
     modified ? `date_modified: ${modified}` : null,
+    `content_type: ${JSON.stringify(contentType)}`,
+    `owner: ${JSON.stringify(owner)}`,
+    `llm_priority: ${JSON.stringify(llmPriority)}`,
+    `last_verified: ${JSON.stringify(lastVerified)}`,
     `source: ${SITE}${route}`,
     "publisher: SealMetrics",
     "---",
@@ -288,7 +320,7 @@ for (const file of files) {
   mkdirSync(path.dirname(mdPath), { recursive: true });
   writeFileSync(mdPath, `${frontMatter}\n\n${md}\n`);
   written++;
-  manifest.push({ route, md: mdUrl });
+  manifest.push({ route, md: mdUrl, canonical, markdown: mdUrl, lang, content_type: contentType, owner, llm_priority: llmPriority, last_verified: lastVerified, title, description, generated_at: new Date().toISOString() });
 
   // Advertise the twin from the HTML — only now that it exists.
   const linkTag = `<link rel="alternate" type="text/markdown" href="${mdUrl}"/>`;
@@ -310,6 +342,10 @@ writeFileSync(
     ...manifest.map((m) => m.md),
     "",
   ].join("\n")
+);
+writeFileSync(
+  path.join(OUT, "knowledge-manifest.json"),
+  `${JSON.stringify({ generated_at: new Date().toISOString(), routes: manifest.sort((a, b) => a.route.localeCompare(b.route)) }, null, 2)}\n`
 );
 
 console.log(

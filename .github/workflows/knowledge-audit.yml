@@ -1,0 +1,36 @@
+name: Knowledge Layer nightly audit
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Deployed site to smoke-test"
+        required: false
+        default: "https://sealmetrics.com"
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: knowledge-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: Build and smoke-test Knowledge Layer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Smoke-test deployed critical Markdown
+        env:
+          KNOWLEDGE_BASE_URL: ${{ inputs.base_url || 'https://sealmetrics.com' }}
+        run: node scripts/smoke-deployed-knowledge.mjs
