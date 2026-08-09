@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ComparisonLinks } from "@/components/ui/ComparisonLinks";
 import {
   Chip,
@@ -1046,6 +1047,10 @@ export default function BestWebAnalyticsToolPage() {
               tool is not the expense. The decisions are.
             </p>
 
+          <CommercialModule
+            hook="Want to score SealMetrics against your own requirements list? The demo walks the 24 requirements on your traffic, including the one we fail."
+          />
+
             <h2 className={h2Class}>How SealMetrics scores against this list</h2>
 
             <div className="rounded-[14px] border-l-2 border-amber bg-amber-soft/30 p-5">
@@ -1190,6 +1195,10 @@ export default function BestWebAnalyticsToolPage() {
               ))}
             </div>
           </div>
+
+          <CommercialModule
+            hook="The scorecard says 23/24 — and names the miss. See what the 23 look like on your own site before you shortlist."
+          />
 
           <ComparisonLinks locale="en" />
 

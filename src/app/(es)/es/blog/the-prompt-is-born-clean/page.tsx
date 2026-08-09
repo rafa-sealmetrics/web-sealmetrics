@@ -10,6 +10,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "the-prompt-is-born-clean";
 const URL = `/es/blog/${SLUG}`;
@@ -308,6 +309,11 @@ export default function ThePromptIsBornCleanPageEs() {
               .
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Sabes exactamente qué contiene el prompt que tu analítica le envía a su IA? En una demo ves qué recibe LENS: agregados anónimos, nunca datos personales."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               La segunda capa: defensa en profundidad
             </h2>
@@ -378,6 +384,11 @@ export default function ThePromptIsBornCleanPageEs() {
               accidente en un conjunto de entrenamiento.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Tu DPO pregunta qué ve el modelo? Respóndele con una demo: el prompt de LENS nace de dato anónimo y agregado, y la inferencia no sale de la UE."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

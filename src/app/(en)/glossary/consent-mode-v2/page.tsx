@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Google Consent Mode v2? — SealMetrics Glossary",
@@ -70,6 +71,8 @@ export default function ConsentModeV2Page() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">When measurement is the right answer</h2>
             <p>For board-level revenue decisions, for CFO reconciliation, for the cost-of-customer calculations a serious finance team will defend — modelling is the wrong layer. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> measures every visitor on the same anonymous-aggregate basis, with no model in between. See the architectural argument on the <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data pillar</Link>.</p>
           </div>
+          <CommercialModule hook="Consent Mode v2 models what it can't observe. SealMetrics counts what actually happened — compare modelled against measured on your own traffic." />
+
           <RelatedGlossaryTerms slug="consent-mode-v2" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">

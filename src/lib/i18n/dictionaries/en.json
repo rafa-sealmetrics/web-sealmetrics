@@ -53,7 +53,7 @@
     "changelogDesc": "Product updates",
     "login": "Login",
     "bookDemo": "Book a Demo",
-    "startTrial": "Start FREE Trial",
+    "startTrial": "Start 14-day trial",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -101,7 +101,7 @@
   },
   "common": {
     "bookDemo": "Book a Demo",
-    "startTrial": "Start Free Trial",
+    "startTrial": "Start 14-day trial",
     "home": "Home"
   }
 }

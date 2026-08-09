@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "We Added 9 Analytics Tools to One Page. Lighthouse Scores.",
@@ -298,6 +299,10 @@ export default function LighthouseScoresPage() {
           </p>
 
           {/* --- What the numbers mean --- */}
+          <CommercialModule
+            hook="SealMetrics scored 100 with zero performance impact in this test. Run Lighthouse on your own site before and after removing the heavy scripts."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             What the numbers mean
           </h2>
@@ -490,6 +495,10 @@ export default function LighthouseScoresPage() {
             , this one shows up in every Lighthouse report.
           </p>
         </div>
+
+        <CommercialModule
+          hook="Every point your analytics stack costs in Lighthouse is paid on every pageview. See what measurement with zero score impact looks like on your pages."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

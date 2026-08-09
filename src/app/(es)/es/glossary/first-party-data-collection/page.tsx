@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es la recolección first-party? — Glosario",
@@ -68,6 +69,8 @@ export default function FirstPartyDataCollectionEsPage() {
             Combinada con la <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, la recolección first-party elimina dos de los tres grandes vectores de <Link href={glossaryHref("data-loss-in-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">pérdida de datos</Link>: el bloqueo por extensiones y las restricciones de cookies del navegador.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="SealMetrics es first-party por diseño: tu dominio, tus datos, alojados en Dublín. Mira qué cambia eso en tus cifras." />
 
         <RelatedGlossaryTerms slug="first-party-data-collection" locale="es" />
 

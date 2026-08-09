@@ -14,6 +14,7 @@ import {
   FeatureSuperAPIV3Es,
   NineReportsV3Es,
   IntegrationsStripV3Es,
+  ProductProofV3Es,
   ProductFinalCtaV3Es,
 } from "@/components/sections/v3/ProductV3SectionsEs";
 
@@ -72,6 +73,7 @@ export default function ProductPageEs() {
       <FeatureSuperAPIV3Es />
       <NineReportsV3Es />
       <IntegrationsStripV3Es />
+      <ProductProofV3Es />
       <ProductFinalCtaV3Es />
     </>
   );

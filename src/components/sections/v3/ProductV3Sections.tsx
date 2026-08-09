@@ -23,21 +23,21 @@ export function ProductHeroV3() {
           A full analytics stack built for eCommerce teams: consentless tracking, revenue attribution, LENS AI, SuperAPI and MCP server — all on the same full-resolution data. No sampling. No modelling.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a
-            href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-          >
-            Start FREE Trial <span>→</span>
-          </a>
           <Link
             href="/demo"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+          >
+            Book a demo <span>→</span>
+          </Link>
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Book a demo
-          </Link>
+            Start 14-day trial
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14-day free trial
+          14-day trial · nothing charged if you cancel · EU-hosted
         </p>
       </div>
     </section>
@@ -275,7 +275,7 @@ function LensChatVisual() {
       />
       <div className="relative">
         <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-4" style={{ color: "#E8B84B" }}>
-          ● LENS AI · live
+          ● LENS AI
         </div>
         <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">
           What happened to paid social yesterday?
@@ -303,6 +303,9 @@ function LensChatVisual() {
             Opening Attribution → Meta → Summer Sale…
           </div>
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative conversation — not a live account.
+        </p>
       </div>
     </div>
   );
@@ -456,6 +459,9 @@ function AttributionBarsVisual() {
             </div>
           ))}
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative example — not a live account.
+        </p>
       </div>
     </div>
   );
@@ -519,6 +525,9 @@ function SuperApiVisual() {
 <span style={{ color: "#E8B84B" }}>ORDER BY</span> attributed <span style={{ color: "#E8B84B" }}>DESC</span>;{"\n"}{"\n"}
 <span className="text-white/45">{`→ 1.2M rows · 340ms · full resolution`}</span>
         </pre>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative query — not a live account.
+        </p>
       </div>
     </div>
   );
@@ -668,25 +677,123 @@ export function ProductFinalCtaV3() {
             The analytics platform <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>eCommerce teams deserve.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Start the free 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. You add a card to start, and pay nothing if you cancel before day 14. No call required.
+            Start the 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. You add a card to start, and pay nothing if you cancel before day 14. No call required.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <a
-              href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
-            >
-              Start FREE Trial →
-            </a>
             <Link
               href="/demo"
+              className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+            >
+              Book a demo →
+            </Link>
+            <a
+              href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
             >
-              Book a demo
-            </Link>
+              Start 14-day trial
+            </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            14-day free trial · EU-hosted · Consentless by design
+            14-day trial · EU-hosted · Consentless by design
           </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   PROOF · audited results before the final ask
+   ============================================
+   The page was a feature tour that closed on a claim with no number behind
+   it. This is the only place on /product where outcomes are evidenced, so it
+   sits directly before the CTA. Light section on purpose — the design system
+   allows two dark slabs per page and the final CTA takes one.
+   PRD-CONVERSION-REDESIGN.md §5. */
+export function ProductProofV3() {
+  const cases = [
+    {
+      client: "Palladium Hotel Group",
+      href: "/case-studies/palladium-hotel-group",
+      stats: [
+        { n: "40%", l: "of inbound traffic had no attribution before" },
+        { n: "35%", l: "of GA4 bookings had no channel assigned" },
+        { n: "+165%", l: "Display Cost-per-Search on DV360 after" },
+      ],
+      quote:
+        "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+      cite: "Toni Andújar · Digital & Direct Sales Director",
+    },
+    {
+      client: "Dreamplace Hotels",
+      href: "/case-studies/dreamplace-hotels",
+      stats: [
+        { n: "+30%", l: "more traffic measured vs Google Analytics" },
+        { n: "15–20%", l: "sales attribution gap against the CRM, closed" },
+      ],
+      quote:
+        "It's no longer a tool that sits next to the process. It's the tool that gives us the real data — and the one we make decisions with.",
+      cite: "Eduardo Martin · Analytics & Campaigns",
+    },
+  ];
+
+  return (
+    <section className="py-28 bg-warm-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">Audited, not claimed</span>
+            <h2 className="h-section mt-5">
+              What the stack does <em>on real accounts.</em>
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Two customers ran SealMetrics against their previous setup and
+            published the numbers. Both figures below are theirs, audited on
+            their own traffic — not our benchmarks.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {cases.map((c) => (
+            <article
+              key={c.client}
+              className="bg-white border border-warm-100 rounded-xl p-8 md:p-10 flex flex-col"
+            >
+              <h3 className="text-[19px] font-semibold text-ink tracking-[-0.015em] mb-7">
+                {c.client}
+              </h3>
+              <div className="flex flex-col gap-5 pb-7 border-b border-warm-100">
+                {c.stats.map((s) => (
+                  <div key={s.n} className="flex items-baseline gap-4">
+                    <span
+                      className="font-semibold tabular-nums tracking-[-0.03em] leading-none text-brand shrink-0 min-w-[110px]"
+                      style={{ fontSize: "clamp(30px, 3.2vw, 42px)" }}
+                    >
+                      {s.n}
+                    </span>
+                    <span className="text-[14px] leading-[1.5] text-ink-soft">
+                      {s.l}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <figure className="mt-7 border-l-2 pl-5 grow" style={{ borderColor: "#2E5C8A" }}>
+                <blockquote className="text-[16px] leading-[1.55] text-ink-2 font-medium">
+                  &ldquo;{c.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.08em] text-ink-soft font-semibold">
+                  {c.cite}
+                </figcaption>
+              </figure>
+              <Link
+                href={c.href}
+                className="mt-7 inline-flex items-center gap-2 text-[14px] font-semibold text-ink no-underline border-b border-warm-200 pb-0.5 w-fit hover:border-ink transition-colors"
+              >
+                Read the full case study →
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "How Many HTTP Requests Does Your Analytics Tool Make?",
@@ -244,6 +245,10 @@ export default function AnalyticsHttpRequestsPage() {
             in bytes transferred.
           </p>
 
+          <CommercialModule
+            hook="The SealMetrics row reads 2 requests, 1 domain, 2.7 KB. Open your own network tab, filter by analytics, and compare."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Why request count matters
           </h2>
@@ -409,6 +414,10 @@ export default function AnalyticsHttpRequestsPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="Every request in the table above fires on every pageview, for every visitor. See what two requests to a single domain change on your load time."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

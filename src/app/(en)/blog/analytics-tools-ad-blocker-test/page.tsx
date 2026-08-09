@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "We Tested 9 Analytics Tools Against Every Major Ad Blocker",
@@ -338,6 +339,10 @@ export default function AdBlockerTestPage() {
             default. Only one tool passed all five tests.
           </p>
 
+          <CommercialModule
+            hook="SealMetrics passed all five blockers — first-party CNAME collection is why. Run the same test against your own stack and count what disappears."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Why some tools survive and others do not
           </h2>
@@ -517,6 +522,10 @@ export default function AdBlockerTestPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="Blocked scripts fail silently: no error, just missing visitors. See how first-party, cookieless collection survives every blocker on your site."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

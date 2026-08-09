@@ -12,9 +12,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         h1Em: "40%",
         h1Post: " de tu tráfico. SealMetrics te enseña el 100%.",
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
-        ctaA: "Empieza gratis",
+        ctaA: "Prueba de 14 días",
         ctaB: "Reserva una demo",
-        micro: "14 días gratis · Cancela antes del día 14 y no pagas · Setup en 4 min",
+        micro: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 min",
       }
     : {
         eyebrow: "vs Google Analytics 4",
@@ -22,9 +22,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         h1Em: "40%",
         h1Post: " of your traffic. SealMetrics shows 100%.",
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
-        ctaA: "Start FREE Trial",
+        ctaA: "Start 14-day trial",
         ctaB: "Book a demo",
-        micro: "14-day free trial · Cancel before day 14, pay nothing · 4-minute setup",
+        micro: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
       };
 
   return (
@@ -43,18 +43,18 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
           {t.lede}
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a
-            href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
-          >
-            {t.ctaA} →
-          </a>
           <Link
             href={locale === "es" ? "/es/demo" : "/demo"}
+            className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
+          >
+            {t.ctaB} →
+          </Link>
+          <a
+            href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            {t.ctaB}
-          </Link>
+            {t.ctaA}
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
           {t.micro}

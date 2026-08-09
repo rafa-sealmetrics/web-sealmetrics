@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Analítica cookieless: cómo medir sin cookies",
@@ -265,6 +266,11 @@ export default function CookielessAnalyticsExplainedPageEs() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          locale="es"
+          hook="¿Quieres ver la analítica cookieless sobre tu propio sitio en lugar de en un diagrama? En una demo la ves midiendo el 100% de tus visitas sin cookies ni banner."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

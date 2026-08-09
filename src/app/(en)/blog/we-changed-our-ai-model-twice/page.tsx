@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "we-changed-our-ai-model-twice";
 const URL = `/blog/${SLUG}`;
@@ -256,6 +257,10 @@ export default function WeChangedOurAiModelTwicePage() {
               exposed to it.
             </p>
 
+            <CommercialModule
+              hook="Model swaps are invisible when answers are grounded in your data, not the model's memory. Ask why the current pick is gpt-oss-120b — and what would make us change again."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Pick two: the loops stopped, the answers got worse
             </h2>
@@ -387,6 +392,10 @@ export default function WeChangedOurAiModelTwicePage() {
               for what the assistant actually does.
             </p>
           </div>
+
+          <CommercialModule
+            hook="A vendor that can change models without your data moving is the point of open weights. See the current stack, gpt-oss-120b on Scaleway Paris, answer live."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

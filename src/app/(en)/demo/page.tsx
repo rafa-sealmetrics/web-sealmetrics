@@ -138,23 +138,60 @@ export default function DemoPage() {
               </div>
             </div>
 
-            {/* Right: form */}
+            {/* Right: booking first, qualification form as the optional path.
+                The page promises a 30-minute walkthrough — the first thing it
+                offers must be a calendar, not a 6-question form and a 24h wait. */}
             <div className="lg:sticky lg:top-24">
-              <div className="mb-5">
-                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
-                  Get in touch
+              <div className="p-6 bg-ink text-white rounded-xl">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-amber">
+                  Book directly
                 </span>
                 <h2
-                  className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-2"
+                  className="font-semibold text-white leading-[1.15] tracking-[-0.02em] mt-2"
                   style={{ fontSize: "clamp(22px, 2.4vw, 28px)" }}
                 >
-                  Tell us about your setup — <em className="italic-accent">we&apos;ll reply in 24h.</em>
+                  Pick a time — <em>right now.</em>
                 </h2>
+                <p className="text-[14px] text-white/70 leading-[1.55] mt-2 mb-5">
+                  30 minutes with the founder, on your own traffic. No
+                  qualification form, no waiting for a reply.
+                </p>
+                <a
+                  href="https://cal.com/sealmetrics"
+                  className="inline-flex w-full items-center justify-center gap-2 bg-white text-ink px-6 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
+                >
+                  Book a walkthrough with Rafa →
+                </a>
+                <p className="font-mono text-[10.5px] text-white/50 uppercase tracking-[0.08em] font-semibold mt-3 text-center">
+                  Instant booking · 30 min · no commitment
+                </p>
+              </div>
+
+              <div className="mt-7 mb-5">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-brand">
+                  Prefer a tailored session?
+                </span>
+                <h3
+                  className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-2"
+                  style={{ fontSize: "clamp(19px, 2vw, 24px)" }}
+                >
+                  Tell us about your setup — <em className="italic-accent">we&apos;ll prepare your audit first.</em>
+                </h3>
                 <p className="text-[14px] text-ink-soft leading-[1.55] mt-2">
-                  6 quick questions. We use them to tailor your audit to your real numbers, not a generic deck.
+                  6 quick questions and we come to the call with your real
+                  numbers pulled up, not a generic deck. We reply within one
+                  business day.
                 </p>
               </div>
               <DemoForm />
+
+              <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-5">
+                Prefer to explore on your own before talking?{" "}
+                <Link href="/demo-access" className="text-ink underline">
+                  Access the demo account
+                </Link>{" "}
+                — credentials by email, corporate address required.
+              </p>
             </div>
           </div>
         </div>

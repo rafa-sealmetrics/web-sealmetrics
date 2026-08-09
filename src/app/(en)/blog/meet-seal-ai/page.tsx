@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "meet-seal-ai";
 const URL = `/blog/${SLUG}`;
@@ -288,6 +289,10 @@ export default function MeetSealAiPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="The fastest way to meet Seal AI is to ask it something about your own traffic. Book a demo — there is nothing to configure first."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

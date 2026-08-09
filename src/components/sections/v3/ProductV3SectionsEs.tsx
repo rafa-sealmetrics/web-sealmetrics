@@ -15,15 +15,15 @@ export function ProductHeroV3Es() {
           Un stack analítico completo para equipos eCommerce: tracking sin consentimiento, atribución de ingresos, LENS AI, SuperAPI y MCP server — todo sobre los mismos datos a resolución completa. Sin muestreo. Sin modelado.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
-            Empieza gratis <span>→</span>
-          </a>
-          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-            Reserva una demo
+          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
+            Reserva una demo <span>→</span>
           </Link>
+          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
+            Prueba de 14 días
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14 días gratis
+          Prueba de 14 días · no se cobra nada si cancelas · alojado en UE
         </p>
       </div>
     </section>
@@ -182,7 +182,7 @@ function LensChatVisualEs() {
     <div className="bg-ink text-white rounded-[20px] p-8 md:p-10 min-h-[380px] flex flex-col justify-center relative overflow-hidden">
       <div aria-hidden className="absolute pointer-events-none" style={{ right: -80, top: -80, width: 240, height: 240, borderRadius: "50%", background: "radial-gradient(circle,rgba(45,139,109,0.35),transparent 70%)" }} />
       <div className="relative">
-        <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-4" style={{ color: "#E8B84B" }}>● LENS AI · en vivo</div>
+        <div className="font-mono text-[11px] tracking-[0.12em] uppercase mb-4" style={{ color: "#E8B84B" }}>● LENS AI</div>
         <h4 className="text-[20px] font-semibold mb-6 leading-[1.3]">¿Qué pasó con paid social ayer?</h4>
         <div className="flex flex-col gap-2.5">
           <div className="self-end max-w-[85%] bg-white/10 text-white px-4 py-3 rounded-[14px] rounded-br-[4px] text-[13px] leading-[1.45]">
@@ -201,6 +201,7 @@ function LensChatVisualEs() {
             Abriendo Atribución → Meta → Summer Sale…
           </div>
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">Ejemplo ilustrativo — no es una cuenta real.</p>
       </div>
     </div>
   );
@@ -251,6 +252,7 @@ function AttributionBarsVisualEs() {
             </div>
           ))}
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">Ejemplo ilustrativo — no es una cuenta real.</p>
       </div>
     </div>
   );
@@ -291,6 +293,7 @@ function SuperApiVisualEs() {
 <span style={{ color: "#E8B84B" }}>ORDER BY</span> attributed <span style={{ color: "#E8B84B" }}>DESC</span>;{"\n"}{"\n"}
 <span className="text-white/45">{`→ 1,2M filas · 340ms · resolución completa`}</span>
         </pre>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">Ejemplo ilustrativo — no es una cuenta real.</p>
       </div>
     </div>
   );
@@ -379,19 +382,117 @@ export function ProductFinalCtaV3Es() {
             La plataforma de analítica que <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>los equipos eCommerce merecen.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Empieza la prueba gratis de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
+            Empieza la prueba de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <a href="https://my.sealmetrics.com/register" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
-              Empieza gratis →
-            </a>
-            <Link href="/es/demo" className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5">
-              Reserva una demo
+            <Link href="/es/demo" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
+              Reserva una demo →
             </Link>
+            <a href="https://my.sealmetrics.com/register" className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5">
+              Prueba de 14 días
+            </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            14 días gratis · Alojado en UE · Sin consentimiento por diseño
+            Prueba de 14 días · Alojado en UE · Sin consentimiento por diseño
           </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================
+   PRUEBA · resultados auditados antes del cierre
+   ============================================
+   La página era un tour de funcionalidades que cerraba con una afirmación sin
+   ninguna cifra detrás. Este es el único punto de /product donde los
+   resultados están evidenciados, así que va justo antes del CTA. Sección
+   light a propósito: el design system permite dos slabs oscuros por página y
+   el CTA final ocupa uno. PRD-CONVERSION-REDESIGN.md §5. */
+export function ProductProofV3Es() {
+  const cases = [
+    {
+      client: "Palladium Hotel Group",
+      href: "/es/case-studies/palladium-hotel-group",
+      stats: [
+        { n: "40%", l: "del tráfico entrante no tenía atribución antes" },
+        { n: "35%", l: "de las reservas de GA4 no tenían canal asignado" },
+        { n: "+165%", l: "Coste por Búsqueda en Display en DV360 después" },
+      ],
+      quote:
+        "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+      cite: "Toni Andújar · Director Digital y Venta Directa",
+    },
+    {
+      client: "Dreamplace Hotels",
+      href: "/es/case-studies/dreamplace-hotels",
+      stats: [
+        { n: "+30%", l: "más tráfico medido frente a Google Analytics" },
+        { n: "15–20%", l: "de brecha de atribución de ventas contra el CRM, cerrada" },
+      ],
+      quote:
+        "Ya no es una herramienta que está al lado del proceso. Es la herramienta que nos da el dato real — y con la que tomamos decisiones.",
+      cite: "Eduardo Martin · Analytics & Campañas",
+    },
+  ];
+
+  return (
+    <section className="py-28 bg-warm-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
+          <div>
+            <span className="eyebrow mb-5">Auditado, no prometido</span>
+            <h2 className="h-section mt-5">
+              Lo que hace el stack <em>en cuentas reales.</em>
+            </h2>
+          </div>
+          <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
+            Dos clientes pusieron SealMetrics frente a su stack anterior y
+            publicaron los números. Las cifras de abajo son suyas, auditadas
+            sobre su propio tráfico — no benchmarks nuestros.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          {cases.map((c) => (
+            <article
+              key={c.client}
+              className="bg-white border border-warm-100 rounded-xl p-8 md:p-10 flex flex-col"
+            >
+              <h3 className="text-[19px] font-semibold text-ink tracking-[-0.015em] mb-7">
+                {c.client}
+              </h3>
+              <div className="flex flex-col gap-5 pb-7 border-b border-warm-100">
+                {c.stats.map((s) => (
+                  <div key={s.n} className="flex items-baseline gap-4">
+                    <span
+                      className="font-semibold tabular-nums tracking-[-0.03em] leading-none text-brand shrink-0 min-w-[110px]"
+                      style={{ fontSize: "clamp(30px, 3.2vw, 42px)" }}
+                    >
+                      {s.n}
+                    </span>
+                    <span className="text-[14px] leading-[1.5] text-ink-soft">
+                      {s.l}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <figure className="mt-7 border-l-2 pl-5 grow" style={{ borderColor: "#2E5C8A" }}>
+                <blockquote className="text-[16px] leading-[1.55] text-ink-2 font-medium">
+                  &ldquo;{c.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.08em] text-ink-soft font-semibold">
+                  {c.cite}
+                </figcaption>
+              </figure>
+              <Link
+                href={c.href}
+                className="mt-7 inline-flex items-center gap-2 text-[14px] font-semibold text-ink no-underline border-b border-warm-200 pb-0.5 w-fit hover:border-ink transition-colors"
+              >
+                Lee el caso completo →
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </section>

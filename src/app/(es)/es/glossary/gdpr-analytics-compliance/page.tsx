@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Cumplimiento RGPD en analítica — Glosario SealMetrics",
@@ -70,6 +71,8 @@ export default function Page() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cumplimiento por arquitectura</h2>
           <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> aborda el cumplimiento de otra manera. Al no recoger dato personal y no almacenar nada en el dispositivo del visitante, el requisito de consentimiento bajo ePrivacy no aplica y las obligaciones RGPD son mínimas. Es coherente con la guía de la CNIL (Francia), DSK (Alemania) y otras autoridades UE sobre exenciones de medición de audiencia.</p>
         </div>
+        <CommercialModule locale="es" hook="Cumplimiento del RGPD por arquitectura, no por banner. Mira cómo SealMetrics mide el 100% de las visitas sin tocar datos personales." />
+
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
             Más: <Link href="/es/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Seguridad y arquitectura de privacidad</Link>

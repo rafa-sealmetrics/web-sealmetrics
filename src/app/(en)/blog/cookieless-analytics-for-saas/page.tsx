@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics for SaaS — 2026 Guide",
@@ -199,6 +200,10 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule
+            hook="Top-of-funnel is where PLG measurement breaks first. See trial signups attributed on 100% of traffic — last-click, no cookies, no consent gate."
+          />
 
           <RelatedReading currentSlug="cookieless-analytics-for-saas" />
 

@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "GDPR-Compliant Analytics Without Consent Banners",
@@ -228,6 +229,8 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             (EDPB) has indicated alignment with its principles.
           </p>
 
+          <CommercialModule hook="Want the legal architecture applied to your setup? Walk through it with the person who signs the DPA." />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Technical requirements for consent-free analytics
           </h2>
@@ -386,6 +389,8 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             .
           </p>
         </div>
+
+        <CommercialModule hook="Consentless measurement is an architecture decision, not a checkbox. See it running — and take the DPA questions to the source." />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

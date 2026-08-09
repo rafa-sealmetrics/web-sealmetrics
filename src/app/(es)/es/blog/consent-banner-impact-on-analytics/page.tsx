@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Cómo los banners de consentimiento destruyen tus datos",
@@ -220,6 +221,11 @@ export default function ConsentBannerImpactPageEs() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          locale="es"
+          hook="¿Cuánto tráfico te está borrando el banner — el 40%, el 60%? Ve en una demo cómo quedarían tus informes midiendo el 100% de las visitas sin pedir consentimiento."
+        />
 
         <div className="mt-16 pt-10 border-t border-warm-100">
           <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

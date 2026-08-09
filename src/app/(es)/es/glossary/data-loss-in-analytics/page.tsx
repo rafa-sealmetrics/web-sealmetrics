@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es la pérdida de datos en analítica? — Glosario",
@@ -71,6 +72,8 @@ export default function Page() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo cerrar la brecha</h2>
           <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> elimina los tres vectores de pérdida en su origen: sin cookies que requieran consentimiento, sin scripts que los bloqueadores reconozcan, sin dependencia de identificadores que ITP/ETP recorten. El resultado es conteo agregado sobre el 100% del tráfico — no una muestra, no una estimación.</p>
         </div>
+
+        <CommercialModule locale="es" hook="Entre el 40–60% de rechazo de consentimiento y los bloqueadores, GA4 ve una fracción de tus visitas. Mide tu propia brecha contra un conteo del 100%." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

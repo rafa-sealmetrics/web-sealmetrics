@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "How SealMetrics Enables Self-Service Analytics",
@@ -241,6 +242,10 @@ export default function Page() {
               </table>
             </div>
 
+            <CommercialModule
+              hook="Layers 01 and 02 are the foundation: 100% of events in a schema the model cannot misread. See LENS read your own traffic that way in a demo."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               Layer 03 — A senior analyst&apos;s workflow, encoded
             </h2>
@@ -372,6 +377,10 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule
+            hook="LENS is a senior analyst's workflow encoded on top of complete data — gpt-oss-120b on Scaleway Paris, every answer grounded in your own numbers. Try it live."
+          />
 
           <RelatedReading currentSlug="self-service-analytics-lens-ai" />
 

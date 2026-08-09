@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const URL = "/blog/self-service-analytics-for-marketing-teams";
 
@@ -358,6 +359,10 @@ export default function Page() {
               or any MCP-compatible assistant. Nobody learns a new BI tool.
             </p>
 
+            <CommercialModule
+              hook="What would your team ask first if analytics answered in plain language? Bring that question to a demo — LENS answers it on your own data."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               Is the data safe if an AI agent reads it?
             </h2>
@@ -578,6 +583,10 @@ export default function Page() {
               </div>
             ))}
           </div>
+
+          <CommercialModule
+            hook="Self-service only works when the data underneath is complete. See LENS answer marketing questions on 100% of your traffic, not a consented sample."
+          />
 
           <RelatedReading currentSlug="self-service-analytics-for-marketing-teams" />
 

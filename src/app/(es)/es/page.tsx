@@ -19,6 +19,7 @@ import {
   FinalUrgencyV3,
 } from "@/components/sections/v3/HomeV3";
 import { ComparatorGA4Es } from "@/components/sections/v3/HomeV3EsPart2";
+import { CfoObjectionHome } from "@/components/sections/v3/HomeDSections";
 import { FeatureLensAIV3Es } from "@/components/sections/v3/ProductV3SectionsEs";
 import { FaqV3Es } from "@/components/sections/v3/FaqV3Es";
 import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
@@ -106,10 +107,12 @@ export default function HomeEs() {
       <SolutionStepsPLG locale="es" />
       <FourPillars locale="es" />
       <Connectors locale="es" />
+      <CfoObjectionHome locale="es" />
       <PricingPLG locale="es" />
       <FaqV3Es />
       <FeatureLensAIV3Es />
-      <FinalUrgencyV3 locale="es" />
+      {/* El bloque GEO va ANTES del cierre a propósito: lo último que ve el
+          visitante debe ser el slab de urgencia, no un apéndice de SEO. */}
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
@@ -122,6 +125,7 @@ export default function HomeEs() {
           </QuickAnswer>
         </div>
       </section>
+      <FinalUrgencyV3 locale="es" />
       <StickyCtaBar locale="es" />
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "GA4 y Google Ads: la separacion que nadie vio venir",
@@ -275,6 +276,11 @@ export default function GA4GoogleAdsSeparationPage() {
               senyal: la que envia tu CMP.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Aún no sabes qué te rompe exactamente la separación de GA4 y Google Ads? En una demo ves cómo medir tus campañas de Google Ads sin depender del enlace entre ambos."
+            />
+
             {/* 3. Impacto en datos */}
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Impacto real en los datos: moderado
@@ -503,6 +509,11 @@ export default function GA4GoogleAdsSeparationPage() {
               para capturar datos completos de tráfico.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Reconstruyendo tu medición tras la separación GA4–Google Ads? Ve en una demo cómo funciona SealMetrics junto al tag de Google Ads: 100% de captura y atribución last-click sin cookies."
+          />
 
           {/* Related articles */}
           <div className="mt-16 pt-10 border-t border-warm-100">

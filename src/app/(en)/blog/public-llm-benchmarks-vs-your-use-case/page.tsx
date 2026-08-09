@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "public-llm-benchmarks-vs-your-use-case";
 const URL = `/blog/${SLUG}`;
@@ -327,6 +328,10 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
               the product does not use.
             </p>
 
+            <CommercialModule
+              hook="This is why LENS runs gpt-oss-120b on Scaleway Paris — it won on our workload, not on a leaderboard. See how it answers real analytics questions."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               The benchmarks that are relevant — and their footnotes
             </h2>
@@ -514,6 +519,10 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="The only benchmark that matters is your own workload. Bring three questions from your reports and watch a model chosen that way answer them."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Is Adobe Analytics GDPR Compliant?",
@@ -266,6 +267,10 @@ export default function Page() {
               conclusion for your deployment.
             </p>
           </div>
+
+          <CommercialModule
+            hook="If the expensive part is making Adobe compliant, the alternative is an architecture that starts compliant: no cookies, no consent dependency, EU-hosted. Compare the two costs."
+          />
 
           <RelatedReading currentSlug="is-adobe-analytics-gdpr-compliant" />
         </div>

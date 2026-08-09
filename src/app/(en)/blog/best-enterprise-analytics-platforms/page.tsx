@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "8 Best Enterprise Analytics Platforms in 2026",
@@ -475,6 +476,10 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               </Link>
             </p>
 
+          <CommercialModule
+            hook="Shortlisting enterprise platforms? See complete-data analytics at \u20ac499/mo next to the $100K+ incumbents — live, on your traffic."
+          />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               4. SealMetrics
             </h2>
@@ -752,6 +757,10 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               {"\u20ac"}6K platform that captures 100%.
             </p>
           </div>
+
+          <CommercialModule
+            hook="Six-figure contracts buy estimates. See what complete data looks like on your own traffic before renewing one."
+          />
 
           {/* Related */}
           <div className="mt-16 pt-10 border-t border-warm-100">

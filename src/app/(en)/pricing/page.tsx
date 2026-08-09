@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SealMetrics Pricing — Pay for humans, not bots",
     description:
-      "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day free trial.",
+      "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/pricing/",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "SealMetrics Pricing — Pay for humans, not bots",
-    description: "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day free trial.",
+    description: "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
@@ -49,7 +49,7 @@ const faqsForSchema = [
   { question: "What counts as a human event?", answer: "Any real visitor interaction: pageviews, clicks, conversions, form submissions, add-to-cart, newsletter signups. AI agent traffic and traditional bots are excluded — they don't count toward your limit." },
   { question: "Why is AI agent traffic free?", answer: "AI agents (ChatGPT, Claude, Perplexity) are a new category of traffic you need visibility into. We track them for free because understanding who reads your content with AI is a strategic advantage." },
   { question: "What happens if I exceed my event limit?", answer: "Your tracking never stops. We never block, throttle or sample your data. If you exceed for 2 consecutive months, Growth moves up to Scale automatically at your next billing cycle; Scale is never auto-upgraded — we email you to discuss Enterprise. One overage month per year is free." },
-  { question: "Is there a free trial?", answer: "Yes. Every plan includes a 14-day free trial with full access to all features. You add a payment method when you start and are not charged until the trial ends — cancel before then and you pay nothing. The Agentic Package, set up from your AI assistant, needs no card." },
+  { question: "Is there a free trial?", answer: "Yes — a 14-day trial with full access to every feature. You add a payment method when you start and are not charged until the trial ends — cancel before then and you pay nothing. The Agentic Package, set up from your AI assistant, needs no card." },
   { question: "Are all features included in every plan?", answer: "Yes for the analytics. Core analytics, conversion tracking, API, MCP Server, BigQuery export and LENS AI — ask your data in plain language and turn the answer into a report — are all included from Growth up, running on your own AI key (BYOK: Anthropic, OpenAI, Gemini or DeepSeek). Rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today. The only usage-based option is Private AI, our managed EU-hosted model with no key needed: a paid add-on on Growth, included on Scale and Enterprise (5M tokens/month), with extra 5M-token packs at €358.80 each and a dedicated non-shared instance on Enterprise. Other plan differences are event volume, webhooks and audit logs (Scale up), governance and support." },
   { question: "What is the Agentic Package?", answer: "A free SealMetrics tier set up directly from your AI assistant (Claude Desktop, Codex or any MCP-capable agent). Your agent creates the account and generates the pixel — same complete cookieless analytics as Growth, free up to 1M human events per month, self-serve with documentation only and no credit card. Above 1M events per month the Growth plan activates." },
 ];

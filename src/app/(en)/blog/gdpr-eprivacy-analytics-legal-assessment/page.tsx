@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Is Your Analytics GDPR-Compliant? A Legal Assessment",
@@ -273,6 +274,10 @@ export default function Page() {
               Regulators have been converging on exactly this reading. France&apos;s CNIL maintains an exemption for analytics that meets a set of technical criteria — the basis for the <Link href="/blog/cnil-self-assessment-published" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">self-assessment we published</Link> showing how SealMetrics satisfies it. The UK&apos;s DUAA 2025 introduced a live analytics exemption under PECR. And the proposed EU Digital Omnibus (COM(2025) 837) would move cookie-consent rules into GDPR and give first-party analytics an explicit legal footing — <Link href="/blog/eu-digital-omnibus-marketer-guide-2026" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">still a proposal, but a clear direction of travel</Link>. Every one of these rewards the same architecture: no device storage, no personal data.
             </p>
 
+            <CommercialModule
+              hook="SealMetrics passes the consent-free test by architecture: no cookies, no identifiers, aggregate-only counts. Put the assessment questions to us directly."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               Where each tool lands
             </h2>
@@ -363,6 +368,10 @@ export default function Page() {
               This article is general information about how data-protection law applies to web analytics, not legal advice. For your specific deployment, confirm with your DPO or counsel.
             </p>
           </div>
+
+          <CommercialModule
+            hook="A compliance badge is a claim; an architecture is a fact. Walk through the DPA, the Dublin hosting and the aggregate-only model in a demo."
+          />
 
           <RelatedReading currentSlug="gdpr-eprivacy-analytics-legal-assessment" />
 

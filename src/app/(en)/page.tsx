@@ -18,6 +18,7 @@ import {
   PromoDaysRealTime,
   GrowthRiskCost,
   QuoteBlock,
+  CfoObjectionHome,
 } from "@/components/sections/v3/HomeDSections";
 
 export const metadata: Metadata = {
@@ -100,8 +101,10 @@ export default function Home() {
       <QuoteBlock />
       <InstallInSeconds />
       <Connectors />
+      <CfoObjectionHome />
       <PricingPLG />
-      <FinalUrgencyV3 />
+      {/* GEO answer block sits BEFORE the closing CTA on purpose: the last
+          thing a visitor sees must be the urgency slab, not an SEO appendix. */}
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
@@ -114,6 +117,7 @@ export default function Home() {
           </QuickAnswer>
         </div>
       </section>
+      <FinalUrgencyV3 />
       <StickyCtaBar locale="en" />
     </>
   );

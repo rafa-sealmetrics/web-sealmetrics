@@ -11,6 +11,7 @@ import {
   faqPageSchema,
   speakableWebPageSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "eu-ai-act-for-marketers";
 const URL = `/es/blog/${SLUG}`;
@@ -277,6 +278,11 @@ export default function EuAiActForMarketersPageEs() {
               ha dejado por escrito qué sistemas están dentro del alcance.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Ya sabes qué te exige el artículo 50 como responsable del despliegue? En una demo ves cómo queda tu expediente cuando la IA de tu analítica corre sobre pesos abiertos en la UE."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Qué queda aguas arriba y por qué es una buena noticia
             </h2>
@@ -436,6 +442,11 @@ export default function EuAiActForMarketersPageEs() {
               apoyarte en nada de esto.
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Preparando el expediente antes del 2 de agosto de 2026? Ve en una demo qué preguntas del AI Act responde por ti una analítica con IA sobre modelo abierto — gpt-oss-120b en Scaleway París — con el dato en Dublín."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

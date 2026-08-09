@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Analytics Data Residency? — SealMetrics Glossary",
@@ -88,6 +89,8 @@ export default function AnalyticsDataResidencyPage() {
             <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> with EU-only infrastructure, combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link> that collects no personal data, provides the strongest compliance posture &mdash; no consent required, no transfers, no dependency on shifting adequacy decisions.
           </p>
         </div>
+
+        <CommercialModule hook="Your analytics data can live in Dublin, under EU jurisdiction, full stop. See what EU-resident measurement looks like on your own traffic." />
 
         <RelatedGlossaryTerms slug="analytics-data-residency" />
 

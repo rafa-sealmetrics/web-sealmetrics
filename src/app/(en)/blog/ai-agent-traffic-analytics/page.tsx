@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "AI Agent Traffic: The Invisible Analytics Channel",
@@ -217,6 +218,10 @@ export default function AIAgentTrafficPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="AI agents are already landing on your site — most analytics never sees them. Ask where this traffic shows up in SealMetrics and what is on the roadmap."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

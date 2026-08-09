@@ -58,7 +58,7 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - `npm run build` fails on any SEO/GEO regression via `scripts/seo-audit.mjs`; `npm test` reports the same rules per-rule. Run both before opening a PR
 - Blog posts must declare `dateModified` explicitly in their `articleSchema({ ... })` call, and it must only be bumped for a real content revision — never for a lint pass, a canonical/metadata rewrite or a formatting sweep. It is a freshness claim to Google and AI engines, so it is author-set and never derived: there is no git-based fallback, and a post that omits it falls back to its own `datePublished`
 - Internal links must be contextual (within text), not generic lists ("Related: X, Y, Z")
-- Blog posts link to pillar pages, never directly to /demo
+- **Body-text links in blog posts go to pillar pages, never directly to /demo.** The `<CommercialModule>` conversion box (`src/components/ui/CommercialModule.tsx`) is the one sanctioned exception: it links directly to /demo and /pricing because it is a visually distinct conversion component, not an in-text link — it lives outside the SEO equity flow (spoke → pillar → demo), which stays intact. See `PRD-CONVERSION-REDESIGN.md` §7
 - Pillar pages (/product, /how-it-works, /security) link to /demo
 - Every page includes breadcrumbs (when not homepage)
 - First mention of a key concept links to its glossary page
@@ -139,7 +139,7 @@ When asked to create a new page, ALWAYS apply these rules automatically:
 15. Every page below Tier 1 must include at least 1 CTA linking to /demo or /pricing
 16. CTA placement: after demonstrating value, never at the top before context
 17. Comparison pages include "Other comparisons" footer section linking to sibling /vs/* pages
-18. Blog posts do NOT link directly to /demo (flow: blog → pillar → demo)
+18. Blog post body text does NOT link directly to /demo (flow: blog → pillar → demo). Every blog post DOES include a `<CommercialModule>` conversion box (direct to /demo — the sanctioned exception, see SEO Rules) with a hook line specific to the post's topic, placed before the related-articles block
 
 ### Technical
 19. Static export compatible — no server components with dynamic data

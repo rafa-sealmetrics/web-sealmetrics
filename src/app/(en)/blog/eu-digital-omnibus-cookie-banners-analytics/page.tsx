@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "EU Digital Omnibus: Cookie Banners & Analytics",
@@ -185,6 +186,10 @@ export default function OmnibusShortPage() {
             .
           </p>
 
+          <CommercialModule
+            hook="Consent-free measurement does not wait for browser signals or the final text — there is no banner to redesign. See what that removes from your roadmap."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Browser signals are coming
           </h2>
@@ -334,6 +339,10 @@ export default function OmnibusShortPage() {
             for a deeper analysis of every provision.
           </p>
         </div>
+
+        <CommercialModule
+          hook="Whatever the Omnibus lands on, 40–60% of visitors already reject banners today. Measure what that hides on your own site now."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

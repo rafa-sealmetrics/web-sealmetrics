@@ -566,9 +566,9 @@ const STEPS_COPY = {
       "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant.",
       "See the 40-60% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
     ],
-    primaryCta: "Start your 14-day free trial",
+    primaryCta: "Start 14-day trial",
     secondaryCta: "See your GA4 gap first",
-    foot: "14-day free trial · 4-minute setup · Worth a look before next quarter's budget",
+    foot: "14-day trial · 4-minute setup · Worth a look before next quarter's budget",
   },
   es: {
     eyebrow: "Cómo empezar",
@@ -582,9 +582,9 @@ const STEPS_COPY = {
       "Visitas, productos, add-to-cart, checkout, compra — todo fluyendo a tu dashboard desde el primer segundo. 100% del tráfico, RGPD-compliant.",
       "Ve el 40-60% que GA4 te oculta. Reasigna paid media sobre datos que cuadran con Shopify. Defiende cada euro frente a finanzas.",
     ],
-    primaryCta: "Empieza tu trial de 14 días",
+    primaryCta: "Prueba de 14 días",
     secondaryCta: "Ver tu gap GA4 primero",
-    foot: "14 días gratis · Setup en 4 minutos · Antes del próximo presupuesto",
+    foot: "Prueba de 14 días · Setup en 4 minutos · Antes del próximo presupuesto",
   },
 } as const;
 
@@ -730,7 +730,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
     body: "Every day without SealMetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
-    foot: "14-day free trial · Cancel before day 14, pay nothing · 4-minute setup",
+    foot: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
   },
   es: {
     eyebrow: "La sangría es diaria",
@@ -738,7 +738,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
     body: "Cada día sin SealMetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
-    foot: "14 días gratis · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
+    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
   },
 } as const;
 
@@ -809,7 +809,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Billed annually · ${total}/yr`,
     monthlyAlt: (m: string) => `or ${m}/mo billed monthly`,
     lessThanLost: <>Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.</>,
-    trial: "14-day free trial · Cancel before day 14, pay nothing",
+    trial: "14-day trial · Cancel before day 14, pay nothing",
     customLabel: "Custom",
     customSub: "Annual or custom terms",
     growthBlurb: "For teams that want to see their real data.",
@@ -818,7 +818,7 @@ const PRICING_COPY = {
     growthFeatures: (m: number) => [`${m}M human events / month`, "3 domains", "Full MCP + BigQuery + API", "GA4 side-by-side comparison", "Email support"],
     scaleFeatures: (m: number) => [`${m}M human events / month`, "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"],
     enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "Private AI — exclusive, not shared", "99.9% SLA", "Dedicated account manager"],
-    cta: "Start free 14 days",
+    cta: "Start 14-day trial",
     enterpriseCta: "Talk to us",
     quote: <>&ldquo;Recovered 35% of bookings without attribution.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
     foot: <>For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. SealMetrics gives you enterprise-grade data without the enterprise contract.</>,
@@ -834,7 +834,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Anual · ${total}/año`,
     monthlyAlt: (m: string) => `o ${m}/mes con facturación mensual`,
     lessThanLost: <>Menos que lo que pierdes en <em className="italic-accent">un solo día</em> de datos incompletos.</>,
-    trial: "14 días gratis · Cancela antes del día 14 y no pagas",
+    trial: "Prueba de 14 días · Cancela antes del día 14 y no pagas",
     customLabel: "A medida",
     customSub: "Anual o términos custom",
     growthBlurb: "Para equipos que quieren ver su dato real.",
@@ -843,7 +843,7 @@ const PRICING_COPY = {
     growthFeatures: (m: number) => [`${m}M eventos humanos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Comparativa GA4 lado a lado", "Soporte por email"],
     scaleFeatures: (m: number) => [`${m}M eventos humanos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding con el founder"],
     enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "Private AI — exclusiva, no compartida", "SLA 99,9%", "Account manager dedicado"],
-    cta: "Empieza gratis 14 días",
+    cta: "Prueba de 14 días",
     enterpriseCta: "Habla con nosotros",
     quote: <>&ldquo;Recuperaron el 35% de las reservas sin atribución.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
     foot: <>De referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics arranca en 100.000$/año</b>. SealMetrics te da dato enterprise sin contrato enterprise.</>,

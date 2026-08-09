@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Multi-Touch Attribution? — SealMetrics Glossary",
@@ -60,6 +61,8 @@ export default function MultiTouchAttributionPage() {
           <p>SealMetrics is designed as anonymous, aggregate event measurement. No per-user identifier is ever created, so there is no basis for linking touchpoints of the same person across sessions. <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Attribution</Link> is last-click on the observed conversion event: whichever source was recorded on the pageview where the conversion fired gets credit. Channel totals roll up from those events.</p>
           <p>The trade-off is deliberate: you give up modelled credit-splitting across touchpoints, and in exchange you get aggregate channel totals on 100% of traffic with no consent dependency.</p>
         </div>
+        <CommercialModule hook="We don't do multi-touch — deliberately. See what last-click on complete data tells you that models can't." />
+
         <RelatedGlossaryTerms slug="multi-touch-attribution" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

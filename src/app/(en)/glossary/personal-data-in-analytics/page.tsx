@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Personal Data in Analytics — SealMetrics Glossary",
@@ -257,6 +258,8 @@ export default function PersonalDataInAnalyticsPage() {
               conclusion for your deployment.
             </p>
           </div>
+
+          <CommercialModule hook="SealMetrics stores no personal data — not pseudonymised, none. See what analytics looks like when there is nothing to redact." />
 
           <RelatedGlossaryTerms slug="personal-data-in-analytics" />
         </div>

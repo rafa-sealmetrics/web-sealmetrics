@@ -6,12 +6,9 @@ export function PricingHeroV3Es() {
   return (
     <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-        <div className="inline-flex items-center gap-3 bg-white border border-warm-100 rounded-full px-4 py-1.5 text-[13px] text-ink-2 mb-8">
-          <span className="bg-warm-100 text-ink px-2.5 py-1 rounded text-[10px] font-semibold font-mono tracking-[0.08em] uppercase">
-            Nuevo
-          </span>
-          <span>Tracking de agentes IA · próximamente · gratis en todos los planes</span>
-        </div>
+        {/* Sin badges de roadmap en el hero de precios: la página del dinero
+            vende lo que está vivo hoy. El tracking de agentes IA sigue en la
+            tabla comparativa, marcado "próximamente". */}
         <span className="eyebrow mb-5 justify-center" style={{ display: "inline-flex" }}>
           Precios
         </span>
@@ -22,15 +19,15 @@ export function PricingHeroV3Es() {
           Cada plan incluye analítica completa sobre el 100% de tu tráfico — sin muestreo, sin estimaciones modeladas, sin muros de features. Solo pagas más cuando realmente creces.
         </p>
         <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
-            Empieza gratis <span>→</span>
-          </a>
-          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-            Reserva una demo
+          <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
+            Reserva una demo <span>→</span>
           </Link>
+          <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
+            Prueba de 14 días
+          </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14 días gratis
+          Prueba de 14 días
         </p>
       </div>
     </section>

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Event Tracking? — SealMetrics Glossary",
@@ -97,6 +98,8 @@ export default function EventTrackingPage() {
             <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party</Link>, <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link> event tracking captures interactions across 100% of sessions &mdash; providing the complete behavioral dataset that metrics like <Link href="/glossary/bounce-rate" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">bounce rate</Link>, engagement rate, and conversion rate depend on.
           </p>
         </div>
+
+        <CommercialModule hook="See your key events — signups, carts, checkouts — counted on 100% of visits, not just the consented ones." />
 
         <RelatedGlossaryTerms slug="event-tracking" />
 

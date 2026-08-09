@@ -287,10 +287,10 @@ Q: Does SealMetrics work with ad blockers?
 A: Yes. Because SealMetrics operates as first-party infrastructure served from the customer's own domain, it is invisible to ad blockers — which target known third-party analytics endpoints like google-analytics.com.
 
 Q: How much does SealMetrics cost?
-A: Pricing starts at €499/month billed annually (Growth plan, 5M human events/month). Scale plan is €899/month (15M events). Every plan includes all features — LENS AI, revenue attribution, API, MCP server, BigQuery export. A 14-day free trial is available; no credit card required. AI agent traffic (ChatGPT, Claude, Perplexity) is tracked free and does not count against event limits.
+A: Pricing starts at €499/month billed annually (Growth plan, 5M human events/month). Scale plan is €899/month (15M events). Every plan includes all features — LENS AI, revenue attribution, API, MCP server, BigQuery export. A 14-day trial is available: you add a payment method to start and pay nothing if you cancel before day 14. The free Agentic Package (up to 1M human events/month, provisioned from an MCP-capable AI assistant) needs no card at all. AI agent traffic (ChatGPT, Claude, Perplexity) is tracked free and does not count against event limits.
 
 Q: What integrations does SealMetrics support?
-A: Google Ads, Meta Ads, Shopify, Prestashop, Magento, WooCommerce, BigQuery, Looker Studio, Segment, Zapier, and native MCP server for AI agents (Claude, ChatGPT, custom LLMs). Full integration list at https://sealmetrics.com/integrations.
+A: Google Ads, Meta Ads, Shopify, Prestashop, Magento, WooCommerce, BigQuery, Data Studio, Segment, Zapier, and native MCP server for AI agents (Claude, ChatGPT, custom LLMs). Full integration list at https://sealmetrics.com/integrations.
 
 Q: Who founded SealMetrics?
 A: Rafa Jiménez, founder and CEO. 20+ years in European eCommerce analytics. Prior experience: digital marketer, agency founder, advisor to retail groups. LinkedIn: https://www.linkedin.com/in/rafajimenez/. Based in Spain. Full profile at https://sealmetrics.com/authors/rafa-jimenez.

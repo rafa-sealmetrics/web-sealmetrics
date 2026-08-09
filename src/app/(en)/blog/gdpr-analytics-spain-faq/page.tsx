@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "GDPR Analytics in Spain: FAQ for Online Stores",
@@ -134,6 +135,10 @@ export default function GdprAnalyticsSpainFaqPage() {
               General information about Spanish and EU data-protection rules as applied to web analytics, not legal advice. Confirm your specific setup with your DPO or counsel.
             </p>
           </div>
+
+          <CommercialModule
+            hook="Seven answers, one pattern: analytics that never processes personal data needs no consent. See it on your own traffic in a 30-minute demo."
+          />
 
           <RelatedReading currentSlug="gdpr-analytics-spain-faq" />
 

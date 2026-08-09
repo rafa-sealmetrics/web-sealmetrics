@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "We Published Our CNIL Self-Assessment",
@@ -166,6 +167,10 @@ export default function CnilAssessmentPage() {
             .
           </p>
         </div>
+
+        <CommercialModule
+          hook="We published the CNIL self-assessment so you do not have to take the badge on faith. Walk through it criterion by criterion in a demo."
+        />
 
         {/* Related */}
         <div className="mt-16 pt-10 border-t border-warm-100">

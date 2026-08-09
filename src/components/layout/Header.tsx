@@ -28,20 +28,15 @@ interface NavDropdown {
   groups: DropdownGroup[];
 }
 
+// The trigger itself links to /why-sealmetrics (the site's strongest sales
+// page — it earns a top-level slot, not a slot inside its own dropdown); the
+// dropdown keeps the pillar links the nav must carry per SEO-STRATEGY §4.
 function getWhyDropdown(t: ReturnType<typeof getDictionary>["header"], locale: Locale): NavDropdown {
   return {
     label: t.why,
     groups: [
       {
         items: [
-          {
-            href: localizedHref("/why-sealmetrics", locale),
-            label: locale === "es" ? "Por qué SealMetrics" : "Why SealMetrics",
-            desc:
-              locale === "es"
-                ? "El argumento completo: mide el 100%, legalmente."
-                : "The full case: measure 100%, legally.",
-          },
           { href: localizedHref("/cookieless-analytics", locale), label: t.cookielessAnalytics, desc: t.cookielessAnalyticsDesc },
           { href: localizedHref("/consentless-analytics", locale), label: t.consentlessAnalytics, desc: t.consentlessAnalyticsDesc },
           { href: localizedHref("/complete-data", locale), label: t.completeData, desc: t.completeDataDesc },
@@ -121,11 +116,14 @@ function Dropdown({
   isOpen,
   onToggle,
   onClose,
+  labelHref,
 }: {
   dropdown: NavDropdown;
   isOpen: boolean;
   onToggle: () => void;
   onClose: () => void;
+  // When set, the label navigates there and only the chevron toggles the menu.
+  labelHref?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -140,28 +138,53 @@ function Dropdown({
     return () => document.removeEventListener("mousedown", handleClick);
   }, [isOpen, onClose]);
 
+  const chevron = (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+    >
+      <path d="M3 4.5L6 7.5L9 4.5" />
+    </svg>
+  );
+
   return (
     <div ref={ref} className="relative">
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-        className="flex items-center gap-1 text-[0.9rem] text-text-secondary hover:text-text-primary transition-colors cursor-pointer bg-transparent border-none p-0"
-      >
-        {dropdown.label}
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 12 12"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+      {labelHref ? (
+        <span className="flex items-center gap-1 text-[0.9rem] text-text-secondary">
+          <Link
+            href={labelHref}
+            className="no-underline text-text-secondary hover:text-text-primary transition-colors"
+          >
+            {dropdown.label}
+          </Link>
+          <button
+            type="button"
+            onClick={onToggle}
+            aria-expanded={isOpen}
+            aria-haspopup="true"
+            aria-label={`${dropdown.label} menu`}
+            className="flex items-center cursor-pointer bg-transparent border-none p-0 text-text-secondary hover:text-text-primary transition-colors"
+          >
+            {chevron}
+          </button>
+        </span>
+      ) : (
+        <button
+          type="button"
+          onClick={onToggle}
+          aria-expanded={isOpen}
+          aria-haspopup="true"
+          className="flex items-center gap-1 text-[0.9rem] text-text-secondary hover:text-text-primary transition-colors cursor-pointer bg-transparent border-none p-0"
         >
-          <path d="M3 4.5L6 7.5L9 4.5" />
-        </svg>
-      </button>
+          {dropdown.label}
+          {chevron}
+        </button>
+      )}
 
       {isOpen && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
@@ -255,6 +278,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
             isOpen={openDropdown === "Why"}
             onToggle={() => handleToggle("Why")}
             onClose={handleClose}
+            labelHref={localizedHref("/why-sealmetrics", locale)}
           />
 
           <Dropdown
@@ -280,10 +304,16 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
 
           <a
             href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+            className="inline-flex items-center min-h-[44px] px-4 py-2.5 text-[0.875rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline hover:bg-warm-50 transition-colors"
           >
             {t.startTrial}
           </a>
+          <Link
+            href={localizedHref("/demo", locale)}
+            className="inline-flex items-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+          >
+            {t.bookDemo}
+          </Link>
           <LanguageSwitcher locale={locale} />
         </nav>
 
@@ -326,11 +356,15 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
               {t.product}
             </Link>
 
-            {/* Why group */}
+            {/* Why group — label links to the page itself, items are the pillars */}
             <div className="py-2.5">
-              <span className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary">
-                {t.why}
-              </span>
+              <Link
+                href={localizedHref("/why-sealmetrics", locale)}
+                className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary no-underline hover:text-text-primary"
+                onClick={() => setMobileOpen(false)}
+              >
+                {t.why} →
+              </Link>
               <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
                 {whyDropdown.groups.map((group) =>
                   group.items.map((item) => (
@@ -397,9 +431,16 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
               </div>
             </div>
 
+            <Link
+              href={localizedHref("/demo", locale)}
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-3"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t.bookDemo}
+            </Link>
             <a
               href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-3"
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline mt-2"
               onClick={() => setMobileOpen(false)}
             >
               {t.startTrial}

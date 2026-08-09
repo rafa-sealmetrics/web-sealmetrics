@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Por qué GA4 muestra el 13% de tu tráfico UE",
@@ -270,6 +271,11 @@ export default function WhyGA4Shows13PctPageEs() {
             </p>
           </div>
 
+          <CommercialModule
+            locale="es"
+            hook="¿Cuál de las tres capas se está comiendo tu tráfico? En una demo pones tus informes de GA4 al lado de una medición del 100% de tus visitas y ves el hueco exacto."
+          />
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Por qué esto no se resuelve dentro de GA4
           </h2>
@@ -370,6 +376,11 @@ export default function WhyGA4Shows13PctPageEs() {
             la única diferencia.
           </p>
         </div>
+
+        <CommercialModule
+          locale="es"
+          hook="¿Tu GA4 también ve solo un ~13% del tráfico UE con precisión de campaña? Compara en una demo tus números con una medición del 100% de las visitas, sin banner y sin muestreo."
+        />
 
         <div className="mt-16 pt-10 border-t border-warm-100">
           <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">

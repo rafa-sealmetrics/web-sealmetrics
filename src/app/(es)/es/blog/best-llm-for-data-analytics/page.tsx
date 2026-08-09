@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "best-llm-for-data-analytics";
 const URL = `/es/blog/${SLUG}`;
@@ -228,6 +229,11 @@ export default function BestLlmForAnalyticsPageEs() {
               dentro de datos pegados para poner a prueba el prompt injection.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Te fiarías de un ranking público para elegir el LLM de tu analítica? En una demo ves cómo responde LENS — gpt-oss-120b en Scaleway París — a preguntas reales sobre tu propio tráfico, no sobre un benchmark."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Qué dijeron los números
             </h2>
@@ -325,6 +331,11 @@ export default function BestLlmForAnalyticsPageEs() {
               (ambos en inglés).
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Eligiendo LLM para tu equipo de datos? Prueba LENS sobre tu propio tráfico en una demo, o trae tu clave de Anthropic, OpenAI, Gemini o DeepSeek y compara."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is an Attribution Window? — SealMetrics Glossary",
@@ -70,6 +71,8 @@ export default function AttributionWindowPage() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click on observed events</h2>
             <p>SealMetrics applies <Link href="/glossary/last-click-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click</Link> at the event level: each conversion is attributed to the channel observed on the pageview where it happened, not to a touchpoint days earlier. There is no window to collapse and no cookie to expire. This produces a different number than a 30-day window — typically simpler and closer to the channel that actually drove the action.</p>
           </div>
+          <CommercialModule hook="An attribution window only works on data you actually captured. See last-click attribution running on 100% of your traffic." />
+
           <RelatedGlossaryTerms slug="attribution-window" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">

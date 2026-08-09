@@ -198,6 +198,51 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "Privacy",
     related: ["gdpr-analytics-compliance", "consent-management-platform", "cookieless-analytics", "eprivacy-directive"],
   },
+  {
+    slug: "utm-parameters",
+    hasPage: true,
+    term: "UTM Parameters",
+    shortDefinition:
+      "Query-string tags — utm_source, utm_medium, utm_campaign, utm_term, utm_content — appended to links so the destination can attribute the visit. The values are whatever you type, so attribution quality depends entirely on naming discipline.",
+    category: "Acquisition",
+    related: ["last-click-attribution", "attribution-model", "revenue-attribution", "data-loss-in-analytics"],
+  },
+  {
+    slug: "funnel",
+    hasPage: true,
+    term: "Funnel",
+    shortDefinition:
+      "An ordered sequence of steps toward a conversion, measured by drop-off between them. Only as trustworthy as its coverage — a funnel built on the consenting minority describes that minority, not your customers.",
+    category: "Analysis",
+    related: ["event-tracking", "data-loss-in-analytics", "bounce-rate", "cohort"],
+  },
+  {
+    slug: "cohort",
+    hasPage: true,
+    term: "Cohort",
+    shortDefinition:
+      "A group sharing a starting characteristic, usually first visit or first purchase period, tracked over time to compare behaviour between groups rather than across a whole audience.",
+    category: "Analysis",
+    related: ["funnel", "customer-lifetime-value", "multi-touch-attribution", "data-loss-in-analytics"],
+  },
+  {
+    slug: "return-on-ad-spend",
+    hasPage: true,
+    term: "Return on Ad Spend (ROAS)",
+    shortDefinition:
+      "Attributed revenue divided by ad spend. The numerator comes from your analytics and the denominator from the ad platform, so unmeasured conversions understate ROAS and push budget away from channels that were working.",
+    category: "eCommerce",
+    related: ["revenue-attribution", "last-click-attribution", "customer-lifetime-value", "data-loss-in-analytics"],
+  },
+  {
+    slug: "customer-lifetime-value",
+    hasPage: true,
+    term: "Customer Lifetime Value (LTV)",
+    shortDefinition:
+      "Expected total margin from a customer relationship. Usually calculated from order data rather than web analytics, precisely because it needs an identity that survives longer than any browser identifier.",
+    category: "eCommerce",
+    related: ["return-on-ad-spend", "revenue-attribution", "cohort", "data-loss-in-analytics"],
+  },
 
   // ── Index-only entries (no dedicated page) ─────────────────────────────
   // Defined here so the glossary is complete as a reference. Promote an entry
@@ -272,13 +317,6 @@ export const glossaryTerms: GlossaryTerm[] = [
     shortDefinition:
       "Clicks divided by impressions. Falling CTR at a stable ranking position usually means the answer is now being rendered in the results page rather than on your site.",
     category: "Metrics",
-  },
-  {
-    slug: "utm-parameters",
-    term: "UTM Parameters",
-    shortDefinition:
-      "Query-string tags — utm_source, utm_medium, utm_campaign, utm_term, utm_content — appended to links so the destination can attribute the visit. The values are whatever you type, so attribution quality depends entirely on naming discipline.",
-    category: "Acquisition",
   },
   {
     slug: "referrer",
@@ -386,20 +424,6 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "Privacy",
   },
   {
-    slug: "funnel",
-    term: "Funnel",
-    shortDefinition:
-      "An ordered sequence of steps toward a conversion, measured by drop-off between them. Only as trustworthy as its coverage — a funnel built on the consenting minority describes that minority, not your customers.",
-    category: "Analysis",
-  },
-  {
-    slug: "cohort",
-    term: "Cohort",
-    shortDefinition:
-      "A group sharing a starting characteristic, usually first visit or first purchase period, tracked over time to compare behaviour between groups rather than across a whole audience.",
-    category: "Analysis",
-  },
-  {
     slug: "segment",
     term: "Segment",
     shortDefinition:
@@ -414,24 +438,10 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "eCommerce",
   },
   {
-    slug: "return-on-ad-spend",
-    term: "Return on Ad Spend (ROAS)",
-    shortDefinition:
-      "Attributed revenue divided by ad spend. The numerator comes from your analytics and the denominator from the ad platform, so unmeasured conversions understate ROAS and push budget away from channels that were working.",
-    category: "eCommerce",
-  },
-  {
     slug: "cost-per-acquisition",
     term: "Cost per Acquisition (CPA)",
     shortDefinition:
       "Spend divided by attributed conversions. Inflates whenever conversions go unmeasured, which makes it the metric most likely to trigger a wrong budget cut.",
-    category: "eCommerce",
-  },
-  {
-    slug: "customer-lifetime-value",
-    term: "Customer Lifetime Value (LTV)",
-    shortDefinition:
-      "Expected total margin from a customer relationship. Usually calculated from order data rather than web analytics, precisely because it needs an identity that survives longer than any browser identifier.",
     category: "eCommerce",
   },
 ];

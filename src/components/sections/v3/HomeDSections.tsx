@@ -116,6 +116,9 @@ export function ConsentlessAnalytics() {
             You weren&rsquo;t under-performing — you were under-measuring. The budget you&rsquo;d have
             cut was your best-converting channel.
           </div>
+          <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-mute">
+            Illustrative scenario — your real gap depends on your consent rate. Measure it on your own traffic.
+          </div>
         </div>
       </div>
     </section>
@@ -187,6 +190,9 @@ export function PromoDaysRealTime() {
           <div className="mt-8 pt-6 border-t border-warm-100 text-[13px] leading-[1.5] text-ink-soft">
             Decision at 13:00: kill DemandGen, move budget to PMax_Catalog. Not a post-mortem
             tomorrow — a fix today.
+          </div>
+          <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-mute">
+            Illustrative example — not a live account.
           </div>
         </div>
       </div>
@@ -275,6 +281,10 @@ export function GrowthRiskCost() {
           ))}
         </div>
 
+        <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">
+          Illustrative Q&amp;A — example conversations, not a live account.
+        </p>
+
         <div className="mt-10">
           <a
             href="https://lens-lite.sealmetrics.com"
@@ -333,6 +343,121 @@ export function QuoteBlock() {
             </span>
           </footer>
         </blockquote>
+      </div>
+    </section>
+  );
+}
+
+/* --- CFO objection + legal mechanism (condensed from /why-sealmetrics) ---
+   The homepage stacked benefits but never rebutted an objection or explained
+   why 100% capture is legal — the two moves that close a skeptical CMO/CFO.
+   The full argument lives on /why-sealmetrics; this is the short form. */
+export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
+  const t =
+    locale === "es"
+      ? {
+          quote:
+            "Esas ventas ya se cerraron. Ver el número completo no hace que venda más.",
+          cite: "Lo que te dirá tu CFO",
+          p1a: "Tienen razón: SealMetrics no crea ingresos nuevos.",
+          p1b: "Esos ingresos ya existen.",
+          p1c:
+            "Lo que recuperas es la capacidad de decidir bien sobre ellos: hoy la foto distorsionada te empuja a cortar los canales cuyos compradores rechazan cookies y a financiar los que solo parecen fuertes.",
+          p2a: "Mismo presupuesto,",
+          p2em1: "más ventas.",
+          p2b: "O mismas ventas,",
+          p2em2: "menos presupuesto.",
+          readMore: "Lee el argumento completo →",
+          whyHref: "/es/why-sealmetrics",
+          h2a: "¿Medir el 100%, legalmente?",
+          h2em: "Así es cómo.",
+          steps: [
+            { n: "01", t: "Sin cookies", d: "Sin identificadores, sin fingerprints. Eventos agregados — hits, no personas." },
+            { n: "02", t: "Sin datos personales", d: "No se procesa nada personal, así que no se dispara ningún diálogo de consentimiento." },
+            { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Capturar el 100% y la privacidad son el mismo diseño." },
+          ],
+          badges: ["RGPD por arquitectura", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
+        }
+      : {
+          quote:
+            "Those sales already closed. Seeing the full number doesn't make me sell more.",
+          cite: "What your CFO will say",
+          p1a: "They're right — SealMetrics doesn't create new revenue.",
+          p1b: "That revenue already exists.",
+          p1c:
+            "What you recover is the ability to decide well on top of it: today the distorted picture pushes you to cut the channels whose buyers reject cookies and fund the ones that only look strong.",
+          p2a: "Same budget,",
+          p2em1: "more sales.",
+          p2b: "Or same sales,",
+          p2em2: "less budget.",
+          readMore: "Read the full argument →",
+          whyHref: "/why-sealmetrics",
+          h2a: "\u201cMeasure 100%, legally?\u201d",
+          h2em: "Here's how.",
+          steps: [
+            { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
+            { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
+            { n: "03", t: "Nothing to consent to", d: "No profile to object to. 100% capture and privacy are the same design." },
+          ],
+          badges: ["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],
+        };
+
+  return (
+    <section className="py-28 bg-white border-t border-warm-100">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+        <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 md:gap-16 items-start mb-16">
+          <figure className="border-l-2 pl-6" style={{ borderColor: "#2E5C8A" }}>
+            <blockquote className="text-[22px] md:text-[26px] leading-[1.4] text-ink font-medium tracking-[-0.01em]">
+              &ldquo;{t.quote}&rdquo;
+            </blockquote>
+            <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
+              {t.cite}
+            </figcaption>
+          </figure>
+          <div className="grid gap-4">
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              {t.p1a}{" "}
+              <strong className="font-semibold text-ink">{t.p1b}</strong> {t.p1c}
+            </p>
+            <p className="text-[16.5px] leading-[1.6] text-ink-2">
+              {t.p2a} <em className="italic-accent">{t.p2em1}</em> {t.p2b}{" "}
+              <em className="italic-accent">{t.p2em2}</em>{" "}
+              <Link href={t.whyHref} className="text-brand font-medium border-b border-brand/30 hover:border-brand no-underline">
+                {t.readMore}
+              </Link>
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-[52ch] mb-10">
+          <h2 className="h-section">
+            {t.h2a} <em>{t.h2em}</em>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 items-stretch">
+          {t.steps.map((s, i) => (
+            <div key={s.n} className="contents">
+              {i > 0 && (
+                <div className="hidden md:flex items-center justify-center text-warm-300 text-[22px]" aria-hidden>
+                  →
+                </div>
+              )}
+              <article className="bg-warm-50 border border-warm-100 rounded-xl p-7">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand">{s.n}</span>
+                <h3 className="text-[19px] font-semibold text-ink leading-[1.3] mt-2.5 mb-2">{s.t}</h3>
+                <p className="text-[14px] leading-[1.55] text-ink-soft">{s.d}</p>
+              </article>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
+          {t.badges.map((b) => (
+            <span key={b} className="inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+              {b}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

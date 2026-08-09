@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es Intelligent Tracking Prevention (ITP)?",
@@ -65,6 +66,8 @@ export default function ItpEsPage() {
             La <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> no almacena cookies en el dispositivo del visitante, así que ITP y ETP no tienen efecto sobre la recolección. El enfoque <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party sin cookies</Link> captura las sesiones con independencia de las funciones de privacidad del navegador.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="ITP no puede caducar lo que nunca se almacenó. Mira tu tráfico de Safari contado completo, sin cookies." />
 
         <RelatedGlossaryTerms slug="intelligent-tracking-prevention" locale="es" />
 

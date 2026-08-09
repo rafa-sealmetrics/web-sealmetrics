@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Ad Blocker Impact on Analytics — SealMetrics",
@@ -84,6 +85,8 @@ export default function AdBlockerAnalyticsImpactPage() {
             <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> takes this further by routing data through your own domain, eliminating the third-party requests that ad blockers intercept. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like SealMetrics combine first-party infrastructure with no cookies to capture 100% of visitor activity regardless of ad blocker status.
           </p>
         </div>
+
+        <CommercialModule hook="Ad blockers never see SealMetrics' first-party count. See what your traffic looks like when nothing strips sessions out." />
 
         <RelatedGlossaryTerms slug="ad-blocker-analytics-impact" />
 

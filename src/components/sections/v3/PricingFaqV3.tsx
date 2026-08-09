@@ -44,7 +44,7 @@ const ITEMS_EN = [
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. Every plan includes a 14-day free trial with full access to all features. You add a payment method when you start and are not charged until the trial ends — cancel before then and you pay nothing. You'll see your real data within minutes of installing our script. The Agentic Package, set up from your AI assistant, needs no card at all.",
+    a: "Yes — a 14-day trial with full access to every feature. You add a payment method when you start and are not charged until the trial ends — cancel before then and you pay nothing. You'll see your real data within minutes of installing our script. The Agentic Package, set up from your AI assistant, needs no card at all.",
   },
   {
     q: "Unlimited websites and users?",
@@ -103,7 +103,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Hay prueba gratuita?",
-    a: "Sí. Cada plan incluye 14 días gratis con acceso completo a todas las features. Añades método de pago al empezar y no se te cobra hasta que acaba la prueba — si cancelas antes, no pagas nada. Verás tus datos reales a los pocos minutos de instalar el script. El Agentic Package, que configuras desde tu asistente de IA, no pide tarjeta.",
+    a: "Sí — una prueba de 14 días con acceso completo a todas las features. Añades método de pago al empezar y no se te cobra hasta que acaba la prueba — si cancelas antes, no pagas nada. Verás tus datos reales a los pocos minutos de instalar el script. El Agentic Package, que configuras desde tu asistente de IA, no pide tarjeta.",
   },
   {
     q: "¿Webs y usuarios ilimitados?",

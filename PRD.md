@@ -250,10 +250,11 @@ TIER 6 — Institucional
 
 **Estado:** ✅ Construida
 **Objetivo:** Transparencia + conversión a demo
-**Planes:**
-- Growth: €390/mes (hasta 500K pageviews)
-- Business: €790/mes (hasta 2M pageviews) — destacado
+**Planes** (fuente única de verdad: `src/lib/content/pricing.ts` — no duplicar cifras aquí):
+- Growth: €499/mes anual (€599 mensual) — 5M eventos humanos/mes
+- Scale: €899/mes anual (€1.079 mensual) — 15M eventos humanos/mes — destacado
 - Enterprise: Custom (ilimitado)
+- Agentic Package: gratis hasta 1M eventos/mes, aprovisionado vía MCP, sin tarjeta
 **Secciones:** Hero + Plans grid + 6 FAQs + CTA dark
 
 ### 5.4 How It Works `/how-it-works`

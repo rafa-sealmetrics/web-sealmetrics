@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "What Is Last-Click Attribution? — SealMetrics Glossary",
@@ -71,6 +72,8 @@ export default function LastClickAttributionPage() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click on 100% of data</h2>
             <p>Cookie-based last-click attribution still loses data the moment the cookie disappears. SealMetrics applies last-click at the <strong>event level</strong>: the channel observed on the page where the conversion fires gets the credit, on 100% of observed conversions. No cookie required, no expiration risk, no &ldquo;direct&rdquo; bucket inflated by ITP. See the full pattern in the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>.</p>
           </div>
+          <CommercialModule hook="See last-click attribution running on 100% of your traffic — no consent gaps, no modelling." />
+
           <RelatedGlossaryTerms slug="last-click-attribution" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">

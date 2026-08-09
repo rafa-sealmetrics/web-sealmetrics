@@ -12,6 +12,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "grounding-analytics-ai";
 const URL = `/es/blog/${SLUG}`;
@@ -273,6 +274,11 @@ export default function GroundingAnalyticsAiPageEs() {
               lo que hace que la respuesta sea cierta.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Tu asistente de IA consulta tus datos o se los inventa? En una demo ves a LENS responder solo con cifras leídas de tu propia base de datos — y negarse cuando el dato no existe."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               La recompensa: un modelo «malo» puede ser el modelo adecuado
             </h2>
@@ -427,6 +433,11 @@ export default function GroundingAnalyticsAiPageEs() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Quieres poner a prueba el grounding con tus propias preguntas trampa? Haz en una demo las preguntas que sabes que no tienen respuesta en tu dato y mira qué contesta LENS."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

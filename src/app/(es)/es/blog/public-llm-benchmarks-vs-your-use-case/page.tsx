@@ -11,6 +11,7 @@ import {
   speakableWebPageSchema,
   statisticClaimSchema,
 } from "@/lib/schema";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "public-llm-benchmarks-vs-your-use-case";
 const URL = `/es/blog/${SLUG}`;
@@ -337,6 +338,11 @@ export default function PublicLlmBenchmarksVsYourUseCasePageEs() {
               no usa.
             </p>
 
+            <CommercialModule
+              locale="es"
+              hook="¿Estás eligiendo modelo por su puesto en un ranking que no mide tu caso? En una demo ves cómo rinde LENS sobre tu propia carga de trabajo: tus preguntas, tu dato, tus cifras."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Los benchmarks que sí son relevantes, y su letra pequeña
             </h2>
@@ -541,6 +547,11 @@ export default function PublicLlmBenchmarksVsYourUseCasePageEs() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            locale="es"
+            hook="¿Cinco pasos son demasiados para esta semana? El primero cuesta media hora: trae tus preguntas reales a una demo y evalúa el resultado contra tus propios números."
+          />
 
           <section className="mt-16 pt-10 border-t border-warm-100">
             <h2 className="text-[0.75rem] font-medium uppercase tracking-[0.06em] text-text-tertiary mb-5">

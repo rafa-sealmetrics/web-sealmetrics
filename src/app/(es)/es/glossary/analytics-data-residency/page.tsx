@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es la residencia del dato? — Glosario",
@@ -75,6 +76,8 @@ export default function AnalyticsDataResidencyEsPage() {
             El Marco de Privacidad de Datos UE-EE. UU., adoptado en julio de 2023, aporta una nueva base de adecuación, pero muchos expertos esperan un «Schrems III». La combinación de <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección first-party</Link> sobre infraestructura exclusivamente europea y <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> que no recoge dato personal es la postura de cumplimiento más sólida: sin consentimiento, sin transferencias y sin depender de decisiones de adecuación cambiantes.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="Tus datos de analítica pueden vivir en Dublín, bajo jurisdicción europea. Mira cómo es la medición con residencia en la UE sobre tu propio tráfico." />
 
         <RelatedGlossaryTerms slug="analytics-data-residency" locale="es" />
 

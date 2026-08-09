@@ -12,6 +12,7 @@ import {
 } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const SLUG = "our-ai-got-it-wrong-in-production";
 const URL = `/blog/${SLUG}`;
@@ -247,6 +248,10 @@ export default function OurAiGotItWrongInProductionPage() {
               against our own assumptions and passed.
             </p>
 
+            <CommercialModule
+              hook="We caught this because grounded answers are checkable against the database. Ask in a demo how LENS output is validated — and what happens when it fails."
+            />
+
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Why this class of bug is inevitable
             </h2>
@@ -360,6 +365,10 @@ export default function OurAiGotItWrongInProductionPage() {
               .
             </p>
           </div>
+
+          <CommercialModule
+            hook="A vendor that publishes its own defects is easier to audit. Bring your hardest reliability questions to a demo — including about this incident."
+          />
 
           <FaqSection items={FAQ} locale="en" />
 

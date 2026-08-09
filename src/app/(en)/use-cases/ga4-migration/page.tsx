@@ -11,6 +11,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -315,6 +316,14 @@ export default function Ga4MigrationPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="pb-4 bg-white">
+        <div className="max-w-[1000px] mx-auto px-5 sm:px-8">
+          <CommercialModule
+            hook="Ready for Day 0? We help you install the pixel alongside GA4 today — the parallel month starts the moment it fires."
+          />
         </div>
       </section>
 

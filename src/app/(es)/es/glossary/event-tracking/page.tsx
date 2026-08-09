@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es el tracking de eventos? — Glosario",
@@ -72,6 +73,8 @@ export default function EventTrackingEsPage() {
             El <Link href={glossaryHref("server-side-tracking", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">tracking server-side</Link> traslada la recolección a la capa de servidor. No hay script que bloquear, ni cookie que restringir, ni dependencia del consentimiento.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="Mira tus eventos clave — registros, carritos, checkouts — contados sobre el 100% de las visitas, no solo las consentidas." />
 
         <RelatedGlossaryTerms slug="event-tracking" locale="es" />
 

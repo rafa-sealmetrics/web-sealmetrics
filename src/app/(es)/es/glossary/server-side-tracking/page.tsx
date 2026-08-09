@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "¿Qué es el tracking server-side? — Glosario",
@@ -65,6 +66,8 @@ export default function ServerSideTrackingEsPage() {
             El tracking server-side es más eficaz combinado con la <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link>. Cuando todo el camino del dato es first-party (tu dominio) y server-side (tu servidor), la infraestructura de analítica es invisible para las herramientas de bloqueo e inmune a las restricciones del navegador.
           </p>
         </div>
+
+        <CommercialModule locale="es" hook="SealMetrics cuenta los eventos en el servidor por una ruta first-party propia. Mira qué llega cuando nada lo bloquea." />
 
         <RelatedGlossaryTerms slug="server-side-tracking" locale="es" />
 

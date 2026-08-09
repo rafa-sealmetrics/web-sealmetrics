@@ -76,10 +76,10 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale).footer;
   const footerColumns = getFooterColumns(t, locale);
 
-  const demoAccessLabel = locale === "es" ? "Acceder a la cuenta demo" : "Access Demo Account";
-  const demoAccessHelper = locale === "es"
-    ? "Recibe credenciales por email · email corporativo requerido"
-    : "Credentials by email · corporate email required";
+  // Footer strip follows the site-wide conversion ladder: demo first (the
+  // assisted path for the ICP), self-serve sandbox as the explicit alternative.
+  const demoHref = localizedHref("/demo", locale);
+  const demoAccessHref = locale === "es" ? "/es/demo-access" : "/demo-access";
 
   return (
     <footer className="bg-warm-900 border-t border-warm-800 pt-12 pb-8">
@@ -88,17 +88,31 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
           <div>
             <p className="text-[0.95rem] font-semibold text-warm-white tracking-[-0.01em]">
               {locale === "es"
-                ? "¿Quieres ver el dashboard antes de hablar con nosotros?"
-                : "Want to see the dashboard before talking to us?"}
+                ? "¿Listo para ver el 100% de tu tráfico?"
+                : "Ready to see 100% of your traffic?"}
             </p>
-            <p className="text-[0.78rem] text-warm-400 mt-1">{demoAccessHelper}</p>
+            <p className="text-[0.78rem] text-warm-400 mt-1">
+              {locale === "es"
+                ? "30 minutos con el founder, sobre tu propia web · sin compromiso"
+                : "30 minutes with the founder, on your own site · no commitment"}
+            </p>
           </div>
-          <Link
-            href="/demo-access"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-[0.9rem] font-semibold text-warm-900 bg-warm-white no-underline hover:bg-white transition-colors self-start md:self-auto"
-          >
-            {demoAccessLabel} <span aria-hidden>→</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-5 self-start md:self-auto">
+            <Link
+              href={demoHref}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-[0.9rem] font-semibold text-warm-900 bg-warm-white no-underline hover:bg-white transition-colors"
+            >
+              {locale === "es" ? "Reserva una demo" : "Book a demo"} <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href={demoAccessHref}
+              className="text-[0.85rem] text-warm-300 no-underline border-b border-warm-800 pb-0.5 hover:text-warm-white transition-colors"
+            >
+              {locale === "es"
+                ? "o explora la cuenta demo por tu cuenta"
+                : "or explore the demo account on your own"}
+            </Link>
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
