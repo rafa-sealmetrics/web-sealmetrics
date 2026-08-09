@@ -27,7 +27,7 @@ export function PricingHeroV3Es() {
           </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14 días gratis
+          Prueba de 14 días
         </p>
       </div>
     </section>

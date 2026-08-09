@@ -568,7 +568,7 @@ const STEPS_COPY = {
     ],
     primaryCta: "Start 14-day trial",
     secondaryCta: "See your GA4 gap first",
-    foot: "14-day free trial · 4-minute setup · Worth a look before next quarter's budget",
+    foot: "14-day trial · 4-minute setup · Worth a look before next quarter's budget",
   },
   es: {
     eyebrow: "Cómo empezar",
@@ -584,7 +584,7 @@ const STEPS_COPY = {
     ],
     primaryCta: "Prueba de 14 días",
     secondaryCta: "Ver tu gap GA4 primero",
-    foot: "14 días gratis · Setup en 4 minutos · Antes del próximo presupuesto",
+    foot: "Prueba de 14 días · Setup en 4 minutos · Antes del próximo presupuesto",
   },
 } as const;
 
@@ -730,7 +730,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
     body: "Every day without SealMetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
-    foot: "14-day free trial · Cancel before day 14, pay nothing · 4-minute setup",
+    foot: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
   },
   es: {
     eyebrow: "La sangría es diaria",
@@ -738,7 +738,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
     body: "Cada día sin SealMetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
-    foot: "14 días gratis · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
+    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
   },
 } as const;
 
@@ -809,7 +809,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Billed annually · ${total}/yr`,
     monthlyAlt: (m: string) => `or ${m}/mo billed monthly`,
     lessThanLost: <>Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.</>,
-    trial: "14-day free trial · Cancel before day 14, pay nothing",
+    trial: "14-day trial · Cancel before day 14, pay nothing",
     customLabel: "Custom",
     customSub: "Annual or custom terms",
     growthBlurb: "For teams that want to see their real data.",
@@ -834,7 +834,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Anual · ${total}/año`,
     monthlyAlt: (m: string) => `o ${m}/mes con facturación mensual`,
     lessThanLost: <>Menos que lo que pierdes en <em className="italic-accent">un solo día</em> de datos incompletos.</>,
-    trial: "14 días gratis · Cancela antes del día 14 y no pagas",
+    trial: "Prueba de 14 días · Cancela antes del día 14 y no pagas",
     customLabel: "A medida",
     customSub: "Anual o términos custom",
     growthBlurb: "Para equipos que quieren ver su dato real.",

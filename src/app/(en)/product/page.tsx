@@ -15,6 +15,7 @@ import {
   FeatureSuperAPIV3,
   NineReportsV3,
   IntegrationsStripV3,
+  ProductProofV3,
   ProductFinalCtaV3,
 } from "@/components/sections/v3/ProductV3Sections";
 
@@ -73,6 +74,7 @@ export default function ProductPage() {
       <FeatureSuperAPIV3 />
       <NineReportsV3 />
       <IntegrationsStripV3 />
+      <ProductProofV3 />
       <ProductFinalCtaV3 />
     </>
   );

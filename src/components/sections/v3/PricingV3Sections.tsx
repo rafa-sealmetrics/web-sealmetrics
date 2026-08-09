@@ -41,7 +41,7 @@ export function PricingHeroV3() {
           </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14-day free trial
+          14-day trial
         </p>
       </div>
     </section>

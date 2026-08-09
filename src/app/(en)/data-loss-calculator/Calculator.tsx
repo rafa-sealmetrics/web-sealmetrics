@@ -430,7 +430,7 @@ export function Calculator() {
                     Start 14-day trial &mdash; see your exact numbers
                   </a>
                   <p className="text-[0.72rem] text-text-tertiary text-center">
-                    14-day free trial · Cancel before day 14, pay nothing · 4-minute setup.
+                    14-day trial · Cancel before day 14, pay nothing · 4-minute setup.
                   </p>
                   <div className="mt-4 pt-4 border-t border-warm-100">
                     <p className="text-[0.75rem] text-text-tertiary text-center mb-3">

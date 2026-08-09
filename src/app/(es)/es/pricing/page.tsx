@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Precios SealMetrics — Paga por humanos, no por bots",
     description:
-      "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. 14 días gratis.",
+      "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. Prueba de 14 días.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     locale: "es_ES",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Precios SealMetrics — Paga por humanos, no por bots",
-    description: "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. 14 días gratis.",
+    description: "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. Prueba de 14 días.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
@@ -49,7 +49,7 @@ const faqsForSchema = [
   { question: "¿Qué cuenta como evento humano?", answer: "Cualquier interacción real de un visitante: páginas vistas, clics, conversiones, envíos de formulario, añadir al carrito, suscripciones. El tráfico de agentes IA y bots tradicionales se excluye." },
   { question: "¿Por qué el tráfico de agentes IA es gratis?", answer: "Los agentes IA (ChatGPT, Claude, Perplexity) son una categoría nueva de tráfico sobre la que necesitas visibilidad. Los trackeamos gratis." },
   { question: "¿Qué pasa si supero mi límite de eventos?", answer: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos. Si superas el límite 2 meses seguidos, Growth pasa a Scale automáticamente en el siguiente ciclo; Scale nunca sube solo — te escribimos para hablar de Enterprise. Un mes de exceso al año es gratis." },
-  { question: "¿Hay prueba gratuita?", answer: "Sí. Cada plan incluye 14 días gratis con acceso completo. Añades método de pago al empezar y no se te cobra hasta que acaba la prueba — si cancelas antes, no pagas nada. El Agentic Package, que configuras desde tu asistente de IA, no pide tarjeta." },
+  { question: "¿Hay prueba gratuita?", answer: "Sí — una prueba de 14 días con acceso completo. Añades método de pago al empezar y no se te cobra hasta que acaba la prueba — si cancelas antes, no pagas nada. El Agentic Package, que configuras desde tu asistente de IA, no pide tarjeta." },
   { question: "¿Todas las features están incluidas en cada plan?", answer: "Sí en la analítica. Analítica core, tracking de conversiones, API, MCP Server, export BigQuery y LENS AI — pregunta a tus datos en lenguaje natural y convierte la respuesta en un informe — están incluidos desde Growth, funcionando con tu propia API key (BYOK: Anthropic, OpenAI, Gemini o DeepSeek). La detección de anomalías por reglas, el forecasting y las oportunidades de crecimiento están en el roadmap, no activos hoy. La única opción por uso es Private AI, nuestro modelo gestionado alojado en la UE y sin API key: add-on de pago en Growth, incluida en Scale y Enterprise (5M tokens/mes), con packs extra de 5M tokens a 358,80€ e instancia dedicada no compartida en Enterprise. Otras diferencias entre planes son volumen de eventos, webhooks y logs de auditoría (desde Scale), governance y soporte." },
   { question: "¿Qué es el Agentic Package?", answer: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA (Claude Desktop, Codex o cualquier agente compatible con MCP). Tu agente crea la cuenta y genera el píxel — la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes, self-serve con solo documentación y sin tarjeta. Al superar 1M de eventos en un mes, se activa el plan Growth." },
 ];

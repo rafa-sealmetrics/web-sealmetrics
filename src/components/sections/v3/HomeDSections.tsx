@@ -352,12 +352,55 @@ export function QuoteBlock() {
    The homepage stacked benefits but never rebutted an objection or explained
    why 100% capture is legal — the two moves that close a skeptical CMO/CFO.
    The full argument lives on /why-sealmetrics; this is the short form. */
-export function CfoObjectionHome() {
-  const steps = [
-    { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
-    { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
-    { n: "03", t: "Nothing to consent to", d: "No profile to object to. 100% capture and privacy are the same design." },
-  ];
+export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
+  const t =
+    locale === "es"
+      ? {
+          quote:
+            "Esas ventas ya se cerraron. Ver el número completo no hace que venda más.",
+          cite: "Lo que te dirá tu CFO",
+          p1a: "Tienen razón: SealMetrics no crea ingresos nuevos.",
+          p1b: "Esos ingresos ya existen.",
+          p1c:
+            "Lo que recuperas es la capacidad de decidir bien sobre ellos: hoy la foto distorsionada te empuja a cortar los canales cuyos compradores rechazan cookies y a financiar los que solo parecen fuertes.",
+          p2a: "Mismo presupuesto,",
+          p2em1: "más ventas.",
+          p2b: "O mismas ventas,",
+          p2em2: "menos presupuesto.",
+          readMore: "Lee el argumento completo →",
+          whyHref: "/es/why-sealmetrics",
+          h2a: "¿Medir el 100%, legalmente?",
+          h2em: "Así es cómo.",
+          steps: [
+            { n: "01", t: "Sin cookies", d: "Sin identificadores, sin fingerprints. Eventos agregados — hits, no personas." },
+            { n: "02", t: "Sin datos personales", d: "No se procesa nada personal, así que no se dispara ningún diálogo de consentimiento." },
+            { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Capturar el 100% y la privacidad son el mismo diseño." },
+          ],
+          badges: ["RGPD por arquitectura", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
+        }
+      : {
+          quote:
+            "Those sales already closed. Seeing the full number doesn't make me sell more.",
+          cite: "What your CFO will say",
+          p1a: "They're right — SealMetrics doesn't create new revenue.",
+          p1b: "That revenue already exists.",
+          p1c:
+            "What you recover is the ability to decide well on top of it: today the distorted picture pushes you to cut the channels whose buyers reject cookies and fund the ones that only look strong.",
+          p2a: "Same budget,",
+          p2em1: "more sales.",
+          p2b: "Or same sales,",
+          p2em2: "less budget.",
+          readMore: "Read the full argument →",
+          whyHref: "/why-sealmetrics",
+          h2a: "\u201cMeasure 100%, legally?\u201d",
+          h2em: "Here's how.",
+          steps: [
+            { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
+            { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
+            { n: "03", t: "Nothing to consent to", d: "No profile to object to. 100% capture and privacy are the same design." },
+          ],
+          badges: ["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],
+        };
 
   return (
     <section className="py-28 bg-white border-t border-warm-100">
@@ -365,26 +408,22 @@ export function CfoObjectionHome() {
         <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 md:gap-16 items-start mb-16">
           <figure className="border-l-2 pl-6" style={{ borderColor: "#2E5C8A" }}>
             <blockquote className="text-[22px] md:text-[26px] leading-[1.4] text-ink font-medium tracking-[-0.01em]">
-              &ldquo;Those sales already closed. Seeing the full number doesn&apos;t make me
-              sell more.&rdquo;
+              &ldquo;{t.quote}&rdquo;
             </blockquote>
             <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-              What your CFO will say
+              {t.cite}
             </figcaption>
           </figure>
           <div className="grid gap-4">
             <p className="text-[16.5px] leading-[1.6] text-ink-2">
-              They&apos;re right — SealMetrics doesn&apos;t create new revenue.{" "}
-              <strong className="font-semibold text-ink">That revenue already exists.</strong>{" "}
-              What you recover is the ability to decide well on top of it: today the
-              distorted picture pushes you to cut the channels whose buyers reject
-              cookies and fund the ones that only look strong.
+              {t.p1a}{" "}
+              <strong className="font-semibold text-ink">{t.p1b}</strong> {t.p1c}
             </p>
             <p className="text-[16.5px] leading-[1.6] text-ink-2">
-              Same budget, <em className="italic-accent">more sales.</em> Or same sales,{" "}
-              <em className="italic-accent">less budget.</em>{" "}
-              <Link href="/why-sealmetrics" className="text-brand font-medium border-b border-brand/30 hover:border-brand no-underline">
-                Read the full argument →
+              {t.p2a} <em className="italic-accent">{t.p2em1}</em> {t.p2b}{" "}
+              <em className="italic-accent">{t.p2em2}</em>{" "}
+              <Link href={t.whyHref} className="text-brand font-medium border-b border-brand/30 hover:border-brand no-underline">
+                {t.readMore}
               </Link>
             </p>
           </div>
@@ -392,11 +431,11 @@ export function CfoObjectionHome() {
 
         <div className="max-w-[52ch] mb-10">
           <h2 className="h-section">
-            &ldquo;Measure 100%, legally?&rdquo; <em>Here&apos;s how.</em>
+            {t.h2a} <em>{t.h2em}</em>
           </h2>
         </div>
         <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 items-stretch">
-          {steps.map((s, i) => (
+          {t.steps.map((s, i) => (
             <div key={s.n} className="contents">
               {i > 0 && (
                 <div className="hidden md:flex items-center justify-center text-warm-300 text-[22px]" aria-hidden>
@@ -412,7 +451,7 @@ export function CfoObjectionHome() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"].map((b) => (
+          {t.badges.map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
