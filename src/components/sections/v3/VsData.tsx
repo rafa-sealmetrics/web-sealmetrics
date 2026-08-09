@@ -72,8 +72,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Real-time (<2 min)", them: "Partial", us: "Yes · all plans" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
-            { feature: "Script weight on the wire (gzip)", them: "~171 KB · same gtag.js as free GA4", us: "1.1 KB · ~155× lighter" },
-            { feature: "JavaScript parsed on the device", them: "~512 KB", us: "2.0 KB" },
+            { feature: "Script weight on the wire (gzip)", them: "~146 KB · same gtag.js as free GA4", us: "1.1 KB · ~132× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~409 KB", us: "2.0 KB" },
             { feature: "Pageview hit secured", them: "~0.5–0.7 s best case · only after consent", us: "~0.1–0.3 s · sendBeacon from the head" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -162,8 +162,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Tiempo real (<2 min)", them: "Parcial", us: "Sí · todos los planes" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
-            { feature: "Peso del script en red (gzip)", them: "~171 KB · el mismo gtag.js que GA4 gratis", us: "1,1 KB · ~155× más ligero" },
-            { feature: "JavaScript parseado en el dispositivo", them: "~512 KB", us: "2,0 KB" },
+            { feature: "Peso del script en red (gzip)", them: "~146 KB · el mismo gtag.js que GA4 gratis", us: "1,1 KB · ~132× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~409 KB", us: "2,0 KB" },
             { feature: "Pageview asegurado", them: "~0,5–0,7 s mejor caso · solo tras consentimiento", us: "~0,1–0,3 s · sendBeacon desde el head" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -775,8 +775,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Your data ownership", them: "Shared with Google ad models", us: "Yours only · no training for anyone" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
-            { feature: "Script weight on the wire (gzip)", them: "~171 KB · gtag.js", us: "1.1 KB · ~155× lighter" },
-            { feature: "JavaScript parsed on the device", them: "~512 KB", us: "2.0 KB" },
+            { feature: "Script weight on the wire (gzip)", them: "~146 KB · gtag.js", us: "1.1 KB · ~132× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~409 KB", us: "2.0 KB" },
             { feature: "Pageview hit secured", them: "~0.5–0.7 s best case · only after consent", us: "~0.1–0.3 s · sendBeacon from the head" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -864,8 +864,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Propiedad de datos", them: "Compartidos con modelos de ads de Google", us: "Solo tuyos · sin training para nadie" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
-            { feature: "Peso del script en red (gzip)", them: "~171 KB · gtag.js", us: "1,1 KB · ~155× más ligero" },
-            { feature: "JavaScript parseado en el dispositivo", them: "~512 KB", us: "2,0 KB" },
+            { feature: "Peso del script en red (gzip)", them: "~146 KB · gtag.js", us: "1,1 KB · ~132× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~409 KB", us: "2,0 KB" },
             { feature: "Pageview asegurado", them: "~0,5–0,7 s mejor caso · solo tras consentimiento", us: "~0,1–0,3 s · sendBeacon desde el head" },
           ]},
           { category: "Customer success", block: "commercial", rows: [

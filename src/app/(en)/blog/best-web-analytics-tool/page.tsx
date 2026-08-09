@@ -54,7 +54,7 @@ const requirements = [
     id: "req-1",
     title: "Ultralightweight pixel",
     bar: "Under 5 KB gzipped on the wire, under 10 KB parsed, async, no tag manager dependency",
-    seal: "1.1 KB on the wire · 2.0 KB parsed. ~155× lighter than gtag.js",
+    seal: "1.1 KB on the wire · 2.0 KB parsed. ~132× lighter than gtag.js",
     score: 2,
   },
   {
@@ -156,7 +156,7 @@ const faqs = [
   {
     question: "How light should an analytics pixel be?",
     answer:
-      "Under 5 KB gzipped on the wire and under 10 KB of JavaScript parsed on the device. For reference, GA4's gtag.js is roughly 171 KB on the wire and around 512 KB parsed. Heavy tags fail first on 3G and mobile, so you lose exactly the traffic whose conversion rate is most fragile — and the sessions that never fired don't appear in the report telling you sessions are down.",
+      "Under 5 KB gzipped on the wire and under 10 KB of JavaScript parsed on the device. For reference, GA4's gtag.js is roughly 146 KB on the wire and around 409 KB parsed. Heavy tags fail first on 3G and mobile, so you lose exactly the traffic whose conversion rate is most fragile — and the sessions that never fired don't appear in the report telling you sessions are down.",
   },
   {
     question: "What does real time actually mean in web analytics?",
@@ -320,7 +320,7 @@ export default function BestWebAnalyticsToolPage() {
               <Chip tone="risk">The failure it prevents</Chip>
               <p>
                 Every kilobyte of measurement code is a tax on the sessions you
-                most want to measure. A 171 KB tag on a 3G connection in a
+                most want to measure. A 146 KB tag on a 3G connection in a
                 regional market doesn&rsquo;t arrive late — it often
                 doesn&rsquo;t arrive at all, because the visitor has already
                 bounced. You lose the slowest, most mobile, most marginal
@@ -348,12 +348,12 @@ export default function BestWebAnalyticsToolPage() {
             <StatRow
               items={[
                 {
-                  value: "171 KB",
+                  value: "146 KB",
                   label: "GA4 gtag.js on the wire, gzipped",
                   tone: "risk",
                 },
                 {
-                  value: "512 KB",
+                  value: "409 KB",
                   label: "JavaScript GA4 parses on the device",
                   tone: "risk",
                 },

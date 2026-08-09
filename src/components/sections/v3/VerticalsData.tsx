@@ -86,13 +86,13 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         h1: <>Analytics that <em>your engineering team</em> won't hate.</>,
         lede: "One script. 846 bytes. First-party. No cookie banner integration. No consent mode config. No tag manager variables. Setup in minutes, deprecated dependencies in zero.",
         pains: [
-          { title: "GA4 adds ~171 KB to every page", desc: "Our tracker is ~155× lighter on the wire. CLS stays low, Lighthouse scores don't get punished, your dev team doesn't complain." },
+          { title: "GA4 adds ~146 KB to every page", desc: "Our tracker is ~132× lighter on the wire. CLS stays low, Lighthouse scores don't get punished, your dev team doesn't complain." },
           { title: "Consent Mode v2 is a maze", desc: "Modeled conversions, modelled pageviews, modelled everything. Marketing makes decisions on data you can't audit. SealMetrics captures the real events." },
           { title: "GA4 + server-side GTM = 3 months of work", desc: "We do what server-side GTM tries to do — but out of the box. No GCP project, no Cloud Run, no maintenance." },
           { title: "BigQuery sampling above threshold", desc: "GA4 exports sampled data to BigQuery above certain volumes. Our export is full resolution — every event, no sampling, ever." },
         ],
         outcomes: [
-          { n: "846 B", label: "Minimum pixel", detail: "1.1 KB on the wire · ~155× lighter than GA4. Invisible to ad blockers. No CLS impact." },
+          { n: "846 B", label: "Minimum pixel", detail: "1.1 KB on the wire · ~132× lighter than GA4. Invisible to ad blockers. No CLS impact." },
           { n: "15 min", label: "To full install", detail: "One script tag. Works with any CMS, framework or CDN." },
           { n: "0", label: "Ongoing maintenance", detail: "No GCP, no server-side GTM, no tag variables to update." },
           { n: "Full", label: "BigQuery resolution", detail: "Every event exported. No sampling, no thresholds, no modelling." },
@@ -100,7 +100,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "Does SealMetrics fingerprint users?", a: "No. No browser fingerprinting, no canvas, no audio, no device tricks. Each pageview is counted anonymously with channel metadata (referrer, UTM, landing page) and aggregated into channel totals — no unique identifier is ever created, no per-user profile is built. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
           { q: "How does this bypass ad blockers?", a: "The pixel is first-party — it runs on your domain, not ours. Ad blocker lists target third-party analytics domains (google-analytics.com, segment.io, etc.). Because our collection flows through your own domain, it's invisible to ad blockers." },
-          { q: "What's the performance impact?", a: "846 bytes. Asynchronous load. No render-blocking. Our synthetic tests show no measurable CLS or LCP impact. Compared to GA4 (~171 KB) + GTM + Consent Mode polyfills, SealMetrics typically improves Core Web Vitals." },
+          { q: "What's the performance impact?", a: "846 bytes. Asynchronous load. No render-blocking. Our synthetic tests show no measurable CLS or LCP impact. Compared to GA4 (~146 KB) + GTM + Consent Mode polyfills, SealMetrics typically improves Core Web Vitals." },
           { q: "Can I self-host or isolate processing?", a: "Enterprise plan includes isolated processing — your data never shares infrastructure with other customers. We don't offer on-prem self-hosting, but for regulated industries we support dedicated EU regions and custom SLAs." },
           { q: "Do you have a REST API and webhooks?", a: "Yes, both. REST API with full coverage from the Growth plan. Webhooks from the Scale plan. Plus a native MCP server so AI agents (Claude, ChatGPT, custom copilots) can query your analytics directly." },
           faqGDPR.en,
@@ -113,13 +113,13 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         h1: <>Analítica que <em>tu equipo de ingeniería</em> no va a odiar.</>,
         lede: "Un script. 846 bytes. First-party. Sin integrar el banner de cookies. Sin config de consent mode. Sin variables de tag manager. Setup en minutos, deprecated dependencies: cero.",
         pains: [
-          { title: "GA4 añade ~171 KB a cada página", desc: "Nuestro tracker es ~155× más ligero en red. CLS bajo, Lighthouse no se resiente, tu dev team deja de quejarse." },
+          { title: "GA4 añade ~146 KB a cada página", desc: "Nuestro tracker es ~132× más ligero en red. CLS bajo, Lighthouse no se resiente, tu dev team deja de quejarse." },
           { title: "Consent Mode v2 es un laberinto", desc: "Conversiones modeladas, pageviews modelados, todo modelado. Marketing decide sobre datos que no puedes auditar. SealMetrics captura los eventos reales." },
           { title: "GA4 + server-side GTM = 3 meses", desc: "Hacemos lo que server-side GTM intenta hacer — pero out of the box. Sin proyecto GCP, sin Cloud Run, sin mantenimiento." },
           { title: "Muestreo BigQuery sobre umbral", desc: "GA4 exporta datos muestreados a BigQuery sobre cierto volumen. Nuestro export es a resolución completa — cada evento, sin muestreo, nunca." },
         ],
         outcomes: [
-          { n: "846 B", label: "Pixel mínimo", detail: "1,1 KB en red · ~155× más ligero que GA4. Invisible a ad blockers. Sin impacto en CLS." },
+          { n: "846 B", label: "Pixel mínimo", detail: "1,1 KB en red · ~132× más ligero que GA4. Invisible a ad blockers. Sin impacto en CLS." },
           { n: "15 min", label: "Instalación completa", detail: "Un script. Funciona con cualquier CMS, framework o CDN." },
           { n: "0", label: "Mantenimiento", detail: "Sin GCP, sin server-side GTM, sin variables que actualizar." },
           { n: "Total", label: "Resolución BigQuery", detail: "Cada evento exportado. Sin muestreo, sin umbrales, sin modelado." },
@@ -127,7 +127,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "¿Hace SealMetrics fingerprinting?", a: "No. Sin browser fingerprinting, sin canvas, sin audio, sin trucos de dispositivo. Cada pageview se cuenta de forma anónima con metadatos de canal (referrer, UTM, landing) y se agrega en totales por canal — nunca se crea un identificador único, nunca se construye un perfil por usuario. Decisión arquitectónica deliberada — el fingerprinting crea dato personal y requeriría consentimiento." },
           { q: "¿Cómo evita los ad blockers?", a: "El pixel es first-party — corre sobre tu dominio, no el nuestro. Las listas de ad blockers atacan dominios de analítica third-party (google-analytics.com, segment.io, etc.). Como nuestra recolección pasa por tu propio dominio, es invisible para ellos." },
-          { q: "¿Cuál es el impacto de rendimiento?", a: "846 bytes. Carga asíncrona. Sin render-blocking. Nuestros tests sintéticos muestran cero impacto medible en CLS o LCP. Comparado con GA4 (~171 KB) + GTM + polyfills de Consent Mode, SealMetrics suele mejorar Core Web Vitals." },
+          { q: "¿Cuál es el impacto de rendimiento?", a: "846 bytes. Carga asíncrona. Sin render-blocking. Nuestros tests sintéticos muestran cero impacto medible en CLS o LCP. Comparado con GA4 (~146 KB) + GTM + polyfills de Consent Mode, SealMetrics suele mejorar Core Web Vitals." },
           { q: "¿Se puede self-host o aislar procesamiento?", a: "El plan Enterprise incluye procesamiento aislado — tus datos nunca comparten infraestructura con otros clientes. No ofrecemos self-hosting on-prem, pero para industrias reguladas soportamos regiones UE dedicadas y SLAs custom." },
           { q: "¿Tenéis REST API y webhooks?", a: "Sí, ambos. REST API con cobertura completa desde el plan Growth. Webhooks desde el plan Scale. Más un MCP server nativo para que agentes IA (Claude, ChatGPT, copilots propios) consulten tu analítica directamente." },
           faqGDPR.es,

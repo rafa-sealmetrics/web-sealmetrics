@@ -60,7 +60,7 @@ export default function AnalyticsScriptsPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Every 100ms of site speed improvement produces +8.4% conversions in eCommerce, +10.1% in travel, and +21.6% in lead forms.</li>
-            <li>GA4 script is ~90 KB (gzipped) and Adobe Analytics is ~150 KB, while SealMetrics is just 1.3 KB — the tool measuring conversions may be costing you conversions.</li>
+            <li>GA4 script is ~146 KB (gzipped) and the Adobe stack is ~170 KB, while SealMetrics is just 1.1 KB — the tool measuring conversions may be costing you conversions.</li>
             <li>The compound effect is multiplicative: heavy scripts slow pages, consent banners reject 25-70% of visitors, and ad blockers erase ~32% of the rest.</li>
             <li>Traditional analytics captures less than half of actual traffic once all three forces — script weight, consent rejection, and tracker blocking — combine.</li>
           </ul>
@@ -135,15 +135,15 @@ export default function AnalyticsScriptsPage() {
               <tbody>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
-                  <td className="py-2.5 text-right font-mono text-green-muted">1.3 KB</td>
+                  <td className="py-2.5 text-right font-mono text-green-muted">1.1 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Google Analytics 4</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">~90 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">~146 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Adobe Analytics</td>
-                  <td className="py-2.5 text-right font-mono text-red-alert">~150 KB</td>
+                  <td className="py-2.5 text-right font-mono text-red-alert">~170 KB</td>
                 </tr>
               </tbody>
             </table>
@@ -219,8 +219,8 @@ export default function AnalyticsScriptsPage() {
               <tbody>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Script size</td>
-                  <td className="py-2.5 text-right pr-6 font-mono text-text-body">~90 KB</td>
-                  <td className="py-2.5 text-right font-mono text-green-muted">1.3 KB</td>
+                  <td className="py-2.5 text-right pr-6 font-mono text-text-body">~146 KB</td>
+                  <td className="py-2.5 text-right font-mono text-green-muted">1.1 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Consent required</td>

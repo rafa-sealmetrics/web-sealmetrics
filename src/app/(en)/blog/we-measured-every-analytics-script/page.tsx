@@ -8,7 +8,7 @@ import { RelatedReading } from "@/components/ui/RelatedReading";
 export const metadata: Metadata = {
   title: "We Measured Every Analytics Script. Here Is What We Found.",
   description:
-    "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 52x heavier than SealMetrics.",
+    "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 132x heavier than SealMetrics, which came out the lightest of the ten.",
   openGraph: {
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
@@ -59,8 +59,8 @@ export default function MeasuredScriptsPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>GA4 is 52x heavier than SealMetrics (128.8 KB vs 2.5 KB gzipped) and Adobe Analytics is 60x heavier at 150.7 KB.</li>
-            <li>For a site with 100,000 monthly visitors, GA4 consumes 12.9 GB of bandwidth per month versus 250 MB for SealMetrics.</li>
+            <li>GA4 is 132x heavier than SealMetrics (145.6 KB vs 1.1 KB gzipped), and the Adobe stack is 155x heavier at ~170 KB. SealMetrics was the lightest measured, ahead of Plausible at 1.3 KB.</li>
+            <li>For a site with 100,000 monthly visitors, GA4 consumes 14.9 GB of bandwidth per month versus 113 MB for SealMetrics.</li>
             <li>Enterprise analytics scripts carry legacy code for cross-site tracking and fingerprinting — features now illegal under GDPR or blocked by browsers.</li>
             <li>At 1 million pageviews/month, GA4 generates approximately 30 kg of CO2 annually versus 0.6 kg for SealMetrics.</li>
           </ul>
@@ -74,6 +74,29 @@ export default function MeasuredScriptsPage() {
             files that load on your visitors&apos; browsers.
           </p>
 
+          <p className="text-[0.95rem] text-text-tertiary border-l-2 border-warm-200 pl-4">
+            <strong className="text-text-secondary">Method.</strong> One GET per
+            script with <code className="font-mono text-[0.85rem]">Accept-Encoding: gzip</code>,
+            bytes counted on disk, response headers read from the same request.
+            &ldquo;On the wire&rdquo; is what actually crosses the network;
+            &ldquo;uncompressed&rdquo; is what the browser then has to parse.
+            Measured 9 August 2026 — vendors ship changes constantly, so treat
+            these as a dated snapshot rather than fixed constants.
+          </p>
+
+          <p className="text-[0.95rem] text-text-tertiary border-l-2 border-warm-200 pl-4">
+            <strong className="text-text-secondary">† Adobe is measured
+            differently.</strong> Adobe Analytics has no single public script to
+            fetch: it loads as a per-customer Launch container plus
+            AppMeasurement, the ActivityMap module and rule payloads. Those
+            figures come from a field measurement on a real European media site
+            running Adobe and SealMetrics side by side — ~150 KB for the Launch
+            container and ~20 KB for AppMeasurement and modules, ~170 KB in
+            total. It is a real number from a real page, but it is a stack, not
+            a single file, so it is not strictly like-for-like with the rows
+            above.
+          </p>
+
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             The raw numbers
           </h2>
@@ -83,45 +106,60 @@ export default function MeasuredScriptsPage() {
               <thead>
                 <tr className="border-b border-warm-200">
                   <th className="text-left py-2.5 pr-4 text-text-secondary font-medium">Tool</th>
-                  <th className="text-right py-2.5 text-text-secondary font-medium">Size (gzipped)</th>
+                  <th className="text-right py-2.5 text-text-secondary font-medium">On the wire (gzip)</th>
+                  <th className="text-right py-2.5 text-text-secondary font-medium">Uncompressed</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">2.5 KB</td>
+                  <td className="py-2.5 text-right font-mono text-green-muted">1.1 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">1.9 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Plausible</td>
-                  <td className="py-2.5 text-right font-mono text-green-muted">1.3 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">1.3 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">2.8 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Fathom</td>
                   <td className="py-2.5 text-right font-mono text-text-body">2.0 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">6.7 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Simple Analytics</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">3.7 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">3.8 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">7.3 KB</td>
+                </tr>
+                <tr className="border-b border-warm-100">
+                  <td className="py-2.5 pr-4 text-text-body">Piwik PRO</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">26.2 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">67.5 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Mixpanel</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">30.0 KB</td>
-                </tr>
-                <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 text-text-body">PostHog</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">56.5 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">32.6 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">101.5 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Matomo</td>
-                  <td className="py-2.5 text-right font-mono text-text-body">65.2 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">46.2 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">152.5 KB</td>
+                </tr>
+                <tr className="border-b border-warm-100">
+                  <td className="py-2.5 pr-4 text-text-body">PostHog</td>
+                  <td className="py-2.5 text-right font-mono text-text-body">76.2 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">237.8 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Google Analytics 4</td>
-                  <td className="py-2.5 text-right font-mono text-red-alert">128.8 KB</td>
+                  <td className="py-2.5 text-right font-mono text-red-alert">145.6 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">409.4 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 text-text-body">Adobe Analytics</td>
-                  <td className="py-2.5 text-right font-mono text-red-alert">150.7 KB</td>
+                  <td className="py-2.5 pr-4 text-text-body">Adobe Analytics&nbsp;†</td>
+                  <td className="py-2.5 text-right font-mono text-red-alert">~170 KB</td>
+                  <td className="py-2.5 text-right font-mono text-text-tertiary">~730 KB</td>
                 </tr>
               </tbody>
             </table>
@@ -130,76 +168,84 @@ export default function MeasuredScriptsPage() {
           {/* Visual bar chart */}
           <div className="my-8 space-y-1.5" aria-label="Script size comparison chart">
             <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '0.6%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-primary w-[65px] shrink-0 text-right">1.1 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
               <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Plausible</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '1.5%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '0.8%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
               <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">1.3 KB</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Fathom</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '1.5%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '1.2%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
               <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">2.0 KB</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
-              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '1.7%', minWidth: '5px', backgroundColor: 'var(--color-green-muted)' }} />
-              </div>
-              <span className="text-[0.75rem] font-mono text-text-primary w-[65px] shrink-0 text-right">2.5 KB</span>
-            </div>
-            <div className="flex items-center gap-3">
               <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '2.5%', minWidth: '6px', backgroundColor: 'var(--color-green-muted)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '2.2%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">3.7 KB</span>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">3.8 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Piwik PRO</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '15.4%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">26.2 KB</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Mixpanel</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '19.9%', backgroundColor: 'var(--color-warm-400)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '19.2%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">30.0 KB</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
-              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '37.5%', backgroundColor: 'var(--color-warm-400)' }} />
-              </div>
-              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">56.5 KB</span>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">32.6 KB</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Matomo</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '43.3%', backgroundColor: 'var(--color-warm-400)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '27.2%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">65.2 KB</span>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">46.2 KB</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">GA4</span>
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">PostHog</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '85.5%', backgroundColor: 'var(--color-red-alert)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '44.8%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">128.8 KB</span>
+              <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">76.2 KB</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe</span>
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Google Analytics 4</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
-                <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-red-alert)' }} />
+                <div className="h-full rounded-[2px]" style={{ width: '85.6%', minWidth: '4px', backgroundColor: 'var(--color-red-alert)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">150.7 KB</span>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">145.6 KB</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Adobe Analytics</span>
+              <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
+                <div className="h-full rounded-[2px]" style={{ width: '100.0%', minWidth: '4px', backgroundColor: 'var(--color-red-alert)' }} />
+              </div>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">~170 KB</span>
             </div>
           </div>
 
           <p>
             GA4 is{" "}
             <span className="font-mono font-medium text-text-primary">
-              52x heavier
+              132x heavier
             </span>{" "}
-            than SealMetrics. Adobe Analytics is 60x heavier.
+            than SealMetrics, and the Adobe stack is 155x heavier. SealMetrics
+            is the lightest of the ten, just ahead of Plausible.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -208,8 +254,8 @@ export default function MeasuredScriptsPage() {
 
           <p>
             For a site with 100,000 monthly visitors, <a href="https://developers.google.com/tag-platform/gtagjs" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4&apos;s script</a> alone
-            consumes 12.9 GB of bandwidth per month. SealMetrics consumes
-            250 MB. That is not a rounding error — it is a 52x difference in
+            consumes 14.9 GB of bandwidth per month. SealMetrics consumes
+            113 MB. That is not a rounding error — it is a 132x difference in
             network resources, battery drain, and page load time.
           </p>
 
@@ -266,7 +312,7 @@ export default function MeasuredScriptsPage() {
 
           <p>
             The script that measures your site performance is itself degrading
-            your site performance. A 2.5 KB script captures 100% of traffic
+            your site performance. A 1.1 KB script captures 100% of traffic
             through{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless first-party collection</Link>
             , complies with{" "}
