@@ -37,7 +37,7 @@ SealMetrics eliminates this problem entirely by using first-party server-side co
 - AI agent traffic counted as a distinct channel (ChatGPT, Claude, Perplexity, Google AI Overviews)
 
 ### Intelligence
-- LENS AI: automated anomaly detection with 60+ rules that continuously monitor data quality, traffic patterns, and conversion funnels
+- LENS AI: ask business questions in plain language and get answers grounded in your complete data. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today
 - Natural language queries: ask business questions in plain English, get data-driven answers
 - Last-click revenue attribution based on 100% of data (not the 13% that consent-dependent tools capture)
 - 9 specialized report types including funnel analysis with drop-off diagnostics
@@ -103,7 +103,7 @@ No. SealMetrics does not use cookies or any form of device storage, and collects
 All data is stored exclusively on EU servers. Data never leaves the EU. No Standard Contractual Clauses or data transfer mechanisms are needed.
 
 **What is LENS AI?**
-LENS is SealMetrics' AI supervision engine. It continuously monitors your analytics data with 60+ automated rules, detecting anomalies in traffic patterns, conversion funnels, campaign performance, and data quality. It alerts you when something changes before it impacts your business.
+LENS is SealMetrics' AI layer. It answers business questions about your analytics in plain language, grounded in your complete data, and turns those answers into reports. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap and are not live today.
 
 **What is AI Agent Analytics?**
 AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity, Google AI Overviews, and others — as a distinct channel alongside human traffic. This is included free in all plans. Most analytics tools cannot distinguish AI agent traffic from human traffic.

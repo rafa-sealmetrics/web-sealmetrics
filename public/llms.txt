@@ -11,7 +11,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - First-party server-side data collection
 - EU-only data residency (Dublin, Ireland)
 - GDPR, ePrivacy, CCPA compliant by architecture
-- LENS AI anomaly detection with 60+ rules
+- LENS AI: ask your analytics in plain language and turn the answer into a report. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today
 - Last-click revenue attribution on complete data (SealMetrics does not do multi-touch attribution by design)
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
