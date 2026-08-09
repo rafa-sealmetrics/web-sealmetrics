@@ -89,7 +89,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
           p: "A tiny JavaScript tag, 846 bytes at its minimum and 1.1 KB on the wire in full. It ships from t.sealmetrics.com by default, and you can switch it to a subdomain of your own — first-party mode — so ad-blocker lists that target third-party analytics domains have nothing to match. No cookies are written. No local storage. No fingerprinting.",
           bullet: [
             "Optional first-party mode on your own subdomain",
-            "1.1 KB on the wire · ~155× lighter than GA4",
+            "1.1 KB on the wire · ~132× lighter than GA4",
             "Works with any CMS or framework",
             "5-minute install · one script tag",
           ],
@@ -134,7 +134,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
           p: "Un script JavaScript diminuto: 846 bytes en su versión mínima y 1,1 KB en red al completo. Por defecto se sirve desde t.sealmetrics.com, y puedes moverlo a un subdominio tuyo — modo first-party — para que las listas de bloqueadores que atacan dominios de analítica de terceros no tengan nada que bloquear. Sin cookies. Sin localStorage. Sin fingerprinting.",
           bullet: [
             "Modo first-party opcional en tu propio subdominio",
-            "1,1 KB en red · ~155× más ligero que GA4",
+            "1,1 KB en red · ~132× más ligero que GA4",
             "Funciona con cualquier CMS o framework",
             "Instalación en 5 min · un solo script",
           ],

@@ -53,7 +53,7 @@ const requisitos = [
     id: "req-1",
     title: "Píxel ultraligero",
     bar: "Menos de 5 KB gzip en red, menos de 10 KB parseados, asíncrono, sin depender de tag manager",
-    seal: "1,1 KB en red · 2,0 KB parseados. ~155× más ligero que gtag.js",
+    seal: "1,1 KB en red · 2,0 KB parseados. ~132× más ligero que gtag.js",
     score: 2,
   },
   {
@@ -156,7 +156,7 @@ const faqs = [
   {
     question: "¿Cuánto debe pesar un píxel de analítica?",
     answer:
-      "Menos de 5 KB gzip en red y menos de 10 KB de JavaScript parseado en el dispositivo. Como referencia, gtag.js de GA4 pesa unos 171 KB en red y unos 512 KB parseados. Las etiquetas pesadas fallan primero en 3G y en móvil, así que pierdes justo el tráfico cuya tasa de conversión es más frágil — y las sesiones que nunca dispararon no aparecen en el informe que te dice que las sesiones bajan.",
+      "Menos de 5 KB gzip en red y menos de 10 KB de JavaScript parseado en el dispositivo. Como referencia, gtag.js de GA4 pesa unos 146 KB en red y unos 409 KB parseados. Las etiquetas pesadas fallan primero en 3G y en móvil, así que pierdes justo el tráfico cuya tasa de conversión es más frágil — y las sesiones que nunca dispararon no aparecen en el informe que te dice que las sesiones bajan.",
   },
   {
     question: "¿Qué significa realmente «tiempo real» en analítica web?",
@@ -321,7 +321,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
               <Chip tone="risk">El fallo que previene</Chip>
               <p>
                 Cada kilobyte de código de medición es un impuesto sobre las
-                sesiones que más te interesa medir. Una etiqueta de 171 KB en
+                sesiones que más te interesa medir. Una etiqueta de 146 KB en
                 una conexión 3G de un mercado regional no llega tarde: muchas
                 veces no llega, porque el visitante ya ha rebotado. Pierdes
                 primero el tráfico más lento, más móvil y más marginal, que es
@@ -348,12 +348,12 @@ export default function MejorHerramientaAnaliticaWebPage() {
             <StatRow
               items={[
                 {
-                  value: "171 KB",
+                  value: "146 KB",
                   label: "gtag.js de GA4 en red, comprimido",
                   tone: "risk",
                 },
                 {
-                  value: "512 KB",
+                  value: "409 KB",
                   label: "JavaScript que GA4 parsea en el dispositivo",
                   tone: "risk",
                 },

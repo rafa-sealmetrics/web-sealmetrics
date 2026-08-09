@@ -493,13 +493,13 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
   {
     title: "Peso transferido por la red · gzip",
     rows: [
-      { label: "SealMetrics", pct: 0.64, value: "1,1 KB", us: true },
-      { label: "GA4", pct: 100, value: "~171 KB" },
-      { label: "Adobe", pct: 99.4, value: "~170 KB" },
+      { label: "SealMetrics", pct: 0.65, value: "1,1 KB", us: true },
+      { label: "GA4", pct: 85.6, value: "~146 KB" },
+      { label: "Adobe", pct: 100, value: "~170 KB" },
     ],
     note: (
       <>
-        <b className="text-white font-mono font-semibold">155×</b> más ligero que ambos. El tracker cabe en{" "}
+        <b className="text-white font-mono font-semibold">132×</b> más ligero que GA4 y <b className="text-white font-mono font-semibold">155×</b> que Adobe. El tracker cabe en{" "}
         <b className="text-white font-mono font-semibold">un solo paquete TCP</b> y llega en el primer
         round-trip. Las otras dos cargas necesitan 4 o 5 round-trips solo para descargarse.
       </>
@@ -509,7 +509,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
     title: "JavaScript que el dispositivo tiene que parsear · sin comprimir",
     rows: [
       { label: "SealMetrics", pct: 0.27, value: "2,0 KB", us: true },
-      { label: "GA4", pct: 70, value: "~512 KB" },
+      { label: "GA4", pct: 56.1, value: "~409 KB" },
       { label: "Adobe", pct: 100, value: "~730 KB" },
     ],
     note: (

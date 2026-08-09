@@ -101,8 +101,8 @@ export default function AnalyticsHttpRequestsPage() {
                   <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">2</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">1</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-green-muted">2.7</td>
-                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script (2.5 KB) + beacon to first-party endpoint</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-green-muted">1.3</td>
+                  <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">Script (1.1 KB) + beacon to first-party endpoint</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Plausible</td>
@@ -157,7 +157,7 @@ export default function AnalyticsHttpRequestsPage() {
                   <td className="py-2.5 pr-4 text-text-body">Adobe Analytics</td>
                   <td className="py-2.5 px-3 text-center font-mono text-red-alert">6</td>
                   <td className="py-2.5 px-3 text-center font-mono text-red-alert">4</td>
-                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">158</td>
+                  <td className="py-2.5 px-3 text-right font-mono text-red-alert">175</td>
                   <td className="py-2.5 pl-4 text-[0.85rem] text-text-secondary">AppMeasurement + visitor ID + config + beacon + ID sync + audience mgr</td>
                 </tr>
               </tbody>
@@ -185,7 +185,7 @@ export default function AnalyticsHttpRequestsPage() {
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '1.7%', minWidth: '5px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-text-primary w-[65px] shrink-0 text-right">2.7 KB</span>
+              <span className="text-[0.75rem] font-mono text-text-primary w-[65px] shrink-0 text-right">1.3 KB</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-[0.8rem] text-text-secondary w-[110px] shrink-0 text-right">Simple Analytics</span>
@@ -227,7 +227,7 @@ export default function AnalyticsHttpRequestsPage() {
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-red-alert)' }} />
               </div>
-              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">158 KB</span>
+              <span className="text-[0.75rem] font-mono text-red-alert w-[65px] shrink-0 text-right">175 KB</span>
             </div>
           </div>
 
@@ -236,10 +236,10 @@ export default function AnalyticsHttpRequestsPage() {
             <span className="font-mono font-medium text-text-primary">
               6 requests across 4 domains
             </span>{" "}
-            and transfers 158 KB. SealMetrics fires 2 requests to 1 domain
-            and transfers 2.7 KB. That is a{" "}
+            and transfers 175 KB. SealMetrics fires 2 requests to 1 domain
+            and transfers 1.3 KB. That is a{" "}
             <span className="font-mono font-medium text-text-primary">
-              59x difference
+              134x difference
             </span>{" "}
             in bytes transferred.
           </p>
@@ -336,7 +336,7 @@ export default function AnalyticsHttpRequestsPage() {
           </p>
 
           <p>
-            SealMetrics&apos; 2.7 KB total — a 2.5 KB script and a small
+            SealMetrics&apos; 1.3 KB total — a 1.1 KB script and a small
             beacon — goes to a single first-party endpoint. No visitor IDs
             to sync. No cross-domain stitching. No remarketing payloads.{" "}
             <Link
@@ -379,7 +379,7 @@ export default function AnalyticsHttpRequestsPage() {
 
           <p>
             Your analytics tool should measure your site, not slow it down.
-            Two requests totaling 2.7 KB to one first-party domain captures
+            Two requests totaling 1.3 KB to one first-party domain captures
             100% of traffic through{" "}
             <Link
               href="/how-it-works"
