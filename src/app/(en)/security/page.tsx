@@ -114,7 +114,7 @@ export default function Page() {
             (including AI inference), AES-256 at rest, per-account logical
             isolation across all storage layers, RBAC with MFA and least
             privilege, and retention enforced by automatic database-level TTLs
-            (14 days / 90 days / 24 months / 2 hours). Visitor data is processed
+            (1 day / 90 days / 24 months / 2 hours). Visitor data is processed
             entirely within the EU.
           </>
         }
@@ -191,7 +191,7 @@ export default function Page() {
                 </strong>{" "}
                 The session identifier is computed in the browser from technical
                 characteristics, writing nothing to the device. Maximum
-                effective lifetime: 2 hours in the active session, 14 days in
+                effective lifetime: 2 hours in the active session, 1 day in
                 the technical log. Reporting tables are 100% aggregated and do
                 not contain it.
               </li>
@@ -253,7 +253,7 @@ export default function Page() {
                 ["Data", "Period"],
                 [
                   "Event-level technical log (user agent, full URLs)",
-                  "14 days",
+                  "1 day",
                 ],
                 ["Hourly aggregates", "90 days"],
                 [

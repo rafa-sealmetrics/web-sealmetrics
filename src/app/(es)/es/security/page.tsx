@@ -119,7 +119,7 @@ export default function Page() {
             tránsito (incluida la inferencia de IA), AES-256 en reposo,
             aislamiento lógico por cuenta en todas las capas, RBAC con MFA y
             mínimo privilegio, y retención aplicada por TTL automático de base
-            de datos (14 días / 90 días / 24 meses / 2 horas). Los datos de
+            de datos (1 día / 90 días / 24 meses / 2 horas). Los datos de
             visitantes se tratan íntegramente en la UE.
           </>
         }
@@ -198,8 +198,8 @@ export default function Page() {
                 </strong>{" "}
                 El identificador de sesión se calcula en el navegador a partir
                 de características técnicas, sin escribir nada en el
-                dispositivo. Vida efectiva máxima: 2 horas en sesión activa, 14
-                días en el registro técnico. Las tablas de reporting son 100%
+                dispositivo. Vida efectiva máxima: 2 horas en sesión activa, 1
+                día en el registro técnico. Las tablas de reporting son 100%
                 agregadas y no lo contienen.
               </li>
               <li>
@@ -263,7 +263,7 @@ export default function Page() {
                 ["Datos", "Plazo"],
                 [
                   "Registro técnico a nivel de evento (user agent, URLs completas)",
-                  "14 días",
+                  "1 día",
                 ],
                 ["Agregados horarios", "90 días"],
                 [
