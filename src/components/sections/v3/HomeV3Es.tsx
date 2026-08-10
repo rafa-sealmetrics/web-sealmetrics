@@ -1,6 +1,7 @@
 import { ClientLogosGrid } from "./ClientLogos";
 import Link from "next/link";
 import { HeroDashboardEs } from "./HeroDashboardEs";
+import { DualCTA } from "@/components/homepage/DualCTA";
 
 /* HERO · ES */
 export function HeroV3Es() {
@@ -34,18 +35,28 @@ export function HeroV3Es() {
           ocurrió de verdad.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
-          <Link href="/es/audit" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
-            Pide una auditoría gratuita <span>→</span>
-          </Link>
-          <Link href="#how" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-            Cómo funciona
-          </Link>
-        </div>
+        {/* Misma escalera de conversión que la home inglesa: demo primero
+            (venta asistida para el ICP), prueba de 14 días como secundaria.
+            La auditoría gratuita no se pierde — baja al tercer peldaño, como
+            micro-conversión contextual. Ver PRD-CONVERSION-REDESIGN.md §4.1. */}
+        <DualCTA locale="es" className="justify-center mt-7" />
 
-        <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          Sin instalar nada · Sin compromiso
+        <p className="mt-5 text-[13.5px] leading-[1.6] text-ink-soft">
+          ¿Prefieres empezar por los datos?{" "}
+          <Link href="/es/audit/" className="text-ink underline hover:text-brand transition-colors">
+            Pide una auditoría gratuita de tu web
+          </Link>{" "}
+          — sin instalar nada, sin compromiso.
         </p>
+
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
+          {["100% del tráfico medido", "Sin cookies · sin banner", "RGPD por arquitectura", "Números que cuadran con Shopify"].map((b) => (
+            <span key={b} className="inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+              {b}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
