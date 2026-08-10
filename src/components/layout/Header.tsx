@@ -155,7 +155,7 @@ function Dropdown({
   return (
     <div ref={ref} className="relative">
       {labelHref ? (
-        <span className="flex items-center gap-1 text-[0.9rem] text-text-secondary">
+        <span className="flex items-center gap-1 whitespace-nowrap text-[0.9rem] text-text-secondary">
           <Link
             href={labelHref}
             className="no-underline text-text-secondary hover:text-text-primary transition-colors"
@@ -179,7 +179,7 @@ function Dropdown({
           onClick={onToggle}
           aria-expanded={isOpen}
           aria-haspopup="true"
-          className="flex items-center gap-1 text-[0.9rem] text-text-secondary hover:text-text-primary transition-colors cursor-pointer bg-transparent border-none p-0"
+          className="flex items-center gap-1 whitespace-nowrap text-[0.9rem] text-text-secondary hover:text-text-primary transition-colors cursor-pointer bg-transparent border-none p-0"
         >
           {dropdown.label}
           {chevron}
@@ -265,10 +265,13 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
         </Link>
 
         {/* Desktop nav */}
-        <nav aria-label="Main navigation" className="hidden md:flex items-center gap-7">
+        {/* Desktop nav starts at lg, not md: five items + two CTAs + the
+            language switcher need ~1000px. Below that the hamburger carries
+            the same links and both CTAs. */}
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6 xl:gap-7">
           <Link
             href={localizedHref("/product", locale)}
-            className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+            className="whitespace-nowrap text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
           >
             {t.product}
           </Link>
@@ -290,7 +293,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
 
           <Link
             href={localizedHref("/pricing", locale)}
-            className="text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
+            className="whitespace-nowrap text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
           >
             {t.pricing}
           </Link>
@@ -302,15 +305,18 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
             onClose={handleClose}
           />
 
+          {/* Secondary CTA only from xl: between lg and xl there is room for
+              the primary ask but not both. The trial stays reachable from every
+              page hero and from the mobile menu. */}
           <a
             href="https://my.sealmetrics.com/register"
-            className="inline-flex items-center min-h-[44px] px-4 py-2.5 text-[0.875rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline hover:bg-warm-50 transition-colors"
+            className="hidden xl:inline-flex items-center whitespace-nowrap min-h-[44px] px-4 py-2.5 text-[0.875rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline hover:bg-warm-50 transition-colors"
           >
             {t.startTrial}
           </a>
           <Link
             href={localizedHref("/demo", locale)}
-            className="inline-flex items-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+            className="inline-flex items-center whitespace-nowrap min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
             {t.bookDemo}
           </Link>
@@ -318,7 +324,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
         </nav>
 
         {/* Mobile: language switcher + hamburger */}
-        <div className="md:hidden flex items-center gap-1">
+        <div className="lg:hidden flex items-center gap-1">
           <LanguageSwitcher locale={locale} />
           <button
             className="p-2 inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
@@ -346,7 +352,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-warm-100 px-4 sm:px-6 py-6 max-h-[calc(100vh-64px)] overflow-y-auto">
+        <div className="lg:hidden bg-white border-t border-warm-100 px-4 sm:px-6 py-6 max-h-[calc(100vh-64px)] overflow-y-auto">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
             <Link
               href={localizedHref("/product", locale)}
