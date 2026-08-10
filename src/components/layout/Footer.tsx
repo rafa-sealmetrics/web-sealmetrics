@@ -119,7 +119,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
             <Link href={localizedHref("/", locale)} className="inline-block mb-3 no-underline">
               <Picture
                 src="/logos/logo-sealmetrics-white.svg"
-                alt="SealMetrics"
+                alt="Sealmetrics"
                 width={157}
                 height={28}
                 className="h-7 w-auto"

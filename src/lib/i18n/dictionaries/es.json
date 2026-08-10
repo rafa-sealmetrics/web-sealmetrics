@@ -1,7 +1,7 @@
 {
   "header": {
     "product": "Producto",
-    "why": "Por qué SealMetrics",
+    "why": "Por qué Sealmetrics",
     "cookielessAnalytics": "Analítica sin cookies",
     "cookielessAnalyticsDesc": "Qué es, qué captura, qué no",
     "consentlessAnalytics": "Analítica sin consentimiento",
@@ -96,7 +96,7 @@
     "terms": "Términos de Servicio",
     "dpa": "DPA",
     "trust": "Centro de confianza",
-    "copyright": "SealMetrics. Todos los derechos reservados.",
+    "copyright": "Sealmetrics. Todos los derechos reservados.",
     "hosted": "Alojado en la UE. Sin cookies por diseño."
   },
   "common": {

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Términos del Servicio — Sealmetrics",
     description: "Condiciones de uso de la plataforma: planes, facturación, uso aceptable, propiedad de los datos, responsabilidad y terminación.",
     url: "https://sealmetrics.com/es/terms/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     type: "website",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og-image.png"],
@@ -506,7 +506,7 @@ export default function TermsEsPage() {
             mantenimiento programado). Los mantenimientos programados se
             notifican con antelación razonable; los mantenimientos
             de emergencia pueden realizarse sin previo aviso. Para planes
-            Business y Enterprise pueden aplicar SLAs específicos (compromisos
+            Scale y Enterprise pueden aplicar SLAs específicos (compromisos
             de disponibilidad, créditos por incumplimiento, tiempos de
             respuesta de soporte), establecidos en acuerdos separados.
           </p>

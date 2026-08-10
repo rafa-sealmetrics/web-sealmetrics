@@ -5,24 +5,24 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — SealMetrics",
+  title: "Privacy Policy — Sealmetrics",
   description:
-    "SealMetrics privacy policy. How we handle data, what we collect, and how we protect your information.",
+    "Sealmetrics privacy policy. How we handle data, what we collect, and how we protect your information.",
   openGraph: {
-    title: "Privacy Policy — SealMetrics",
+    title: "Privacy Policy — Sealmetrics",
     description:
-      "How SealMetrics handles data, what we collect, and how we protect your information.",
+      "How Sealmetrics handles data, what we collect, and how we protect your information.",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/privacy/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Privacy Policy — SealMetrics",
-    description: "How SealMetrics handles data, what we collect, and how we protect your information.",
+    title: "Privacy Policy — Sealmetrics",
+    description: "How Sealmetrics handles data, what we collect, and how we protect your information.",
     images: ["https://sealmetrics.com/og-image.png"],
   },
   alternates: {
@@ -53,12 +53,12 @@ export default function PrivacyPage() {
               1. Who we are
             </h2>
             <p>
-              SealMetrics (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is a web analytics
+              Sealmetrics (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is a web analytics
               platform headquartered in Spain, EU. We provide cookieless
               analytics services to businesses (&ldquo;Clients&rdquo;). This privacy
               policy covers how we handle data in two contexts: (a) visitors to
               sealmetrics.com, and (b) visitors to our Clients&rsquo; websites
-              where SealMetrics analytics is installed.
+              where Sealmetrics analytics is installed.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Anonymous analytics data via our own SealMetrics script (page
+                Anonymous analytics data via our own Sealmetrics script (page
                 views, session duration, referrer — no PII)
               </li>
             </ul>
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
               3. Data we collect on Client websites
             </h2>
             <p className="mb-3">
-              When installed on a Client&rsquo;s website, SealMetrics collects:
+              When installed on a Client&rsquo;s website, Sealmetrics collects:
             </p>
             <ul className="space-y-1 pl-5 list-none">
               <li className="flex items-start gap-3">
@@ -132,12 +132,12 @@ export default function PrivacyPage() {
               <strong className="text-text-primary">
                 On session identifiers:
               </strong>{" "}
-              SealMetrics uses a short-lived session identifier computed in the
+              Sealmetrics uses a short-lived session identifier computed in the
               visitor&rsquo;s browser from general device characteristics. It is
               not unique to a person &mdash; many different visitors can produce
               the same value &mdash; so it cannot identify an individual. It is
               never stored on the visitor&rsquo;s device, and each client
-              site&rsquo;s data is processed in isolation. SealMetrics does not
+              site&rsquo;s data is processed in isolation. Sealmetrics does not
               use it to correlate visits over time:
               each new entrance is counted as new, independent data, and no
               visitor history or profile is built across sessions.
@@ -197,7 +197,11 @@ export default function PrivacyPage() {
               6. Data retention
             </h2>
             <p>
-              Analytics data on Client websites is retained for a maximum of
+              The raw technical event log is retained for{" "}
+              <strong className="text-text-primary">1 day</strong> and then
+              deleted automatically; only aggregated analytics remain beyond
+              that point. Aggregated analytics data on Client websites is
+              retained for a maximum of
               <strong className="text-text-primary"> 24 months</strong> (enforced
               automatically via database TTL), in line with the AEPD audience
               measurement guidance (January 2024). Aggregated hourly reports are

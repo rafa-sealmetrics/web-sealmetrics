@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
     url: "https://sealmetrics.com/terms/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -502,7 +502,7 @@ export default function TermsPage() {
               Availability target:{" "}
               <strong className="text-text-primary">99.9%</strong> (excluding
               scheduled maintenance). Scheduled maintenance is notified with reasonable notice; emergency maintenance may be
-              performed without prior notice. For Business and Enterprise
+              performed without prior notice. For Scale and Enterprise
               plans, specific SLAs may apply (availability commitments,
               credits for non-compliance, support response times),
               established in separate agreements.

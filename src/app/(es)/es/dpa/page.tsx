@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Acuerdo de Encargo de Tratamiento (DPA)",
     description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
     url: "https://sealmetrics.com/es/dpa/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     type: "website",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og-image.png"],

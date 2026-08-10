@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Centro de confianza — Sealmetrics",
     description: "Dónde vive la documentación legal y de seguridad: DPA, Términos, Seguridad, Privacidad y documentos previa solicitud.",
     url: "https://sealmetrics.com/es/trust/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     type: "website",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og-image.png"],
