@@ -185,7 +185,7 @@ function WhereDataDies() {
             El ROAS que defiendes el lunes <em className="italic-accent">se calcula sobre la última barra.</em>
           </p>
           <Link
-            href="/es/data-loss-calculator"
+            href="/es/data-loss-calculator/"
             className="inline-flex items-center gap-2 border border-warm-200 text-ink px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 shrink-0"
           >
             Calcula tu pérdida de datos →

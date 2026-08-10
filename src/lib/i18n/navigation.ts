@@ -100,12 +100,22 @@ export function hasTranslation(path: string): boolean {
   return translatedPaths.has(clean);
 }
 
+/**
+ * Append the trailing slash the site is served with (`trailingSlash: true`).
+ * Without it an internal link costs a 301 hop on every click and every crawl.
+ * Paths carrying a hash or query are left alone — callers pass plain paths.
+ */
+function withTrailingSlash(path: string): string {
+  if (path.includes("#") || path.includes("?")) return path;
+  return path.endsWith("/") ? path : `${path}/`;
+}
+
 /** Prefix a path with the locale prefix. Untranslated pages stay in English. */
 export function localizedHref(path: string, locale: Locale): string {
-  if (locale === "en") return path;
+  if (locale === "en") return withTrailingSlash(path);
   const clean = path.replace(/\/$/, "") || "/";
-  if (!hasTranslation(clean)) return path;
-  return `${localePrefix[locale]}${clean === "/" ? "" : clean}` || "/es";
+  if (!hasTranslation(clean)) return withTrailingSlash(path);
+  return withTrailingSlash(`${localePrefix[locale]}${clean === "/" ? "" : clean}`);
 }
 
 /** Generate alternates.languages for Next.js metadata (use from English pages) */

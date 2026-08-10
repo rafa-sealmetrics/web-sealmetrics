@@ -151,7 +151,7 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
                 I agree to receive demo access credentials and occasional
                 product updates. You can unsubscribe at any time.{" "}
                 <a
-                  href="/privacy"
+                  href="/privacy/"
                   className="text-dark-text-secondary underline"
                 >
                   Privacy policy

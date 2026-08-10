@@ -379,7 +379,7 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
         >
           {t.consent}{" "}
           <a
-            href={locale === "es" ? "/privacy" : "/privacy"}
+            href="/privacy/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-ink underline hover:text-brand transition-colors"
