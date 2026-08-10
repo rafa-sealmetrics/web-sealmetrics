@@ -137,9 +137,9 @@ export function HeroDashboard() {
         <aside className="hidden md:flex flex-col gap-1 border-r border-warm-100 bg-warm-50 p-5">
           <div className="flex items-center justify-between mb-3 px-1">
             <Picture
-              src="/logos/logo-sealmetrics-negro.png"
+              src="/logos/logo-sealmetrics.svg"
               alt="SealMetrics"
-              width={108}
+              width={101}
               height={18}
               className="h-[18px] w-auto"
             />

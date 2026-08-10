@@ -82,10 +82,10 @@ function VideoCard({
         </div>
         {/* Logo watermark */}
         <Picture
-          src="/logos/logo-sealmetrics-blanco.png"
+          src="/logos/logo-sealmetrics-white.svg"
           alt=""
           width={90}
-          height={24}
+          height={16}
 
           className="absolute bottom-3 left-3 h-4 w-auto opacity-25"
         />

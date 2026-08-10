@@ -25,6 +25,18 @@ const blogTsPath = path.join(repoRoot, "src/lib/content/blog.ts");
 const outDir = path.join(repoRoot, "public/og");
 const scriptMtime = statSync(fileURLToPath(import.meta.url)).mtimeMs;
 
+// Brand lockup for the card footer, embedded as a data URI because satori has
+// no filesystem access. Sourced from the PNG that `logo-sealmetrics.svg`
+// generates, so the card follows the brand without a second hand-made asset.
+const LOGO_PATH = path.join(repoRoot, "public/logos/logo-sealmetrics-negro.png");
+const LOGO_DATA_URI = `data:image/png;base64,${readFileSync(LOGO_PATH).toString("base64")}`;
+const LOGO_H = 30;
+const LOGO_W = Math.round(LOGO_H * 5.603); // ratio del lockup
+const logoNode = (h = LOGO_H) => ({
+  type: "img",
+  props: { src: LOGO_DATA_URI, width: Math.round(h * 5.603), height: h },
+});
+
 mkdirSync(path.join(outDir, "blog"), { recursive: true });
 mkdirSync(path.join(outDir, "case-studies"), { recursive: true });
 mkdirSync(path.join(outDir, "glossary"), { recursive: true });
@@ -143,18 +155,7 @@ function ogTemplate({ eyebrow, title }) {
               paddingTop: 28,
             },
             children: [
-              {
-                type: "div",
-                props: {
-                  style: {
-                    fontSize: 28,
-                    fontWeight: 700,
-                    color: "#0E0E0C",
-                    letterSpacing: "-0.01em",
-                  },
-                  children: "SealMetrics",
-                },
-              },
+              logoNode(30),
               {
                 type: "div",
                 props: {
@@ -276,12 +277,7 @@ function ogSiteTemplate({ eyebrow, title, blurb, stats, note }) {
                     paddingTop: 26,
                   },
                   children: [
-                    text("SealMetrics", {
-                      fontSize: 26,
-                      fontWeight: 700,
-                      color: "#0E0E0C",
-                      letterSpacing: "-0.01em",
-                    }),
+                    logoNode(28),
                     text(note, { fontSize: 20, color: "#6B6B5E", letterSpacing: "0.02em" }),
                   ],
                 },
