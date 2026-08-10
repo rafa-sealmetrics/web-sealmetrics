@@ -103,7 +103,7 @@ export function AnnouncementBar({ locale = "en" }: { locale?: "en" | "es" }) {
               <span className="text-white font-semibold" aria-current="true">ES</span>
             ) : (
               <a
-                href="/es"
+                href="/es/"
                 className="text-white/60 hover:text-white no-underline transition-colors"
                 hrefLang="es"
                 aria-label="Cambiar a español"

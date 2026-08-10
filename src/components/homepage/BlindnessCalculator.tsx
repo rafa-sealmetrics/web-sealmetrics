@@ -72,7 +72,7 @@ const COPY = {
     paybackFootC: "days into the month, you're in profit.",
     primaryFootCta: "Stop the bleeding · start 14-day trial",
     secondaryFootCta: "Run the deep gap audit",
-    auditHref: "/data-loss-calculator",
+    auditHref: "/data-loss-calculator/",
     locale: "en-US",
   },
   es: {
@@ -142,7 +142,7 @@ const COPY = {
     paybackFootC: "días después de empezar el mes, estás en beneficio.",
     primaryFootCta: "Para la sangría · prueba de 14 días",
     secondaryFootCta: "Auditoría profunda del gap",
-    auditHref: "/es/data-loss-calculator",
+    auditHref: "/es/data-loss-calculator/",
     locale: "es-ES",
   },
 } as const;

@@ -17,9 +17,12 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   if (!hasTranslation(basePath)) return null;
 
   const targetLocale = locale === "es" ? "en" : "es";
-  const targetHref = targetLocale === "es"
+  // Trailing slash to match `trailingSlash: true` — this link sits on every
+  // page, so without it the switcher costs a 301 hop site-wide.
+  const rawHref = targetLocale === "es"
     ? `/es${basePath === "/" ? "" : basePath}`
     : basePath;
+  const targetHref = rawHref.endsWith("/") ? rawHref : `${rawHref}/`;
 
   return (
     <Link

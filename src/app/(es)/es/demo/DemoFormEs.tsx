@@ -348,7 +348,7 @@ export function DemoFormEs() {
             <label htmlFor="gdpr" className="text-[12.5px] text-ink-soft leading-relaxed cursor-pointer">
               Acepto el{" "}
               <a
-                href="/privacy"
+                href="/privacy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-ink underline hover:text-brand transition-colors"

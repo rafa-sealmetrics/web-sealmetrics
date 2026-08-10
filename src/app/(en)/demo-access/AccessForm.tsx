@@ -358,7 +358,7 @@ export function AccessForm() {
         >
           I agree to the{" "}
           <a
-            href="/privacy"
+            href="/privacy/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-ink underline hover:text-brand transition-colors"

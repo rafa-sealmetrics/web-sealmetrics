@@ -280,7 +280,7 @@ export function FreeAuditForm() {
           />
           <span>
             I agree to receive the audit report by email and accept the{" "}
-            <Link href="/privacy" className="underline hover:text-text-primary">
+            <Link href="/privacy/" className="underline hover:text-text-primary">
               privacy policy
             </Link>
             .
