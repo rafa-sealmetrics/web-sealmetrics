@@ -15,9 +15,9 @@ export function LandingHeader({ ctaHref, ctaLabel }: { ctaHref: string; ctaLabel
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10 flex items-center justify-between h-16">
         {/* El logo no enlaza: en una landing de pago, volver a la home es una fuga. */}
         <Picture
-          src="/logos/logo-sealmetrics-negro.png"
+          src="/logos/logo-sealmetrics.svg"
           alt="SealMetrics"
-          width={167}
+          width={157}
           height={28}
           className="h-7 w-auto"
           loading="eager"

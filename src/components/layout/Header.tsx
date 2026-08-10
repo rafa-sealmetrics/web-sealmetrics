@@ -253,9 +253,9 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
         <Link href={localizedHref("/", locale)} className="flex items-center no-underline">
           <Picture
-            src="/logos/logo-sealmetrics-negro.png"
+            src="/logos/logo-sealmetrics.svg"
             alt="SealMetrics"
-            width={167}
+            width={157}
             height={28}
             className="h-7 w-auto"
             loading="eager"
