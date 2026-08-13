@@ -37,6 +37,8 @@
   ],
   "exclude": [
     "node_modules",
-    "scan-worker"
+    "scan-worker",
+    "new-new",
+    "workers"
   ]
 }

@@ -177,3 +177,38 @@ test("validates the Turnstile action and hostname before forwarding", async () =
     globalThis.fetch = originalFetch;
   }
 });
+
+test("routes every public form type through the private relay", async () => {
+  const originalFetch = globalThis.fetch;
+  const forwarded = [];
+  globalThis.fetch = async (url) => {
+    forwarded.push(String(url));
+    return new Response(null, { status: 204 });
+  };
+
+  const env = {
+    ...baseEnv,
+    N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
+    N8N_DEMO_ACCESS_URL: "https://automation.invalid/demo-access",
+    N8N_CAREERS_URL: "https://automation.invalid/careers",
+  };
+  const cases = [
+    ["demo", { name: "Test Lead", email: "test@example.com", website: "https://example.com", gdpr: true }, env.N8N_WEBFORM_LEAD_URL],
+    ["demo_access", { name: "Test Lead", email: "test@example.com", website: "https://example.com", gdpr: true }, env.N8N_DEMO_ACCESS_URL],
+    ["audit", { name: "Test Lead", email: "test@example.com", website: "https://example.com" }, env.N8N_WEBFORM_LEAD_URL],
+    ["careers", { team: "Engineering", linkedin: "https://www.linkedin.com/in/test" }, env.N8N_CAREERS_URL],
+    ["calculator", { email: "test@example.com" }, env.N8N_WEBFORM_LEAD_URL],
+    ["growth", { email: "test@example.com" }, env.N8N_WEBFORM_LEAD_URL],
+  ];
+
+  try {
+    for (const [type, payload, endpoint] of cases) {
+      const response = await worker.fetch(request({ type, payload }), env);
+      assert.equal(response.status, 200, `${type} should be accepted`);
+      assert.equal(forwarded.at(-1), endpoint, `${type} should use its configured relay`);
+    }
+    assert.equal(forwarded.length, cases.length);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

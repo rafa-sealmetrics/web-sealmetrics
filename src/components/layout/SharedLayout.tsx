@@ -43,7 +43,7 @@ export function SharedLayout({
         <AnnouncementBarOffset />
         <AnnouncementBar locale={locale} />
         <Header locale={locale} />
-        <main id="main-content">{children}</main>
+        <main id="main-content" data-design-system="signal-v4">{children}</main>
         <Footer locale={locale} />
       </body>
     </html>

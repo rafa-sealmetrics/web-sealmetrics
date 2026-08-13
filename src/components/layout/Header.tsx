@@ -188,7 +188,7 @@ function Dropdown({
 
       {isOpen && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
-          <div role="menu" className="bg-white border border-warm-100 rounded-[4px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] py-2 min-w-[260px]">
+          <div role="menu" className="bg-paper-white border border-signal-ink shadow-hard py-2 min-w-[260px]">
             {dropdown.groups.map((group, gi) => (
               <div key={gi}>
                 {gi > 0 && (
@@ -249,12 +249,12 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-xl border-b border-warm-100">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-xl border-b border-hairline">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-[76px]">
         <Link href={localizedHref("/", locale)} className="flex items-center no-underline">
           <Picture
             src="/logos/logo-sealmetrics.svg"
-            alt="Sealmetrics"
+            alt="SealMetrics"
             width={157}
             height={28}
             className="h-7 w-auto"
@@ -310,13 +310,13 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
               page hero and from the mobile menu. */}
           <a
             href="https://my.sealmetrics.com/register"
-            className="hidden xl:inline-flex items-center whitespace-nowrap min-h-[44px] px-4 py-2.5 text-[0.875rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline hover:bg-warm-50 transition-colors"
+            className="hidden xl:inline-flex items-center whitespace-nowrap min-h-[44px] px-4 py-2.5 text-[0.875rem] font-semibold text-signal-ink border border-signal-ink no-underline hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard transition-all"
           >
             {t.startTrial}
           </a>
           <Link
             href={localizedHref("/demo", locale)}
-            className="inline-flex items-center whitespace-nowrap min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
+            className="inline-flex items-center whitespace-nowrap min-h-[44px] px-5 py-2.5 text-[0.875rem] font-semibold text-signal-ink bg-acid border border-signal-ink no-underline hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard transition-all"
           >
             {t.bookDemo}
           </Link>
@@ -352,7 +352,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-warm-100 px-4 sm:px-6 py-6 max-h-[calc(100vh-64px)] overflow-y-auto">
+        <div className="lg:hidden bg-paper border-t border-hairline px-4 sm:px-6 py-6 max-h-[calc(100vh-76px)] overflow-y-auto">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
             <Link
               href={localizedHref("/product", locale)}
@@ -439,14 +439,14 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
 
             <Link
               href={localizedHref("/demo", locale)}
-              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-white bg-text-primary rounded-[4px] no-underline mt-3"
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-semibold text-signal-ink bg-acid border border-signal-ink no-underline mt-3"
               onClick={() => setMobileOpen(false)}
             >
               {t.bookDemo}
             </Link>
             <a
               href="https://my.sealmetrics.com/register"
-              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline mt-2"
+              className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-[0.875rem] font-semibold text-signal-ink border border-signal-ink no-underline mt-2"
               onClick={() => setMobileOpen(false)}
             >
               {t.startTrial}

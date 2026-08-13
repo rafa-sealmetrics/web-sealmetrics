@@ -177,7 +177,7 @@ export function stripLocale(pathname: string): string {
 }
 
 export function getContentGroup(pathname: string): string {
-  const path = stripLocale(pathname);
+  const path = stripLocale(pathname).replace(/\/$/, "") || "/";
   if (path === "/") return "home";
   if (path === "/product") return "product";
   if (path === "/pricing") return "pricing";

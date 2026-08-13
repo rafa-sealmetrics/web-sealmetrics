@@ -42,7 +42,7 @@ export function AnnouncementBar({ locale = "en" }: { locale?: "en" | "es" }) {
   return (
     <div
       id="sm-annbar"
-      className="hidden sm:block fixed top-0 left-0 right-0 z-[60] bg-brand text-white"
+      className="hidden sm:block fixed top-0 left-0 right-0 z-[60] bg-signal-ink text-paper-white border-b border-signal-ink"
     >
       <div className="max-w-[1280px] mx-auto flex items-center gap-4 h-9 pl-4 pr-2 sm:pl-6">
         {/* Announcement — left, truncates */}
@@ -51,7 +51,7 @@ export function AnnouncementBar({ locale = "en" }: { locale?: "en" | "es" }) {
           className="group flex items-center gap-2 min-w-0 flex-1 text-white no-underline text-[12.5px] sm:text-[13px] font-medium tracking-[-0.005em] whitespace-nowrap"
         >
           <span className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-white/85 shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-white/90" />
+            <span className="w-1.5 h-1.5 bg-acid" />
             {t.kicker}
           </span>
           <span className="truncate">

@@ -1,0 +1,456 @@
+.sig-case-page {
+  --ink: #111412;
+  --acid: #cbff3d;
+  --paper: #f4f1e8;
+  --white: #fffdf7;
+  --muted: #5d625a;
+  --rule: rgba(17, 20, 18, 0.24);
+  overflow-x: clip;
+  padding-top: 76px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-onest), Onest, sans-serif;
+}
+.sig-case-page *,
+.sig-case-page *:before,
+.sig-case-page *:after {
+  box-sizing: border-box;
+}
+.sig-case-page h1,
+.sig-case-page h2,
+.sig-case-page h3,
+.sig-case-page p {
+  margin: 0;
+}
+.sig-case-page a {
+  color: inherit;
+  text-decoration: none;
+}
+.sig-case-hero,
+.sig-case-metrics,
+.sig-case-problem,
+.sig-case-method,
+.sig-case-result,
+.sig-case-quote,
+.sig-case-final {
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+}
+.sig-case-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 790px;
+  padding-block: 42px 92px;
+  border-bottom: 1px solid var(--rule);
+}
+.sig-case-hero:before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(17, 20, 18, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 20, 18, 0.16) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 18%,
+    #000 82%,
+    transparent
+  );
+  content: "";
+  opacity: 0.35;
+}
+.sig-case-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 54px;
+  color: var(--muted);
+  font:
+    650 10px/1.5 var(--font-jetbrains-mono),
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-case-breadcrumbs a {
+  border-bottom: 1px solid currentColor;
+}
+.sig-case-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(390px, 0.75fr);
+  gap: clamp(50px, 7vw, 110px);
+  align-items: end;
+}
+.sig-case-logo {
+  width: auto;
+  max-width: min(360px, 70vw);
+  height: 72px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 40px;
+}
+.sig-case-eyebrow,
+.sig-case-tag {
+  margin-bottom: 24px !important;
+  font:
+    650 10px/1.5 var(--font-jetbrains-mono),
+    monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sig-case-eyebrow span,
+.sig-case-tag {
+  display: inline-block;
+  padding: 8px 10px;
+  background: var(--ink);
+  color: var(--acid);
+}
+.sig-case-hero h1 {
+  max-width: 980px;
+  font-size: clamp(58px, 6.4vw, 102px);
+  font-weight: 790;
+  letter-spacing: -0.075em;
+  line-height: 0.84;
+}
+.sig-case-page h1 em,
+.sig-case-page h2 em {
+  color: transparent;
+  font-style: normal;
+  -webkit-text-stroke: 1.5px var(--ink);
+}
+.sig-case-method h2 em {
+  -webkit-text-stroke-color: var(--white);
+}
+.sig-case-hero-body {
+  max-width: 760px;
+  margin-top: 38px !important;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.5;
+}
+.sig-case-file {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  box-shadow: 20px 20px 0 var(--acid);
+  color: var(--white);
+}
+.sig-case-module-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 18px;
+  border-bottom: 1px solid rgba(255, 253, 247, 0.25);
+  font:
+    650 9px/1.4 var(--font-jetbrains-mono),
+    monospace;
+  letter-spacing: 0.1em;
+}
+.sig-case-file > div:not(.sig-case-module-top) {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px 15px;
+  padding: 18px;
+  border-bottom: 1px solid rgba(255, 253, 247, 0.2);
+}
+.sig-case-file > div > span {
+  grid-row: 1/3;
+  color: var(--acid);
+  font:
+    650 9px/1 var(--font-jetbrains-mono),
+    monospace;
+}
+.sig-case-file strong {
+  font-size: 13px;
+}
+.sig-case-file b {
+  color: rgba(255, 253, 247, 0.66);
+  font:
+    650 9px/1.5 var(--font-jetbrains-mono),
+    monospace;
+  text-transform: uppercase;
+}
+.sig-case-file > p {
+  padding: 15px 18px;
+  color: rgba(255, 253, 247, 0.55);
+  font:
+    650 8px/1.6 var(--font-jetbrains-mono),
+    monospace;
+  text-transform: uppercase;
+}
+.sig-case-metrics {
+  padding-block: 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--white);
+}
+.sig-case-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid var(--ink);
+}
+.sig-case-metric-grid article {
+  min-height: 330px;
+  padding: 28px;
+  border-right: 1px solid var(--ink);
+}
+.sig-case-metric-grid article > span {
+  font:
+    650 9px/1 var(--font-jetbrains-mono),
+    monospace;
+}
+.sig-case-metric-grid strong {
+  display: block;
+  margin-top: 60px;
+  color: var(--ink);
+  font:
+    790 clamp(58px, 7vw, 104px) / 0.85 var(--font-onest),
+    sans-serif;
+  letter-spacing: -0.07em;
+}
+.sig-case-metric-grid h2 {
+  margin-top: 22px !important;
+  font-size: 18px;
+  font-weight: 760;
+}
+.sig-case-metric-grid p {
+  margin-top: 12px !important;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.sig-case-problem,
+.sig-case-method,
+.sig-case-result,
+.sig-case-quote {
+  padding-block: clamp(92px, 10vw, 156px);
+  border-bottom: 1px solid var(--rule);
+}
+.sig-case-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: clamp(50px, 8vw, 130px);
+  align-items: start;
+}
+.sig-case-section-head h2,
+.sig-case-method h2,
+.sig-case-result h2,
+.sig-case-final h2 {
+  font-size: clamp(48px, 6vw, 92px);
+  font-weight: 790;
+  letter-spacing: -0.07em;
+  line-height: 0.88;
+}
+.sig-case-section-head > div > p,
+.sig-case-section-head > p,
+.sig-case-result > div > p:not(.sig-case-tag),
+.sig-case-final > p:not(.sig-case-tag) {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.68;
+}
+.sig-case-section-head > div > p + p,
+.sig-case-result > div > p + p {
+  margin-top: 20px !important;
+}
+.sig-case-problem blockquote,
+.sig-case-quote blockquote {
+  max-width: 1050px;
+  margin: 110px 0 0 auto;
+  padding-left: 34px;
+  border-left: 4px solid #2e5c8a;
+}
+.sig-case-problem blockquote p,
+.sig-case-quote blockquote p {
+  font-size: clamp(30px, 4vw, 58px);
+  font-weight: 680;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+.sig-case-problem cite,
+.sig-case-quote cite {
+  display: block;
+  margin-top: 28px;
+  font:
+    650 10px/1.6 var(--font-jetbrains-mono),
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sig-case-method {
+  background: var(--ink);
+  color: var(--white);
+}
+.sig-case-method .sig-case-section-head > p {
+  color: rgba(255, 253, 247, 0.65);
+}
+.sig-case-method ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 90px 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 253, 247, 0.3);
+  border-left: 1px solid rgba(255, 253, 247, 0.3);
+  list-style: none;
+}
+.sig-case-method li {
+  min-height: 330px;
+  padding: 24px;
+  border-right: 1px solid rgba(255, 253, 247, 0.3);
+  border-bottom: 1px solid rgba(255, 253, 247, 0.3);
+}
+.sig-case-method li > span {
+  color: var(--acid);
+  font:
+    650 10px/1 var(--font-jetbrains-mono),
+    monospace;
+}
+.sig-case-method li > div {
+  margin-top: 96px;
+}
+.sig-case-method h3 {
+  font-size: 23px;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+}
+.sig-case-method li p {
+  margin-top: 14px !important;
+  color: rgba(255, 253, 247, 0.64);
+  font-size: 14px;
+  line-height: 1.58;
+}
+.sig-case-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: clamp(50px, 8vw, 130px);
+  align-items: center;
+  background: var(--white);
+}
+.sig-case-result > div > p:not(.sig-case-tag) {
+  max-width: 720px;
+  margin-top: 26px !important;
+}
+.sig-case-result aside {
+  padding: 34px;
+  border: 1px solid var(--ink);
+  background: var(--acid);
+  box-shadow: 14px 14px 0 var(--ink);
+}
+.sig-case-result aside span {
+  display: block;
+  font-size: clamp(70px, 9vw, 130px);
+  font-weight: 790;
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+}
+.sig-case-result aside strong {
+  display: block;
+  margin-top: 28px;
+  font-size: 20px;
+}
+.sig-case-result aside p {
+  margin-top: 48px !important;
+  font:
+    650 9px/1.6 var(--font-jetbrains-mono),
+    monospace;
+  text-transform: uppercase;
+}
+.sig-case-quote {
+  background: var(--paper);
+}
+.sig-case-quote blockquote {
+  margin-top: 0;
+}
+.sig-case-final {
+  padding-block: clamp(100px, 12vw, 180px);
+  background: var(--acid);
+}
+.sig-case-final h2 {
+  max-width: 1080px;
+}
+.sig-case-final > p:not(.sig-case-tag) {
+  max-width: 760px;
+  margin-top: 34px !important;
+}
+.sig-case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-top: 36px;
+}
+.sig-case-button {
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 14px 18px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--white) !important;
+  font-size: 14px;
+  font-weight: 720;
+}
+.sig-case-link {
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  font-weight: 720;
+}
+@media (max-width: 1000px) {
+  .sig-case-hero-grid,
+  .sig-case-section-head,
+  .sig-case-result {
+    grid-template-columns: 1fr;
+  }
+  .sig-case-file {
+    max-width: 720px;
+  }
+  .sig-case-method ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .sig-case-page {
+    padding-top: 66px;
+  }
+  .sig-case-hero,
+  .sig-case-metrics,
+  .sig-case-problem,
+  .sig-case-method,
+  .sig-case-result,
+  .sig-case-quote,
+  .sig-case-final {
+    padding-inline: 20px;
+  }
+  .sig-case-hero {
+    min-height: 0;
+    padding-block: 24px 72px;
+  }
+  .sig-case-breadcrumbs {
+    margin-bottom: 38px;
+  }
+  .sig-case-hero h1 {
+    font-size: clamp(48px, 15vw, 70px);
+  }
+  .sig-case-file {
+    margin-right: 10px;
+    box-shadow: 10px 10px 0 var(--acid);
+  }
+  .sig-case-metric-grid,
+  .sig-case-method ol {
+    grid-template-columns: 1fr;
+  }
+  .sig-case-metric-grid article {
+    min-height: 280px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .sig-case-method li {
+    min-height: 280px;
+  }
+  .sig-case-result aside {
+    margin-right: 10px;
+  }
+  .sig-case-problem blockquote,
+  .sig-case-quote blockquote {
+    margin-top: 72px;
+    padding-left: 20px;
+  }
+}

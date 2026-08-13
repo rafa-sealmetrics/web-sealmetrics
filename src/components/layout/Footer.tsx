@@ -82,7 +82,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
   const demoAccessHref = locale === "es" ? "/es/demo-access" : "/demo-access";
 
   return (
-    <footer className="bg-warm-900 border-t border-warm-800 pt-12 pb-8">
+    <footer className="bg-signal-ink border-t border-signal-ink pt-12 pb-8">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="mb-12 pb-10 border-b border-warm-800 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
           <div>
@@ -100,7 +100,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-5 self-start md:self-auto">
             <Link
               href={demoHref}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md text-[0.9rem] font-semibold text-warm-900 bg-warm-white no-underline hover:bg-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.9rem] font-semibold text-signal-ink bg-acid border border-acid no-underline hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_#FFFDF7] transition-all"
             >
               {locale === "es" ? "Reserva una demo" : "Book a demo"} <span aria-hidden>→</span>
             </Link>
@@ -119,7 +119,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
             <Link href={localizedHref("/", locale)} className="inline-block mb-3 no-underline">
               <Picture
                 src="/logos/logo-sealmetrics-white.svg"
-                alt="Sealmetrics"
+                alt="SealMetrics"
                 width={157}
                 height={28}
                 className="h-7 w-auto"

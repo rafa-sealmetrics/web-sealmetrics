@@ -1,25 +1,16 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { QuickAnswer } from "@/components/ui/QuickAnswer";
+import { SignalHome, signalHomeFaqs } from "@/components/v4/SignalHome";
+import "@/components/v4/signal-home.css";
 import {
   organizationSchema,
   softwareApplicationSchema,
   statisticClaimSchema,
   quotationSchema,
   speakableWebPageSchema,
+  faqPageSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip, PricingPLG, Connectors, FinalUrgencyV3 } from "@/components/sections/v3/HomeV3";
-import { InstallInSeconds } from "@/components/sections/v3/InstallInSeconds";
-import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
-import {
-  HeroD,
-  ConsentlessAnalytics,
-  PromoDaysRealTime,
-  GrowthRiskCost,
-  QuoteBlock,
-  CfoObjectionHome,
-} from "@/components/sections/v3/HomeDSections";
 
 export const metadata: Metadata = {
   title: "SealMetrics — Consentless analytics for eCommerce",
@@ -53,6 +44,7 @@ export default function Home() {
     <>
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={faqPageSchema(signalHomeFaqs, "/")} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
       <JsonLd data={statisticClaimSchema({
         text: "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
@@ -93,32 +85,7 @@ export default function Home() {
         spokenByRole: "Analytics & Campaigns, Dreamplace Hotels",
         url: "/",
       })} />
-      <HeroD />
-      <LogosStrip />
-      <ConsentlessAnalytics />
-      <PromoDaysRealTime />
-      <GrowthRiskCost />
-      <QuoteBlock />
-      <InstallInSeconds />
-      <Connectors />
-      <CfoObjectionHome />
-      <PricingPLG />
-      {/* GEO answer block sits BEFORE the closing CTA on purpose: the last
-          thing a visitor sees must be the urgency slab, not an SEO appendix. */}
-      <section className="bg-warm-white border-t border-warm-100 py-12">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
-          <QuickAnswer>
-            <p>
-              SealMetrics is consentless analytics for European eCommerce — a cookieless web analytics platform that captures 100% of inbound traffic, attributes each conversion last-click at channel level, and is GDPR-compliant by architecture rather than by a consent layer added on top. Hosted exclusively in Dublin, Ireland on EU-owned infrastructure, it removes the Schrems II review GA4 + Consent Mode requires and the 40-60% consent-rejection gap that breaks aggregate channel ROAS in Europe.
-            </p>
-            <p>
-              Customers use it to align brand, paid-media agencies, finance and internal analytics on a single number every party accepts. Dreamplace Hotels recovered +30% more traffic vs Google Analytics and closed a 15-20% sales attribution gap against their CRM. Palladium Hotel Group recovered 40% of previously-unattributed traffic and improved Display Cost-per-Search by +165% on DV360 after switching the measurement model. Growth starts at €499/month billed annually (5M human events/mo); Scale is €899/month billed annually (15M events); Enterprise is custom-quoted. Setup is one script tag, runs side-by-side with GA4 from day 1, no migration required.
-            </p>
-          </QuickAnswer>
-        </div>
-      </section>
-      <FinalUrgencyV3 />
-      <StickyCtaBar locale="en" />
+      <SignalHome />
     </>
   );
 }
