@@ -28,6 +28,7 @@
 .sig-brand-word { color: currentColor; }
 .sig-brand-lockup-showcase { margin-bottom: 44px; font-size: clamp(52px,7.2vw,106px); letter-spacing: -.09em; }
 .sig-brand-lockup-showcase .sig-brand-metrics { -webkit-text-stroke-width: 1.6px; }
+.sig-brand-showcase { width: min(70vw, 423px); height: auto; margin-bottom: 44px; }
 .sig-site-header nav { display: flex; gap: 30px; }
 .sig-site-header nav a { text-decoration: none; font-size: 13px; font-weight: 600; }
 .sig-site-header nav a:hover { text-decoration: underline; text-underline-offset: 5px; }

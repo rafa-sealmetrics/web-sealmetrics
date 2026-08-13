@@ -24,7 +24,8 @@ This file is the operational record for porting the current website to the Signa
 | Pricing | `/pricing/` | `/es/pricing/` | Complete in PR | Interactive billing, four plan cards, traffic table, semantic comparison table, overage policy and visible FAQ. |
 | Security | `/security/` | `/es/security/` | Complete in PR | Data boundary, controls and retention remain inspectable; Dublin-only and no unearned certifications. |
 | Comparison pages | `/vs/*` | `/es/vs/*` | Pending | Port by page type and retain comparison interlinking. |
-| Case studies | `/case-studies/*` | `/es/case-studies/*` | Pending | Keep approved named customers and published figures. |
+| Hotel case studies | Palladium + Dreamplace | Palladium + Dreamplace | Complete in PR | Named clients, approved quotes and published figures preserved in a bilingual Signal family. |
+| Remaining case studies | Index + European hotel group | Spanish counterparts | Pending | Complete the index family and review the legacy anonymised route. |
 | Solution/platform pages | Multiple | Multiple | Pending | Port reusable page families without flattening content. |
 | Editorial content | Blog and glossary | Blog and glossary | Pending | Preserve Article/DefinedTerm schemas and content hierarchy. |
 | Conversion routes | Demo, audit, calculators | Spanish counterparts | Pending visually | Working form logic must be reused unchanged. |

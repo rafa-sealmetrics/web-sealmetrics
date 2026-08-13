@@ -64,14 +64,6 @@ function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function BrandLockup({ showcase = false }: { showcase?: boolean }) {
-  return (
-    <span className={`sig-brand-lockup${showcase ? " sig-brand-lockup-showcase" : ""}`} aria-label="sealmetrics">
-      <span className="sig-brand-seal" aria-hidden="true">seal</span><span className="sig-brand-metrics" aria-hidden="true">metrics</span>
-    </span>
-  );
-}
-
 export function SignalHome() {
   return (
     <div className="sig-signal-home">
@@ -249,7 +241,13 @@ export function SignalHome() {
         <p className="sig-section-tag">OUR POINT OF VIEW</p>
         <div className="sig-pov-grid">
           <div className="sig-pov-statement">
-            <BrandLockup showcase />
+            <Picture
+              src="/logos/logo-sealmetrics.svg"
+              alt="SealMetrics"
+              width={423}
+              height={76}
+              className="sig-brand-showcase"
+            />
             <h2>We don&apos;t build visitor profiles.<br /><em>We measure eligible aggregate events.</em></h2>
           </div>
           <div>
@@ -379,3 +377,4 @@ export function SignalHome() {
     </div>
   );
 }
+import { Picture } from "@/components/ui/Picture";

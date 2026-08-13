@@ -1,8 +1,8 @@
+import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/types";
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { localizedHref } from "@/lib/i18n/navigation";
-import { BrandLockup } from "./BrandLockup";
 
 function getFooterColumns(t: ReturnType<typeof getDictionary>["footer"], locale: Locale) {
   return [
@@ -117,7 +117,13 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-12 mb-12">
           <div>
             <Link href={localizedHref("/", locale)} className="inline-block mb-3 no-underline">
-              <BrandLockup className="sm-brand-lockup-footer" />
+              <Picture
+                src="/logos/logo-sealmetrics-white.svg"
+                alt="SealMetrics"
+                width={157}
+                height={28}
+                className="h-7 w-auto"
+              />
             </Link>
             <p className="text-[0.85rem] leading-relaxed text-warm-400 max-w-[280px]">
               {t.tagline}
