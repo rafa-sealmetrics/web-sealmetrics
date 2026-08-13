@@ -132,7 +132,7 @@
 .sig-product-cards { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .sig-product-card { min-height: 720px; padding: clamp(28px,4vw,50px); border: 1px solid var(--rule); }
 .sig-product-card h3 { max-width: 650px; margin: 54px 0 18px; font-size: clamp(34px,3.7vw,56px); line-height: .96; letter-spacing: -.055em; }
-.sig-product-card h3 em { color: transparent; -webkit-text-stroke: 1.2px currentColor; font-style: normal; }
+.sig-product-card h3 em { color: transparent; -webkit-text-stroke: 1.2px var(--ink); font-style: normal; }
 .sig-product-card > p { max-width: 590px; color: #60645d; font-size: 14px; line-height: 1.6; }
 .sig-promo-card { background: var(--white); }
 .sig-module-live { color: #4f7700; }

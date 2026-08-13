@@ -13,7 +13,8 @@
 .sig-pricing-tag-light { background:var(--acid); color:var(--ink); }
 .sig-pricing-hero h1 { max-width:900px; font-size:clamp(60px,6.4vw,104px); font-weight:790; letter-spacing:-.075em; line-height:.84; }
 .sig-pricing-page h2 { font-size:clamp(48px,6vw,94px); font-weight:790; letter-spacing:-.07em; line-height:.88; }
-.sig-pricing-hero h1 em,.sig-pricing-page h2 em { color:transparent; font-style:normal; -webkit-text-stroke:1.5px currentColor; }
+.sig-pricing-hero h1 em,.sig-pricing-page h2 em { color:transparent; font-style:normal; -webkit-text-stroke:1.5px var(--ink); }
+.sig-pricing-included h2 em,.sig-pricing-policy h2 em { -webkit-text-stroke-color:var(--white); }
 .sig-pricing-hero-body { max-width:700px; margin-top:40px!important; font-size:clamp(18px,1.5vw,22px); line-height:1.48; }
 .sig-pricing-actions { display:flex; flex-wrap:wrap; gap:24px; align-items:center; margin-top:34px; }
 .sig-pricing-button { display:inline-flex; gap:30px; align-items:center; justify-content:space-between; min-height:52px; padding:14px 18px; border:1px solid var(--ink); font-size:14px; font-weight:720; transition:box-shadow 140ms ease,transform 140ms ease; }

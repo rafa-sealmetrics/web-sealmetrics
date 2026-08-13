@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,6 +27,14 @@ for (const route of routes) {
 const css = readFileSync(path.join(root, "src/app/globals.css"), "utf8");
 if (!css.includes("SIGNAL V4 · SITE-WIDE COMPATIBILITY LAYER")) failures.push("global Signal compatibility layer missing");
 if (!css.includes("border-radius: 0 !important")) failures.push("square-geometry enforcement missing");
+
+const v4CssDir = path.join(root, "src/components/v4");
+for (const name of readdirSync(v4CssDir).filter(file => file.endsWith(".css"))) {
+  const source = readFileSync(path.join(v4CssDir, name), "utf8");
+  if (/color\s*:\s*transparent[^}]*-webkit-text-stroke\s*:[^;}]*currentColor/i.test(source)) {
+    failures.push(`${name}: transparent outlined text inherits a transparent stroke`);
+  }
+}
 
 if (failures.length) {
   console.error(`[audit-signal-design] ${failures.length} failure(s):`);
