@@ -6,6 +6,15 @@
    ============================================ */
 
 @theme {
+  /* Signal v4 — additive until every v3 page has migrated */
+  --color-paper: #F4F1E8;
+  --color-paper-white: #FFFDF7;
+  --color-acid: #CBFF3D;
+  --color-signal-ink: #111412;
+  --color-hairline: rgba(17, 20, 18, 0.25);
+  --shadow-hard: 3px 3px 0 #111412;
+  --shadow-slab: 20px 20px 0 #CBFF3D;
+
   /* Warm paper palette */
   --color-white: #FFFFFF;
   --color-warm-white: #FAFAF7;
@@ -108,9 +117,9 @@ body {
    ============================================ */
 
 :focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 3px solid var(--color-acid);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .skip-to-content {
