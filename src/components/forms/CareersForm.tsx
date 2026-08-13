@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 import { micro } from "@/lib/analytics";
-
-// Dedicated careers webhook — do NOT reuse webform-lead: that workflow parses
-// lead payloads only (email/name/answers) and would drop careers submissions.
-// The n8n workflow behind this path must email hello@sealmetrics.com.
-const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/careers-application";
 
 type Locale = "en" | "es";
 
@@ -159,6 +156,8 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -166,6 +165,14 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
 
     if (!team) {
       setError(t.errorTeam);
+      return;
+    }
+    if (!gdpr) {
+      setError(locale === "es" ? "Acepta el aviso de privacidad." : "Please accept the privacy notice.");
+      return;
+    }
+    if (!turnstileToken) {
+      setError(locale === "es" ? "Completa la verificación de seguridad." : "Please complete the security verification.");
       return;
     }
 
@@ -201,14 +208,14 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
     micro("form_submit", { form: "careers", team });
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitFirstPartyForm("careers", payload, { turnstileToken });
     } catch (err) {
-      console.warn("Webhook delivery failed, continuing", err);
+      console.warn("Form delivery failed", err);
+      setError(locale === "es" ? "No hemos podido enviar la solicitud." : "We could not send the application.");
+      setSubmitting(false);
+      setTurnstileToken(null);
+      setTurnstileResetKey((key) => key + 1);
+      return;
     }
 
     setSubmitting(false);
@@ -390,11 +397,17 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
         </label>
       </div>
 
+      <LeadTurnstile
+        onToken={setTurnstileToken}
+        resetKey={turnstileResetKey}
+        locale={locale}
+      />
+
       {error && <p className="text-[13px] text-red-alert">{error}</p>}
 
       <button
         type="submit"
-        disabled={submitting}
+        disabled={submitting || !turnstileToken}
         className="w-full py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md hover:bg-brand transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {submitting ? t.submitting : t.submit}

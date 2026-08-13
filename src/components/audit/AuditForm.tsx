@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 import {
   SignupQualifier,
   EMPTY_QUALIFIER,
@@ -371,6 +373,9 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [scoreTier, setScoreTier] = useState<"high" | "mid" | "low">("mid");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+  const [deliveryError, setDeliveryError] = useState<string | null>(null);
   const microFired = useRef(false);
 
   useEffect(() => {
@@ -395,11 +400,12 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
         contact.company.trim() &&
           contact.website.trim() &&
           contact.email.trim() &&
-          contact.name.trim()
+          contact.name.trim() &&
+          turnstileToken
       );
     }
     return Boolean(answers[step]);
-  }, [step, answers, contact, isContactStep]);
+  }, [step, answers, contact, isContactStep, turnstileToken]);
 
   const progressPct = ((step - 1) / TOTAL_QUESTIONS) * 100;
 
@@ -425,6 +431,12 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
 
   async function handleSubmit() {
     setSubmitting(true);
+    setDeliveryError(null);
+    if (!turnstileToken) {
+      setDeliveryError(locale === "es" ? "Completa la verificación de seguridad." : "Please complete the security verification.");
+      setSubmitting(false);
+      return;
+    }
     const raw = Object.values(answers).reduce((sum, a) => sum + a.score, 0);
     const normalized = Math.max(
       1,
@@ -476,34 +488,14 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
       signup,
     };
 
-    // Existing endpoint (when configured) plus n8n fan-out so n8n can
-    // forward the embedded `signup` to /inbound/signup.
-    const endpoint = process.env.NEXT_PUBLIC_AUDIT_ENDPOINT;
-    if (endpoint) {
-      try {
-        await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-          mode: "cors",
-        });
-      } catch {
-        // Fail silently — the submission was captured client-side.
-      }
-    }
     try {
-      await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitFirstPartyForm("audit", payload, { turnstileToken });
     } catch {
-      // Webhook is fire-and-forget; ignore failures.
-    }
-    if (!endpoint && typeof window !== "undefined") {
-      // eslint-disable-next-line no-console
-      console.log("[SealMetrics audit submission]", payload);
+      setDeliveryError(locale === "es" ? "No hemos podido enviar la auditoría. Inténtalo de nuevo." : "We could not send the audit. Please try again.");
+      setTurnstileToken(null);
+      setTurnstileResetKey((key) => key + 1);
+      setSubmitting(false);
+      return;
     }
 
     setScoreTier(tier);
@@ -674,6 +666,14 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
               }}
             />
           </div>
+          <div className="mt-5">
+            <LeadTurnstile
+              onToken={setTurnstileToken}
+              resetKey={turnstileResetKey}
+              locale={locale}
+            />
+          </div>
+          {deliveryError && <p role="alert" className="mt-3 text-[13px] text-red-alert">{deliveryError}</p>}
         </div>
       )}
 

@@ -50,6 +50,8 @@ const KEEP = {
     "Turnstile — loaded by the @marsidev/react-turnstile dependency, so it never appears in our own source",
   "https://api.sealmetrics.com":
     "audit endpoint, supplied at build time via NEXT_PUBLIC_AUDIT_ENDPOINT rather than a literal",
+  "https://sealmetrics-forms.sealmetrics-forms-worker.workers.dev":
+    "first-party forms proxy, supplied through NEXT_PUBLIC_FORMS_ENDPOINT with this production fallback",
   "https://pixel-pre.sealmetrics.com":
     "connect-src: t.js beacons events back to its own origin from third-party code we can't scan. Its script-src entry IS verified below — do not confuse the two",
 };

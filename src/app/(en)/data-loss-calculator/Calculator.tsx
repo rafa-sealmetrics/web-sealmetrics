@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { pushEvent } from "@/lib/analytics";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
 /* ===========================================
    Country-specific loss rates
@@ -240,6 +242,9 @@ export function Calculator() {
   const [copied, setCopied] = useState(false);
   const [reportEmail, setReportEmail] = useState("");
   const [reportSent, setReportSent] = useState(false);
+  const [reportTurnstileToken, setReportTurnstileToken] = useState<string | null>(null);
+  const [reportTurnstileResetKey, setReportTurnstileResetKey] = useState(0);
+  const [reportError, setReportError] = useState(false);
 
   const inputClasses =
     "w-full px-4 py-3 text-[0.95rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none focus-visible:outline-2 focus-visible:outline-blue-accent focus-visible:outline-offset-2 transition-colors";
@@ -441,44 +446,54 @@ export function Calculator() {
                         Report sent. Check your inbox.
                       </p>
                     ) : (
-                      <div className="flex gap-2">
-                        <input
+                      <div className="space-y-3">
+                        <div className="flex gap-2">
+                          <input
                           type="email"
                           placeholder="your@email.com"
                           value={reportEmail}
                           onChange={(e) => setReportEmail(e.target.value)}
                           className="flex-1 px-3 py-2 text-[0.85rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none transition-colors"
-                        />
-                        <button
+                          />
+                          <button
                           type="button"
                           className="px-4 py-2 text-[0.85rem] font-medium text-text-primary border border-warm-200 rounded-[4px] hover:border-text-body transition-colors whitespace-nowrap cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-                          disabled={!reportEmail}
+                          disabled={!reportEmail || !reportTurnstileToken}
                           onClick={async () => {
                             try {
                               pushEvent({
                                 event: "calculator_report_email",
                                 email: reportEmail,
                               });
-                              await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
-                                method: "POST",
-                                headers: { "Content-Type": "application/json" },
-                                body: JSON.stringify({
+                              setReportError(false);
+                              await submitFirstPartyForm(
+                                "calculator",
+                                {
                                   email: reportEmail,
                                   source: "calculator-report",
                                   visitors: String(visitors),
                                   country,
                                   revenue: String(monthlyRevenue),
                                   dataLoss: `${Math.round((1 - visibilityRate) * 100)}%`,
-                                }),
-                              });
+                                },
+                                { turnstileToken: reportTurnstileToken ?? "" }
+                              );
                               setReportSent(true);
                             } catch {
-                              setReportSent(true);
+                              setReportError(true);
+                              setReportTurnstileToken(null);
+                              setReportTurnstileResetKey((key) => key + 1);
                             }
                           }}
                         >
                           Send report
-                        </button>
+                          </button>
+                        </div>
+                        <LeadTurnstile
+                          onToken={setReportTurnstileToken}
+                          resetKey={reportTurnstileResetKey}
+                        />
+                        {reportError && <p role="alert" className="text-[0.75rem] text-red-alert">We could not send the report. Please try again.</p>}
                       </div>
                     )}
                   </div>
