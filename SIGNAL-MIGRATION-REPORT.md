@@ -1,6 +1,6 @@
 # Signal migration report
 
-Status: ready for review, not deployed.
+Status: visually approved for release, not deployed.
 
 ## Executive result
 
@@ -84,4 +84,4 @@ These counts include both native and shared Signal-adapted routes.
 
 ## Pending before deployment
 
-There are no missing URLs in the design coverage. The remaining mandatory steps are stakeholder review in localhost across representative desktop and mobile pages, followed by one real hosted submission for each of the six form types so Turnstile, the relay, n8n and mailbox delivery are verified together. Any visual or copy corrections found during review should be resolved before merging. Deployment remains blocked until explicit approval.
+There are no missing URLs in the design coverage. Stakeholder visual review was approved on 2026-08-13. The remaining runtime validation is one real hosted submission for each of the six form types after release, so Turnstile, the relay, n8n and mailbox delivery are verified together. Production remains unchanged until explicit merge authorization.
