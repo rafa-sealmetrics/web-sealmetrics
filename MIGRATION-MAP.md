@@ -21,7 +21,7 @@ This file is the operational record for porting the current website to the Signa
 | Homepage | `/` | `/es/` | Partial | English Signal work exists; Spanish parity is still pending. |
 | Product | `/product/` | `/es/product/` | Complete in PR | Real bilingual React component, Signal styling, metadata and schemas validated. |
 | How it works | `/how-it-works/` | `/es/how-it-works/` | Complete in PR | Signal path, semantic data-contract table, implementation sequence and visible FAQ. |
-| Pricing | `/pricing/` | `/es/pricing/` | Pending | Preserve the pricing comparison as a real table/grid. |
+| Pricing | `/pricing/` | `/es/pricing/` | Complete in PR | Interactive billing, four plan cards, traffic table, semantic comparison table, overage policy and visible FAQ. |
 | Security | `/security/` | `/es/security/` | Pending | Port claims carefully; Dublin-only hosting and no unearned certifications. |
 | Comparison pages | `/vs/*` | `/es/vs/*` | Pending | Port by page type and retain comparison interlinking. |
 | Case studies | `/case-studies/*` | `/es/case-studies/*` | Pending | Keep approved named customers and published figures. |
@@ -33,7 +33,7 @@ This file is the operational record for porting the current website to the Signa
 
 1. Product — complete in the redesign PR.
 2. How it works — complete in the redesign PR.
-3. Pricing.
+3. Pricing — complete in the redesign PR.
 4. Security.
 5. Case studies and comparisons.
 6. Remaining commercial page families.

@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+.sm-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: .42em;
+  color: currentColor;
+  font-family: var(--font-onest), Onest, sans-serif;
+  font-size: 29px;
+  font-weight: 790;
+  letter-spacing: -.06em;
+  line-height: .9;
+}
+
+.sm-brand-mark {
+  width: .72em;
+  height: .82em;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.sm-brand-mark-primary { fill: currentColor; }
+.sm-brand-mark-signal { fill: #cbff3d; stroke: #a9cdb9; stroke-width: .55; paint-order: stroke fill; }
+.sm-brand-word { color: currentColor; }
+.sm-brand-lockup-header { color: #111412; }
+.sm-brand-lockup-footer { color: #fffdf7; font-size: 28px; }
+.sm-brand-lockup-footer .sm-brand-mark-signal { stroke: none; }
+
+@media (max-width: 640px) {
+  .sm-brand-lockup-header { font-size: 24px; }
+}
+
 /* ============================================
    DESIGN SYSTEM · SealMetrics v3
    Editorial authority · warm cream + forest green

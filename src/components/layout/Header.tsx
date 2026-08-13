@@ -1,12 +1,12 @@
 "use client";
 
-import { Picture } from "@/components/ui/Picture";
 import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
 import type { Locale } from "@/lib/i18n/types";
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { localizedHref } from "@/lib/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { BrandLockup } from "./BrandLockup";
 
 /* ===========================================
    Dropdown data
@@ -252,16 +252,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
     <header className="fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-xl border-b border-hairline">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between h-[76px]">
         <Link href={localizedHref("/", locale)} className="flex items-center no-underline">
-          <Picture
-            src="/logos/logo-sealmetrics.svg"
-            alt="Sealmetrics"
-            width={157}
-            height={28}
-            className="h-7 w-auto"
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-          />
+          <BrandLockup className="sm-brand-lockup-header" />
         </Link>
 
         {/* Desktop nav */}

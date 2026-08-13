@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { QuickAnswer } from "@/components/ui/QuickAnswer";
-import { pricingSchema, breadcrumbSchema } from "@/lib/schema";
+import { pricingSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
-import { PricingPlansV3 } from "@/components/sections/v3/PricingPlansV3";
-import {
-  PricingHeroV3Es,
-  PlanIncludesV3Es,
-  TrafficCountingV3Es,
-  PlanAdaptsV3Es,
-  FullComparisonV3Es,
-  PricingFinalCtaV3Es,
-} from "@/components/sections/v3/PricingV3SectionsEs";
-import { PricingFaqV3 } from "@/components/sections/v3/PricingFaqV3";
-import { AgenticSetupSteps } from "@/components/sections/v3/AgenticPlanV3";
-import { McpInstaller } from "@/components/sections/v3/McpInstaller";
+import { PricingSignal } from "@/components/v4/PricingSignal";
+import { pricingSignalFaqItems } from "@/lib/content/pricing-signal";
+import "@/components/v4/pricing-signal.css";
 
 export const metadata: Metadata = {
   title: "Precios SealMetrics — Paga por humanos, no por bots",
@@ -45,49 +33,17 @@ export const metadata: Metadata = {
   },
 };
 
-const faqsForSchema = [
-  { question: "¿Qué cuenta como evento humano?", answer: "Cualquier interacción real de un visitante: páginas vistas, clics, conversiones, envíos de formulario, añadir al carrito, suscripciones. El tráfico de agentes IA y bots tradicionales se excluye." },
-  { question: "¿Por qué el tráfico de agentes IA es gratis?", answer: "Los agentes IA (ChatGPT, Claude, Perplexity) son una categoría nueva de tráfico sobre la que necesitas visibilidad. Los trackeamos gratis." },
-  { question: "¿Qué pasa si supero mi límite de eventos?", answer: "El tracking nunca se detiene. Nunca bloqueamos, limitamos ni muestreamos. Si superas el límite 2 meses seguidos, Growth pasa a Scale automáticamente en el siguiente ciclo; Scale nunca sube solo — te escribimos para hablar de Enterprise. Un mes de exceso al año es gratis." },
-  { question: "¿Hay prueba gratuita?", answer: "Sí — una prueba de 14 días con acceso completo. Añades método de pago al empezar y no se te cobra hasta que acaba la prueba — si cancelas antes, no pagas nada. El Agentic Package, que configuras desde tu asistente de IA, no pide tarjeta." },
-  { question: "¿Todas las features están incluidas en cada plan?", answer: "Sí en la analítica. Analítica core, tracking de conversiones, API, MCP Server, export BigQuery y LENS AI — pregunta a tus datos en lenguaje natural y convierte la respuesta en un informe — están incluidos desde Growth, funcionando con tu propia API key (BYOK: Anthropic, OpenAI, Gemini o DeepSeek). La detección de anomalías por reglas, el forecasting y las oportunidades de crecimiento están en el roadmap, no activos hoy. La única opción por uso es Private AI, nuestro modelo gestionado alojado en la UE y sin API key: add-on de pago en Growth, incluida en Scale y Enterprise (5M tokens/mes), con packs extra de 5M tokens a 358,80€ e instancia dedicada no compartida en Enterprise. Otras diferencias entre planes son volumen de eventos, webhooks y logs de auditoría (desde Scale), governance y soporte." },
-  { question: "¿Qué es el Agentic Package?", answer: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA (Claude Desktop, Codex o cualquier agente compatible con MCP). Tu agente crea la cuenta y genera el píxel — la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes, self-serve con solo documentación y sin tarjeta. Al superar 1M de eventos en un mes, se activa el plan Growth." },
-];
-
 export default function PricingPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Precios" }]} locale="es" />
       <JsonLd data={pricingSchema([
         { name: "Agentic", price: "0", description: "1M eventos humanos/mes · gratis · configurado desde tu asistente de IA" },
         { name: "Growth", price: "499", description: "5M eventos humanos/mes · anual" },
         { name: "Scale", price: "899", description: "15M eventos humanos/mes · anual" },
       ], { locale: "es" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Precios", url: "/es/pricing" }])} />
-
-      <PricingHeroV3Es />
-      <LogosStripEs />
-      <PricingPlansV3 locale="es" />
-      <McpInstaller locale="es" />
-      <AgenticSetupSteps locale="es" />
-      <PlanIncludesV3Es />
-      <TrafficCountingV3Es />
-      <PlanAdaptsV3Es />
-      <FullComparisonV3Es />
-      <PricingFaqV3 locale="es" />
-      <PricingFinalCtaV3Es />
-      <section className="bg-warm-white border-t border-warm-100 py-12">
-        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
-          <QuickAnswer label="Respuesta rápida">
-            <p>
-              El precio de SealMetrics es analítica enterprise con facturación anual, sin sorpresas por uso. El plan Growth son 499€/mes anual (599€/mes mensual) por 5 millones de eventos humanos al mes; el Scale son 899€/mes anual (1.079€/mes mensual) por 15 millones; Enterprise es a medida para portfolios con eventos ilimitados, procesamiento aislado, una Private AI exclusiva no compartida, SLA del 99,9% y account manager dedicado. Todos los planes incluyen la misma arquitectura: 100% de captura, atribución last-click, alojado en Dublín, retención fija de 24 meses, RGPD por diseño y DPA estándar. LENS AI — pregunta a tus datos en lenguaje natural y convierte la respuesta en un informe — está incluida desde Growth y funciona con tu propia API key (BYOK: Anthropic, OpenAI, Gemini o DeepSeek); la detección de anomalías por reglas y el forecasting están en el roadmap. Private AI, el modelo gestionado alojado en la UE que no necesita API key, es un add-on de pago en Growth y viene incluida en Scale y Enterprise (5M tokens/mes), con packs extra de 5M tokens a 358,80€.
-            </p>
-            <p>
-              Para un equipo eCommerce UE con 20K€+/mes en paid media, el plan Growth representa menos del 2,5% del spend en paid — típicamente menos que el coste de una sola decisión mal atribuida. La facturación anual incluye dos meses gratis frente a la mensual. El trial de 14 días pide método de pago al empezar y no cobra nada si cancelas antes de que acabe; el tier Agentic gratuito, aprovisionado desde tu asistente de IA, no pide tarjeta. Sin migración desde GA4 porque corren en paralelo.
-            </p>
-          </QuickAnswer>
-        </div>
-      </section>
+      <JsonLd data={faqPageSchema(pricingSignalFaqItems.es, "/es/pricing")} />
+      <PricingSignal locale="es" />
     </>
   );
 }
