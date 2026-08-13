@@ -8,8 +8,7 @@ import {
   type QualifierState,
 } from "@/components/forms/SignupQualifier";
 import { buildSignupPayload } from "@/lib/signup/payload";
-
-const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/demo-request";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
 
 const FREE_EMAIL_DOMAINS = new Set([
   "gmail.com",
@@ -199,17 +198,13 @@ export function AccessForm() {
       source: typeof window !== "undefined" ? window.location.href : "",
       submittedAt: new Date().toISOString(),
       signup,
+      gdpr,
     };
 
     pushEvent({ event: "demo_access_request", value: 1, email: payload.email });
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitFirstPartyForm("demo_access", payload);
       setStatus({ kind: "success" });
     } catch (err) {
       console.warn("Webhook delivery failed", err);

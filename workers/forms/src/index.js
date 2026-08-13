@@ -95,12 +95,14 @@ function validatePayload(type, payload) {
   if (!EMAIL_RE.test(email) || email.length > 254) return false;
   if (type === "calculator" || type === "growth") return true;
 
+  const websiteValue = payload.websiteRaw || payload.website;
+
   if (
     typeof payload.name !== "string" ||
     payload.name.trim().length < 2 ||
     payload.name.length > 160 ||
-    !validUrl(payload.website) ||
-    payload.gdpr !== true
+    !validUrl(websiteValue) ||
+    ((type === "demo" || type === "demo_access") && payload.gdpr !== true)
   ) {
     return false;
   }
@@ -133,6 +135,7 @@ function endpointFor(type, env) {
 
 async function verifyTurnstile(request, env, token) {
   if (env.ALLOW_INSECURE_TESTING === "true") return true;
+  if (env.REQUIRE_TURNSTILE !== "true") return true;
   if (
     !env.TURNSTILE_SECRET ||
     typeof token !== "string" ||

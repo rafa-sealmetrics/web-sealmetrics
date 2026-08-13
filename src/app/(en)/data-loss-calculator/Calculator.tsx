@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { pushEvent } from "@/lib/analytics";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
 
 /* ===========================================
    Country-specific loss rates
@@ -459,17 +460,13 @@ export function Calculator() {
                                 event: "calculator_report_email",
                                 email: reportEmail,
                               });
-                              await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
-                                method: "POST",
-                                headers: { "Content-Type": "application/json" },
-                                body: JSON.stringify({
-                                  email: reportEmail,
-                                  source: "calculator-report",
-                                  visitors: String(visitors),
-                                  country,
-                                  revenue: String(monthlyRevenue),
-                                  dataLoss: `${Math.round((1 - visibilityRate) * 100)}%`,
-                                }),
+                              await submitFirstPartyForm("calculator", {
+                                email: reportEmail,
+                                source: "calculator-report",
+                                visitors: String(visitors),
+                                country,
+                                revenue: String(monthlyRevenue),
+                                dataLoss: `${Math.round((1 - visibilityRate) * 100)}%`,
                               });
                               setReportSent(true);
                             } catch {

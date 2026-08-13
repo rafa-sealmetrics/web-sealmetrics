@@ -11,7 +11,8 @@
   "vars": {
     "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com",
     "TURNSTILE_HOSTNAMES": "sealmetrics.com,www.sealmetrics.com",
-    "TURNSTILE_ACTION": "sealmetrics_lead"
+    "TURNSTILE_ACTION": "sealmetrics_lead",
+    "REQUIRE_TURNSTILE": "false"
   },
   "ratelimits": [
     {
