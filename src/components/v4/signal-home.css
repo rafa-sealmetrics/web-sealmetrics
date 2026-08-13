@@ -1,6 +1,7 @@
 .sig-signal-home {
   --ink: #111412;
   --acid: #cbff3d;
+  --acid-ink: #4f6900;
   --paper: #f4f1e8;
   --white: #fffdf7;
   --gray: #50554d;
@@ -24,7 +25,7 @@
 .sig-brand-lockup-official { align-items: center; gap: .42em; letter-spacing: -.06em; }
 .sig-brand-mark { width: .72em; height: .82em; flex: 0 0 auto; overflow: visible; }
 .sig-brand-mark-primary { fill: currentColor; }
-.sig-brand-mark-signal { fill: var(--acid); stroke: #a9cdb9; stroke-width: .55; paint-order: stroke fill; }
+.sig-brand-mark-signal { fill: var(--acid); stroke: var(--ink); stroke-width: .8; paint-order: stroke fill; }
 .sig-brand-word { color: currentColor; }
 .sig-brand-lockup-showcase { margin-bottom: 44px; font-size: clamp(52px,7.2vw,106px); letter-spacing: -.09em; }
 .sig-brand-lockup-showcase .sig-brand-metrics { -webkit-text-stroke-width: 1.6px; }

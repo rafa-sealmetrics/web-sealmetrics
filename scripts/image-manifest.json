@@ -3,12 +3,12 @@
   "targets": {
     "public/favicon.avif": {
       "source": "public/favicon.png",
-      "sourceHash": "c75909cc5e97055de784c28ab38ec6ad335f5aafc578fbc37c7b94290bcb012b",
+      "sourceHash": "81290297fca8a80cbe60a6054d5f17cf87cd22f6458eecb728a07fc748e640eb",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/favicon.webp": {
       "source": "public/favicon.png",
-      "sourceHash": "c75909cc5e97055de784c28ab38ec6ad335f5aafc578fbc37c7b94290bcb012b",
+      "sourceHash": "81290297fca8a80cbe60a6054d5f17cf87cd22f6458eecb728a07fc748e640eb",
       "signature": "webp:{\"quality\":78}"
     },
     "public/logos/clients/3cat.avif": {
