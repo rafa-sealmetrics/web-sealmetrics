@@ -16,8 +16,18 @@ be committed:
 
 `ALLOWED_ORIGINS`, `TURNSTILE_HOSTNAMES`, `TURNSTILE_ACTION`, and
 `REQUIRE_TURNSTILE` are non-secret settings in `wrangler.jsonc`. Turnstile is
-implemented but remains disabled until every production form renders the
-challenge; rate limiting and origin validation remain active meanwhile.
+required on every production lead flow. Origin validation and Cloudflare rate
+limiting are also active.
+
+The deployed endpoint is:
+
+`https://sealmetrics-forms.sealmetrics-forms-worker.workers.dev/api/forms`
+
+It is first-party application infrastructure in the sense that the browser
+never sees or calls n8n, although the temporary public hostname is under
+`workers.dev`. `forms.sealmetrics.com` cannot be attached while the
+`sealmetrics.com` DNS zone remains at GoDaddy rather than in this Cloudflare
+account.
 
 ## Deployment sequence
 
@@ -25,10 +35,15 @@ challenge; rate limiting and origin validation remain active meanwhile.
 2. Confirm the target Cloudflare account with `npx wrangler whoami`.
 3. Configure the four secrets above.
 4. Deploy to the generated `workers.dev` hostname and run synthetic tests.
-5. Add `forms.sealmetrics.com` as a Worker custom domain.
-6. Point the static forms at `https://forms.sealmetrics.com/api/forms`.
-7. Add Turnstile to every form and set `REQUIRE_TURNSTILE` to `true`.
+5. Point the static forms at the deployed endpoint above.
+6. Confirm the Turnstile widget allows only `sealmetrics.com` and
+   `www.sealmetrics.com`, then keep `REQUIRE_TURNSTILE` set to `true`.
+7. Confirm all six flows reach the expected mailbox before merging to `main`.
 8. Rotate the n8n webhook paths that were previously present in frontend code.
-9. Confirm all six flows reach the expected mailbox before merging to `main`.
+
+If the DNS zone is moved to this Cloudflare account later, add
+`forms.sealmetrics.com` as a Worker custom domain, update
+`NEXT_PUBLIC_FORMS_ENDPOINT` and the CSP allowlist, rebuild, test all flows,
+and only then retire the `workers.dev` endpoint.
 
 Do not enable `ALLOW_INSECURE_TESTING` outside the automated unit tests.

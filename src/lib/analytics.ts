@@ -9,7 +9,8 @@
 // PRIVACY — SealMetrics is cookieless and GDPR-compliant by architecture.
 // Never send personal data (email, name, phone), order/transaction IDs, or
 // user/customer IDs to the pixel. PII keys are stripped centrally below; the
-// raw email still flows to our first-party n8n webhook, never to the pixel.
+// raw email flows only through the server-side forms relay, never to the pixel
+// or directly from the browser to n8n.
 
 export const SEALMETRICS_ID =
   process.env.NEXT_PUBLIC_SEALMETRICS_ID ?? "sealmetrics2";

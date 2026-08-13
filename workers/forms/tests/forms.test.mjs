@@ -80,3 +80,100 @@ test("a filled honeypot returns success without forwarding", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("accepts a demo-access hostname when websiteRaw contains the URL", async () => {
+  let forwarded = 0;
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    forwarded += 1;
+    return new Response(null, { status: 200 });
+  };
+  try {
+    const response = await worker.fetch(
+      request({
+        type: "demo_access",
+        payload: {
+          name: "Test Lead",
+          email: "test@sealmetrics.com",
+          website: "sealmetrics.com",
+          websiteRaw: "https://sealmetrics.com",
+          gdpr: true,
+        },
+      }),
+      { ...baseEnv, N8N_DEMO_ACCESS_URL: "https://automation.invalid/demo" },
+    );
+    assert.equal(response.status, 200);
+    assert.equal(forwarded, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("requires a Turnstile token in production mode", async () => {
+  const response = await worker.fetch(
+    request({
+      type: "demo",
+      payload: {
+        name: "Test Person",
+        email: "test@example.com",
+        website: "https://example.com",
+        gdpr: true,
+      },
+    }),
+    {
+      ...baseEnv,
+      ALLOW_INSECURE_TESTING: "false",
+      REQUIRE_TURNSTILE: "true",
+      TURNSTILE_SECRET: "test-secret",
+      FORM_RATE_LIMITER: { limit: async () => ({ success: true }) },
+      N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
+    },
+  );
+  assert.equal(response.status, 403);
+  assert.deepEqual(await response.json(), { ok: false, error: "challenge_failed" });
+});
+
+test("validates the Turnstile action and hostname before forwarding", async () => {
+  const originalFetch = globalThis.fetch;
+  const requests = [];
+  globalThis.fetch = async (url) => {
+    requests.push(String(url));
+    if (String(url).includes("siteverify")) {
+      return Response.json({
+        success: true,
+        action: "sealmetrics_lead",
+        hostname: "sealmetrics.com",
+      });
+    }
+    return new Response(null, { status: 204 });
+  };
+
+  try {
+    const response = await worker.fetch(
+      request({
+        type: "demo",
+        payload: {
+          name: "Test Person",
+          email: "test@example.com",
+          website: "https://example.com",
+          gdpr: true,
+        },
+        turnstileToken: "valid-test-token",
+      }),
+      {
+        ...baseEnv,
+        ALLOW_INSECURE_TESTING: "false",
+        REQUIRE_TURNSTILE: "true",
+        TURNSTILE_SECRET: "test-secret",
+        FORM_RATE_LIMITER: { limit: async () => ({ success: true }) },
+        N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
+      },
+    );
+    assert.equal(response.status, 200);
+    assert.equal(requests.length, 2);
+    assert.match(requests[0], /siteverify/);
+    assert.equal(requests[1], "https://automation.invalid/webform");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
