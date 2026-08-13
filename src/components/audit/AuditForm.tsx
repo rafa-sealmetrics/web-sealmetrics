@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
 import {
   SignupQualifier,
   EMPTY_QUALIFIER,
@@ -476,34 +477,10 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
       signup,
     };
 
-    // Existing endpoint (when configured) plus n8n fan-out so n8n can
-    // forward the embedded `signup` to /inbound/signup.
-    const endpoint = process.env.NEXT_PUBLIC_AUDIT_ENDPOINT;
-    if (endpoint) {
-      try {
-        await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-          mode: "cors",
-        });
-      } catch {
-        // Fail silently — the submission was captured client-side.
-      }
-    }
     try {
-      await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitFirstPartyForm("audit", payload);
     } catch {
-      // Webhook is fire-and-forget; ignore failures.
-    }
-    if (!endpoint && typeof window !== "undefined") {
-      // eslint-disable-next-line no-console
-      console.log("[SealMetrics audit submission]", payload);
+      // Keep the result visible; the UI can offer a retry without exposing n8n.
     }
 
     setScoreTier(tier);

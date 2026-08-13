@@ -1,12 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
 import { micro } from "@/lib/analytics";
-
-// Dedicated careers webhook — do NOT reuse webform-lead: that workflow parses
-// lead payloads only (email/name/answers) and would drop careers submissions.
-// The n8n workflow behind this path must email hello@sealmetrics.com.
-const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/careers-application";
 
 type Locale = "en" | "es";
 
@@ -201,12 +197,7 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
     micro("form_submit", { form: "careers", team });
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitFirstPartyForm("careers", payload);
     } catch (err) {
       console.warn("Webhook delivery failed, continuing", err);
     }

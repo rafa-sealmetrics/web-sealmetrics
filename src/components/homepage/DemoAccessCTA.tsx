@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { type QuizAnswers } from "@/lib/content/diagnostic";
 import { pushEvent } from "@/lib/analytics";
 import { buildSignupPayload } from "@/lib/signup/payload";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
 
 interface DemoAccessCTAProps {
   answers: QuizAnswers;
@@ -44,17 +45,13 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
     });
 
     try {
-      await fetch("https://n8n.sealmetrics.com/webhook/webform-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          company: company.trim(),
-          source: "diagnostic_demo_access",
-          quiz_answers: answers,
-          signup,
-        }),
+      await submitFirstPartyForm("growth", {
+        name: name.trim(),
+        email: email.trim(),
+        company: company.trim(),
+        source: "diagnostic_demo_access",
+        quiz_answers: answers,
+        signup,
       });
       setStatus("success");
     } catch {

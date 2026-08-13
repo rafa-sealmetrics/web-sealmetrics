@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { scoreAnswers, type DemoAnswers } from "@/lib/demo-scoring";
 import { pushEvent } from "@/lib/analytics";
+import { submitFirstPartyForm } from "@/lib/forms/submit";
 import {
   SignupQualifier,
   EMPTY_QUALIFIER,
@@ -14,8 +15,6 @@ import {
   type AdsSpendEnum,
   type SectorEnum,
 } from "@/lib/signup/payload";
-
-const WEBHOOK_URL = "https://n8n.sealmetrics.com/webhook/webform-lead";
 
 function mapBusinessToSector(business?: string): SectorEnum | "" {
   if (business === "ecommerce") return "ecom";
@@ -201,17 +200,13 @@ export function DemoFormEs() {
       answers,
       score: { raw, normalized, tier },
       signup,
+      gdpr,
     };
 
     pushEvent({ event: "demo_request", value: 1, email });
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await submitFirstPartyForm("demo", payload);
     } catch (err) {
       console.warn("Webhook delivery failed, continuing", err);
     }

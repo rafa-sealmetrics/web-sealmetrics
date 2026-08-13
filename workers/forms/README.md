@@ -14,9 +14,10 @@ be committed:
 - `N8N_CAREERS_URL`
 - `TURNSTILE_SECRET`
 
-`ALLOWED_ORIGINS`, `TURNSTILE_HOSTNAMES`, and `TURNSTILE_ACTION` are non-secret
-settings in `wrangler.jsonc`. Production uses the Turnstile action
-`sealmetrics_lead`.
+`ALLOWED_ORIGINS`, `TURNSTILE_HOSTNAMES`, `TURNSTILE_ACTION`, and
+`REQUIRE_TURNSTILE` are non-secret settings in `wrangler.jsonc`. Turnstile is
+implemented but remains disabled until every production form renders the
+challenge; rate limiting and origin validation remain active meanwhile.
 
 ## Deployment sequence
 
@@ -26,7 +27,8 @@ settings in `wrangler.jsonc`. Production uses the Turnstile action
 4. Deploy to the generated `workers.dev` hostname and run synthetic tests.
 5. Add `forms.sealmetrics.com` as a Worker custom domain.
 6. Point the static forms at `https://forms.sealmetrics.com/api/forms`.
-7. Rotate the n8n webhook paths that were previously present in frontend code.
-8. Confirm all six flows reach the expected mailbox before merging to `main`.
+7. Add Turnstile to every form and set `REQUIRE_TURNSTILE` to `true`.
+8. Rotate the n8n webhook paths that were previously present in frontend code.
+9. Confirm all six flows reach the expected mailbox before merging to `main`.
 
 Do not enable `ALLOW_INSECURE_TESTING` outside the automated unit tests.
