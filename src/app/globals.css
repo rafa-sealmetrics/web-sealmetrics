@@ -10,6 +10,7 @@
   --color-paper: #F4F1E8;
   --color-paper-white: #FFFDF7;
   --color-acid: #CBFF3D;
+  --color-acid-ink: #4F6900;
   --color-signal-ink: #111412;
   --color-hairline: rgba(17, 20, 18, 0.25);
   --shadow-hard: 3px 3px 0 #111412;
@@ -117,9 +118,10 @@ body {
    ============================================ */
 
 :focus-visible {
-  outline: 3px solid var(--color-acid);
+  outline: 3px solid var(--color-signal-ink);
   outline-offset: 3px;
   border-radius: 0;
+  box-shadow: 0 0 0 5px var(--color-acid);
 }
 
 .skip-to-content {

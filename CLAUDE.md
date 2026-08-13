@@ -22,7 +22,7 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - **Ink** `#111412` for dark slabs, header rules and the footer
 - **Border radius: 0 everywhere.** No rounded cards, no pills, no rounded chips. A rounded corner is the tell that a page has not been migrated
 - **Depth is a hard offset shadow, never a blur**: `shadow-hard` (3px 3px 0 ink), `shadow-slab` (20px 20px 0 acid). Buttons lift with `translate(-2px,-2px)` on hover
-- **Acid** (`color-acid: #CBFF3D`) is the accent: primary CTA fill, eyebrow chips (ink background + acid text), live indicators, slab shadows. Replaces brand green and amber as the attention colour
+- **Acid** (`color-acid: #CBFF3D`) is the accent: primary CTA fill, eyebrow chips (ink background + acid text), live indicators, slab shadows. Replaces brand green and amber as the attention colour. Never use it as text on paper: use `color-acid-ink: #4F6900` there (5.55:1 on paper); keep bright acid for dark backgrounds and filled surfaces
 - **Emphasis in H1/H2 is outlined text**, not italic: `color: transparent; -webkit-text-stroke: 1.5px currentColor`. The v3 italic + amber highlight is retired
 - **Type**: headlines weight 790, `text-display` clamp(62px,7.2vw,112px) / line-height .84 / tracking -.075em. Body 400. Eyebrows and data in JetBrains Mono 650, 10px, tracking .12em, uppercase
 - **Fonts unchanged**: Onest (headlines + body), JetBrains Mono (data, eyebrows)
