@@ -74,11 +74,14 @@ These counts include both native and shared Signal-adapted routes.
 
 - Production-style static build: **265 routes generated**.
 - Indexable routes, sitemap entries and Markdown twins: **237 / 237 / 237**.
-- Repository tests: **57 / 57 passed**.
+- Repository, tracking and forms-proxy tests: **70 / 70 passed**.
 - SEO, metadata, structured data, Markdown, knowledge, llms.txt and CSP audits: **0 violations**.
 - Signal design build gate verifies every sitemap route for the v4 marker, one H1, restored repository brand and square-geometry layer.
 - First-party forms, tracking and calculators were not replaced or redirected to browser-visible n8n endpoints.
+- Every public lead flow is now covered by an automated gate requiring the first-party relay and a Turnstile token.
+- The deployed forms relay passed its health check, accepted CORS from `https://sealmetrics.com`, and rejected a valid-looking lead without Turnstile before any n8n forwarding.
+- The SealMetrics tracker is present at runtime as `https://pixel-pre.sealmetrics.com/t.js?id=sealmetrics2`, with no browser console errors in the representative page check. Exported trailing-slash URLs are classified correctly in EN and ES (`product`, `pricing`, `case-studies`) instead of falling back to `other`.
 
 ## Pending before deployment
 
-There are no missing URLs in the design coverage. The remaining mandatory step is stakeholder review in localhost across representative desktop and mobile pages. Any visual or copy corrections found during that review should be resolved before merging. Deployment remains blocked until explicit approval.
+There are no missing URLs in the design coverage. The remaining mandatory steps are stakeholder review in localhost across representative desktop and mobile pages, followed by one real hosted submission for each of the six form types so Turnstile, the relay, n8n and mailbox delivery are verified together. Any visual or copy corrections found during review should be resolved before merging. Deployment remains blocked until explicit approval.
