@@ -208,9 +208,9 @@ function toMarkdown(html) {
 /* --------------------------------------------------------------- extraction */
 
 function mainContent(html) {
-  const start = html.indexOf('<main id="main-content">');
-  if (start === -1) return null;
-  const from = start + '<main id="main-content">'.length;
+  const opening = html.match(/<main\b[^>]*\bid="main-content"[^>]*>/i);
+  if (!opening || opening.index == null) return null;
+  const from = opening.index + opening[0].length;
   const end = html.lastIndexOf("</main>");
   if (end <= from) return null;
   return html.slice(from, end);

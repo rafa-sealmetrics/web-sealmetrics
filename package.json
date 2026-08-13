@@ -7,7 +7,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/optimize-images.mjs",
     "build": "next build",
-    "postbuild": "node scripts/build-404.mjs && node scripts/generate-markdown.mjs && node scripts/prepare-llms-txt.mjs && node scripts/audit-markdown.mjs && node scripts/audit-knowledge.mjs && node scripts/audit-llms-txt.mjs && node scripts/audit-csp.mjs && node scripts/seo-audit.mjs",
+    "postbuild": "node scripts/build-404.mjs && node scripts/generate-markdown.mjs && node scripts/prepare-llms-txt.mjs && node scripts/audit-markdown.mjs && node scripts/audit-knowledge.mjs && node scripts/audit-llms-txt.mjs && node scripts/audit-csp.mjs && node scripts/seo-audit.mjs && node scripts/audit-signal-design.mjs",
     "test": "node --test 'tests/**/*.test.mjs'",
     "seo:audit": "node scripts/seo-audit.mjs",
     "start": "next start",
