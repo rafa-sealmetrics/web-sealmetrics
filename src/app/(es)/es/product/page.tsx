@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { TldrBlock } from "@/components/ui/TldrBlock";
 import { softwareApplicationSchema, breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
-import {
-  ProductHeroV3Es,
-  ProblemNarrativeV3Es,
-  FourPillarsV3Es,
-  FeatureLensAIV3Es,
-  FeatureAttributionV3Es,
-  FeatureSuperAPIV3Es,
-  NineReportsV3Es,
-  IntegrationsStripV3Es,
-  ProductProofV3Es,
-  ProductFinalCtaV3Es,
-} from "@/components/sections/v3/ProductV3SectionsEs";
+import { ProductSignal } from "@/components/v4/ProductSignal";
+import "@/components/v4/product-signal.css";
 
 export const metadata: Metadata = {
   title: "Producto — SealMetrics · Analítica completa",
@@ -48,33 +35,10 @@ export const metadata: Metadata = {
 export default function ProductPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Producto" }]} locale="es" />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Producto", url: "/es/product" }])} />
       <JsonLd data={speakableWebPageSchema({ url: "/es/product", name: "Producto — SealMetrics" })} />
-
-      <ProductHeroV3Es />
-      <ProblemNarrativeV3Es />
-      <TldrBlock
-        label="En resumen"
-        answer={
-          <>SealMetrics es una <strong>plataforma de analítica first-party sin cookies</strong> para equipos eCommerce europeos. Captura el 100% del tráfico sin banner de consentimiento, atribuye ingresos last-click sobre datos completos y te deja preguntar a ese dato en lenguaje natural con LENS AI — todo alojado en Dublín bajo RGPD por arquitectura.</>
-        }
-        bullets={[
-          <>Cuatro capas: Captura (sin consentimiento) · Atribución (last-click, 100% datos) · Comprensión (LENS AI) · Activación (API + MCP + BigQuery).</>,
-          <>Reemplaza o complementa GA4, GA360 y Adobe Analytics para equipos europeos regulados.</>,
-          <>Alojado en UE (Dublín), cero dato personal almacenado, DPA + TPSR incluidos.</>,
-        ]}
-      />
-      <LogosStripEs />
-      <FourPillarsV3Es />
-      <FeatureLensAIV3Es />
-      <FeatureAttributionV3Es />
-      <FeatureSuperAPIV3Es />
-      <NineReportsV3Es />
-      <IntegrationsStripV3Es />
-      <ProductProofV3Es />
-      <ProductFinalCtaV3Es />
+      <ProductSignal locale="es" />
     </>
   );
 }

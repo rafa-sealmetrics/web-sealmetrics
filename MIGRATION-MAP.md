@@ -1,0 +1,41 @@
+# Signal v4 migration map
+
+This file is the operational record for porting the current website to the Signal design system. A route is complete only when its content remains structured as real React components, its English and Spanish versions have been reviewed together, and the full static build passes.
+
+## Definition of done
+
+- Signal v4 visual language: paper, ink, acid, square geometry and hard shadows.
+- No scraped or flattened page content; tables, reports, forms and interactive elements keep their semantic structure.
+- Exactly one H1, correct heading order and visible breadcrumbs outside the homepage.
+- Complete page metadata, Twitter metadata, canonical/hreflang and appropriate JSON-LD.
+- Contextual internal links follow `SEO-STRATEGY.md`.
+- Desktop and mobile review with no horizontal overflow or console errors.
+- `npm run build` passes every post-build audit.
+
+## Route status
+
+| Block | English | Spanish | Status | Notes |
+| --- | --- | --- | --- | --- |
+| Global shell | Shared | Shared | Complete | Signal header/footer and common layout are in place. |
+| Forms security | Shared | Shared | Complete | First-party proxy, Turnstile and tracking protections are on `main`. |
+| Homepage | `/` | `/es/` | Partial | English Signal work exists; Spanish parity is still pending. |
+| Product | `/product/` | `/es/product/` | Complete in PR | Real bilingual React component, Signal styling, metadata and schemas validated. |
+| How it works | `/how-it-works/` | `/es/how-it-works/` | Pending | Next pillar block. |
+| Pricing | `/pricing/` | `/es/pricing/` | Pending | Preserve the pricing comparison as a real table/grid. |
+| Security | `/security/` | `/es/security/` | Pending | Port claims carefully; Dublin-only hosting and no unearned certifications. |
+| Comparison pages | `/vs/*` | `/es/vs/*` | Pending | Port by page type and retain comparison interlinking. |
+| Case studies | `/case-studies/*` | `/es/case-studies/*` | Pending | Keep approved named customers and published figures. |
+| Solution/platform pages | Multiple | Multiple | Pending | Port reusable page families without flattening content. |
+| Editorial content | Blog and glossary | Blog and glossary | Pending | Preserve Article/DefinedTerm schemas and content hierarchy. |
+| Conversion routes | Demo, audit, calculators | Spanish counterparts | Pending visually | Working form logic must be reused unchanged. |
+
+## Recommended sequence
+
+1. Product — complete in the redesign PR.
+2. How it works.
+3. Pricing.
+4. Security.
+5. Case studies and comparisons.
+6. Remaining commercial page families.
+7. Blog and glossary templates, followed by route-level content review.
+8. Final route inventory, asset audit, link crawl and production cutover rehearsal.

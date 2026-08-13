@@ -12,24 +12,27 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 - Fonts: **Onest** (headlines + body), JetBrains Mono (data)
 - No additional JS libraries (no Framer Motion, no animation libs)
 
-## Design System Rules (v3 — Editorial Authority)
+## Design System Rules (v4 — Signal)
 
-- **Light mode default** · warm cream background `#FAFAF7` · alternate `bg-warm-white` and `bg-white` between sections
-- **Two dark slabs allowed per page** (typically: featured case study, final CTA or pricing) — `bg-ink` (#0E0E0C)
-- **Footer** — `bg-warm-900` (#0E0E0C), warm near-black
-- **Border radius**: up to 4px for inputs, 10–16px for cards, 20–24px for hero/case slabs, pills (999px) for chips and announcement tags
-- **Font weight**: headlines 600, italic emphasis 500, body 400, data chips 600 mono
-- **Italic emphasis** on key phrases in H1/H2 with subtle amber highlight underneath (`color-amber-soft`)
+> Canonical source is this file. Keep `AGENTS.md` in sync — the stale v3 copy previously reintroduced retired rules.
+
+Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and must not be deleted** until the last page is migrated — see `MIGRATION-MAP.md`. New and ported pages use v4 only.
+
+- **Light mode default** · paper background `#F4F1E8` (`bg-paper`) · alternate with `bg-paper-white` (#FFFDF7) between sections
+- **Ink** `#111412` for dark slabs, header rules and the footer
+- **Border radius: 0 everywhere.** No rounded cards, no pills, no rounded chips. A rounded corner is the tell that a page has not been migrated
+- **Depth is a hard offset shadow, never a blur**: `shadow-hard` (3px 3px 0 ink), `shadow-slab` (20px 20px 0 acid). Buttons lift with `translate(-2px,-2px)` on hover
+- **Acid** (`color-acid: #CBFF3D`) is the accent: primary CTA fill, eyebrow chips (ink background + acid text), live indicators, slab shadows. Replaces brand green and amber as the attention colour
+- **Emphasis in H1/H2 is outlined text**, not italic: `color: transparent; -webkit-text-stroke: 1.5px currentColor`. The v3 italic + amber highlight is retired
+- **Type**: headlines weight 790, `text-display` clamp(62px,7.2vw,112px) / line-height .84 / tracking -.075em. Body 400. Eyebrows and data in JetBrains Mono 650, 10px, tracking .12em, uppercase
+- **Fonts unchanged**: Onest (headlines + body), JetBrains Mono (data, eyebrows)
+- **Hairline rules** `--color-hairline` separate sections — 1px solid, never a shadow
+- **Grid overlay** allowed on hero only: 64px grid at opacity .16, masked to fade horizontally
 - **Bullets**: dashes (—), never dots or icons
 - **No emojis, ever**
-- **Decorative gradients**: allowed as subtle `radial-gradient` (opacity ≤0.35) inside dark slabs only (case study, pricing, final CTA)
 - Icons: minimal, SVG line style only
-- **Brand accent** (`color-brand: #2D8B6D`) for positive indicators, deltas, link color
-- **Amber** (`color-amber: #E8B84B`) for highlight behind italic emphasis, positive deltas inside dark slabs
-- **Red alert** (`color-red-alert: #B5423B`) for negative data, anomalies, urgency
-- **Blue quote** (`color-quote: #2E5C8A`) for editorial pull-quote left-border
-- Sections separated by `border-t border-warm-100`
-- Case studies currently anonymized (e.g. "European hotel group" instead of "Grupo Palladium") until explicit client OK to de-anonymize
+- **Green and amber survive as data semantics only** — positive delta, warning — never as emphasis or CTA. **Red alert** `#B5423B` for negative data. **Blue quote** `#2E5C8A` for pull-quote left border
+- **Case studies are named, not anonymized.** Palladium Hotel Group (Toni Andújar) and Dreamplace Hotels are approved by name with their published figures. Do not re-anonymize them and do not introduce a new client name that is not already approved
 
 ## Content rules — DO NOT include
 
@@ -101,7 +104,7 @@ SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-li
 
 ## Copywriting Rules
 
-- Language: English only (i18n planned for later)
+- Language: English by default. When an `/es/*` counterpart exists or is requested, ship the English and Spanish pages together with native editorial copy — never a literal machine translation
 - Tone: authoritative, precise, editorial — not startup-casual, not corporate-boring
 - Never use superlatives without data ("the best" → "captures 100%")
 - Pain before solution — state the problem before presenting the answer

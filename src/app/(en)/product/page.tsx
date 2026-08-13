@@ -1,23 +1,9 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { TldrBlock } from "@/components/ui/TldrBlock";
 import { softwareApplicationSchema, breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
-import {
-  ProductHeroV3,
-  ProblemNarrativeV3,
-  FourPillarsV3,
-  FeatureLensAIV3,
-  FeaturePrivateAIV3,
-  FeatureAttributionV3,
-  FeatureSuperAPIV3,
-  NineReportsV3,
-  IntegrationsStripV3,
-  ProductProofV3,
-  ProductFinalCtaV3,
-} from "@/components/sections/v3/ProductV3Sections";
+import { ProductSignal } from "@/components/v4/ProductSignal";
+import "@/components/v4/product-signal.css";
 
 export const metadata: Metadata = {
   title: "Product — SealMetrics · Complete analytics, no compromises",
@@ -49,33 +35,10 @@ export const metadata: Metadata = {
 export default function ProductPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Product" }]} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Product", url: "/product" }])} />
       <JsonLd data={speakableWebPageSchema({ url: "/product", name: "Product — SealMetrics" })} />
-
-      <ProductHeroV3 />
-      <ProblemNarrativeV3 />
-      <TldrBlock
-        answer={
-          <>SealMetrics is a <strong>cookieless, first-party analytics platform</strong> for European eCommerce teams. It captures 100% of traffic without consent banners, attributes revenue last-click on complete data, and lets you ask that data questions in plain language with LENS AI — all hosted in Dublin under GDPR-by-architecture.</>
-        }
-        bullets={[
-          <>Four layers: Capture (consentless) · Attribute (last-click, 100% data) · Understand (LENS AI) · Activate (API + MCP + BigQuery).</>,
-          <>Replaces or complements GA4, GA360 and Adobe Analytics for EU-regulated teams.</>,
-          <>EU-hosted in Dublin, zero personal data stored, DPA + TPSR included.</>,
-        ]}
-      />
-      <LogosStrip />
-      <FourPillarsV3 />
-      <FeatureLensAIV3 />
-      <FeaturePrivateAIV3 />
-      <FeatureAttributionV3 />
-      <FeatureSuperAPIV3 />
-      <NineReportsV3 />
-      <IntegrationsStripV3 />
-      <ProductProofV3 />
-      <ProductFinalCtaV3 />
+      <ProductSignal locale="en" />
     </>
   );
 }
