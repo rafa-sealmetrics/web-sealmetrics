@@ -72,19 +72,31 @@
 .sig-pricing-included-grid span { color:var(--acid); font:650 9px/1.4 var(--font-jetbrains-mono),monospace; }
 .sig-pricing-included-grid p { margin-top:46px!important; font-size:15px; font-weight:650; line-height:1.35; }
 
-.sig-pricing-table-wrap { overflow-x:auto; border:1px solid var(--ink); }
+.sig-pricing-table-label { display:flex; justify-content:space-between; gap:24px; padding:13px 16px; border:1px solid var(--ink); border-bottom:0; background:var(--ink); color:var(--white); font:650 9px/1.4 var(--font-jetbrains-mono),monospace; letter-spacing:.09em; text-transform:uppercase; }
+.sig-pricing-table-label span:last-child { color:var(--acid); }
+.sig-pricing-table-wrap { overflow-x:auto; border:1px solid var(--ink); background:var(--white); box-shadow:8px 8px 0 var(--ink); }
 .sig-pricing-table-wrap table { width:100%; min-width:760px; border-collapse:collapse; }
-.sig-pricing-table-wrap th,.sig-pricing-table-wrap td { padding:20px; border-right:1px solid var(--ink); border-bottom:1px solid var(--ink); text-align:left; }
+.sig-pricing-table-wrap th,.sig-pricing-table-wrap td { padding:20px; border-right:1px solid rgba(17,20,18,.32); border-bottom:1px solid rgba(17,20,18,.24); text-align:left; }
 .sig-pricing-table-wrap tr > *:last-child { border-right:0; }
 .sig-pricing-table-wrap tbody tr:last-child > * { border-bottom:0; }
-.sig-pricing-table-wrap thead th { background:var(--ink); color:var(--acid); font:650 9px/1.5 var(--font-jetbrains-mono),monospace; letter-spacing:.08em; text-transform:uppercase; }
+.sig-pricing-table-wrap thead th { height:82px; background:var(--ink); color:var(--acid); font:650 11px/1.35 var(--font-jetbrains-mono),monospace; letter-spacing:.08em; text-transform:uppercase; vertical-align:bottom; }
 .sig-pricing-table-wrap tbody th { font-size:14px; font-weight:720; }
 .sig-pricing-table-wrap td { color:var(--muted); font-size:13px; line-height:1.5; }
+.sig-pricing-table-wrap tbody tr:not(.sig-pricing-category):nth-child(odd) > * { background:rgba(244,241,232,.5); }
+.sig-pricing-table-wrap tbody tr:not(.sig-pricing-category):hover > * { background:#eefbc9; }
+.sig-pricing-table-note { max-width:880px; margin-top:28px!important; color:var(--muted); font:650 10px/1.65 var(--font-jetbrains-mono),monospace; letter-spacing:.04em; text-transform:uppercase; }
 .sig-pricing-comparison-table table { min-width:980px; }
 .sig-pricing-comparison-table thead th:not(:first-child),.sig-pricing-comparison-table td { text-align:center; }
 .sig-pricing-comparison-table thead th:first-child,.sig-pricing-comparison-table tbody th { width:33%; }
-.sig-pricing-comparison-table thead small { display:block; margin-top:5px; color:var(--white); }
-.sig-pricing-category th { background:var(--acid); color:var(--ink); font:650 10px/1.4 var(--font-jetbrains-mono),monospace; letter-spacing:.1em; text-transform:uppercase; }
+.sig-pricing-comparison-table thead small { display:block; margin-top:8px; color:rgba(255,253,247,.6); font-size:8px; letter-spacing:.06em; }
+.sig-pricing-comparison-table thead .sig-pricing-reference { position:relative; background:var(--acid); color:var(--ink); }
+.sig-pricing-comparison-table thead .sig-pricing-reference::before { position:absolute; top:-8px; right:-1px; left:-1px; height:8px; background:var(--acid); content:""; }
+.sig-pricing-comparison-table thead .sig-pricing-reference small { color:var(--acid-ink); }
+.sig-pricing-comparison-table tbody tr:not(.sig-pricing-category) > *:nth-child(4) { background:rgba(203,255,61,.16); box-shadow:inset 1px 0 0 var(--ink),inset -1px 0 0 var(--ink); }
+.sig-pricing-comparison-table tbody tr:not(.sig-pricing-category):hover > *:nth-child(4) { background:var(--acid); }
+.sig-pricing-category th { padding:14px 18px; background:var(--ink)!important; color:var(--acid); font:650 10px/1.4 var(--font-jetbrains-mono),monospace; letter-spacing:.1em; text-transform:uppercase; }
+.sig-pricing-category th span { display:inline-flex; align-items:center; gap:10px; }
+.sig-pricing-category th span::before { width:8px; height:8px; background:var(--acid); content:""; }
 .sig-pricing-yes { display:inline-block; padding:6px 8px; background:var(--acid); color:var(--ink); font:650 8px/1 var(--font-jetbrains-mono),monospace; letter-spacing:.05em; text-transform:uppercase; }
 .sig-pricing-no { color:#92978e; }
 
