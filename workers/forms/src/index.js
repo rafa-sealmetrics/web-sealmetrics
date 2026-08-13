@@ -109,7 +109,7 @@ function validatePayload(type, payload) {
 
   if (type === "demo_access") {
     const emailDomain = email.toLowerCase().split("@")[1];
-    const webDomain = new URL(payload.website)
+    const webDomain = new URL(websiteValue)
       .hostname.toLowerCase()
       .replace(/^www\./, "");
     if (

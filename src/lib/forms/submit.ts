@@ -8,7 +8,7 @@ export type FirstPartyFormType =
 
 const FORMS_ENDPOINT =
   process.env.NEXT_PUBLIC_FORMS_ENDPOINT ??
-  "https://forms.sealmetrics.com/api/forms";
+  "https://sealmetrics-forms.sealmetrics-forms-worker.workers.dev/api/forms";
 
 export async function submitFirstPartyForm(
   type: FirstPartyFormType,
