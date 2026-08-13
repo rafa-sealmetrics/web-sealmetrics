@@ -120,6 +120,30 @@
 .sig-pricing-final h2 { max-width:1100px; }
 .sig-pricing-final > p:not(.sig-pricing-tag) { max-width:760px; margin-top:34px!important; font-size:17px; line-height:1.62; }
 
+/* Readability pass: operational labels are information, not ornament. */
+.sig-pricing-breadcrumbs,
+.sig-pricing-eyebrow,
+.sig-pricing-tag { font-size:12px; letter-spacing:.08em; }
+.sig-pricing-micro,
+.sig-pricing-module-top,
+.sig-pricing-board > div > span,
+.sig-pricing-board > p { font-size:11px; letter-spacing:.05em; }
+.sig-pricing-board > div > span,
+.sig-pricing-board > p { color:rgba(255,253,247,.7); }
+.sig-pricing-billing button span { margin-top:6px; font-size:11px; line-height:1.15; }
+.sig-pricing-chosen { top:-34px; font-size:11px; letter-spacing:.06em; }
+.sig-pricing-price small { min-height:32px; font-size:11px; }
+.sig-pricing-events { font-size:12px; }
+.sig-pricing-included-grid span { font-size:11px; }
+.sig-pricing-table-label { padding-block:14px; font-size:11px; letter-spacing:.06em; }
+.sig-pricing-table-wrap thead th { height:88px; font-size:13px; letter-spacing:.05em; }
+.sig-pricing-table-wrap td { font-size:14px; }
+.sig-pricing-table-note { max-width:920px; font-size:12px; letter-spacing:.025em; }
+.sig-pricing-comparison-table thead small { color:rgba(255,253,247,.7); font-size:11px; }
+.sig-pricing-category th { padding-block:15px; font-size:12px; letter-spacing:.07em; }
+.sig-pricing-yes { padding:7px 9px; font-size:11px; }
+.sig-pricing-faq-list summary span { font-size:12px; letter-spacing:.07em; }
+
 @media (max-width:1100px) { .sig-pricing-hero { grid-template-columns:1fr; min-height:0; }.sig-pricing-board{max-width:720px}.sig-pricing-section-head{grid-template-columns:1fr}.sig-pricing-section-head>p{max-width:700px}.sig-pricing-plan-grid{grid-template-columns:repeat(2,1fr)}.sig-pricing-included-grid,.sig-pricing-policy-grid{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:720px) { .sig-pricing-page{padding-top:66px}.sig-pricing-hero,.sig-pricing-plans,.sig-pricing-included,.sig-pricing-traffic,.sig-pricing-comparison,.sig-pricing-policy,.sig-pricing-faq,.sig-pricing-final{padding-inline:20px}.sig-pricing-hero{gap:56px;padding-block:24px 72px}.sig-pricing-breadcrumbs{margin-bottom:34px}.sig-pricing-hero h1{font-size:clamp(48px,15vw,70px)}.sig-pricing-page h2{font-size:clamp(44px,13vw,66px)}.sig-pricing-board{margin-right:10px;box-shadow:10px 10px 0 var(--acid)}.sig-pricing-billing{width:100%;margin-left:0}.sig-pricing-billing button{flex:1}.sig-pricing-plan-grid,.sig-pricing-included-grid,.sig-pricing-policy-grid{grid-template-columns:1fr}.sig-pricing-plan-grid article{min-height:590px}.sig-pricing-plan-featured{margin-bottom:10px}.sig-pricing-faq-list summary{grid-template-columns:36px 1fr 24px;gap:10px;padding-inline:4px}.sig-pricing-faq-list details>p{padding:0 34px 26px 50px} }
 @media (prefers-reduced-motion:reduce){.sig-pricing-button{transition:none}}
