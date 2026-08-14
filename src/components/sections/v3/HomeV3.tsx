@@ -56,7 +56,7 @@ export function ValueProp4Min() {
     <section className="bg-ink text-white py-14 border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 grid md:grid-cols-[1fr_auto] gap-7 md:gap-12 items-center">
         <div>
-          <span className="inline-block bg-brand text-white font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
+          <span className="inline-block bg-brand text-ink font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
             4-minute demo
           </span>
           <p
@@ -926,7 +926,7 @@ export function PricingPLG({ locale = "en" }: { locale?: "en" | "es" }) {
               }`}
             >
               {p.featured && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-ink font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
                   {c.mostPopular}
                 </span>
               )}

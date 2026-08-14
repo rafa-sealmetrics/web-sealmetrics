@@ -351,7 +351,7 @@ export function PricingV3Es() {
             <article key={p.name} className={`rounded-xl p-8 flex flex-col bg-white ${p.featured ? "border-2 border-brand" : "border border-warm-100"}`}>
               <header className="pb-5 border-b border-warm-100 mb-5">
                 {p.featured && (
-                  <span className="inline-block mb-2.5 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
+                  <span className="inline-block mb-2.5 bg-brand text-ink font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md">
                     La mayoría de eCommerce eligen este
                   </span>
                 )}

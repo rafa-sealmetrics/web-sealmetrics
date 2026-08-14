@@ -215,7 +215,7 @@ export function PricingPlansV3({ locale = "en" }: { locale?: Locale }) {
                 className={`font-mono text-[10px] font-semibold uppercase tracking-[0.08em] px-1.5 py-0.5 rounded ${
                   billing === "annual"
                     ? "bg-amber text-ink"
-                    : "bg-brand text-white"
+                    : "bg-brand text-ink"
                 }`}
                 style={
                   billing === "annual" ? { backgroundColor: "#E8B84B" } : undefined
@@ -247,7 +247,7 @@ export function PricingPlansV3({ locale = "en" }: { locale?: Locale }) {
               >
                 {plan.featured && (
                   <span
-                    className="absolute -top-3 left-6 bg-brand text-white font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md"
+                    className="absolute -top-3 left-6 bg-brand text-ink font-mono text-[10.5px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-md"
                   >
                     {t.mostPopular}
                   </span>
