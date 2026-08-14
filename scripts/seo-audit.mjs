@@ -242,6 +242,28 @@ for (const p of pages) {
   }
 }
 
+// Internal page URLs in JSON-LD must use the same trailing-slash convention
+// as canonicals and the sitemap. Assets keep their filenames unchanged.
+const SCHEMA_ASSET = /\/[^/]+\.[a-z0-9]+$/i;
+function visitSchemaStrings(value, visit) {
+  if (typeof value === "string") visit(value);
+  else if (Array.isArray(value)) value.forEach((child) => visitSchemaStrings(child, visit));
+  else if (value && typeof value === "object") {
+    Object.values(value).forEach((child) => visitSchemaStrings(child, visit));
+  }
+}
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    visitSchemaStrings(schema, (value) => {
+      if (!value.startsWith(`${SITE}/`)) return;
+      const url = new URL(value);
+      if (!url.pathname.endsWith("/") && !SCHEMA_ASSET.test(url.pathname)) {
+        fail("schema-url-no-trailing-slash", `${p.route} → ${value}`);
+      }
+    });
+  }
+}
+
 // 11. FAQPage schema must correspond to questions visible on the page.
 //     Google's structured data policy requires it, and an AI engine cannot
 //     cite a passage that only exists inside a script tag.
