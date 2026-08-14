@@ -6,16 +6,36 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "out");
 const sitemap = readFileSync(path.join(out, "sitemap.xml"), "utf8");
-const routes = [...sitemap.matchAll(/<loc>https:\/\/sealmetrics\.com([^<]*)<\/loc>/g)].map(match => match[1] || "/");
+const sitemapRoutes = [...sitemap.matchAll(/<loc>https:\/\/sealmetrics\.com([^<]*)<\/loc>/g)].map(match => match[1] || "/");
 const failures = [];
+
+function exportedRoutes(directory, relative = "") {
+  return readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    if (!entry.isDirectory()) return [];
+    const childRelative = path.join(relative, entry.name);
+    const childDirectory = path.join(directory, entry.name);
+    const ownRoute = existsSync(path.join(childDirectory, "index.html"))
+      ? [`/${childRelative.replaceAll(path.sep, "/")}/`]
+      : [];
+    return [...ownRoute, ...exportedRoutes(childDirectory, childRelative)];
+  });
+}
+
+const routes = [
+  ...(existsSync(path.join(out, "index.html")) ? ["/"] : []),
+  ...exportedRoutes(out),
+];
+
+for (const route of sitemapRoutes) {
+  const relative = route === "/" ? "index.html" : `${route.replace(/^\//, "")}index.html`;
+  if (!existsSync(path.join(out, relative))) {
+    failures.push(`${route}: sitemap route output HTML missing`);
+  }
+}
 
 for (const route of routes) {
   const relative = route === "/" ? "index.html" : `${route.replace(/^\//, "")}index.html`;
   const file = path.join(out, relative);
-  if (!existsSync(file)) {
-    failures.push(`${route}: output HTML missing`);
-    continue;
-  }
   const html = readFileSync(file, "utf8");
   const h1 = (html.match(/<h1\b/g) || []).length;
   if (!html.includes('data-design-system="signal-v4"')) failures.push(`${route}: Signal v4 marker missing`);
@@ -42,4 +62,6 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[audit-signal-design] ${routes.length} sitemap routes · Signal marker, one H1, repository brand and square geometry verified.`);
+console.log(
+  `[audit-signal-design] ${routes.length} exported routes (${sitemapRoutes.length} indexable + ${routes.length - sitemapRoutes.length} noindex) · Signal marker, one H1, repository brand and square geometry verified.`,
+);

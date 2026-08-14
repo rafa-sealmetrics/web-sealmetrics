@@ -157,7 +157,7 @@ export default function DemoPage() {
                   qualification form, no waiting for a reply.
                 </p>
                 <a
-                  href="https://cal.com/sealmetrics"
+                  href="https://cal.sealmetrics.com/rafa/30min"
                   className="inline-flex w-full items-center justify-center gap-2 bg-white text-ink px-6 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
                 >
                   Book a walkthrough with Rafa →

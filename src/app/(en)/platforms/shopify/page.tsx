@@ -17,7 +17,7 @@ const DATE_MODIFIED = "2026-05-29";
 export const metadata: Metadata = {
   title: "Shopify analytics without cookies — SealMetrics integration",
   description:
-    "Install SealMetrics on Shopify via the Pixel app and a theme app embed. Cookieless, purchases confirmed server-side, no consent banner required for the analytics layer.",
+    "Install SealMetrics on Shopify with the Pixel app and theme embed. Cookieless analytics, server-confirmed purchases and no analytics consent banner.",
   openGraph: {
     title: "Shopify analytics without cookies — SealMetrics integration",
     description:

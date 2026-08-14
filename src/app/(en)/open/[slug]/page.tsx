@@ -177,7 +177,7 @@ export default async function OpenChapterPage({ params }: PageProps) {
               <p className="text-[0.85rem] text-text-secondary">
                 Was this chapter useful?{" "}
                 <a
-                  href="mailto:open@sealmetrics.com?subject=Open — feedback"
+                  href="mailto:open@sealmetrics.com?subject=Open%20%E2%80%94%20feedback"
                   className="text-brand hover:text-brand-hover no-underline"
                 >
                   Tell us →

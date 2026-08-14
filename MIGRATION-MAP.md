@@ -11,7 +11,7 @@ This file is the operational record for porting the current website to the Signa
 - Contextual internal links follow `SEO-STRATEGY.md`.
 - Desktop and mobile review with no horizontal overflow or console errors.
 - `npm run build` passes every post-build audit.
-- Every sitemap route carries the `signal-v4` marker and the repository brand asset; the build fails on drift.
+- Every exported route, including `noindex` campaign and utility pages, carries the `signal-v4` marker and the repository brand asset; the build fails on drift.
 
 ## Route status
 

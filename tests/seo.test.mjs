@@ -111,6 +111,12 @@ test("document structure", { skip }, async (t) => {
 
 test("structured data", { skip }, async (t) => {
   await t.test("all JSON-LD parses", () => noneOf("invalid-jsonld", "malformed JSON-LD"));
+  await t.test("internal page URLs match the trailing-slash convention", () =>
+    noneOf(
+      "schema-url-no-trailing-slash",
+      "JSON-LD page URLs disagree with canonicals and the sitemap"
+    )
+  );
   await t.test("FAQ schema matches visible page content", () =>
     noneOf(
       "faq-schema-not-visible",

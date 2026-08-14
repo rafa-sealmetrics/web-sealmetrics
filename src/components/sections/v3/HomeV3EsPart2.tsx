@@ -408,7 +408,7 @@ export function FinalCtaV3Es() {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
-            <a href="https://cal.com/sealmetrics" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
+            <a href="https://cal.sealmetrics.com/rafa/30min" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
               Reserva 30 min de walkthrough →
             </a>
             <Link href="/es/pricing" className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5">

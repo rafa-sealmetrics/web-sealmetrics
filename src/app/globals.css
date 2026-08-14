@@ -113,6 +113,15 @@ body {
   color: #fff;
 }
 
+/* Contrast guard: acid is a highlight surface, never a dark text surface.
+   This also fixes legacy buttons that changed from ink to brand on hover but
+   kept their old white label. */
+.bg-acid.text-white,
+.bg-brand.text-white,
+.hover\:bg-brand:hover {
+  color: var(--color-signal-ink) !important;
+}
+
 /* ============================================
    FOCUS & ACCESSIBILITY
    ============================================ */
