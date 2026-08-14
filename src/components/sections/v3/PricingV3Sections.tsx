@@ -509,7 +509,7 @@ export function PricingFinalCtaV3() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a
-              href="https://cal.com/sealmetrics"
+              href="https://cal.sealmetrics.com/rafa/30min"
               className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
             >
               Book a walkthrough with Rafa →
