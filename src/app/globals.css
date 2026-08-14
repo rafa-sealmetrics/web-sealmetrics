@@ -380,14 +380,14 @@ body {
   -webkit-text-stroke-color: var(--color-paper-white);
 }
 
-#main-content :is(a, button)[class*="bg-brand"] {
+#main-content :is(a, button):is(.bg-acid, .bg-brand) {
   border: 1px solid var(--color-signal-ink) !important;
   color: var(--color-signal-ink) !important;
   box-shadow: none;
   transition: box-shadow 140ms ease, transform 140ms ease;
 }
 
-#main-content :is(a, button)[class*="bg-brand"]:hover {
+#main-content :is(a, button):is(.bg-acid, .bg-brand):hover {
   box-shadow: var(--shadow-hard);
   transform: translate(-2px, -2px);
 }

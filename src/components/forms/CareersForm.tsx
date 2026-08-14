@@ -256,7 +256,7 @@ export function CareersForm({ locale = "en" }: { locale?: Locale }) {
                 onClick={() => setTeam(id)}
                 className={`px-4 py-2.5 rounded-full border text-[14px] leading-none transition-all cursor-pointer ${
                   selected
-                    ? "bg-brand text-white border-brand"
+                    ? "bg-brand text-ink border-brand"
                     : "bg-warm-50 border-warm-100 text-ink hover:border-brand hover:bg-white"
                 }`}
               >

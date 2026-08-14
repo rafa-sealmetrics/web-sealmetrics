@@ -85,7 +85,7 @@ export function FaqV3() {
                     </h3>
                     <span
                       className={`w-7 h-7 rounded-md flex items-center justify-center text-[18px] font-normal shrink-0 transition-transform ${
-                        isOpen ? "bg-brand text-white rotate-45" : "bg-warm-50 text-ink-soft"
+                        isOpen ? "bg-brand text-ink rotate-45" : "bg-warm-50 text-ink-soft"
                       }`}
                     >
                       +

@@ -162,7 +162,7 @@ export function TrafficCountingV3() {
           <div className="grid md:grid-cols-[1.5fr_1fr_1fr_1.2fr] border-b border-warm-100">
             <div className="p-5 md:p-6 text-ink font-semibold text-[15px]">Humans</div>
             <div className="p-5 md:p-6 text-center">
-              <span className="inline-flex w-[22px] h-[22px] rounded-full bg-brand text-white items-center justify-center text-[12px] font-bold">✓</span>
+              <span className="inline-flex w-[22px] h-[22px] rounded-full bg-brand text-ink items-center justify-center text-[12px] font-bold">✓</span>
             </div>
             <div className="p-5 md:p-6 text-center text-[14px] text-ink font-medium">Yes</div>
             <div className="p-5 md:p-6 text-[14px] text-ink-soft">Human Analytics</div>
@@ -175,7 +175,7 @@ export function TrafficCountingV3() {
               </span>
             </div>
             <div className="p-5 md:p-6 text-center">
-              <span className="inline-flex w-[22px] h-[22px] rounded-full bg-brand text-white items-center justify-center text-[12px] font-bold">✓</span>
+              <span className="inline-flex w-[22px] h-[22px] rounded-full bg-brand text-ink items-center justify-center text-[12px] font-bold">✓</span>
             </div>
             <div className="p-5 md:p-6 text-center text-[14px] text-brand font-semibold">No · free</div>
             <div className="p-5 md:p-6 text-[14px] text-ink-soft">Agent Analytics</div>
@@ -376,7 +376,7 @@ function Cell({ value }: { value: string | boolean }) {
   if (value === true) {
     return (
       <span
-        className="inline-flex w-[20px] h-[20px] rounded-full bg-brand text-white items-center justify-center text-[11px] font-bold"
+        className="inline-flex w-[20px] h-[20px] rounded-full bg-brand text-ink items-center justify-center text-[11px] font-bold"
       >
         ✓
       </span>

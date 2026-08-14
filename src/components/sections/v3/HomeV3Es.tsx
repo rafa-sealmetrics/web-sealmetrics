@@ -128,7 +128,7 @@ export function ValueProp4MinEs() {
     <section className="bg-ink text-white py-14 border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 grid md:grid-cols-[1fr_auto] gap-7 md:gap-12 items-center">
         <div>
-          <span className="inline-block bg-brand text-white font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
+          <span className="inline-block bg-brand text-ink font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
             Demo de 4 minutos
           </span>
           <p className="text-white font-semibold leading-[1.2] tracking-[-0.025em] max-w-[32ch]" style={{ fontSize: "clamp(24px, 3vw, 34px)" }}>

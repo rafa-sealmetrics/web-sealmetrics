@@ -272,7 +272,7 @@ export function DemoFormEs() {
                   onClick={() => select(QUESTIONS[step].id, opt.value)}
                   className={`text-left px-5 py-4 rounded-lg border text-[15px] leading-[1.4] transition-all ${
                     selected
-                      ? "bg-brand text-white border-brand"
+                      ? "bg-brand text-ink border-brand"
                       : "bg-warm-50 border-warm-100 text-ink hover:border-brand hover:bg-white"
                   }`}
                 >

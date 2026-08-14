@@ -970,7 +970,7 @@ export function Close() {
         <div className="flex flex-wrap gap-3 justify-center">
           <Link
             href={AUDIT}
-            className="inline-flex items-center gap-2 px-7 py-4 bg-white text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-brand hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-white text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-brand hover:text-ink transition-colors"
           >
             Pide tu auditoría gratuita <span aria-hidden="true">→</span>
           </Link>
