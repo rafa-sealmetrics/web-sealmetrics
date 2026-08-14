@@ -60,7 +60,7 @@ export function LandingRootShell({
 }) {
   return (
     <html lang={locale} className={`${onest.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" data-design-system="signal-v4">
         <a href="#main-content" className="skip-to-content">
           {SKIP[locale]}
         </a>
