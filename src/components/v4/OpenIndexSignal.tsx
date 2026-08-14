@@ -6,6 +6,7 @@ import {
   publishedChaptersByPart,
   OPEN_PUBLISHED_MINUTES,
 } from "@/lib/content/open";
+import { EditorialSectionNav } from "./EditorialSectionNav";
 import "./open-index-signal.css";
 
 function Arrow() {
@@ -21,6 +22,7 @@ export function OpenIndexSignal() {
 
   return (
     <div className="sig-open-page">
+      <EditorialSectionNav current="open" />
       <section className="sig-open-hero">
         <div className="sig-open-hero-copy">
           <nav className="sig-open-breadcrumbs" aria-label="Breadcrumb">

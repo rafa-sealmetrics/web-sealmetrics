@@ -96,6 +96,8 @@ function getResourcesDropdown(t: ReturnType<typeof getDictionary>["header"], loc
       {
         items: [
           { href: localizedHref("/blog", locale), label: t.blog, desc: t.blogDesc },
+          { href: localizedHref("/open", locale), label: t.open, desc: t.openDesc },
+          { href: localizedHref("/growth", locale), label: t.growth, desc: t.growthDesc },
           { href: localizedHref("/videos", locale), label: t.videos, desc: t.videosDesc },
           { href: localizedHref("/glossary", locale), label: t.glossary, desc: t.glossaryDesc },
           { href: localizedHref("/platforms", locale), label: t.platforms, desc: t.platformsDesc },

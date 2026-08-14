@@ -44,6 +44,7 @@ SealMetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /ai-analytics — AI analytics done right: complete cookieless data + semantic MCP + private AI hosted in the EU (LENS AI). Connect Claude/ChatGPT to your analytics
 - /reg-gap-analysis — Regulatory gap analysis for web analytics: GDPR, ePrivacy, AEPD, UK PECR — requirement-by-requirement audit with self-assessment
 - /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of SealMetrics
+- /growth — Practical systems for digital teams: measurement, attribution, privacy, and revenue decisions that growth teams can defend
 
 ## Compliance by country (DPO-ready pages)
 - /gdpr-analytics — Hub: why ePrivacy transposition makes the consent question national, and which regulators published auditable criteria

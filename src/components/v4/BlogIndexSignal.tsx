@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { BlogPost } from "@/lib/content/blog";
+import { EditorialSectionNav } from "./EditorialSectionNav";
 import "./blog-index-signal.css";
 
 type Locale = "en" | "es";
@@ -61,6 +62,7 @@ export function BlogIndexSignal({
 
   return (
     <div className="sig-blog-page">
+      <EditorialSectionNav current="blog" />
       <section className="sig-blog-hero">
         <div className="sig-blog-hero-copy">
           <nav className="sig-blog-breadcrumbs" aria-label="Breadcrumb"><Link href={`${prefix}/`}>{t.home}</Link><span>/</span><span>Blog</span></nav>
