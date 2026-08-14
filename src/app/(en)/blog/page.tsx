@@ -40,7 +40,7 @@ export default function Page() {
         "@context": "https://schema.org",
         "@type": "ItemList",
         itemListElement: posts.map((post, i) => ({
-          "@type": "ListItem", position: i + 1, url: `https://sealmetrics.com/blog/${post.slug}`, name: post.title,
+          "@type": "ListItem", position: i + 1, url: `https://sealmetrics.com/blog/${post.slug}/`, name: post.title,
         })),
       }} />
 

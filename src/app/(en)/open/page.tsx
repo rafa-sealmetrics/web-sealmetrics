@@ -43,7 +43,7 @@ export default function OpenIndexPage() {
       "@type": "Chapter",
       name: c.title,
       position: c.number,
-      url: `https://sealmetrics.com/open/${c.slug}`,
+      url: `https://sealmetrics.com/open/${c.slug}/`,
     })),
   };
 

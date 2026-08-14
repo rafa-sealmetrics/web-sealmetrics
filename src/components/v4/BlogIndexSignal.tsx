@@ -33,6 +33,10 @@ export function BlogIndexSignal({
   const lead = posts.slice(0, 3);
   const archive = posts.slice(3);
   const categories = Array.from(new Set(posts.map((post) => post.category)));
+  const latestDate = posts.reduce<string | null>(
+    (latest, post) => latest === null || post.date > latest ? post.date : latest,
+    null,
+  );
   const t = locale === "es" ? {
     home: "Inicio", eyebrow: "Cuaderno editorial · evidencia · análisis",
     title: <>Las decisiones mejoran<br />cuando la evidencia<br /><em>resiste preguntas.</em></>,
@@ -68,7 +72,7 @@ export function BlogIndexSignal({
         <aside className="sig-blog-desk" aria-label={locale === "es" ? "Estado editorial" : "Editorial status"}>
           <div className="sig-blog-module-top"><span>SealMetrics / editorial desk</span><span>Live</span></div>
           <dl>
-            <div><dt>{t.latest}</dt><dd>{formatDate(posts[0].date)}</dd></div>
+            <div><dt>{t.latest}</dt><dd>{latestDate ? formatDate(latestDate) : "—"}</dd></div>
             <div><dt>{t.articles}</dt><dd>{posts.length}</dd></div>
             <div><dt>{t.beats}</dt><dd>{categories.length}</dd></div>
           </dl>

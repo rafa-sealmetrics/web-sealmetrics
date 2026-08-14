@@ -64,7 +64,7 @@ export function OpenIndexSignal() {
       <section className="sig-open-chapters" id="chapters">
         <div className="sig-open-section-head">
           <div><p className="sig-open-tag">The public record</p><h2>Read from the problem<br /><em>to the operating model.</em></h2></div>
-          <p>Eight published chapters move from why complete data matters to the architecture, commercial rules and definitions behind the product.</p>
+          <p>{publishedChapters.length} published chapters move from why complete data matters to the architecture, commercial rules and definitions behind the product.</p>
         </div>
 
         <div className="sig-open-parts">
@@ -108,7 +108,7 @@ export function OpenIndexSignal() {
         <div className="sig-open-protocol-copy">
           <p>If a statement is inaccurate, incomplete or outdated, we correct it. The useful part of transparency is not the promise. It is the ability to point to the exact sentence.</p>
           <div className="sig-open-actions">
-            <a className="sig-open-button sig-open-button-acid" href="mailto:open@sealmetrics.com">Challenge the record <Arrow /></a>
+            <a className="sig-open-button sig-open-button-acid" href="https://cal.com/sealmetrics">Challenge the record <Arrow /></a>
             <Link className="sig-open-text-link sig-open-text-link-light" href="/changelog/">See the changelog →</Link>
           </div>
         </div>

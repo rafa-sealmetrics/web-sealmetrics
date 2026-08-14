@@ -216,8 +216,8 @@ export default function Page() {
         itemListElement: posts.map((post, i) => ({
           "@type": "ListItem", position: i + 1,
           url: ES_TRANSLATED_SLUGS.has(post.slug)
-            ? `https://sealmetrics.com/es/blog/${post.slug}`
-            : `https://sealmetrics.com/blog/${post.slug}`,
+            ? `https://sealmetrics.com/es/blog/${post.slug}/`
+            : `https://sealmetrics.com/blog/${post.slug}/`,
           name: post.title,
         })),
       }} />

@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "We Measured Every Analytics Script. Here Is What We Found.",
   description:
-    "We downloaded major analytics scripts from production CDNs and measured their real size. GA4 is 132x heavier than SealMetrics, which came out the lightest of the ten.",
+    "We measured major analytics scripts from production CDNs. GA4 was 132x heavier than SealMetrics, the lightest of the ten tools tested.",
   openGraph: {
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
