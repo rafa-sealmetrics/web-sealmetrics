@@ -239,11 +239,11 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
 
         {/* Calculator grid */}
         <div
-          className="mt-12 grid md:grid-cols-[360px_1fr] border border-ink bg-warm-white"
+          className="mt-12 grid min-w-0 md:grid-cols-[360px_1fr] border border-ink bg-warm-white"
           style={{ boxShadow: "8px 8px 0 #0E0E0C" }}
         >
           {/* INPUTS */}
-          <aside className="bg-ink text-warm-white p-8 md:p-9 relative">
+          <aside className="min-w-0 bg-ink text-warm-white p-8 md:p-9 relative">
             <span className="absolute top-3 right-4 font-mono text-[10px] tracking-[0.2em] text-white/40">
               {c.inputLabel}
             </span>
@@ -301,7 +301,7 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
           </aside>
 
           {/* OUTPUT */}
-          <section className="p-8 md:p-10 bg-warm-white relative">
+          <section className="min-w-0 p-8 md:p-10 bg-warm-white relative">
             <span className="absolute top-3 right-6 font-mono text-[10px] tracking-[0.2em] text-ink/40">
               {c.blindnessCalc}
             </span>
@@ -597,7 +597,7 @@ function CalcField({
           min={0}
           step={step}
           onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
-          className="bg-transparent border-0 text-white font-semibold text-[28px] md:text-[32px] w-full outline-none tabular-nums"
+          className="min-w-0 bg-transparent border-0 text-white font-semibold text-[28px] md:text-[32px] w-full outline-none tabular-nums"
           style={{ letterSpacing: "-0.01em" }}
         />
         {suffix && (
