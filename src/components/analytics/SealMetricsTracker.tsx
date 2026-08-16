@@ -22,8 +22,9 @@ function locationOf(el: Element): string {
 }
 
 // Fires a SealMetrics pageview on every route change (including the first
-// load), tagged with the page's content group. The pixel itself only fires
-// on script load, so we (re)inject it per navigation — see lib/analytics.
+// load), tagged with the page's content group. The pixel runs in fully manual
+// mode (`auto=0&spa=0`) and is loaded once per document, so this effect is the
+// only source of pageviews — see lib/analytics.
 export function SealMetricsTracker() {
   const pathname = usePathname();
 
