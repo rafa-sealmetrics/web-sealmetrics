@@ -1,10 +1,18 @@
 // SealMetrics — cookieless, consentless analytics. Replaces Google Tag Manager.
 //
-// The pixel (`t.js`) fires ONE pageview when it loads, reading `id` + `group`
-// from its own <script> src. Because this site is a Next.js SPA (soft client
-// navigation never reloads the document), we re-inject the script on every
-// route change to register each subsequent pageview. Business events are sent
-// through the global `sealmetrics.micro()` / `sealmetrics.conv()` API.
+// The pixel (`t.js`) is loaded ONCE per document, in fully manual mode
+// (`auto=0&spa=0`), and every pageview — the first one included — is fired by
+// us as `sealmetrics({ group })`. Business events go through the same global
+// API via `sealmetrics.micro()` / `sealmetrics.conv()`.
+//
+// Do NOT go back to re-injecting the script per route change. Removing the
+// <script> element does not unload the code it already ran: the tracker's
+// History API listeners stay alive, so every re-injection leaves one more live
+// instance behind and each of them fires its own pageview on the next
+// navigation (1, 2, 3, 4 … hits per route change, each with a fresh token, so
+// the backend counts them as new entrances). `auto=0` alone does not prevent
+// this — it only gates the initial pageview; `spa=0` is what silences the
+// tracker's own SPA navigation listener.
 //
 // PRIVACY — SealMetrics is cookieless and GDPR-compliant by architecture.
 // Never send personal data (email, name, phone), order/transaction IDs, or
@@ -20,7 +28,10 @@ export const SEALMETRICS_PIXEL_HOST = "https://pixel-pre.sealmetrics.com";
 
 type EventProps = Record<string, string | number | boolean>;
 
+// The global is callable — `sealmetrics({ group })` IS a complete pageview hit
+// — and also carries the event helpers.
 interface SealMetricsApi {
+  (options?: { group?: string }): void;
   micro?: (event: string, props?: EventProps) => void;
   conv?: (event: string, value?: number, props?: EventProps) => void;
 }
@@ -54,11 +65,20 @@ function whenReady(fn: () => void): void {
   }
 }
 
-function injectPixel(group?: string): void {
-  document.getElementById(PIXEL_SCRIPT_ID)?.remove();
+// Loads t.js exactly once per document. `auto=0` suppresses the pixel's own
+// initial pageview and `spa=0` its History API listener, so this module is the
+// single source of pageviews.
+let pixelRequested = false;
 
-  const params = new URLSearchParams({ id: SEALMETRICS_ID });
-  if (group) params.set("group", group);
+function loadPixel(): void {
+  if (pixelRequested) return;
+  pixelRequested = true;
+
+  const params = new URLSearchParams({
+    id: SEALMETRICS_ID,
+    auto: "0",
+    spa: "0",
+  });
 
   const script = document.createElement("script");
   script.id = PIXEL_SCRIPT_ID;
@@ -70,23 +90,25 @@ function injectPixel(group?: string): void {
 
 // The pixel lives on its own origin, so the first hit costs a DNS + TCP + TLS
 // handshake. Racing that against the initial render pushes LCP out for no gain:
-// nothing above the fold depends on it. So the first pageview waits for `load`
-// (already fired = fire now), and every later route change fires immediately.
+// nothing above the fold depends on it. So the script request waits for `load`
+// (already fired = request now); later route changes reuse the loaded tracker.
 let firstPageviewSent = false;
 
-// (Re)load the pixel for `group`, which registers a pageview. Called on every
-// route change by SealMetricsTracker.
+// Registers exactly one pageview for `group`. Called on every route change by
+// SealMetricsTracker, first load included. Queued until t.js is ready.
 export function pageview(group?: string): void {
   if (typeof document === "undefined") return;
 
+  whenReady(() => window.sealmetrics?.(group ? { group } : undefined));
+
   if (firstPageviewSent || document.readyState === "complete") {
     firstPageviewSent = true;
-    injectPixel(group);
+    loadPixel();
     return;
   }
 
   firstPageviewSent = true;
-  window.addEventListener("load", () => injectPixel(group), { once: true });
+  window.addEventListener("load", loadPixel, { once: true });
 }
 
 // ---------------------------------------------------------------------------
