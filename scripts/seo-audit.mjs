@@ -109,6 +109,7 @@ function parsePage(file) {
       .flatMap((j) => (j["@graph"] ? j["@graph"].map((g) => g["@type"]) : [j["@type"]]))
       .filter(Boolean),
     markdownLink: one(html, /<link rel="alternate" type="text\/markdown" href="([^"]*)"/),
+    metaRefresh: one(html, /<meta http-equiv="refresh" content="([^"]*)"/i),
     links: [
       ...new Set(
         all(html, /<a\b[^>]+href="([^"]+)"/g)
@@ -366,6 +367,45 @@ for (const u of sitemapUrls) {
   if (u.endsWith(".md")) fail("markdown-in-sitemap", u);
 }
 
+// 18. A redirect stub must carry a real <meta http-equiv="refresh">. Routing it
+//     through Next.js `metadata.other` renders `<meta name="refresh">`, which
+//     is inert: 10 alias URLs shipped a manual "click to continue" interstitial
+//     for months because only the JS fallback ever fired.
+for (const p of pages) {
+  if (!/^Redirecting to /.test(p.title ?? "")) continue;
+  const target = p.canonical?.replace(SITE, "");
+  if (!p.metaRefresh) {
+    fail("redirect-stub-without-meta-refresh", `${p.route} → ${target ?? "?"}`);
+    continue;
+  }
+  const url = p.metaRefresh.replace(/^\s*\d+\s*;\s*url=/i, "");
+  const norm = url.endsWith("/") ? url : url + "/";
+  if (target && norm !== target) {
+    fail(
+      "redirect-stub-target-mismatch",
+      `${p.route} refresh→${url} canonical→${target}`
+    );
+  }
+}
+
+// 19. No orphan pages. An indexable page with no inbound internal link is in
+//     the sitemap and in llms.txt but unreachable by crawling, which is the
+//     state ten pages were in — including the /for hub and a draft blog post
+//     that shipped indexable because nothing tied indexability to the link
+//     graph. Nav counts: a footer link is a real link.
+{
+  const inbound = new Map(indexable.map((p) => [p.route, 0]));
+  for (const p of indexable) {
+    for (const l of new Set(p.links)) {
+      const norm = l.endsWith("/") ? l : l + "/";
+      if (norm !== p.route && inbound.has(norm)) inbound.set(norm, inbound.get(norm) + 1);
+    }
+  }
+  for (const [route, n] of inbound) {
+    if (n === 0 && route !== "/" && route !== "/es/") fail("orphan-page", route);
+  }
+}
+
 /* -------------------------------------------------------------- warnings */
 
 for (const p of indexable) {
@@ -387,6 +427,15 @@ for (const p of indexable) {
       break;
     }
     prev = l;
+  }
+
+  // An <img> without both width and height gives the browser no aspect ratio
+  // to reserve, which is how a CLS of 0.00 turns into a layout shift. A warning
+  // rather than a failure: some decorative markup legitimately sizes in CSS only.
+  for (const tag of p.imgs) {
+    if (!(/\swidth=/.test(tag) && /\sheight=/.test(tag))) {
+      warn("image-without-dimensions", `${p.route}: ${tag.slice(0, 80)}`);
+    }
   }
 
   if (!p.types.includes("BreadcrumbList") && p.route !== "/" && p.route !== "/es/") {
