@@ -1,11 +1,11 @@
 // SealMetrics — cookieless, consentless analytics. Replaces Google Tag Manager.
 //
-// The pixel (`t.js`) is loaded ONCE per document, in fully manual mode
-// (`auto=0&spa=0`), and every pageview — the first one included — is fired by
-// us as `sealmetrics({ group })`. Business events go through the same global
-// API via `sealmetrics.micro()` / `sealmetrics.conv()`.
+// The site is DUAL-TAGGED: every pageview and event is sent to both the preprod
+// account (`pixel-pre`, kept as-is) and the production one (`t.sealmetrics.com`).
+// Both trackers are loaded ONCE per document in fully manual mode
+// (`auto=0&spa=0`) and every hit is fired by us — see `dispatch()` below.
 //
-// Do NOT go back to re-injecting the script per route change. Removing the
+// Do NOT go back to re-injecting a script per route change. Removing the
 // <script> element does not unload the code it already ran: the tracker's
 // History API listeners stay alive, so every re-injection leaves one more live
 // instance behind and each of them fires its own pageview on the next
@@ -20,11 +20,31 @@
 // raw email flows only through the server-side forms relay, never to the pixel
 // or directly from the browser to n8n.
 
+// Hosts are module-level string consts on purpose: `scripts/audit-csp.mjs`
+// resolves them from source to lint the drafted CSP. Inlining them into the
+// array below would make the origins invisible to that gate.
+const PIXEL_HOST_PRE = "https://pixel-pre.sealmetrics.com";
+const PIXEL_HOST_PROD = "https://t.sealmetrics.com";
+
+// Preprod — the original tag for the marketing site (by design, not a bug).
 export const SEALMETRICS_ID =
   process.env.NEXT_PUBLIC_SEALMETRICS_ID ?? "sealmetrics2";
 
-// Preprod endpoint is correct for the marketing site (by design).
-export const SEALMETRICS_PIXEL_HOST = "https://pixel-pre.sealmetrics.com";
+// Production.
+export const SEALMETRICS_ID_PROD =
+  process.env.NEXT_PUBLIC_SEALMETRICS_ID_PROD ?? "sealmetricsv2";
+
+export interface PixelTarget {
+  /** Short name, also the DOM id suffix of its <script>. */
+  readonly label: string;
+  readonly host: string;
+  readonly id: string;
+}
+
+export const SEALMETRICS_PIXELS: readonly PixelTarget[] = [
+  { label: "pre", host: PIXEL_HOST_PRE, id: SEALMETRICS_ID },
+  { label: "prod", host: PIXEL_HOST_PROD, id: SEALMETRICS_ID_PROD },
+];
 
 type EventProps = Record<string, string | number | boolean>;
 
@@ -43,72 +63,99 @@ declare global {
 }
 
 // ---------------------------------------------------------------------------
-// Pixel loading + a tiny ready-queue so events fired before t.js has finished
-// loading (e.g. a view-micro on the first page load) are not dropped.
+// Pixel loading + fan-out.
+//
+// Each t.js ends with `window.sealmetrics = <its own instance>`, unconditionally
+// — so with two tags loaded the global only ever points at whichever finished
+// last, and the other account would receive nothing (with auto=0&spa=0 it fires
+// nothing on its own). We therefore capture each instance inside its OWN
+// `onload`, the one moment it is guaranteed to be the global, and every call is
+// fanned out to all captured instances. Calls made before a tracker is ready are
+// queued per target, so nothing is dropped and per-target order is preserved.
 // ---------------------------------------------------------------------------
 
 const PIXEL_SCRIPT_ID = "sealmetrics-pixel";
-let pixelReady = false;
-const pending: Array<() => void> = [];
 
-function flushQueue(): void {
-  pixelReady = true;
-  while (pending.length) pending.shift()?.();
+type Call = (api: SealMetricsApi) => void;
+
+const instances: Array<SealMetricsApi | null> = SEALMETRICS_PIXELS.map(() => null);
+const queues: Call[][] = SEALMETRICS_PIXELS.map(() => []);
+
+function capture(index: number): void {
+  const api = window.sealmetrics;
+  // If a tag 404s or throws midway its onload may still fire while the global
+  // holds another target's instance. Capturing that twice would double-count
+  // every hit on one account, so only ever adopt an instance we haven't seen.
+  if (!api || instances.includes(api)) return;
+
+  instances[index] = api;
+  const queued = queues[index];
+  while (queued.length) queued.shift()?.(api);
 }
 
-function whenReady(fn: () => void): void {
+function dispatch(call: Call): void {
   if (typeof window === "undefined") return;
-  if (pixelReady && window.sealmetrics) {
-    fn();
-  } else {
-    pending.push(fn);
-  }
-}
-
-// Loads t.js exactly once per document. `auto=0` suppresses the pixel's own
-// initial pageview and `spa=0` its History API listener, so this module is the
-// single source of pageviews.
-let pixelRequested = false;
-
-function loadPixel(): void {
-  if (pixelRequested) return;
-  pixelRequested = true;
-
-  const params = new URLSearchParams({
-    id: SEALMETRICS_ID,
-    auto: "0",
-    spa: "0",
+  instances.forEach((api, index) => {
+    if (api) call(api);
+    else queues[index].push(call);
   });
-
-  const script = document.createElement("script");
-  script.id = PIXEL_SCRIPT_ID;
-  script.defer = true;
-  script.src = `${SEALMETRICS_PIXEL_HOST}/t.js?${params.toString()}`;
-  script.onload = flushQueue;
-  document.head.appendChild(script);
 }
 
-// The pixel lives on its own origin, so the first hit costs a DNS + TCP + TLS
-// handshake. Racing that against the initial render pushes LCP out for no gain:
-// nothing above the fold depends on it. So the script request waits for `load`
-// (already fired = request now); later route changes reuse the loaded tracker.
+let pixelsRequested = false;
+
+/** `?id=…&auto=0&spa=0` — manual mode, see the header comment. */
+function query(id: string): string {
+  return new URLSearchParams({ id, auto: "0", spa: "0" }).toString();
+}
+
+function newScript(index: number): HTMLScriptElement {
+  const script = document.createElement("script");
+  script.id = `${PIXEL_SCRIPT_ID}-${SEALMETRICS_PIXELS[index].label}`;
+  script.defer = true;
+  script.onload = () => capture(index);
+  return script;
+}
+
+// Each tag is injected explicitly rather than in a loop over SEALMETRICS_PIXELS:
+// `scripts/audit-csp.mjs` reads the literal right-hand side of `.src =` to lint
+// the drafted CSP, and `${target.host}` inside a loop resolves to nothing — it
+// would blind the gate to BOTH origins, including the one it already covers.
+// Adding a third account means adding another three lines here, on purpose.
+function loadPixels(): void {
+  if (pixelsRequested) return;
+  pixelsRequested = true;
+
+  const pre = newScript(0);
+  pre.src = `${PIXEL_HOST_PRE}/t.js?${query(SEALMETRICS_ID)}`;
+  document.head.appendChild(pre);
+
+  const prod = newScript(1);
+  prod.src = `${PIXEL_HOST_PROD}/t.js?${query(SEALMETRICS_ID_PROD)}`;
+  document.head.appendChild(prod);
+}
+
+// The pixels live on their own origins, so the first hit costs a DNS + TCP + TLS
+// handshake each. Racing that against the initial render pushes LCP out for no
+// gain: nothing above the fold depends on it. So the script requests wait for
+// `load` (already fired = request now); later route changes reuse the loaded
+// trackers.
 let firstPageviewSent = false;
 
-// Registers exactly one pageview for `group`. Called on every route change by
-// SealMetricsTracker, first load included. Queued until t.js is ready.
+// Registers exactly one pageview per account for `group`. Called on every route
+// change by SealMetricsTracker, first load included. Queued until t.js is ready.
 export function pageview(group?: string): void {
   if (typeof document === "undefined") return;
 
-  whenReady(() => window.sealmetrics?.(group ? { group } : undefined));
+  dispatch((api) => api(group ? { group } : undefined));
 
   if (firstPageviewSent || document.readyState === "complete") {
     firstPageviewSent = true;
-    loadPixel();
+    loadPixels();
     return;
   }
 
   firstPageviewSent = true;
-  window.addEventListener("load", loadPixel, { once: true });
+  window.addEventListener("load", loadPixels, { once: true });
 }
 
 // ---------------------------------------------------------------------------
@@ -167,25 +214,25 @@ export function pushEvent(
   const mapping = EVENT_MAP[payload.event];
   if (!mapping) return; // unmapped legacy event → ignored
   const props = sanitize(payload);
-  whenReady(() => {
+  dispatch((api) => {
     if (mapping.kind === "conv") {
       const value =
         mapping.value ??
         (typeof payload.value === "number" ? payload.value : 0);
-      window.sealmetrics?.conv?.(mapping.name, value, props);
+      api.conv?.(mapping.name, value, props);
     } else {
-      window.sealmetrics?.micro?.(mapping.name, props);
+      api.micro?.(mapping.name, props);
     }
   });
 }
 
 // Direct helpers for new instrumentation that doesn't go through pushEvent.
 export function micro(event: string, props?: EventProps): void {
-  whenReady(() => window.sealmetrics?.micro?.(event, props));
+  dispatch((api) => api.micro?.(event, props));
 }
 
 export function conv(event: string, value = 0, props?: EventProps): void {
-  whenReady(() => window.sealmetrics?.conv?.(event, value, props));
+  dispatch((api) => api.conv?.(event, value, props));
 }
 
 // ---------------------------------------------------------------------------
