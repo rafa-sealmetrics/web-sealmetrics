@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { DemoForm } from "./DemoForm";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Book a Demo — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Book a Demo — SealMetrics",
     description: "30-minute walkthrough with the founder. See your own data gap live.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/demo/")],
     url: "https://sealmetrics.com/demo/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Book a Demo — SealMetrics",
     description: "30-minute walkthrough with the founder. See your own data gap live.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/demo/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/demo/",

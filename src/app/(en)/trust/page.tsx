@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Trust Center — Sealmetrics",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Sealmetrics legal and security documentation: DPA, Terms, Security, Privacy, compliance docs, and request-only assessments.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/trust/")],
     url: "https://sealmetrics.com/trust/",
     siteName: "Sealmetrics",
     locale: "en_US",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Trust Center — Sealmetrics",
     description: "Sealmetrics legal and security documentation: DPA, Terms, Security, Privacy, compliance docs, and request-only assessments.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/trust/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/trust/",

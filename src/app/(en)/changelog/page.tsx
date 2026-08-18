@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Changelog — SealMetrics",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: "Changelog — SealMetrics",
     description: "Product updates and new features from SealMetrics.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/changelog/")],
     url: "https://sealmetrics.com/changelog/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Changelog — SealMetrics",
     description: "Product updates and new features from SealMetrics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/changelog/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/changelog/",

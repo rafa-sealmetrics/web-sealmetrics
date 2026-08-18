@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CareersForm } from "@/components/forms/CareersForm";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Trabaja con nosotros — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/careers/")],
     url: "https://sealmetrics.com/es/careers/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Trabaja con nosotros — SealMetrics",
     description: "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/careers/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/careers/",

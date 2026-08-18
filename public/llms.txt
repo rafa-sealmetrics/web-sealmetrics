@@ -279,7 +279,6 @@ Blog (ES):
 - /es/blog/cookieless-analytics-explained — Analítica cookieless explicada: cómo medir sin cookies
 - /es/blog/consent-banner-impact-on-analytics — Cómo los banners de consentimiento destruyen tus datos
 - /es/blog/ga4-data-sampling-problem — Muestreo de datos en GA4: por qué tus números están mal
-- /es/blog/ga4-google-ads-separation — GA4 y Google Ads: Google elimina Google Signals como control de datos en junio 2026; impacto y riesgo legal para anunciantes europeos
 
 Seal AI (ES) — la serie sobre IA privada para analítica:
 - /es/blog/meet-seal-ai — Qué es Seal AI, cómo funciona y por qué es privada por arquitectura y no por promesa

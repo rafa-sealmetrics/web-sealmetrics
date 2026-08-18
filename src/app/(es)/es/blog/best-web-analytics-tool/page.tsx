@@ -21,6 +21,7 @@ import {
   ScrollableTable,
 } from "@/components/ui/RequirementBlocks";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "La mejor herramienta de analítica web: 12 requisitos",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "La especificación que una plataforma tiene que cumplir antes de merecer ese nombre. Cada requisito con el fallo que previene y una prueba que puedes ejecutar en la demo.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/best-web-analytics-tool/")],
     url: "https://sealmetrics.com/es/blog/best-web-analytics-tool/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "La mejor herramienta de analítica web: los 12 requisitos",
     description: "La especificación que una plataforma tiene que cumplir antes de merecer ese nombre. Cada requisito con el fallo que previene y una prueba que puedes ejecutar en la demo.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/best-web-analytics-tool/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/best-web-analytics-tool/",

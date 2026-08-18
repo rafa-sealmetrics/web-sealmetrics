@@ -91,6 +91,13 @@
 .sig-manifesto, .sig-product-reality, .sig-outcomes, .sig-point-of-view, .sig-how, .sig-faq { padding: clamp(90px,11vw,160px) clamp(20px,5vw,80px); }
 .sig-manifesto { background: var(--ink); color: var(--white); }
 .sig-section-tag { color: #686d66; }
+/* 3.50:1 on the ink sections. Scoped so the light-background value stays
+   at its 4.69:1, and a new dark section cannot silently fail by omitting
+   .sig-light — see audits/2026-08-18. */
+.sig-manifesto .sig-section-tag,
+.sig-proof .sig-section-tag,
+.sig-offer .sig-section-tag,
+.sig-roas-story .sig-section-tag { color: #a8ada4; }
 .sig-section-tag::before { content: ""; display: inline-block; width: 30px; height: 2px; margin: 0 10px 3px 0; background: var(--acid); }
 .sig-section-tag.sig-light { color: #a8ada4; }
 .sig-manifesto-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 80px; align-items: end; }
@@ -128,7 +135,7 @@
 .sig-roas-row { min-height: 122px; margin-top: 18px; padding: 24px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--rule); }
 .sig-roas-row div { display: flex; flex-direction: column; gap: 5px; }.sig-roas-row span { font-size: 15px; font-weight: 700; }.sig-roas-row small { color: var(--gray); }
 .sig-roas-row strong { font-size: clamp(46px,5vw,76px); line-height: .8; letter-spacing: -.07em; }
-.sig-roas-muted { color: #8b8f88; }.sig-roas-real { background: var(--acid); border-color: var(--ink); }
+.sig-roas-muted { color: #6b7068; } /* was #8b8f88 — 3.23:1 at 15px bold */.sig-roas-real { background: var(--acid); border-color: var(--ink); }
 .sig-roas-card > p { margin: 24px 0 0; font-size: 14px; font-weight: 680; }
 .sig-product-cards { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .sig-product-card { min-height: 720px; padding: clamp(28px,4vw,50px); border: 1px solid var(--rule); }
@@ -206,7 +213,10 @@
 .sig-offer { padding: clamp(90px,11vw,150px) clamp(20px,9vw,150px); background: var(--ink); color: var(--white); display: grid; grid-template-columns: 1fr minmax(360px,480px); gap: clamp(60px,10vw,160px); align-items: center; }
 .sig-offer-copy > p:not(.sig-section-tag) { max-width: 650px; margin: 36px 0; color: #b9beb5; font-size: 17px; line-height: 1.6; }
 .sig-offer h2 em { display: inline-block; }
-.sig-offer li { color: #d1d5ce; }
+.sig-offer li:not(.sig-price-card li) { color: #d1d5ce; }
+/* The price card is a paper panel inside the ink section, so it must not
+   inherit the light-on-dark list colour: that measured 1.31:1. */
+.sig-price-card li { color: var(--ink); }
 .sig-price-card { padding: clamp(28px,4vw,46px); background: var(--paper); color: var(--ink); box-shadow: 14px 14px 0 var(--acid); }
 .sig-price-card > div { display: flex; justify-content: space-between; font: 700 11px/1 var(--font-mono), monospace; }
 .sig-popular { padding: 7px 8px; margin-top: -7px; background: var(--acid); }

@@ -13,7 +13,7 @@
  *
  * Idempotent: skips files already on disk newer than this script.
  */
-import { readFileSync, mkdirSync, statSync, existsSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, mkdirSync, statSync, existsSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import satori from "satori";
@@ -88,6 +88,113 @@ function parseBlogPosts() {
   }
   return posts;
 }
+
+/**
+ * Glossary terms that have their own page. `og/glossary/` was created on every
+ * run since this script was written but never written to, so all 56 term pages
+ * shipped the site-wide default card.
+ */
+function parseGlossaryTerms() {
+  const src = readFileSync(path.join(repoRoot, "src/lib/content/glossary.ts"), "utf8");
+  const terms = [];
+  for (const block of src.split(/\n  \{\n/).slice(1)) {
+    const slug = block.match(/slug:\s*"([^"]+)"/)?.[1];
+    const term = block.match(/term:\s*"([^"]+)"/)?.[1];
+    const category = block.match(/category:\s*"([^"]+)"/)?.[1] ?? "Glossary";
+    if (slug && term && /hasPage:\s*true/.test(block)) terms.push({ slug, term, category });
+  }
+  return terms;
+}
+
+/**
+ * Hand-written cards for the pages a share or an AI citation is most likely to
+ * land on. Everything else is derived below — these exist only because their
+ * metadata title is not the best line to put on a social card.
+ */
+const HUB_OVERRIDES = {
+  vs: { eyebrow: "Comparisons", title: "SealMetrics compared with the enterprise analytics you already run" },
+  for: { eyebrow: "By industry", title: "Complete measurement, by the kind of business you run" },
+  "use-cases": { eyebrow: "Use cases", title: "What teams actually do with 100% of their data" },
+  platforms: { eyebrow: "Platforms", title: "Install on the eCommerce platform you already use" },
+  integrations: { eyebrow: "Integrations", title: "Plugs into the stack you already run" },
+  glossary: { eyebrow: "Glossary", title: "The vocabulary of cookieless, consentless measurement" },
+  "case-studies": { eyebrow: "Case studies", title: "Named European teams, inspectable figures" },
+  product: { eyebrow: "Product", title: "Enterprise analytics that measures 100% of your traffic" },
+  "how-it-works": { eyebrow: "How it works", title: "No cookies, no consent banner, no blind spot" },
+  pricing: { eyebrow: "Pricing", title: "Enterprise analytics at a fraction of GA360 and Adobe" },
+  security: { eyebrow: "Security", title: "GDPR by architecture, EU-hosted in Dublin" },
+  open: { eyebrow: "Open", title: "How SealMetrics works, written down in public" },
+  blog: { eyebrow: "Blog", title: "Measurement, attribution and privacy for eCommerce" },
+};
+
+/** First path segment → the eyebrow line printed above the title. */
+const SEGMENT_EYEBROW = {
+  vs: "Comparison",
+  alternatives: "Alternatives",
+  for: "By industry",
+  "use-cases": "Use case",
+  platforms: "Platform",
+  "gdpr-analytics": "GDPR by country",
+  open: "Open",
+  glossary: "Glossary",
+  authors: "Author",
+  "case-studies": "Case study",
+  blog: "Blog",
+};
+
+/**
+ * Every indexable EN route that still has no card, read from the page's own
+ * metadata rather than a list someone has to remember to extend. A hand-kept
+ * table is exactly what let 202 of 262 pages ship the same generic image.
+ *
+ * Spanish routes deliberately reuse the English card — see src/lib/seo/og.ts.
+ */
+function parseEnRoutes() {
+  const appRoot = path.join(repoRoot, "src/app/(en)");
+  const routes = [];
+
+  const walk = (dir, prefix) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const name = e.name;
+      if (e.isFile() && name === "page.tsx") {
+        const src = readFileSync(path.join(dir, name), "utf8");
+        // Redirect stubs and noindex pages do not need their own card.
+        if (/buildRedirectMetadata/.test(src)) continue;
+        if (/robots\s*:\s*\{[^}]*index\s*:\s*false/.test(src)) continue;
+        const title = src.match(/title:\s*"([^"]+)"/)?.[1];
+        if (!title || !prefix) continue;
+        routes.push({ route: prefix.replace(/^\//, ""), title });
+        continue;
+      }
+      if (!e.isDirectory()) continue;
+      if (name.startsWith("[") || name.startsWith("@") || name.startsWith("_")) continue;
+      walk(path.join(dir, name), `${prefix}/${name}`);
+    }
+  };
+  walk(appRoot, "");
+  return routes;
+}
+
+/**
+ * /open/<slug> is a dynamic route, so parseEnRoutes() cannot see it — the
+ * eight published chapters were the last indexable pages left on the generic
+ * card. Read them from the same registry the route itself uses.
+ */
+function parseOpenChapters() {
+  const src = readFileSync(path.join(repoRoot, "src/lib/content/open.ts"), "utf8");
+  const out = [];
+  for (const block of src.split(/\n  \{\n/).slice(1)) {
+    const slug = block.match(/slug:\s*"([^"]+)"/)?.[1];
+    const title = block.match(/title:\s*"([^"]+)"/)?.[1];
+    const eyebrow = block.match(/eyebrow:\s*"([^"]+)"/)?.[1] ?? "Open";
+    if (slug && title && /status:\s*"ready"/.test(block)) out.push({ slug, title, eyebrow });
+  }
+  return out;
+}
+
+/** "Shopify Analytics Integration — SealMetrics" → "Shopify Analytics Integration" */
+const stripBrand = (t) => t.replace(/\s*[—|·-]\s*SealMetrics\s*$/, "").trim();
+
 
 function ogTemplate({ eyebrow, title }) {
   return {
@@ -359,6 +466,37 @@ const cases = [
 for (const c of cases) {
   const out = path.join(outDir, "case-studies", `${c.slug}.png`);
   const made = await renderOg({ outFile: out, eyebrow: c.eyebrow, title: c.title, font });
+  if (made) generated++; else skipped++;
+}
+
+
+// Glossary terms
+for (const t of parseGlossaryTerms()) {
+  const out = path.join(outDir, "glossary", `${t.slug}.png`);
+  const made = await renderOg({ outFile: out, eyebrow: `Glossary · ${t.category}`, title: t.term, font });
+  if (made) generated++; else skipped++;
+}
+
+// Open chapters (dynamic route)
+mkdirSync(path.join(outDir, "open"), { recursive: true });
+for (const c of parseOpenChapters()) {
+  const out = path.join(outDir, "open", `${c.slug}.png`);
+  const made = await renderOg({ outFile: out, eyebrow: `Open · ${c.eyebrow}`, title: c.title, font });
+  if (made) generated++; else skipped++;
+}
+
+// Every remaining indexable page, hand-written copy where we have it.
+for (const { route, title } of parseEnRoutes()) {
+  const out = path.join(outDir, `${route}.png`);
+  mkdirSync(path.dirname(out), { recursive: true });
+  const override = HUB_OVERRIDES[route];
+  const segment = route.split("/")[0];
+  const made = await renderOg({
+    outFile: out,
+    eyebrow: override?.eyebrow ?? SEGMENT_EYEBROW[segment] ?? "SealMetrics",
+    title: override?.title ?? stripBrand(title),
+    font,
+  });
   if (made) generated++; else skipped++;
 }
 

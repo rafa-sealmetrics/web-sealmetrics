@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Searchmetrics vs SealMetrics — Different Companies",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/searchmetrics-vs-sealmetrics/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/searchmetrics-vs-sealmetrics")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Searchmetrics vs SealMetrics — Different Companies",
     description: "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what SealMetrics actually measures.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/searchmetrics-vs-sealmetrics")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/searchmetrics-vs-sealmetrics",

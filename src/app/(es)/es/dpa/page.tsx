@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Acuerdo de Encargo de Tratamiento (DPA) — Sealmetrics",
@@ -14,14 +15,14 @@ export const metadata: Metadata = {
     siteName: "Sealmetrics",
     type: "website",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/dpa/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Acuerdo de Encargo de Tratamiento (DPA)",
     description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/dpa/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/dpa/",

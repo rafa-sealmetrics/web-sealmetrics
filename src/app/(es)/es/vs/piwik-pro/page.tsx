@@ -8,6 +8,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Piwik PRO — Hosting UE más captura completa",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "SealMetrics vs Piwik PRO — Hosting UE más captura completa",
     description: "Piwik PRO está alojado en UE pero sigue con cookies. SealMetrics resuelve la arquitectura de raíz, no solo el hosting.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/piwik-pro/")],
     url: "https://sealmetrics.com/es/vs/piwik-pro/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs Piwik PRO — Hosting UE más captura completa",
     description: "Piwik PRO está alojado en UE pero sigue con cookies. SealMetrics resuelve la arquitectura de raíz, no solo el hosting.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/piwik-pro/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/piwik-pro/", languages: getAlternatesEs("/vs/piwik-pro") },
 };

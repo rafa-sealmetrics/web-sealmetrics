@@ -16,6 +16,7 @@ import {
   PriceDoors,
   Close,
 } from "@/components/landing/RoasRealSectionsEn";
+import { ogImage } from "@/lib/seo/og";
 
 /* Cold paid-traffic landing for eCommerce (EN). Twin of /es/roas-real/.
    noindex/follow by decision: it targets no keyword, has no inbound internal
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
       "Between 25% and 45% of your sales never reach your analytics tool. They happened, you were paid for them, and the report you decide on does not count them.",
     type: "website",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/real-roas/")],
     url: "https://sealmetrics.com/real-roas/",
     siteName: "SealMetrics",
   },
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Your real ROAS is higher than you think",
     description: "Between 25% and 45% of your sales never reach your analytics tool. They happened, you were paid for them, and the report you decide on does not count them.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/real-roas/")],
   },
   alternates: { canonical: "https://sealmetrics.com/real-roas/" },
 };

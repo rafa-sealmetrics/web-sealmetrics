@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionPageSchema, breadcrumbSchema, itemListSchema, definedTermSetSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analytics Glossary — Web, GDPR & Attribution Terms",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Analytics Glossary — Web, GDPR & Attribution Terms",
     description: "A–Z definitions of web analytics, GDPR, attribution and eCommerce measurement terms, written for European marketing and data leaders.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/")],
     url: "https://sealmetrics.com/glossary/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analytics Glossary — Web, GDPR & Attribution Terms",
     description: "A–Z definitions of web analytics, GDPR, attribution and eCommerce measurement terms, written for European marketing and data leaders.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/",

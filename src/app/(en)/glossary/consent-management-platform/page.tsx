@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is a Consent Management Platform (CMP)?",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/consent-management-platform/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/consent-management-platform/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is a Consent Management Platform (CMP)?",
     description: "A CMP displays cookie consent banners and manages user preferences. 55% of EU visitors reject.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/consent-management-platform/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/consent-management-platform/",

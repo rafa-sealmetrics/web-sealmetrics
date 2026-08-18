@@ -16,6 +16,7 @@ import {
   PriceDoors,
   Close,
 } from "@/components/landing/RoasRealSections";
+import { ogImage } from "@/lib/seo/og";
 
 /* Landing de conversión para tráfico frío de pago (eCommerce ES).
    noindex/follow por decisión: no targetea keyword, no tiene enlaces
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
       "Entre el 25% y el 45% de tus ventas nunca llegan a tu herramienta de analítica. Ocurrieron, las cobraste, y el informe con el que decides no las cuenta.",
     type: "website",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/roas-real/")],
     url: "https://sealmetrics.com/es/roas-real/",
     siteName: "SealMetrics",
   },
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Tu ROAS real es mayor del que crees",
     description: "Entre el 25% y el 45% de tus ventas nunca llegan a tu herramienta de analítica. Ocurrieron, las cobraste, y el informe con el que decides no las cuenta.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/roas-real/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/roas-real/" },
 };

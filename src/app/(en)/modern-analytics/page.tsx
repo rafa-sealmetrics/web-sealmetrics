@@ -9,6 +9,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Modern Web Analytics — Clean, Unmodeled, AI-Agent Ready",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description:
       "The end of cookie-based analytics. Clean data, no sampling, AI-ready via MCP. See the gap.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/modern-analytics/")],
     url: "https://sealmetrics.com/modern-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Modern Web Analytics — Clean, Unmodeled, AI-Agent Ready",
     description: "The vanguard of web analytics. No cookies. No sampling. No modeling.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/modern-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/modern-analytics/",

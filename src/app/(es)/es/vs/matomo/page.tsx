@@ -8,6 +8,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Matomo — Sin cookies por diseño, sin devops",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "El default de Matomo son cookies + banner. SealMetrics es cookieless en todo el producto, alojado en UE, con MCP y BigQuery nativos — sin devops.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/matomo/")],
     url: "https://sealmetrics.com/es/vs/matomo/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs Matomo — Sin cookies por diseño, sin devops",
     description: "El default de Matomo son cookies + banner. SealMetrics es cookieless en todo el producto, alojado en UE, con MCP y BigQuery nativos — sin devops.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/matomo/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/vs/matomo/",

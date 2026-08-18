@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { AccessFormEs } from "./AccessFormEs";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Acceso a la cuenta demo — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/demo-access/")],
     url: "https://sealmetrics.com/es/demo-access/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Acceso a la cuenta demo — SealMetrics",
     description: "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/demo-access/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/demo-access/",

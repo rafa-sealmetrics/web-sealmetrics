@@ -12,6 +12,7 @@ import {
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Last-click attribution on 100% of data. The architecture, the trade-offs, and why CFOs accept it.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/revenue-attribution/")],
     url: "https://sealmetrics.com/use-cases/revenue-attribution/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Revenue attribution without cookies",
     description: "Last-click attribution on 100% of data. The architecture, the trade-offs, and why CFOs accept it.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/revenue-attribution/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/use-cases/revenue-attribution/",

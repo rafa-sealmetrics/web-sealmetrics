@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Intelligent Tracking Prevention (ITP)?",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/intelligent-tracking-prevention/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Intelligent Tracking Prevention (ITP)?",
     description: "ITP is Safari's privacy feature that limits cookie lifespan. Learn how it affects analytics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/intelligent-tracking-prevention/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/",

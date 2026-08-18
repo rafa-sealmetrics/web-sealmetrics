@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "How SealMetrics Enables Self-Service Analytics",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How SealMetrics ships self-service analytics as LENS AI.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/self-service-analytics-lens-ai/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-lens-ai/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "What It Takes to Make Self-Service Analytics Actually Work",
     description: "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How SealMetrics ships self-service analytics as LENS AI.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/self-service-analytics-lens-ai/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/self-service-analytics-lens-ai/",

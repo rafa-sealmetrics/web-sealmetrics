@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "We Tested 9 Analytics Tools Against Every Major Ad Blocker",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/blog/analytics-tools-ad-blocker-test/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/analytics-tools-ad-blocker-test/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "We Tested 9 Analytics Tools Against Every Major Ad Blocker",
     description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. The results split the market in two.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/analytics-tools-ad-blocker-test/")],
   },
   robots: { index: false, follow: true },
   alternates: {

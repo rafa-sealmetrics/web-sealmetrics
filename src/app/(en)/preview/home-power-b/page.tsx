@@ -16,6 +16,7 @@ import {
   LensTriadSlab,
   EuStackBand,
 } from "@/components/preview/HomePowerSections";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Preview B — AI-led home proposal",
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
     siteName: "SealMetrics",
     locale: "en_US",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/preview/home-power-b/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Preview B — Power home proposal",
     description: "Internal design proposal B for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/preview/home-power-b/")],
   },
   alternates: { canonical: "https://sealmetrics.com/preview/home-power-b/" },
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Centro de confianza — Sealmetrics",
@@ -13,14 +14,14 @@ export const metadata: Metadata = {
     siteName: "Sealmetrics",
     type: "website",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/trust/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Centro de confianza — Sealmetrics",
     description: "Dónde vive la documentación legal y de seguridad: DPA, Términos, Seguridad, Privacidad y documentos previa solicitud.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/trust/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/trust/",

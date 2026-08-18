@@ -12,6 +12,7 @@ import {
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Parallel-run plan, not rip-and-replace. What you keep, what you replace, and how to make the decision in 30 days.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/ga4-migration/")],
     url: "https://sealmetrics.com/use-cases/ga4-migration/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "GA4 migration — the honest guide for EU eCommerce",
     description: "Parallel-run plan, not rip-and-replace. What you keep, what you replace, and how to make the decision in 30 days.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/ga4-migration/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/use-cases/ga4-migration/",

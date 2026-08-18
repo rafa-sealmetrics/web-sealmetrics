@@ -14,6 +14,7 @@ import { DualCTA } from "@/components/homepage/DualCTA";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { AgenticSetupSteps } from "@/components/sections/v3/AgenticPlanV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Por qué SealMetrics — mide el 100% de tráfico y ventas",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "El banner de consentimiento oculta tus visitas, la prevención de rastreo borra tus conversiones y el ROAS que defiendes se calcula sobre la fracción que sobrevivió.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/why-sealmetrics/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/why-sealmetrics/",
     siteName: "SealMetrics",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Por qué SealMetrics — mide el 100% de tráfico y ventas",
     description: "El banner de consentimiento oculta tus visitas, la prevención de rastreo borra tus conversiones y el ROAS que defiendes se calcula sobre la fracción que sobrevivió.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/why-sealmetrics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/why-sealmetrics/",

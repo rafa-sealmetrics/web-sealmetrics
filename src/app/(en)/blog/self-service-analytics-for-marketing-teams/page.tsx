@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 const URL = "/blog/self-service-analytics-for-marketing-teams";
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
     description: "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",

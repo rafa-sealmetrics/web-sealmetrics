@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is an Attribution Window? — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/attribution-window/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/attribution-window/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is an Attribution Window?",
     description: "Default attribution windows by channel, why they collapse under Safari ITP, and the cookieless alternative.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/attribution-window/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/attribution-window/" },
 };

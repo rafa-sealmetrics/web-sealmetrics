@@ -6,6 +6,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sobre SealMetrics — Analítica founder-led para Europa",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Sobre SealMetrics — Analítica founder-led para Europa",
     description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/about/")],
     url: "https://sealmetrics.com/es/about/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Sobre SealMetrics — Analítica founder-led para Europa",
     description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/about/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/about/", languages: getAlternatesEs("/about") },
 };

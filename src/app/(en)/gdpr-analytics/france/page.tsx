@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "The CNIL exemption for analytics: 5 criteria, 14 technical points, and the architectures that meet them by design.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/gdpr-analytics/france/")],
     url: "https://sealmetrics.com/gdpr-analytics/france/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "GDPR analytics in France — CNIL exemption explained",
     description: "The CNIL exemption for analytics: 5 criteria, 14 technical points, and the architectures that meet them by design.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/gdpr-analytics/france/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/gdpr-analytics/france/",

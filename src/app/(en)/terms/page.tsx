@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Terms of Service — Sealmetrics",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Conditions for using the Sealmetrics web analytics platform: plans, billing, acceptable use, data ownership, liability and termination.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/terms/")],
     url: "https://sealmetrics.com/terms/",
     siteName: "Sealmetrics",
     locale: "en_US",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Terms of Service — Sealmetrics",
     description: "Conditions for using the Sealmetrics web analytics platform: plans, billing, acceptable use, data ownership, liability and termination.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/terms/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/terms/",

@@ -7,6 +7,7 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analytics for Marketing Agencies | SealMetrics",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     title: "Analytics for Marketing Agencies | SealMetrics",
     description: getVerticalData("agencies", "en").lede.slice(0, 155) + "…",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/agencies/")],
     url: "https://sealmetrics.com/for/agencies/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analytics for Marketing Agencies | SealMetrics",
     description: getVerticalData("agencies", "en").lede.slice(0, 155) + "…",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/agencies/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/agencies/",

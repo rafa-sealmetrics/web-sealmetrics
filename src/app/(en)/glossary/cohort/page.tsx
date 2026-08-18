@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Cohort Analysis? — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/cohort/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/cohort/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Cohort Analysis?",
     description: "Groups sharing a starting point, compared over time — and what per-user cohort tracking requires that anonymous measurement refuses.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/cohort/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/cohort/",

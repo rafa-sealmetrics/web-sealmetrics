@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "GDPR Analytics Compliance — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/gdpr-analytics-compliance/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/gdpr-analytics-compliance/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "GDPR Analytics Compliance",
     description: "What GDPR requires from web analytics: lawful basis, data minimization, and consent for cookies.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/gdpr-analytics-compliance/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/gdpr-analytics-compliance/", languages: getAlternates("/glossary/gdpr-analytics-compliance") },
 };

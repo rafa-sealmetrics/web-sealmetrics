@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics for Hotels — 2026 Guide",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/cookieless-analytics-for-hotels/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-hotels/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Cookieless Analytics for Hotels — 2026 Guide",
     description: "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/cookieless-analytics-for-hotels/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/cookieless-analytics-for-hotels/",

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "¿Qué es la analítica sin cookies? — Glosario SealMetrics",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/es/glossary/cookieless-analytics/",
     siteName: "SealMetrics",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/cookieless-analytics/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la analítica sin cookies?",
     description: "Analítica que captura el 100% del tráfico sin cookies, sin consentimiento, sin per-user tracking.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/cookieless-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/cookieless-analytics/",

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics por equipo — Roles e industrias",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "Páginas dedicadas para cada rol e industria.",
     type: "website",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/")],
     url: "https://sealmetrics.com/es/for/",
     siteName: "SealMetrics",
   },
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics para cada equipo",
     description: "Páginas dedicadas para cada rol e industria.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/for/", languages: getAlternatesEs("/for") },
 };

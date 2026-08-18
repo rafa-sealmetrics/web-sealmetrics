@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "How Many HTTP Requests Does Your Analytics Tool Make?",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/blog/analytics-tools-http-requests/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/analytics-tools-http-requests/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "How Many HTTP Requests Does Your Analytics Tool Make?",
     description: "We counted every HTTP request, domain lookup, and byte transferred by 9 analytics tools. The results are revealing.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/analytics-tools-http-requests/")],
   },
   robots: { index: false, follow: true },
   alternates: {

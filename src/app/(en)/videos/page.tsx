@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, videoObjectSchema, itemListSchema } from "@/lib/schema";
 import { VideoGrid } from "./VideoGrid";
+import { ogImage } from "@/lib/seo/og";
 
 const videosForSchema = [
   {
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Product demos and tutorials to help you get the most out of SealMetrics.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/videos/")],
     url: "https://sealmetrics.com/videos/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Videos — SealMetrics",
     description: "Product demos and tutorials to help you get the most out of SealMetrics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/videos/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/videos/",
@@ -99,6 +100,40 @@ export default function VideosPage() {
 
       {/* Video sections */}
       <VideoGrid />
+
+      {/* The page was 100 words wrapped around a thumbnail grid. What the
+          videos are for — and what to read instead if you would rather read —
+          is the part that makes it a destination rather than a directory. */}
+      <section className="py-16 md:py-20 bg-paper border-t border-hairline">
+        <div className="max-w-[760px] mx-auto px-5 sm:px-8">
+          <h2 className="headline-section mb-6">Where to start</h2>
+          <p className="text-[1.05rem] leading-[1.8] text-text-body">
+            If you are evaluating, watch the platform overview first: it shows
+            what the reports look like when 100% of traffic is counted rather
+            than the roughly 13% GA4 sees in Europe, which is the difference
+            most teams want to see before they believe the number. If you have
+            already decided and want the tag live, the getting-started walkthrough
+            covers installation end to end — one script, no cookie banner
+            dependency, no tag manager gymnastics.
+          </p>
+          <p className="text-[1.05rem] leading-[1.8] text-text-body mt-6">
+            Video is the fastest way to see the interface, but it is the slowest
+            way to check a claim. If you are here to verify rather than to watch,
+            the written material is denser: <Link href="/how-it-works" className="underline">how it works</Link>{" "}
+            explains the collection architecture step by step,{" "}
+            <Link href="/security" className="underline">security</Link> covers
+            where the data lives and what never leaves the browser, and{" "}
+            <Link href="/vs-ga4" className="underline">SealMetrics vs GA4</Link>{" "}
+            puts the two side by side without softening the trade-offs.
+          </p>
+          <p className="text-[1.05rem] leading-[1.8] text-text-body mt-6">
+            Product changes ship faster than we re-record, so the{" "}
+            <Link href="/changelog" className="underline">changelog</Link> is the
+            authority when a screen in a video no longer matches what you see in
+            your account.
+          </p>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-20 bg-warm-white border-t border-warm-100">

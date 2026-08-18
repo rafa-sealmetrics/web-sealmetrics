@@ -4,7 +4,10 @@ import { JsonLd } from "@/components/ui/JsonLd";
 
 /**
  * Static-export-friendly client-side redirect.
- * - Emits <meta http-equiv="refresh"> which GitHub Pages respects
+ * - Emits a real <meta http-equiv="refresh"> from the page body, which React
+ *   hoists into <head>. It MUST NOT go through Next.js `metadata.other`:
+ *   that renders every key as `name="…"`, and <meta name="refresh"> is inert —
+ *   it silently did nothing in production until the 2026-08-18 audit
  * - Adds canonical to the real destination (no duplicate content)
  * - Adds noindex so search engines don't index the alias
  * - Renders a visible fallback link for users without JS/meta-refresh
@@ -32,9 +35,6 @@ export function buildRedirectMetadata(destination: string): Metadata {
       description: `This page has moved. Redirecting to ${destination}.`,
       images: ["https://sealmetrics.com/og-image.png"],
     },
-    other: {
-      refresh: `0; url=${destination}`,
-    },
   };
 }
 
@@ -56,7 +56,8 @@ export function RedirectStub({ to }: { to: string }) {
           },
         }}
       />
-      {/* Meta refresh for no-JS fallback — Next.js hoists this to <head> via metadata */}
+      {/* Real meta refresh: works without JS. React hoists <meta> to <head>. */}
+      <meta httpEquiv="refresh" content={`0; url=${to}`} />
       <section className="min-h-[50vh] flex items-center justify-center px-5 py-20 bg-warm-white">
         <div className="text-center max-w-[480px]">
           <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft mb-3">

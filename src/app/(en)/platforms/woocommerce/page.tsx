@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "WordPress plugin install from a GitHub release, full e-commerce funnel coverage, aggregate reconciliation for finance teams.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/platforms/woocommerce/")],
     url: "https://sealmetrics.com/platforms/woocommerce/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "WooCommerce analytics without cookies — SealMetrics plugin",
     description: "WordPress plugin install, WooCommerce hook coverage, and the order_id reconciliation pattern for finance teams.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/platforms/woocommerce/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/platforms/woocommerce/",

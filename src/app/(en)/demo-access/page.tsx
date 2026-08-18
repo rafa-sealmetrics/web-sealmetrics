@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { AccessForm } from "./AccessForm";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Get Demo Account Access — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Request credentials for the live SealMetrics demo account. Corporate email required.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/demo-access/")],
     url: "https://sealmetrics.com/demo-access/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Get Demo Account Access — SealMetrics",
     description: "Request credentials for the live SealMetrics demo account. Corporate email required.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/demo-access/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/demo-access/",

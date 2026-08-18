@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Cookieless Analytics for eCommerce: The 2026 Guide",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Aggregate, anonymous event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
     description: "Aggregate, anonymous event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",

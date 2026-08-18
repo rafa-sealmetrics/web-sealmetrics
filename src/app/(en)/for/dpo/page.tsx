@@ -7,6 +7,7 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analytics for DPOs — GDPR by Architecture | SealMetrics",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     title: "Analytics for DPOs — GDPR by Architecture | SealMetrics",
     description: getVerticalData("dpo", "en").lede.slice(0, 155) + "…",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/dpo/")],
     url: "https://sealmetrics.com/for/dpo/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analytics for DPOs — GDPR by Architecture | SealMetrics",
     description: getVerticalData("dpo", "en").lede.slice(0, 155) + "…",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/dpo/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/dpo/",

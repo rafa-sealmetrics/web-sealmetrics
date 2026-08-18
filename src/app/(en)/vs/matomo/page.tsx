@@ -8,6 +8,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Matomo — Cookieless by design, no devops",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Matomo's default is cookies + banner. SealMetrics is cookieless across the whole product, EU-hosted, with native MCP and BigQuery — no devops required.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/matomo/")],
     url: "https://sealmetrics.com/vs/matomo/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs Matomo — Cookieless by design, no devops",
     description: "Matomo's default is cookies + banner. SealMetrics is cookieless across the whole product, EU-hosted, with native MCP and BigQuery — no devops required.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/matomo/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/vs/matomo/",

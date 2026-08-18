@@ -4,6 +4,7 @@ import { breadcrumbSchema, faqPageSchema, speakableWebPageSchema } from "@/lib/s
 import { getAlternates } from "@/lib/i18n/navigation";
 import { HowItWorksSignal, howItWorksFaqItems } from "@/components/v4/HowItWorksSignal";
 import "@/components/v4/how-it-works-signal.css";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "How SealMetrics Works — First-party, Cookieless, EU-hosted",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Three layers. One pipeline. How SealMetrics counts 100% of your traffic anonymously, without cookies or user tracking.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/how-it-works/")],
     url: "https://sealmetrics.com/how-it-works/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "How SealMetrics Works — First-party, Cookieless, EU-hosted",
     description: "Three layers. One pipeline. How SealMetrics counts 100% of your traffic anonymously, without cookies or user tracking.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/how-it-works/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/how-it-works/",

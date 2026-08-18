@@ -7,6 +7,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analítica para educación — embudos con RGPD | SealMetrics",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     title: "Analítica para educación — embudos con RGPD | SealMetrics",
     description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/education/")],
     url: "https://sealmetrics.com/es/for/education/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analítica para educación — embudos con RGPD | SealMetrics",
     description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/education/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/education/",

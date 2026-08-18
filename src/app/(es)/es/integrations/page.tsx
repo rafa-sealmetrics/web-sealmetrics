@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Integraciones — SealMetrics",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     title: "Integraciones — SealMetrics",
     description: "Módulos nativos para eCommerce, CMS, frameworks y tag managers. Conector BigQuery, MCP server para agentes IA y API REST completa.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/integrations/")],
     url: "https://sealmetrics.com/es/integrations/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Integraciones — SealMetrics",
     description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/integrations/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/integrations/", languages: getAlternatesEs("/integrations") },
 };

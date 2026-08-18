@@ -25,6 +25,7 @@ import { FaqV3Es } from "@/components/sections/v3/FaqV3Es";
 import { BlindnessCalculator } from "@/components/homepage/BlindnessCalculator";
 import { StickyCtaBar } from "@/components/homepage/StickyCtaBar";
 import { HeroV3Es, LogosStripEs } from "@/components/sections/v3/HomeV3Es";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics — Analítica sin consentimiento para eCommerce",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     description:
       "Mide el 100% de tu tráfico. Sin cookies. Sin modelos. Presenta números board-ready que cuadran con Shopify. Alojado en Dublín.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/",
     siteName: "SealMetrics",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics — Analítica sin consentimiento para eCommerce",
     description: "Mide el 100% de tu tráfico. Sin cookies. Sin modelos. Presenta números board-ready que cuadran con Shopify. Alojado en Dublín.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/",

@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-29";
 const PILLAR_DATE_MODIFIED = "2026-05-29";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "Por qué la analítica incompleta produce decisiones equivocadas, qué significan los datos completos arquitectónicamente y los números que cambian.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/complete-data/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/complete-data/",
     siteName: "SealMetrics",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Datos completos — analítica que captura el 100% del tráfico",
     description: "Por qué la analítica incompleta produce decisiones equivocadas, qué significan los datos completos arquitectónicamente y los números que cambian.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/complete-data/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/complete-data/",

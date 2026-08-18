@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs alternativas — Comparativas completas",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "Comparativas feature a feature contra cada plataforma analytics.",
     type: "website",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/")],
     url: "https://sealmetrics.com/es/vs/",
     siteName: "SealMetrics",
   },
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs alternativas",
     description: "Comparativas feature a feature contra cada plataforma analytics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/", languages: getAlternatesEs("/vs") },
 };

@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Multi-Touch Attribution? — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/multi-touch-attribution/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/multi-touch-attribution/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Multi-Touch Attribution?",
     description: "An attribution model that requires per-user tracking. SealMetrics does last-click only, at channel level.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/multi-touch-attribution/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/multi-touch-attribution/", languages: getAlternates("/glossary/multi-touch-attribution") },
 };

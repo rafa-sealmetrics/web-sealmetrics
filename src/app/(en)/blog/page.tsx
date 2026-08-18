@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { BlogIndexSignal } from "@/components/v4/BlogIndexSignal";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Blog — SealMetrics",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: "Blog — SealMetrics",
     description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/")],
     url: "https://sealmetrics.com/blog/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Blog — SealMetrics",
     description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/",

@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-05-28";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "What cookieless analytics is, why cookies fail in 2026, what you measure, and where it fits in your stack.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/cookieless-analytics/")],
     url: "https://sealmetrics.com/cookieless-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Cookieless analytics, explained",
     description: "What cookieless analytics is, why cookies fail in 2026, what you measure, and where it fits in your stack.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/cookieless-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/cookieless-analytics/",

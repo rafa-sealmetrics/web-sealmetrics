@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Customer Lifetime Value (LTV) — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/customer-lifetime-value/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/customer-lifetime-value/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Customer Lifetime Value (LTV)?",
     description: "The expected total margin from a customer relationship — and why it is calculated from order data, not web analytics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/customer-lifetime-value/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/customer-lifetime-value/",

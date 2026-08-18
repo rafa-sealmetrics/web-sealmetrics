@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Plataformas — SealMetrics",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: "Plataformas — SealMetrics",
     description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/platforms/")],
     url: "https://sealmetrics.com/es/platforms/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Plataformas — SealMetrics",
     description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/platforms/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/platforms/", languages: getAlternatesEs("/platforms") },
 };

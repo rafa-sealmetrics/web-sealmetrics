@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, webApplicationSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Calculadora de pérdida de datos — SealMetrics",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     title: "Calculadora de pérdida de datos — SealMetrics",
     description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/data-loss-calculator/")],
     url: "https://sealmetrics.com/es/data-loss-calculator/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Calculadora de pérdida de datos — SealMetrics",
     description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/data-loss-calculator/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/data-loss-calculator/",

@@ -15,6 +15,7 @@ import {
   isPublished,
   type OpenChapter,
 } from "@/lib/content/open";
+import { ogImage } from "@/lib/seo/og";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -44,14 +45,14 @@ export async function generateMetadata({
       url: `https://sealmetrics.com/open/${chapter.slug}/`,
       siteName: "SealMetrics",
       locale: "en_US",
-      images: ["https://sealmetrics.com/og-image.png"],
+      images: [ogImage(`/open/${chapter.slug}/`)],
     },
     twitter: {
       card: "summary_large_image",
       site: "@sealmetrics",
       title: `${chapter.title} — Open`,
       description: chapter.summary,
-      images: ["https://sealmetrics.com/og-image.png"],
+      images: [ogImage(`/open/${chapter.slug}/`)],
     },
     alternates: {
       canonical: `https://sealmetrics.com/open/${chapter.slug}/`,
@@ -72,6 +73,8 @@ export default async function OpenChapterPage({ params }: PageProps) {
     headline: chapter.title,
     description: chapter.summary,
     inLanguage: "en",
+    datePublished: chapter.datePublished,
+    dateModified: chapter.dateModified,
     isPartOf: {
       "@type": "Book",
       name: "Open — SealMetrics",

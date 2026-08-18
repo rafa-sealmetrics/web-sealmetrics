@@ -11,6 +11,7 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analytics for eCommerce — Full Attribution | SealMetrics",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/ecommerce/")],
     url: "https://sealmetrics.com/for/ecommerce/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analytics for eCommerce — Full Attribution | SealMetrics",
     description: "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/ecommerce/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/for/ecommerce/",

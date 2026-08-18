@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "¿Qué es la pérdida de datos en analítica? — Glosario",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
     siteName: "SealMetrics",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/data-loss-in-analytics/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la pérdida de datos en analítica?",
     description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/data-loss-in-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
@@ -71,6 +72,14 @@ export default function Page() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo cerrar la brecha</h2>
           <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> elimina los tres vectores de pérdida en su origen: sin cookies que requieran consentimiento, sin scripts que los bloqueadores reconozcan, sin dependencia de identificadores que ITP/ETP recorten. El resultado es conteo agregado sobre el 100% del tráfico — no una muestra, no una estimación.</p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La cuarta pérdida: la fuente de tráfico</h2>
+          <p>Hay una capa que casi nunca se cuenta y que suele doler más que las tres anteriores. De ese 40–45% que sí acepta el banner, alrededor de dos tercios aceptan en la segunda página vista — es decir, después de la landing, que es justo donde viaja el parámetro de campaña. El visitante queda medido, pero llega sin origen. El efecto neto es que solo un 16% aproximado del tráfico conserva la atribución de fuente correcta, frente al 13% que se cita para la visibilidad total.</p>
+          <p>La consecuencia práctica es que el número de sesiones y el número de conversiones atribuidas se degradan a ritmos distintos. Un informe puede parecer razonable en volumen y estar completamente equivocado en reparto: el tráfico directo se hincha con lo que en realidad era campaña, y el canal de pago aparece infrafinanciado en su propio panel. Cuando alguien dice que su ROAS no cuadra con el backend, esta suele ser la razón, no un error de etiquetado.</p>
+
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo medir tu propia brecha</h2>
+          <p>La pérdida no se estima leyendo benchmarks, se mide contrastando dos cifras que ya tienes. Toma los pedidos que registró tu backend — Shopify, Prestashop, Magento o el ERP — en un mes cerrado, y compáralos con las conversiones que atribuyó tu analítica en ese mismo periodo. La diferencia es tu pérdida real, no la media del sector. Repite el ejercicio por canal y verás en cuál se concentra.</p>
+          <p>Si quieres una primera aproximación antes de tocar nada, la <Link href="/es/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">calculadora de pérdida de datos</Link> parte de tus visitas e ingresos mensuales y devuelve el importe que tu configuración actual está ocultando cada mes. Es una estimación, y está pensada para decidir si merece la pena hacer la comparación seria contra backend — no para sustituirla.</p>
         </div>
 
         <CommercialModule locale="es" hook="Entre el 40–60% de rechazo de consentimiento y los bloqueadores, GA4 ve una fracción de tus visitas. Mide tu propia brecha contra un conteo del 100%." />
