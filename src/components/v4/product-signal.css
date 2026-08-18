@@ -671,7 +671,11 @@
   max-width: 1050px;
 }
 
-.sig-product-final > p {
+/* :not(.sig-product-tag) — the eyebrow is a <p> too, and it is an ink chip
+   with acid text. This two-class rule outranked the chip's own one-class
+   colour and painted ink on ink, so the eyebrow rendered invisible. Mirrors
+   the `> p:not(.sig-section-tag)` exclusions used elsewhere in this file. */
+.sig-product-final > p:not(.sig-product-tag) {
   max-width: 720px;
   margin-top: 34px !important;
   color: var(--sig-ink);

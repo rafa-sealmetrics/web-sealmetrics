@@ -211,10 +211,14 @@ body {
 }
 
 /* Plain italic emphasis (no highlight) — for body and pull quotes */
+/* Acid on paper measures 1.04:1 — CLAUDE.md already says never to use it as
+ * text on a light background and to reach for --color-acid-ink there. Every
+ * failing instance of this class was on paper, white or paper-white, so the
+ * token swap is unconditional. */
 .italic-accent {
   font-style: italic;
   font-weight: 500;
-  color: var(--color-brand);
+  color: var(--color-acid-ink);
 }
 
 /* Back-compat helpers used across existing pages (pre-v3).
@@ -424,11 +428,19 @@ body {
   transform: translate(-2px, -2px);
 }
 
-#main-content .text-brand:not(.section-dark *) {
+/* `.text-brand` is forced to ink on light and acid on dark. "Dark" was
+ * detected only by a `.section-dark` ancestor, so a panel that is dark by its
+ * `bg-ink` utility — the terminal blocks in the blog — got ink on ink and the
+ * text vanished. Same root cause as the outlined-<em> bug above: a class
+ * standing in for the background it cannot see. Excluding the ink utilities
+ * covers the panels that exist and the ones added later. */
+#main-content .text-brand:not(.section-dark *):not(.bg-ink *):not(.bg-signal-ink *) {
   color: var(--color-signal-ink) !important;
 }
 
 #main-content .section-dark .text-brand,
+#main-content .bg-ink .text-brand,
+#main-content .bg-signal-ink .text-brand,
 #main-content .text-brand-soft {
   color: var(--color-acid) !important;
 }
