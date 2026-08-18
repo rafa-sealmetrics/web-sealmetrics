@@ -5,9 +5,14 @@
 // navigation — 1, 2, 3, 4 … hits per route change, each with a fresh token, so
 // the backend counted them as new entrances.
 //
-// The contract these tests pin down: t.js is requested exactly ONCE per
-// document, in manual mode (auto=0&spa=0), and every pageview is one explicit
-// sealmetrics({ group }) call.
+// Also guards the dual-tagging contract. Every t.js ends with an unconditional
+// `window.sealmetrics = <its own instance>`, so with two tags the global only
+// points at whichever loaded last; the module has to capture each instance in
+// its own onload and fan every call out to both, or one account silently
+// receives nothing.
+//
+// The contract: each tag is requested exactly ONCE per document, in manual mode
+// (auto=0&spa=0), and every pageview/event reaches BOTH accounts exactly once.
 
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -23,71 +28,147 @@ const compiled = ts.transpileModule(source, {
 }).outputText;
 
 // A fresh module instance per test — the module keeps load state in closures.
+// Each injected <script> gets its own tracker instance, mirroring what t.js
+// does: on execution it overwrites window.sealmetrics with itself.
 async function loadAnalytics() {
   const scripts = [];
-  const pageviews = [];
-
-  const sealmetrics = (options) => pageviews.push(options?.group ?? null);
-  sealmetrics.micro = () => {};
-  sealmetrics.conv = () => {};
+  const received = new Map(); // account id -> [{ kind, ... }]
 
   globalThis.document = {
     readyState: "complete",
-    createElement: () => ({ set src(v) { this._src = v; }, get src() { return this._src; } }),
+    createElement: () => ({}),
     head: { appendChild: (node) => scripts.push(node) },
   };
-  globalThis.window = {
-    addEventListener: () => {},
-    // Present from the start: the real tracker defines it as t.js executes,
-    // and the module only calls it once the script's onload has fired.
-    sealmetrics,
-  };
+  globalThis.window = { addEventListener: () => {}, sealmetrics: undefined };
 
   const analytics = await import(
     `data:text/javascript;base64,${Buffer.from(compiled).toString("base64")}#${Math.random()}`
   );
-  // Drain the ready-queue the way the loaded tracker would.
-  const fireOnload = () => scripts.forEach((s) => s.onload?.());
-  return { analytics, scripts, pageviews, fireOnload };
+
+  // Simulate each tag loading: it claims the global, then fires its onload.
+  function loadTag(script) {
+    const id = new URL(script.src).searchParams.get("id");
+    const log = [];
+    received.set(id, log);
+
+    const api = (options) => log.push({ kind: "pageview", group: options?.group ?? null });
+    api.micro = (event, props) => log.push({ kind: "micro", event, props });
+    api.conv = (event, value) => log.push({ kind: "conv", event, value });
+
+    globalThis.window.sealmetrics = api; // unconditional, exactly like t.js
+    script.onload?.();
+  }
+
+  const loadAll = () => scripts.forEach(loadTag);
+  return { analytics, scripts, received, loadAll, loadTag };
 }
 
-test("t.js is requested once, in manual mode, however many route changes", async () => {
-  const { analytics, scripts, fireOnload } = await loadAnalytics();
+const accounts = ["sealmetrics2", "sealmetricsv2"];
+
+test("both tags are requested once, in manual mode, however many route changes", async () => {
+  const { analytics, scripts, loadAll } = await loadAnalytics();
 
   analytics.pageview("home");
-  fireOnload();
+  loadAll();
   analytics.pageview("product");
   analytics.pageview("pricing");
   analytics.pageview("blog");
 
-  assert.equal(scripts.length, 1, "the pixel script must be injected exactly once");
+  assert.equal(scripts.length, 2, "exactly one <script> per account, never re-injected");
 
-  const src = new URL(scripts[0].src);
-  assert.equal(src.origin + src.pathname, "https://pixel-pre.sealmetrics.com/t.js");
-  assert.equal(src.searchParams.get("auto"), "0", "auto=0 gates the pixel's own initial pageview");
-  assert.equal(src.searchParams.get("spa"), "0", "spa=0 gates the pixel's own SPA listener");
-  assert.equal(src.searchParams.get("id"), "sealmetrics2");
-  assert.equal(src.searchParams.get("group"), null, "the group travels per pageview, not on the script URL");
+  const byId = Object.fromEntries(
+    scripts.map((s) => {
+      const u = new URL(s.src);
+      return [u.searchParams.get("id"), u];
+    })
+  );
+  assert.deepEqual(Object.keys(byId).sort(), [...accounts].sort());
+
+  assert.equal(byId.sealmetrics2.origin, "https://pixel-pre.sealmetrics.com");
+  assert.equal(byId.sealmetricsv2.origin, "https://t.sealmetrics.com");
+
+  for (const id of accounts) {
+    assert.equal(byId[id].pathname, "/t.js");
+    assert.equal(byId[id].searchParams.get("auto"), "0", `${id}: auto=0 gates the initial pageview`);
+    assert.equal(byId[id].searchParams.get("spa"), "0", `${id}: spa=0 gates the SPA listener`);
+    assert.equal(byId[id].searchParams.get("group"), null, "the group travels per pageview, not on the script URL");
+  }
 });
 
-test("each route change produces exactly one pageview, with its own group", async () => {
-  const { analytics, pageviews, fireOnload } = await loadAnalytics();
+test("every route change sends exactly one pageview to EACH account", async () => {
+  const { analytics, received, loadAll } = await loadAnalytics();
 
   analytics.pageview("home");
-  fireOnload();
+  loadAll();
   analytics.pageview("product");
   analytics.pageview("pricing");
-  analytics.pageview("blog");
 
-  assert.deepEqual(pageviews, ["home", "product", "pricing", "blog"]);
+  for (const id of accounts) {
+    assert.deepEqual(
+      received.get(id).map((h) => h.group),
+      ["home", "product", "pricing"],
+      `${id} must receive each pageview exactly once, with its own group`
+    );
+  }
 });
 
-test("pageviews fired before t.js finishes loading are queued, not dropped", async () => {
-  const { analytics, pageviews, fireOnload } = await loadAnalytics();
+test("micro and conv events fan out to both accounts", async () => {
+  const { analytics, received, loadAll } = await loadAnalytics();
 
   analytics.pageview("home");
-  assert.deepEqual(pageviews, [], "nothing can be sent before the tracker exists");
+  loadAll();
+  analytics.micro("scroll_50");
+  analytics.conv("lead", 0);
+  analytics.pushEvent({ event: "demo_request", email: "a@b.com" });
 
-  fireOnload();
-  assert.deepEqual(pageviews, ["home"], "the queued pageview is replayed on load");
+  for (const id of accounts) {
+    const log = received.get(id);
+    assert.deepEqual(
+      log.filter((h) => h.kind !== "pageview").map((h) => `${h.kind}:${h.event}`),
+      ["micro:scroll_50", "conv:lead", "conv:lead"],
+      `${id} must receive every event exactly once`
+    );
+    assert.ok(
+      log.every((h) => !h.props || !("email" in h.props)),
+      `${id}: PII must never reach the pixel`
+    );
+  }
+});
+
+test("hits fired before a tag finishes loading are queued per account, not dropped", async () => {
+  const { analytics, scripts, received, loadTag } = await loadAnalytics();
+
+  analytics.pageview("home");
+  analytics.micro("scroll_50");
+  assert.equal(received.size, 0, "nothing can be sent before a tracker exists");
+
+  // Tags rarely finish together — drain them one at a time.
+  loadTag(scripts[0]);
+  assert.deepEqual(
+    received.get("sealmetrics2").map((h) => h.kind),
+    ["pageview", "micro"],
+    "the first tag replays its queue in order"
+  );
+  assert.equal(received.has("sealmetricsv2"), false, "the slower tag has not replayed yet");
+
+  loadTag(scripts[1]);
+  assert.deepEqual(
+    received.get("sealmetricsv2").map((h) => h.kind),
+    ["pageview", "micro"],
+    "the second tag replays the same queue, independently"
+  );
+});
+
+test("a tag that fails mid-execution never gets another account's instance adopted twice", async () => {
+  const { analytics, scripts, received, loadTag } = await loadAnalytics();
+
+  analytics.pageview("home");     // injects both tags, queues the pageview
+  loadTag(scripts[0]);            // first tag loads normally, replays the queue
+  scripts[1].onload?.();          // second 404s: onload fires, global still tag 1
+
+  assert.deepEqual(
+    received.get("sealmetrics2").map((h) => h.group),
+    ["home"],
+    "the healthy account must be hit once, not twice"
+  );
 });
