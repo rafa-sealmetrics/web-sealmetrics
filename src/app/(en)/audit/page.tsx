@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, servicePageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { AuditForm } from "@/components/audit/AuditForm";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Free measurement audit — SealMetrics",
@@ -66,6 +68,75 @@ export default function Page() {
           </p>
           <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-soft font-semibold mt-6">
             3 minutes · no install
+          </p>
+        </div>
+      </section>
+
+      {/* The page was 96 words of visible copy wrapped around a form — the
+          thinnest indexable page on the site. What the audit actually is, and
+          what it is not, is the part a reader and an AI engine both need. */}
+      <section className="bg-paper border-t border-hairline py-16 md:py-20">
+        <div className="max-w-[760px] mx-auto px-5 sm:px-8">
+          <h2 className="text-[32px] md:text-[40px] font-[790] tracking-[-0.045em] leading-[0.95] text-ink">
+            What you get back
+          </h2>
+          <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
+            GA4 in Europe reports roughly 13% of a site&apos;s visitors, and
+            only about 16% arrive with the traffic source still attached. Every
+            budget decision made on that base is a decision made on a sample
+            nobody chose. The audit puts a number on your own version of that
+            gap before you install anything.
+          </p>
+          <ul className="mt-8 space-y-4 text-[16px] leading-[1.6] text-ink-soft">
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                An estimate of the traffic and revenue your current setup does
+                not attribute, reconciled against the backend figures you give
+                us.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                Which of your channels is most likely being under-credited, and
+                what that costs at your current spend.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                A written read on whether your consent and pixel setup is
+                creating legal exposure alongside the measurement gap.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                Written by a person within 24 hours. No drip sequence, no
+                automated scoring, no call required to receive it.
+              </span>
+            </li>
+          </ul>
+
+          <h2 className="text-[32px] md:text-[40px] font-[790] tracking-[-0.045em] leading-[0.95] text-ink mt-16">
+            What this is not
+          </h2>
+          <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
+            It is not a technical scan of your tags — for that, the{" "}
+            <Link href="/free-audit/" className="underline">
+              free pixel and GDPR audit
+            </Link>{" "}
+            crawls your site and reports which pixels fire before consent, with
+            a PDF back in two to three minutes. It is not a product demo either:
+            if you already know the gap is real and want to see the platform,
+            book a{" "}
+            <Link href="/demo/" className="underline">
+              demo
+            </Link>{" "}
+            instead. And it is not a rewrite of your measurement plan — it is a
+            number, a cause, and an honest read on whether the number is big
+            enough to act on.
           </p>
         </div>
       </section>
