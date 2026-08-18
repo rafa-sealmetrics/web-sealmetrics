@@ -39,7 +39,10 @@
   --color-text-primary: #0E0E0C;
   --color-text-body: #2B2A28;
   --color-text-secondary: #6B6B5E;
-  --color-text-tertiary: #717165;
+  /* 4.85:1 on bg-paper #F4F1E8, 5.38:1 on bg-paper-white. The previous
+     #717165 measured 4.37:1 and failed WCAG AA at the 13.6px used by
+     the header language switcher — see audits/2026-08-18. */
+  --color-text-tertiary: #6A6A5E;
 
   /* Signal attention colour. Legacy green remains available as data semantics. */
   --color-brand: #CBFF3D;

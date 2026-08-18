@@ -100,7 +100,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
                 ? "¿Listo para ver el 100% de tu tráfico?"
                 : "Ready to see 100% of your traffic?"}
             </p>
-            <p className="text-[0.78rem] text-warm-400 mt-1">
+            <p className="text-[0.78rem] text-warm-300 mt-1">
               {locale === "es"
                 ? "30 minutos con el founder, sobre tu propia web · sin compromiso"
                 : "30 minutes with the founder, on your own site · no commitment"}
@@ -134,13 +134,13 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
                 className="h-7 w-auto"
               />
             </Link>
-            <p className="text-[0.85rem] leading-relaxed text-warm-400 max-w-[280px]">
+            <p className="text-[0.85rem] leading-relaxed text-warm-300 max-w-[280px]">
               {t.tagline}
             </p>
           </div>
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <h3 className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-400 mb-4">
+              <h3 className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-warm-300 mb-4">
                 {col.title}
               </h3>
               <nav aria-label={col.title} className="flex flex-col">
@@ -157,7 +157,7 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
             </div>
           ))}
         </div>
-        <div className="pt-8 border-t border-warm-800 flex flex-col md:flex-row justify-between text-[0.8rem] text-warm-400 gap-2">
+        <div className="pt-8 border-t border-warm-800 flex flex-col md:flex-row justify-between text-[0.8rem] text-warm-300 gap-2">
           <span>&copy; {new Date().getFullYear()} {t.copyright}</span>
           <span>{t.hosted}</span>
         </div>
