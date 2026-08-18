@@ -3,6 +3,19 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { getHotelCase, type HotelCaseLocale, type HotelCaseSlug } from "@/lib/content/hotel-cases";
 import { articleSchema, breadcrumbSchema, casePersonSchema, collectionPageSchema, itemListSchema, quotationSchema, reviewSchema, statisticClaimSchema } from "@/lib/schema";
 
+/**
+ * Intrinsic dimensions from each SVG's viewBox. CSS still sets the rendered
+ * size (`.sig-case-logo`, `.sig-case-index-card>img`); these attributes only
+ * give the browser an aspect ratio to reserve before the SVG arrives, which is
+ * what keeps CLS at 0.
+ */
+const LOGO_BOX: Record<string, { width: number; height: number }> = {
+  "/logos/clients/palladium-dark.svg": { width: 200, height: 60 },
+  "/logos/clients/dreamplace.svg": { width: 260, height: 60 },
+};
+const logoBox = (src: string) => LOGO_BOX[src] ?? { width: 260, height: 60 };
+
+
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
 export function HotelCaseSignal({ slug, locale }: { slug: HotelCaseSlug; locale: HotelCaseLocale }) {
@@ -24,7 +37,7 @@ export function HotelCaseSignal({ slug, locale }: { slug: HotelCaseSlug; locale:
       <section className="sig-case-hero">
         <nav className="sig-case-breadcrumbs" aria-label="Breadcrumb"><Link href={`${prefix}/`}>{locale === "es" ? "Inicio" : "Home"}</Link><span>/</span><Link href={`${prefix}/case-studies/`}>{casesLabel}</Link><span>/</span><span>{c.client}</span></nav>
         <div className="sig-case-hero-grid">
-          <div><img src={c.logo} alt={c.client} className="sig-case-logo" /><p className="sig-case-eyebrow"><span>{c.eyebrow}</span></p><h1>{c.hero}</h1><p className="sig-case-hero-body">{c.heroBody}</p></div>
+          <div><img src={c.logo} alt={c.client} className="sig-case-logo" width={logoBox(c.logo).width} height={logoBox(c.logo).height} /><p className="sig-case-eyebrow"><span>{c.eyebrow}</span></p><h1>{c.hero}</h1><p className="sig-case-hero-body">{c.heroBody}</p></div>
           <aside className="sig-case-file"><div className="sig-case-module-top"><span>CASE FILE</span><span>VERIFIED · 2026</span></div>{c.meta.map(([label,value],index)=><div key={label}><span>0{index+1}</span><strong>{label}</strong><b>{value}</b></div>)}<p>{c.sourceLabel} · {c.sourceText}</p></aside>
         </div>
       </section>
@@ -57,7 +70,7 @@ export function CaseStudyIndexSignal({ locale }: { locale: HotelCaseLocale }) {
     {cases.map(({data})=><JsonLd key={data.client} data={reviewSchema({ reviewBody:data.quote, authorName:data.person, authorRole:`${data.role} · ${data.client}` })} />)}
     <main className="sig-case-page sig-case-index">
       <section className="sig-case-index-hero"><nav className="sig-case-breadcrumbs" aria-label="Breadcrumb"><Link href={`${prefix}/`}>{locale === "es" ? "Inicio" : "Home"}</Link><span>/</span><span>{label}</span></nav><p className="sig-case-eyebrow"><span>{label}</span></p><h1>{title}</h1><p>{intro}</p></section>
-      <section className="sig-case-index-list">{cases.map(({slug,data},index)=><Link key={slug} href={`${prefix}/case-studies/${slug}/`} className="sig-case-index-card"><div className="sig-case-index-card-top"><span>0{index+1} · {data.eyebrow}</span><Arrow /></div><img src={data.logo} alt={data.client}/><h2>{data.hero}</h2><div className="sig-case-index-stats">{data.metrics.slice(0,2).map(metric=><p key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></p>)}</div><blockquote>“{data.quote}”<cite>{data.person} · {data.role}</cite></blockquote></Link>)}</section>
+      <section className="sig-case-index-list">{cases.map(({slug,data},index)=><Link key={slug} href={`${prefix}/case-studies/${slug}/`} className="sig-case-index-card"><div className="sig-case-index-card-top"><span>0{index+1} · {data.eyebrow}</span><Arrow /></div><img src={data.logo} alt={data.client} width={logoBox(data.logo).width} height={logoBox(data.logo).height}/><h2>{data.hero}</h2><div className="sig-case-index-stats">{data.metrics.slice(0,2).map(metric=><p key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></p>)}</div><blockquote>“{data.quote}”<cite>{data.person} · {data.role}</cite></blockquote></Link>)}</section>
       <section className="sig-case-final"><p className="sig-case-tag">{locale === "es" ? "Tu comparación" : "Your comparison"}</p><h2>{locale === "es" ? <>Contrasta tu stack<br/><em>contra el total real.</em></> : <>Test your stack<br/><em>against the real total.</em></>}</h2><p>{locale === "es" ? "Mide en paralelo sin retirar la analítica actual y localiza la diferencia sobre tu propio tráfico e ingresos." : "Measure in parallel without removing the current analytics and locate the difference on your own traffic and revenue."}</p><div className="sig-case-actions"><Link className="sig-case-button" href={`${prefix}/demo/`}>{locale === "es" ? "Reserva una revisión" : "Book a measurement review"}<Arrow /></Link></div></section>
     </main>
   </>;

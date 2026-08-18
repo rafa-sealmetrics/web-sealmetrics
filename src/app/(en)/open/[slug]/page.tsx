@@ -73,6 +73,8 @@ export default async function OpenChapterPage({ params }: PageProps) {
     headline: chapter.title,
     description: chapter.summary,
     inLanguage: "en",
+    datePublished: chapter.datePublished,
+    dateModified: chapter.dateModified,
     isPartOf: {
       "@type": "Book",
       name: "Open — SealMetrics",

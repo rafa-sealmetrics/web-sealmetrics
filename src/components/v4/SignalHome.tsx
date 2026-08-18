@@ -313,7 +313,7 @@ export function SignalHome() {
         <div className="sig-integration-grid">
           {integrations.map((integration) => (
             <article key={integration.name}>
-              <img src={integration.src} alt={integration.name} />
+              <img src={integration.src} alt={integration.name} width={24} height={24} />
               <span>{integration.type}</span>
             </article>
           ))}

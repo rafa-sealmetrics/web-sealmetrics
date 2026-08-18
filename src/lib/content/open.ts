@@ -21,6 +21,14 @@ export interface OpenChapter {
   summary: string;
   readMinutes: number;
   status: "draft" | "ready";
+  /**
+   * Author-set, never derived. `dateModified` is a freshness claim to Google
+   * and to AI engines, so it is bumped only for a real revision of the
+   * chapter's argument — not for a link swap, a metadata rewrite or a design
+   * pass. Until a chapter is genuinely revised it equals `datePublished`.
+   */
+  datePublished: string;
+  dateModified: string;
   toc: TocItem[];
 }
 
@@ -43,6 +51,8 @@ export const openChapters: OpenChapter[] = [
       "Most enterprise eCommerce companies in Europe optimize advertising investment on top of 13% of their traffic. This is what happens when that gets normalized.",
     readMinutes: 8,
     status: "ready",
+    datePublished: "2026-05-27",
+    dateModified: "2026-05-27",
     toc: [
       { id: "the-problem", label: "The problem we see" },
       { id: "what-breaks", label: "What breaks in decision-making" },
@@ -61,6 +71,8 @@ export const openChapters: OpenChapter[] = [
       "Every company knows more than half of their analytics data is missing. We build for the operators who refuse to keep making decisions on top of it — regardless of sector, country, or revenue band.",
     readMinutes: 6,
     status: "ready",
+    datePublished: "2026-05-28",
+    dateModified: "2026-05-28",
     toc: [
       { id: "the-numbers", label: "The numbers everyone already knows" },
       { id: "the-operator", label: "The operator we build for" },
@@ -79,6 +91,8 @@ export const openChapters: OpenChapter[] = [
       "The technical difference between what GA4 measures (≈13% in the EU) and what you need to defend a number to your CFO.",
     readMinutes: 8,
     status: "ready",
+    datePublished: "2026-05-28",
+    dateModified: "2026-05-28",
     toc: [
       { id: "the-cascade", label: "Where the 13% comes from" },
       { id: "sampling-vs-complete", label: "Sampling vs complete measurement" },
@@ -96,6 +110,8 @@ export const openChapters: OpenChapter[] = [
       "No cookies, no fingerprinting, no localStorage. 60+ server-side validation rules and last-click attribution over 100% of events.",
     readMinutes: 10,
     status: "draft",
+    datePublished: "2026-05-27",
+    dateModified: "2026-05-27",
     toc: [
       { id: "what-it-captures", label: "What the pixel captures" },
       { id: "server-validation", label: "Server-side validation · 60+ rules" },
@@ -114,6 +130,8 @@ export const openChapters: OpenChapter[] = [
       "Where the pixel runs, what latency it adds, how it scales. No promises — verifiable numbers.",
     readMinutes: 6,
     status: "ready",
+    datePublished: "2026-05-27",
+    dateModified: "2026-05-27",
     toc: [
       { id: "where-it-runs", label: "Where the pixel runs" },
       { id: "latency", label: "Latency and client footprint" },
@@ -133,6 +151,8 @@ export const openChapters: OpenChapter[] = [
       "How we meet GDPR, ePrivacy, and Schrems II without resorting to creative legal interpretations — and what we explicitly do not claim.",
     readMinutes: 10,
     status: "ready",
+    datePublished: "2026-05-28",
+    dateModified: "2026-05-28",
     toc: [
       { id: "gdpr-architecture", label: "GDPR by architecture, not by permission" },
       { id: "eprivacy", label: "ePrivacy and the cookie question" },
@@ -151,6 +171,8 @@ export const openChapters: OpenChapter[] = [
       "Pay for human events, not for bots or AI agents. One architecture across plans. Honest comparison against the enterprise tier we replace.",
     readMinutes: 8,
     status: "ready",
+    datePublished: "2026-05-28",
+    dateModified: "2026-05-28",
     toc: [
       { id: "what-we-charge-for", label: "What we charge for and what we don't" },
       { id: "three-plans", label: "Three plans, one architecture" },
@@ -168,6 +190,8 @@ export const openChapters: OpenChapter[] = [
       "Onboarding, support, and partners: Product Hackers, 3dids, Ayesa. How we come in and how we stay.",
     readMinutes: 6,
     status: "draft",
+    datePublished: "2026-05-27",
+    dateModified: "2026-05-27",
     toc: [
       { id: "onboarding", label: "Onboarding in four phases" },
       { id: "support", label: "How we support customers" },
@@ -186,6 +210,8 @@ export const openChapters: OpenChapter[] = [
       "No multi-touch attribution. No session reconstruction. No individual identification. No fingerprinting. Why this is a position, not a limitation.",
     readMinutes: 7,
     status: "ready",
+    datePublished: "2026-05-28",
+    dateModified: "2026-05-28",
     toc: [
       { id: "no-multi-touch", label: "We won't do multi-touch attribution" },
       { id: "no-sessions", label: "We won't reconstruct sessions" },
@@ -204,6 +230,8 @@ export const openChapters: OpenChapter[] = [
       "LENS AI, native MCP, and the direction we're betting on for the next 18 months.",
     readMinutes: 5,
     status: "draft",
+    datePublished: "2026-05-27",
+    dateModified: "2026-05-27",
     toc: [
       { id: "lens-ai", label: "LENS AI" },
       { id: "mcp", label: "Native MCP server" },
@@ -222,6 +250,8 @@ export const openChapters: OpenChapter[] = [
       "Opinionated definitions of the terms used across Open. Where we use a word differently from the rest of the industry, we say so.",
     readMinutes: 7,
     status: "ready",
+    datePublished: "2026-05-28",
+    dateModified: "2026-05-28",
     toc: [
       { id: "method", label: "Method and measurement" },
       { id: "compliance", label: "Legal compliance" },
