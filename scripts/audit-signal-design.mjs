@@ -51,7 +51,13 @@ if (!css.includes("border-radius: 0 !important")) failures.push("square-geometry
 const v4CssDir = path.join(root, "src/components/v4");
 for (const name of readdirSync(v4CssDir).filter(file => file.endsWith(".css"))) {
   const source = readFileSync(path.join(v4CssDir, name), "utf8");
-  if (/color\s*:\s*transparent[^}]*-webkit-text-stroke\s*:[^;}]*currentColor/i.test(source)) {
+  // `color` must be anchored to a declaration boundary. Unanchored, it also
+  // matched `-webkit-text-fill-color: transparent`, which is the *correct*
+  // way to write outlined text: the fill is cleared while `color` keeps the
+  // inherited value, so a currentColor stroke resolves to the heading's own
+  // colour and works on light and dark alike. Only a genuinely transparent
+  // `color` with a currentColor stroke is invisible.
+  if (/(^|[;{])\s*color\s*:\s*transparent[^}]*-webkit-text-stroke\s*:[^;}]*currentColor/im.test(source)) {
     failures.push(`${name}: transparent outlined text inherits a transparent stroke`);
   }
 }

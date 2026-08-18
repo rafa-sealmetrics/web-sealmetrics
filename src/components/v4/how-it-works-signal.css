@@ -59,7 +59,11 @@
 .sig-how-actions { display:flex; flex-wrap:wrap; gap:24px; align-items:center; margin-top:34px; }
 .sig-how-button { display:inline-flex; gap:30px; align-items:center; justify-content:space-between; min-height:52px; padding:14px 18px; border:1px solid var(--ink); font-size:14px; font-weight:720; transition:box-shadow 140ms ease,transform 140ms ease; }
 .sig-how-button:hover { box-shadow:3px 3px 0 var(--ink); transform:translate(-2px,-2px); }
-.sig-how-button-acid { background:var(--acid); color:var(--ink); }
+/* `.sig-how-page a { color: inherit }` above is two classes, so it outranked
+ * the one-class button rule and the acid button inherited white from the
+ * dark sections it sits in: white on acid, 1.15:1. Matched specificity so
+ * the button keeps its ink label wherever it is placed. */
+.sig-how-page .sig-how-button-acid { background:var(--acid); color:var(--ink); }
 .sig-how-button-dark { background:var(--ink); color:var(--white)!important; }
 .sig-how-text-link, .sig-how-dark-link { border-bottom:1px solid currentColor; font-size:14px; font-weight:720; }
 .sig-how-micro, .sig-how-note { margin-top:28px!important; color:var(--muted); font:650 9px/1.7 var(--font-jetbrains-mono),monospace; letter-spacing:.08em; text-transform:uppercase; }

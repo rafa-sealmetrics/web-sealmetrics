@@ -52,6 +52,16 @@ jobs:
       # step reports them per-rule so a failure names the regression.
       - run: npm test
 
+      # WCAG AA colour contrast, measured in a real browser against the built
+      # pages. Not part of `npm run build`: it needs Chrome, and the build has
+      # to keep working on a machine without one. ubuntu-latest ships Chrome.
+      #
+      # It gates regressions, not perfection — .contrast-baseline.json records
+      # the known v3 debt and the script fails if a pair is new or grows.
+      - run: npm run audit:contrast
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+
       # Surfaces tracked files the build rewrites. Warn only: the deploy
       # rewrites them the same way, so this does not affect what ships.
       #
