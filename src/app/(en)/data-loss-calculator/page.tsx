@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Data Loss Calculator — SealMetrics",
     description: "See the exact revenue your analytics is missing.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/data-loss-calculator/")],
     url: "https://sealmetrics.com/data-loss-calculator/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Data Loss Calculator — SealMetrics",
     description: "See the exact revenue your analytics is missing.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/data-loss-calculator/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/data-loss-calculator/",
@@ -91,6 +91,13 @@ export default function Page() {
               lightweight first-party server-side pixel — no cookies, no consent dependency, no
               sampling — so revenue in the report matches Shopify. Enter your monthly visitors and
               revenue above to see the exact amount your current setup hides each month.
+            </p>
+            <p>
+              This calculator sizes what you are losing today. Once you know the
+              gap, the{" "}
+              <Link href="/growth-calculator/">growth calculator</Link> works the
+              other way round: it projects what recovering that share of
+              attributed revenue is worth against your current paid-media spend.
             </p>
           </QuickAnswer>
         </div>

@@ -69,6 +69,9 @@ const copy = {
       "The useful claim is not “more data” in isolation. It is a reported total you can compare with backend revenue, under an attribution model your team can name.",
     definitionAction: "Book a measurement walkthrough",
     definitionPricing: "Review pricing",
+    definitionEraBefore: "The architectural shift behind that claim — unmodeled data, no consent dependency, output an AI agent can read — is set out in ",
+    definitionEraLink: "modern web analytics",
+    definitionEraAfter: ".",
     layersTag: "Four layers · one evidence chain",
     layersTitle: <>From first signal to<br /><em>a decision you can defend.</em></>,
     layersBody:
@@ -167,6 +170,9 @@ const copy = {
       "La afirmación útil no es “más datos” de forma aislada. Es un total que puedes comparar con los ingresos del backend, bajo un modelo de atribución que tu equipo sabe nombrar.",
     definitionAction: "Reserva una revisión de medición",
     definitionPricing: "Consulta precios",
+    definitionEraBefore: "El cambio de arquitectura detrás de esa afirmación — dato sin modelar, sin dependencia del consentimiento, con una salida que un agente de IA puede leer — está explicado en ",
+    definitionEraLink: "analítica web moderna",
+    definitionEraAfter: ".",
     layersTag: "Cuatro capas · una cadena de evidencia",
     layersTitle: <>De la primera señal a<br /><em>una decisión defendible.</em></>,
     layersBody:
@@ -287,6 +293,12 @@ export function ProductSignal({ locale }: { locale: Locale }) {
             {t.definitionBefore}<Link href={glossaryCookieless}>{t.cookieless}</Link>{t.definitionMiddle}<Link href={glossaryAttribution}>{t.lastClick}</Link>{t.definitionAfter}
           </p>
           <p>{t.definitionCaveat}</p>
+          {/* /modern-analytics/ had no inbound link from anywhere on the site. */}
+          <p>
+            {t.definitionEraBefore}
+            <Link href={`${prefix}/modern-analytics/`}>{t.definitionEraLink}</Link>
+            {t.definitionEraAfter}
+          </p>
           <div className="sig-product-definition-actions">
             <Link className="sig-product-button sig-product-button-acid" href={`${prefix}/demo/`}>{t.definitionAction} <Arrow /></Link>
             <Link className="sig-product-dark-link" href={`${prefix}/pricing/`}>{t.definitionPricing} <span aria-hidden="true">→</span></Link>

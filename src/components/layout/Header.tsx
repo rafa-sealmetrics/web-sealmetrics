@@ -188,8 +188,12 @@ function Dropdown({
         </button>
       )}
 
-      {isOpen && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
+      {/* Always in the DOM, hidden with `display:none` when closed.
+          It used to be `{isOpen && …}`, which meant the entire nav shipped
+          seven crawlable links: every dropdown destination existed only after
+          a click no crawler performs. /privacy-end-to-end/ was reachable from
+          nowhere else and had zero inbound links site-wide as a result. */}
+      <div className={isOpen ? "absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50" : "hidden"} aria-hidden={!isOpen}>
           <div role="menu" className="bg-paper-white border border-signal-ink shadow-hard py-2 min-w-[260px]">
             {dropdown.groups.map((group, gi) => (
               <div key={gi}>
@@ -220,8 +224,7 @@ function Dropdown({
               </div>
             ))}
           </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

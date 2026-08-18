@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "SealMetrics vs Adobe Analytics — Enterprise alternative",
     description: "Adobe Analytics costs $100K+ and requires specialists. SealMetrics delivers complete data without consultants.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/adobe-analytics/")],
     url: "https://sealmetrics.com/vs/adobe-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs Adobe Analytics — Enterprise alternative",
     description: "Adobe Analytics costs $100K+ and requires specialists. SealMetrics delivers complete data without consultants.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/adobe-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/adobe-analytics/", languages: getAlternates("/vs/adobe-analytics") },
 };
@@ -63,7 +63,8 @@ export default function Page() {
         pages={[
         { href: "/vs-ga4", title: "vs Google Analytics 4", desc: "The free default — and its EU blind spot." },
         { href: "/vs/ga360", title: "vs Google Analytics 360", desc: "Enterprise data without the $150K invoice." },
-        { href: "/vs/piwik-pro", title: "vs Piwik PRO", desc: "EU hosting plus complete capture." }
+        { href: "/vs/piwik-pro", title: "vs Piwik PRO", desc: "EU hosting plus complete capture." },
+        { href: "/alternatives/adobe-analytics", title: "Adobe Analytics alternatives", desc: "The wider field, before you renew." }
       ]}
       />
       <LogosStrip />

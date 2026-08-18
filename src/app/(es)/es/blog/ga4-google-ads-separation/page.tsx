@@ -17,15 +17,20 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://sealmetrics.com/es/blog/ga4-google-ads-separation/",
     siteName: "SealMetrics",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/ga4-google-ads-separation/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "GA4 y Google Ads: la separacion que nadie vio venir",
     description: "Google elimina Google Signals como control de datos GA4 a Google Ads. Qué significa para tu privacidad y tus campañas.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/ga4-google-ads-separation/")],
   },
+  // `draft: true` in blog.ts, so the /es/blog index never lists it — but the
+  // page was still indexable and in the sitemap, which made it the only page
+  // on the site with zero inbound internal links. Indexability now matches the
+  // draft status; flip both together when it is ready to publish.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/ga4-google-ads-separation/",
   },

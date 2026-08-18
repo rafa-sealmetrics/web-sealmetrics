@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "SealMetrics vs the alternatives",
     description: "Feature-by-feature comparisons against every major analytics platform.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/")],
     url: "https://sealmetrics.com/vs/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs the alternatives",
     description: "Feature-by-feature comparisons against every major analytics platform.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/", languages: getAlternates("/vs") },
 };
@@ -35,6 +35,7 @@ const comparisons = [
   { slug: "vs/piwik-pro", name: "Piwik PRO", stat: "€30K enterprise", tagline: "EU-hosted — but still cookie-based and consent-dependent." },
   { slug: "vs/matomo", name: "Matomo", stat: "Open-source + ops cost", tagline: "EU-friendly and open-source — but cookies-by-default and self-hosting eats the 'free' label." },
   { slug: "alternatives/google-analytics", name: "Google Analytics alternatives", stat: "The broader picture", tagline: "What to pick if you're post-GA4 — and why most \"alternatives\" are just cheaper clones." },
+  { slug: "alternatives/adobe-analytics", name: "Adobe Analytics alternatives", stat: "Before you renew", tagline: "What replaces Adobe without a six-month implementation and a certified team to run it." },
 ];
 
 export default function Page() {
@@ -83,6 +84,18 @@ export default function Page() {
               </Link>
             ))}
           </div>
+
+          {/* Disambiguation. People searching "Searchmetrics vs SealMetrics"
+              are usually looking for two different companies, not a feature
+              comparison — and that page had no inbound link at all. */}
+          <p className="mt-10 text-[15px] leading-[1.6] text-ink-soft">
+            Looking for Searchmetrics? It is a different company in a different
+            category — SEO visibility software, not web analytics. We wrote{" "}
+            <Link href="/searchmetrics-vs-sealmetrics/" className="underline">
+              why the two get confused
+            </Link>{" "}
+            so you can tell quickly which one you actually need.
+          </p>
         </div>
       </section>
 

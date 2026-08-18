@@ -30,6 +30,13 @@ function getFooterColumns(t: ReturnType<typeof getDictionary>["footer"], locale:
         { label: t.finance, href: localizedHref("/for/finance", locale) },
         { label: t.healthcare, href: localizedHref("/for/healthcare", locale) },
         { label: t.education, href: localizedHref("/for/education", locale) },
+        // The /for hub itself. Every leaf under it was linked from here and
+        // from the header, but the index that lists them all was reachable
+        // from nowhere. Literal label: the slug is not in the dictionary.
+        {
+          label: locale === "es" ? "Todos los roles y sectores" : "All roles and industries",
+          href: localizedHref("/for", locale),
+        },
       ],
     },
     {
