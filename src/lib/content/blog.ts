@@ -30,6 +30,21 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "analytics-for-independent-hotels-attribution-gap",
+    title: "Analytics for Independent Hotels: How to Fix the Direct-Booking Attribution Gap",
+    description:
+      "Discover why independent hotels lose direct-booking attribution to consent banners and OTAs, and how to measure the full booking journey without cookies.",
+    date: "2026-08-18",
+    category: "Hotels",
+    readTime: "8 min",
+    author: AUTHORS.rafa,
+    related: [
+      "cookieless-analytics-for-hotels",
+      "consent-banner-impact-on-analytics",
+      "cookieless-analytics-for-ecommerce",
+    ],
+  },
+  {
     slug: "self-service-analytics-for-marketing-teams",
     title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
     description:
