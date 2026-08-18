@@ -178,13 +178,31 @@ body {
   max-width: 18ch;
 }
 
-/* Signal outlined headline emphasis. */
+/* Signal outlined headline emphasis.
+ *
+ * The stroke follows the heading's own colour instead of being hard-coded to
+ * ink, and the fill is cleared with -webkit-text-fill-color rather than by
+ * setting `color: transparent`. That distinction is the whole fix: `color`
+ * stays inherited, so `currentColor` in the stroke resolves to whatever the
+ * heading is painted in, and the outline is correct on any background without
+ * anyone remembering to add a class.
+ *
+ * Before this, the stroke was ink and only a `.section-dark` ancestor switched
+ * it to paper-white. A dark panel that is dark by its own `bg-ink` class —
+ * every v3 final-CTA block — got an ink stroke on an ink background: the
+ * emphasised words rendered invisible. "Talk directly to <em>the founder.</em>"
+ * shipped as "Talk directly to". 62 elements site-wide. Found by
+ * scripts/audit-contrast.mjs. */
 .h-display em,
 .h-section em {
-  color: transparent;
+  /* `color` must be the heading's own colour, not the retired v3 amber some
+     pages still set inline: the stroke reads currentColor, so an amber fill
+     would paint an amber outline on paper (1.81:1) instead of an ink one. */
+  color: inherit;
+  -webkit-text-fill-color: transparent;
   font-style: normal;
   font-weight: inherit;
-  -webkit-text-stroke: 1.5px var(--color-signal-ink);
+  -webkit-text-stroke: 1.5px currentColor;
 }
 
 .h-display em::before,
@@ -238,10 +256,12 @@ body {
   color: var(--color-dark-text);
 }
 
+/* Kept only to clear the fill for stylesheets that set `color` on the em
+ * directly. The stroke colour no longer needs an override — it follows
+ * currentColor, which .section-dark already sets. */
 .section-dark .h-display em,
 .section-dark .h-section em {
-  color: transparent;
-  -webkit-text-stroke-color: var(--color-paper-white);
+  -webkit-text-fill-color: transparent;
 }
 
 .section-dark .h-display em::before,
@@ -365,12 +385,18 @@ body {
   line-height: 0.92;
 }
 
+/* Same fix, for the pages that have not been migrated to the Signal classes.
+ * `color` must NOT be forced to transparent here: currentColor is what carries
+ * the stroke colour onto a dark panel. */
 #main-content > :not([class*="sig-"]) :is(h1, h2) em {
-  color: transparent !important;
+  /* !important because the v3 pages set the retired amber inline. The colour
+     has to land on `inherit` rather than `transparent`: the stroke follows
+     currentColor, and transparent would erase the outline entirely. */
+  color: inherit !important;
   font-style: normal !important;
   font-weight: inherit !important;
   -webkit-text-fill-color: transparent !important;
-  -webkit-text-stroke: 1.5px var(--color-signal-ink);
+  -webkit-text-stroke: 1.5px currentColor;
   background: transparent !important;
 }
 
@@ -378,6 +404,9 @@ body {
   content: none !important;
 }
 
+/* Redundant now that the stroke is currentColor, but harmless and explicit:
+ * a .section-dark ancestor that does not itself set a text colour still gets
+ * a paper-white outline. */
 #main-content > :not([class*="sig-"]).section-dark :is(h1, h2) em,
 #main-content > :not([class*="sig-"]) .section-dark :is(h1, h2) em {
   -webkit-text-stroke-color: var(--color-paper-white);
