@@ -11,6 +11,7 @@ import {
   faqPageSchema,
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics — Consentless analytics for eCommerce",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/")],
     url: "https://sealmetrics.com/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics — Consentless analytics for eCommerce",
     description: "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/",

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Cumplimiento RGPD en analítica — Glosario SealMetrics",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/es/glossary/gdpr-analytics-compliance/",
     siteName: "SealMetrics",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/gdpr-analytics-compliance/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cumplimiento RGPD en analítica",
     description: "Qué exige el RGPD a la analítica web y cómo la arquitectura sin cookies cambia el problema.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/gdpr-analytics-compliance/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/gdpr-analytics-compliance/",

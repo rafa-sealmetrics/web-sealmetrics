@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Legitimate Interest (Analytics) — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/legitimate-interest-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/legitimate-interest-analytics/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Legitimate Interest as a Basis for Analytics",
     description: "What legitimate interest covers and doesn't — the common confusion with ePrivacy and the cookie-consent rule.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/legitimate-interest-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/legitimate-interest-analytics/" },
 };

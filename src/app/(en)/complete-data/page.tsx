@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-05-28";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "Why incomplete analytics produces wrong investment decisions, what complete data means architecturally, and the numbers that change when you switch.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/complete-data/")],
     url: "https://sealmetrics.com/complete-data/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Complete data — analytics that captures 100% of traffic",
     description: "Why incomplete analytics produces wrong investment decisions, what complete data means architecturally, and the numbers that change when you switch.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/complete-data/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/complete-data/",

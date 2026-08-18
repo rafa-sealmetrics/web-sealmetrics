@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Event Tracking? — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/event-tracking/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/event-tracking/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Event Tracking?",
     description: "Event tracking records user interactions beyond pageviews. Learn about GA4's event model and cookieless alternatives.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/event-tracking/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/event-tracking/",

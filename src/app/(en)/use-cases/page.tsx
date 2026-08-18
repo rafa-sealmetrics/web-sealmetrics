@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/lib/schema";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const TITLE = "Analytics use cases — cookieless measurement tasks";
 const DESCRIPTION =
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "SealMetrics",
     locale: "en_US",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/")],
   },
   twitter: {
     card: "summary_large_image",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: "Analytics use cases — cookieless measurement tasks",
     description:
       "Revenue attribution, conversion tracking and GA4 migration — task-level guides with the real trade-offs.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/")],
   },
   alternates: { canonical: "https://sealmetrics.com/use-cases/" },
 };

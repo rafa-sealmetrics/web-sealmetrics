@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { SharedLayout } from "@/components/layout/SharedLayout";
+import { ogImage } from "@/lib/seo/og";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     images: [
       {
-        url: "https://sealmetrics.com/og-image.png",
+        url: ogImage("/es/"),
         width: 1200,
         height: 630,
         alt: "SealMetrics — Analítica Completa para eCommerce",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: "SealMetrics — Analítica Completa para eCommerce",
     description:
       "GA4 captura ~13% del tráfico europeo. SealMetrics captura el 100% — sin cookies, sin muros de consentimiento.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/",

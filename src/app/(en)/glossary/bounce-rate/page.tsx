@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Bounce Rate? — SealMetrics Glossary",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/bounce-rate/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/bounce-rate/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Bounce Rate?",
     description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/bounce-rate/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/bounce-rate/" },
 };

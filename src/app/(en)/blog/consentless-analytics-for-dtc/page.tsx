@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Consentless Analytics for DTC — 2026 Guide",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/consentless-analytics-for-dtc/")],
     url: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Consentless Analytics for DTC — 2026 Guide",
     description: "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/consentless-analytics-for-dtc/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",

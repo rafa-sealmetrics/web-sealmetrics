@@ -7,6 +7,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Impacto del bloqueador en la analítica — Glosario",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     siteName: "SealMetrics",
     locale: "es_ES",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/ad-blocker-analytics-impact/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Cómo afectan los bloqueadores a la analítica?",
     description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party los esquiva.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/ad-blocker-analytics-impact/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/ad-blocker-analytics-impact/",

@@ -8,6 +8,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Análisis de brechas RGPD para la analítica web",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Mapea tu stack de analítica contra cada requisito que debe cumplir, encuentra las brechas y ve cómo una arquitectura cookieless las cierra.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/reg-gap-analysis/")],
     url: "https://sealmetrics.com/es/reg-gap-analysis/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Análisis de brechas RGPD para la analítica web",
     description: "Dónde tu stack de analítica se sale del cumplimiento — requisito a requisito.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/reg-gap-analysis/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/reg-gap-analysis/",

@@ -11,6 +11,7 @@ import {
   GrowthRiskCost,
   QuoteBlock,
 } from "@/components/sections/v3/HomeDSections";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Preview D — Setup, real time & LENS home proposal",
@@ -23,14 +24,14 @@ export const metadata: Metadata = {
     siteName: "SealMetrics",
     locale: "en_US",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/preview/home-power-d/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Preview D — Power home proposal",
     description: "Internal design proposal D for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/preview/home-power-d/")],
   },
   alternates: { canonical: "https://sealmetrics.com/preview/home-power-d/" },
 };

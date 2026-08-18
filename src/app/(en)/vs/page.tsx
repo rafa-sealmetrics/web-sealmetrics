@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs the alternatives — Complete comparisons",

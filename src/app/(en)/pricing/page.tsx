@@ -5,6 +5,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { PricingSignal } from "@/components/v4/PricingSignal";
 import { pricingSignalFaqItems } from "@/lib/content/pricing-signal";
 import "@/components/v4/pricing-signal.css";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics Pricing — Pay for humans, not bots",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/pricing/")],
     url: "https://sealmetrics.com/pricing/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics Pricing — Pay for humans, not bots",
     description: "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/pricing/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/pricing/",

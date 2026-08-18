@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is First-Party Data Collection? — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/first-party-data-collection/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/first-party-data-collection/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is First-Party Data Collection?",
     description: "First-party data collection gathers analytics through your own domain, avoiding ad blockers.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/first-party-data-collection/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/first-party-data-collection/",

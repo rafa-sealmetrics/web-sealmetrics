@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Términos del Servicio — Sealmetrics",
@@ -13,14 +14,14 @@ export const metadata: Metadata = {
     siteName: "Sealmetrics",
     type: "website",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/terms/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Términos del Servicio — Sealmetrics",
     description: "Condiciones de uso de la plataforma: planes, facturación, uso aceptable, propiedad de los datos, responsabilidad y terminación.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/terms/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/terms/",

@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-05-28";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "How analytics can be lawful under GDPR and ePrivacy without a consent banner — the architectural path, the authority guidance, the limits.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/consentless-analytics/")],
     url: "https://sealmetrics.com/consentless-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Consentless analytics — lawful by architecture",
     description: "How analytics can be lawful under GDPR and ePrivacy without a consent banner — the architectural path, the authority guidance, the limits.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/consentless-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/consentless-analytics/",

@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionPageSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { BlogIndexSignal } from "@/components/v4/BlogIndexSignal";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Blog de analítica sin cookies — SealMetrics",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: "Blog de analítica sin cookies — SealMetrics",
     description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/")],
     url: "https://sealmetrics.com/es/blog/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Blog de analítica sin cookies — SealMetrics",
     description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/",

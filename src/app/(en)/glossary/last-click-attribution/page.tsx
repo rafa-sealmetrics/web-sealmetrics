@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Last-Click Attribution? — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/last-click-attribution/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/last-click-attribution/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Last-Click Attribution?",
     description: "Last-click attribution explained: how it differs from multi-touch, why it scales, and what it deliberately doesn't do.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/last-click-attribution/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/last-click-attribution/" },
 };

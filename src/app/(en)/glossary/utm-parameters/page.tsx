@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Are UTM Parameters? — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/utm-parameters/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/utm-parameters/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Are UTM Parameters?",
     description: "The five query-string tags behind campaign attribution — and why they work without cookies or consent.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/utm-parameters/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/utm-parameters/",

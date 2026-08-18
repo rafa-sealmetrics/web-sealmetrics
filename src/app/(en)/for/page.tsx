@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics for every team — Roles, industries, verticals",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     title: "SealMetrics for every team",
     description: "Dedicated pages for each role and industry.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/")],
     url: "https://sealmetrics.com/for/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics for every team",
     description: "Dedicated pages for each role and industry.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/for/")],
   },
   alternates: { canonical: "https://sealmetrics.com/for/", languages: getAlternates("/for") },
 };

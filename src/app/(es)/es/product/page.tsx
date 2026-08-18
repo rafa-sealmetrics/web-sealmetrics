@@ -4,6 +4,7 @@ import { softwareApplicationSchema, breadcrumbSchema, speakableWebPageSchema } f
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ProductSignal } from "@/components/v4/ProductSignal";
 import "@/components/v4/product-signal.css";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Producto — SealMetrics · Analítica completa",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Stack analítico completo para equipos eCommerce. Sin consentimiento, 100% observado, alojado en UE. LENS AI + SuperAPI + MCP nativo.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/product/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/product/",
     siteName: "SealMetrics",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Producto — SealMetrics · Analítica completa",
     description: "Stack analítico completo para equipos eCommerce. Sin consentimiento, 100% observado, alojado en UE. LENS AI + SuperAPI + MCP nativo.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/product/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/product/",

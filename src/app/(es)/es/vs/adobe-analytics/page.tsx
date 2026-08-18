@@ -8,6 +8,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Adobe Analytics — Alternativa enterprise",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "SealMetrics vs Adobe Analytics — Alternativa enterprise",
     description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. SealMetrics da dato completo sin consultores.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/adobe-analytics/")],
     url: "https://sealmetrics.com/es/vs/adobe-analytics/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs Adobe Analytics — Alternativa enterprise",
     description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. SealMetrics da dato completo sin consultores.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/vs/adobe-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/adobe-analytics/", languages: getAlternatesEs("/vs/adobe-analytics") },
 };

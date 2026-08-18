@@ -8,6 +8,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs Adobe Analytics — Enterprise alternative",

@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "GDPR Analytics in Spain: FAQ for Online Stores",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow? Direct answers, one per question.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/gdpr-analytics-spain-faq/")],
     url: "https://sealmetrics.com/blog/gdpr-analytics-spain-faq/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "GDPR Analytics in Spain: 7 Questions Online Stores Ask",
     description: "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow? Direct answers, one per question.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/gdpr-analytics-spain-faq/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/gdpr-analytics-spain-faq/",

@@ -9,6 +9,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description:
       "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/ga4-alternatives-enterprise/")],
     url: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
     description: "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/ga4-alternatives-enterprise/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise/",

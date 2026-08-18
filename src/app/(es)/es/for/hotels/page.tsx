@@ -13,6 +13,7 @@ import { Picture } from "@/components/ui/Picture";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analítica para hoteles — venta directa | SealMetrics",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "Analítica first-party sin consentimiento para grupos hoteleros. Reconcilia reservas directas con tu PMS y atribuye ingresos de meta-search sin cajas negras de OTAs.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/hotels/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/for/hotels/",
     siteName: "SealMetrics",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analítica para hoteles — venta directa | SealMetrics",
     description: "Analítica first-party sin consentimiento para grupos hoteleros. Reconcilia reservas directas con tu PMS y atribuye ingresos de meta-search sin cajas negras de OTAs.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/hotels/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/hotels/",

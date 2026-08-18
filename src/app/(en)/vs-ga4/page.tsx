@@ -19,6 +19,7 @@ import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
 import { ComparisonMethodology } from "@/components/sections/v3/ComparisonMethodology";
 import { quotationSchema } from "@/lib/schema";
 import Link from "next/link";
+import { ogImage } from "@/lib/seo/og";
 
 const VS_GA4_DATE_MODIFIED = "2026-05-04";
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
     description: "Feature-by-feature comparison. Honest.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs-ga4/")],
     url: "https://sealmetrics.com/vs-ga4/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
     description: "Feature-by-feature comparison. Honest.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs-ga4/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/vs-ga4/",

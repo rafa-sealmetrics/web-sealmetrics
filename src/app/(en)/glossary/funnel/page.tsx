@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is a Conversion Funnel? — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/funnel/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/funnel/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is a Conversion Funnel?",
     description: "An ordered sequence of steps toward a conversion, measured by drop-off — trustworthy only at full coverage.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/funnel/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/funnel/",

@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "¿Tu analítica cumple el RGPD? Análisis legal",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner de consentimiento. Aquí está el test legal y dónde cae cada herramienta.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/gdpr-eprivacy-analytics-legal-assessment/")],
     url: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y SealMetrics",
     description: "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner de consentimiento. Aquí está el test legal y dónde cae cada herramienta.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/blog/gdpr-eprivacy-analytics-legal-assessment/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment/",

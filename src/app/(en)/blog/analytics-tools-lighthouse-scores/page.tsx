@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "We Added 9 Analytics Tools to One Page. Lighthouse Scores.",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/blog/analytics-tools-lighthouse-scores/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/analytics-tools-lighthouse-scores/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "We Added 9 Analytics Tools to One Page. Lighthouse Scores.",
     description: "Lighthouse performance scores for 9 analytics tools tested on the same baseline page. The data speaks for itself.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/analytics-tools-lighthouse-scores/")],
   },
   robots: { index: false, follow: true },
   alternates: {

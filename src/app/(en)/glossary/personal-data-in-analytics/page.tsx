@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Personal Data in Analytics — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/personal-data-in-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/personal-data-in-analytics")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Personal Data in Analytics: When GDPR Applies",
     description: "The Article 4(1) test, the Recital 26 anonymity bar, and the ePrivacy trap that catches analytics collecting no personal data at all.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/personal-data-in-analytics")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/personal-data-in-analytics",

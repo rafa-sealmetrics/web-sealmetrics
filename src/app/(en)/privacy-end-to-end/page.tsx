@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Privacy end to end — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/privacy-end-to-end/")],
     url: "https://sealmetrics.com/privacy-end-to-end/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Privacy end to end — SealMetrics",
     description: "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/privacy-end-to-end/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/privacy-end-to-end/",

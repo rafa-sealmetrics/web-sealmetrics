@@ -11,6 +11,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analítica para SaaS — PLG y trial-to-paid | SealMetrics",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Analítica first-party para empresas SaaS europeas. Atribución trial-to-paid, tracking de funnel self-serve y métricas PLG — RGPD-safe, sin consentimiento.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/saas/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/for/saas/",
     siteName: "SealMetrics",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analítica para SaaS — PLG y trial-to-paid | SealMetrics",
     description: "Analítica first-party para empresas SaaS europeas. Atribución trial-to-paid, tracking de funnel self-serve y métricas PLG — RGPD-safe, sin consentimiento.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/saas/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/saas/",

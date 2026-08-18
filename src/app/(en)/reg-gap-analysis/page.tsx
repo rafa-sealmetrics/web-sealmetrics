@@ -8,6 +8,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Regulatory Gap Analysis for Web Analytics | GDPR",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Map your analytics stack against every requirement it has to meet, find the gaps, and see how a cookieless architecture closes them.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/reg-gap-analysis/")],
     url: "https://sealmetrics.com/reg-gap-analysis/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Regulatory Gap Analysis for Web Analytics",
     description: "Where your analytics stack falls out of compliance — requirement by requirement.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/reg-gap-analysis/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/reg-gap-analysis/",

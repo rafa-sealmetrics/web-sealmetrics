@@ -8,6 +8,7 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "SealMetrics vs GA360 — Enterprise data for less",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "SealMetrics vs GA360 — Enterprise data for less",
     description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. SealMetrics delivers complete data at €499/mo.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/ga360/")],
     url: "https://sealmetrics.com/vs/ga360/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "SealMetrics vs GA360 — Enterprise data for less",
     description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. SealMetrics delivers complete data at €499/mo.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/vs/ga360/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/ga360/", languages: getAlternates("/vs/ga360") },
 };

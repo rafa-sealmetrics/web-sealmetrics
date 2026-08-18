@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 const faqs = [
   {
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     title: "About SealMetrics — Founder-led analytics for Europe",
     description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/about/")],
     url: "https://sealmetrics.com/about/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "About SealMetrics — Founder-led analytics for Europe",
     description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/about/")],
   },
   alternates: { canonical: "https://sealmetrics.com/about/", languages: getAlternates("/about") },
 };

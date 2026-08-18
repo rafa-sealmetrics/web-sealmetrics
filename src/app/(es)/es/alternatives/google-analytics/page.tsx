@@ -6,6 +6,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VsComparisonV3 } from "@/components/sections/v3/VsComparisonV3";
 import { getVsData } from "@/components/sections/v3/VsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Alternativas a Google Analytics — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Alternativas a Google Analytics — SealMetrics",
     description: "¿Buscando una alternativa a GA que no commoditice tus datos? SealMetrics es otra categoría: completo, UE-hosted, grado enterprise.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/alternatives/google-analytics/")],
     url: "https://sealmetrics.com/es/alternatives/google-analytics/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Alternativas a Google Analytics — SealMetrics",
     description: "¿Buscando una alternativa a GA que no commoditice tus datos? SealMetrics es otra categoría: completo, UE-hosted, grado enterprise.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/alternatives/google-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/alternatives/google-analytics/", languages: getAlternatesEs("/alternatives/google-analytics") },
 };

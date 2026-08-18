@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Google Consent Mode v2? — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/consent-mode-v2/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/consent-mode-v2/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Google Consent Mode v2?",
     description: "How Consent Mode v2 actually works, what it estimates rather than measures, and when modelling stops being the right answer.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/consent-mode-v2/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/consent-mode-v2/" },
 };

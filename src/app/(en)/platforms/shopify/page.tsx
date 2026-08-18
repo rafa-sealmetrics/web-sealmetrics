@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "The SealMetrics Pixel app plus a Theme App Extension, connected from your dashboard. Full e-commerce funnel coverage, purchases confirmed server-side via webhook.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/platforms/shopify/")],
     url: "https://sealmetrics.com/platforms/shopify/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Shopify analytics without cookies — SealMetrics integration",
     description: "Shopify Plus one-click install, Shopify Standard theme snippet, dataLayer event coverage, and order reconciliation patterns.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/platforms/shopify/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/platforms/shopify/",

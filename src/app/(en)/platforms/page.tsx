@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 const faqs = [
   {
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     title: "Platforms — SealMetrics",
     description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/platforms/")],
     url: "https://sealmetrics.com/platforms/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Platforms — SealMetrics",
     description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/platforms/")],
   },
   alternates: { canonical: "https://sealmetrics.com/platforms/", languages: getAlternates("/platforms") },
 };

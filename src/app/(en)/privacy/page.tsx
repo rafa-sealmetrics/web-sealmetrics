@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Sealmetrics",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "How Sealmetrics handles data, what we collect, and how we protect your information.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/privacy/")],
     url: "https://sealmetrics.com/privacy/",
     siteName: "Sealmetrics",
     locale: "en_US",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Privacy Policy — Sealmetrics",
     description: "How Sealmetrics handles data, what we collect, and how we protect your information.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/privacy/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/privacy/",

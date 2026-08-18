@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { ThankYouVariantsEs } from "./ThankYouVariantsEs";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Gracias — SealMetrics",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Gracias — SealMetrics",
     description: "Tu solicitud de audit ha sido recibida. Respondemos en un día laborable.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/demo/thank-you/")],
     url: "https://sealmetrics.com/es/demo/thank-you/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Gracias — SealMetrics",
     description: "Tu solicitud de audit ha sido recibida. Respondemos en un día laborable.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/demo/thank-you/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/demo/thank-you/" },
   robots: { index: false, follow: false },

@@ -8,6 +8,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analítica Web Moderna — Datos limpios para IA",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "El fin de la analítica basada en cookies. Datos limpios, sin sampling, lista para IA vía MCP. Comprueba la diferencia.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/modern-analytics/")],
     url: "https://sealmetrics.com/es/modern-analytics/",
     siteName: "SealMetrics",
     locale: "es_ES",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analítica Web Moderna — Datos limpios para IA",
     description: "La vanguardia de la analítica web. Sin cookies. Sin sampling. Sin modelado.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/modern-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/modern-analytics/",

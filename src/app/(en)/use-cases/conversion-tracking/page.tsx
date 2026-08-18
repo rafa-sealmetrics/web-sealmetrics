@@ -11,6 +11,7 @@ import {
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "Setup patterns, event taxonomy, and what to keep alongside (Meta/Google pixels) — without breaking the measurement layer.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/conversion-tracking/")],
     url: "https://sealmetrics.com/use-cases/conversion-tracking/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Conversion tracking without cookies",
     description: "Setup patterns, event taxonomy, and what to keep alongside (Meta/Google pixels) — without breaking the measurement layer.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/use-cases/conversion-tracking/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/use-cases/conversion-tracking/",

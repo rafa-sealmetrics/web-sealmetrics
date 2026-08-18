@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Descubre cuánto revenue oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/audit/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/audit/",
     siteName: "SealMetrics",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Auditoría gratuita de medición — SealMetrics",
     description: "Descubre cuánto revenue oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/audit/")],
   },
 };
 

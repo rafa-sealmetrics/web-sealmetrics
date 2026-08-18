@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Adobe Analytics Alternatives — 5 Compared (2026)",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "GA360, Piwik PRO, Matomo, GA4 and SealMetrics compared against Adobe on cost, EU capture and consent dependency.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/alternatives/adobe-analytics")],
     url: "https://sealmetrics.com/alternatives/adobe-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Adobe Analytics Alternatives — 5 Compared (2026)",
     description: "GA360, Piwik PRO, Matomo, GA4 and SealMetrics compared against Adobe on cost, EU capture and consent dependency.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/alternatives/adobe-analytics")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/alternatives/adobe-analytics",

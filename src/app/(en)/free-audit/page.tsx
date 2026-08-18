@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { FreeAuditForm } from "./FreeAuditForm";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Free Pixel & GDPR Audit — SealMetrics",
@@ -16,14 +17,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/free-audit/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/free-audit/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Free Pixel & GDPR Audit — SealMetrics",
     description: "Find out if your GA4, Meta, TikTok, and Google Ads pixels fire before consent. Free audit, full PDF report by email.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/free-audit/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/free-audit/",

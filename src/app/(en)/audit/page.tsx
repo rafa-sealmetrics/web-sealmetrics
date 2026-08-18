@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/audit/")],
     url: "https://sealmetrics.com/audit/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Free measurement audit — SealMetrics",
     description: "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/audit/")],
   },
 };
 

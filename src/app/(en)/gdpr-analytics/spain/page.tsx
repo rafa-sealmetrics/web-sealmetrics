@@ -10,6 +10,7 @@ import {
 } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description:
       "AEPD 2024 cookies guide, LSSI-CE Art. 22.2, and the conditions for anonymous audience measurement without consent.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/gdpr-analytics/spain/")],
     url: "https://sealmetrics.com/gdpr-analytics/spain/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "GDPR analytics in Spain — AEPD cookies guide explained",
     description: "AEPD 2024 cookies guide, LSSI-CE Art. 22.2, and the conditions for anonymous audience measurement without consent.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/gdpr-analytics/spain/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/gdpr-analytics/spain/",

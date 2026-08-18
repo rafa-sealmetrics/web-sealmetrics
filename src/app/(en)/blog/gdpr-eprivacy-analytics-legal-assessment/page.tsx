@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Is Your Analytics GDPR-Compliant? A Legal Assessment",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where each major tool lands.",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/gdpr-eprivacy-analytics-legal-assessment/")],
     url: "https://sealmetrics.com/blog/gdpr-eprivacy-analytics-legal-assessment/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Is Your Analytics GDPR-Compliant? A Legal Assessment of GA4, Matomo, Plausible and SealMetrics",
     description: "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where each major tool lands.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/blog/gdpr-eprivacy-analytics-legal-assessment/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/gdpr-eprivacy-analytics-legal-assessment/",

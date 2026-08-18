@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "¿Qué es la pérdida de datos en analítica? — Glosario",
@@ -17,14 +18,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
     siteName: "SealMetrics",
     locale: "es_ES",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/data-loss-in-analytics/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la pérdida de datos en analítica?",
     description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/data-loss-in-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",

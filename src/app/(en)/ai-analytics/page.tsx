@@ -8,6 +8,7 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Point an LLM at incomplete GA4 data and it invents answers. SealMetrics is AI analytics done right: complete data, a semantic MCP, and private AI in the EU.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/ai-analytics/")],
     url: "https://sealmetrics.com/ai-analytics/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
     description: "Complete data. A semantic MCP. Private AI in the EU. Ask your analytics in plain language.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/ai-analytics/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/ai-analytics/",

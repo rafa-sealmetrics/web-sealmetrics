@@ -7,6 +7,7 @@ import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is ROAS (Return on Ad Spend)? — SealMetrics Glossary",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/return-on-ad-spend/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/return-on-ad-spend/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is ROAS (Return on Ad Spend)?",
     description: "Attributed revenue divided by ad spend — and why unmeasured conversions systematically understate it.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/return-on-ad-spend/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/return-on-ad-spend/",

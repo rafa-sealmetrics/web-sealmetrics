@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Analytics Data Residency? — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/analytics-data-residency/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/analytics-data-residency/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Analytics Data Residency?",
     description: "Data residency defines where analytics data is stored. EU residency is key for GDPR compliance.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/analytics-data-residency/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/analytics-data-residency/",

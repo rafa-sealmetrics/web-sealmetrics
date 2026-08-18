@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "What Is Data Sampling in Analytics? — SealMetrics Glossary",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/data-sampling/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/data-sampling/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Data Sampling in Analytics?",
     description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects GA4 reporting.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/data-sampling/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/data-sampling/",

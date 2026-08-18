@@ -6,6 +6,7 @@ import { breadcrumbSchema, personSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { TldrBlock } from "@/components/ui/TldrBlock";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Rafa Jiménez — Founder & CEO of SealMetrics",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "20+ years in European eCommerce analytics. Founder of SealMetrics.",
     type: "profile",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/authors/rafa-jimenez/")],
     url: "https://sealmetrics.com/authors/rafa-jimenez/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Rafa Jiménez — Founder & CEO of SealMetrics",
     description: "20+ years in European eCommerce analytics. Founder of SealMetrics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/authors/rafa-jimenez/")],
   },
 };
 

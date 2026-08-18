@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Data Processing Agreement — Sealmetrics",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Article 28 GDPR DPA: AEPD audience-measurement guarantees, EU-only processing, sub-processors and security measures.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/dpa/")],
     url: "https://sealmetrics.com/dpa/",
     siteName: "Sealmetrics",
     locale: "en_US",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Data Processing Agreement — Sealmetrics",
     description: "Article 28 GDPR DPA: AEPD audience-measurement guarantees, EU-only processing, sub-processors and security measures.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/dpa/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/dpa/",

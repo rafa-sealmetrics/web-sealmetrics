@@ -11,6 +11,7 @@ import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
 import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
 import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Analítica para medios y editores | SealMetrics",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/media/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/for/media/",
     siteName: "SealMetrics",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Analítica para medios y editores | SealMetrics",
     description: "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/for/media/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/for/media/",

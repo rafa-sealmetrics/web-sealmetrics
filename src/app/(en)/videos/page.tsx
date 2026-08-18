@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, videoObjectSchema, itemListSchema } from "@/lib/schema";
 import { VideoGrid } from "./VideoGrid";
+import { ogImage } from "@/lib/seo/og";
 
 const videosForSchema = [
   {
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Product demos and tutorials to help you get the most out of SealMetrics.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/videos/")],
     url: "https://sealmetrics.com/videos/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Videos — SealMetrics",
     description: "Product demos and tutorials to help you get the most out of SealMetrics.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/videos/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/videos/",

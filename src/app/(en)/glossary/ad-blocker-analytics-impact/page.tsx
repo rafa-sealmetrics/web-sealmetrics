@@ -6,6 +6,7 @@ import { RelatedGlossaryTerms } from "@/components/ui/RelatedGlossaryTerms";
 import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Ad Blocker Impact on Analytics — SealMetrics",
@@ -18,14 +19,14 @@ export const metadata: Metadata = {
     url: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",
     siteName: "SealMetrics",
     locale: "en_US",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/ad-blocker-analytics-impact/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Ad Blocker Impact on Analytics?",
     description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/glossary/ad-blocker-analytics-impact/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",

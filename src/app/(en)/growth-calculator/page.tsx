@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, webApplicationSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Growth Calculator — SealMetrics",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     title: "Growth Calculator — SealMetrics",
     description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/growth-calculator/")],
     url: "https://sealmetrics.com/growth-calculator/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Growth Calculator — SealMetrics",
     description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/growth-calculator/")],
   },
   alternates: { canonical: "https://sealmetrics.com/growth-calculator/", languages: getAlternates("/growth-calculator") },
 };

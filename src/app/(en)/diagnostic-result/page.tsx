@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { DiagnosticResultClient } from "./DiagnosticResultClient";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Diagnostic Results — SealMetrics",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "View your analytics diagnostic result and see how much data your current setup may be missing.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/diagnostic-result/")],
     url: "https://sealmetrics.com/diagnostic-result/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Diagnostic Results — SealMetrics",
     description: "View your analytics diagnostic result and see how much data your current setup may be missing.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/diagnostic-result/")],
   },
 };
 

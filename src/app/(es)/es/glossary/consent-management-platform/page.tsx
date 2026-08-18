@@ -8,6 +8,7 @@ import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
 import { glossaryHref } from "@/lib/content/glossary-es";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "¿Qué es una CMP? — Glosario SealMetrics",
@@ -19,14 +20,14 @@ export const metadata: Metadata = {
     siteName: "SealMetrics",
     locale: "es_ES",
     type: "article",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/consent-management-platform/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es una plataforma de gestión de consentimiento (CMP)?",
     description: "Software que muestra el banner de cookies y gestiona las preferencias del visitante.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/glossary/consent-management-platform/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/glossary/consent-management-platform/",

@@ -5,6 +5,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { PricingSignal } from "@/components/v4/PricingSignal";
 import { pricingSignalFaqItems } from "@/lib/content/pricing-signal";
 import "@/components/v4/pricing-signal.css";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Precios SealMetrics — Paga por humanos, no por bots",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. Prueba de 14 días.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/pricing/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/pricing/",
     siteName: "SealMetrics",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Precios SealMetrics — Paga por humanos, no por bots",
     description: "Analítica completa desde €499/mes. Todas las features en cada plan. Agentes IA gratis. Prueba de 14 días.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/es/pricing/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/es/pricing/",

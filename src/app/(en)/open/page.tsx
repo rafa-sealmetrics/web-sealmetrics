@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { publishedChapters } from "@/lib/content/open";
 import { OpenIndexSignal } from "@/components/v4/OpenIndexSignal";
+import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Open — How we measure at SealMetrics",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned.",
     type: "website",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/open/")],
     url: "https://sealmetrics.com/open/",
     siteName: "SealMetrics",
     locale: "en_US",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Open — How we measure at SealMetrics",
     description: "An open document on how we measure, comply, and build SealMetrics. Eleven chapters planned.",
-    images: ["https://sealmetrics.com/og-image.png"],
+    images: [ogImage("/open/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/open/",
