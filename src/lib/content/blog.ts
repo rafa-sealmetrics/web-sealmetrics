@@ -30,6 +30,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ftc-personalized-pricing-enforcement-compliance-guide",
+    title: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
+    description: "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
+    date: "2026-08-20",
+    category: "Regulation",
+    readTime: "8 min",
+    author: AUTHORS.rafa,
+  },
+  {
     slug: "self-service-analytics-for-marketing-teams",
     title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
     description:
