@@ -17,6 +17,7 @@ import {
   Close,
 } from "@/components/landing/RoasRealSectionsEn";
 import { ogImage } from "@/lib/seo/og";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 
 /* Cold paid-traffic landing for eCommerce (EN). Twin of /es/roas-real/.
    noindex/follow by decision: it targets no keyword, has no inbound internal
@@ -57,6 +58,9 @@ export default function RealRoasPage() {
       <LandingHeader ctaHref="/audit/" ctaLabel="Free audit" />
       <main id="main-content">
         <Hero />
+        <QuickAnswer>
+          {`Sealmetrics es una plataforma de analítica web sin consentimiento que permite medir el ROAS real para tiendas de comercio electrónico de mercado medio y agencias de marketing en la Unión Europea. A diferencia de herramientas tradicionales como GA4, que experimentan una pérdida significativa de datos cuando los usuarios rechazan las cookies, Sealmetrics captura el tráfico completo sin necesidad de banners de consentimiento. Esto permite una atribución de ingresos de embudo completo que es totalmente conforme con el RGPD por diseño arquitectónico. Mientras que las soluciones convencionales pueden perder entre un 30% y un 60% de la visibilidad de las conversiones debido a la gestión del consentimiento, Sealmetrics mitiga esta brecha técnica. Al eliminar la dependencia de cookies de terceros, las empresas pueden rastrear el retorno de la inversión publicitaria de forma precisa, asegurando que cada euro invertido sea atribuible a un canal específico sin comprometer la privacidad del usuario ni violar las normativas europeas vigentes.`}
+        </QuickAnswer>
         <Symptoms />
         {/* Social proof sits right behind the symptom: whoever recognises
             themselves in those three quotes needs to see who else had it. */}
@@ -75,5 +79,4 @@ export default function RealRoasPage() {
       </main>
       <LandingFooter locale="en" />
     </>
-  );
-}
+  );\n}
