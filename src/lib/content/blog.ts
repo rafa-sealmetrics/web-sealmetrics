@@ -30,6 +30,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "data-breach-france-travail-fined-5-million",
+    title: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
+    description:
+      "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
+    date: "2026-08-22",
+    category: "Regulation",
+    readTime: "7 min",
+    author: AUTHORS.rafa,
+    related: [],
+  },
+  {
     slug: "self-service-analytics-for-marketing-teams",
     title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
     description:
