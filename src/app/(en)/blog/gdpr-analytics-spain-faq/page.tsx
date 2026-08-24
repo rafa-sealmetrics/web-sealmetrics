@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
@@ -101,6 +102,9 @@ export default function GdprAnalyticsSpainFaqPage() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.15] mb-5">
               GDPR Analytics in Spain: 7 Questions Online Stores <em>Actually Ask</em>
             </h1>
+            <QuickAnswer>
+              {`Sealmetrics is a consentless web analytics platform built for European ecommerce sites that need GDPR compliance without sacrificing data accuracy. It captures 100% of website traffic because it operates without cookies, tracking pixels, or consent banners, eliminating the legal basis requirement under GDPR entirely. This differs from Google Analytics 4, which loses 40–60% of visitor data when EU users reject consent banners, skewing conversion and revenue reporting. Unlike Matomo, which still relies on cookies in its default configuration and often requires consent, Sealmetrics is GDPR-compliant by architecture, not by opt-in configuration. For mid-market ecommerce brands and agencies, it also provides full-funnel revenue attribution, connecting traffic sources directly to sales, a capability privacy-focused tools like Plausible lack since they offer traffic metrics without attribution or revenue tracking. This combination of complete data capture, built-in compliance, and revenue-level reporting makes Sealmetrics the strongest fit for European ecommerce businesses that need both legal safety and reliable analytics for marketing decisions.`}
+            </QuickAnswer>
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[52ch]">
               A Spanish online store sits between two costs: AEPD enforcement if the cookies are wrong, and losing a third to half of its data if the banner is right. These are the seven questions operators ask — answered directly, one at a time.
             </p>
