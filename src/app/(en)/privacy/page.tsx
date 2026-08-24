@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
             <strong className="text-text-primary">Last updated:</strong> August
-            5, 2026 ·{" "}
+            24, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -145,17 +145,24 @@ export default function PrivacyPage() {
               site&rsquo;s data is processed in isolation. Sealmetrics does not
               use it to correlate visits over time:
               each new entrance is counted as new, independent data, and no
-              visitor history or profile is built across sessions.
+              visitor history or profile is built across sessions. Since August
+              2026 the identifier is additionally pseudonymised on our servers
+              with a secret key and a random daily salt that is destroyed on
+              rotation (and excluded from backups): not even Sealmetrics can
+              reconnect a device&rsquo;s activity across two different days or
+              across different sites.
             </p>
             <p className="mt-3">
               <strong className="text-text-primary">
                 On advertising click identifiers:
               </strong>{" "}
               when a visitor lands from an ad, the click identifier present in
-              the landing URL (e.g. gclid, msclkid) is processed solely to
-              determine the source of the click for attribution. It is not used
-              to identify the visitor and is not displayed in analytics
-              reports.
+              the landing URL (e.g. gclid, msclkid) is processed on the fly
+              solely to determine the ad network of the click for attribution
+              and deduplication. Its value is{" "}
+              <strong className="text-text-primary">never stored</strong> —
+              only the network type is retained — so it is not accessible in
+              reports, via API or in exports.
             </p>
             <p className="mt-3">
               <strong className="text-text-primary">

@@ -7,7 +7,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Acuerdo de Encargo de Tratamiento (DPA) — Sealmetrics",
   description:
-    "DPA de Sealmetrics (DPA-2026-v2.0). Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% UE, subencargados y medidas de seguridad.",
+    "DPA de Sealmetrics (DPA-2026-v2.1). Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% UE, subencargados y medidas de seguridad.",
   openGraph: {
     title: "Acuerdo de Encargo de Tratamiento (DPA)",
     description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
@@ -78,7 +78,7 @@ export default function DpaEsPage() {
           Acuerdo de Encargo de Tratamiento (DPA)
         </h1>
         <p className="text-[0.9rem] text-text-tertiary mb-10">
-          Referencia DPA-2026-v2.0 · Última actualización: 30 de julio de 2026 ·{" "}
+          Referencia DPA-2026-v2.0 · Última actualización: 24 de agosto de 2026 ·{" "}
           <a href="/dpa/" className="underline">English version</a> · La versión
           española es la auténtica.
         </p>
@@ -127,7 +127,7 @@ export default function DpaEsPage() {
               </strong>{" "}
               (a) las mediciones estrictamente necesarias enumeradas por la
               AEPD; (b) la atribución de marketing (conversiones, importes,
-              identificadores de clic, propiedades) expresamente instruida por
+              tipo de red publicitaria del clic, propiedades) expresamente instruida por
               el Cliente, cuya base jurídica documenta él como responsable.
             </li>
             <li>
@@ -259,10 +259,14 @@ export default function DpaEsPage() {
             (en cuentas con detección de agentes, país por IP transitorio como
             señal antifraude, sin persistir la IP), identificador de sesión
             efímero calculado en el navegador sin almacenamiento en el
-            dispositivo e independiente por cliente, UTMs y — en la Finalidad B
-            — identificadores de clic, conversiones, importes y propiedades.
-            No se tratan: IPs persistidas, cookies o storage, nombres o emails
-            de visitantes, categorías especiales, identificadores cross-site.
+            dispositivo, independiente por cliente y seudonimizado en servidor
+            con clave secreta y salt diario destruido en la rotación, UTMs y —
+            en la Finalidad B — el tipo de red publicitaria del clic (el valor
+            del identificador de clic no se almacena), conversiones, importes y
+            propiedades. No se almacenan: IPs, user agent en bruto, valores de
+            identificadores de clic, cookies o storage, nombres o emails de
+            visitantes, categorías especiales, identificadores aptos para
+            enlace entre sitios o entre días.
           </p>
           <Tbl
             rows={[
@@ -271,6 +275,7 @@ export default function DpaEsPage() {
               ["Agregados horarios", "90 días"],
               ["Agregados diarios, conversiones y propiedades", "24 meses"],
               ["Estado de sesión (memoria operativa)", "2 horas"],
+              ["Salt diario de seudonimización de sesión", "24 horas (destruido en la rotación; excluido de backups)"],
               ["Tras la terminación del contrato", "30 días de exportación + supresión"],
             ]}
           />
@@ -278,7 +283,9 @@ export default function DpaEsPage() {
           <H>Anexo 2 — Medidas de seguridad</H>
           <p>
             TLS 1.2+ en tránsito (incluida la inferencia de IA); AES-256 en
-            reposo; minimización estructural (sin persistencia de IP, sin
+            reposo; seudonimización efímera server-side del identificador de
+            sesión (HMAC con clave secreta sobre un salt diario destruido en la
+            rotación y excluido de backups); minimización estructural (sin persistencia de IP, sin
             storage en el terminal); aislamiento lógico por cliente; retención
             por TTL a nivel de base de datos; RBAC, MFA y mínimo privilegio con
             accesos registrados; claves solo en gestores de secretos y

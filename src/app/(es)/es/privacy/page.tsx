@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              5 de agosto de 2026 ·{" "}
+              24 de agosto de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -155,17 +155,27 @@ export default function PrivacyPageEs() {
                 Sealmetrics no lo usa para correlacionar visitas a lo largo del
                 tiempo: cada nueva entrada se cuenta como un dato nuevo e
                 independiente, y no se construye ningún historial ni perfil de
-                visitante entre sesiones.
+                visitante entre sesiones. Desde agosto de 2026, el
+                identificador se seudonimiza además en nuestros servidores con
+                una clave secreta y un salt aleatorio diario que se destruye en
+                la rotación (y se excluye de los backups): ni Sealmetrics puede
+                reconectar la actividad de un dispositivo entre dos días
+                distintos ni entre sitios distintos.
               </p>
               <p className="mt-3">
                 <strong className="text-text-primary">
                   Sobre los identificadores de clic publicitarios:
                 </strong>{" "}
                 cuando un visitante llega desde un anuncio, el identificador de
-                clic presente en la URL de aterrizaje (p. ej. gclid, msclkid) se
-                procesa únicamente para determinar la fuente del clic a efectos
-                de atribución. No se usa para identificar al visitante y no se
-                muestra en los informes de analítica.
+                clic presente en la URL de aterrizaje (p. ej. gclid, msclkid)
+                se procesa al vuelo únicamente para determinar la red
+                publicitaria del clic, a efectos de atribución y deduplicación.
+                Su valor{" "}
+                <strong className="text-text-primary">
+                  no se almacena nunca
+                </strong>{" "}
+                — solo se conserva el tipo de red —, por lo que no es accesible
+                en informes, API ni exportaciones.
               </p>
               <p className="mt-3">
                 <strong className="text-text-primary">No recogemos:</strong>{" "}

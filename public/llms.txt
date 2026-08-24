@@ -31,7 +31,7 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
 - /trust — Trust Center: index of Sealmetrics legal and security documentation — public documents, request-only assessments, and change notifications
-- /dpa — Data Processing Agreement (DPA-2026-v2.0): GDPR Art. 28 terms, AEPD audience-measurement guarantees, EU-only processing, sub-processor list and security measures. Spanish version at /es/dpa
+- /dpa — Data Processing Agreement (DPA-2026-v2.1): GDPR Art. 28 terms, AEPD audience-measurement guarantees, EU-only processing, sub-processor list and security measures. Spanish version at /es/dpa
 - /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no personal data, EU-hosted, and an AI that runs on European soil and never trains on your data
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
@@ -224,7 +224,7 @@ Core pages (ES):
 - /es/privacy — Política de privacidad
 - /es/terms — Términos del servicio
 - /es/sla — Acuerdo de Nivel de Servicio (v1.1): compromisos de disponibilidad por plano de servicio, créditos y tiempos de respuesta de soporte para los planes Scale y Enterprise
-- /es/dpa — Acuerdo de Encargo de Tratamiento (DPA-2026-v2.0): Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad
+- /es/dpa — Acuerdo de Encargo de Tratamiento (DPA-2026-v2.1): Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad
 - /es/growth-calculator — Calculadora de crecimiento
 - /es/demo — Solicitar demo
 
