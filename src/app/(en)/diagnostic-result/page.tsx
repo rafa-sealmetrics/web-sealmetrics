@@ -6,25 +6,25 @@ import { DiagnosticResultClient } from "./DiagnosticResultClient";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Diagnostic Results — SealMetrics",
+  title: "Diagnostic Results — Sealmetrics",
   description:
     "View your analytics diagnostic result and see how much data your current setup may be missing.",
   robots: { index: false, follow: true },
   alternates: { canonical: "https://sealmetrics.com/diagnostic-result/" },
   openGraph: {
-    title: "Diagnostic Results — SealMetrics",
+    title: "Diagnostic Results — Sealmetrics",
     description:
       "View your analytics diagnostic result and see how much data your current setup may be missing.",
     type: "website",
     images: [ogImage("/diagnostic-result/")],
     url: "https://sealmetrics.com/diagnostic-result/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Diagnostic Results — SealMetrics",
+    title: "Diagnostic Results — Sealmetrics",
     description: "View your analytics diagnostic result and see how much data your current setup may be missing.",
     images: [ogImage("/diagnostic-result/")],
   },

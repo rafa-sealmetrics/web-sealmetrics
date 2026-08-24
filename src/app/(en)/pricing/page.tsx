@@ -8,23 +8,23 @@ import "@/components/v4/pricing-signal.css";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "SealMetrics Pricing — Pay for humans, not bots",
+  title: "Sealmetrics Pricing — Pay for humans, not bots",
   description:
     "Free Agentic tier up to 1M events, set up from your AI assistant. Paid plans from €499/mo annual — every feature, every plan. You only pay more if you grow.",
   openGraph: {
-    title: "SealMetrics Pricing — Pay for humans, not bots",
+    title: "Sealmetrics Pricing — Pay for humans, not bots",
     description:
       "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
     type: "website",
     images: [ogImage("/pricing/")],
     url: "https://sealmetrics.com/pricing/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics Pricing — Pay for humans, not bots",
+    title: "Sealmetrics Pricing — Pay for humans, not bots",
     description: "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
     images: [ogImage("/pricing/")],
   },

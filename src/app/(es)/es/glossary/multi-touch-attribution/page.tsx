@@ -8,15 +8,15 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "¿Qué es la atribución multi-touch? — Glosario SealMetrics",
+  title: "¿Qué es la atribución multi-touch? — Glosario Sealmetrics",
   description:
-    "La atribución multi-touch reparte el crédito entre touchpoints de un visitante identificado. Requiere tracking por usuario; SealMetrics usa last-click.",
+    "La atribución multi-touch reparte el crédito entre touchpoints de un visitante identificado. Requiere tracking por usuario; Sealmetrics usa last-click.",
   openGraph: {
     title: "¿Qué es la atribución multi-touch?",
-    description: "Modelo de atribución que requiere tracking por usuario. SealMetrics hace last-click a nivel de canal.",
+    description: "Modelo de atribución que requiere tracking por usuario. Sealmetrics hace last-click a nivel de canal.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/multi-touch-attribution/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: [ogImage("/es/glossary/multi-touch-attribution/")],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la atribución multi-touch?",
-    description: "Modelo de atribución que requiere tracking por usuario. SealMetrics hace last-click a nivel de canal.",
+    description: "Modelo de atribución que requiere tracking por usuario. Sealmetrics hace last-click a nivel de canal.",
     images: [ogImage("/es/glossary/multi-touch-attribution/")],
   },
   alternates: {
@@ -57,9 +57,9 @@ export default function Page() {
           <p>La atribución multi-touch es tan precisa como los datos que la alimentan. Cuando la analítica con cookies pierde el 87% de las interacciones por <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">rechazo de consentimiento</Link>, bloqueadores y restricciones de navegador, el modelo reparte crédito sobre un fragmento del dato observado.</p>
           <p>Esto infravalora sistemáticamente los canales top-of-funnel (orgánico, social, display) porque los primeros touchpoints son los que más se pierden cuando las cookies aún no están activas.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué SealMetrics no hace atribución multi-touch</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué Sealmetrics no hace atribución multi-touch</h2>
           <p>La atribución multi-touch requiere identificar al mismo visitante a través de múltiples sesiones para enlazar los touchpoints. Esa identificación exige un identificador persistente por usuario — una cookie, un fingerprint o cualquier mecanismo de tracking que somete la analítica al consentimiento RGPD.</p>
-          <p>SealMetrics está diseñada como medición de eventos agregada y anónima. Nunca se crea un identificador por usuario, así que no hay base para enlazar touchpoints de la misma persona entre sesiones. La <Link href="/es/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución</Link> es last-click sobre el evento de conversión observado: la fuente registrada en la pageview donde se dispara la conversión recibe el crédito. Los totales por canal se acumulan desde esos eventos.</p>
+          <p>Sealmetrics está diseñada como medición de eventos agregada y anónima. Nunca se crea un identificador por usuario, así que no hay base para enlazar touchpoints de la misma persona entre sesiones. La <Link href="/es/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución</Link> es last-click sobre el evento de conversión observado: la fuente registrada en la pageview donde se dispara la conversión recibe el crédito. Los totales por canal se acumulan desde esos eventos.</p>
           <p>El trade-off es deliberado: renuncias al reparto de crédito modelado entre touchpoints y a cambio obtienes totales agregados por canal sobre el 100% del tráfico, sin dependencia de consentimiento.</p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Page() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto SealMetrics</Link>
+            Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto Sealmetrics</Link>
           </p>
         </div>
       </div>

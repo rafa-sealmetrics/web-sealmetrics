@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "A vendor-neutral checklist for testing whether an AI analytics feature is genuinely private — ownership, location, retention, training and exit.",
     type: "article",
     url: "https://sealmetrics.com/blog/audit-your-analytics-ai-privacy/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/audit-your-analytics-ai-privacy.png"],
   },
@@ -88,7 +88,7 @@ export default function AuditYourAnalyticsAiPrivacyPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -405,7 +405,7 @@ export default function AuditYourAnalyticsAiPrivacyPage() {
               >
                 Seal AI
               </Link>
-              , the private AI layer inside SealMetrics.
+              , the private AI layer inside Sealmetrics.
             </p>
             <p>
               <strong>1. Ownership.</strong> Inference runs on Scaleway

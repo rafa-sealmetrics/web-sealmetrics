@@ -16,23 +16,23 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for Hotels — Direct-Booking | SealMetrics",
+  title: "Analytics for Hotels — Direct-Booking | Sealmetrics",
   description:
     "Cookieless analytics for hotels: match direct-booking attribution to your PMS. Palladium recovered 35% of lost bookings; Dreamplace closed a 15–20% gap.",
   openGraph: {
-    title: "Analytics for Hotels — Direct-Booking | SealMetrics",
+    title: "Analytics for Hotels — Direct-Booking | Sealmetrics",
     description:
       "Consentless, first-party analytics for hotel groups. Reconcile direct bookings with your PMS and attribute revenue from meta-search without OTA black boxes.",
     type: "website",
     images: [ogImage("/for/hotels/")],
     url: "https://sealmetrics.com/for/hotels/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Hotels — Direct-Booking | SealMetrics",
+    title: "Analytics for Hotels — Direct-Booking | Sealmetrics",
     description: "Consentless, first-party analytics for hotel groups. Reconcile direct bookings with your PMS and attribute revenue from meta-search without OTA black boxes.",
     images: [ogImage("/for/hotels/")],
   },
@@ -54,7 +54,7 @@ const seoFaqs = [
       "On average 25% of direct bookings recorded in hotel PMS systems do not appear correctly attributed in GA4 because of consent rejection on mobile (Safari), ITP-induced cookie expiry and OTA path breaks. Cookieless analytics counts every pageview anonymously on the server, captures the traffic source on each booking pageview and aggregates bookings per channel — no per-guest tracking required.",
   },
   {
-    question: "Does SealMetrics work across multiple hotel properties?",
+    question: "Does Sealmetrics work across multiple hotel properties?",
     answer:
       "Yes. Portfolio rollups are included in every plan. Each property runs its own tracking and data consolidates at brand/group level — ideal for hotel chains with 5+ properties across multiple countries.",
   },
@@ -95,7 +95,7 @@ export default function Page() {
               </h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Palladium Hotel Group and Dreamplace Hotels both ran SealMetrics next to their existing stack. Both found a structural gap. Both started taking paid-media decisions on the recovered data — not on what each platform reports back to itself.
+              Palladium Hotel Group and Dreamplace Hotels both ran Sealmetrics next to their existing stack. Both found a structural gap. Both started taking paid-media decisions on the recovered data — not on what each platform reports back to itself.
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export default function Page() {
                 style={{ borderColor: "#2E5C8A" }}
               >
                 <p className="text-[18.5px] leading-[1.4] tracking-[-0.01em] font-medium text-ink">
-                  &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
+                  &ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
                 </p>
                 <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
                   Toni Andújar · Digital &amp; Direct Sales Director
@@ -193,7 +193,7 @@ export default function Page() {
                 {[
                   { n: "+30%", l: "More traffic vs Google Analytics" },
                   { n: "15–20%", l: "Sales attribution gap closed (vs CRM)" },
-                  { n: "Meta + Google", l: "First channels using SealMetrics data to decide" },
+                  { n: "Meta + Google", l: "First channels using Sealmetrics data to decide" },
                 ].map((s) => (
                   <li key={s.l}>
                     <div className="text-[24px] font-semibold tracking-[-0.025em] text-ink leading-none tabular-nums">
@@ -216,7 +216,7 @@ export default function Page() {
           </div>
 
               <p className="mt-10 text-center text-[15px] text-ink-soft">
-                Different sizes. Different tech stacks. Same diagnosis: incomplete data was driving budget decisions until SealMetrics replaced it with the real number.
+                Different sizes. Different tech stacks. Same diagnosis: incomplete data was driving budget decisions until Sealmetrics replaced it with the real number.
               </p>
             </div>
           </section>
@@ -229,7 +229,7 @@ export default function Page() {
           <>
             <strong>Cookieless analytics for hotels</strong> lets hotel groups
             reconcile aggregate direct-booking totals with the PMS without cookies,
-            consent banners or ad-blocker gaps. SealMetrics counts every
+            consent banners or ad-blocker gaps. Sealmetrics counts every
             meta-search landing, every mobile Safari visit and every booking event
             anonymously — each booking attributed last-click at channel level and
             rolled up across properties for portfolio-level revenue reporting.

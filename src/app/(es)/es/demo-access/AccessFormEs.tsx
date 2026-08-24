@@ -191,7 +191,7 @@ export function AccessFormEs() {
         </h2>
         <p className="text-[15px] text-ink-soft leading-[1.6] mt-4">
           Si tu dominio pasa la validación, recibirás usuario y contraseña en{" "}
-          <span className="text-ink font-semibold">{email}</span> en pocos minutos. Si no llega, revisa spam y busca &ldquo;SealMetrics&rdquo;.
+          <span className="text-ink font-semibold">{email}</span> en pocos minutos. Si no llega, revisa spam y busca &ldquo;Sealmetrics&rdquo;.
         </p>
         <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-5">
           ¿Prefieres un tour guiado?{" "}
@@ -299,7 +299,7 @@ export function AccessFormEs() {
           >
             Aviso de Privacidad
           </a>{" "}
-          y consiento que SealMetrics procese mis datos para enviarme credenciales demo.
+          y consiento que Sealmetrics procese mis datos para enviarme credenciales demo.
         </label>
       </div>
 

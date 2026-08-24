@@ -145,7 +145,7 @@ export function FourPillarsV3() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            SealMetrics is not four tools stitched together. It&apos;s one pipeline: from the first observed visitor to the last-touch revenue attribution your CFO signs off on.
+            Sealmetrics is not four tools stitched together. It&apos;s one pipeline: from the first observed visitor to the last-touch revenue attribution your CFO signs off on.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-warm-100 border border-warm-100 rounded-2xl overflow-hidden">
@@ -721,7 +721,7 @@ export function ProductProofV3() {
         { n: "+165%", l: "Display Cost-per-Search on DV360 after" },
       ],
       quote:
-        "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+        "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
       cite: "Toni Andújar · Digital & Direct Sales Director",
     },
     {
@@ -748,7 +748,7 @@ export function ProductProofV3() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Two customers ran SealMetrics against their previous setup and
+            Two customers ran Sealmetrics against their previous setup and
             published the numbers. Both figures below are theirs, audited on
             their own traffic — not our benchmarks.
           </p>

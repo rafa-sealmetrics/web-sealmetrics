@@ -10,15 +10,15 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Cohort Analysis? — SealMetrics Glossary",
+  title: "What Is Cohort Analysis? — Sealmetrics Glossary",
   description:
-    "A cohort is a group sharing a starting characteristic, tracked over time. How cohort analysis works, what it needs, and where SealMetrics draws the line.",
+    "A cohort is a group sharing a starting characteristic, tracked over time. How cohort analysis works, what it needs, and where Sealmetrics draws the line.",
   openGraph: {
     title: "What Is Cohort Analysis?",
     description: "Groups sharing a starting point, compared over time — and what per-user cohort tracking requires that anonymous measurement refuses.",
     type: "article",
     url: "https://sealmetrics.com/glossary/cohort/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/cohort/")],
   },
@@ -58,7 +58,7 @@ export default function CohortPage() {
 
           <QuickAnswer>
             <p>
-              A cohort is a group of customers or visitors who share a starting point — most commonly the week or month of their first purchase — whose later behaviour is tracked as a group. Cohort analysis compares those groups over time: do customers acquired in March retain, reorder or spend better than customers acquired in January? Averaged across everyone, such changes cancel out; broken into cohorts, they become visible, which is why the technique anchors retention and lifetime value work. Behavioural cohort tracking has a strict requirement: recognising the same individual across months, which in a browser means a persistent per-user identifier subject to EU consent rules. Purchase cohorts avoid this — they are built from order data, where the identity already exists. SealMetrics keeps no per-user identifier, so it measures aggregates and leaves cohort-building to the order database.
+              A cohort is a group of customers or visitors who share a starting point — most commonly the week or month of their first purchase — whose later behaviour is tracked as a group. Cohort analysis compares those groups over time: do customers acquired in March retain, reorder or spend better than customers acquired in January? Averaged across everyone, such changes cancel out; broken into cohorts, they become visible, which is why the technique anchors retention and lifetime value work. Behavioural cohort tracking has a strict requirement: recognising the same individual across months, which in a browser means a persistent per-user identifier subject to EU consent rules. Purchase cohorts avoid this — they are built from order data, where the identity already exists. Sealmetrics keeps no per-user identifier, so it measures aggregates and leaves cohort-building to the order database.
             </p>
           </QuickAnswer>
 
@@ -72,9 +72,9 @@ export default function CohortPage() {
             To place a visitor in a cohort and find them again months later, an analytics tool must recognise the same individual across sessions — a persistent identifier stored in the browser or derived from the device. That is per-user tracking, with everything it implies in the EU: consent under ePrivacy, GDPR obligations, and coverage limited to whoever accepted the banner. It is the same requirement that underpins <Link href="/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch attribution</Link>, and it fails the same way: with 40-60% of EU visitors rejecting consent, browser-based cohorts are built from the consenting minority, and their retention curves describe that minority only.
           </p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What SealMetrics does and does not do</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What Sealmetrics does and does not do</h2>
           <p>
-            SealMetrics does not build per-user cohorts, deliberately. Its architecture is anonymous, aggregate event measurement: no persistent visitor identifier is ever created, so there is no mechanism for recognising an individual across sessions — the precondition for behavioural cohort tracking. What it provides instead is aggregate comparison over time on 100% of traffic: acquisition, conversions and revenue by channel and period, segmentable and unbiased by consent status. For purchase-based cohorts — the kind most retention and LTV work actually uses — the natural home is your order database, where customer identity already persists lawfully; SealMetrics&rsquo; role is supplying the complete channel-level acquisition data those cohorts are joined against. If per-user behavioural cohorts inside the analytics tool are a hard requirement, SealMetrics is the wrong tool for that job, and it is designed to be.
+            Sealmetrics does not build per-user cohorts, deliberately. Its architecture is anonymous, aggregate event measurement: no persistent visitor identifier is ever created, so there is no mechanism for recognising an individual across sessions — the precondition for behavioural cohort tracking. What it provides instead is aggregate comparison over time on 100% of traffic: acquisition, conversions and revenue by channel and period, segmentable and unbiased by consent status. For purchase-based cohorts — the kind most retention and LTV work actually uses — the natural home is your order database, where customer identity already persists lawfully; Sealmetrics&rsquo; role is supplying the complete channel-level acquisition data those cohorts are joined against. If per-user behavioural cohorts inside the analytics tool are a hard requirement, Sealmetrics is the wrong tool for that job, and it is designed to be.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What cohort analysis does not tell you</h2>
@@ -89,7 +89,7 @@ export default function CohortPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

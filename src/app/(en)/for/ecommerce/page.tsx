@@ -14,23 +14,23 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for eCommerce — Full Attribution | SealMetrics",
+  title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
   description:
     "Cookieless analytics for eCommerce: 100% traffic captured, last-click revenue attribution, no consent banner, EU-hosted in Dublin. From EUR499/mo.",
   openGraph: {
-    title: "Analytics for eCommerce — Full Attribution | SealMetrics",
+    title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
     description:
       "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
     type: "website",
     images: [ogImage("/for/ecommerce/")],
     url: "https://sealmetrics.com/for/ecommerce/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for eCommerce — Full Attribution | SealMetrics",
+    title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
     description: "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
     images: [ogImage("/for/ecommerce/")],
   },
@@ -54,12 +54,12 @@ const seoFaqs = [
   {
     question: "Does cookieless analytics for eCommerce require a consent banner?",
     answer:
-      "No. Because no cookies, localStorage or personal identifiers are used, no consent is required under GDPR or ePrivacy for the analytics itself. You can still display a banner for advertising pixels; SealMetrics operates independently of it.",
+      "No. Because no cookies, localStorage or personal identifiers are used, no consent is required under GDPR or ePrivacy for the analytics itself. You can still display a banner for advertising pixels; Sealmetrics operates independently of it.",
   },
   {
     question: "Can cookieless analytics replace GA4 for an eCommerce team?",
     answer:
-      "Yes for revenue decisions; usually not for Google Ads conversion import. Most eCommerce teams run SealMetrics alongside GA4 for 30 days to compare, then make decisions on SealMetrics data and keep GA4 as a Google Ads conduit.",
+      "Yes for revenue decisions; usually not for Google Ads conversion import. Most eCommerce teams run Sealmetrics alongside GA4 for 30 days to compare, then make decisions on Sealmetrics data and keep GA4 as a Google Ads conduit.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function Page() {
             <strong>Cookieless analytics for eCommerce</strong> means capturing
             every visit, add-to-cart and purchase without browser cookies,
             consent banners or ad-blocker gaps — and reconciling those numbers
-            with your Shopify, WooCommerce or Magento backend. SealMetrics is a
+            with your Shopify, WooCommerce or Magento backend. Sealmetrics is a
             first-party, EU-hosted implementation built specifically for DTC
             and retail eCommerce teams under GDPR.
           </>

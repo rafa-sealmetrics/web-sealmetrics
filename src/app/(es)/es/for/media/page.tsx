@@ -14,23 +14,23 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para medios y editores | SealMetrics",
+  title: "Analítica para medios y editores | Sealmetrics",
   description:
     "Analítica sin cookies para editores: captura lectores que ad blockers esconden a GA4. Audiencia, engagement y atribución first-party en la UE.",
   openGraph: {
-    title: "Analítica para medios y editores | SealMetrics",
+    title: "Analítica para medios y editores | Sealmetrics",
     description:
       "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
     type: "website",
     images: [ogImage("/es/for/media/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/for/media/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para medios y editores | SealMetrics",
+    title: "Analítica para medios y editores | Sealmetrics",
     description: "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
     images: [ogImage("/es/for/media/")],
   },
@@ -59,7 +59,7 @@ const seoFaqs = [
   {
     question: "¿La analítica sin cookies reemplaza Chartbeat o Parse.ly?",
     answer:
-      "Categorías distintas. Chartbeat y Parse.ly son herramientas editoriales en tiempo real para redacciones. SealMetrics cubre audiencia, atribución y funnels de suscripción. Muchos editores corren los dos: Chartbeat para la redacción, SealMetrics para decisiones de marketing y suscripción.",
+      "Categorías distintas. Chartbeat y Parse.ly son herramientas editoriales en tiempo real para redacciones. Sealmetrics cubre audiencia, atribución y funnels de suscripción. Muchos editores corren los dos: Chartbeat para la redacción, Sealmetrics para decisiones de marketing y suscripción.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function Page() {
             La <strong>analítica sin cookies para medios y editores</strong>{" "}
             captura lectorazgo, funnels de suscripción y atribución de ingresos
             publicitarios sin cookies — crítico para sitios donde el 50–70% de
-            los visitantes usan ad-blockers. SealMetrics opera como
+            los visitantes usan ad-blockers. Sealmetrics opera como
             infraestructura first-party en el dominio del propio editor,
             invisible a los ad-blockers e independiente de la deprecation de
             cookies de terceros.

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Plain-language answers about your analytics, with inference that never leaves the EU and retains nothing.",
     type: "article",
     url: "https://sealmetrics.com/blog/meet-seal-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
   },
@@ -50,7 +50,7 @@ const FAQ = [
   {
     question: "What is Seal AI?",
     answer:
-      "Seal AI is the private AI layer built into SealMetrics. It powers a natural-language assistant that answers questions about your analytics by querying your data, and it generates automated insights. Inference runs on European infrastructure only (Scaleway, Paris), retains no prompt content, and never trains any model on your data. It requires no setup: there are no API keys to create and no AI vendor account.",
+      "Seal AI is the private AI layer built into Sealmetrics. It powers a natural-language assistant that answers questions about your analytics by querying your data, and it generates automated insights. Inference runs on European infrastructure only (Scaleway, Paris), retains no prompt content, and never trains any model on your data. It requires no setup: there are no API keys to create and no AI vendor account.",
   },
   {
     question: "Does Seal AI send my data to the United States?",
@@ -60,12 +60,12 @@ const FAQ = [
   {
     question: "Does Seal AI train on my analytics data?",
     answer:
-      "No. The underlying model (gpt-oss-120b) is open-weight and static — it does not learn from requests. Neither Scaleway, nor SealMetrics, nor the model's creator trains on your data. SealMetrics stores only token counters for quota and billing; prompt and response content is never persisted.",
+      "No. The underlying model (gpt-oss-120b) is open-weight and static — it does not learn from requests. Neither Scaleway, nor Sealmetrics, nor the model's creator trains on your data. Sealmetrics stores only token counters for quota and billing; prompt and response content is never persisted.",
   },
   {
     question: "How is Seal AI different from using ChatGPT or Claude with my data?",
     answer:
-      "Consumer and API AI tools from US providers route your data to US-jurisdiction companies, even when an EU region is available. Seal AI is private by architecture: EU-only inference, no US parent, zero retention, no training, and an open-weight model you could self-host. If you prefer a specific external provider, SealMetrics also supports bring-your-own-key — but Seal AI is the default so privacy doesn't depend on configuration.",
+      "Consumer and API AI tools from US providers route your data to US-jurisdiction companies, even when an EU region is available. Seal AI is private by architecture: EU-only inference, no US parent, zero retention, no training, and an open-weight model you could self-host. If you prefer a specific external provider, Sealmetrics also supports bring-your-own-key — but Seal AI is the default so privacy doesn't depend on configuration.",
   },
   {
     question: "What can I ask Seal AI?",
@@ -88,7 +88,7 @@ export default function MeetSealAiPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -179,7 +179,7 @@ export default function MeetSealAiPage() {
               Analytics tools have been racing to bolt an AI chat box onto the
               dashboard. Most of them quietly route your data to a US AI provider
               to do it. We didn&apos;t want to be one of them — so we built{" "}
-              <strong>Seal AI</strong>, the private AI layer inside SealMetrics,
+              <strong>Seal AI</strong>, the private AI layer inside Sealmetrics,
               on a different premise: the AI should be as private as the analytics
               it explains.
             </p>
@@ -227,12 +227,12 @@ export default function MeetSealAiPage() {
               </li>
               <li>
                 <strong>Zero retention, no training.</strong> Scaleway retains no
-                prompt content by default; SealMetrics stores only token counts,
+                prompt content by default; Sealmetrics stores only token counts,
                 never the content. The model is open-weight and static — it does
                 not learn from your requests.
               </li>
               <li>
-                <strong>The prompt is born clean.</strong> SealMetrics is
+                <strong>The prompt is born clean.</strong> Sealmetrics is
                 consentless analytics: we never collect IPs, cookies, or visitor
                 identifiers in the first place. So there is no personal identifier
                 to send to the AI, even before privacy controls apply.
@@ -251,7 +251,7 @@ export default function MeetSealAiPage() {
               You don&apos;t configure anything. There are no API keys to create
               and no third-party AI account to sign up for — Seal AI is included
               and uses a platform-owned key you never see. If you&apos;d rather
-              use a specific external provider, SealMetrics supports
+              use a specific external provider, Sealmetrics supports
               bring-your-own-key for OpenAI, Anthropic, Gemini, or DeepSeek. But
               Seal AI is the default on purpose: privacy shouldn&apos;t depend on
               a checkbox.
@@ -269,7 +269,7 @@ export default function MeetSealAiPage() {
               Try it with three questions
             </h2>
             <p>
-              If you already use SealMetrics, open the assistant and ask: (1)
+              If you already use Sealmetrics, open the assistant and ask: (1)
               &quot;Compare my entrances over the last 7 days to the previous
               7.&quot; (2) &quot;Which of my top 3 sources converts best, and
               why?&quot; (3) &quot;What&apos;s my bounce rate this month?&quot;

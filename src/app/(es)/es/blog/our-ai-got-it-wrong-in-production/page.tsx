@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Un campo mal formado en un gráfico tumbó una respuesta entera. Lo que encontramos en 1 de 162 consultas del benchmark, cómo lo arreglamos en dos capas y qué nos enseñó sobre la salida estructurada de los LLM.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/our-ai-got-it-wrong-in-production/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/our-ai-got-it-wrong-in-production.png"],
   },
@@ -87,7 +87,7 @@ export default function OurAiGotItWrongInProductionPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -99,9 +99,9 @@ export default function OurAiGotItWrongInProductionPageEs() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "SealMetrics detectó un fallo de salida estructurada en producción como 1 error de transporte en 162 consultas reales de benchmark: un modelo emitió un gráfico cuya clave del eje Y era una lista de dos series en lugar de un string, la validación estricta del esquema lo rechazó y toda la respuesta del chat devolvió un HTTP 500, descartando una respuesta de texto ya generada.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "Sealmetrics detectó un fallo de salida estructurada en producción como 1 error de transporte en 162 consultas reales de benchmark: un modelo emitió un gráfico cuya clave del eje Y era una lista de dos series en lugar de un string, la validación estricta del esquema lo rechazó y toda la respuesta del chat devolvió un HTTP 500, descartando una respuesta de texto ya generada.",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}

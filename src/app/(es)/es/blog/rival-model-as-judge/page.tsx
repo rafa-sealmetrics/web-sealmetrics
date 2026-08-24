@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "El sesgo de autopreferencia existe. La solución no es un prompt mejor: es un juez con motivos para bajarte la nota y evaluadores deterministas haciendo el trabajo objetivo.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/rival-model-as-judge/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/rival-model-as-judge.png"],
   },
@@ -88,7 +88,7 @@ export default function RivalModelAsJudgePageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -113,8 +113,8 @@ export default function RivalModelAsJudgePageEs() {
       <JsonLd
         data={statisticClaimSchema({
           text: "En un benchmark interno de 162 consultas, un juez deliberadamente adversario —el rival directo del modelo seleccionado, ejecutado a temperatura cero— puntuó al modelo seleccionado, gpt-oss-120b, con aproximadamente 4,9 sobre 5,0 en utilidad, claridad y precisión formal.",
-          source: "Benchmark interno de LLM de SealMetrics (tanda 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Benchmark interno de LLM de Sealmetrics (tanda 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}

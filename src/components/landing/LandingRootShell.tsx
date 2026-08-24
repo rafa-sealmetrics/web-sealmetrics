@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Onest, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
-import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
+import { SealmetricsTracker } from "@/components/analytics/SealmetricsTracker";
 
 /* ============================================================
    SHELL RAÍZ COMPARTIDO · LANDINGS DE PAGO
@@ -65,7 +65,7 @@ export function LandingRootShell({
           {SKIP[locale]}
         </a>
         {/* Se conserva el tracker: estas páginas son justo las que hay que medir. */}
-        <SealMetricsTracker />
+        <SealmetricsTracker />
         {children}
       </body>
     </html>

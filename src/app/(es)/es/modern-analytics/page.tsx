@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [ogImage("/es/modern-analytics/")],
     url: "https://sealmetrics.com/es/modern-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa exactamente \"analítica moderna\"?",
-    a: "La analítica moderna es la nueva generación de medición web: cookieless por arquitectura, captura el 100% de eventos en servidor sin banners de consentimiento, nunca samplea, nunca modela datos faltantes y expone datos limpios a nivel de evento a humanos y agentes IA mediante estándares como MCP. SealMetrics es la implementación production-grade de ese enfoque.",
+    a: "La analítica moderna es la nueva generación de medición web: cookieless por arquitectura, captura el 100% de eventos en servidor sin banners de consentimiento, nunca samplea, nunca modela datos faltantes y expone datos limpios a nivel de evento a humanos y agentes IA mediante estándares como MCP. Sealmetrics es la implementación production-grade de ese enfoque.",
   },
   {
     q: "¿En qué se diferencia de herramientas cookieless como Plausible o Fathom?",
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "¿Qué quiere decir lista para agentes IA?",
-    a: "Significa que un LLM o agente autónomo (Claude, ChatGPT Operator, copilots internos) puede conectar a la plataforma analítica mediante el Model Context Protocol (MCP) y consultar revenue, conversiones, propiedades y forecasts en lenguaje natural — sin que tengas que construir dashboards. SealMetrics incluye un servidor MCP con 40+ herramientas listas.",
+    a: "Significa que un LLM o agente autónomo (Claude, ChatGPT Operator, copilots internos) puede conectar a la plataforma analítica mediante el Model Context Protocol (MCP) y consultar revenue, conversiones, propiedades y forecasts en lenguaje natural — sin que tengas que construir dashboards. Sealmetrics incluye un servidor MCP con 40+ herramientas listas.",
   },
   {
     q: "¿Es realmente compatible con GDPR y ePrivacy?",
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "¿Cómo migro desde mi analítica actual?",
-    a: "No migras — añades. Coloca el píxel de SealMetrics junto a tu GA4 o Adobe actual, corre ambos durante 30 días y compara con tu CRM. La mayoría de equipos mantiene la herramienta legacy como conducto a Google Ads y empieza a tomar decisiones con SealMetrics.",
+    a: "No migras — añades. Coloca el píxel de Sealmetrics junto a tu GA4 o Adobe actual, corre ambos durante 30 días y compara con tu CRM. La mayoría de equipos mantiene la herramienta legacy como conducto a Google Ads y empieza a tomar decisiones con Sealmetrics.",
   },
   {
     q: "¿Escala para tráfico enterprise?",
@@ -157,7 +157,7 @@ const useCases = [
   {
     role: "Builder de IA",
     headline: "Despliega un analista Claude en una tarde",
-    body: "Conecta el servidor MCP de SealMetrics a Claude o a tu copilot interno y deja que responda preguntas de revenue en lenguaje natural.",
+    body: "Conecta el servidor MCP de Sealmetrics a Claude o a tu copilot interno y deja que responda preguntas de revenue en lenguaje natural.",
   },
 ];
 
@@ -220,7 +220,7 @@ export default function ModernAnalyticsPageEs() {
           <>
             La analítica web moderna captura el <strong>100% del tráfico</strong> sin cookies, nunca
             samplea, nunca modela, y expone datos limpios a nivel de evento a agentes IA mediante el{" "}
-            <strong>Model Context Protocol</strong>. SealMetrics es esa plataforma — production-grade,
+            <strong>Model Context Protocol</strong>. Sealmetrics es esa plataforma — production-grade,
             hosted en UE y lista para la era post-cookie y first-AI.
           </>
         }
@@ -304,7 +304,7 @@ export default function ModernAnalyticsPageEs() {
                     Legacy con cookies
                   </th>
                   <th className="px-6 py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-brand">
-                    Moderna (SealMetrics)
+                    Moderna (Sealmetrics)
                   </th>
                 </tr>
               </thead>
@@ -337,7 +337,7 @@ export default function ModernAnalyticsPageEs() {
               Tus datos, consultables en lenguaje natural.
             </h2>
             <p className="mt-6 text-[17px] leading-[1.6] text-ink-soft">
-              SealMetrics incluye un servidor MCP (Model Context Protocol) nativo con 40+ tools.
+              Sealmetrics incluye un servidor MCP (Model Context Protocol) nativo con 40+ tools.
               Conecta Claude, ChatGPT o tu copilot interno y deja que tire de revenue, conversiones,
               performance de landings, forecasts y propiedades de producto bajo demanda.
             </p>
@@ -376,7 +376,7 @@ export default function ModernAnalyticsPageEs() {
           </div>
           <div className="rounded-2xl border border-warm-100 bg-dark-bg p-8 text-white shadow-[0_24px_60px_-24px_rgba(14,14,12,0.5)]">
             <div className="font-mono text-[11px] text-white/50 uppercase tracking-[0.12em] mb-4">
-              Claude · MCP · SealMetrics
+              Claude · MCP · Sealmetrics
             </div>
             <p className="font-mono text-[13px] leading-[1.7] text-white/90">
               <span className="text-brand-soft">{">"}</span> Dame las 10 landings con bounce rate
@@ -384,7 +384,7 @@ export default function ModernAnalyticsPageEs() {
             </p>
             <div className="my-6 h-px bg-white/10" />
             <p className="text-[13px] leading-[1.7] text-white/80">
-              Consultando SealMetrics para el sitio <code className="text-amber">acme.com</code>… 14
+              Consultando Sealmetrics para el sitio <code className="text-amber">acme.com</code>… 14
               landings coinciden. Top 3 por entradas perdidas:{" "}
               <code className="text-amber">/black-friday-2026</code>,{" "}
               <code className="text-amber">/promo-cyber</code>,{" "}
@@ -461,8 +461,8 @@ export default function ModernAnalyticsPageEs() {
             </em>
           </>
         }
-        ledeEn="Install SealMetrics alongside your current analytics. Run both for 30 days. Compare with your own CRM. If the gap isn't real, you owe us nothing."
-        ledeEs="Instala SealMetrics junto a tu analítica actual. Corre los dos 30 días. Compara con tu propio CRM. Si el gap no es real, no nos debes nada."
+        ledeEn="Install Sealmetrics alongside your current analytics. Run both for 30 days. Compare with your own CRM. If the gap isn't real, you owe us nothing."
+        ledeEs="Instala Sealmetrics junto a tu analítica actual. Corre los dos 30 días. Compara con tu propio CRM. Si el gap no es real, no nos debes nada."
         primaryTextEn="Try free →"
         primaryTextEs="Pruébalo gratis →"
       />

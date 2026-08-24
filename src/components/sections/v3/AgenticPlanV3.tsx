@@ -12,7 +12,7 @@ const BAND_COPY = {
     badge: "New · Free",
     name: "Agentic Package",
     tagline:
-      "Created by your AI assistant. Set up SealMetrics directly from Claude or Codex — no sales, no setup call.",
+      "Created by your AI assistant. Set up Sealmetrics directly from Claude or Codex — no sales, no setup call.",
     price: "Free",
     priceSub: "Up to 1M human events / month",
     priceNote: "Then the Growth plan activates",
@@ -28,7 +28,7 @@ const BAND_COPY = {
     badge: "Nuevo · Gratis",
     name: "Agentic Package",
     tagline:
-      "Creado por tu asistente de IA. Configura SealMetrics directamente desde Claude o Codex — sin ventas, sin llamada de setup.",
+      "Creado por tu asistente de IA. Configura Sealmetrics directamente desde Claude o Codex — sin ventas, sin llamada de setup.",
     price: "Gratis",
     priceSub: "Hasta 1M de eventos humanos / mes",
     priceNote: "Después se activa el plan Growth",
@@ -142,13 +142,13 @@ const SETUP_COPY = {
     steps: [
       {
         n: "01",
-        title: "Add the SealMetrics MCP",
-        p: "Install the SealMetrics MCP server in Claude Desktop, Codex or any MCP-capable agent.",
+        title: "Add the Sealmetrics MCP",
+        p: "Install the Sealmetrics MCP server in Claude Desktop, Codex or any MCP-capable agent.",
       },
       {
         n: "02",
         title: "Ask it to create your account",
-        p: "Your agent provisions a SealMetrics account and generates your tracking pixel — all through the MCP.",
+        p: "Your agent provisions a Sealmetrics account and generates your tracking pixel — all through the MCP.",
       },
       {
         n: "03",
@@ -166,13 +166,13 @@ const SETUP_COPY = {
     steps: [
       {
         n: "01",
-        title: "Añade el MCP de SealMetrics",
-        p: "Instala el servidor MCP de SealMetrics en Claude Desktop, Codex o cualquier agente compatible con MCP.",
+        title: "Añade el MCP de Sealmetrics",
+        p: "Instala el servidor MCP de Sealmetrics en Claude Desktop, Codex o cualquier agente compatible con MCP.",
       },
       {
         n: "02",
         title: "Pídele que cree tu cuenta",
-        p: "Tu agente aprovisiona una cuenta de SealMetrics y genera tu píxel de tracking — todo a través del MCP.",
+        p: "Tu agente aprovisiona una cuenta de Sealmetrics y genera tu píxel de tracking — todo a través del MCP.",
       },
       {
         n: "03",

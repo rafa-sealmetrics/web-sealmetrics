@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is an Attribution Model? — SealMetrics Glossary",
+  title: "What Is an Attribution Model? — Sealmetrics Glossary",
   description:
     "Attribution models determine how conversion credit is split across touchpoints. Compare first-touch, last-touch, linear, and data-driven models.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Attribution models determine how conversion credit is split across marketing touchpoints.",
     type: "article",
     url: "https://sealmetrics.com/glossary/attribution-model/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/attribution-model/")],
   },
@@ -124,13 +124,13 @@ export default function AttributionModelPage() {
           </p>
         </div>
 
-        <CommercialModule hook="SealMetrics runs one model — last-click on 100% of your traffic. See what a single, complete model tells you that blended data can't." />
+        <CommercialModule hook="Sealmetrics runs one model — last-click on 100% of your traffic. See what a single, complete model tells you that blended data can't." />
 
         <RelatedGlossaryTerms slug="attribution-model" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Multi-Touch Attribution with Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Multi-Touch Attribution with Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

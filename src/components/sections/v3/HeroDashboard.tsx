@@ -138,7 +138,7 @@ export function HeroDashboard() {
           <div className="flex items-center justify-between mb-3 px-1">
             <Picture
               src="/logos/logo-sealmetrics.svg"
-              alt="SealMetrics"
+              alt="Sealmetrics"
               width={101}
               height={18}
               className="h-[18px] w-auto"
@@ -284,7 +284,7 @@ function ChartThreeLines() {
         <div className="hidden md:flex gap-3.5 text-[10px] text-ink-soft font-mono tracking-[0.04em]">
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-sm bg-ink" />
-            SealMetrics · 100%
+            Sealmetrics · 100%
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-sm bg-brand" />
@@ -357,12 +357,12 @@ function ChartChannelBars() {
       <div className="flex justify-between items-center mb-5">
         <div className="text-[12px] font-semibold">
           Revenue by channel{" "}
-          <span className="text-ink-soft font-medium">· SealMetrics vs GA4</span>
+          <span className="text-ink-soft font-medium">· Sealmetrics vs GA4</span>
         </div>
         <div className="flex gap-3.5 text-[10px] text-ink-soft font-mono tracking-[0.04em]">
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-sm bg-ink" />
-            SealMetrics
+            Sealmetrics
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-sm bg-warm-200" />

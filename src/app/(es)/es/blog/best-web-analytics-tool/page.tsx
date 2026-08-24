@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/es/blog/best-web-analytics-tool/")],
     url: "https://sealmetrics.com/es/blog/best-web-analytics-tool/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
@@ -205,7 +205,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -1064,11 +1064,11 @@ export default function MejorHerramientaAnaliticaWebPage() {
 
             <CommercialModule
               locale="es"
-              hook="¿Cuántos de estos criterios supera tu herramienta actual? Trae la lista a una demo y puntúa a SealMetrics en directo sobre tu propio caso."
+              hook="¿Cuántos de estos criterios supera tu herramienta actual? Trae la lista a una demo y puntúa a Sealmetrics en directo sobre tu propio caso."
             />
 
             <h2 className={h2Class}>
-              Cómo puntúa SealMetrics contra esta lista
+              Cómo puntúa Sealmetrics contra esta lista
             </h2>
 
             <div className="rounded-[14px] border-l-2 border-amber bg-amber-soft/30 p-5">
@@ -1080,7 +1080,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 modelado, y que privacidad y completitud son el mismo requisito
                 — que{" "}
                 <Link href="/es/product" className={linkClass}>
-                  SealMetrics
+                  Sealmetrics
                 </Link>{" "}
                 comparte. Un comprador cuya prioridad sea product analytics a
                 nivel de usuario, session replay o modelado multi-touch debería
@@ -1100,7 +1100,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                       El listón
                     </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
-                      SealMetrics
+                      Sealmetrics
                     </th>
                     <th className="text-left py-3 text-text-tertiary font-medium">
                       Puntos
@@ -1149,7 +1149,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
               <div className="rounded-[14px] border border-warm-100 bg-white p-6">
                 <Chip tone="test">Dónde se pierde el punto</Chip>
                 <p className="mt-3 text-[0.95rem] leading-[1.7] text-text-body">
-                  Requisito 11 — SealMetrics no está certificado en ISO 27001 ni
+                  Requisito 11 — Sealmetrics no está certificado en ISO 27001 ni
                   SOC 2. Todo lo demás de esa fila se cumple: sin datos
                   personales, alojado en la UE en Dublín, DPA en el contrato
                   estándar, sin medidas suplementarias de transferencia. Pero un
@@ -1215,7 +1215,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa SealMetrics sobre tu propio dominio: 100% de captura, sin banner y last-click sobre todo el dato."
+            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: 100% de captura, sin banner y last-click sobre todo el dato."
           />
 
           <ComparisonLinks locale="es" />

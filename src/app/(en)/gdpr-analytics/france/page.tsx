@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/gdpr-analytics/france/")],
     url: "https://sealmetrics.com/gdpr-analytics/france/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "What if my analytics is hosted in another EU country?",
-    a: "The exemption applies as long as the processing happens in the EU (no third-country transfer). SealMetrics processes exclusively in Dublin, Ireland — within scope of GDPR adequacy, no Schrems II transfer assessment required.",
+    a: "The exemption applies as long as the processing happens in the EU (no third-country transfer). Sealmetrics processes exclusively in Dublin, Ireland — within scope of GDPR adequacy, no Schrems II transfer assessment required.",
   },
   {
     q: "Did the Digital Omnibus 2026 change the CNIL position?",
@@ -131,7 +131,7 @@ export default function GdprAnalyticsFrancePage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -174,7 +174,7 @@ export default function GdprAnalyticsFrancePage() {
             five criteria: a strictly limited audience-measurement
             purpose, no cross-site tracking, anonymised or
             uncollected IPs, no merging with other personal data, and
-            aggregate-only reporting. SealMetrics meets each criterion
+            aggregate-only reporting. Sealmetrics meets each criterion
             by design — no identifier is generated, no cookie is set,
             no IP is collected, no cross-site data path exists. The
             architecture sits inside the exemption rather than
@@ -212,7 +212,7 @@ export default function GdprAnalyticsFrancePage() {
                     <p className="mt-2 text-[14.5px] leading-[1.65] text-ink-soft">{c.cnil}</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold">SealMetrics</span>
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold">Sealmetrics</span>
                     <p className="mt-2 text-[14.5px] leading-[1.65] text-ink">{c.us}</p>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function GdprAnalyticsFrancePage() {
               Last octet of IP must be removed.
             </p>
             <p className="text-ink">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand">SealMetrics:</span>{" "}
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand">Sealmetrics:</span>{" "}
               No IP address is ever stored — it is used transiently in memory
               during request handling and then discarded.
             </p>
@@ -271,7 +271,7 @@ export default function GdprAnalyticsFrancePage() {
               Cookies must not exceed 13 months retention.
             </p>
             <p className="text-ink">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand">SealMetrics:</span>{" "}
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand">Sealmetrics:</span>{" "}
               No persistent cookies are used.
             </p>
           </div>
@@ -321,14 +321,14 @@ export default function GdprAnalyticsFrancePage() {
           <h2 className="h-section">What it means for your French site</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
             Three practical outcomes for an operator running a French
-            site with SealMetrics installed:
+            site with Sealmetrics installed:
           </p>
 
           <div className="mt-10 space-y-6">
             <div>
               <h3 className="text-[17px] font-semibold text-ink mb-2">Banner scope shrinks (or disappears)</h3>
               <p className="text-[15.5px] leading-[1.7] text-ink-soft">
-                If SealMetrics is the only analytics layer and the only
+                If Sealmetrics is the only analytics layer and the only
                 tools that set cookies are strictly-necessary (cart,
                 session, fraud), no consent dialog is required. If you
                 also run ad pixels or A/B testing tools, the banner
@@ -429,7 +429,7 @@ export default function GdprAnalyticsFrancePage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Blog</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">The CNIL self-assessment, published</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                All 14 technical criteria with SealMetrics&rsquo; actual answers — copy directly into your DPO review.
+                All 14 technical criteria with Sealmetrics&rsquo; actual answers — copy directly into your DPO review.
               </p>
             </Link>
 

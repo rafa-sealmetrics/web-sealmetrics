@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Event Tracking? — SealMetrics Glossary",
+  title: "What Is Event Tracking? — Sealmetrics Glossary",
   description:
     "Event tracking records specific user interactions beyond pageviews. Learn how GA4's event model works and why cookieless collection is more reliable.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Event tracking records user interactions beyond pageviews. Learn about GA4's event model and cookieless alternatives.",
     type: "article",
     url: "https://sealmetrics.com/glossary/event-tracking/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/event-tracking/")],
   },
@@ -68,7 +68,7 @@ export default function EventTrackingPage() {
             &mdash; <strong className="font-medium">Custom events</strong> &mdash; any interaction specific to your product (filter applied, configurator used, calculator completed)
           </p>
           <p>
-            GA4 automatically collects a set of enhanced measurement events (page_view, scroll, click, file_download, video_start, video_complete) without additional configuration. Custom events require either gtag.js calls or GTM triggers. SealMetrics captures pageviews automatically — including SPA route changes — and business events through explicit calls, all via <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless tracking</Link>, including interactions that third-party scripts miss.
+            GA4 automatically collects a set of enhanced measurement events (page_view, scroll, click, file_download, video_start, video_complete) without additional configuration. Custom events require either gtag.js calls or GTM triggers. Sealmetrics captures pageviews automatically — including SPA route changes — and business events through explicit calls, all via <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless tracking</Link>, including interactions that third-party scripts miss.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">GA4 event model</h2>
@@ -106,7 +106,7 @@ export default function EventTrackingPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
+            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link>
           </p>
         </div>
       </div>

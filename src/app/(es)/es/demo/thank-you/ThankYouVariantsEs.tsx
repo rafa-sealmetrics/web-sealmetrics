@@ -41,7 +41,7 @@ const variants: Record<DemoTier, Variant> = {
     headline: <>Gracias — te contactamos.</>,
     lede: (
       <>
-        Revisaremos tu situación y respondemos en un día laborable. Mientras tanto, los recursos de abajo te dan una foto clara de cómo funciona SealMetrics.
+        Revisaremos tu situación y respondemos en un día laborable. Mientras tanto, los recursos de abajo te dan una foto clara de cómo funciona Sealmetrics.
       </>
     ),
   },
@@ -124,7 +124,7 @@ export function ThankYouVariantsEs() {
               className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-3 mx-auto max-w-[26ch]"
               style={{ fontSize: "clamp(24px, 3vw, 36px)" }}
             >
-              Mira cómo SealMetrics consigue <em className="italic-accent">data en directo en tu sitio.</em>
+              Mira cómo Sealmetrics consigue <em className="italic-accent">data en directo en tu sitio.</em>
             </h2>
             <p className="text-[15px] leading-[1.6] text-ink-soft mt-4 mx-auto max-w-[56ch]">
               Getting Started — un walkthrough de 2 minutos sobre cómo crear tu cuenta, añadir tu sitio e instalar el script. Así cuando hablemos, tu data ya está fluyendo.
@@ -137,7 +137,7 @@ export function ThankYouVariantsEs() {
               loading="lazy"
               allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
-              title="SealMetrics — Getting Started"
+              title="Sealmetrics — Getting Started"
               className="absolute inset-0 w-full h-full"
             />
           </div>
@@ -203,7 +203,7 @@ export function ThankYouVariantsEs() {
               style={{ borderLeftColor: "#2E5C8A" }}
             >
               <p className="text-[17px] leading-[1.55] text-ink font-medium tracking-[-0.01em] italic">
-                &ldquo;El dato que entrega SealMetrics es agnóstico, neutral, sin sesgo. No hay caja negra.&rdquo;
+                &ldquo;El dato que entrega Sealmetrics es agnóstico, neutral, sin sesgo. No hay caja negra.&rdquo;
               </p>
               <footer className="mt-5">
                 <p className="text-[14px] font-semibold text-ink leading-[1.3]">

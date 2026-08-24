@@ -32,11 +32,11 @@ const ITEMS_EN = [
   },
   {
     q: "What is the Agentic Package?",
-    a: "A free SealMetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events per month. It's fully self-serve with documentation only and no credit card — no email, chat or priority support. When you pass 1M events in a month, the Growth plan activates.",
+    a: "A free Sealmetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events per month. It's fully self-serve with documentation only and no credit card — no email, chat or priority support. When you pass 1M events in a month, the Growth plan activates.",
   },
   {
     q: "How do I create an account from an LLM?",
-    a: "Add the SealMetrics MCP server to your AI assistant, then ask it to set up SealMetrics. It provisions your account, generates your tracking pixel, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the free tier covers up to 1M human events per month.",
+    a: "Add the Sealmetrics MCP server to your AI assistant, then ask it to set up Sealmetrics. It provisions your account, generates your tracking pixel, and you paste the pixel on your site. You access the same dashboard as any customer — the only difference is the account was created by your agent, not a signup form. Sites, users and accounts are unlimited; the free tier covers up to 1M human events per month.",
   },
   {
     q: "Can I switch between monthly and annual billing?",
@@ -51,7 +51,7 @@ const ITEMS_EN = [
     a: "Yes, on every plan. No per-seat charges, no per-domain charges. Add your entire team and all your domains from day one.",
   },
   {
-    q: "My event count in SealMetrics will be higher than in GA4 — why?",
+    q: "My event count in Sealmetrics will be higher than in GA4 — why?",
     a: "Because we track without cookies or consent banners, we capture visitors GA4 never sees — typically 40–90% more traffic depending on your consent rejection rate. If GA4 shows 100K sessions/month, your real traffic may be 170K–300K sessions, generating roughly 4–6 events per session.",
   },
   {
@@ -91,11 +91,11 @@ const ITEMS_ES = [
   },
   {
     q: "¿Qué es el Agentic Package?",
-    a: "Un tier gratuito de SealMetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes. Es totalmente self-serve con solo documentación y sin tarjeta — sin soporte email, chat ni prioritario. Al superar 1M de eventos en un mes, se activa el plan Growth.",
+    a: "Un tier gratuito de Sealmetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes. Es totalmente self-serve con solo documentación y sin tarjeta — sin soporte email, chat ni prioritario. Al superar 1M de eventos en un mes, se activa el plan Growth.",
   },
   {
     q: "¿Cómo creo una cuenta desde un LLM?",
-    a: "Añade el servidor MCP de SealMetrics a tu asistente de IA y pídele que configure SealMetrics. Aprovisiona tu cuenta, genera tu píxel de tracking, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el tier gratuito cubre hasta 1M de eventos humanos al mes.",
+    a: "Añade el servidor MCP de Sealmetrics a tu asistente de IA y pídele que configure Sealmetrics. Aprovisiona tu cuenta, genera tu píxel de tracking, y tú pegas el píxel en tu web. Accedes al mismo dashboard que cualquier cliente — la única diferencia es que la cuenta la creó tu agente, no un formulario de registro. Sitios, usuarios y cuentas son ilimitados; el tier gratuito cubre hasta 1M de eventos humanos al mes.",
   },
   {
     q: "¿Puedo cambiar entre mensual y anual?",

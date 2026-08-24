@@ -18,7 +18,7 @@ const SLUG = "best-llm-for-data-analytics";
 const URL = `/blog/${SLUG}`;
 const TITLE = "The Best LLM for Data Analytics Isn't the One With the Highest Benchmark";
 const DESCRIPTION =
-  "We ran 162 live queries across three open models against real analytics data to pick the AI inside SealMetrics. What decided it wasn't MMLU — it was tool-calling, grounding, and a security flaw that only showed up in one language.";
+  "We ran 162 live queries across three open models against real analytics data to pick the AI inside Sealmetrics. What decided it wasn't MMLU — it was tool-calling, grounding, and a security flaw that only showed up in one language.";
 
 export const metadata: Metadata = {
   title: "The Best LLM for Data Analytics Isn't the Top Scorer",
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Best LLM for Data Analytics Isn't the One You'd Guess",
     description:
-      "162 live queries, real data, ground truth from the database. How we actually chose the model inside SealMetrics.",
+      "162 live queries, real data, ground truth from the database. How we actually chose the model inside Sealmetrics.",
     type: "article",
     url: "https://sealmetrics.com/blog/best-llm-for-data-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "The Best LLM for Data Analytics Isn't the One You'd Guess",
-    description: "162 live queries, real data, ground truth from the database. How we actually chose the model inside SealMetrics.",
+    description: "162 live queries, real data, ground truth from the database. How we actually chose the model inside Sealmetrics.",
     images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
   },
   alternates: {
@@ -50,7 +50,7 @@ const FAQ = [
   {
     question: "What is the best LLM for data analytics?",
     answer:
-      "For an analytics assistant that answers by calling data tools, the best model is the one with the most reliable tool-calling and grounding on your actual workload — not the highest general-knowledge benchmark. In SealMetrics' internal testing across 162 live queries, an open-weight model (gpt-oss-120b) outperformed larger and more expensive alternatives on tool-calling reliability, injection resistance, and cost, while general benchmarks like MMLU barely predicted real-task performance.",
+      "For an analytics assistant that answers by calling data tools, the best model is the one with the most reliable tool-calling and grounding on your actual workload — not the highest general-knowledge benchmark. In Sealmetrics' internal testing across 162 live queries, an open-weight model (gpt-oss-120b) outperformed larger and more expensive alternatives on tool-calling reliability, injection resistance, and cost, while general benchmarks like MMLU barely predicted real-task performance.",
   },
   {
     question: "Why don't public benchmarks like MMLU predict analytics performance?",
@@ -65,7 +65,7 @@ const FAQ = [
   {
     question: "Does the language of the prompt affect an LLM's safety?",
     answer:
-      "It can. In SealMetrics' bilingual testing, one model obeyed an injected 'ignore your instructions' attack in English while ignoring the identical attack in Spanish. A model that looks robust in one language can be vulnerable in another — which is why security testing has to be multilingual, not monolingual.",
+      "It can. In Sealmetrics' bilingual testing, one model obeyed an injected 'ignore your instructions' attack in English while ignoring the identical attack in Spanish. A model that looks robust in one language can be vulnerable in another — which is why security testing has to be multilingual, not monolingual.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function BestLlmForAnalyticsPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -96,8 +96,8 @@ export default function BestLlmForAnalyticsPage() {
       <JsonLd
         data={statisticClaimSchema({
           text: "Across 162 live analytics queries in two languages, gpt-oss-120b passed 18 of 18 grounding-and-injection traps and returned about ten times cheaper per answered query than the next-strongest open model, which leaked an injected-instruction canary in 2 of 3 English attempts.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -140,7 +140,7 @@ export default function BestLlmForAnalyticsPage() {
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">
-            We didn&apos;t pick the AI inside SealMetrics from a leaderboard. We
+            We didn&apos;t pick the AI inside Sealmetrics from a leaderboard. We
             ran 162 live queries against real data, checked every number the
             model claimed, and let the results — including the ones we threw
             away — decide.

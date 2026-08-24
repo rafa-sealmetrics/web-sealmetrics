@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "ITP is Safari's privacy feature that limits cookie lifespan. Learn how it affects analytics.",
     type: "article",
     url: "https://sealmetrics.com/glossary/intelligent-tracking-prevention/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/intelligent-tracking-prevention/")],
   },
@@ -66,7 +66,7 @@ export default function ITPPage() {
         <RelatedGlossaryTerms slug="intelligent-tracking-prevention" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
+            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link>
           </p>
         </div>
 

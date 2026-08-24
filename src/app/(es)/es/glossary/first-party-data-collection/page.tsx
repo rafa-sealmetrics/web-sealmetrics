@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "¿Qué es la recolección de datos first-party?",
     description: "Captura analítica a través de tu propio dominio, invisible para los bloqueadores.",
     url: "https://sealmetrics.com/es/glossary/first-party-data-collection/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/first-party-data-collection/")],
@@ -71,13 +71,13 @@ export default function FirstPartyDataCollectionEsPage() {
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="SealMetrics es first-party por diseño: tu dominio, tus datos, alojados en Dublín. Mira qué cambia eso en tus cifras." />
+        <CommercialModule locale="es" hook="Sealmetrics es first-party por diseño: tu dominio, tus datos, alojados en Dublín. Mira qué cambia eso en tus cifras." />
 
         <RelatedGlossaryTerms slug="first-party-data-collection" locale="es" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona SealMetrics</Link> &middot; <Link href="/es/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Analítica sin cookies explicada</Link>
+            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona Sealmetrics</Link> &middot; <Link href="/es/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Analítica sin cookies explicada</Link>
           </p>
         </div>
 

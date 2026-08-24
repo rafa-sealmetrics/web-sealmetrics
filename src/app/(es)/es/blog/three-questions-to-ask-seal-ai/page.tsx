@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "¿Qué se le puede preguntar de verdad a un asistente de analítica con IA? Tres preguntas que merece la pena probar y cómo leer las respuestas.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/three-questions-to-ask-seal-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/three-questions-to-ask-seal-ai.png"],
   },
@@ -57,9 +57,9 @@ const FAQ = [
       "Pregúntale por qué. Un asistente con grounding recupera las cifras mediante llamadas a herramientas contra tus datos y puede nombrar la métrica, el periodo y el desglose que hay detrás de cada número que afirma. Si no puede enseñarte esa evidencia, trata la cifra como una afirmación y no como una medición. Como prueba puntual, pregúntale por una campaña que nunca lanzaste: la respuesta correcta es que no hay datos de eso.",
   },
   {
-    question: "¿Cómo se calcula la tasa de rebote en SealMetrics?",
+    question: "¿Cómo se calcula la tasa de rebote en Sealmetrics?",
     answer:
-      "La tasa de rebote son las entradas menos las entradas con interacción, dividido entre las entradas y expresado en porcentaje. Una sesión con interacción es la que tiene más de una página vista. No es lo mismo que la tasa de interacción, y tampoco es la definición que usan todas las herramientas de analítica: compara la tasa de rebote de SealMetrics con tu propio histórico, no con una cifra de otra plataforma.",
+      "La tasa de rebote son las entradas menos las entradas con interacción, dividido entre las entradas y expresado en porcentaje. Una sesión con interacción es la que tiene más de una página vista. No es lo mismo que la tasa de interacción, y tampoco es la definición que usan todas las herramientas de analítica: compara la tasa de rebote de Sealmetrics con tu propio histórico, no con una cifra de otra plataforma.",
   },
   {
     question: "¿Cómo debo formular las preguntas a una IA de analítica?",
@@ -69,7 +69,7 @@ const FAQ = [
   {
     question: "¿Tengo que configurar algo para usar el asistente de IA?",
     answer:
-      "No. Seal AI es la capa de IA por defecto dentro de SealMetrics: no hay clave de API que pegar ni cuenta con un proveedor de IA que crear. La inferencia se ejecuta solo en la UE, no se retiene nada por defecto y nada se usa para entrenar. Si prefieres usar tu propio modelo, puedes conectar la clave de tu proveedor, pero no necesitas configurar nada para empezar a preguntar.",
+      "No. Seal AI es la capa de IA por defecto dentro de Sealmetrics: no hay clave de API que pegar ni cuenta con un proveedor de IA que crear. La inferencia se ejecuta solo en la UE, no se retiene nada por defecto y nada se usa para entrenar. Si prefieres usar tu propio modelo, puedes conectar la clave de tu proveedor, pero no necesitas configurar nada para empezar a preguntar.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -99,7 +99,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
       />
       <JsonLd
         data={definedTermSchema({
-          name: "Tasa de rebote (definición de SealMetrics)",
+          name: "Tasa de rebote (definición de Sealmetrics)",
           description:
             "Proporción de entradas que no llegaron a ser sesiones con interacción, calculada como las entradas menos las entradas con interacción, dividido entre las entradas. Una sesión con interacción es la que tiene más de una página vista. La tasa de rebote es la vista inversa de la interacción, no la misma cifra que la tasa de interacción, y las definiciones difieren entre plataformas de analítica — por eso debe compararse contra el histórico propio y no entre herramientas.",
           url: URL,
@@ -169,7 +169,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
                 qué lo dices?» obliga al asistente a enseñar su evidencia.
               </li>
               <li>
-                Después, una <strong>pregunta de interacción</strong>. En SealMetrics la
+                Después, una <strong>pregunta de interacción</strong>. En Sealmetrics la
                 tasa de rebote son las entradas menos las entradas con interacción,
                 dividido entre las entradas; una sesión con interacción tiene más de una
                 página vista.
@@ -263,7 +263,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
               comparación, y deriva la tasa a partir de ellas.
             </p>
             <p>
-              <strong>La definición que conviene conocer.</strong> En SealMetrics, la
+              <strong>La definición que conviene conocer.</strong> En Sealmetrics, la
               tasa de rebote es:
             </p>
             <p className="pl-4 border-l-2 border-warm-200 font-mono text-[0.9rem] text-text-secondary">
@@ -349,7 +349,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
               Dónde probarlo
             </h2>
             <p>
-              El asistente ya está en tu cuenta de SealMetrics: no hay clave que pegar
+              El asistente ya está en tu cuenta de Sealmetrics: no hay clave que pegar
               ni cuenta con un proveedor de IA que crear, y la inferencia se ejecuta
               solo en la UE sin retener nada por defecto. Abre un sitio, abre el
               asistente y empieza por la primera pregunta.

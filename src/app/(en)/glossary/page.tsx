@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [ogImage("/glossary/")],
     url: "https://sealmetrics.com/glossary/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -151,8 +151,8 @@ export default function Page() {
         locale="en"
         titleEn={<>Past <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>definitions.</em> See the real thing.</>}
         titleEs={<>Más allá de las <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>definiciones.</em> Ve lo real.</>}
-        ledeEn="30 minutes on your own site. We run SealMetrics alongside GA4 and show the gap — live."
-        ledeEs="30 min sobre tu web. Corremos SealMetrics junto a GA4 y te mostramos el gap — en directo."
+        ledeEn="30 minutes on your own site. We run Sealmetrics alongside GA4 and show the gap — live."
+        ledeEs="30 min sobre tu web. Corremos Sealmetrics junto a GA4 y te mostramos el gap — en directo."
       />
     </>
   );

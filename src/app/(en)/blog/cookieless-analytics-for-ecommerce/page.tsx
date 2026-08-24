@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -42,10 +42,10 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual customers across sessions?",
     answer:
-      "No. SealMetrics does not identify individual visitors, does not stitch pageviews into per-user journeys and does not build behavioral profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page and country. By avoiding personal-data collection at the architecture level, the system meets GDPR by design — confirm against your specific implementation with your DPO; SealMetrics ships a DPA and TPSR package for this review.",
+      "No. Sealmetrics does not identify individual visitors, does not stitch pageviews into per-user journeys and does not build behavioral profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page and country. By avoiding personal-data collection at the architecture level, the system meets GDPR by design — confirm against your specific implementation with your DPO; Sealmetrics ships a DPA and TPSR package for this review.",
   },
   {
-    question: "How does SealMetrics attribute revenue without journeys?",
+    question: "How does Sealmetrics attribute revenue without journeys?",
     answer:
       "Attribution is last-click at the event level. When a conversion fires on a page, the traffic source observed on that page load gets the credit. Totals roll up by channel — for example, 42 conversions attributed to Google Ads this week. There is no multi-touch model and no stitching of previous visits.",
   },
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "Will I need to migrate off GA4?",
     answer:
-      "No. Most teams run SealMetrics alongside GA4 for 30 days to compare numbers. After that, many keep GA4 as a Google Ads conversion conduit and use SealMetrics as the source of truth for channel-level revenue decisions.",
+      "No. Most teams run Sealmetrics alongside GA4 for 30 days to compare numbers. After that, many keep GA4 as a Google Ads conversion conduit and use Sealmetrics as the source of truth for channel-level revenue decisions.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Page() {
           dateModified: "2026-05-28",
           url: "/blog/cookieless-analytics-for-ecommerce",
           category: "eCommerce",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for eCommerce", url: "/blog/cookieless-analytics-for-ecommerce" }])} />
@@ -196,7 +196,7 @@ export default function Page() {
               <li>On day 30, review: the gap to the backend is the measurement improvement.</li>
             </ol>
             <p>
-              No migration. GA4 keeps running for Google Ads conversion import. SealMetrics becomes the source of truth for channel-level decisions.
+              No migration. GA4 keeps running for Google Ads conversion import. Sealmetrics becomes the source of truth for channel-level decisions.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -220,7 +220,7 @@ export default function Page() {
             ))}
           </div>
 
-          <CommercialModule hook="See your pixel, your backend and SealMetrics on the same screen — the reconciliation your CFO keeps asking for." />
+          <CommercialModule hook="See your pixel, your backend and Sealmetrics on the same screen — the reconciliation your CFO keeps asking for." />
 
           <RelatedReading currentSlug="cookieless-analytics-for-ecommerce" />
 
@@ -230,7 +230,7 @@ export default function Page() {
             </h2>
             <ul className="space-y-4">
               <li>
-                <Link href="/for/ecommerce" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics for eCommerce</Link>
+                <Link href="/for/ecommerce" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics for eCommerce</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Vertical page with pains, outcomes and Shopify-specific integration details.</p>
               </li>
               <li>
@@ -238,7 +238,7 @@ export default function Page() {
                 <p className="text-[0.8rem] text-text-tertiary mt-1">The glossary term, with related concepts and technical detail.</p>
               </li>
               <li>
-                <Link href="/vs-ga4" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics vs GA4</Link>
+                <Link href="/vs-ga4" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics vs GA4</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Feature-by-feature comparison for eCommerce teams.</p>
               </li>
             </ul>

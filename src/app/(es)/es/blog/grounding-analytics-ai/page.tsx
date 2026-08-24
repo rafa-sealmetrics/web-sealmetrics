@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Cómo el grounding evita las alucinaciones de la IA en analítica: el modelo narra números que acaba de consultar, en lugar de recordar números que nunca tuvo.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/grounding-analytics-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/grounding-analytics-ai.png"],
   },
@@ -60,7 +60,7 @@ const FAQ = [
   {
     question: "¿Puede una IA con poco conocimiento del mundo servir para analizar datos?",
     answer:
-      "Sí, y además el conocimiento del mundo suele ser lo que menos conviene optimizar. El modelo que usa SealMetrics, gpt-oss-120b, obtiene 0,168 de precisión en SimpleQA con una tasa de alucinación de 0,782: memoria factual del mundo abierto muy pobre. Eso es irrelevante en analítica con grounding, porque al asistente nunca se le pregunta qué recuerda del mundo. Se le pide que lea tus entradas y tus conversiones, que llegan al prompt desde tu propia base de datos.",
+      "Sí, y además el conocimiento del mundo suele ser lo que menos conviene optimizar. El modelo que usa Sealmetrics, gpt-oss-120b, obtiene 0,168 de precisión en SimpleQA con una tasa de alucinación de 0,782: memoria factual del mundo abierto muy pobre. Eso es irrelevante en analítica con grounding, porque al asistente nunca se le pregunta qué recuerda del mundo. Se le pide que lea tus entradas y tus conversiones, que llegan al prompt desde tu propia base de datos.",
   },
   {
     question: "¿Cómo sé si un asistente de analítica con IA se está inventando los números?",
@@ -88,7 +88,7 @@ export default function GroundingAnalyticsAiPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -109,9 +109,9 @@ export default function GroundingAnalyticsAiPageEs() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "En un benchmark interno de 162 consultas sobre el asistente de analítica de SealMetrics, el modelo enviado a producción, gpt-oss-120b, afirmó correctamente 144 de 144 cifras verificadas y superó 18 de 18 trampas de grounding e inyección (intervalo de confianza de Wilson al 95%: 0,82-1,00), con cada cifra comprobada contra la verdad de referencia calculada en vivo desde la base de datos analítica.",
-          source: "Benchmark interno de LLM de SealMetrics (ejecución 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "En un benchmark interno de 162 consultas sobre el asistente de analítica de Sealmetrics, el modelo enviado a producción, gpt-oss-120b, afirmó correctamente 144 de 144 cifras verificadas y superó 18 de 18 trampas de grounding e inyección (intervalo de confianza de Wilson al 95%: 0,82-1,00), con cada cifra comprobada contra la verdad de referencia calculada en vivo desde la base de datos analítica.",
+          source: "Benchmark interno de LLM de Sealmetrics (ejecución 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}

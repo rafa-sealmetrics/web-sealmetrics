@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is First-Party Data Collection? — SealMetrics Glossary",
+  title: "What Is First-Party Data Collection? — Sealmetrics Glossary",
   description:
     "First-party data collection gathers analytics through your own domain, avoiding ad blockers and third-party cookie restrictions.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "First-party data collection gathers analytics through your own domain, avoiding ad blockers.",
     type: "article",
     url: "https://sealmetrics.com/glossary/first-party-data-collection/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/first-party-data-collection/")],
   },
@@ -62,12 +62,12 @@ export default function FirstPartyDataCollectionPage() {
           <p>Approximately 40% of EU users run ad blockers that specifically target third-party analytics requests. First-party data collection bypasses this entirely — not through deception, but by fundamentally changing the data path to be genuinely first-party.</p>
           <p>Combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, first-party collection eliminates two of the three major <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link> vectors: ad blocker blocking and browser cookie restrictions.</p>
         </div>
-        <CommercialModule hook="SealMetrics is first-party by design: your domain, your data, EU-hosted in Dublin. See what that changes in your numbers." />
+        <CommercialModule hook="Sealmetrics is first-party by design: your domain, your data, EU-hosted in Dublin. See what that changes in your numbers." />
 
         <RelatedGlossaryTerms slug="first-party-data-collection" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
           </p>
         </div>
 

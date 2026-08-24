@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Qué miden realmente MMLU, GPQA, tau-bench y BFCL, y la letra pequeña que vuelve engañosas las comparaciones entre modelos.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/public-llm-benchmarks-vs-your-use-case/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/public-llm-benchmarks-vs-your-use-case.png"],
   },
@@ -87,7 +87,7 @@ export default function PublicLlmBenchmarksVsYourUseCasePageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -100,8 +100,8 @@ export default function PublicLlmBenchmarksVsYourUseCasePageEs() {
       <JsonLd
         data={statisticClaimSchema({
           text: "En un benchmark interno de 162 consultas sobre un asistente de analítica en producción, el modelo candidato con mejores puntuaciones en los benchmarks públicos superó 15 de 18 trampas de grounding e inyección y costó alrededor de diez veces más por consulta respondida que el modelo con puntuaciones públicas más bajas, que superó 18 de 18.",
-          source: "Benchmark interno de LLM de SealMetrics (tanda 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Benchmark interno de LLM de Sealmetrics (tanda 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -206,7 +206,7 @@ export default function PublicLlmBenchmarksVsYourUseCasePageEs() {
                 Seal AI
               </Link>
               , el asistente de analítica en lenguaje natural que va dentro de
-              SealMetrics. Las cifras públicas acotaron el campo. No eligieron al
+              Sealmetrics. Las cifras públicas acotaron el campo. No eligieron al
               ganador y, en la dimensión decisiva, apuntaban en la dirección
               equivocada.
             </p>

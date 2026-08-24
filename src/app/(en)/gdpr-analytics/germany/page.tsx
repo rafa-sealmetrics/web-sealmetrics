@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/gdpr-analytics/germany/")],
     url: "https://sealmetrics.com/gdpr-analytics/germany/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -72,7 +72,7 @@ const criteria = [
 const faqs = [
   {
     q: "Does the §25 TTDSG exemption apply to all analytics?",
-    a: "No. The exemption requires that the analytics is strictly necessary for the operation of the service, OR meets the conditions for anonymous audience measurement — no terminal-device storage, no cross-site tracking, no personal data, EU processing. Cookie-based analytics with a visitor ID does not qualify; SealMetrics' aggregate cookieless architecture does.",
+    a: "No. The exemption requires that the analytics is strictly necessary for the operation of the service, OR meets the conditions for anonymous audience measurement — no terminal-device storage, no cross-site tracking, no personal data, EU processing. Cookie-based analytics with a visitor ID does not qualify; Sealmetrics' aggregate cookieless architecture does.",
   },
   {
     q: "What is the DSK orientation paper?",
@@ -84,11 +84,11 @@ const faqs = [
   },
   {
     q: "What about Google Analytics on a German site?",
-    a: "Google Analytics still requires consent under §25 TTDSG because it sets cookies and processes personal data through Google infrastructure (transfer to the US). The Garante Italian ban on GA4 in 2022 was followed by similar concerns from German authorities. Consent Mode v2 reduces the cookie load but does not change the fundamental processing nature. SealMetrics operates outside that framework entirely.",
+    a: "Google Analytics still requires consent under §25 TTDSG because it sets cookies and processes personal data through Google infrastructure (transfer to the US). The Garante Italian ban on GA4 in 2022 was followed by similar concerns from German authorities. Consent Mode v2 reduces the cookie load but does not change the fundamental processing nature. Sealmetrics operates outside that framework entirely.",
   },
   {
     q: "Do I still need a Datenschutzerklärung?",
-    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (24 months for SealMetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TTDSG exemption). A template ships with the TPSR package.",
+    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (24 months for Sealmetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TTDSG exemption). A template ships with the TPSR package.",
   },
   {
     q: "What's the position on the new Digital Omnibus 2026?",
@@ -122,7 +122,7 @@ export default function GdprAnalyticsGermanyPage() {
           dateModified: DATE_MODIFIED,
           url: "/gdpr-analytics/germany",
           category: "Compliance",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
 
@@ -193,7 +193,7 @@ export default function GdprAnalyticsGermanyPage() {
                     <p className="mt-2 text-[14.5px] leading-[1.65] text-ink-soft">{c.requirement}</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold">SealMetrics</span>
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold">Sealmetrics</span>
                     <p className="mt-2 text-[14.5px] leading-[1.65] text-ink">{c.us}</p>
                   </div>
                 </div>

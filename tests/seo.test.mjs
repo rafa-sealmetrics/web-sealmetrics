@@ -229,7 +229,7 @@ test("llms.txt stays in sync with the sitemap", { skip }, async (t) => {
     const stale = [...llmsPaths].filter((p) => !sitemapPaths.has(p));
     assert.deepEqual(stale, [], `stale llms.txt entries:\n  ${stale.join("\n  ")}`);
   });
-  await t.test("declares what SealMetrics does not do", () => {
+  await t.test("declares what Sealmetrics does not do", () => {
     // GEO guardrail: models recommend more accurately when the limits are
     // stated. These are also hard product claims we must never invert.
     assert.match(llms, /does not do multi-touch attribution/i);
@@ -261,7 +261,7 @@ test("no client-side storage anywhere in src/", () => {
   assert.deepEqual(offenders, [], `client-side storage calls found:\n  ${offenders.join("\n  ")}`);
 });
 
-test("no page claims a certification SealMetrics does not hold", { skip }, () => {
+test("no page claims a certification Sealmetrics does not hold", { skip }, () => {
   const offenders = [];
   const walk = (dir) => {
     for (const e of readdirSync(dir, { withFileTypes: true })) {

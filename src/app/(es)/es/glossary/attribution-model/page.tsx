@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "¿Qué es un modelo de atribución?",
     description: "Las reglas que reparten el crédito de una conversión entre los puntos de contacto.",
     url: "https://sealmetrics.com/es/glossary/attribution-model/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/attribution-model/")],
@@ -69,19 +69,19 @@ export default function AttributionModelEsPage() {
             Piensa en un cliente que descubre tu marca en una búsqueda orgánica (bloqueada por un bloqueador), luego hace clic en un anuncio de display (registrado) y finalmente convierte por búsqueda de marca (registrada). Un modelo last-touch acredita a la búsqueda de marca; un data-driven acredita a display. Ninguno sabe que la visita orgánica existió. El canal que de verdad trajo al cliente recibe cero crédito, y cero presupuesto en la siguiente planificación.
           </p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Qué hace SealMetrics</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Qué hace Sealmetrics</h2>
           <p>
-            SealMetrics no aplica modelos <Link href={glossaryHref("multi-touch-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch</Link>: hace <Link href={glossaryHref("revenue-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución de ingresos last-click</Link> sobre el 100% del dato observado, de forma anónima y a nivel de canal. Es una decisión de arquitectura, no una limitación temporal: no se reconstruyen recorridos por usuario porque no se identifica a ningún usuario.
+            Sealmetrics no aplica modelos <Link href={glossaryHref("multi-touch-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch</Link>: hace <Link href={glossaryHref("revenue-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución de ingresos last-click</Link> sobre el 100% del dato observado, de forma anónima y a nivel de canal. Es una decisión de arquitectura, no una limitación temporal: no se reconstruyen recorridos por usuario porque no se identifica a ningún usuario.
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="SealMetrics usa un solo modelo: last-click sobre el 100% de tu tráfico. Mira lo que cuenta un modelo completo frente a datos modelados." />
+        <CommercialModule locale="es" hook="Sealmetrics usa un solo modelo: last-click sobre el 100% de tu tráfico. Mira lo que cuenta un modelo completo frente a datos modelados." />
 
         <RelatedGlossaryTerms slug="attribution-model" locale="es" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">La plataforma SealMetrics</Link> &middot; <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona SealMetrics</Link>
+            Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">La plataforma Sealmetrics</Link> &middot; <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona Sealmetrics</Link>
           </p>
         </div>
       </div>

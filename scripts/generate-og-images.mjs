@@ -112,7 +112,7 @@ function parseGlossaryTerms() {
  * metadata title is not the best line to put on a social card.
  */
 const HUB_OVERRIDES = {
-  vs: { eyebrow: "Comparisons", title: "SealMetrics compared with the enterprise analytics you already run" },
+  vs: { eyebrow: "Comparisons", title: "Sealmetrics compared with the enterprise analytics you already run" },
   for: { eyebrow: "By industry", title: "Complete measurement, by the kind of business you run" },
   "use-cases": { eyebrow: "Use cases", title: "What teams actually do with 100% of their data" },
   platforms: { eyebrow: "Platforms", title: "Install on the eCommerce platform you already use" },
@@ -123,7 +123,7 @@ const HUB_OVERRIDES = {
   "how-it-works": { eyebrow: "How it works", title: "No cookies, no consent banner, no blind spot" },
   pricing: { eyebrow: "Pricing", title: "Enterprise analytics at a fraction of GA360 and Adobe" },
   security: { eyebrow: "Security", title: "GDPR by architecture, EU-hosted in Dublin" },
-  open: { eyebrow: "Open", title: "How SealMetrics works, written down in public" },
+  open: { eyebrow: "Open", title: "How Sealmetrics works, written down in public" },
   blog: { eyebrow: "Blog", title: "Measurement, attribution and privacy for eCommerce" },
 };
 
@@ -192,8 +192,8 @@ function parseOpenChapters() {
   return out;
 }
 
-/** "Shopify Analytics Integration — SealMetrics" → "Shopify Analytics Integration" */
-const stripBrand = (t) => t.replace(/\s*[—|·-]\s*SealMetrics\s*$/, "").trim();
+/** "Shopify Analytics Integration — Sealmetrics" → "Shopify Analytics Integration" */
+const stripBrand = (t) => t.replace(/\s*[—|·-]\s*Sealmetrics\s*$/, "").trim();
 
 
 function ogTemplate({ eyebrow, title }) {
@@ -493,7 +493,7 @@ for (const { route, title } of parseEnRoutes()) {
   const segment = route.split("/")[0];
   const made = await renderOg({
     outFile: out,
-    eyebrow: override?.eyebrow ?? SEGMENT_EYEBROW[segment] ?? "SealMetrics",
+    eyebrow: override?.eyebrow ?? SEGMENT_EYEBROW[segment] ?? "Sealmetrics",
     title: override?.title ?? stripBrand(title),
     font,
   });

@@ -95,7 +95,7 @@ const y = (text: string): Cell => ({ text, tone: "yes" });
 const n = (text: string): Cell => ({ text, tone: "no" });
 const m = (text: string): Cell => ({ text, tone: "mid" });
 
-const MATRIX_COLS = ["SealMetrics", "GA4", "Adobe Analytics", "Piwik PRO", "Amplitude", "Matomo"];
+const MATRIX_COLS = ["Sealmetrics", "GA4", "Adobe Analytics", "Piwik PRO", "Amplitude", "Matomo"];
 
 const MATRIX_ROWS: { capability: string; cells: Cell[] }[] = [
   {
@@ -246,7 +246,7 @@ export function PowerMatrix() {
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
           {[
-            { href: "/vs-ga4", label: "SealMetrics vs GA4" },
+            { href: "/vs-ga4", label: "Sealmetrics vs GA4" },
             { href: "/vs/adobe-analytics", label: "vs Adobe Analytics" },
             { href: "/vs/piwik-pro", label: "vs Piwik PRO" },
             { href: "/vs/matomo", label: "vs Matomo" },
@@ -275,7 +275,7 @@ export function RealTimePower() {
           </h2>
           <p className="mt-6 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
             Most platforms give you a &ldquo;visitors right now&rdquo; widget and make you wait for
-            the real reports. SealMetrics computes every dashboard in real time — channels,
+            the real reports. Sealmetrics computes every dashboard in real time — channels,
             campaigns, products, revenue — because the decisions you make at 11:58 PM on Black
             Friday are the ones that pay for the whole quarter.
           </p>
@@ -383,7 +383,7 @@ export function PropertiesPower() {
             Store <em>any property</em> on any event.
           </h2>
           <p className="mt-6 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
-            GA4 caps you at 25 parameters per event. Adobe makes you ration eVars. SealMetrics
+            GA4 caps you at 25 parameters per event. Adobe makes you ration eVars. Sealmetrics
             stores whatever your business needs on every purchase, signup or micro-conversion —
             value, product, SKU, brand, size, payment method, anything — with no property cap.
           </p>

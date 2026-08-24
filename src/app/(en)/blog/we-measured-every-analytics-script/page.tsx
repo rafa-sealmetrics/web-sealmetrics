@@ -9,14 +9,14 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "We Measured Every Analytics Script. Here Is What We Found.",
   description:
-    "We measured major analytics scripts from production CDNs. GA4 was 132x heavier than SealMetrics, the lightest of the ten tools tested.",
+    "We measured major analytics scripts from production CDNs. GA4 was 132x heavier than Sealmetrics, the lightest of the ten tools tested.",
   openGraph: {
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
       "Real measurements of analytics script sizes from production CDNs. The results are stark.",
     type: "article",
     url: "https://sealmetrics.com/blog/we-measured-every-analytics-script/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/we-measured-every-analytics-script.png"],
   },
@@ -36,7 +36,7 @@ export default function MeasuredScriptsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Measured Every Analytics Script" }]} />
-      <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", datePublished: "2026-02-20", dateModified: "2026-05-04", url: "/blog/we-measured-every-analytics-script", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", datePublished: "2026-02-20", dateModified: "2026-05-04", url: "/blog/we-measured-every-analytics-script", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Measured Every Analytics Script", url: "/blog/we-measured-every-analytics-script" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -60,10 +60,10 @@ export default function MeasuredScriptsPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>GA4 is 132x heavier than SealMetrics (145.6 KB vs 1.1 KB gzipped), and the Adobe stack is 155x heavier at ~170 KB. SealMetrics was the lightest measured, ahead of Plausible at 1.3 KB.</li>
-            <li>For a site with 100,000 monthly visitors, GA4 consumes 14.9 GB of bandwidth per month versus 113 MB for SealMetrics.</li>
+            <li>GA4 is 132x heavier than Sealmetrics (145.6 KB vs 1.1 KB gzipped), and the Adobe stack is 155x heavier at ~170 KB. Sealmetrics was the lightest measured, ahead of Plausible at 1.3 KB.</li>
+            <li>For a site with 100,000 monthly visitors, GA4 consumes 14.9 GB of bandwidth per month versus 113 MB for Sealmetrics.</li>
             <li>Enterprise analytics scripts carry legacy code for cross-site tracking and fingerprinting — features now illegal under GDPR or blocked by browsers.</li>
-            <li>At 1 million pageviews/month, GA4 generates approximately 30 kg of CO2 annually versus 0.6 kg for SealMetrics.</li>
+            <li>At 1 million pageviews/month, GA4 generates approximately 30 kg of CO2 annually versus 0.6 kg for Sealmetrics.</li>
           </ul>
         </div>
 
@@ -91,7 +91,7 @@ export default function MeasuredScriptsPage() {
             fetch: it loads as a per-customer Launch container plus
             AppMeasurement, the ActivityMap module and rule payloads. Those
             figures come from a field measurement on a real European media site
-            running Adobe and SealMetrics side by side — ~150 KB for the Launch
+            running Adobe and Sealmetrics side by side — ~150 KB for the Launch
             container and ~20 KB for AppMeasurement and modules, ~170 KB in
             total. It is a real number from a real page, but it is a stack, not
             a single file, so it is not strictly like-for-like with the rows
@@ -113,7 +113,7 @@ export default function MeasuredScriptsPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 text-right font-mono text-green-muted">1.1 KB</td>
                   <td className="py-2.5 text-right font-mono text-text-tertiary">1.9 KB</td>
                 </tr>
@@ -169,7 +169,7 @@ export default function MeasuredScriptsPage() {
           {/* Visual bar chart */}
           <div className="my-8 space-y-1.5" aria-label="Script size comparison chart">
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">Sealmetrics</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '0.6%', minWidth: '4px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
@@ -245,12 +245,12 @@ export default function MeasuredScriptsPage() {
             <span className="font-mono font-medium text-text-primary">
               132x heavier
             </span>{" "}
-            than SealMetrics, and the Adobe stack is 155x heavier. SealMetrics
+            than Sealmetrics, and the Adobe stack is 155x heavier. Sealmetrics
             is the lightest of the ten, just ahead of Plausible.
           </p>
 
           <CommercialModule
-            hook="GA4 is 52x heavier than the 2.5 KB SealMetrics script in this test. Weigh your own stack on your own pages and compare."
+            hook="GA4 is 52x heavier than the 2.5 KB Sealmetrics script in this test. Weigh your own stack on your own pages and compare."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -259,7 +259,7 @@ export default function MeasuredScriptsPage() {
 
           <p>
             For a site with 100,000 monthly visitors, <a href="https://developers.google.com/tag-platform/gtagjs" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4&apos;s script</a> alone
-            consumes 14.9 GB of bandwidth per month. SealMetrics consumes
+            consumes 14.9 GB of bandwidth per month. Sealmetrics consumes
             113 MB. That is not a rounding error — it is a 132x difference in
             network resources, battery drain, and page load time.
           </p>
@@ -290,7 +290,7 @@ export default function MeasuredScriptsPage() {
           <p>
             At 1 million pageviews per month, GA4&apos;s script generates
             approximately 30 kg of CO&#x2082; annually — equivalent to driving
-            120 km. SealMetrics&apos; equivalent: 0.6 kg, or about 2.4 km.
+            120 km. Sealmetrics&apos; equivalent: 0.6 kg, or about 2.4 km.
           </p>
 
           <p>

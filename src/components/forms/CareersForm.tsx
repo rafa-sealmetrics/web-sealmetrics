@@ -67,7 +67,7 @@ const COPY: Record<
     removeLink: "Remove this link",
     maxLinks: "That's plenty — 6 links is the maximum.",
     consent:
-      "I agree that SealMetrics reviews the public links I share to evaluate my application, as described in the",
+      "I agree that Sealmetrics reviews the public links I share to evaluate my application, as described in the",
     privacyLabel: "Privacy Notice",
     submit: "Send My Public Profile →",
     submitting: "Sending…",
@@ -103,7 +103,7 @@ const COPY: Record<
     removeLink: "Quitar este enlace",
     maxLinks: "Con eso basta — el máximo son 6 enlaces.",
     consent:
-      "Acepto que SealMetrics revise los enlaces públicos que comparto para evaluar mi candidatura, según el",
+      "Acepto que Sealmetrics revise los enlaces públicos que comparto para evaluar mi candidatura, según el",
     privacyLabel: "Aviso de Privacidad",
     submit: "Enviar mi perfil público →",
     submitting: "Enviando…",

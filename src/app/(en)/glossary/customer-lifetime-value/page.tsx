@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Customer Lifetime Value (LTV) — SealMetrics Glossary",
+  title: "Customer Lifetime Value (LTV) — Sealmetrics Glossary",
   description:
     "LTV is the expected total margin from a customer relationship. How it is calculated, why it belongs in order data, and how biased acquisition data skews it.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "The expected total margin from a customer relationship — and why it is calculated from order data, not web analytics.",
     type: "article",
     url: "https://sealmetrics.com/glossary/customer-lifetime-value/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/customer-lifetime-value/")],
   },
@@ -69,7 +69,7 @@ export default function CustomerLifetimeValuePage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why LTV lives in order data, not web analytics</h2>
           <p>
-            LTV needs an identity that survives years: the same customer recognised across every purchase. Order systems have one — an email address or account. Browser-based analytics does not: cookies are capped at days in Safari, rejected outright by 40-60% of EU visitors, and never shared across devices. Any &ldquo;LTV&rdquo; a web analytics tool reports is really per-browser value over a cookie&rsquo;s lifespan, which systematically undercounts. This is a structural limit, not a vendor flaw — and it is why SealMetrics, which measures anonymously and keeps no per-user identifier at all, does not claim to compute LTV. The order database owns the metric.
+            LTV needs an identity that survives years: the same customer recognised across every purchase. Order systems have one — an email address or account. Browser-based analytics does not: cookies are capped at days in Safari, rejected outright by 40-60% of EU visitors, and never shared across devices. Any &ldquo;LTV&rdquo; a web analytics tool reports is really per-browser value over a cookie&rsquo;s lifespan, which systematically undercounts. This is a structural limit, not a vendor flaw — and it is why Sealmetrics, which measures anonymously and keeps no per-user identifier at all, does not claim to compute LTV. The order database owns the metric.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Where analytics data still distorts LTV decisions</h2>
@@ -89,7 +89,7 @@ export default function CustomerLifetimeValuePage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/cookieless-analytics-for-ecommerce" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics for eCommerce</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/cookieless-analytics-for-ecommerce" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics for eCommerce</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

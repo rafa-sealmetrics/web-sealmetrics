@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "GA4 loses EU traffic at three structural levels. Here is the cascade that leaves you with 13%.",
     type: "article",
     url: "https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/why-ga4-shows-13pct-eu-traffic.png"],
   },
@@ -38,7 +38,7 @@ export default function WhyGA4Shows13PctPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
-      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", dateModified: "2026-05-28", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", dateModified: "2026-05-28", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic", url: "/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -323,7 +323,7 @@ export default function WhyGA4Shows13PctPage() {
           </p>
 
           <p>
-            SealMetrics uses a{" "}
+            Sealmetrics uses a{" "}
             <Link
               href="/glossary/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -375,7 +375,7 @@ export default function WhyGA4Shows13PctPage() {
               href="/vs-ga4"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              detailed comparison between SealMetrics and GA4
+              detailed comparison between Sealmetrics and GA4
             </Link>{" "}
             covers pricing, data ownership, and compliance alongside data
             completeness. The 13% figure is the starting point, but it is

@@ -29,7 +29,7 @@ export function HeroV3Es() {
           className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          SealMetrics es analítica sin consentimiento para eCommerce. Mide cada visita y cada venta
+          Sealmetrics es analítica sin consentimiento para eCommerce. Mide cada visita y cada venta
           — sin cookies, sin banner, sin el punto ciego del 40–60% — para que tu ROAS real, tus
           decisiones de canal y los números que llevas al consejo cuadren por fin con lo que
           ocurrió de verdad.
@@ -159,7 +159,7 @@ export function CompareSectionEs() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Cuando Palladium Hotel Group comparó SealMetrics con su stack completo — pixel de Meta, Google Ads, Analytics, CRM — descubrieron que el 40% de su tráfico entrante no tenía atribución. Ni mal etiquetado, ni en &ldquo;directo&rdquo;. Source y medium simplemente perdidos en tránsito.
+            Cuando Palladium Hotel Group comparó Sealmetrics con su stack completo — pixel de Meta, Google Ads, Analytics, CRM — descubrieron que el 40% de su tráfico entrante no tenía atribución. Ni mal etiquetado, ni en &ldquo;directo&rdquo;. Source y medium simplemente perdidos en tránsito.
           </p>
         </div>
 
@@ -193,7 +193,7 @@ export function CompareSectionEs() {
               <div className="flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-sm bg-brand shrink-0" />
                 <h3 className="font-semibold text-white leading-[1.15] tracking-[-0.015em]" style={{ fontSize: "clamp(20px, 2vw, 26px)" }}>
-                  Con <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>SealMetrics</em> · observado neutralmente
+                  Con <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Sealmetrics</em> · observado neutralmente
                 </h3>
               </div>
               <div className="font-semibold leading-[0.88] tracking-[-0.045em] mt-6 text-white tabular-nums" style={{ fontSize: "clamp(100px, 13vw, 180px)" }}>
@@ -250,7 +250,7 @@ export function CompareSectionEs() {
             { label: "Vende sus propios ads", name: "Meta Ads", bias: "Reporta con sesgo de Meta. Se atribuye el máximo posible de conversiones — porque cada conversión reclamada justifica el siguiente euro de inversión.", dark: false },
             { label: "Vende sus propios ads", name: "Google Ads", bias: "Reporta con sesgo de Google. Infla el last-click hacia paid search, porque paid search es el inventario que Google te vende.", dark: false },
             { label: "Vive dentro de Google", name: "Google Analytics", bias: "No se vende como producto publicitario, pero es parte del ecosistema Google. Muestrea sobre cierto umbral. Modela lo que el rechazo de consentimiento elimina.", dark: false },
-            { label: "No vende inventario", name: "SealMetrics", bias: "Sin negocio publicitario. Sin canal que favorecer. Mide lo que realmente ocurrió — por eso agencias, marca y CFO firman el mismo número.", dark: true },
+            { label: "No vende inventario", name: "Sealmetrics", bias: "Sin negocio publicitario. Sin canal que favorecer. Mide lo que realmente ocurrió — por eso agencias, marca y CFO firman el mismo número.", dark: true },
           ].map((t) => (
             <div key={t.name} className={`p-7 rounded-xl border flex flex-col gap-2.5 ${t.dark ? "bg-ink text-white border-ink relative overflow-hidden" : "bg-warm-50 border-warm-100"}`}>
               {t.dark && <span aria-hidden className="absolute pointer-events-none" style={{ right: -40, top: -40, width: 180, height: 180, borderRadius: "50%", background: "radial-gradient(circle,rgba(45,139,109,0.4),transparent 70%)" }} />}
@@ -278,7 +278,7 @@ export function FeaturedCaseEs() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Palladium Hotel Group eligió SealMetrics por una razón: neutralidad. Cuatro herramientas reportaban cuatro verdades distintas. SealMetrics se convirtió en el único número que marca, agencia de medios, agencia creativa y analítica interna aceptan como válido.
+            Palladium Hotel Group eligió Sealmetrics por una razón: neutralidad. Cuatro herramientas reportaban cuatro verdades distintas. Sealmetrics se convirtió en el único número que marca, agencia de medios, agencia creativa y analítica interna aceptan como válido.
           </p>
         </div>
 
@@ -290,7 +290,7 @@ export function FeaturedCaseEs() {
             </span>
             <div className="text-brand text-[72px] leading-[0.5] h-8 font-semibold">&ldquo;</div>
             <blockquote className="mt-5 text-white font-medium leading-[1.2] tracking-[-0.02em]" style={{ fontSize: "clamp(24px, 2.6vw, 34px)" }}>
-              Los datos que da SealMetrics son{" "}
+              Los datos que da Sealmetrics son{" "}
               <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>agnósticos, no están sesgados y son neutrales.</em>{" "}
               No hay caja negra.
             </blockquote>
@@ -310,7 +310,7 @@ export function FeaturedCaseEs() {
             {[
               { l: "Tráfico sin atribución · antes", v: "40", u: "%", hl: false, note: "Del tráfico registrado pero con source/medium perdido — absorbido por 'directo' o sin asignar." },
               { l: "Reservas sin atribuir · antes", v: "35", u: "%", hl: true, note: "Reservas reales registradas como evento en GA4 que no se podían asignar al canal que las generó." },
-              { l: "Mejora en Coste por Búsqueda · DV360", v: "+165", u: "%", hl: false, note: "En el canal Display, tras rebalancear partners, soportes, audiencias y estrategias sobre el modelo de medición de SealMetrics.", span: true },
+              { l: "Mejora en Coste por Búsqueda · DV360", v: "+165", u: "%", hl: false, note: "En el canal Display, tras rebalancear partners, soportes, audiencias y estrategias sobre el modelo de medición de Sealmetrics.", span: true },
             ].map((s, i) => (
               <div key={i} className={`p-6 rounded-xl border flex flex-col gap-1.5 min-h-[150px] justify-between ${s.hl ? "bg-brand border-brand" : "bg-white/5 border-white/12"} ${s.span ? "col-span-2" : ""}`}>
                 <div className={`font-mono text-[10px] uppercase tracking-[0.12em] font-semibold ${s.hl ? "text-white/85" : "text-white/55"}`}>{s.l}</div>
@@ -340,7 +340,7 @@ export function FeaturedCaseEs() {
           <CaseCardEs
             client="eCommerce DTC · Café"
             sector="DTC eCommerce · España"
-            quote={<>Hemos usado SealMetrics como <em className="italic-accent">&ldquo;vale, nos creemos este dato.&rdquo;</em> Es nuestra fuente única de verdad.</>}
+            quote={<>Hemos usado Sealmetrics como <em className="italic-accent">&ldquo;vale, nos creemos este dato.&rdquo;</em> Es nuestra fuente única de verdad.</>}
             cite="Founder & CEO · marca DTC"
             stats={[
               { n: "30–40%", l: "Infra-reportado por GA4 antes de cambiar" },

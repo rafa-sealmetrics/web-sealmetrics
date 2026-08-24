@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const ITEMS = [
   {
-    q: "Why pay for SealMetrics when GA4 is free?",
-    a: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject. You make budget decisions on a fraction of real data. The cost of SealMetrics is a rounding error compared to the cost of misallocated ad spend.",
+    q: "Why pay for Sealmetrics when GA4 is free?",
+    a: "GA4 is free because you are the product — your data trains Google's ad models. More importantly, GA4 relies on cookies most EU visitors reject. You make budget decisions on a fraction of real data. The cost of Sealmetrics is a rounding error compared to the cost of misallocated ad spend.",
   },
   {
     q: 'Why is "neutrality" a feature?',
-    a: "Meta reports with Meta's bias. Google reports with Google's bias. GA lives inside Google's ecosystem. SealMetrics has no ad inventory to sell and no channel to favour — so brand, agencies and finance can all sign the same number without feeling they're signing against a rival.",
+    a: "Meta reports with Meta's bias. Google reports with Google's bias. GA lives inside Google's ecosystem. Sealmetrics has no ad inventory to sell and no channel to favour — so brand, agencies and finance can all sign the same number without feeling they're signing against a rival.",
   },
   {
     q: "How accurate is cookieless tracking?",
@@ -18,7 +18,7 @@ const ITEMS = [
   },
   {
     q: "Do I need to remove GA4?",
-    a: "No. Most clients run SealMetrics alongside GA4 for the first 30 days so you can compare side by side. After that, most teams use SealMetrics as their source of truth and keep GA4 for specific Google product integrations.",
+    a: "No. Most clients run Sealmetrics alongside GA4 for the first 30 days so you can compare side by side. After that, most teams use Sealmetrics as their source of truth and keep GA4 for specific Google product integrations.",
   },
   {
     q: "GDPR compliant without a consent banner?",

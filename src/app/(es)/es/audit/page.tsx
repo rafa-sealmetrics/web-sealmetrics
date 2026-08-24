@@ -8,7 +8,7 @@ import { AuditForm } from "@/components/audit/AuditForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Auditoría gratuita de medición — SealMetrics",
+  title: "Auditoría gratuita de medición — Sealmetrics",
   description:
     "Responde 7 preguntas en 3 minutos. Te enviamos un análisis personalizado del gap entre lo que mide GA4 y lo que realmente vende tu eCommerce.",
   alternates: {
@@ -16,19 +16,19 @@ export const metadata: Metadata = {
     languages: getAlternatesEs("/audit"),
   },
   openGraph: {
-    title: "Auditoría gratuita de medición — SealMetrics",
+    title: "Auditoría gratuita de medición — Sealmetrics",
     description:
       "Descubre cuánto revenue oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
     type: "website",
     images: [ogImage("/es/audit/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/audit/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Auditoría gratuita de medición — SealMetrics",
+    title: "Auditoría gratuita de medición — Sealmetrics",
     description: "Descubre cuánto revenue oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
     images: [ogImage("/es/audit/")],
   },
@@ -49,7 +49,7 @@ export default function Page() {
       />
       <JsonLd
         data={servicePageSchema({
-          name: "Auditoría gratuita de medición · SealMetrics",
+          name: "Auditoría gratuita de medición · Sealmetrics",
           description:
             "Auditoría personalizada del gap entre GA4 y los ingresos reales de tu backend. 7 preguntas, 3 minutos, informe humano en 24h.",
           url: "/es/audit",

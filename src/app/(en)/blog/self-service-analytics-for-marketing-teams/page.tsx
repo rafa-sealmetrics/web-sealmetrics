@@ -13,19 +13,19 @@ export const metadata: Metadata = {
   title: "Self-Service Analytics for Marketing Teams",
   description: "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 47 named tools instead of SQL, and BYOK or private AI.",
   openGraph: {
-    title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
+    title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
       "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     type: "article",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
+    title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description: "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
   },
@@ -100,7 +100,7 @@ const deployments = [
   {
     shape: "Managed Private AI",
     key: "No key needed · 5M tokens included",
-    where: "SealMetrics-managed private instance",
+    where: "Sealmetrics-managed private instance",
     plan: "Scale",
   },
   {
@@ -120,17 +120,17 @@ const FAQ = [
   {
     question: "Can ChatGPT or Claude read my analytics data?",
     answer:
-      "Yes, through an MCP server. SealMetrics exposes 47 named read-only tools to any MCP-compatible assistant, including Claude Desktop, Claude Code, ChatGPT and Cursor. The assistant calls named functions rather than writing SQL against a warehouse.",
+      "Yes, through an MCP server. Sealmetrics exposes 47 named read-only tools to any MCP-compatible assistant, including Claude Desktop, Claude Code, ChatGPT and Cursor. The assistant calls named functions rather than writing SQL against a warehouse.",
   },
   {
     question: "What is BYOK in analytics?",
     answer:
-      "BYOK means bring your own key. The customer connects their own Anthropic, OpenAI or Gemini account, so inference runs under their existing contract, retention settings and data processing agreement. SealMetrics offers BYOK from the Growth plan.",
+      "BYOK means bring your own key. The customer connects their own Anthropic, OpenAI or Gemini account, so inference runs under their existing contract, retention settings and data processing agreement. Sealmetrics offers BYOK from the Growth plan.",
   },
   {
     question: "Is AI analytics GDPR compliant?",
     answer:
-      "It depends on what the AI reads. SealMetrics is consentless by architecture and EU-hosted in Dublin, so the underlying data was never personal data. The MCP server runs locally and stores no analytics data on the machine, authenticating over an API key the customer generates from their own dashboard.",
+      "It depends on what the AI reads. Sealmetrics is consentless by architecture and EU-hosted in Dublin, so the underlying data was never personal data. The MCP server runs locally and stores no analytics data on the machine, authenticating over an API key the customer generates from their own dashboard.",
   },
   {
     question: "Do I need a data team to use it?",
@@ -140,7 +140,7 @@ const FAQ = [
   {
     question: "How is this different from asking GA4's AI features?",
     answer:
-      "The difference is the input, not the model. GA4 answers from consented traffic only. SealMetrics answers from 100% of human traffic, which is why its numbers reconcile with Shopify and the CRM instead of sitting 40-60% below them.",
+      "The difference is the input, not the model. GA4 answers from consented traffic only. Sealmetrics answers from 100% of human traffic, which is why its numbers reconcile with Shopify and the CRM instead of sitting 40-60% below them.",
   },
 ];
 
@@ -152,14 +152,14 @@ export default function Page() {
       />
       <JsonLd
         data={articleSchema({
-          headline: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
+          headline: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
           description:
             "Complete cookieless data, 47 named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
           datePublished: "2026-08-06",
           dateModified: "2026-08-06",
           url: URL,
           category: "AI & Analytics",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd
@@ -177,7 +177,7 @@ export default function Page() {
               AI &amp; Analytics
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.15] mb-5">
-              Self-service analytics for marketing teams: <em>how SealMetrics does it</em>
+              Self-service analytics for marketing teams: <em>how Sealmetrics does it</em>
             </h1>
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[46ch]">
               The reporting queue disappears. The definition of &ldquo;revenue&rdquo; does not.
@@ -202,7 +202,7 @@ export default function Page() {
             <div className="rounded-[16px] border border-warm-100 bg-warm-white p-7 not-prose">
               <p className="text-[1rem] leading-[1.75] text-text-body">
                 Self-service analytics means a marketing team gets a correct answer to a business
-                question without opening a ticket for the data team. At SealMetrics it works in
+                question without opening a ticket for the data team. At Sealmetrics it works in
                 three moves: the platform measures 100% of traffic without cookies or consent, it
                 exposes that data to an AI agent as 47 named, read-only tools instead of raw SQL,
                 and the customer chooses whether that agent runs on their own model key (BYOK) or on
@@ -223,7 +223,7 @@ export default function Page() {
             </p>
             <p>
               Completeness is where consent-based analytics breaks. In the EU, cookie-based tools
-              only measure the share of visitors who accept the banner. SealMetrics measures every
+              only measure the share of visitors who accept the banner. Sealmetrics measures every
               visit and every sale with{" "}
               <Link
                 href="/glossary/cookieless-analytics"
@@ -251,7 +251,7 @@ export default function Page() {
             <p>
               Single definition is the second condition. If three tables in a warehouse each hold a
               column called <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">revenue</code>,
-              an agent will pick one. It will not tell you it guessed. SealMetrics ships one
+              an agent will pick one. It will not tell you it guessed. Sealmetrics ships one
               canonical definition per business concept, so &ldquo;conversions&rdquo; resolves to the
               same number in the dashboard, in the API, in BigQuery and in the agent&apos;s answer.
             </p>
@@ -267,7 +267,7 @@ export default function Page() {
                     <th className="text-left py-3 px-4 text-text-secondary font-medium">
                       Consent-gated stack (GA4 + banner)
                     </th>
-                    <th className="text-left py-3 pl-4 text-brand font-medium">SealMetrics</th>
+                    <th className="text-left py-3 pl-4 text-brand font-medium">Sealmetrics</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -298,7 +298,7 @@ export default function Page() {
               and the model never finds it.
             </p>
             <p>
-              SealMetrics removes the search space instead of trying to teach the model to navigate
+              Sealmetrics removes the search space instead of trying to teach the model to navigate
               it. The agent does not write SQL. It calls named functions:{" "}
               <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_top_channels</code>,{" "}
               <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_funnel</code>,{" "}
@@ -368,7 +368,7 @@ export default function Page() {
               Is the data safe if an AI agent reads it?
             </h2>
             <p>
-              This is the objection that decides the deal, so SealMetrics answers it with
+              This is the objection that decides the deal, so Sealmetrics answers it with
               architecture rather than a promise. There are three deployment shapes, and the
               customer picks one.
             </p>
@@ -423,7 +423,7 @@ export default function Page() {
               no analytics data on the machine, authenticating over an{" "}
               <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">X-API-Key</code>{" "}
               header the customer generates from their own dashboard. And the data underneath was
-              never personal data to begin with — SealMetrics is consentless by architecture,{" "}
+              never personal data to begin with — Sealmetrics is consentless by architecture,{" "}
               <Link
                 href="/security"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -551,7 +551,7 @@ export default function Page() {
               Sources and limitations
             </h2>
             <p>
-              Figures in this article come from SealMetrics published material: the product and
+              Figures in this article come from Sealmetrics published material: the product and
               customer figures from sealmetrics.com, the tool inventory and authentication model from{" "}
               <a
                 href="https://docs.sealmetrics.com"
@@ -624,7 +624,7 @@ export default function Page() {
                   href="/how-it-works"
                   className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
                 >
-                  How SealMetrics works
+                  How Sealmetrics works
                 </Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">
                   First-party, cookieless collection and why the numbers reconcile with the CRM.

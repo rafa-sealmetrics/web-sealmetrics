@@ -14,7 +14,7 @@ export interface VerticalPageData {
   lede: string;
   /** 3-4 pains this audience has (the "problem cards") */
   pains: { title: string; desc: string }[];
-  /** 3-4 outcomes SealMetrics delivers for them */
+  /** 3-4 outcomes Sealmetrics delivers for them */
   outcomes: { n: string; label: string; detail: string }[];
   /** One killer quote, optional */
   quote?: { text: string; cite: string };
@@ -95,8 +95,8 @@ export function VerticalPageV3({
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
               {locale === "es"
-                ? "Los problemas reales que nos mencionan una y otra vez. Si te identificas con dos o más, SealMetrics encaja."
-                : "The real problems we hear again and again. If two or more ring true, SealMetrics fits."}
+                ? "Los problemas reales que nos mencionan una y otra vez. Si te identificas con dos o más, Sealmetrics encaja."
+                : "The real problems we hear again and again. If two or more ring true, Sealmetrics fits."}
             </p>
           </div>
 
@@ -128,8 +128,8 @@ export function VerticalPageV3({
               </span>
               <h2 className="h-section mt-5">
                 {locale === "es"
-                  ? <>Lo que <em>cambia</em> con SealMetrics.</>
-                  : <>What <em>changes</em> with SealMetrics.</>}
+                  ? <>Lo que <em>cambia</em> con Sealmetrics.</>
+                  : <>What <em>changes</em> with Sealmetrics.</>}
               </h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">

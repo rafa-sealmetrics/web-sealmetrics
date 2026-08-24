@@ -22,7 +22,7 @@ export interface VsData {
   competitor: string;
   /** Short label for H1 italic emphasis */
   hook: string;
-  /** H1 wrapper (template: "SealMetrics vs {competitor}. [italic hook]") */
+  /** H1 wrapper (template: "Sealmetrics vs {competitor}. [italic hook]") */
   eyebrow: string;
   h1: React.ReactNode;
   lede: string;
@@ -57,8 +57,8 @@ function VsTableCard({ cats, competitor, locale }: { cats: VsCategory[]; competi
       <table className="w-full border-collapse table-fixed">
         <caption className="sr-only">
           {locale === "es"
-            ? `Comparativa feature por feature: SealMetrics vs ${competitor}`
-            : `Feature-by-feature comparison: SealMetrics vs ${competitor}`}
+            ? `Comparativa feature por feature: Sealmetrics vs ${competitor}`
+            : `Feature-by-feature comparison: Sealmetrics vs ${competitor}`}
         </caption>
         <colgroup>
           <col style={{ width: "44%" }} />
@@ -78,7 +78,7 @@ function VsTableCard({ cats, competitor, locale }: { cats: VsCategory[]; competi
               className="p-5 text-left align-middle text-ink"
               style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
             >
-              SealMetrics
+              Sealmetrics
             </th>
           </tr>
         </thead>

@@ -1,4 +1,4 @@
-# SealMetrics forms proxy
+# Sealmetrics forms proxy
 
 First-party Cloudflare Worker for the static marketing website. Browsers submit
 to `/api/forms`; the Worker validates the request and forwards the existing

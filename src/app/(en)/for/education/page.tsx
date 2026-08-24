@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for Education — GDPR Funnels | SealMetrics",
+  title: "Analytics for Education — GDPR Funnels | Sealmetrics",
   description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analytics for Education — GDPR Funnels | SealMetrics",
+    title: "Analytics for Education — GDPR Funnels | Sealmetrics",
     description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/for/education/")],
     url: "https://sealmetrics.com/for/education/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Education — GDPR Funnels | SealMetrics",
+    title: "Analytics for Education — GDPR Funnels | Sealmetrics",
     description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
     images: [ogImage("/for/education/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "For Education" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "For Education", url: "/for/education" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "education", audienceType: "Education and training", description: "SealMetrics — enterprise analytics for education teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/education" })} /><VerticalPageV3 data={getVerticalData("education", "en")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "education", audienceType: "Education and training", description: "Sealmetrics — enterprise analytics for education teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/education" })} /><VerticalPageV3 data={getVerticalData("education", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Also explore"

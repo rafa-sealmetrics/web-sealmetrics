@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "The specification a platform has to meet before it deserves to be called the best. Each requirement with the failure it prevents and a test you can run in the demo.",
     type: "article",
     url: "https://sealmetrics.com/blog/best-web-analytics-tool/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/best-web-analytics-tool.png"],
   },
@@ -203,7 +203,7 @@ export default function BestWebAnalyticsToolPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -1048,10 +1048,10 @@ export default function BestWebAnalyticsToolPage() {
             </p>
 
           <CommercialModule
-            hook="Want to score SealMetrics against your own requirements list? The demo walks the 24 requirements on your traffic, including the one we fail."
+            hook="Want to score Sealmetrics against your own requirements list? The demo walks the 24 requirements on your traffic, including the one we fail."
           />
 
-            <h2 className={h2Class}>How SealMetrics scores against this list</h2>
+            <h2 className={h2Class}>How Sealmetrics scores against this list</h2>
 
             <div className="rounded-[14px] border-l-2 border-amber bg-amber-soft/30 p-5">
               <Chip tone="test">Disclosure</Chip>
@@ -1061,7 +1061,7 @@ export default function BestWebAnalyticsToolPage() {
                 observed data beats modelled data, and that privacy and
                 completeness are the same requirement — which{" "}
                 <Link href="/product" className={linkClass}>
-                  SealMetrics
+                  Sealmetrics
                 </Link>{" "}
                 happens to share. A buyer whose priority is user-level product
                 analytics, session replay or multi-touch modelling should
@@ -1081,7 +1081,7 @@ export default function BestWebAnalyticsToolPage() {
                       The bar
                     </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
-                      SealMetrics
+                      Sealmetrics
                     </th>
                     <th className="text-left py-3 text-text-tertiary font-medium">
                       Score
@@ -1130,7 +1130,7 @@ export default function BestWebAnalyticsToolPage() {
               <div className="rounded-[14px] border border-warm-100 bg-white p-6">
                 <Chip tone="test">Where the point is lost</Chip>
                 <p className="mt-3 text-[0.95rem] leading-[1.7] text-text-body">
-                  Requirement 11 — SealMetrics is not ISO 27001 or SOC 2
+                  Requirement 11 — Sealmetrics is not ISO 27001 or SOC 2
                   certified. Everything else in that row is met: no personal
                   data, EU-hosted in Dublin, DPA in the standard contract, no
                   supplementary transfer measures. But a certificate is an

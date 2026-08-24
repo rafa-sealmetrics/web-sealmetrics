@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "¿Qué es Intelligent Tracking Prevention (ITP)?",
     description: "La función de Safari que limita la vida de las cookies y bloquea el seguimiento entre sitios.",
     url: "https://sealmetrics.com/es/glossary/intelligent-tracking-prevention/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/intelligent-tracking-prevention/")],
@@ -74,7 +74,7 @@ export default function ItpEsPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Analítica sin cookies explicada</Link> &middot; <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona SealMetrics</Link>
+            Más: <Link href="/es/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Analítica sin cookies explicada</Link> &middot; <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona Sealmetrics</Link>
           </p>
         </div>
 

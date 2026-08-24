@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [ogImage("/es/reg-gap-analysis/")],
     url: "https://sealmetrics.com/es/reg-gap-analysis/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
@@ -129,8 +129,8 @@ const faqs = [
     a: "No sin un banner de consentimiento. GA4 deja cookies (activando el artículo 5(3) de ePrivacy) y trata dato personal como la localización por IP y un client ID (activando el RGPD), y Google es una empresa de EE. UU., lo que planteó preguntas de transferencia Schrems II que llevaron a varias autoridades UE a declarar ilícitos despliegues concretos de GA en 2022. Google añadió después opciones de dato en la UE y Consent Mode, pero la arquitectura sigue siendo basada en cookies y dependiente del consentimiento — así que en un análisis de brechas UE muestra brechas abiertas en almacenamiento en el dispositivo, base jurídica y transferencias.",
   },
   {
-    q: "¿Cómo cierra SealMetrics las brechas de cumplimiento habituales de la analítica?",
-    a: "Por arquitectura y no por configuración. SealMetrics es cookieless y no almacena nada en el dispositivo (cierra la brecha ePrivacy), trata cero dato personal como eventos agregados y anónimos (cierra las brechas de base jurídica, minimización y derechos del interesado), y está alojado de extremo a extremo en Dublín (Irlanda) (cierra la brecha de transferencia internacional). Se incluye un DPA, y la atribución es a último clic sobre el 100% del tráfico. Nota: SealMetrics no reclama certificación ISO 27001 ni SOC 2 — el caso de cumplimiento se apoya en cómo está construido: RGPD por diseño, ePrivacy limpio, Schrems II limpio.",
+    q: "¿Cómo cierra Sealmetrics las brechas de cumplimiento habituales de la analítica?",
+    a: "Por arquitectura y no por configuración. Sealmetrics es cookieless y no almacena nada en el dispositivo (cierra la brecha ePrivacy), trata cero dato personal como eventos agregados y anónimos (cierra las brechas de base jurídica, minimización y derechos del interesado), y está alojado de extremo a extremo en Dublín (Irlanda) (cierra la brecha de transferencia internacional). Se incluye un DPA, y la atribución es a último clic sobre el 100% del tráfico. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2 — el caso de cumplimiento se apoya en cómo está construido: RGPD por diseño, ePrivacy limpio, Schrems II limpio.",
   },
   {
     q: "¿Puede la analítica funcionar sin banner tras un análisis de brechas?",
@@ -368,8 +368,8 @@ export default function RegGapAnalysisEsPage() {
             </em>
           </>
         }
-        ledeEn="Run SealMetrics alongside your current analytics for 30 days. See the gaps close and the EU data you were losing come back."
-        ledeEs="Corre SealMetrics junto a tu analítica actual durante 30 días. Verás cerrarse las brechas y volver el dato UE que perdías. Si la brecha no es real, no nos debes nada."
+        ledeEn="Run Sealmetrics alongside your current analytics for 30 days. See the gaps close and the EU data you were losing come back."
+        ledeEs="Corre Sealmetrics junto a tu analítica actual durante 30 días. Verás cerrarse las brechas y volver el dato UE que perdías. Si la brecha no es real, no nos debes nada."
         primaryTextEn="Get a free audit →"
         primaryTextEs="Consigue una auditoría gratis →"
       />

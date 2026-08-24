@@ -8,22 +8,22 @@ import { DemoFormEs } from "./DemoFormEs";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Pide una demo — SealMetrics",
+  title: "Pide una demo — Sealmetrics",
   description:
     "Walkthrough de 30 minutos personalizado. Ve cómo luce el 100% de tu tráfico sobre tu propia web.",
   openGraph: {
-    title: "Pide una demo — SealMetrics",
+    title: "Pide una demo — Sealmetrics",
     description: "30 min con el founder. Ve tu gap de datos en directo.",
     type: "website",
     images: [ogImage("/es/demo/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/demo/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Pide una demo — SealMetrics",
+    title: "Pide una demo — Sealmetrics",
     description: "30 min con el founder. Ve tu gap de datos en directo.",
     images: [ogImage("/es/demo/")],
   },
@@ -55,7 +55,7 @@ export default function DemoPageEs() {
 
               <div className="mt-8 flex flex-col gap-4">
                 {[
-                  { t: "Al lado de GA4", d: "Tus números de GA4 al lado de SealMetrics sobre el mismo tráfico. El gap está en tu propio dato." },
+                  { t: "Al lado de GA4", d: "Tus números de GA4 al lado de Sealmetrics sobre el mismo tráfico. El gap está en tu propio dato." },
                   { t: "Tus webs, tus UTMs", d: "No un sandbox genérico. Tiramos de tus canales, campañas y embudos reales." },
                   { t: "Sin compromiso, sin email drip", d: "30 minutos. Si no te encaja, te lo decimos. Sin secuencia comercial." },
                 ].map((item) => (
@@ -86,7 +86,7 @@ export default function DemoPageEs() {
 
               <div className="mt-8 p-6 bg-white rounded-xl" style={{ borderLeft: "3px solid #2E5C8A" }}>
                 <p className="text-[15px] text-ink-2 leading-[1.6] italic">
-                  &ldquo;Creíamos que nuestra analítica era fiable. SealMetrics nos mostró que nos estábamos perdiendo el 74% de las conversiones.&rdquo;
+                  &ldquo;Creíamos que nuestra analítica era fiable. Sealmetrics nos mostró que nos estábamos perdiendo el 74% de las conversiones.&rdquo;
                 </p>
                 <p className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
                   Head of Digital Marketing · Retailer europeo de moda

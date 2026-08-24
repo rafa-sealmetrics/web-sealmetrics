@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const ITEMS = [
   {
-    q: "¿Por qué pagar SealMetrics si GA4 es gratis?",
-    a: "GA4 es gratis porque tú eres el producto — tus datos entrenan los modelos publicitarios de Google. Más importante: GA4 depende de cookies que la mayoría de visitantes europeos rechazan. Tomas decisiones de presupuesto sobre una fracción del dato real. El coste de SealMetrics es un error de redondeo comparado con el coste de mal asignar inversión publicitaria.",
+    q: "¿Por qué pagar Sealmetrics si GA4 es gratis?",
+    a: "GA4 es gratis porque tú eres el producto — tus datos entrenan los modelos publicitarios de Google. Más importante: GA4 depende de cookies que la mayoría de visitantes europeos rechazan. Tomas decisiones de presupuesto sobre una fracción del dato real. El coste de Sealmetrics es un error de redondeo comparado con el coste de mal asignar inversión publicitaria.",
   },
   {
     q: "¿Por qué la «neutralidad» es una feature?",
-    a: "Meta reporta con el sesgo de Meta. Google reporta con el de Google. GA vive dentro del ecosistema Google. SealMetrics no vende inventario publicitario ni tiene canal al que favorecer — por eso marca, agencias y finanzas pueden firmar el mismo número sin sentir que firman contra un rival.",
+    a: "Meta reporta con el sesgo de Meta. Google reporta con el de Google. GA vive dentro del ecosistema Google. Sealmetrics no vende inventario publicitario ni tiene canal al que favorecer — por eso marca, agencias y finanzas pueden firmar el mismo número sin sentir que firman contra un rival.",
   },
   {
     q: "¿Qué tan preciso es el tracking sin cookies?",
@@ -18,7 +18,7 @@ const ITEMS = [
   },
   {
     q: "¿Tengo que quitar GA4?",
-    a: "No. La mayoría de clientes corren SealMetrics junto a GA4 los primeros 30 días para comparar en paralelo. Después, la mayoría usa SealMetrics como fuente de verdad y mantiene GA4 para integraciones específicas del ecosistema Google.",
+    a: "No. La mayoría de clientes corren Sealmetrics junto a GA4 los primeros 30 días para comparar en paralelo. Después, la mayoría usa Sealmetrics como fuente de verdad y mantiene GA4 para integraciones específicas del ecosistema Google.",
   },
   {
     q: "¿Cumple RGPD sin banner de consentimiento?",

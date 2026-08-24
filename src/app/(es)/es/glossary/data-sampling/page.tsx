@@ -10,13 +10,13 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "¿Qué es el muestreo de datos? — Glosario SealMetrics",
+  title: "¿Qué es el muestreo de datos? — Glosario Sealmetrics",
   description: "El muestreo ocurre cuando la analítica analiza un subconjunto de datos y extrapola. Cómo afecta a los informes de GA4 y a tus decisiones.",
   openGraph: {
     title: "¿Qué es el muestreo de datos en analítica?",
     description: "Analizar un subconjunto de datos y extrapolar. Cómo afecta a los informes de GA4.",
     url: "https://sealmetrics.com/es/glossary/data-sampling/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/data-sampling/")],
@@ -68,17 +68,17 @@ export default function DataSamplingEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La alternativa: analítica a resolución completa</h2>
           <p>
-            Las plataformas de <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> como SealMetrics registran cada sesión individualmente y sin aplicar muestreo. Cuando ves 72.847 visitantes, esa cifra representa 72.847 sesiones reales, no una estimación estadística.
+            Las plataformas de <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> como Sealmetrics registran cada sesión individualmente y sin aplicar muestreo. Cuando ves 72.847 visitantes, esa cifra representa 72.847 sesiones reales, no una estimación estadística.
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="SealMetrics nunca muestrea: cada informe se calcula sobre cada sesión, no sobre una estimación estadística. Mira tus informes a resolución completa." />
+        <CommercialModule locale="es" hook="Sealmetrics nunca muestrea: cada informe se calcula sobre cada sesión, no sobre una estimación estadística. Mira tus informes a resolución completa." />
 
         <RelatedGlossaryTerms slug="data-sampling" locale="es" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">El problema del muestreo en GA4</Link> &middot; <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">La plataforma SealMetrics</Link>
+            Más: <Link href="/es/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">El problema del muestreo en GA4</Link> &middot; <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">La plataforma Sealmetrics</Link>
           </p>
         </div>
       </div>

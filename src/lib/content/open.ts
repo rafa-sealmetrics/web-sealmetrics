@@ -43,8 +43,8 @@ export const openChapters: OpenChapter[] = [
   {
     number: 1,
     slug: "why-we-exist",
-    title: "Why SealMetrics exists",
-    titleHtml: "Why SealMetrics <em>exists</em>",
+    title: "Why Sealmetrics exists",
+    titleHtml: "Why Sealmetrics <em>exists</em>",
     part: 1,
     eyebrow: "Manifesto",
     summary:
@@ -97,7 +97,7 @@ export const openChapters: OpenChapter[] = [
       { id: "the-cascade", label: "Where the 13% comes from" },
       { id: "sampling-vs-complete", label: "Sampling vs complete measurement" },
       { id: "modeling-vs-measuring", label: "Modeling vs measuring" },
-      { id: "where-we-sit", label: "Where SealMetrics sits" },
+      { id: "where-we-sit", label: "Where Sealmetrics sits" },
     ],
   },
   {

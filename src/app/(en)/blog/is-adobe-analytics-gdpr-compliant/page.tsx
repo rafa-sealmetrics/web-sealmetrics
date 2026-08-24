@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Compliance is a property of your deployment, not of the tool. What Adobe requires, and the coverage you pay for it.",
     type: "article",
     url: "https://sealmetrics.com/blog/is-adobe-analytics-gdpr-compliant/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/is-adobe-analytics-gdpr-compliant.png"],
   },
@@ -57,7 +57,7 @@ export default function Page() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -199,7 +199,7 @@ export default function Page() {
             </p>
             <p>
               We measured a related effect directly. In a 30-day parallel run on a
-              European media site, SealMetrics recorded 25% more pageviews than
+              European media site, Sealmetrics recorded 25% more pageviews than
               Adobe with Adobe firing <em>without</em> a consent gate at all — the
               gap coming from privacy filter lists blocking its collection
               endpoints and a pageview that fires roughly three seconds into the

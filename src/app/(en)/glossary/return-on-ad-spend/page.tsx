@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is ROAS (Return on Ad Spend)? — SealMetrics Glossary",
+  title: "What Is ROAS (Return on Ad Spend)? — Sealmetrics Glossary",
   description:
     "ROAS is attributed revenue divided by ad spend. How it is calculated, why incomplete analytics data understates it, and what the ratio cannot tell you.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Attributed revenue divided by ad spend — and why unmeasured conversions systematically understate it.",
     type: "article",
     url: "https://sealmetrics.com/glossary/return-on-ad-spend/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/return-on-ad-spend/")],
   },

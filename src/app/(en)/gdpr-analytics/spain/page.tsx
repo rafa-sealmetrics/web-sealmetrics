@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/gdpr-analytics/spain/")],
     url: "https://sealmetrics.com/gdpr-analytics/spain/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -83,8 +83,8 @@ const faqs = [
     a: "Not on the exemption itself. The Omnibus tightened banner-design enforcement and harmonised national approaches, but the AEPD's position on anonymous audience measurement survived intact. If anything, the new floor on banner design makes the cookie-based path more expensive while leaving the exempt architectures unchanged.",
   },
   {
-    q: "Is SealMetrics suitable for Spanish public-sector sites?",
-    a: "Yes. Public-sector procurement in Spain typically requires Schrems II clean processing (no US transfer), a signed DPA under GDPR Art. 28, and either explicit consent or an exemption. SealMetrics ships all three: EU-only processing in Dublin, a pre-filled DPA, and the architectural exemption under LSSI-CE 22.2. Several Spanish public-sector operators run SealMetrics for that reason.",
+    q: "Is Sealmetrics suitable for Spanish public-sector sites?",
+    a: "Yes. Public-sector procurement in Spain typically requires Schrems II clean processing (no US transfer), a signed DPA under GDPR Art. 28, and either explicit consent or an exemption. Sealmetrics ships all three: EU-only processing in Dublin, a pre-filled DPA, and the architectural exemption under LSSI-CE 22.2. Several Spanish public-sector operators run Sealmetrics for that reason.",
   },
   {
     q: "What does the privacy policy still need to say?",
@@ -122,7 +122,7 @@ export default function GdprAnalyticsSpainPage() {
           dateModified: DATE_MODIFIED,
           url: "/gdpr-analytics/spain",
           category: "Compliance",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
 
@@ -156,7 +156,7 @@ export default function GdprAnalyticsSpainPage() {
             measurement from the consent requirement provided four
             conditions hold: aggregate-only reporting, no personal
             data, first-party context with no cross-site tracking,
-            and EU residency. SealMetrics is built to meet each
+            and EU residency. Sealmetrics is built to meet each
             condition by design — same architectural pattern that
             covers the CNIL exemption in France and the §25 TTDSG
             exemption in Germany.
@@ -192,7 +192,7 @@ export default function GdprAnalyticsSpainPage() {
                     <p className="mt-2 text-[14.5px] leading-[1.65] text-ink-soft">{c.requirement}</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold">SealMetrics</span>
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-semibold">Sealmetrics</span>
                     <p className="mt-2 text-[14.5px] leading-[1.65] text-ink">{c.us}</p>
                   </div>
                 </div>

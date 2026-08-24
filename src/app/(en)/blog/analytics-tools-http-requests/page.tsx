@@ -9,14 +9,14 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "How Many HTTP Requests Does Your Analytics Tool Make?",
   description:
-    "We counted every HTTP request from 9 analytics tools. GA4 makes 4 requests across 3 domains. SealMetrics makes 2 to a single first-party endpoint.",
+    "We counted every HTTP request from 9 analytics tools. GA4 makes 4 requests across 3 domains. Sealmetrics makes 2 to a single first-party endpoint.",
   openGraph: {
     title: "How Many HTTP Requests Does Your Analytics Tool Make?",
     description:
       "We counted every HTTP request, domain lookup, and byte transferred by 9 analytics tools. The results are revealing.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-tools-http-requests/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/blog/analytics-tools-http-requests/")],
   },
@@ -37,7 +37,7 @@ export default function AnalyticsHttpRequestsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools HTTP Requests" }]} />
-      <JsonLd data={articleSchema({ headline: "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.", description: "We counted every HTTP request from 9 analytics tools on the same test page. GA4 makes 4 requests across 3 domains. SealMetrics makes 1.", datePublished: "2026-03-06", dateModified: "2026-05-04", url: "/blog/analytics-tools-http-requests", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.", description: "We counted every HTTP request from 9 analytics tools on the same test page. GA4 makes 4 requests across 3 domains. Sealmetrics makes 1.", datePublished: "2026-03-06", dateModified: "2026-05-04", url: "/blog/analytics-tools-http-requests", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools HTTP Requests", url: "/blog/analytics-tools-http-requests" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -100,7 +100,7 @@ export default function AnalyticsHttpRequestsPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">2</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">1</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">1.3</td>
@@ -183,7 +183,7 @@ export default function AnalyticsHttpRequestsPage() {
               <span className="text-[0.75rem] font-mono text-text-tertiary w-[65px] shrink-0 text-right">2.2 KB</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">Sealmetrics</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '1.7%', minWidth: '5px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
@@ -238,7 +238,7 @@ export default function AnalyticsHttpRequestsPage() {
             <span className="font-mono font-medium text-text-primary">
               6 requests across 4 domains
             </span>{" "}
-            and transfers 175 KB. SealMetrics fires 2 requests to 1 domain
+            and transfers 175 KB. Sealmetrics fires 2 requests to 1 domain
             and transfers 1.3 KB. That is a{" "}
             <span className="font-mono font-medium text-text-primary">
               134x difference
@@ -247,7 +247,7 @@ export default function AnalyticsHttpRequestsPage() {
           </p>
 
           <CommercialModule
-            hook="The SealMetrics row reads 2 requests, 1 domain, 2.7 KB. Open your own network tab, filter by analytics, and compare."
+            hook="The Sealmetrics row reads 2 requests, 1 domain, 2.7 KB. Open your own network tab, filter by analytics, and compare."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -305,7 +305,7 @@ export default function AnalyticsHttpRequestsPage() {
           </p>
 
           <p>
-            SealMetrics uses{" "}
+            Sealmetrics uses{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -342,7 +342,7 @@ export default function AnalyticsHttpRequestsPage() {
           </p>
 
           <p>
-            SealMetrics&apos; 1.3 KB total — a 1.1 KB script and a small
+            Sealmetrics&apos; 1.3 KB total — a 1.1 KB script and a small
             beacon — goes to a single first-party endpoint. No visitor IDs
             to sync. No cross-domain stitching. No remarketing payloads.{" "}
             <Link
@@ -403,7 +403,7 @@ export default function AnalyticsHttpRequestsPage() {
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              how SealMetrics works under the hood
+              how Sealmetrics works under the hood
             </Link>
             , or{" "}
             <Link

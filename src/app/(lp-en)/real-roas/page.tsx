@@ -27,7 +27,7 @@ import { ogImage } from "@/lib/seo/og";
    Lives in the (lp-en) group so it does not inherit the site navigation or
    footer: on paid traffic every exit link is a leak. */
 export const metadata: Metadata = {
-  title: "Your real ROAS is higher than you think — SealMetrics",
+  title: "Your real ROAS is higher than you think — Sealmetrics",
   description:
     "Between 25% and 45% of your sales never reach your analytics. Measure 100% without cookies or consent and recover the ROAS you were already generating.",
   robots: { index: false, follow: true },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [ogImage("/real-roas/")],
     url: "https://sealmetrics.com/real-roas/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",

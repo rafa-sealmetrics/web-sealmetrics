@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Analítica con IA — IA privada sobre datos completos y en la UE",
     description:
-      "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. SealMetrics es analítica con IA bien hecha: dato completo, un MCP semántico e IA privada en la UE.",
+      "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. Sealmetrics es analítica con IA bien hecha: dato completo, un MCP semántico e IA privada en la UE.",
     type: "website",
     images: [ogImage("/es/ai-analytics/")],
     url: "https://sealmetrics.com/es/ai-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
@@ -52,27 +52,27 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué es la analítica con IA?",
-    a: "La analítica con IA es la capacidad de consultar tu dato web y de revenue en lenguaje natural y obtener una respuesta directa — sin SQL, sin construir dashboards, sin abrir un ticket a un analista. Un modelo de lenguaje como Claude o ChatGPT lee tu analítica a través de un conector y devuelve el número, el diagnóstico o la siguiente acción. La trampa es que la respuesta solo es tan fiable como el dato de debajo: apunta un LLM a una analítica incompleta y basada en cookies y producirá respuestas seguras, bien formateadas y falsas. SealMetrics es analítica con IA construida sobre dato cookieless completo, así que las respuestas se apoyan en el 100% de tu tráfico.",
+    a: "La analítica con IA es la capacidad de consultar tu dato web y de revenue en lenguaje natural y obtener una respuesta directa — sin SQL, sin construir dashboards, sin abrir un ticket a un analista. Un modelo de lenguaje como Claude o ChatGPT lee tu analítica a través de un conector y devuelve el número, el diagnóstico o la siguiente acción. La trampa es que la respuesta solo es tan fiable como el dato de debajo: apunta un LLM a una analítica incompleta y basada en cookies y producirá respuestas seguras, bien formateadas y falsas. Sealmetrics es analítica con IA construida sobre dato cookieless completo, así que las respuestas se apoyan en el 100% de tu tráfico.",
   },
   {
     q: "¿Existe una herramienta de analítica con IA conforme con el RGPD?",
-    a: "Sí. SealMetrics es analítica con IA conforme con el RGPD por arquitectura: la capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
+    a: "Sí. Sealmetrics es analítica con IA conforme con el RGPD por arquitectura: la capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
   },
   {
     q: "¿Puedo conectar ChatGPT o Claude a mi analítica?",
-    a: "Sí. SealMetrics incluye un servidor Model Context Protocol (MCP) con 47 herramientas de solo lectura. Conéctalo desde Claude, ChatGPT, Cursor o Claude Code en mcp.sealmetrics.com y pregunta directamente a tu analítica — revenue por canal, conversiones, rendimiento de landing pages, desperdicio de campañas. Cada herramienta mapea un concepto de negocio a una métrica canónica, así que el modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Puedes usar la IA privada de SealMetrics o traer tu propia clave de Anthropic, OpenAI, Gemini o DeepSeek — eliges el algoritmo, no el dato.",
+    a: "Sí. Sealmetrics incluye un servidor Model Context Protocol (MCP) con 47 herramientas de solo lectura. Conéctalo desde Claude, ChatGPT, Cursor o Claude Code en mcp.sealmetrics.com y pregunta directamente a tu analítica — revenue por canal, conversiones, rendimiento de landing pages, desperdicio de campañas. Cada herramienta mapea un concepto de negocio a una métrica canónica, así que el modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Puedes usar la IA privada de Sealmetrics o traer tu propia clave de Anthropic, OpenAI, Gemini o DeepSeek — eliges el algoritmo, no el dato.",
   },
   {
     q: "¿Qué es la IA privada para analítica?",
-    a: "IA privada significa que el modelo de lenguaje que lee tu dato corre sobre infraestructura de la que controlas los límites, no sobre un endpoint público compartido. Con SealMetrics LENS private AI, la inferencia corre sobre el modelo open-weight gpt-oss-120b alojado por Scaleway en París — dentro de la UE, nunca compartido con terceros, nunca usado para entrenar modelos externos. Enterprise puede tener una instancia dedicada y no compartida — solo por contacto comercial. Está disponible y se puede contratar ahora, no es una beta.",
+    a: "IA privada significa que el modelo de lenguaje que lee tu dato corre sobre infraestructura de la que controlas los límites, no sobre un endpoint público compartido. Con Sealmetrics LENS private AI, la inferencia corre sobre el modelo open-weight gpt-oss-120b alojado por Scaleway en París — dentro de la UE, nunca compartido con terceros, nunca usado para entrenar modelos externos. Enterprise puede tener una instancia dedicada y no compartida — solo por contacto comercial. Está disponible y se puede contratar ahora, no es una beta.",
   },
   {
     q: "¿En qué se diferencia esto de poner ChatGPT encima de GA4?",
-    a: "Dos diferencias, ambas estructurales. Primero, el dato: GA4 se basa en cookies y depende del consentimiento, así que en la UE suele capturar una fracción del tráfico real — un LLM que razona sobre él es seguro y falso. SealMetrics captura el 100% sin cookies. Segundo, la interfaz: un warehouse abierto obliga al modelo a adivinar cuál de cientos de campos significa «revenue», lo que produce números plausibles pero falsos. El MCP de SealMetrics expone herramientas con nombre y una definición canónica cada una, así que el modelo no puede malinterpretar el esquema. El dato completo más una superficie acotada eliminan ambos modos de fallo.",
+    a: "Dos diferencias, ambas estructurales. Primero, el dato: GA4 se basa en cookies y depende del consentimiento, así que en la UE suele capturar una fracción del tráfico real — un LLM que razona sobre él es seguro y falso. Sealmetrics captura el 100% sin cookies. Segundo, la interfaz: un warehouse abierto obliga al modelo a adivinar cuál de cientos de campos significa «revenue», lo que produce números plausibles pero falsos. El MCP de Sealmetrics expone herramientas con nombre y una definición canónica cada una, así que el modelo no puede malinterpretar el esquema. El dato completo más una superficie acotada eliminan ambos modos de fallo.",
   },
   {
     q: "¿La analítica con IA necesita cookies o dato personal?",
-    a: "No tiene por qué. SealMetrics mide eventos agregados y anónimos sin cookies, sin localStorage, sin fingerprinting y sin dato personal, y atribuye el revenue a último clic a nivel de evento. Como hay cero PII por construcción, la capa de IA no puede sacar a una persona, reconstruir un journey individual ni ejecutar modelos multi-touch — solo responde lo que el dato agregado y completo puede responder, que es justo lo que mantiene las respuestas honestas y conformes.",
+    a: "No tiene por qué. Sealmetrics mide eventos agregados y anónimos sin cookies, sin localStorage, sin fingerprinting y sin dato personal, y atribuye el revenue a último clic a nivel de evento. Como hay cero PII por construcción, la capa de IA no puede sacar a una persona, reconstruir un journey individual ni ejecutar modelos multi-touch — solo responde lo que el dato agregado y completo puede responder, que es justo lo que mantiene las respuestas honestas y conformes.",
   },
 ];
 
@@ -101,7 +101,7 @@ const pillars = [
   {
     eyebrow: "Tu elección",
     title: "Elige el algoritmo",
-    body: "Usa la IA privada de SealMetrics, o trae tu propia clave de Anthropic, OpenAI o Gemini, o conecta el MCP alojado desde tu propio cliente. El mismo dato completo debajo — solo eliges el modelo.",
+    body: "Usa la IA privada de Sealmetrics, o trae tu propia clave de Anthropic, OpenAI o Gemini, o conecta el MCP alojado desde tu propio cliente. El mismo dato completo debajo — solo eliges el modelo.",
     metric: "BYOK",
     metricLabel: "o IA privada, o MCP",
   },
@@ -151,7 +151,7 @@ const useCases = [
   {
     role: "Constructor de IA",
     headline: "Monta un analista con Claude en una tarde",
-    body: "Conecta el MCP de SealMetrics a Claude, ChatGPT, Cursor o Claude Code y deja que responda preguntas de revenue directamente — el mismo servidor puede incluso dar de alta un sitio nuevo desde el chat.",
+    body: "Conecta el MCP de Sealmetrics a Claude, ChatGPT, Cursor o Claude Code y deja que responda preguntas de revenue directamente — el mismo servidor puede incluso dar de alta un sitio nuevo desde el chat.",
   },
 ];
 
@@ -178,7 +178,7 @@ export default function AiAnalyticsEsPage() {
             </h1>
             <p className="mt-8 text-[19px] leading-[1.6] text-ink-soft max-w-[68ch]">
               Apunta un LLM a una analítica incompleta y basada en cookies y se inventará respuestas
-              seguras y falsas. SealMetrics es analítica con IA construida al revés — dato cookieless
+              seguras y falsas. Sealmetrics es analítica con IA construida al revés — dato cookieless
               completo, un MCP semántico que el modelo no puede malinterpretar e IA privada alojada en la
               UE. Pregúntale a Claude o ChatGPT por tu revenue y obtén un número que puedes defender.
             </p>
@@ -207,7 +207,7 @@ export default function AiAnalyticsEsPage() {
         label="En breve"
         answer={
           <>
-            La analítica con IA solo es tan fiable como el dato de debajo. SealMetrics combina{" "}
+            La analítica con IA solo es tan fiable como el dato de debajo. Sealmetrics combina{" "}
             <strong>dato cookieless al 100%</strong> con un <strong>MCP semántico</strong> e{" "}
             <strong>IA privada alojada en la UE</strong> (LENS AI), así un LLM responde tus preguntas de
             revenue desde dato completo que no puede malinterpretar — con cero dato personal en juego.
@@ -215,7 +215,7 @@ export default function AiAnalyticsEsPage() {
         }
         bullets={[
           <>IA genérica sobre GA4: dato parcial, riesgo de PII, inferencia en EE. UU., respuestas plausibles pero falsas.</>,
-          <>SealMetrics: dato completo, 0 PII, IA privada UE, atribución a último clic sobre el 100% del tráfico.</>,
+          <>Sealmetrics: dato completo, 0 PII, IA privada UE, atribución a último clic sobre el 100% del tráfico.</>,
           <>Conecta Claude, ChatGPT, Cursor o Claude Code vía MCP — o trae tu propia clave de modelo.</>,
         ]}
       />
@@ -240,7 +240,7 @@ export default function AiAnalyticsEsPage() {
               Seis propiedades separan la analítica con IA sobre la que puedes actuar de un chatbot
               adivinando sobre un warehouse. Escribimos la versión larga en{" "}
               <Link href="/es/blog/self-service-analytics-lens-ai" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
-                cómo SealMetrics habilita la analítica self-service
+                cómo Sealmetrics habilita la analítica self-service
               </Link>
               .
             </p>
@@ -291,7 +291,7 @@ export default function AiAnalyticsEsPage() {
                     LLM + warehouse en bruto
                   </th>
                   <th className="px-6 py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-brand">
-                    SealMetrics LENS AI
+                    Sealmetrics LENS AI
                   </th>
                 </tr>
               </thead>
@@ -363,7 +363,7 @@ export default function AiAnalyticsEsPage() {
           </div>
           <div className="rounded-2xl border border-warm-100 bg-dark-bg p-8 text-white shadow-[0_24px_60px_-24px_rgba(14,14,12,0.5)]">
             <div className="font-mono text-[11px] text-white/50 uppercase tracking-[0.12em] mb-4">
-              Claude · MCP · SealMetrics LENS AI
+              Claude · MCP · Sealmetrics LENS AI
             </div>
             <p className="font-mono text-[13px] leading-[1.7] text-white/90">
               <span className="text-brand-soft">{">"}</span> Las ventas pintan flojas esta semana frente a

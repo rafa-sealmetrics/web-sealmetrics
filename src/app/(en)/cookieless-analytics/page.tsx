@@ -16,7 +16,7 @@ const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-05-28";
 
 export const metadata: Metadata = {
-  title: "Cookieless analytics, explained — SealMetrics",
+  title: "Cookieless analytics, explained — Sealmetrics",
   description:
     "Cookieless analytics captures 100% of traffic with first-party server-side collection — no cookies, no consent banners, no sampling.",
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/cookieless-analytics/")],
     url: "https://sealmetrics.com/cookieless-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is cookieless analytics legal under GDPR?",
-    a: "Yes — and the legal route is architectural, not contractual. Because no personal data, identifier or cookie is stored, the processing sits outside the material scope of GDPR and the cookie-consent requirement of ePrivacy. The CNIL exemption criteria, the German DSK guidance and the UK ICO PECR exemption all describe this same path. SealMetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
+    a: "Yes — and the legal route is architectural, not contractual. Because no personal data, identifier or cookie is stored, the processing sits outside the material scope of GDPR and the cookie-consent requirement of ePrivacy. The CNIL exemption criteria, the German DSK guidance and the UK ICO PECR exemption all describe this same path. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     q: "Can I run it alongside Google Analytics 4?",
-    a: "Yes — we recommend it for the first 30 days. Most teams keep GA4 running for Google Ads conversion import and BigQuery legacy, and use SealMetrics as the source of truth for board-level decisions. There is no migration. One script tag, runs in parallel.",
+    a: "Yes — we recommend it for the first 30 days. Most teams keep GA4 running for Google Ads conversion import and BigQuery legacy, and use Sealmetrics as the source of truth for board-level decisions. There is no migration. One script tag, runs in parallel.",
   },
   {
     q: "What can cookieless analytics not do?",
-    a: "It cannot identify a returning visitor. It cannot follow a single person across pages or sessions. It does not build per-user behavioural profiles. If your use case requires user-level identification (logged-in product analytics, CRM triggers based on individual browsing), you need a different category of tool — likely Mixpanel, Amplitude or a CDP. SealMetrics counts events anonymously and attributes conversions to the channel that drove them, at aggregate scale.",
+    a: "It cannot identify a returning visitor. It cannot follow a single person across pages or sessions. It does not build per-user behavioural profiles. If your use case requires user-level identification (logged-in product analytics, CRM triggers based on individual browsing), you need a different category of tool — likely Mixpanel, Amplitude or a CDP. Sealmetrics counts events anonymously and attributes conversions to the channel that drove them, at aggregate scale.",
   },
   {
     q: "What about Google Consent Mode v2?",
@@ -97,7 +97,7 @@ export default function CookielessAnalyticsPillar() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -454,7 +454,7 @@ export default function CookielessAnalyticsPillar() {
               href="/vs-ga4"
               className="text-brand underline decoration-1 underline-offset-2"
             >
-              SealMetrics vs Google Analytics 4
+              Sealmetrics vs Google Analytics 4
             </Link>
             . The enterprise tier (GA360, Adobe Analytics, Piwik PRO) is
             covered on{" "}
@@ -547,7 +547,7 @@ export default function CookielessAnalyticsPillar() {
               <p className="text-[15px] leading-[1.7] text-ink-soft">
                 Keep GA4 running for the integrations Google reserves for
                 its own product: Ads conversion import, the Search Console
-                join. Use SealMetrics as the number you make decisions on.
+                join. Use Sealmetrics as the number you make decisions on.
                 Two tools, two purposes.
               </p>
             </div>
@@ -560,7 +560,7 @@ export default function CookielessAnalyticsPillar() {
                 Product analytics needs user-level identification — logged-in
                 event streams, cohort retention, feature usage by account.
                 That is a different tool category. Run it after authentication;
-                run SealMetrics on the marketing surface.
+                run Sealmetrics on the marketing surface.
               </p>
             </div>
 
@@ -584,7 +584,7 @@ export default function CookielessAnalyticsPillar() {
                 Retargeting audiences and on-platform optimisation still
                 need their respective pixels. They serve the bidder, not the
                 measurement. Keep them; measure their actual contribution
-                with SealMetrics.
+                with Sealmetrics.
               </p>
             </div>
           </div>

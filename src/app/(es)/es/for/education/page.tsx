@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para educación — embudos con RGPD | SealMetrics",
+  title: "Analítica para educación — embudos con RGPD | Sealmetrics",
   description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analítica para educación — embudos con RGPD | SealMetrics",
+    title: "Analítica para educación — embudos con RGPD | Sealmetrics",
     description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/es/for/education/")],
     url: "https://sealmetrics.com/es/for/education/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para educación — embudos con RGPD | SealMetrics",
+    title: "Analítica para educación — embudos con RGPD | Sealmetrics",
     description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
     images: [ogImage("/es/for/education/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para educación" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para educación", url: "/es/for/education" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "education", audienceType: "Educacion y formacion", description: "SealMetrics — enterprise analytics for education teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/education" })} /><VerticalPageV3 data={getVerticalData("education", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "education", audienceType: "Educacion y formacion", description: "Sealmetrics — enterprise analytics for education teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/education" })} /><VerticalPageV3 data={getVerticalData("education", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

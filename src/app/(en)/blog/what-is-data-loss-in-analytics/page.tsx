@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "The 4 causes of analytics data loss and how they compound to 87% missing traffic in the EU.",
     type: "article",
     url: "https://sealmetrics.com/blog/what-is-data-loss-in-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/what-is-data-loss-in-analytics.png"],
   },
@@ -36,7 +36,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Data Loss in Analytics?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Data Loss in Analytics? Causes, Impact, and Solutions", description: "The 4 causes of analytics data loss and how to eliminate them.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/what-is-data-loss-in-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "What Is Data Loss in Analytics? Causes, Impact, and Solutions", description: "The 4 causes of analytics data loss and how to eliminate them.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/what-is-data-loss-in-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Data Loss in Analytics?", url: "/blog/what-is-data-loss-in-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -375,7 +375,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how SealMetrics eliminates data loss
+              See how Sealmetrics eliminates data loss
             </Link>{" "}
             or{" "}
             <Link
@@ -389,7 +389,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
         </div>
 
         <CommercialModule
-          hook="Data loss is invisible in the tool that suffers it. Run SealMetrics in parallel for a month and measure the gap against your current numbers."
+          hook="Data loss is invisible in the tool that suffers it. Run Sealmetrics in parallel for a month and measure the gap against your current numbers."
         />
 
         {/* Related */}

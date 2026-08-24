@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Data Loss in Analytics? — SealMetrics Glossary",
+  title: "What Is Data Loss in Analytics? — Sealmetrics Glossary",
   description:
     "Data loss in analytics is the gap between actual traffic and what tools report. Typically 70-87% in the EU due to consent, ad blockers, and ITP.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Data loss in analytics: the gap between real traffic and what tools report. Typically 70-87% in the EU.",
     type: "article",
     url: "https://sealmetrics.com/glossary/data-loss-in-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/data-loss-in-analytics/")],
   },
@@ -69,7 +69,7 @@ export default function DataLossPage() {
         <RelatedGlossaryTerms slug="data-loss-in-analytics" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate Your Data Loss</Link> &middot; <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">What Is Data Loss in Analytics?</Link>
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link> &middot; <Link href="/data-loss-calculator" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Calculate Your Data Loss</Link> &middot; <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">What Is Data Loss in Analytics?</Link>
           </p>
         </div>
       </div>

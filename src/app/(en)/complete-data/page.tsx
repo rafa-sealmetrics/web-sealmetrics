@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/complete-data/")],
     url: "https://sealmetrics.com/complete-data/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -60,7 +60,7 @@ const faqs = [
     a: "Run the gap calculator on your real traffic. We compare what GA4 reports against what your CRM, Shopify orders, or PMS records show. The gap is usually 25–45% for B2C consumer brands, 15–25% for B2B. If the gap is below 10%, you probably do not need to switch. Most teams discover the gap is much larger than they assumed.",
   },
   {
-    q: "Does complete data mean SealMetrics ignores privacy?",
+    q: "Does complete data mean Sealmetrics ignores privacy?",
     a: "The opposite. Complete data is possible because the architecture is consentless by design — no cookies, no identifiers, no personal data. Privacy is the constraint that forces the measurement to be aggregate; aggregate measurement is what makes 100% capture lawful without a consent dialog. The two are the same architectural choice, viewed from different angles.",
   },
   {
@@ -97,7 +97,7 @@ export default function CompleteDataPillar() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />

@@ -6,23 +6,23 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Changelog — SealMetrics",
+  title: "Changelog — Sealmetrics",
   description:
-    "Product updates and new features from SealMetrics. See what we have shipped recently.",
+    "Product updates and new features from Sealmetrics. See what we have shipped recently.",
   openGraph: {
-    title: "Changelog — SealMetrics",
-    description: "Product updates and new features from SealMetrics.",
+    title: "Changelog — Sealmetrics",
+    description: "Product updates and new features from Sealmetrics.",
     type: "website",
     images: [ogImage("/changelog/")],
     url: "https://sealmetrics.com/changelog/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Changelog — SealMetrics",
-    description: "Product updates and new features from SealMetrics.",
+    title: "Changelog — Sealmetrics",
+    description: "Product updates and new features from Sealmetrics.",
     images: [ogImage("/changelog/")],
   },
   alternates: {
@@ -85,7 +85,7 @@ const entries = [
     date: "February 2026",
     updates: [
       {
-        title: "SealMetrics V2 is here",
+        title: "Sealmetrics V2 is here",
         type: "Launch",
         desc: "The most significant update since we started, rebuilt from the ground up: a faster, cleaner dashboard; smarter attribution; compliance ready for GDPR, CNIL, UK PECR and the upcoming EU Digital Omnibus; a new, better-documented API; and a lighter tracking script with better SPA support. V2 is the default for all accounts — data, settings and tracking code keep working.",
       },

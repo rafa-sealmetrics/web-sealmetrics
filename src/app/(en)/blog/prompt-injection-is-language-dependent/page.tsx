@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "The same attack, the same model, two languages, two outcomes. Why safety evaluations have to be multilingual — and how to run one.",
     type: "article",
     url: "https://sealmetrics.com/blog/prompt-injection-is-language-dependent/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/prompt-injection-is-language-dependent.png"],
   },
@@ -88,7 +88,7 @@ export default function PromptInjectionIsLanguageDependentPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -101,8 +101,8 @@ export default function PromptInjectionIsLanguageDependentPage() {
       <JsonLd
         data={statisticClaimSchema({
           text: "In a bilingual benchmark of 162 live analytics queries, an identical prompt-injection attempt was ignored by all three tested models in all 9 Spanish executions, while one model (qwen3-235b-a22b-2507) reproduced the injected canary string in 2 of 3 English attempts.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -191,7 +191,7 @@ export default function PromptInjectionIsLanguageDependentPage() {
               >
                 Seal AI
               </Link>
-              , the analytics assistant inside SealMetrics, we built every
+              , the analytics assistant inside Sealmetrics, we built every
               scenario twice: once in Spanish and once in English, sharing the
               same ground truth. The mirroring was originally about coverage —
               our users work in both languages, so both had to be measured.

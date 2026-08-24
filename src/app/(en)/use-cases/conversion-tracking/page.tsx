@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/use-cases/conversion-tracking/")],
     url: "https://sealmetrics.com/use-cases/conversion-tracking/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -50,23 +50,23 @@ const faqs = [
   },
   {
     q: "Does it work for offline conversions?",
-    a: "Partially. Offline conversions (phone calls, in-store purchases) need to be ingested via the offline-conversion API with whatever business identifier ties them back to the on-site visit — for example, a unique discount code shown on-site and used in-store. SealMetrics does not stitch sessions to users, so the join key comes from your business logic, not from the tracker.",
+    a: "Partially. Offline conversions (phone calls, in-store purchases) need to be ingested via the offline-conversion API with whatever business identifier ties them back to the on-site visit — for example, a unique discount code shown on-site and used in-store. Sealmetrics does not stitch sessions to users, so the join key comes from your business logic, not from the tracker.",
   },
   {
     q: "What about Meta Conversion API and Google Enhanced Conversions?",
-    a: "These are platform-side server-to-server pipes for sending conversion data back to Meta and Google for ad optimisation. They still require user-level data to be sent (hashed email, hashed phone). SealMetrics does not feed them — Meta Conversion API and Google Enhanced Conversions remain a separate concern, typically wired through your tag manager or via your CRM. SealMetrics handles the measurement side; the ad pixels handle the optimisation side.",
+    a: "These are platform-side server-to-server pipes for sending conversion data back to Meta and Google for ad optimisation. They still require user-level data to be sent (hashed email, hashed phone). Sealmetrics does not feed them — Meta Conversion API and Google Enhanced Conversions remain a separate concern, typically wired through your tag manager or via your CRM. Sealmetrics handles the measurement side; the ad pixels handle the optimisation side.",
   },
   {
     q: "Will my paid-ad platforms still optimise correctly?",
-    a: "Yes, as long as the platform pixels keep firing. Meta and Google pixels run as a separate layer with their own consent and their own cookies — they exist to feed the bidder, not to measure your business. SealMetrics replaces the measurement layer (the number you decide on); the platform pixels stay for their optimisation purpose. The right setup is parallel: pixels for bidding, SealMetrics for truth.",
+    a: "Yes, as long as the platform pixels keep firing. Meta and Google pixels run as a separate layer with their own consent and their own cookies — they exist to feed the bidder, not to measure your business. Sealmetrics replaces the measurement layer (the number you decide on); the platform pixels stay for their optimisation purpose. The right setup is parallel: pixels for bidding, Sealmetrics for truth.",
   },
   {
     q: "How do I handle GA4 conversion goals during the transition?",
-    a: "Keep them. GA4 conversion goals power Google Ads conversion import — that integration is valuable independent of measurement accuracy. The recommended pattern is: SealMetrics records the conversion event for measurement (channel attribution, revenue reporting), GA4 records the conversion event for Google Ads bidding. Both layers run in parallel from the same dataLayer push. The 30-day parallel-run is documented on the GA4 migration use-case page.",
+    a: "Keep them. GA4 conversion goals power Google Ads conversion import — that integration is valuable independent of measurement accuracy. The recommended pattern is: Sealmetrics records the conversion event for measurement (channel attribution, revenue reporting), GA4 records the conversion event for Google Ads bidding. Both layers run in parallel from the same dataLayer push. The 30-day parallel-run is documented on the GA4 migration use-case page.",
   },
   {
     q: "Does it support custom conversion definitions?",
-    a: "Yes. Beyond the standard eCommerce events (add_to_cart, begin_checkout, purchase), any custom event from your site can be configured as a conversion in the SealMetrics workspace — including scroll-depth, time-on-page thresholds, micro-conversions (PDF downloads, video starts) and any element your team flags. Conversions are aggregate counts; no per-user behavioural sequencing.",
+    a: "Yes. Beyond the standard eCommerce events (add_to_cart, begin_checkout, purchase), any custom event from your site can be configured as a conversion in the Sealmetrics workspace — including scroll-depth, time-on-page thresholds, micro-conversions (PDF downloads, video starts) and any element your team flags. Conversions are aggregate counts; no per-user behavioural sequencing.",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function ConversionTrackingPage() {
           dateModified: DATE_MODIFIED,
           url: "/use-cases/conversion-tracking",
           category: "Implementation",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
 
@@ -129,16 +129,16 @@ export default function ConversionTrackingPage() {
             captures 100% of conversions for revenue reporting) and an
             <strong> optimisation layer</strong> (Meta pixel, Google
             Ads pixel — feeds the bidder, still requires consent for
-            its cookies). SealMetrics is the first; Meta Conversion
+            its cookies). Sealmetrics is the first; Meta Conversion
             API and Google Enhanced Conversions are the second. The
             two run in parallel from the same dataLayer push, fed
-            independently, with the SealMetrics number used for
+            independently, with the Sealmetrics number used for
             revenue decisions and the platform pixels used for
             bidding optimisation.
           </>
         }
         bullets={[
-          <><strong>Two layers</strong> — measurement (SealMetrics) + optimisation (Meta / Google pixels).</>,
+          <><strong>Two layers</strong> — measurement (Sealmetrics) + optimisation (Meta / Google pixels).</>,
           <><strong>One dataLayer push</strong> feeds both.</>,
           <><strong>Any conversion type</strong> — purchase, form, signup, custom — aggregate-anonymous.</>,
           <><strong>Offline conversions</strong> via business-key join (discount codes, CRM IDs), not visitor stitching.</>,
@@ -171,7 +171,7 @@ export default function ConversionTrackingPage() {
               </p>
               <ul className="mt-4 space-y-2 text-[14.5px] leading-[1.7] text-ink-soft list-none pl-0">
                 {[
-                  "SealMetrics (this is the layer the page describes)",
+                  "Sealmetrics (this is the layer the page describes)",
                   "First-party server-side from pixel.yourdomain.com",
                   "Outside ePrivacy / GDPR consent scope",
                 ].map((s) => (
@@ -202,9 +202,9 @@ export default function ConversionTrackingPage() {
 
           <p className="mt-10 text-[15.5px] leading-[1.7] text-ink-soft">
             Both layers run from the same dataLayer push — one
-            event fires the SealMetrics pixel and the platform
+            event fires the Sealmetrics pixel and the platform
             pixels in parallel. The CMP gates only the platform
-            pixels; the SealMetrics pixel runs regardless of
+            pixels; the Sealmetrics pixel runs regardless of
             consent decision.
           </p>
         </div>
@@ -259,7 +259,7 @@ export default function ConversionTrackingPage() {
                 fires on the post-signup confirmation page. The
                 trial-to-paid conversion fires on the first paid
                 charge via your billing webhook. Channel attribution
-                rolls up against the SealMetrics dataset; user-level
+                rolls up against the Sealmetrics dataset; user-level
                 in-product analytics live in Mixpanel or Amplitude
                 alongside.
               </p>
@@ -285,7 +285,7 @@ export default function ConversionTrackingPage() {
                 used at the point of conversion. The offline-conversion
                 API ingests the event with that business key, which
                 ties it back to the source channel on the on-site
-                visit. SealMetrics does not stitch sessions to
+                visit. Sealmetrics does not stitch sessions to
                 users; the join key comes from your business logic.
               </p>
             </div>
@@ -317,11 +317,11 @@ export default function ConversionTrackingPage() {
           </ul>
 
           <p className="mt-8 text-[15.5px] leading-[1.7] text-ink-soft">
-            The right setup is parallel: SealMetrics on the
+            The right setup is parallel: Sealmetrics on the
             measurement layer (always firing, always counting), the
             platform pixels on the optimisation layer (firing only
             when the visitor consents to the cookie banner).
-            Decisions are made on the SealMetrics number; bidding is
+            Decisions are made on the Sealmetrics number; bidding is
             done on whatever signal the platforms accept.
           </p>
         </div>
@@ -381,8 +381,8 @@ export default function ConversionTrackingPage() {
         locale="en"
         titleEn={<>Set up <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>complete conversion tracking</em>. Without the banner.</>}
         titleEs={<>Configura <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>conversion tracking completo</em>. Sin banner.</>}
-        ledeEn="Book 30 minutes with the founder. We map your existing conversion goals to SealMetrics live, configure custom events, and confirm the platform pixels stay intact."
-        ledeEs="Reserva 30 min con el founder. Mapeamos tus goals existentes a SealMetrics en directo, configuramos eventos custom y confirmamos que los pixels de plataforma siguen vivos."
+        ledeEn="Book 30 minutes with the founder. We map your existing conversion goals to Sealmetrics live, configure custom events, and confirm the platform pixels stay intact."
+        ledeEs="Reserva 30 min con el founder. Mapeamos tus goals existentes a Sealmetrics en directo, configuramos eventos custom y confirmamos que los pixels de plataforma siguen vivos."
       />
     </>
   );

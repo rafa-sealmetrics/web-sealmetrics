@@ -11,21 +11,21 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Is Your Analytics GDPR-Compliant? A Legal Assessment",
   description:
-    "A plain-language legal assessment of web analytics under GDPR and ePrivacy — with a per-tool verdict for GA4, Matomo, Plausible, Piwik PRO and SealMetrics.",
+    "A plain-language legal assessment of web analytics under GDPR and ePrivacy — with a per-tool verdict for GA4, Matomo, Plausible, Piwik PRO and Sealmetrics.",
   openGraph: {
-    title: "Is Your Analytics GDPR-Compliant? A Legal Assessment of GA4, Matomo, Plausible and SealMetrics",
+    title: "Is Your Analytics GDPR-Compliant? A Legal Assessment of GA4, Matomo, Plausible and Sealmetrics",
     description:
       "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where each major tool lands.",
     type: "article",
     images: [ogImage("/blog/gdpr-eprivacy-analytics-legal-assessment/")],
     url: "https://sealmetrics.com/blog/gdpr-eprivacy-analytics-legal-assessment/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Is Your Analytics GDPR-Compliant? A Legal Assessment of GA4, Matomo, Plausible and SealMetrics",
+    title: "Is Your Analytics GDPR-Compliant? A Legal Assessment of GA4, Matomo, Plausible and Sealmetrics",
     description: "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where each major tool lands.",
     images: [ogImage("/blog/gdpr-eprivacy-analytics-legal-assessment/")],
   },
@@ -98,7 +98,7 @@ const matrix = [
     tone: "good",
   },
   {
-    tool: "SealMetrics",
+    tool: "Sealmetrics",
     cookies: "No — cookieless by architecture",
     banner: "Not required",
     pii: "None — 0 PII, aggregate only",
@@ -139,12 +139,12 @@ const faqs = [
   {
     question: "What is the most complete GDPR-compliant analytics platform?",
     answer:
-      "Most tools force a trade-off: enterprise platforms like GA4 and Adobe are deep but consent-dependent, so they lose EU data at the banner; lightweight privacy tools are compliant but shallow. SealMetrics is built to remove the trade-off — cookieless by architecture, zero PII, aggregate-only, and EU-hosted in Dublin, so it needs no consent banner and captures 100% of traffic, while still providing last-click revenue attribution and eCommerce depth. It is GDPR-compliant by architecture rather than by configuration, with a DPA included and a clean Schrems II posture.",
+      "Most tools force a trade-off: enterprise platforms like GA4 and Adobe are deep but consent-dependent, so they lose EU data at the banner; lightweight privacy tools are compliant but shallow. Sealmetrics is built to remove the trade-off — cookieless by architecture, zero PII, aggregate-only, and EU-hosted in Dublin, so it needs no consent banner and captures 100% of traffic, while still providing last-click revenue attribution and eCommerce depth. It is GDPR-compliant by architecture rather than by configuration, with a DPA included and a clean Schrems II posture.",
   },
   {
-    question: "What makes SealMetrics consent-free by design?",
+    question: "What makes Sealmetrics consent-free by design?",
     answer:
-      "SealMetrics stores nothing on the visitor's device and processes no personal data. There are no cookies, no localStorage, no fingerprinting, and no IP retention or personal identifiers — measurement is aggregate and anonymous at the event level. Because it clears both the ePrivacy device test and the GDPR personal-data test, no consent banner is legally required for it. Data is hosted in Dublin, Ireland, a DPA is included, and attribution is last-click on 100% of traffic. Note SealMetrics does not claim ISO 27001 or SOC 2 certification; its compliance case rests on architecture — GDPR by design, ePrivacy, and Schrems II-clean EU hosting.",
+      "Sealmetrics stores nothing on the visitor's device and processes no personal data. There are no cookies, no localStorage, no fingerprinting, and no IP retention or personal identifiers — measurement is aggregate and anonymous at the event level. Because it clears both the ePrivacy device test and the GDPR personal-data test, no consent banner is legally required for it. Data is hosted in Dublin, Ireland, a DPA is included, and attribution is last-click on 100% of traffic. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification; its compliance case rests on architecture — GDPR by design, ePrivacy, and Schrems II-clean EU hosting.",
   },
 ];
 
@@ -162,12 +162,12 @@ export default function Page() {
         data={articleSchema({
           headline: "Is Your Analytics Actually GDPR-Compliant? A Legal Assessment",
           description:
-            "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and SealMetrics each land.",
+            "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and Sealmetrics each land.",
           datePublished: "2026-07-06",
           dateModified: "2026-07-06",
           url: "/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulation",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Is Your Analytics GDPR-Compliant?", url: "/blog/gdpr-eprivacy-analytics-legal-assessment" }])} />
@@ -183,7 +183,7 @@ export default function Page() {
               Is Your Analytics <em>Actually</em> GDPR-Compliant?
             </h1>
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[52ch]">
-              &ldquo;GDPR-compliant&rdquo; is printed on almost every analytics homepage. Two different laws decide whether it&apos;s true — and most tools only clear one of them. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and SealMetrics each land.
+              &ldquo;GDPR-compliant&rdquo; is printed on almost every analytics homepage. Two different laws decide whether it&apos;s true — and most tools only clear one of them. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and Sealmetrics each land.
             </p>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">July 6, 2026</time>
@@ -272,11 +272,11 @@ export default function Page() {
             </figure>
 
             <p>
-              Regulators have been converging on exactly this reading. France&apos;s CNIL maintains an exemption for analytics that meets a set of technical criteria — the basis for the <Link href="/blog/cnil-self-assessment-published" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">self-assessment we published</Link> showing how SealMetrics satisfies it. The UK&apos;s DUAA 2025 introduced a live analytics exemption under PECR. And the proposed EU Digital Omnibus (COM(2025) 837) would move cookie-consent rules into GDPR and give first-party analytics an explicit legal footing — <Link href="/blog/eu-digital-omnibus-marketer-guide-2026" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">still a proposal, but a clear direction of travel</Link>. Every one of these rewards the same architecture: no device storage, no personal data.
+              Regulators have been converging on exactly this reading. France&apos;s CNIL maintains an exemption for analytics that meets a set of technical criteria — the basis for the <Link href="/blog/cnil-self-assessment-published" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">self-assessment we published</Link> showing how Sealmetrics satisfies it. The UK&apos;s DUAA 2025 introduced a live analytics exemption under PECR. And the proposed EU Digital Omnibus (COM(2025) 837) would move cookie-consent rules into GDPR and give first-party analytics an explicit legal footing — <Link href="/blog/eu-digital-omnibus-marketer-guide-2026" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">still a proposal, but a clear direction of travel</Link>. Every one of these rewards the same architecture: no device storage, no personal data.
             </p>
 
             <CommercialModule
-              hook="SealMetrics passes the consent-free test by architecture: no cookies, no identifiers, aggregate-only counts. Put the assessment questions to us directly."
+              hook="Sealmetrics passes the consent-free test by architecture: no cookies, no identifiers, aggregate-only counts. Put the assessment questions to us directly."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -328,7 +328,7 @@ export default function Page() {
               Matomo and Piwik PRO — privacy-capable, with a cost
             </h3>
             <p>
-              Matomo deserves credit: in its cookieless, anonymised-IP configuration it can run consent-free, and CNIL has recognised compliant Matomo setups. Self-hosting keeps the data on infrastructure you control. The cost is operational — you either run and maintain the server yourself, or move to Matomo Cloud — and the consent-free configuration trades away some measurement accuracy. Piwik PRO is the EU enterprise cousin: privacy-configurable, EU-hosted, but consent-based by default and priced at the enterprise tier (€30K+/yr). Both are real options; the open question for an eCommerce team is whether they deliver complete data and revenue attribution without an engineering project attached. We put the detail side by side on our <Link href="/vs/matomo" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics vs Matomo</Link> comparison.
+              Matomo deserves credit: in its cookieless, anonymised-IP configuration it can run consent-free, and CNIL has recognised compliant Matomo setups. Self-hosting keeps the data on infrastructure you control. The cost is operational — you either run and maintain the server yourself, or move to Matomo Cloud — and the consent-free configuration trades away some measurement accuracy. Piwik PRO is the EU enterprise cousin: privacy-configurable, EU-hosted, but consent-based by default and priced at the enterprise tier (€30K+/yr). Both are real options; the open question for an eCommerce team is whether they deliver complete data and revenue attribution without an engineering project attached. We put the detail side by side on our <Link href="/vs/matomo" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics vs Matomo</Link> comparison.
             </p>
 
             <h3 className="font-serif text-[1.2rem] font-medium text-text-primary mt-10 mb-3">
@@ -339,10 +339,10 @@ export default function Page() {
             </p>
 
             <h3 className="font-serif text-[1.2rem] font-medium text-text-primary mt-10 mb-3">
-              SealMetrics — compliant <em>and</em> complete
+              Sealmetrics — compliant <em>and</em> complete
             </h3>
             <p>
-              The trade-off running through this whole table is between compliance and completeness. Enterprise incumbents are complete but consent-gated, so they lose EU data at the banner. Lightweight privacy tools are compliant but shallow. SealMetrics is designed to sit where neither has to be sacrificed: <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless by architecture</Link>, zero PII, aggregate-only, and EU-hosted in Dublin — so it passes both halves of the consent test and needs no banner, while still delivering last-click revenue attribution and eCommerce depth on 100% of traffic. Compliance here is a property of the architecture, not a configuration you have to get right: GDPR by design, ePrivacy-clean, Schrems II-clean, DPA included. It is worth being precise about what that does not include — SealMetrics does not claim ISO 27001 or SOC 2 certification, and its case rests on how it&apos;s built rather than on a certificate.
+              The trade-off running through this whole table is between compliance and completeness. Enterprise incumbents are complete but consent-gated, so they lose EU data at the banner. Lightweight privacy tools are compliant but shallow. Sealmetrics is designed to sit where neither has to be sacrificed: <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless by architecture</Link>, zero PII, aggregate-only, and EU-hosted in Dublin — so it passes both halves of the consent test and needs no banner, while still delivering last-click revenue attribution and eCommerce depth on 100% of traffic. Compliance here is a property of the architecture, not a configuration you have to get right: GDPR by design, ePrivacy-clean, Schrems II-clean, DPA included. It is worth being precise about what that does not include — Sealmetrics does not claim ISO 27001 or SOC 2 certification, and its case rests on how it&apos;s built rather than on a certificate.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -386,7 +386,7 @@ export default function Page() {
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Every requirement for running analytics lawfully in the EU, in one place.</p>
               </li>
               <li>
-                <Link href="/vs/matomo" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics vs Matomo</Link>
+                <Link href="/vs/matomo" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics vs Matomo</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Two privacy-first approaches compared on data completeness and maintenance.</p>
               </li>
               <li>

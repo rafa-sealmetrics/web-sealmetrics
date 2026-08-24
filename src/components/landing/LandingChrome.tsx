@@ -16,7 +16,7 @@ export function LandingHeader({ ctaHref, ctaLabel }: { ctaHref: string; ctaLabel
         {/* El logo no enlaza: en una landing de pago, volver a la home es una fuga. */}
         <Picture
           src="/logos/logo-sealmetrics.svg"
-          alt="SealMetrics"
+          alt="Sealmetrics"
           width={157}
           height={28}
           className="h-7 w-auto"
@@ -58,7 +58,7 @@ export function LandingFooter({ locale = "es" }: { locale?: "es" | "en" }) {
     <footer className="bg-warm-900 py-9">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10 flex flex-wrap gap-x-8 gap-y-4 justify-between items-center">
         <span className="text-[14px] text-dark-text-secondary">
-          SealMetrics · Esfera Marketing SL · Barcelona
+          Sealmetrics · Esfera Marketing SL · Barcelona
         </span>
         <div className="flex flex-wrap gap-6 items-center">
           <Link

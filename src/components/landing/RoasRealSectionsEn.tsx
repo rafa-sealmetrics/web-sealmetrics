@@ -215,7 +215,7 @@ export function WhatWeDo() {
         </div>
         <div>
           <p className="text-ink-2 leading-[1.5] max-w-[58ch]" style={{ fontSize: "clamp(17px,1.6vw,20px)" }}>
-            SealMetrics does not reconstruct journeys. It records aggregate hits that are unconnected to each
+            Sealmetrics does not reconstruct journeys. It records aggregate hits that are unconnected to each
             other, with no user identifier, no cookies and no profiling. Since nobody is identifiable now or
             later, no consent is needed to measure.
           </p>
@@ -269,7 +269,7 @@ export function Proof() {
               </div>
             </div>
             <blockquote className="mt-8 pt-6 border-t border-dashed border-warm-200 text-[18px] font-semibold leading-[1.35] tracking-[-0.015em] text-ink border-l-2 border-l-quote pl-4">
-              The data SealMetrics delivers is agnostic, impartial and neutral. There is no black box.
+              The data Sealmetrics delivers is agnostic, impartial and neutral. There is no black box.
             </blockquote>
             <p className="mt-3 font-mono text-[11.5px] tracking-[0.06em] text-ink-soft">
               Toni Andújar · Digital &amp; Direct Sales Director
@@ -494,7 +494,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
   {
     title: "Weight transferred over the network · gzip",
     rows: [
-      { label: "SealMetrics", pct: 0.65, value: "1.1 KB", us: true },
+      { label: "Sealmetrics", pct: 0.65, value: "1.1 KB", us: true },
       { label: "GA4", pct: 85.6, value: "~146 KB" },
       { label: "Adobe", pct: 100, value: "~170 KB" },
     ],
@@ -509,7 +509,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
   {
     title: "JavaScript the device has to parse · uncompressed",
     rows: [
-      { label: "SealMetrics", pct: 0.27, value: "2.0 KB", us: true },
+      { label: "Sealmetrics", pct: 0.27, value: "2.0 KB", us: true },
       { label: "GA4", pct: 56.1, value: "~409 KB" },
       { label: "Adobe", pct: 100, value: "~730 KB" },
     ],
@@ -524,7 +524,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
   {
     title: "Time until the hit leaves the device · fibre, installed in head",
     rows: [
-      { label: "SealMetrics", pct: 10, value: "0.1–0.3 s", us: true },
+      { label: "Sealmetrics", pct: 10, value: "0.1–0.3 s", us: true },
       { label: "GA4", pct: 23, value: "0.5–0.7 s" },
       { label: "Adobe", pct: 100, value: "~3.0 s" },
     ],
@@ -588,7 +588,7 @@ export function Machine() {
           It is not another analytics tool. It is <em>different engineering.</em>
         </h2>
         <p className="mt-6 max-w-[62ch] text-dark-text-secondary leading-[1.55]" style={{ fontSize: "clamp(16px,1.5vw,19px)" }}>
-          SealMetrics against GA4&rsquo;s <span className="font-mono text-dark-text">gtag.js</span> and against
+          Sealmetrics against GA4&rsquo;s <span className="font-mono text-dark-text">gtag.js</span> and against
           the Adobe Launch + AppMeasurement chain. Same reference sites, same methodology, July 2026.
         </p>
 
@@ -625,7 +625,7 @@ export function Machine() {
               <tr>
                 <th className="text-left p-4 border-b border-dark-border font-mono text-[11px] uppercase tracking-[0.12em] text-dark-text-tertiary font-medium" />
                 <th className="text-left p-4 border-b border-dark-border font-mono text-[11px] uppercase tracking-[0.12em] text-brand font-medium">
-                  SealMetrics
+                  Sealmetrics
                 </th>
                 <th className="text-left p-4 border-b border-dark-border font-mono text-[11px] uppercase tracking-[0.12em] text-dark-text-tertiary font-medium">
                   GA4
@@ -733,7 +733,7 @@ export function Implementation() {
             1 · Measurement pixel
           </p>
           <CodeBlock>
-            <span className={CM}>{"<!-- SealMetrics Analytics -->"}</span>
+            <span className={CM}>{"<!-- Sealmetrics Analytics -->"}</span>
             {"\n"}
             {"<script src=\""}
             <span className={VAL}>https://t.sealmetrics.com/t.js?id=YOUR_ACCOUNT_ID</span>
@@ -787,7 +787,7 @@ export function Implementation() {
             3 · Or not even that: a prompt
           </p>
           <CodeBlock>
-            {"Connect Claude to the SealMetrics MCP. Server:\n"}
+            {"Connect Claude to the Sealmetrics MCP. Server:\n"}
             <span className={VAL}>https://mcp.sealmetrics.com/mcp</span>
             {"\nThen create my account, generate the pixels I\nneed and build the reports in real time."}
           </CodeBlock>

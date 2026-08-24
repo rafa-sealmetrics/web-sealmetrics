@@ -8,7 +8,7 @@ import { AuditForm } from "@/components/audit/AuditForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Free measurement audit — SealMetrics",
+  title: "Free measurement audit — Sealmetrics",
   description:
     "Answer 7 questions in 3 minutes. We send you a personalised analysis of the gap between what GA4 measures and what your eCommerce actually sells.",
   alternates: {
@@ -16,19 +16,19 @@ export const metadata: Metadata = {
     languages: getAlternates("/audit"),
   },
   openGraph: {
-    title: "Free measurement audit — SealMetrics",
+    title: "Free measurement audit — Sealmetrics",
     description:
       "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
     type: "website",
     images: [ogImage("/audit/")],
     url: "https://sealmetrics.com/audit/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Free measurement audit — SealMetrics",
+    title: "Free measurement audit — Sealmetrics",
     description: "Discover how much revenue your analytics is hiding. Personalised audit in 24h, human-written, no automated sequences.",
     images: [ogImage("/audit/")],
   },
@@ -43,7 +43,7 @@ export default function Page() {
       />
       <JsonLd
         data={servicePageSchema({
-          name: "SealMetrics Free Measurement Audit",
+          name: "Sealmetrics Free Measurement Audit",
           description:
             "Personalised audit of the gap between GA4 and your real backend revenue. 7 questions, 3 minutes, human-written report within 24h.",
           url: "/audit",

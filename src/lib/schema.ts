@@ -1,7 +1,7 @@
 import { PRICING } from "./content/pricing";
 
 const SITE_URL = "https://sealmetrics.com";
-const ORG_NAME = "SealMetrics";
+const ORG_NAME = "Sealmetrics";
 
 /**
  * Build an absolute page URL with a trailing slash so JSON-LD page URLs match
@@ -481,7 +481,7 @@ export function pricingSchema(
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "SealMetrics Analytics",
+    name: "Sealmetrics Analytics",
     description:
       "Cookieless web analytics with 100% data capture, GDPR-compliant by architecture. Enterprise alternative to GA360 and Adobe Analytics.",
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,

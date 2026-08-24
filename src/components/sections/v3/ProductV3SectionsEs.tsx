@@ -110,7 +110,7 @@ export function FourPillarsV3Es() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            SealMetrics no son cuatro herramientas pegadas. Es un solo pipeline: del primer visitante observado a la atribución last-touch que firma tu CFO.
+            Sealmetrics no son cuatro herramientas pegadas. Es un solo pipeline: del primer visitante observado a la atribución last-touch que firma tu CFO.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-warm-100 border border-warm-100 rounded-2xl overflow-hidden">
@@ -420,7 +420,7 @@ export function ProductProofV3Es() {
         { n: "+165%", l: "Coste por Búsqueda en Display en DV360 después" },
       ],
       quote:
-        "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+        "Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
       cite: "Toni Andújar · Director Digital y Venta Directa",
     },
     {
@@ -447,7 +447,7 @@ export function ProductProofV3Es() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Dos clientes pusieron SealMetrics frente a su stack anterior y
+            Dos clientes pusieron Sealmetrics frente a su stack anterior y
             publicaron los números. Las cifras de abajo son suyas, auditadas
             sobre su propio tráfico — no benchmarks nuestros.
           </p>

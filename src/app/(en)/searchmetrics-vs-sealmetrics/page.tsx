@@ -7,24 +7,24 @@ import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Searchmetrics vs SealMetrics — Different Companies",
+  title: "Searchmetrics vs Sealmetrics — Different Companies",
   description:
-    "Searchmetrics was acquired by Conductor in 2023 and its domain now redirects there. SealMetrics is an unrelated company: cookieless analytics for eCommerce.",
+    "Searchmetrics was acquired by Conductor in 2023 and its domain now redirects there. Sealmetrics is an unrelated company: cookieless analytics for eCommerce.",
   openGraph: {
-    title: "Searchmetrics vs SealMetrics — Different Companies",
+    title: "Searchmetrics vs Sealmetrics — Different Companies",
     description:
-      "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what SealMetrics actually measures.",
+      "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what Sealmetrics actually measures.",
     type: "article",
     url: "https://sealmetrics.com/searchmetrics-vs-sealmetrics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/searchmetrics-vs-sealmetrics")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Searchmetrics vs SealMetrics — Different Companies",
-    description: "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what SealMetrics actually measures.",
+    title: "Searchmetrics vs Sealmetrics — Different Companies",
+    description: "Two similar names, two different categories. What happened to Searchmetrics, where its product went, and what Sealmetrics actually measures.",
     images: [ogImage("/searchmetrics-vs-sealmetrics")],
   },
   alternates: {
@@ -32,19 +32,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SearchmetricsVsSealMetricsPage() {
+export default function SearchmetricsVsSealmetricsPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Searchmetrics vs SealMetrics" }]} />
+      <Breadcrumbs items={[{ label: "Searchmetrics vs Sealmetrics" }]} />
       <JsonLd
         data={speakableWebPageSchema({
           url: "/searchmetrics-vs-sealmetrics",
-          name: "Searchmetrics vs SealMetrics — Different Companies",
+          name: "Searchmetrics vs Sealmetrics — Different Companies",
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Searchmetrics vs SealMetrics", url: "/searchmetrics-vs-sealmetrics" },
+          { name: "Searchmetrics vs Sealmetrics", url: "/searchmetrics-vs-sealmetrics" },
         ])}
       />
 
@@ -55,7 +55,7 @@ export default function SearchmetricsVsSealMetricsPage() {
               Disambiguation
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              Searchmetrics vs SealMetrics
+              Searchmetrics vs Sealmetrics
             </h1>
             <p className="text-[1.15rem] leading-[1.7] text-text-secondary">
               Two companies with similar names in adjacent industries. One of them
@@ -64,19 +64,19 @@ export default function SearchmetricsVsSealMetricsPage() {
           </header>
 
           <QuickAnswer>
-            SealMetrics and Searchmetrics are two unrelated companies with similar
+            Sealmetrics and Searchmetrics are two unrelated companies with similar
             names. Searchmetrics was an enterprise SEO and search-visibility
             platform based in Berlin. Conductor acquired it in February 2023 and
             folded it into its own platform; searchmetrics.com now returns a
             permanent redirect to conductor.com, and the product is no longer sold
-            under its original name. SealMetrics is a cookieless web analytics
+            under its original name. Sealmetrics is a cookieless web analytics
             platform for eCommerce, founded in 2020 and hosted in Dublin, Ireland.
             It measures what visitors do on a site and attributes revenue using
             last-click on 100% of traffic. It does not measure keyword rankings,
             search visibility, or competitor SEO. If you are looking for
             Searchmetrics pricing or a replacement for its SEO tooling, Conductor
             is where that product went. If you arrived here because the two names
-            read alike, the rest of this page explains what SealMetrics measures.
+            read alike, the rest of this page explains what Sealmetrics measures.
           </QuickAnswer>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body mt-12">
@@ -134,7 +134,7 @@ export default function SearchmetricsVsSealMetricsPage() {
                       Searchmetrics
                     </th>
                     <th className="text-left py-3 font-medium text-text-primary">
-                      SealMetrics
+                      Sealmetrics
                     </th>
                   </tr>
                 </thead>
@@ -175,10 +175,10 @@ export default function SearchmetricsVsSealMetricsPage() {
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              What SealMetrics measures
+              What Sealmetrics measures
             </h2>
             <p>
-              SealMetrics is{" "}
+              Sealmetrics is{" "}
               <Link
                 href="/glossary/cookieless-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -193,7 +193,7 @@ export default function SearchmetricsVsSealMetricsPage() {
             <p>
               The consequence is coverage. A consent-dependent tool reports only
               the share of traffic that accepted the banner; in European eCommerce
-              that is frequently a minority of real visits. SealMetrics records
+              that is frequently a minority of real visits. Sealmetrics records
               100% of traffic and 100% of revenue events, then attributes revenue
               with{" "}
               <Link

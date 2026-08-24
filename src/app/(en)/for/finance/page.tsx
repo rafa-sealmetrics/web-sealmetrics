@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for Finance — Compliance | SealMetrics",
+  title: "Analytics for Finance — Compliance | Sealmetrics",
   description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analytics for Finance — Compliance | SealMetrics",
+    title: "Analytics for Finance — Compliance | Sealmetrics",
     description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/for/finance/")],
     url: "https://sealmetrics.com/for/finance/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Finance — Compliance | SealMetrics",
+    title: "Analytics for Finance — Compliance | Sealmetrics",
     description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
     images: [ogImage("/for/finance/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "For Finance" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "For Finance", url: "/for/finance" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banking, insurance and wealth management", description: "SealMetrics — enterprise analytics for finance teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "en")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banking, insurance and wealth management", description: "Sealmetrics — enterprise analytics for finance teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Also explore"

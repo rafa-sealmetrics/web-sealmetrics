@@ -1,4 +1,4 @@
-// SealMetrics — cookieless, consentless analytics. Replaces Google Tag Manager.
+// Sealmetrics — cookieless, consentless analytics. Replaces Google Tag Manager.
 //
 // The site is DUAL-TAGGED: every pageview and event is sent to both the preprod
 // account (`pixel-pre`, kept as-is) and the production one (`t.sealmetrics.com`).
@@ -14,7 +14,7 @@
 // this — it only gates the initial pageview; `spa=0` is what silences the
 // tracker's own SPA navigation listener.
 //
-// PRIVACY — SealMetrics is cookieless and GDPR-compliant by architecture.
+// PRIVACY — Sealmetrics is cookieless and GDPR-compliant by architecture.
 // Never send personal data (email, name, phone), order/transaction IDs, or
 // user/customer IDs to the pixel. PII keys are stripped centrally below; the
 // raw email flows only through the server-side forms relay, never to the pixel
@@ -50,7 +50,7 @@ type EventProps = Record<string, string | number | boolean>;
 
 // The global is callable — `sealmetrics({ group })` IS a complete pageview hit
 // — and also carries the event helpers.
-interface SealMetricsApi {
+interface SealmetricsApi {
   (options?: { group?: string }): void;
   micro?: (event: string, props?: EventProps) => void;
   conv?: (event: string, value?: number, props?: EventProps) => void;
@@ -58,7 +58,7 @@ interface SealMetricsApi {
 
 declare global {
   interface Window {
-    sealmetrics?: SealMetricsApi;
+    sealmetrics?: SealmetricsApi;
   }
 }
 
@@ -76,9 +76,9 @@ declare global {
 
 const PIXEL_SCRIPT_ID = "sealmetrics-pixel";
 
-type Call = (api: SealMetricsApi) => void;
+type Call = (api: SealmetricsApi) => void;
 
-const instances: Array<SealMetricsApi | null> = SEALMETRICS_PIXELS.map(() => null);
+const instances: Array<SealmetricsApi | null> = SEALMETRICS_PIXELS.map(() => null);
 const queues: Call[][] = SEALMETRICS_PIXELS.map(() => []);
 
 function capture(index: number): void {
@@ -142,7 +142,7 @@ function loadPixels(): void {
 let firstPageviewSent = false;
 
 // Registers exactly one pageview per account for `group`. Called on every route
-// change by SealMetricsTracker, first load included. Queued until t.js is ready.
+// change by SealmetricsTracker, first load included. Queued until t.js is ready.
 export function pageview(group?: string): void {
   if (typeof document === "undefined") return;
 
@@ -160,7 +160,7 @@ export function pageview(group?: string): void {
 
 // ---------------------------------------------------------------------------
 // Event taxonomy. Keep call sites unchanged: they still call pushEvent() with
-// the legacy event names; this table maps each to the SealMetrics closed
+// the legacy event names; this table maps each to the Sealmetrics closed
 // taxonomy (conv: lead/signup/purchase/subscription/booking · micro: the rest).
 // ---------------------------------------------------------------------------
 
@@ -206,7 +206,7 @@ function sanitize(payload: Record<string, unknown>): EventProps {
 }
 
 // Legacy entry point kept so existing call sites don't change. Dispatches to
-// the SealMetrics pixel via the taxonomy table above, stripping any PII.
+// the Sealmetrics pixel via the taxonomy table above, stripping any PII.
 export function pushEvent(
   payload: { event: string; value?: number } & Record<string, unknown>,
 ): void {

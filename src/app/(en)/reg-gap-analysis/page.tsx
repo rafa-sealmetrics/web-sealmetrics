@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [ogImage("/reg-gap-analysis/")],
     url: "https://sealmetrics.com/reg-gap-analysis/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -129,8 +129,8 @@ const faqs = [
     a: "Not without a consent banner. GA4 sets cookies (triggering ePrivacy Article 5(3)) and processes personal data such as IP-derived location and a client ID (engaging GDPR), and Google is a US company, which raised Schrems II transfer questions that led several EU regulators to rule specific GA deployments unlawful in 2022. Google has since added EU data options and Consent Mode, but the architecture remains cookie-based and consent-dependent — so in an EU gap analysis it shows open gaps on device storage, lawful basis, and transfers.",
   },
   {
-    q: "How does SealMetrics close the common analytics compliance gaps?",
-    a: "By architecture rather than configuration. SealMetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), processes zero personal data as aggregate anonymous events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on 100% of traffic. Note SealMetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: GDPR by design, ePrivacy-clean, Schrems II-clean.",
+    q: "How does Sealmetrics close the common analytics compliance gaps?",
+    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), processes zero personal data as aggregate anonymous events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on 100% of traffic. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: GDPR by design, ePrivacy-clean, Schrems II-clean.",
   },
   {
     q: "Can analytics run without a consent banner after a gap analysis?",
@@ -364,8 +364,8 @@ export default function RegGapAnalysisPage() {
             </em>
           </>
         }
-        ledeEn="Run SealMetrics alongside your current analytics for 30 days. See the gaps close and the EU data you were losing come back. If the gap isn't real, you owe us nothing."
-        ledeEs="Corre SealMetrics junto a tu analítica actual durante 30 días. Verás cerrarse las brechas y volver el dato UE que perdías. Si la brecha no es real, no nos debes nada."
+        ledeEn="Run Sealmetrics alongside your current analytics for 30 days. See the gaps close and the EU data you were losing come back. If the gap isn't real, you owe us nothing."
+        ledeEs="Corre Sealmetrics junto a tu analítica actual durante 30 días. Verás cerrarse las brechas y volver el dato UE que perdías. Si la brecha no es real, no nos debes nada."
         primaryTextEn="Get a free audit →"
         primaryTextEs="Consigue una auditoría gratis →"
       />

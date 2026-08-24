@@ -10,21 +10,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Glosario de analítica — SealMetrics",
+  title: "Glosario de analítica — Sealmetrics",
   description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
   openGraph: {
-    title: "Glosario de analítica — SealMetrics",
+    title: "Glosario de analítica — Sealmetrics",
     description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
     type: "website",
     images: [ogImage("/es/glossary/")],
     url: "https://sealmetrics.com/es/glossary/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Glosario de analítica — SealMetrics",
+    title: "Glosario de analítica — Sealmetrics",
     description: "Definiciones claras de términos de analítica web: analítica sin cookies, muestreo, atribución, compliance RGPD y más.",
     images: [ogImage("/es/glossary/")],
   },
@@ -117,7 +117,7 @@ export default function Page() {
         titleEn={<>Past definitions. See the real thing.</>}
         titleEs={<>Más allá de las <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>definiciones.</em> Ve lo real.</>}
         ledeEn="30 min walkthrough."
-        ledeEs="30 min sobre tu web. Corremos SealMetrics junto a GA4 y te mostramos el gap — en directo."
+        ledeEs="30 min sobre tu web. Corremos Sealmetrics junto a GA4 y te mostramos el gap — en directo."
       />
     </>
   );

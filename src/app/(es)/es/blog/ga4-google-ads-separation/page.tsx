@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "article",
     locale: "es_ES",
     url: "https://sealmetrics.com/es/blog/ga4-google-ads-separation/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     images: [ogImage("/es/blog/ga4-google-ads-separation/")],
   },
   twitter: {
@@ -60,7 +60,7 @@ export default function GA4GoogleAdsSeparationPage() {
           author: {
             name: "Rafa Jimenez",
             url: "/about",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -113,7 +113,7 @@ export default function GA4GoogleAdsSeparationPage() {
                 funcionan de forma independiente.
               </li>
               <li>
-                La alternativa lógica: analítica completa con SealMetrics + tag
+                La alternativa lógica: analítica completa con Sealmetrics + tag
                 propio de Google Ads solo para conversiones.
               </li>
             </ul>
@@ -461,7 +461,7 @@ export default function GA4GoogleAdsSeparationPage() {
 
             {/* 7. La salida lógica */}
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              La salida lógica: SealMetrics + tag de Google Ads
+              La salida lógica: Sealmetrics + tag de Google Ads
             </h2>
 
             <p>
@@ -479,7 +479,7 @@ export default function GA4GoogleAdsSeparationPage() {
               <li className="text-text-secondary">
                 &mdash;{" "}
                 <strong className="text-text-primary">
-                  Analítica web: SealMetrics
+                  Analítica web: Sealmetrics
                 </strong>{" "}
                 &mdash; captura el 100% del tráfico sin cookies, sin banners de
                 consentimiento, sin transferencias de datos a terceros. Datos
@@ -509,7 +509,7 @@ export default function GA4GoogleAdsSeparationPage() {
                 href="/es/how-it-works"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                ver cómo funciona SealMetrics
+                ver cómo funciona Sealmetrics
               </Link>{" "}
               y entender por qué no necesita cookies ni banners de consentimiento
               para capturar datos completos de tráfico.
@@ -518,7 +518,7 @@ export default function GA4GoogleAdsSeparationPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Reconstruyendo tu medición tras la separación GA4–Google Ads? Ve en una demo cómo funciona SealMetrics junto al tag de Google Ads: 100% de captura y atribución last-click sin cookies."
+            hook="¿Reconstruyendo tu medición tras la separación GA4–Google Ads? Ve en una demo cómo funciona Sealmetrics junto al tag de Google Ads: 100% de captura y atribución last-click sin cookies."
           />
 
           {/* Related articles */}

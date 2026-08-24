@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Analytics Data Residency? — SealMetrics Glossary",
+  title: "What Is Analytics Data Residency? — Sealmetrics Glossary",
   description:
     "Analytics data residency defines where visitor data is stored and processed. EU residency is required for GDPR compliance after Schrems II.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Data residency defines where analytics data is stored. EU residency is key for GDPR compliance.",
     type: "article",
     url: "https://sealmetrics.com/glossary/analytics-data-residency/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/analytics-data-residency/")],
   },
@@ -97,7 +97,7 @@ export default function AnalyticsDataResidencyPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/gdpr-analytics-without-consent" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GDPR Analytics Without Consent</Link> &middot; <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Security &amp; Compliance</Link>
+            Learn more: <Link href="/blog/gdpr-analytics-without-consent" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GDPR Analytics Without Consent</Link> &middot; <Link href="/security" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Security &amp; Compliance</Link>
           </p>
         </div>
       </div>

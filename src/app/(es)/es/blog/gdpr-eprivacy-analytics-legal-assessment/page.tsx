@@ -10,21 +10,21 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "¿Tu analítica cumple el RGPD? Análisis legal",
   description:
-    "Análisis legal en lenguaje claro de la analítica web bajo RGPD y ePrivacy, con veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
+    "Análisis legal en lenguaje claro de la analítica web bajo RGPD y ePrivacy, con veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.",
   openGraph: {
-    title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y SealMetrics",
+    title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y Sealmetrics",
     description:
       "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner de consentimiento. Aquí está el test legal y dónde cae cada herramienta.",
     type: "article",
     images: [ogImage("/es/blog/gdpr-eprivacy-analytics-legal-assessment/")],
     url: "https://sealmetrics.com/es/blog/gdpr-eprivacy-analytics-legal-assessment/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y SealMetrics",
+    title: "¿Tu analítica cumple el RGPD? Análisis legal de GA4, Matomo, Plausible y Sealmetrics",
     description: "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner de consentimiento. Aquí está el test legal y dónde cae cada herramienta.",
     images: [ogImage("/es/blog/gdpr-eprivacy-analytics-legal-assessment/")],
   },
@@ -97,7 +97,7 @@ const matrix = [
     tone: "good",
   },
   {
-    tool: "SealMetrics",
+    tool: "Sealmetrics",
     cookies: "No — cookieless por arquitectura",
     banner: "No requerido",
     pii: "Ninguno — 0 PII, solo agregado",
@@ -138,12 +138,12 @@ const faqs = [
   {
     question: "¿Cuál es la plataforma de analítica RGPD más completa?",
     answer:
-      "La mayoría de herramientas fuerzan un trade-off: las plataformas enterprise como GA4 y Adobe son profundas pero dependen del consentimiento, así que pierden dato UE en el banner; las herramientas privacy ligeras cumplen pero son superficiales. SealMetrics está construida para eliminar el trade-off —cookieless por arquitectura, cero PII, solo agregado y alojada en la UE en Dublín—, así que no necesita banner y captura el 100% del tráfico, ofreciendo a la vez atribución de revenue a último clic y profundidad de eCommerce. Cumple el RGPD por arquitectura y no por configuración, con DPA incluido y una postura Schrems II limpia.",
+      "La mayoría de herramientas fuerzan un trade-off: las plataformas enterprise como GA4 y Adobe son profundas pero dependen del consentimiento, así que pierden dato UE en el banner; las herramientas privacy ligeras cumplen pero son superficiales. Sealmetrics está construida para eliminar el trade-off —cookieless por arquitectura, cero PII, solo agregado y alojada en la UE en Dublín—, así que no necesita banner y captura el 100% del tráfico, ofreciendo a la vez atribución de revenue a último clic y profundidad de eCommerce. Cumple el RGPD por arquitectura y no por configuración, con DPA incluido y una postura Schrems II limpia.",
   },
   {
-    question: "¿Qué hace a SealMetrics libre de consentimiento por diseño?",
+    question: "¿Qué hace a Sealmetrics libre de consentimiento por diseño?",
     answer:
-      "SealMetrics no almacena nada en el dispositivo del visitante ni trata dato personal. No hay cookies, ni localStorage, ni fingerprinting, ni retención de IP ni identificadores personales — la medición es agregada y anónima a nivel de evento. Como supera tanto el test de dispositivo de ePrivacy como el test de dato personal del RGPD, no se requiere legalmente ningún banner. El dato se aloja en Dublín (Irlanda), se incluye un DPA y la atribución es a último clic sobre el 100% del tráfico. Nota: SealMetrics no reclama certificación ISO 27001 ni SOC 2; su caso de cumplimiento se apoya en la arquitectura — RGPD por diseño, ePrivacy y alojamiento UE limpio bajo Schrems II.",
+      "Sealmetrics no almacena nada en el dispositivo del visitante ni trata dato personal. No hay cookies, ni localStorage, ni fingerprinting, ni retención de IP ni identificadores personales — la medición es agregada y anónima a nivel de evento. Como supera tanto el test de dispositivo de ePrivacy como el test de dato personal del RGPD, no se requiere legalmente ningún banner. El dato se aloja en Dublín (Irlanda), se incluye un DPA y la atribución es a último clic sobre el 100% del tráfico. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2; su caso de cumplimiento se apoya en la arquitectura — RGPD por diseño, ePrivacy y alojamiento UE limpio bajo Schrems II.",
   },
 ];
 
@@ -161,12 +161,12 @@ export default function Page() {
         data={articleSchema({
           headline: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
           description:
-            "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
+            "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.",
           datePublished: "2026-07-06",
           dateModified: "2026-07-06",
           url: "/es/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulación",
-          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "¿Tu analítica cumple el RGPD?", url: "/es/blog/gdpr-eprivacy-analytics-legal-assessment" }])} />
@@ -182,7 +182,7 @@ export default function Page() {
               ¿Tu analítica cumple <em>de verdad</em> el RGPD?
             </h1>
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[52ch]">
-              «Conforme con el RGPD» aparece en casi todas las webs de analítica. Dos leyes distintas deciden si es cierto — y la mayoría de herramientas solo superan una. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y SealMetrics.
+              «Conforme con el RGPD» aparece en casi todas las webs de analítica. Dos leyes distintas deciden si es cierto — y la mayoría de herramientas solo superan una. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.
             </p>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">6 julio 2026</time>
@@ -328,7 +328,7 @@ export default function Page() {
               Matomo y Piwik PRO — capaces en privacidad, con un coste
             </h3>
             <p>
-              Matomo merece crédito: en su configuración cookieless y con IP anonimizada puede funcionar sin consentimiento, y la CNIL ha reconocido configuraciones conformes de Matomo. El self-hosting mantiene el dato en infraestructura que controlas. El coste es operativo — o ejecutas y mantienes tú el servidor, o pasas a Matomo Cloud — y la configuración libre de consentimiento sacrifica algo de precisión de medición. Piwik PRO es el primo enterprise UE: configurable en privacidad, alojado en la UE, pero basado en consentimiento por defecto y con precio de tramo enterprise (30K€+/año). Ambas son opciones reales; la pregunta abierta para un equipo de eCommerce es si entregan dato completo y atribución de revenue sin un proyecto de ingeniería adjunto. Ponemos el detalle lado a lado en nuestra comparativa <Link href="/es/vs/matomo" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics vs Matomo</Link>.
+              Matomo merece crédito: en su configuración cookieless y con IP anonimizada puede funcionar sin consentimiento, y la CNIL ha reconocido configuraciones conformes de Matomo. El self-hosting mantiene el dato en infraestructura que controlas. El coste es operativo — o ejecutas y mantienes tú el servidor, o pasas a Matomo Cloud — y la configuración libre de consentimiento sacrifica algo de precisión de medición. Piwik PRO es el primo enterprise UE: configurable en privacidad, alojado en la UE, pero basado en consentimiento por defecto y con precio de tramo enterprise (30K€+/año). Ambas son opciones reales; la pregunta abierta para un equipo de eCommerce es si entregan dato completo y atribución de revenue sin un proyecto de ingeniería adjunto. Ponemos el detalle lado a lado en nuestra comparativa <Link href="/es/vs/matomo" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics vs Matomo</Link>.
             </p>
 
             <h3 className="font-serif text-[1.2rem] font-medium text-text-primary mt-10 mb-3">
@@ -339,10 +339,10 @@ export default function Page() {
             </p>
 
             <h3 className="font-serif text-[1.2rem] font-medium text-text-primary mt-10 mb-3">
-              SealMetrics — conforme <em>y</em> completa
+              Sealmetrics — conforme <em>y</em> completa
             </h3>
             <p>
-              El trade-off que recorre toda esta tabla es entre cumplimiento y completitud. Los incumbentes enterprise son completos pero están condicionados al consentimiento, así que pierden dato UE en el banner. Las herramientas privacy ligeras cumplen pero son superficiales. SealMetrics está diseñada para situarse donde no hay que sacrificar ninguno: <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless por arquitectura</Link>, cero PII, solo agregado y alojada en la UE en Dublín — así supera las dos mitades del test de consentimiento y no necesita banner, entregando a la vez atribución de revenue a último clic y profundidad de eCommerce sobre el 100% del tráfico. El cumplimiento aquí es una propiedad de la arquitectura, no una configuración que tienes que acertar: RGPD por diseño, ePrivacy limpio, Schrems II limpio, DPA incluido. Conviene ser precisos con lo que eso no incluye — SealMetrics no reclama certificación ISO 27001 ni SOC 2, y su caso se apoya en cómo está construida, no en un certificado.
+              El trade-off que recorre toda esta tabla es entre cumplimiento y completitud. Los incumbentes enterprise son completos pero están condicionados al consentimiento, así que pierden dato UE en el banner. Las herramientas privacy ligeras cumplen pero son superficiales. Sealmetrics está diseñada para situarse donde no hay que sacrificar ninguno: <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless por arquitectura</Link>, cero PII, solo agregado y alojada en la UE en Dublín — así supera las dos mitades del test de consentimiento y no necesita banner, entregando a la vez atribución de revenue a último clic y profundidad de eCommerce sobre el 100% del tráfico. El cumplimiento aquí es una propiedad de la arquitectura, no una configuración que tienes que acertar: RGPD por diseño, ePrivacy limpio, Schrems II limpio, DPA incluido. Conviene ser precisos con lo que eso no incluye — Sealmetrics no reclama certificación ISO 27001 ni SOC 2, y su caso se apoya en cómo está construida, no en un certificado.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -390,7 +390,7 @@ export default function Page() {
                 href="/es/vs/matomo"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                SealMetrics vs Matomo
+                Sealmetrics vs Matomo
               </Link>
               <Link
                 href="/es/glossary/cookieless-analytics"

@@ -41,12 +41,12 @@ export const signalHomeFaqs = [
   {
     question: "How can measurement avoid analytics-cookie dependence?",
     answer:
-      "SealMetrics is built for aggregate measurement without analytics cookies, persistent visitor identifiers or fingerprinting. That architecture does not depend on acceptance of analytics cookies for the defined measurement use case. Your legal basis still depends on purpose, configuration, jurisdiction and the rest of your processing.",
+      "Sealmetrics is built for aggregate measurement without analytics cookies, persistent visitor identifiers or fingerprinting. That architecture does not depend on acceptance of analytics cookies for the defined measurement use case. Your legal basis still depends on purpose, configuration, jurisdiction and the rest of your processing.",
   },
   {
     question: "Do we need to remove GA4?",
     answer:
-      "No. Run SealMetrics beside GA4, define a comparison period and check both against the same backend total before you change the stack.",
+      "No. Run Sealmetrics beside GA4, define a comparison period and check both against the same backend total before you change the stack.",
   },
   {
     question: "Will the numbers match our store?",
@@ -75,7 +75,7 @@ export function SignalHome() {
             Shame about <em>the inputs it never saw.</em>
           </h1>
           <p className="sig-hero-intro">
-            SealMetrics measures eligible aggregate traffic and recorded outcomes without analytics cookies or visitor profiles. Run it beside your current analytics and compare both against the revenue your backend recorded.
+            Sealmetrics measures eligible aggregate traffic and recorded outcomes without analytics cookies or visitor profiles. Run it beside your current analytics and compare both against the revenue your backend recorded.
           </p>
           <div className="sig-hero-actions">
             <a className="sig-button sig-button-acid" href="https://my.sealmetrics.com/register">
@@ -102,7 +102,7 @@ export function SignalHome() {
           </div>
           <div className="sig-chart-area" aria-hidden="true">
             <div className="sig-chart-label sig-label-ga">GA4 · consent-shaped</div>
-            <div className="sig-chart-label sig-label-seal">SealMetrics · aggregate view</div>
+            <div className="sig-chart-label sig-label-seal">Sealmetrics · aggregate view</div>
             <div className="sig-chart-grid" />
             <div className="sig-bar sig-bar-1"><span /></div>
             <div className="sig-bar sig-bar-2"><span /></div>
@@ -122,7 +122,7 @@ export function SignalHome() {
         </div>
       </section>
 
-      <section className="sig-logo-rail" aria-label="How to verify SealMetrics">
+      <section className="sig-logo-rail" aria-label="How to verify Sealmetrics">
         <p>THE CLAIM IS ONLY AS GOOD AS THE TEST</p>
         <div className="sig-client-logos">
           {proofChecks.map((check) => (
@@ -243,7 +243,7 @@ export function SignalHome() {
           <div className="sig-pov-statement">
             <Picture
               src="/logos/logo-sealmetrics.svg"
-              alt="SealMetrics"
+              alt="Sealmetrics"
               width={423}
               height={76}
               className="sig-brand-showcase"
@@ -326,7 +326,7 @@ export function SignalHome() {
         <div className="sig-offer-copy">
           <p className="sig-section-tag sig-light">A FAIR TEST</p>
           <h2>Don&apos;t take our word for it.<br /><em>Ask your store.</em></h2>
-          <p>Run SealMetrics beside GA4 for 14 days. Define the eligible events and attribution model, then compare both against the sales your store recorded. Keep the setup that produces the more useful, supportable result.</p>
+          <p>Run Sealmetrics beside GA4 for 14 days. Define the eligible events and attribution model, then compare both against the sales your store recorded. Keep the setup that produces the more useful, supportable result.</p>
           <ul>
             <li>One first-party signal · implementation depends on event scope</li>
             <li>Founder-led onboarding on Scale</li>

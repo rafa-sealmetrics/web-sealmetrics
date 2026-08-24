@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Modelos de pesos abiertos frente a LLM propietarios en la empresa: fijar versiones, evitar la dependencia del proveedor (lock-in) y poder cambiar de host sin cambiar el producto.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/open-weights-exit-strategy/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/open-weights-exit-strategy.png"],
   },
@@ -87,7 +87,7 @@ export default function OpenWeightsExitStrategyPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />

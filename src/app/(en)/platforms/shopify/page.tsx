@@ -16,23 +16,23 @@ const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "Shopify analytics without cookies — SealMetrics integration",
+  title: "Shopify analytics without cookies — Sealmetrics integration",
   description:
-    "Install SealMetrics on Shopify with the Pixel app and theme embed. Cookieless analytics, server-confirmed purchases and no analytics consent banner.",
+    "Install Sealmetrics on Shopify with the Pixel app and theme embed. Cookieless analytics, server-confirmed purchases and no analytics consent banner.",
   openGraph: {
-    title: "Shopify analytics without cookies — SealMetrics integration",
+    title: "Shopify analytics without cookies — Sealmetrics integration",
     description:
-      "The SealMetrics Pixel app plus a Theme App Extension, connected from your dashboard. Full e-commerce funnel coverage, purchases confirmed server-side via webhook.",
+      "The Sealmetrics Pixel app plus a Theme App Extension, connected from your dashboard. Full e-commerce funnel coverage, purchases confirmed server-side via webhook.",
     type: "article",
     images: [ogImage("/platforms/shopify/")],
     url: "https://sealmetrics.com/platforms/shopify/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Shopify analytics without cookies — SealMetrics integration",
+    title: "Shopify analytics without cookies — Sealmetrics integration",
     description: "Shopify Plus one-click install, Shopify Standard theme snippet, dataLayer event coverage, and order reconciliation patterns.",
     images: [ogImage("/platforms/shopify/")],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 };
 
 const events = [
-  { name: "pageview", maps: "Automatic", note: "Fires on every page load via the SealMetrics tracker." },
+  { name: "pageview", maps: "Automatic", note: "Fires on every page load via the Sealmetrics tracker." },
   { name: "view_product", maps: "view_item (GA4 equivalent)", note: "Product page load. Product name, SKU, price, currency, ID." },
   { name: "add_to_cart", maps: "add_to_cart", note: "Intercepts /cart/add requests. Product, price, quantity, currency." },
   { name: "initiate_checkout", maps: "begin_checkout", note: "Fires once per checkout attempt — cart submit, checkout button, or Buy Now." },
@@ -52,24 +52,24 @@ const events = [
 
 const faqs = [
   {
-    q: "Does SealMetrics work on Shopify Standard or only Plus?",
-    a: "Any Shopify plan that allows app embeds — there's no Plus/Standard distinction. You connect the SealMetrics Pixel app from your SealMetrics dashboard (OAuth), then enable the \"Sealmetrics Analytics\" app embed in your theme and paste your Account ID. Same install, same event coverage, on every plan.",
+    q: "Does Sealmetrics work on Shopify Standard or only Plus?",
+    a: "Any Shopify plan that allows app embeds — there's no Plus/Standard distinction. You connect the Sealmetrics Pixel app from your Sealmetrics dashboard (OAuth), then enable the \"Sealmetrics Analytics\" app embed in your theme and paste your Account ID. Same install, same event coverage, on every plan.",
   },
   {
     q: "How does it reconcile with Shopify Analytics?",
-    a: "Aggregate channel revenue reported by SealMetrics typically lands within 15–20% of Shopify Analytics totals — the gap is shipping, discounts, taxes and gift-card credits handled differently between the two systems. SealMetrics does not store the Shopify order ID externally, by design, so reconciliation is at the aggregate/channel level, not a row-by-row join.",
+    a: "Aggregate channel revenue reported by Sealmetrics typically lands within 15–20% of Shopify Analytics totals — the gap is shipping, discounts, taxes and gift-card credits handled differently between the two systems. Sealmetrics does not store the Shopify order ID externally, by design, so reconciliation is at the aggregate/channel level, not a row-by-row join.",
   },
   {
     q: "Does it replace Shopify's native analytics?",
-    a: "No. Shopify Analytics stays — it is the operational view for the merchandising team (which products are selling, which collections are converting, which discount codes are working). SealMetrics replaces the marketing-side analytics (which channels and campaigns drove the revenue). They answer different questions on overlapping data.",
+    a: "No. Shopify Analytics stays — it is the operational view for the merchandising team (which products are selling, which collections are converting, which discount codes are working). Sealmetrics replaces the marketing-side analytics (which channels and campaigns drove the revenue). They answer different questions on overlapping data.",
   },
   {
     q: "What happens with the existing Google Analytics on my Shopify store?",
-    a: "Run both in parallel. GA4 keeps firing for Google Ads conversion import and for any GTM container you already have. SealMetrics installs alongside without touching GA4. After 30 days, most teams move strategic decisions to SealMetrics and keep GA4 as the Google Ads conduit. The full migration plan lives on /use-cases/ga4-migration.",
+    a: "Run both in parallel. GA4 keeps firing for Google Ads conversion import and for any GTM container you already have. Sealmetrics installs alongside without touching GA4. After 30 days, most teams move strategic decisions to Sealmetrics and keep GA4 as the Google Ads conduit. The full migration plan lives on /use-cases/ga4-migration.",
   },
   {
     q: "Does it track the purchase on checkout.shopify.com (Shopify-hosted checkout)?",
-    a: "Yes. The purchase itself is confirmed server-side: when an order is placed, Shopify sends an orders/create webhook to SealMetrics with the revenue, currency and line items. No script needs to load on checkout.shopify.com at all — the browser-side loader only needs to see the funnel up to initiate_checkout.",
+    a: "Yes. The purchase itself is confirmed server-side: when an order is placed, Shopify sends an orders/create webhook to Sealmetrics with the revenue, currency and line items. No script needs to load on checkout.shopify.com at all — the browser-side loader only needs to see the funnel up to initiate_checkout.",
   },
   {
     q: "What about Shopify Markets and multi-currency?",
@@ -90,7 +90,7 @@ export default function ShopifyPlatformPage() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/platforms/shopify",
-          name: "Shopify analytics without cookies — SealMetrics integration",
+          name: "Shopify analytics without cookies — Sealmetrics integration",
         })}
       />
       <JsonLd
@@ -98,7 +98,7 @@ export default function ShopifyPlatformPage() {
           headline:
             "Shopify analytics without cookies — install, events, and order reconciliation",
           description:
-            "Install SealMetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full e-commerce funnel coverage, aggregate reconciliation within 15–20% of Shopify Analytics.",
+            "Install Sealmetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full e-commerce funnel coverage, aggregate reconciliation within 15–20% of Shopify Analytics.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/platforms/shopify",
@@ -106,7 +106,7 @@ export default function ShopifyPlatformPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -138,8 +138,8 @@ export default function ShopifyPlatformPage() {
       <TldrBlock
         answer={
           <>
-            SealMetrics connects to Shopify through the SealMetrics
-            Pixel app (OAuth, from your SealMetrics dashboard) and a
+            Sealmetrics connects to Shopify through the Sealmetrics
+            Pixel app (OAuth, from your Sealmetrics dashboard) and a
             Theme App Extension you enable as an app embed — the
             same install on any Shopify plan, no Plus/Standard split.
             The tag is cookieless and first-party (no consent banner
@@ -150,7 +150,7 @@ export default function ShopifyPlatformPage() {
             browser. Aggregate channel revenue reconciles with
             Shopify Analytics totals within 15–20% (the gap is
             taxes, discounts and gift cards handled differently
-            between systems); SealMetrics does not store the
+            between systems); Sealmetrics does not store the
             Shopify order ID externally, so reconciliation is at
             the aggregate level, not a row-by-row join.
           </>
@@ -178,9 +178,9 @@ export default function ShopifyPlatformPage() {
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Step 1 — Connect the app</span>
               </div>
               <ol className="mt-3 list-decimal pl-5 space-y-2 text-[15px] leading-[1.7] text-ink">
-                <li>In the SealMetrics dashboard, go to Settings → Integrations → Shopify.</li>
+                <li>In the Sealmetrics dashboard, go to Settings → Integrations → Shopify.</li>
                 <li>Select the site you want to connect and enter your Shopify domain.</li>
-                <li>Click <strong>Connect Shopify</strong> and authorize the SealMetrics Pixel app — this registers the conversion webhook automatically.</li>
+                <li>Click <strong>Connect Shopify</strong> and authorize the Sealmetrics Pixel app — this registers the conversion webhook automatically.</li>
               </ol>
             </div>
 
@@ -195,7 +195,7 @@ export default function ShopifyPlatformPage() {
               </ol>
 
               <p className="mt-4 text-[14.5px] leading-[1.65] text-ink-soft">
-                The embed loads the SealMetrics loader by account:
+                The embed loads the Sealmetrics loader by account:
               </p>
 
               <pre className="mt-5 p-5 bg-ink text-warm-50 rounded-xl text-[12.5px] leading-[1.6] overflow-x-auto font-mono">
@@ -203,7 +203,7 @@ export default function ShopifyPlatformPage() {
               </pre>
 
               <p className="mt-4 text-[14.5px] leading-[1.65] text-ink-soft">
-                The loader injects the tracker, writes SealMetrics
+                The loader injects the tracker, writes Sealmetrics
                 session attributes to the cart, and sets up the
                 microconversion listeners below. No shopper-facing
                 UI is rendered — the tracker is invisible by design.
@@ -227,7 +227,7 @@ export default function ShopifyPlatformPage() {
             <table className="w-full text-[14.5px] border-collapse">
               <thead>
                 <tr className="border-b border-warm-200 text-left">
-                  <th className="py-3 pr-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">SealMetrics event</th>
+                  <th className="py-3 pr-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">Sealmetrics event</th>
                   <th className="py-3 px-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">Maps to</th>
                   <th className="py-3 pl-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">What it carries</th>
                 </tr>
@@ -262,7 +262,7 @@ export default function ShopifyPlatformPage() {
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
             The number that matters in a CFO review is whether the
             marketing dashboard ties to the Shopify backend.
-            SealMetrics is built to reconcile at two levels:
+            Sealmetrics is built to reconcile at two levels:
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -270,7 +270,7 @@ export default function ShopifyPlatformPage() {
               <h3 className="text-[16px] font-semibold text-ink mb-3">Aggregate level</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
                 Weekly and monthly aggregate revenue reported by
-                SealMetrics typically lands within{" "}
+                Sealmetrics typically lands within{" "}
                 <strong>15–20%</strong> of Shopify Analytics. The
                 residual gap is shipping discounts, taxes and
                 gift-card credits handled differently between the two
@@ -281,7 +281,7 @@ export default function ShopifyPlatformPage() {
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
               <h3 className="text-[16px] font-semibold text-ink mb-3">Why not order-by-order</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                SealMetrics does not store the Shopify order ID
+                Sealmetrics does not store the Shopify order ID
                 externally — that&rsquo;s deliberate, part of the
                 same privacy-first design that keeps the analytics
                 layer cookieless. Reconciliation happens at the
@@ -329,7 +329,7 @@ export default function ShopifyPlatformPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Use case</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">GA4 migration — 30-day parallel plan</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                How to run SealMetrics alongside your existing GA4 install without breaking Google Ads.
+                How to run Sealmetrics alongside your existing GA4 install without breaking Google Ads.
               </p>
             </Link>
 

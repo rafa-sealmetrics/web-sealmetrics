@@ -378,7 +378,7 @@ export function DemoForm() {
               >
                 Privacy Notice
               </a>{" "}
-              and consent to SealMetrics processing my data to respond to my request.
+              and consent to Sealmetrics processing my data to respond to my request.
             </label>
           </div>
 

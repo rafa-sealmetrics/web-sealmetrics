@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "One malformed chart field took down a whole answer. What we found in 1 of 162 benchmark queries, how we fixed it in two layers, and the rules it taught us about LLM structured output.",
     type: "article",
     url: "https://sealmetrics.com/blog/our-ai-got-it-wrong-in-production/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/our-ai-got-it-wrong-in-production.png"],
   },
@@ -88,7 +88,7 @@ export default function OurAiGotItWrongInProductionPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -100,9 +100,9 @@ export default function OurAiGotItWrongInProductionPage() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "SealMetrics detected a production structured-output failure as 1 transport error in 162 live benchmark queries: a model emitted a chart whose y-axis key was a list of two series instead of a string, strict schema validation rejected it, and the entire chat response returned HTTP 500, discarding an already-generated text answer.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "Sealmetrics detected a production structured-output failure as 1 transport error in 162 live benchmark queries: a model emitted a chart whose y-axis key was a list of two series instead of a string, strict schema validation rejected it, and the entire chat response returned HTTP 500, discarding an already-generated text answer.",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}

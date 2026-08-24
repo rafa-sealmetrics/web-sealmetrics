@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
     url: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "Is consentless analytics legal under GDPR?",
     answer:
-      "When correctly implemented, yes. GDPR regulates processing of personal data; if no personal data is collected and no identifier is stored or read on the device, the architecture meets GDPR by design. This is a question for a DPO to confirm against the specific implementation — SealMetrics ships a DPA and TPSR package for this review.",
+      "When correctly implemented, yes. GDPR regulates processing of personal data; if no personal data is collected and no identifier is stored or read on the device, the architecture meets GDPR by design. This is a question for a DPO to confirm against the specific implementation — Sealmetrics ships a DPA and TPSR package for this review.",
   },
   {
     question: "Can I use consentless analytics alongside advertising pixels?",
@@ -78,7 +78,7 @@ export default function Page() {
           dateModified: "2026-05-28",
           url: "/blog/consentless-analytics-for-dtc",
           category: "eCommerce",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consentless Analytics for DTC", url: "/blog/consentless-analytics-for-dtc" }])} />
@@ -165,7 +165,7 @@ export default function Page() {
               <li>Does the tool read anything from the device beyond standard HTTP headers? (Must be no.)</li>
               <li>Does the tool collect IP addresses, device IDs, session IDs or any identifier that could link pageviews together? (Must be no.)</li>
               <li>Where is data processed and stored? (Should be EU for European DTC brands.)</li>
-              <li>Is there a DPA signed with the vendor? (Should be yes — SealMetrics ships one by default.)</li>
+              <li>Is there a DPA signed with the vendor? (Should be yes — Sealmetrics ships one by default.)</li>
               <li>Is a TPSR (Third-Party Security Review) package available? (Should be yes for enterprise procurement.)</li>
             </ol>
 
@@ -215,7 +215,7 @@ export default function Page() {
                 <p className="text-[0.8rem] text-text-tertiary mt-1">What GDPR actually requires of web analytics.</p>
               </li>
               <li>
-                <Link href="/for/ecommerce" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics for eCommerce</Link>
+                <Link href="/for/ecommerce" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics for eCommerce</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Vertical page with DTC-specific pains and outcomes.</p>
               </li>
             </ul>

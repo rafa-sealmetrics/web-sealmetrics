@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "When does your analytics tool stop counting and start estimating? We compared sampling thresholds across 10 platforms.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-tools-data-sampling/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/analytics-tools-data-sampling.png"],
   },
@@ -36,7 +36,7 @@ export default function DataSamplingComparedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Data Sampling Thresholds Compared" }]} />
-      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", dateModified: "2026-05-04", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", dateModified: "2026-05-04", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Data Sampling Thresholds Compared", url: "/blog/analytics-tools-data-sampling" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -62,7 +62,7 @@ export default function DataSamplingComparedPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 (free) starts sampling at ~10M events per query in Exploration reports; avoiding it requires upgrading to GA360 at $150K+/year.</li>
             <li>A 10% sample introduces approximately +/-3% margin of error — at $10M revenue, that represents a $200K uncertainty in business decisions.</li>
-            <li>Zero-sampling tools split into two categories: lightweight privacy tools for simple reporting, and SealMetrics for enterprise revenue attribution.</li>
+            <li>Zero-sampling tools split into two categories: lightweight privacy tools for simple reporting, and Sealmetrics for enterprise revenue attribution.</li>
             <li>Sampling functions as a pricing lever in enterprise tools: companies must pay more to see their actual data instead of estimates.</li>
           </ul>
         </div>
@@ -123,7 +123,7 @@ export default function DataSamplingComparedPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 pr-4 font-mono text-green-muted">Never</td>
                   <td className="py-2.5 pr-4 text-text-tertiary">&mdash;</td>
                   <td className="py-2.5 pr-4 text-center text-text-tertiary">&mdash;</td>
@@ -204,7 +204,7 @@ export default function DataSamplingComparedPage() {
           </p>
 
           <CommercialModule
-            hook="The SealMetrics row reads Never — no sampling by design, at any volume. Check whether your own GA4 reports are already estimates."
+            hook="The Sealmetrics row reads Never — no sampling by design, at any volume. Check whether your own GA4 reports are already estimates."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -287,15 +287,15 @@ export default function DataSamplingComparedPage() {
 
           <p>
             Some tools simply do not sample. They store every event and query the
-            full dataset every time. SealMetrics and privacy-first lightweight
+            full dataset every time. Sealmetrics and privacy-first lightweight
             tools such as Plausible, Fathom and Simple Analytics share that
             zero-sampling property, but they serve different buyers. When you see
             a number, it is a count — not an extrapolation.
           </p>
 
           <p>
-            The difference between SealMetrics and the privacy-lightweight
-            alternatives is scope. SealMetrics combines zero sampling with
+            The difference between Sealmetrics and the privacy-lightweight
+            alternatives is scope. Sealmetrics combines zero sampling with
             enterprise features:{" "}
             <Link
               href="/glossary/multi-touch-attribution"
@@ -369,7 +369,7 @@ export default function DataSamplingComparedPage() {
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              SealMetrics captures 100% of your data
+              Sealmetrics captures 100% of your data
             </Link>{" "}
             without sampling, or{" "}
             <Link

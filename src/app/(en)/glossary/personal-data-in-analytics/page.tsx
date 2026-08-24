@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Personal Data in Analytics — SealMetrics Glossary",
+  title: "Personal Data in Analytics — Sealmetrics Glossary",
   description:
     "GDPR applies only to personal data. When analytics data is personal, when it is genuinely anonymous, and why ePrivacy still applies either way.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "The Article 4(1) test, the Recital 26 anonymity bar, and the ePrivacy trap that catches analytics collecting no personal data at all.",
     type: "article",
     url: "https://sealmetrics.com/glossary/personal-data-in-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/personal-data-in-analytics")],
   },
@@ -260,7 +260,7 @@ export default function PersonalDataInAnalyticsPage() {
             </p>
           </div>
 
-          <CommercialModule hook="SealMetrics stores no personal data — not pseudonymised, none. See what analytics looks like when there is nothing to redact." />
+          <CommercialModule hook="Sealmetrics stores no personal data — not pseudonymised, none. See what analytics looks like when there is nothing to redact." />
 
           <RelatedGlossaryTerms slug="personal-data-in-analytics" />
         </div>

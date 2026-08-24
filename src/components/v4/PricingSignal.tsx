@@ -68,7 +68,7 @@ const copy = {
     policyTag:"How the plan adapts", policyTitle:<>No surprise line item<br /><em>after a traffic spike.</em></>, policyBody:"Collection continues during an overage. The plan changes only when the higher volume is sustained under the published policy.",
     policy:[["80%","Usage notice","An informational email before the allowance is reached."],["100%","Dashboard signal","The account shows that the monthly allowance has been reached."],["2 months","Sustained overage","Growth can move to Scale at the next cycle after notice."],["Annual","Contract protection","Mid-year growth is reviewed at renewal, not invoiced as a variable event charge."]],
     faqTag:"Pricing questions", faqTitle:<>Direct answers.<br /><em>No fine print.</em></>, faqBody:"The commercial conditions buyers usually need before approving a plan.",
-    finalTag:"Choose from evidence", finalTitle:<>See your own data first.<br /><em>Then choose the plan.</em></>, finalBody:"Run the current stack and SealMetrics together, estimate the real human-event volume and select the operating envelope from observed traffic.", finalPrimary:"Book a pricing review", finalSecondary:"Review the product",
+    finalTag:"Choose from evidence", finalTitle:<>See your own data first.<br /><em>Then choose the plan.</em></>, finalBody:"Run the current stack and Sealmetrics together, estimate the real human-event volume and select the operating envelope from observed traffic.", finalPrimary:"Book a pricing review", finalSecondary:"Review the product",
   },
   es: {
     home: "Inicio", breadcrumb: "Precios", eyebrow: "Precios · planes fijos · límites declarados",
@@ -96,7 +96,7 @@ const copy = {
     policyTag:"Cómo se adapta el plan", policyTitle:<>Sin una línea sorpresa<br /><em>tras un pico de tráfico.</em></>, policyBody:"La captura continúa durante un exceso. El plan sólo cambia cuando el volumen superior se mantiene bajo la política publicada.",
     policy:[["80%","Aviso de uso","Un email informativo antes de alcanzar el límite."],["100%","Señal en dashboard","La cuenta indica que se ha alcanzado el límite mensual."],["2 meses","Exceso sostenido","Growth puede pasar a Scale en el siguiente ciclo tras aviso."],["Anual","Protección de contrato","El crecimiento a mitad de año se revisa al renovar, no se factura como evento variable."]],
     faqTag:"Preguntas de precio", faqTitle:<>Respuestas directas.<br /><em>Sin letra pequeña.</em></>, faqBody:"Las condiciones comerciales que suelen necesitarse antes de aprobar un plan.",
-    finalTag:"Elige desde la evidencia", finalTitle:<>Primero ve tus datos.<br /><em>Después elige plan.</em></>, finalBody:"Ejecuta el stack actual y SealMetrics juntos, estima el volumen real de eventos humanos y elige el entorno operativo desde tráfico observado.", finalPrimary:"Reserva una revisión de precio", finalSecondary:"Revisa el producto",
+    finalTag:"Elige desde la evidencia", finalTitle:<>Primero ve tus datos.<br /><em>Después elige plan.</em></>, finalBody:"Ejecuta el stack actual y Sealmetrics juntos, estima el volumen real de eventos humanos y elige el entorno operativo desde tráfico observado.", finalPrimary:"Reserva una revisión de precio", finalSecondary:"Revisa el producto",
   },
 } as const;
 

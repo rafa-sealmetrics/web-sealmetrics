@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const comparisons = [
-  { href: "/vs-ga4/", label: "SealMetrics vs GA4", blurb: "Data capture, GDPR, pricing" },
-  { href: "/vs/ga360/", label: "SealMetrics vs GA360", blurb: "Enterprise analytics compared" },
-  { href: "/vs/adobe-analytics/", label: "SealMetrics vs Adobe Analytics", blurb: "Legacy enterprise vs cookieless" },
-  { href: "/vs/piwik-pro/", label: "SealMetrics vs Piwik PRO", blurb: "EU privacy analytics compared" },
-  { href: "/vs/matomo/", label: "SealMetrics vs Matomo", blurb: "Open-source meets cookieless" },
+  { href: "/vs-ga4/", label: "Sealmetrics vs GA4", blurb: "Data capture, GDPR, pricing" },
+  { href: "/vs/ga360/", label: "Sealmetrics vs GA360", blurb: "Enterprise analytics compared" },
+  { href: "/vs/adobe-analytics/", label: "Sealmetrics vs Adobe Analytics", blurb: "Legacy enterprise vs cookieless" },
+  { href: "/vs/piwik-pro/", label: "Sealmetrics vs Piwik PRO", blurb: "EU privacy analytics compared" },
+  { href: "/vs/matomo/", label: "Sealmetrics vs Matomo", blurb: "Open-source meets cookieless" },
   { href: "/alternatives/google-analytics/", label: "Google Analytics alternatives", blurb: "Full category overview" },
 ];
 

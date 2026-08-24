@@ -8,7 +8,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "¿Qué es la atribución de ingresos? — Glosario SealMetrics",
+  title: "¿Qué es la atribución de ingresos? — Glosario Sealmetrics",
   description:
     "La atribución de ingresos asigna cada conversión a la fuente que la generó. Sobre datos completos last-click, es la métrica que más cuadra con el CRM.",
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Asigna cada conversión a su fuente. Sobre datos completos last-click es la métrica que más cuadra con el CRM.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/revenue-attribution/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: [ogImage("/es/glossary/revenue-attribution/")],
   },
@@ -48,7 +48,7 @@ export default function Page() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              La asignación de cada conversión — pedido, reserva, lead — a la fuente de tráfico que la generó. SealMetrics implementa atribución last-click sobre datos completos: la fuente observada en la pageview donde se dispara la conversión recibe el crédito; los totales se acumulan por canal.
+              La asignación de cada conversión — pedido, reserva, lead — a la fuente de tráfico que la generó. Sealmetrics implementa atribución last-click sobre datos completos: la fuente observada en la pageview donde se dispara la conversión recibe el crédito; los totales se acumulan por canal.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Page() {
           <p>El modelo de atribución que importa no es el más sofisticado, sino el que se calcula sobre el dato más cercano a la realidad. Last-click sobre el 100% de las conversiones observadas reconcilia con el CRM dentro del 15-20% — significativamente mejor que un modelo data-driven calculado sobre el fragmento de tráfico que aceptó cookies.</p>
           <p>La razón: los modelos avanzados (linear, time-decay, position-based, data-driven) aplicados sobre una muestra sesgada producen un sesgo amplificado, no un dato refinado.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que SealMetrics atribuye</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que Sealmetrics atribuye</h2>
           <ul className="space-y-2 pl-0 list-none">
             {[
               "Canal de marketing (orgánico, paid search, paid social, email, direct, referral, display)",
@@ -73,7 +73,7 @@ export default function Page() {
           </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que no atribuye</h2>
-          <p>SealMetrics no enlaza touchpoints de visitantes individuales entre sesiones — no hay un identificador persistente. Por eso no soporta <Link href="/es/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución multi-touch</Link>, ni journeys por usuario, ni reparto de crédito modelado entre touchpoints. El trade-off es deliberado: a cambio mide el 100% del tráfico, sin consentimiento ni dependencia de cookies.</p>
+          <p>Sealmetrics no enlaza touchpoints de visitantes individuales entre sesiones — no hay un identificador persistente. Por eso no soporta <Link href="/es/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución multi-touch</Link>, ni journeys por usuario, ni reparto de crédito modelado entre touchpoints. El trade-off es deliberado: a cambio mide el 100% del tráfico, sin consentimiento ni dependencia de cookies.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo se reconcilia con tu CRM</h2>
           <p>Los totales agregados por canal cuadran con los pedidos exportados de Shopify/WooCommerce/Magento o con las reservas de un PMS hotelero dentro del 15-20% — el rango residual procede de devoluciones, cancelaciones y pedidos que entran fuera del flujo web (call center, B2B, etc.). Es el grado de cuadre que tu CFO acepta como base para decisiones de presupuesto.</p>
@@ -83,7 +83,7 @@ export default function Page() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto SealMetrics</Link>
+            Más: <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Producto Sealmetrics</Link>
           </p>
         </div>
       </div>

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Endpoint real, verdad de referencia en vivo, evaluadores deterministas, trampas adversarias, intervalos de confianza — y la tanda descartada que publicamos igualmente. Una metodología que otros equipos pueden copiar.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/how-we-benchmark-our-own-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/how-we-benchmark-our-own-ai.png"],
   },
@@ -87,7 +87,7 @@ export default function HowWeBenchmarkOurOwnAiPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -99,9 +99,9 @@ export default function HowWeBenchmarkOurOwnAiPageEs() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "El benchmark interno de LLM de SealMetrics ejecutó 18 escenarios en español e inglés con tres pasadas y tres modelos — 162 consultas reales contra el endpoint de producción del asistente — con la verdad de referencia calculada en vivo desde la base de datos de analítica; gpt-oss-120b superó 18 de 18 trampas adversarias (intervalo de confianza de Wilson al 95% de 0,82-1,00) frente a 9 de 18 de mistral-small-3.2 (0,29-0,71) y 15 de 18 de qwen3-235b-a22b-2507 (0,61-0,94).",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "El benchmark interno de LLM de Sealmetrics ejecutó 18 escenarios en español e inglés con tres pasadas y tres modelos — 162 consultas reales contra el endpoint de producción del asistente — con la verdad de referencia calculada en vivo desde la base de datos de analítica; gpt-oss-120b superó 18 de 18 trampas adversarias (intervalo de confianza de Wilson al 95% de 0,82-1,00) frente a 9 de 18 de mistral-small-3.2 (0,29-0,71) y 15 de 18 de qwen3-235b-a22b-2507 (0,61-0,94).",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -149,7 +149,7 @@ export default function HowWeBenchmarkOurOwnAiPageEs() {
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">
-            Evaluamos el modelo que hay dentro de SealMetrics sobre el producto
+            Evaluamos el modelo que hay dentro de Sealmetrics sobre el producto
             que entregamos, no sobre rankings públicos: endpoint real,
             herramientas reales, datos reales y con las respuestas correctas
             calculadas desde la base de datos antes de preguntarle nada al

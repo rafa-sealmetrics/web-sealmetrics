@@ -96,7 +96,7 @@ export function PlanIncludesV3() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Every paid plan from Growth up includes the complete SealMetrics platform. The only differences between plans are event volume, governance and support — never features.
+            Every paid plan from Growth up includes the complete Sealmetrics platform. The only differences between plans are event volume, governance and support — never features.
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export function TrafficCountingV3() {
           style={{ background: "rgba(45,139,109,0.04)", borderLeft: "3px solid #2D8B6D" }}
         >
           <b className="text-ink font-semibold block mb-2">Important on estimating your plan</b>
-          SealMetrics captures 100% of traffic — including visitors who reject cookies on other tools. Your event count in SealMetrics will be significantly higher than what GA4 shows. When choosing your plan, estimate your real traffic at <b className="text-ink">2–3× what GA4 reports</b>. We&apos;ll flag this proactively on your first week.
+          Sealmetrics captures 100% of traffic — including visitors who reject cookies on other tools. Your event count in Sealmetrics will be significantly higher than what GA4 shows. When choosing your plan, estimate your real traffic at <b className="text-ink">2–3× what GA4 reports</b>. We&apos;ll flag this proactively on your first week.
         </div>
       </div>
     </section>

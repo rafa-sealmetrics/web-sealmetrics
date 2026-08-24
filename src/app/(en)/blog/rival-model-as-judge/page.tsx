@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       "Self-preference bias is real. The fix is not a better prompt — it is a judge with an incentive to mark you down, and deterministic graders doing the objective work.",
     type: "article",
     url: "https://sealmetrics.com/blog/rival-model-as-judge/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/rival-model-as-judge.png"],
   },
@@ -89,7 +89,7 @@ export default function RivalModelAsJudgePage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -114,8 +114,8 @@ export default function RivalModelAsJudgePage() {
       <JsonLd
         data={statisticClaimSchema({
           text: "In a 162-query internal benchmark, a deliberately adversarial judge — the direct rival of the selected model, run at temperature zero — scored the selected model gpt-oss-120b at approximately 4.9 out of 5.0 on usefulness, clarity and formal precision.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "A CMP displays cookie consent banners and manages user preferences. 55% of EU visitors reject.",
     type: "article",
     url: "https://sealmetrics.com/glossary/consent-management-platform/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/consent-management-platform/")],
   },
@@ -61,7 +61,7 @@ export default function ConsentManagementPlatformPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The alternative</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not require a CMP for its operation because it does not use cookies or collect personal data. This eliminates the consent rejection data loss vector entirely while maintaining full <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link>.</p>
         </div>
-        <CommercialModule hook="A CMP decides what your analytics sees. SealMetrics stores nothing on the device, so nothing needs asking — see your numbers without a consent gate in front." />
+        <CommercialModule hook="A CMP decides what your analytics sees. Sealmetrics stores nothing on the device, so nothing needs asking — see your numbers without a consent gate in front." />
 
         <RelatedGlossaryTerms slug="consent-management-platform" />
         <div className="mt-10 pt-6 border-t border-warm-100">

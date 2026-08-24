@@ -72,7 +72,7 @@ export function BlogIndexSignal({
           {t.languageNote && <p className="sig-blog-language">{t.languageNote}</p>}
         </div>
         <aside className="sig-blog-desk" aria-label={locale === "es" ? "Estado editorial" : "Editorial status"}>
-          <div className="sig-blog-module-top"><span>SealMetrics / editorial desk</span><span>Live</span></div>
+          <div className="sig-blog-module-top"><span>Sealmetrics / editorial desk</span><span>Live</span></div>
           <dl>
             <div><dt>{t.latest}</dt><dd>{latestDate ? formatDate(latestDate) : "—"}</dd></div>
             <div><dt>{t.articles}</dt><dd>{posts.length}</dd></div>

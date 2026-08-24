@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/es/blog/gdpr-analytics-spain-faq/")],
     url: "https://sealmetrics.com/es/blog/gdpr-analytics-spain-faq/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "¿Necesita mi tienda online un banner de cookies para la analítica?",
     answer:
-      "No — si la herramienta de analítica no coloca cookies y no trata datos personales. El banner solo es legalmente obligatorio cuando la medición almacena algo en el dispositivo (una cookie, localStorage) o trata datos personales como la dirección IP. La guía de cookies de la AEPD exime la medición de audiencia anónima y agregada sin seguimiento entre sitios. Con analítica cookieless como SealMetrics no se requiere banner para medir; si además usas cookies de marketing, esas siguen necesitando su propio consentimiento.",
+      "No — si la herramienta de analítica no coloca cookies y no trata datos personales. El banner solo es legalmente obligatorio cuando la medición almacena algo en el dispositivo (una cookie, localStorage) o trata datos personales como la dirección IP. La guía de cookies de la AEPD exime la medición de audiencia anónima y agregada sin seguimiento entre sitios. Con analítica cookieless como Sealmetrics no se requiere banner para medir; si además usas cookies de marketing, esas siguen necesitando su propio consentimiento.",
   },
   {
     question: "¿Qué dice la AEPD sobre las cookies de analítica?",
@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "¿Qué analítica RGPD puede usar un pequeño negocio?",
     answer:
-      "Depende de lo que decidas con el dato. Para una web pequeña sin inversión publicitaria, una herramienta ligera privacy-first (Plausible, Fathom, Umami — desde unos 9 €/mes) cumple y es suficiente. Cuando inviertes en campañas y asignas presupuesto con el dato — típicamente a partir de unos miles de euros al mes en ads — el 40-60% de tráfico que pierde una herramienta con banner cuesta más que la propia analítica: ahí una plataforma cookieless con atribución de revenue como SealMetrics (desde 599 €/mes) se paga sola.",
+      "Depende de lo que decidas con el dato. Para una web pequeña sin inversión publicitaria, una herramienta ligera privacy-first (Plausible, Fathom, Umami — desde unos 9 €/mes) cumple y es suficiente. Cuando inviertes en campañas y asignas presupuesto con el dato — típicamente a partir de unos miles de euros al mes en ads — el 40-60% de tráfico que pierde una herramienta con banner cuesta más que la propia analítica: ahí una plataforma cookieless con atribución de revenue como Sealmetrics (desde 599 €/mes) se paga sola.",
   },
   {
     question: "¿Puedo medir conversiones y campañas sin cookies?",
@@ -68,7 +68,7 @@ const faqs = [
   {
     question: "¿Cuánto tráfico pierdo si mi analítica depende de un banner?",
     answer:
-      "Entre el 35% y el 55% de los visitantes UE rechaza el banner, los ad blockers afectan a más del 40% de los usuarios y los navegadores restringen las cookies — el efecto combinado deja a GA4 mostrando en torno al 13% del tráfico UE real. Para una tienda online eso significa atribución de campañas y tasas de conversión calculadas sobre una fracción de la realidad. Puedes cuantificar tu caso con la calculadora de pérdida de datos de SealMetrics.",
+      "Entre el 35% y el 55% de los visitantes UE rechaza el banner, los ad blockers afectan a más del 40% de los usuarios y los navegadores restringen las cookies — el efecto combinado deja a GA4 mostrando en torno al 13% del tráfico UE real. Para una tienda online eso significa atribución de campañas y tasas de conversión calculadas sobre una fracción de la realidad. Puedes cuantificar tu caso con la calculadora de pérdida de datos de Sealmetrics.",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function GdprAnalyticsSpainFaqEsPage() {
           dateModified: "2026-07-07",
           url: "/es/blog/gdpr-analytics-spain-faq",
           category: "Regulación",
-          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica RGPD en España: FAQ", url: "/es/blog/gdpr-analytics-spain-faq" }])} />

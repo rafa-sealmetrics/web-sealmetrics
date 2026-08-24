@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "¿IA gestionada solo en la UE o tu propia clave de OpenAI, Anthropic, Gemini o DeepSeek? Qué te cuesta realmente cada opción y cómo elegir.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/seal-ai-vs-bring-your-own-key/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/seal-ai-vs-bring-your-own-key.png"],
   },
@@ -64,7 +64,7 @@ const FAQ = [
   {
     question: "¿Se contabiliza mi consumo de IA si uso mi propia clave?",
     answer:
-      "No. SealMetrics no contabiliza el consumo con clave propia: te factura tu proveedor, en sus condiciones y a sus precios. El uso de Seal AI, en cambio, va contra la cuota de tokens de tu plan, con packs de tokens adicionales sin caducidad para las organizaciones que necesiten más margen.",
+      "No. Sealmetrics no contabiliza el consumo con clave propia: te factura tu proveedor, en sus condiciones y a sus precios. El uso de Seal AI, en cambio, va contra la cuota de tokens de tu plan, con packs de tokens adicionales sin caducidad para las organizaciones que necesiten más margen.",
   },
   {
     question: "¿Puedo cambiar de Seal AI a mi propia clave más adelante?",
@@ -102,7 +102,7 @@ const COMPARISON = [
   {
     aspect: "Medición de consumo",
     seal: "Contadores de tokens por organización, solo para la cuota",
-    byok: "SealMetrics no lo contabiliza",
+    byok: "Sealmetrics no lo contabiliza",
   },
   {
     aspect: "Análisis de transferencia",
@@ -125,7 +125,7 @@ export default function SealAiVsByokPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -231,7 +231,7 @@ export default function SealAiVsByokPageEs() {
               Seal AI: la opción por defecto, y por qué lo es
             </h2>
             <p>
-              Seal AI es la capa de IA privada dentro de SealMetrics. Es lo que mueve
+              Seal AI es la capa de IA privada dentro de Sealmetrics. Es lo que mueve
               el asistente en lenguaje natural y los insights automáticos, y no hay
               nada que configurar: ni clave de API, ni cuenta con un proveedor de IA,
               ni un paso de onboarding en el que pegues un secreto en una pantalla de
@@ -273,7 +273,7 @@ export default function SealAiVsByokPageEs() {
             </ul>
             <p>
               Hay una propiedad más que conviene nombrar, porque está aguas arriba de
-              todo lo anterior. SealMetrics es analítica sin consentimiento: no recoge
+              todo lo anterior. Sealmetrics es analítica sin consentimiento: no recoge
               direcciones IP, ni cookies, ni fingerprints, ni identificadores de
               visitante. No hay ningún identificador personal en el conjunto de datos
               que enviar a un modelo, para empezar. El prompt nace limpio.
@@ -306,7 +306,7 @@ export default function SealAiVsByokPageEs() {
               </li>
               <li>
                 <strong>El coste.</strong> Te factura directamente el proveedor. El
-                consumo con clave propia no lo contabiliza SealMetrics, lo que significa
+                consumo con clave propia no lo contabiliza Sealmetrics, lo que significa
                 que no hay techo de cuota por nuestra parte, pero tampoco visibilidad.
               </li>
               <li>

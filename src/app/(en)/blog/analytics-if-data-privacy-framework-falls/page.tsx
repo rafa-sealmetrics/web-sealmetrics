@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "The DPF's legal status right now, the Safe Harbor and Privacy Shield precedent, and which analytics stacks are structurally immune to the outcome.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-if-data-privacy-framework-falls/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/analytics-if-data-privacy-framework-falls.png"],
   },
@@ -87,7 +87,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />

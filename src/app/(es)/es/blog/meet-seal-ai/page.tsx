@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que nunca sale de la UE y que no retiene nada.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/meet-seal-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
   },
@@ -49,7 +49,7 @@ const FAQ = [
   {
     question: "¿Qué es Seal AI?",
     answer:
-      "Seal AI es la capa de IA privada integrada en SealMetrics. Alimenta un asistente en lenguaje natural que responde preguntas sobre tu analítica consultando tus datos, y genera insights automáticos. La inferencia se ejecuta únicamente en infraestructura europea (Scaleway, París), no conserva el contenido de los prompts y no entrena ningún modelo con tus datos. No requiere configuración: no hay claves de API que crear ni cuenta con un proveedor de IA.",
+      "Seal AI es la capa de IA privada integrada en Sealmetrics. Alimenta un asistente en lenguaje natural que responde preguntas sobre tu analítica consultando tus datos, y genera insights automáticos. La inferencia se ejecuta únicamente en infraestructura europea (Scaleway, París), no conserva el contenido de los prompts y no entrena ningún modelo con tus datos. No requiere configuración: no hay claves de API que crear ni cuenta con un proveedor de IA.",
   },
   {
     question: "¿Seal AI envía mis datos a Estados Unidos?",
@@ -59,12 +59,12 @@ const FAQ = [
   {
     question: "¿Seal AI entrena sus modelos con mis datos de analítica?",
     answer:
-      "No. El modelo que hay debajo (gpt-oss-120b) es de pesos abiertos y estático: no aprende de las peticiones. Ni Scaleway, ni SealMetrics, ni el creador del modelo entrenan con tus datos. SealMetrics solo guarda contadores de tokens para cuota y facturación; el contenido de los prompts y de las respuestas nunca se persiste.",
+      "No. El modelo que hay debajo (gpt-oss-120b) es de pesos abiertos y estático: no aprende de las peticiones. Ni Scaleway, ni Sealmetrics, ni el creador del modelo entrenan con tus datos. Sealmetrics solo guarda contadores de tokens para cuota y facturación; el contenido de los prompts y de las respuestas nunca se persiste.",
   },
   {
     question: "¿En qué se diferencia Seal AI de usar ChatGPT o Claude con mis datos?",
     answer:
-      "Las herramientas de IA de proveedores estadounidenses, tanto las de consumo como las de API, envían tus datos a empresas bajo jurisdicción de Estados Unidos, incluso cuando ofrecen una región europea. Seal AI es privada por arquitectura: inferencia solo en la UE, sin matriz estadounidense, retención cero, sin entrenamiento y un modelo de pesos abiertos que podrías autoalojar. Si prefieres un proveedor externo concreto, SealMetrics también admite usar tu propia clave, pero Seal AI viene por defecto para que la privacidad no dependa de la configuración.",
+      "Las herramientas de IA de proveedores estadounidenses, tanto las de consumo como las de API, envían tus datos a empresas bajo jurisdicción de Estados Unidos, incluso cuando ofrecen una región europea. Seal AI es privada por arquitectura: inferencia solo en la UE, sin matriz estadounidense, retención cero, sin entrenamiento y un modelo de pesos abiertos que podrías autoalojar. Si prefieres un proveedor externo concreto, Sealmetrics también admite usar tu propia clave, pero Seal AI viene por defecto para que la privacidad no dependa de la configuración.",
   },
   {
     question: "¿Qué le puedo preguntar a Seal AI?",
@@ -87,7 +87,7 @@ export default function MeetSealAiPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -187,7 +187,7 @@ export default function MeetSealAiPageEs() {
               chat de IA al dashboard. La mayoría lo hace enviando tus datos, sin
               hacer mucho ruido, a un proveedor de IA estadounidense. No queríamos
               ser una de ellas, así que construimos <strong>Seal AI</strong>, la
-              capa de IA privada dentro de SealMetrics, sobre otra premisa: la IA
+              capa de IA privada dentro de Sealmetrics, sobre otra premisa: la IA
               debería ser tan privada como la analítica que explica.
             </p>
 
@@ -245,12 +245,12 @@ export default function MeetSealAiPageEs() {
               </li>
               <li>
                 <strong>Retención cero, sin entrenamiento.</strong> Scaleway no
-                conserva el contenido de los prompts por defecto; SealMetrics solo
+                conserva el contenido de los prompts por defecto; Sealmetrics solo
                 almacena contadores de tokens, nunca el contenido. El modelo es de
                 pesos abiertos y estático: no aprende de tus peticiones.
               </li>
               <li>
-                <strong>El prompt nace limpio.</strong> SealMetrics es analítica
+                <strong>El prompt nace limpio.</strong> Sealmetrics es analítica
                 sin consentimiento: no recogemos IPs, cookies ni identificadores de
                 visitante en ningún momento. De modo que no hay ningún
                 identificador personal que enviar a la IA, ni siquiera antes de
@@ -270,7 +270,7 @@ export default function MeetSealAiPageEs() {
               No tienes que configurar nada. No hay claves de API que crear ni
               cuenta de terceros que dar de alta: Seal AI viene incluida y usa una
               clave de la plataforma que tú nunca ves. Si prefieres usar un
-              proveedor externo concreto, SealMetrics admite bring-your-own-key
+              proveedor externo concreto, Sealmetrics admite bring-your-own-key
               (tu propia clave) con OpenAI, Anthropic, Gemini o DeepSeek. Pero Seal
               AI es la opción por defecto a propósito: la privacidad no debería
               depender de que alguien marque una casilla.
@@ -289,7 +289,7 @@ export default function MeetSealAiPageEs() {
               Pruébala con tres preguntas
             </h2>
             <p>
-              Si ya usas SealMetrics, abre el asistente y pregúntale: (1) «Compara
+              Si ya usas Sealmetrics, abre el asistente y pregúntale: (1) «Compara
               mis entradas de los últimos 7 días con los 7 anteriores». (2) «¿Cuál
               de mis 3 fuentes principales convierte mejor, y por qué?». (3) «¿Cuál
               es mi tasa de rebote este mes?». Tendrás respuestas ancladas en tus

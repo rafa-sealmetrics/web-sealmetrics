@@ -16,23 +16,23 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para hoteles — venta directa | SealMetrics",
+  title: "Analítica para hoteles — venta directa | Sealmetrics",
   description:
     "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS. Palladium recuperó el 35% de reservas sin atribuir; Dreamplace cerró un gap del 15-20%.",
   openGraph: {
-    title: "Analítica para hoteles — venta directa | SealMetrics",
+    title: "Analítica para hoteles — venta directa | Sealmetrics",
     description:
       "Analítica first-party sin consentimiento para grupos hoteleros. Reconcilia reservas directas con tu PMS y atribuye ingresos de meta-search sin cajas negras de OTAs.",
     type: "website",
     images: [ogImage("/es/for/hotels/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/for/hotels/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para hoteles — venta directa | SealMetrics",
+    title: "Analítica para hoteles — venta directa | Sealmetrics",
     description: "Analítica first-party sin consentimiento para grupos hoteleros. Reconcilia reservas directas con tu PMS y atribuye ingresos de meta-search sin cajas negras de OTAs.",
     images: [ogImage("/es/for/hotels/")],
   },
@@ -54,7 +54,7 @@ const seoFaqs = [
       "De media, el 25% de las reservas directas registradas en el PMS no aparecen bien atribuidas en GA4 por rechazo de consentimiento en móvil (Safari), expiración de cookies por ITP y rupturas de ruta en OTAs. La analítica sin cookies cuenta cada pageview de forma anónima en servidor, captura la fuente de tráfico en cada pageview de reserva y agrega las reservas por canal — sin tracking por huésped.",
   },
   {
-    question: "¿SealMetrics funciona con múltiples propiedades hoteleras?",
+    question: "¿Sealmetrics funciona con múltiples propiedades hoteleras?",
     answer:
       "Sí. La vista de portfolio está incluida en cada plan. Cada propiedad corre su propio tracking y los datos se consolidan a nivel de marca/grupo — ideal para cadenas con 5+ propiedades en varios países.",
   },
@@ -98,7 +98,7 @@ export default function Page() {
               </h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Palladium Hotel Group y Dreamplace Hotels pasaron SealMetrics junto a su stack actual. Los dos descubrieron un gap estructural. Los dos empezaron a tomar decisiones de paid media sobre el dato recuperado — no sobre lo que cada plataforma se reporta a sí misma.
+              Palladium Hotel Group y Dreamplace Hotels pasaron Sealmetrics junto a su stack actual. Los dos descubrieron un gap estructural. Los dos empezaron a tomar decisiones de paid media sobre el dato recuperado — no sobre lo que cada plataforma se reporta a sí misma.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function Page() {
                 style={{ borderColor: "#2E5C8A" }}
               >
                 <p className="text-[18.5px] leading-[1.4] tracking-[-0.01em] font-medium text-ink">
-                  &ldquo;El dato que entrega SealMetrics es agnóstico, sin sesgo y neutral. No hay caja negra.&rdquo;
+                  &ldquo;El dato que entrega Sealmetrics es agnóstico, sin sesgo y neutral. No hay caja negra.&rdquo;
                 </p>
                 <cite className="block mt-3 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
                   Toni Andújar · Digital &amp; Direct Sales Director
@@ -196,7 +196,7 @@ export default function Page() {
                 {[
                   { n: "+30%", l: "Más tráfico vs Google Analytics" },
                   { n: "15–20%", l: "Gap de atribución cerrado (vs CRM)" },
-                  { n: "Meta + Google", l: "Primeros canales decidiendo con SealMetrics" },
+                  { n: "Meta + Google", l: "Primeros canales decidiendo con Sealmetrics" },
                 ].map((s) => (
                   <li key={s.l}>
                     <div className="text-[24px] font-semibold tracking-[-0.025em] text-ink leading-none tabular-nums">
@@ -219,7 +219,7 @@ export default function Page() {
           </div>
 
               <p className="mt-10 text-center text-[15px] text-ink-soft">
-                Tamaños distintos. Stacks distintos. Mismo diagnóstico: el dato incompleto estaba dirigiendo las decisiones de presupuesto hasta que SealMetrics lo sustituyó por el número real.
+                Tamaños distintos. Stacks distintos. Mismo diagnóstico: el dato incompleto estaba dirigiendo las decisiones de presupuesto hasta que Sealmetrics lo sustituyó por el número real.
               </p>
             </div>
           </section>
@@ -233,7 +233,7 @@ export default function Page() {
             La <strong>analítica sin cookies para hoteles</strong> permite a los
             grupos hoteleros cuadrar los totales agregados de reservas directas
             con el PMS sin cookies, banners de consentimiento ni gaps de
-            ad-blockers. SealMetrics cuenta de forma anónima cada landing de
+            ad-blockers. Sealmetrics cuenta de forma anónima cada landing de
             meta-search, cada visita móvil Safari y cada evento de reserva —
             cada reserva atribuida last-click a nivel de canal y consolidada
             entre propiedades para reporting de ingresos de portfolio.

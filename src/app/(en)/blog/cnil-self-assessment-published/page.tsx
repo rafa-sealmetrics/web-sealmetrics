@@ -9,14 +9,14 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "We Published Our CNIL Self-Assessment",
   description:
-    "The French CNIL allows certain analytics tools to operate without cookie banners. We documented how SealMetrics meets all 14 technical criteria.",
+    "The French CNIL allows certain analytics tools to operate without cookie banners. We documented how Sealmetrics meets all 14 technical criteria.",
   openGraph: {
     title: "We Published Our CNIL Self-Assessment",
     description:
-      "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics in France.",
+      "Sealmetrics meets all 14 CNIL technical criteria for consent-exempt analytics in France.",
     type: "article",
     url: "https://sealmetrics.com/blog/cnil-self-assessment-published/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/cnil-self-assessment-published.png"],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "We Published Our CNIL Self-Assessment",
-    description: "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics in France.",
+    description: "Sealmetrics meets all 14 CNIL technical criteria for consent-exempt analytics in France.",
     images: ["https://sealmetrics.com/og/blog/cnil-self-assessment-published.png"],
   },
   alternates: {
@@ -36,7 +36,7 @@ export default function CnilAssessmentPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "CNIL Self-Assessment Published" }]} />
-      <JsonLd data={articleSchema({ headline: "We Published Our CNIL Self-Assessment", description: "SealMetrics meets all 14 CNIL technical criteria for consent-exempt analytics.", datePublished: "2026-02-10", dateModified: "2026-05-28", url: "/blog/cnil-self-assessment-published", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Published Our CNIL Self-Assessment", description: "Sealmetrics meets all 14 CNIL technical criteria for consent-exempt analytics.", datePublished: "2026-02-10", dateModified: "2026-05-28", url: "/blog/cnil-self-assessment-published", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "CNIL Self-Assessment Published", url: "/blog/cnil-self-assessment-published" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -61,7 +61,7 @@ export default function CnilAssessmentPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The French CNIL allows certain cookieless analytics tools to operate without consent banners if they meet 5 permitted objectives and 14 technical criteria.</li>
-            <li>SealMetrics meets all 14 CNIL criteria and exceeds several — it does not collect IP addresses at all (CNIL only requires last-octet removal) and uses no persistent cookies (CNIL permits up to 13 months).</li>
+            <li>Sealmetrics meets all 14 CNIL criteria and exceeds several — it does not collect IP addresses at all (CNIL only requires last-octet removal) and uses no persistent cookies (CNIL permits up to 13 months).</li>
             <li>This is compliance documentation, not official CNIL certification — the authority explicitly prohibits such claims, but the self-assessment is publicly available.</li>
             <li>The regulatory trend across Europe (France, UK, EU Omnibus) is moving toward consent exemption for first-party, aggregated analytics.</li>
           </ul>
@@ -88,7 +88,7 @@ export default function CnilAssessmentPage() {
           <p>
             The CNIL released an <a href="https://www.cnil.fr/fr/cookies-solutions-pour-les-outils-de-mesure-daudience" target="_blank" rel="noopener noreferrer">auto-evaluation tool</a> in July 2025 covering 5
             permitted objectives and 14 technical criteria. We documented how
-            SealMetrics addresses each requirement — covering data retention
+            Sealmetrics addresses each requirement — covering data retention
             limits, cross-site tracking prevention, and every other criterion
             — without marketing language. Just technical documentation against
             regulatory requirements.
@@ -99,7 +99,7 @@ export default function CnilAssessmentPage() {
           </h2>
 
           <p>
-            SealMetrics meets all 14 technical criteria. In several cases, we
+            Sealmetrics meets all 14 technical criteria. In several cases, we
             exceed the requirements:
           </p>
 
@@ -125,17 +125,17 @@ export default function CnilAssessmentPage() {
 
           <p>
             If you operate a website targeting French users and use
-            SealMetrics with the standard configuration, you can measure
+            Sealmetrics with the standard configuration, you can measure
             audiences without requesting consent. Your privacy policy must
             still mention the analytics tool (transparency is required), but
-            a cookie banner is not necessary for SealMetrics specifically.
+            a cookie banner is not necessary for Sealmetrics specifically.
           </p>
 
           <p>
             To be clear: this is compliance documentation, not official
             &ldquo;CNIL certification.&rdquo; The authority explicitly
             prohibits such claims. What we have done is document, criterion
-            by criterion, how SealMetrics meets the requirements for the
+            by criterion, how Sealmetrics meets the requirements for the
             consent exemption.
           </p>
 

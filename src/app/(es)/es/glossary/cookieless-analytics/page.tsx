@@ -8,7 +8,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "¿Qué es la analítica sin cookies? — Glosario SealMetrics",
+  title: "¿Qué es la analítica sin cookies? — Glosario Sealmetrics",
   description:
     "Analítica web que captura datos de visitantes sin cookies, midiendo el 100% del tráfico sin depender del consentimiento ni de las restricciones del navegador.",
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Analítica que captura el 100% del tráfico sin cookies, sin consentimiento, sin per-user tracking.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/cookieless-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: [ogImage("/es/glossary/cookieless-analytics/")],
   },
@@ -77,11 +77,11 @@ export default function Page() {
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="Esto es exactamente lo que hace SealMetrics: contar el 100% de las visitas sin cookies. Míralo funcionando sobre tu propio tráfico." />
+        <CommercialModule locale="es" hook="Esto es exactamente lo que hace Sealmetrics: contar el 100% de las visitas sin cookies. Míralo funcionando sobre tu propio tráfico." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona SealMetrics</Link>
+            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona Sealmetrics</Link>
           </p>
         </div>
       </div>

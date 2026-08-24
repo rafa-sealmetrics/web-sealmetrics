@@ -8,21 +8,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs alternativas — Comparativas completas",
+  title: "Sealmetrics vs alternativas — Comparativas completas",
   description: "Comparativas lado a lado contra GA4, GA360, Adobe Analytics y Piwik PRO. Honestos sobre los trade-offs. Sin rodeos.",
   openGraph: {
-    title: "SealMetrics vs alternativas",
+    title: "Sealmetrics vs alternativas",
     description: "Comparativas feature a feature contra cada plataforma analytics.",
     type: "website",
     locale: "es_ES",
     images: [ogImage("/es/vs/")],
     url: "https://sealmetrics.com/es/vs/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics vs alternativas",
+    title: "Sealmetrics vs alternativas",
     description: "Comparativas feature a feature contra cada plataforma analytics.",
     images: [ogImage("/es/vs/")],
   },
@@ -44,8 +44,8 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Comparativas" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Comparativas", url: "/es/vs" }])} />
       <JsonLd data={itemListSchema({
-        name: "Comparativas SealMetrics",
-        description: "Análisis lado a lado de SealMetrics vs GA4, GA360, Adobe Analytics y Piwik PRO.",
+        name: "Comparativas Sealmetrics",
+        description: "Análisis lado a lado de Sealmetrics vs GA4, GA360, Adobe Analytics y Piwik PRO.",
         url: "/es/vs",
         items: comparisons.map((c) => ({ name: c.name, url: `/${c.slug}` })),
       })} />
@@ -54,7 +54,7 @@ export default function Page() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
           <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Comparativas</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
-            SealMetrics vs <em>las alternativas.</em>
+            Sealmetrics vs <em>las alternativas.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             Comparativas honestas lado a lado. Reconoce fortalezas. Directa sobre trade-offs. Con números reales sobre tu propio tráfico — corre ambos 30 días y decide.
@@ -69,7 +69,7 @@ export default function Page() {
               <Link key={c.slug} href={`/${c.slug}`} className="group block bg-white border border-warm-100 rounded-xl p-8 no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5">
                 <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
                   <h2 className="text-[22px] font-semibold tracking-[-0.015em] text-ink leading-[1.2] group-hover:text-brand transition-colors">
-                    SealMetrics vs {c.name}
+                    Sealmetrics vs {c.name}
                   </h2>
                   <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em]" style={{ color: "#B5423B" }}>{c.stat}</span>
                 </div>
@@ -87,8 +87,8 @@ export default function Page() {
         locale="es"
         titleEn={<>Run both for 30 days. Then decide.</>}
         titleEs={<>Corre los dos 30 días. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Y entonces decide.</em></>}
-        ledeEn="Install SealMetrics alongside your current stack."
-        ledeEs="Instala SealMetrics junto a tu stack actual. Compara con tu CRM. Si el gap no es real, no nos debes nada."
+        ledeEn="Install Sealmetrics alongside your current stack."
+        ledeEs="Instala Sealmetrics junto a tu stack actual. Compara con tu CRM. Si el gap no es real, no nos debes nada."
       />
     </>
   );

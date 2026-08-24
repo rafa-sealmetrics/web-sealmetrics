@@ -8,21 +8,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Calculadora de crecimiento — SealMetrics",
+  title: "Calculadora de crecimiento — Sealmetrics",
   description: "¿Cuánto ingreso podrías escalar con datos completos? Mete tus números y ve el potencial de crecimiento que tu analítica actual no puede mostrarte.",
   openGraph: {
-    title: "Calculadora de crecimiento — SealMetrics",
+    title: "Calculadora de crecimiento — Sealmetrics",
     description: "¿Cuánto ingreso podrías escalar con datos completos? Mete tus números y ve el potencial de crecimiento que tu analítica actual no puede mostrarte.",
     type: "website",
     images: [ogImage("/es/growth-calculator/")],
     url: "https://sealmetrics.com/es/growth-calculator/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Calculadora de crecimiento — SealMetrics",
+    title: "Calculadora de crecimiento — Sealmetrics",
     description: "¿Cuánto ingreso podrías escalar con datos completos? Mete tus números y ve el potencial de crecimiento que tu analítica actual no puede mostrarte.",
     images: [ogImage("/es/growth-calculator/")],
   },

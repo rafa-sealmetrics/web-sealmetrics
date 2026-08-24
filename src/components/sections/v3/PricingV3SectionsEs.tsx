@@ -67,7 +67,7 @@ export function PlanIncludesV3Es() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Todo plan desde Growth incluye la plataforma SealMetrics completa. Las únicas diferencias entre planes son volumen de eventos, governance y soporte — nunca features.
+            Todo plan desde Growth incluye la plataforma Sealmetrics completa. Las únicas diferencias entre planes son volumen de eventos, governance y soporte — nunca features.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ export function TrafficCountingV3Es() {
 
         <div className="mt-6 p-6 md:p-7 rounded-xl text-[14.5px] leading-[1.65] text-ink-2 relative overflow-hidden" style={{ background: "rgba(45,139,109,0.04)", borderLeft: "3px solid #2D8B6D" }}>
           <b className="text-ink font-semibold block mb-2">Importante al estimar tu plan</b>
-          SealMetrics captura el 100% del tráfico — incluidos los visitantes que rechazan cookies en otras herramientas. Tu número de eventos en SealMetrics será significativamente mayor que el de GA4. Al elegir plan, estima tu tráfico real a <b className="text-ink">2–3× lo que GA4 muestra</b>. Te lo avisamos proactivamente la primera semana.
+          Sealmetrics captura el 100% del tráfico — incluidos los visitantes que rechazan cookies en otras herramientas. Tu número de eventos en Sealmetrics será significativamente mayor que el de GA4. Al elegir plan, estima tu tráfico real a <b className="text-ink">2–3× lo que GA4 muestra</b>. Te lo avisamos proactivamente la primera semana.
         </div>
       </div>
     </section>

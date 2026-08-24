@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "What MMLU, GPQA, tau-bench and BFCL really measure — and the footnotes that make cross-model comparisons misleading.",
     type: "article",
     url: "https://sealmetrics.com/blog/public-llm-benchmarks-vs-your-use-case/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/public-llm-benchmarks-vs-your-use-case.png"],
   },
@@ -88,7 +88,7 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -101,8 +101,8 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
       <JsonLd
         data={statisticClaimSchema({
           text: "In a 162-query internal benchmark on a production analytics assistant, the candidate model with the stronger public benchmark scores passed 15 of 18 grounding and injection traps and cost roughly ten times more per answered query than the model with lower public scores, which passed 18 of 18.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -199,7 +199,7 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
               >
                 Seal AI
               </Link>
-              , the natural-language analytics assistant inside SealMetrics. The
+              , the natural-language analytics assistant inside Sealmetrics. The
               public numbers narrowed the field. They did not pick the winner, and
               on the decisive dimension they pointed the wrong way.
             </p>

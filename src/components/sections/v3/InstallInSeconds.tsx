@@ -5,7 +5,7 @@ import { useState } from "react";
 /* ============================================================
    INSTALL IN SECONDS
    Amplitude-style "pick your AI → paste one prompt" install,
-   in the SealMetrics editorial system. Selecting a tool tailors
+   in the Sealmetrics editorial system. Selecting a tool tailors
    the copyable connect prompt. Ends with what the MCP can do.
    ============================================================ */
 
@@ -28,9 +28,9 @@ const TOOLS: Tool[] = [
 function connectPrompt(tool: string): string {
   const who = tool === "Any MCP tool" ? "my AI assistant" : tool;
   return (
-    `Connect ${who} to the SealMetrics MCP for me. If SealMetrics isn't added as an MCP server yet, ` +
+    `Connect ${who} to the Sealmetrics MCP for me. If Sealmetrics isn't added as an MCP server yet, ` +
     `prompt me to install it — the hosted server is ${HOSTED_MCP} (setup guide: ${DOCS}). ` +
-    `Once connected, create my SealMetrics account, generate the tracking pixels I need, and build ` +
+    `Once connected, create my Sealmetrics account, generate the tracking pixels I need, and build ` +
     `real-time reports, charts and alerts.`
   );
 }
@@ -39,7 +39,7 @@ const CAPABILITIES = [
   {
     n: "01",
     t: "Create your account",
-    d: "Spin up a SealMetrics account without leaving your AI — no signup form, no sales call.",
+    d: "Spin up a Sealmetrics account without leaving your AI — no signup form, no sales call.",
   },
   {
     n: "02",
@@ -78,7 +78,7 @@ export function InstallInSeconds() {
           </h2>
           <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
             No install project, no tag-manager maze. Pick your assistant, paste one prompt, and it
-            connects to SealMetrics, creates your account and wires the pixel — for you.
+            connects to Sealmetrics, creates your account and wires the pixel — for you.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export function InstallInSeconds() {
             className="font-semibold text-ink tracking-[-0.02em] leading-[1.2] mb-8"
             style={{ fontSize: "clamp(20px, 2.2vw, 28px)" }}
           >
-            What you can do with the <em className="italic-accent">SealMetrics MCP</em>
+            What you can do with the <em className="italic-accent">Sealmetrics MCP</em>
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
             {CAPABILITIES.map((c) => (

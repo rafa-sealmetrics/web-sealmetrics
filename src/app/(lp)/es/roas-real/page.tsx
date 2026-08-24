@@ -27,7 +27,7 @@ import { ogImage } from "@/lib/seo/og";
    Vive en el grupo (lp) para no heredar el header de navegación ni el
    footer del site: en tráfico de pago cada enlace de salida es una fuga. */
 export const metadata: Metadata = {
-  title: "Tu ROAS real es mayor del que crees — SealMetrics",
+  title: "Tu ROAS real es mayor del que crees — Sealmetrics",
   description:
     "Entre el 25% y el 45% de tus ventas nunca llegan a tu analítica. Mide el 100% sin cookies ni consentimiento y recupera el ROAS que ya estabas generando.",
   robots: { index: false, follow: true },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     images: [ogImage("/es/roas-real/")],
     url: "https://sealmetrics.com/es/roas-real/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",

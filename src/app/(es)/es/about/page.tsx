@@ -9,21 +9,21 @@ import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Sobre SealMetrics — Analítica founder-led para Europa",
+  title: "Sobre Sealmetrics — Analítica founder-led para Europa",
   description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
   openGraph: {
-    title: "Sobre SealMetrics — Analítica founder-led para Europa",
+    title: "Sobre Sealmetrics — Analítica founder-led para Europa",
     description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
     type: "website",
     images: [ogImage("/es/about/")],
     url: "https://sealmetrics.com/es/about/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Sobre SealMetrics — Analítica founder-led para Europa",
+    title: "Sobre Sealmetrics — Analítica founder-led para Europa",
     description: "Fundada tras 20+ años viendo a equipos eCommerce europeos decidir con datos que no se creían. UE-founded, UE-hosted, founder-led.",
     images: [ogImage("/es/about/")],
   },
@@ -39,12 +39,12 @@ export default function Page() {
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Sobre SealMetrics</span>
+          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Sobre Sealmetrics</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Construido para que equipos europeos <em>volvieran a fiarse de sus datos.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            SealMetrics es una plataforma de analítica UE-founded y UE-hosted que sirve a 2.000+ clientes entre hoteles, eCommerce DTC, medios e instituciones públicas.
+            Sealmetrics es una plataforma de analítica UE-founded y UE-hosted que sirve a 2.000+ clientes entre hoteles, eCommerce DTC, medios e instituciones públicas.
           </p>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function Page() {
               El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible el 40–60% del tráfico UE. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
             </p>
             <p>
-              SealMetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
+              Sealmetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function Page() {
             </div>
             <div>
               <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
-              <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
+              <div className="text-[13px] text-ink-soft">Founder & CEO · Sealmetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
                 <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
               </div>
@@ -93,7 +93,7 @@ export default function Page() {
               <h2 className="h-section mt-5">Lo que <em>hemos probado hasta ahora.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              No proyecciones, no aspiraciones. Lo que 2.000+ equipos europeos usan con SealMetrics hoy.
+              No proyecciones, no aspiraciones. Lo que 2.000+ equipos europeos usan con Sealmetrics hoy.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

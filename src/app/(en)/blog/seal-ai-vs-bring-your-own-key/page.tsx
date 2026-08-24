@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Managed EU-only AI or your own OpenAI, Anthropic, Gemini or DeepSeek key? What each option actually costs you, and how to choose.",
     type: "article",
     url: "https://sealmetrics.com/blog/seal-ai-vs-bring-your-own-key/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/seal-ai-vs-bring-your-own-key.png"],
   },
@@ -65,7 +65,7 @@ const FAQ = [
   {
     question: "Is my AI usage metered if I bring my own key?",
     answer:
-      "No. Bring-your-own-key usage is not metered by SealMetrics — you are billed by your chosen provider on their terms, at their prices. Seal AI usage, by contrast, is covered by your plan's token quota, with additional non-expiring token packs available for organisations that need more headroom.",
+      "No. Bring-your-own-key usage is not metered by Sealmetrics — you are billed by your chosen provider on their terms, at their prices. Seal AI usage, by contrast, is covered by your plan's token quota, with additional non-expiring token packs available for organisations that need more headroom.",
   },
   {
     question: "Can I switch between Seal AI and my own key later?",
@@ -103,7 +103,7 @@ const COMPARISON = [
   {
     aspect: "Metering",
     seal: "Token counters per organisation, for quota only",
-    byok: "Not metered by SealMetrics",
+    byok: "Not metered by Sealmetrics",
   },
   {
     aspect: "Transfer analysis",
@@ -126,7 +126,7 @@ export default function SealAiVsByokPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -226,7 +226,7 @@ export default function SealAiVsByokPage() {
               Seal AI: the default, and why it is the default
             </h2>
             <p>
-              Seal AI is the private AI layer inside SealMetrics. It powers the
+              Seal AI is the private AI layer inside Sealmetrics. It powers the
               natural-language assistant and the automated insights, and there is
               nothing to configure — no API key, no AI vendor account, no
               onboarding step where you paste a secret into a settings page. The
@@ -268,7 +268,7 @@ export default function SealAiVsByokPage() {
             </ul>
             <p>
               There is one more property worth naming, because it is upstream of
-              everything above. SealMetrics is consentless analytics: it never
+              everything above. Sealmetrics is consentless analytics: it never
               collects IP addresses, cookies, fingerprints or visitor
               identifiers at all. There is no personal identifier in the dataset
               to send to a model in the first place. The prompt is born clean.
@@ -306,7 +306,7 @@ export default function SealAiVsByokPage() {
               </li>
               <li>
                 <strong>The cost.</strong> You are billed directly by the
-                provider. Bring-your-own-key usage is not metered by SealMetrics,
+                provider. Bring-your-own-key usage is not metered by Sealmetrics,
                 which means no quota ceiling from us and no visibility from us
                 either.
               </li>

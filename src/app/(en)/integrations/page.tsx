@@ -7,11 +7,11 @@ import { ogImage } from "@/lib/seo/og";
 
 const faqs = [
   {
-    question: "Does SealMetrics connect to Google Ads for conversion import?",
-    answer: "SealMetrics tracks Google Ads campaigns end-to-end via UTM parameters and click IDs and reports ROAS on them. It does not push audiences back to Google Ads for automated bidding — that needs GA4 with consented users. Most teams keep GA4 as the Ads conduit and use SealMetrics as the source of truth for decisions.",
+    question: "Does Sealmetrics connect to Google Ads for conversion import?",
+    answer: "Sealmetrics tracks Google Ads campaigns end-to-end via UTM parameters and click IDs and reports ROAS on them. It does not push audiences back to Google Ads for automated bidding — that needs GA4 with consented users. Most teams keep GA4 as the Ads conduit and use Sealmetrics as the source of truth for decisions.",
   },
   {
-    question: "Which eCommerce CMS does SealMetrics work with?",
+    question: "Which eCommerce CMS does Sealmetrics work with?",
     answer: "WooCommerce, Magento 2, PrestaShop, OpenCart and Shopify have native modules. WordPress, Drupal, Joomla, Webflow, Wix, Squarespace, Next.js, React and Nuxt have documented integrations. Any other CMS works with the standard JavaScript tag or GTM.",
   },
   {
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "What is the MCP server?",
-    answer: "SealMetrics ships a native Model Context Protocol server. AI agents (Claude, ChatGPT, custom LLMs) can query your analytics data in natural language, enabling AI-native reporting and forecasting workflows.",
+    answer: "Sealmetrics ships a native Model Context Protocol server. AI agents (Claude, ChatGPT, custom LLMs) can query your analytics data in natural language, enabling AI-native reporting and forecasting workflows.",
   },
   {
     question: "Are there webhooks for real-time events?",
@@ -31,21 +31,21 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "Integrations — SealMetrics",
+  title: "Integrations — Sealmetrics",
   description: "Native modules for eCommerce, CMS, frameworks and tag managers. BigQuery connector, MCP server for AI agents, webhooks and full REST API.",
   openGraph: {
-    title: "Integrations — SealMetrics",
+    title: "Integrations — Sealmetrics",
     description: "Native modules for eCommerce, CMS, frameworks and tag managers. BigQuery connector, MCP server for AI agents and full REST API.",
     type: "website",
     images: [ogImage("/integrations/")],
     url: "https://sealmetrics.com/integrations/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Integrations — SealMetrics",
+    title: "Integrations — Sealmetrics",
     description: "25+ native integrations: ad platforms, eCommerce CMSs, data warehouses, BI tools, CRMs. Plus MCP server for AI agents and full REST API.",
     images: [ogImage("/integrations/")],
   },

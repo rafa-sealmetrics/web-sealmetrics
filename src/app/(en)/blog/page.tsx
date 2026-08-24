@@ -7,21 +7,21 @@ import { BlogIndexSignal } from "@/components/v4/BlogIndexSignal";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Blog — SealMetrics",
+  title: "Blog — Sealmetrics",
   description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
   openGraph: {
-    title: "Blog — SealMetrics",
+    title: "Blog — Sealmetrics",
     description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
     type: "website",
     images: [ogImage("/blog/")],
     url: "https://sealmetrics.com/blog/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Blog — SealMetrics",
+    title: "Blog — Sealmetrics",
     description: "Insights on web analytics, data quality, attribution, and privacy-first measurement.",
     images: [ogImage("/blog/")],
   },

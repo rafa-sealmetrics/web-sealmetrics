@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Cómo funciona la analítica sin cookies, por qué captura más datos y qué implica para compliance.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/cookieless-analytics-explained/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/cookieless-analytics-explained.png"],
   },
@@ -37,7 +37,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica cookieless explicada" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", datePublished: "2026-02-08", dateModified: "2026-05-06", url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", datePublished: "2026-02-08", dateModified: "2026-05-06", url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica cookieless", url: "/es/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -160,7 +160,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
                     Con cookies (GA4)
                   </th>
                   <th className="text-left py-3 pl-6 text-green-muted font-medium">
-                    Cookieless (SealMetrics)
+                    Cookieless (Sealmetrics)
                   </th>
                 </tr>
               </thead>
@@ -254,7 +254,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
               href="/es/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              Aprende cómo funciona SealMetrics
+              Aprende cómo funciona Sealmetrics
             </Link>{" "}
             o{" "}
             <Link

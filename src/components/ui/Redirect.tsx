@@ -17,21 +17,21 @@ export function buildRedirectMetadata(destination: string): Metadata {
     ? destination
     : `https://sealmetrics.com${destination}`;
   return {
-    title: `Redirecting to ${destination} — SealMetrics`,
+    title: `Redirecting to ${destination} — Sealmetrics`,
     description: `This page has moved. Redirecting to ${destination}.`,
     alternates: { canonical: absolute },
     robots: { index: false, follow: true },
     openGraph: {
-      title: `Redirecting to ${destination} — SealMetrics`,
+      title: `Redirecting to ${destination} — Sealmetrics`,
       description: `This page has moved. Redirecting to ${destination}.`,
       url: absolute,
-      siteName: "SealMetrics",
+      siteName: "Sealmetrics",
       type: "website",
       images: ["https://sealmetrics.com/og-image.png"],
     },
     twitter: {
       card: "summary_large_image",
-      title: `Redirecting to ${destination} — SealMetrics`,
+      title: `Redirecting to ${destination} — Sealmetrics`,
       description: `This page has moved. Redirecting to ${destination}.`,
       images: ["https://sealmetrics.com/og-image.png"],
     },
@@ -51,7 +51,7 @@ export function RedirectStub({ to }: { to: string }) {
           url: absolute,
           isPartOf: {
             "@type": "WebSite",
-            name: "SealMetrics",
+            name: "Sealmetrics",
             url: "https://sealmetrics.com",
           },
         }}

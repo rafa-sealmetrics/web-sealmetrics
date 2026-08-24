@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "What can you actually ask an AI analytics assistant? Three questions worth trying, and how to read the answers.",
     type: "article",
     url: "https://sealmetrics.com/blog/three-questions-to-ask-seal-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/three-questions-to-ask-seal-ai.png"],
   },
@@ -58,9 +58,9 @@ const FAQ = [
       "Ask it why. A grounded assistant fetches figures through tool calls against your data and can name the metric, the period and the breakdown behind every number it states. If it cannot show you that evidence, treat the figure as a claim rather than a measurement. As a one-off test, ask about a campaign you never ran — the right answer is that there is no data for it.",
   },
   {
-    question: "How is bounce rate calculated in SealMetrics?",
+    question: "How is bounce rate calculated in Sealmetrics?",
     answer:
-      "Bounce rate is entrances minus engaged entrances, divided by entrances, expressed as a percentage. An engaged session is one with more than one pageview. This is not the same as engagement rate, and it is not the same definition every analytics tool uses — so compare SealMetrics bounce rate against your own history rather than against a number from another platform.",
+      "Bounce rate is entrances minus engaged entrances, divided by entrances, expressed as a percentage. An engaged session is one with more than one pageview. This is not the same as engagement rate, and it is not the same definition every analytics tool uses — so compare Sealmetrics bounce rate against your own history rather than against a number from another platform.",
   },
   {
     question: "What is the best way to phrase a question to an analytics AI?",
@@ -70,7 +70,7 @@ const FAQ = [
   {
     question: "Do I need to set anything up to use the AI assistant?",
     answer:
-      "No. Seal AI is the default AI layer inside SealMetrics — there is no API key to paste and no AI vendor account to create. Inference runs in the EU only, nothing is retained by default and nothing is used for training. If you would rather use your own model, you can connect your own provider key instead, but you do not have to configure anything to start asking questions.",
+      "No. Seal AI is the default AI layer inside Sealmetrics — there is no API key to paste and no AI vendor account to create. Inference runs in the EU only, nothing is retained by default and nothing is used for training. If you would rather use your own model, you can connect your own provider key instead, but you do not have to configure anything to start asking questions.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function ThreeQuestionsToAskSealAiPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -100,7 +100,7 @@ export default function ThreeQuestionsToAskSealAiPage() {
       />
       <JsonLd
         data={definedTermSchema({
-          name: "Bounce rate (SealMetrics definition)",
+          name: "Bounce rate (Sealmetrics definition)",
           description:
             "The share of entrances that did not become engaged sessions, calculated as entrances minus engaged entrances, divided by entrances. An engaged session is one with more than one pageview. Bounce rate is the inverse view of engagement, not the same figure as engagement rate, and definitions differ between analytics platforms — so it should be compared against your own history rather than across tools.",
           url: URL,
@@ -168,7 +168,7 @@ export default function ThreeQuestionsToAskSealAiPage() {
                 do you say that?&quot; forces the assistant to expose its evidence.
               </li>
               <li>
-                Then an <strong>engagement question</strong>. Bounce rate in SealMetrics is
+                Then an <strong>engagement question</strong>. Bounce rate in Sealmetrics is
                 entrances minus engaged entrances over entrances; an engaged session has
                 more than one pageview.
               </li>
@@ -268,7 +268,7 @@ export default function ThreeQuestionsToAskSealAiPage() {
               for the comparison window, and derives the rate from them.
             </p>
             <p>
-              <strong>The definition you need to know.</strong> In SealMetrics,
+              <strong>The definition you need to know.</strong> In Sealmetrics,
               bounce rate is:
             </p>
             <p className="pl-4 border-l-2 border-warm-200 font-mono text-[0.9rem] text-text-secondary">
@@ -351,7 +351,7 @@ export default function ThreeQuestionsToAskSealAiPage() {
               Where to try it
             </h2>
             <p>
-              The assistant is already in your SealMetrics account — there is no
+              The assistant is already in your Sealmetrics account — there is no
               key to paste and no AI vendor account to create, and inference runs
               in the EU only with nothing retained by default. Open a site, open
               the assistant, and start with the first question above.

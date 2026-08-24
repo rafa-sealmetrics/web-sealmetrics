@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Your Diagnostic Results — SealMetrics",
+  title: "Your Diagnostic Results — Sealmetrics",
   description:
     "See your personalized analytics diagnostic results and discover how much data your current setup is missing.",
   robots: { index: false, follow: true },

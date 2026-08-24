@@ -17,23 +17,23 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Why SealMetrics — measure 100% of traffic and sales",
+  title: "Why Sealmetrics — measure 100% of traffic and sales",
   description:
-    "Consent banners hide 40–60% of EU visits. SealMetrics measures 100% of traffic and sales, attributes last-click on complete data, and sets up in 5 minutes.",
+    "Consent banners hide 40–60% of EU visits. Sealmetrics measures 100% of traffic and sales, attributes last-click on complete data, and sets up in 5 minutes.",
   openGraph: {
-    title: "Why SealMetrics — measure 100% of traffic and sales",
+    title: "Why Sealmetrics — measure 100% of traffic and sales",
     description:
       "The consent banner hides your visitors, tracking prevention erases your conversions, and the ROAS you defend is built on the fraction that survived. Here's the fix.",
     type: "website",
     images: [ogImage("/why-sealmetrics/")],
     url: "https://sealmetrics.com/why-sealmetrics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Why SealMetrics — measure 100% of traffic and sales",
+    title: "Why Sealmetrics — measure 100% of traffic and sales",
     description: "The consent banner hides your visitors, tracking prevention erases your conversions, and the ROAS you defend is built on the fraction that survived. Here's the fix.",
     images: [ogImage("/why-sealmetrics/")],
   },
@@ -73,7 +73,7 @@ function Hero() {
           className="text-ink-soft mt-7 mx-auto max-w-[52ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          SealMetrics measures 100% of your traffic and sales — no cookies, no consent
+          Sealmetrics measures 100% of your traffic and sales — no cookies, no consent
           wall — and puts your ROAS back on solid ground.
         </p>
 
@@ -400,7 +400,7 @@ function CfoObjection() {
 
           <div className="grid gap-5">
             <p className="text-[16.5px] leading-[1.6] text-ink-2">
-              They&apos;re right about the first part: SealMetrics doesn&apos;t create new
+              They&apos;re right about the first part: Sealmetrics doesn&apos;t create new
               revenue. <strong className="font-semibold text-ink">That revenue already exists.</strong>{" "}
               What you recover is the ability to decide well on top of it.
             </p>
@@ -453,7 +453,7 @@ function FiveOutcomes() {
     <section className="py-24 bg-warm-white border-t border-warm-100">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
         <div className="max-w-[52ch] mb-12">
-          <span className="eyebrow mb-5">What changes with SealMetrics</span>
+          <span className="eyebrow mb-5">What changes with Sealmetrics</span>
           <h2 className="h-section mt-5">
             Five things become true <em>on day one.</em>
           </h2>
@@ -470,7 +470,7 @@ function FiveOutcomes() {
             </div>
             <div className="grid gap-2.5">
               <MiniBar label="GA4 · EU" pct={55} color="var(--color-warm-300)" textColor="text-ink-soft" />
-              <MiniBar label="SealMetrics" pct={100} color="var(--color-brand)" textColor="text-brand" />
+              <MiniBar label="Sealmetrics" pct={100} color="var(--color-brand)" textColor="text-brand" />
             </div>
             <p className="text-[14px] leading-[1.55] text-ink-soft mt-auto">
               No consent gate, so nothing to reject.{" "}
@@ -649,7 +649,7 @@ function CmoOutcomes() {
           </div>
           <div className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-brand font-bold flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-            With SealMetrics
+            With Sealmetrics
           </div>
         </div>
 
@@ -780,7 +780,7 @@ function ProofSlab() {
 
         <figure className="mt-12 max-w-[64ch] border-l-2 pl-6" style={{ borderColor: "#2E5C8A" }}>
           <blockquote className="text-[20px] md:text-[23px] leading-[1.45] text-white/90 font-medium tracking-[-0.01em]">
-            &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral.
+            &ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral.
             There&apos;s no black box.&rdquo;
           </blockquote>
           <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.1em] text-white/50 font-semibold">
@@ -841,7 +841,7 @@ function ComparisonAnchor() {
                 <th className="p-4 text-[15px] font-semibold text-ink border-b border-warm-100 w-[19%]">GA4 (free)</th>
                 <th className="p-4 text-[15px] font-semibold text-ink border-b border-warm-100 w-[19%]">GA360</th>
                 <th className="p-4 text-[15px] font-semibold text-ink border-b border-warm-100 w-[19%]">Adobe Analytics</th>
-                <th className="p-4 text-[15px] font-semibold text-ink border-b border-warm-100 bg-brand-soft/30 w-[25%]">SealMetrics</th>
+                <th className="p-4 text-[15px] font-semibold text-ink border-b border-warm-100 bg-brand-soft/30 w-[25%]">Sealmetrics</th>
               </tr>
             </thead>
             <tbody>
@@ -970,15 +970,15 @@ function PrivateAI() {
 /* ============================================
    PAGE
    ============================================ */
-export default function WhySealMetricsPage() {
+export default function WhySealmetricsPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Why SealMetrics" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "Why SealMetrics", url: "/why-sealmetrics" }])} />
+      <Breadcrumbs items={[{ label: "Why Sealmetrics" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "Why Sealmetrics", url: "/why-sealmetrics" }])} />
       <JsonLd
         data={speakableWebPageSchema({
           url: "/why-sealmetrics",
-          name: "Why SealMetrics — measure 100% of traffic and sales",
+          name: "Why Sealmetrics — measure 100% of traffic and sales",
         })}
       />
       <JsonLd
@@ -1005,7 +1005,7 @@ export default function WhySealMetricsPage() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "+165% improvement in Cost-per-Search on Display after applying a SealMetrics-based measurement model on DV360.",
+          text: "+165% improvement in Cost-per-Search on Display after applying a Sealmetrics-based measurement model on DV360.",
           source: "Palladium Hotel Group DV360 efficiency improvement",
           sourceAuthor: "Palladium Hotel Group",
           sourceDate: "2026-04-15",
@@ -1016,7 +1016,7 @@ export default function WhySealMetricsPage() {
       />
       <JsonLd
         data={quotationSchema({
-          text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+          text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
           spokenBy: "Toni Andújar",
           spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
           url: "/why-sealmetrics",
@@ -1052,21 +1052,21 @@ export default function WhySealMetricsPage() {
             </em>
           </>
         }
-        ledeEn="Run SealMetrics side-by-side with GA4 — one tag, five minutes, free trial. If the gap on your own traffic isn't worth acting on, keep GA4."
-        ledeEs="Ejecuta SealMetrics en paralelo con GA4 — un tag, cinco minutos, prueba de 14 días. Si el gap en tu propio tráfico no justifica actuar, quédate con GA4."
+        ledeEn="Run Sealmetrics side-by-side with GA4 — one tag, five minutes, free trial. If the gap on your own traffic isn't worth acting on, keep GA4."
+        ledeEs="Ejecuta Sealmetrics en paralelo con GA4 — un tag, cinco minutos, prueba de 14 días. Si el gap en tu propio tráfico no justifica actuar, quédate con GA4."
       />
 
       <section className="bg-warm-white border-t border-warm-100 py-12">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              Why SealMetrics: in Europe, consent banners and tracking prevention hide 40–60%
+              Why Sealmetrics: in Europe, consent banners and tracking prevention hide 40–60%
               of visits from conventional analytics, and audits show up to 35% of recorded
               conversions cannot be assigned to the channel that generated them — so
               dashboard ROAS is computed on a fraction of reality. The loss is not random:
               cookie rejection rates vary by channel, so consented data is not just
               incomplete but skewed — channels whose buyers reject more cookies look weaker
-              than they are. SealMetrics is consentless,
+              than they are. Sealmetrics is consentless,
               cookieless analytics that measures 100% of traffic and sales, applies
               last-click attribution to the complete dataset, and adds funnels, SKU-level
               analytics and breakdowns by product property (size, colour, model).
@@ -1076,7 +1076,7 @@ export default function WhySealMetricsPage() {
               data — hosted exclusively in Dublin, Ireland. The AI layer runs as LENS private
               AI (open-weight gpt-oss-120b model hosted by Scaleway in Paris) or with your own
               Anthropic, OpenAI or Gemini key, and your data never trains third-party models.
-              Setup is one script tag or automatic via the SealMetrics MCP, in about 5
+              Setup is one script tag or automatic via the Sealmetrics MCP, in about 5
               minutes, running side-by-side with GA4. Palladium Hotel Group's audit found 40%
               of traffic unattributed before switching and a +165% Display Cost-per-Search
               improvement after. Pricing starts at €499/month — against $150K+/year for GA360

@@ -21,11 +21,11 @@ function locationOf(el: Element): string {
   return "page";
 }
 
-// Fires a SealMetrics pageview on every route change (including the first
+// Fires a Sealmetrics pageview on every route change (including the first
 // load), tagged with the page's content group. The pixel runs in fully manual
 // mode (`auto=0&spa=0`) and is loaded once per document, so this effect is the
 // only source of pageviews — see lib/analytics.
-export function SealMetricsTracker() {
+export function SealmetricsTracker() {
   const pathname = usePathname();
 
   useEffect(() => {

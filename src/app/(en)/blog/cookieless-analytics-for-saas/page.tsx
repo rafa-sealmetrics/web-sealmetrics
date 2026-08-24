@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-saas/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-saas/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual visitors or users?",
     answer:
-      "No. On the marketing site, SealMetrics counts events anonymously — no cookies, no identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in Mixpanel, Amplitude or your own product database, where the user is authenticated and tracking is a different compliance question.",
+      "No. On the marketing site, Sealmetrics counts events anonymously — no cookies, no identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in Mixpanel, Amplitude or your own product database, where the user is authenticated and tracking is a different compliance question.",
   },
   {
     question: "Does cookieless analytics replace Mixpanel or Amplitude?",
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: "Is cookieless analytics compliant for SaaS marketing sites?",
     answer:
-      "Yes — when the implementation uses no cookies, localStorage or personal identifiers. Most European SaaS companies need a DPO review and a DPA from the analytics provider. SealMetrics ships a standard DPA and a TPSR (Third-Party Security Review) package for procurement teams.",
+      "Yes — when the implementation uses no cookies, localStorage or personal identifiers. Most European SaaS companies need a DPO review and a DPA from the analytics provider. Sealmetrics ships a standard DPA and a TPSR (Third-Party Security Review) package for procurement teams.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Page() {
           dateModified: "2026-05-28",
           url: "/blog/cookieless-analytics-for-saas",
           category: "SaaS",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for SaaS", url: "/blog/cookieless-analytics-for-saas" }])} />
@@ -214,7 +214,7 @@ export default function Page() {
             </h2>
             <ul className="space-y-4">
               <li>
-                <Link href="/for/saas" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics for SaaS</Link>
+                <Link href="/for/saas" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics for SaaS</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">The vertical page with pains, outcomes and integration specifics.</p>
               </li>
               <li>

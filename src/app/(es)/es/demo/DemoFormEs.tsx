@@ -363,7 +363,7 @@ export function DemoFormEs() {
               >
                 Aviso de Privacidad
               </a>{" "}
-              y doy mi consentimiento a SealMetrics para procesar mis datos y responder a mi solicitud.
+              y doy mi consentimiento a Sealmetrics para procesar mis datos y responder a mi solicitud.
             </label>
           </div>
 

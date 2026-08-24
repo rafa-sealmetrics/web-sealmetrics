@@ -15,36 +15,36 @@ const CONTENT: Record<
 > = {
   en: {
     eyebrow: "Run the list against a real platform",
-    title: "SealMetrics compared, one requirement at a time",
+    title: "Sealmetrics compared, one requirement at a time",
     lede: "Each comparison takes the checklist to a specific incumbent — same criteria, different architecture. The requirement each one turns on is tagged below.",
     items: [
       {
         href: "/vs-ga4/",
-        label: "SealMetrics vs GA4",
+        label: "Sealmetrics vs GA4",
         blurb: "The free default, and the 60% of EU sessions it never sees.",
         tag: "Req 2 · 100% of the data",
       },
       {
         href: "/vs/ga360/",
-        label: "SealMetrics vs GA360",
+        label: "Sealmetrics vs GA360",
         blurb: "$150K+/yr buys unsampled reports — on the same cookie-dependent collection.",
         tag: "Req 12 · price per accurate data point",
       },
       {
         href: "/vs/adobe-analytics/",
-        label: "SealMetrics vs Adobe Analytics",
+        label: "Sealmetrics vs Adobe Analytics",
         blurb: "The deepest segmentation in the market, on ~170 KB of tag and a 3–6 month implementation.",
         tag: "Req 1 · pixel weight",
       },
       {
         href: "/vs/piwik-pro/",
-        label: "SealMetrics vs Piwik PRO",
+        label: "Sealmetrics vs Piwik PRO",
         blurb: "EU-native and privacy-positioned, but still asking for consent.",
         tag: "Req 11 · compliance by architecture",
       },
       {
         href: "/vs/matomo/",
-        label: "SealMetrics vs Matomo",
+        label: "Sealmetrics vs Matomo",
         blurb: "Open source and self-hostable — what its cookieless mode gives up.",
         tag: "Req 4 · analyst questions",
       },
@@ -58,36 +58,36 @@ const CONTENT: Record<
   },
   es: {
     eyebrow: "Pasa la lista por una plataforma real",
-    title: "SealMetrics comparado, requisito a requisito",
+    title: "Sealmetrics comparado, requisito a requisito",
     lede: "Cada comparativa lleva la checklist a un competidor concreto — mismos criterios, arquitectura distinta. Debajo va etiquetado el requisito sobre el que pivota cada una.",
     items: [
       {
         href: "/es/vs-ga4/",
-        label: "SealMetrics vs GA4",
+        label: "Sealmetrics vs GA4",
         blurb: "El estándar gratuito, y el 60% de sesiones UE que nunca ve.",
         tag: "Req 2 · el 100% del dato",
       },
       {
         href: "/es/vs/ga360/",
-        label: "SealMetrics vs GA360",
+        label: "Sealmetrics vs GA360",
         blurb: "150.000 $/año compran informes sin muestreo — sobre la misma recogida dependiente de cookies.",
         tag: "Req 12 · precio por dato fiable",
       },
       {
         href: "/es/vs/adobe-analytics/",
-        label: "SealMetrics vs Adobe Analytics",
+        label: "Sealmetrics vs Adobe Analytics",
         blurb: "La segmentación más profunda del mercado, sobre ~170 KB de etiqueta y una implantación de 3 a 6 meses.",
         tag: "Req 1 · peso del píxel",
       },
       {
         href: "/es/vs/piwik-pro/",
-        label: "SealMetrics vs Piwik PRO",
+        label: "Sealmetrics vs Piwik PRO",
         blurb: "Nativo europeo y posicionado en privacidad, pero sigue pidiendo consentimiento.",
         tag: "Req 11 · cumplimiento por arquitectura",
       },
       {
         href: "/es/vs/matomo/",
-        label: "SealMetrics vs Matomo",
+        label: "Sealmetrics vs Matomo",
         blurb: "Open source y autoalojable — a qué renuncia su modo cookieless.",
         tag: "Req 4 · preguntas de analista",
       },

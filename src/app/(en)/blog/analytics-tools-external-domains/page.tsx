@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "We mapped every domain contacted by 9 analytics tools. Each one is a performance cost, a privacy risk, and a legal surface.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-tools-external-domains/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/analytics-tools-external-domains.png"],
   },
@@ -36,7 +36,7 @@ export default function ExternalDomainsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools External Domains" }]} />
-      <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", datePublished: "2026-03-04", dateModified: "2026-05-04", url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", datePublished: "2026-03-04", dateModified: "2026-05-04", url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools External Domains", url: "/blog/analytics-tools-external-domains" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -61,7 +61,7 @@ export default function ExternalDomainsPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Adobe Analytics contacts 4 third-party domains per page load, adding 600-1,200 ms of network overhead; GA4 contacts 3 domains costing 450-900 ms.</li>
-            <li>SealMetrics contacts only 1 domain — your own subdomain — with zero third-party requests, zero cross-border transfers, and zero additional DNS lookups.</li>
+            <li>Sealmetrics contacts only 1 domain — your own subdomain — with zero third-party requests, zero cross-border transfers, and zero additional DNS lookups.</li>
             <li>Each third-party US domain is a GDPR legal surface requiring Standard Contractual Clauses and a Transfer Impact Assessment.</li>
             <li>Third-party domains are the primary target of ad blockers and browser privacy features — first-party collection is indistinguishable from normal website requests.</li>
           </ul>
@@ -117,7 +117,7 @@ export default function ExternalDomainsPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">1</td>
                   <td className="py-2.5 px-3 text-center font-mono text-green-muted">0</td>
                   <td className="py-2.5 px-3 text-text-body">EU (customer&apos;s subdomain)</td>
@@ -186,7 +186,7 @@ export default function ExternalDomainsPage() {
           {/* Visual: domain count chart */}
           <div className="my-8 space-y-1.5" aria-label="External domain count comparison chart">
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">Sealmetrics</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '25%', minWidth: '6px', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
@@ -251,7 +251,7 @@ export default function ExternalDomainsPage() {
           </div>
 
           <p>
-            The range is stark. SealMetrics contacts one domain &mdash; your
+            The range is stark. Sealmetrics contacts one domain &mdash; your
             own. Adobe Analytics contacts four third-party domains, all
             resolving to US infrastructure.
           </p>
@@ -274,7 +274,7 @@ export default function ExternalDomainsPage() {
               600&ndash;1,200 ms
             </span>{" "}
             of network overhead before analytics data even begins to transfer.
-            GA4&apos;s 3 domains cost 450&ndash;900 ms. SealMetrics, with one
+            GA4&apos;s 3 domains cost 450&ndash;900 ms. Sealmetrics, with one
             first-party domain, costs 150&ndash;300 ms &mdash; and that domain
             is already resolved because it is a subdomain of your own site.
           </p>
@@ -355,7 +355,7 @@ export default function ExternalDomainsPage() {
           </p>
 
           <p>
-            SealMetrics resolves to the customer&apos;s own subdomain
+            Sealmetrics resolves to the customer&apos;s own subdomain
             (e.g.{" "}
             <code className="text-[0.9em] font-mono bg-warm-50 px-1.5 py-0.5 rounded">collect.yourdomain.com</code>
             ), which points to EU infrastructure in Barcelona, Spain
@@ -387,7 +387,7 @@ export default function ExternalDomainsPage() {
           </p>
 
           <p>
-            SealMetrics uses{" "}
+            Sealmetrics uses{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -465,7 +465,7 @@ export default function ExternalDomainsPage() {
           </p>
 
           <p>
-            SealMetrics collects data through your subdomain, stores it in EU
+            Sealmetrics collects data through your subdomain, stores it in EU
             infrastructure, and contacts zero third-party domains. Read the
             full{" "}
             <Link

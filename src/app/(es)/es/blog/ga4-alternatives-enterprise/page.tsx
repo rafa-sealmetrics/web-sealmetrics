@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/es/blog/ga4-alternatives-enterprise/")],
     url: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
@@ -56,7 +56,7 @@ const alternatives = [
       "Ya usas Adobe Experience Cloud y tienes analistas dedicados de Adobe que saben exprimir Analysis Workspace.",
   },
   {
-    name: "SealMetrics",
+    name: "Sealmetrics",
     url: "https://sealmetrics.com",
     pricing: "Desde 499 €/mes con facturación anual (5.988 €/año)",
     dataCompleteness: "100% en UE",
@@ -119,7 +119,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -173,7 +173,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 Las alternativas enterprise se dividen en dos categorías: las
                 plataformas dependientes de cookies (GA360, Adobe, Piwik PRO) que
                 mejoran a GA4 pero aún pierden 40-60% del tráfico UE, y las
-                plataformas cookieless (SealMetrics) que capturan el 100%.
+                plataformas cookieless (Sealmetrics) que capturan el 100%.
               </li>
               <li>
                 Amplitude y Mixpanel son herramientas de analítica de producto, no
@@ -183,7 +183,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               </li>
               <li>
                 La brecha de coste total entre plataformas es de 25x o más. GA360
-                cuesta más de $150K/año por ~35% de captura de dato UE. SealMetrics
+                cuesta más de $150K/año por ~35% de captura de dato UE. Sealmetrics
                 cuesta {"€"}5.988/año por el 100% de captura. La comparación
                 relevante es el coste por dato preciso.
               </li>
@@ -349,7 +349,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 href="/es/vs/ga360"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Comparativa completa SealMetrics vs GA360
+                Comparativa completa Sealmetrics vs GA360
               </Link>
             </p>
 
@@ -426,17 +426,17 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 href="/es/vs/adobe-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Comparativa completa SealMetrics vs Adobe Analytics
+                Comparativa completa Sealmetrics vs Adobe Analytics
               </Link>
             </p>
 
             <CommercialModule
               locale="es"
-              hook="¿Comparando alternativas sobre folletos de proveedor? Ve la siguiente de esta lista — SealMetrics — corriendo sobre tu propio tráfico en una demo."
+              hook="¿Comparando alternativas sobre folletos de proveedor? Ve la siguiente de esta lista — Sealmetrics — corriendo sobre tu propio tráfico en una demo."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              3. SealMetrics
+              3. Sealmetrics
             </h2>
 
             <p>
@@ -444,11 +444,11 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 href="/es/product"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                SealMetrics
+                Sealmetrics
               </Link>{" "}
               toma un enfoque de arquitectura fundamentalmente distinto. En lugar de
               recoger dato con cookies de navegador y luego mitigar la pérdida por
-              consentimiento, SealMetrics usa{" "}
+              consentimiento, Sealmetrics usa{" "}
               <Link
                 href="/es/glossary/cookieless-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -496,7 +496,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
 
             <p>
               Para empresas de eCommerce UE que priorizan la completitud del dato,
-              SealMetrics ofrece capacidades enterprise a una fracción del precio
+              Sealmetrics ofrece capacidades enterprise a una fracción del precio
               enterprise heredado. La atribución de revenue a último clic se
               construye sobre dato completo — no sobre estimaciones de una fracción
               consentida. LENS AI responde preguntas sobre tu analítica en
@@ -525,14 +525,14 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 href="/es/how-it-works"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Cómo funciona SealMetrics
+                Cómo funciona Sealmetrics
               </Link>{" "}
               /{" "}
               <Link
                 href="/es/for/ecommerce"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                SealMetrics para eCommerce
+                Sealmetrics para eCommerce
               </Link>
             </p>
 
@@ -610,7 +610,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 href="/es/vs/piwik-pro"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Comparativa completa SealMetrics vs Piwik PRO
+                Comparativa completa Sealmetrics vs Piwik PRO
               </Link>
             </p>
 
@@ -844,7 +844,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 ¿Necesitas analítica web o analítica de producto?
               </strong>{" "}
               Amplitude y Mixpanel miden el comportamiento in-app. GA360, Adobe,
-              Piwik PRO, Matomo y SealMetrics miden el tráfico web. Usar una para el
+              Piwik PRO, Matomo y Sealmetrics miden el tráfico web. Usar una para el
               propósito de la otra genera una fricción que la configuración no
               resuelve.
             </p>
@@ -876,7 +876,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Migrando de GA4 este trimestre? Compara tus números de GA4 con el 100% de captura de SealMetrics sobre tu propio tráfico en una demo — 499 €/mes frente a los seis dígitos de GA360 o Adobe."
+            hook="¿Migrando de GA4 este trimestre? Compara tus números de GA4 con el 100% de captura de Sealmetrics sobre tu propio tráfico en una demo — 499 €/mes frente a los seis dígitos de GA360 o Adobe."
           />
 
           {/* Relacionados */}

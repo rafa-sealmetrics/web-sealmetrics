@@ -7,7 +7,7 @@ const COPY = {
     eyebrow: "How it works",
     h1Pre: "A different approach to ",
     h1Em: "measurement.",
-    lede: "Traditional analytics lose most of your data before it's even recorded. SealMetrics was built from scratch to solve this — without cookies, without consent dependency, and without compromising privacy.",
+    lede: "Traditional analytics lose most of your data before it's even recorded. Sealmetrics was built from scratch to solve this — without cookies, without consent dependency, and without compromising privacy.",
     ctaDemo: "Start 14-day trial",
     ctaPricing: "Book a demo",
     microTrust: "5-minute setup · No cookies · EU-hosted by design",
@@ -16,7 +16,7 @@ const COPY = {
     eyebrow: "Cómo funciona",
     h1Pre: "Un enfoque distinto a la ",
     h1Em: "medición.",
-    lede: "La analítica tradicional pierde la mayoría de tus datos antes de registrarlos. SealMetrics se construyó desde cero para resolverlo — sin cookies, sin consentimiento y sin comprometer la privacidad.",
+    lede: "La analítica tradicional pierde la mayoría de tus datos antes de registrarlos. Sealmetrics se construyó desde cero para resolverlo — sin cookies, sin consentimiento y sin comprometer la privacidad.",
     ctaDemo: "Prueba de 14 días",
     ctaPricing: "Reserva una demo",
     microTrust: "Setup en 5 min · Sin cookies · Alojado en UE por diseño",
@@ -81,7 +81,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         </>
       ),
       lede:
-        "Traditional analytics depend on third-party cookies and browser-side tracking. SealMetrics flips the model: first-party collection, server-side processing, EU-hosted storage. All designed so consent rejection, ad blockers and Schrems II stop being your problem.",
+        "Traditional analytics depend on third-party cookies and browser-side tracking. Sealmetrics flips the model: first-party collection, server-side processing, EU-hosted storage. All designed so consent rejection, ad blockers and Schrems II stop being your problem.",
       layers: [
         {
           n: "01 · Collect",
@@ -126,7 +126,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         </>
       ),
       lede:
-        "La analítica tradicional depende de cookies de terceros y tracking en el navegador. SealMetrics invierte el modelo: recolección first-party, procesamiento en servidor, almacenamiento en UE. Todo diseñado para que el rechazo de consentimiento, los bloqueadores y Schrems II dejen de ser tu problema.",
+        "La analítica tradicional depende de cookies de terceros y tracking en el navegador. Sealmetrics invierte el modelo: recolección first-party, procesamiento en servidor, almacenamiento en UE. Todo diseñado para que el rechazo de consentimiento, los bloqueadores y Schrems II dejen de ser tu problema.",
       layers: [
         {
           n: "01 · Captura",
@@ -295,21 +295,21 @@ import { FaqAccordionV3 } from "./FaqAccordionV3";
 
 export function HowItWorksFaqV3({ locale = "en" as Locale }) {
   const itemsEn = [
-    { q: "How does cookieless tracking work without identifying users?", a: "SealMetrics does not identify users at all. Each pageview is logged anonymously with channel metadata (referrer, UTM parameters, landing page, country, device class) and aggregated into channel totals on the server. No cookies, no localStorage, no fingerprinting, no cross-visit stitching — counts only, no per-user journeys." },
-    { q: "Is SealMetrics affected by ad blockers?", a: "No. SealMetrics operates as first-party infrastructure on your own domain. Ad blockers target third-party analytics requests (like those to google-analytics.com). Because SealMetrics data flows through your domain, it is invisible to ad blockers." },
+    { q: "How does cookieless tracking work without identifying users?", a: "Sealmetrics does not identify users at all. Each pageview is logged anonymously with channel metadata (referrer, UTM parameters, landing page, country, device class) and aggregated into channel totals on the server. No cookies, no localStorage, no fingerprinting, no cross-visit stitching — counts only, no per-user journeys." },
+    { q: "Is Sealmetrics affected by ad blockers?", a: "No. Sealmetrics operates as first-party infrastructure on your own domain. Ad blockers target third-party analytics requests (like those to google-analytics.com). Because Sealmetrics data flows through your domain, it is invisible to ad blockers." },
     { q: "How long does setup take?", a: "5 minutes. Add one JavaScript tag to your website — either directly in the HTML or via Google Tag Manager. No consent mode configuration, no cookie banner integration, and no Tag Manager variables to set up." },
-    { q: "Do I need to modify my consent banner?", a: "No. SealMetrics does not require consent under GDPR or ePrivacy because it uses no cookies and collects no personal data. If you already have a consent banner for other tools (like GA4 or advertising pixels), SealMetrics operates independently of it." },
+    { q: "Do I need to modify my consent banner?", a: "No. Sealmetrics does not require consent under GDPR or ePrivacy because it uses no cookies and collects no personal data. If you already have a consent banner for other tools (like GA4 or advertising pixels), Sealmetrics operates independently of it." },
     { q: "Where is data processed and stored?", a: "All data is processed and stored exclusively on EU servers in Dublin, Ireland. No data transfers outside the EU, no sub-processors in third countries, no reliance on Standard Contractual Clauses or other cross-border transfer mechanisms." },
-    { q: "Does SealMetrics use fingerprinting?", a: "No. SealMetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
+    { q: "Does Sealmetrics use fingerprinting?", a: "No. Sealmetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
     { q: "What happens if I exceed my event limit?", a: "We never block your tracking. At 80% of your event limit you receive an email alert, at 100% a dashboard notification, and at 120% we contact you to discuss upgrading. No data is lost during any overage period." },
   ];
   const itemsEs = [
-    { q: "¿Cómo funciona el tracking sin cookies sin identificar al usuario?", a: "SealMetrics no identifica a los usuarios, en absoluto. Cada pageview se registra de forma anónima con metadatos de canal (referrer, UTM, landing, país, tipo de dispositivo) y se agrega en totales por canal en servidor. Sin cookies, sin localStorage, sin fingerprinting, sin stitching entre visitas — solo conteos, sin journeys por usuario." },
-    { q: "¿Afectan los bloqueadores de anuncios a SealMetrics?", a: "No. SealMetrics opera como infraestructura first-party en tu propio dominio. Los bloqueadores atacan peticiones de analítica de terceros (como las de google-analytics.com). Como los datos de SealMetrics pasan por tu dominio, es invisible para los bloqueadores." },
+    { q: "¿Cómo funciona el tracking sin cookies sin identificar al usuario?", a: "Sealmetrics no identifica a los usuarios, en absoluto. Cada pageview se registra de forma anónima con metadatos de canal (referrer, UTM, landing, país, tipo de dispositivo) y se agrega en totales por canal en servidor. Sin cookies, sin localStorage, sin fingerprinting, sin stitching entre visitas — solo conteos, sin journeys por usuario." },
+    { q: "¿Afectan los bloqueadores de anuncios a Sealmetrics?", a: "No. Sealmetrics opera como infraestructura first-party en tu propio dominio. Los bloqueadores atacan peticiones de analítica de terceros (como las de google-analytics.com). Como los datos de Sealmetrics pasan por tu dominio, es invisible para los bloqueadores." },
     { q: "¿Cuánto tarda la instalación?", a: "5 minutos. Añade un script JavaScript a tu web — directamente en el HTML o vía Google Tag Manager. Sin configurar consent mode, sin integrar banner de cookies, sin variables de Tag Manager." },
-    { q: "¿Tengo que modificar mi banner de consentimiento?", a: "No. SealMetrics no requiere consentimiento bajo RGPD o ePrivacy porque no usa cookies ni recopila datos personales. Si ya tienes un banner para otras herramientas (GA4 o pixels publicitarios), SealMetrics opera independientemente." },
+    { q: "¿Tengo que modificar mi banner de consentimiento?", a: "No. Sealmetrics no requiere consentimiento bajo RGPD o ePrivacy porque no usa cookies ni recopila datos personales. Si ya tienes un banner para otras herramientas (GA4 o pixels publicitarios), Sealmetrics opera independientemente." },
     { q: "¿Dónde se procesan y almacenan los datos?", a: "Todos los datos se procesan y almacenan exclusivamente en servidores UE en Dublín, Irlanda. Sin transferencias fuera de UE, sin sub-procesadores en terceros países, sin dependencia de Cláusulas Contractuales Tipo." },
-    { q: "¿Usa SealMetrics fingerprinting?", a: "No. SealMetrics no usa fingerprinting de navegador, canvas fingerprinting ni ninguna técnica que cree un identificador único a partir de características del dispositivo. Es una decisión arquitectónica — el fingerprinting crea dato personal y requeriría consentimiento." },
+    { q: "¿Usa Sealmetrics fingerprinting?", a: "No. Sealmetrics no usa fingerprinting de navegador, canvas fingerprinting ni ninguna técnica que cree un identificador único a partir de características del dispositivo. Es una decisión arquitectónica — el fingerprinting crea dato personal y requeriría consentimiento." },
     { q: "¿Qué pasa si supero mi límite de eventos?", a: "Nunca bloqueamos tu tracking. Al 80% del límite recibes un email, al 100% una notificación en dashboard, y al 120% te contactamos para hablar de upgrade. Ningún dato se pierde durante el exceso." },
   ];
   const items = locale === "es" ? itemsEs : itemsEn;
@@ -329,8 +329,8 @@ export function HowItWorksFaqV3({ locale = "en" as Locale }) {
           Las objeciones <em>técnicas</em>, respondidas.
         </>
       }
-      ledeEn="Questions we get from CTOs, DPOs and security teams evaluating SealMetrics."
-      ledeEs="Preguntas que nos llegan de CTOs, DPOs y equipos de seguridad evaluando SealMetrics."
+      ledeEn="Questions we get from CTOs, DPOs and security teams evaluating Sealmetrics."
+      ledeEs="Preguntas que nos llegan de CTOs, DPOs y equipos de seguridad evaluando Sealmetrics."
     />
   );
 }
