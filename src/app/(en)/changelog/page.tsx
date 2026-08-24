@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
@@ -27,10 +28,31 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://sealmetrics.com/changelog/",
+    languages: getAlternates("/changelog"),
   },
 };
 
 const entries = [
+  {
+    date: "August 2026",
+    updates: [
+      {
+        title: "Ephemeral session identifiers — rotated every day",
+        type: "Improved",
+        desc: "The session identifier we use to count visits without cookies is now ephemeral: it expires and regenerates daily, and the key material behind each rotation is destroyed immediately afterwards. Activity from the same device can no longer be linked across days or across sites — by anyone, ourselves included. Your reports are unaffected and no action is required.",
+      },
+      {
+        title: "Click IDs are no longer stored",
+        type: "Improved",
+        desc: "Ad-platform click identifiers (gclid, fbclid, msclkid and the like) are now used only at the moment of the visit to attribute the channel, and are never stored — not as a field, not inside stored URLs. Campaign attribution for Google Ads, Meta and others works exactly as before. If you use the raw-data endpoints or the BigQuery export, the click ID field now comes back empty: that's not a bug, that's privacy.",
+      },
+      {
+        title: "Raw User-Agents and IPs removed from storage and server logs",
+        type: "Improved",
+        desc: "The browser's full User-Agent string is no longer retained in analytics storage, and our edge access logs no longer record visitor IP addresses or User-Agents. Browser, device and country reports are computed in flight and keep working unchanged.",
+      },
+    ],
+  },
   {
     date: "July 2026",
     updates: [
