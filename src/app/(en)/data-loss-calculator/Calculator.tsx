@@ -89,7 +89,7 @@ const COUNTRY_DATA: Record<CountryCode, CountryData> = {
    is independent of consent, ad blockers or Safari ITP, and it is the
    same regardless of country because it is a property of the tag, not
    the market. Grounded in page-speed abandonment research (Google/
-   Deloitte, "Milliseconds Make Millions"). SealMetrics ships a
+   Deloitte, "Milliseconds Make Millions"). Sealmetrics ships a
    lightweight first-party pixel that fires immediately, so it does not
    pay this tax.
    =========================================== */
@@ -709,7 +709,7 @@ export function Calculator() {
                   <span className="font-medium text-text-primary">
                     {Math.round(HEAVY_PIXEL_ABANDON * 100)}%
                   </span>{" "}
-                  of visitors leave before the hit is ever sent. SealMetrics
+                  of visitors leave before the hit is ever sent. Sealmetrics
                   uses a lightweight first-party pixel that fires immediately —
                   it never pays this tax.
                 </p>
@@ -746,11 +746,11 @@ export function Calculator() {
                     );
                   })}
 
-                  {/* SealMetrics bar */}
+                  {/* Sealmetrics bar */}
                   <div className="pt-3 mt-3 border-t border-warm-200">
                     <div className="flex justify-between text-[0.8rem] mb-1.5">
                       <span className="text-text-secondary font-medium">
-                        SealMetrics captures
+                        Sealmetrics captures
                       </span>
                       <span className="font-mono text-green-muted font-medium">
                         {formatNumber(visitors)}

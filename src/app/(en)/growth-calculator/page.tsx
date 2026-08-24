@@ -8,21 +8,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Growth Calculator — SealMetrics",
+  title: "Growth Calculator — Sealmetrics",
   description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
   openGraph: {
-    title: "Growth Calculator — SealMetrics",
+    title: "Growth Calculator — Sealmetrics",
     description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
     type: "website",
     images: [ogImage("/growth-calculator/")],
     url: "https://sealmetrics.com/growth-calculator/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Growth Calculator — SealMetrics",
+    title: "Growth Calculator — Sealmetrics",
     description: "How much revenue could you scale with complete data? Enter your numbers and see the growth potential your current analytics cannot show you.",
     images: [ogImage("/growth-calculator/")],
   },

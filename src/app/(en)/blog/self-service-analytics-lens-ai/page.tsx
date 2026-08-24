@@ -9,24 +9,24 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "How SealMetrics Enables Self-Service Analytics",
+  title: "How Sealmetrics Enables Self-Service Analytics",
   description:
-    "Pointing an LLM at your data is easy. The hard part is trustworthy answers: complete cookieless data plus the SealMetrics MCP, shipped as LENS AI.",
+    "Pointing an LLM at your data is easy. The hard part is trustworthy answers: complete cookieless data plus the Sealmetrics MCP, shipped as LENS AI.",
   openGraph: {
     title: "What It Takes to Make Self-Service Analytics Actually Work",
     description:
-      "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How SealMetrics ships self-service analytics as LENS AI.",
+      "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How Sealmetrics ships self-service analytics as LENS AI.",
     type: "article",
     images: [ogImage("/blog/self-service-analytics-lens-ai/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-lens-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What It Takes to Make Self-Service Analytics Actually Work",
-    description: "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How SealMetrics ships self-service analytics as LENS AI.",
+    description: "Complete cookieless data, a semantic MCP the model can't misread, an encoded analyst playbook, and architectural guardrails. How Sealmetrics ships self-service analytics as LENS AI.",
     images: [ogImage("/blog/self-service-analytics-lens-ai/")],
   },
   alternates: {
@@ -99,7 +99,7 @@ const faqs = [
   {
     question: "What is self-service analytics with LENS AI?",
     answer:
-      "It is the ability for a non-technical person — a CMO, a growth lead, an ecommerce manager — to ask a question in plain language and get an answer directly from their own analytics, without writing SQL, hunting through dashboards, or filing a request with a data analyst. LENS AI is the umbrella brand for SealMetrics AI; the SealMetrics MCP exposes several dozen read-only tools that a model like Claude, ChatGPT or Cursor calls on the user's behalf to pull real, complete data.",
+      "It is the ability for a non-technical person — a CMO, a growth lead, an ecommerce manager — to ask a question in plain language and get an answer directly from their own analytics, without writing SQL, hunting through dashboards, or filing a request with a data analyst. LENS AI is the umbrella brand for Sealmetrics AI; the Sealmetrics MCP exposes several dozen read-only tools that a model like Claude, ChatGPT or Cursor calls on the user's behalf to pull real, complete data.",
   },
   {
     question: "Why does pointing an LLM at GA4 usually produce wrong answers?",
@@ -109,7 +109,7 @@ const faqs = [
   {
     question: "Does LENS AI reconstruct customer journeys or do multi-touch attribution?",
     answer:
-      "No. SealMetrics measures aggregate, anonymous events and attributes revenue last-click at the event level. It does not identify individuals, does not stitch pageviews into per-user journeys, and does not run multi-touch models. The model can only answer questions the underlying aggregate data can answer — which is exactly what keeps the answers honest.",
+      "No. Sealmetrics measures aggregate, anonymous events and attributes revenue last-click at the event level. It does not identify individuals, does not stitch pageviews into per-user journeys, and does not run multi-touch models. The model can only answer questions the underlying aggregate data can answer — which is exactly what keeps the answers honest.",
   },
   {
     question: "Where does the AI run, and does my data leave the EU?",
@@ -142,7 +142,7 @@ export default function Page() {
           dateModified: "2026-07-06",
           url: "/blog/self-service-analytics-lens-ai",
           category: "AI & Analytics",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Self-Service Analytics With LENS AI", url: "/blog/self-service-analytics-lens-ai" }])} />
@@ -157,7 +157,7 @@ export default function Page() {
               What It Takes to Make Self-Service Analytics <em>Actually Work</em>
             </h1>
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[46ch]">
-              Pointing an LLM at your data is the easy part. The hard part is making its answers trustworthy — and it&apos;s the part SealMetrics built first, then shipped as LENS AI.
+              Pointing an LLM at your data is the easy part. The hard part is making its answers trustworthy — and it&apos;s the part Sealmetrics built first, then shipped as LENS AI.
             </p>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">July 5, 2026</time>
@@ -208,14 +208,14 @@ export default function Page() {
               Self-service analytics is a data-quality problem before it is an AI problem. If your measurement layer only captures the visitors who accepted a cookie banner, every answer built on top of it inherits that bias — and no amount of prompting fixes a dataset that was never collected. A model reasoning over partial data isn&apos;t wrong because it&apos;s a bad model; it&apos;s wrong because it&apos;s reasoning over a fraction of reality and has no way to know it.
             </p>
             <p>
-              SealMetrics starts here. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless, first-party measurement</Link> counts events anonymously on your own domain: no cookies to reject, no third-party endpoint for ad blockers to target, nothing on the device to expire, and no sampling at volume. When the model asks &ldquo;how many conversions from paid search last week,&rdquo; the number describes the whole of your traffic — not the compliant remainder of it. If you want the arithmetic of how the alternative erodes, we walked through why <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 ends up showing a sliver of EU traffic</Link>.
+              Sealmetrics starts here. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless, first-party measurement</Link> counts events anonymously on your own domain: no cookies to reject, no third-party endpoint for ad blockers to target, nothing on the device to expire, and no sampling at volume. When the model asks &ldquo;how many conversions from paid search last week,&rdquo; the number describes the whole of your traffic — not the compliant remainder of it. If you want the arithmetic of how the alternative erodes, we walked through why <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 ends up showing a sliver of EU traffic</Link>.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               Layer 02 — A surface the model can&apos;t misread
             </h2>
             <p>
-              The second failure mode — the model guessing which field means what — is solved by not giving it a warehouse to guess about. The SealMetrics MCP (Model Context Protocol) server doesn&apos;t hand the model a SQL prompt. It exposes several dozen named, read-only tools, and each maps a single business concept to a single canonical metric with a fixed contract: <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_overview</code> for headline KPIs, <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_channels</code> and <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_campaigns</code> for acquisition, <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_funnel</code> and <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_conversions</code> for outcomes, <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_landing_pages</code> for entry performance.
+              The second failure mode — the model guessing which field means what — is solved by not giving it a warehouse to guess about. The Sealmetrics MCP (Model Context Protocol) server doesn&apos;t hand the model a SQL prompt. It exposes several dozen named, read-only tools, and each maps a single business concept to a single canonical metric with a fixed contract: <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_overview</code> for headline KPIs, <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_channels</code> and <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_campaigns</code> for acquisition, <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_funnel</code> and <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_conversions</code> for outcomes, <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">get_landing_pages</code> for entry performance.
             </p>
             <p>
               When the model wants revenue by country, there is one tool for it and one definition behind it. It cannot accidentally sum a staging column, because there is no staging column within reach — only the metric your team actually agreed on. This is the same idea a good data org implements internally as a semantic layer: force every question through a small set of governed definitions before it touches raw data. The difference is that here it ships as the product. The tool contract <em>is</em> the guardrail — you don&apos;t build or maintain it.
@@ -228,7 +228,7 @@ export default function Page() {
                   <tr className="border-b border-warm-200">
                     <th className="text-left py-3 pr-6 text-text-tertiary font-medium w-[26%]"> </th>
                     <th className="text-left py-3 px-4 text-text-secondary font-medium">LLM + raw warehouse</th>
-                    <th className="text-left py-3 pl-4 text-brand font-medium">SealMetrics MCP</th>
+                    <th className="text-left py-3 pl-4 text-brand font-medium">Sealmetrics MCP</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -251,7 +251,7 @@ export default function Page() {
               Layer 03 — A senior analyst&apos;s workflow, encoded
             </h2>
             <p>
-              Naming the metrics is half the job. The other half is knowing what to do with them — the sequence a good analyst runs almost without thinking when someone asks &ldquo;why did sales drop.&rdquo; SealMetrics encodes that sequence as a marketing playbook the model invokes on its own. Ask a diagnostic question and it doesn&apos;t improvise; it pulls the playbook, which hands it a <em>method</em> rather than an answer: start with the overview against the previous period, decompose by channel, isolate the campaigns and landing pages that moved, separate traffic from conversion rate, and only then form a diagnosis with a prioritized action list. Then it executes that method by calling the data tools in order.
+              Naming the metrics is half the job. The other half is knowing what to do with them — the sequence a good analyst runs almost without thinking when someone asks &ldquo;why did sales drop.&rdquo; Sealmetrics encodes that sequence as a marketing playbook the model invokes on its own. Ask a diagnostic question and it doesn&apos;t improvise; it pulls the playbook, which hands it a <em>method</em> rather than an answer: start with the overview against the previous period, decompose by channel, isolate the campaigns and landing pages that moved, separate traffic from conversion rate, and only then form a diagnosis with a prioritized action list. Then it executes that method by calling the data tools in order.
             </p>
 
             {/* ── Worked transcript: dark slab ── */}
@@ -355,7 +355,7 @@ export default function Page() {
               It is worth being precise about the boundary. LENS AI automates the reporting queue: the &ldquo;pull me the numbers,&rdquo; &ldquo;why did this move,&rdquo; &ldquo;how did the campaign do&rdquo; questions that make up the bulk of inbound analyst requests. It does not design your experiments, reason about causality beyond what the data supports, or set strategy — that judgment stays human, and freeing up time for it is the entire point.
             </p>
             <p>
-              It also won&apos;t reconstruct a customer journey or split credit across touchpoints, because SealMetrics doesn&apos;t collect the per-user data those reports require. If your model of the world depends on stitching one person&apos;s path across sessions, this is the wrong tool, and honestly so. What you get instead is a defensible, complete, aggregate picture that a non-analyst can interrogate directly.
+              It also won&apos;t reconstruct a customer journey or split credit across touchpoints, because Sealmetrics doesn&apos;t collect the per-user data those reports require. If your model of the world depends on stitching one person&apos;s path across sessions, this is the wrong tool, and honestly so. What you get instead is a defensible, complete, aggregate picture that a non-analyst can interrogate directly.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -365,7 +365,7 @@ export default function Page() {
               The lightest possible start is the open LENS demo at <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">lens-lite.sealmetrics.com</code>, which runs the whole self-service loop on sample data — ask it to boost ROAS, find growth, or cut waste, and watch it work through the method. When you&apos;re ready with real data, connect the MCP at <code className="font-mono text-[0.85rem] bg-warm-50 px-1.5 py-0.5 rounded">mcp.sealmetrics.com</code> from Claude, ChatGPT, Cursor or Claude Code; the same server can even provision a fresh site from the chat, so the tool that answers your questions is also the one that sets you up. The measurement foundation is covered end-to-end on the <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">how it works</Link> page.
             </p>
             <p>
-              The upshot is simple, and it&apos;s the through-line of all four layers: self-service analytics doesn&apos;t start with the model. It starts with data complete enough to trust and a surface constrained enough that the model can&apos;t misread it. Get those right — as SealMetrics does — and the analyst&apos;s queue mostly answers itself.
+              The upshot is simple, and it&apos;s the through-line of all four layers: self-service analytics doesn&apos;t start with the model. It starts with data complete enough to trust and a surface constrained enough that the model can&apos;t misread it. Get those right — as Sealmetrics does — and the analyst&apos;s queue mostly answers itself.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -391,11 +391,11 @@ export default function Page() {
             </h2>
             <ul className="space-y-4">
               <li>
-                <Link href="/product" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics product &amp; LENS AI</Link>
+                <Link href="/product" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics product &amp; LENS AI</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">The measurement platform, the private-AI layer, and the one-minute MCP setup.</p>
               </li>
               <li>
-                <Link href="/how-it-works" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">How SealMetrics works</Link>
+                <Link href="/how-it-works" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">How Sealmetrics works</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">First-party, cookieless collection and why the numbers reconcile.</p>
               </li>
               <li>

@@ -7,24 +7,24 @@ import { AccessForm } from "./AccessForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Get Demo Account Access — SealMetrics",
+  title: "Get Demo Account Access — Sealmetrics",
   description:
-    "Request credentials for the live SealMetrics demo account. Corporate email required. Credentials delivered by email.",
+    "Request credentials for the live Sealmetrics demo account. Corporate email required. Credentials delivered by email.",
   openGraph: {
-    title: "Get Demo Account Access — SealMetrics",
+    title: "Get Demo Account Access — Sealmetrics",
     description:
-      "Request credentials for the live SealMetrics demo account. Corporate email required.",
+      "Request credentials for the live Sealmetrics demo account. Corporate email required.",
     type: "website",
     images: [ogImage("/demo-access/")],
     url: "https://sealmetrics.com/demo-access/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Get Demo Account Access — SealMetrics",
-    description: "Request credentials for the live SealMetrics demo account. Corporate email required.",
+    title: "Get Demo Account Access — Sealmetrics",
+    description: "Request credentials for the live Sealmetrics demo account. Corporate email required.",
     images: [ogImage("/demo-access/")],
   },
   alternates: {
@@ -57,7 +57,7 @@ export default function DemoAccessPage() {
                 className="text-ink-soft mt-7 leading-[1.55] max-w-[52ch]"
                 style={{ fontSize: "clamp(16px, 1.3vw, 19px)" }}
               >
-                Get credentials to log in to a working SealMetrics dashboard. Real traffic, real revenue attribution, real reports — so you can click around at your own pace before talking to anyone.
+                Get credentials to log in to a working Sealmetrics dashboard. Real traffic, real revenue attribution, real reports — so you can click around at your own pace before talking to anyone.
               </p>
 
               <div className="mt-8 flex flex-col gap-4">

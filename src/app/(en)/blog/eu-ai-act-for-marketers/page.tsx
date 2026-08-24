@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Provider or deployer? What Article 50 transparency actually requires, what lands on the model publisher instead, and a checklist for 2 August 2026.",
     type: "article",
     url: "https://sealmetrics.com/blog/eu-ai-act-for-marketers/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/eu-ai-act-for-marketers.png"],
   },
@@ -88,7 +88,7 @@ export default function EuAiActForMarketersPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -324,7 +324,7 @@ export default function EuAiActForMarketersPage() {
               <code className="font-mono text-[0.9em]">gpt-oss-120b</code>, under
               the Apache 2.0 licence, hosted on Scaleway Generative APIs in
               Paris, France. Scaleway is a French company whose parent is the
-              Iliad group, with no US ownership. As the platform, SealMetrics is
+              Iliad group, with no US ownership. As the platform, Sealmetrics is
               a deployer of a limited-risk AI system, and we say so plainly
               rather than implying the assistant is anything other than a model
               reading your reports. The full architecture write-up is in the{" "}

@@ -9,14 +9,14 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "8 Best Enterprise Analytics Platforms in 2026",
   description:
-    "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, SealMetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
+    "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, Sealmetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
   openGraph: {
     title: "8 Best Enterprise Analytics Platforms in 2026",
     description:
       "Editorial ranking of enterprise analytics platforms compared on data capture, compliance, pricing, and AI features.",
     type: "article",
     url: "https://sealmetrics.com/blog/best-enterprise-analytics-platforms/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/best-enterprise-analytics-platforms.png"],
   },
@@ -67,7 +67,7 @@ const platforms = [
     bestFor: "Enterprises already using Adobe Experience Cloud that need advanced segmentation and can invest in specialized talent.",
   },
   {
-    name: "SealMetrics",
+    name: "Sealmetrics",
     url: "https://sealmetrics.com",
     pricing: "From \u20ac5,988/yr",
     euDataCapture: "100%",
@@ -142,7 +142,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
           url: "/blog/best-enterprise-analytics-platforms",
           category: "Comparisons",
           author: {
-            name: "SealMetrics Team",
+            name: "Sealmetrics Team",
             url: "/about",
           },
         })}
@@ -178,7 +178,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">March 16, 2026</time>
               <span>12 min read</span>
-              <span>By SealMetrics Team</span>
+              <span>By Sealmetrics Team</span>
             </div>
           </header>
 
@@ -191,7 +191,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 Enterprise analytics in 2026 splits into two categories:
                 cookie-dependent platforms (GA4, GA360, Adobe, Piwik PRO,
                 Amplitude, Mixpanel) that lose 40-60% of EU traffic, and
-                cookieless platforms (SealMetrics) that capture 100%.
+                cookieless platforms (Sealmetrics) that capture 100%.
               </li>
               <li>
                 GA360 and Adobe Analytics remain the incumbents for organizations
@@ -426,7 +426,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 href="/vs/ga360"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Full SealMetrics vs GA360 comparison
+                Full Sealmetrics vs GA360 comparison
               </Link>
             </p>
 
@@ -472,7 +472,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 href="/vs/adobe-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Full SealMetrics vs Adobe Analytics comparison
+                Full Sealmetrics vs Adobe Analytics comparison
               </Link>
             </p>
 
@@ -481,7 +481,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
           />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              4. SealMetrics
+              4. Sealmetrics
             </h2>
 
             <p>
@@ -489,11 +489,11 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 href="/product"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                SealMetrics
+                Sealmetrics
               </Link>{" "}
               takes a fundamentally different architectural approach. Instead of
               collecting data through browser-side cookies and then trying to
-              mitigate consent loss, SealMetrics uses{" "}
+              mitigate consent loss, Sealmetrics uses{" "}
               <Link
                 href="/glossary/cookieless-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -506,7 +506,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
 
             <p>
               For EU eCommerce companies prioritizing data completeness,
-              SealMetrics offers enterprise-grade capabilities at a fraction of
+              Sealmetrics offers enterprise-grade capabilities at a fraction of
               legacy enterprise pricing. LENS AI answers analytics questions in
               plain language, grounded in your own numbers. Last-click revenue attribution is built on
               complete data — not estimates from a consented fraction. Agent analytics
@@ -524,7 +524,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
 
             <p>
               <strong className="font-semibold text-text-primary">
-                Choose SealMetrics if:
+                Choose Sealmetrics if:
               </strong>{" "}
               You operate in the EU, need 100% data capture, want GDPR
               compliance built into the architecture, and prefer enterprise
@@ -536,7 +536,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 href="/how-it-works"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                How SealMetrics works
+                How Sealmetrics works
               </Link>
             </p>
 
@@ -589,7 +589,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 href="/vs/piwik-pro"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                Full SealMetrics vs Piwik PRO comparison
+                Full Sealmetrics vs Piwik PRO comparison
               </Link>
             </p>
 
@@ -741,7 +741,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 Are you measuring web traffic or product behavior?
               </strong>{" "}
               Amplitude and Mixpanel are product analytics tools. GA4, GA360,
-              Adobe, Piwik PRO, Matomo, and SealMetrics are web analytics
+              Adobe, Piwik PRO, Matomo, and Sealmetrics are web analytics
               platforms. Using a product analytics tool for web measurement (or
               vice versa) creates friction that no configuration can eliminate.
             </p>

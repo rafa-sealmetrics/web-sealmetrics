@@ -6,7 +6,7 @@ export const pricingSignalFaqs = {
     ["Are all analytics capabilities included?", "Core analytics, conversion tracking, API, MCP, BigQuery and LENS with your own model key are included from Growth. Scale adds webhooks, audit logs, priority support and managed Private AI tokens. Enterprise adds isolated processing and dedicated governance."],
     ["What is the Agentic Package?", "A self-service tier provisioned from an MCP-capable assistant. It includes aggregate cookieless analytics for up to 1M human events per month, documentation-only support and no card."],
     ["Can I change billing period?", "Yes. Annual billing is paid upfront and prices the year at the equivalent of ten monthly payments. A monthly-to-annual change starts on the next billing cycle."],
-    ["Can I downgrade when traffic falls?", "Yes. If usage stays below half of the current allowance for at least three months, SealMetrics can suggest a lower plan. Nothing changes without your action."],
+    ["Can I downgrade when traffic falls?", "Yes. If usage stays below half of the current allowance for at least three months, Sealmetrics can suggest a lower plan. Nothing changes without your action."],
     ["Do you charge per-event overages?", "No. There is no variable per-event line item. Sustained growth moves the account to the next fixed plan under the published overage policy."],
   ],
   es: [
@@ -16,7 +16,7 @@ export const pricingSignalFaqs = {
     ["¿Están incluidas todas las capacidades analíticas?", "Analítica core, conversiones, API, MCP, BigQuery y LENS con tu propia clave de modelo están incluidos desde Growth. Scale añade webhooks, logs de auditoría, soporte prioritario y tokens de Private AI gestionada. Enterprise añade procesamiento aislado y governance dedicada."],
     ["¿Qué es el Agentic Package?", "Un tier self-service aprovisionado desde un asistente compatible con MCP. Incluye analítica agregada sin cookies hasta 1M de eventos humanos al mes, soporte sólo por documentación y sin tarjeta."],
     ["¿Puedo cambiar el periodo de facturación?", "Sí. La facturación anual se paga por adelantado y equivale a diez mensualidades. El cambio de mensual a anual empieza en el siguiente ciclo."],
-    ["¿Puedo bajar de plan si cae el tráfico?", "Sí. Si el uso permanece por debajo de la mitad del límite durante al menos tres meses, SealMetrics puede proponerte un plan inferior. Nada cambia sin tu acción."],
+    ["¿Puedo bajar de plan si cae el tráfico?", "Sí. Si el uso permanece por debajo de la mitad del límite durante al menos tres meses, Sealmetrics puede proponerte un plan inferior. Nada cambia sin tu acción."],
     ["¿Cobráis excesos por evento?", "No. No existe una línea variable por evento. El crecimiento sostenido mueve la cuenta al siguiente plan fijo bajo la política de exceso publicada."],
   ],
 } as const;

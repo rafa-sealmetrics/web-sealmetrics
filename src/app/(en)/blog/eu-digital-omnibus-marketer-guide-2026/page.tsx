@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Cookie banners could vanish for 60% of websites. Complete guide to COM(2025) 837.",
     type: "article",
     url: "https://sealmetrics.com/blog/eu-digital-omnibus-marketer-guide-2026/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/eu-digital-omnibus-marketer-guide-2026.png"],
   },
@@ -36,7 +36,7 @@ export default function OmnibusGuidePage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "EU Digital Omnibus Marketer Guide" }]} />
-      <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus Explained: What Every Marketer Needs to Know in 2026", description: "Cookie banners could vanish for 60% of websites. First-party analytics gets explicit legal authorization.", datePublished: "2026-02-12", dateModified: "2026-05-04", url: "/blog/eu-digital-omnibus-marketer-guide-2026", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus Explained: What Every Marketer Needs to Know in 2026", description: "Cookie banners could vanish for 60% of websites. First-party analytics gets explicit legal authorization.", datePublished: "2026-02-12", dateModified: "2026-05-04", url: "/blog/eu-digital-omnibus-marketer-guide-2026", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus Marketer Guide", url: "/blog/eu-digital-omnibus-marketer-guide-2026" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "¿Qué es el tracking de eventos?",
     description: "Registra interacciones más allá de las páginas vistas. El modelo de GA4 y sus alternativas.",
     url: "https://sealmetrics.com/es/glossary/event-tracking/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/event-tracking/")],
@@ -58,7 +58,7 @@ export default function EventTrackingEsPage() {
             Los eventos capturan las acciones que importan para decidir. Una página vista te dice que alguien llegó; los eventos te dicen qué hizo: eventos de interacción (profundidad de scroll, tiempo en página, inicio y fin de vídeo, descargas), eventos de conversión (envíos de formulario, compras, añadir al carrito, altas, confirmaciones de reserva), eventos de navegación (clics salientes, clics internos, búsquedas en el sitio) y eventos personalizados propios de tu producto.
           </p>
           <p>
-            GA4 recoge automáticamente un conjunto de eventos de medición mejorada sin configuración adicional. Los eventos personalizados requieren llamadas a gtag.js o disparadores de GTM. SealMetrics captura más de 60 eventos estándar de forma automática mediante <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">tracking first-party sin cookies</Link>, incluidas interacciones que los scripts de terceros no ven.
+            GA4 recoge automáticamente un conjunto de eventos de medición mejorada sin configuración adicional. Los eventos personalizados requieren llamadas a gtag.js o disparadores de GTM. Sealmetrics captura más de 60 eventos estándar de forma automática mediante <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">tracking first-party sin cookies</Link>, incluidas interacciones que los scripts de terceros no ven.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">El punto de fallo del modelo de GA4</h2>
@@ -81,7 +81,7 @@ export default function EventTrackingEsPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona SealMetrics</Link> &middot; <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">La plataforma SealMetrics</Link>
+            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona Sealmetrics</Link> &middot; <Link href="/es/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">La plataforma Sealmetrics</Link>
           </p>
         </div>
       </div>

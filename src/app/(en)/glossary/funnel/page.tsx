@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is a Conversion Funnel? — SealMetrics Glossary",
+  title: "What Is a Conversion Funnel? — Sealmetrics Glossary",
   description:
     "A funnel is an ordered sequence of steps toward a conversion, measured by drop-off. How funnel analysis works and why coverage decides whether to trust it.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "An ordered sequence of steps toward a conversion, measured by drop-off — trustworthy only at full coverage.",
     type: "article",
     url: "https://sealmetrics.com/glossary/funnel/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/funnel/")],
   },
@@ -67,7 +67,7 @@ export default function FunnelPage() {
             Each funnel step is a countable event — a pageview of a URL, or an explicit action recorded through <Link href="/glossary/event-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">event tracking</Link>, like add-to-cart or begin-checkout. The report counts how much traffic reached each step within a period and computes the transition rate between consecutive steps. Reading it is subtraction: a healthy product-to-cart rate followed by a collapse at checkout points at the checkout, not at marketing. That precision is the whole appeal — a single conversion rate says you have a problem, a funnel says where.
           </p>
           <p>
-            Funnels can be counted in two ways. Aggregate step counts compare totals at each stage over a period. Per-user path analysis instead follows identified individuals across sessions to establish that the same person completed each step in order. The second requires a persistent per-visitor identifier — which is exactly what consent rules gate. SealMetrics measures funnels the first way: each step is an anonymous aggregate count on 100% of traffic, with no individual followed through the sequence.
+            Funnels can be counted in two ways. Aggregate step counts compare totals at each stage over a period. Per-user path analysis instead follows identified individuals across sessions to establish that the same person completed each step in order. The second requires a persistent per-visitor identifier — which is exactly what consent rules gate. Sealmetrics measures funnels the first way: each step is an anonymous aggregate count on 100% of traffic, with no individual followed through the sequence.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why incomplete data bends the funnel</h2>
@@ -77,7 +77,7 @@ export default function FunnelPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What a funnel does not tell you</h2>
           <p>
-            A funnel imposes a linear story on non-linear behaviour: real visitors skip steps, loop back, compare tabs and return days later, and an aggregate funnel compresses all of that into ordered totals. It cannot tell you why a step leaks — only that it does; the why needs qualitative work, testing, or session-level research tools built for that purpose. And step counts from different periods or segments are only comparable if measurement coverage was the same in both — which is precisely what consent-gated analytics cannot guarantee. See how SealMetrics reports funnels on complete data on the <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">product page</Link>.
+            A funnel imposes a linear story on non-linear behaviour: real visitors skip steps, loop back, compare tabs and return days later, and an aggregate funnel compresses all of that into ordered totals. It cannot tell you why a step leaks — only that it does; the why needs qualitative work, testing, or session-level research tools built for that purpose. And step counts from different periods or segments are only comparable if measurement coverage was the same in both — which is precisely what consent-gated analytics cannot guarantee. See how Sealmetrics reports funnels on complete data on the <Link href="/product" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">product page</Link>.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function FunnelPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">What Is Data Loss in Analytics</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/what-is-data-loss-in-analytics" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">What Is Data Loss in Analytics</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "GA4 aplica muestreo de datos a volúmenes altos. Aquí está el impacto en tus datos y decisiones.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/ga4-data-sampling-problem/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/ga4-data-sampling-problem.png"],
   },
@@ -37,7 +37,7 @@ export default function GA4DataSamplingPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Muestreo de datos en GA4" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Muestreo de datos en GA4: por qué tus números de tráfico están mal", description: "GA4 aplica muestreo de datos que distorsiona tu analítica.", datePublished: "2026-02-15", dateModified: "2026-05-06", url: "/es/blog/ga4-data-sampling-problem", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Muestreo de datos en GA4: por qué tus números de tráfico están mal", description: "GA4 aplica muestreo de datos que distorsiona tu analítica.", datePublished: "2026-02-15", dateModified: "2026-05-06", url: "/es/blog/ga4-data-sampling-problem", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Muestreo de datos en GA4", url: "/es/blog/ga4-data-sampling-problem" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -158,14 +158,14 @@ export default function GA4DataSamplingPageEs() {
             >
               analítica cookieless
             </Link>{" "}
-            como SealMetrics tienen un enfoque fundamentalmente distinto.
+            como Sealmetrics tienen un enfoque fundamentalmente distinto.
             Al recoger datos por métodos cookieless first-party, cada sesión se captura independientemente del estado del banner, del ad blocker o de las restricciones del navegador. Y como el volumen de datos
             se gestiona a nivel de infraestructura, no hace falta muestreo
             estadístico.
           </p>
 
           <p>
-            Cuando ves 72.847 visitantes en SealMetrics, ese número representa
+            Cuando ves 72.847 visitantes en Sealmetrics, ese número representa
             72.847 sesiones reales. No una muestra. No una estimación. No una
             proyección a partir del subconjunto que aceptó cookies.
           </p>
@@ -202,7 +202,7 @@ export default function GA4DataSamplingPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Tus informes de GA4 llevan el aviso de muestreo? Ve tus propios datos a resolución completa en una demo: SealMetrics calcula sobre el 100% de los eventos, nunca sobre una muestra."
+          hook="¿Tus informes de GA4 llevan el aviso de muestreo? Ve tus propios datos a resolución completa en una demo: Sealmetrics calcula sobre el 100% de los eventos, nunca sobre una muestra."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

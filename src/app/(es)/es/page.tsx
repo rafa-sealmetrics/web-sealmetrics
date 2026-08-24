@@ -28,23 +28,23 @@ import { HeroV3Es, LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Analítica sin consentimiento para eCommerce",
+  title: "Sealmetrics — Analítica sin consentimiento para eCommerce",
   description:
     "Analítica sin consentimiento para eCommerce. Mide el 100% del tráfico — sin cookies, sin modelos. Números que cuadran con Shopify. Alojado en Dublín.",
   openGraph: {
-    title: "SealMetrics — Analítica sin consentimiento para eCommerce",
+    title: "Sealmetrics — Analítica sin consentimiento para eCommerce",
     description:
       "Mide el 100% de tu tráfico. Sin cookies. Sin modelos. Presenta números board-ready que cuadran con Shopify. Alojado en Dublín.",
     type: "website",
     images: [ogImage("/es/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics — Analítica sin consentimiento para eCommerce",
+    title: "Sealmetrics — Analítica sin consentimiento para eCommerce",
     description: "Mide el 100% de tu tráfico. Sin cookies. Sin modelos. Presenta números board-ready que cuadran con Shopify. Alojado en Dublín.",
     images: [ogImage("/es/")],
   },
@@ -59,7 +59,7 @@ export default function HomeEs() {
     <>
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
-      <JsonLd data={speakableWebPageSchema({ url: "/es", name: "SealMetrics — datos completos para eCommerce" })} />
+      <JsonLd data={speakableWebPageSchema({ url: "/es", name: "Sealmetrics — datos completos para eCommerce" })} />
       <JsonLd data={statisticClaimSchema({
         text: "El 40% del tráfico entrante no tenía atribución de source/medium en el stack de medición anterior.",
         source: "Auditoría interna de Palladium Hotel Group sobre atribución de tráfico",
@@ -79,7 +79,7 @@ export default function HomeEs() {
         unit: "PERCENT",
       })} />
       <JsonLd data={statisticClaimSchema({
-        text: "Mejora del +165% en Coste por Búsqueda en Display tras aplicar un modelo de medición basado en SealMetrics sobre DV360.",
+        text: "Mejora del +165% en Coste por Búsqueda en Display tras aplicar un modelo de medición basado en Sealmetrics sobre DV360.",
         source: "Mejora de eficiencia DV360 · Palladium Hotel Group",
         sourceAuthor: "Palladium Hotel Group",
         sourceDate: "2026-04-15",
@@ -88,7 +88,7 @@ export default function HomeEs() {
         unit: "PERCENT",
       })} />
       <JsonLd data={quotationSchema({
-        text: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+        text: "Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
         spokenBy: "Toni Andújar",
         spokenByRole: "Director Digital y Venta Directa, Palladium Hotel Group",
         url: "/es",
@@ -118,7 +118,7 @@ export default function HomeEs() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
             <p>
-              SealMetrics es la fuente neutral de verdad para el eCommerce europeo — una plataforma de analítica web sin cookies que captura el 100% del tráfico entrante, atribuye cada conversión last-click a nivel de canal y cumple el RGPD por arquitectura, no por una capa de consentimiento añadida después. Alojada exclusivamente en Dublín, Irlanda sobre infraestructura propiedad UE, elimina la revisión Schrems II que GA4 + Consent Mode requiere y el gap del 40-60% de rechazo de consentimiento que rompe el ROAS agregado por canal en Europa.
+              Sealmetrics es la fuente neutral de verdad para el eCommerce europeo — una plataforma de analítica web sin cookies que captura el 100% del tráfico entrante, atribuye cada conversión last-click a nivel de canal y cumple el RGPD por arquitectura, no por una capa de consentimiento añadida después. Alojada exclusivamente en Dublín, Irlanda sobre infraestructura propiedad UE, elimina la revisión Schrems II que GA4 + Consent Mode requiere y el gap del 40-60% de rechazo de consentimiento que rompe el ROAS agregado por canal en Europa.
             </p>
             <p>
               Los clientes la usan para alinear marca, agencias de medios, finanzas y analítica interna sobre un único número que cada parte acepta. Palladium Hotel Group recuperó el 40% del tráfico previamente sin atribuir y mejoró el Coste por Búsqueda en Display un +165% en DV360 tras cambiar el modelo de medición. Precio desde €499/mes con facturación anual.

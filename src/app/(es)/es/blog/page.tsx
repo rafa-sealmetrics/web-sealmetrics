@@ -7,21 +7,21 @@ import { BlogIndexSignal } from "@/components/v4/BlogIndexSignal";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Blog de analítica sin cookies — SealMetrics",
+  title: "Blog de analítica sin cookies — Sealmetrics",
   description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
   openGraph: {
-    title: "Blog de analítica sin cookies — SealMetrics",
+    title: "Blog de analítica sin cookies — Sealmetrics",
     description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
     type: "website",
     images: [ogImage("/es/blog/")],
     url: "https://sealmetrics.com/es/blog/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Blog de analítica sin cookies — SealMetrics",
+    title: "Blog de analítica sin cookies — Sealmetrics",
     description: "Insights sobre analítica web, calidad de datos, atribución y medición privacy-first.",
     images: [ogImage("/es/blog/")],
   },
@@ -46,7 +46,7 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
   },
   "gdpr-eprivacy-analytics-legal-assessment": {
     title: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
-    description: "RGPD y ePrivacy son dos leyes distintas, y la analítica tiene que superar las dos para funcionar sin banner. El test legal y el veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y SealMetrics.",
+    description: "RGPD y ePrivacy son dos leyes distintas, y la analítica tiene que superar las dos para funcionar sin banner. El test legal y el veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.",
     category: "Regulación",
     readTime: "9 min",
   },
@@ -57,8 +57,8 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     readTime: "10 min",
   },
   "self-service-analytics-lens-ai": {
-    title: "Cómo SealMetrics habilita la analítica self-service con LENS AI",
-    description: "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. Cómo el dato cookieless completo más el MCP de SealMetrics permiten consultar tu propia analítica.",
+    title: "Cómo Sealmetrics habilita la analítica self-service con LENS AI",
+    description: "Apunta un LLM a datos incompletos de GA4 y se inventa las respuestas. Cómo el dato cookieless completo más el MCP de Sealmetrics permiten consultar tu propia analítica.",
     category: "IA y Analítica",
     readTime: "10 min",
   },
@@ -107,7 +107,7 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
   },
   "best-llm-for-data-analytics": {
     title: "El mejor LLM para analítica de datos no es el que puntúa más alto en los benchmarks",
-    description: "Ejecutamos 162 consultas en vivo con tres modelos abiertos sobre datos de analítica reales para elegir la IA que va dentro de SealMetrics. Lo que lo decidió no fue MMLU: fue el tool-calling, el grounding y un fallo de seguridad que solo apareció en un idioma.",
+    description: "Ejecutamos 162 consultas en vivo con tres modelos abiertos sobre datos de analítica reales para elegir la IA que va dentro de Sealmetrics. Lo que lo decidió no fue MMLU: fue el tool-calling, el grounding y un fallo de seguridad que solo apareció en un idioma.",
     category: "IA",
     readTime: "7 min",
   },

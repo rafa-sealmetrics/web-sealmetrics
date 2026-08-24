@@ -8,10 +8,10 @@ export const AUTHORS = {
   rafa: {
     name: "Rafa Jiménez",
     url: "/authors/rafa-jimenez",
-    jobTitle: "Founder, SealMetrics",
+    jobTitle: "Founder, Sealmetrics",
   } satisfies BlogAuthor,
   sealmetrics: {
-    name: "SealMetrics Team",
+    name: "Sealmetrics Team",
     url: "/about",
   } satisfies BlogAuthor,
 };
@@ -31,7 +31,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "self-service-analytics-for-marketing-teams",
-    title: "Self-Service Analytics for Marketing Teams: How SealMetrics Does It",
+    title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
       "A marketing team gets a correct answer without opening a ticket. 100% of traffic measured without consent, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
     date: "2026-08-06",
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
     slug: "gdpr-eprivacy-analytics-legal-assessment",
     title: "Is Your Analytics Actually GDPR-Compliant? A Legal Assessment",
     description:
-      "GDPR and ePrivacy are two different laws, and analytics has to clear both to run without a consent banner. The legal test, plus a per-tool verdict for GA4, Matomo, Plausible, Piwik PRO and SealMetrics.",
+      "GDPR and ePrivacy are two different laws, and analytics has to clear both to run without a consent banner. The legal test, plus a per-tool verdict for GA4, Matomo, Plausible, Piwik PRO and Sealmetrics.",
     date: "2026-07-06",
     category: "Regulation",
     readTime: "9 min",
@@ -106,9 +106,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "self-service-analytics-lens-ai",
-    title: "How SealMetrics Enables Self-Service Analytics With LENS AI",
+    title: "How Sealmetrics Enables Self-Service Analytics With LENS AI",
     description:
-      "Point an LLM at incomplete GA4 data and it invents answers. How complete cookieless data plus the SealMetrics MCP let teams query their own analytics — no analyst in the loop.",
+      "Point an LLM at incomplete GA4 data and it invents answers. How complete cookieless data plus the Sealmetrics MCP let teams query their own analytics — no analyst in the loop.",
     date: "2026-07-05",
     category: "AI & Analytics",
     readTime: "10 min",
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
     slug: "best-enterprise-analytics-platforms",
     title: "8 Best Enterprise Analytics Platforms in 2026",
     description:
-      "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, SealMetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
+      "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, Sealmetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
     date: "2026-03-16",
     category: "Comparisons",
     readTime: "12 min",
@@ -195,7 +195,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.",
     description:
-      "Same HTML page, 9 analytics tools, 5 Lighthouse runs each. GA4 drops your Performance score by 8 points. Adobe by 12. SealMetrics by 0.",
+      "Same HTML page, 9 analytics tools, 5 Lighthouse runs each. GA4 drops your Performance score by 8 points. Adobe by 12. Sealmetrics by 0.",
     date: "2026-03-08",
     category: "Performance",
     readTime: "5 min",
@@ -230,7 +230,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "How Many HTTP Requests Does Your Analytics Tool Make? We Counted.",
     description:
-      "One pageview, one browser. GA4 makes 4 requests to 3 domains. Adobe makes 6 to 4 domains. SealMetrics makes 2 to 1. The network waterfall tells the story.",
+      "One pageview, one browser. GA4 makes 4 requests to 3 domains. Adobe makes 6 to 4 domains. Sealmetrics makes 2 to 1. The network waterfall tells the story.",
     date: "2026-03-06",
     category: "Performance",
     readTime: "4 min",
@@ -242,7 +242,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "Every Cookie Set by Every Major Analytics Tool, Cataloged",
     description:
-      "We cataloged every cookie from 9 analytics tools using vendor docs and DevTools. GA4 sets 2 first-party cookies. Adobe sets 6. SealMetrics sets 0.",
+      "We cataloged every cookie from 9 analytics tools using vendor docs and DevTools. GA4 sets 2 first-party cookies. Adobe sets 6. Sealmetrics sets 0.",
     date: "2026-03-05",
     category: "Privacy",
     readTime: "5 min",
@@ -266,7 +266,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared",
     description:
-      "GA4 starts sampling at 10M events in Explorations. Adobe varies by contract. Piwik PRO: optional. SealMetrics: never. We documented every threshold.",
+      "GA4 starts sampling at 10M events in Explorations. Adobe varies by contract. Piwik PRO: optional. Sealmetrics: never. We documented every threshold.",
     date: "2026-03-03",
     category: "Data Quality",
     readTime: "5 min",
@@ -289,7 +289,7 @@ export const blogPosts: BlogPost[] = [
     slug: "we-measured-every-analytics-script",
     title: "We Measured Every Analytics Script. Here Is What We Found.",
     description:
-      "We measured major analytics scripts from production CDNs. GA4 was 132x heavier than SealMetrics, the lightest of the ten tools tested.",
+      "We measured major analytics scripts from production CDNs. GA4 was 132x heavier than Sealmetrics, the lightest of the ten tools tested.",
     date: "2026-02-20",
     category: "Performance",
     readTime: "4 min",
@@ -301,7 +301,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "UK Analytics Exemption Is Now Live: Our PECR Self-Assessment",
     description:
-      "The DUAA 2025 exempts certain analytics from consent requirements in the UK. We published our self-assessment showing how SealMetrics qualifies.",
+      "The DUAA 2025 exempts certain analytics from consent requirements in the UK. We published our self-assessment showing how Sealmetrics qualifies.",
     date: "2026-02-17",
     category: "Regulation",
     readTime: "2 min",
@@ -347,7 +347,7 @@ export const blogPosts: BlogPost[] = [
     slug: "cnil-self-assessment-published",
     title: "We Published Our CNIL Self-Assessment",
     description:
-      "The French CNIL allows certain analytics tools to operate without cookie banners. We documented how SealMetrics meets all 14 technical criteria.",
+      "The French CNIL allows certain analytics tools to operate without cookie banners. We documented how Sealmetrics meets all 14 technical criteria.",
     date: "2026-02-10",
     category: "Regulation",
     readTime: "2 min",
@@ -471,7 +471,7 @@ export const blogPosts: BlogPost[] = [
     slug: "best-llm-for-data-analytics",
     title: "The Best LLM for Data Analytics Isn't the One With the Highest Benchmark",
     description:
-      "We ran 162 live queries across three open models against real analytics data to pick the AI inside SealMetrics. What decided it wasn't MMLU — it was tool-calling, grounding, and a security flaw that only showed up in one language.",
+      "We ran 162 live queries across three open models against real analytics data to pick the AI inside Sealmetrics. What decided it wasn't MMLU — it was tool-calling, grounding, and a security flaw that only showed up in one language.",
     date: "2026-07-24",
     category: "AI",
     readTime: "7 min",
@@ -537,7 +537,7 @@ export const blogPosts: BlogPost[] = [
     slug: "we-changed-our-ai-model-twice",
     title: "We Changed Our AI Model Twice in Three Weeks — And That's the Point",
     description:
-      "Gemma 4 looped. Mistral Small refused things it shouldn't. gpt-oss-120b held. The full lineage of how we picked the model inside SealMetrics, including the two picks we got wrong.",
+      "Gemma 4 looped. Mistral Small refused things it shouldn't. gpt-oss-120b held. The full lineage of how we picked the model inside Sealmetrics, including the two picks we got wrong.",
     date: "2026-07-24",
     category: "AI",
     readTime: "6 min",

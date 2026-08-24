@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is the ePrivacy Directive? — SealMetrics Glossary",
+  title: "What Is the ePrivacy Directive? — Sealmetrics Glossary",
   description:
     "Directive 2002/58/EC — the EU rule (Art. 5(3)) requiring consent before storing or reading information on a device. The legal basis for cookie banners.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
     type: "article",
     url: "https://sealmetrics.com/glossary/eprivacy-directive/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/eprivacy-directive/")],
   },
@@ -75,7 +75,7 @@ export default function EPrivacyDirectivePage() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The 2026 ePrivacy Regulation</h2>
             <p>The proposed ePrivacy Regulation (intended to replace the Directive) has been in draft since 2017. The Digital Omnibus 2026 brought some of its enforcement clarifications into force via amendments to GDPR — including formalised reject-all banner parity and harmonised dark-pattern enforcement. The carve-out for anonymous, non-tracking analytics survived intact.</p>
           </div>
-          <CommercialModule hook="ePrivacy is why the banners exist. SealMetrics stores nothing on the device — see analytics that doesn't need the banner to measure." />
+          <CommercialModule hook="ePrivacy is why the banners exist. Sealmetrics stores nothing on the device — see analytics that doesn't need the banner to measure." />
 
           <RelatedGlossaryTerms slug="eprivacy-directive" />
           <div className="mt-10 pt-6 border-t border-warm-100">
@@ -90,7 +90,7 @@ export default function EPrivacyDirectivePage() {
                 The ePrivacy Directive (Directive 2002/58/EC) is the EU framework on privacy in electronic communications, distinct from but often co-applied with GDPR. Its Article 5(3) is the legal basis for cookie consent banners: storing or accessing information on a user&rsquo;s terminal device requires informed consent, except for strictly necessary functions and — per CNIL, AEPD, DSK and ICO guidance — anonymous audience measurement that does not enable cross-site tracking.
               </p>
               <p>
-                For analytics, the consequence is binary: if the tool sets a cookie or stores any identifier on the device, ePrivacy Art. 5(3) triggers and a consent banner is required regardless of GDPR posture. If the tool writes nothing on the device — cookieless, no localStorage, no fingerprinting — Art. 5(3) does not engage and consent is not required. SealMetrics is built to the second pattern: server-side, first-party, aggregate-only, outside the storage-and-access trigger.
+                For analytics, the consequence is binary: if the tool sets a cookie or stores any identifier on the device, ePrivacy Art. 5(3) triggers and a consent banner is required regardless of GDPR posture. If the tool writes nothing on the device — cookieless, no localStorage, no fingerprinting — Art. 5(3) does not engage and consent is not required. Sealmetrics is built to the second pattern: server-side, first-party, aggregate-only, outside the storage-and-access trigger.
               </p>
             </QuickAnswer>
           </div>

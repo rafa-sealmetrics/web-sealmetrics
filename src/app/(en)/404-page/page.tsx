@@ -15,15 +15,15 @@ import { NotFoundContent } from "@/components/ui/NotFoundContent";
  * of that, so it stays out of the sitemap even if the move ever fails.
  */
 export const metadata: Metadata = {
-  title: "Page not found (404) — SealMetrics",
+  title: "Page not found (404) — Sealmetrics",
   description:
     "That page does not exist or has moved. Jump to the product, pricing, how it works, the blog or the analytics glossary.",
   robots: { index: false, follow: true },
   openGraph: {
-    title: "Page not found (404) — SealMetrics",
+    title: "Page not found (404) — Sealmetrics",
     description: "That page does not exist or has moved.",
     url: "https://sealmetrics.com/404.html",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     type: "website",
     images: ["https://sealmetrics.com/og-image.png"],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Page not found (404) — SealMetrics",
+    title: "Page not found (404) — Sealmetrics",
     description: "That page does not exist or has moved.",
     images: ["https://sealmetrics.com/og-image.png"],
   },

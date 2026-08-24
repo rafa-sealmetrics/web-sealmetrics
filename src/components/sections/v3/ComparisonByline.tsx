@@ -4,12 +4,12 @@ const COPY = {
   en: {
     updated: "Updated",
     by: "By",
-    role: "Founder, SealMetrics",
+    role: "Founder, Sealmetrics",
   },
   es: {
     updated: "Actualizado",
     by: "Por",
-    role: "Fundador, SealMetrics",
+    role: "Fundador, Sealmetrics",
   },
 } as const;
 

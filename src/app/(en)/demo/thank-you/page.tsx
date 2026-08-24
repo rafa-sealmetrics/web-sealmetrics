@@ -8,22 +8,22 @@ import { ThankYouVariants } from "./ThankYouVariants";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Thank You — SealMetrics",
+  title: "Thank You — Sealmetrics",
   description:
     "Your audit request has been received. We respond within one business day.",
   openGraph: {
-    title: "Thank You — SealMetrics",
+    title: "Thank You — Sealmetrics",
     description: "Your audit request has been received. We respond within one business day.",
     type: "website",
     images: [ogImage("/demo/thank-you/")],
     url: "https://sealmetrics.com/demo/thank-you/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Thank You — SealMetrics",
+    title: "Thank You — Sealmetrics",
     description: "Your audit request has been received. We respond within one business day.",
     images: [ogImage("/demo/thank-you/")],
   },

@@ -22,7 +22,7 @@ const videos: Video[] = [
   {
     title: "Platform Overview",
     description:
-      "A complete tour of the SealMetrics dashboard, from traffic overview to AI insights.",
+      "A complete tour of the Sealmetrics dashboard, from traffic overview to AI insights.",
     duration: "3:24",
     embedUrl:
       "https://iframe.mediadelivery.net/embed/609541/e616aab7-d8cf-47d1-b250-517df6a8c593",

@@ -7,21 +7,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Plataformas — SealMetrics",
+  title: "Plataformas — Sealmetrics",
   description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
   openGraph: {
-    title: "Plataformas — SealMetrics",
+    title: "Plataformas — Sealmetrics",
     description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
     type: "website",
     images: [ogImage("/es/platforms/")],
     url: "https://sealmetrics.com/es/platforms/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Plataformas — SealMetrics",
+    title: "Plataformas — Sealmetrics",
     description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
     images: [ogImage("/es/platforms/")],
   },

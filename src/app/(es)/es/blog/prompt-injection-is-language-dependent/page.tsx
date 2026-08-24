@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "El mismo ataque, el mismo modelo, dos idiomas, dos resultados. Por qué las evaluaciones de seguridad tienen que ser multilingües, y cómo montar una.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/prompt-injection-is-language-dependent/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/prompt-injection-is-language-dependent.png"],
   },
@@ -88,7 +88,7 @@ export default function PromptInjectionIsLanguageDependentPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -101,8 +101,8 @@ export default function PromptInjectionIsLanguageDependentPageEs() {
       <JsonLd
         data={statisticClaimSchema({
           text: "En un benchmark bilingüe de 162 consultas reales de analítica, un intento de prompt injection idéntico fue ignorado por los tres modelos probados en las 9 ejecuciones en español, mientras que un modelo (qwen3-235b-a22b-2507) reprodujo la cadena canario inyectada en 2 de 3 intentos en inglés.",
-          source: "Benchmark interno de LLM de SealMetrics (tanda 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Benchmark interno de LLM de Sealmetrics (tanda 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -195,7 +195,7 @@ export default function PromptInjectionIsLanguageDependentPageEs() {
               >
                 Seal AI
               </Link>
-              , el asistente de analítica que va dentro de SealMetrics,
+              , el asistente de analítica que va dentro de Sealmetrics,
               construimos cada escenario dos veces: una en español y otra en
               inglés, compartiendo la misma verdad de referencia. La duplicación
               nació como una cuestión de cobertura: nuestros usuarios trabajan

@@ -14,23 +14,23 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para SaaS — PLG y trial-to-paid | SealMetrics",
+  title: "Analítica para SaaS — PLG y trial-to-paid | Sealmetrics",
   description:
     "Analítica sin cookies para SaaS: medición product-led growth sin banners. Trackea conversión trial-to-paid y funnels self-serve sobre tráfico UE.",
   openGraph: {
-    title: "Analítica para SaaS — PLG y trial-to-paid | SealMetrics",
+    title: "Analítica para SaaS — PLG y trial-to-paid | Sealmetrics",
     description:
       "Analítica first-party para empresas SaaS europeas. Atribución trial-to-paid, tracking de funnel self-serve y métricas PLG — RGPD-safe, sin consentimiento.",
     type: "website",
     images: [ogImage("/es/for/saas/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/for/saas/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para SaaS — PLG y trial-to-paid | SealMetrics",
+    title: "Analítica para SaaS — PLG y trial-to-paid | Sealmetrics",
     description: "Analítica first-party para empresas SaaS europeas. Atribución trial-to-paid, tracking de funnel self-serve y métricas PLG — RGPD-safe, sin consentimiento.",
     images: [ogImage("/es/for/saas/")],
   },
@@ -49,7 +49,7 @@ const seoFaqs = [
   {
     question: "¿Cómo trackea la analítica sin cookies los PQLs?",
     answer:
-      "SealMetrics cuenta visitas a la web de marketing y signups de trial de forma anónima con metadatos de canal; los eventos in-product llegan vía REST API una vez que el usuario está autenticado. Las definiciones de PQL se montan en el warehouse uniendo la atribución agregada de marketing con tu tabla autenticada de usuarios. SealMetrics no trackea el journey del visitante en la web de marketing — el join a datos a nivel de usuario ocurre tras el signup, dentro de tu base de datos de producto.",
+      "Sealmetrics cuenta visitas a la web de marketing y signups de trial de forma anónima con metadatos de canal; los eventos in-product llegan vía REST API una vez que el usuario está autenticado. Las definiciones de PQL se montan en el warehouse uniendo la atribución agregada de marketing con tu tabla autenticada de usuarios. Sealmetrics no trackea el journey del visitante en la web de marketing — el join a datos a nivel de usuario ocurre tras el signup, dentro de tu base de datos de producto.",
   },
   {
     question: "¿Funciona para funnels self-serve SaaS?",
@@ -59,7 +59,7 @@ const seoFaqs = [
   {
     question: "¿Los equipos SaaS pueden reemplazar Mixpanel o Amplitude con analítica sin cookies?",
     answer:
-      "Parcialmente. SealMetrics gestiona la atribución de web de marketing, conversión landing-to-trial y atribución de ingresos — todo como totales agregados por canal, sin tracking por usuario. Para analítica profunda de evento in-product dentro de la app autenticada (cohortes de retención, adopción de features, journeys a nivel de usuario), la mayoría de equipos SaaS mantienen Mixpanel o Amplitude y usan SealMetrics para la capa anónima marketing-to-signup.",
+      "Parcialmente. Sealmetrics gestiona la atribución de web de marketing, conversión landing-to-trial y atribución de ingresos — todo como totales agregados por canal, sin tracking por usuario. Para analítica profunda de evento in-product dentro de la app autenticada (cohortes de retención, adopción de features, journeys a nivel de usuario), la mayoría de equipos SaaS mantienen Mixpanel o Amplitude y usan Sealmetrics para la capa anónima marketing-to-signup.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function Page() {
             La <strong>analítica sin cookies para SaaS</strong> cuenta las
             visitas de la web de marketing y los eventos de trial-signup sin
             banners de consentimiento, cookies ni interferencia de ad-blockers —
-            de forma anónima, a nivel de canal. SealMetrics atribuye cada evento
+            de forma anónima, a nivel de canal. Sealmetrics atribuye cada evento
             de trial-signup last-click a la fuente registrada en esa pageview
             y exporta los totales por canal a BigQuery para unirlos con los
             datos de producto para reporting PLG.

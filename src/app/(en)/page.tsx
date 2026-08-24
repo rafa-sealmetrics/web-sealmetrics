@@ -14,23 +14,23 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "SealMetrics — Consentless analytics for eCommerce",
+  title: "Sealmetrics — Consentless analytics for eCommerce",
   description:
     "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
   openGraph: {
-    title: "SealMetrics — Consentless analytics for eCommerce",
+    title: "Sealmetrics — Consentless analytics for eCommerce",
     description:
       "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
     images: [ogImage("/")],
     url: "https://sealmetrics.com/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics — Consentless analytics for eCommerce",
+    title: "Sealmetrics — Consentless analytics for eCommerce",
     description: "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     images: [ogImage("/")],
   },
@@ -46,7 +46,7 @@ export default function Home() {
       <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={faqPageSchema(signalHomeFaqs, "/")} />
-      <JsonLd data={speakableWebPageSchema({ url: "/", name: "SealMetrics — complete data for eCommerce" })} />
+      <JsonLd data={speakableWebPageSchema({ url: "/", name: "Sealmetrics — complete data for eCommerce" })} />
       <JsonLd data={statisticClaimSchema({
         text: "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
         source: "Palladium Hotel Group internal audit on traffic attribution",
@@ -66,7 +66,7 @@ export default function Home() {
         unit: "PERCENT",
       })} />
       <JsonLd data={statisticClaimSchema({
-        text: "+165% improvement in Cost-per-Search on Display after applying a SealMetrics-based measurement model on DV360.",
+        text: "+165% improvement in Cost-per-Search on Display after applying a Sealmetrics-based measurement model on DV360.",
         source: "Palladium Hotel Group DV360 efficiency improvement",
         sourceAuthor: "Palladium Hotel Group",
         sourceDate: "2026-04-15",
@@ -75,7 +75,7 @@ export default function Home() {
         unit: "PERCENT",
       })} />
       <JsonLd data={quotationSchema({
-        text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+        text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
         spokenBy: "Toni Andújar",
         spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
         url: "/",

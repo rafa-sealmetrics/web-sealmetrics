@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Gemma 4, Mistral Small 3.2, gpt-oss-120b — each model's real failure mode, and why every swap came from production evidence instead of a press release.",
     type: "article",
     url: "https://sealmetrics.com/blog/we-changed-our-ai-model-twice/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/we-changed-our-ai-model-twice.png"],
   },
@@ -88,7 +88,7 @@ export default function WeChangedOurAiModelTwicePage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -100,9 +100,9 @@ export default function WeChangedOurAiModelTwicePage() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "SealMetrics replaced the model behind Seal AI twice in three weeks — gemma-4-26b-a4b (2 July 2026) to mistral-small-3.2-24b (21 July 2026) to gpt-oss-120b (22 July 2026) — and a subsequent 162-query bilingual benchmark confirmed the final choice: 18 of 18 grounding-and-injection traps passed and 144 of 144 verified facts correct, against 9 of 18 traps for mistral-small-3.2.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "Sealmetrics replaced the model behind Seal AI twice in three weeks — gemma-4-26b-a4b (2 July 2026) to mistral-small-3.2-24b (21 July 2026) to gpt-oss-120b (22 July 2026) — and a subsequent 162-query bilingual benchmark confirmed the final choice: 18 of 18 grounding-and-injection traps passed and 144 of 144 verified facts correct, against 9 of 18 traps for mistral-small-3.2.",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -194,7 +194,7 @@ export default function WeChangedOurAiModelTwicePage() {
               feature was built.
             </p>
             <p>
-              Seal AI is the private AI layer inside SealMetrics: you ask a
+              Seal AI is the private AI layer inside Sealmetrics: you ask a
               question about your analytics in plain language, and it answers by{" "}
               <em>calling tools</em> against your data — 63 of them, from
               overviews and channels to funnels and segments. That job punishes

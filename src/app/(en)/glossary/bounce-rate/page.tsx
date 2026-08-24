@@ -8,7 +8,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Bounce Rate? — SealMetrics Glossary",
+  title: "What Is Bounce Rate? — Sealmetrics Glossary",
   description:
     "Bounce rate measures single-page sessions as a percentage of total sessions. Learn how GA4 redefined it and why incomplete data makes it unreliable.",
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
     type: "article",
     url: "https://sealmetrics.com/glossary/bounce-rate/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/bounce-rate/")],
   },
@@ -93,7 +93,7 @@ export default function BounceRatePage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">The GA4 Data Sampling Problem</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">The GA4 Data Sampling Problem</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

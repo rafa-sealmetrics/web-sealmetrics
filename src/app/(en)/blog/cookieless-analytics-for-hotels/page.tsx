@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-hotels/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-hotels/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual guests across sessions?",
     answer:
-      "No. SealMetrics does not identify individuals, does not stitch visits into per-guest journeys and does not build per-visitor profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page, country and device. This is how the system stays out of personal-data territory under GDPR.",
+      "No. Sealmetrics does not identify individuals, does not stitch visits into per-guest journeys and does not build per-visitor profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page, country and device. This is how the system stays out of personal-data territory under GDPR.",
   },
   {
     question: "How much of hotel booking attribution is lost to GA4?",
@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "Does cookieless analytics work with Mews, Cloudbeds or Opera?",
     answer:
-      "Yes. SealMetrics ships native integrations with Mews, Cloudbeds and Opera. Any other PMS or custom booking engine integrates via REST API. Booking revenue flows back automatically so conversion counts can be multiplied by ADR for channel revenue totals.",
+      "Yes. Sealmetrics ships native integrations with Mews, Cloudbeds and Opera. Any other PMS or custom booking engine integrates via REST API. Booking revenue flows back automatically so conversion counts can be multiplied by ADR for channel revenue totals.",
   },
   {
     question: "Can hotel groups roll up totals across multiple properties?",
@@ -74,7 +74,7 @@ export default function Page() {
           dateModified: "2026-05-28",
           url: "/blog/cookieless-analytics-for-hotels",
           category: "Hotels",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for Hotels", url: "/blog/cookieless-analytics-for-hotels" }])} />
@@ -215,7 +215,7 @@ export default function Page() {
             </h2>
             <ul className="space-y-4">
               <li>
-                <Link href="/for/hotels" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">SealMetrics for Hotels</Link>
+                <Link href="/for/hotels" className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Sealmetrics for Hotels</Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Vertical page with PMS integrations, multi-property rollups and real case numbers.</p>
               </li>
               <li>

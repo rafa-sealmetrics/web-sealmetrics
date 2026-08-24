@@ -15,10 +15,10 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
   const t = locale === "es"
     ? {
         eyebrow: "En una frase",
-        title: "¿Qué es SealMetrics?",
+        title: "¿Qué es Sealmetrics?",
         definition: (
           <>
-            SealMetrics es una plataforma de analítica web <strong>sin cookies, server-side y alojada en UE</strong> que captura el 100% del tráfico europeo sin banner de consentimiento. Fundada en 2020, alojada en Dublín, la usan más de 2.000 equipos eCommerce europeos para decisiones de presupuesto que el CFO firma.
+            Sealmetrics es una plataforma de analítica web <strong>sin cookies, server-side y alojada en UE</strong> que captura el 100% del tráfico europeo sin banner de consentimiento. Fundada en 2020, alojada en Dublín, la usan más de 2.000 equipos eCommerce europeos para decisiones de presupuesto que el CFO firma.
           </>
         ),
         factsTitle: "Hechos clave",
@@ -34,10 +34,10 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
       }
     : {
         eyebrow: "In one sentence",
-        title: "What is SealMetrics?",
+        title: "What is Sealmetrics?",
         definition: (
           <>
-            SealMetrics is a <strong>cookieless, server-side, EU-hosted web analytics</strong> platform that captures 100% of European traffic without a consent banner. Founded in 2020, hosted in Dublin, used by 2,000+ European eCommerce teams for budget decisions the CFO signs against.
+            Sealmetrics is a <strong>cookieless, server-side, EU-hosted web analytics</strong> platform that captures 100% of European traffic without a consent banner. Founded in 2020, hosted in Dublin, used by 2,000+ European eCommerce teams for budget decisions the CFO signs against.
           </>
         ),
         factsTitle: "Key facts",

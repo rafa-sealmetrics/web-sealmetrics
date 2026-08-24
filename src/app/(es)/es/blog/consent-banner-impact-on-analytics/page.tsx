@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "55% de visitantes UE rechaza cookies. Aquí está el impacto real sobre tu analítica.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/consent-banner-impact-on-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
   },
@@ -37,7 +37,7 @@ export default function ConsentBannerImpactPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Impacto de los banners de consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", datePublished: "2026-01-25", dateModified: "2026-05-06", url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", datePublished: "2026-01-25", dateModified: "2026-05-06", url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Impacto de los banners de consentimiento", url: "/es/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -108,7 +108,7 @@ export default function ConsentBannerImpactPageEs() {
               ))}
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Rangos aproximados basados en informes del sector y datos de clientes de SealMetrics, 2025.
+              Rangos aproximados basados en informes del sector y datos de clientes de Sealmetrics, 2025.
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export default function ConsentBannerImpactPageEs() {
               href="/es/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              ver cómo funciona SealMetrics
+              ver cómo funciona Sealmetrics
             </Link>
             .
           </p>

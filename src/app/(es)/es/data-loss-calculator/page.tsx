@@ -8,21 +8,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Calculadora de pérdida de datos — SealMetrics",
+  title: "Calculadora de pérdida de datos — Sealmetrics",
   description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
   openGraph: {
-    title: "Calculadora de pérdida de datos — SealMetrics",
+    title: "Calculadora de pérdida de datos — Sealmetrics",
     description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
     type: "website",
     images: [ogImage("/es/data-loss-calculator/")],
     url: "https://sealmetrics.com/es/data-loss-calculator/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Calculadora de pérdida de datos — SealMetrics",
+    title: "Calculadora de pérdida de datos — Sealmetrics",
     description: "Calcula cuánto ingreso es invisible para tu analítica actual. Banners de consentimiento, ad blockers y restricciones del navegador ocultan tráfico.",
     images: [ogImage("/es/data-loss-calculator/")],
   },
@@ -64,7 +64,7 @@ export default function Page() {
         titleEn={<>See the gap on your actual traffic.</>}
         titleEs={<>Ve el gap sobre <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>tu tráfico real.</em></>}
         ledeEn="30 min live review."
-        ledeEs="30 min. Pasamos tu web por SealMetrics y comparamos con tu analítica actual — en directo."
+        ledeEs="30 min. Pasamos tu web por Sealmetrics y comparamos con tu analítica actual — en directo."
       />
     </>
   );

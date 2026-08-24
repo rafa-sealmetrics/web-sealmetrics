@@ -14,7 +14,7 @@ export function IndustriesBuiltForEs() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            SealMetrics encaja en cualquier equipo que decide de ingresos con datos de marketing — pero aparece primero donde el rechazo de consentimiento duele más.
+            Sealmetrics encaja en cualquier equipo que decide de ingresos con datos de marketing — pero aparece primero donde el rechazo de consentimiento duele más.
           </p>
         </div>
 
@@ -176,10 +176,10 @@ export function ComparatorGA4Es() {
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-14">
           <div>
             <span className="eyebrow mb-5">Cómo se compara</span>
-            <h2 className="h-section mt-5">GA4 vs SealMetrics. <em>Corre los dos en paralelo.</em></h2>
+            <h2 className="h-section mt-5">GA4 vs Sealmetrics. <em>Corre los dos en paralelo.</em></h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            No te pedimos reemplazar GA4. Corre SealMetrics en paralelo durante 30 días, compara los números con tu propio CRM y decide para qué sirve cada uno.
+            No te pedimos reemplazar GA4. Corre Sealmetrics en paralelo durante 30 días, compara los números con tu propio CRM y decide para qué sirve cada uno.
           </p>
         </div>
 
@@ -187,7 +187,7 @@ export function ComparatorGA4Es() {
           <div className="grid md:grid-cols-[1.4fr_1fr_1fr] border-b border-warm-100 bg-warm-50 font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-soft font-bold">
             <div className="p-5">Capacidad</div>
             <div className="p-5">Google Analytics 4</div>
-            <div className="p-5 bg-white text-ink" style={{ borderLeft: "2px solid #2D8B6D" }}>SealMetrics</div>
+            <div className="p-5 bg-white text-ink" style={{ borderLeft: "2px solid #2D8B6D" }}>Sealmetrics</div>
           </div>
           {rows.map((r, i) => (
             <div key={r.cap} className={`grid md:grid-cols-[1.4fr_1fr_1fr] ${i < rows.length - 1 ? "border-b border-warm-100" : ""}`}>
@@ -201,7 +201,7 @@ export function ComparatorGA4Es() {
         </div>
 
         <div className="mt-5 p-6 bg-warm-50 border border-warm-100 rounded-xl text-center text-[15px] text-ink-2 leading-[1.55]">
-          <b className="text-ink font-semibold">No es &ldquo;GA4 está roto&rdquo;.</b> Corre SealMetrics junto a GA4 durante 30 días. Compara con tu propio CRM. <em className="italic-accent">Y entonces decide.</em>
+          <b className="text-ink font-semibold">No es &ldquo;GA4 está roto&rdquo;.</b> Corre Sealmetrics junto a GA4 durante 30 días. Compara con tu propio CRM. <em className="italic-accent">Y entonces decide.</em>
         </div>
       </div>
     </section>
@@ -375,7 +375,7 @@ export function PricingV3Es() {
         </div>
 
         <p className="mt-10 p-6 bg-white border border-warm-100 rounded-xl text-center max-w-[48rem] mx-auto text-[14.5px] leading-[1.65] text-ink-soft">
-          Si no estás seguro de qué plan encaja, te lo decimos en el walkthrough. Como referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics en 100.000$/año</b>. SealMetrics se hizo para que no necesites un contrato enterprise para tener datos enterprise.
+          Si no estás seguro de qué plan encaja, te lo decimos en el walkthrough. Como referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics en 100.000$/año</b>. Sealmetrics se hizo para que no necesites un contrato enterprise para tener datos enterprise.
         </p>
       </div>
     </section>

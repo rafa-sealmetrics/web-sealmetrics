@@ -27,7 +27,7 @@ export function ComparisonReveal({ answers }: ComparisonRevealProps) {
           Your comparison
         </p>
         <h2 className="headline-sub mb-8">
-          Today with {toolName} vs. with SealMetrics
+          Today with {toolName} vs. with Sealmetrics
         </h2>
 
         {/* Comparison table */}
@@ -41,7 +41,7 @@ export function ComparisonReveal({ answers }: ComparisonRevealProps) {
               Today
             </div>
             <div className="p-4 text-[0.75rem] font-medium text-text-tertiary uppercase tracking-[0.06em]">
-              SealMetrics
+              Sealmetrics
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export function ComparisonReveal({ answers }: ComparisonRevealProps) {
             <span className="font-medium text-text-primary">
               The bottom line:
             </span>{" "}
-            SealMetrics would make fully visible and attributable{" "}
+            Sealmetrics would make fully visible and attributable{" "}
             <span className="font-mono font-medium text-green-muted">
               {formatNumber(recovered)}
             </span>{" "}
@@ -84,7 +84,7 @@ export function ComparisonReveal({ answers }: ComparisonRevealProps) {
 
         {/* Social proof */}
         <p className="text-[0.8rem] text-text-secondary text-center mt-6">
-          On average, SealMetrics customers discover 42% more sessions than
+          On average, Sealmetrics customers discover 42% more sessions than
           their previous analytics tool reported.
         </p>
       </div>

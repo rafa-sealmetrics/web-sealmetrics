@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: [ogImage("/es/complete-data/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/complete-data/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
@@ -60,7 +60,7 @@ const faqs = [
     a: "Corre la calculadora de gap sobre tu tráfico real. Comparamos lo que GA4 reporta contra lo que tu CRM, los pedidos de Shopify o los registros del PMS muestran. El gap suele ser de 25–45% para marcas consumer B2C, 15–25% para B2B. Si el gap está por debajo del 10%, probablemente no necesitas cambiar. La mayoría de equipos descubren que el gap es mucho mayor de lo que asumían.",
   },
   {
-    q: "¿«Datos completos» significa que SealMetrics ignora la privacidad?",
+    q: "¿«Datos completos» significa que Sealmetrics ignora la privacidad?",
     a: "Lo contrario. Los datos completos son posibles porque la arquitectura es sin consentimiento por diseño — sin cookies, sin identificadores, sin datos personales. La privacidad es la restricción que obliga a que la medición sea agregada; la medición agregada es lo que hace lícita la captura del 100% sin diálogo de consentimiento. Son la misma decisión arquitectónica, vistas desde ángulos distintos.",
   },
   {
@@ -89,7 +89,7 @@ export default function CompleteDataPillarEs() {
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/es/complete-data",
           category: "Strategy",
-          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
 

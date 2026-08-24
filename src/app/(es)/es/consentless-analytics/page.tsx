@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: [ogImage("/es/consentless-analytics/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/consentless-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     q: "¿Sigo necesitando un banner por otras razones?",
-    a: "Posiblemente — para pixels de Google Ads, Meta, herramientas A/B o cualquier script third-party que sí instale cookies. SealMetrics elimina la razón específica de analítica para el banner, no todas las razones. Muchos equipos reducen el alcance del banner (o lo eliminan en páginas sin ad-pixels) cuando la analítica se mueve a una capa sin consentimiento.",
+    a: "Posiblemente — para pixels de Google Ads, Meta, herramientas A/B o cualquier script third-party que sí instale cookies. Sealmetrics elimina la razón específica de analítica para el banner, no todas las razones. Muchos equipos reducen el alcance del banner (o lo eliminan en páginas sin ad-pixels) cuando la analítica se mueve a una capa sin consentimiento.",
   },
   {
     q: "¿En qué se diferencia de herramientas «consent-light» o «privacy-friendly»?",
-    a: "La mayoría de herramientas lightweight todavía instalan una cookie first-party o un ID de visitante aleatorio — son consent-light, no consentless. La exención CNIL es específica: sin identificador, sin enlace entre sesiones, sin profiling. SealMetrics está construido para esa vara. El trade-off es honesto — sin identificación de visitantes recurrentes — y es la decisión de diseño deliberada que produce la exención legal.",
+    a: "La mayoría de herramientas lightweight todavía instalan una cookie first-party o un ID de visitante aleatorio — son consent-light, no consentless. La exención CNIL es específica: sin identificador, sin enlace entre sesiones, sin profiling. Sealmetrics está construido para esa vara. El trade-off es honesto — sin identificación de visitantes recurrentes — y es la decisión de diseño deliberada que produce la exención legal.",
   },
   {
     q: "¿Y Schrems II y las transferencias a EE.UU.?",
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "¿Cambia la base legal si añado CRM o marketing tools después?",
-    a: "La base legal de la capa de analítica no cambia. Lo que cambia es la superficie general: si añades una herramienta que sí almacena cookies o procesa datos personales, esa herramienta trae su propio requisito de consentimiento. El estatus de SealMetrics lo determina su propia arquitectura, no las otras herramientas que corran junto a ella.",
+    a: "La base legal de la capa de analítica no cambia. Lo que cambia es la superficie general: si añades una herramienta que sí almacena cookies o procesa datos personales, esa herramienta trae su propio requisito de consentimiento. El estatus de Sealmetrics lo determina su propia arquitectura, no las otras herramientas que corran junto a ella.",
   },
 ];
 
@@ -74,7 +74,7 @@ const authorities = [
     country: "Francia",
     body: "CNIL",
     summary:
-      "Publicó criterios explícitos de exención de analítica en 2020, reafirmados en 2024: sin identificador por usuario, sin tracking entre sesiones, reporting agregado, procesamiento UE-only. SealMetrics cumple cada criterio.",
+      "Publicó criterios explícitos de exención de analítica en 2020, reafirmados en 2024: sin identificador por usuario, sin tracking entre sesiones, reporting agregado, procesamiento UE-only. Sealmetrics cumple cada criterio.",
   },
   {
     country: "Alemania",
@@ -92,7 +92,7 @@ const authorities = [
     country: "Italia",
     body: "Garante",
     summary:
-      "Tras la decisión sobre Google Analytics de 2022: las herramientas que anonimizan en la recolección y alojan en la UE no disparan las mismas restricciones. El procesamiento en Dublín y el diseño cero-identificador de SealMetrics encajan en la exención.",
+      "Tras la decisión sobre Google Analytics de 2022: las herramientas que anonimizan en la recolección y alojan en la UE no disparan las mismas restricciones. El procesamiento en Dublín y el diseño cero-identificador de Sealmetrics encajan en la exención.",
   },
   {
     country: "Reino Unido",
@@ -128,7 +128,7 @@ export default function ConsentlessAnalyticsPillarEs() {
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/es/consentless-analytics",
           category: "Privacy",
-          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
 
@@ -300,7 +300,7 @@ export default function ConsentlessAnalyticsPillarEs() {
                 exención: propósito estrictamente limitado, sin tracking
                 entre sitios, IPs anonimizadas o no almacenadas, sin
                 combinación con datos personales de otras fuentes, y
-                reporting sólo agregado. SealMetrics cumple cada criterio
+                reporting sólo agregado. Sealmetrics cumple cada criterio
                 por diseño — no por configuración. Otras autoridades se
                 han alineado en torno a los mismos cinco puntos.
               </p>
@@ -384,7 +384,7 @@ export default function ConsentlessAnalyticsPillarEs() {
             </div>
 
             <div className="border border-warm-100 rounded-2xl p-7 bg-white">
-              <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-3">Sin consentimiento (SealMetrics)</h3>
+              <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-3">Sin consentimiento (Sealmetrics)</h3>
               <ul className="space-y-2 text-[15px] leading-[1.6] text-ink list-none pl-0">
                 {[
                   "No instala cookie, no escribe localStorage, no genera ID de visitante.",
@@ -421,7 +421,7 @@ export default function ConsentlessAnalyticsPillarEs() {
 
           <div className="mt-10 space-y-5">
             {[
-              { name: "DPA", detail: "Data Processing Agreement, Art. 28 RGPD compliant, firmado por SealMetrics S.L. como encargado. Pre-rellenado, listo para contraseñar." },
+              { name: "DPA", detail: "Data Processing Agreement, Art. 28 RGPD compliant, firmado por Sealmetrics S.L. como encargado. Pre-rellenado, listo para contraseñar." },
               { name: "Paquete TPSR", detail: "Documento de revisión de transferencia, privacidad y seguridad. Cubre flujos de datos, sub-procesadores (ninguno fuera de la UE sobre dato de visitante), retención, cifrado en reposo y en tránsito, control de accesos y procedimiento de brecha." },
               { name: "Lista de sub-procesadores", detail: "Lista completa de sub-procesadores con sus roles, jurisdicciones y DPAs se incluye en el paquete TPSR. UE-only por política." },
               { name: "Hosting y residencia", detail: "Todo el procesamiento en Dublín, Irlanda, sobre infraestructura europea. Sin sub-procesadores estadounidenses en la ruta de datos analíticos. Evaluación de transferencia Schrems II innecesaria — no hay transferencia." },

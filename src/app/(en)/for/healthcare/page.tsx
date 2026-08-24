@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for Healthcare — Privacy-First | SealMetrics",
+  title: "Analytics for Healthcare — Privacy-First | Sealmetrics",
   description: getVerticalData("healthcare", "en").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analytics for Healthcare — Privacy-First | SealMetrics",
+    title: "Analytics for Healthcare — Privacy-First | Sealmetrics",
     description: getVerticalData("healthcare", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/for/healthcare/")],
     url: "https://sealmetrics.com/for/healthcare/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Healthcare — Privacy-First | SealMetrics",
+    title: "Analytics for Healthcare — Privacy-First | Sealmetrics",
     description: getVerticalData("healthcare", "en").lede.slice(0, 155) + "…",
     images: [ogImage("/for/healthcare/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "For Healthcare" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "For Healthcare", url: "/for/healthcare" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "healthcare", audienceType: "Healthcare and life sciences", description: "SealMetrics — enterprise analytics for healthcare teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/healthcare" })} /><VerticalPageV3 data={getVerticalData("healthcare", "en")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "healthcare", audienceType: "Healthcare and life sciences", description: "Sealmetrics — enterprise analytics for healthcare teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/healthcare" })} /><VerticalPageV3 data={getVerticalData("healthcare", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Also explore"

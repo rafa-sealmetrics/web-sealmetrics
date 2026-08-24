@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para DPOs — RGPD por arquitectura | SealMetrics",
+  title: "Analítica para DPOs — RGPD por arquitectura | Sealmetrics",
   description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analítica para DPOs — RGPD por arquitectura | SealMetrics",
+    title: "Analítica para DPOs — RGPD por arquitectura | Sealmetrics",
     description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/es/for/dpo/")],
     url: "https://sealmetrics.com/es/for/dpo/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para DPOs — RGPD por arquitectura | SealMetrics",
+    title: "Analítica para DPOs — RGPD por arquitectura | Sealmetrics",
     description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
     images: [ogImage("/es/for/dpo/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para DPOs" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para DPOs", url: "/es/for/dpo" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "DPOs", audienceType: "Data Protection Officer", description: "SealMetrics — enterprise analytics for DPOs teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/dpo" })} /><VerticalPageV3 data={getVerticalData("dpo", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "DPOs", audienceType: "Data Protection Officer", description: "Sealmetrics — enterprise analytics for DPOs teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/dpo" })} /><VerticalPageV3 data={getVerticalData("dpo", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

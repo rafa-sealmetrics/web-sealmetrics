@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Revenue Attribution? — SealMetrics Glossary",
+  title: "What Is Revenue Attribution? — Sealmetrics Glossary",
   description:
     "Revenue attribution connects conversion events to marketing channels. Accuracy depends on the attribution model and how many events your analytics sees.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Connecting revenue events to the marketing channels that drove them. Accuracy depends on observable data.",
     type: "article",
     url: "https://sealmetrics.com/glossary/revenue-attribution/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/revenue-attribution/")],
   },
@@ -61,8 +61,8 @@ export default function RevenueAttributionPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What does revenue attribution require to be accurate?</h2>
           <p>Revenue attribution is uniquely sensitive to <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link>. If your analytics miss 87% of pageviews to consent rejection, ad blockers and browser restrictions, the remaining 13% is what the attribution model operates on — so the channel totals it produces are biased by whatever demographic survived the filter. The typical result: direct traffic is inflated, top-of-funnel channels are undervalued, and budget allocation follows the bias.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does SealMetrics handle revenue attribution?</h2>
-          <p>SealMetrics does <strong>last-click revenue attribution on 100% of observed events</strong>. When a conversion event fires, the traffic source recorded on that pageview is credited. Channel totals roll up by campaign, landing page and creative. There is no multi-touch model and no cross-session stitching — because there is no cookie, no personal identifier and no way to recognise a returning visitor. The trade-off is deliberate: aggregate channel totals that reconcile with your backend, in exchange for giving up per-user journey analysis.</p>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does Sealmetrics handle revenue attribution?</h2>
+          <p>Sealmetrics does <strong>last-click revenue attribution on 100% of observed events</strong>. When a conversion event fires, the traffic source recorded on that pageview is credited. Channel totals roll up by campaign, landing page and creative. There is no multi-touch model and no cross-session stitching — because there is no cookie, no personal identifier and no way to recognise a returning visitor. The trade-off is deliberate: aggregate channel totals that reconcile with your backend, in exchange for giving up per-user journey analysis.</p>
 
           <p>Because every pageview is captured through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, last-click attribution reflects the full observed traffic — not the cookie-accepting minority.</p>
         </div>
@@ -71,7 +71,7 @@ export default function RevenueAttributionPage() {
         <RelatedGlossaryTerms slug="revenue-attribution" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Revenue Attribution</Link>
+            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Revenue Attribution</Link>
           </p>
         </div>
       </div>

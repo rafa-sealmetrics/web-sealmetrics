@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
     description:
-      "Point an LLM at incomplete GA4 data and it invents answers. SealMetrics is AI analytics done right: complete data, a semantic MCP, and private AI in the EU.",
+      "Point an LLM at incomplete GA4 data and it invents answers. Sealmetrics is AI analytics done right: complete data, a semantic MCP, and private AI in the EU.",
     type: "website",
     images: [ogImage("/ai-analytics/")],
     url: "https://sealmetrics.com/ai-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -52,27 +52,27 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is AI analytics?",
-    a: "AI analytics is the ability to query your web and revenue data in plain language and get an answer directly — no SQL, no dashboard building, no analyst in the queue. A large language model like Claude or ChatGPT reads your analytics through a connector and returns the number, the diagnosis, or the next action. The catch is that the answer is only as trustworthy as the data underneath: point an LLM at incomplete, cookie-based analytics and it will produce confident, well-formatted, wrong answers. SealMetrics is AI analytics built on complete cookieless data, so the answers are grounded in 100% of your traffic.",
+    a: "AI analytics is the ability to query your web and revenue data in plain language and get an answer directly — no SQL, no dashboard building, no analyst in the queue. A large language model like Claude or ChatGPT reads your analytics through a connector and returns the number, the diagnosis, or the next action. The catch is that the answer is only as trustworthy as the data underneath: point an LLM at incomplete, cookie-based analytics and it will produce confident, well-formatted, wrong answers. Sealmetrics is AI analytics built on complete cookieless data, so the answers are grounded in 100% of your traffic.",
   },
   {
     q: "Is there a GDPR-compliant AI analytics tool?",
-    a: "Yes. SealMetrics is AI analytics that is GDPR-compliant by architecture: the measurement layer is cookieless and processes zero personal data, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Your data never leaves the EU, is never shared with any company, and is never used to train third-party models. There is no consent banner and no personal data in play.",
+    a: "Yes. Sealmetrics is AI analytics that is GDPR-compliant by architecture: the measurement layer is cookieless and processes zero personal data, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Your data never leaves the EU, is never shared with any company, and is never used to train third-party models. There is no consent banner and no personal data in play.",
   },
   {
     q: "Can I connect ChatGPT or Claude to my analytics?",
-    a: "Yes. SealMetrics ships a Model Context Protocol (MCP) server with 47 read-only tools. Connect it from Claude, ChatGPT, Cursor or Claude Code at mcp.sealmetrics.com and ask your analytics questions directly — revenue by channel, conversions, landing-page performance, campaign waste. Each tool maps one business concept to one canonical metric, so the model calls a documented contract instead of guessing at raw columns. You can use SealMetrics private AI, or bring your own Anthropic, OpenAI, Gemini or DeepSeek key — you are choosing the algorithm, not the data.",
+    a: "Yes. Sealmetrics ships a Model Context Protocol (MCP) server with 47 read-only tools. Connect it from Claude, ChatGPT, Cursor or Claude Code at mcp.sealmetrics.com and ask your analytics questions directly — revenue by channel, conversions, landing-page performance, campaign waste. Each tool maps one business concept to one canonical metric, so the model calls a documented contract instead of guessing at raw columns. You can use Sealmetrics private AI, or bring your own Anthropic, OpenAI, Gemini or DeepSeek key — you are choosing the algorithm, not the data.",
   },
   {
     q: "What is private AI for analytics?",
-    a: "Private AI means the language model that reads your data runs on infrastructure you control the boundaries of, not on a shared public endpoint. With SealMetrics LENS private AI, inference runs on the open-weight gpt-oss-120b model hosted by Scaleway in Paris — inside the EU, never shared with third parties, never used to train external models. Enterprise can get a dedicated, non-shared instance — available through sales only. It is available and purchasable now, not a beta.",
+    a: "Private AI means the language model that reads your data runs on infrastructure you control the boundaries of, not on a shared public endpoint. With Sealmetrics LENS private AI, inference runs on the open-weight gpt-oss-120b model hosted by Scaleway in Paris — inside the EU, never shared with third parties, never used to train external models. Enterprise can get a dedicated, non-shared instance — available through sales only. It is available and purchasable now, not a beta.",
   },
   {
     q: "How is this different from putting ChatGPT on top of GA4?",
-    a: "Two differences, both structural. First, the data: GA4 is cookie-based and consent-gated, so in the EU it typically captures a fraction of real traffic — an LLM reasoning over it is confident and wrong. SealMetrics captures 100% cookielessly. Second, the interface: an open warehouse forces the model to guess which of hundreds of fields means 'revenue,' which produces plausible but false numbers. The SealMetrics MCP exposes named tools with one canonical definition each, so the model cannot misread the schema. Complete data plus a constrained surface removes both failure modes.",
+    a: "Two differences, both structural. First, the data: GA4 is cookie-based and consent-gated, so in the EU it typically captures a fraction of real traffic — an LLM reasoning over it is confident and wrong. Sealmetrics captures 100% cookielessly. Second, the interface: an open warehouse forces the model to guess which of hundreds of fields means 'revenue,' which produces plausible but false numbers. The Sealmetrics MCP exposes named tools with one canonical definition each, so the model cannot misread the schema. Complete data plus a constrained surface removes both failure modes.",
   },
   {
     q: "Does AI analytics require cookies or personal data?",
-    a: "It does not have to. SealMetrics measures aggregate, anonymous events with no cookies, no localStorage, no fingerprinting and no personal data, and attributes revenue last-click at the event level. Because there is zero PII by construction, the AI layer cannot surface a person, reconstruct an individual journey, or run multi-touch models — it answers only what aggregate, complete data can answer, which is exactly what keeps the answers honest and compliant.",
+    a: "It does not have to. Sealmetrics measures aggregate, anonymous events with no cookies, no localStorage, no fingerprinting and no personal data, and attributes revenue last-click at the event level. Because there is zero PII by construction, the AI layer cannot surface a person, reconstruct an individual journey, or run multi-touch models — it answers only what aggregate, complete data can answer, which is exactly what keeps the answers honest and compliant.",
   },
 ];
 
@@ -101,7 +101,7 @@ const pillars = [
   {
     eyebrow: "Your choice",
     title: "Choose the algorithm",
-    body: "Use SealMetrics private AI, or bring your own Anthropic, OpenAI, Gemini or DeepSeek key, or connect the hosted MCP from your own client. Same complete data underneath — you only pick the model.",
+    body: "Use Sealmetrics private AI, or bring your own Anthropic, OpenAI, Gemini or DeepSeek key, or connect the hosted MCP from your own client. Same complete data underneath — you only pick the model.",
     metric: "BYOK",
     metricLabel: "or private AI, or MCP",
   },
@@ -151,7 +151,7 @@ const useCases = [
   {
     role: "AI builder",
     headline: "Ship a Claude analyst in an afternoon",
-    body: "Connect the SealMetrics MCP to Claude, ChatGPT, Cursor or Claude Code and let it answer revenue questions directly — the same server can even provision a new site from the chat.",
+    body: "Connect the Sealmetrics MCP to Claude, ChatGPT, Cursor or Claude Code and let it answer revenue questions directly — the same server can even provision a new site from the chat.",
   },
 ];
 
@@ -178,7 +178,7 @@ export default function AiAnalyticsPage() {
             </h1>
             <p className="mt-8 text-[19px] leading-[1.6] text-ink-soft max-w-[68ch]">
               Point an LLM at incomplete, cookie-based analytics and it invents confident, wrong answers.
-              SealMetrics is AI analytics built the other way round — complete cookieless data, a semantic
+              Sealmetrics is AI analytics built the other way round — complete cookieless data, a semantic
               MCP the model can&apos;t misread, and private AI hosted in the EU. Ask Claude or ChatGPT your
               revenue questions and get a number you can defend.
             </p>
@@ -206,7 +206,7 @@ export default function AiAnalyticsPage() {
       <TldrBlock
         answer={
           <>
-            AI analytics is only as trustworthy as the data beneath it. SealMetrics pairs{" "}
+            AI analytics is only as trustworthy as the data beneath it. Sealmetrics pairs{" "}
             <strong>100% cookieless data</strong> with a <strong>semantic MCP</strong> and{" "}
             <strong>private AI hosted in the EU</strong> (LENS AI), so an LLM answers your revenue
             questions from complete data it cannot misread — with zero personal data in play.
@@ -214,7 +214,7 @@ export default function AiAnalyticsPage() {
         }
         bullets={[
           <>Generic AI on GA4: partial data, PII risk, US inference, plausible-but-wrong answers.</>,
-          <>SealMetrics: complete data, 0 PII, EU private AI, last-click attribution on 100% of traffic.</>,
+          <>Sealmetrics: complete data, 0 PII, EU private AI, last-click attribution on 100% of traffic.</>,
           <>Connect Claude, ChatGPT, Cursor or Claude Code via MCP — or bring your own model key.</>,
         ]}
       />
@@ -239,7 +239,7 @@ export default function AiAnalyticsPage() {
               Six properties separate AI analytics you can act on from a chatbot guessing over a warehouse.
               We wrote the long version in{" "}
               <Link href="/blog/self-service-analytics-lens-ai" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
-                how SealMetrics ships self-service analytics
+                how Sealmetrics ships self-service analytics
               </Link>
               .
             </p>
@@ -290,7 +290,7 @@ export default function AiAnalyticsPage() {
                     LLM + raw warehouse
                   </th>
                   <th className="px-6 py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-brand">
-                    SealMetrics LENS AI
+                    Sealmetrics LENS AI
                   </th>
                 </tr>
               </thead>
@@ -361,7 +361,7 @@ export default function AiAnalyticsPage() {
           </div>
           <div className="rounded-2xl border border-warm-100 bg-dark-bg p-8 text-white shadow-[0_24px_60px_-24px_rgba(14,14,12,0.5)]">
             <div className="font-mono text-[11px] text-white/50 uppercase tracking-[0.12em] mb-4">
-              Claude · MCP · SealMetrics LENS AI
+              Claude · MCP · Sealmetrics LENS AI
             </div>
             <p className="font-mono text-[13px] leading-[1.7] text-white/90">
               <span className="text-brand-soft">{">"}</span> Sales look soft this week versus last. What

@@ -8,21 +8,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Integraciones — SealMetrics",
+  title: "Integraciones — Sealmetrics",
   description: "Módulos nativos para eCommerce, CMS, frameworks y tag managers. Conector BigQuery, MCP server para agentes IA, webhooks y API REST completa.",
   openGraph: {
-    title: "Integraciones — SealMetrics",
+    title: "Integraciones — Sealmetrics",
     description: "Módulos nativos para eCommerce, CMS, frameworks y tag managers. Conector BigQuery, MCP server para agentes IA y API REST completa.",
     type: "website",
     images: [ogImage("/es/integrations/")],
     url: "https://sealmetrics.com/es/integrations/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Integraciones — SealMetrics",
+    title: "Integraciones — Sealmetrics",
     description: "25+ integraciones nativas: plataformas publicitarias, CMSs eCommerce, data warehouses, BI tools, CRMs. Más MCP server para agentes IA y API REST completa.",
     images: [ogImage("/es/integrations/")],
   },

@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para finanzas — cumplimiento | SealMetrics",
+  title: "Analítica para finanzas — cumplimiento | Sealmetrics",
   description: getVerticalData("finance", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analítica para finanzas — cumplimiento | SealMetrics",
+    title: "Analítica para finanzas — cumplimiento | Sealmetrics",
     description: getVerticalData("finance", "es").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/es/for/finance/")],
     url: "https://sealmetrics.com/es/for/finance/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para finanzas — cumplimiento | SealMetrics",
+    title: "Analítica para finanzas — cumplimiento | Sealmetrics",
     description: getVerticalData("finance", "es").lede.slice(0, 155) + "…",
     images: [ogImage("/es/for/finance/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para finanzas" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para finanzas", url: "/es/for/finance" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banca, seguros y wealth management", description: "SealMetrics — enterprise analytics for finance teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banca, seguros y wealth management", description: "Sealmetrics — enterprise analytics for finance teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

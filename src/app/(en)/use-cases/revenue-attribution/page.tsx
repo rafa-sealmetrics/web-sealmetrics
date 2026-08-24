@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/use-cases/revenue-attribution/")],
     url: "https://sealmetrics.com/use-cases/revenue-attribution/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -51,15 +51,15 @@ const faqs = [
   },
   {
     q: "What about view-through attribution?",
-    a: "SealMetrics does not measure view-through (impressions that did not produce a click). View-through requires linking ad-server impression logs to subsequent visits per user — which is the same identifier dependency as multi-touch. View-through measurement belongs in the ad platform (Meta, Google) or in a marketing-mix model (MMM) built on aggregate spend and revenue. SealMetrics provides the aggregate revenue side; MMM tools provide the modelling.",
+    a: "Sealmetrics does not measure view-through (impressions that did not produce a click). View-through requires linking ad-server impression logs to subsequent visits per user — which is the same identifier dependency as multi-touch. View-through measurement belongs in the ad platform (Meta, Google) or in a marketing-mix model (MMM) built on aggregate spend and revenue. Sealmetrics provides the aggregate revenue side; MMM tools provide the modelling.",
   },
   {
     q: "How does last-click on 100% data differ from GA4's last-click?",
-    a: "GA4 applies last-click within its attribution windows on the data it actually captured — typically 13–40% of EU traffic after consent rejection, ad blockers and ITP. The credit GA4 assigns to channels is correct for that subset but biased toward channels that consent more. SealMetrics applies last-click on 100% of observed conversions on the full population — same model, complete data underneath.",
+    a: "GA4 applies last-click within its attribution windows on the data it actually captured — typically 13–40% of EU traffic after consent rejection, ad blockers and ITP. The credit GA4 assigns to channels is correct for that subset but biased toward channels that consent more. Sealmetrics applies last-click on 100% of observed conversions on the full population — same model, complete data underneath.",
   },
   {
     q: "Can I get the attribution by campaign and creative, not just channel?",
-    a: "Yes. The full UTM stack is captured: source, medium, campaign, content, term. Aggregate revenue rolls up at any combination of those dimensions. The campaign-level totals reconcile with the platform-side spend exactly (within rounding) when you join the SealMetrics dataset against Google Ads / Meta Ads cost data in BigQuery.",
+    a: "Yes. The full UTM stack is captured: source, medium, campaign, content, term. Aggregate revenue rolls up at any combination of those dimensions. The campaign-level totals reconcile with the platform-side spend exactly (within rounding) when you join the Sealmetrics dataset against Google Ads / Meta Ads cost data in BigQuery.",
   },
   {
     q: "What if my conversion happens after multiple sessions?",
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "How does this reconcile with CRM revenue?",
-    a: "Aggregate revenue reconciles within 15–20% of the CRM/backend totals once shipping, taxes, gift cards and refunds are normalised. Per-order reconciliation uses the same order_id from your eCommerce platform (Shopify, WooCommerce, Magento, PrestaShop). Finance can join the SealMetrics dataset and the order-ledger dataset in BigQuery on order_id with no fuzzy matching.",
+    a: "Aggregate revenue reconciles within 15–20% of the CRM/backend totals once shipping, taxes, gift cards and refunds are normalised. Per-order reconciliation uses the same order_id from your eCommerce platform (Shopify, WooCommerce, Magento, PrestaShop). Finance can join the Sealmetrics dataset and the order-ledger dataset in BigQuery on order_id with no fuzzy matching.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function RevenueAttributionPage() {
           dateModified: DATE_MODIFIED,
           url: "/use-cases/revenue-attribution",
           category: "Attribution",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd
@@ -134,7 +134,7 @@ export default function RevenueAttributionPage() {
         answer={
           <>
             Revenue attribution is the connection between a marketing
-            channel and the revenue it generated. SealMetrics applies
+            channel and the revenue it generated. Sealmetrics applies
             <strong> last-click attribution</strong> at the event
             level: each conversion is attributed to the channel
             observed on the page load where the conversion fires. The
@@ -187,7 +187,7 @@ export default function RevenueAttributionPage() {
                 rolls up by campaign, ad set, creative — and joins
                 against platform cost (Google Ads, Meta Ads) for
                 accurate ROAS at the campaign level. The platform
-                tells you what you spent; SealMetrics tells you what
+                tells you what you spent; Sealmetrics tells you what
                 actually came back.
               </p>
             </div>
@@ -212,7 +212,7 @@ export default function RevenueAttributionPage() {
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
             The most common objection to last-click is &ldquo;but
             multi-touch is more accurate.&rdquo; The honest answer is
-            that multi-touch requires architecture SealMetrics does
+            that multi-touch requires architecture Sealmetrics does
             not have — and the architecture has a cost most teams
             should not pay.
           </p>
@@ -265,10 +265,10 @@ export default function RevenueAttributionPage() {
                 The right home for multi-touch reasoning is a
                 marketing-mix model (MMM) built on aggregate spend and
                 aggregate revenue — no per-individual stitching
-                required. The SealMetrics aggregate revenue dataset is
+                required. The Sealmetrics aggregate revenue dataset is
                 exactly what an MMM needs as the revenue side of the
                 equation. Many customers run the two together: MMM in
-                the warehouse for cross-channel influence, SealMetrics
+                the warehouse for cross-channel influence, Sealmetrics
                 last-click as the measurement layer underneath.
               </p>
             </div>
@@ -289,7 +289,7 @@ export default function RevenueAttributionPage() {
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
               <h3 className="text-[16px] font-semibold text-ink mb-3">Aggregate weekly / monthly</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Total SealMetrics-attributed revenue lands within{" "}
+                Total Sealmetrics-attributed revenue lands within{" "}
                 <strong>15–20%</strong> of the eCommerce backend
                 (Shopify, WooCommerce, Magento). The residual gap is
                 shipping discounts, taxes and refunds handled
@@ -300,7 +300,7 @@ export default function RevenueAttributionPage() {
               <h3 className="text-[16px] font-semibold text-ink mb-3">Per-order in the warehouse</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
                 Every order in the eCommerce backend appears in
-                SealMetrics with the same{" "}
+                Sealmetrics with the same{" "}
                 <code className="font-mono text-[13px]">order_id</code>.
                 Finance joins both datasets in BigQuery on a single
                 key — no fuzzy matching, no probability scoring.

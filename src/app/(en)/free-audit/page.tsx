@@ -6,23 +6,23 @@ import { FreeAuditForm } from "./FreeAuditForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Free Pixel & GDPR Audit — SealMetrics",
+  title: "Free Pixel & GDPR Audit — Sealmetrics",
   description:
     "Free audit of your site's tracking: pixel firing pre-consent, Consent Mode v2 and GDPR compliance signals. Report delivered by email in 2–3 minutes.",
   openGraph: {
-    title: "Free Pixel & GDPR Audit — SealMetrics",
+    title: "Free Pixel & GDPR Audit — Sealmetrics",
     description:
       "Find out if your GA4, Meta, TikTok, and Google Ads pixels fire before consent. Free audit, full PDF report by email.",
     type: "website",
     url: "https://sealmetrics.com/free-audit/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/free-audit/")],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Free Pixel & GDPR Audit — SealMetrics",
+    title: "Free Pixel & GDPR Audit — Sealmetrics",
     description: "Find out if your GA4, Meta, TikTok, and Google Ads pixels fire before consent. Free audit, full PDF report by email.",
     images: [ogImage("/free-audit/")],
   },

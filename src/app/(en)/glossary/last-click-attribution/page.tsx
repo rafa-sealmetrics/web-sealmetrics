@@ -9,15 +9,15 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Last-Click Attribution? — SealMetrics Glossary",
+  title: "What Is Last-Click Attribution? — Sealmetrics Glossary",
   description:
-    "Last-click attribution credits a conversion to the final touchpoint before it. How it differs from multi-touch and why SealMetrics uses it on 100% of data.",
+    "Last-click attribution credits a conversion to the final touchpoint before it. How it differs from multi-touch and why Sealmetrics uses it on 100% of data.",
   openGraph: {
     title: "What Is Last-Click Attribution?",
     description: "Last-click attribution explained: how it differs from multi-touch, why it scales, and what it deliberately doesn't do.",
     type: "article",
     url: "https://sealmetrics.com/glossary/last-click-attribution/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/last-click-attribution/")],
   },
@@ -68,10 +68,10 @@ export default function LastClickAttributionPage() {
             <p>This is deliberate. Last-click does not measure influence; it measures the source that closed the conversion. For media-mix decisions on a single channel at a time, that is usually the correct question.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click vs <Link href="/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch</Link></h2>
-            <p>Multi-touch attribution distributes credit across the chain of touchpoints — linear, time-decay or data-driven. To work, it requires per-user tracking: linking pageview A and pageview B to the same visitor across sessions. That requirement makes multi-touch unreachable for any architecture that does not track individuals. SealMetrics counts events anonymously in aggregate, so multi-touch is not part of the product.</p>
+            <p>Multi-touch attribution distributes credit across the chain of touchpoints — linear, time-decay or data-driven. To work, it requires per-user tracking: linking pageview A and pageview B to the same visitor across sessions. That requirement makes multi-touch unreachable for any architecture that does not track individuals. Sealmetrics counts events anonymously in aggregate, so multi-touch is not part of the product.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click on 100% of data</h2>
-            <p>Cookie-based last-click attribution still loses data the moment the cookie disappears. SealMetrics applies last-click at the <strong>event level</strong>: the channel observed on the page where the conversion fires gets the credit, on 100% of observed conversions. No cookie required, no expiration risk, no &ldquo;direct&rdquo; bucket inflated by ITP. See the full pattern in the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>.</p>
+            <p>Cookie-based last-click attribution still loses data the moment the cookie disappears. Sealmetrics applies last-click at the <strong>event level</strong>: the channel observed on the page where the conversion fires gets the credit, on 100% of observed conversions. No cookie required, no expiration risk, no &ldquo;direct&rdquo; bucket inflated by ITP. See the full pattern in the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>.</p>
           </div>
           <CommercialModule hook="See last-click attribution running on 100% of your traffic — no consent gaps, no modelling." />
 
@@ -88,7 +88,7 @@ export default function LastClickAttributionPage() {
                 Last-click attribution is the attribution model that credits 100% of a conversion to the final marketing touchpoint observed before it. If the visitor arrives via Google CPC, browses, and converts in the same session, Google CPC gets the credit. If they leave and return via direct, direct gets the credit. Simple, deterministic, channel-level — the default reporting view of every analytics tool from GA Universal onward.
               </p>
               <p>
-                The cost of simplicity is honesty about what it does not measure: it does not credit earlier touchpoints (emails, influencer posts, retargeting impressions) that influenced the decision before the closing visit. Multi-touch attribution models attempt that — but require per-user tracking across sessions, which collides with consent rejection, ad blockers and Safari ITP. SealMetrics applies last-click at the event level on 100% of observed conversions, anonymously at channel scale, with no cookie required.
+                The cost of simplicity is honesty about what it does not measure: it does not credit earlier touchpoints (emails, influencer posts, retargeting impressions) that influenced the decision before the closing visit. Multi-touch attribution models attempt that — but require per-user tracking across sessions, which collides with consent rejection, ad blockers and Safari ITP. Sealmetrics applies last-click at the event level on 100% of observed conversions, anonymously at channel scale, with no cookie required.
               </p>
             </QuickAnswer>
           </div>

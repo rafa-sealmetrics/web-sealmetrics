@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Data Sampling in Analytics? — SealMetrics Glossary",
+  title: "What Is Data Sampling in Analytics? — Sealmetrics Glossary",
   description:
     "Data sampling is when analytics tools analyze a subset of data and extrapolate. Learn how it affects GA4 reporting and decision accuracy.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects GA4 reporting.",
     type: "article",
     url: "https://sealmetrics.com/glossary/data-sampling/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/data-sampling/")],
   },
@@ -72,17 +72,17 @@ export default function DataSamplingPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The alternative: full-resolution analytics</h2>
           <p>
-            <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like SealMetrics record every session individually with no sampling applied. When you see 72,847 visitors, that number represents 72,847 actual sessions — not a statistical estimate.
+            <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like Sealmetrics record every session individually with no sampling applied. When you see 72,847 visitors, that number represents 72,847 actual sessions — not a statistical estimate.
           </p>
         </div>
 
-        <CommercialModule hook="SealMetrics never samples — every report is computed on every session, not a statistical estimate. See your own reports at full resolution." />
+        <CommercialModule hook="Sealmetrics never samples — every report is computed on every session, not a statistical estimate. See your own reports at full resolution." />
 
         <RelatedGlossaryTerms slug="data-sampling" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GA4 Data Sampling: Why Your Traffic Numbers Are Wrong</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GA4 Data Sampling: Why Your Traffic Numbers Are Wrong</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

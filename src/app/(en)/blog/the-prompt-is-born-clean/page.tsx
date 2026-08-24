@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Redaction, DPAs and retention policies are cleanup. Consentless analytics removes the mess upstream: there is no visitor identifier to send to the model.",
     type: "article",
     url: "https://sealmetrics.com/blog/the-prompt-is-born-clean/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/the-prompt-is-born-clean.png"],
   },
@@ -64,7 +64,7 @@ const FAQ = [
   {
     question: "Does an AI assistant see individual visitors in my analytics?",
     answer:
-      "In SealMetrics it cannot, because individual visitors are not identified anywhere in the system. There are no cookies, no IP addresses, no device fingerprints and no visitor identifiers to query, so no report and no AI answer can be resolved down to a person. That is a property of the data model, not a permission setting.",
+      "In Sealmetrics it cannot, because individual visitors are not identified anywhere in the system. There are no cookies, no IP addresses, no device fingerprints and no visitor identifiers to query, so no report and no AI answer can be resolved down to a person. That is a property of the data model, not a permission setting.",
   },
   {
     question: "What is the difference between privacy-by-design and privacy-by-policy for AI?",
@@ -87,7 +87,7 @@ export default function ThePromptIsBornCleanPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -151,7 +151,7 @@ export default function ThePromptIsBornCleanPage() {
                 manage a risk created upstream, at collection.
               </li>
               <li>
-                SealMetrics never collects IPs, cookies, fingerprints or visitor
+                Sealmetrics never collects IPs, cookies, fingerprints or visitor
                 identifiers, so there is no personal identifier available to put
                 in a prompt in the first place.
               </li>
@@ -192,7 +192,7 @@ export default function ThePromptIsBornCleanPage() {
               Privacy starts before the AI
             </h2>
             <p>
-              SealMetrics is consentless analytics. That is not a claim about
+              Sealmetrics is consentless analytics. That is not a claim about
               cookie banners being optional; it is a statement about what the
               tracker records. It never collects IP addresses, never sets
               cookies, never builds device fingerprints and never assigns visitor
@@ -224,7 +224,7 @@ export default function ThePromptIsBornCleanPage() {
             </h2>
             <p>
               Concretely, here is what travels to the model when you ask the
-              SealMetrics assistant a question — and what cannot, because it does
+              Sealmetrics assistant a question — and what cannot, because it does
               not exist anywhere behind it.
             </p>
 

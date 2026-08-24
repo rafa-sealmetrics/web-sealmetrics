@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "COM(2025) 837 could eliminate cookie banners for first-party analytics. Here is what changed.",
     type: "article",
     url: "https://sealmetrics.com/blog/eu-digital-omnibus-cookie-banners-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/eu-digital-omnibus-cookie-banners-analytics.png"],
   },
@@ -36,7 +36,7 @@ export default function OmnibusShortPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "EU Digital Omnibus and Analytics" }]} />
-      <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus: What It Means for Cookie Banners and Analytics", description: "The European Commission proposed the biggest change to EU data law since GDPR.", datePublished: "2026-02-12", dateModified: "2026-05-28", url: "/blog/eu-digital-omnibus-cookie-banners-analytics", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "The EU Digital Omnibus: What It Means for Cookie Banners and Analytics", description: "The European Commission proposed the biggest change to EU data law since GDPR.", datePublished: "2026-02-12", dateModified: "2026-05-28", url: "/blog/eu-digital-omnibus-cookie-banners-analytics", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "EU Digital Omnibus and Analytics", url: "/blog/eu-digital-omnibus-cookie-banners-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -229,7 +229,7 @@ export default function OmnibusShortPage() {
             <a href="https://www.cnil.fr/en/cookies-and-other-trackers/cookie-walls-and-alternatives" target="_blank" rel="noopener noreferrer">specific criteria</a>{" "}
             for analytics tools that can operate without consent: no
             cross-site tracking, no individual profiles, data used only
-            for aggregated audience measurement. SealMetrics{" "}
+            for aggregated audience measurement. Sealmetrics{" "}
             <Link
               href="/blog/cnil-self-assessment-published"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

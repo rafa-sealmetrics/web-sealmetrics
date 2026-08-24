@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "GA4 applies data sampling at high traffic volumes. Here is how it affects your data and decisions.",
     type: "article",
     url: "https://sealmetrics.com/blog/ga4-data-sampling-problem/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/ga4-data-sampling-problem.png"],
   },
@@ -38,7 +38,7 @@ export default function GA4DataSamplingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GA4 Data Sampling Problem" }]} />
-      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", dateModified: "2026-05-28", url: "/blog/ga4-data-sampling-problem", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", dateModified: "2026-05-28", url: "/blog/ga4-data-sampling-problem", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Data Sampling", url: "/blog/ga4-data-sampling-problem" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -134,7 +134,7 @@ export default function GA4DataSamplingPage() {
           </div>
 
         <CommercialModule
-          hook="Hitting GA4's sampling thresholds? See your own reports unsampled — SealMetrics runs on 100% of events at any volume."
+          hook="Hitting GA4's sampling thresholds? See your own reports unsampled — Sealmetrics runs on 100% of events at any volume."
         />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -171,7 +171,7 @@ export default function GA4DataSamplingPage() {
             >
               Cookieless analytics
             </Link>{" "}
-            platforms like SealMetrics take a fundamentally different approach.
+            platforms like Sealmetrics take a fundamentally different approach.
             By collecting data through first-party cookieless methods, every
             session is captured regardless of consent banner status, ad blocker
             usage, or browser restrictions. And because the data volume is
@@ -180,7 +180,7 @@ export default function GA4DataSamplingPage() {
           </p>
 
           <p>
-            When you see 72,847 visitors in SealMetrics, that number represents
+            When you see 72,847 visitors in Sealmetrics, that number represents
             72,847 actual sessions. Not a sample. Not an estimate. Not a
             projection from the subset that happened to accept cookies.
           </p>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. The results split the market in two.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-tools-ad-blocker-test/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/blog/analytics-tools-ad-blocker-test/")],
   },
@@ -37,7 +37,7 @@ export default function AdBlockerTestPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Tested 9 Analytics Tools Against Ad Blockers" }]} />
-      <JsonLd data={articleSchema({ headline: "We Tested 9 Analytics Tools Against Every Major Ad Blocker", description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. GA4, Adobe, and PostHog are blocked by all five.", datePublished: "2026-03-07", dateModified: "2026-05-04", url: "/blog/analytics-tools-ad-blocker-test", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Tested 9 Analytics Tools Against Every Major Ad Blocker", description: "Binary pass/fail results for 9 analytics platforms across 5 major ad blockers. GA4, Adobe, and PostHog are blocked by all five.", datePublished: "2026-03-07", dateModified: "2026-05-04", url: "/blog/analytics-tools-ad-blocker-test", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Tested 9 Analytics Tools Against Ad Blockers", url: "/blog/analytics-tools-ad-blocker-test" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -158,7 +158,7 @@ export default function AdBlockerTestPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
                   <td className="py-2.5 px-2 text-center font-mono text-green-muted">Pass</td>
@@ -252,8 +252,8 @@ export default function AdBlockerTestPage() {
               <div className="text-text-tertiary text-center py-1">FF</div>
               <div className="text-text-tertiary text-center py-1">PB</div>
               <div />
-              {/* SealMetrics */}
-              <div className="text-[0.8rem] font-medium text-text-primary text-right pr-2 py-0.5">SealMetrics</div>
+              {/* Sealmetrics */}
+              <div className="text-[0.8rem] font-medium text-text-primary text-right pr-2 py-0.5">Sealmetrics</div>
               <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
               <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
               <div className="h-6 rounded-[2px]" style={{ backgroundColor: 'var(--color-green-muted)' }} />
@@ -341,7 +341,7 @@ export default function AdBlockerTestPage() {
           </p>
 
           <CommercialModule
-            hook="SealMetrics passed all five blockers — first-party CNAME collection is why. Run the same test against your own stack and count what disappears."
+            hook="Sealmetrics passed all five blockers — first-party CNAME collection is why. Run the same test against your own stack and count what disappears."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -485,10 +485,10 @@ export default function AdBlockerTestPage() {
             anyone can download EasyPrivacy and search for{" "}
             <span className="font-mono text-[0.9rem]">plausible.io</span> or{" "}
             <span className="font-mono text-[0.9rem]">cdn.usefathom.com</span> to verify
-            the results. SealMetrics has one rule in EasyPrivacy:{" "}
+            the results. Sealmetrics has one rule in EasyPrivacy:{" "}
             <span className="font-mono text-[0.9rem]">||sealmetrics.com^$third-party</span>{" "}
             — which only triggers when loaded as a third-party resource. Since
-            SealMetrics uses first-party CNAME collection, this rule does not apply.
+            Sealmetrics uses first-party CNAME collection, this rule does not apply.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -511,7 +511,7 @@ export default function AdBlockerTestPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how SealMetrics collects data without client-side scripts
+              See how Sealmetrics collects data without client-side scripts
             </Link>
             {" "}or{" "}
             <Link

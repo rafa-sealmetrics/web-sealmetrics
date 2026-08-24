@@ -20,13 +20,13 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Preview B — AI-led home proposal",
-  description: "Internal design proposal B for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+  description: "Internal design proposal B for the Sealmetrics homepage. Not indexed, not linked publicly, kept only for design review.",
   robots: { index: false, follow: false },
   openGraph: {
     title: "Preview B — Power home proposal",
-    description: "Internal design proposal B for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+    description: "Internal design proposal B for the Sealmetrics homepage. Not indexed, not linked publicly, kept only for design review.",
     url: "https://sealmetrics.com/preview/home-power-b/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     type: "website",
     images: [ogImage("/preview/home-power-b/")],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Preview B — Power home proposal",
-    description: "Internal design proposal B for the SealMetrics homepage. Not indexed, not linked publicly, kept only for design review.",
+    description: "Internal design proposal B for the Sealmetrics homepage. Not indexed, not linked publicly, kept only for design review.",
     images: [ogImage("/preview/home-power-b/")],
   },
   alternates: { canonical: "https://sealmetrics.com/preview/home-power-b/" },

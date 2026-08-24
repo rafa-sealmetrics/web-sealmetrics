@@ -8,23 +8,23 @@ import { CareersForm } from "@/components/forms/CareersForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Work With Us — SealMetrics",
+  title: "Work With Us — Sealmetrics",
   description:
     "Apply with public links — LinkedIn, GitHub, your published work. No CV uploads, no personal data forms. Pick a team and show us what you've shipped.",
   openGraph: {
-    title: "Work With Us — SealMetrics",
+    title: "Work With Us — Sealmetrics",
     description:
       "Apply with public links — LinkedIn, GitHub, your published work. No CV uploads, no personal data forms.",
     type: "website",
     images: [ogImage("/careers/")],
     url: "https://sealmetrics.com/careers/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Work With Us — SealMetrics",
+    title: "Work With Us — Sealmetrics",
     description: "Apply with public links — LinkedIn, GitHub, your published work. No CV uploads, no personal data forms.",
     images: [ogImage("/careers/")],
   },
@@ -84,7 +84,7 @@ const FAQ = [
   {
     question: "Why don't you accept CVs or PDFs?",
     answer:
-      "SealMetrics doesn't collect personal data from website visitors — that discipline extends to hiring. A CV tells us what you claim; public work shows what you actually do. We also keep the personal data we hold about candidates to the minimum: the links you chose to share, nothing else.",
+      "Sealmetrics doesn't collect personal data from website visitors — that discipline extends to hiring. A CV tells us what you claim; public work shows what you actually do. We also keep the personal data we hold about candidates to the minimum: the links you chose to share, nothing else.",
   },
   {
     question: "What if I don't have GitHub or much public work?",
@@ -156,7 +156,7 @@ export default function CareersPage() {
               just sits there as risk.
             </p>
             <p>
-              SealMetrics measures 100% of website traffic without collecting
+              Sealmetrics measures 100% of website traffic without collecting
               personal data — that is the whole product. Applying the opposite
               logic to the people who want to build it with us would be
               incoherent. So the application is three optional link fields and
@@ -167,7 +167,7 @@ export default function CareersPage() {
               If you want to know who you would be working with before
               sharing anything, read{" "}
               <Link href="/about" className="text-brand">
-                who is behind SealMetrics
+                who is behind Sealmetrics
               </Link>{" "}
               or{" "}
               <Link href="/open" className="text-brand">

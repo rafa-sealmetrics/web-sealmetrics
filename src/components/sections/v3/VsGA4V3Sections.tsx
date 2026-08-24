@@ -10,7 +10,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         eyebrow: "vs Google Analytics 4",
         h1Pre: "GA4 te enseña el ",
         h1Em: "40%",
-        h1Post: " de tu tráfico. SealMetrics te enseña el 100%.",
+        h1Post: " de tu tráfico. Sealmetrics te enseña el 100%.",
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
         ctaA: "Prueba de 14 días",
         ctaB: "Reserva una demo",
@@ -20,7 +20,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         eyebrow: "vs Google Analytics 4",
         h1Pre: "GA4 shows you ",
         h1Em: "40%",
-        h1Post: " of your traffic. SealMetrics shows 100%.",
+        h1Post: " of your traffic. Sealmetrics shows 100%.",
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
         ctaA: "Start 14-day trial",
         ctaB: "Book a demo",
@@ -126,7 +126,7 @@ export function VsGA4GapStatsV3({ locale = "en" as Locale }) {
   );
 }
 
-/* DASHBOARD PATTERNS · 5 cards · "what GA4 reports" vs "what SealMetrics captures"
+/* DASHBOARD PATTERNS · 5 cards · "what GA4 reports" vs "what Sealmetrics captures"
    Ported from v2 homepage. Anchored to consequence framing.
    ============================================ */
 export function DashboardPatternsV3({ locale = "en" as Locale }) {
@@ -134,9 +134,9 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
     ? {
         eyebrow: "Lo que el dashboard dice vs lo que pasó",
         title: <>Lo que tu dashboard muestra <em>vs lo que de verdad pasó.</em></>,
-        lede: "Cinco patrones que vemos en cuentas eCommerce europeas. La mayoría de clientes encuentra al menos dos de estos huecos en sus propios datos durante los primeros 30 días corriendo SealMetrics junto a GA4.",
+        lede: "Cinco patrones que vemos en cuentas eCommerce europeas. La mayoría de clientes encuentra al menos dos de estos huecos en sus propios datos durante los primeros 30 días corriendo Sealmetrics junto a GA4.",
         gaTag: "GA4 reporta",
-        sealTag: "SealMetrics captura",
+        sealTag: "Sealmetrics captura",
         consequence: "Consecuencia —",
         foot: "El tamaño exacto del gap depende de tu mix de mercado, mix de dispositivo y tasa de aceptación de consent. Ningún cliente ve los cinco — pero casi todos ven uno o dos.",
         cards: [
@@ -175,9 +175,9 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
     : {
         eyebrow: "What the dashboard says vs what happened",
         title: <>What your dashboard shows <em>vs what actually happened.</em></>,
-        lede: "Five patterns we see across European eCommerce accounts. Most customers find at least two of these gaps in their own data within the first 30 days running SealMetrics alongside GA4.",
+        lede: "Five patterns we see across European eCommerce accounts. Most customers find at least two of these gaps in their own data within the first 30 days running Sealmetrics alongside GA4.",
         gaTag: "GA4 reports",
-        sealTag: "SealMetrics captures",
+        sealTag: "Sealmetrics captures",
         consequence: "Consequence —",
         foot: "The exact size of the gap depends on your market mix, device mix and consent acceptance rate. No client sees all five — but almost every one sees one or two.",
         cards: [
@@ -488,7 +488,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
                     className="p-5 text-ink"
                     style={{ background: "rgba(45,139,109,0.05)", borderLeft: "2px solid #2D8B6D" }}
                   >
-                    SealMetrics
+                    Sealmetrics
                   </div>
                 </div>
                 {cats.map((section) => (
@@ -567,10 +567,10 @@ export function RunBothV3({ locale = "en" as Locale }) {
         title: <>Corre los dos en paralelo. <em>Compara con tu CRM.</em></>,
         lede: "No te pedimos que reemplaces GA4. Te pedimos que los corras en paralelo 30 días, comparando ambos con tu CRM real. Después tú decides qué dato firmar.",
         phases: [
-          { n: "Semana 1", t: "Ambos instalados", p: "GA4 sigue donde está. SealMetrics se instala en 15 min con un script. Los dos corren sobre el mismo tráfico." },
+          { n: "Semana 1", t: "Ambos instalados", p: "GA4 sigue donde está. Sealmetrics se instala en 15 min con un script. Los dos corren sobre el mismo tráfico." },
           { n: "Semana 2", t: "Calibración", p: "Te ayudamos a mapear canales, UTMs y microconversiones. Ambos sistemas ven lo mismo, reportan distinto." },
           { n: "Semana 3", t: "Comparación", p: "CRM en mano, comparas canales, conversiones e ingresos. Ves exactamente dónde GA4 se queda corto sobre tu tráfico." },
-          { n: "Semana 4", t: "Decisión", p: "La mayoría de equipos firman SealMetrics como fuente de verdad y mantienen GA4 para las integraciones específicas de Google Ads." },
+          { n: "Semana 4", t: "Decisión", p: "La mayoría de equipos firman Sealmetrics como fuente de verdad y mantienen GA4 para las integraciones específicas de Google Ads." },
         ],
       }
     : {
@@ -578,10 +578,10 @@ export function RunBothV3({ locale = "en" as Locale }) {
         title: <>Run both alongside. <em>Compare against your CRM.</em></>,
         lede: "We're not asking you to replace GA4. We're asking you to run both in parallel for 30 days, comparing each against your actual CRM. Then you decide which number to sign against.",
         phases: [
-          { n: "Week 1", t: "Both installed", p: "GA4 stays where it is. SealMetrics installs in 15 minutes with one script tag. Both running on the same traffic." },
+          { n: "Week 1", t: "Both installed", p: "GA4 stays where it is. Sealmetrics installs in 15 minutes with one script tag. Both running on the same traffic." },
           { n: "Week 2", t: "Calibration", p: "We help you map channels, UTMs and microconversions. Both systems see the same traffic — and report very differently." },
           { n: "Week 3", t: "Comparison", p: "CRM in hand, you compare channels, conversions and revenue. You see exactly where GA4 falls short on your own data." },
-          { n: "Week 4", t: "Decision", p: "Most teams sign SealMetrics as source of truth and keep GA4 for specific Google Ads integrations. No migration forced." },
+          { n: "Week 4", t: "Decision", p: "Most teams sign Sealmetrics as source of truth and keep GA4 for specific Google Ads integrations. No migration forced." },
         ],
       };
 

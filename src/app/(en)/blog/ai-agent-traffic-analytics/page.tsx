@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "AI agents are sending traffic to your site. Your analytics classify it as direct or unknown.",
     type: "article",
     url: "https://sealmetrics.com/blog/ai-agent-traffic-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/ai-agent-traffic-analytics.png"],
   },
@@ -36,7 +36,7 @@ export default function AIAgentTrafficPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "AI Agent Traffic Analytics" }]} />
-      <JsonLd data={articleSchema({ headline: "AI Agent Traffic: The Invisible Channel Your Analytics Miss", description: "AI agents are sending traffic your analytics can't see.", datePublished: "2026-01-18", dateModified: "2026-05-04", url: "/blog/ai-agent-traffic-analytics", category: "AI & Analytics", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "AI Agent Traffic: The Invisible Channel Your Analytics Miss", description: "AI agents are sending traffic your analytics can't see.", datePublished: "2026-01-18", dateModified: "2026-05-04", url: "/blog/ai-agent-traffic-analytics", category: "AI & Analytics", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "AI Agent Traffic", url: "/blog/ai-agent-traffic-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -63,7 +63,7 @@ export default function AIAgentTrafficPage() {
             <li>AI agents (GPT, Claude, Perplexity, Google AI Overviews) are sending 7-22% of sessions to content-rich sites, but traditional analytics classifies this traffic as "direct" or "unassigned."</li>
             <li>AI crawlers do not execute JavaScript and often omit referrer headers — client-side analytics like GA4 cannot detect these visits at all.</li>
             <li>For a site with 500,000 monthly sessions, 35,000 to 100,000 AI-influenced sessions per month may be invisible to or misclassified by traditional analytics.</li>
-            <li>SealMetrics Agent Analytics — in development, not yet live — will identify each AI agent type (GPT, Claude, Perplexity) as a distinct source, tracked separately from human traffic and never billed against your event limit.</li>
+            <li>Sealmetrics Agent Analytics — in development, not yet live — will identify each AI agent type (GPT, Claude, Perplexity) as a distinct source, tracked separately from human traffic and never billed against your event limit.</li>
           </ul>
         </div>
 
@@ -122,7 +122,7 @@ export default function AIAgentTrafficPage() {
           <p>
             The volume varies significantly by industry. Content-rich sites
             (eCommerce product pages, knowledge bases, editorial content) see
-            higher AI agent activity. Based on SealMetrics client data from
+            higher AI agent activity. Based on Sealmetrics client data from
             2025-2026:
           </p>
 
@@ -147,7 +147,7 @@ export default function AIAgentTrafficPage() {
               ))}
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Ranges based on SealMetrics Agent Analytics data across 100+
+              Ranges based on Sealmetrics Agent Analytics data across 100+
               eCommerce sites, Q4 2025 — Q1 2026.
             </p>
           </div>
@@ -185,11 +185,11 @@ export default function AIAgentTrafficPage() {
           </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How SealMetrics will track AI agent traffic
+            How Sealmetrics will track AI agent traffic
           </h2>
 
           <p>
-            SealMetrics Agent Analytics is in development and not yet
+            Sealmetrics Agent Analytics is in development and not yet
             available on accounts. When it ships, it will identify AI agent
             sessions through{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party</Link>{" "}
@@ -220,7 +220,7 @@ export default function AIAgentTrafficPage() {
         </div>
 
         <CommercialModule
-          hook="AI agents are already landing on your site — most analytics never sees them. Ask where this traffic shows up in SealMetrics and what is on the roadmap."
+          hook="AI agents are already landing on your site — most analytics never sees them. Ask where this traffic shows up in Sealmetrics and what is on the roadmap."
         />
 
         {/* Related */}

@@ -31,7 +31,7 @@ export function HeroD() {
           className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          SealMetrics is cookieless analytics for eCommerce. Measure every visit and every sale — no
+          Sealmetrics is cookieless analytics for eCommerce. Measure every visit and every sale — no
           cookies, no consent banner, no 40–60% blind spot — so your real ROAS, your channel
           decisions and your board numbers finally match what actually happened.
         </p>
@@ -333,7 +333,7 @@ export function QuoteBlock() {
       <div className="max-w-[1000px] mx-auto px-5 sm:px-10">
         <blockquote className="border-l-2 pl-7 md:pl-10" style={{ borderColor: "#2E5C8A" }}>
           <p className="text-[24px] md:text-[32px] font-medium text-ink leading-[1.3] tracking-[-0.02em] max-w-[26ch]">
-            The data SealMetrics delivers is agnostic, unbiased and neutral. <em className="italic-accent">There&rsquo;s no black box.</em>
+            The data Sealmetrics delivers is agnostic, unbiased and neutral. <em className="italic-accent">There&rsquo;s no black box.</em>
           </p>
           <footer className="mt-7 flex items-center gap-3.5">
             <span className="w-11 h-11 rounded-full bg-ink text-white font-semibold text-[14px] flex items-center justify-center shrink-0">TA</span>
@@ -359,7 +359,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           quote:
             "Esas ventas ya se cerraron. Ver el número completo no hace que venda más.",
           cite: "Lo que te dirá tu CFO",
-          p1a: "Tienen razón: SealMetrics no crea ingresos nuevos.",
+          p1a: "Tienen razón: Sealmetrics no crea ingresos nuevos.",
           p1b: "Esos ingresos ya existen.",
           p1c:
             "Lo que recuperas es la capacidad de decidir bien sobre ellos: hoy la foto distorsionada te empuja a cortar los canales cuyos compradores rechazan cookies y a financiar los que solo parecen fuertes.",
@@ -382,7 +382,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           quote:
             "Those sales already closed. Seeing the full number doesn't make me sell more.",
           cite: "What your CFO will say",
-          p1a: "They're right — SealMetrics doesn't create new revenue.",
+          p1a: "They're right — Sealmetrics doesn't create new revenue.",
           p1b: "That revenue already exists.",
           p1c:
             "What you recover is the ability to decide well on top of it: today the distorted picture pushes you to cut the channels whose buyers reject cookies and fund the ones that only look strong.",

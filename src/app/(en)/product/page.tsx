@@ -7,23 +7,23 @@ import "@/components/v4/product-signal.css";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Product — SealMetrics · Complete analytics, no compromises",
+  title: "Product — Sealmetrics · Complete analytics, no compromises",
   description:
     "Consentless tracking, last-click revenue attribution, LENS AI, SuperAPI and MCP server — all on 100% observed data. No sampling, no modelling.",
   openGraph: {
-    title: "Product — SealMetrics · Complete analytics, no compromises",
+    title: "Product — Sealmetrics · Complete analytics, no compromises",
     description:
       "A full analytics stack for eCommerce teams. Consentless, 100% observed, EU-hosted. LENS AI + SuperAPI + MCP native.",
     type: "website",
     images: [ogImage("/product/")],
     url: "https://sealmetrics.com/product/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Product — SealMetrics · Complete analytics, no compromises",
+    title: "Product — Sealmetrics · Complete analytics, no compromises",
     description: "A full analytics stack for eCommerce teams. Consentless, 100% observed, EU-hosted. LENS AI + SuperAPI + MCP native.",
     images: [ogImage("/product/")],
   },
@@ -38,7 +38,7 @@ export default function ProductPage() {
     <>
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={breadcrumbSchema([{ name: "Product", url: "/product" }])} />
-      <JsonLd data={speakableWebPageSchema({ url: "/product", name: "Product — SealMetrics" })} />
+      <JsonLd data={speakableWebPageSchema({ url: "/product", name: "Product — Sealmetrics" })} />
       <ProductSignal locale="en" />
     </>
   );

@@ -18,7 +18,7 @@ export function EditorialSectionNav({ current }: { current: EditorialSection }) 
   return (
     <div className="sig-editorial-nav">
       <div className="sig-editorial-nav-inner">
-        <span className="sig-editorial-nav-label">SealMetrics / public knowledge</span>
+        <span className="sig-editorial-nav-label">Sealmetrics / public knowledge</span>
         <nav aria-label="Editorial sections" className="sig-editorial-nav-links">
           {sections.map((section) => {
             const active = section.id === current;

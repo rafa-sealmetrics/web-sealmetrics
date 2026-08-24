@@ -11,7 +11,7 @@ const COPY = {
           <>
             Public vendor documentation for {competitor} (pricing, feature lists, EU
             data residency statements). G2 and Capterra reviews referenced where they
-            illuminate workflow differences. SealMetrics data points come from our own
+            illuminate workflow differences. Sealmetrics data points come from our own
             architecture and from named customer audits (
             <Link
               href="/case-studies/palladium-hotel-group"
@@ -36,7 +36,7 @@ const COPY = {
           <>
             Pricing data is current as of <time dateTime={dateModified}>{dateModified}</time>.
             Vendor pricing changes; we review quarterly and re-anchor on every major
-            competitor release. SealMetrics pricing comes from{" "}
+            competitor release. Sealmetrics pricing comes from{" "}
             <Link href="/pricing" className="text-ink no-underline border-b border-warm-200 pb-px hover:border-ink">
               /pricing
             </Link>{" "}
@@ -48,7 +48,7 @@ const COPY = {
         h: "Disclosure",
         b: () => (
           <>
-            SealMetrics is our product. We built this comparison to be useful even if
+            Sealmetrics is our product. We built this comparison to be useful even if
             you don&rsquo;t choose us — every competitor mention is verifiable against
             its public documentation. If you find a fact that&rsquo;s wrong or has
             changed, write to us and we&rsquo;ll correct it within 48 hours.
@@ -77,7 +77,7 @@ const COPY = {
           <>
             Documentación pública de {competitor} (precio, features, residencia de
             datos UE). Reviews de G2 y Capterra referenciadas cuando aclaran
-            diferencias de workflow. Los datos de SealMetrics proceden de nuestra
+            diferencias de workflow. Los datos de Sealmetrics proceden de nuestra
             arquitectura y de auditorías con clientes nombrados (
             <Link
               href="/es/case-studies/palladium-hotel-group"
@@ -102,7 +102,7 @@ const COPY = {
           <>
             Datos de precio actualizados a <time dateTime={dateModified}>{dateModified}</time>.
             El precio de los vendors cambia; revisamos trimestralmente y reanclamos
-            ante cada release competitiva mayor. El precio de SealMetrics viene de{" "}
+            ante cada release competitiva mayor. El precio de Sealmetrics viene de{" "}
             <Link href="/es/pricing" className="text-ink no-underline border-b border-warm-200 pb-px hover:border-ink">
               /es/pricing
             </Link>{" "}
@@ -114,7 +114,7 @@ const COPY = {
         h: "Conflicto de interés",
         b: () => (
           <>
-            SealMetrics es nuestro producto. Hemos construido esta comparativa para
+            Sealmetrics es nuestro producto. Hemos construido esta comparativa para
             que te sea útil incluso si no nos eliges — cada mención del competidor es
             verificable contra su documentación pública. Si encuentras un dato
             incorrecto o desactualizado, escríbenos y lo corregimos en 48 horas.

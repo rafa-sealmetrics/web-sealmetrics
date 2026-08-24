@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Gemma 4, Mistral Small 3.2, gpt-oss-120b — cómo falló realmente cada uno, y por qué cada cambio salió de la evidencia en producción y no de una nota de prensa.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/we-changed-our-ai-model-twice/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/we-changed-our-ai-model-twice.png"],
   },
@@ -87,7 +87,7 @@ export default function WeChangedOurAiModelTwicePageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -99,9 +99,9 @@ export default function WeChangedOurAiModelTwicePageEs() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "SealMetrics sustituyó dos veces en tres semanas el modelo que hay detrás de Seal AI — de gemma-4-26b-a4b (2 de julio de 2026) a mistral-small-3.2-24b (21 de julio de 2026) y de ahí a gpt-oss-120b (22 de julio de 2026) — y un benchmark bilingüe posterior de 162 consultas confirmó la elección final: 18 de 18 trampas de grounding e inyección superadas y 144 de 144 hechos verificados correctos, frente a 9 de 18 trampas en el caso de mistral-small-3.2.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "Sealmetrics sustituyó dos veces en tres semanas el modelo que hay detrás de Seal AI — de gemma-4-26b-a4b (2 de julio de 2026) a mistral-small-3.2-24b (21 de julio de 2026) y de ahí a gpt-oss-120b (22 de julio de 2026) — y un benchmark bilingüe posterior de 162 consultas confirmó la elección final: 18 de 18 trampas de grounding e inyección superadas y 144 de 144 hechos verificados correctos, frente a 9 de 18 trampas en el caso de mistral-small-3.2.",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -196,7 +196,7 @@ export default function WeChangedOurAiModelTwicePageEs() {
               que podemos contarte sobre cómo se construyó la funcionalidad.
             </p>
             <p>
-              Seal AI es la capa de IA privada dentro de SealMetrics: haces una
+              Seal AI es la capa de IA privada dentro de Sealmetrics: haces una
               pregunta sobre tu analítica en lenguaje natural y responde{" "}
               <em>llamando a herramientas</em> contra tus datos — 63 en total,
               desde vistas generales y canales hasta embudos y segmentos. Ese

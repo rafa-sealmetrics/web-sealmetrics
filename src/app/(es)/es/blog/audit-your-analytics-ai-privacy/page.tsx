@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Un checklist neutral para comprobar si una función de analítica con IA es realmente privada: propiedad, ubicación, retención, entrenamiento y salida.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/audit-your-analytics-ai-privacy/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/audit-your-analytics-ai-privacy.png"],
   },
@@ -87,7 +87,7 @@ export default function AuditYourAnalyticsAiPrivacyPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -423,7 +423,7 @@ export default function AuditYourAnalyticsAiPrivacyPageEs() {
               >
                 Seal AI
               </Link>
-              , la capa de IA privada dentro de SealMetrics.
+              , la capa de IA privada dentro de Sealmetrics.
             </p>
             <p>
               <strong>1. Propiedad.</strong> La inferencia se ejecuta en Scaleway

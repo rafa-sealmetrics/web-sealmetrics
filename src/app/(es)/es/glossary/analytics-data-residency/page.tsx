@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "¿Qué es la residencia del dato en analítica?",
     description: "Dónde se procesa y almacena el dato, y qué marco legal lo gobierna.",
     url: "https://sealmetrics.com/es/glossary/analytics-data-residency/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/analytics-data-residency/")],

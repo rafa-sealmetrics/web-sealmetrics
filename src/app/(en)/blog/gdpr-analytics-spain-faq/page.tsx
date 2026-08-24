@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/blog/gdpr-analytics-spain-faq/")],
     url: "https://sealmetrics.com/blog/gdpr-analytics-spain-faq/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "Does my online store need a cookie banner for analytics?",
     answer:
-      "No — not if the analytics tool sets no cookies and processes no personal data. A banner is legally required only when measurement stores something on the device (a cookie, localStorage) or processes personal data such as an IP address. The AEPD's cookie guidance exempts anonymous, aggregate audience measurement with no cross-site tracking. With cookieless analytics like SealMetrics, no banner is required for measurement; if you also run marketing cookies, those still need consent on their own.",
+      "No — not if the analytics tool sets no cookies and processes no personal data. A banner is legally required only when measurement stores something on the device (a cookie, localStorage) or processes personal data such as an IP address. The AEPD's cookie guidance exempts anonymous, aggregate audience measurement with no cross-site tracking. With cookieless analytics like Sealmetrics, no banner is required for measurement; if you also run marketing cookies, those still need consent on their own.",
   },
   {
     question: "What does the AEPD say about analytics cookies?",
@@ -54,7 +54,7 @@ const faqs = [
   {
     question: "Which GDPR-compliant analytics can a small business use?",
     answer:
-      "It depends on what the data decides. For a small site with no ad spend, a lightweight privacy-first tool (Plausible, Fathom, Umami — from around €9/month) is compliant and sufficient. Once you invest in campaigns and allocate budget on the data — typically from a few thousand euros a month in ads — the 40-60% of traffic a banner-gated tool loses costs more than the analytics: that is where a cookieless platform with revenue attribution like SealMetrics (from €599/month) pays for itself.",
+      "It depends on what the data decides. For a small site with no ad spend, a lightweight privacy-first tool (Plausible, Fathom, Umami — from around €9/month) is compliant and sufficient. Once you invest in campaigns and allocate budget on the data — typically from a few thousand euros a month in ads — the 40-60% of traffic a banner-gated tool loses costs more than the analytics: that is where a cookieless platform with revenue attribution like Sealmetrics (from €599/month) pays for itself.",
   },
   {
     question: "Can I measure conversions and campaigns without cookies?",
@@ -69,7 +69,7 @@ const faqs = [
   {
     question: "How much traffic do I lose if my analytics depends on a banner?",
     answer:
-      "Between 35% and 55% of EU visitors reject the banner, ad blockers affect over 40% of users, and browsers restrict cookies — the combined effect leaves GA4 showing roughly 13% of real EU traffic. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the SealMetrics data-loss calculator.",
+      "Between 35% and 55% of EU visitors reject the banner, ad blockers affect over 40% of users, and browsers restrict cookies — the combined effect leaves GA4 showing roughly 13% of real EU traffic. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function GdprAnalyticsSpainFaqPage() {
           dateModified: "2026-07-07",
           url: "/blog/gdpr-analytics-spain-faq",
           category: "Regulation",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics in Spain: FAQ", url: "/blog/gdpr-analytics-spain-faq" }])} />

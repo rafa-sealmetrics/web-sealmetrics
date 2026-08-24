@@ -9,22 +9,22 @@ import { getVsData } from "@/components/sections/v3/VsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Google Analytics Alternatives — SealMetrics",
-  description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+  title: "Google Analytics Alternatives — Sealmetrics",
+  description: "Looking for a GA alternative that doesn't commoditize your data? Sealmetrics is a different category: complete, EU-hosted, enterprise-grade.",
   openGraph: {
-    title: "Google Analytics Alternatives — SealMetrics",
-    description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+    title: "Google Analytics Alternatives — Sealmetrics",
+    description: "Looking for a GA alternative that doesn't commoditize your data? Sealmetrics is a different category: complete, EU-hosted, enterprise-grade.",
     type: "website",
     images: [ogImage("/alternatives/google-analytics/")],
     url: "https://sealmetrics.com/alternatives/google-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Google Analytics Alternatives — SealMetrics",
-    description: "Looking for a GA alternative that doesn't commoditize your data? SealMetrics is a different category: complete, EU-hosted, enterprise-grade.",
+    title: "Google Analytics Alternatives — Sealmetrics",
+    description: "Looking for a GA alternative that doesn't commoditize your data? Sealmetrics is a different category: complete, EU-hosted, enterprise-grade.",
     images: [ogImage("/alternatives/google-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/alternatives/google-analytics/", languages: getAlternates("/alternatives/google-analytics") },
@@ -36,7 +36,7 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Google Analytics alternatives" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Google Analytics alternatives", url: "/alternatives/google-analytics" }])} />
       <JsonLd data={comparisonPageSchema({
-        name: "Google Analytics alternatives — SealMetrics",
+        name: "Google Analytics alternatives — Sealmetrics",
         description: "Enterprise alternative to Google Analytics for European companies that need complete data, EU residency and decision-grade attribution.",
         url: "/alternatives/google-analytics",
         competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" },

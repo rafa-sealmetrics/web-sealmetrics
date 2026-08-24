@@ -259,7 +259,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
         <Link href={localizedHref("/", locale)} className="flex items-center no-underline">
           <Picture
             src="/logos/logo-sealmetrics.svg"
-            alt="SealMetrics"
+            alt="Sealmetrics"
             width={157}
             height={28}
             className="h-7 w-auto"

@@ -7,24 +7,24 @@ import "@/components/v4/how-it-works-signal.css";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Cómo funciona SealMetrics — Sin cookies y UE",
+  title: "Cómo funciona Sealmetrics — Sin cookies y UE",
   description:
     "Pixel first-party de 846 bytes. Conteo de eventos anónimo en servidor. Almacenamiento en Dublín. RGPD por arquitectura, no por capa de compliance.",
   openGraph: {
-    title: "Cómo funciona SealMetrics — Sin cookies y UE",
+    title: "Cómo funciona Sealmetrics — Sin cookies y UE",
     description:
-      "Tres capas. Un pipeline. Cómo SealMetrics cuenta el 100% de tu tráfico de forma anónima, sin cookies ni seguimiento de usuarios.",
+      "Tres capas. Un pipeline. Cómo Sealmetrics cuenta el 100% de tu tráfico de forma anónima, sin cookies ni seguimiento de usuarios.",
     type: "website",
     images: [ogImage("/es/how-it-works/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/how-it-works/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Cómo funciona SealMetrics — Sin cookies y UE",
-    description: "Tres capas. Un pipeline. Cómo SealMetrics cuenta el 100% de tu tráfico de forma anónima, sin cookies ni seguimiento de usuarios.",
+    title: "Cómo funciona Sealmetrics — Sin cookies y UE",
+    description: "Tres capas. Un pipeline. Cómo Sealmetrics cuenta el 100% de tu tráfico de forma anónima, sin cookies ni seguimiento de usuarios.",
     images: [ogImage("/es/how-it-works/")],
   },
   alternates: {
@@ -37,7 +37,7 @@ export default function HowItWorksPageEs() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Cómo funciona", url: "/es/how-it-works" }])} />
-      <JsonLd data={speakableWebPageSchema({ url: "/es/how-it-works", name: "Cómo funciona — SealMetrics" })} />
+      <JsonLd data={speakableWebPageSchema({ url: "/es/how-it-works", name: "Cómo funciona — Sealmetrics" })} />
       <JsonLd data={faqPageSchema(howItWorksFaqItems.es, "/es/how-it-works")} />
       <HowItWorksSignal locale="es" />
     </>

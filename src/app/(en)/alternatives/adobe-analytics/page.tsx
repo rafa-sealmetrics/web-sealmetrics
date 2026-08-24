@@ -14,18 +14,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adobe Analytics Alternatives — 5 Compared (2026)",
     description:
-      "GA360, Piwik PRO, Matomo, GA4 and SealMetrics compared against Adobe on cost, EU capture and consent dependency.",
+      "GA360, Piwik PRO, Matomo, GA4 and Sealmetrics compared against Adobe on cost, EU capture and consent dependency.",
     type: "article",
     images: [ogImage("/alternatives/adobe-analytics")],
     url: "https://sealmetrics.com/alternatives/adobe-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Adobe Analytics Alternatives — 5 Compared (2026)",
-    description: "GA360, Piwik PRO, Matomo, GA4 and SealMetrics compared against Adobe on cost, EU capture and consent dependency.",
+    description: "GA360, Piwik PRO, Matomo, GA4 and Sealmetrics compared against Adobe on cost, EU capture and consent dependency.",
     images: [ogImage("/alternatives/adobe-analytics")],
   },
   alternates: {
@@ -57,7 +57,7 @@ export default function Page() {
             { name: "Piwik PRO" },
             { name: "Matomo" },
             { name: "Google Analytics 4" },
-            { name: "SealMetrics" },
+            { name: "Sealmetrics" },
           ],
         })}
       />
@@ -80,15 +80,15 @@ export default function Page() {
           <QuickAnswer>
             Teams replacing Adobe Analytics in Europe evaluate five realistic
             options: Google Analytics 360, Piwik PRO, Matomo, Google Analytics 4
-            and SealMetrics. They separate on two axes. The first is cost: Adobe
+            and Sealmetrics. They separate on two axes. The first is cost: Adobe
             runs $100,000+ a year plus implementation consulting, GA360 starts at
             $150,000, Piwik PRO around €30,000, Matomo and GA4 are cheap or free.
             The second matters more and is easier to miss — every option except
-            SealMetrics collects data with cookies, so all of them lose the 40–60%
+            Sealmetrics collects data with cookies, so all of them lose the 40–60%
             of EU visitors who reject a consent banner. Moving from Adobe to
             GA360, Piwik PRO or Matomo changes what you pay and where data is
             hosted, but not how much of your audience you measure. This page is
-            published by SealMetrics, so treat the last entry accordingly; the
+            published by Sealmetrics, so treat the last entry accordingly; the
             comparison points are checkable either way.
           </QuickAnswer>
 
@@ -196,7 +196,7 @@ export default function Page() {
             </p>
 
             <h3 className="font-serif text-[1.2rem] font-medium text-text-primary mt-8 mb-3">
-              5. SealMetrics
+              5. Sealmetrics
             </h3>
             <p>
               Ours, so weigh it accordingly. It is the only option here that does
@@ -274,7 +274,7 @@ export default function Page() {
                     <td className="py-3">No</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4 font-medium">SealMetrics</td>
+                    <td className="py-3 pr-4 font-medium">Sealmetrics</td>
                     <td className="py-3 pr-4">From €499/mo</td>
                     <td className="py-3 pr-4">No — no cookies, no personal data</td>
                     <td className="py-3">Yes — Dublin only</td>
@@ -325,7 +325,7 @@ export default function Page() {
             See the gap on your own traffic
           </h2>
           <p className="text-[1.05rem] leading-[1.8] text-text-body mb-8">
-            Run SealMetrics beside whatever you use today. Thirty days, both
+            Run Sealmetrics beside whatever you use today. Thirty days, both
             numbers side by side, no migration. If the datasets agree, you have
             your answer and you have lost nothing.
           </p>

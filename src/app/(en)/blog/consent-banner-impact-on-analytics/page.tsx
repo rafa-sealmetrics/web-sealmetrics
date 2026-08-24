@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "55% of EU visitors reject cookies. Here is the real impact on your analytics.",
     type: "article",
     url: "https://sealmetrics.com/blog/consent-banner-impact-on-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
   },
@@ -38,7 +38,7 @@ export default function ConsentBannerImpactPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
-      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", datePublished: "2026-01-25", dateModified: "2026-05-28", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", datePublished: "2026-01-25", dateModified: "2026-05-28", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact", url: "/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -112,7 +112,7 @@ export default function ConsentBannerImpactPage() {
               ))}
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Approximate ranges based on industry reports and SealMetrics
+              Approximate ranges based on industry reports and Sealmetrics
               client data, 2025.
             </p>
           </div>
@@ -243,7 +243,7 @@ export default function ConsentBannerImpactPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              learn how SealMetrics works
+              learn how Sealmetrics works
             </Link>
             .
           </p>

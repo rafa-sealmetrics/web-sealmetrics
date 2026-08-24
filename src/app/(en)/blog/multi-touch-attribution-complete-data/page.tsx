@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Attribution models built on 13% of data produce misleading results. Here is why complete data changes everything.",
     type: "article",
     url: "https://sealmetrics.com/blog/multi-touch-attribution-complete-data/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/multi-touch-attribution-complete-data.png"],
   },
@@ -36,7 +36,7 @@ export default function MultiTouchAttributionPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Multi-Touch Attribution" }]} />
-      <JsonLd data={articleSchema({ headline: "Why Multi-Touch Attribution Fails Without Complete Data", description: "Attribution models need complete data to work.", datePublished: "2026-01-10", dateModified: "2026-05-04", url: "/blog/multi-touch-attribution-complete-data", category: "Attribution", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Why Multi-Touch Attribution Fails Without Complete Data", description: "Attribution models need complete data to work.", datePublished: "2026-01-10", dateModified: "2026-05-04", url: "/blog/multi-touch-attribution-complete-data", category: "Attribution", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Multi-Touch Attribution", url: "/blog/multi-touch-attribution-complete-data" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -204,7 +204,7 @@ export default function MultiTouchAttributionPage() {
           </p>
 
           <p>
-            SealMetrics provides last-click revenue attribution built on
+            Sealmetrics provides last-click revenue attribution built on
             complete session data. Because every visit is captured regardless of
             consent status or browser restrictions, the attribution reflects
             what actually happened — not what the cookie-accepting subset
@@ -220,7 +220,7 @@ export default function MultiTouchAttributionPage() {
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how SealMetrics handles attribution
+              See how Sealmetrics handles attribution
             </Link>
             .
           </p>

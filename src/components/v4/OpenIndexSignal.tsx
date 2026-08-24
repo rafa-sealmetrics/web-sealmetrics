@@ -31,7 +31,7 @@ export function OpenIndexSignal() {
           <p className="sig-open-tag">Open document · living record · v1.0</p>
           <h1>We publish<br />the method.<br /><em>Not just the claim.</em></h1>
           <p className="sig-open-lede">
-            How SealMetrics measures, complies and operates — documented in public, with the limits left in.
+            How Sealmetrics measures, complies and operates — documented in public, with the limits left in.
           </p>
           <div className="sig-open-actions">
             <Link className="sig-open-button sig-open-button-acid" href={`/open/${publishedChapters[0].slug}/`}>

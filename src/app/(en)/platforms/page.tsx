@@ -7,41 +7,41 @@ import { ogImage } from "@/lib/seo/og";
 
 const faqs = [
   {
-    question: "Which eCommerce platforms does SealMetrics support?",
-    answer: "SealMetrics has native integrations for Shopify, Magento 2 (Adobe Commerce), WooCommerce, PrestaShop 1.7/8.x and OpenCart 3.x/4.x. Any custom or headless framework (Next.js, Nuxt, React, Astro, Remix) works via a standard JavaScript tag.",
+    question: "Which eCommerce platforms does Sealmetrics support?",
+    answer: "Sealmetrics has native integrations for Shopify, Magento 2 (Adobe Commerce), WooCommerce, PrestaShop 1.7/8.x and OpenCart 3.x/4.x. Any custom or headless framework (Next.js, Nuxt, React, Astro, Remix) works via a standard JavaScript tag.",
   },
   {
-    question: "How long does it take to install SealMetrics on Shopify?",
+    question: "How long does it take to install Sealmetrics on Shopify?",
     answer: "Five minutes on Shopify Plus (one-click install) or via theme.liquid snippet on Shopify Standard. Order data flows automatically — no manual event configuration.",
   },
   {
-    question: "Does SealMetrics work with headless or custom-built sites?",
+    question: "Does Sealmetrics work with headless or custom-built sites?",
     answer: "Yes. The standard JavaScript tag plus event API works on any framework — Next.js, Nuxt, Astro, Remix, SvelteKit or custom SSR stacks. Typical install time is 30 minutes.",
   },
   {
-    question: "Does SealMetrics require changes to my existing cookie banner?",
-    answer: "No. SealMetrics does not use cookies, localStorage or fingerprinting, so no consent banner is required for its operation. It runs alongside any existing CMP configuration without interfering with it.",
+    question: "Does Sealmetrics require changes to my existing cookie banner?",
+    answer: "No. Sealmetrics does not use cookies, localStorage or fingerprinting, so no consent banner is required for its operation. It runs alongside any existing CMP configuration without interfering with it.",
   },
 ];
 import { getAlternates } from "@/lib/i18n/navigation";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
-  title: "Platforms — SealMetrics",
+  title: "Platforms — Sealmetrics",
   description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
   openGraph: {
-    title: "Platforms — SealMetrics",
+    title: "Platforms — Sealmetrics",
     description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
     type: "website",
     images: [ogImage("/platforms/")],
     url: "https://sealmetrics.com/platforms/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Platforms — SealMetrics",
+    title: "Platforms — Sealmetrics",
     description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
     images: [ogImage("/platforms/")],
   },

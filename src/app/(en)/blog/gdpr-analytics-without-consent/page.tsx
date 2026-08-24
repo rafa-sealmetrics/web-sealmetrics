@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Under specific conditions, GDPR and ePrivacy allow analytics without consent. Here is how.",
     type: "article",
     url: "https://sealmetrics.com/blog/gdpr-analytics-without-consent/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/gdpr-analytics-without-consent.png"],
   },
@@ -38,7 +38,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GDPR Analytics Without Consent" }]} />
-      <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/gdpr-analytics-without-consent", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/gdpr-analytics-without-consent", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics Without Consent", url: "/blog/gdpr-analytics-without-consent" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -66,7 +66,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             <li>The CNIL has published specific criteria for consent-exempt analytics: anonymous statistical output only, no cross-site tracking, no advertising use, and IP anonymization at minimum.</li>
             <li>Six technical requirements must all be met: no cookies, no localStorage, no fingerprinting, no personal data, first-party only, and EU data residency — any single failure invalidates the approach.</li>
             <li>The EU Digital Omnibus would create a harmonized EU-wide framework explicitly authorizing first-party analytics without consent, replacing the current patchwork of national DPA interpretations.</li>
-            <li>SealMetrics was built from the ground up for consent-free operation — no cookies, no PII, EU-only infrastructure — satisfying CNIL, ePrivacy, and GDPR requirements simultaneously.</li>
+            <li>Sealmetrics was built from the ground up for consent-free operation — no cookies, no PII, EU-only infrastructure — satisfying CNIL, ePrivacy, and GDPR requirements simultaneously.</li>
           </ul>
         </div>
 
@@ -320,11 +320,11 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How SealMetrics achieves consent-free compliance
+            How Sealmetrics achieves consent-free compliance
           </h2>
 
           <p>
-            SealMetrics was built from the ground up to operate without
+            Sealmetrics was built from the ground up to operate without
             consent. This is not a feature added to an existing
             cookie-based platform &mdash; it is the architectural
             foundation.
@@ -358,7 +358,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p>
             This architecture satisfies the CNIL exemption criteria, the
             ePrivacy Article 5(3) requirements, and the GDPR legitimate
-            interest basis simultaneously. SealMetrics has completed the
+            interest basis simultaneously. Sealmetrics has completed the
             CNIL self-assessment process and maintains compliance
             documentation for all EU member states.
           </p>

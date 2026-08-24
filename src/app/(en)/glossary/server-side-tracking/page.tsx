@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Server-Side Tracking? — SealMetrics Glossary",
+  title: "What Is Server-Side Tracking? — Sealmetrics Glossary",
   description:
     "Server-side tracking processes analytics events on the server rather than in the browser, avoiding ad blocker blocking and client-side limitations.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Server-side tracking processes analytics on the server, avoiding ad blockers and client-side limitations.",
     type: "article",
     url: "https://sealmetrics.com/glossary/server-side-tracking/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/server-side-tracking/")],
   },
@@ -61,12 +61,12 @@ export default function ServerSideTrackingPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Combined with first-party collection</h2>
           <p>Server-side tracking is most effective when combined with <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party data collection</Link>. When the entire data path is first-party (your domain) and server-side (your server), the analytics infrastructure is invisible to blocking tools and immune to browser restrictions.</p>
         </div>
-        <CommercialModule hook="SealMetrics counts events server-side over your own first-party path. See what reaches the server when nothing blocks the way." />
+        <CommercialModule hook="Sealmetrics counts events server-side over your own first-party path. See what reaches the server when nothing blocks the way." />
 
         <RelatedGlossaryTerms slug="server-side-tracking" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link> &middot; <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link>
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function ServerSideTrackingPage() {
               Server-side tracking processes analytics events on a server you control instead of inside the visitor&rsquo;s browser. A minimal client-side hook (or a server-to-server beacon for backend events like Shopify orders) ships the raw signal to your own endpoint; processing, enrichment and storage happen server-side. Because the request never leaves the first-party origin and no script is exposed to ad-blocker rule lists, the data path is resilient to ~40% client-side data loss caused by uBlock, Brave and the analytics block-lists shipped with iOS Safari content blockers.
             </p>
             <p>
-              Server-side does not automatically mean &ldquo;cookieless.&rdquo; A server-side tracker can still set a first-party cookie or generate a visitor ID — at which point it triggers ePrivacy Art. 5(3) and requires consent. SealMetrics is server-side AND cookieless: events are counted in aggregate with no per-visitor identifier, which is what makes the architecture both resilient and consent-free.
+              Server-side does not automatically mean &ldquo;cookieless.&rdquo; A server-side tracker can still set a first-party cookie or generate a visitor ID — at which point it triggers ePrivacy Art. 5(3) and requires consent. Sealmetrics is server-side AND cookieless: events are counted in aggregate with no per-visitor identifier, which is what makes the architecture both resilient and consent-free.
             </p>
           </QuickAnswer>
         </div>

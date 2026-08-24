@@ -8,21 +8,21 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "SealMetrics for every team — Roles, industries, verticals",
+  title: "Sealmetrics for every team — Roles, industries, verticals",
   description: "Dedicated pages for CMOs, CTOs, DPOs and 8 industry verticals. Honest about who this fits, with concrete outcomes for each.",
   openGraph: {
-    title: "SealMetrics for every team",
+    title: "Sealmetrics for every team",
     description: "Dedicated pages for each role and industry.",
     type: "website",
     images: [ogImage("/for/")],
     url: "https://sealmetrics.com/for/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics for every team",
+    title: "Sealmetrics for every team",
     description: "Dedicated pages for each role and industry.",
     images: [ogImage("/for/")],
   },
@@ -53,8 +53,8 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "For" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "For", url: "/for" }])} />
       <JsonLd data={itemListSchema({
-        name: "SealMetrics by role and industry",
-        description: "SealMetrics dedicated pages for CMOs, CTOs, DPOs and 8 industry verticals.",
+        name: "Sealmetrics by role and industry",
+        description: "Sealmetrics dedicated pages for CMOs, CTOs, DPOs and 8 industry verticals.",
         url: "/for",
         items: allItems,
       })} />
@@ -63,7 +63,7 @@ export default function Page() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
           <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>For every team</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
-            SealMetrics for <em>your team.</em>
+            Sealmetrics for <em>your team.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             Specific pages for each role and industry. Concrete pains, measurable outcomes, honest about when we're not the fit.
@@ -107,8 +107,8 @@ export default function Page() {
         locale="en"
         titleEn={<>Not sure which fits? <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Let&apos;s talk.</em></>}
         titleEs={<>¿No sabes cuál encaja? <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Hablemos.</em></>}
-        ledeEn="30-minute walkthrough with the founder. We'll run your site through SealMetrics and show you the gap — tailored to your role and industry."
-        ledeEs="30 min con el founder. Pasamos tu web por SealMetrics y te enseñamos el gap — ajustado a tu rol e industria."
+        ledeEn="30-minute walkthrough with the founder. We'll run your site through Sealmetrics and show you the gap — tailored to your role and industry."
+        ledeEs="30 min con el founder. Pasamos tu web por Sealmetrics y te enseñamos el gap — ajustado a tu rol e industria."
       />
     </>
   );

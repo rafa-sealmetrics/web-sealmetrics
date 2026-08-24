@@ -9,14 +9,14 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "UK Analytics Exemption — PECR Self-Assessment",
   description:
-    "The DUAA 2025 exempts certain analytics from consent requirements in the UK. We published our self-assessment showing how SealMetrics qualifies.",
+    "The DUAA 2025 exempts certain analytics from consent requirements in the UK. We published our self-assessment showing how Sealmetrics qualifies.",
   openGraph: {
     title: "UK Analytics Exemption — PECR Self-Assessment",
     description:
-      "The DUAA 2025 changes UK analytics consent requirements. Here is how SealMetrics qualifies.",
+      "The DUAA 2025 changes UK analytics consent requirements. Here is how Sealmetrics qualifies.",
     type: "article",
     url: "https://sealmetrics.com/blog/uk-pecr-analytics-exemption/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/uk-pecr-analytics-exemption.png"],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "UK Analytics Exemption — PECR Self-Assessment",
-    description: "The DUAA 2025 changes UK analytics consent requirements. Here is how SealMetrics qualifies.",
+    description: "The DUAA 2025 changes UK analytics consent requirements. Here is how Sealmetrics qualifies.",
     images: ["https://sealmetrics.com/og/blog/uk-pecr-analytics-exemption.png"],
   },
   alternates: {
@@ -36,7 +36,7 @@ export default function UkPecrPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "UK PECR Analytics Exemption" }]} />
-      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption — PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", dateModified: "2026-05-28", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption — PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", dateModified: "2026-05-28", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "UK PECR Analytics Exemption", url: "/blog/uk-pecr-analytics-exemption" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -62,7 +62,7 @@ export default function UkPecrPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The UK Data Use and Access Act 2025 (effective February 5, 2026) creates a new analytics exemption under PECR — certain analytics no longer require consent.</li>
             <li>Four conditions must be met: sole purpose is aggregate statistics, users are informed, a free opt-out exists, and data is not used for advertising.</li>
-            <li>SealMetrics meets all four conditions in its standard configuration, allowing UK websites to run analytics without consent banners.</li>
+            <li>Sealmetrics meets all four conditions in its standard configuration, allowing UK websites to run analytics without consent banners.</li>
             <li>Penalties for non-compliance are up to 17.5 million pounds or 4% of worldwide turnover — documentation matters.</li>
           </ul>
         </div>
@@ -133,7 +133,7 @@ export default function UkPecrPage() {
 
           <p>
             Rather than simply claiming compliance, we published a
-            comprehensive self-assessment covering how SealMetrics addresses
+            comprehensive self-assessment covering how Sealmetrics addresses
             each requirement:
           </p>
 
@@ -162,7 +162,7 @@ export default function UkPecrPage() {
           </h2>
 
           <p>
-            If you use SealMetrics with the standard configuration, you can
+            If you use Sealmetrics with the standard configuration, you can
             operate without consent requests for analytics. Four practical
             steps:
           </p>
@@ -174,7 +174,7 @@ export default function UkPecrPage() {
             </p>
             <p>
               <span className="font-medium text-text-primary">2.</span>{" "}
-              Update your privacy policy to mention SealMetrics
+              Update your privacy policy to mention Sealmetrics
             </p>
             <p>
               <span className="font-medium text-text-primary">3.</span>{" "}
@@ -182,7 +182,7 @@ export default function UkPecrPage() {
             </p>
             <p>
               <span className="font-medium text-text-primary">4.</span>{" "}
-              Do not combine SealMetrics data with advertising data
+              Do not combine Sealmetrics data with advertising data
             </p>
           </div>
 

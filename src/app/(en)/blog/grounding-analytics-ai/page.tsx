@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       "How grounding stops AI hallucination in analytics — the model narrates numbers it just fetched, instead of recalling numbers it never had.",
     type: "article",
     url: "https://sealmetrics.com/blog/grounding-analytics-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/grounding-analytics-ai.png"],
   },
@@ -61,7 +61,7 @@ const FAQ = [
   {
     question: "Can an AI assistant with weak factual knowledge still be good at analytics?",
     answer:
-      "Yes, and it is often the wrong thing to optimise for. The model SealMetrics ships, gpt-oss-120b, scores 0.168 accuracy on SimpleQA with a 0.782 hallucination rate — weak open-world factual recall. That is irrelevant to grounded analytics, because the assistant is never asked what it remembers about the world. It is asked to read your entrances and conversions, which arrive in the prompt from your own database.",
+      "Yes, and it is often the wrong thing to optimise for. The model Sealmetrics ships, gpt-oss-120b, scores 0.168 accuracy on SimpleQA with a 0.782 hallucination rate — weak open-world factual recall. That is irrelevant to grounded analytics, because the assistant is never asked what it remembers about the world. It is asked to read your entrances and conversions, which arrive in the prompt from your own database.",
   },
   {
     question: "How can I tell if an AI analytics assistant is making numbers up?",
@@ -89,7 +89,7 @@ export default function GroundingAnalyticsAiPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -110,9 +110,9 @@ export default function GroundingAnalyticsAiPage() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "In a 162-query internal benchmark of the SealMetrics analytics assistant, the shipped model gpt-oss-120b asserted 144 of 144 verified figures correctly and passed 18 of 18 grounding-and-injection traps (95% Wilson CI 0.82-1.00), with every figure checked against ground truth computed live from the analytics database.",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "In a 162-query internal benchmark of the Sealmetrics analytics assistant, the shipped model gpt-oss-120b asserted 144 of 144 verified figures correctly and passed 18 of 18 grounding-and-injection traps (95% Wilson CI 0.82-1.00), with every figure checked against ground truth computed live from the analytics database.",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}

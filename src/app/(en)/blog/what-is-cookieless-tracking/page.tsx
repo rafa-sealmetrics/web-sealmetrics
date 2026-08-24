@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "How cookieless tracking works, why cookies fail, and what it means for marketing teams in 2026.",
     type: "article",
     url: "https://sealmetrics.com/blog/what-is-cookieless-tracking/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/what-is-cookieless-tracking.png"],
   },
@@ -36,7 +36,7 @@ export default function WhatIsCookielessTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Cookieless Tracking?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", datePublished: "2026-03-02", dateModified: "2026-05-28", url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?", url: "/blog/what-is-cookieless-tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -359,7 +359,7 @@ export default function WhatIsCookielessTrackingPage() {
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how SealMetrics captures 100% of traffic
+              See how Sealmetrics captures 100% of traffic
             </Link>{" "}
             or{" "}
             <Link

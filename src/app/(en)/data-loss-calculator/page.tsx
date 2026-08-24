@@ -10,22 +10,22 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Data Loss Calculator — SealMetrics",
+  title: "Data Loss Calculator — Sealmetrics",
   description:
     "Calculate how much revenue is invisible to your current analytics. Consent banners + ad blockers + browser restrictions hide the majority of your traffic.",
   openGraph: {
-    title: "Data Loss Calculator — SealMetrics",
+    title: "Data Loss Calculator — Sealmetrics",
     description: "See the exact revenue your analytics is missing.",
     type: "website",
     images: [ogImage("/data-loss-calculator/")],
     url: "https://sealmetrics.com/data-loss-calculator/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Data Loss Calculator — SealMetrics",
+    title: "Data Loss Calculator — Sealmetrics",
     description: "See the exact revenue your analytics is missing.",
     images: [ogImage("/data-loss-calculator/")],
   },
@@ -88,7 +88,7 @@ export default function Page() {
               concrete.
             </p>
             <p>
-              <Link href="/product">SealMetrics</Link> measures 100% of the same traffic with a
+              <Link href="/product">Sealmetrics</Link> measures 100% of the same traffic with a
               lightweight first-party server-side pixel — no cookies, no consent dependency, no
               sampling — so revenue in the report matches Shopify. Enter your monthly visitors and
               revenue above to see the exact amount your current setup hides each month.
@@ -108,8 +108,8 @@ export default function Page() {
         locale="en"
         titleEn={<>See the gap on <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>your actual traffic.</em></>}
         titleEs={<>Ve el gap sobre <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>tu tráfico real.</em></>}
-        ledeEn="30 minutes. We run your own site through SealMetrics and compare with your current analytics — live."
-        ledeEs="30 min. Pasamos tu web por SealMetrics y comparamos con tu analítica actual — en directo."
+        ledeEn="30 minutes. We run your own site through Sealmetrics and compare with your current analytics — live."
+        ledeEs="30 min. Pasamos tu web por Sealmetrics y comparamos con tu analítica actual — en directo."
       />
     </>
   );

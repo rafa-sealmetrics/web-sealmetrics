@@ -17,7 +17,7 @@ const SLUG = "best-llm-for-data-analytics";
 const URL = `/es/blog/${SLUG}`;
 const TITLE = "El mejor LLM para analítica de datos no es el que puntúa más alto en los benchmarks";
 const DESCRIPTION =
-  "Ejecutamos 162 consultas en vivo con tres modelos abiertos sobre datos de analítica reales para elegir la IA que va dentro de SealMetrics. Lo que lo decidió no fue MMLU: fue el tool-calling, el grounding y un fallo de seguridad que solo apareció en un idioma.";
+  "Ejecutamos 162 consultas en vivo con tres modelos abiertos sobre datos de analítica reales para elegir la IA que va dentro de Sealmetrics. Lo que lo decidió no fue MMLU: fue el tool-calling, el grounding y un fallo de seguridad que solo apareció en un idioma.";
 
 export const metadata: Metadata = {
   title: "El mejor LLM para analítica no es el de mejor benchmark",
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "El mejor LLM para analítica de datos no es el que te imaginas",
     description:
-      "162 consultas en vivo, datos reales y una verdad de referencia sacada de la base de datos. Así elegimos de verdad el modelo que va dentro de SealMetrics.",
+      "162 consultas en vivo, datos reales y una verdad de referencia sacada de la base de datos. Así elegimos de verdad el modelo que va dentro de Sealmetrics.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/best-llm-for-data-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "El mejor LLM para analítica de datos no es el que te imaginas",
-    description: "162 consultas en vivo, datos reales y una verdad de referencia sacada de la base de datos. Así elegimos de verdad el modelo que va dentro de SealMetrics.",
+    description: "162 consultas en vivo, datos reales y una verdad de referencia sacada de la base de datos. Así elegimos de verdad el modelo que va dentro de Sealmetrics.",
     images: ["https://sealmetrics.com/og/blog/best-llm-for-data-analytics.png"],
   },
   alternates: {
@@ -49,7 +49,7 @@ const FAQ = [
   {
     question: "¿Cuál es el mejor LLM para analítica de datos?",
     answer:
-      "Para un asistente de analítica que responde llamando a herramientas de datos, el mejor modelo es el que ofrece un tool-calling y un grounding más fiables sobre tu carga de trabajo real, no el que saca la nota más alta en conocimiento general. En las pruebas internas de SealMetrics, a lo largo de 162 consultas en vivo, un modelo de pesos abiertos (gpt-oss-120b) superó a alternativas más grandes y más caras en fiabilidad de tool-calling, resistencia a inyecciones y coste, mientras que benchmarks generales como MMLU apenas predecían el rendimiento en la tarea real.",
+      "Para un asistente de analítica que responde llamando a herramientas de datos, el mejor modelo es el que ofrece un tool-calling y un grounding más fiables sobre tu carga de trabajo real, no el que saca la nota más alta en conocimiento general. En las pruebas internas de Sealmetrics, a lo largo de 162 consultas en vivo, un modelo de pesos abiertos (gpt-oss-120b) superó a alternativas más grandes y más caras en fiabilidad de tool-calling, resistencia a inyecciones y coste, mientras que benchmarks generales como MMLU apenas predecían el rendimiento en la tarea real.",
   },
   {
     question: "¿Por qué los benchmarks públicos como MMLU no predicen el rendimiento en analítica?",
@@ -64,7 +64,7 @@ const FAQ = [
   {
     question: "¿El idioma del prompt afecta a la seguridad de un LLM?",
     answer:
-      "Puede afectar. En las pruebas bilingües de SealMetrics, un modelo obedeció en inglés un ataque de inyección del tipo «ignora tus instrucciones» mientras ignoraba el ataque idéntico en español. Un modelo que parece robusto en un idioma puede ser vulnerable en otro, y por eso el testing de seguridad tiene que ser multilingüe y no monolingüe.",
+      "Puede afectar. En las pruebas bilingües de Sealmetrics, un modelo obedeció en inglés un ataque de inyección del tipo «ignora tus instrucciones» mientras ignoraba el ataque idéntico en español. Un modelo que parece robusto en un idioma puede ser vulnerable en otro, y por eso el testing de seguridad tiene que ser multilingüe y no monolingüe.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function BestLlmForAnalyticsPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -95,8 +95,8 @@ export default function BestLlmForAnalyticsPageEs() {
       <JsonLd
         data={statisticClaimSchema({
           text: "En 162 consultas de analítica en vivo y en dos idiomas, gpt-oss-120b superó 18 de 18 trampas de grounding e inyección y resultó unas diez veces más barato por consulta respondida que el siguiente modelo abierto más fuerte, que filtró el canario de la instrucción inyectada en 2 de sus 3 intentos en inglés.",
-          source: "Benchmark interno de LLM de SealMetrics (ejecución 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          source: "Benchmark interno de LLM de Sealmetrics (ejecución 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -140,7 +140,7 @@ export default function BestLlmForAnalyticsPageEs() {
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">
-            No elegimos la IA que hay dentro de SealMetrics de una tabla de
+            No elegimos la IA que hay dentro de Sealmetrics de una tabla de
             clasificación. Ejecutamos 162 consultas en vivo contra datos reales,
             comprobamos cada cifra que afirmaba el modelo y dejamos que
             decidieran los resultados, incluidos los que acabamos tirando.

@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for Marketing Agencies | SealMetrics",
+  title: "Analytics for Marketing Agencies | Sealmetrics",
   description: getVerticalData("agencies", "en").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analytics for Marketing Agencies | SealMetrics",
+    title: "Analytics for Marketing Agencies | Sealmetrics",
     description: getVerticalData("agencies", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/for/agencies/")],
     url: "https://sealmetrics.com/for/agencies/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Marketing Agencies | SealMetrics",
+    title: "Analytics for Marketing Agencies | Sealmetrics",
     description: getVerticalData("agencies", "en").lede.slice(0, 155) + "…",
     images: [ogImage("/for/agencies/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "For Agencies" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "For Agencies", url: "/for/agencies" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "agencies", audienceType: "Marketing agencies", description: "SealMetrics — enterprise analytics for agencies teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/agencies" })} /><VerticalPageV3 data={getVerticalData("agencies", "en")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "agencies", audienceType: "Marketing agencies", description: "Sealmetrics — enterprise analytics for agencies teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/for/agencies" })} /><VerticalPageV3 data={getVerticalData("agencies", "en")} />
       <RelatedPagesV3
         locale="en"
         eyebrow="Also explore"

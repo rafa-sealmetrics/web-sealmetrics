@@ -10,15 +10,15 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Multi-Touch Attribution? — SealMetrics Glossary",
+  title: "What Is Multi-Touch Attribution? — Sealmetrics Glossary",
   description:
-    "Multi-touch attribution splits conversion credit across visitor touchpoints. It requires per-user tracking; SealMetrics uses last-click only.",
+    "Multi-touch attribution splits conversion credit across visitor touchpoints. It requires per-user tracking; Sealmetrics uses last-click only.",
   openGraph: {
     title: "What Is Multi-Touch Attribution?",
-    description: "An attribution model that requires per-user tracking. SealMetrics does last-click only, at channel level.",
+    description: "An attribution model that requires per-user tracking. Sealmetrics does last-click only, at channel level.",
     type: "article",
     url: "https://sealmetrics.com/glossary/multi-touch-attribution/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/multi-touch-attribution/")],
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Multi-Touch Attribution?",
-    description: "An attribution model that requires per-user tracking. SealMetrics does last-click only, at channel level.",
+    description: "An attribution model that requires per-user tracking. Sealmetrics does last-click only, at channel level.",
     images: [ogImage("/glossary/multi-touch-attribution/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/multi-touch-attribution/", languages: getAlternates("/glossary/multi-touch-attribution") },
@@ -57,9 +57,9 @@ export default function MultiTouchAttributionPage() {
           <p>Multi-touch attribution is only as accurate as the touchpoint data feeding it. When cookie-based analytics miss 87% of visitor interactions due to <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent rejection</Link>, ad blockers, and browser restrictions, the model distributes credit across a fragment of the observed data.</p>
           <p>This systematically undervalues top-of-funnel channels (organic, social, display) because first touches are most likely to be lost when cookies are not yet active.</p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why does SealMetrics not implement multi-touch attribution?</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why does Sealmetrics not implement multi-touch attribution?</h2>
           <p>Multi-touch attribution requires the analytics system to identify the same visitor across multiple sessions so the touchpoints can be linked. That identification requires a persistent per-user identifier — a cookie, a device fingerprint or another tracking mechanism that makes the analytics subject to GDPR consent rules.</p>
-          <p>SealMetrics is designed as anonymous, aggregate event measurement. No per-user identifier is ever created, so there is no basis for linking touchpoints of the same person across sessions. <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Attribution</Link> is last-click on the observed conversion event: whichever source was recorded on the pageview where the conversion fired gets credit. Channel totals roll up from those events.</p>
+          <p>Sealmetrics is designed as anonymous, aggregate event measurement. No per-user identifier is ever created, so there is no basis for linking touchpoints of the same person across sessions. <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Attribution</Link> is last-click on the observed conversion event: whichever source was recorded on the pageview where the conversion fired gets credit. Channel totals roll up from those events.</p>
           <p>The trade-off is deliberate: you give up modelled credit-splitting across touchpoints, and in exchange you get aggregate channel totals on 100% of traffic with no consent dependency.</p>
         </div>
         <CommercialModule hook="We don't do multi-touch — deliberately. See what last-click on complete data tells you that models can't." />
@@ -67,7 +67,7 @@ export default function MultiTouchAttributionPage() {
         <RelatedGlossaryTerms slug="multi-touch-attribution" />
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/blog/multi-touch-attribution-complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Multi-Touch Attribution Fails Without Complete Data</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function MultiTouchAttributionPage() {
               Multi-touch attribution is an attribution model that splits conversion credit across multiple observed touchpoints of the same identified visitor — linear, time-decay, position-based, or data-driven weights — instead of giving all credit to the first or last interaction. It requires a persistent per-user identifier (a cookie, fingerprint or login) to link touchpoints across sessions, which subjects the analytics to GDPR consent rules under European law.
             </p>
             <p>
-              When the underlying data is incomplete — and in the EU, cookie-based analytics typically observes only 13% of real traffic after consent rejection (40-60%), ad blockers (~25%) and browser restrictions — multi-touch attribution distributes credit across a biased fragment, systematically undervaluing top-of-funnel channels. SealMetrics deliberately does not implement multi-touch attribution: by avoiding per-visitor identifiers entirely, it captures 100% of traffic and attributes each conversion last-click at channel level.
+              When the underlying data is incomplete — and in the EU, cookie-based analytics typically observes only 13% of real traffic after consent rejection (40-60%), ad blockers (~25%) and browser restrictions — multi-touch attribution distributes credit across a biased fragment, systematically undervaluing top-of-funnel channels. Sealmetrics deliberately does not implement multi-touch attribution: by avoiding per-visitor identifiers entirely, it captures 100% of traffic and attributes each conversion last-click at channel level.
             </p>
           </QuickAnswer>
         </div>

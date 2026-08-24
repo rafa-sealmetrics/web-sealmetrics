@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Cookieless Analytics? — SealMetrics Glossary",
+  title: "What Is Cookieless Analytics? — Sealmetrics Glossary",
   description:
     "Cookieless analytics captures visitor data without browser cookies, enabling 100% traffic measurement. Learn how it works and why it matters.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
     type: "article",
     url: "https://sealmetrics.com/glossary/cookieless-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/cookieless-analytics/")],
   },
@@ -78,13 +78,13 @@ export default function CookielessAnalyticsPage() {
           </p>
         </div>
 
-        <CommercialModule hook="This is what SealMetrics does all day: cookieless counting of 100% of visits. See it running on your own traffic." />
+        <CommercialModule hook="This is what Sealmetrics does all day: cookieless counting of 100% of visits. See it running on your own traffic." />
 
         <RelatedGlossaryTerms slug="cookieless-analytics" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
+            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link>
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export default function CookielessAnalyticsPage() {
               Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
             </p>
             <p>
-              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. SealMetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
+              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. Sealmetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
             </p>
           </QuickAnswer>
         </div>

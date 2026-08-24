@@ -6,20 +6,20 @@ import { ogImage } from "@/lib/seo/og";
 
 const faqs = [
   {
-    question: "When was SealMetrics founded?",
-    answer: "SealMetrics was founded in 2020 by Rafa Jiménez, after two decades working in European eCommerce analytics. The goal: give European teams a single, defensible source of truth for revenue decisions, compliant with GDPR by architecture.",
+    question: "When was Sealmetrics founded?",
+    answer: "Sealmetrics was founded in 2020 by Rafa Jiménez, after two decades working in European eCommerce analytics. The goal: give European teams a single, defensible source of truth for revenue decisions, compliant with GDPR by architecture.",
   },
   {
-    question: "Where is SealMetrics based?",
-    answer: "SealMetrics is headquartered in Spain (EU). All data processing happens on EU-owned infrastructure in Dublin, Ireland. The team is distributed across Spain and the broader EU.",
+    question: "Where is Sealmetrics based?",
+    answer: "Sealmetrics is headquartered in Spain (EU). All data processing happens on EU-owned infrastructure in Dublin, Ireland. The team is distributed across Spain and the broader EU.",
   },
   {
-    question: "Who are SealMetrics customers?",
-    answer: "SealMetrics serves 2,000+ European teams — hotels, DTC eCommerce, media publishers and public institutions. Typical customers are revenue-driven teams with 10M€+ in online revenue who cannot tolerate 40–60% of EU traffic being invisible to GA4.",
+    question: "Who are Sealmetrics customers?",
+    answer: "Sealmetrics serves 2,000+ European teams — hotels, DTC eCommerce, media publishers and public institutions. Typical customers are revenue-driven teams with 10M€+ in online revenue who cannot tolerate 40–60% of EU traffic being invisible to GA4.",
   },
   {
-    question: "Is SealMetrics funded or bootstrapped?",
-    answer: "SealMetrics is an independent, founder-led European company. The product is profitable in production and has been since early launch.",
+    question: "Is Sealmetrics funded or bootstrapped?",
+    answer: "Sealmetrics is an independent, founder-led European company. The product is profitable in production and has been since early launch.",
   },
 ];
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -28,21 +28,21 @@ import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { WhatIsV3 } from "@/components/sections/v3/WhatIsV3";
 
 export const metadata: Metadata = {
-  title: "About SealMetrics — Founder-led analytics for Europe",
+  title: "About Sealmetrics — Founder-led analytics for Europe",
   description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
   openGraph: {
-    title: "About SealMetrics — Founder-led analytics for Europe",
+    title: "About Sealmetrics — Founder-led analytics for Europe",
     description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
     type: "website",
     images: [ogImage("/about/")],
     url: "https://sealmetrics.com/about/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "About SealMetrics — Founder-led analytics for Europe",
+    title: "About Sealmetrics — Founder-led analytics for Europe",
     description: "Founded after 20+ years watching European eCommerce teams make decisions with data they couldn't trust. EU-founded, EU-hosted, founder-led.",
     images: [ogImage("/about/")],
   },
@@ -58,12 +58,12 @@ export default function Page() {
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>About SealMetrics</span>
+          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>About Sealmetrics</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Built so European teams <em>could trust their own data again.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            SealMetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
+            Sealmetrics is an EU-founded, EU-hosted analytics platform serving 2,000+ customers across hotels, DTC eCommerce, media and public institutions.
           </p>
         </div>
       </section>
@@ -85,7 +85,7 @@ export default function Page() {
               The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
-              SealMetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              Sealmetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ export default function Page() {
             </div>
             <div>
               <div className="text-[17px] font-semibold text-ink">Rafa Jiménez</div>
-              <div className="text-[13px] text-ink-soft">Founder & CEO · SealMetrics</div>
+              <div className="text-[13px] text-ink-soft">Founder & CEO · Sealmetrics</div>
               <div className="mt-2 flex gap-4 text-[13px]">
                 <a href="https://www.linkedin.com/in/rafajimenez/" className="text-brand hover:underline">LinkedIn</a>
               </div>
@@ -115,7 +115,7 @@ export default function Page() {
               <h2 className="h-section mt-5">What we've <em>proved so far.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Not projections, not aspirations. What 2,000+ European teams use SealMetrics for today.
+              Not projections, not aspirations. What 2,000+ European teams use Sealmetrics for today.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

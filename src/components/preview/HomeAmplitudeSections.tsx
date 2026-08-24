@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 /* ============================================================
-   OPTION C — Amplitude-style block sequence, SealMetrics content
+   OPTION C — Amplitude-style block sequence, Sealmetrics content
    Mirrors amplitude.com's marketing block ARRANGEMENT (AI demo →
    feature grid → tabbed value prop → quote → alternating rows →
    team grid → success stories → resources → CTA) while keeping
-   the SealMetrics editorial design system (warm cream, forest
+   the Sealmetrics editorial design system (warm cream, forest
    green, dashes, one dark AI slab).
    ============================================================ */
 

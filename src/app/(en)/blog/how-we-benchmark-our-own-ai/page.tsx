@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Real endpoint, live ground truth, deterministic graders, adversarial traps, confidence intervals — and the discarded run we published anyway. A methodology other teams can copy.",
     type: "article",
     url: "https://sealmetrics.com/blog/how-we-benchmark-our-own-ai/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/how-we-benchmark-our-own-ai.png"],
   },
@@ -88,7 +88,7 @@ export default function HowWeBenchmarkOurOwnAiPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -100,9 +100,9 @@ export default function HowWeBenchmarkOurOwnAiPage() {
       />
       <JsonLd
         data={statisticClaimSchema({
-          text: "SealMetrics' internal LLM benchmark ran 18 scenarios in Spanish and English across three passes and three models — 162 live queries on the real production assistant endpoint — with ground truth computed live from the analytics database; gpt-oss-120b passed 18 of 18 adversarial traps (95% Wilson confidence interval 0.82-1.00) versus 9 of 18 for mistral-small-3.2 (0.29-0.71) and 15 of 18 for qwen3-235b-a22b-2507 (0.61-0.94).",
-          source: "SealMetrics internal LLM benchmark (run 20260724-111147)",
-          sourceAuthor: "SealMetrics",
+          text: "Sealmetrics' internal LLM benchmark ran 18 scenarios in Spanish and English across three passes and three models — 162 live queries on the real production assistant endpoint — with ground truth computed live from the analytics database; gpt-oss-120b passed 18 of 18 adversarial traps (95% Wilson confidence interval 0.82-1.00) versus 9 of 18 for mistral-small-3.2 (0.29-0.71) and 15 of 18 for qwen3-235b-a22b-2507 (0.61-0.94).",
+          source: "Sealmetrics internal LLM benchmark (run 20260724-111147)",
+          sourceAuthor: "Sealmetrics",
           sourceDate: "2026-07-24",
           url: URL,
         })}
@@ -149,7 +149,7 @@ export default function HowWeBenchmarkOurOwnAiPage() {
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">
-            We evaluate the model inside SealMetrics on the product we ship, not
+            We evaluate the model inside Sealmetrics on the product we ship, not
             on public leaderboards: real endpoint, real tools, real data, with
             the correct answers computed from the database before the model is
             asked. This is the whole method — including the run we discarded and

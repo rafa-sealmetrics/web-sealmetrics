@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "A full cookie audit of 9 analytics tools. Names, domains, types, sizes, and expiry dates — documented from DevTools.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-tools-cookies-cataloged/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/analytics-tools-cookies-cataloged.png"],
   },
@@ -36,7 +36,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Every Cookie Set by Every Major Analytics Tool" }]} />
-      <JsonLd data={articleSchema({ headline: "Every Cookie Set by Every Major Analytics Tool, Cataloged", description: "We cataloged every cookie set by GA4, Adobe Analytics, Mixpanel, PostHog, Piwik PRO, and cookieless tools.", datePublished: "2026-03-05", dateModified: "2026-05-04", url: "/blog/analytics-tools-cookies-cataloged", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Every Cookie Set by Every Major Analytics Tool, Cataloged", description: "We cataloged every cookie set by GA4, Adobe Analytics, Mixpanel, PostHog, Piwik PRO, and cookieless tools.", datePublished: "2026-03-05", dateModified: "2026-05-04", url: "/blog/analytics-tools-cookies-cataloged", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Every Cookie Set by Every Major Analytics Tool", url: "/blog/analytics-tools-cookies-cataloged" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -60,7 +60,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>Zero-cookie tools split into two categories: lightweight privacy analytics for simple reporting, and SealMetrics for enterprise revenue attribution.</li>
+            <li>Zero-cookie tools split into two categories: lightweight privacy analytics for simple reporting, and Sealmetrics for enterprise revenue attribution.</li>
             <li>GA4 sets 2 first-party cookies (_ga and _ga_XXXX) with a 2-year expiry — each one requires consent under the ePrivacy Directive.</li>
             <li>EU consent rejection rates run between 60% and 70%, meaning any tool that sets cookies measures at most 30-40% of actual traffic.</li>
             <li>Zero cookies means zero consent dependency means 100% data capture — every cookie above zero is a gate most EU visitors will close.</li>
@@ -105,7 +105,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">0</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">0</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">0</td>
@@ -183,7 +183,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           {/* Visual: cookie count chart */}
           <div className="my-8 space-y-1.5" aria-label="Cookie count comparison chart">
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">Sealmetrics</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '0%', minWidth: '0px' }} />
               </div>
@@ -415,7 +415,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </p>
 
           <CommercialModule
-            hook="Every cookie in the catalog above is a consent obligation. SealMetrics sets zero — see what a cookie-free count looks like on your own traffic."
+            hook="Every cookie in the catalog above is a consent obligation. Sealmetrics sets zero — see what a cookie-free count looks like on your own traffic."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -498,7 +498,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            Four tools in our audit set zero cookies: SealMetrics plus
+            Four tools in our audit set zero cookies: Sealmetrics plus
             privacy-first lightweight tools such as Plausible, Fathom and Simple
             Analytics. All four can operate without consent banners under{" "}
             <Link
@@ -514,7 +514,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             The difference is in what you get beyond zero cookies. Plausible,
             Fathom, and Simple Analytics are privacy-first lightweight
             alternatives — they give you pageviews, referrers, and basic
-            metrics. SealMetrics combines zero cookies with enterprise-grade
+            metrics. Sealmetrics combines zero cookies with enterprise-grade
             channel attribution, complete observed data, and{" "}
             <Link
               href="/glossary/first-party-data-collection"
@@ -592,7 +592,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </p>
 
           <p>
-            SealMetrics captures every visit through{" "}
+            Sealmetrics captures every visit through{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -619,7 +619,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
         </div>
 
         <CommercialModule
-          hook="Zero cookies means no banner gating your measurement. Run SealMetrics in parallel and compare the counts against your consent-gated tool."
+          hook="Zero cookies means no banner gating your measurement. Run Sealmetrics in parallel and compare the counts against your consent-gated tool."
         />
 
         {/* Related */}

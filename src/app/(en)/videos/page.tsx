@@ -8,9 +8,9 @@ import { ogImage } from "@/lib/seo/og";
 
 const videosForSchema = [
   {
-    name: "SealMetrics Platform Overview",
+    name: "Sealmetrics Platform Overview",
     description:
-      "A complete tour of the SealMetrics dashboard — from traffic overview to AI insights.",
+      "A complete tour of the Sealmetrics dashboard — from traffic overview to AI insights.",
     thumbnailUrl: "/videos/platform-overview.jpg",
     uploadDate: "2025-09-01T09:00:00+02:00",
     duration: "PT3M24S",
@@ -19,7 +19,7 @@ const videosForSchema = [
     url: "/videos",
   },
   {
-    name: "Getting Started with SealMetrics",
+    name: "Getting Started with Sealmetrics",
     description:
       "How to create your account, add your site, and install the 846-byte tracking script in 5 minutes.",
     thumbnailUrl: "/videos/getting-started.jpg",
@@ -32,24 +32,24 @@ const videosForSchema = [
 ];
 
 export const metadata: Metadata = {
-  title: "Videos — SealMetrics",
+  title: "Videos — Sealmetrics",
   description:
-    "Watch product demos and step-by-step tutorials. See how SealMetrics captures 100% of your traffic without cookies.",
+    "Watch product demos and step-by-step tutorials. See how Sealmetrics captures 100% of your traffic without cookies.",
   openGraph: {
-    title: "Videos — SealMetrics",
+    title: "Videos — Sealmetrics",
     description:
-      "Product demos and tutorials to help you get the most out of SealMetrics.",
+      "Product demos and tutorials to help you get the most out of Sealmetrics.",
     type: "website",
     images: [ogImage("/videos/")],
     url: "https://sealmetrics.com/videos/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Videos — SealMetrics",
-    description: "Product demos and tutorials to help you get the most out of SealMetrics.",
+    title: "Videos — Sealmetrics",
+    description: "Product demos and tutorials to help you get the most out of Sealmetrics.",
     images: [ogImage("/videos/")],
   },
   alternates: {
@@ -66,8 +66,8 @@ export default function VideosPage() {
       />
       <JsonLd
         data={itemListSchema({
-          name: "SealMetrics video library",
-          description: "Product demos and tutorials for the SealMetrics analytics platform.",
+          name: "Sealmetrics video library",
+          description: "Product demos and tutorials for the Sealmetrics analytics platform.",
           url: "/videos",
           items: videosForSchema.map((v, i) => ({
             name: v.name,
@@ -92,7 +92,7 @@ export default function VideosPage() {
             </h1>
             <p className="text-[1.15rem] leading-[1.75] text-text-secondary">
               Product demos and step-by-step tutorials to help you get the
-              most out of SealMetrics.
+              most out of Sealmetrics.
             </p>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function VideosPage() {
             explains the collection architecture step by step,{" "}
             <Link href="/security" className="underline">security</Link> covers
             where the data lives and what never leaves the browser, and{" "}
-            <Link href="/vs-ga4" className="underline">SealMetrics vs GA4</Link>{" "}
+            <Link href="/vs-ga4" className="underline">Sealmetrics vs GA4</Link>{" "}
             puts the two side by side without softening the trade-offs.
           </p>
           <p className="text-[1.05rem] leading-[1.8] text-text-body mt-6">

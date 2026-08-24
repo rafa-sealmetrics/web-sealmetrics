@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "GA4 pierde tráfico UE en tres niveles estructurales. Aquí está la cascada que te deja con el 13%.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/why-ga4-shows-13pct-eu-traffic/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/why-ga4-shows-13pct-eu-traffic.png"],
   },
@@ -37,7 +37,7 @@ export default function WhyGA4Shows13PctPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Por qué GA4 muestra el 13% de tu tráfico UE" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Por qué GA4 muestra el 13% de tu tráfico UE", description: "GA4 pierde dato en tres niveles estructurales, dejando ~13% del tráfico real UE.", datePublished: "2026-03-06", dateModified: "2026-05-06", url: "/es/blog/why-ga4-shows-13pct-eu-traffic", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Por qué GA4 muestra el 13% de tu tráfico UE", description: "GA4 pierde dato en tres niveles estructurales, dejando ~13% del tráfico real UE.", datePublished: "2026-03-06", dateModified: "2026-05-06", url: "/es/blog/why-ga4-shows-13pct-eu-traffic", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Por qué GA4 muestra el 13% de tu tráfico UE", url: "/es/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -319,7 +319,7 @@ export default function WhyGA4Shows13PctPageEs() {
           </p>
 
           <p>
-            SealMetrics usa un enfoque{" "}
+            Sealmetrics usa un enfoque{" "}
             <Link
               href="/es/glossary/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -369,7 +369,7 @@ export default function WhyGA4Shows13PctPageEs() {
               href="/es/vs-ga4"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              comparativa detallada entre SealMetrics y GA4
+              comparativa detallada entre Sealmetrics y GA4
             </Link>{" "}
             cubre precio, propiedad del dato y compliance además de
             completitud. La cifra del 13% es el punto de partida, pero no es

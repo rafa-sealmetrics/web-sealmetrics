@@ -14,23 +14,23 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for Media & Publishers | SealMetrics",
+  title: "Analytics for Media & Publishers | Sealmetrics",
   description:
     "Cookieless analytics for publishers: capture readers ad blockers hide from GA4. First-party audience, engagement and subscription attribution, EU-hosted.",
   openGraph: {
-    title: "Analytics for Media & Publishers | SealMetrics",
+    title: "Analytics for Media & Publishers | Sealmetrics",
     description:
       "Consentless analytics built for European media companies. Audience measurement, subscription funnels and ad-revenue attribution without cookies.",
     type: "website",
     images: [ogImage("/for/media/")],
     url: "https://sealmetrics.com/for/media/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Media & Publishers | SealMetrics",
+    title: "Analytics for Media & Publishers | Sealmetrics",
     description: "Consentless analytics built for European media companies. Audience measurement, subscription funnels and ad-revenue attribution without cookies.",
     images: [ogImage("/for/media/")],
   },
@@ -59,7 +59,7 @@ const seoFaqs = [
   {
     question: "Does cookieless analytics replace Chartbeat or Parse.ly?",
     answer:
-      "Different categories. Chartbeat and Parse.ly are real-time editorial tools for newsrooms. SealMetrics covers audience, attribution and subscription funnels. Many publishers run both: Chartbeat for the newsroom, SealMetrics for marketing and subscription decisions.",
+      "Different categories. Chartbeat and Parse.ly are real-time editorial tools for newsrooms. Sealmetrics covers audience, attribution and subscription funnels. Many publishers run both: Chartbeat for the newsroom, Sealmetrics for marketing and subscription decisions.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function Page() {
             <strong>Cookieless analytics for media and publishers</strong>{" "}
             captures readership, subscription funnels and ad-revenue attribution
             without cookies — critical for sites where 50–70% of visitors run
-            ad blockers. SealMetrics operates as first-party infrastructure on
+            ad blockers. Sealmetrics operates as first-party infrastructure on
             the publisher's own domain, invisible to ad blockers and
             independent of third-party cookie deprecation.
           </>

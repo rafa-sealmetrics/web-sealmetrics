@@ -3,7 +3,7 @@ import "@/app/globals.css";
 import { Header } from "@/components/layout/Header";
 import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
-import { SealMetricsTracker } from "@/components/analytics/SealMetricsTracker";
+import { SealmetricsTracker } from "@/components/analytics/SealmetricsTracker";
 import type { Locale } from "@/lib/i18n/types";
 
 const onest = Onest({
@@ -39,7 +39,7 @@ export function SharedLayout({
         <a href="#main-content" className="skip-to-content">
           {locale === "es" ? "Ir al contenido" : "Skip to content"}
         </a>
-        <SealMetricsTracker />
+        <SealmetricsTracker />
         <AnnouncementBarOffset />
         <AnnouncementBar locale={locale} />
         <Header locale={locale} />

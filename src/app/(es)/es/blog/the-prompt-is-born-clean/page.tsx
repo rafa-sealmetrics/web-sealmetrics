@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Enmascarar datos, firmar contratos y fijar plazos de retención es limpiar después. La analítica sin consentimiento elimina el problema antes: no hay identificador de visitante que enviar al modelo.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/the-prompt-is-born-clean/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/the-prompt-is-born-clean.png"],
   },
@@ -64,7 +64,7 @@ const FAQ = [
   {
     question: "¿Puede un asistente de IA ver visitantes individuales en mi analítica?",
     answer:
-      "En SealMetrics no puede, porque los visitantes individuales no están identificados en ninguna parte del sistema. No hay cookies, ni direcciones IP, ni huellas de dispositivo, ni identificadores de visitante que consultar, así que ningún informe y ninguna respuesta de la IA puede resolverse hasta una persona. Es una propiedad del modelo de datos, no un ajuste de permisos.",
+      "En Sealmetrics no puede, porque los visitantes individuales no están identificados en ninguna parte del sistema. No hay cookies, ni direcciones IP, ni huellas de dispositivo, ni identificadores de visitante que consultar, así que ningún informe y ninguna respuesta de la IA puede resolverse hasta una persona. Es una propiedad del modelo de datos, no un ajuste de permisos.",
   },
   {
     question: "¿Qué diferencia hay entre privacidad desde el diseño y privacidad por política en la IA?",
@@ -87,7 +87,7 @@ export default function ThePromptIsBornCleanPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -157,7 +157,7 @@ export default function ThePromptIsBornCleanPageEs() {
                 creado aguas arriba, en la recogida.
               </li>
               <li>
-                SealMetrics nunca recoge IPs, cookies, huellas de dispositivo ni
+                Sealmetrics nunca recoge IPs, cookies, huellas de dispositivo ni
                 identificadores de visitante, así que no hay ningún identificador
                 personal disponible para meter en un prompt.
               </li>
@@ -199,7 +199,7 @@ export default function ThePromptIsBornCleanPageEs() {
               La privacidad empieza antes de la IA
             </h2>
             <p>
-              SealMetrics es analítica sin consentimiento. Eso no es una
+              Sealmetrics es analítica sin consentimiento. Eso no es una
               afirmación sobre lo opcionales que son los banners de cookies; es
               una afirmación sobre lo que registra el tracker. Nunca recoge
               direcciones IP, nunca instala cookies, nunca construye huellas de
@@ -228,7 +228,7 @@ export default function ThePromptIsBornCleanPageEs() {
             </h2>
             <p>
               En concreto, esto es lo que viaja al modelo cuando le haces una
-              pregunta al asistente de SealMetrics, y lo que no puede viajar
+              pregunta al asistente de Sealmetrics, y lo que no puede viajar
               porque no existe en ninguna parte detrás.
             </p>
 

@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para agencias de marketing | SealMetrics",
+  title: "Analítica para agencias de marketing | Sealmetrics",
   description: getVerticalData("agencies", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analítica para agencias de marketing | SealMetrics",
+    title: "Analítica para agencias de marketing | Sealmetrics",
     description: getVerticalData("agencies", "es").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/es/for/agencies/")],
     url: "https://sealmetrics.com/es/for/agencies/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para agencias de marketing | SealMetrics",
+    title: "Analítica para agencias de marketing | Sealmetrics",
     description: getVerticalData("agencies", "es").lede.slice(0, 155) + "…",
     images: [ogImage("/es/for/agencies/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para agencias" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para agencias", url: "/es/for/agencies" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "agencies", audienceType: "Marketing agencies", description: "SealMetrics — enterprise analytics for agencies teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/agencies" })} /><VerticalPageV3 data={getVerticalData("agencies", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "agencies", audienceType: "Marketing agencies", description: "Sealmetrics — enterprise analytics for agencies teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/agencies" })} /><VerticalPageV3 data={getVerticalData("agencies", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

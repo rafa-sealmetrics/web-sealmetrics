@@ -41,7 +41,7 @@ const variants: Record<DemoTier, Variant> = {
     headline: <>Thanks — we&apos;ll be in touch.</>,
     lede: (
       <>
-        We&apos;ll review your situation and reply within one business day. Meanwhile, the resources below should give you a clear picture of how SealMetrics works.
+        We&apos;ll review your situation and reply within one business day. Meanwhile, the resources below should give you a clear picture of how Sealmetrics works.
       </>
     ),
   },
@@ -126,7 +126,7 @@ export function ThankYouVariants() {
               className="font-semibold text-ink leading-[1.15] tracking-[-0.02em] mt-3 mx-auto max-w-[26ch]"
               style={{ fontSize: "clamp(24px, 3vw, 36px)" }}
             >
-              Watch how SealMetrics gets <em className="italic-accent">live data on your site.</em>
+              Watch how Sealmetrics gets <em className="italic-accent">live data on your site.</em>
             </h2>
             <p className="text-[15px] leading-[1.6] text-ink-soft mt-4 mx-auto max-w-[56ch]">
               Getting Started — a 2-minute walkthrough showing how to create your account, add your site and install the script. So when we call, your data is already flowing.
@@ -139,7 +139,7 @@ export function ThankYouVariants() {
               loading="lazy"
               allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
-              title="SealMetrics — Getting Started"
+              title="Sealmetrics — Getting Started"
               className="absolute inset-0 w-full h-full"
             />
           </div>
@@ -207,7 +207,7 @@ export function ThankYouVariants() {
               style={{ borderLeftColor: "#2E5C8A" }}
             >
               <p className="text-[17px] leading-[1.55] text-ink font-medium tracking-[-0.01em] italic">
-                &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
+                &ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo;
               </p>
               <footer className="mt-5 flex items-center gap-3">
                 <div>

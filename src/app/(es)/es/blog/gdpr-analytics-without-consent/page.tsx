@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Bajo condiciones específicas, RGPD y ePrivacy permiten analítica sin consentimiento. Aquí está cómo.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/gdpr-analytics-without-consent/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/gdpr-analytics-without-consent.png"],
   },
@@ -37,7 +37,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica RGPD sin consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica conforme con RGPD sin banners de consentimiento: cómo funciona", description: "La analítica sin banners de consentimiento es legalmente posible bajo RGPD y ePrivacy.", datePublished: "2026-03-02", dateModified: "2026-07-28", url: "/es/blog/gdpr-analytics-without-consent", category: "Regulación", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica conforme con RGPD sin banners de consentimiento: cómo funciona", description: "La analítica sin banners de consentimiento es legalmente posible bajo RGPD y ePrivacy.", datePublished: "2026-03-02", dateModified: "2026-07-28", url: "/es/blog/gdpr-analytics-without-consent", category: "Regulación", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica RGPD sin consentimiento", url: "/es/blog/gdpr-analytics-without-consent" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -65,7 +65,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             <li>La CNIL ha publicado criterios específicos para analítica exenta de consentimiento: solo output estadístico anónimo, sin cross-site tracking, sin uso publicitario y, como mínimo, anonimización de IP.</li>
             <li>Hay que cumplir seis requisitos técnicos: sin cookies, sin localStorage, sin fingerprinting, sin datos personales, solo first-party y residencia de dato en UE — cualquier fallo invalida el enfoque.</li>
             <li>El Digital Omnibus de la UE crearía un marco armonizado a nivel UE autorizando explícitamente la analítica first-party sin consentimiento, reemplazando el patchwork actual de interpretaciones por DPA nacional.</li>
-            <li>SealMetrics se construyó desde cero para operar sin consentimiento — sin cookies, sin PII, infraestructura solo UE — cumpliendo simultáneamente los requisitos de CNIL, ePrivacy y RGPD.</li>
+            <li>Sealmetrics se construyó desde cero para operar sin consentimiento — sin cookies, sin PII, infraestructura solo UE — cumpliendo simultáneamente los requisitos de CNIL, ePrivacy y RGPD.</li>
           </ul>
         </div>
 
@@ -215,7 +215,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu analítica actual superaría los criterios de exención de la CNIL? En una demo repasamos requisito a requisito cómo los cumple SealMetrics midiendo tu propio tráfico."
+            hook="¿Tu analítica actual superaría los criterios de exención de la CNIL? En una demo repasamos requisito a requisito cómo los cumple Sealmetrics midiendo tu propio tráfico."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -305,11 +305,11 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            Cómo logra SealMetrics el cumplimiento sin consentimiento
+            Cómo logra Sealmetrics el cumplimiento sin consentimiento
           </h2>
 
           <p>
-            SealMetrics se construyó desde cero para operar sin consentimiento.
+            Sealmetrics se construyó desde cero para operar sin consentimiento.
             No es una feature añadida a una plataforma con cookies&mdash; es la
             base arquitectónica.
           </p>
@@ -340,7 +340,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
           <p>
             Esta arquitectura cumple simultáneamente los criterios de exención
             CNIL, los requisitos del Art. 5(3) ePrivacy y la base de interés
-            legítimo del RGPD. SealMetrics ha completado el proceso de
+            legítimo del RGPD. Sealmetrics ha completado el proceso de
             autoevaluación CNIL y mantiene documentación de cumplimiento para
             todos los Estados miembro UE.
           </p>

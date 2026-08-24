@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Legitimate Interest (Analytics) — SealMetrics Glossary",
+  title: "Legitimate Interest (Analytics) — Sealmetrics Glossary",
   description:
     "GDPR Art. 6(1)(f) allows processing on legitimate-interest grounds. Why it doesn't override ePrivacy consent rules, and when it applies to analytics.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "What legitimate interest covers and doesn't — the common confusion with ePrivacy and the cookie-consent rule.",
     type: "article",
     url: "https://sealmetrics.com/glossary/legitimate-interest-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/legitimate-interest-analytics/")],
   },
@@ -75,7 +75,7 @@ export default function LegitimateInterestAnalyticsPage() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Authority guidance</h2>
             <p>The CNIL, German DSK, AEPD, Italian Garante and UK ICO have all published guidance accepting legitimate interest for analytics — provided the architecture meets the exemption criteria (no per-user identification, no cross-site tracking, aggregate reporting, EU-only processing). The convergence makes legitimate interest the cleaner-than-consent path for analytics that is built correctly.</p>
           </div>
-          <CommercialModule hook="Skip the legal-basis debate: SealMetrics collects no personal data, so no basis is needed. See how that works on your own site." />
+          <CommercialModule hook="Skip the legal-basis debate: Sealmetrics collects no personal data, so no basis is needed. See how that works on your own site." />
 
           <RelatedGlossaryTerms slug="legitimate-interest-analytics" />
           <div className="mt-10 pt-6 border-t border-warm-100">

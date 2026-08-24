@@ -10,7 +10,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Are UTM Parameters? — SealMetrics Glossary",
+  title: "What Are UTM Parameters? — Sealmetrics Glossary",
   description:
     "UTM parameters are query-string tags that attribute visits to campaigns. The five tags, naming discipline, and why they work without cookies or consent.",
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "The five query-string tags behind campaign attribution — and why they work without cookies or consent.",
     type: "article",
     url: "https://sealmetrics.com/glossary/utm-parameters/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/utm-parameters/")],
   },
@@ -74,7 +74,7 @@ export default function UtmParametersPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why UTMs survive the cookieless era</h2>
           <p>
-            Most attribution mechanisms depend on state stored in the browser — cookies, local storage, device identifiers — and all of that is consent-gated in the EU and actively restricted by Safari and Firefox. UTM parameters carry the attribution in the URL of the visit itself, so nothing needs to be stored or read back later. That is why they are the backbone of <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>: SealMetrics reads the UTM set on each pageview and attributes conversions last-click at channel level, on 100% of visits, without a consent banner — while a cookie-based tool applies the same tags to only the minority of traffic it is allowed to observe.
+            Most attribution mechanisms depend on state stored in the browser — cookies, local storage, device identifiers — and all of that is consent-gated in the EU and actively restricted by Safari and Firefox. UTM parameters carry the attribution in the URL of the visit itself, so nothing needs to be stored or read back later. That is why they are the backbone of <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>: Sealmetrics reads the UTM set on each pageview and attributes conversions last-click at channel level, on 100% of visits, without a consent banner — while a cookie-based tool applies the same tags to only the minority of traffic it is allowed to observe.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What UTM parameters do not tell you</h2>
@@ -83,13 +83,13 @@ export default function UtmParametersPage() {
           </p>
         </div>
 
-        <CommercialModule hook="Your UTMs are only read on the visits your analytics is allowed to see. SealMetrics reads them on 100% of visits — no cookies, no consent banner." />
+        <CommercialModule hook="Your UTMs are only read on the visits your analytics is allowed to see. Sealmetrics reads them on 100% of visits — no cookies, no consent banner." />
 
         <RelatedGlossaryTerms slug="utm-parameters" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics Product</Link>
+            Learn more: <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>

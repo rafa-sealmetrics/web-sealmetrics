@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Open-weight vs proprietary LLMs for business: pinning versions, avoiding vendor lock-in, and keeping the option to move hosts without changing the product.",
     type: "article",
     url: "https://sealmetrics.com/blog/open-weights-exit-strategy/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/open-weights-exit-strategy.png"],
   },
@@ -88,7 +88,7 @@ export default function OpenWeightsExitStrategyPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />

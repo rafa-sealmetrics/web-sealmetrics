@@ -16,7 +16,7 @@ const PILLAR_DATE_PUBLISHED = "2026-05-29";
 const PILLAR_DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "Analítica sin cookies, explicada — SealMetrics",
+  title: "Analítica sin cookies, explicada — Sealmetrics",
   description:
     "Analítica sin cookies que captura el 100% del tráfico con recolección first-party server-side. Sin cookies, sin banners de consentimiento, sin muestreo.",
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: [ogImage("/es/cookieless-analytics/")],
     locale: "es_ES",
     url: "https://sealmetrics.com/es/cookieless-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
   },
   twitter: {
     card: "summary_large_image",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿La analítica sin cookies es legal bajo RGPD?",
-    a: "Sí — y la vía legal es arquitectónica, no contractual. Como no se almacenan datos personales, identificadores ni cookies, el procesamiento queda fuera del ámbito material del RGPD y del requisito de consentimiento de ePrivacy. Los criterios de exención de la CNIL, la guía de la DSK alemana y la exención PECR del ICO británico describen la misma vía. SealMetrics incluye DPA, procesamiento exclusivo en la UE (Dublín) y un paquete TPSR para revisión legal.",
+    a: "Sí — y la vía legal es arquitectónica, no contractual. Como no se almacenan datos personales, identificadores ni cookies, el procesamiento queda fuera del ámbito material del RGPD y del requisito de consentimiento de ePrivacy. Los criterios de exención de la CNIL, la guía de la DSK alemana y la exención PECR del ICO británico describen la misma vía. Sealmetrics incluye DPA, procesamiento exclusivo en la UE (Dublín) y un paquete TPSR para revisión legal.",
   },
   {
     q: "¿Qué precisión tiene comparada con GA4?",
@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     q: "¿Puedo correrla junto a Google Analytics 4?",
-    a: "Sí — lo recomendamos para los primeros 30 días. La mayoría de equipos mantienen GA4 para el import de conversiones de Google Ads y el legacy de BigQuery, y usan SealMetrics como fuente de verdad para decisiones a nivel directivo. No hay migración. Un tag, corren en paralelo.",
+    a: "Sí — lo recomendamos para los primeros 30 días. La mayoría de equipos mantienen GA4 para el import de conversiones de Google Ads y el legacy de BigQuery, y usan Sealmetrics como fuente de verdad para decisiones a nivel directivo. No hay migración. Un tag, corren en paralelo.",
   },
   {
     q: "¿Qué NO puede hacer la analítica sin cookies?",
-    a: "No puede identificar a un visitante recurrente. No puede seguir a una persona individual entre páginas o sesiones. No construye perfiles de comportamiento por usuario. Si tu caso de uso requiere identificación a nivel de usuario (product analytics autenticado, triggers de CRM basados en navegación individual), necesitas otra categoría de herramienta — probablemente Mixpanel, Amplitude o un CDP. SealMetrics cuenta eventos anónimamente y atribuye conversiones al canal que las generó, en agregado.",
+    a: "No puede identificar a un visitante recurrente. No puede seguir a una persona individual entre páginas o sesiones. No construye perfiles de comportamiento por usuario. Si tu caso de uso requiere identificación a nivel de usuario (product analytics autenticado, triggers de CRM basados en navegación individual), necesitas otra categoría de herramienta — probablemente Mixpanel, Amplitude o un CDP. Sealmetrics cuenta eventos anónimamente y atribuye conversiones al canal que las generó, en agregado.",
   },
   {
     q: "¿Y el Consent Mode v2 de Google?",
@@ -97,7 +97,7 @@ export default function CookielessAnalyticsPillarEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />

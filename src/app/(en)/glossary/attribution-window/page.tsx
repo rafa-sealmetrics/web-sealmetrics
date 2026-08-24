@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is an Attribution Window? — SealMetrics Glossary",
+  title: "What Is an Attribution Window? — Sealmetrics Glossary",
   description:
     "The attribution window is the period after a touchpoint during which a conversion is credited to it. Default values, EU implications and the ITP collapse.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Default attribution windows by channel, why they collapse under Safari ITP, and the cookieless alternative.",
     type: "article",
     url: "https://sealmetrics.com/glossary/attribution-window/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/attribution-window/")],
   },
@@ -70,14 +70,14 @@ export default function AttributionWindowPage() {
             <p>Cookie-based attribution windows assume the cookie that recorded the original touchpoint survives until the conversion. <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Safari ITP</Link> caps first-party analytics cookies at 7 days. Any window longer than that is fictional on Safari: the conversion fires after the cookie is gone, the channel attribution defaults to &ldquo;direct&rdquo;, and your dashboard under-counts the original source. Firefox ETP applies the same cap.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click on observed events</h2>
-            <p>SealMetrics applies <Link href="/glossary/last-click-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click</Link> at the event level: each conversion is attributed to the channel observed on the pageview where it happened, not to a touchpoint days earlier. There is no window to collapse and no cookie to expire. This produces a different number than a 30-day window — typically simpler and closer to the channel that actually drove the action.</p>
+            <p>Sealmetrics applies <Link href="/glossary/last-click-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click</Link> at the event level: each conversion is attributed to the channel observed on the pageview where it happened, not to a touchpoint days earlier. There is no window to collapse and no cookie to expire. This produces a different number than a 30-day window — typically simpler and closer to the channel that actually drove the action.</p>
           </div>
           <CommercialModule hook="An attribution window only works on data you actually captured. See last-click attribution running on 100% of your traffic." />
 
           <RelatedGlossaryTerms slug="attribution-window" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">
-              Learn more: <Link href="/complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Complete Data Pillar</Link> &middot; <Link href="/vs-ga4" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">SealMetrics vs GA4</Link>
+              Learn more: <Link href="/complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Complete Data Pillar</Link> &middot; <Link href="/vs-ga4" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics vs GA4</Link>
             </p>
           </div>
 

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Una región europea no pone tus datos fuera del alcance legal de Estados Unidos. La diferencia, y cómo auditar a tu proveedor de analítica con IA.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/residency-is-not-sovereignty/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/residency-is-not-sovereignty.png"],
   },
@@ -82,7 +82,7 @@ export default function ResidencyIsNotSovereigntyPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -270,7 +270,7 @@ export default function ResidencyIsNotSovereigntyPageEs() {
               >
                 Seal AI
               </Link>
-              , la capa de IA privada dentro de SealMetrics. La inferencia se
+              , la capa de IA privada dentro de Sealmetrics. La inferencia se
               ejecuta solo en la infraestructura de Scaleway en París. Scaleway es
               una empresa francesa con matriz francesa (el grupo Iliad) y sin
               propiedad estadounidense: afirma sin rodeos que sus servicios de IA

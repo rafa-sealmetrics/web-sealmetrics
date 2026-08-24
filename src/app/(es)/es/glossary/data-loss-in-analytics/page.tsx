@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: [ogImage("/es/glossary/data-loss-in-analytics/")],
   },

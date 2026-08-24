@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Practical thinking on measurement, attribution, privacy, and revenue for digital teams that need growth they can defend.",
     type: "website",
     url: "https://sealmetrics.com/growth/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/growth/")],
   },

@@ -31,7 +31,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const chapter = getChapterBySlug(slug);
   if (!chapter) return {};
-  const title = `${chapter.title} — Open · SealMetrics`;
+  const title = `${chapter.title} — Open · Sealmetrics`;
   return {
     title: title.length > 60 ? `${chapter.title} — Open` : title,
     description: chapter.summary.slice(0, 158),
@@ -43,7 +43,7 @@ export async function generateMetadata({
       // replaces the parent `openGraph` object wholesale when a page declares
       // its own. Every field this page needs has to be spelled out here.
       url: `https://sealmetrics.com/open/${chapter.slug}/`,
-      siteName: "SealMetrics",
+      siteName: "Sealmetrics",
       locale: "en_US",
       images: [ogImage(`/open/${chapter.slug}/`)],
     },
@@ -77,13 +77,13 @@ export default async function OpenChapterPage({ params }: PageProps) {
     dateModified: chapter.dateModified,
     isPartOf: {
       "@type": "Book",
-      name: "Open — SealMetrics",
+      name: "Open — Sealmetrics",
       url: "https://sealmetrics.com/open",
     },
-    author: { "@type": "Organization", name: "SealMetrics" },
+    author: { "@type": "Organization", name: "Sealmetrics" },
     publisher: {
       "@type": "Organization",
-      name: "SealMetrics",
+      name: "Sealmetrics",
       url: "https://sealmetrics.com",
     },
   };
@@ -239,7 +239,7 @@ export default async function OpenChapterPage({ params }: PageProps) {
             <p className="text-[1.05rem] leading-[1.7] text-text-body max-w-[62ch]">
               {chapter.number === 1 && (
                 <>
-                  This is why SealMetrics exists. What that means in practice
+                  This is why Sealmetrics exists. What that means in practice
                   starts with{" "}
                   <Link href="/complete-data" className="underline">
                     complete data
@@ -376,7 +376,7 @@ function DraftPlaceholder({ chapter }: { chapter: OpenChapter }) {
 }
 
 /* ============================================
-   CHAPTER 01 · Why SealMetrics exists
+   CHAPTER 01 · Why Sealmetrics exists
    ============================================ */
 function ChapterOneBody() {
   return (
@@ -463,7 +463,7 @@ function ChapterOneBody() {
         Our position
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-7">
-        SealMetrics is built on three premises. They are constraints, not
+        Sealmetrics is built on three premises. They are constraints, not
         features — they define what we will and will not build.
       </p>
 
@@ -583,7 +583,7 @@ function ChapterFiveBody() {
       <p className="text-[1.2rem] leading-[1.65] text-ink-2 mb-8 first-letter:font-semibold first-letter:text-[2.4em] first-letter:float-left first-letter:mr-2 first-letter:leading-[1] first-letter:text-ink">
         Anyone can promise "complete, real-time measurement at scale." What
         follows is what it takes to back that sentence with numbers. This
-        chapter describes where the SealMetrics pixel runs, what latency it
+        chapter describes where the Sealmetrics pixel runs, what latency it
         introduces, how it scales, and what we guarantee.
       </p>
 
@@ -1055,7 +1055,7 @@ function ChapterThreeBody() {
     {
       label: "Tier 01",
       title: "Enterprise analytics",
-      examples: "GA360, Adobe Analytics, Piwik PRO, SealMetrics",
+      examples: "GA360, Adobe Analytics, Piwik PRO, Sealmetrics",
       note: "Six- and seven-figure decisions. Complete data, compliance posture, and audit trails are non-negotiable.",
       active: true,
     },
@@ -1080,7 +1080,7 @@ function ChapterThreeBody() {
       <p className="text-[1.25rem] leading-[1.6] text-ink-2 mb-8 first-letter:font-semibold first-letter:text-[2.4em] first-letter:float-left first-letter:mr-2 first-letter:leading-[1] first-letter:text-ink">
         "Complete data" is one of those phrases that sounds obvious until you
         try to define it. This chapter draws the line — what we mean when we
-        say SealMetrics captures 100%, what GA4 means when it shows the
+        say Sealmetrics captures 100%, what GA4 means when it shows the
         dashboard you've been reading, and why the difference is a budget
         problem, not a vocabulary one.
       </p>
@@ -1166,7 +1166,7 @@ function ChapterThreeBody() {
       </p>
 
       <p className="text-[0.85rem] text-text-tertiary mb-10 italic">
-        Cascade percentages from SealMetrics measurement studies of EU
+        Cascade percentages from Sealmetrics measurement studies of EU
         enterprise CMPs. Methodology in our{" "}
         <Link
           href="/blog/why-ga4-shows-13pct-eu-traffic"
@@ -1213,7 +1213,7 @@ function ChapterThreeBody() {
       </blockquote>
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        SealMetrics does not sample. Every event lands in ClickHouse at full
+        Sealmetrics does not sample. Every event lands in ClickHouse at full
         resolution. A query against 4 billion events queries 4 billion
         events. We pay for the storage and the compute so that the answer
         matches the question.
@@ -1270,7 +1270,7 @@ function ChapterThreeBody() {
         id="where-we-sit"
         className="font-sans text-[1.85rem] sm:text-[2.15rem] font-semibold text-ink mt-14 mb-5 leading-[1.1] tracking-[-0.025em] scroll-mt-24"
       >
-        Where SealMetrics sits
+        Where Sealmetrics sits
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
         Three tiers operate in analytics today. The category matters because
@@ -1314,9 +1314,9 @@ function ChapterThreeBody() {
       </div>
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        SealMetrics competes in Tier 1. The lightweight tools are not
+        Sealmetrics competes in Tier 1. The lightweight tools are not
         competitors — they are the right choice for a different problem. If
-        you are evaluating SealMetrics, you are not choosing between us and
+        you are evaluating Sealmetrics, you are not choosing between us and
         Plausible. You are choosing between complete data and the budget
         consequences of the alternative.
       </p>
@@ -1432,7 +1432,7 @@ function ChapterSixBody() {
         traffic.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        SealMetrics does not rely on consent because there is no personal
+        Sealmetrics does not rely on consent because there is no personal
         data to consent to. What we measure is aggregate event data — a
         request hit /product-X, originated from a referrer, on a device
         whose fingerprint{" "}
@@ -1460,7 +1460,7 @@ function ChapterSixBody() {
           cookieless analytics under legitimate interest. The French CNIL
           maintains an equivalent self-assessment for measurement tools that
           operate without consent (the &ldquo;exempted measurement&rdquo;
-          framework). SealMetrics is built to satisfy both. Where you have a
+          framework). Sealmetrics is built to satisfy both. Where you have a
           DPO, these are the documents they will ask about.
         </p>
       </div>
@@ -1491,7 +1491,7 @@ function ChapterSixBody() {
         terminal.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        SealMetrics does none of these. The pixel sends a single HTTPS POST
+        Sealmetrics does none of these. The pixel sends a single HTTPS POST
         with the event payload. No terminal storage is set, no terminal
         storage is read. The user-agent string is parsed server-side and
         immediately generalised to browser family plus major version. IPs
@@ -1548,7 +1548,7 @@ function ChapterSixBody() {
         same grounds.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        SealMetrics avoids this entirely. All data processing — pixel
+        Sealmetrics avoids this entirely. All data processing — pixel
         ingestion, validation, attribution, storage — runs in owned
         infrastructure in{" "}
         <strong className="font-semibold text-ink">Dublin, Ireland</strong>.
@@ -1578,7 +1578,7 @@ function ChapterSixBody() {
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
         Before the document set, a side-by-side that DPOs tend to ask for
         early — what GA4 needs to remain compliant for an EU eCommerce
-        deployment, versus what SealMetrics needs.
+        deployment, versus what Sealmetrics needs.
       </p>
 
       <div className="my-10 rounded-[14px] border border-warm-100 bg-white overflow-hidden">
@@ -1595,7 +1595,7 @@ function ChapterSixBody() {
           </div>
           <div className="p-4 sm:p-5 bg-warm-50/60 border-b border-warm-100 border-l border-l-warm-100">
             <span className="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-brand">
-              SealMetrics
+              Sealmetrics
             </span>
           </div>
           {comparison.map((row) => (
@@ -2143,7 +2143,7 @@ function ChapterElevenBody() {
       id: "sampling",
       term: "Sampling",
       plain:
-        "Analysing a subset of events and extrapolating the result as if it were a full measurement. GA4 applies sampling above 10M events per query. SealMetrics does not sample.",
+        "Analysing a subset of events and extrapolating the result as if it were a full measurement. GA4 applies sampling above 10M events per query. Sealmetrics does not sample.",
       body: (
         <>
           Analysing a subset of events and extrapolating the result as if it
@@ -2271,7 +2271,7 @@ function ChapterElevenBody() {
       id: "dpa",
       term: "DPA (Data Processing Agreement)",
       plain:
-        "Contract signed before data flows between customer (controller) and SealMetrics (processor). Covers scope of processing, lawful basis, sub-processors, technical and organisational measures, data subject rights, and breach notification. Included by default in Scale plans.",
+        "Contract signed before data flows between customer (controller) and Sealmetrics (processor). Covers scope of processing, lawful basis, sub-processors, technical and organisational measures, data subject rights, and breach notification. Included by default in Scale plans.",
       body: (
         <>
           Contract signed before data flows. We are the processor, you are
@@ -2321,7 +2321,7 @@ function ChapterElevenBody() {
       id: "fingerprinting",
       term: "Fingerprinting",
       plain:
-        "Combining terminal signals — user agent, canvas hash, fonts, audio context, screen, plugins, IP — into a near-unique browser identifier. Functionally equivalent to setting a cookie under ePrivacy Article 5(3). SealMetrics strips the vectors before storage.",
+        "Combining terminal signals — user agent, canvas hash, fonts, audio context, screen, plugins, IP — into a near-unique browser identifier. Functionally equivalent to setting a cookie under ePrivacy Article 5(3). Sealmetrics strips the vectors before storage.",
       body: (
         <>
           Combining terminal signals — UA, canvas, fonts, audio context, IP
@@ -2367,7 +2367,7 @@ function ChapterElevenBody() {
       id: "pixel",
       term: "Pixel",
       plain:
-        "The small client-side script that captures and dispatches events to ingestion. SealMetrics's pixel is under 4 KB gzipped, loads asynchronously, and sets no terminal storage.",
+        "The small client-side script that captures and dispatches events to ingestion. Sealmetrics's pixel is under 4 KB gzipped, loads asynchronously, and sets no terminal storage.",
       body: (
         <>
           The small client-side script that captures and dispatches events
@@ -2413,7 +2413,7 @@ function ChapterElevenBody() {
       id: "the-operator",
       term: "The operator",
       plain:
-        "The buyer profile SealMetrics serves, defined by intolerance to broken data rather than by sector, geography, or revenue band.",
+        "The buyer profile Sealmetrics serves, defined by intolerance to broken data rather than by sector, geography, or revenue band.",
       body: (
         <>
           Our buyer profile. Defined by intolerance to broken data rather
@@ -2430,7 +2430,7 @@ function ChapterElevenBody() {
   const definedTermSetSchema = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    name: "Open Glossary — SealMetrics",
+    name: "Open Glossary — Sealmetrics",
     inDefinedTermSet: "https://sealmetrics.com/open/glossary",
     hasDefinedTerm: allTerms.map((t) => ({
       "@type": "DefinedTerm",
@@ -2890,7 +2890,7 @@ function ChapterSevenBody() {
       </div>
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        There is no version of SealMetrics that holds the architecture
+        There is no version of Sealmetrics that holds the architecture
         hostage to the enterprise plan. Growth ships the data model that
         makes the product the product. Scale and Enterprise add capacity,
         governance, and the premium AI layer.
@@ -2932,7 +2932,7 @@ function ChapterSevenBody() {
             </div>
             <div className="p-4 sm:p-5 bg-warm-50/60 border-b border-warm-100 border-l border-l-warm-100">
               <span className="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-brand">
-                SealMetrics
+                Sealmetrics
               </span>
             </div>
             <div className="p-4 sm:p-5 bg-warm-50/60 border-b border-warm-100 border-l border-l-warm-100">

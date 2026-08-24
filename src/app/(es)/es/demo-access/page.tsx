@@ -7,24 +7,24 @@ import { AccessFormEs } from "./AccessFormEs";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Acceso a la cuenta demo — SealMetrics",
+  title: "Acceso a la cuenta demo — Sealmetrics",
   description:
-    "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido. Credenciales por email en minutos.",
+    "Solicita credenciales para la cuenta demo en directo de Sealmetrics. Email corporativo requerido. Credenciales por email en minutos.",
   openGraph: {
-    title: "Acceso a la cuenta demo — SealMetrics",
+    title: "Acceso a la cuenta demo — Sealmetrics",
     description:
-      "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido.",
+      "Solicita credenciales para la cuenta demo en directo de Sealmetrics. Email corporativo requerido.",
     type: "website",
     images: [ogImage("/es/demo-access/")],
     url: "https://sealmetrics.com/es/demo-access/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Acceso a la cuenta demo — SealMetrics",
-    description: "Solicita credenciales para la cuenta demo en directo de SealMetrics. Email corporativo requerido.",
+    title: "Acceso a la cuenta demo — Sealmetrics",
+    description: "Solicita credenciales para la cuenta demo en directo de Sealmetrics. Email corporativo requerido.",
     images: [ogImage("/es/demo-access/")],
   },
   alternates: {
@@ -56,7 +56,7 @@ export default function DemoAccessPageEs() {
                 className="text-ink-soft mt-7 leading-[1.55] max-w-[52ch]"
                 style={{ fontSize: "clamp(16px, 1.3vw, 19px)" }}
               >
-                Consigue credenciales para entrar a un dashboard real de SealMetrics. Tráfico real, atribución de ingresos real, reports reales — para que toques y pruebes a tu ritmo antes de hablar con nadie.
+                Consigue credenciales para entrar a un dashboard real de Sealmetrics. Tráfico real, atribución de ingresos real, reports reales — para que toques y pruebes a tu ritmo antes de hablar con nadie.
               </p>
 
               <div className="mt-8 flex flex-col gap-4">

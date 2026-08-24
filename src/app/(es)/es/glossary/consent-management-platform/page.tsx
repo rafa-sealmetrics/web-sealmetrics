@@ -11,13 +11,13 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "¿Qué es una CMP? — Glosario SealMetrics",
+  title: "¿Qué es una CMP? — Glosario Sealmetrics",
   description: "Una CMP muestra el banner de cookies y gestiona las preferencias del visitante. Obligatoria bajo RGPD para la analítica con cookies.",
   openGraph: {
     title: "¿Qué es una plataforma de gestión de consentimiento (CMP)?",
     description: "Software que muestra el banner de cookies y gestiona las preferencias del visitante.",
     url: "https://sealmetrics.com/es/glossary/consent-management-platform/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/consent-management-platform/")],
@@ -68,7 +68,7 @@ export default function ConsentManagementPlatformEsPage() {
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="Un CMP decide qué ve tu analítica. SealMetrics no guarda nada en el dispositivo, así que no hay nada que pedir — mira tus cifras sin puerta de consentimiento delante." />
+        <CommercialModule locale="es" hook="Un CMP decide qué ve tu analítica. Sealmetrics no guarda nada en el dispositivo, así que no hay nada que pedir — mira tus cifras sin puerta de consentimiento delante." />
 
         <RelatedGlossaryTerms slug="consent-management-platform" locale="es" />
 

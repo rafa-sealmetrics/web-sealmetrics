@@ -24,22 +24,22 @@ import { ogImage } from "@/lib/seo/og";
 const VS_GA4_DATE_MODIFIED = "2026-05-04";
 
 export const metadata: Metadata = {
-  title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
+  title: "Sealmetrics vs Google Analytics 4 — Complete data, no spin",
   description:
-    "Honest comparison. GA4 loses 40–60% of EU traffic to consent and ad blockers. SealMetrics captures 100%. Run both alongside for 30 days.",
+    "Honest comparison. GA4 loses 40–60% of EU traffic to consent and ad blockers. Sealmetrics captures 100%. Run both alongside for 30 days.",
   openGraph: {
-    title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
+    title: "Sealmetrics vs Google Analytics 4 — Complete data, no spin",
     description: "Feature-by-feature comparison. Honest.",
     type: "website",
     images: [ogImage("/vs-ga4/")],
     url: "https://sealmetrics.com/vs-ga4/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "SealMetrics vs Google Analytics 4 — Complete data, no spin",
+    title: "Sealmetrics vs Google Analytics 4 — Complete data, no spin",
     description: "Feature-by-feature comparison. Honest.",
     images: [ogImage("/vs-ga4/")],
   },
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
-  { q: "Do I have to replace GA4?", a: "No. Most customers run SealMetrics alongside GA4 — in fact, we recommend it for your first 30 days so you can compare side by side with your own CRM numbers." },
-  { q: "Will SealMetrics connect to Google Ads?", a: "Yes, via BigQuery export and API. For native Google Ads conversion import, you can keep GA4 running alongside — SealMetrics becomes your source of truth for decisions, GA4 becomes your Google Ads conduit." },
-  { q: "Is SealMetrics really consent-free?", a: "Yes. No cookies, no localStorage, no fingerprinting. First-party event counting on the server side, aggregated into channel totals without any personal identifier. This means no consent banner required under GDPR or ePrivacy." },
+  { q: "Do I have to replace GA4?", a: "No. Most customers run Sealmetrics alongside GA4 — in fact, we recommend it for your first 30 days so you can compare side by side with your own CRM numbers." },
+  { q: "Will Sealmetrics connect to Google Ads?", a: "Yes, via BigQuery export and API. For native Google Ads conversion import, you can keep GA4 running alongside — Sealmetrics becomes your source of truth for decisions, GA4 becomes your Google Ads conduit." },
+  { q: "Is Sealmetrics really consent-free?", a: "Yes. No cookies, no localStorage, no fingerprinting. First-party event counting on the server side, aggregated into channel totals without any personal identifier. This means no consent banner required under GDPR or ePrivacy." },
   { q: "How much does migration cost?", a: "Nothing. There's no migration. Add one script tag to your site and run both tools in parallel. Most teams never fully remove GA4 — they just stop making decisions on it." },
   { q: "How accurate is the 40–60% consent rejection figure?", a: "It's a cross-industry average for EU traffic with a standard consent banner. Your exact rejection rate depends on your sector, device mix and banner design. The gap is smaller in B2B, larger in B2C consumer brands." },
-  { q: "Can I use SealMetrics data in my BigQuery warehouse?", a: "Yes. Full-resolution export to BigQuery is included from the Growth plan up — no ETL, no sampling. Your warehouse gets every event, same as your dashboard." },
-  { q: "What about GA4's free tier? Isn't the price a barrier?", a: "GA4 is free because you are the product — your data trains Google's ad models. SealMetrics starts at €499/mo annual. For a team spending €20K+/month in paid media, that's a rounding error compared to the cost of misallocated ad spend on incomplete data." },
+  { q: "Can I use Sealmetrics data in my BigQuery warehouse?", a: "Yes. Full-resolution export to BigQuery is included from the Growth plan up — no ETL, no sampling. Your warehouse gets every event, same as your dashboard." },
+  { q: "What about GA4's free tier? Isn't the price a barrier?", a: "GA4 is free because you are the product — your data trains Google's ad models. Sealmetrics starts at €499/mo annual. For a team spending €20K+/month in paid media, that's a rounding error compared to the cost of misallocated ad spend on incomplete data." },
 ];
 
 export default function VsGA4Page() {
@@ -64,9 +64,9 @@ export default function VsGA4Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/vs-ga4" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "SealMetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: SealMetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" }, criteria: ["EU traffic captured (with consent banner vs without)", "Consent banner dependency", "Cookie-based vs cookieless architecture", "Data sampling thresholds in standard reports", "Last-click attribution on observed events", "Data residency and Schrems II posture", "Pricing for enterprise eCommerce", "MCP / AI-native interface", "Time to first decision-ready report"] })} />
+      <JsonLd data={comparisonPageSchema({ name: "Sealmetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: Sealmetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" }, criteria: ["EU traffic captured (with consent banner vs without)", "Consent banner dependency", "Cookie-based vs cookieless architecture", "Data sampling thresholds in standard reports", "Last-click attribution on observed events", "Data residency and Schrems II posture", "Pricing for enterprise eCommerce", "MCP / AI-native interface", "Time to first decision-ready report"] })} />
       <JsonLd data={quotationSchema({
-        text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+        text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
         spokenBy: "Toni Andújar",
         spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
         url: "/vs-ga4",
@@ -78,11 +78,11 @@ export default function VsGA4Page() {
       </div>
       <TldrBlock
         answer={
-          <>GA4 is Google&rsquo;s free analytics product, hosted in the United States, that requires a cookie consent banner across the EU and uses statistical modelling for unconsented traffic. SealMetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without a consent banner and attributes every conversion last-click on observed events. The substantive difference is data completeness: GA4 typically reports <strong>13–40% of real EU traffic</strong> after consent rejection (40–60%), ad blockers (~25%) and Safari&rsquo;s Intelligent Tracking Prevention; SealMetrics captures the full <strong>100%</strong> on aggregate. Most teams run both for 30 days side-by-side, compare against their CRM, then keep GA4 as a Google Ads conversion conduit while making revenue and budget decisions on SealMetrics. Pricing starts at €499/month annually.</>
+          <>GA4 is Google&rsquo;s free analytics product, hosted in the United States, that requires a cookie consent banner across the EU and uses statistical modelling for unconsented traffic. Sealmetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without a consent banner and attributes every conversion last-click on observed events. The substantive difference is data completeness: GA4 typically reports <strong>13–40% of real EU traffic</strong> after consent rejection (40–60%), ad blockers (~25%) and Safari&rsquo;s Intelligent Tracking Prevention; Sealmetrics captures the full <strong>100%</strong> on aggregate. Most teams run both for 30 days side-by-side, compare against their CRM, then keep GA4 as a Google Ads conversion conduit while making revenue and budget decisions on Sealmetrics. Pricing starts at €499/month annually.</>
         }
         bullets={[
           <>GA4: consent-gated, sampled, US-hosted, Google-owned — best for Google Ads conduit.</>,
-          <>SealMetrics: consent-free, full-resolution, EU-hosted in Dublin — best for revenue decisions.</>,
+          <>Sealmetrics: consent-free, full-resolution, EU-hosted in Dublin — best for revenue decisions.</>,
           <>No migration required — drop the pixel alongside GA4 and compare your own numbers.</>,
         ]}
       />
@@ -91,10 +91,10 @@ export default function VsGA4Page() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              SealMetrics vs Google Analytics 4 (GA4): GA4 is Google&rsquo;s free analytics platform — US-hosted, cookie-based, sampled at scale, and dependent on a cookie consent banner across the EU. SealMetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without consent dependency and attributes each conversion last-click on observed events, from &euro;499/month billed annually.
+              Sealmetrics vs Google Analytics 4 (GA4): GA4 is Google&rsquo;s free analytics platform — US-hosted, cookie-based, sampled at scale, and dependent on a cookie consent banner across the EU. Sealmetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without consent dependency and attributes each conversion last-click on observed events, from &euro;499/month billed annually.
             </p>
             <p>
-              For European eCommerce the gap is structural: GA4 loses 40&ndash;60% of EU traffic to consent rejection and reconstructs it with statistical modelling, while Safari&rsquo;s ITP and ad blockers erode more. SealMetrics measures the same traffic with a lightweight first-party pixel — no cookies, no sampling, no Schrems II review — so the revenue in the report matches Shopify. Most teams run both side by side for 30 days, reconcile against their CRM, then move revenue decisions to SealMetrics while keeping GA4 as a Google Ads conduit.
+              For European eCommerce the gap is structural: GA4 loses 40&ndash;60% of EU traffic to consent rejection and reconstructs it with statistical modelling, while Safari&rsquo;s ITP and ad blockers erode more. Sealmetrics measures the same traffic with a lightweight first-party pixel — no cookies, no sampling, no Schrems II review — so the revenue in the report matches Shopify. Most teams run both side by side for 30 days, reconcile against their CRM, then move revenue decisions to Sealmetrics while keeping GA4 as a Google Ads conduit.
             </p>
           </QuickAnswer>
         </div>
@@ -109,7 +109,7 @@ export default function VsGA4Page() {
         titleEn={<>The <em>objections</em>, answered.</>}
         ledeEn="What CMOs and CTOs actually ask before replacing (or complementing) GA4."
       />
-      {/* Migration callout — Palladium Hotel Group switched from GA-stack to SealMetrics */}
+      {/* Migration callout — Palladium Hotel Group switched from GA-stack to Sealmetrics */}
       <section className="py-20 bg-warm-white border-t border-warm-100">
         <div className="max-w-[860px] mx-auto px-5 sm:px-8">
           <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-brand font-semibold">
@@ -123,19 +123,19 @@ export default function VsGA4Page() {
             style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}
           >
             <p className="text-[20px] leading-[1.45] tracking-[-0.01em] font-medium">
-              &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&rsquo;s no black box.&rdquo;
+              &ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral. There&rsquo;s no black box.&rdquo;
             </p>
             <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
               Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
             </cite>
           </blockquote>
           <p className="mt-6 text-[15.5px] leading-[1.65] text-ink-2">
-            Palladium ran SealMetrics alongside their existing GA-tier stack. The audit
+            Palladium ran Sealmetrics alongside their existing GA-tier stack. The audit
             surfaced 40% of inbound traffic with no source/medium attribution, 35% of
             bookings unassigned to a channel in GA4, and a +165% Cost-per-Search
-            improvement on Display once the SealMetrics measurement model drove DV360
+            improvement on Display once the Sealmetrics measurement model drove DV360
             decisions. They kept GA4 as the Google Ads conduit and made revenue
-            decisions on SealMetrics.
+            decisions on Sealmetrics.
           </p>
           <Link
             href="/case-studies/palladium-hotel-group"
@@ -150,8 +150,8 @@ export default function VsGA4Page() {
         locale="en"
         titleEn={<>Run both for 30 days. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Then decide.</em></>}
         titleEs={<>Corre los dos 30 días. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Y entonces decide.</em></>}
-        ledeEn="Install SealMetrics alongside GA4. Compare with your own CRM. If the gap isn't real, you owe us nothing."
-        ledeEs="Instala SealMetrics junto a GA4. Compara con tu propio CRM. Si el gap no es real, no nos debes nada."
+        ledeEn="Install Sealmetrics alongside GA4. Compare with your own CRM. If the gap isn't real, you owe us nothing."
+        ledeEs="Instala Sealmetrics junto a GA4. Compara con tu propio CRM. Si el gap no es real, no nos debes nada."
       />
 
       <ComparisonMethodology

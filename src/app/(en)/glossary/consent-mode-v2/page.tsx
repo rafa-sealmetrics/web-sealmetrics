@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Google Consent Mode v2? — SealMetrics Glossary",
+  title: "What Is Google Consent Mode v2? — Sealmetrics Glossary",
   description:
     "Consent Mode v2 lets Google tags load without cookies when consent is rejected, then models the missing data statistically. A modelling layer, not measurement.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "How Consent Mode v2 actually works, what it estimates rather than measures, and when modelling stops being the right answer.",
     type: "article",
     url: "https://sealmetrics.com/glossary/consent-mode-v2/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/consent-mode-v2/")],
   },
@@ -72,7 +72,7 @@ export default function ConsentModeV2Page() {
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">When measurement is the right answer</h2>
             <p>For board-level revenue decisions, for CFO reconciliation, for the cost-of-customer calculations a serious finance team will defend — modelling is the wrong layer. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> measures every visitor on the same anonymous-aggregate basis, with no model in between. See the architectural argument on the <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data pillar</Link>.</p>
           </div>
-          <CommercialModule hook="Consent Mode v2 models what it can't observe. SealMetrics counts what actually happened — compare modelled against measured on your own traffic." />
+          <CommercialModule hook="Consent Mode v2 models what it can't observe. Sealmetrics counts what actually happened — compare modelled against measured on your own traffic." />
 
           <RelatedGlossaryTerms slug="consent-mode-v2" />
           <div className="mt-10 pt-6 border-t border-warm-100">

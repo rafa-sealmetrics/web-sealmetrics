@@ -7,23 +7,23 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Privacy end to end — SealMetrics",
+  title: "Privacy end to end — Sealmetrics",
   description:
     "Private from the first hit to private-AI processing. No cookies, no personal data, EU-hosted — and an AI that runs in Europe and never trains on your data.",
   openGraph: {
-    title: "Privacy end to end — SealMetrics",
+    title: "Privacy end to end — Sealmetrics",
     description:
       "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
     type: "website",
     images: [ogImage("/privacy-end-to-end/")],
     url: "https://sealmetrics.com/privacy-end-to-end/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Privacy end to end — SealMetrics",
+    title: "Privacy end to end — Sealmetrics",
     description: "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
     images: [ogImage("/privacy-end-to-end/")],
   },
@@ -60,7 +60,7 @@ export default function PrivacyEndToEndPage() {
       <Breadcrumbs items={[{ label: "Privacy end to end" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "Privacy end to end", url: "/privacy-end-to-end" }])} />
       <JsonLd
-        data={speakableWebPageSchema({ url: "/privacy-end-to-end", name: "Privacy end to end — SealMetrics" })}
+        data={speakableWebPageSchema({ url: "/privacy-end-to-end", name: "Privacy end to end — Sealmetrics" })}
       />
 
       {/* Hero */}
@@ -77,7 +77,7 @@ export default function PrivacyEndToEndPage() {
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
             Most analytics is &ldquo;privacy-first&rdquo; only at collection, then ships your data to a
-            US cloud the moment AI enters the picture. SealMetrics is private at every step — from the
+            US cloud the moment AI enters the picture. Sealmetrics is private at every step — from the
             byte we record to the model that reads it.
           </p>
         </div>

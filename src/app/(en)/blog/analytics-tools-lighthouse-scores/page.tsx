@@ -9,14 +9,14 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "We Added 9 Analytics Tools to One Page. Lighthouse Scores.",
   description:
-    "We installed 9 analytics scripts on the same page and ran Lighthouse 5 times each. SealMetrics scored 100. Adobe Analytics dropped 12 points.",
+    "We installed 9 analytics scripts on the same page and ran Lighthouse 5 times each. Sealmetrics scored 100. Adobe Analytics dropped 12 points.",
   openGraph: {
     title: "We Added 9 Analytics Tools to One Page. Lighthouse Scores.",
     description:
       "Lighthouse performance scores for 9 analytics tools tested on the same baseline page. The data speaks for itself.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-tools-lighthouse-scores/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/blog/analytics-tools-lighthouse-scores/")],
   },
@@ -37,7 +37,7 @@ export default function LighthouseScoresPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools Lighthouse Scores" }]} />
-      <JsonLd data={articleSchema({ headline: "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.", description: "We installed 9 analytics scripts on the same baseline page and ran Google Lighthouse 5 times each. The performance impact ranges from zero to devastating.", datePublished: "2026-03-08", dateModified: "2026-05-04", url: "/blog/analytics-tools-lighthouse-scores", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.", description: "We installed 9 analytics scripts on the same baseline page and ran Google Lighthouse 5 times each. The performance impact ranges from zero to devastating.", datePublished: "2026-03-08", dateModified: "2026-05-04", url: "/blog/analytics-tools-lighthouse-scores", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools Lighthouse Scores", url: "/blog/analytics-tools-lighthouse-scores" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -140,7 +140,7 @@ export default function LighthouseScoresPage() {
                   <td className="py-2.5 pl-3 text-right font-mono text-text-tertiary">0</td>
                 </tr>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">100</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">0</td>
                   <td className="py-2.5 px-3 text-right font-mono text-green-muted">0</td>
@@ -225,7 +225,7 @@ export default function LighthouseScoresPage() {
               <span className="text-[0.75rem] font-mono text-text-tertiary w-[32px] shrink-0 text-right">100</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">SealMetrics</span>
+              <span className="text-[0.8rem] font-medium text-text-primary w-[110px] shrink-0 text-right">Sealmetrics</span>
               <div className="flex-1 bg-warm-50 rounded-[2px] h-6">
                 <div className="h-full rounded-[2px]" style={{ width: '100%', backgroundColor: 'var(--color-green-muted)' }} />
               </div>
@@ -301,7 +301,7 @@ export default function LighthouseScoresPage() {
 
           {/* --- What the numbers mean --- */}
           <CommercialModule
-            hook="SealMetrics scored 100 with zero performance impact in this test. Run Lighthouse on your own site before and after removing the heavy scripts."
+            hook="Sealmetrics scored 100 with zero performance impact in this test. Run Lighthouse on your own site before and after removing the heavy scripts."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -404,7 +404,7 @@ export default function LighthouseScoresPage() {
           <p>
             A tool that requires no consent banner, no tag manager intermediary,
             and no cookie management layer avoids this compounding entirely. The
-            performance score with SealMetrics in that same stack scenario: 100.
+            performance score with Sealmetrics in that same stack scenario: 100.
             Because there is no stack.
           </p>
 
@@ -465,7 +465,7 @@ export default function LighthouseScoresPage() {
           </p>
 
           <p>
-            SealMetrics captures 100% of traffic through{" "}
+            Sealmetrics captures 100% of traffic through{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

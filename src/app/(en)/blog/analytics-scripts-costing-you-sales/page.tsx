@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Heavy scripts, consent banners, and ad blockers create a compound effect that costs you conversions.",
     type: "article",
     url: "https://sealmetrics.com/blog/analytics-scripts-costing-you-sales/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/analytics-scripts-costing-you-sales.png"],
   },
@@ -36,7 +36,7 @@ export default function AnalyticsScriptsPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Scripts Costing You Sales" }]} />
-      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", dateModified: "2026-05-28", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", dateModified: "2026-05-28", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Scripts Costing You Sales", url: "/blog/analytics-scripts-costing-you-sales" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -61,7 +61,7 @@ export default function AnalyticsScriptsPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Every 100ms of site speed improvement produces +8.4% conversions in eCommerce, +10.1% in travel, and +21.6% in lead forms.</li>
-            <li>GA4 script is ~146 KB (gzipped) and the Adobe stack is ~170 KB, while SealMetrics is just 1.1 KB — the tool measuring conversions may be costing you conversions.</li>
+            <li>GA4 script is ~146 KB (gzipped) and the Adobe stack is ~170 KB, while Sealmetrics is just 1.1 KB — the tool measuring conversions may be costing you conversions.</li>
             <li>The compound effect is multiplicative: heavy scripts slow pages, consent banners reject 25-70% of visitors, and ad blockers erase ~32% of the rest.</li>
             <li>Traditional analytics captures less than half of actual traffic once all three forces — script weight, consent rejection, and tracker blocking — combine.</li>
           </ul>
@@ -135,7 +135,7 @@ export default function AnalyticsScriptsPage() {
               </thead>
               <tbody>
                 <tr className="border-b border-warm-100">
-                  <td className="py-2.5 pr-4 font-medium text-text-primary">SealMetrics</td>
+                  <td className="py-2.5 pr-4 font-medium text-text-primary">Sealmetrics</td>
                   <td className="py-2.5 text-right font-mono text-green-muted">1.1 KB</td>
                 </tr>
                 <tr className="border-b border-warm-100">
@@ -214,7 +214,7 @@ export default function AnalyticsScriptsPage() {
                 <tr className="border-b border-warm-200">
                   <th className="text-left py-2.5 pr-4 text-text-secondary font-medium">Metric</th>
                   <th className="text-right py-2.5 pr-6 text-text-secondary font-medium">GA4</th>
-                  <th className="text-right py-2.5 text-text-secondary font-medium">SealMetrics</th>
+                  <th className="text-right py-2.5 text-text-secondary font-medium">Sealmetrics</th>
                 </tr>
               </thead>
               <tbody>

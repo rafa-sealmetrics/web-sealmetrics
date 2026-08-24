@@ -10,21 +10,21 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para CMOs — atribución defendible | SealMetrics",
+  title: "Analítica para CMOs — atribución defendible | Sealmetrics",
   description: getVerticalData("cmo", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analítica para CMOs — atribución defendible | SealMetrics",
+    title: "Analítica para CMOs — atribución defendible | Sealmetrics",
     description: getVerticalData("cmo", "es").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/es/for/cmo/")],
     url: "https://sealmetrics.com/es/for/cmo/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para CMOs — atribución defendible | SealMetrics",
+    title: "Analítica para CMOs — atribución defendible | Sealmetrics",
     description: getVerticalData("cmo", "es").lede.slice(0, 155) + "…",
     images: [ogImage("/es/for/cmo/")],
   },
@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para CMOs" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para CMOs", url: "/es/for/cmo" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "CMOs", audienceType: "Chief Marketing Officer", description: "SealMetrics — enterprise analytics for CMOs teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/cmo" })} /><VerticalPageV3 data={getVerticalData("cmo", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "CMOs", audienceType: "Chief Marketing Officer", description: "Sealmetrics — enterprise analytics for CMOs teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/cmo" })} /><VerticalPageV3 data={getVerticalData("cmo", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "A European region does not put your data beyond US legal reach. The difference — and how to audit your AI analytics vendor for it.",
     type: "article",
     url: "https://sealmetrics.com/blog/residency-is-not-sovereignty/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: ["https://sealmetrics.com/og/blog/residency-is-not-sovereignty.png"],
   },
@@ -83,7 +83,7 @@ export default function ResidencyIsNotSovereigntyPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -261,7 +261,7 @@ export default function ResidencyIsNotSovereigntyPage() {
               >
                 Seal AI
               </Link>
-              , the private AI layer inside SealMetrics. Inference runs on
+              , the private AI layer inside Sealmetrics. Inference runs on
               Scaleway&apos;s infrastructure in Paris only. Scaleway is a French
               company with a French parent (the Iliad group) and no US
               ownership — it states plainly that its AI services are not subject
@@ -318,7 +318,7 @@ export default function ResidencyIsNotSovereigntyPage() {
           </div>
 
           <CommercialModule
-            hook="The three audit questions above apply to us too. Put them to SealMetrics in a demo and compare the answers with your current vendor's."
+            hook="The three audit questions above apply to us too. Put them to Sealmetrics in a demo and compare the answers with your current vendor's."
           />
 
           <FaqSection items={FAQ} locale="en" />

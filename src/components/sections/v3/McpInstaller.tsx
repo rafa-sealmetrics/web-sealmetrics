@@ -68,7 +68,7 @@ const COPY: Record<
 > = {
   en: {
     eyebrow: "Install the MCP",
-    title: "Connect SealMetrics to your AI",
+    title: "Connect Sealmetrics to your AI",
     intro:
       "Works with Claude, ChatGPT, Cursor, Codex, Claude Code and any MCP-capable agent. The fastest path needs no install and no account — the hosted MCP can create your account and run the full setup for you.",
     hostedTitle: "Hosted MCP — no install, no account needed",
@@ -135,7 +135,7 @@ const COPY: Record<
   },
   es: {
     eyebrow: "Instalar el MCP",
-    title: "Conecta SealMetrics con tu IA",
+    title: "Conecta Sealmetrics con tu IA",
     intro:
       "Funciona con Claude, ChatGPT, Cursor, Codex, Claude Code y cualquier agente compatible con MCP. La vía más rápida no requiere instalar nada ni tener cuenta — el MCP alojado puede crear tu cuenta y hacer el setup completo por ti.",
     hostedTitle: "MCP alojado — sin instalar nada, sin cuenta previa",

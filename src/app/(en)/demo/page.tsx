@@ -8,22 +8,22 @@ import { DemoForm } from "./DemoForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Book a Demo — SealMetrics",
+  title: "Book a Demo — Sealmetrics",
   description:
     "30-minute personalized walkthrough. See what 100% of your traffic looks like on your own site.",
   openGraph: {
-    title: "Book a Demo — SealMetrics",
+    title: "Book a Demo — Sealmetrics",
     description: "30-minute walkthrough with the founder. See your own data gap live.",
     type: "website",
     images: [ogImage("/demo/")],
     url: "https://sealmetrics.com/demo/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Book a Demo — SealMetrics",
+    title: "Book a Demo — Sealmetrics",
     description: "30-minute walkthrough with the founder. See your own data gap live.",
     images: [ogImage("/demo/")],
   },
@@ -61,7 +61,7 @@ export default function DemoPage() {
                 {[
                   {
                     t: "Side-by-side with GA4",
-                    d: "Your current GA4 numbers next to SealMetrics running on the same traffic. The gap is in your own data.",
+                    d: "Your current GA4 numbers next to Sealmetrics running on the same traffic. The gap is in your own data.",
                   },
                   {
                     t: "Your sites, your UTMs",
@@ -110,7 +110,7 @@ export default function DemoPage() {
                 style={{ borderLeft: "3px solid #2E5C8A" }}
               >
                 <p className="text-[15px] text-ink-2 leading-[1.6] italic">
-                  &ldquo;We thought our analytics were accurate. SealMetrics showed us we were missing 74% of our conversions.&rdquo;
+                  &ldquo;We thought our analytics were accurate. Sealmetrics showed us we were missing 74% of our conversions.&rdquo;
                 </p>
                 <p className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
                   Head of Digital Marketing · European fashion retailer

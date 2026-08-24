@@ -8,22 +8,22 @@ import { CareersForm } from "@/components/forms/CareersForm";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Trabaja con nosotros — SealMetrics",
+  title: "Trabaja con nosotros — Sealmetrics",
   description: "Candidatura con enlaces públicos: LinkedIn, GitHub, tu trabajo publicado. Sin CV ni formularios de datos personales. Elige equipo y enséñanos lo que has hecho.",
   openGraph: {
-    title: "Trabaja con nosotros — SealMetrics",
+    title: "Trabaja con nosotros — Sealmetrics",
     description:
       "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales.",
     type: "website",
     images: [ogImage("/es/careers/")],
     url: "https://sealmetrics.com/es/careers/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Trabaja con nosotros — SealMetrics",
+    title: "Trabaja con nosotros — Sealmetrics",
     description: "Candidatura con enlaces públicos — LinkedIn, GitHub, tu trabajo publicado. Sin subir CV, sin formularios de datos personales.",
     images: [ogImage("/es/careers/")],
   },
@@ -83,7 +83,7 @@ const FAQ = [
   {
     question: "¿Por qué no aceptáis CVs ni PDFs?",
     answer:
-      "SealMetrics no recoge datos personales de los visitantes de una web — esa disciplina se extiende a la contratación. Un CV cuenta lo que afirmas; el trabajo público muestra lo que haces. Además, reducimos al mínimo los datos personales que guardamos de cada candidato: los enlaces que decidiste compartir, nada más.",
+      "Sealmetrics no recoge datos personales de los visitantes de una web — esa disciplina se extiende a la contratación. Un CV cuenta lo que afirmas; el trabajo público muestra lo que haces. Además, reducimos al mínimo los datos personales que guardamos de cada candidato: los enlaces que decidiste compartir, nada más.",
   },
   {
     question: "¿Y si no tengo GitHub ni mucho trabajo público?",
@@ -160,7 +160,7 @@ export default function CareersPageEs() {
               ahí, como riesgo.
             </p>
             <p>
-              SealMetrics mide el 100% del tráfico de una web sin recoger datos
+              Sealmetrics mide el 100% del tráfico de una web sin recoger datos
               personales — ese es todo el producto. Aplicar la lógica contraria
               a las personas que quieren construirlo con nosotros sería
               incoherente. Por eso la candidatura son tres campos de enlace
@@ -172,7 +172,7 @@ export default function CareersPageEs() {
               Si quieres saber con quién trabajarías antes de compartir nada,
               lee{" "}
               <Link href="/es/about" className="text-brand">
-                quién está detrás de SealMetrics
+                quién está detrás de Sealmetrics
               </Link>{" "}
               u{" "}
               <Link href="/open" className="text-brand">

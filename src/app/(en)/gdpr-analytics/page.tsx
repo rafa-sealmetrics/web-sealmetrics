@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "CNIL, DSK/§25 TTDSG and AEPD: what each regulator requires for consent-exempt audience measurement, and which architectures meet it.",
     url: "https://sealmetrics.com/gdpr-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     type: "website",
     images: [ogImage("/gdpr-analytics/")],
@@ -100,9 +100,9 @@ export default function Page() {
               works through one national supervisory authority — CNIL, the DSK
               under §25 TTDSG, and the AEPD — and states the criteria that
               authority actually published, then which architectures satisfy
-              them. These pages describe regulator guidance and how SealMetrics
+              them. These pages describe regulator guidance and how Sealmetrics
               is built against it. They are not legal advice, and none of them
-              claims a certification SealMetrics does not hold.
+              claims a certification Sealmetrics does not hold.
             </p>
           </QuickAnswer>
         </div>

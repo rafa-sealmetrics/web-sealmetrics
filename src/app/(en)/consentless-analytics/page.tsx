@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/consentless-analytics/")],
     url: "https://sealmetrics.com/consentless-analytics/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -53,11 +53,11 @@ const faqs = [
   },
   {
     q: "Do I still need a cookie banner for other reasons?",
-    a: "Possibly — for Google Ads pixels, Meta pixels, A/B testing tools or any third-party script that does set cookies. SealMetrics removes the analytics-specific reason for the banner, not every reason. Many teams reduce the banner's scope (or eliminate it on pages without ad pixels) once analytics moves to a consentless layer.",
+    a: "Possibly — for Google Ads pixels, Meta pixels, A/B testing tools or any third-party script that does set cookies. Sealmetrics removes the analytics-specific reason for the banner, not every reason. Many teams reduce the banner's scope (or eliminate it on pages without ad pixels) once analytics moves to a consentless layer.",
   },
   {
     q: "How does this differ from \"consent-light\" or \"privacy-friendly\" tools?",
-    a: "Most lightweight analytics tools still set a first-party cookie or a randomised visitor ID — they are consent-light, not consentless. The CNIL exemption is specific: no identifier, no cross-session linkage, no profiling. SealMetrics is built to that bar. The trade-off is honest — no returning-visitor identification — and it is the deliberate design choice that produces the legal exemption.",
+    a: "Most lightweight analytics tools still set a first-party cookie or a randomised visitor ID — they are consent-light, not consentless. The CNIL exemption is specific: no identifier, no cross-session linkage, no profiling. Sealmetrics is built to that bar. The trade-off is honest — no returning-visitor identification — and it is the deliberate design choice that produces the legal exemption.",
   },
   {
     q: "What about Schrems II and US transfers?",
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "Can the legal basis change if I add CRM or marketing tools later?",
-    a: "The legal basis for the analytics layer does not change. What changes is the overall surface: if you add a tool that stores cookies or processes personal data, that tool brings its own consent requirement. SealMetrics' status is determined by its own architecture, not by the other tools running alongside it.",
+    a: "The legal basis for the analytics layer does not change. What changes is the overall surface: if you add a tool that stores cookies or processes personal data, that tool brings its own consent requirement. Sealmetrics' status is determined by its own architecture, not by the other tools running alongside it.",
   },
 ];
 
@@ -74,7 +74,7 @@ const authorities = [
     country: "France",
     body: "CNIL",
     summary:
-      "Issued explicit analytics exemption criteria in 2020, reaffirmed 2024: no per-user identifier, no cross-session tracking, aggregate reporting, EU-only processing. SealMetrics meets every criterion.",
+      "Issued explicit analytics exemption criteria in 2020, reaffirmed 2024: no per-user identifier, no cross-session tracking, aggregate reporting, EU-only processing. Sealmetrics meets every criterion.",
   },
   {
     country: "Germany",
@@ -92,7 +92,7 @@ const authorities = [
     country: "Italy",
     body: "Garante",
     summary:
-      "Post-Google-Analytics 2022 ruling: tools that anonymise at collection and host in the EU do not trigger the same restrictions. SealMetrics' Dublin processing and zero-identifier design fit the exemption shape.",
+      "Post-Google-Analytics 2022 ruling: tools that anonymise at collection and host in the EU do not trigger the same restrictions. Sealmetrics' Dublin processing and zero-identifier design fit the exemption shape.",
   },
   {
     country: "United Kingdom",
@@ -136,7 +136,7 @@ export default function ConsentlessAnalyticsPillar() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -348,7 +348,7 @@ export default function ConsentlessAnalyticsPillar() {
                 system must meet to qualify for the exemption: a strictly
                 limited purpose, no cross-site tracking, anonymised IP
                 addresses or none stored, no merging with personal data
-                from other sources, and aggregate reporting only. SealMetrics
+                from other sources, and aggregate reporting only. Sealmetrics
                 meets each criterion by design — not by configuration.
                 Other authorities have aligned around the same five points.
               </p>
@@ -473,7 +473,7 @@ export default function ConsentlessAnalyticsPillar() {
 
             <div className="border border-warm-100 rounded-2xl p-7 bg-white">
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-3">
-                Consentless (SealMetrics)
+                Consentless (Sealmetrics)
               </h3>
               <ul className="space-y-2 text-[15px] leading-[1.6] text-ink list-none pl-0">
                 {[
@@ -514,7 +514,7 @@ export default function ConsentlessAnalyticsPillar() {
               {
                 name: "DPA",
                 detail:
-                  "Data Processing Agreement, GDPR Art. 28 compliant, signed by SealMetrics S.L. as processor. Pre-filled, ready to counter-sign.",
+                  "Data Processing Agreement, GDPR Art. 28 compliant, signed by Sealmetrics S.L. as processor. Pre-filled, ready to counter-sign.",
               },
               {
                 name: "TPSR package",
@@ -588,7 +588,7 @@ export default function ConsentlessAnalyticsPillar() {
                 href: "/blog/cnil-self-assessment-published",
                 tag: "France · CNIL",
                 title: "The CNIL self-assessment, published",
-                lede: "Walk through the five exemption criteria with SealMetrics' actual answers, side by side.",
+                lede: "Walk through the five exemption criteria with Sealmetrics' actual answers, side by side.",
               },
               {
                 href: "/blog/uk-pecr-analytics-exemption",

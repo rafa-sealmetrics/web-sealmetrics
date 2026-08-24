@@ -9,7 +9,7 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Ad Blocker Impact on Analytics — SealMetrics",
+  title: "Ad Blocker Impact on Analytics — Sealmetrics",
   description:
     "Ad blockers block 40%+ of EU analytics sessions by intercepting third-party scripts like GA4. First-party cookieless tools bypass ad blockers entirely.",
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
     type: "article",
     url: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     images: [ogImage("/glossary/ad-blocker-analytics-impact/")],
   },
@@ -83,17 +83,17 @@ export default function AdBlockerAnalyticsImpactPage() {
             Ad blockers target third-party scripts &mdash; JavaScript loaded from external domains. <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> operates differently: the tracking endpoint lives on your own domain, making it indistinguishable from legitimate site functionality.
           </p>
           <p>
-            <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> takes this further by routing data through your own domain, eliminating the third-party requests that ad blockers intercept. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like SealMetrics combine first-party infrastructure with no cookies to capture 100% of visitor activity regardless of ad blocker status.
+            <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> takes this further by routing data through your own domain, eliminating the third-party requests that ad blockers intercept. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like Sealmetrics combine first-party infrastructure with no cookies to capture 100% of visitor activity regardless of ad blocker status.
           </p>
         </div>
 
-        <CommercialModule hook="Ad blockers never see SealMetrics' first-party count. See what your traffic looks like when nothing strips sessions out." />
+        <CommercialModule hook="Ad blockers never see Sealmetrics' first-party count. See what your traffic looks like when nothing strips sessions out." />
 
         <RelatedGlossaryTerms slug="ad-blocker-analytics-impact" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How SealMetrics Works</Link>
+            Learn more: <Link href="/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cookieless Analytics Explained</Link> &middot; <Link href="/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">How Sealmetrics Works</Link>
           </p>
         </div>
       </div>

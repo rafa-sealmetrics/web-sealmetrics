@@ -311,7 +311,7 @@ for (const file of files) {
     `llm_priority: ${JSON.stringify(llmPriority)}`,
     `last_verified: ${JSON.stringify(lastVerified)}`,
     `source: ${SITE}${route}`,
-    "publisher: SealMetrics",
+    "publisher: Sealmetrics",
     "---",
   ]
     .filter(Boolean)
@@ -334,7 +334,7 @@ manifest.sort((a, b) => a.route.localeCompare(b.route));
 writeFileSync(
   path.join(OUT, "llms-md-index.txt"),
   [
-    "# SealMetrics — Markdown twins of every indexable page",
+    "# Sealmetrics — Markdown twins of every indexable page",
     "# One clean Markdown document per HTML page. Generated from the rendered",
     "# HTML at build time, so it cannot drift from what a human reads.",
     `# Generated for ${manifest.length} pages.`,

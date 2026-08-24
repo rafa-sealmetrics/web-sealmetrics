@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [ogImage("/use-cases/ga4-migration/")],
     url: "https://sealmetrics.com/use-cases/ga4-migration/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
@@ -47,27 +47,27 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Do I have to remove GA4?",
-    a: "No. Most teams keep GA4 running indefinitely. GA4 is the conduit Google requires for Google Ads conversion import and the easiest path to Search Console / Data Studio joins. What changes is what you decide on. After 30 days of parallel running, most customers shift revenue and channel-mix decisions to SealMetrics and let GA4 handle the Google-Ads side. Two tools, two purposes.",
+    a: "No. Most teams keep GA4 running indefinitely. GA4 is the conduit Google requires for Google Ads conversion import and the easiest path to Search Console / Data Studio joins. What changes is what you decide on. After 30 days of parallel running, most customers shift revenue and channel-mix decisions to Sealmetrics and let GA4 handle the Google-Ads side. Two tools, two purposes.",
   },
   {
     q: "How long does the migration actually take?",
-    a: "Five minutes to install. First data in the first hour. Decision-ready in week one. Full calibration to your CRM within 30 days of parallel running. There is no historical-data migration step — SealMetrics begins counting from day one on new data; GA4's historical data stays in GA4 for reference.",
+    a: "Five minutes to install. First data in the first hour. Decision-ready in week one. Full calibration to your CRM within 30 days of parallel running. There is no historical-data migration step — Sealmetrics begins counting from day one on new data; GA4's historical data stays in GA4 for reference.",
   },
   {
     q: "What about my BigQuery export from GA4?",
-    a: "Keep it for historical reference. SealMetrics ships native BigQuery export at full resolution (no sampling thresholds) from the Growth plan up. Most teams add the SealMetrics dataset alongside the GA4 dataset and join them in the warehouse — the GA4 dataset for pre-migration history, the SealMetrics dataset as the source of truth going forward.",
+    a: "Keep it for historical reference. Sealmetrics ships native BigQuery export at full resolution (no sampling thresholds) from the Growth plan up. Most teams add the Sealmetrics dataset alongside the GA4 dataset and join them in the warehouse — the GA4 dataset for pre-migration history, the Sealmetrics dataset as the source of truth going forward.",
   },
   {
     q: "How does the EU consent banner change?",
-    a: "If SealMetrics replaces the analytics layer entirely, the analytics-specific reason for the banner disappears. The banner may still be required for other tools — Meta pixel, Google Ads remarketing, A/B testing platforms that set cookies. Many teams reduce the banner scope (or remove it on pages without ad pixels) once analytics moves to a cookieless layer. The full legal walk-through lives on the consentless analytics pillar.",
+    a: "If Sealmetrics replaces the analytics layer entirely, the analytics-specific reason for the banner disappears. The banner may still be required for other tools — Meta pixel, Google Ads remarketing, A/B testing platforms that set cookies. Many teams reduce the banner scope (or remove it on pages without ad pixels) once analytics moves to a cookieless layer. The full legal walk-through lives on the consentless analytics pillar.",
   },
   {
     q: "Will my paid agency push back?",
-    a: "Some will. The honest framing: agencies optimise toward the numbers the platform reports. When those numbers are an estimated 13% of EU reality, optimisation rewards channels that consent more, not channels that perform better. Once you and your agency see the SealMetrics numbers alongside the CRM, the conversation moves from defending the GA4 dashboard to which channels actually drove the orders. Most agencies adapt; the ones that don't were defending the tool, not the result.",
+    a: "Some will. The honest framing: agencies optimise toward the numbers the platform reports. When those numbers are an estimated 13% of EU reality, optimisation rewards channels that consent more, not channels that perform better. Once you and your agency see the Sealmetrics numbers alongside the CRM, the conversation moves from defending the GA4 dashboard to which channels actually drove the orders. Most agencies adapt; the ones that don't were defending the tool, not the result.",
   },
   {
     q: "Can we migrate gradually or do we cut over?",
-    a: "Gradually, always. SealMetrics is designed to run alongside GA4 from day one — same script tag pattern, parallel ingest, side-by-side dashboards. After 30 days of comparison, decide per use case where each tool fits. Most teams never fully decommission GA4 because the Google Ads integration is valuable; they just stop making strategic decisions on it.",
+    a: "Gradually, always. Sealmetrics is designed to run alongside GA4 from day one — same script tag pattern, parallel ingest, side-by-side dashboards. After 30 days of comparison, decide per use case where each tool fits. Most teams never fully decommission GA4 because the Google Ads integration is valuable; they just stop making strategic decisions on it.",
   },
 ];
 
@@ -100,13 +100,13 @@ export default function Ga4MigrationPage() {
           author: {
             name: "Rafa Jiménez",
             url: "/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
       <JsonLd
         data={quotationSchema({
-          text: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+          text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
           spokenBy: "Toni Andújar",
           spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
           url: "/use-cases/ga4-migration",
@@ -228,7 +228,7 @@ export default function Ga4MigrationPage() {
                 Marketing wants to query channel performance through
                 ChatGPT, Claude or an internal agent. GA4&rsquo;s
                 Data-Studio path is brittle for agents; the BigQuery
-                export is sampled above thresholds. SealMetrics ships a
+                export is sampled above thresholds. Sealmetrics ships a
                 native MCP server, full-resolution BigQuery, and answers
                 that an agent can quote without a wrapper.
               </p>
@@ -278,32 +278,32 @@ export default function Ga4MigrationPage() {
               {
                 week: "Day 0",
                 title: "Install alongside GA4",
-                body: "Add the 846-byte first-party SealMetrics pixel via the same tag manager you already use for GA4. Configure the CNAME under your own domain (e.g. pixel.yourdomain.com). Verify event firing in the SealMetrics debugger.",
+                body: "Add the 846-byte first-party Sealmetrics pixel via the same tag manager you already use for GA4. Configure the CNAME under your own domain (e.g. pixel.yourdomain.com). Verify event firing in the Sealmetrics debugger.",
               },
               {
                 week: "Day 1",
                 title: "Map the conversion events",
-                body: "Mirror the conversion events you track in GA4 (purchase, lead form, signup) into SealMetrics. For Shopify, WooCommerce, Magento and PrestaShop the order events flow automatically through native integrations.",
+                body: "Mirror the conversion events you track in GA4 (purchase, lead form, signup) into Sealmetrics. For Shopify, WooCommerce, Magento and PrestaShop the order events flow automatically through native integrations.",
               },
               {
                 week: "Week 1",
                 title: "Pull the first reconciliation report",
-                body: "Compare SealMetrics aggregate conversions against the CRM or backend (Shopify orders, WooCommerce orders, your order DB). Compare against GA4 in the same report. Document the gap by channel — direct, organic, paid search, paid social, email.",
+                body: "Compare Sealmetrics aggregate conversions against the CRM or backend (Shopify orders, WooCommerce orders, your order DB). Compare against GA4 in the same report. Document the gap by channel — direct, organic, paid search, paid social, email.",
               },
               {
                 week: "Week 2",
                 title: "Run the first weekly review with marketing",
-                body: "Two columns: GA4 numbers and SealMetrics numbers. Same week. Same channels. Walk through which channels gain share, which lose share, which lose attribution to 'direct' under GA4. The pattern is consistent across customers; the magnitude is yours.",
+                body: "Two columns: GA4 numbers and Sealmetrics numbers. Same week. Same channels. Walk through which channels gain share, which lose share, which lose attribution to 'direct' under GA4. The pattern is consistent across customers; the magnitude is yours.",
               },
               {
                 week: "Week 3",
                 title: "Bring in the agencies",
-                body: "Share the comparison with paid-media agencies. Ask them to interpret the gap. The good ones will engage with the SealMetrics numbers; the ones that resist usually do so because their reporting depends on the GA4 view of their performance.",
+                body: "Share the comparison with paid-media agencies. Ask them to interpret the gap. The good ones will engage with the Sealmetrics numbers; the ones that resist usually do so because their reporting depends on the GA4 view of their performance.",
               },
               {
                 week: "Day 30",
                 title: "Decide what stays where",
-                body: "One meeting, one decision. Most teams settle on: GA4 stays for Google Ads conversion import and Search Console join. SealMetrics becomes the source of truth for revenue, channel mix, paid ROAS, board reporting. Update the dashboards stakeholders see; close the GA4-only views.",
+                body: "One meeting, one decision. Most teams settle on: GA4 stays for Google Ads conversion import and Search Console join. Sealmetrics becomes the source of truth for revenue, channel mix, paid ROAS, board reporting. Update the dashboards stakeholders see; close the GA4-only views.",
               },
             ].map((item) => (
               <li key={item.week} className="flex gap-6">
@@ -355,7 +355,7 @@ export default function Ga4MigrationPage() {
 
             <div className="border border-warm-100 rounded-2xl p-7 bg-white">
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-4">
-                Replace with SealMetrics
+                Replace with Sealmetrics
               </h3>
               <ul className="space-y-3 text-[15px] leading-[1.7] text-ink list-none pl-0">
                 {[
@@ -380,7 +380,7 @@ export default function Ga4MigrationPage() {
               href="/vs-ga4"
               className="text-brand underline decoration-1 underline-offset-2"
             >
-              SealMetrics vs Google Analytics 4
+              Sealmetrics vs Google Analytics 4
             </Link>
             . For the architecture of how 100% capture is possible, see{" "}
             <Link
@@ -428,21 +428,21 @@ export default function Ga4MigrationPage() {
             style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}
           >
             <p className="text-[20px] leading-[1.45] tracking-[-0.01em] font-medium">
-              &ldquo;The data SealMetrics delivers is agnostic, unbiased and neutral. There&rsquo;s no black box.&rdquo;
+              &ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral. There&rsquo;s no black box.&rdquo;
             </p>
             <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
               Toni Andújar · Digital &amp; Direct Sales Director · Palladium Hotel Group
             </cite>
           </blockquote>
           <p className="mt-6 text-[15.5px] leading-[1.65] text-ink-2">
-            Palladium ran SealMetrics alongside their existing GA-tier
+            Palladium ran Sealmetrics alongside their existing GA-tier
             stack for the first month. The audit surfaced 40% of inbound
             traffic with no source/medium attribution in GA, 35% of
             bookings unassigned to a channel, and a +165%
-            Cost-per-Search improvement on Display once the SealMetrics
+            Cost-per-Search improvement on Display once the Sealmetrics
             measurement model drove DV360 decisions. They kept GA as
             the Google Ads conduit and moved revenue decisions to
-            SealMetrics.
+            Sealmetrics.
           </p>
           <Link
             href="/case-studies/palladium-hotel-group"
@@ -475,8 +475,8 @@ export default function Ga4MigrationPage() {
             </em>. Decide al día 30.
           </>
         }
-        ledeEn="Book a 30-minute walkthrough with the founder. We map your GA4 events to SealMetrics live and ship the parallel-run plan tailored to your stack."
-        ledeEs="Reserva 30 min con el founder. Mapeamos tus eventos GA4 a SealMetrics en directo y enviamos el plan de paralelo a tu medida."
+        ledeEn="Book a 30-minute walkthrough with the founder. We map your GA4 events to Sealmetrics live and ship the parallel-run plan tailored to your stack."
+        ledeEs="Reserva 30 min con el founder. Mapeamos tus eventos GA4 a Sealmetrics en directo y enviamos el plan de paralelo a tu medida."
       />
     </>
   );

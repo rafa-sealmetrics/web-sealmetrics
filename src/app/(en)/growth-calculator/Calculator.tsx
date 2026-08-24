@@ -635,11 +635,11 @@ export function Calculator() {
                     );
                   })}
 
-                  {/* SealMetrics bar */}
+                  {/* Sealmetrics bar */}
                   <div className="pt-3 mt-3 border-t border-warm-200">
                     <div className="flex justify-between text-[0.8rem] mb-1.5">
                       <span className="text-text-secondary font-medium">
-                        SealMetrics captures
+                        Sealmetrics captures
                       </span>
                       <span className="font-mono text-green-muted font-medium">
                         {formatNumber(visitors)}

@@ -246,7 +246,7 @@ export function AccessForm() {
         </h2>
         <p className="text-[15px] text-ink-soft leading-[1.6] mt-4">
           If your domain checks out, you&apos;ll receive your demo account user and password at{" "}
-          <span className="text-ink font-semibold">{email}</span> within a few minutes. The email may land in spam — search for &ldquo;SealMetrics&rdquo;.
+          <span className="text-ink font-semibold">{email}</span> within a few minutes. The email may land in spam — search for &ldquo;Sealmetrics&rdquo;.
         </p>
         <p className="text-[13.5px] text-ink-soft leading-[1.55] mt-5">
           Want a guided tour instead?{" "}
@@ -369,7 +369,7 @@ export function AccessForm() {
           >
             Privacy Notice
           </a>{" "}
-          and consent to SealMetrics processing my data to send me demo credentials.
+          and consent to Sealmetrics processing my data to send me demo credentials.
         </label>
       </div>
 

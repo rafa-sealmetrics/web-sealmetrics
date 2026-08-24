@@ -104,7 +104,7 @@ export function CompareSection() {
             </h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            When Palladium Hotel Group compared SealMetrics against their full stack — Meta Pixel, Google Ads, Analytics, their CRM — they discovered 40% of their inbound traffic had no attribution. Not mis-tagged. Not in &ldquo;direct&rdquo;. Source and medium simply lost in transit.
+            When Palladium Hotel Group compared Sealmetrics against their full stack — Meta Pixel, Google Ads, Analytics, their CRM — they discovered 40% of their inbound traffic had no attribution. Not mis-tagged. Not in &ldquo;direct&rdquo;. Source and medium simply lost in transit.
           </p>
         </div>
 
@@ -160,7 +160,7 @@ export function CompareSection() {
                   className="font-semibold text-white leading-[1.15] tracking-[-0.015em]"
                   style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
                 >
-                  With <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>SealMetrics</em> · neutrally observed
+                  With <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Sealmetrics</em> · neutrally observed
                 </h3>
               </div>
               <div
@@ -237,7 +237,7 @@ export function CompareSection() {
             { label: "Sells its own ads", name: "Meta Ads", bias: "Reports with Meta's bias. Attributes the maximum possible to Meta campaigns — because every claimed conversion justifies the next ad euro.", dark: false },
             { label: "Sells its own ads", name: "Google Ads", bias: "Reports with Google's bias. Inflates last-click toward paid search, because paid search is the inventory Google is selling you.", dark: false },
             { label: "Lives inside Google", name: "Google Analytics", bias: "Not sold as an ad product, but part of Google's ecosystem. Samples above threshold. Models what consent-rejection removes.", dark: false },
-            { label: "Sells no inventory", name: "SealMetrics", bias: "No ad business. No channel to favour. Measures what actually happened — which is why agencies, brand and CFO can sign the same number.", dark: true },
+            { label: "Sells no inventory", name: "Sealmetrics", bias: "No ad business. No channel to favour. Measures what actually happened — which is why agencies, brand and CFO can sign the same number.", dark: true },
           ].map((t) => (
             <div
               key={t.name}
@@ -285,13 +285,13 @@ const FEATURED_COPY = {
     badgeMeta: "April 2026 · Hotels · Spain",
     headline: <>From <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>40% blind traffic</em> to{" "}
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>+165%</em> Display efficiency.</>,
-    lede: "Palladium Hotel Group rebuilt their measurement stack on SealMetrics. One number every stakeholder — brand, agencies, departments — signs against.",
+    lede: "Palladium Hotel Group rebuilt their measurement stack on Sealmetrics. One number every stakeholder — brand, agencies, departments — signs against.",
     metrics: [
       { n: "40%", l: "traffic that was invisible to GA4" },
       { n: "35%", l: "bookings recovered & attributed" },
       { n: "+165%", l: "Display CPS improvement on DV360" },
     ],
-    quote: "The data SealMetrics delivers is agnostic, unbiased and neutral. There's no black box.",
+    quote: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
     quoteRole: "Digital & Direct Sales Director · Palladium Hotel Group",
     readFull: "Read the full case study",
     caseUrl: "/case-studies/palladium-hotel-group",
@@ -301,13 +301,13 @@ const FEATURED_COPY = {
     badgeMeta: "Abril 2026 · Hoteles · España",
     headline: <>De <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>40% de tráfico ciego</em> a{" "}
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>+165%</em> de eficiencia en Display.</>,
-    lede: "Palladium Hotel Group reconstruyó su stack de medición sobre SealMetrics. Un único número que cada stakeholder — marca, agencias, departamentos — firma como referencia.",
+    lede: "Palladium Hotel Group reconstruyó su stack de medición sobre Sealmetrics. Un único número que cada stakeholder — marca, agencias, departamentos — firma como referencia.",
     metrics: [
       { n: "40%", l: "del tráfico era invisible para GA4" },
       { n: "35%", l: "de reservas recuperadas y atribuidas" },
       { n: "+165%", l: "mejora Display CPS en DV360" },
     ],
-    quote: "Los datos que da SealMetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
+    quote: "Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
     quoteRole: "Director Digital y Venta Directa · Palladium Hotel Group",
     readFull: "Leer el caso completo",
     caseUrl: "/es/case-studies/palladium-hotel-group",
@@ -729,7 +729,7 @@ const URGENCY_COPY = {
     headline: <>The average eCommerce loses 58% of its data.{" "}
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
-    body: "Every day without SealMetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
+    body: "Every day without Sealmetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
     foot: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
   },
   es: {
@@ -737,7 +737,7 @@ const URGENCY_COPY = {
     headline: <>El eCommerce medio pierde el 58% de sus datos.{" "}
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
-    body: "Cada día sin SealMetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
+    body: "Cada día sin Sealmetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
     foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
   },
 } as const;
@@ -821,7 +821,7 @@ const PRICING_COPY = {
     cta: "Start 14-day trial",
     enterpriseCta: "Talk to us",
     quote: <>&ldquo;Recovered 35% of bookings without attribution.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
-    foot: <>For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. SealMetrics gives you enterprise-grade data without the enterprise contract.</>,
+    foot: <>For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. Sealmetrics gives you enterprise-grade data without the enterprise contract.</>,
     demoHref: "/demo",
   },
   es: {
@@ -846,7 +846,7 @@ const PRICING_COPY = {
     cta: "Prueba de 14 días",
     enterpriseCta: "Habla con nosotros",
     quote: <>&ldquo;Recuperaron el 35% de las reservas sin atribución.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
-    foot: <>De referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics arranca en 100.000$/año</b>. SealMetrics te da dato enterprise sin contrato enterprise.</>,
+    foot: <>De referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics arranca en 100.000$/año</b>. Sealmetrics te da dato enterprise sin contrato enterprise.</>,
     demoHref: "/es/demo",
   },
 } as const;

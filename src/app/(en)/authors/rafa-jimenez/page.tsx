@@ -9,28 +9,28 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Rafa Jiménez — Founder & CEO of SealMetrics",
+  title: "Rafa Jiménez — Founder & CEO of Sealmetrics",
   description:
-    "20+ years in European eCommerce analytics. Founder of SealMetrics, digital marketer, agency founder and analytics architect.",
+    "20+ years in European eCommerce analytics. Founder of Sealmetrics, digital marketer, agency founder and analytics architect.",
   alternates: {
     canonical: "https://sealmetrics.com/authors/rafa-jimenez/",
     languages: getAlternates("/authors/rafa-jimenez"),
   },
   openGraph: {
-    title: "Rafa Jiménez — Founder & CEO of SealMetrics",
+    title: "Rafa Jiménez — Founder & CEO of Sealmetrics",
     description:
-      "20+ years in European eCommerce analytics. Founder of SealMetrics.",
+      "20+ years in European eCommerce analytics. Founder of Sealmetrics.",
     type: "profile",
     images: [ogImage("/authors/rafa-jimenez/")],
     url: "https://sealmetrics.com/authors/rafa-jimenez/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Rafa Jiménez — Founder & CEO of SealMetrics",
-    description: "20+ years in European eCommerce analytics. Founder of SealMetrics.",
+    title: "Rafa Jiménez — Founder & CEO of Sealmetrics",
+    description: "20+ years in European eCommerce analytics. Founder of Sealmetrics.",
     images: [ogImage("/authors/rafa-jimenez/")],
   },
 };
@@ -47,9 +47,9 @@ export default function Page() {
       <JsonLd
         data={personSchema({
           name: "Rafa Jiménez",
-          jobTitle: "Founder & CEO, SealMetrics",
+          jobTitle: "Founder & CEO, Sealmetrics",
           description:
-            "20+ years in European eCommerce analytics. Founder of SealMetrics, a cookieless, first-party analytics platform hosted in Dublin. Former digital marketer, agency founder and advisor to European retail groups.",
+            "20+ years in European eCommerce analytics. Founder of Sealmetrics, a cookieless, first-party analytics platform hosted in Dublin. Former digital marketer, agency founder and advisor to European retail groups.",
           url: "/authors/rafa-jimenez",
           sameAs: [
             "https://www.linkedin.com/in/rafajimenez/",
@@ -79,19 +79,19 @@ export default function Page() {
             Rafa Jiménez — <em>founder-led analytics for Europe.</em>
           </h1>
           <p className="text-ink-soft mt-8 max-w-[68ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            Two decades in European eCommerce analytics. Founder &amp; CEO of SealMetrics. Writes about GDPR-compliant attribution, cookieless infrastructure and why reconciling three sets of numbers is not a job.
+            Two decades in European eCommerce analytics. Founder &amp; CEO of Sealmetrics. Writes about GDPR-compliant attribution, cookieless infrastructure and why reconciling three sets of numbers is not a job.
           </p>
         </div>
       </section>
 
       <TldrBlock
         answer={
-          <>Rafa Jiménez is the founder and CEO of <strong>SealMetrics</strong>, a European cookieless web analytics platform hosted in Dublin. He spent 20+ years in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups — before building SealMetrics to solve the problem he kept seeing: teams making revenue decisions on data that GA4, the pixel and the CRM all reported differently.</>
+          <>Rafa Jiménez is the founder and CEO of <strong>Sealmetrics</strong>, a European cookieless web analytics platform hosted in Dublin. He spent 20+ years in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups — before building Sealmetrics to solve the problem he kept seeing: teams making revenue decisions on data that GA4, the pixel and the CRM all reported differently.</>
         }
         bullets={[
-          <>Founded SealMetrics in 2020 to give European eCommerce teams a single, defensible source of truth.</>,
+          <>Founded Sealmetrics in 2020 to give European eCommerce teams a single, defensible source of truth.</>,
           <>Writes at the intersection of GDPR law, revenue attribution and analytics infrastructure.</>,
-          <>Publishes educational content on the <Link href="/blog" className="text-brand hover:underline">SealMetrics blog</Link> and <Link href="/glossary" className="text-brand hover:underline">glossary</Link>.</>,
+          <>Publishes educational content on the <Link href="/blog" className="text-brand hover:underline">Sealmetrics blog</Link> and <Link href="/glossary" className="text-brand hover:underline">glossary</Link>.</>,
         ]}
       />
 
@@ -108,7 +108,7 @@ export default function Page() {
               After founding an agency and advising retail groups, the pattern became impossible to ignore. The problem wasn&apos;t the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
-              SealMetrics was built to replace reconciliation with a single neutral layer — first-party, cookieless, EU-hosted. Compliance-by-architecture, not by a banner layer bolted on afterwards.
+              Sealmetrics was built to replace reconciliation with a single neutral layer — first-party, cookieless, EU-hosted. Compliance-by-architecture, not by a banner layer bolted on afterwards.
             </p>
           </div>
         </div>
@@ -142,10 +142,10 @@ export default function Page() {
           <h2 className="h-section mt-5">Where to <em>read more.</em></h2>
           <ul className="mt-10 space-y-4 text-[16px] text-ink-2">
             <li>
-              — <Link href="/blog" className="text-brand hover:underline">SealMetrics blog</Link> — essays on attribution, compliance and European analytics
+              — <Link href="/blog" className="text-brand hover:underline">Sealmetrics blog</Link> — essays on attribution, compliance and European analytics
             </li>
             <li>
-              — <Link href="/glossary" className="text-brand hover:underline">SealMetrics glossary</Link> — technical definitions curated for EU eCommerce teams
+              — <Link href="/glossary" className="text-brand hover:underline">Sealmetrics glossary</Link> — technical definitions curated for EU eCommerce teams
             </li>
             <li>
               — <Link href="/case-studies" className="text-brand hover:underline">Customer case studies</Link> — how teams replaced or complemented GA4 with complete data

@@ -16,23 +16,23 @@ const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "WooCommerce analytics without cookies — SealMetrics plugin",
+  title: "WooCommerce analytics without cookies — Sealmetrics plugin",
   description:
-    "Install the SealMetrics WooCommerce plugin from a ZIP download. Cookieless, no order IDs stored externally, no consent banner required for the analytics layer.",
+    "Install the Sealmetrics WooCommerce plugin from a ZIP download. Cookieless, no order IDs stored externally, no consent banner required for the analytics layer.",
   openGraph: {
-    title: "WooCommerce analytics without cookies — SealMetrics plugin",
+    title: "WooCommerce analytics without cookies — Sealmetrics plugin",
     description:
       "WordPress plugin install from a GitHub release, full e-commerce funnel coverage, aggregate reconciliation for finance teams.",
     type: "article",
     images: [ogImage("/platforms/woocommerce/")],
     url: "https://sealmetrics.com/platforms/woocommerce/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "WooCommerce analytics without cookies — SealMetrics plugin",
+    title: "WooCommerce analytics without cookies — Sealmetrics plugin",
     description: "WordPress plugin install, WooCommerce hook coverage, and the order_id reconciliation pattern for finance teams.",
     images: [ogImage("/platforms/woocommerce/")],
   },
@@ -52,8 +52,8 @@ const events = [
 
 const faqs = [
   {
-    q: "How is the SealMetrics plugin different from the WooCommerce GA plugin?",
-    a: "WooCommerce's official Google Analytics integration depends on GA4's cookie-based tracking — and inherits the 40–60% consent-rejection loss. SealMetrics installs as a separate WordPress plugin, hooks into the same WooCommerce action surface, and writes no cookie. Both can run side by side: keep the GA plugin for Google Ads conversion import, run SealMetrics for revenue and channel decisions.",
+    q: "How is the Sealmetrics plugin different from the WooCommerce GA plugin?",
+    a: "WooCommerce's official Google Analytics integration depends on GA4's cookie-based tracking — and inherits the 40–60% consent-rejection loss. Sealmetrics installs as a separate WordPress plugin, hooks into the same WooCommerce action surface, and writes no cookie. Both can run side by side: keep the GA plugin for Google Ads conversion import, run Sealmetrics for revenue and channel decisions.",
   },
   {
     q: "Does it support WooCommerce Subscriptions and Bookings?",
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "Will I need to change my consent banner setup?",
-    a: "Not necessarily. If SealMetrics is the only analytics on the site, the analytics-specific reason for the banner disappears (the plugin sets no cookie, stores no localStorage). If you also run ad pixels or A/B testing tools that do set cookies, those still require consent. Many WooCommerce stores shrink the banner scope to those specific products instead of running a catch-all banner.",
+    a: "Not necessarily. If Sealmetrics is the only analytics on the site, the analytics-specific reason for the banner disappears (the plugin sets no cookie, stores no localStorage). If you also run ad pixels or A/B testing tools that do set cookies, those still require consent. Many WooCommerce stores shrink the banner scope to those specific products instead of running a catch-all banner.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function WooCommercePlatformPage() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/platforms/woocommerce",
-          name: "WooCommerce analytics without cookies — SealMetrics plugin",
+          name: "WooCommerce analytics without cookies — Sealmetrics plugin",
         })}
       />
       <JsonLd
@@ -98,12 +98,12 @@ export default function WooCommercePlatformPage() {
           headline:
             "WooCommerce analytics without cookies — install, hooks, and order reconciliation",
           description:
-            "Install the SealMetrics WooCommerce plugin from a GitHub release ZIP. Cookieless capture, full WooCommerce hook coverage, aggregate reconciliation for finance teams.",
+            "Install the Sealmetrics WooCommerce plugin from a GitHub release ZIP. Cookieless capture, full WooCommerce hook coverage, aggregate reconciliation for finance teams.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/platforms/woocommerce",
           category: "Integration",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
 
@@ -130,7 +130,7 @@ export default function WooCommercePlatformPage() {
       <TldrBlock
         answer={
           <>
-            SealMetrics for WooCommerce installs as a standard
+            Sealmetrics for WooCommerce installs as a standard
             WordPress plugin from a downloaded ZIP file. It
             subscribes to the WooCommerce action hooks —
             {" "}<code>woocommerce_add_to_cart</code>,
@@ -139,7 +139,7 @@ export default function WooCommercePlatformPage() {
             event as an aggregate, anonymous count with channel and
             campaign metadata. No cookie is set. No customer email is
             collected. No banner is required for the analytics layer.
-            SealMetrics does not store the WooCommerce order ID
+            Sealmetrics does not store the WooCommerce order ID
             externally, so reconciliation with your WooCommerce
             reports happens at the aggregate/channel level.
           </>
@@ -163,15 +163,15 @@ export default function WooCommercePlatformPage() {
           </p>
 
           <ol className="mt-10 space-y-5 text-[15.5px] leading-[1.7] text-ink list-decimal pl-6">
-            <li>Download the plugin ZIP from SealMetrics&rsquo; GitHub releases.</li>
+            <li>Download the plugin ZIP from Sealmetrics&rsquo; GitHub releases.</li>
             <li>WordPress admin → Plugins → Add New → Upload Plugin → select the ZIP → Install Now → Activate.</li>
-            <li>Go to Settings → SealMetrics and paste your Account ID (from the SealMetrics dashboard).</li>
+            <li>Go to Settings → Sealmetrics and paste your Account ID (from the Sealmetrics dashboard).</li>
             <li>
               Optionally set a custom pixel domain under your own
               domain for first-party tracking — this keeps the
               request invisible to ad blockers.
             </li>
-            <li>Save. The plugin starts ingesting on the next pageview. Verify in the SealMetrics debugger.</li>
+            <li>Save. The plugin starts ingesting on the next pageview. Verify in the Sealmetrics debugger.</li>
           </ol>
 
           <p className="mt-8 text-[14.5px] leading-[1.65] text-ink-soft">
@@ -197,7 +197,7 @@ export default function WooCommercePlatformPage() {
             <table className="w-full text-[14.5px] border-collapse">
               <thead>
                 <tr className="border-b border-warm-200 text-left">
-                  <th className="py-3 pr-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">SealMetrics event</th>
+                  <th className="py-3 pr-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">Sealmetrics event</th>
                   <th className="py-3 px-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">WordPress / WooCommerce hook</th>
                   <th className="py-3 pl-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft font-semibold">What it carries</th>
                 </tr>
@@ -246,7 +246,7 @@ export default function WooCommercePlatformPage() {
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
               <h3 className="text-[16px] font-semibold text-ink mb-3">Why not order-by-order</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                SealMetrics does not store the WooCommerce order ID
+                Sealmetrics does not store the WooCommerce order ID
                 externally — that&rsquo;s deliberate, part of the
                 same privacy-first design that keeps the analytics
                 layer cookieless. Reconciliation happens at the
@@ -289,7 +289,7 @@ export default function WooCommercePlatformPage() {
               className="group block border border-warm-100 rounded-xl p-7 bg-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
             >
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Platform</span>
-              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">SealMetrics for Shopify</h3>
+              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Sealmetrics for Shopify</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
                 Equivalent install pattern for stores on Shopify or Shopify Plus.
               </p>
@@ -301,7 +301,7 @@ export default function WooCommercePlatformPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Use case</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">GA4 migration — 30-day parallel plan</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                Run SealMetrics alongside the WooCommerce GA plugin without breaking Google Ads.
+                Run Sealmetrics alongside the WooCommerce GA plugin without breaking Google Ads.
               </p>
             </Link>
           </div>

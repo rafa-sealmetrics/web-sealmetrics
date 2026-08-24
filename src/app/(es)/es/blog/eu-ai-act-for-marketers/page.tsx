@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "¿Proveedor o responsable del despliegue? Qué exige realmente la transparencia del artículo 50, qué recae en quien publica el modelo y un checklist para el 2 de agosto de 2026.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/eu-ai-act-for-marketers/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     images: ["https://sealmetrics.com/og/blog/eu-ai-act-for-marketers.png"],
   },
@@ -87,7 +87,7 @@ export default function EuAiActForMarketersPageEs() {
           author: {
             name: "Rafa Jiménez",
             url: "/es/authors/rafa-jimenez",
-            jobTitle: "Founder, SealMetrics",
+            jobTitle: "Founder, Sealmetrics",
           },
         })}
       />
@@ -342,7 +342,7 @@ export default function EuAiActForMarketersPageEs() {
               <code className="font-mono text-[0.9em]">gpt-oss-120b</code>, bajo
               licencia Apache 2.0, alojado en Scaleway Generative APIs en París,
               Francia. Scaleway es una empresa francesa cuya matriz es el grupo
-              Iliad, sin capital estadounidense. Como plataforma, SealMetrics es
+              Iliad, sin capital estadounidense. Como plataforma, Sealmetrics es
               responsable del despliegue de un sistema de IA de riesgo limitado,
               y lo decimos con claridad en lugar de insinuar que el asistente es
               algo distinto de un modelo leyendo tus informes. El desarrollo

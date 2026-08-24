@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "¿Qué es el tracking server-side?",
     description: "Procesa la analítica en el servidor, evitando bloqueadores y limitaciones del cliente.",
     url: "https://sealmetrics.com/es/glossary/server-side-tracking/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "es_ES",
     type: "article",
     images: [ogImage("/es/glossary/server-side-tracking/")],
@@ -68,13 +68,13 @@ export default function ServerSideTrackingEsPage() {
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="SealMetrics cuenta los eventos en el servidor por una ruta first-party propia. Mira qué llega cuando nada lo bloquea." />
+        <CommercialModule locale="es" hook="Sealmetrics cuenta los eventos en el servidor por una ruta first-party propia. Mira qué llega cuando nada lo bloquea." />
 
         <RelatedGlossaryTerms slug="server-side-tracking" locale="es" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona SealMetrics</Link> &middot; <Link href="/es/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Analítica sin cookies explicada</Link>
+            Más: <Link href="/es/how-it-works" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Cómo funciona Sealmetrics</Link> &middot; <Link href="/es/blog/cookieless-analytics-explained" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Analítica sin cookies explicada</Link>
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function ServerSideTrackingEsPage() {
               El tracking server-side procesa los eventos de analítica en un servidor que tú controlas en lugar de dentro del navegador del visitante. Un enganche mínimo en el cliente (o una baliza servidor a servidor para eventos de backend, como los pedidos de Shopify) envía la señal en bruto a tu propio endpoint; el procesamiento, el enriquecimiento y el almacenamiento ocurren en el servidor. Como la petición nunca sale del origen first-party y ningún script queda expuesto a las listas de reglas de los bloqueadores, el camino del dato resiste la pérdida de aproximadamente el 40% que provocan uBlock, Brave y los bloqueadores de contenido de iOS Safari.
             </p>
             <p>
-              Server-side no significa automáticamente «sin cookies». Un tracker server-side puede seguir fijando una cookie first-party o generar un identificador de visitante, y en ese momento activa el art. 5(3) de ePrivacy y requiere consentimiento. SealMetrics es server-side Y sin cookies: los eventos se cuentan de forma agregada sin ningún identificador por visitante, y eso es lo que hace la arquitectura a la vez resistente y libre de consentimiento.
+              Server-side no significa automáticamente «sin cookies». Un tracker server-side puede seguir fijando una cookie first-party o generar un identificador de visitante, y en ese momento activa el art. 5(3) de ePrivacy y requiere consentimiento. Sealmetrics es server-side Y sin cookies: los eventos se cuentan de forma agregada sin ningún identificador por visitante, y eso es lo que hace la arquitectura a la vez resistente y libre de consentimiento.
             </p>
           </QuickAnswer>
         </div>

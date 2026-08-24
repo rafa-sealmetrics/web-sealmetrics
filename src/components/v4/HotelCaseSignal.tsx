@@ -27,7 +27,7 @@ export function HotelCaseSignal({ slug, locale }: { slug: HotelCaseSlug; locale:
   return <>
     <JsonLd data={breadcrumbSchema([{ name: casesLabel, url: `${prefix}/case-studies` }, { name: c.client, url: route }], locale)} />
     <JsonLd data={casePersonSchema({ name:c.person, jobTitle:c.role, worksForName:c.client, worksForUrl:c.companyUrl, caseUrl:route, caseName:c.title })} />
-    <JsonLd data={articleSchema({ headline:c.title, description:c.description, datePublished:"2026-04-15", dateModified:"2026-04-15", url:route, category:casesLabel, author:{ name:"SealMetrics", url:`${prefix}/about` }, image:"https://sealmetrics.com/og-image.png" })} />
+    <JsonLd data={articleSchema({ headline:c.title, description:c.description, datePublished:"2026-04-15", dateModified:"2026-04-15", url:route, category:casesLabel, author:{ name:"Sealmetrics", url:`${prefix}/about` }, image:"https://sealmetrics.com/og-image.png" })} />
     {c.metrics.map(metric => <JsonLd key={metric.label} data={statisticClaimSchema({ text:`${metric.value} — ${metric.label}. ${metric.note}`, source:c.sourceText, sourceAuthor:c.client, sourceDate:"2026-04-15", url:route, numericValue:metric.numericValue, unit:"PERCENT" })} />)}
     <JsonLd data={quotationSchema({ text:c.quote, spokenBy:c.person, spokenByRole:`${c.role} · ${c.client}`, url:route })} />
     <JsonLd data={quotationSchema({ text:c.secondQuote, spokenBy:c.person, spokenByRole:`${c.role} · ${c.client}`, url:route })} />
@@ -66,7 +66,7 @@ export function CaseStudyIndexSignal({ locale }: { locale: HotelCaseLocale }) {
   return <>
     <JsonLd data={breadcrumbSchema([{ name:label, url:`${prefix}/case-studies` }], locale)} />
     <JsonLd data={collectionPageSchema({ name:label, description:intro, url:`${prefix}/case-studies` })} />
-    <JsonLd data={itemListSchema({ name:`SealMetrics ${label}`, description:intro, url:`${prefix}/case-studies`, items:cases.map(({slug,data})=>({ name:data.client, url:`https://sealmetrics.com${prefix}/case-studies/${slug}/` })) })} />
+    <JsonLd data={itemListSchema({ name:`Sealmetrics ${label}`, description:intro, url:`${prefix}/case-studies`, items:cases.map(({slug,data})=>({ name:data.client, url:`https://sealmetrics.com${prefix}/case-studies/${slug}/` })) })} />
     {cases.map(({data})=><JsonLd key={data.client} data={reviewSchema({ reviewBody:data.quote, authorName:data.person, authorRole:`${data.role} · ${data.client}` })} />)}
     <main className="sig-case-page sig-case-index">
       <section className="sig-case-index-hero"><nav className="sig-case-breadcrumbs" aria-label="Breadcrumb"><Link href={`${prefix}/`}>{locale === "es" ? "Inicio" : "Home"}</Link><span>/</span><span>{label}</span></nav><p className="sig-case-eyebrow"><span>{label}</span></p><h1>{title}</h1><p>{intro}</p></section>

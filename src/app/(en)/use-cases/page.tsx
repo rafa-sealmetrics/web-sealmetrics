@@ -9,7 +9,7 @@ import { ogImage } from "@/lib/seo/og";
 
 const TITLE = "Analytics use cases — cookieless measurement tasks";
 const DESCRIPTION =
-  "The three jobs teams hire SealMetrics for: last-click revenue attribution, cookieless conversion tracking, and migrating off GA4. Each with the real trade-offs.";
+  "The three jobs teams hire Sealmetrics for: last-click revenue attribution, cookieless conversion tracking, and migrating off GA4. Each with the real trade-offs.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Revenue attribution, conversion tracking and GA4 migration — the task-level guides, including what each approach does not do.",
     url: "https://sealmetrics.com/use-cases/",
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
     type: "website",
     images: [ogImage("/use-cases/")],
@@ -73,7 +73,7 @@ export default function Page() {
       />
       <JsonLd
         data={itemListSchema({
-          name: "SealMetrics analytics use cases",
+          name: "Sealmetrics analytics use cases",
           description:
             "Task-level guides for revenue attribution, conversion tracking and GA4 migration on cookieless data.",
           url: "/use-cases",
@@ -93,12 +93,12 @@ export default function Page() {
 
           <QuickAnswer>
             <p>
-              Three measurement jobs account for almost every SealMetrics
+              Three measurement jobs account for almost every Sealmetrics
               deployment: attributing revenue to channels, tracking conversions
               on sites that cannot rely on cookies, and replacing GA4 without
               losing a quarter of reporting. Each page below covers the setup,
               the data model, and the limits — including what the approach does
-              not measure. SealMetrics is aggregate, anonymous, event-level
+              not measure. Sealmetrics is aggregate, anonymous, event-level
               measurement: it attributes revenue last-click across the full
               dataset, and it does not reconstruct individual sessions or
               customer journeys. If your requirement is per-user journey
@@ -146,7 +146,7 @@ export default function Page() {
             <Link href="/vs" className="text-brand">
               the comparisons
             </Link>{" "}
-            put SealMetrics next to GA4, GA360, Adobe Analytics and Piwik PRO.
+            put Sealmetrics next to GA4, GA360, Adobe Analytics and Piwik PRO.
           </p>
         </div>
       </section>
