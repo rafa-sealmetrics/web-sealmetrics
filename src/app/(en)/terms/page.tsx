@@ -504,9 +504,16 @@ export default function TermsPage() {
               <strong className="text-text-primary">99.9%</strong> (excluding
               scheduled maintenance). Scheduled maintenance is notified with reasonable notice; emergency maintenance may be
               performed without prior notice. For Scale and Enterprise
-              plans, specific SLAs may apply (availability commitments,
-              credits for non-compliance, support response times),
-              established in separate agreements.
+              plans, the{" "}
+              <a href="/sla/" className="underline">
+                Sealmetrics Service Level Agreement
+              </a>{" "}
+              applies: availability commitments per service plane (measurement
+              ingestion and dashboard/API), service credits as the sole remedy
+              (consistent with Section 14 and clause 8.3 of the DPA) and
+              support response times by severity. For the Agentic and Growth
+              plans, the availability figure above is an operational target
+              with no contractual credit entitlement.
             </p>
             <Tbl
               rows={[

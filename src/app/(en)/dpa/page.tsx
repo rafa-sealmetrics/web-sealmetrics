@@ -362,7 +362,7 @@ export default function DpaPage() {
             <Tbl
               rows={[
                 ["Data", "Retention (automatic TTL)"],
-                ["Event-level technical log (user agent, full URLs)", "1 day"],
+                ["Event-level technical log (full URLs; raw user agent not retained)", "1 day"],
                 ["Hourly aggregates", "90 days"],
                 ["Daily aggregates, conversions and properties", "24 months"],
                 ["Session state (operational memory)", "2 hours"],
