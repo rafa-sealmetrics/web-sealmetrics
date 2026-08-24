@@ -506,10 +506,17 @@ export default function TermsEsPage() {
             <strong className="text-text-primary">99.9%</strong> (excluido
             mantenimiento programado). Los mantenimientos programados se
             notifican con antelación razonable; los mantenimientos
-            de emergencia pueden realizarse sin previo aviso. Para planes
-            Scale y Enterprise pueden aplicar SLAs específicos (compromisos
-            de disponibilidad, créditos por incumplimiento, tiempos de
-            respuesta de soporte), establecidos en acuerdos separados.
+            de emergencia pueden realizarse sin previo aviso. Para los planes
+            Scale y Enterprise aplica el{" "}
+            <a href="/es/sla/" className="underline">
+              Acuerdo de Nivel de Servicio de Sealmetrics
+            </a>
+            : compromisos de disponibilidad por plano de servicio (ingesta de
+            medición y panel/API), créditos de servicio como remedio único (en
+            coherencia con la Sección 14 y la cláusula 8.3 del DPA) y tiempos
+            de respuesta de soporte por severidad. Para los planes Agentic y
+            Growth, la cifra de disponibilidad anterior es un objetivo
+            operativo sin derecho contractual a créditos.
           </p>
           <Tbl
             rows={[
