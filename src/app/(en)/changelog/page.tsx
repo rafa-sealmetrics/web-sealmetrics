@@ -44,7 +44,7 @@ const entries = [
       {
         title: "Click IDs are no longer stored",
         type: "Improved",
-        desc: "Ad-platform click identifiers (gclid, fbclid, msclkid and the like) are now used only at the moment of the visit to attribute the channel, and are never stored — not as a field, not inside stored URLs. Campaign attribution for Google Ads, Meta and others works exactly as before. If you use the raw-data endpoints or the BigQuery export, the click ID field now comes back empty: that's not a bug, that's privacy.",
+        desc: "Ad-platform click identifiers (gclid, fbclid, msclkid and the like) are now used only at the moment of the visit to attribute the channel, and are never stored — not as a field, not inside stored URLs. Campaign attribution for Google Ads, Meta and others works exactly as before. If you use the raw-data endpoints or the BigQuery export, the click ID field is gone from the responses (NULL in existing BigQuery tables): that's not a bug, that's privacy.",
       },
       {
         title: "Raw User-Agents and IPs removed from storage and server logs",
