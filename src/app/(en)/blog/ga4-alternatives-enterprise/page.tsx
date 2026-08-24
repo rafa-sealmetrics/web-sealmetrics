@@ -171,7 +171,7 @@ export default function GA4AlternativesEnterprisePage() {
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Comparisons
-            </span >
+            </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               7 GA4 Alternatives for eCommerce Teams in 2026
             </h1>
@@ -181,53 +181,53 @@ export default function GA4AlternativesEnterprisePage() {
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
               <time className="font-mono">March 2, 2026</time>
               <span>10 min read</span>
-              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span >
-            </div >
+              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
+            </div>
           </header>
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
               Key Takeaways
-            </h2 >
+            </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li >
+              <li>
                 GA4 captures approximately 13% of actual EU eCommerce traffic
                 after accounting for consent rejection (40-60%), ad blockers
                 (40%+), and data sampling. Revenue attribution built on this data
                 is structurally incomplete.
-              </li >
-              <li >
+              </li>
+              <li>
                 Enterprise alternatives split into two categories:
                 cookie-dependent platforms (GA360, Adobe, Piwik PRO) that
                 improve on GA4 but still lose 40-60% of EU traffic, and
                 cookieless platforms (Sealmetrics) that capture 100%.
-              </li >
-              <li >
+              </li>
+              <li>
                 Amplitude and Mixpanel are product analytics tools, not web
                 analytics replacements. They excel at in-app behavior but do not
                 measure traditional web metrics like traffic sources or campaign
                 attribution.
-              </li >
-              <li >
+              </li>
+              <li>
                 The total cost gap between platforms spans 25x or more. GA360
                 costs $150K+/yr for ~35% EU data capture. Sealmetrics costs
                 {"\u20ac"}5,988/yr for 100% data capture. The relevant comparison
                 is cost per accurate data point.
-              </li >
-            </ul >
-          </div >
+              </li>
+            </ul>
+          </div>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
-            <p >
+            <p>
               GA4 works well for small and mid-sized websites with modest
               reporting needs. It is free, well-documented, and deeply integrated
               with Google Ads. But for eCommerce teams managing revenue
               attribution, campaign optimization, and budget allocation across
               European markets, GA4 creates a specific set of problems that no
               amount of configuration can solve.
-            </p >
+            </p>
 
-            <p >
+            <p>
               The core issue is structural. GA4 depends on cookies. Cookies
               require{" "}
               <Link
@@ -235,14 +235,14 @@ export default function GA4AlternativesEnterprisePage() {
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 consent
-              </Link >
+              </Link>
               . In the EU, 40-60% of visitors reject cookies. Before{" "}
               <Link
                 href="/glossary/data-sampling"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 data sampling
-              </Link >{" "}
+              </Link>{" "}
               and ad blockers even enter the picture, GA4 has already lost a
               third to half of your traffic. For eCommerce, that means revenue
               attribution, conversion rates, and{" "}
@@ -251,13 +251,13 @@ export default function GA4AlternativesEnterprisePage() {
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 every downstream metric
-              </Link >{" "}
+              </Link>{" "}
               is built on a fraction of reality.
-            </p >
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               Quick comparison
-            </h2 >
+            </h2>
 
             <div className="overflow-x-auto my-6">
               <table className="w-full text-[0.8rem]">
@@ -265,17 +265,17 @@ export default function GA4AlternativesEnterprisePage() {
                   <tr className="border-b border-warm-200">
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
                       Platform
-                    </th >
+                    </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
                       Pricing
-                    </th >
+                    </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
                       EU Data Capture
-                    </th >
+                    </th>
                     <th className="text-left py-3 pr-4 text-text-tertiary font-medium">
                       Choose If
-                    </th >
-                  </tr >
+                    </th>
+                  </tr>
                 </thead>
                 <tbody>
                   {alternatives.map((alt) => (
@@ -285,187 +285,187 @@ export default function GA4AlternativesEnterprisePage() {
                     >
                       <td className="py-3 pr-4 text-text-body font-medium">
                         {alt.name}
-                      </td >
+                      </td>
                       <td className="py-3 pr-4 text-text-body font-mono text-[0.75rem]">
                         {alt.pricing}
-                      </td >
+                      </td>
                       <td className="py-3 pr-4 text-text-body font-mono text-[0.75rem]">
                         {alt.dataCompleteness}
-                      </td >
+                      </td>
                       <td className="py-3 pr-4 text-text-secondary">
                         {alt.chooseIf.split(".")[0]}
-                      </td >
-                    </tr >
+                      </td>
+                    </tr>
                   ))}
                 </tbody>
               </table>
-            </div >
+            </div>
 
             {/* Individual alternatives */}
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               1. Google Analytics 360
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <a
                 href="https://marketingplatform.google.com/about/analytics-360/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GA360
-              </a >{" "}
+              </a>{" "}
               is the enterprise tier of Google Analytics. It addresses
               GA4&rsquo;s most visible limitations: higher sampling thresholds,
               native BigQuery export, guaranteed SLAs, and a dedicated account
               manager. For organizations deeply invested in Google Ads and Data Studio
               Studio, GA360 offers integration that no competitor matches.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     $150,000+/yr
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
-                  <span className="font-mono text-text-primary">~30-35%</span >
-                </div >
-                <div >
+                  </span>{" "}
+                  <span className="font-mono text-text-primary">~30-35%</span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     US processing, DPA required
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Enhanced eCommerce, BigQuery
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               The fundamental limitation remains: GA360 is cookie-dependent. In
               European eCommerce, this means 40-60% data loss persists regardless
               of spend. At $150K+ per year, the question is whether your budget
               produces complete data or better estimates.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[0].chooseIf}
-            </p >
+            </p>
 
-            <p >
+            <p>
               <Link
                 href="/vs/ga360"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 Full Sealmetrics vs GA360 comparison
-              </Link >
-            </p >
+              </Link>
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               2. Adobe Analytics
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <a
                 href="https://business.adobe.com/products/analytics/adobe-analytics.html"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Adobe Analytics
-              </a >{" "}
+              </a>{" "}
               offers the deepest segmentation capabilities in the market.
               Analysis Workspace is purpose-built for enterprise reporting, and
               cross-product integration within Adobe Experience Cloud creates a
               unified marketing intelligence layer.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     $100,000+/yr
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
-                  <span className="font-mono text-text-primary">~30%</span >
-                </div >
-                <div >
+                  </span>{" "}
+                  <span className="font-mono text-text-primary">~30%</span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Configurable, legal review needed
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Advanced segmentation, calculated metrics
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               The trade-offs are significant. Implementation takes 3-6 months
               with specialized consultants. Pricing starts above $100K and scales
               with server calls. And like every cookie-dependent platform, Adobe
               faces the same 40-60% EU data gap.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[1].chooseIf}
-            </p >
+            </p>
 
-            <p >
+            <p>
               <Link
                 href="/vs/adobe-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 Full Sealmetrics vs Adobe Analytics comparison
-              </Link >
-            </p >
+              </Link>
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               3. Sealmetrics
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <Link
                 href="/product"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 Sealmetrics
-              </Link >{" "}
+              </Link>{" "}
               takes a fundamentally different architectural approach. Instead of
               collecting data through browser-side cookies and then mitigating
               consent loss, Sealmetrics uses{" "}
@@ -474,47 +474,47 @@ export default function GA4AlternativesEnterprisePage() {
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 cookieless analytics
-              </Link >{" "}
+              </Link>{" "}
               to capture 100% of traffic. No cookies are set. No personal data is
               collected. No consent banner is required.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     From {"\u20ac"}499/mo billed annually ({"\u20ac"}5,988/yr)
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
-                  <span className="font-mono text-text-primary">100%</span >
-                </div >
-                <div >
+                  </span>{" "}
+                  <span className="font-mono text-text-primary">100%</span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     By design — no PII, EU-only
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Revenue attribution, LENS AI, agent analytics
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               For EU eCommerce companies prioritizing data completeness,
               Sealmetrics offers enterprise-grade capabilities at a fraction of
               legacy enterprise pricing. Last-click revenue attribution is built
@@ -522,37 +522,37 @@ export default function GA4AlternativesEnterprisePage() {
               analytics questions in plain language, grounded in your complete data. Agent analytics
               separates AI bot traffic from human visitors. Data is processed and
               stored exclusively in the EU.
-            </p >
+            </p>
 
-            <p >
+            <p>
               The platform is newer than Google or Adobe, with a smaller
               ecosystem and no native Google Ads integration (data export
               available). For teams whose primary need is accurate measurement of
               EU eCommerce performance, the trade-off favors completeness.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[2].chooseIf}
-            </p >
+            </p>
 
-            <p >
+            <p>
               <Link
                 href="/how-it-works"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 How Sealmetrics works
-              </Link >{" "}
+              </Link>{" "}
               /{" "}
               <Link
                 href="/for/ecommerce"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 Sealmetrics for eCommerce
-              </Link >
-            </p >
+              </Link>
+            </p>
 
             <CommercialModule
               hook="Comparing alternatives on vendor claims? Run Sealmetrics next to GA4 on your own traffic and compare on your own numbers instead."
@@ -560,317 +560,317 @@ export default function GA4AlternativesEnterprisePage() {
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               4. Piwik PRO
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <a
                 href="https://piwikpro.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Piwik PRO
-              </a >{" "}
+              </a>{" "}
               is the strongest EU-native alternative for regulated industries.
               Built in Poland with EU-only data hosting, it combines analytics
               with a built-in tag manager and consent manager. For government,
               finance, and healthcare, Piwik PRO&rsquo;s compliance posture is a
               genuine differentiator.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     From ~{"\u20ac"}30,000/yr
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
-                  <span className="font-mono text-text-primary">~35%</span >
-                </div >
-                <div >
+                  </span>{" "}
+                  <span className="font-mono text-text-primary">~35%</span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     EU-only hosting, consent manager bundled
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Standard tracking, no sampling
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               Piwik PRO still depends on cookies. Despite privacy-first
               positioning, the platform requires consent for tracking. In EU
               markets, this means 40-60% of eCommerce traffic remains invisible.
               AI-powered features are limited. Enterprise pricing starts around
               {"\u20ac"}30,000 per year.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[3].chooseIf}
-            </p >
+            </p>
 
-            <p >
+            <p>
               <Link
                 href="/vs/piwik-pro"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 Full Sealmetrics vs Piwik PRO comparison
-              </Link >
-            </p >
+              </Link>
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               5. Matomo
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <a
                 href="https://matomo.org/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Matomo
-              </a >{" "}
+              </a>{" "}
               is the open-source option with a self-hosting path. For
               organizations that want data to never leave their infrastructure,
               Matomo provides that guarantee. A cookieless mode is available but
               sacrifices visitor-level tracking and cross-session analysis.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     Free / From {"\u20ac"}23/mo
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     ~40-60%
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Full ownership if self-hosted
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     eCommerce plugin, goals, funnels
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               Self-hosting requires DevOps resources for maintenance, scaling,
               and security. Performance can degrade at high traffic volumes.
               Enterprise eCommerce features require paid plugins. For teams with
               the technical capacity, Matomo offers a flexible foundation.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[4].chooseIf}
-            </p >
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               6. Amplitude
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <a
                 href="https://amplitude.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Amplitude
-              </a >{" "}
+              </a>{" "}
               is a product analytics platform — not a web analytics replacement.
               It excels at behavioral cohort analysis, feature adoption tracking,
               and retention measurement. The experimentation platform is among
               the strongest available.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     From ~$50,000/yr
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
-                  <span className="font-mono text-text-primary">Varies</span >
-                </div >
-                <div >
+                  </span>{" "}
+                  <span className="font-mono text-text-primary">Varies</span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Standard DPA, US/EU hosting
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Product analytics, not web analytics
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               For product teams measuring how users interact with software
               features, Amplitude provides capabilities GA4 cannot match. But it
               does not replace web analytics for marketing attribution, traffic
               source analysis, or campaign measurement.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[5].chooseIf}
-            </p >
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               7. Mixpanel
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               <a
                 href="https://mixpanel.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Mixpanel
-              </a >{" "}
+              </a>{" "}
               is an event-based analytics platform with an intuitive interface
               that non-technical teams can use effectively. Funnel analysis,
               retention reports, and flow visualization are well-designed.
               EU data residency is available.
-            </p >
+            </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div >
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Pricing:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="font-mono text-text-primary">
                     Free / From ~$25,000/yr
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
-                  </span >{" "}
-                  <span className="font-mono text-text-primary">Varies</span >
-                </div >
-                <div >
+                  </span>{" "}
+                  <span className="font-mono text-text-primary">Varies</span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Compliance:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     EU residency option
-                  </span >
-                </div >
-                <div >
+                  </span>
+                </div>
+                <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     eCommerce:
-                  </span >{" "}
+                  </span>{" "}
                   <span className="text-text-primary">
                     Event-based, funnels, retention
-                  </span >
-                </div >
-              </div >
-            </div >
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <p >
+            <p>
               Like Amplitude, Mixpanel is product analytics. The event-based
               model requires careful implementation planning. Enterprise pricing
               grows with tracked users. Best for teams needing event-based
               analysis with a lower complexity threshold.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Choose if:
-              </strong >{" "}
+              </strong>{" "}
               {alternatives[6].chooseIf}
-            </p >
+            </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               How to choose the right alternative
-            </h2 >
+            </h2>
 
-            <p >
+            <p>
               The decision for eCommerce teams comes down to three questions.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 How much of your revenue depends on EU traffic?
-              </strong >{" "}
+              </strong>{" "}
               If the majority of your customers are European, cookie-dependent
               platforms will structurally misattribute revenue by 40-60%. This
               affects campaign ROI calculations, budget allocation, and executive
               reporting. Only cookieless platforms avoid this gap entirely.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 Do you need web analytics or product analytics?
-              </strong >{" "}
+              </strong>{" "}
               Amplitude and Mixpanel measure in-app behavior. GA360, Adobe, Piwik
               PRO, Matomo, and Sealmetrics measure web traffic. Using one for the
               other&rsquo;s purpose creates friction that configuration cannot
               solve.
-            </p >
+            </p>
 
-            <p >
+            <p>
               <strong className="font-semibold text-text-primary">
                 What is your total cost tolerance?
-              </strong >{" "}
+              </strong>{" "}
               Include the platform fee plus implementation, required consultants,
               and the implicit cost of revenue misattribution from incomplete
               data. Use the{" "}
@@ -879,17 +879,17 @@ export default function GA4AlternativesEnterprisePage() {
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 data loss calculator
-              </Link >{" "}
+              </Link>{" "}
               to quantify what incomplete data costs your eCommerce operation.
-            </p >
+            </p>
 
-            <p >
+            <p>
               The market has changed. Complete data, EU compliance, and
               AI-powered analysis no longer require six-figure annual budgets.
               The question is whether your analytics investment produces complete,
               reliable data — or pays a premium for estimates.
-            </p >
-          </div >
+            </p>
+          </div>
 
           <CommercialModule
             hook="You've read the comparison on market data. The 30-minute version runs on yours — your channels, your revenue, your gap vs GA4."
@@ -899,35 +899,35 @@ export default function GA4AlternativesEnterprisePage() {
           <div className="mt-16 pt-10 border-t border-warm-100">
             <h3 className="font-serif text-[1.1rem] font-medium text-text-primary mb-4">
               Related articles
-            </h3 >
+            </h3>
             <div className="space-y-3">
               <Link
                 href="/blog/best-enterprise-analytics-platforms"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
                 8 Best Enterprise Analytics Platforms in 2026
-              </Link >
+              </Link>
               <Link
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
                 Why GA4 Shows 13% of Your EU Traffic
-              </Link >
+              </Link>
               <Link
                 href="/blog/cookieless-analytics-explained"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
                 Cookieless Analytics Explained: How to Measure Without Cookies
-              </Link >
+              </Link>
               <Link
                 href="/alternatives/google-analytics"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
                 Google Analytics Alternatives: 8 Tools Compared
-              </Link >
-            </div >
-          </div >
-        </div >
+              </Link>
+            </div>
+          </div>
+        </div>
           <RelatedReading currentSlug="ga4-alternatives-enterprise" />
       </article>
     </>
