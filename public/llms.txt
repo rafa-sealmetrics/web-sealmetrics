@@ -225,6 +225,7 @@ Core pages (ES):
 - /es/terms — Términos del servicio
 - /es/sla — Acuerdo de Nivel de Servicio (v1.1): compromisos de disponibilidad por plano de servicio, créditos y tiempos de respuesta de soporte para los planes Scale y Enterprise
 - /es/dpa — Acuerdo de Encargo de Tratamiento (DPA-2026-v2.1): Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad
+- /es/changelog — Changelog de producto (novedades y mejoras)
 - /es/growth-calculator — Calculadora de crecimiento
 - /es/demo — Solicitar demo
 

@@ -7,11 +7,11 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Changelog — Sealmetrics",
+  title: "Changelog de Sealmetrics — Novedades de producto",
   description:
     "Novedades de producto y nuevas funcionalidades de Sealmetrics. Descubre lo último que hemos lanzado.",
   openGraph: {
-    title: "Changelog — Sealmetrics",
+    title: "Changelog de Sealmetrics — Novedades de producto",
     description: "Novedades de producto y nuevas funcionalidades de Sealmetrics.",
     type: "website",
     images: [ogImage("/es/changelog/")],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Changelog — Sealmetrics",
+    title: "Changelog de Sealmetrics — Novedades de producto",
     description: "Novedades de producto y nuevas funcionalidades de Sealmetrics.",
     images: [ogImage("/es/changelog/")],
   },
