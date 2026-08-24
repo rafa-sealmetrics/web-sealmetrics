@@ -44,7 +44,7 @@ const entries = [
       {
         title: "Los click IDs ya no se almacenan",
         type: "Improved",
-        desc: "Los identificadores de clic de las plataformas de publicidad (gclid, fbclid, msclkid y similares) ahora se usan solo en el instante de la visita para atribuir el canal, y no se almacenan nunca — ni como campo, ni dentro de las URLs guardadas. La atribución de campañas de Google Ads, Meta y demás funciona exactamente igual. Si usas los endpoints de datos en bruto o el export a BigQuery, el campo del click ID ahora llega vacío: no es un error, es privacidad.",
+        desc: "Los identificadores de clic de las plataformas de publicidad (gclid, fbclid, msclkid y similares) ahora se usan solo en el instante de la visita para atribuir el canal, y no se almacenan nunca — ni como campo, ni dentro de las URLs guardadas. La atribución de campañas de Google Ads, Meta y demás funciona exactamente igual. Si usas los endpoints de datos en bruto o el export a BigQuery, el campo del click ID desaparece de las respuestas (en BigQuery queda a NULL): no es un error, es privacidad.",
       },
       {
         title: "User-Agents crudos e IPs fuera del almacenamiento y de los logs",
