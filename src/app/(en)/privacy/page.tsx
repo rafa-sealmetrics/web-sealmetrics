@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://sealmetrics.com/privacy/",
+    languages: { es: "https://sealmetrics.com/es/privacy/" },
   },
 };
 
@@ -46,7 +47,10 @@ export default function PrivacyPage() {
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
             <strong className="text-text-primary">Last updated:</strong> August
-            5, 2026
+            5, 2026 ·{" "}
+            <a href="/es/privacy/" className="underline">
+              Versión en español
+            </a>
           </p>
 
           <div>
