@@ -534,7 +534,7 @@ export default function ConsentlessAnalyticsPillar() {
               {
                 name: "Retention",
                 detail:
-                  "Fixed and identical for every plan, enforced by automatic database TTLs: event-level technical log 14 days, hourly aggregates 90 days, daily aggregates and conversions 24 months. No raw individual-level data is stored beyond the millisecond-level aggregation window.",
+                  "Fixed and identical for every plan, enforced by automatic database TTLs: event-level technical log 1 day, hourly aggregates 90 days, daily aggregates and conversions 24 months. No raw individual-level data is stored beyond the millisecond-level aggregation window.",
               },
             ].map((row) => (
               <div
