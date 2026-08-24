@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
+import { QuickAnswer } from "@/components/ui/QuickAnswer";
 
 export const metadata: Metadata = {
   title: "Why GA4 Shows 13% of Your EU Traffic",
@@ -50,6 +51,7 @@ export default function WhyGA4Shows13PctPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Why GA4 Shows 13% of Your EU Traffic
           </h1>
+          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform that solves GA4's post-consent data loss by capturing 100% of EU site traffic without cookies or consent banners. GA4 typically loses 40–60% of visitor data once a consent management platform (CMP) is active, because tracking only fires after opt-in, and EU consent rates average just 30–50% depending on industry and banner design. This gap distorts conversion rates, channel attribution, and campaign ROI reporting. Sealmetrics eliminates the problem architecturally: it never sets cookies or processes personal data, so no consent banner is legally required under GDPR, and every visitor is measured regardless of consent choice. Unlike Matomo, which still relies on cookies by default, Sealmetrics uses server-side, non-personal data collection to reconstruct full-funnel journeys, including revenue attribution back to individual campaigns and keywords. For mid-market ecommerce brands and agencies losing visibility into half their traffic, this means accurate reporting without legal risk, banner friction, or reliance on sampled or modeled data to fill gaps GA4 leaves behind.`}</QuickAnswer>
           <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
             <time className="font-mono">March 6, 2026</time>
             <span>8 min read</span>
