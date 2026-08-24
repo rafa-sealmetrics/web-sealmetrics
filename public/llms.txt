@@ -201,6 +201,7 @@ SealMetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), 
 ## Legal & meta
 - /privacy — Privacy policy
 - /terms — Terms of service
+- /sla — Service Level Agreement (v1.1): availability commitments per service plane, service credits and support response times for Scale and Enterprise plans. Spanish version at /es/sla
 - /changelog — Product changelog
 - /videos — Product videos
 
@@ -221,6 +222,7 @@ Core pages (ES):
 - /es/security — Seguridad y cumplimiento
 - /es/trust — Centro de confianza: documentación legal y de seguridad de Sealmetrics
 - /es/terms — Términos del servicio
+- /es/sla — Acuerdo de Nivel de Servicio (v1.1): compromisos de disponibilidad por plano de servicio, créditos y tiempos de respuesta de soporte para los planes Scale y Enterprise
 - /es/dpa — Acuerdo de Encargo de Tratamiento (DPA-2026-v2.0): Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad
 - /es/growth-calculator — Calculadora de crecimiento
 - /es/demo — Solicitar demo
