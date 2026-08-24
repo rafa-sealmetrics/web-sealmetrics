@@ -83,7 +83,7 @@ export default function DpaPage() {
           </span>
           <h1 className="headline-hero mb-4">Data Processing Agreement</h1>
           <p className="text-[0.9rem] text-text-tertiary mb-10">
-            Reference DPA-2026-v2.0 · Last updated: July 30, 2026 ·{" "}
+            Reference DPA-2026-v2.1 · Last updated: August 24, 2026 ·{" "}
             <a href="/es/dpa/" className="underline">
               Versión en español
             </a>{" "}
@@ -158,7 +158,7 @@ export default function DpaPage() {
                 </strong>{" "}
                 Processing is limited to (a) the strictly necessary audience
                 measurements listed by the AEPD, and (b) the marketing
-                attribution features (conversions, amounts, click identifiers,
+                attribution features (conversions, amounts, ad network type of the click,
                 conversion properties) expressly instructed by the Client
                 through its configuration, whose legal basis the Client
                 documents as controller.
@@ -353,11 +353,15 @@ export default function DpaPage() {
               (on accounts with agent detection, an additional IP-derived
               country is used transiently as an anti-fraud signal, without
               persisting the IP); an ephemeral session identifier computed in
-              the browser with no device storage, independent per client; UTM
-              data and, under Purpose B, click identifiers, conversion types,
-              amounts and Client-defined properties. Not processed: persisted
-              IPs, cookies or device storage, names or emails of visitors,
-              special categories, cross-site identifiers.
+              the browser with no device storage, independent per client and
+              pseudonymised server-side with a secret key and a daily salt
+              destroyed on rotation; UTM data and, under Purpose B, the ad
+              network type of the click (the click identifier value is never
+              stored), conversion types, amounts and Client-defined
+              properties. Not stored: IPs, raw user agent, click identifier
+              values, cookies or device storage, names or emails of visitors,
+              special categories, identifiers capable of cross-site or
+              cross-day linking.
             </p>
             <Tbl
               rows={[
@@ -366,6 +370,7 @@ export default function DpaPage() {
                 ["Hourly aggregates", "90 days"],
                 ["Daily aggregates, conversions and properties", "24 months"],
                 ["Session state (operational memory)", "2 hours"],
+                ["Daily session-pseudonymisation salt", "24 hours (destroyed on rotation; excluded from backups)"],
                 ["After contract termination", "30-day export window + deletion"],
               ]}
             />
@@ -373,6 +378,9 @@ export default function DpaPage() {
             <H>Annex 2 — Security measures</H>
             <p>
               TLS 1.2+ in transit (including AI inference); AES-256 at rest;
+              ephemeral server-side pseudonymisation of the session identifier
+              (secret-key HMAC over a daily salt destroyed on rotation and
+              excluded from backups);
               structural minimisation (no IP persistence, no terminal storage,
               URL parameters not parsed on the device); per-client logical
               isolation; database-level TTL retention; RBAC, MFA and least
