@@ -44,6 +44,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "Regulación",
     readTime: "5 min",
   },
+  "is-matomo-gdpr-compliant": {
+    title: "¿Matomo cumple el RGPD?",
+    description: "Matomo puede operar sin banner en Francia bajo los criterios de la CNIL, con las cookies puestas. Las seis condiciones, lo que esa configuración te cuesta en atribución, y por qué no viaja a Alemania.",
+    category: "Regulación",
+    readTime: "9 min",
+  },
   "gdpr-eprivacy-analytics-legal-assessment": {
     title: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
     description: "RGPD y ePrivacy son dos leyes distintas, y la analítica tiene que superar las dos para funcionar sin banner. El test legal y el veredicto por herramienta: GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.",

@@ -461,6 +461,16 @@
       "sourceHash": "2a94a5610bc32e36e801cdf23bfb2cd8333ade471051aabab0ce5092e947081e",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/is-matomo-gdpr-compliant.avif": {
+      "source": "public/og/blog/is-matomo-gdpr-compliant.png",
+      "sourceHash": "e967c61ee6029ebf371f06698f8bdb31a79be32691bca6e07685d682e0e9a597",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/is-matomo-gdpr-compliant.webp": {
+      "source": "public/og/blog/is-matomo-gdpr-compliant.png",
+      "sourceHash": "e967c61ee6029ebf371f06698f8bdb31a79be32691bca6e07685d682e0e9a597",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/meet-seal-ai.avif": {
       "source": "public/og/blog/meet-seal-ai.png",
       "sourceHash": "93c52eb9df4611ce95c649c2e39ebf1fd70e6b2a2dfb754f37e1a2402f54c723",
@@ -1439,6 +1449,16 @@
     "public/og/security.webp": {
       "source": "public/og/security.png",
       "sourceHash": "3b436d99b7bfa8a2afc47eeb8508f8b2492a0c4c5ca28c2d66d0cb78ea23533d",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/sla.avif": {
+      "source": "public/og/sla.png",
+      "sourceHash": "07e53ada3f165c1072e5a286d655dd55377fa4981cb0a8b7fc32bd18bee77233",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/sla.webp": {
+      "source": "public/og/sla.png",
+      "sourceHash": "07e53ada3f165c1072e5a286d655dd55377fa4981cb0a8b7fc32bd18bee77233",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/terms.avif": {
