@@ -16,13 +16,13 @@ const DATE_PUBLISHED = "2026-05-29";
 const DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "GDPR analytics in Germany — §25 TTDSG and the DSK position",
+  title: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
   description:
-    "How analytics runs lawfully in Germany under §25 TTDSG. The DSK orientation paper, BfDI guidance, and the architectural exemption.",
+    "How analytics runs lawfully in Germany under §25 TDDDG. The DSK orientation paper, BfDI guidance, and the architectural exemption.",
   openGraph: {
-    title: "GDPR analytics in Germany — §25 TTDSG and the DSK position",
+    title: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
     description:
-      "The §25 TTDSG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
+      "The §25 TDDDG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
     type: "article",
     images: [ogImage("/gdpr-analytics/germany/")],
     url: "https://sealmetrics.com/gdpr-analytics/germany/",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "GDPR analytics in Germany — §25 TTDSG and the DSK position",
-    description: "The §25 TTDSG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
+    title: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
+    description: "The §25 TDDDG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
     images: [ogImage("/gdpr-analytics/germany/")],
   },
   alternates: {
@@ -46,7 +46,7 @@ const criteria = [
   {
     n: "01",
     title: "No terminal-device storage",
-    requirement: "§25 TTDSG requires consent before storing or accessing information on the user's terminal device — cookies, localStorage, fingerprinting.",
+    requirement: "§25 TDDDG requires consent before storing or accessing information on the user's terminal device — cookies, localStorage, fingerprinting.",
     us: "No cookie is set, no localStorage is written, no fingerprint is generated. The terminal-device trigger never engages.",
   },
   {
@@ -64,19 +64,19 @@ const criteria = [
   {
     n: "04",
     title: "EU-only processing",
-    requirement: "DSK and BfDI positions emphasise EU residency to avoid Schrems II transfer concerns layered on top of TTDSG questions.",
+    requirement: "DSK and BfDI positions emphasise EU residency to avoid Schrems II transfer concerns layered on top of TDDDG questions.",
     us: "Processing exclusively in Dublin, Ireland — within the GDPR adequacy zone. No transfer impact assessment required because no transfer occurs.",
   },
 ];
 
 const faqs = [
   {
-    q: "Does the §25 TTDSG exemption apply to all analytics?",
+    q: "Does the §25 TDDDG exemption apply to all analytics?",
     a: "No. The exemption requires that the analytics is strictly necessary for the operation of the service, OR meets the conditions for anonymous audience measurement — no terminal-device storage, no cross-site tracking, no personal data, EU processing. Cookie-based analytics with a visitor ID does not qualify; Sealmetrics' aggregate cookieless architecture does.",
   },
   {
     q: "What is the DSK orientation paper?",
-    a: "The Datenschutzkonferenz — the conference of all German federal and state data protection authorities — publishes joint guidance. The 2022 orientation paper on telemedia consent specifies when §25 TTDSG requires consent and when it does not. The conditions for the exemption align with the EDPB Opinion 5/2019 and the CNIL guidance: aggregate, anonymous, EU-hosted, no identifier on the device.",
+    a: "The Datenschutzkonferenz — the conference of all German federal and state data protection authorities — publishes joint guidance. The 2022 orientation paper on telemedia consent specifies when §25 TDDDG requires consent and when it does not. The conditions for the exemption align with the EDPB Opinion 5/2019 and the CNIL guidance: aggregate, anonymous, EU-hosted, no identifier on the device.",
   },
   {
     q: "Does the BfDI agree with the state authorities?",
@@ -84,15 +84,15 @@ const faqs = [
   },
   {
     q: "What about Google Analytics on a German site?",
-    a: "Google Analytics still requires consent under §25 TTDSG because it sets cookies and processes personal data through Google infrastructure (transfer to the US). The Garante Italian ban on GA4 in 2022 was followed by similar concerns from German authorities. Consent Mode v2 reduces the cookie load but does not change the fundamental processing nature. Sealmetrics operates outside that framework entirely.",
+    a: "Google Analytics still requires consent under §25 TDDDG because it sets cookies and processes personal data through Google infrastructure (transfer to the US). The Garante Italian ban on GA4 in 2022 was followed by similar concerns from German authorities. Consent Mode v2 reduces the cookie load but does not change the fundamental processing nature. Sealmetrics operates outside that framework entirely.",
   },
   {
     q: "Do I still need a Datenschutzerklärung?",
-    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (24 months for Sealmetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TTDSG exemption). A template ships with the TPSR package.",
+    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (24 months for Sealmetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TDDDG exemption). A template ships with the TPSR package.",
   },
   {
-    q: "What's the position on the new Digital Omnibus 2026?",
-    a: "The Digital Omnibus tightened banner-design enforcement at the EU level and gave authorities sharper Art. 5(3) (and equivalent §25 TTDSG) tools. The analytics exemption itself survived intact. German authorities have welcomed the harmonisation — Germany historically had stricter banner rules than the EU average, and the new floor brings other markets closer to the German position rather than weakening it.",
+    q: "What's the position on the proposed Digital Omnibus?",
+    a: "It is a proposal, not law: COM(2025) 837, published 19 November 2025, still in the ordinary legislative procedure and realistically 2027–2028 before adoption, with substantive amendments likely. As drafted it would move the terminal-device rules into the GDPR under a new Article 88a and exempt first-party, aggregated audience measurement for the controller's own use — which would be a genuine change for Germany, where §25 TDDDG recognises no analytics carve-out today. Until a text is adopted, §25 TDDDG and the DSK orientation paper are what apply.",
   },
 ];
 
@@ -109,15 +109,15 @@ export default function GdprAnalyticsGermanyPage() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/gdpr-analytics/germany",
-          name: "GDPR analytics in Germany — §25 TTDSG and the DSK position",
+          name: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
         })}
       />
       <JsonLd
         data={articleSchema({
           headline:
-            "GDPR analytics in Germany — §25 TTDSG, the DSK orientation paper, and the exemption that survives",
+            "GDPR analytics in Germany — §25 TDDDG, the DSK orientation paper, and the exemption that survives",
           description:
-            "How analytics runs lawfully in Germany without a cookie banner under §25 TTDSG and the DSK position. Architectural requirements, BfDI guidance, and the Digital Omnibus impact.",
+            "How analytics runs lawfully in Germany without a cookie banner under §25 TDDDG and the DSK position. Architectural requirements, BfDI guidance, and the Digital Omnibus proposal.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/gdpr-analytics/germany",
@@ -138,7 +138,7 @@ export default function GdprAnalyticsGermanyPage() {
             </em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            §25 TTDSG governs cookie consent in Germany. The DSK
+            §25 TDDDG governs cookie consent in Germany. The DSK
             orientation paper and BfDI guidance carve out anonymous
             audience measurement. This is what the carve-out requires
             and where the limits are.
@@ -149,7 +149,7 @@ export default function GdprAnalyticsGermanyPage() {
       <TldrBlock
         answer={
           <>
-            German analytics law is governed by §25 TTDSG — the
+            German analytics law is governed by §25 TDDDG — the
             domestic implementation of ePrivacy Art. 5(3). Consent
             is required before storing or accessing information on
             the user&rsquo;s terminal device. The Datenschutzkonferenz
@@ -163,7 +163,7 @@ export default function GdprAnalyticsGermanyPage() {
           </>
         }
         bullets={[
-          <><strong>§25 TTDSG</strong> — Germany&rsquo;s ePrivacy implementation, in force since December 2021.</>,
+          <><strong>§25 TDDDG</strong> — Germany&rsquo;s ePrivacy implementation, in force since December 2021.</>,
           <><strong>DSK orientation paper</strong> on telemedia consent describes when the exemption applies.</>,
           <><strong>60–70% rejection rate</strong> on standard banners — the highest in Europe.</>,
           <><strong>State authorities harmonised</strong> — BfDI federal, LDI NRW / LfD Bayern at state level.</>,
@@ -172,9 +172,9 @@ export default function GdprAnalyticsGermanyPage() {
 
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[840px] mx-auto px-5 sm:px-8">
-          <h2 className="h-section">The 4 conditions of the §25 TTDSG exemption</h2>
+          <h2 className="h-section">The 4 conditions of the §25 TDDDG exemption</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
-            §25 TTDSG sets the rule; the DSK paper and BfDI guidance
+            §25 TDDDG sets the rule; the DSK paper and BfDI guidance
             set the exemption boundary. Four conditions, each
             architectural rather than procedural — they describe how
             the tool is built, not what notice is shown.
@@ -209,7 +209,7 @@ export default function GdprAnalyticsGermanyPage() {
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
             Germany consistently posts the highest cookie-rejection
             rates in Europe. The cultural baseline of privacy
-            consciousness, the early hardening of §25 TTDSG (December
+            consciousness, the early hardening of §25 TDDDG (December
             2021, ahead of most other EU implementations), and
             assertive state-level enforcement combine to produce a
             measurement landscape where banner-dependent analytics is
@@ -231,7 +231,7 @@ export default function GdprAnalyticsGermanyPage() {
               <p className="mt-3 text-[28px] font-semibold tracking-[-0.02em] text-ink leading-none">16 DPAs</p>
               <p className="mt-3 text-[14px] leading-[1.6] text-ink-soft">
                 Federal BfDI plus 16 state DPAs. Each has Art. 5(3) /
-                §25 TTDSG jurisdiction. LfD Bayern and LDI NRW are
+                §25 TDDDG jurisdiction. LfD Bayern and LDI NRW are
                 historically the most active enforcers.
               </p>
             </div>
@@ -246,7 +246,7 @@ export default function GdprAnalyticsGermanyPage() {
             <li className="flex gap-3">
               <span className="text-brand" aria-hidden>—</span>
               <a href="https://www.gesetze-im-internet.de/ttdsg/__25.html" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-1 underline-offset-2">
-                §25 TTDSG — Gesetze im Internet (official German text)
+                §25 TDDDG — Gesetze im Internet (official German text)
               </a>
             </li>
             <li className="flex gap-3">
@@ -312,7 +312,7 @@ export default function GdprAnalyticsGermanyPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Blog</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">GDPR analytics without consent</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                The Art. 6 / Art. 5(3) reasoning — equally relevant for §25 TTDSG.
+                The Art. 6 / Art. 5(3) reasoning — equally relevant for §25 TDDDG.
               </p>
             </Link>
             <Link
@@ -343,8 +343,8 @@ export default function GdprAnalyticsGermanyPage() {
         locale="en"
         titleEn={<>One <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>DSK review</em>. Done.</>}
         titleEs={<>Una <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>revisión DSK</em>. Resuelta.</>}
-        ledeEn="Book with the founder. Bring your DPO. We walk through the §25 TTDSG criteria live and ship the DPA + TPSR on the call."
-        ledeEs="Reserva con el founder. Trae a tu DPO. Resolvemos §25 TTDSG en directo y enviamos DPA + TPSR en la llamada."
+        ledeEn="Book with the founder. Bring your DPO. We walk through the §25 TDDDG criteria live and ship the DPA + TPSR on the call."
+        ledeEs="Reserva con el founder. Trae a tu DPO. Resolvemos §25 TDDDG en directo y enviamos DPA + TPSR en la llamada."
       />
     </>
   );

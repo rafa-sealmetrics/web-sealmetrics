@@ -93,8 +93,8 @@ const faqs = [
     a: "The exemption applies as long as the processing happens in the EU (no third-country transfer). Sealmetrics processes exclusively in Dublin, Ireland — within scope of GDPR adequacy, no Schrems II transfer assessment required.",
   },
   {
-    q: "Did the Digital Omnibus 2026 change the CNIL position?",
-    a: "Not on the exemption itself. The Omnibus formalised reject-all banner parity, harmonised dark-pattern enforcement, and gave authorities sharper teeth on Art. 5(3) violations — all of which raise the cost of running cookie-based analytics. The exemption for anonymous non-tracking analytics survived intact and now contrasts even more favourably with the banner-dependent path.",
+    q: "Would the proposed Digital Omnibus change the CNIL position?",
+    a: "Not adversely, and not yet at all — it is a proposal, not law. The Commission published COM(2025) 837 on 19 November 2025; Parliament and Council have still to agree a text, substantive amendments are likely, and adoption is realistically 2027–2028. As drafted it would move cookie rules into the GDPR under a new Article 88a and exempt first-party, aggregated audience measurement for the controller's own use — generalising the CNIL carve-out across the EU rather than removing it. Until then the CNIL criteria are what apply in France.",
   },
   {
     q: "What does the privacy policy still need to say?",
@@ -123,7 +123,7 @@ export default function GdprAnalyticsFrancePage() {
           headline:
             "GDPR analytics in France — how the CNIL exemption works in practice",
           description:
-            "The CNIL exemption criteria for analytics, the 14-point self-assessment, the Digital Omnibus 2026 context, and the architectures that meet the criteria by design.",
+            "The CNIL exemption criteria for analytics, the 14-point self-assessment, the Digital Omnibus proposal, and the architectures that meet the criteria by design.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/gdpr-analytics/france",
@@ -160,8 +160,8 @@ export default function GdprAnalyticsFrancePage() {
           >
             The CNIL has published explicit exemption criteria for
             analytics since 2020. This is what the exemption requires,
-            how the 2025 self-assessment tool works, and what changed
-            with the 2026 Digital Omnibus.
+            how the 2025 self-assessment tool works, and what the
+            proposed Digital Omnibus would change.
           </p>
         </div>
       </section>
@@ -281,19 +281,21 @@ export default function GdprAnalyticsFrancePage() {
       {/* WHAT CHANGED WITH THE OMNIBUS */}
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[840px] mx-auto px-5 sm:px-8">
-          <h2 className="h-section">What the 2026 Digital Omnibus changed</h2>
+          <h2 className="h-section">What the proposed Digital Omnibus would change</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
-            The EU Digital Omnibus (Nov 2025, in force 2026) consolidated
-            the patchwork of five existing data instruments and gave
-            authorities sharper enforcement tools. Three things matter
-            for French operators:
+            The EU Digital Omnibus (COM(2025) 837) was published by the
+            Commission on 19 November 2025. It is a proposal, not law:
+            Parliament and Council have still to agree a text, substantive
+            amendments are likely, and adoption is realistically 2027&ndash;2028.
+            Nothing below is in force. Three things in the draft matter for
+            French operators:
           </p>
 
           <ul className="mt-8 space-y-4 text-[16px] leading-[1.7] text-ink-soft list-none pl-0">
             {[
-              <><strong>Reject-all parity is now formal.</strong> Banner asymmetry (highlighting &ldquo;accept&rdquo; vs hiding &ldquo;reject&rdquo;) is enforceable at the EU level, not just by CNIL national action. Costs of running a defensible banner went up.</>,
-              <><strong>Article 5(3) enforcement clarified.</strong> Authorities have explicit jurisdiction over breaches involving terminal-device storage. The CNIL no longer has to reach for adjacent grounds.</>,
-              <><strong>The exemption itself survived intact.</strong> Anonymous non-tracking analytics remains explicitly out of Art. 5(3) scope. The economics now favour exempt architectures more strongly than before.</>,
+              <><strong>Reject-all parity would become formal.</strong> Banner asymmetry (highlighting &ldquo;accept&rdquo; vs hiding &ldquo;reject&rdquo;) would be enforceable at EU level rather than through CNIL national action alone, raising the cost of running a defensible banner.</>,
+              <><strong>Article 5(3) would move into the GDPR.</strong> A new Article 88a would carry the terminal-device rules, giving authorities explicit jurisdiction instead of the CNIL reaching for adjacent grounds.</>,
+              <><strong>The exemption would widen, not close.</strong> First-party aggregated audience measurement for the controller&rsquo;s own use would be consent-exempt EU-wide — the French carve-out generalised. Cookie-based tools that meet the conditions would qualify too, so the differentiator shifts from the banner to what the exempt configuration costs you in measurement.</>,
             ].map((s, i) => (
               <li key={i} className="flex gap-3">
                 <span className="text-brand" aria-hidden>—</span>
@@ -303,7 +305,7 @@ export default function GdprAnalyticsFrancePage() {
           </ul>
 
           <p className="mt-8 text-[16px] leading-[1.7] text-ink-soft">
-            For the operator&rsquo;s view of what changed, see{" "}
+            For the operator&rsquo;s view of what would change, see{" "}
             <Link
               href="/blog/eu-digital-omnibus-cookie-banners-analytics"
               className="text-brand underline decoration-1 underline-offset-2"

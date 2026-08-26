@@ -79,8 +79,8 @@ const faqs = [
     a: "Article 22.2 of the Ley de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE, 2002 with later amendments) is the Spanish implementation of ePrivacy Art. 5(3). It requires informed consent before storing or accessing information on the user's terminal device. The AEPD has issued guidance (most recently the 2024 cookies guide) describing when the exemption applies — and aggregate audience measurement is explicitly included.",
   },
   {
-    q: "Did the AEPD change position with the Digital Omnibus?",
-    a: "Not on the exemption itself. The Omnibus tightened banner-design enforcement and harmonised national approaches, but the AEPD's position on anonymous audience measurement survived intact. If anything, the new floor on banner design makes the cookie-based path more expensive while leaving the exempt architectures unchanged.",
+    q: "Would the proposed Digital Omnibus change the AEPD position?",
+    a: "Nothing has changed yet: COM(2025) 837 is a Commission proposal of 19 November 2025, still in the ordinary legislative procedure, with adoption realistically 2027–2028. As drafted it would exempt first-party, aggregated audience measurement for the controller's own use across the EU under a new GDPR Article 88a, which sits alongside the AEPD position rather than displacing it. Until a text is adopted, LSSI-CE Art. 22.2 and the AEPD 2024 guide are what apply in Spain.",
   },
   {
     q: "Is Sealmetrics suitable for Spanish public-sector sites?",
@@ -117,7 +117,7 @@ export default function GdprAnalyticsSpainPage() {
           headline:
             "GDPR analytics in Spain — the AEPD 2024 cookies guide and the LSSI-CE Art. 22.2 exemption",
           description:
-            "How analytics runs lawfully in Spain without a cookie banner under the AEPD 2024 guide and LSSI-CE Art. 22.2. Architectural requirements, public-sector posture, and the Digital Omnibus impact.",
+            "How analytics runs lawfully in Spain without a cookie banner under the AEPD 2024 guide and LSSI-CE Art. 22.2. Architectural requirements, public-sector posture, and the Digital Omnibus proposal.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/gdpr-analytics/spain",
@@ -141,7 +141,7 @@ export default function GdprAnalyticsSpainPage() {
             The AEPD 2024 cookies guide carves out anonymous audience
             measurement from the consent obligation. This is what the
             carve-out requires, how it aligns with the CNIL and DSK
-            positions, and what changed with the Digital Omnibus.
+            positions, and what the Digital Omnibus proposal would change.
           </p>
         </div>
       </section>
@@ -158,7 +158,7 @@ export default function GdprAnalyticsSpainPage() {
             data, first-party context with no cross-site tracking,
             and EU residency. Sealmetrics is built to meet each
             condition by design — same architectural pattern that
-            covers the CNIL exemption in France and the §25 TTDSG
+            covers the CNIL exemption in France and the §25 TDDDG
             exemption in Germany.
           </>
         }
@@ -292,7 +292,7 @@ export default function GdprAnalyticsSpainPage() {
             </Link>
             <Link href="/gdpr-analytics/germany" className="group block border border-warm-100 rounded-xl p-7 bg-warm-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Country</span>
-              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Germany — §25 TTDSG</h3>
+              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Germany — §25 TDDDG</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
                 The DSK orientation paper and the architectural exemption.
               </p>
