@@ -50,7 +50,7 @@ export default function Page() {
           url: "/es/vs/matomo",
           competitor: { name: "Matomo", url: "https://matomo.org/" },
           datePublished: "2026-05-06",
-          dateModified: "2026-05-29",
+          dateModified: "2026-08-26",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
           criteria: [
             "Cookies por defecto vs sin cookies por diseño",
@@ -63,7 +63,7 @@ export default function Page() {
           ],
         })}
       />
-      <VsComparisonV3 data={getVsData("matomo", "es")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("matomo", "es")} dateModified="2026-08-26" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"
@@ -83,7 +83,7 @@ export default function Page() {
               Sealmetrics vs Matomo: Matomo es una plataforma de analítica open-source, EU-friendly y self-hostable, pero las cookies siguen siendo el default y el self-hosting tiene un coste operativo real. Sealmetrics es una plataforma cookieless totalmente gestionada que mide el 100% del tráfico entrante sin banner de consentimiento y atribuye cada conversión last-click sobre eventos observados, alojada en la UE (Dublín), desde 499€/mes con facturación anual.
             </p>
             <p>
-              El trade-off es completitud frente a overhead. La configuración cookieless de Matomo limita lo que puede medir y aun así te deja gestionando infraestructura, actualizaciones y escalado; su modo cookies necesita banner y pierde el tráfico que lo rechaza. Sealmetrics mide el 100% completo con un píxel first-party ligero, nada que self-hostear, y un stack IA-nativo — LENS AI y un servidor MCP — sobre datos completos.
+              El trade-off es completitud frente a overhead. La configuración cookieless de Matomo limita lo que puede medir y aun así te deja gestionando infraestructura, actualizaciones y escalado; su modo cookies opera sin banner solo bajo una configuración de exención — permitida por los criterios de la CNIL en Francia, no por el &sect;25 de la TDDDG alemana — y en cualquier otro caso pierde a todo visitante que rechaza. Sealmetrics mide el 100% completo con un píxel first-party ligero, nada que self-hostear, y un stack IA-nativo — LENS AI y un servidor MCP — sobre datos completos.
             </p>
           </QuickAnswer>
         </div>
