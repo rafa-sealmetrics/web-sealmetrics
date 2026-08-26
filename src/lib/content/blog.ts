@@ -60,6 +60,21 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: "is-matomo-gdpr-compliant",
+    title: "Is Matomo GDPR Compliant?",
+    description:
+      "Matomo can run banner-free in France under the CNIL criteria, with cookies still on. The six conditions, what the exempt configuration costs you in attribution, and why it does not travel to Germany.",
+    date: "2026-08-26",
+    category: "Regulation",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: [
+      "gdpr-eprivacy-analytics-legal-assessment",
+      "is-adobe-analytics-gdpr-compliant",
+      "cnil-self-assessment-published",
+    ],
+  },
+  {
     slug: "is-adobe-analytics-gdpr-compliant",
     title: "Is Adobe Analytics GDPR Compliant?",
     description:

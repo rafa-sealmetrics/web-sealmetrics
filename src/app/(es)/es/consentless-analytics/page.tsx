@@ -48,8 +48,8 @@ const faqs = [
     a: "Sí, cuando la arquitectura cumple los criterios de exención. El RGPD aplica al tratamiento de datos personales. El Art. 5(3) de ePrivacy regula el almacenamiento/acceso a información del dispositivo. Si un sistema de medición no almacena cookie, no establece identificador y no procesa datos personales, ambas normas quedan satisfechas sin diálogo de consentimiento. La CNIL ha publicado criterios explícitos para analítica; la DSK alemana, la AEPD, el Garante italiano, el ICO británico y la AP holandesa han emitido guía alineada. Esto no es un workaround — es la carve-out original que contemplaron las normas.",
   },
   {
-    q: "¿Qué cambió con el Digital Omnibus UE 2026?",
-    a: "El Omnibus endureció las reglas de diseño de banner (enforcement de dark-patterns), formalizó la paridad reject-all a nivel UE y dio a las autoridades nacionales dientes más afilados sobre violaciones del Art. 5(3). Efecto neto: las tasas de rechazo subieron 5–10 puntos más en los mercados donde aterrizó, y el coste de correr analítica basada en cookies legalmente subió. La arquitectura sin consentimiento no se ve afectada — no hay banner que diseñar ni consentimiento que registrar.",
+    q: "¿Qué cambiaría el Digital Omnibus UE?",
+    a: "Todavía nada: es una propuesta de la Comisión (COM(2025) 837, de 19 de noviembre de 2025), en procedimiento legislativo ordinario, con enmiendas sustantivas probables y adopción realista en 2027–2028. Tal como está redactada trasladaría las reglas sobre el equipo terminal al RGPD mediante un nuevo artículo 88a y eximiría de consentimiento la medición de audiencia agregada, first-party y de uso propio del responsable. Si sale adelante en esa forma, el banner deja de ser la línea divisoria y la pregunta pasa a ser qué te cuesta en medición una configuración de exención. La arquitectura sin consentimiento no se ve afectada en ningún caso — no hay banner que diseñar ni consentimiento que registrar.",
   },
   {
     q: "¿Sigo necesitando un banner por otras razones?",
@@ -80,7 +80,7 @@ const authorities = [
     country: "Alemania",
     body: "DSK / BfDI",
     summary:
-      "Guía de la Datenschutzkonferenz: las herramientas de analítica sin cookies y sin fingerprinting no requieren consentimiento bajo §25 TTDSG. Alineada con la posición CNIL.",
+      "Guía de la Datenschutzkonferenz: las herramientas de analítica sin cookies y sin fingerprinting no requieren consentimiento bajo §25 TDDDG. Alineada con la posición CNIL.",
   },
   {
     country: "España",
@@ -206,13 +206,13 @@ export default function ConsentlessAnalyticsPillarEs() {
               <h3 className="text-[18px] font-semibold text-ink mb-2">El enforcement de dark-patterns cerró el agujero</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 La CNIL multó a Google y Amazon por diseño asimétrico
-                de banner en 2023. El Garante italiano siguió. El
-                Digital Omnibus 2026 formalizó la paridad reject-all a
-                nivel UE: el botón «rechazar» debe ser tan prominente
-                como «aceptar», sin casillas pre-marcadas, sin copy
-                manipulador. La ventana breve en la que el diseño
-                inteligente de banner elevaba las tasas de aceptación
-                está cerrada.
+                de banner en 2023. El Garante italiano siguió, y los
+                reguladores nacionales de la UE tratan ya un botón de
+                «rechazar» escondido como infracción por sí misma: debe
+                ser tan prominente como «aceptar», sin casillas
+                pre-marcadas, sin copy manipulador. La ventana breve en
+                la que el diseño inteligente de banner elevaba las tasas
+                de aceptación está cerrada.
               </p>
             </div>
 
@@ -229,12 +229,15 @@ export default function ConsentlessAnalyticsPillarEs() {
             </div>
 
             <div>
-              <h3 className="text-[18px] font-semibold text-ink mb-2">El Digital Omnibus 2026 afiló el enforcement</h3>
+              <h3 className="text-[18px] font-semibold text-ink mb-2">El Digital Omnibus redibujaría la línea</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                El Omnibus armonizó los enfoques nacionales bajo un
-                marco de enforcement único y dio a las autoridades un
-                poder más claro sobre infracciones del Art. 5(3). Lee
-                las implicaciones prácticas en{" "}
+                La propuesta de la Comisión de noviembre de 2025
+                trasladaría las reglas sobre el equipo terminal al RGPD
+                y eximiría de consentimiento la medición de audiencia
+                agregada y first-party. Sigue siendo una propuesta
+                &mdash; adopción realista en 2027&ndash;2028 &mdash;
+                pero la dirección es clara. Lee las implicaciones
+                prácticas en{" "}
                 <Link
                   href="/es/blog/consent-banner-impact-on-analytics"
                   className="text-brand underline decoration-1 underline-offset-2"

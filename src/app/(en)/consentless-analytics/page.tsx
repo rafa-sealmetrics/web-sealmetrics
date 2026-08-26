@@ -48,8 +48,8 @@ const faqs = [
     a: "Yes, when the architecture meets the exemption criteria. GDPR applies to processing of personal data. ePrivacy Art. 5(3) governs storage/access to terminal-device information. If a measurement system stores no cookie, sets no identifier and processes no personal data, both rules are satisfied without a consent dialog. The CNIL has published explicit exemption criteria for analytics; the German DSK, Italian Garante, UK ICO and Dutch AP have all issued aligned guidance. This is not a workaround — it is the original carve-out the regulations contemplated.",
   },
   {
-    q: "What changed with the EU Digital Omnibus 2026?",
-    a: "The Omnibus tightened banner-design rules (dark-pattern enforcement), formalised reject-all parity, and gave national authorities sharper teeth on Art. 5(3) violations. The net effect: consent rejection rates rose another 5–10 points in the markets where it has landed, and the cost of running cookie-based analytics legally went up. Consentless architecture is unaffected — there is no banner to design and no consent to record.",
+    q: "What would the EU Digital Omnibus change?",
+    a: "Nothing yet — it is a Commission proposal (COM(2025) 837, 19 November 2025), still in the ordinary legislative procedure, with substantive amendments likely and adoption realistically 2027–2028. As drafted it would move the terminal-device rules into the GDPR under a new Article 88a and exempt first-party, aggregated audience measurement for the controller's own use from consent. If it passes in that form the banner stops being the dividing line and the question becomes what a consent-exempt configuration costs you in measurement. A consentless architecture is unaffected either way — there is no banner to design and no consent to record.",
   },
   {
     q: "Do I still need a cookie banner for other reasons?",
@@ -80,7 +80,7 @@ const authorities = [
     country: "Germany",
     body: "DSK / BfDI",
     summary:
-      "Datenschutzkonferenz guidance: analytics tools without cookies and without device fingerprinting do not require consent under §25 TTDSG. Aligned with CNIL position.",
+      "Datenschutzkonferenz guidance: analytics tools without cookies and without device fingerprinting do not require consent under §25 TDDDG. Aligned with CNIL position.",
   },
   {
     country: "Spain",
@@ -242,11 +242,12 @@ export default function ConsentlessAnalyticsPillar() {
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 The CNIL fined Google and Amazon for asymmetric banner
-                design in 2023. The Italian Garante followed. The 2026
-                Digital Omnibus formalised reject-all parity at the EU
-                level: the &ldquo;reject&rdquo; button must be as prominent
-                as &ldquo;accept&rdquo;, no pre-ticked boxes, no nudging
-                copy. The brief window in which clever banner design lifted
+                design in 2023. The Italian Garante followed, and national
+                regulators across the EU now treat a hidden
+                &ldquo;reject&rdquo; button as a breach in its own right:
+                the reject control must be as prominent as
+                &ldquo;accept&rdquo;, no pre-ticked boxes, no nudging copy.
+                The brief window in which clever banner design lifted
                 consent rates is closed.
               </p>
             </div>
@@ -266,12 +267,15 @@ export default function ConsentlessAnalyticsPillar() {
 
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                The Digital Omnibus 2026 sharpened authority enforcement
+                The Digital Omnibus would redraw the line
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                The Omnibus harmonised national approaches under one
-                enforcement framework and gave authorities clearer power
-                over Art. 5(3) breaches. Read the practical implications in{" "}
+                The Commission&apos;s proposal of November 2025 would move
+                the terminal-device rules into the GDPR and exempt
+                first-party, aggregated audience measurement from consent.
+                It is still a proposal — adoption is realistically
+                2027&ndash;2028 — but the direction is clear. Read the
+                practical implications in{" "}
                 <Link
                   href="/blog/eu-digital-omnibus-cookie-banners-analytics"
                   className="text-brand underline decoration-1 underline-offset-2"

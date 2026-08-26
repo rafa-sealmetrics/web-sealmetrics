@@ -9,7 +9,7 @@ import { ogImage } from "@/lib/seo/og";
 
 const TITLE = "GDPR analytics by country — regulator guidance";
 const DESCRIPTION =
-  "How analytics runs lawfully without a cookie banner in France, Germany and Spain. CNIL, DSK/TTDSG and AEPD guidance, criterion by criterion.";
+  "How analytics runs lawfully without a cookie banner in France, Germany and Spain. CNIL, DSK/TDDDG and AEPD guidance, criterion by criterion.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "GDPR analytics by country — regulator guidance",
     description:
-      "CNIL, DSK/§25 TTDSG and AEPD: what each regulator requires for consent-exempt audience measurement, and which architectures meet it.",
+      "CNIL, DSK/§25 TDDDG and AEPD: what each regulator requires for consent-exempt audience measurement, and which architectures meet it.",
     url: "https://sealmetrics.com/gdpr-analytics/",
     siteName: "Sealmetrics",
     locale: "en_US",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "GDPR analytics by country — regulator guidance",
     description:
-      "CNIL, DSK/§25 TTDSG and AEPD guidance on consent-exempt analytics, criterion by criterion.",
+      "CNIL, DSK/§25 TDDDG and AEPD guidance on consent-exempt analytics, criterion by criterion.",
     images: [ogImage("/gdpr-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/gdpr-analytics/" },
@@ -48,7 +48,7 @@ const countries = [
     country: "Germany",
     authority: "DSK / BfDI",
     tagline:
-      "§25 TTDSG, the DSK orientation paper and BfDI guidance — and how a cookieless architecture meets the exemption by design.",
+      "§25 TDDDG, the DSK orientation paper and BfDI guidance — and how a cookieless architecture meets the exemption by design.",
   },
   {
     href: "/gdpr-analytics/spain",
@@ -98,7 +98,7 @@ export default function Page() {
               transposed nationally. That is why the same setup can be
               consent-exempt in France and contested in Germany. Each page below
               works through one national supervisory authority — CNIL, the DSK
-              under §25 TTDSG, and the AEPD — and states the criteria that
+              under §25 TDDDG, and the AEPD — and states the criteria that
               authority actually published, then which architectures satisfy
               them. These pages describe regulator guidance and how Sealmetrics
               is built against it. They are not legal advice, and none of them
