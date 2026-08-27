@@ -351,6 +351,16 @@
       "sourceHash": "aea51848528899ad73f87576d275b4fdaf6f382ae58d126693293736c308283b",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/data-breach-france-travail-fined-5-million.avif": {
+      "source": "public/og/blog/data-breach-france-travail-fined-5-million.png",
+      "sourceHash": "afd5329cbdd9c8799726ec949677cfadb43491f3dea905006a05162aaf570372",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/data-breach-france-travail-fined-5-million.webp": {
+      "source": "public/og/blog/data-breach-france-travail-fined-5-million.png",
+      "sourceHash": "afd5329cbdd9c8799726ec949677cfadb43491f3dea905006a05162aaf570372",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/eu-ai-act-for-marketers.avif": {
       "source": "public/og/blog/eu-ai-act-for-marketers.png",
       "sourceHash": "53b3e15af47a8fc151898c51b4da662820e8b70eb48d74d510cc43c4fd8e021d",
@@ -379,6 +389,16 @@
     "public/og/blog/eu-digital-omnibus-marketer-guide-2026.webp": {
       "source": "public/og/blog/eu-digital-omnibus-marketer-guide-2026.png",
       "sourceHash": "fb5210eeb2f984352ca2a883f721d23ea9bd57ba40813ac666c425bce785d582",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.avif": {
+      "source": "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.png",
+      "sourceHash": "f7b56fcb6aca209c532ddeea958524c7b7146e34445929376961dee53398d6a4",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.webp": {
+      "source": "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.png",
+      "sourceHash": "f7b56fcb6aca209c532ddeea958524c7b7146e34445929376961dee53398d6a4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/ga4-alternatives-enterprise.avif": {
