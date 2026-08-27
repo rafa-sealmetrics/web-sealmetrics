@@ -34,7 +34,7 @@ export const blogPosts: BlogPost[] = [
     title: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
     description:
       "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
-    date: "2026-08-22",
+    date: "2026-08-27",
     category: "Regulation",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ftc-personalized-pricing-enforcement-compliance-guide",
     title: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
     description: "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
-    date: "2026-08-20",
+    date: "2026-08-27",
     category: "Regulation",
     readTime: "8 min",
     author: AUTHORS.rafa,

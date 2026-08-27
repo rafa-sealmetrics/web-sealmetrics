@@ -10,21 +10,21 @@ import { ogImage } from "@/lib/seo/og";
 const URL = "/blog/data-breach-france-travail-fined-5-million";
 
 export const metadata: Metadata = {
-  title: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
+  title: "France Travail fined €5M — what Article 32 costs",
   description: "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
   openGraph: {
-    title: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
+    title: "France Travail fined €5M — what Article 32 costs",
     description: "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
     type: "article",
     images: [ogImage("/blog/data-breach-france-travail-fined-5-million/")],
     url: `https://sealmetrics.com/blog/data-breach-france-travail-fined-5-million/`,
-    siteName: "SealMetrics",
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
+    title: "France Travail fined €5M — what Article 32 costs",
     description: "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
     images: [ogImage("/blog/data-breach-france-travail-fined-5-million/")],
   },
@@ -69,11 +69,11 @@ export default function Page() {
         data={articleSchema({
           headline: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
           description: "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
-          datePublished: "2026-08-22",
-          dateModified: "2026-08-22",
+          datePublished: "2026-08-27",
+          dateModified: "2026-08-27",
           url: URL,
           category: "Security & Privacy",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, SealMetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd
@@ -94,7 +94,7 @@ export default function Page() {
               Data breach: France Travail fined €5 million – Lessons in Security and Privacy
             </h1>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">August 22, 2026</time>
+              <time className="font-mono">August 27, 2026</time>
               <span>8 min read</span>
               <span
                 >
@@ -111,13 +111,13 @@ export default function Page() {
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              SealMetrics is a <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless, consentless web analytics platform</Link> for eCommerce that captures 100% of traffic, providing a privacy-first alternative to traditional tracking methods that often trigger complex compliance requirements. By avoiding the collection of <Link href="/glossary/#personal-identifiers" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">personal identifiers</Link>, it helps businesses mitigate the risks associated with data breaches and the evolving regulatory landscape of the GDPR and the EU Digital Omnibus.
+              Sealmetrics is a <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless, consentless web analytics platform</Link> for eCommerce that captures 100% of traffic, providing a privacy-first alternative to traditional tracking methods that often trigger complex compliance requirements. By avoiding the collection of <Link href="/glossary/#personal-identifiers" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">personal identifiers</Link>, it helps businesses mitigate the risks associated with data breaches and the evolving regulatory landscape of the GDPR and the EU Digital Omnibus.
             </p>
 
             {/* ── Quick answer ── */}
             <div className="rounded-[16px] border border-warm-100 bg-warm-white p-7 not-prose">
               <p className="text-[1rem] leading-[1.75] text-text-body">
-                <strong>Quick answer:</strong> The incident highlights the critical importance of managing data security under GDPR. Under current regulations, organizations must assess whether a breach constitutes a 'high risk' to individuals' rights and freedoms. According to the Digital Omnibus amendments, notification to supervisory authorities is mandatory only for high-risk scenarios, such as large-scale breaches affecting sensitive data (financial, health, or credentials) that could lead to identity theft or fraud. Factors influencing such assessments include the scale of the breach, the sensitivity of the exposed data, and the potential consequences for vulnerable populations. For businesses, maintaining robust encryption and effective mitigation measures is essential to reduce the severity of a breach and demonstrate compliance during regulatory audits.
+                <strong>Quick answer:</strong> On 22 January 2026 the CNIL fined France Travail &euro;5 million under Article 32 GDPR &mdash; the security obligation, not consent. Attackers used social engineering to take over CAP EMPLOI adviser accounts and exfiltrated 25 GB covering <strong>36,820,828 people</strong>, including social security numbers, postal and email addresses and phone numbers. The CNIL also ordered corrective measures under a fixed timetable, with a &euro;5,000 penalty for each day of delay. The lesson for eCommerce is not about consent banners: it is that every field you store is a field you can be fined for losing. Data you never collected cannot be exfiltrated, and cannot be held against you in an Article 32 assessment.
               </p>
             </div>
 
@@ -125,27 +125,23 @@ export default function Page() {
               Why was France Travail fined €5 million for a data breach?
             </h2>
             <p>
-              Data breach: France Travail fined €5 million. This wasn’t a sophisticated hack by a nation-state actor; it was a fundamental failure of technical and organizational safeguards. The French regulator (CNIL) determined that France Travail failed to implement adequate access controls and sufficient monitoring, allowing unauthorized access to sensitive personal data.
+              This wasn’t a sophisticated hack by a nation-state actor; it was a fundamental failure of technical and organizational safeguards. The <a href="https://www.cnil.fr/fr/violation-de-donnees-sanction-5millions-france-travail" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">CNIL decision of 22 January 2026</a> turns on Article 32 alone. The French regulator (CNIL) determined that France Travail failed to implement adequate access controls and sufficient monitoring, allowing unauthorized access to sensitive personal data.
             </p>
             <p>
               This penalty highlights a shift in how the EU enforces data security. Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Regulation (EU) 2016/679 — GDPR</a>, security is not an optional feature—it is a core legal requirement for any entity processing personal information. When you fail to protect that data, you aren't just looking at a technical error; you're looking at massive liability.
             </p>
             <p>
-              The incident perfectly illustrates the "High Risk" definition central to the Digital Omnibus. Large-scale breaches affecting massive numbers of individuals, especially when involving sensitive data, are the primary triggers for heavy sanctions. Because the breach involved employment and identity-related information, the potential for identity theft and fraud was high, justifying the €5 million fine.
+              The scale is what drove the sanction. Large breaches affecting many individuals, particularly where the data is sensitive, are the primary triggers for heavy fines under Article 32 as it stands today. Because this breach exposed employment and identity data including social security numbers, the potential for identity theft and fraud was high, and the CNIL weighed that in reaching €5 million. Worth separating from the proposal doing the rounds: the Digital Omnibus (COM(2025) 837, 19 November 2025) would adjust breach-notification thresholds, but it is a Commission proposal still in the ordinary legislative procedure, realistically 2027–2028 and open to substantive amendment. It did not apply to this decision and does not apply to yours today.
             </p>
             <p>
               For eCommerce businesses, the takeaway is simple: reduce your data surface area. You can assess your potential exposure using our <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss calculator</Link>. Most companies collect and store far more data than they actually need for measurement, creating a massive target for attackers. If your measurement stack relies on heavy cookie-based tracking, complex identity stitching, and massive IP databases, you are building a liability rather than an asset.
             </p>
             <p>
-              SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By design, we eliminate the most common vectors for privacy-related incidents. We don't store IP addresses, we don't use cookies, and we don't create the "data delta" that regulators target during an audit. Privacy-by-design, not privacy-by-policy, means your measurement strategy actually helps minimize your risk rather than compounding it.
+              Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By design, we eliminate the most common vectors for privacy-related incidents. We don't store IP addresses, we don't use cookies, and we don't create the "data delta" that regulators target during an audit. Privacy-by-design, not privacy-by-policy, means your measurement strategy actually helps minimize your risk rather than compounding it.
             </p>
             <p>
               While the <a href="https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Guidelines 05/2020 on consent under Regulation 2016/679</a> focus on how users agree to tracking, the France Travail case proves that even with perfect consent, weak security architecture is a multi-million euro mistake.
             </p>
-
-            <CommercialModule
-              hook="Minimize your data liability before a breach happens. Explore how SealMetrics provides privacy-by-design analytics."
-            />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               How can technical security and access controls prevent massive data leaks?
@@ -172,7 +168,7 @@ export default function Page() {
               Failure in these areas transforms a minor incident into a high-risk scenario. According to the <a href="https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Guidelines 05/2020 on consent</a>, while consent is a legal pillar, it is not a technical security measure. You cannot "consent" your way out of a data breach caused by poor encryption or weak IAM.
             </p>
             <p>
-              At SealMetrics, we solve this by reducing the attack surface from the start. SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By eliminating the need to store cookies, PII, or IP addresses, we ensure that even in the event of a breach, there is no sensitive "data delta" for an attacker to exploit. We build privacy-by-design, not privacy-by-policy.
+              We solve this by reducing the attack surface from the start. By eliminating the need to store cookies, PII, or IP addresses, we ensure that even in the event of a breach, there is no sensitive "data delta" for an attacker to exploit. We build privacy-by-design, not privacy-by-policy.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -194,7 +190,7 @@ export default function Page() {
               Furthermore, failing to meet the strict information and consent obligations outlined by the <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">AEPD</a> can lead to sanctions even before a breach occurs.
             </p>
             <p>
-              SealMetrics changes the math by removing the liability at the source. SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. 
+              Sealmetrics changes the math by removing the liability at the source. 
             </p>
             <p>
               Because our architecture does not rely on cookies, IP addresses, or any form of PII, we don't create an attack surface within your measurement stack. We practice privacy-by-design, not privacy-by-policy. 
@@ -219,7 +215,7 @@ export default function Page() {
               From a risk management perspective, the logic is binary: if you don't hold the data, you cannot lose it. By minimizing the "data delta"—the gap between the information you actually need for performance and the surplus data traditionally collected by cookie-based tools—you transform a potential regulatory catastrophe into a manageable technical incident.
             </p>
             <p>
-              This is exactly why we built our platform. SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. We move the measurement layer away from intrusive, cookie-dependent tracking and toward a model of privacy-by-design, not privacy-by-policy. You get the granular performance data required to scale your business without accumulating the security debt of massive, sensitive datasets.
+              This is exactly why we built the platform the way we did. We move the measurement layer away from intrusive, cookie-dependent tracking and toward a model of privacy-by-design, not privacy-by-policy. You get the granular performance data required to scale your business without accumulating the security debt of massive, sensitive datasets.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -235,7 +231,7 @@ export default function Page() {
               The most common mistake is treating analytics as a massive PII repository rather than a low-data-volume utility. Traditional, cookie-based tracking architectures are inherently high-risk because they rely on long-lived identifiers that act as honeypots for attackers. Every cookie you drop is another piece of sensitive data that requires protection, consent, and constant auditing.
             </p>
             <p>
-              The solution is to reduce the data surface area by design. SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By removing the reliance on cookies and heavy PII-based tracking, you eliminate the very assets that attackers prioritize during a breach.
+              The solution is to reduce the data surface area by design. By removing the reliance on cookies and heavy PII-based tracking, you eliminate the very assets that attackers prioritize during a breach.
             </p>
             <p>
               Furthermore, legal defensibility must be built into the architecture, not just the privacy policy. Many organizations struggle to establish a valid lawful basis for processing under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR Art. 6</a>, often relying on flawed or "forced" consent mechanisms. Relying on patterns like scrolling or cookie walls fails to meet the <a href="https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">EDPB's criteria for valid consent</a>, which requires actions to be freely given, specific, informed, and unambiguous.
@@ -277,9 +273,8 @@ export default function Page() {
               </div>
             ))}
           </div>
-
           <CommercialModule
-            hook="Self-service only works when the data underneath is complete. See LENS answer marketing questions on 100% of your traffic, not a consented sample."
+            hook="Every field you never collect is a field you cannot be fined for losing. See what Article 32 exposure looks like when the analytics layer stores no IP, no cookie and no identifier."
           />
 
           <RelatedReading currentSlug="data-breach-france-travail-fined-5-million" />
@@ -317,7 +312,7 @@ export default function Page() {
                   href="/how-it-works"
                   className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
                 >
-                  How SealMetrics works
+                  How Sealmetrics works
                 </Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">
                   First-party, cookieless collection and why the numbers reconcile with the CRM.
@@ -328,4 +323,5 @@ export default function Page() {
         </div>
       </article>
     </>
-  );\n}
+  );
+}

@@ -10,27 +10,27 @@ import { ogImage } from "@/lib/seo/og";
 const URL = "/blog/ftc-personalized-pricing-enforcement-compliance-guide";
 
 export const metadata: Metadata = {
-  title: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
+  title: "FTC personalized pricing — an eCommerce guide",
   description: "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
   openGraph: {
-    title: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
+    title: "FTC personalized pricing — an eCommerce guide",
     description:
       "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
     type: "article",
     images: [ogImage("/blog/ftc-personalized-pricing-enforcement-compliance-guide/")],
-    url: `https://sealmetrics.com${URL}/",
-    siteName: "SealMetrics",
+    url: `https://sealmetrics.com${URL}/`,
+    siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
+    title: "FTC personalized pricing — an eCommerce guide",
     description: "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
     images: [ogImage("/blog/ftc-personalized-pricing-enforcement-compliance-guide/")],
   },
   alternates: {
-    canonical: `https://sealmetrics.com${URL}/",
+    canonical: `https://sealmetrics.com${URL}/`,
   },
 };
 
@@ -67,20 +67,20 @@ export default function Page() {
         data={articleSchema({
           headline: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
           description: "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
-          datePublished: "2026-08-20",
-          dateModified: "2026-08-20",
-          url: `https://sealmetrics.com${URL}/",
+          datePublished: "2026-08-27",
+          dateModified: "2026-08-27",
+          url: `https://sealmetrics.com${URL}/`,
           category: "Compliance & Privacy",
-          author: { name: "Sealmetrics", url: "/authors/sealmetrics" },
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Blog", url: "/blog" },
-          { name: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing", url: `https://sealmetrics.com${URL}/" },
+          { name: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing", url: URL },
         ])}
       />
-      <JsonLd data={faqPageSchema(FAQ, `https://sealmetrics.com${URL}/" )} />
+      <JsonLd data={faqPageSchema(FAQ, URL)} />
 
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -92,10 +92,10 @@ export default function Page() {
               FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands
             </h1>
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[46ch]">
-              Sealmetrics is a [cookieless](/glossary), [consentless](/glossary) web analytics platform for eCommerce that captures 100% of traffic through privacy-first technology. As the FTC seeks comment on enforcement policies regarding personalized pricing, Sealmetrics enables brands to gain deep behavioral insights without the invasive data collection practices that trigger regulatory concerns regarding discriminatory pricing and consumer profiling.
+              Sealmetrics is a <Link href="/glossary" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>, <Link href="/glossary" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless</Link> web analytics platform for eCommerce that captures 100% of traffic through privacy-first technology. As the FTC seeks comment on enforcement policies regarding personalized pricing, Sealmetrics lets brands measure channel and revenue performance in aggregate, without the individual-level profiling that trigger regulatory concerns regarding discriminatory pricing and consumer profiling.
             </p>
             <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">August 20, 2026</time>
+              <time className="font-mono">August 27, 2026</time>
               <span className="text-text-tertiary">8 min read</span>
               <span className="text-text-tertiary">
                 By{" "}
@@ -110,13 +110,16 @@ export default function Page() {
             {/* ── Answer-first summary ── */}
             <div className="rounded-[16px] border border-warm-100 bg-warm-white p-7 not-prose">
               <p className="text-[1rem] leading-[1.75] text-text-body">
-                <strong>Quick answer:</strong> The FTC's Enforcement Policy Statement signals stricter scrutiny of algorithmic pricing built on granular behavioral tracking. Sealmetrics helps brands reduce exposure by capturing 100% of site traffic without cookies or personal identifiers. This positions [cookieless analytics](/cookieless-analytics) as a compliance hedge: businesses get accurate data without the individualized tracking infrastructure now facing direct regulatory scrutiny.
+                <strong>Quick answer:</strong> On <strong>19 August 2026</strong> the FTC opened a 30-day comment period on a proposed enforcement policy statement about personalized pricing &mdash; using personal data to set an individual's price based on what they might pay or whether they are likely to comparison-shop. <strong>Comments close 18 September 2026.</strong> Read what it is and is not: it would create no new rule banning the practice, and it deliberately excludes ordinary price variation from supply, demand, local conditions or taxes. What it says is that failing to tell people how their data sets their price may breach the FTC Act. The exposure therefore sits in the profiling data you hold, not in measurement itself. Sealmetrics reduces that surface by capturing 100% of site traffic without cookies or personal identifiers. This positions <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link> as a compliance hedge: businesses get accurate data without the individualized tracking infrastructure now facing direct regulatory scrutiny.
               </p>
             </div>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
               What is the FTC's latest stance on personalized pricing enforcement?
             </h2>
+            <p>
+              The proposal and the docket are published by the Commission: <a href="https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-seeks-comment-enforcement-policy-statement-regarding-personalized-pricing" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing</a>. If personalized pricing is part of how you operate, the comment window is the cheapest moment to influence the final text.
+            </p>
             <p>
               The FTC is signaling a crackdown on algorithmic discrimination. Through its latest request for comment, the Commission is exploring how to enforce policies against personalized pricing models that exploit consumer profiling. This isn't about standard dynamic pricing driven by supply and demand; it is about the use of granular, often sensitive, data to manipulate prices at the individual level.
             </p>
@@ -130,7 +133,7 @@ export default function Page() {
               For eCommerce brands, the tension between personalization and compliance is reaching a breaking point. Relying on deep-profile behavioral tracking to drive pricing models creates significant regulatory debt and legal liability.
             </p>
             <p>
-              You don't need to exploit consumer data to drive growth. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of your traffic. We provide the performance data you need—attribution, conversion, and funnel analysis—without the regulatory baggage of invasive profiling or the uncertainty of consent-dependent tracking.
+              You don't need to exploit consumer data to drive growth. We provide the performance data you need—attribution, conversion, and funnel analysis—without the regulatory baggage of invasive profiling or the uncertainty of consent-dependent tracking.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -155,7 +158,7 @@ export default function Page() {
               For e-commerce brands, the goal should be measurement, not profiling. You need to know what sold and through which channel, not how much more you can squeeze out of a specific individual based on their behavioral pattern.
             </p>
             <p>
-              Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. We provide the source of truth for your revenue without the privacy risks of hyper-segmentation. We build with privacy-by-design, not privacy-by-policy.
+              It provides the source of truth for your revenue without the privacy risks of hyper-segmentation. We build with privacy-by-design, not privacy-by-policy.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -165,10 +168,10 @@ export default function Page() {
               The FTC’s move to seek comment on its enforcement policy regarding personalized pricing is a direct shot at the data-extractive models that have become standard in e-commerce. For years, brands have used hyper-granular profiling to understand exactly how much a specific user is willing to pay. This isn't just a performance marketing tactic; it is a growing regulatory liability.
             </p>
             <p>
-              The risk lies in the "who." When you rely on third-party cookies and invasive tracking, you aren't just measuring traffic—you are building dossiers. These dossiers allow for the kind of individual-level manipulation that regulators are now targeting. If your pricing models rely on the data harvested through these invisible profiles, you are walking into a regulatory trap. If you aren't sure how much visibility you're losing to consent gaps, use our [data loss calculator](/data-loss-calculator).
+              The risk lies in the "who." When you rely on third-party cookies and invasive tracking, you aren't just measuring traffic—you are building dossiers. These dossiers allow for the kind of individual-level manipulation that regulators are now targeting. If your pricing models rely on the data harvested through these invisible profiles, you are walking into a regulatory trap. If you aren't sure how much visibility you're losing to consent gaps, use our <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss calculator</Link>.
             </p>
             <p>
-              Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. We solve this by shifting the focus from "who is this person?" to "what happened on the site?" 
+              The shift is from "who is this person?" to "what happened on the site?" 
             </p>
             <p>
               By moving to a session-based, first-party measurement model, you fundamentally change your data footprint. Instead of collecting the invasive, cross-site identifiers that fuel predatory profiling, you capture the essential business intelligence: conversions, revenue, and channel attribution. You get the board number that reconciles without the baggage of a user's entire digital history.
@@ -202,7 +205,7 @@ export default function Page() {
               To build the deep, identity-based profiles required for discriminatory pricing, brands often rely on invasive tracking methods that fail to meet strict legal standards. For example, the [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) requires a clear legal basis for processing personal data under Article 6. If that data is harvested through non-compliant cookie banners, you are already in violation. Furthermore, the [EDPB Guidelines on consent](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en) are clear: consent must be freely given, specific, informed, and unambiguous. Relying on "cookie walls" or forced consent to fuel pricing algorithms is a high-stakes gamble. Even in specific jurisdictions like Spain, the [AEPD](https://www.aepd.es/guias/guia-cookies.pdf) provides strict guidance on the obligations of information and consent that many brands ignore in the name of "optimization."
             </p>
             <p>
-              The safest way to grow is to decouple performance from surveillance. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By focusing on behavioral truth—what is happening on your site—rather than invasive identity-based profiling, you can optimize your ROAS and conversion rates without building a regulatory liability.
+              The safest way to grow is to decouple performance from surveillance. By focusing on behavioral truth—what is happening on your site—rather than invasive identity-based profiling, you can optimize your ROAS and conversion rates without building a regulatory liability.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -215,7 +218,7 @@ export default function Page() {
               The second shift is moving from third-party, cookie-based profiling to first-party, cookieless measurement. The regulatory pressure on how consent is obtained is mounting. The [EDPB Guidelines on consent](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en) make it clear that consent must be freely given, specific, and informed—meaning cookie walls and forced scrolling are increasingly indefensible. Even in specific jurisdictions like Spain, the [AEPD provides strict guidance](https://www.aepd.es/guias/guia-cookies.pdf) on cookie obligations that many brands still fail to meet. 
             </p>
             <p>
-              This is why the transition to server-side, first-party measurement is no longer optional for large e-commerce brands. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By removing the reliance on third-party identifiers, you eliminate the invasive profiling that triggers FTC investigations into personalized pricing, while still maintaining the high-fidelity data needed to run your business.
+              This is why the transition to server-side, first-party measurement is no longer optional for large eCommerce brands. By removing the reliance on third-party identifiers, you eliminate the invasive profiling that triggers FTC investigations into personalized pricing, while still maintaining the high-fidelity data needed to run your business.
             </p>
             <p>
               Finally, audit your pricing algorithms for bias. If your systems ingest consumer behavioral data to adjust prices in real-time, you must ensure they aren't using proxies for protected classes. 
@@ -306,7 +309,7 @@ export default function Page() {
                   href="/how-it-works"
                   className="text-[0.95rem] text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
                 >
-                  How SealMetrics works
+                  How Sealmetrics works
                 </Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">
                   First-party, cookieless collection and why the numbers reconcile with the CRM.
@@ -317,4 +320,5 @@ export default function Page() {
         </div>
       </article>
     </>
-  );\n}
+  );
+}
