@@ -10,30 +10,34 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       en: {
         competitor: "GA360",
         techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
-        hook: "GA360 starts at $150,000/year. Enterprise-grade pricing, but the same cookie and consent architecture as free GA4. Complete EU data still requires consent.",
+        hook: "GA360 is quote-based and scales with event volume — entry contracts around $50K/yr, mid-market typically $100–175K. Whatever you pay, the cookie and consent architecture is the same as free GA4.",
         eyebrow: "vs Google Analytics 360",
-        h1: <>Enterprise data <em>without the $150K invoice.</em></>,
-        lede: "GA360 costs six figures per year and still loses the same 40–60% of EU traffic that free GA4 loses — because the architecture is identical. Sealmetrics is complete data, EU-hosted, from €499/mo.",
+        h1: <>Enterprise data <em>without the six-figure invoice.</em></>,
+        lede: "GA360 costs tens to hundreds of thousands per year and still loses the same 40–60% of EU traffic that free GA4 loses — because the collection architecture is identical. Sealmetrics is complete data, EU-hosted, from €499/mo.",
         tldr: {
           answer: (
             <>
               GA360 is Google&rsquo;s enterprise tier of Analytics:
               SLAs, dedicated support, custom retention, sampling
-              relief on BigQuery — wrapped in a <strong>$150K+/year</strong>{" "}
-              annual commit. Underneath, the collection architecture is
+              relief on BigQuery — wrapped in a quote-based annual
+              commit that scales with event volume:{" "}
+              <strong>from around $50K/year</strong> at the entry tier,
+              typically <strong>$100–175K</strong> for mid-market
+              properties. Underneath, the collection architecture is
               identical to free GA4: cookie-based, consent-required,
               US-hosted. In the EU, GA360 loses the same{" "}
               <strong>40–60% of traffic</strong> to consent rejection
               and ad blockers that free GA4 loses — premium price,
               premium incomplete data. Sealmetrics replaces the
-              measurement layer for around <strong>7%</strong> of the
-              GA360 cost, captures 100% on aggregate and keeps
-              everything in Dublin.
+              measurement layer for a published{" "}
+              <strong>€10,788/year</strong> at Scale — a fraction of
+              any GA360 contract — captures 100% on aggregate and
+              keeps everything in Dublin.
             </>
           ),
           bullets: [
             <>GA360: premium support &amp; sampling relief, same collection layer as free GA4.</>,
-            <>Sealmetrics: full capture, EU-only processing, ~93% cheaper than GA360 at scale.</>,
+            <>Sealmetrics: full capture, EU-only processing, published pricing against a quote-only contract.</>,
             <>Most teams keep GA360 only for Google Ads conversion import, run Sealmetrics for revenue decisions.</>,
           ],
         },
@@ -47,14 +51,14 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Read the full Palladium case study",
         },
         gapStats: [
-          { n: "$150K+", label: "Annual cost", detail: "Starts at $150,000/year. Billed annually upfront." },
+          { n: "$50–175K+", label: "Annual cost", detail: "Quote-based, scales with event volume. Billed annually upfront." },
           { n: "40–60%", label: "Still cookie-dependent", detail: "Same consent rejection loss as free GA4." },
           { n: "US-hosted", label: "Schrems II exposure", detail: "EU data transfers to Google infrastructure." },
           { n: "12 months", label: "Minimum contract", detail: "Annual lock-in. Negotiation via Google sales." },
         ],
         comparison: [
           { category: "Pricing", block: "commercial", rows: [
-            { feature: "Starting price", them: "$150,000/yr annual commit", us: "€499/mo · no annual commit" },
+            { feature: "Starting price", them: "Quote-based · from ~$50,000/yr, scales with events", us: "€499/mo · published · no annual commit" },
             { feature: "Billing model", them: "Enterprise sales negotiation", us: "Self-serve · transparent pricing" },
             { feature: "Contract length", them: "12-month minimum", us: "Monthly or annual (2 months free)" },
           ]},
@@ -66,11 +70,12 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { category: "Infrastructure", block: "technical", rows: [
             { feature: "Data residency", them: "US · Google infra", us: "EU · Dublin, Ireland" },
             { feature: "Schrems II", them: "Exposed", us: "Clean" },
-            { feature: "BigQuery export", them: "Included (sampled above 10M/day)", us: "Full resolution · no limits" },
+            { feature: "BigQuery export", them: "Included · raised daily export limit over free GA4", us: "Full resolution · no limits" },
           ]},
           { category: "AI & modern stack", block: "reporting", rows: [
-            { feature: "MCP server", them: "No", us: "Native" },
-            { feature: "Real-time (<2 min)", them: "Partial", us: "Yes · all plans" },
+            { feature: "MCP server", them: "Official server · experimental, read-only", us: "Native · managed · read and act" },
+            { feature: "What the agent can read", them: "Post-consent subset", us: "100% of events" },
+            { feature: "Report latency", them: "Realtime report is core · standard reports lag 24–48 h", us: "< 2 minutes · all plans" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
             { feature: "Script weight on the wire (gzip)", them: "~146 KB · same gtag.js as free GA4", us: "1.1 KB · ~132× lighter" },
@@ -91,39 +96,43 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "Isn't GA360 more accurate than free GA4?", a: "Only on certain dimensions. GA360 removes sampling thresholds on BigQuery export and adds some advanced features, but uses the same cookie + consent architecture. Your 40–60% consent rejection loss is identical. Premium GA4 = premium incomplete data." },
           { q: "What about GA360's enterprise features?", a: "GA360 adds SLAs, dedicated support and custom data retention. Sealmetrics Enterprise includes the same — plus isolated processing, custom DPA and a dedicated account manager. At a fraction of the cost." },
           { q: "Can we migrate gradually from GA360?", a: "Yes. Run both in parallel. Most customers keep GA360 for Google Ads integration during the transition and move strategic reporting to Sealmetrics. Usually takes 60–90 days to fully decommission GA360." },
-          { q: "Is there a way to compare costs directly?", a: "Yes. For a typical large eCommerce (15M events/month), GA360 ≈ $150K/yr vs. Sealmetrics Scale = €10,788/yr — about 93% cheaper, with more complete data." },
+          { q: "Is there a way to compare costs directly?", a: "Yes, and it depends where your event volume lands, because GA360 is quote-based. A typical large eCommerce at 15M events/month sits at GA360's entry tier — around $50K/yr against Sealmetrics Scale at €10,788/yr, roughly 75–80% cheaper. Mid-market GA360 contracts commonly land between $100K and $175K, where the gap widens past 90%. Google does not publish a self-serve price, so get your own quote and compare it against our published tiers rather than against our estimate." },
         ],
-        ctaTitle: <>Get enterprise data. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Skip the $150K invoice.</em></>,
+        ctaTitle: <>Get enterprise data. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Skip the six-figure invoice.</em></>,
         ctaLede: "30-minute walkthrough with the founder. We'll show your GA360 numbers next to Sealmetrics on your own traffic — you see the gap and the savings.",
       },
       es: {
         competitor: "GA360",
         techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
-        hook: "GA360 arranca en 150.000$/año. Precio enterprise, misma arquitectura de cookies y consentimiento que GA4 gratis. Los datos UE completos siguen requiriendo consentimiento.",
+        hook: "GA360 va por presupuesto y escala con el volumen de eventos — contratos de entrada sobre 50.000$/año, mid-market normalmente 100–175K$. Pagues lo que pagues, la arquitectura de cookies y consentimiento es la de GA4 gratis.",
         eyebrow: "vs Google Analytics 360",
-        h1: <>Datos enterprise <em>sin la factura de 150K$.</em></>,
-        lede: "GA360 cuesta seis cifras al año y sigue perdiendo el mismo 40–60% del tráfico UE que GA4 gratis — porque la arquitectura es idéntica. Sealmetrics es dato completo, alojado en UE, desde €499/mes.",
+        h1: <>Datos enterprise <em>sin la factura de seis cifras.</em></>,
+        lede: "GA360 cuesta entre decenas y cientos de miles al año y sigue perdiendo el mismo 40–60% del tráfico UE que GA4 gratis — porque la capa de recolección es idéntica. Sealmetrics es dato completo, alojado en UE, desde €499/mes.",
         tldr: {
           answer: (
             <>
               GA360 es el tier enterprise de Google Analytics: SLAs,
               soporte dedicado, retención custom, alivio de muestreo
-              en BigQuery — todo envuelto en un compromiso anual de{" "}
-              <strong>150.000$+/año</strong>. Debajo, la capa de
+              en BigQuery — todo envuelto en un compromiso anual por
+              presupuesto que escala con el volumen de eventos:{" "}
+              <strong>desde unos 50.000$/año</strong> en el tier de
+              entrada, normalmente <strong>100–175K$</strong> en
+              propiedades mid-market. Debajo, la capa de
               recolección es idéntica a la de GA4 gratuito:
               basada en cookies, requiere consentimiento, alojada en
               EE.UU. En la UE, GA360 pierde el mismo{" "}
               <strong>40–60% de tráfico</strong> que GA4 gratis por
               rechazo de consentimiento y ad-blockers — precio premium,
               datos premium incompletos. Sealmetrics reemplaza la capa
-              de medición por cerca del <strong>7%</strong> del coste
-              de GA360, captura el 100% en agregado y mantiene todo en
+              de medición por <strong>10.788€/año</strong> publicados
+              en Scale — una fracción de cualquier contrato GA360 —,
+              captura el 100% en agregado y mantiene todo en
               Dublín.
             </>
           ),
           bullets: [
             <>GA360: soporte premium y alivio de muestreo, misma capa de recolección que GA4 gratis.</>,
-            <>Sealmetrics: captura completa, procesamiento solo en UE, ~93% más barato que GA360 a escala.</>,
+            <>Sealmetrics: captura completa, procesamiento solo en UE, precio publicado frente a un contrato solo por presupuesto.</>,
             <>La mayoría de equipos mantienen GA360 solo para el import de conversiones de Google Ads y deciden sobre Sealmetrics.</>,
           ],
         },
@@ -137,14 +146,14 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Leer el case study completo de Palladium",
         },
         gapStats: [
-          { n: "150K$+", label: "Coste anual", detail: "Arranca en 150.000$/año. Pagado anualmente por adelantado." },
+          { n: "50–175K$+", label: "Coste anual", detail: "Por presupuesto, escala con el volumen de eventos. Pagado anualmente por adelantado." },
           { n: "40–60%", label: "Sigue con cookies", detail: "Misma pérdida por rechazo de consentimiento que GA4." },
           { n: "US-hosted", label: "Exposición Schrems II", detail: "Transferencias UE a infra Google." },
           { n: "12 meses", label: "Contrato mínimo", detail: "Lock-in anual. Negociación vía Google sales." },
         ],
         comparison: [
           { category: "Precio", block: "commercial", rows: [
-            { feature: "Precio de entrada", them: "150.000$/año compromiso anual", us: "€499/mes · sin compromiso anual" },
+            { feature: "Precio de entrada", them: "Por presupuesto · desde ~50.000$/año, escala con eventos", us: "€499/mes · publicado · sin compromiso anual" },
             { feature: "Modelo facturación", them: "Negociación enterprise sales", us: "Self-serve · precio transparente" },
             { feature: "Duración contrato", them: "Mínimo 12 meses", us: "Mensual o anual (2 meses gratis)" },
           ]},
@@ -156,11 +165,12 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { category: "Infraestructura", block: "technical", rows: [
             { feature: "Residencia de datos", them: "US · infra Google", us: "UE · Dublín, Irlanda" },
             { feature: "Schrems II", them: "Expuesto", us: "Limpio" },
-            { feature: "Export BigQuery", them: "Incluido (muestreado sobre 10M/día)", us: "Resolución completa · sin límites" },
+            { feature: "Export BigQuery", them: "Incluido · límite diario de export más alto que GA4 gratis", us: "Resolución completa · sin límites" },
           ]},
           { category: "IA y stack moderno", block: "reporting", rows: [
-            { feature: "MCP server", them: "No", us: "Nativo" },
-            { feature: "Tiempo real (<2 min)", them: "Parcial", us: "Sí · todos los planes" },
+            { feature: "MCP server", them: "Servidor oficial · experimental, solo lectura", us: "Nativo · gestionado · lee y actúa" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "100% de los eventos" },
+            { feature: "Latencia de informes", them: "El informe Realtime es core · los estándar tardan 24–48 h", us: "< 2 minutos · todos los planes" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
             { feature: "Peso del script en red (gzip)", them: "~146 KB · el mismo gtag.js que GA4 gratis", us: "1,1 KB · ~132× más ligero" },
@@ -194,15 +204,18 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         hook: "Adobe Analytics is powerful for enterprise reporting but requires specialists, enterprise contracts and the same consent-dependent data capture. In 2026, power tools working on incomplete data are a liability.",
         eyebrow: "vs Adobe Analytics",
         h1: <>Enterprise power. <em>Zero enterprise overhead.</em></>,
-        lede: "Adobe Analytics delivers depth at the cost of complexity: dedicated analysts, implementation consultants and $100K+ annual contracts. Sealmetrics delivers complete data with no specialists required — from €499/mo.",
+        lede: "Adobe Analytics delivers depth at the cost of complexity: dedicated analysts, implementation consultants and unpublished annual contracts that run from around $50K to $200K+. Sealmetrics delivers complete data with no specialists required — from €499/mo.",
         tldr: {
           answer: (
             <>
               Adobe Analytics is a powerful enterprise reporting suite —
               segmentation depth, calculated metrics, Customer Journey
               Analytics stitching. Three frictions show up in every
-              vendor review: <strong>$100K+/year</strong> base licence,
-              <strong> 3–6 month</strong> implementation, and a dedicated
+              vendor review: an unpublished base licence that runs from
+              around <strong>$50K/year</strong> for Select to{" "}
+              <strong>$200K+</strong> for Ultimate, a{" "}
+              <strong>3–6 month</strong> implementation billed separately
+              at $20–100K, and a dedicated
               Adobe-certified analyst on staff. Under all of it, the
               AppMeasurement collection layer is still cookie-based and
               consent-gated — the EU traffic gap is unchanged. Sealmetrics
@@ -227,21 +240,21 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Read the full Palladium case study",
         },
         gapStats: [
-          { n: "$100K+", label: "Annual cost", detail: "Plus implementation consulting fees." },
+          { n: "$50–200K+", label: "Annual cost", detail: "Unpublished, by tier and volume. Plus $20–100K implementation consulting." },
           { n: "3–6 months", label: "Implementation", detail: "Typical time to first value." },
           { n: "+25%", label: "Measured traffic gap", detail: "30-day parallel run on a European media site. Losses beyond consent: blockers + a ~3 s hit window." },
           { n: "40–60%", label: "Still consent-gated", detail: "Cookie-dependent capture. Same EU gap as GA." },
         ],
         comparison: [
           { category: "Pricing & time to value", block: "commercial", rows: [
-            { feature: "Starting price", them: "$100,000/yr + implementation fees", us: "€499/mo · no hidden fees" },
+            { feature: "Starting price", them: "Unpublished · Select from ~$50,000/yr + implementation fees", us: "€499/mo · published · no hidden fees" },
             { feature: "Implementation time", them: "3–6 months typical", us: "1 week to decision-ready" },
             { feature: "Required specialists", them: "Adobe-certified analyst on team", us: "Self-serve · founder onboarding" },
           ]},
           { category: "Data capture", block: "technical", rows: [
             { feature: "Cookie-dependent", them: "Yes · AppMeasurement library", us: "No · first-party server-side" },
             { feature: "EU consent rejection handling", them: "Banner-dependent", us: "Not applicable (no cookies)" },
-            { feature: "Sampling", them: "Virtual Report Suites impact sampling", us: "Zero sampling" },
+            { feature: "Sampling", them: "No sampling on standard reporting · large Workspace queries can be estimated", us: "Zero sampling" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
             { feature: "Script weight on the wire (gzip)", them: "~170 KB · Launch + AppMeasurement", us: "1.1 KB · ~155× lighter" },
@@ -254,8 +267,9 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Schrems II", them: "Requires separate legal review", us: "Clean by architecture" },
           ]},
           { category: "Modern stack", block: "reporting", rows: [
-            { feature: "MCP / AI-native", them: "Via separate Adobe Analytics AI", us: "Native MCP server" },
-            { feature: "BigQuery export", them: "Via Customer Journey Analytics (premium)", us: "Included in all plans" },
+            { feature: "MCP / AI-native", them: "Official MCP servers for Adobe Analytics and CJA", us: "Native · managed · all plans" },
+            { feature: "What the agent can read", them: "Post-consent subset", us: "100% of events" },
+            { feature: "Warehouse export", them: "Data Feeds / Data Warehouse · CJA for cross-channel", us: "Native BigQuery export · included in all plans" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Implementation partners · consultant-led", us: "Founder-led · 15-minute install" },
@@ -278,7 +292,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "How hard is migration?", a: "No migration. Both tools run in parallel. Decide per use case where each serves best. Most teams move acquisition + attribution reporting to Sealmetrics and keep Adobe for enterprise segmentation and email orchestration." },
         ],
         ctaTitle: <>Skip the <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>6-month implementation.</em></>,
-        ctaLede: "30 minutes with the founder. Sealmetrics installed in 15 minutes. Decision-ready in week one. No consultants, no specialists, no $100K invoice.",
+        ctaLede: "30 minutes with the founder. Sealmetrics installed in 15 minutes. Decision-ready in week one. No consultants, no specialists, no six-figure invoice.",
       },
       es: {
         competitor: "Adobe Analytics",
@@ -286,7 +300,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         hook: "Adobe Analytics es potente para reporting enterprise pero requiere especialistas, contratos enterprise y la misma captura de datos dependiente del consentimiento. En 2026, herramientas potentes sobre datos incompletos son una liability.",
         eyebrow: "vs Adobe Analytics",
         h1: <>Potencia enterprise. <em>Cero overhead enterprise.</em></>,
-        lede: "Adobe Analytics da profundidad a coste de complejidad: analistas dedicados, consultores de implementación y contratos de 100K$+ anuales. Sealmetrics da dato completo sin especialistas — desde €499/mes.",
+        lede: "Adobe Analytics da profundidad a coste de complejidad: analistas dedicados, consultores de implementación y contratos anuales no publicados que van de unos 50K$ a 200K$+. Sealmetrics da dato completo sin especialistas — desde €499/mes.",
         tldr: {
           answer: (
             <>
@@ -294,8 +308,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               enterprise — profundidad de segmentación, métricas
               calculadas, stitching cross-canal de Customer Journey
               Analytics. Tres fricciones aparecen en cada revisión de
-              vendor: licencia base de <strong>100K$+/año</strong>,
-              implementación de <strong>3–6 meses</strong> y un analista
+              vendor: una licencia base no publicada que va de unos{" "}
+              <strong>50K$/año</strong> en Select a{" "}
+              <strong>200K$+</strong> en Ultimate, una implementación de{" "}
+              <strong>3–6 meses</strong> facturada aparte a 20–100K$, y un analista
               certificado en Adobe en plantilla. Debajo de todo, la capa
               de recolección AppMeasurement sigue siendo basada en
               cookies y dependiente de consentimiento — el gap UE no
@@ -321,21 +337,21 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Leer el case study completo de Palladium",
         },
         gapStats: [
-          { n: "100K$+", label: "Coste anual", detail: "Más fees de consultoría de implementación." },
+          { n: "50–200K$+", label: "Coste anual", detail: "No publicado, por tier y volumen. Más 20–100K$ de consultoría de implementación." },
           { n: "3–6 meses", label: "Implementación", detail: "Tiempo típico al primer valor." },
           { n: "+25%", label: "Gap de tráfico medido", detail: "30 días en paralelo en un medio europeo. Pérdidas más allá del consentimiento: blockers + ventana de hit de ~3 s." },
           { n: "40–60%", label: "Sigue con consentimiento", detail: "Captura dependiente de cookies. Mismo gap UE que GA." },
         ],
         comparison: [
           { category: "Precio y tiempo al valor", block: "commercial", rows: [
-            { feature: "Precio de entrada", them: "100.000$/año + fees implementación", us: "€499/mes · sin fees ocultos" },
+            { feature: "Precio de entrada", them: "No publicado · Select desde ~50.000$/año + fees implementación", us: "€499/mes · publicado · sin fees ocultos" },
             { feature: "Tiempo implementación", them: "3–6 meses típicamente", us: "1 semana a decisiones" },
             { feature: "Especialistas requeridos", them: "Analista certificado Adobe", us: "Self-serve · onboarding founder" },
           ]},
           { category: "Captura de datos", block: "technical", rows: [
             { feature: "Depende de cookies", them: "Sí · librería AppMeasurement", us: "No · first-party server-side" },
             { feature: "Manejo rechazo UE", them: "Dependiente de banner", us: "No aplica (sin cookies)" },
-            { feature: "Muestreo", them: "Virtual Report Suites afectan muestreo", us: "Cero muestreo" },
+            { feature: "Muestreo", them: "Sin muestreo en reporting estándar · consultas grandes en Workspace pueden estimarse", us: "Cero muestreo" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
             { feature: "Peso del script en red (gzip)", them: "~170 KB · Launch + AppMeasurement", us: "1,1 KB · ~155× más ligero" },
@@ -348,8 +364,9 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Schrems II", them: "Requiere revisión legal aparte", us: "Limpio por arquitectura" },
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
-            { feature: "MCP / IA nativa", them: "Vía Adobe Analytics AI aparte", us: "MCP server nativo" },
-            { feature: "Export BigQuery", them: "Vía Customer Journey Analytics (premium)", us: "Incluido en todos los planes" },
+            { feature: "MCP / IA nativa", them: "Servidores MCP oficiales para Adobe Analytics y CJA", us: "Nativo · gestionado · todos los planes" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "100% de los eventos" },
+            { feature: "Export a warehouse", them: "Data Feeds / Data Warehouse · CJA para cross-canal", us: "Export BigQuery nativo · incluido en todos los planes" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Partners de implementación · liderado por consultores", us: "Liderado por el founder · instalación en 15 min" },
@@ -372,13 +389,13 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "¿Qué tan difícil es migrar?", a: "Sin migración. Ambas corren en paralelo. Decides caso a caso dónde encaja cada una. La mayoría mueve reporting de adquisición + atribución a Sealmetrics y mantienen Adobe para segmentación enterprise y orquestación email." },
         ],
         ctaTitle: <>Sáltate la <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>implementación de 6 meses.</em></>,
-        ctaLede: "30 min con el founder. Sealmetrics instalado en 15 min. Listo para decidir en semana uno. Sin consultores, sin especialistas, sin factura de 100K$.",
+        ctaLede: "30 min con el founder. Sealmetrics instalado en 15 min. Listo para decidir en semana uno. Sin consultores, sin especialistas, sin factura de seis cifras.",
       },
     },
     "piwik-pro": {
       en: {
         competitor: "Piwik PRO",
-        hook: "Piwik PRO offers EU-hosted analytics but is still cookie-based, consent-required, and priced for €30K+/yr contracts. The architecture is closer to GA4 than you'd expect — just hosted on European servers.",
+        hook: "Piwik PRO offers EU-hosted analytics but is still cookie-based by default. The free Core plan is being retired on 31 March 2026, Business starts at €35/month and Enterprise is quote-only. The architecture is closer to GA4 than you'd expect — just hosted on European servers.",
         eyebrow: "vs Piwik PRO",
         h1: <>EU hosting is the <em>beginning</em>, not the finish line.</>,
         lede: "Piwik PRO runs in Europe — that's good. But it still uses cookies, requires consent, and loses the same EU traffic GA4 loses. Sealmetrics solves the root problem: the architecture, not just the hosting.",
@@ -413,14 +430,15 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Read the full Dreamplace case study",
         },
         gapStats: [
-          { n: "€30K+", label: "Enterprise minimum", detail: "Enterprise plan starts around €30K/yr." },
-          { n: "Cookie-based", label: "Same consent dependency", detail: "40–60% EU traffic still lost to rejection." },
-          { n: "Banner required", label: "No compliance advantage", detail: "Needs consent banner like GA4." },
-          { n: "Manual DPIA", label: "Per-cookie review", detail: "Cookie addition still triggers compliance scope." },
+          { n: "Free plan ends", label: "Core retired 31 Mar 2026", detail: "Existing Core users must move to Business (from €35/mo) or Enterprise." },
+          { n: "Quote-only", label: "Enterprise pricing", detail: "No published Enterprise rate — every deal is negotiated individually." },
+          { n: "Cookie-based", label: "Same consent dependency", detail: "40–60% EU traffic still lost to rejection under a banner." },
+          { n: "By configuration", label: "Consentless mode is a setting", detail: "Compliance depends on holding the configuration, and on the jurisdiction reading it." },
         ],
         comparison: [
           { category: "Pricing", block: "commercial", rows: [
-            { feature: "Entry plan", them: "Free (limited) / Enterprise from €30K/yr", us: "€499/mo from Growth" },
+            { feature: "Entry plan", them: "Business from €35/mo · free Core retired 31 Mar 2026", us: "€499/mo from Growth" },
+            { feature: "Enterprise pricing", them: "Quote-only · negotiated per deal, no published rate", us: "Published pricing at every tier" },
             { feature: "Implementation support", them: "Enterprise-only", us: "Founder-led on all plans" },
           ]},
           { category: "Data capture", block: "technical", rows: [
@@ -433,7 +451,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Schrems II", them: "Clean", us: "Clean" },
           ]},
           { category: "Modern stack", block: "reporting", rows: [
-            { feature: "MCP / AI integration", them: "No native support", us: "Native MCP server" },
+            { feature: "MCP / AI integration", them: "Official MCP, beta since May 2026 · Analytics, CDP and Tag Manager", us: "Native · managed · all plans" },
+            { feature: "What the agent can read", them: "Post-consent subset, or consentless data with visitor-level reports off", us: "100% of events" },
             { feature: "BigQuery export", them: "Enterprise add-on", us: "Included from Growth" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -447,17 +466,17 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
         ],
         faqs: [
-          { q: "Piwik PRO is also EU-hosted. Why is Sealmetrics different?", a: "EU hosting solves data residency. It doesn't solve consent. Piwik PRO uses cookies, requires consent, and loses the same 40–60% of EU visitors. Sealmetrics solves both: EU-hosted AND cookieless, so nothing gets lost to consent rejection." },
+          { q: "Piwik PRO is also EU-hosted. Why is Sealmetrics different?", a: "EU hosting solves data residency. It doesn't solve consent. Piwik PRO is cookie-based by default and, run that way, loses the same 40–60% of EU visitors to rejection. It does offer a consentless mode, but that is a configuration you have to hold, that drops visitor-level reporting, and whose standing varies by jurisdiction — France's CNIL criteria read it differently from Germany's TDDDG §25. Sealmetrics writes nothing to the visitor's device and reads nothing from it, so there is no configuration to maintain and no carve-out to defend." },
           { q: "Isn't Piwik PRO's consent-aware tracking enough?", a: "It depends on your risk appetite. Piwik PRO has a 'consentless tracking' mode, but it relies on interpreting RGPD/ePrivacy carve-outs that vary per jurisdiction (CNIL treats it differently from BfDI). Sealmetrics writes nothing to the visitor's device and reads nothing from it, so ePrivacy Article 5(3) is not engaged and there is no carve-out left to interpret." },
           { q: "What about their Customer Data Platform features?", a: "Piwik PRO bundles CDP features in higher tiers. If you need a CDP, pair Sealmetrics with Segment/Rudderstack (more mature, better pricing). For pure analytics, Sealmetrics is complete data at a fraction of Piwik PRO's enterprise cost." },
-          { q: "Can I migrate from Piwik PRO?", a: "Yes. Run both 30 days. Compare traffic volumes (Sealmetrics typically shows 30–70% more), compare attribution (Sealmetrics attributes the 'direct' bucket correctly). Most teams decide within the first 14 days." },
+          { q: "Can I migrate from Piwik PRO?", a: "Yes. Run both 30 days. If your Piwik PRO runs a consent banner, compare traffic volumes first — Sealmetrics typically shows 30–70% more, and the gap is your rejection rate. If it runs consentless, volumes will be closer, so compare visitor-level and attribution reporting instead, because that is what the consentless configuration gives up. Most teams decide within the first 14 days." },
         ],
         ctaTitle: <>EU hosting <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>plus complete capture.</em></>,
         ctaLede: "30 minutes. We run your site through Sealmetrics and Piwik PRO simultaneously. You see how much of your EU traffic Piwik PRO's banner still loses.",
       },
       es: {
         competitor: "Piwik PRO",
-        hook: "Piwik PRO ofrece analítica alojada en UE pero sigue siendo basada en cookies, requiere consentimiento y con precio de 30K€+/año. La arquitectura está más cerca de GA4 de lo que parece — solo alojada en servidores europeos.",
+        hook: "Piwik PRO ofrece analítica alojada en UE pero sigue siendo basada en cookies por defecto. El plan Core gratuito se retira el 31 de marzo de 2026, Business arranca en 35€/mes y Enterprise va solo por presupuesto. La arquitectura está más cerca de GA4 de lo que parece — solo alojada en servidores europeos.",
         eyebrow: "vs Piwik PRO",
         h1: <>El hosting UE es el <em>principio</em>, no la meta.</>,
         lede: "Piwik PRO corre en Europa — eso está bien. Pero sigue usando cookies, requiere consentimiento y pierde el mismo tráfico UE que GA4. Sealmetrics resuelve el problema de raíz: la arquitectura, no solo el hosting.",
@@ -493,19 +512,20 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Leer el case study completo de Dreamplace",
         },
         gapStats: [
-          { n: "30K€+", label: "Mínimo enterprise", detail: "Plan enterprise arranca en ~30K€/año." },
-          { n: "Con cookies", label: "Misma dependencia", detail: "40–60% tráfico UE sigue perdido por rechazo." },
-          { n: "Banner requerido", label: "Sin ventaja compliance", detail: "Necesita banner como GA4." },
-          { n: "DPIA manual", label: "Revisión por cookie", detail: "Añadir cookie sigue disparando scope de compliance." },
+          { n: "Se acaba el free", label: "Core retirado 31 mar 2026", detail: "Los usuarios de Core deben pasar a Business (desde 35€/mes) o Enterprise." },
+          { n: "Por presupuesto", label: "Precio Enterprise", detail: "Sin tarifa Enterprise publicada — cada acuerdo se negocia individualmente." },
+          { n: "Con cookies", label: "Misma dependencia", detail: "40–60% tráfico UE sigue perdido por rechazo con banner." },
+          { n: "Por configuración", label: "El modo sin consentimiento es un ajuste", detail: "El cumplimiento depende de sostener la configuración, y de cómo la lea cada jurisdicción." },
         ],
         comparison: [
           { category: "Precio", block: "commercial", rows: [
-            { feature: "Plan de entrada", them: "Free (limitado) / Enterprise desde 30K€/año", us: "€499/mes desde Growth" },
+            { feature: "Plan de entrada", them: "Business desde 35€/mes · Core gratuito retirado el 31 mar 2026", us: "€499/mes desde Growth" },
+            { feature: "Precio Enterprise", them: "Solo por presupuesto · negociado por acuerdo, sin tarifa publicada", us: "Precio publicado en todos los tiers" },
             { feature: "Soporte implementación", them: "Solo Enterprise", us: "Liderado por founder en todos los planes" },
           ]},
           { category: "Captura de datos", block: "technical", rows: [
             { feature: "Cookies", them: "Sí · opt-in requerido", us: "Ninguna" },
-            { feature: "Banner consentimiento", them: "Sí", us: "No · fuera del scope RGPD" },
+            { feature: "Banner consentimiento", them: "Sí por defecto · sin banner solo en modo sin consentimiento", us: "No · no escribe ni lee nada del dispositivo" },
             { feature: "Tráfico UE capturado", them: "60% típico con banner", us: "100% capturado" },
           ]},
           { category: "Infraestructura", block: "technical", rows: [
@@ -513,7 +533,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Schrems II", them: "Limpio", us: "Limpio" },
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
-            { feature: "MCP / integración IA", them: "Sin soporte nativo", us: "MCP server nativo" },
+            { feature: "MCP / integración IA", them: "MCP oficial, beta desde mayo 2026 · Analytics, CDP y Tag Manager", us: "Nativo · gestionado · todos los planes" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, o dato sin consentimiento con los informes de visitante apagados", us: "100% de los eventos" },
             { feature: "Export BigQuery", them: "Add-on enterprise", us: "Incluido desde Growth" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -527,10 +548,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
         ],
         faqs: [
-          { q: "Piwik PRO también está alojado en UE. ¿Por qué es distinto Sealmetrics?", a: "El hosting UE resuelve la residencia. No resuelve el consentimiento. Piwik PRO usa cookies, requiere consentimiento y pierde el mismo 40–60% de visitantes UE. Sealmetrics resuelve ambos: alojado en UE Y sin cookies, así nada se pierde por rechazo." },
+          { q: "Piwik PRO también está alojado en UE. ¿Por qué es distinto Sealmetrics?", a: "El hosting UE resuelve la residencia. No resuelve el consentimiento. Piwik PRO es basado en cookies por defecto y, funcionando así, pierde el mismo 40–60% de visitantes UE por rechazo. Sí ofrece un modo sin consentimiento, pero es una configuración que tienes que sostener, que renuncia al reporting a nivel de visitante, y cuyo encaje varía por jurisdicción — los criterios de la CNIL francesa lo leen distinto que el §25 de la TDDDG alemana. Sealmetrics no escribe nada en el dispositivo del visitante ni lee nada de él, así que no hay configuración que mantener ni excepción que defender." },
           { q: "¿No basta con su tracking consent-aware?", a: "Depende de tu apetito de riesgo. Piwik PRO tiene un modo 'consentless tracking', pero depende de interpretar excepciones RGPD/ePrivacy que varían por jurisdicción (CNIL lo trata distinto a BfDI). Sealmetrics no escribe nada en el dispositivo del visitante ni lee nada de él, así que el artículo 5(3) de ePrivacy no llega a activarse y no queda excepción que interpretar." },
           { q: "¿Y sus features de Customer Data Platform?", a: "Piwik PRO empaqueta features CDP en tiers altos. Si necesitas un CDP, combina Sealmetrics con Segment/Rudderstack (más maduros, mejor precio). Para analítica pura, Sealmetrics es dato completo a una fracción del coste enterprise de Piwik PRO." },
-          { q: "¿Puedo migrar desde Piwik PRO?", a: "Sí. Corre ambos 30 días. Compara volúmenes de tráfico (Sealmetrics típicamente muestra 30–70% más), compara atribución (Sealmetrics atribuye el bucket 'directo' correctamente). La mayoría de equipos decide en los primeros 14 días." },
+          { q: "¿Puedo migrar desde Piwik PRO?", a: "Sí. Corre ambos 30 días. Si tu Piwik PRO lleva banner de consentimiento, compara primero los volúmenes de tráfico — Sealmetrics típicamente muestra 30–70% más, y la diferencia es tu tasa de rechazo. Si va en modo sin consentimiento, los volúmenes estarán más cerca, así que compara el reporting a nivel de visitante y la atribución, que es a lo que renuncia esa configuración. La mayoría de equipos decide en los primeros 14 días." },
         ],
         ctaTitle: <>Hosting UE <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>más captura completa.</em></>,
         ctaLede: "30 min. Pasamos tu web por Sealmetrics y Piwik PRO simultáneamente. Ves cuánto tráfico UE sigue perdiendo el banner de Piwik PRO.",
@@ -649,7 +670,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "Doesn't Matomo have a CNIL exemption? Why would I need Sealmetrics?", a: "It does, and it deserves to be taken seriously — the CNIL republished its audience-measurement criteria in July 2025 with a self-assessment tool, and Matomo publishes a configuration guide for it. Both Cloud and On-Premise can qualify, with cookies still on. Two things decide whether it solves your problem. Scope: the criteria are French. Germany's TDDDG §25 does not recognise them, and most EU markets run no equivalent named-solution list, so a multi-market eCommerce is still showing a banner outside France. Cost: the exempt configuration strips UTM and campaign parameters, cuts referrers to the domain, disables visit-level reports and APIs, turns off cross-domain tracking, and recommends disabling eCommerce tracking. If you run paid media, that removes the attribution you bought analytics for. Sealmetrics needs no exemption because it writes nothing to the visitor's device and reads nothing from it — campaigns, channels and revenue stay intact across the EU." },
           { q: "Isn't Matomo's cookieless mode equivalent to Sealmetrics?", a: "Not really. Without cookies Matomo falls back to config_id, a short-lived environment hash — a window of roughly 30 minutes, 24 hours at most — deliberately built not to recognise returning visitors. Pageviews, events, downloads, outlinks and site search survive intact; returning-visitor counts, visit frequency, multi-session campaign attribution and cohorts degrade. Sealmetrics is cookieless across the entire product with no toggle and no feature loss. The legal basis also differs in kind: Matomo without a banner depends on holding a consent-exempt configuration — permitted under the CNIL criteria in France, not under Germany's TDDDG §25 — while Sealmetrics writes nothing to the visitor's device and reads nothing from it, so ePrivacy Article 5(3) is not engaged in the first place." },
           { q: "Self-hosted Matomo is free. Sealmetrics costs €499/mo. Why pay?", a: "Self-hosting is free on the licence. It is not free in operations: you need a server, security patches, backups, plugin maintenance, upgrade cycles and someone responsible when archiving breaks at 3 AM. For a serious eCommerce, that's typically 0.2–0.5 FTE — €15K–€40K/yr in real cost. Sealmetrics replaces all of that for €6K/yr, with cookieless data and a modern stack on top. If you would rather compare like for like, use Matomo Cloud: $23 / ~€29 a month covers 50,000 hits, and above 10 million hits a month it is quote-based, so at eCommerce volume you are negotiating a price rather than reading one." },
-          { q: "How does Matomo compare to Piwik PRO?", a: "Piwik PRO is a commercial fork of Matomo, with enterprise features and EU hosting layered on top. Both share the cookie-based architecture origin, and both offer a consentless configuration that trades data for compliance. Piwik PRO is closer to enterprise pricing (~€30K+/yr) while Matomo Cloud is more mid-market. Sealmetrics differs from both at the architecture level: not a privacy-friendly configuration of cookie tracking, but cookieless capture by design — nothing to configure and nothing to keep configured." },
+          { q: "How does Matomo compare to Piwik PRO?", a: "Piwik PRO is a commercial fork of Matomo, with enterprise features and EU hosting layered on top. Both share the cookie-based architecture origin, and both offer a consentless configuration that trades data for compliance. Piwik PRO sells Business from €35/mo and quotes Enterprise privately, and is retiring its free Core plan on 31 March 2026; Matomo Cloud publishes its tiers. Sealmetrics differs from both at the architecture level: not a privacy-friendly configuration of cookie tracking, but cookieless capture by design — nothing to configure and nothing to keep configured." },
           { q: "What about Matomo's ecosystem and open-source model?", a: "Both are real, and for some teams they decide the choice: source code you can audit, a database you own with direct SQL access, and a suite that includes Tag Manager, heatmaps, session recording and A/B testing. Sealmetrics does none of those things and is not trying to — it is analytics only, aggregate by design, with no session recording and no individual-level data. Where the two genuinely diverge is the paid-media case: if consent rejection or the exempt configuration is costing you campaign-level attribution on a €10M+ eCommerce, no amount of ecosystem replaces the missing data." },
           { q: "What happens to this comparison if the EU Digital Omnibus passes?", a: "It narrows the gap, and it is worth saying so plainly. The Commission's proposal of 19 November 2025 (COM(2025) 837) would move cookie rules into the GDPR through a new Article 88a and exempt first-party, aggregated audience measurement for the controller's own use from consent. Adopted broadly as drafted — ordinary legislative procedure, realistically 2027–2028, substantive amendments likely — a Matomo in exempt configuration would qualify across the EU rather than only in France. What does not change: that configuration still strips your campaign parameters and visit-level data, it still costs you returning-visitor recognition and multi-session attribution, a first-party endpoint still survives ad blockers that a third-party script does not, and you still run the servers. Our position has never depended on the banner alone." },
           { q: "Can I migrate gradually from Matomo?", a: "Yes. Run both in parallel 30 days. If your Matomo runs a consent banner, compare traffic counts first — the gap is your consent rejection rate, and Sealmetrics typically captures 30–70% more EU traffic. If it runs the consent-exempt configuration, traffic counts will be much closer, so compare campaign and channel attribution instead, because that is where the exempt configuration is blank. Then compare revenue alignment against your backend. Most teams decide within the first 14 days." },
@@ -765,7 +786,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "¿Matomo no tiene exención de la CNIL? ¿Para qué necesito Sealmetrics?", a: "La tiene, y merece tomarse en serio: la CNIL republicó sus criterios de medición de audiencia en julio de 2025 con una herramienta de autoevaluación, y Matomo publica su guía de configuración para ella. Cloud y On-Premise pueden calificar, con las cookies aún activas. Dos cosas deciden si eso resuelve tu problema. Alcance: los criterios son franceses. El §25 de la TDDDG alemana no los reconoce, y la mayoría de mercados UE no tiene una lista equivalente de soluciones nominadas, así que un eCommerce multimercado sigue enseñando banner fuera de Francia. Coste: la configuración exenta elimina los parámetros UTM y de campaña, reduce el referrer al dominio, deshabilita informes y APIs a nivel de visita, apaga el cross-domain y recomienda desactivar el tracking de eCommerce. Si inviertes en paid media, eso te quita la atribución por la que compraste la analítica. Sealmetrics no necesita exención porque no escribe nada en el dispositivo del visitante ni lee nada de él — campañas, canales e ingresos se mantienen intactos en toda la UE." },
           { q: "¿No es el modo cookieless de Matomo equivalente a Sealmetrics?", a: "No del todo. Sin cookies, Matomo cae a config_id, un hash de entorno efímero — una ventana de unos 30 minutos, 24 horas como máximo — diseñado deliberadamente para no reconocer visitantes recurrentes. Páginas vistas, eventos, descargas, outlinks y búsqueda interna sobreviven intactos; se degradan los visitantes recurrentes, la frecuencia de visita, la atribución de campaña multi-sesión y las cohortes. Sealmetrics es cookieless en todo el producto, sin toggle y sin pérdida de funcionalidad. La base legal también difiere en naturaleza: Matomo sin banner depende de sostener una configuración de exención — permitida por los criterios de la CNIL en Francia, no por el §25 de la TDDDG alemana — mientras que Sealmetrics no escribe nada en el dispositivo del visitante ni lee nada de él, así que el artículo 5(3) de ePrivacy no llega a activarse." },
           { q: "Matomo self-hosted es gratis. Sealmetrics cuesta €499/mes. ¿Por qué pagar?", a: "Self-hosting es gratis en licencia. No es gratis en operación: necesitas servidor, parches de seguridad, backups, mantenimiento de plugins, ciclos de upgrade y alguien responsable cuando el archivado se rompe a las 3 AM. Para un eCommerce serio, suele ser 0,2–0,5 FTE — 15K€–40K€/año de coste real. Sealmetrics reemplaza todo eso por 6K€/año, con dato cookieless y stack moderno encima. Y si prefieres comparar peras con peras, mira Matomo Cloud: $23 / ~29€ al mes cubren 50.000 hits, y por encima de 10 millones de hits al mes pasa a presupuesto, así que a volumen de eCommerce estás negociando un precio, no leyéndolo." },
-          { q: "¿Cómo se compara Matomo con Piwik PRO?", a: "Piwik PRO es un fork comercial de Matomo, con features enterprise y hosting UE encima. Ambos comparten el origen de arquitectura basada en cookies y ambos ofrecen una configuración sin consentimiento que cambia dato por compliance. Piwik PRO está más cerca de pricing enterprise (~30K€+/año) mientras Matomo Cloud es más mid-market. Sealmetrics se diferencia de ambos en arquitectura: no es una configuración privacy-friendly sobre tracking con cookies, sino captura sin cookies por diseño — sin nada que configurar y sin nada que mantener configurado." },
+          { q: "¿Cómo se compara Matomo con Piwik PRO?", a: "Piwik PRO es un fork comercial de Matomo, con features enterprise y hosting UE encima. Ambos comparten el origen de arquitectura basada en cookies y ambos ofrecen una configuración sin consentimiento que cambia dato por compliance. Piwik PRO vende Business desde 35€/mes y cotiza Enterprise en privado, y retira su plan Core gratuito el 31 de marzo de 2026; Matomo Cloud publica sus tiers. Sealmetrics se diferencia de ambos en arquitectura: no es una configuración privacy-friendly sobre tracking con cookies, sino captura sin cookies por diseño — sin nada que configurar y sin nada que mantener configurado." },
           { q: "¿Y el ecosistema de Matomo y su modelo open-source?", a: "Ambos son reales y para algunos equipos deciden la elección: código que puedes auditar, una base de datos que es tuya con acceso SQL directo, y una suite que incluye Tag Manager, mapas de calor, grabación de sesión y tests A/B. Sealmetrics no hace nada de eso ni pretende hacerlo — es solo analítica, agregada por diseño, sin grabación de sesión y sin dato a nivel individual. Donde los dos divergen de verdad es en el caso de paid media: si el rechazo de consentimiento o la configuración exenta te está costando la atribución a nivel de campaña en un eCommerce de 10M€+, ningún ecosistema sustituye al dato que falta." },
           { q: "¿Qué pasa con esta comparativa si sale adelante el Digital Omnibus europeo?", a: "Estrecha la diferencia, y conviene decirlo sin rodeos. La propuesta de la Comisión de 19 de noviembre de 2025 (COM(2025) 837) trasladaría las reglas de cookies al RGPD mediante un nuevo artículo 88a y eximiría de consentimiento la medición de audiencia agregada, first-party y de uso propio del responsable. Si se adopta en algo parecido a su forma actual — procedimiento legislativo ordinario, realistamente 2027–2028, con enmiendas sustantivas probables — un Matomo en configuración de exención encajaría en toda la UE y no solo en Francia. Lo que no cambia: esa configuración te sigue eliminando los parámetros de campaña y el dato a nivel de visita, te sigue costando el reconocimiento de visitante recurrente y la atribución multi-sesión, un endpoint first-party sigue sobreviviendo a bloqueadores que tumban un script de tercera parte, y los servidores los sigues llevando tú. Nuestra posición nunca ha dependido solo del banner." },
           { q: "¿Puedo migrar gradualmente desde Matomo?", a: "Sí. Corre ambos en paralelo 30 días. Si tu Matomo lleva banner de consentimiento, compara primero los conteos de tráfico — la diferencia es tu tasa de rechazo, y Sealmetrics típicamente captura 30–70% más tráfico UE. Si va en la configuración de exención, los conteos estarán mucho más cerca, así que compara atribución de campaña y canal, porque ahí es donde la configuración exenta está en blanco. Después compara la alineación de ingresos con tu backend. La mayoría de equipos decide en los primeros 14 días." },
@@ -817,7 +838,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "40–60%", label: "EU traffic lost", detail: "GA + consent banner combo." },
           { n: "US-hosted", label: "Schrems II exposure", detail: "Ongoing CNIL/DPA challenges." },
           { n: "Sampling", label: "Above threshold", detail: "Black Friday = estimates, not measurements." },
-          { n: "14 mo", label: "Default data retention", detail: "Can extend to 50 months — still fixed cap." },
+          { n: "14 mo", label: "Max data retention", detail: "Free GA4 caps at 14 months. 50 months is a GA360 feature." },
         ],
         comparison: [
           { category: "Data completeness", block: "technical", rows: [
@@ -831,13 +852,14 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Data residency", them: "US", us: "EU · Dublin" },
           ]},
           { category: "Modern stack", block: "reporting", rows: [
-            { feature: "MCP for AI agents", them: "No", us: "Native" },
-            { feature: "BigQuery export", them: "Yes (sampled above thresholds)", us: "Full resolution · all plans" },
-            { feature: "Real-time latency", them: "Up to 48 hours", us: "< 2 minutes" },
+            { feature: "MCP for AI agents", them: "Official server · experimental, read-only", us: "Native · managed · read and act" },
+            { feature: "What the agent can read", them: "Post-consent subset, modelled where consent is missing", us: "100% of events" },
+            { feature: "BigQuery export", them: "Yes · daily export cap on the free tier", us: "Full resolution · all plans" },
+            { feature: "Report latency", them: "Realtime report is core · standard reports lag 24–48 h", us: "< 2 minutes" },
           ]},
           { category: "Commercial", block: "commercial", rows: [
-            { feature: "Price", them: "Free (data trains Google ads)", us: "€499/mo from annual" },
-            { feature: "Your data ownership", them: "Shared with Google ad models", us: "Yours only · no training for anyone" },
+            { feature: "Price", them: "Free · paid for with data-sharing defaults and lock-in", us: "€499/mo from annual" },
+            { feature: "Your data ownership", them: "Google data-sharing settings are on by default and have to be turned off", us: "Yours only · no training for anyone" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
             { feature: "Script weight on the wire (gzip)", them: "~146 KB · gtag.js", us: "1.1 KB · ~132× lighter" },
@@ -856,7 +878,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         ],
         faqs: [
           { q: "Why not just use another free analytics tool?", a: "Most free tools are lightweight clones — fewer features, less reliability, still cookie-based. If you're deciding with serious marketing budget, 'free' becomes expensive quickly: misattributed spend, unreliable dashboards, no compliance clarity. Sealmetrics is priced for teams whose data decisions matter." },
-          { q: "What about Plausible, Fathom, Umami — aren't those alternatives?", a: "They're great for simple sites, blogs and content publishers. They're not built for eCommerce at scale — no native revenue attribution, limited integrations, no BigQuery export, no AI/MCP. Different category, different buyer." },
+          { q: "What about Plausible, Fathom, Umami — aren't those alternatives?", a: "They're great for simple sites, blogs and content publishers, and several now ship MCP servers of their own. What they are not built for is eCommerce at scale: no native revenue attribution, limited integrations, and warehouse export that ranges from limited to absent. Different category, different buyer — and we would rather say so than pretend they are competitors." },
           { q: "Do I need to migrate existing GA history?", a: "No. Sealmetrics runs from day one on new data. Most teams keep GA running alongside for historical reference and Google Ads integration, and use Sealmetrics for present + future decisions." },
           { q: "Can I use Data Studio with Sealmetrics?", a: "Yes. Full BigQuery export means Data Studio, Power BI, Tableau — any BI tool connects natively. No ETL, no sampling limits." },
         ],
@@ -906,7 +928,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "40–60%", label: "Tráfico UE perdido", detail: "Combo GA + banner de consentimiento." },
           { n: "US-hosted", label: "Exposición Schrems II", detail: "Challenges CNIL/DPA en curso." },
           { n: "Muestreo", label: "Sobre umbral", detail: "Black Friday = estimaciones, no mediciones." },
-          { n: "14 meses", label: "Retención por defecto", detail: "Ampliable a 50 meses — sigue siendo tope fijo." },
+          { n: "14 meses", label: "Retención máxima", detail: "GA4 gratuito topa en 14 meses. Los 50 meses son una feature de GA360." },
         ],
         comparison: [
           { category: "Completitud de datos", block: "technical", rows: [
@@ -920,13 +942,14 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Residencia de datos", them: "US", us: "UE · Dublín" },
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
-            { feature: "MCP para agentes IA", them: "No", us: "Nativo" },
-            { feature: "Export BigQuery", them: "Sí (muestreado sobre umbrales)", us: "Resolución completa · todos los planes" },
-            { feature: "Latencia tiempo real", them: "Hasta 48h", us: "< 2 minutos" },
+            { feature: "MCP para agentes IA", them: "Servidor oficial · experimental, solo lectura", us: "Nativo · gestionado · lee y actúa" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, modelado donde falta consentimiento", us: "100% de los eventos" },
+            { feature: "Export BigQuery", them: "Sí · tope diario de export en el tier gratuito", us: "Resolución completa · todos los planes" },
+            { feature: "Latencia de informes", them: "El informe Realtime es core · los estándar tardan 24–48 h", us: "< 2 minutos" },
           ]},
           { category: "Comercial", block: "commercial", rows: [
-            { feature: "Precio", them: "Gratis (tus datos entrenan ads de Google)", us: "€499/mes desde anual" },
-            { feature: "Propiedad de datos", them: "Compartidos con modelos de ads de Google", us: "Solo tuyos · sin training para nadie" },
+            { feature: "Precio", them: "Gratis · lo pagas con los ajustes de data-sharing por defecto y el lock-in", us: "€499/mes desde anual" },
+            { feature: "Propiedad de datos", them: "Los ajustes de compartición con Google vienen activados y hay que desactivarlos", us: "Solo tuyos · sin training para nadie" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
             { feature: "Peso del script en red (gzip)", them: "~146 KB · gtag.js", us: "1,1 KB · ~132× más ligero" },
@@ -945,7 +968,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         ],
         faqs: [
           { q: "¿Por qué no usar otra analítica gratis?", a: "La mayoría de herramientas gratis son clones ligeros — menos features, menos fiabilidad, siguen basadas en cookies. Si decides con presupuesto de marketing serio, 'gratis' sale caro rápido: inversión mal atribuida, dashboards poco fiables, sin claridad de compliance. Sealmetrics está priced para equipos cuyas decisiones de dato importan." },
-          { q: "¿Y Plausible, Fathom, Umami — no son alternativas?", a: "Son geniales para sitios simples, blogs y publishers de contenido. No están pensados para eCommerce a escala — sin atribución de ingresos nativa, integraciones limitadas, sin export BigQuery, sin IA/MCP. Categoría distinta, buyer distinto." },
+          { q: "¿Y Plausible, Fathom, Umami — no son alternativas?", a: "Son geniales para sitios simples, blogs y publishers de contenido, y varios ya publican su propio servidor MCP. Para lo que no están pensados es para eCommerce a escala: sin atribución de ingresos nativa, integraciones limitadas y un export a warehouse que va de limitado a inexistente. Categoría distinta, buyer distinto — y preferimos decirlo a fingir que compiten." },
           { q: "¿Tengo que migrar el histórico de GA?", a: "No. Sealmetrics corre desde el día uno con datos nuevos. La mayoría mantiene GA en paralelo para referencia histórica e integración Google Ads, y usa Sealmetrics para decisiones presente + futuro." },
           { q: "¿Puedo usar Data Studio con Sealmetrics?", a: "Sí. Export completo a BigQuery = Data Studio, Power BI, Tableau — cualquier BI conecta nativamente. Sin ETL, sin límites de muestreo." },
         ],

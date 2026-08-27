@@ -43,7 +43,7 @@ export default function Page() {
         url: "/vs/piwik-pro",
         competitor: { name: "Piwik PRO", url: "https://piwik.pro/" },
         datePublished: "2026-04-15",
-        dateModified: "2026-05-29",
+        dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
         criteria: [
           "Cookie vs cookieless collection architecture",
@@ -55,7 +55,7 @@ export default function Page() {
           "BigQuery / warehouse export",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("piwik-pro", "en")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("piwik-pro", "en")} dateModified="2026-08-27" />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"

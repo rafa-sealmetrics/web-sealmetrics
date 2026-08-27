@@ -43,7 +43,7 @@ export default function Page() {
         url: "/es/vs/adobe-analytics",
         competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" },
         datePublished: "2026-04-15",
-        dateModified: "2026-05-29",
+        dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
         criteria: [
           "Coste anual de licencia y fees de implementación",
@@ -55,7 +55,7 @@ export default function Page() {
           "Inclusión de export BigQuery",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-08-27" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"

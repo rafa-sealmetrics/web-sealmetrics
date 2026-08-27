@@ -324,15 +324,16 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       rows: [
         { feature: "Google Ads native", ga4: "Yes", seal: "Via BigQuery export" },
         { feature: "Meta / TikTok Ads", ga4: "Via external sync", seal: "Native + BigQuery" },
-        { feature: "BigQuery export", ga4: "Yes (sampled above threshold)", seal: "Yes · full resolution" },
-        { feature: "MCP / AI agents", ga4: "No native support", seal: "Native MCP server" },
+        { feature: "BigQuery export", ga4: "Yes · daily export cap on the free tier", seal: "Yes · full resolution" },
+        { feature: "MCP / AI agents", ga4: "Official server · experimental, read-only", seal: "Native · managed · read and act" },
+        { feature: "What the agent can read", ga4: "Post-consent subset, modelled where consent is missing", seal: "100% of events" },
       ],
     },
     {
       category: "Pricing",
       block: "commercial",
       rows: [
-        { feature: "Price", ga4: "Free (your data trains ads)", seal: "From €499/mo annual" },
+        { feature: "Price", ga4: "Free · paid for with data-sharing defaults and lock-in", seal: "From €499/mo annual" },
         { feature: "Per-event overage", ga4: "Hidden limits trigger sampling", seal: "No overage billing" },
         { feature: "Data retention", ga4: "14 months default", seal: "24 months included" },
       ],
@@ -402,15 +403,16 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       rows: [
         { feature: "Google Ads nativo", ga4: "Sí", seal: "Vía export BigQuery" },
         { feature: "Meta / TikTok Ads", ga4: "Vía sync externo", seal: "Nativo + BigQuery" },
-        { feature: "Export BigQuery", ga4: "Sí (muestreado sobre umbral)", seal: "Sí · resolución completa" },
-        { feature: "MCP / agentes IA", ga4: "Sin soporte nativo", seal: "MCP server nativo" },
+        { feature: "Export BigQuery", ga4: "Sí · tope diario de export en el tier gratuito", seal: "Sí · resolución completa" },
+        { feature: "MCP / agentes IA", ga4: "Servidor oficial · experimental, solo lectura", seal: "Nativo · gestionado · lee y actúa" },
+        { feature: "Qué puede leer el agente", ga4: "Subconjunto post-consentimiento, modelado donde falta consentimiento", seal: "100% de los eventos" },
       ],
     },
     {
       category: "Precio",
       block: "commercial",
       rows: [
-        { feature: "Precio", ga4: "Gratis (tus datos entrenan Ads)", seal: "Desde €499/mes anual" },
+        { feature: "Precio", ga4: "Gratis · lo pagas con los ajustes de data-sharing por defecto y el lock-in", seal: "Desde €499/mes anual" },
         { feature: "Overage por evento", ga4: "Límites ocultos disparan muestreo", seal: "Sin facturación por exceso" },
         { feature: "Retención de datos", ga4: "14 meses por defecto", seal: "24 meses incluidos" },
       ],

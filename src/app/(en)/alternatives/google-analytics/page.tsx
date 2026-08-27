@@ -41,7 +41,7 @@ export default function Page() {
         url: "/alternatives/google-analytics",
         competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" },
         datePublished: "2026-04-15",
-        dateModified: "2026-05-29",
+        dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
         criteria: [
           "Cookie-free data capture vs Consent Mode modelling",
@@ -53,7 +53,7 @@ export default function Page() {
           "Pricing and data ownership",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("google-analytics", "en")} dateModified="2026-08-27" />
       <LogosStrip />
       
     </>

@@ -43,7 +43,7 @@ export default function Page() {
         url: "/vs/ga360",
         competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" },
         datePublished: "2026-04-15",
-        dateModified: "2026-05-29",
+        dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
         criteria: [
           "Annual cost and contract length",
@@ -61,7 +61,7 @@ export default function Page() {
         spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
         url: "/vs/ga360",
       })} />
-      <VsComparisonV3 data={getVsData("ga360", "en")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("ga360", "en")} dateModified="2026-08-27" />
 
       <RelatedPagesV3
         locale="en"

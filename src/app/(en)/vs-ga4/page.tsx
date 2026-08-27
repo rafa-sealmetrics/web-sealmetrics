@@ -21,7 +21,7 @@ import { quotationSchema } from "@/lib/schema";
 import Link from "next/link";
 import { ogImage } from "@/lib/seo/og";
 
-const VS_GA4_DATE_MODIFIED = "2026-05-04";
+const VS_GA4_DATE_MODIFIED = "2026-08-27";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs Google Analytics 4 — Complete data, no spin",

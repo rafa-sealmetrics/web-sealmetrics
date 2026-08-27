@@ -80,9 +80,12 @@ export default function Page() {
           <QuickAnswer>
             Teams replacing Adobe Analytics in Europe evaluate five realistic
             options: Google Analytics 360, Piwik PRO, Matomo, Google Analytics 4
-            and Sealmetrics. They separate on two axes. The first is cost: Adobe
-            runs $100,000+ a year plus implementation consulting, GA360 starts at
-            $150,000, Piwik PRO around €30,000, Matomo and GA4 are cheap or free.
+            and Sealmetrics. They separate on two axes. The first is cost, and
+            most of it is quote-only: Adobe runs from around $50,000 to $200,000+
+            a year plus implementation consulting, GA360 from about $50,000 and
+            commonly $100–175K for mid-market volumes, Piwik PRO sells Business
+            from €35 a month and quotes Enterprise privately, Matomo and GA4 are
+            cheap or free.
             The second matters more and is easier to miss — every option except
             Sealmetrics collects data with cookies, so all of them lose the 40–60%
             of EU visitors who reject a consent banner. Moving from Adobe to
@@ -100,7 +103,8 @@ export default function Page() {
               Rarely because it lacks capability. Adobe Analytics has the deepest
               segmentation in the category and Analysis Workspace is a genuinely
               powerful surface. The frictions that show up in vendor reviews are
-              structural: a $100,000+ annual licence before implementation
+              structural: an unpublished annual licence that runs from roughly
+              $50,000 for Select to $200,000+ for Ultimate before implementation
               consulting, a 3–6 month deployment, and a dedicated Adobe-certified
               analyst on staff to keep it useful.
             </p>
@@ -123,9 +127,11 @@ export default function Page() {
               1. Google Analytics 360
             </h3>
             <p>
-              The closest like-for-like swap in scale and support model. Starts at
-              $150,000 a year on a 12-month minimum contract, negotiated through
-              Google sales.
+              The closest like-for-like swap in scale and support model.
+              Quote-based on a 12-month minimum contract negotiated through
+              Google sales: entry contracts start around $50,000 a year and
+              scale with event volume, with mid-market properties commonly
+              landing between $100,000 and $175,000.
               <br />
               <span className="text-text-tertiary">The catch —</span> it is the
               same cookie and consent architecture as free GA4, and data sits on
@@ -179,8 +185,8 @@ export default function Page() {
             </h3>
             <p>
               Free, universally understood, and the default most teams land on by
-              gravity rather than decision. For a team leaving a $100,000 contract,
-              the budget relief is real.
+              gravity rather than decision. For a team leaving a six-figure
+              contract, the budget relief is real.
               <br />
               <span className="text-text-tertiary">The catch —</span> it is the
               largest step down in coverage. GA4 depends on consent and applies{" "}
@@ -245,19 +251,19 @@ export default function Page() {
                 <tbody className="text-text-body">
                   <tr className="border-b border-warm-100">
                     <td className="py-3 pr-4">Adobe Analytics</td>
-                    <td className="py-3 pr-4">$100K+/yr plus consulting</td>
+                    <td className="py-3 pr-4">Quote-based, ~$50K&ndash;200K+/yr plus consulting</td>
                     <td className="py-3 pr-4">Yes</td>
                     <td className="py-3">Configurable, complex</td>
                   </tr>
                   <tr className="border-b border-warm-100">
                     <td className="py-3 pr-4">Google Analytics 360</td>
-                    <td className="py-3 pr-4">$150K+/yr, 12-month minimum</td>
+                    <td className="py-3 pr-4">Quote-based, ~$50K–175K+/yr, 12-month minimum</td>
                     <td className="py-3 pr-4">Yes</td>
                     <td className="py-3">No — US infrastructure</td>
                   </tr>
                   <tr className="border-b border-warm-100">
                     <td className="py-3 pr-4">Piwik PRO</td>
-                    <td className="py-3 pr-4">~€30K/yr enterprise</td>
+                    <td className="py-3 pr-4">Business from €35/mo, Enterprise quote-only</td>
                     <td className="py-3 pr-4">Yes</td>
                     <td className="py-3">Yes</td>
                   </tr>
