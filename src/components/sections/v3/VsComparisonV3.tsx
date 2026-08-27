@@ -34,6 +34,9 @@ export interface VsData {
   comparison: { category: string; block?: "technical" | "commercial" | "reporting"; rows: { feature: string; them: string; us: string }[] }[];
   /** Optional link to the full technical report on docs, rendered under the technical block. */
   techReportHref?: string;
+  /** Optional override for the report link text. Defaults to wording that promises field
+   *  measurements — set this for vendors the report covers on script weight only. */
+  techReportLabel?: string;
   /** FAQ */
   faqs: { q: string; a: string }[];
   /** Optional case-study callout rendered before final CTA. */
@@ -272,9 +275,10 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
                           href={data.techReportHref}
                           className="text-ink font-semibold no-underline border-b border-warm-200 pb-px hover:border-ink"
                         >
-                          {locale === "es"
-                            ? "Lee el informe técnico completo (mediciones de campo) →"
-                            : "Read the full technical report (field measurements) →"}
+                          {data.techReportLabel ??
+                            (locale === "es"
+                              ? "Lee el informe técnico completo (mediciones de campo) →"
+                              : "Read the full technical report (field measurements) →")}
                         </a>
                       </p>
                     ) : null}
