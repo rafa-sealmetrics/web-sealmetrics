@@ -600,7 +600,7 @@
     "date": "2026-08-27"
   },
   "/es/vs/piwik-pro/": {
-    "hash": "bc35163c9d75b899",
+    "hash": "c40d3203e6334132",
     "date": "2026-08-27"
   },
   "/es/vs/ga4/": {
@@ -608,7 +608,7 @@
     "date": "2026-08-07"
   },
   "/es/vs/matomo/": {
-    "hash": "858767cd17c92d90",
+    "hash": "5e01b37defb53fa8",
     "date": "2026-08-27"
   },
   "/es/demo/thank-you/": {
@@ -1036,7 +1036,7 @@
     "date": "2026-08-27"
   },
   "/vs/piwik-pro/": {
-    "hash": "eb9a08fb2bdfcb60",
+    "hash": "ea545ad4699f1aa3",
     "date": "2026-08-27"
   },
   "/vs/ga4/": {
@@ -1044,7 +1044,7 @@
     "date": "2026-08-07"
   },
   "/vs/matomo/": {
-    "hash": "6a439c839b62b0f0",
+    "hash": "2550b7b837aef66b",
     "date": "2026-08-27"
   },
   "/demo/thank-you/": {
@@ -1074,5 +1074,13 @@
   "/sla/": {
     "hash": "a4eeb104702f6926",
     "date": "2026-08-24"
+  },
+  "/es/gdpr-analytics/": {
+    "hash": "870f56e753bb830b",
+    "date": "2026-08-27"
+  },
+  "/es/gdpr-analytics/spain/": {
+    "hash": "9ba85a4915e09775",
+    "date": "2026-08-27"
   }
 }

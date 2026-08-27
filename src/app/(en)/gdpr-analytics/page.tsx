@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from "@/lib/schema";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
+import { getAlternates } from "@/lib/i18n/navigation";
 import { ogImage } from "@/lib/seo/og";
 
 const TITLE = "GDPR analytics by country — regulator guidance";
@@ -32,7 +33,10 @@ export const metadata: Metadata = {
       "CNIL, DSK/§25 TDDDG and AEPD guidance on consent-exempt analytics, criterion by criterion.",
     images: [ogImage("/gdpr-analytics/")],
   },
-  alternates: { canonical: "https://sealmetrics.com/gdpr-analytics/" },
+  alternates: {
+    canonical: "https://sealmetrics.com/gdpr-analytics/",
+    languages: getAlternates("/gdpr-analytics"),
+  },
 };
 
 const countries = [
