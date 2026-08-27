@@ -49,7 +49,7 @@ export default function Page() {
           "Data residency and Schrems II posture",
           "Sampling at scale",
           "BigQuery export full resolution",
-          "MCP / AI-native interface",
+          "What an AI agent can read (full dataset vs post-consent subset)",
           "Pricing and data ownership",
         ],
       })} />

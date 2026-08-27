@@ -51,7 +51,7 @@ export default function Page() {
           "EU traffic captured (with banner vs without)",
           "Data residency and Schrems II posture",
           "Pricing for enterprise eCommerce",
-          "MCP / AI-native interface",
+          "What an AI agent can read (full dataset vs post-consent subset)",
           "BigQuery / warehouse export",
         ],
       })} />
@@ -63,7 +63,7 @@ export default function Page() {
         titleEs="Ver cada comparativa de Sealmetrics"
         pages={[
         { href: "/vs-ga4", title: "vs Google Analytics 4", desc: "The free default — and its EU blind spot." },
-        { href: "/vs/ga360", title: "vs Google Analytics 360", desc: "Enterprise data without the $150K invoice." },
+        { href: "/vs/ga360", title: "vs Google Analytics 360", desc: "Enterprise data without the six-figure invoice." },
         { href: "/vs/adobe-analytics", title: "vs Adobe Analytics", desc: "Enterprise power, zero overhead." }
       ]}
       />

@@ -813,7 +813,7 @@ function ComparisonAnchor() {
     { label: "Compliance UE", ga4: "Requiere análisis Schrems II", ga360: "Requiere análisis Schrems II", adobe: "Análisis de transferencia a EE. UU.", seal: "Por arquitectura · Dublín" },
     { label: "Tus datos e IA", ga4: "Ecosistema Google", ga360: "Ecosistema Google", adobe: "Ecosistema Adobe", seal: "IA privada o BYOK" },
     { label: "Setup", ga4: "Plan de etiquetado + CMP", ga360: "Meses", adobe: "Meses", seal: "5 minutos" },
-    { label: "Coste", ga4: "Gratis", ga360: "$150K+/año", adobe: "$100K+/año", seal: "Desde 499 €/mes" },
+    { label: "Coste", ga4: "Gratis", ga360: "~50–175K$/año", adobe: "~50–200K$/año", seal: "Desde 499 €/mes" },
   ];
 
   return (
@@ -1084,7 +1084,7 @@ export default function WhySealmetricsPageEs() {
               MCP de Sealmetrics, en unos 5 minutos, en paralelo con GA4. La auditoría de
               Palladium Hotel Group encontró un 40% de tráfico sin atribuir antes del cambio
               y una mejora del +165% en Cost-per-Search de Display después. El precio
-              empieza en 499 €/mes — frente a $150K+/año de GA360 y $100K+/año de Adobe
+              empieza en 499 €/mes publicados — frente a contratos por presupuesto que arrancan sobre 50.000$/año tanto en GA360 como en Adobe
               Analytics.
             </p>
           </QuickAnswer>

@@ -12,10 +12,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs GA360 — Enterprise data for less",
-  description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. Sealmetrics delivers complete data at €499/mo.",
+  description: "GA360 is quote-based from ~$50K/year and still loses 40-60% of EU traffic. Sealmetrics delivers complete data at a published €499/mo.",
   openGraph: {
     title: "Sealmetrics vs GA360 — Enterprise data for less",
-    description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. Sealmetrics delivers complete data at €499/mo.",
+    description: "GA360 is quote-based from ~$50K/year and still loses 40-60% of EU traffic. Sealmetrics delivers complete data at a published €499/mo.",
     type: "website",
     images: [ogImage("/vs/ga360/")],
     url: "https://sealmetrics.com/vs/ga360/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics vs GA360 — Enterprise data for less",
-    description: "GA360 costs $150K+/year and still loses 40-60% of EU traffic. Sealmetrics delivers complete data at €499/mo.",
+    description: "GA360 is quote-based from ~$50K/year and still loses 40-60% of EU traffic. Sealmetrics delivers complete data at a published €499/mo.",
     images: [ogImage("/vs/ga360/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/ga360/", languages: getAlternates("/vs/ga360") },
@@ -51,7 +51,7 @@ export default function Page() {
           "Data residency and Schrems II posture",
           "BigQuery export sampling thresholds",
           "Implementation time and required specialists",
-          "MCP / AI-native interface",
+          "What an AI agent can read (full dataset vs post-consent subset)",
           "Real-time reporting latency",
         ],
       })} />
@@ -79,7 +79,7 @@ export default function Page() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              Google Analytics 360 (GA360) is the enterprise tier of Google Analytics, priced from $150,000/year with annual contracts, hosted in the United States, and requiring a cookie consent banner across the EU. Sealmetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without consent dependency, attributes last-click on observed events, and starts at €499/month annually with no annual commit.
+              Google Analytics 360 (GA360) is the enterprise tier of Google Analytics. It is quote-based and scales with event volume — entry contracts start around $50,000/year and mid-market properties commonly land between $100,000 and $175,000 — on annual contracts, hosted in the United States, and requiring a cookie consent banner across the EU. Sealmetrics is an EU-hosted cookieless analytics platform that captures 100% of inbound traffic without consent dependency, attributes last-click on observed events, and starts at €499/month annually with no annual commit.
             </p>
             <p>
               The architectural differences matter for EU eCommerce: GA360 still loses 40-60% of EU traffic to consent rejection (Consent Mode v2 reconstructs the gap with statistical modelling, not measurement), and US hosting requires Schrems II SCCs with quarterly DPIA review. Sealmetrics&rsquo; Dublin-only infrastructure, with no sub-processors outside the EU in the visitor data path, removes that compliance overhead entirely. Customers typically run both for 30 days, reconcile against their CRM, and migrate revenue decisions to Sealmetrics while keeping GA360 as a Google Ads conduit.

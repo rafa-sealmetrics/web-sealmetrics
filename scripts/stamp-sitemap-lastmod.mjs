@@ -141,3 +141,28 @@ console.log(
     `tracked, ${distinct} distinct dates` +
     (missing ? ` · ${missing} sitemap URLs had no built page` : "")
 );
+
+/**
+ * Drift gate.
+ *
+ * The manifest is only accurate if someone builds locally and commits it.
+ * Nothing enforced that, so between 2026-08-18 and 2026-08-27 it drifted until
+ * 227 of 263 routes no longer matched a current build — and every build in
+ * between stamped those 227 URLs with the build date, which is exactly the
+ * "everything changed today" noise this script exists to remove.
+ *
+ * On CI the manifest write above is throwaway: the container is discarded, so
+ * the drift is never persisted and silently recurs on the next build. Fail
+ * there instead, the same way audit-llms-txt fails when a page is added
+ * without its hand-written line. Locally the write stands and the build passes,
+ * so the fix is always the same: rebuild, commit .seo-lastmod.json.
+ */
+if (process.env.CI && changed + seeded > 0) {
+  console.error(
+    `\n[lastmod] FAIL — ${changed} changed and ${seeded} new route(s) do not ` +
+      `match the committed .seo-lastmod.json.\n` +
+      `          The sitemap would claim they were all modified today.\n` +
+      `          Fix: run \`npm run build\` locally and commit .seo-lastmod.json.`
+  );
+  process.exit(1);
+}

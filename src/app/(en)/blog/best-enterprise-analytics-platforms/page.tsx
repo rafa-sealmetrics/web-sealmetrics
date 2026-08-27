@@ -47,18 +47,18 @@ const platforms = [
   {
     name: "Google Analytics 360 (GA360)",
     url: "https://marketingplatform.google.com/about/analytics-360/",
-    pricing: "$150,000+/yr",
+    pricing: "Quote-based, ~$50K–175K+/yr",
     euDataCapture: "~30-35%",
     strengths:
       "Unsampled reports (quota-limited), native BigQuery export, dedicated account manager, guaranteed SLAs. The tightest Google Ads attribution pipeline available.",
     limitations:
       "Still cookie-dependent — consent rejection means 40-60% data loss in EU markets persists regardless of tier. US data processing. Six-figure annual commitment for what remains incomplete data in Europe.",
-    bestFor: "Large organizations with $150K+ analytics budgets deeply embedded in the Google Marketing Platform.",
+    bestFor: "Large organizations with six-figure analytics budgets deeply embedded in the Google Marketing Platform.",
   },
   {
     name: "Adobe Analytics",
     url: "https://business.adobe.com/products/analytics/adobe-analytics.html",
-    pricing: "$100,000+/yr",
+    pricing: "Quote-based, ~$50K–200K+/yr",
     euDataCapture: "~30%",
     strengths:
       "Deepest segmentation in the market. Analysis Workspace is purpose-built for enterprise reporting. Strong cross-product integration within Adobe Experience Cloud. Configurable data sampling thresholds.",
@@ -138,7 +138,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
           description:
             "Ranked comparison of enterprise analytics platforms for data capture, compliance, pricing, and AI features.",
           datePublished: "2026-03-16",
-          dateModified: "2026-05-04",
+          dateModified: "2026-08-27",
           url: "/blog/best-enterprise-analytics-platforms",
           category: "Comparisons",
           author: {
@@ -195,7 +195,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               </li>
               <li>
                 GA360 and Adobe Analytics remain the incumbents for organizations
-                with $100K-$150K+ budgets and existing ecosystem dependencies.
+                with six-figure budgets and existing ecosystem dependencies.
                 Both deliver deep capabilities but fundamentally incomplete EU
                 data.
               </li>
@@ -409,7 +409,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <p>
               The fundamental limitation remains: GA360 is cookie-dependent. In
               European markets, this means 40-60% data loss persists regardless
-              of how much you spend. At $150,000+ per year, that is a substantial
+              of how much you spend. At six figures per year, that is a substantial
               investment for incomplete data.
             </p>
 
@@ -417,7 +417,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               <strong className="font-semibold text-text-primary">
                 Choose GA360 if:
               </strong>{" "}
-              You have $150K+ in annual analytics budget, are deeply invested in
+              You have a six-figure annual analytics budget, are deeply invested in
               the Google ecosystem, and consent rates in your markets exceed 70%.
             </p>
 
@@ -454,7 +454,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <p>
               The trade-offs are significant. Implementation typically takes 3-6
               months with specialized consultants. The learning curve requires
-              dedicated Adobe analysts. Pricing starts above $100,000 per year
+              dedicated Adobe analysts. Pricing is unpublished and starts around $50,000 per year
               and scales with server calls. And like every cookie-dependent
               platform, Adobe Analytics faces the same 40-60% EU data gap.
             </p>
@@ -477,7 +477,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             </p>
 
           <CommercialModule
-            hook="Shortlisting enterprise platforms? See complete-data analytics at \u20ac499/mo next to the $100K+ incumbents — live, on your traffic."
+            hook="Shortlisting enterprise platforms? See complete-data analytics at \u20ac499/mo next to the six-figure incumbents — live, on your traffic."
           />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -752,7 +752,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               </strong>{" "}
               Total cost includes the platform fee, implementation, required
               consultants, ongoing maintenance, and the implicit cost of
-              decisions made on incomplete data. A $150K platform that captures
+              decisions made on incomplete data. A six-figure platform that captures
               35% of EU traffic may cost more per accurate data point than a
               {"\u20ac"}6K platform that captures 100%.
             </p>

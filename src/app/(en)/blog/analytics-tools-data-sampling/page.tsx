@@ -36,7 +36,7 @@ export default function DataSamplingComparedPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Data Sampling Thresholds Compared" }]} />
-      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", dateModified: "2026-05-04", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", dateModified: "2026-08-27", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Data Sampling Thresholds Compared", url: "/blog/analytics-tools-data-sampling" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -60,7 +60,7 @@ export default function DataSamplingComparedPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>GA4 (free) starts sampling at ~10M events per query in Exploration reports; avoiding it requires upgrading to GA360 at $150K+/year.</li>
+            <li>GA4 (free) starts sampling at ~10M events per query in Exploration reports; avoiding it requires upgrading to GA360, a quote-based contract that starts around $50K/year.</li>
             <li>A 10% sample introduces approximately +/-3% margin of error — at $10M revenue, that represents a $200K uncertainty in business decisions.</li>
             <li>Zero-sampling tools split into two categories: lightweight privacy tools for simple reporting, and Sealmetrics for enterprise revenue attribution.</li>
             <li>Sampling functions as a pricing lever in enterprise tools: companies must pay more to see their actual data instead of estimates.</li>
@@ -176,7 +176,7 @@ export default function DataSamplingComparedPage() {
                   <td className="py-2.5 pr-4 font-mono text-red-alert">~10M events/query</td>
                   <td className="py-2.5 pr-4 text-text-body">Exploration reports exceeding 10M events</td>
                   <td className="py-2.5 pr-4 text-center text-text-body">Small shield icon</td>
-                  <td className="py-2.5 text-text-body">Upgrade to GA360 ($150K+/yr)</td>
+                  <td className="py-2.5 text-text-body">Upgrade to GA360 (quote-based, from ~$50K/yr)</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">GA4 (GA360)</td>
@@ -267,7 +267,7 @@ export default function DataSamplingComparedPage() {
           </h2>
 
           <p>
-            GA4&apos;s solution to sampling is GA360 at $150K+ per year.
+            GA4&apos;s solution to sampling is GA360, quote-based from around $50K per year.
             Adobe&apos;s solution is contract negotiation. In both cases, the
             sampling threshold functions as a pricing lever — pay more to see
             your actual data.

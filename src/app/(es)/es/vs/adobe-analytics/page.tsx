@@ -12,10 +12,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs Adobe Analytics — Alternativa enterprise",
-  description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. Sealmetrics da dato completo sin consultores.",
+  description: "Adobe Analytics cuesta entre ~50K$ y 200K$+ al año y requiere especialistas. Sealmetrics da dato completo sin consultores.",
   openGraph: {
     title: "Sealmetrics vs Adobe Analytics — Alternativa enterprise",
-    description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. Sealmetrics da dato completo sin consultores.",
+    description: "Adobe Analytics cuesta entre ~50K$ y 200K$+ al año y requiere especialistas. Sealmetrics da dato completo sin consultores.",
     type: "website",
     images: [ogImage("/es/vs/adobe-analytics/")],
     url: "https://sealmetrics.com/es/vs/adobe-analytics/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics vs Adobe Analytics — Alternativa enterprise",
-    description: "Adobe Analytics cuesta 100K$+ y requiere especialistas. Sealmetrics da dato completo sin consultores.",
+    description: "Adobe Analytics cuesta entre ~50K$ y 200K$+ al año y requiere especialistas. Sealmetrics da dato completo sin consultores.",
     images: [ogImage("/es/vs/adobe-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/adobe-analytics/", languages: getAlternatesEs("/vs/adobe-analytics") },
@@ -51,7 +51,7 @@ export default function Page() {
           "Especialistas requeridos en plantilla",
           "Pérdida de tráfico UE por rechazo de consentimiento",
           "Arquitectura AppMeasurement basada en cookies",
-          "Interfaz MCP / IA nativa",
+          "Qué puede leer un agente IA (dataset completo vs subconjunto post-consentimiento)",
           "Inclusión de export BigQuery",
         ],
       })} />
@@ -63,7 +63,7 @@ export default function Page() {
         titleEs="Ver cada comparativa de Sealmetrics"
         pages={[
         { href: "/es/vs-ga4", title: "vs Google Analytics 4", desc: "El default gratis — y su punto ciego UE." },
-        { href: "/es/vs/ga360", title: "vs Google Analytics 360", desc: "Datos enterprise sin factura de 150K$." },
+        { href: "/es/vs/ga360", title: "vs Google Analytics 360", desc: "Datos enterprise sin la factura de seis cifras." },
         { href: "/es/vs/piwik-pro", title: "vs Piwik PRO", desc: "Hosting UE más captura completa." }
       ]}
       />
@@ -73,7 +73,7 @@ export default function Page() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
             <p>
-              Sealmetrics vs Adobe Analytics: Adobe Analytics es una suite de analítica enterprise desde unos 100.000 $/año en contratos anuales, con una implementación pesada, hosting en EE. UU./híbrido y un banner de consentimiento en toda la UE. Sealmetrics es una plataforma cookieless alojada en la UE que mide el 100% del tráfico entrante sin depender del consentimiento y atribuye cada conversión last-click sobre eventos observados — desde 499€/mes con facturación anual, sin compromiso anual.
+              Sealmetrics vs Adobe Analytics: Adobe Analytics es una suite de analítica enterprise con contratos anuales no publicados que van de unos 50.000 $/año en Select a 200.000 $+ en Ultimate, con una implementación pesada, hosting en EE. UU./híbrido y un banner de consentimiento en toda la UE. Sealmetrics es una plataforma cookieless alojada en la UE que mide el 100% del tráfico entrante sin depender del consentimiento y atribuye cada conversión last-click sobre eventos observados — desde 499€/mes con facturación anual, sin compromiso anual.
             </p>
             <p>
               Para el eCommerce UE la diferencia es completitud y compliance. Adobe sigue perdiendo el 40–60% del tráfico UE por rechazo de consentimiento y arrastra overhead Schrems II por sus flujos de datos a EE. UU., además de meses de implementación. Sealmetrics se instala con un píxel, corre en paralelo desde el día uno, y su infraestructura solo en Dublín sin sub-procesadores fuera de la UE elimina la revisión de transferencias. Los equipos mantienen Adobe para análisis custom profundo donde lo necesitan y usan Sealmetrics como el número de revenue completo y listo para el board.

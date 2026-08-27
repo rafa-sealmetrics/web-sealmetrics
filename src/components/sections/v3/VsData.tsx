@@ -82,6 +82,11 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "JavaScript parsed on the device", them: "~409 KB", us: "2.0 KB" },
             { feature: "Pageview hit secured", them: "~0.5–0.7 s best case · only after consent", us: "~0.1–0.3 s · sendBeacon from the head" },
           ]},
+          { category: "Where GA360 is the better choice", block: "commercial", rows: [
+            { feature: "Google Ads and DV360", them: "Native bidding signals and conversion import", us: "Via BigQuery export — not a bidding source" },
+            { feature: "Audiences and remarketing", them: "Its real strength", us: "Not a remarketing tool — no personal identifiers by design" },
+            { feature: "Ecosystem and hiring", them: "Every analyst already knows the interface", us: "New interface · founder-led onboarding" },
+          ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Google sales + certified partners", us: "Founder-led · 15-minute install" },
             { feature: "Support", them: "Enterprise SLAs · via resellers", us: "Direct support on every plan" },
@@ -177,6 +182,11 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "JavaScript parseado en el dispositivo", them: "~409 KB", us: "2,0 KB" },
             { feature: "Pageview asegurado", them: "~0,5–0,7 s mejor caso · solo tras consentimiento", us: "~0,1–0,3 s · sendBeacon desde el head" },
           ]},
+          { category: "Dónde GA360 es la mejor opción", block: "commercial", rows: [
+            { feature: "Google Ads y DV360", them: "Señales de puja e import de conversiones nativos", us: "Vía export BigQuery — no es fuente de puja" },
+            { feature: "Audiencias y remarketing", them: "Su verdadera fortaleza", us: "No es herramienta de remarketing — sin identificadores personales por diseño" },
+            { feature: "Ecosistema y contratación", them: "Cualquier analista ya conoce la interfaz", us: "Interfaz nueva · onboarding con el founder" },
+          ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Google sales + partners certificados", us: "Liderado por el founder · instalación en 15 min" },
             { feature: "Soporte", them: "SLAs enterprise · vía resellers", us: "Soporte directo en todos los planes" },
@@ -191,9 +201,9 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "¿No es GA360 más preciso que GA4?", a: "Solo en ciertas dimensiones. GA360 quita umbrales de muestreo en export BigQuery y añade features avanzadas, pero usa la misma arquitectura cookies + consentimiento. Tu 40–60% de pérdida por consentimiento es idéntico. GA4 premium = datos premium incompletos." },
           { q: "¿Y las features enterprise de GA360?", a: "GA360 añade SLAs, soporte dedicado y retención custom. Sealmetrics Enterprise incluye lo mismo — más procesamiento aislado, DPA custom y account manager dedicado. A una fracción del coste." },
           { q: "¿Podemos migrar gradualmente desde GA360?", a: "Sí. Corre ambos en paralelo. La mayoría de clientes mantienen GA360 para integración Google Ads durante la transición y mueven el reporting estratégico a Sealmetrics. Suele tardar 60–90 días retirar GA360 del todo." },
-          { q: "¿Hay forma de comparar costes directamente?", a: "Sí. Para un eCommerce grande típico (15M eventos/mes), GA360 ≈ 150K$/año vs. Sealmetrics Scale = 10.788€/año — ~93% más barato, con datos más completos." },
+          { q: "¿Hay forma de comparar costes directamente?", a: "Sí, y depende de dónde caiga tu volumen de eventos, porque GA360 va por presupuesto. Un eCommerce grande típico con 15M eventos/mes está en el tier de entrada de GA360 — unos 50K$/año frente a los 10.788€/año de Sealmetrics Scale, un 75–80% más barato. Los contratos GA360 mid-market suelen quedar entre 100K$ y 175K$, donde la diferencia pasa del 90%. Google no publica precio self-serve, así que pide tu presupuesto y compáralo con nuestros tiers publicados en vez de con nuestra estimación." },
         ],
-        ctaTitle: <>Consigue dato enterprise. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Sáltate la factura de 150K$.</em></>,
+        ctaTitle: <>Consigue dato enterprise. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Sáltate la factura de seis cifras.</em></>,
         ctaLede: "Walkthrough de 30 min con el founder. Te enseñamos tus números de GA360 junto a Sealmetrics sobre tu propio tráfico — ves el gap y el ahorro.",
       },
     },
@@ -270,6 +280,11 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "MCP / AI-native", them: "Official MCP servers for Adobe Analytics and CJA", us: "Native · managed · all plans" },
             { feature: "What the agent can read", them: "Post-consent subset", us: "100% of events" },
             { feature: "Warehouse export", them: "Data Feeds / Data Warehouse · CJA for cross-channel", us: "Native BigQuery export · included in all plans" },
+          ]},
+          { category: "Where Adobe is the better choice", block: "commercial", rows: [
+            { feature: "Segmentation depth", them: "The deepest in the category · Analysis Workspace", us: "Segments + property breakdowns · deep dives via BigQuery" },
+            { feature: "Experience Cloud orchestration", them: "Target, Campaign, AEM in one stack", us: "Analytics only — not a marketing suite" },
+            { feature: "Cross-channel stitching", them: "Customer Journey Analytics", us: "Not attempted — aggregate event measurement by design" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Implementation partners · consultant-led", us: "Founder-led · 15-minute install" },
@@ -368,6 +383,11 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "100% de los eventos" },
             { feature: "Export a warehouse", them: "Data Feeds / Data Warehouse · CJA para cross-canal", us: "Export BigQuery nativo · incluido en todos los planes" },
           ]},
+          { category: "Dónde Adobe es la mejor opción", block: "commercial", rows: [
+            { feature: "Profundidad de segmentación", them: "La mayor de la categoría · Analysis Workspace", us: "Segmentos + breakdowns por propiedad · deep dives vía BigQuery" },
+            { feature: "Orquestación Experience Cloud", them: "Target, Campaign y AEM en un stack", us: "Solo analítica — no es una suite de marketing" },
+            { feature: "Stitching cross-canal", them: "Customer Journey Analytics", us: "No se intenta — medición agregada de eventos por diseño" },
+          ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Partners de implementación · liderado por consultores", us: "Liderado por el founder · instalación en 15 min" },
             { feature: "Soporte", them: "Planes de soporte enterprise por tiers", us: "Soporte directo en todos los planes" },
@@ -455,6 +475,11 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "What the agent can read", them: "Post-consent subset, or consentless data with visitor-level reports off", us: "100% of events" },
             { feature: "BigQuery export", them: "Enterprise add-on", us: "Included from Growth" },
           ]},
+          { category: "Where Piwik PRO is the better choice", block: "commercial", rows: [
+            { feature: "Product scope", them: "Analytics + CDP + Tag Manager in one contract", us: "Analytics only — pair with Segment or Rudderstack for CDP" },
+            { feature: "Visitor-level analysis", them: "Available when you accept the consent banner", us: "Not offered — aggregate event measurement by design" },
+            { feature: "Regulated-sector track record", them: "HIPAA options, public-sector deployments", us: "EU-hosted · DPA and TPSR · no sector certification" },
+          ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Guided on enterprise contracts", us: "Founder-led · 15-minute install" },
             { feature: "Support", them: "Tiered · SLAs on enterprise", us: "Direct support on every plan" },
@@ -536,6 +561,11 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "MCP / integración IA", them: "MCP oficial, beta desde mayo 2026 · Analytics, CDP y Tag Manager", us: "Nativo · gestionado · todos los planes" },
             { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, o dato sin consentimiento con los informes de visitante apagados", us: "100% de los eventos" },
             { feature: "Export BigQuery", them: "Add-on enterprise", us: "Incluido desde Growth" },
+          ]},
+          { category: "Dónde Piwik PRO es la mejor opción", block: "commercial", rows: [
+            { feature: "Alcance de producto", them: "Analytics + CDP + Tag Manager en un contrato", us: "Solo analítica — combina con Segment o Rudderstack para CDP" },
+            { feature: "Análisis a nivel de visitante", them: "Disponible si aceptas el banner de consentimiento", us: "No se ofrece — medición agregada de eventos por diseño" },
+            { feature: "Trayectoria en sectores regulados", them: "Opciones HIPAA, despliegues en sector público", us: "Alojado en UE · DPA y TPSR · sin certificación sectorial" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Guiado en contratos enterprise", us: "Liderado por el founder · instalación en 15 min" },

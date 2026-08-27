@@ -49,7 +49,7 @@ export default function Page() {
           "Residencia de datos y postura Schrems II",
           "Muestreo a escala",
           "Export BigQuery a resolución completa",
-          "Interfaz MCP / IA nativa",
+          "Qué puede leer un agente IA (dataset completo vs subconjunto post-consentimiento)",
           "Pricing y propiedad de los datos",
         ],
       })} />

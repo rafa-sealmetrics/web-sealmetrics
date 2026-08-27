@@ -172,9 +172,9 @@ const MATRIX_ROWS: { capability: string; cells: Cell[] }[] = [
     capability: "What it costs per year",
     cells: [
       y("From €5,988 — all features, every plan"),
-      m("Free — until you need GA360, from ~$150K"),
-      n("$100K+ typical"),
-      n("€30K+ enterprise"),
+      m("Free — until you need GA360, from ~$50K"),
+      n("~$50–200K typical"),
+      n("Enterprise quote-only"),
       m("Custom — scales steeply with events"),
       m("Low — plus the team to run it"),
     ],
