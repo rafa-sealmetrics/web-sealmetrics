@@ -108,8 +108,8 @@
     "date": "2026-08-13"
   },
   "/blog/": {
-    "hash": "ebee63456b5a6336",
-    "date": "2026-08-14"
+    "hash": "6e44bc7a47024af1",
+    "date": "2026-08-27"
   },
   "/growth/": {
     "hash": "2a911d7691a739d1",
@@ -296,8 +296,8 @@
     "date": "2026-08-13"
   },
   "/es/blog/": {
-    "hash": "9922732842efe5e4",
-    "date": "2026-08-14"
+    "hash": "fbce229e6909e94a",
+    "date": "2026-08-27"
   },
   "/es/case-studies/": {
     "hash": "2d549e1212e6f98c",
@@ -1081,6 +1081,14 @@
   },
   "/es/gdpr-analytics/spain/": {
     "hash": "9ba85a4915e09775",
+    "date": "2026-08-27"
+  },
+  "/blog/data-breach-france-travail-fined-5-million/": {
+    "hash": "0332650cfa2f790d",
+    "date": "2026-08-27"
+  },
+  "/blog/ftc-personalized-pricing-enforcement-compliance-guide/": {
+    "hash": "7924a01f3c0c2cd2",
     "date": "2026-08-27"
   }
 }
