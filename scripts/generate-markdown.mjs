@@ -116,6 +116,17 @@ function toMarkdown(html) {
   s = s.replace(/<noscript[\s\S]*?<\/noscript>/gi, "");
   s = s.replace(/<template[\s\S]*?<\/template>/gi, "");
   s = s.replace(/<form[\s\S]*?<\/form>/gi, "");
+  // The FAQ accordions (FaqAccordionV3, FaqV3, FaqV3Es, PricingFaqV3) render
+  // each question AND its answer inside the disclosure <button>, so the generic
+  // strip below erased every Q&A from the twins — the answers carry the
+  // strongest material on the comparison pages. Unwrap the disclosure buttons
+  // first, keeping the heading and the answer paragraph; the "+" indicator and
+  // every other button (CTAs, toggles) still get dropped.
+  s = s.replace(/<button\b[^>]*\baria-expanded=[^>]*>([\s\S]*?)<\/button>/gi, (_, inner) => {
+    const q = inner.match(/<h3\b[^>]*>([\s\S]*?)<\/h3>/i);
+    const a = inner.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i);
+    return q && a ? `<h3>${q[1]}</h3><p>${a[1]}</p>` : "";
+  });
   s = s.replace(/<button[\s\S]*?<\/button>/gi, "");
   s = s.replace(/<nav\b[\s\S]*?<\/nav>/gi, "");
   s = s.replace(/<[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/[a-z]+>/gi, "");

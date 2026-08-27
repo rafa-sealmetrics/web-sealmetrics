@@ -11,13 +11,13 @@ import { getVsData } from "@/components/sections/v3/VsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Sealmetrics vs Matomo — Cookieless by design, no devops",
+  title: "Sealmetrics vs Matomo — what the CNIL exemption costs",
   description:
-    "Matomo is open-source and EU-friendly, but cookies are default and self-hosting costs. Sealmetrics is cookieless by design, fully managed and AI-native.",
+    "Matomo can drop the banner in France under the CNIL criteria — at the cost of your UTMs, eCommerce tracking and visit-level data. Sealmetrics keeps all of it.",
   openGraph: {
-    title: "Sealmetrics vs Matomo — Cookieless by design, no devops",
+    title: "Sealmetrics vs Matomo — what the CNIL exemption costs",
     description:
-      "Matomo's default is cookies + banner. Sealmetrics is cookieless across the whole product, EU-hosted, with native MCP and BigQuery — no devops required.",
+      "Matomo's consent-exempt configuration strips UTM parameters, turns eCommerce tracking off and only holds under France's CNIL criteria, not Germany's TDDDG.",
     type: "website",
     images: [ogImage("/vs/matomo/")],
     url: "https://sealmetrics.com/vs/matomo/",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Sealmetrics vs Matomo — Cookieless by design, no devops",
-    description: "Matomo's default is cookies + banner. Sealmetrics is cookieless across the whole product, EU-hosted, with native MCP and BigQuery — no devops required.",
+    title: "Sealmetrics vs Matomo — what the CNIL exemption costs",
+    description: "Matomo's consent-exempt configuration strips UTM parameters, turns eCommerce tracking off and only holds under France's CNIL criteria, not Germany's TDDDG.",
     images: [ogImage("/vs/matomo/")],
   },
   alternates: {
@@ -46,24 +46,25 @@ export default function Page() {
         data={comparisonPageSchema({
           name: "Sealmetrics vs Matomo",
           description:
-            "Side-by-side comparison: Sealmetrics versus Matomo on architecture (cookieless by design vs cookies-by-default), self-hosting cost, modern stack (MCP, BigQuery, real-time) and EU compliance.",
+            "Side-by-side comparison: Sealmetrics versus Matomo on the consent-exempt configuration and what it costs (UTM parameters, eCommerce tracking, visit-level data), its geographic scope under the CNIL criteria and Germany's TDDDG §25, ePrivacy Art. 5(3) exposure, self-hosting cost and EU compliance.",
           url: "/vs/matomo",
           competitor: { name: "Matomo", url: "https://matomo.org/" },
           datePublished: "2026-05-06",
-          dateModified: "2026-08-26",
+          dateModified: "2026-08-27",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
           criteria: [
-            "Cookies on by default vs cookieless by design",
+            "Consent exemption scope (CNIL criteria vs Germany's TDDDG §25)",
+            "UTM and campaign parameters retained without consent",
+            "eCommerce tracking available without consent",
+            "Visit-level reports and raw export availability",
+            "Identifier used when cookies are disabled (config_id vs none)",
+            "ePrivacy Art. 5(3) exposure",
             "Self-hosting operational cost (TCO)",
-            "Cookieless mode feature parity",
-            "EU traffic captured with consent banner",
-            "MCP / AI-native interface",
-            "BigQuery export availability",
-            "Real-time latency",
+            "Cloud pricing transparency at eCommerce volume",
           ],
         })}
       />
-      <VsComparisonV3 data={getVsData("matomo", "en")} dateModified="2026-08-26" />
+      <VsComparisonV3 data={getVsData("matomo", "en")} dateModified="2026-08-27" />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"
@@ -80,10 +81,10 @@ export default function Page() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              Sealmetrics vs Matomo: Matomo is an open-source analytics platform, EU-friendly and self-hostable, but cookies remain the default and self-hosting carries real operational cost. Sealmetrics is a fully managed, cookieless analytics platform that captures 100% of inbound traffic without a consent banner and attributes each conversion last-click on observed events, EU-hosted in Dublin, from &euro;499/month billed annually.
+              Sealmetrics vs Matomo: Matomo is an open-source analytics platform that can run without a consent banner in France under the CNIL exemption criteria, with cookies still on and self-hosting carrying real operational cost. Sealmetrics is a fully managed, cookieless analytics platform that captures 100% of inbound traffic without a consent banner in every EU market and attributes each conversion last-click on observed events, EU-hosted in Dublin, from &euro;499/month billed annually.
             </p>
             <p>
-              The trade-off is completeness and overhead. Matomo&rsquo;s cookieless configuration limits what it can measure and still leaves you running infrastructure, updates and scaling; its cookie mode runs without a banner only under a consent-exempt configuration — permitted under the CNIL criteria in France, not under Germany&rsquo;s TDDDG &sect;25 — and otherwise loses every visitor who rejects. Sealmetrics measures the full 100% with a lightweight first-party pixel, nothing to self-host, and a modern AI-native stack — LENS AI and an MCP server — on top of complete data.
+              The trade-off is what the exemption costs. Matomo runs without a banner only under a consent-exempt configuration — permitted under the CNIL criteria in France, not under Germany&rsquo;s TDDDG &sect;25 — and that configuration strips UTM and campaign parameters, cuts referrers to the domain, disables visit-level reports and APIs and recommends turning eCommerce tracking off. Outside it, the banner loses every visitor who rejects, and you are still running the infrastructure. Sealmetrics measures the full 100% with a lightweight first-party pixel, nothing to self-host, and a modern AI-native stack — LENS AI and an MCP server — on top of complete data.
             </p>
           </QuickAnswer>
         </div>
