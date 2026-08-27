@@ -68,7 +68,7 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /vs/ga360 — Sealmetrics vs Google Analytics 360 ($150,000+/yr)
 - /vs/adobe-analytics — Sealmetrics vs Adobe Analytics ($100,000+/yr)
 - /vs/piwik-pro — Sealmetrics vs Piwik PRO (€30,000+/yr)
-- /vs/matomo — Sealmetrics vs Matomo (managed-service + AI vs DIY-ops)
+- /vs/matomo — Sealmetrics vs Matomo: Matomo can drop the consent banner in France under the CNIL criteria, but the consent-exempt configuration strips UTM and campaign parameters, disables visit-level reports and recommends turning eCommerce tracking off — and Germany's TDDDG §25 does not recognise it
 - /data-loss-calculator — Interactive calculator showing how much data you lose with cookie-based analytics
 
 ## Alternatives (editorial comparisons)
@@ -264,7 +264,7 @@ Comparisons (ES):
 - /es/vs/ga360 — Sealmetrics vs GA360
 - /es/vs/adobe-analytics — Sealmetrics vs Adobe Analytics
 - /es/vs/piwik-pro — Sealmetrics vs Piwik PRO
-- /es/vs/matomo — Sealmetrics vs Matomo: cookieless por diseño y gestionado, frente a cookies por defecto y coste real de self-hosting
+- /es/vs/matomo — Sealmetrics vs Matomo: Matomo puede quitar el banner en Francia bajo los criterios CNIL, pero la configuración de exención elimina los parámetros UTM y de campaña, deshabilita los informes a nivel de visita y recomienda apagar el eCommerce — y el §25 de la TDDDG alemana no la reconoce
 - /es/alternatives/google-analytics — Alternativas a Google Analytics
 
 Case studies (ES):
