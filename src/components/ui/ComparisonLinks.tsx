@@ -27,7 +27,7 @@ const CONTENT: Record<
       {
         href: "/vs/ga360/",
         label: "Sealmetrics vs GA360",
-        blurb: "$150K+/yr buys unsampled reports — on the same cookie-dependent collection.",
+        blurb: "A quote-based contract buys unsampled reports — on the same cookie-dependent collection.",
         tag: "Req 12 · price per accurate data point",
       },
       {
@@ -70,7 +70,7 @@ const CONTENT: Record<
       {
         href: "/es/vs/ga360/",
         label: "Sealmetrics vs GA360",
-        blurb: "150.000 $/año compran informes sin muestreo — sobre la misma recogida dependiente de cookies.",
+        blurb: "Un contrato por presupuesto compra informes sin muestreo — sobre la misma recogida dependiente de cookies.",
         tag: "Req 12 · precio por dato fiable",
       },
       {

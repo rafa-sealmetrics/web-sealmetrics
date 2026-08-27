@@ -375,7 +375,7 @@ export function PricingV3Es() {
         </div>
 
         <p className="mt-10 p-6 bg-white border border-warm-100 rounded-xl text-center max-w-[48rem] mx-auto text-[14.5px] leading-[1.65] text-ink-soft">
-          Si no estás seguro de qué plan encaja, te lo decimos en el walkthrough. Como referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics en 100.000$/año</b>. Sealmetrics se hizo para que no necesites un contrato enterprise para tener datos enterprise.
+          Si no estás seguro de qué plan encaja, te lo decimos en el walkthrough. Como referencia: <b className="text-ink font-semibold">GA360 va por presupuesto desde unos 50.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics desde unos 50.000$</b>. Sealmetrics se hizo para que no necesites un contrato enterprise para tener datos enterprise.
         </p>
       </div>
     </section>

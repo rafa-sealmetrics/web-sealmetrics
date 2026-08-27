@@ -814,7 +814,7 @@ function ComparisonAnchor() {
     { label: "EU compliance", ga4: "Schrems II review", ga360: "Schrems II review", adobe: "US transfer review", seal: "By architecture · Dublin" },
     { label: "Your data & AI", ga4: "Google ecosystem", ga360: "Google ecosystem", adobe: "Adobe ecosystem", seal: "Private AI or BYOK" },
     { label: "Setup", ga4: "Tag plan + CMP", ga360: "Months", adobe: "Months", seal: "5 minutes" },
-    { label: "Cost", ga4: "Free", ga360: "$150K+/yr", adobe: "$100K+/yr", seal: "From €499/mo" },
+    { label: "Cost", ga4: "Free", ga360: "~$50–175K/yr", adobe: "~$50–200K/yr", seal: "From €499/mo" },
   ];
 
   return (
@@ -1079,8 +1079,9 @@ export default function WhySealmetricsPage() {
               Setup is one script tag or automatic via the Sealmetrics MCP, in about 5
               minutes, running side-by-side with GA4. Palladium Hotel Group's audit found 40%
               of traffic unattributed before switching and a +165% Display Cost-per-Search
-              improvement after. Pricing starts at €499/month — against $150K+/year for GA360
-              and $100K+/year for Adobe Analytics.
+              improvement after. Pricing starts at a published €499/month — against
+              quote-based contracts that start around $50,000/year for both GA360 and
+              Adobe Analytics, and run well past six figures at volume.
             </p>
           </QuickAnswer>
         </div>

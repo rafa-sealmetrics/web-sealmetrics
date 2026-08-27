@@ -42,10 +42,10 @@ const alternatives = [
   {
     name: "Google Analytics 360 (GA360)",
     url: "https://marketingplatform.google.com/about/analytics-360/",
-    pricing: "$150.000+/año",
+    pricing: "Por presupuesto, ~50–175K$+/año",
     dataCompleteness: "~30-35% en UE",
     chooseIf:
-      "Tienes un presupuesto de analítica de más de 150K, tu equipo vive en Data Studio y las tasas de consentimiento en tus mercados superan el 70%.",
+      "Tienes un presupuesto de analítica de seis cifras, tu equipo vive en Data Studio y las tasas de consentimiento en tus mercados superan el 70%.",
   },
   {
     name: "Adobe Analytics",
@@ -113,7 +113,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
           description:
             "Compara 7 alternativas a GA4 para eCommerce en precio, captura de dato, cumplimiento UE y features.",
           datePublished: "2026-03-02",
-          dateModified: "2026-07-07",
+          dateModified: "2026-08-27",
           url: "/es/blog/ga4-alternatives-enterprise",
           category: "Comparativas",
           author: {
@@ -183,7 +183,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               </li>
               <li>
                 La brecha de coste total entre plataformas es de 25x o más. GA360
-                cuesta más de $150K/año por ~35% de captura de dato UE. Sealmetrics
+                cuesta seis cifras al año por ~35% de captura de dato UE. Sealmetrics
                 cuesta {"€"}5.988/año por el 100% de captura. La comparación
                 relevante es el coste por dato preciso.
               </li>
@@ -302,7 +302,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                     Precio:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    $150.000+/año
+                    ~50–175K$+/año
                   </span>
                 </div>
                 <div>
@@ -333,7 +333,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
             <p>
               La limitación de fondo persiste: GA360 depende de cookies. En el
               eCommerce europeo, eso significa que la pérdida de 40-60% de dato se
-              mantiene sin importar el gasto. A más de $150K al año, la pregunta es
+              mantiene sin importar el gasto. A seis cifras al año, la pregunta es
               si tu presupuesto produce dato completo o mejores estimaciones.
             </p>
 
@@ -409,7 +409,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
             <p>
               Las contrapartidas son significativas. La implementación lleva de 3 a
               6 meses con consultores especializados. El precio arranca por encima
-              de $100K y escala con las server calls. Y como toda plataforma
+              de 50K$ y escala con las server calls. Y como toda plataforma
               dependiente de cookies, Adobe se enfrenta a la misma brecha de 40-60%
               de dato UE.
             </p>

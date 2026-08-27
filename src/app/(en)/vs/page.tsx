@@ -31,9 +31,9 @@ export const metadata: Metadata = {
 
 const comparisons = [
   { slug: "vs-ga4", name: "Google Analytics 4", stat: "40–60% traffic lost", tagline: "The free default everyone uses — and its structural blind spot in Europe." },
-  { slug: "vs/ga360", name: "Google Analytics 360", stat: "$150K/year", tagline: "Enterprise price, enterprise contract, same cookie architecture as free GA4." },
-  { slug: "vs/adobe-analytics", name: "Adobe Analytics", stat: "$100K + specialists", tagline: "Enterprise depth, but 6-month implementation and Adobe-certified staff required." },
-  { slug: "vs/piwik-pro", name: "Piwik PRO", stat: "€30K enterprise", tagline: "EU-hosted — but still cookie-based and consent-dependent." },
+  { slug: "vs/ga360", name: "Google Analytics 360", stat: "~$50–175K/yr", tagline: "Enterprise price, enterprise contract, same cookie architecture as free GA4." },
+  { slug: "vs/adobe-analytics", name: "Adobe Analytics", stat: "~$50–200K + specialists", tagline: "Enterprise depth, but 6-month implementation and Adobe-certified staff required." },
+  { slug: "vs/piwik-pro", name: "Piwik PRO", stat: "Enterprise quote-only", tagline: "EU-hosted — but still cookie-based and consent-dependent." },
   { slug: "vs/matomo", name: "Matomo", stat: "Open-source + ops cost", tagline: "EU-friendly and open-source — but cookies-by-default and self-hosting eats the 'free' label." },
   { slug: "alternatives/google-analytics", name: "Google Analytics alternatives", stat: "The broader picture", tagline: "What to pick if you're post-GA4 — and why most \"alternatives\" are just cheaper clones." },
   { slug: "alternatives/adobe-analytics", name: "Adobe Analytics alternatives", stat: "Before you renew", tagline: "What replaces Adobe without a six-month implementation and a certified team to run it." },

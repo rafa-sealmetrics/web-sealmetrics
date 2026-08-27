@@ -41,7 +41,7 @@ export default function Page() {
         url: "/es/alternatives/google-analytics",
         competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" },
         datePublished: "2026-04-15",
-        dateModified: "2026-05-29",
+        dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
         criteria: [
           "Captura sin cookies vs modelado de Consent Mode",
@@ -49,11 +49,11 @@ export default function Page() {
           "Residencia de datos y postura Schrems II",
           "Muestreo a escala",
           "Export BigQuery a resolución completa",
-          "Interfaz MCP / IA nativa",
+          "Qué puede leer un agente IA (dataset completo vs subconjunto post-consentimiento)",
           "Pricing y propiedad de los datos",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("google-analytics", "es")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("google-analytics", "es")} dateModified="2026-08-27" />
       <LogosStripEs />
       
     </>

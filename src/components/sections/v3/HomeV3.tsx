@@ -821,7 +821,7 @@ const PRICING_COPY = {
     cta: "Start 14-day trial",
     enterpriseCta: "Talk to us",
     quote: <>&ldquo;Recovered 35% of bookings without attribution.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
-    foot: <>For reference: <b className="text-ink font-semibold">GA360 starts at $150,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics starts at $100,000/year</b>. Sealmetrics gives you enterprise-grade data without the enterprise contract.</>,
+    foot: <>For reference: <b className="text-ink font-semibold">GA360 is quote-based from around $50,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics from around $50,000</b>. Sealmetrics gives you enterprise-grade data without the enterprise contract.</>,
     demoHref: "/demo",
   },
   es: {
@@ -846,7 +846,7 @@ const PRICING_COPY = {
     cta: "Prueba de 14 días",
     enterpriseCta: "Habla con nosotros",
     quote: <>&ldquo;Recuperaron el 35% de las reservas sin atribución.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
-    foot: <>De referencia: <b className="text-ink font-semibold">GA360 arranca en 150.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics arranca en 100.000$/año</b>. Sealmetrics te da dato enterprise sin contrato enterprise.</>,
+    foot: <>De referencia: <b className="text-ink font-semibold">GA360 va por presupuesto desde unos 50.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics desde unos 50.000$</b>. Sealmetrics te da dato enterprise sin contrato enterprise.</>,
     demoHref: "/es/demo",
   },
 } as const;

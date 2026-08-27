@@ -43,7 +43,7 @@ export default function Page() {
         url: "/es/vs/piwik-pro",
         competitor: { name: "Piwik PRO", url: "https://piwik.pro/" },
         datePublished: "2026-04-15",
-        dateModified: "2026-05-29",
+        dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
         criteria: [
           "Cookies vs arquitectura sin cookies",
@@ -51,11 +51,11 @@ export default function Page() {
           "Tráfico UE capturado (con banner vs sin banner)",
           "Residencia y postura Schrems II",
           "Pricing para eCommerce enterprise",
-          "Interfaz MCP / IA nativa",
+          "Qué puede leer un agente IA (dataset completo vs subconjunto post-consentimiento)",
           "Export BigQuery / warehouse",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("piwik-pro", "es")} dateModified="2026-05-29" />
+      <VsComparisonV3 data={getVsData("piwik-pro", "es")} dateModified="2026-08-27" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"
@@ -63,7 +63,7 @@ export default function Page() {
         titleEs="Ver cada comparativa de Sealmetrics"
         pages={[
         { href: "/es/vs-ga4", title: "vs Google Analytics 4", desc: "El default gratis — y su punto ciego UE." },
-        { href: "/es/vs/ga360", title: "vs Google Analytics 360", desc: "Datos enterprise sin factura de 150K$." },
+        { href: "/es/vs/ga360", title: "vs Google Analytics 360", desc: "Datos enterprise sin la factura de seis cifras." },
         { href: "/es/vs/adobe-analytics", title: "vs Adobe Analytics", desc: "Potencia enterprise, cero overhead." }
       ]}
       />

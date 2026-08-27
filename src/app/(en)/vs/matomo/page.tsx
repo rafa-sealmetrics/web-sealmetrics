@@ -73,7 +73,7 @@ export default function Page() {
         pages={[
           { href: "/vs/piwik-pro", title: "vs Piwik PRO", desc: "Commercial Matomo fork — same cookie origin." },
           { href: "/vs-ga4", title: "vs Google Analytics 4", desc: "The free default — and its EU blind spot." },
-          { href: "/vs/ga360", title: "vs Google Analytics 360", desc: "Enterprise data without the $150K invoice." },
+          { href: "/vs/ga360", title: "vs Google Analytics 360", desc: "Enterprise data without the six-figure invoice." },
         ]}
       />
       <LogosStrip />

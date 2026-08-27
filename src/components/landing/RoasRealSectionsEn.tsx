@@ -879,7 +879,7 @@ export function PriceDoors() {
           <p className="mt-5 pt-5 border-t border-dashed border-warm-200 text-[15px] leading-[1.6] text-ink-2">
             For context:{" "}
             <strong className="font-semibold text-ink">
-              GA360 starts at $150,000 a year. Adobe Analytics at $100,000.
+              GA360 is quote-based from around $50,000 a year. Adobe Analytics from around $50,000.
             </strong>
           </p>
         </div>

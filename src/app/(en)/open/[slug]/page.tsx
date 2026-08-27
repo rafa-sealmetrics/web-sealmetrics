@@ -2676,7 +2676,7 @@ function ChapterSevenBody() {
       us: "From €5,988 (Growth) to custom (Enterprise)",
       ga360: "Six-figure annual",
       adobe: "Six-figure annual",
-      piwik: "From €30K+ annual",
+      piwik: "Business from €35/mo · Enterprise quote-only",
     },
     {
       label: "Data captured",
