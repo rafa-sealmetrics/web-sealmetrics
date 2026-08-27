@@ -475,6 +475,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "What the agent can read", them: "Post-consent subset, or consentless data with visitor-level reports off", us: "100% of events" },
             { feature: "BigQuery export", them: "Enterprise add-on", us: "Included from Growth" },
           ]},
+          { category: "Tracker performance (measured)", block: "technical", rows: [
+            { feature: "Script weight on the wire (gzip)", them: "~26 KB · ppms.js, measured 27 Aug 2026", us: "1.1 KB · ~24× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~67 KB", us: "2.0 KB" },
+          ]},
           { category: "Where Piwik PRO is the better choice", block: "commercial", rows: [
             { feature: "Product scope", them: "Analytics + CDP + Tag Manager in one contract", us: "Analytics only — pair with Segment or Rudderstack for CDP" },
             { feature: "Visitor-level analysis", them: "Available when you accept the consent banner", us: "Not offered — aggregate event measurement by design" },
@@ -561,6 +565,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "MCP / integración IA", them: "MCP oficial, beta desde mayo 2026 · Analytics, CDP y Tag Manager", us: "Nativo · gestionado · todos los planes" },
             { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, o dato sin consentimiento con los informes de visitante apagados", us: "100% de los eventos" },
             { feature: "Export BigQuery", them: "Add-on enterprise", us: "Incluido desde Growth" },
+          ]},
+          { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
+            { feature: "Peso del script en red (gzip)", them: "~26 KB · ppms.js, medido el 27 ago 2026", us: "1,1 KB · ~24× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~67 KB", us: "2,0 KB" },
           ]},
           { category: "Dónde Piwik PRO es la mejor opción", block: "commercial", rows: [
             { feature: "Alcance de producto", them: "Analytics + CDP + Tag Manager en un contrato", us: "Solo analítica — combina con Segment o Rudderstack para CDP" },
@@ -681,6 +689,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Real-time latency", them: "Live visitor log is real-time · reports wait on cron archiving", us: "< 2 minutes · default" },
             { feature: "Ask-your-data AI assistant", them: "MCP plugin or premium add-on", us: "LENS AI on all plans (BYOK) · managed Private AI from Scale" },
           ]},
+          { category: "Tracker performance (measured)", block: "technical", rows: [
+            { feature: "Script weight on the wire (gzip)", them: "~46 KB · matomo.js, measured 27 Aug 2026", us: "1.1 KB · ~42× lighter" },
+            { feature: "JavaScript parsed on the device", them: "~153 KB", us: "2.0 KB" },
+          ]},
           { category: "Where Matomo is the better choice", block: "commercial", rows: [
             { feature: "Source code", them: "Open source · fully auditable · self-hostable", us: "Closed source · EU-hosted · DPA and TPSR included" },
             { feature: "Data ownership", them: "Your server, your database, direct SQL access", us: "Managed in Dublin · BigQuery export for raw access" },
@@ -796,6 +808,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Export BigQuery / warehouse", them: "Data Warehouse Connector · coste adicional por tier", us: "Nativo · todos los planes · resolución completa" },
             { feature: "Latencia tiempo real", them: "El log de visitas es en tiempo real · los informes esperan al archivado por cron", us: "< 2 minutos · por defecto" },
             { feature: "Asistente IA sobre tus datos", them: "Plugin MCP o add-on premium", us: "LENS AI en todos los planes (BYOK) · Private AI gestionada desde Scale" },
+          ]},
+          { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
+            { feature: "Peso del script en red (gzip)", them: "~46 KB · matomo.js, medido el 27 ago 2026", us: "1,1 KB · ~42× más ligero" },
+            { feature: "JavaScript parseado en el dispositivo", them: "~153 KB", us: "2,0 KB" },
           ]},
           { category: "Dónde Matomo es la mejor opción", block: "commercial", rows: [
             { feature: "Código fuente", them: "Open source · auditable · self-hostable", us: "Código cerrado · alojado en UE · DPA y TPSR incluidos" },

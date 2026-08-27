@@ -47,7 +47,7 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /growth — Practical systems for digital teams: measurement, attribution, privacy, and revenue decisions that growth teams can defend
 
 ## Compliance by country (DPO-ready pages)
-- /gdpr-analytics — Hub: why ePrivacy transposition makes the consent question national, and which regulators published auditable criteria
+- /gdpr-analytics — Hub: why ePrivacy transposition makes the consent question national, and which regulators published auditable criteria. Also in Spanish at /es/gdpr-analytics
 - /gdpr-analytics/france — CNIL exemption criteria; "analytics sans consentement france"
 - /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung"
 - /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
@@ -257,6 +257,10 @@ About / extras (ES):
 - /es/integrations — Integraciones
 - /es/platforms — Plataformas
 - /es/authors/rafa-jimenez — Autor: Rafa Jiménez
+
+Compliance by country (ES):
+- /es/gdpr-analytics — Hub en castellano: por qué la transposición de ePrivacy hace nacional la pregunta del consentimiento, y qué reguladores publicaron criterios auditables. Francia y Alemania siguen solo en inglés
+- /es/gdpr-analytics/spain — Analítica y RGPD en España: guía de cookies de la AEPD de 2024, art. 22.2 de la LSSI-CE, las cuatro condiciones de la excepción, postura para sector público y qué cambiaría el Digital Omnibus
 
 Comparisons (ES):
 - /es/vs — Todas las comparativas
