@@ -415,6 +415,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
     "piwik-pro": {
       en: {
         competitor: "Piwik PRO",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report#matomo-and-piwik-pro",
+        techReportLabel: "Read the full technical report (script weight, measured) →",
         hook: "Piwik PRO offers EU-hosted analytics but is still cookie-based by default. The free Core plan is being retired on 31 March 2026, Business starts at €35/month and Enterprise is quote-only. The architecture is closer to GA4 than you'd expect — just hosted on European servers.",
         eyebrow: "vs Piwik PRO",
         h1: <>EU hosting is the <em>beginning</em>, not the finish line.</>,
@@ -476,7 +478,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "BigQuery export", them: "Enterprise add-on", us: "Included from Growth" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
-            { feature: "Script weight on the wire (gzip)", them: "~26 KB · ppms.js, measured 27 Aug 2026", us: "1.1 KB · ~24× lighter" },
+            { feature: "Script weight on the wire (gzip)", them: "~26 KB · ppms.js", us: "1.1 KB · ~24× lighter" },
             { feature: "JavaScript parsed on the device", them: "~67 KB", us: "2.0 KB" },
           ]},
           { category: "Where Piwik PRO is the better choice", block: "commercial", rows: [
@@ -505,6 +507,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       },
       es: {
         competitor: "Piwik PRO",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report#matomo-and-piwik-pro",
+        techReportLabel: "Lee el informe técnico completo (peso del script, medido) →",
         hook: "Piwik PRO ofrece analítica alojada en UE pero sigue siendo basada en cookies por defecto. El plan Core gratuito se retira el 31 de marzo de 2026, Business arranca en 35€/mes y Enterprise va solo por presupuesto. La arquitectura está más cerca de GA4 de lo que parece — solo alojada en servidores europeos.",
         eyebrow: "vs Piwik PRO",
         h1: <>El hosting UE es el <em>principio</em>, no la meta.</>,
@@ -567,7 +571,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Export BigQuery", them: "Add-on enterprise", us: "Incluido desde Growth" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
-            { feature: "Peso del script en red (gzip)", them: "~26 KB · ppms.js, medido el 27 ago 2026", us: "1,1 KB · ~24× más ligero" },
+            { feature: "Peso del script en red (gzip)", them: "~26 KB · ppms.js", us: "1,1 KB · ~24× más ligero" },
             { feature: "JavaScript parseado en el dispositivo", them: "~67 KB", us: "2,0 KB" },
           ]},
           { category: "Dónde Piwik PRO es la mejor opción", block: "commercial", rows: [
@@ -598,6 +602,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
     matomo: {
       en: {
         competitor: "Matomo",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report#matomo-and-piwik-pro",
+        techReportLabel: "Read the full technical report (script weight, measured) →",
         hook: "Matomo is open-source, EU-friendly, and it can run banner-free in France under the CNIL criteria. Read what that configuration costs: UTM and campaign parameters stripped, eCommerce tracking recommended off, visit-level reports disabled — and it does not travel to Germany.",
         eyebrow: "vs Matomo",
         h1: <>Open-source is great. <em>The exemption costs you the UTMs.</em></>,
@@ -690,7 +696,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Ask-your-data AI assistant", them: "MCP plugin or premium add-on", us: "LENS AI on all plans (BYOK) · managed Private AI from Scale" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
-            { feature: "Script weight on the wire (gzip)", them: "~46 KB · matomo.js, measured 27 Aug 2026", us: "1.1 KB · ~42× lighter" },
+            { feature: "Script weight on the wire (gzip)", them: "~46 KB · matomo.js", us: "1.1 KB · ~42× lighter" },
             { feature: "JavaScript parsed on the device", them: "~153 KB", us: "2.0 KB" },
           ]},
           { category: "Where Matomo is the better choice", block: "commercial", rows: [
@@ -722,6 +728,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       },
       es: {
         competitor: "Matomo",
+        techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report#matomo-and-piwik-pro",
+        techReportLabel: "Lee el informe técnico completo (peso del script, medido) →",
         hook: "Matomo es open-source, amigable con UE, y puede funcionar sin banner en Francia bajo los criterios de la CNIL. Lee lo que cuesta esa configuración: parámetros UTM y de campaña eliminados, eCommerce recomendado off, informes a nivel de visita deshabilitados. Y no viaja a Alemania.",
         eyebrow: "vs Matomo",
         h1: <>Open-source está bien. <em>La exención te cuesta los UTMs.</em></>,
@@ -810,7 +818,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Asistente IA sobre tus datos", them: "Plugin MCP o add-on premium", us: "LENS AI en todos los planes (BYOK) · Private AI gestionada desde Scale" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
-            { feature: "Peso del script en red (gzip)", them: "~46 KB · matomo.js, medido el 27 ago 2026", us: "1,1 KB · ~42× más ligero" },
+            { feature: "Peso del script en red (gzip)", them: "~46 KB · matomo.js", us: "1,1 KB · ~42× más ligero" },
             { feature: "JavaScript parseado en el dispositivo", them: "~153 KB", us: "2,0 KB" },
           ]},
           { category: "Dónde Matomo es la mejor opción", block: "commercial", rows: [
