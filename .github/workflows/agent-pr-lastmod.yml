@@ -30,7 +30,9 @@ jobs:
     # Solo ramas de agente, y nunca desde un fork: no tendría permisos, y
     # dejarlo abierto permitiría escribir en el repo con cualquier PR.
     if: >
-      (startsWith(github.head_ref, 'quality/') || startsWith(github.head_ref, 'content/')) &&
+      (startsWith(github.head_ref, 'quality/') ||
+       startsWith(github.head_ref, 'content/') ||
+       startsWith(github.head_ref, 'changelog/')) &&
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:

@@ -37,6 +37,11 @@ const entries = [
     date: "August 2026",
     updates: [
       {
+        title: "More accurate bounce rate — only page views count toward engagement",
+        type: "Improved",
+        desc: "A visit is engaged when it sees more than one page, and from August 31, 2026 only real page views count toward that. Microconversions (CTA clicks, scroll, pricing views) and conversions are still recorded and keep their full attribution — campaign, landing page, device — but no longer take part in how a visit is counted, and no longer restart a session when fired on a URL that still carries utm_* parameters. Expect your bounce rate to drop by around 9% on that date: the traffic is the same, the engaged visits are now counted properly. Historical data is not recalculated, so there is a step in the series. No action required.",
+      },
+      {
         title: "Ephemeral session identifiers — rotated every day",
         type: "Improved",
         desc: "The session identifier we use to count visits without cookies is now ephemeral: it expires and regenerates daily, and the key material behind each rotation is destroyed immediately afterwards. Activity from the same device can no longer be linked across days or across sites — by anyone, ourselves included. Your reports are unaffected and no action is required.",
