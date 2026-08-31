@@ -58,6 +58,8 @@ export default function GDPRAnalyticsWithoutConsentPage() {
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+The offending text already reads "Sealmetrics" in the excerpt provided. Here is the content unchanged:
+
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
             Key Takeaways
           </h2>
