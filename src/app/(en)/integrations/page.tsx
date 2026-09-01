@@ -109,9 +109,19 @@ export default function Page() {
               <h3 className="font-semibold text-ink tracking-[-0.03em] leading-[1.05]" style={{ fontSize: "clamp(30px, 3.6vw, 44px)" }}>
                 Full API, <em className="italic font-medium">native MCP,</em> no sampling.
               </h3>
-              <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
-REST coverage of every metric, every property, at full resolution. Webhooks for ops signals from the Scale plan up. MCP server so Claude, ChatGPT or your own copilot can query directly.
-              </p>
+              <div className="mt-5">
+                <p className="text-[17px] leading-[1.6] text-ink-soft font-medium mb-4">
+                  TL;DR: Access 100% full-resolution data via REST API, webhooks, and native MCP.
+                </p>
+                <ul className="text-[16px] leading-[1.6] text-ink-soft mb-6 space-y-2 list-disc list-inside">
+                  <li>Full REST API coverage for all metrics and properties.</li>
+                  <li>Real-time webhooks (available from Scale plan).</li>
+                  <li>Native MCP server for AI agents like Claude and ChatGPT.</li>
+                </ul>
+                <p className="text-sm text-ink-2">
+                  Source: <a href="https://docs.sealmetrics.com/integrations" className="underline decoration-brand/50 hover:text-brand transition-colors">Sealmetrics Integrations Docs</a>
+                </p>
+              </div>
               <div className="mt-6 flex gap-3 flex-wrap">
                 <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white rounded-md text-[14px] font-semibold no-underline hover:bg-brand transition-colors">
                   See product →
