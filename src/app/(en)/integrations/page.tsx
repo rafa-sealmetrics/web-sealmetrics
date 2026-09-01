@@ -8,7 +8,7 @@ import { ogImage } from "@/lib/seo/og";
 const faqs = [
   {
     question: "Does Sealmetrics connect to Google Ads for conversion import?",
-    answer: "Sealmetrics tracks Google Ads campaigns end-to-end via UTM parameters and click IDs and reports ROAS on them. It does not push audiences back to Google Ads for automated bidding — that needs GA4 with consented users. Most teams keep GA4 as the Ads conduit and use Sealmetrics as the source of truth for decisions.",
+    answer: "Sealmetrics tracks Google Ads campaigns end-to-end via UTM parameters and click IDs and reports ROAS on them. It does not push audiences back to Google Ads for automated bidding — that needs standard tools with consented users. Most teams keep their current analytics tool as the Ads conduit and use Sealmetrics as the source of truth for decisions.",
   },
   {
     question: "Which eCommerce CMS does Sealmetrics work with?",
@@ -69,14 +69,14 @@ export default function Page() {
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
-          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Native integrations</span>
+          <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Native integrations</span >
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
-            Plug into <em>the stack you already run.</em>
+            Plug into <em className="italic font-medium">the stack you already run.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             Native modules for eCommerce, CMS, website builders, frameworks and tag managers. Plus a BigQuery connector, webhooks, a full REST API and an MCP server for AI agents.
           </p>
-        </div>
+        </div >
       </section>
 
       <section className="py-28 bg-warm-50 border-t border-warm-100">
@@ -90,24 +90,24 @@ export default function Page() {
                     <li key={i} className="flex items-center gap-2.5 text-[14px] text-ink-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                       {i}
-                    </li>
+                    </li >
                   ))}
-                </ul>
+                </ul >
               </article>
             ))}
-          </div>
-        </div>
+          </div >
+        </div >
       </section>
 
       <section className="py-28 bg-white border-t border-warm-100">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
           <div className="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
-            <div>
+            <div >
               <span className="inline-block font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand bg-brand-soft px-3 py-1 rounded-md mb-5">
                 Developer-first
-              </span>
+              </span >
               <h3 className="font-semibold text-ink tracking-[-0.03em] leading-[1.05]" style={{ fontSize: "clamp(30px, 3.6vw, 44px)" }}>
-                Full API, <em>native MCP,</em> no sampling.
+                Full API, <em className="italic font-medium">native MCP,</em> no sampling.
               </h3>
               <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
 REST coverage of every metric, every property, at full resolution. Webhooks for ops signals from the Scale plan up. MCP server so Claude, ChatGPT or your own copilot can query directly.
@@ -119,25 +119,39 @@ REST coverage of every metric, every property, at full resolution. Webhooks for 
                 <Link href="/demo" className="inline-flex items-center gap-2 px-6 py-3 border border-warm-200 text-ink rounded-md text-[14px] font-semibold no-underline hover:bg-warm-50 transition-colors">
                   Book demo
                 </Link>
-              </div>
-            </div>
+              </div >
+            </div >
             <div className="bg-ink text-white rounded-[20px] p-8 md:p-10 font-mono text-[12.5px] leading-[1.8]">
               <div className="flex gap-1.5 mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#FF6058]" />
                 <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
                 <span className="w-2 h-2 rounded-full bg-[#28CA42]" />
-              </div>
-              <div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/overview</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/conversions</div>
-                <div><span style={{ color: "#E8B84B" }}>GET</span> /api/v1/stats/sources</div>
-                <div><span style={{ color: "#E8B84B" }}>POST</span> /api/v1/webhooks</div>
-                <div><span style={{ color: "#E8B84B" }}>MCP</span> mcp.sealmetrics.com/mcp</div>
-                <div className="mt-3 text-white/45">// no sampling · no thresholds · full resolution</div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div >
+              <div >
+                <div><span style={{ color: "#E8B84B" }}>GET</span > /api/v1/stats/overview</div >
+                <div><span style={{ color: "#E8B84B" }}>GET</span > /api/v1/stats/conversions</div >
+                <div><span style={{ color: "#E8B84B" }}>GET</span > /api/v1/stats/sources</div >
+                <div><span style={{ color: "#E8B84B" }}>POST</span > /api/v1/webhooks</div >
+                <div><span style={{ color: "#E8B84B" }}>MCP</span > mcp.sealmetrics.com/mcp</div >
+                <div className="mt-3 text-white/45">// no sampling · no thresholds · full resolution</div >
+              </div >
+            </div >
+          </div >
+        </div >
+      </section>
+
+      <section className="py-28 bg-white border-t border-warm-100">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-10">
+          <h2 className="text-3xl font-semibold text-ink mb-12 text-center">Frequently Asked Questions</h2>
+          <div className="grid gap-12">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border-b border-warm-100 pb-8 last:border-0">
+                <h3 className="text-xl font-semibold text-ink mb-3">{faq.question}</h3>
+                <p className="text-[17px] leading-[1.6] text-ink-soft">{faq.answer}</p>
+              </div >
+            ))}
+          </div >
+        </div >
       </section>
 
       <FinalCtaSharedV3
