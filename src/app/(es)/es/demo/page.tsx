@@ -6,6 +6,17 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { DemoFormEs } from "./DemoFormEs";
 import { ogImage } from "@/lib/seo/og";
+import { getCaseStudy } from "@/lib/content/case-studies";
+
+/**
+ * Prueba social con nombre, en lugar de la cita anónima del "retailer europeo
+ * de moda" que había aquí. Las citas se leen del contenido de los casos, no se
+ * copian, para que no puedan desincronizarse de las páginas que enlazan.
+ */
+const DEMO_PROOF = [
+  { slug: "incapto", href: "/es/case-studies/incapto/" },
+  { slug: "palladium-hotel-group", href: "/es/case-studies/palladium-hotel-group/" },
+] as const;
 
 export const metadata: Metadata = {
   title: "Pide una demo — Sealmetrics",
@@ -84,13 +95,23 @@ export default function DemoPageEs() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-white rounded-xl" style={{ borderLeft: "3px solid #2E5C8A" }}>
-                <p className="text-[15px] text-ink-2 leading-[1.6] italic">
-                  &ldquo;Creíamos que nuestra analítica era fiable. Sealmetrics nos mostró que nos estábamos perdiendo el 74% de las conversiones.&rdquo;
-                </p>
-                <p className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
-                  Head of Digital Marketing · Retailer europeo de moda
-                </p>
+              <div className="mt-8 grid gap-3">
+                {DEMO_PROOF.map(({ slug, href }) => {
+                  const c = getCaseStudy(slug, "es");
+                  return (
+                    <figure key={slug} className="m-0 p-6 bg-white rounded-xl" style={{ borderLeft: "3px solid #2E5C8A" }}>
+                      <blockquote className="m-0 text-[15px] text-ink-2 leading-[1.6] italic">
+                        &ldquo;{c.quote}&rdquo;
+                      </blockquote>
+                      <figcaption className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
+                        {c.person} · {c.role} · {c.client} ·{" "}
+                        <Link href={href} className="text-ink-soft no-underline border-b border-warm-200 hover:text-ink transition-colors">
+                          Ver el caso
+                        </Link>
+                      </figcaption>
+                    </figure>
+                  );
+                })}
               </div>
 
               <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px]">

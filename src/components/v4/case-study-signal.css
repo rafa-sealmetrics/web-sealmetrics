@@ -804,3 +804,20 @@
     padding-inline: 20px;
   }
 }
+
+/* -- client's own site ----------------------------------------------------- */
+.sig-case-site {
+  display: inline-block;
+  margin-top: 28px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--ink);
+  font:
+    650 11px/1.4 var(--font-jetbrains-mono),
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-case-site:hover {
+  border-bottom-color: var(--acid-ink);
+  color: var(--acid-ink);
+}

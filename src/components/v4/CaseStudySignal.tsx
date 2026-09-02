@@ -19,6 +19,10 @@ const logoBox = (src: string) => LOGO_BOX[src] ?? { width: 260, height: 60 };
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
+/** "https://www.incapto.com/" -> "incapto.com". The bare host reads as an
+    identity rather than a URL, and the arrow already says it leaves the site. */
+const displayHost = (url: string) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+
 
 /**
  * Renders one evidence block. Widths come from the data as percentages of the
@@ -127,7 +131,7 @@ export function CaseStudySignal({ slug, locale }: { slug: CaseStudySlug; locale:
       <section className="sig-case-hero">
         <nav className="sig-case-breadcrumbs" aria-label="Breadcrumb"><Link href={`${prefix}/`}>{locale === "es" ? "Inicio" : "Home"}</Link><span>/</span><Link href={`${prefix}/case-studies/`}>{casesLabel}</Link><span>/</span><span>{c.client}</span></nav>
         <div className="sig-case-hero-grid">
-          <div><img src={c.logo} alt={c.client} className="sig-case-logo" width={logoBox(c.logo).width} height={logoBox(c.logo).height} /><p className="sig-case-eyebrow"><span>{c.eyebrow}</span></p><h1>{c.hero}</h1><p className="sig-case-hero-body">{c.heroBody}</p></div>
+          <div><img src={c.logo} alt={c.client} className="sig-case-logo" width={logoBox(c.logo).width} height={logoBox(c.logo).height} /><p className="sig-case-eyebrow"><span>{c.eyebrow}</span></p><h1>{c.hero}</h1><p className="sig-case-hero-body">{c.heroBody}</p><a className="sig-case-site" href={c.companyUrl} target="_blank" rel="noopener noreferrer">{displayHost(c.companyUrl)} <Arrow /></a></div>
           <aside className="sig-case-file"><div className="sig-case-module-top"><span>CASE FILE</span><span>VERIFIED · 2026</span></div>{c.meta.map(([label,value],index)=><div key={label}><span>0{index+1}</span><strong>{label}</strong><b>{value}</b></div>)}<p>{c.sourceLabel} · {c.sourceText}</p></aside>
         </div>
       </section>

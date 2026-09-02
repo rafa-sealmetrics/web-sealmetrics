@@ -12,8 +12,8 @@
     "date": "2026-04-25"
   },
   "/demo/": {
-    "hash": "f512a87f876d069c",
-    "date": "2026-08-14"
+    "hash": "ec926d28a738df60",
+    "date": "2026-09-02"
   },
   "/vs/": {
     "hash": "3aa2b949de2c3122",
@@ -236,8 +236,8 @@
     "date": "2026-08-27"
   },
   "/es/demo/": {
-    "hash": "44a6a2e4a9db837b",
-    "date": "2026-08-14"
+    "hash": "27357a404bbed96f",
+    "date": "2026-09-02"
   },
   "/es/vs/": {
     "hash": "47deba0430fd0813",
@@ -468,11 +468,11 @@
     "date": "2026-05-04"
   },
   "/es/case-studies/palladium-hotel-group/": {
-    "hash": "951b528a9f6c07c4",
-    "date": "2026-08-13"
+    "hash": "768e0b72c68e895e",
+    "date": "2026-09-02"
   },
   "/es/case-studies/dreamplace-hotels/": {
-    "hash": "3a0b531d8cd0203b",
+    "hash": "6c87d976fbb2630d",
     "date": "2026-09-02"
   },
   "/es/blog/the-prompt-is-born-clean/": {
@@ -796,11 +796,11 @@
     "date": "2026-05-04"
   },
   "/case-studies/palladium-hotel-group/": {
-    "hash": "912e8aa08e930389",
-    "date": "2026-08-13"
+    "hash": "337b6381e3e3994e",
+    "date": "2026-09-02"
   },
   "/case-studies/dreamplace-hotels/": {
-    "hash": "281d0a3cb4ffb81b",
+    "hash": "57f5e9578adc14f3",
     "date": "2026-09-02"
   },
   "/blog/best-enterprise-analytics-platforms/": {
@@ -1092,11 +1092,11 @@
     "date": "2026-08-27"
   },
   "/case-studies/incapto/": {
-    "hash": "e95140a577a0ba4d",
+    "hash": "c2d6dbc8bd77592a",
     "date": "2026-09-02"
   },
   "/es/case-studies/incapto/": {
-    "hash": "734e7dc4791fdaa7",
+    "hash": "0a2932c2ffea93dc",
     "date": "2026-09-02"
   }
 }
