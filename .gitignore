@@ -8,7 +8,6 @@ vite.config.ts.timestamp-*
 
 # Local mockups, agent configs, backups
 Seal-Web-2/
-AGENTS.md
 public/sitemap.xml.old
 .claude/scheduled_tasks.lock
 
