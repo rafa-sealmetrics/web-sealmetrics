@@ -108,8 +108,8 @@
     "date": "2026-08-13"
   },
   "/blog/": {
-    "hash": "6e44bc7a47024af1",
-    "date": "2026-08-27"
+    "hash": "1c0ae0d154dd71fd",
+    "date": "2026-09-02"
   },
   "/growth/": {
     "hash": "2a911d7691a739d1",
@@ -296,8 +296,8 @@
     "date": "2026-08-13"
   },
   "/es/blog/": {
-    "hash": "fbce229e6909e94a",
-    "date": "2026-08-27"
+    "hash": "5ef4a43786f8d577",
+    "date": "2026-09-02"
   },
   "/es/case-studies/": {
     "hash": "2d549e1212e6f98c",
@@ -1090,5 +1090,9 @@
   "/blog/ftc-personalized-pricing-enforcement-compliance-guide/": {
     "hash": "7924a01f3c0c2cd2",
     "date": "2026-08-27"
+  },
+  "/blog/dpo-rejected-google-analytics-eu-alternatives/": {
+    "hash": "98fe56f75c9f0df6",
+    "date": "2026-09-02"
   }
 }
