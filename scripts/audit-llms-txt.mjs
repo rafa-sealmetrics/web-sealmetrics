@@ -29,16 +29,21 @@ if (!existsSync(sitemapPath)) {
 const sitemap = readFileSync(sitemapPath, "utf8");
 const llms = readFileSync(llmsPath, "utf8");
 
+// La home llega como "/" y, al quitarle la barra final, quedaba en cadena
+// vacía y la descartaba el filtro: el auditor nunca miró la portada, que es
+// justo como se quedó fuera de llms.txt sin que nadie lo notara.
+const normalizeRoute = (route) => (route === "/" ? "/" : route.replace(/\/$/, ""));
+
 const sitemapUrls = new Set(
   Array.from(sitemap.matchAll(/<loc>https:\/\/sealmetrics\.com([^<]+)<\/loc>/g))
-    .map((m) => m[1].replace(/\/$/, ""))
+    .map((m) => normalizeRoute(m[1]))
     .filter((u) => u && !u.startsWith("/demo/thank-you"))
 );
 
 const llmsUrls = new Set(
   Array.from(llms.matchAll(/\]\(https:\/\/sealmetrics\.com([^\s)]+\.md)\)/g)).map((m) => {
     const route = m[1].replace(/\.md$/, "");
-    return (route === "/index" ? "/" : route).replace(/\/$/, "");
+    return normalizeRoute(route === "/index" ? "/" : route);
   })
 );
 
