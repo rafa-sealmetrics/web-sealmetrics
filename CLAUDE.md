@@ -14,7 +14,7 @@ Marketing website for SealMetrics — cookieless web analytics platform targetin
 
 ## Design System Rules (v4 — Signal)
 
-> Canonical source is this file. Keep `AGENTS.md` in sync — the stale v3 copy previously reintroduced retired rules.
+> Canonical source is this file. `AGENTS.md` is a symlink to it, so the two cannot drift — an earlier untracked copy went stale and reintroduced retired rules.
 
 Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and must not be deleted** until the last page is migrated — see `MIGRATION-MAP.md`. New and ported pages use v4 only.
 
