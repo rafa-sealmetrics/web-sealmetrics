@@ -293,9 +293,13 @@
 }
 
 .sig-product-section-head > p,
-.sig-product-integrations > div > p,
+/* `:not(.sig-product-tag)` for the same reason spelled out at .sig-product-final
+   below: the eyebrow is a <p> too, and it is an ink chip with acid text. These
+   two-class selectors outrank the chip's own one-class colour and repaint its
+   label muted — 2.97:1 on ink, under AA. */
+.sig-product-integrations > div > p:not(.sig-product-tag),
 .sig-product-proof-copy > p:last-child,
-.sig-product-final > p {
+.sig-product-final > p:not(.sig-product-tag) {
   color: var(--sig-muted);
   font-size: 17px;
   line-height: 1.62;
