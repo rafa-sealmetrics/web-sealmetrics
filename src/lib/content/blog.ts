@@ -30,6 +30,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "dpo-rejected-google-analytics-eu-alternatives",
+    title: "Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?",
+    description: "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
+    date: "2026-08-30",
+    category: "Regulation",
+    readTime: "7 min",
+    author: AUTHORS.rafa,
+    related: [],
+  },
+  {
     slug: "data-breach-france-travail-fined-5-million",
     title: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
     description:
