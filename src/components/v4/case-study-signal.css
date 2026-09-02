@@ -239,8 +239,11 @@
   letter-spacing: -0.07em;
   line-height: 0.88;
 }
-.sig-case-section-head > div > p,
-.sig-case-section-head > p,
+/* `:not(.sig-case-tag)` matches the two selectors below: without it this rule
+   outranks `.sig-case-tag`'s own acid-on-ink and repaints the chip's label
+   muted, which is 2.97:1 on the ink background — under AA. */
+.sig-case-section-head > div > p:not(.sig-case-tag),
+.sig-case-section-head > p:not(.sig-case-tag),
 .sig-case-result > div > p:not(.sig-case-tag),
 .sig-case-final > p:not(.sig-case-tag) {
   color: var(--muted);
