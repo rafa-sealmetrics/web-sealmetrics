@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { getHotelCase, type HotelCaseLocale, type HotelCaseSlug } from "@/lib/content/hotel-cases";
+import { caseStudyOrder, getCaseStudy, nextCaseStudy, type CaseStudyLocale, type CaseStudySlug, type EvidenceBlock } from "@/lib/content/case-studies";
 import { articleSchema, breadcrumbSchema, casePersonSchema, collectionPageSchema, itemListSchema, quotationSchema, reviewSchema, statisticClaimSchema } from "@/lib/schema";
 
 /**
@@ -12,26 +12,116 @@ import { articleSchema, breadcrumbSchema, casePersonSchema, collectionPageSchema
 const LOGO_BOX: Record<string, { width: number; height: number }> = {
   "/logos/clients/palladium-dark.svg": { width: 200, height: 60 },
   "/logos/clients/dreamplace.svg": { width: 260, height: 60 },
+  "/logos/clients/incapto.svg": { width: 856, height: 198 },
 };
 const logoBox = (src: string) => LOGO_BOX[src] ?? { width: 260, height: 60 };
 
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
-export function HotelCaseSignal({ slug, locale }: { slug: HotelCaseSlug; locale: HotelCaseLocale }) {
-  const c = getHotelCase(slug, locale);
+
+/**
+ * Renders one evidence block. Widths come from the data as percentages of the
+ * block's own maximum, so a bar is always read against the row beside it and
+ * never against an absolute scale that does not exist.
+ */
+function Evidence({ block }: { block: EvidenceBlock }) {
+  return (
+    <article className="sig-case-ev">
+      <p className="sig-case-ev-n">{block.number}</p>
+      <h2>{block.title}</h2>
+      <p className="sig-case-ev-cap">{block.caption}</p>
+
+      {block.kind === "reconcile" && (
+        <div className="sig-case-ev-reconcile">
+          {block.panels.map(panel => (
+            <div key={panel.label}>
+              <strong>{panel.value}</strong>
+              <div className="sig-case-ev-meter" role="img" aria-label={`${panel.value} ${panel.label}`}>
+                <span style={{ width: `${panel.percent}%` }} />
+              </div>
+              <p>{panel.label}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.kind === "bars" && (
+        <div className="sig-case-ev-bars">
+          {block.rows.map(row => (
+            <div key={row.name} className="sig-case-ev-bar">
+              <span className="sig-case-ev-name">{row.name}</span>
+              <div className="sig-case-ev-track">
+                {/* A bar too narrow to hold its own label keeps the small
+                    type; the wide ones carry the figure at display size. */}
+                <span className={`sig-case-ev-fill is-${row.tone}`} data-small={row.percent < 15 ? "" : undefined} style={{ width: `${row.percent}%` }}>
+                  <b>{row.display}</b>
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.kind === "channels" && (
+        <div className="sig-case-ev-channels">
+          {block.rows.map(row => (
+            <div key={row.name} className="sig-case-ev-ch">
+              <span className="sig-case-ev-name">{row.name}</span>
+              <div className="sig-case-ev-track">
+                <span
+                  className={`sig-case-ev-fill ${row.offset === undefined ? "is-seal" : "is-range"}`}
+                  style={{ width: `${row.percent}%`, marginLeft: row.offset === undefined ? undefined : `${row.offset}%` }}
+                />
+              </div>
+              <b className="sig-case-ev-val">{row.display}</b>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.kind === "mix" && (
+        <div className="sig-case-ev-mix">
+          {block.bars.map((bar, index) => (
+            <div key={bar.name} className="sig-case-ev-mixrow">
+              {index === block.bars.length - 1 && <p className="sig-case-ev-mixnote">{block.note}</p>}
+              <p className="sig-case-ev-name is-block">{bar.name}</p>
+              <div className="sig-case-ev-stack">
+                {bar.segments.map(segment => (
+                  <span key={segment.key} className={`is-${segment.key}`} style={{ width: `${segment.percent}%` }}>
+                    {segment.display}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+          <ul className="sig-case-ev-legend">
+            {block.legend.map(([key, label]) => (
+              <li key={key}><i className={`is-${key}`} aria-hidden="true" />{label}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <p className="sig-case-ev-body">{block.body}</p>
+    </article>
+  );
+}
+
+export function CaseStudySignal({ slug, locale }: { slug: CaseStudySlug; locale: CaseStudyLocale }) {
+  const c = getCaseStudy(slug, locale);
   const prefix = locale === "es" ? "/es" : "";
   const casesLabel = locale === "es" ? "Casos de éxito" : "Case studies";
   const route = `${prefix}/case-studies/${slug}`;
-  const otherSlug = slug === "palladium-hotel-group" ? "dreamplace-hotels" : "palladium-hotel-group";
+  const otherSlug = nextCaseStudy(slug);
   return <>
     <JsonLd data={breadcrumbSchema([{ name: casesLabel, url: `${prefix}/case-studies` }, { name: c.client, url: route }], locale)} />
     <JsonLd data={casePersonSchema({ name:c.person, jobTitle:c.role, worksForName:c.client, worksForUrl:c.companyUrl, caseUrl:route, caseName:c.title })} />
-    <JsonLd data={articleSchema({ headline:c.title, description:c.description, datePublished:"2026-04-15", dateModified:"2026-04-15", url:route, category:casesLabel, author:{ name:"Sealmetrics", url:`${prefix}/about` }, image:"https://sealmetrics.com/og-image.png" })} />
-    {c.metrics.map(metric => <JsonLd key={metric.label} data={statisticClaimSchema({ text:`${metric.value} — ${metric.label}. ${metric.note}`, source:c.sourceText, sourceAuthor:c.client, sourceDate:"2026-04-15", url:route, numericValue:metric.numericValue, unit:"PERCENT" })} />)}
+    <JsonLd data={articleSchema({ headline:c.title, description:c.description, datePublished:c.datePublished, dateModified:c.datePublished, url:route, category:casesLabel, author:{ name:"Sealmetrics", url:`${prefix}/about` }, image:"https://sealmetrics.com/og-image.png" })} />
+    {c.metrics.map(metric => <JsonLd key={metric.label} data={statisticClaimSchema({ text:`${metric.value} — ${metric.label}. ${metric.note}`, source:c.sourceText, sourceAuthor:c.client, sourceDate:c.datePublished, url:route, numericValue:metric.numericValue, unit:"PERCENT" })} />)}
     <JsonLd data={quotationSchema({ text:c.quote, spokenBy:c.person, spokenByRole:`${c.role} · ${c.client}`, url:route })} />
-    <JsonLd data={quotationSchema({ text:c.secondQuote, spokenBy:c.person, spokenByRole:`${c.role} · ${c.client}`, url:route })} />
-    <JsonLd data={reviewSchema({ reviewBody:c.quote, authorName:c.person, authorRole:`${c.role} · ${c.client}`, datePublished:"2026-04-15" })} />
+    {c.secondQuote && <JsonLd data={quotationSchema({ text:c.secondQuote, spokenBy:c.person, spokenByRole:`${c.role} · ${c.client}`, url:route })} />}
+    <JsonLd data={reviewSchema({ reviewBody:c.quote, authorName:c.person, authorRole:`${c.role} · ${c.client}`, datePublished:c.datePublished })} />
 
     <main className="sig-case-page">
       <section className="sig-case-hero">
@@ -46,23 +136,29 @@ export function HotelCaseSignal({ slug, locale }: { slug: HotelCaseSlug; locale:
 
       <section className="sig-case-problem"><div className="sig-case-section-head"><h2>{c.problemTitle}</h2><div>{c.problemBody.map(body=><p key={body}>{body}</p>)}</div></div><blockquote><p>“{c.quote}”</p><cite>{c.person} · {c.role} · {c.client}</cite></blockquote></section>
 
+      {c.evidence && <section className="sig-case-evidence">{c.evidence.map(block => <Evidence key={block.number} block={block} />)}</section>}
+
       <section className="sig-case-method"><div className="sig-case-section-head"><div><p className="sig-case-tag">{locale === "es" ? "Método" : "Method"}</p><h2>{c.methodTitle}</h2></div><p>{c.methodBody}</p></div><ol>{c.steps.map(([number,title,body])=><li key={number}><span>{number}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol></section>
 
       <section className="sig-case-result"><div><p className="sig-case-tag">{locale === "es" ? "Resultado" : "Result"}</p><h2>{c.resultTitle}</h2>{c.resultBody.map(body=><p key={body}>{body}</p>)}</div><aside><span>{c.resultSignal}</span><strong>{c.resultLabel}</strong><p>{c.sourceText}</p></aside></section>
 
-      <section className="sig-case-quote"><blockquote><p>“{c.secondQuote}”</p><cite>{c.person} · {c.role} · {c.client}</cite></blockquote></section>
+      {c.limits && <section className="sig-case-limits"><div><p className="sig-case-tag">{c.limits.tag}</p><h2>{c.limits.title}</h2><p>{c.limits.body}</p></div></section>}
+
+      {c.secondQuote && <section className="sig-case-quote"><blockquote><p>“{c.secondQuote}”</p><cite>{c.person} · {c.role} · {c.client}</cite></blockquote></section>}
+
+      {c.notes && <section className="sig-case-notes"><p className="sig-case-tag">{c.notes.tag}</p><ul>{c.notes.items.map((item, index) => <li key={index}>{item}</li>)}</ul></section>}
 
       <section className="sig-case-final"><p className="sig-case-tag">{locale === "es" ? "Compara con tu dato" : "Compare with your data"}</p><h2>{c.ctaTitle}</h2><p>{c.ctaBody}</p><div className="sig-case-actions"><Link className="sig-case-button" href={`${prefix}/demo/`}>{c.ctaPrimary}<Arrow /></Link><Link className="sig-case-link" href={`${prefix}/case-studies/${otherSlug}/`}>{c.ctaSecondary} <Arrow /></Link></div></section>
     </main>
   </>;
 }
 
-export function CaseStudyIndexSignal({ locale }: { locale: HotelCaseLocale }) {
+export function CaseStudyIndexSignal({ locale }: { locale: CaseStudyLocale }) {
   const prefix = locale === "es" ? "/es" : "";
-  const cases = (["palladium-hotel-group", "dreamplace-hotels"] as const).map(slug => ({ slug, data:getHotelCase(slug, locale) }));
+  const cases = caseStudyOrder.map(slug => ({ slug, data:getCaseStudy(slug, locale) }));
   const label = locale === "es" ? "Casos de éxito" : "Case studies";
   const title = locale === "es" ? <>Equipos reales.<br/>Números <em>que se pueden defender.</em></> : <>Real teams.<br/>Numbers <em>worth defending.</em></>;
-  const intro = locale === "es" ? "Dos grupos hoteleros han publicado las brechas que encontraron, el método que aplicaron y las decisiones que cambiaron. Clientes con nombre, cifras contrastables y contexto operativo." : "Two hotel groups have published the gaps they found, the method they applied and the decisions that changed. Named clients, inspectable figures and operating context.";
+  const intro = locale === "es" ? "Dos grupos hoteleros y un eCommerce han publicado las brechas que encontraron, el método que aplicaron y las decisiones que cambiaron. Clientes con nombre, cifras contrastables y contexto operativo." : "Two hotel groups and one eCommerce brand have published the gaps they found, the method they applied and the decisions that changed. Named clients, inspectable figures and operating context.";
   return <>
     <JsonLd data={breadcrumbSchema([{ name:label, url:`${prefix}/case-studies` }], locale)} />
     <JsonLd data={collectionPageSchema({ name:label, description:intro, url:`${prefix}/case-studies` })} />

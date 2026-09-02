@@ -462,6 +462,7 @@ for (const post of parseBlogPosts()) {
 const cases = [
   { slug: "palladium-hotel-group", title: "A neutral single source of truth all stakeholders accept", eyebrow: "Case study · Palladium Hotel Group" },
   { slug: "dreamplace-hotels", title: "Decide paid media on real data, not what each platform reports", eyebrow: "Case study · Dreamplace Hotels" },
+  { slug: "incapto", title: "GA4 was not measuring less. It was measuring another business", eyebrow: "Case study · Incapto" },
 ];
 for (const c of cases) {
   const out = path.join(outDir, "case-studies", `${c.slug}.png`);
