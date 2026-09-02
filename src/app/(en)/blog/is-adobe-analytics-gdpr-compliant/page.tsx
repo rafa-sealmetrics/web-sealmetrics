@@ -9,8 +9,15 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
   title: "Is Adobe Analytics GDPR Compliant?",
+  // La versión anterior resolvía la pregunta del buscador dentro del propio
+  // snippet ("can be deployed compliantly under GDPR") y no daba ningún
+  // motivo para entrar — además de hacerle a Adobe el trabajo de
+  // tranquilizar al lector. 903 impresiones en posición 6,4 y cero clicks
+  // en 30 días. Esta responde igual de honestamente pero deja el coste
+  // fuera del snippet, que es lo que la página aporta y el listado del
+  // blog (src/lib/content/blog.ts) ya contaba mejor que la propia página.
   description:
-    "Adobe Analytics can be deployed compliantly under GDPR. What that requires — consent, DPA, transfer assessment — and what it costs you in coverage.",
+    "Yes — with consent, a DPA and a transfer assessment. But 40–60% of EU visitors decline the banner, so you get a lawful dataset missing most of your audience.",
   openGraph: {
     title: "Is Adobe Analytics GDPR Compliant?",
     description:
