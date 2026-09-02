@@ -10,7 +10,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Auditoría gratuita de medición — Sealmetrics",
   description:
-    "Responde 7 preguntas en 3 minutos. Te enviamos un análisis personalizado del gap entre lo que mide GA4 y lo que realmente vende tu eCommerce.",
+    "Responde 7 preguntas en 3 minutos. Te enviamos un análisis personalizado de la brecha entre lo que mide tu analytics actual y lo que realmente vende tu comercio electrónico.",
   alternates: {
     canonical: "https://sealmetrics.com/es/audit/",
     languages: getAlternatesEs("/audit"),
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Auditoría gratuita de medición — Sealmetrics",
     description:
-      "Descubre cuánto revenue oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
+      "Descubre cuántos ingresos oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
     type: "website",
     images: [ogImage("/es/audit/")],
     locale: "es_ES",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Auditoría gratuita de medición — Sealmetrics",
-    description: "Descubre cuánto revenue oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
+    description: "Descubre cuántos ingresos oculta tu analytics. Auditoría personalizada en 24h, escrita por una persona, sin secuencias automatizadas.",
     images: [ogImage("/es/audit/")],
   },
 };
@@ -51,9 +51,9 @@ export default function Page() {
         data={servicePageSchema({
           name: "Auditoría gratuita de medición · Sealmetrics",
           description:
-            "Auditoría personalizada del gap entre GA4 y los ingresos reales de tu backend. 7 preguntas, 3 minutos, informe humano en 24h.",
+            "Auditoría personalizada de la brecha entre tu analytics actual y los ingresos reales de tu sistema interno. 7 preguntas, 3 minutos, informe humano en 24h.",
           url: "/es/audit",
-          audience: "CMO, Head of Marketing, Director eCommerce",
+          audience: "CMO, Head of Marketing, Director de Comercio Electrónico",
         })}
       />
 
@@ -61,15 +61,16 @@ export default function Page() {
         <div className="max-w-[760px] mx-auto px-5 sm:px-8">
           <span className="eyebrow mb-5">Auditoría gratuita de medición</span>
           <h1 className="h-display mt-5">
-            Descubre cuánto revenue oculta <em>tu analytics.</em>
+            Descubre cuántos ingresos oculta <em>tu analytics.</em>
           </h1>
           <p
             className="text-ink-soft mt-7 leading-[1.55] max-w-[60ch]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
-            Responde 7 preguntas y te enviamos un análisis personalizado del gap
-            entre lo que mide GA4 y lo que realmente vende tu eCommerce. Escrito
-            por una persona y entregado en 24h — sin secuencias automatizadas.
+            Responde 7 preguntas y te enviamos un análisis personalizado de la brecha
+            entre lo que mide tu analytics actual y lo que realmente vende tu comercio
+            electrónico. Escrito por una persona y entregado en 24h — sin secuencias
+            automatizadas.
           </p>
           <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-ink-soft font-semibold mt-6">
             3 minutos · sin instalar nada
@@ -84,19 +85,33 @@ export default function Page() {
           <h2 className="text-[32px] md:text-[40px] font-[790] tracking-[-0.045em] leading-[0.95] text-ink">
             Qué recibes
           </h2>
-          <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
-            En Europa, GA4 reporta en torno al 13% de los visitantes de un sitio,
+          <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] font-semibold max-w-[62ch]">
+            TL;DR: en 24h recibes una cifra concreta de los ingresos no atribuidos,
+            el canal más infravalorado y una lectura legal del montaje —
+            escrita por una persona, sin llamada ni puntuación automática.
+          </p>
+          <p className="text-ink-soft mt-4 leading-[1.6] text-[17px] max-w-[62ch]">
+            En Europa, tu herramienta actual reporta en torno al 13% de los visitantes de un sitio,
             y solo un 16% aproximadamente llega con la fuente de tráfico todavía
             asociada. Cada decisión de inversión tomada sobre esa base se toma
             sobre una muestra que nadie eligió. La auditoría pone un número a tu
-            versión concreta de ese gap antes de que instales nada.
+            versión concreta de esa brecha antes de que instales nada.{" "}
+            <Link
+              href="https://support.google.com/analytics/answer/9445345"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fuente: metodología de medición de herramientas estándar de mercado
+            </Link>
+            .
           </p>
           <ul className="mt-8 space-y-4 text-[16px] leading-[1.6] text-ink-soft">
             <li className="flex gap-3">
               <span className="text-acid-ink shrink-0">—</span>
               <span>
                 Una estimación del tráfico y los ingresos que tu configuración
-                actual no atribuye, contrastada con las cifras de backend que nos
+                actual no atribuye, contrastada con las cifras de tu sistema interno que nos
                 facilites.
               </span>
             </li>
@@ -111,14 +126,14 @@ export default function Page() {
               <span className="text-acid-ink shrink-0">—</span>
               <span>
                 Una lectura escrita de si tu montaje de consentimiento y píxeles
-                está generando exposición legal además del gap de medición.
+                está generando exposición legal además de la brecha de medición.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-acid-ink shrink-0">—</span>
               <span>
                 Escrito por una persona en 24 horas. Sin secuencia de correos,
-                sin scoring automático y sin llamada obligatoria para recibirlo.
+                sin puntuación automática y sin llamada obligatoria para recibirlo.
               </span>
             </li>
           </ul>
@@ -126,22 +141,43 @@ export default function Page() {
           <h2 className="text-[32px] md:text-[40px] font-[790] tracking-[-0.045em] leading-[0.95] text-ink mt-16">
             Qué no es
           </h2>
-          <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
-            No es un escaneo técnico de tus etiquetas: para eso está la{" "}
-            <Link href="/free-audit/" className="underline">
-              auditoría gratuita de píxeles y RGPD
-            </Link>
-            , que rastrea tu web y te dice qué píxeles disparan antes del
-            consentimiento, con un PDF de vuelta en dos o tres minutos. Tampoco
-            es una demo de producto: si ya sabes que el gap es real y quieres ver
-            la plataforma, reserva una{" "}
-            <Link href="/es/demo/" className="underline">
-              demo
-            </Link>{" "}
-            directamente. Y no es una reescritura de tu plan de medición — es una
-            cifra, una causa y una lectura honesta de si esa cifra es lo bastante
-            grande como para actuar.
+          <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] font-semibold max-w-[62ch]">
+            TL;DR: no es un escaneo de etiquetas, ni una demo de producto, ni un
+            plan de medición — es solo una cifra, una causa y una lectura
+            honesta.
           </p>
+          <ul className="mt-6 space-y-4 text-[16px] leading-[1.6] text-ink-soft">
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                No es un escaneo técnico de tus etiquetas: para eso está la{" "}
+                <Link href="/free-audit/" className="underline">
+                  auditoría gratuita de píxeles y RGPD
+                </Link>
+                , que rastrea tu web y te dice qué píxeles disparan antes del
+                consentimiento, con un PDF de vuelta en dos o tres minutos.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                No es una demo de producto: si ya sabes que el gap es real y
+                quieres ver la plataforma, reserva una{" "}
+                <Link href="/es/demo/" className="underline">
+                  demo
+                </Link>{" "}
+                directamente.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-acid-ink shrink-0">—</span>
+              <span>
+                No es una reescritura de tu plan de medición — es una cifra, una
+                causa y una lectura honesta de si esa cifra es lo bastante
+                grande como para actuar.
+              </span>
+            </li>
+          </ul>
         </div>
       </section>
 
