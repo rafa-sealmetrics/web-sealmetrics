@@ -13,21 +13,25 @@ import { useState } from "react";
  */
 /* Copy por idioma. La barra vive en SharedLayout, así que sin esto el texto
    inglés salía en las ~80 páginas españolas, no solo en la home. */
+/* `brand` vive aquí y no en el JSX: estaba escrito a mano dentro del marcado,
+   así que cambiar de caso obligaba a tocar el render y no solo el copy. */
 const COPY = {
   en: {
     kicker: "Case study",
-    lead: " recovered 40% of unattributed traffic → +165% Display CPS.",
-    leadShort: " — 40% of traffic recovered.",
+    brand: "Incapto",
+    lead: " ran GA4 and Sealmetrics side by side → GA4 missed 29% of visits.",
+    leadShort: " — GA4 missed 29% of visits.",
     cta: "Read the case",
-    href: "/case-studies/palladium-hotel-group/",
+    href: "/case-studies/incapto/",
     dismiss: "Dismiss announcement",
   },
   es: {
     kicker: "Caso de estudio",
-    lead: " recuperó el 40% del tráfico sin atribución → +165% de CPS en Display.",
-    leadShort: " — 40% del tráfico recuperado.",
+    brand: "Incapto",
+    lead: " midió GA4 y Sealmetrics en paralelo → GA4 no veía el 29% de las visitas.",
+    leadShort: " — GA4 no veía el 29% de las visitas.",
     cta: "Ver el caso",
-    href: "/es/case-studies/palladium-hotel-group/",
+    href: "/es/case-studies/incapto/",
     dismiss: "Cerrar el anuncio",
   },
 } as const;
@@ -55,7 +59,7 @@ export function AnnouncementBar({ locale = "en" }: { locale?: "en" | "es" }) {
             {t.kicker}
           </span>
           <span className="truncate">
-            <b className="font-semibold">Palladium Hotel Group</b>
+            <b className="font-semibold">{t.brand}</b>
             <span className="hidden sm:inline">{t.lead}</span>
             <span className="sm:hidden">{t.leadShort}</span>
           </span>

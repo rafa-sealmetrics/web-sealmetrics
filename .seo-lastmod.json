@@ -116,8 +116,8 @@
     "date": "2026-08-14"
   },
   "/case-studies/": {
-    "hash": "e276f4aa8a9a080c",
-    "date": "2026-08-13"
+    "hash": "c176b5b908fae621",
+    "date": "2026-09-02"
   },
   "/careers/": {
     "hash": "697b8ff917a3283a",
@@ -300,8 +300,8 @@
     "date": "2026-08-27"
   },
   "/es/case-studies/": {
-    "hash": "2d549e1212e6f98c",
-    "date": "2026-08-13"
+    "hash": "88ddedafd810a690",
+    "date": "2026-09-02"
   },
   "/es/careers/": {
     "hash": "304c959ccfc4723e",
@@ -472,8 +472,8 @@
     "date": "2026-08-13"
   },
   "/es/case-studies/dreamplace-hotels/": {
-    "hash": "0bcfa8eeaf272cf8",
-    "date": "2026-08-13"
+    "hash": "3a0b531d8cd0203b",
+    "date": "2026-09-02"
   },
   "/es/blog/the-prompt-is-born-clean/": {
     "hash": "aaf509deef508095",
@@ -800,8 +800,8 @@
     "date": "2026-08-13"
   },
   "/case-studies/dreamplace-hotels/": {
-    "hash": "ddacdd6fc1ace039",
-    "date": "2026-08-13"
+    "hash": "281d0a3cb4ffb81b",
+    "date": "2026-09-02"
   },
   "/blog/best-enterprise-analytics-platforms/": {
     "hash": "f062e992f89a6b01",
@@ -1090,5 +1090,13 @@
   "/blog/ftc-personalized-pricing-enforcement-compliance-guide/": {
     "hash": "7924a01f3c0c2cd2",
     "date": "2026-08-27"
+  },
+  "/case-studies/incapto/": {
+    "hash": "e95140a577a0ba4d",
+    "date": "2026-09-02"
+  },
+  "/es/case-studies/incapto/": {
+    "hash": "734e7dc4791fdaa7",
+    "date": "2026-09-02"
   }
 }

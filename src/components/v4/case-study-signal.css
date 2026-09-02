@@ -455,3 +455,349 @@
     padding-left: 20px;
   }
 }
+
+/* ==========================================================================
+   EVIDENCE BLOCKS · side-by-side measured comparisons
+   Used by cases whose argument is a parallel measurement (Incapto). One key
+   across every chart: acid = Sealmetrics, ink = the compared tool, amber =
+   "unknown origin" (warning), red-alert = traffic the compared tool never saw.
+   Colours are data semantics only, per the design rules — never emphasis.
+   ========================================================================== */
+.sig-case-evidence {
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+  border-top: 1px solid var(--ink);
+  background: var(--white);
+}
+.sig-case-ev {
+  padding-block: clamp(56px, 6vw, 92px);
+  border-bottom: 1px solid var(--rule);
+}
+.sig-case-ev:last-of-type {
+  border-bottom: 0;
+}
+.sig-case-ev-n {
+  display: inline-block;
+  margin-bottom: 20px !important;
+  padding: 8px 10px;
+  background: var(--ink);
+  color: var(--acid);
+  font: 650 10px/1 var(--font-jetbrains-mono), monospace;
+  letter-spacing: 0.12em;
+}
+.sig-case-ev h2 {
+  max-width: 18ch;
+  font-size: clamp(34px, 4.2vw, 62px);
+  font-weight: 790;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+.sig-case-ev-cap {
+  margin-top: 26px !important;
+  color: var(--muted);
+  font: 650 10px/1.6 var(--font-jetbrains-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-case-ev-body {
+  max-width: 62ch;
+  margin-top: 34px !important;
+  font-size: 18px;
+  line-height: 1.55;
+}
+.sig-case-ev-body strong {
+  font-weight: 760;
+}
+
+/* -- 00 · reconciliation meters ------------------------------------------- */
+.sig-case-ev-reconcile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 34px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+}
+.sig-case-ev-reconcile > div {
+  padding: 30px;
+  background: var(--paper);
+}
+.sig-case-ev-reconcile strong {
+  display: block;
+  font: 790 clamp(52px, 6vw, 88px) / 0.85 var(--font-onest), sans-serif;
+  letter-spacing: -0.07em;
+}
+.sig-case-ev-meter {
+  height: 16px;
+  margin-top: 24px;
+  border: 1px solid var(--ink);
+}
+.sig-case-ev-meter span {
+  display: block;
+  height: 100%;
+  background: var(--acid);
+}
+.sig-case-ev-reconcile p {
+  margin-top: 16px !important;
+  max-width: 26ch;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* -- 01/02/03/05 · two-row comparison bars -------------------------------- */
+.sig-case-ev-bars {
+  margin-top: 34px;
+}
+.sig-case-ev-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.sig-case-ev-name {
+  flex: none;
+  width: 190px;
+  color: var(--muted);
+  font: 650 10px/1.4 var(--font-jetbrains-mono), monospace;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+.sig-case-ev-name.is-block {
+  width: auto;
+  margin-bottom: 10px !important;
+  text-align: left;
+}
+.sig-case-ev-track {
+  flex: 1;
+  min-width: 0;
+}
+.sig-case-ev-fill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 46px;
+  padding-inline: 14px;
+  font: 650 16px/1 var(--font-jetbrains-mono), monospace;
+}
+.sig-case-ev-fill.is-seal {
+  background: var(--acid);
+  color: var(--ink);
+}
+.sig-case-ev-fill.is-ga4 {
+  background: var(--ink);
+  color: var(--white);
+}
+.sig-case-ev-fill.is-warn {
+  background: var(--color-amber, #e8b84b);
+  color: var(--ink);
+}
+/* In a two-row comparison the figure IS the content, so it is set at display
+   size rather than as a caption on the bar. */
+.sig-case-ev-bar .sig-case-ev-fill {
+  height: clamp(58px, 6.5vw, 86px);
+  min-width: 82px;
+  justify-content: center;
+  font-size: clamp(24px, 3.2vw, 44px);
+  letter-spacing: -0.02em;
+}
+/* The 0.3% bar is narrower than a display-size label, so it keeps caption
+   type instead of widening the bar and overstating the value it represents. */
+.sig-case-ev-bar .sig-case-ev-fill[data-small] {
+  font-size: 16px;
+}
+
+/* -- 04 · per-channel gap ------------------------------------------------- */
+.sig-case-ev-channels {
+  margin-top: 34px;
+}
+.sig-case-ev-ch {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.sig-case-ev-ch .sig-case-ev-track {
+  height: 28px;
+  border-bottom: 1px solid var(--rule);
+}
+.sig-case-ev-ch .sig-case-ev-fill {
+  height: 28px;
+  padding: 0;
+}
+/* Paid media is a range, not a point: GA4 buckets part of the spend into
+   Cross-network, which Sealmetrics splits across search and social. Hatching
+   says "somewhere in here" rather than implying a precision we do not have. */
+.sig-case-ev-fill.is-range {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--acid) 0 6px,
+    var(--acid-ink) 6px 12px
+  );
+}
+.sig-case-ev-val {
+  flex: none;
+  width: 120px;
+  font: 650 14px/1 var(--font-jetbrains-mono), monospace;
+}
+
+/* -- 06 · stacked channel mix --------------------------------------------- */
+.sig-case-ev-mix {
+  margin-top: 34px;
+}
+.sig-case-ev-mixrow {
+  margin-bottom: 24px;
+}
+.sig-case-ev-mixnote {
+  max-width: 62ch;
+  margin: 34px 0 26px !important;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.sig-case-ev-stack {
+  display: flex;
+  height: 52px;
+  border: 1px solid var(--ink);
+}
+.sig-case-ev-stack span {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  font: 650 12px/1 var(--font-jetbrains-mono), monospace;
+}
+/* One key across all three bars, so a channel keeps its colour between them. */
+.sig-case-ev-stack .is-paid,
+.sig-case-ev-legend .is-paid {
+  background: var(--acid);
+  color: var(--ink);
+}
+.sig-case-ev-stack .is-direct,
+.sig-case-ev-legend .is-direct {
+  background: #9ac42e;
+  color: var(--ink);
+}
+.sig-case-ev-stack .is-organic,
+.sig-case-ev-legend .is-organic {
+  background: #5b7a22;
+  color: var(--white);
+}
+.sig-case-ev-stack .is-other,
+.sig-case-ev-legend .is-other {
+  background: #2c3a1a;
+  color: var(--white);
+}
+.sig-case-ev-stack .is-unknown,
+.sig-case-ev-legend .is-unknown {
+  background: var(--color-amber, #e8b84b);
+  color: var(--ink);
+}
+.sig-case-ev-stack .is-unmeasured,
+.sig-case-ev-legend .is-unmeasured {
+  background: var(--color-red-alert, #b5423b);
+  color: var(--white);
+}
+.sig-case-ev-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.sig-case-ev-legend li {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 13px;
+}
+.sig-case-ev-legend i {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--ink);
+}
+
+/* -- limits ("what this does not prove") ---------------------------------- */
+.sig-case-limits {
+  padding-block: clamp(56px, 6vw, 88px);
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+  border-top: 1px solid var(--ink);
+  background: var(--paper);
+}
+.sig-case-limits h2 {
+  max-width: 22ch;
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 790;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+.sig-case-limits > div > p:last-child {
+  max-width: 64ch;
+  margin-top: 26px !important;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .sig-case-evidence,
+  .sig-case-limits {
+    padding-inline: 20px;
+  }
+  .sig-case-ev-reconcile {
+    grid-template-columns: 1fr;
+  }
+  .sig-case-ev-bar,
+  .sig-case-ev-ch {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .sig-case-ev-name {
+    width: 100%;
+    text-align: left;
+  }
+  .sig-case-ev-val {
+    width: auto;
+  }
+  .sig-case-ev-stack span {
+    font-size: 10px;
+  }
+}
+
+/* -- methodology small print ---------------------------------------------- */
+.sig-case-notes {
+  padding-block: clamp(48px, 5vw, 76px);
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+  border-top: 1px solid var(--rule);
+  background: var(--white);
+}
+.sig-case-notes ul {
+  max-width: 90ch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sig-case-notes li {
+  position: relative;
+  margin-bottom: 14px;
+  padding-left: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+/* Dashes, never dots — see the design rules. */
+.sig-case-notes li:before {
+  position: absolute;
+  left: 0;
+  content: "—";
+}
+.sig-case-notes li b {
+  color: var(--ink);
+  font: 650 13px/1.65 var(--font-jetbrains-mono), monospace;
+}
+@media (max-width: 860px) {
+  .sig-case-notes {
+    padding-inline: 20px;
+  }
+}

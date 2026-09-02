@@ -711,6 +711,16 @@
       "sourceHash": "2b1d057335dc4212f5cf94dbf37fce0bea816c04d90baaead217d999e4d9267f",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/case-studies/incapto.avif": {
+      "source": "public/og/case-studies/incapto.png",
+      "sourceHash": "631e1fa55593e71e9a6b0846ae1567127fcc8e30f83723d90131d92ab2c4d9c6",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/case-studies/incapto.webp": {
+      "source": "public/og/case-studies/incapto.png",
+      "sourceHash": "631e1fa55593e71e9a6b0846ae1567127fcc8e30f83723d90131d92ab2c4d9c6",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/case-studies/palladium-hotel-group.avif": {
       "source": "public/og/case-studies/palladium-hotel-group.png",
       "sourceHash": "177d8cb1b195823175acc5f41177c6dfd033e6c6de3d55868382fc1d09def8ee",
