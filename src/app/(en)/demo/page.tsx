@@ -6,6 +6,18 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { DemoForm } from "./DemoForm";
 import { ogImage } from "@/lib/seo/og";
+import { getCaseStudy } from "@/lib/content/case-studies";
+
+/**
+ * Named proof, in place of the anonymous "European fashion retailer" quote
+ * this block used to carry — the weakest social proof on the site, sitting in
+ * its highest-intent page. Quotes are read from the case-study content rather
+ * than copied, so they cannot drift from the pages they link to.
+ */
+const DEMO_PROOF = [
+  { slug: "incapto", href: "/case-studies/incapto/" },
+  { slug: "palladium-hotel-group", href: "/case-studies/palladium-hotel-group/" },
+] as const;
 
 export const metadata: Metadata = {
   title: "Book a Demo — Sealmetrics",
@@ -105,16 +117,27 @@ export default function DemoPage() {
                 </div>
               </div>
 
-              <div
-                className="mt-8 p-6 bg-white rounded-xl"
-                style={{ borderLeft: "3px solid #2E5C8A" }}
-              >
-                <p className="text-[15px] text-ink-2 leading-[1.6] italic">
-                  &ldquo;We thought our analytics were accurate. Sealmetrics showed us we were missing 74% of our conversions.&rdquo;
-                </p>
-                <p className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
-                  Head of Digital Marketing · European fashion retailer
-                </p>
+              <div className="mt-8 grid gap-3">
+                {DEMO_PROOF.map(({ slug, href }) => {
+                  const c = getCaseStudy(slug, "en");
+                  return (
+                    <figure
+                      key={slug}
+                      className="m-0 p-6 bg-white rounded-xl"
+                      style={{ borderLeft: "3px solid #2E5C8A" }}
+                    >
+                      <blockquote className="m-0 text-[15px] text-ink-2 leading-[1.6] italic">
+                        &ldquo;{c.quote}&rdquo;
+                      </blockquote>
+                      <figcaption className="font-mono text-[11px] text-ink-soft uppercase tracking-[0.08em] font-semibold mt-3">
+                        {c.person} · {c.role} · {c.client} ·{" "}
+                        <Link href={href} className="text-ink-soft no-underline border-b border-warm-200 hover:text-ink transition-colors">
+                          Read the case
+                        </Link>
+                      </figcaption>
+                    </figure>
+                  );
+                })}
               </div>
 
               <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px]">
