@@ -11,9 +11,29 @@
  * default; AVIF + WebP siblings are then created by `optimize-images.mjs`
  * in the same prebuild pass.
  *
- * Idempotent: skips files already on disk newer than this script.
+ * Idempotent, keyed on CONTENT rather than mtime. Each card records the hash
+ * of its own render inputs (the satori node — which carries the copy, the
+ * layout and the colours — plus the font) in `scripts/og-manifest.json`, and
+ * is re-rendered only when that hash changes.
+ *
+ * It used to skip files "newer than this script", which broke twice over.
+ * Every git checkout, branch switch and `git checkout --` rewrites mtimes, and
+ * any edit to this file invalidated all 228 cards at once — so a one-line
+ * change to add a single card re-rendered the lot. Re-rendering is not free:
+ * satori/resvg is deterministic for a given toolchain but not across them, so
+ * whoever built last rewrote ~69 files (23 cards x png/webp/avif) with
+ * byte-different, visually identical output, and `git add -A` swept the churn
+ * into unrelated commits.
+ *
+ * Deliberately NOT part of the hash: the satori / resvg versions. Including
+ * them would re-render everything on every dependency bump — the same churn
+ * from a different direction — and would make the manifest disagree between a
+ * macOS dev machine and CI's Linux. Same reasoning as the signature in
+ * `optimize-images.mjs`. To force a re-render after a toolchain or template
+ * change this cannot see, run with `--force`.
  */
-import { readFileSync, readdirSync, mkdirSync, statSync, existsSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, mkdirSync, existsSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import satori from "satori";
@@ -23,7 +43,42 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..");
 const blogTsPath = path.join(repoRoot, "src/lib/content/blog.ts");
 const outDir = path.join(repoRoot, "public/og");
-const scriptMtime = statSync(fileURLToPath(import.meta.url)).mtimeMs;
+const manifestPath = path.join(here, "og-manifest.json");
+const FORCE = process.argv.includes("--force");
+
+/** Repo-relative, forward-slashed — so the manifest is identical on any OS. */
+const manifestKey = (file) => path.relative(repoRoot, file).split(path.sep).join("/");
+const sha = (input) => createHash("sha256").update(input).digest("hex");
+
+function readManifest() {
+  if (!existsSync(manifestPath)) return {};
+  try {
+    const parsed = JSON.parse(readFileSync(manifestPath, "utf8"));
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    // A corrupt manifest must not fail the build — treat it as absent. Every
+    // card then re-adopts on this run rather than re-rendering.
+    console.warn("[og] manifest unreadable — rebuilding it");
+    return {};
+  }
+}
+
+const manifest = readManifest();
+let manifestChanged = false;
+let fontHash = null;
+
+/**
+ * Output paths already rendered on this run. The generic `parseEnRoutes()`
+ * pass at the bottom of this file also covers /blog/<slug>, so 75 posts were
+ * being rendered TWICE to the same PNG with different content — the blog pass
+ * using the post's real category and editorial title ("Comparisons" / "…12
+ * Requirements That Decide It"), the route pass using a generic "Blog" eyebrow
+ * and the shorter SEO title. Whichever ran last won, which is the real reason
+ * ~23 cards changed on every build. First writer wins, and the specific
+ * sources all run before the generic one.
+ */
+const claimed = new Set();
+let duplicates = 0;
 
 // Brand lockup for the card footer, embedded as a data URI because satori has
 // no filesystem access. Sourced from the PNG that `logo-sealmetrics.svg`
@@ -398,10 +453,29 @@ function ogSiteTemplate({ eyebrow, title, blurb, stats, note }) {
 }
 
 async function renderTemplate({ outFile, node, font }) {
-  if (existsSync(outFile)) {
-    const m = statSync(outFile).mtimeMs;
-    if (m >= scriptMtime) return false;
+  fontHash ??= sha(font).slice(0, 16);
+  const key = manifestKey(outFile);
+  if (claimed.has(key)) {
+    duplicates++;
+    return false;
   }
+  claimed.add(key);
+  const inputHash = sha(`${JSON.stringify(node)}|${fontHash}`).slice(0, 32);
+
+  if (!FORCE && existsSync(outFile)) {
+    if (manifest[key] === inputHash) return false;
+    if (manifest[key] === undefined) {
+      // First run after this manifest was introduced: the card already exists
+      // and its inputs are unchanged, so record the hash and keep the bytes
+      // that are already committed. Re-rendering here would produce the churn
+      // this manifest exists to stop.
+      manifest[key] = inputHash;
+      manifestChanged = true;
+      adopted++;
+      return false;
+    }
+  }
+
   const svg = await satori(node, {
     width: 1200,
     height: 630,
@@ -409,6 +483,8 @@ async function renderTemplate({ outFile, node, font }) {
   });
   const png = new Resvg(svg, { fitTo: { mode: "width", value: 1200 } }).render().asPng();
   writeFileSync(outFile, png);
+  manifest[key] = inputHash;
+  manifestChanged = true;
   return true;
 }
 
@@ -424,6 +500,7 @@ if (!font) {
 
 let generated = 0;
 let skipped = 0;
+let adopted = 0;
 
 // Site-wide default card. Copy tracks the live home hero (HeroD in
 // HomeDSections.tsx) rather than being written here: the card had drifted to
@@ -501,4 +578,12 @@ for (const { route, title } of parseEnRoutes()) {
   if (made) generated++; else skipped++;
 }
 
-console.log(`[og] generated ${generated}, skipped ${skipped}`);
+if (manifestChanged) {
+  // Sorted keys so the manifest itself never churns on reordering.
+  const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
+  writeFileSync(manifestPath, `${JSON.stringify(sorted, null, 2)}\n`);
+}
+console.log(`[og] generated ${generated}, skipped ${skipped}${adopted ? `, adopted ${adopted}` : ""}`);
+if (duplicates) {
+  console.log(`[og] ${duplicates} duplicate target(s) ignored — a more specific source had already claimed them`);
+}
