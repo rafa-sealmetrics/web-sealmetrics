@@ -293,9 +293,13 @@
 }
 
 .sig-product-section-head > p,
-.sig-product-integrations > div > p,
+/* `:not(.sig-product-tag)` for the same reason spelled out at .sig-product-final
+   below: the eyebrow is a <p> too, and it is an ink chip with acid text. These
+   two-class selectors outrank the chip's own one-class colour and repaint its
+   label muted — 2.97:1 on ink, under AA. */
+.sig-product-integrations > div > p:not(.sig-product-tag),
 .sig-product-proof-copy > p:last-child,
-.sig-product-final > p {
+.sig-product-final > p:not(.sig-product-tag) {
   color: var(--sig-muted);
   font-size: 17px;
   line-height: 1.62;
@@ -634,7 +638,11 @@
   gap: clamp(50px, 8vw, 130px);
 }
 
-.sig-product-integrations > div > p {
+/* `:not(.sig-product-tag)` here too: this is the body copy's measure and
+   rhythm, and the `!important` margin was overriding the chip's own
+   `0 0 24px`, leaving the integrations eyebrow the only one on the page
+   with a top margin and 32px underneath. */
+.sig-product-integrations > div > p:not(.sig-product-tag) {
   max-width: 560px;
   margin: 32px 0 !important;
 }

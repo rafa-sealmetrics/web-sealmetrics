@@ -37,6 +37,11 @@ const entries = [
     date: "Agosto 2026",
     updates: [
       {
+        title: "Bounce rate más preciso — solo las páginas vistas cuentan como engagement",
+        type: "Improved",
+        desc: "Una visita está enganchada cuando ve más de una página, y desde el 31 de agosto de 2026 solo las páginas vistas reales cuentan para eso. Las microconversiones (clics en CTA, scroll, vistas de pricing) y las conversiones se siguen registrando y mantienen toda su atribución — campaña, landing, dispositivo — pero ya no participan en cómo se cuenta la visita, ni reinician la sesión al dispararse en una URL que todavía lleva parámetros utm_*. Verás bajar tu bounce rate en torno a un 9% ese día: el tráfico es el mismo, las visitas enganchadas por fin se cuentan bien. El histórico no se recalcula, así que habrá un escalón en la serie. No tienes que hacer nada.",
+      },
+      {
         title: "Identificadores de sesión efímeros — rotan cada día",
         type: "Improved",
         desc: "El identificador de sesión que usamos para contar visitas sin cookies ahora es efímero: caduca y se regenera a diario, y el material de claves de cada rotación se destruye inmediatamente después. La actividad de un mismo dispositivo ya no puede enlazarse entre días ni entre sitios — por nadie, nosotros incluidos. Tus informes no cambian y no tienes que hacer nada.",

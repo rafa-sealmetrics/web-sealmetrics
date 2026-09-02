@@ -12,8 +12,8 @@
     "date": "2026-04-25"
   },
   "/demo/": {
-    "hash": "f512a87f876d069c",
-    "date": "2026-08-14"
+    "hash": "ec926d28a738df60",
+    "date": "2026-09-02"
   },
   "/vs/": {
     "hash": "3aa2b949de2c3122",
@@ -52,8 +52,8 @@
     "date": "2026-08-27"
   },
   "/changelog/": {
-    "hash": "04927e54714ad7fe",
-    "date": "2026-08-09"
+    "hash": "65893b853783c528",
+    "date": "2026-08-31"
   },
   "/security/": {
     "hash": "f3c0cf0157dbd9ac",
@@ -108,16 +108,16 @@
     "date": "2026-08-13"
   },
   "/blog/": {
-    "hash": "1c0ae0d154dd71fd",
-    "date": "2026-09-02"
+    "hash": "6e44bc7a47024af1",
+    "date": "2026-08-27"
   },
   "/growth/": {
     "hash": "2a911d7691a739d1",
     "date": "2026-08-14"
   },
   "/case-studies/": {
-    "hash": "e276f4aa8a9a080c",
-    "date": "2026-08-13"
+    "hash": "c176b5b908fae621",
+    "date": "2026-09-02"
   },
   "/careers/": {
     "hash": "697b8ff917a3283a",
@@ -236,8 +236,8 @@
     "date": "2026-08-27"
   },
   "/es/demo/": {
-    "hash": "44a6a2e4a9db837b",
-    "date": "2026-08-14"
+    "hash": "27357a404bbed96f",
+    "date": "2026-09-02"
   },
   "/es/vs/": {
     "hash": "47deba0430fd0813",
@@ -296,12 +296,12 @@
     "date": "2026-08-13"
   },
   "/es/blog/": {
-    "hash": "5ef4a43786f8d577",
-    "date": "2026-09-02"
+    "hash": "fbce229e6909e94a",
+    "date": "2026-08-27"
   },
   "/es/case-studies/": {
-    "hash": "2d549e1212e6f98c",
-    "date": "2026-08-13"
+    "hash": "88ddedafd810a690",
+    "date": "2026-09-02"
   },
   "/es/careers/": {
     "hash": "304c959ccfc4723e",
@@ -468,12 +468,12 @@
     "date": "2026-05-04"
   },
   "/es/case-studies/palladium-hotel-group/": {
-    "hash": "951b528a9f6c07c4",
-    "date": "2026-08-13"
+    "hash": "768e0b72c68e895e",
+    "date": "2026-09-02"
   },
   "/es/case-studies/dreamplace-hotels/": {
-    "hash": "0bcfa8eeaf272cf8",
-    "date": "2026-08-13"
+    "hash": "6c87d976fbb2630d",
+    "date": "2026-09-02"
   },
   "/es/blog/the-prompt-is-born-clean/": {
     "hash": "aaf509deef508095",
@@ -796,12 +796,12 @@
     "date": "2026-05-04"
   },
   "/case-studies/palladium-hotel-group/": {
-    "hash": "912e8aa08e930389",
-    "date": "2026-08-13"
+    "hash": "337b6381e3e3994e",
+    "date": "2026-09-02"
   },
   "/case-studies/dreamplace-hotels/": {
-    "hash": "ddacdd6fc1ace039",
-    "date": "2026-08-13"
+    "hash": "57f5e9578adc14f3",
+    "date": "2026-09-02"
   },
   "/blog/best-enterprise-analytics-platforms/": {
     "hash": "f062e992f89a6b01",
@@ -912,8 +912,8 @@
     "date": "2026-08-09"
   },
   "/blog/multi-touch-attribution-complete-data/": {
-    "hash": "132fe7c7ddd08bf9",
-    "date": "2026-08-09"
+    "hash": "a28f2d129a8e3507",
+    "date": "2026-08-31"
   },
   "/blog/analytics-tools-lighthouse-scores/": {
     "hash": "d728162baa430826",
@@ -1060,8 +1060,8 @@
     "date": "2026-08-26"
   },
   "/es/changelog/": {
-    "hash": "3a293f589d1ee42a",
-    "date": "2026-08-24"
+    "hash": "304b51a78f0edc4a",
+    "date": "2026-08-31"
   },
   "/es/privacy/": {
     "hash": "07e8af381c387781",
@@ -1091,8 +1091,12 @@
     "hash": "7924a01f3c0c2cd2",
     "date": "2026-08-27"
   },
-  "/blog/dpo-rejected-google-analytics-eu-alternatives/": {
-    "hash": "98fe56f75c9f0df6",
+  "/case-studies/incapto/": {
+    "hash": "c2d6dbc8bd77592a",
+    "date": "2026-09-02"
+  },
+  "/es/case-studies/incapto/": {
+    "hash": "0a2932c2ffea93dc",
     "date": "2026-09-02"
   }
 }

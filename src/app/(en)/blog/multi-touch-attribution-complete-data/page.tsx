@@ -126,7 +126,7 @@ export default function MultiTouchAttributionPage() {
           </h2>
 
           <p>
-            In the EU, traditional analytics capture approximately 13% of actual
+            In the EU, based on internal aggregated estimates, traditional analytics capture approximately 13% of actual
             traffic after{" "}
             <Link
               href="/blog/consent-banner-impact-on-analytics"

@@ -23,10 +23,10 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - /consentless-analytics — Legal-grade explainer of analytics without consent under GDPR Art. 6(1)(f) and ePrivacy
 
 ## Core pages
+- / — Homepage: consentless analytics for eCommerce. Measure 100% of your traffic with no cookies and no models, EU-hosted in Dublin
 - /why-sealmetrics — The case in one page: consent banners hide 40–60% of EU visits, tracking prevention erases conversions, and ROAS gets defended on what survived
 - /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
 - /how-it-works — Technical explanation of cookieless first-party server-side collection
-- /case-studies — Customer results and success stories
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
 - /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
@@ -95,6 +95,7 @@ Open is our public transparency hub: numbered chapters on how we run the company
 - /case-studies — All published case studies
 - /case-studies/palladium-hotel-group — Palladium Hotel Group: Toni Andújar (Digital & Direct Sales Director) on neutrality. 40% traffic with no attribution before, +165% Cost-per-Search on Display after
 - /case-studies/dreamplace-hotels — Dreamplace Hotels: Eduardo Martin (eCommerce) on paid-media reallocation. 15–20% more attributed sales, +30% more traffic vs Google Analytics
+- /case-studies/incapto — Incapto: 48 days of GA4 and Sealmetrics measured side by side on Shopify. 96% of real orders reconciled, 29% of visits and 45% of pageviews missing from GA4, 14% of GA4 traffic with no usable origin
 
 ## Role-specific pages
 - /for — Audiences and verticals index
@@ -278,6 +279,7 @@ Case studies (ES):
 - /es/case-studies — Casos de estudio
 - /es/case-studies/palladium-hotel-group — Palladium Hotel Group: Toni Andújar y la decisión de neutralidad
 - /es/case-studies/dreamplace-hotels — Dreamplace Hotels: paid media con dato real
+- /es/case-studies/incapto — Incapto: 48 días midiendo GA4 y Sealmetrics en paralelo sobre Shopify. 96% de pedidos reales conciliados, 29% de visitas y 45% de páginas que GA4 no veía
 
 Blog (ES):
 - /es/blog — Blog (ES)

@@ -1,0 +1,66 @@
+name: Stamp lastmod on agent PRs
+
+# Los PRs que abren los agentes (docs-agent con correcciones de calidad,
+# content-agent con posts nuevos) editan el fuente pero no regeneran
+# `.seo-lastmod.json`. El postbuild lo detecta y falla —con razón: sin esa
+# actualización el sitemap afirmaría que todas esas rutas se modificaron hoy.
+#
+# El resultado era que TODO PR de agente nacía en rojo y había que
+# desbloquearlo a mano (visto el 2026-08-31 en los PRs #118 y #119, y en el
+# del content-agent). Esto hace ese trabajo en el propio PR.
+#
+# Solo se commitea `.seo-lastmod.json`: el resto de lo que el build reescribe
+# (imágenes optimizadas) es churn esperado que el deploy rehace igual.
+
+on:
+  pull_request:
+    paths:
+      - 'src/app/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agent-lastmod-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  stamp:
+    name: Stamp lastmod
+    # Solo ramas de agente, y nunca desde un fork: no tendría permisos, y
+    # dejarlo abierto permitiría escribir en el repo con cualquier PR.
+    if: >
+      (startsWith(github.head_ref, 'quality/') ||
+       startsWith(github.head_ref, 'content/') ||
+       startsWith(github.head_ref, 'changelog/')) &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # El build falla a propósito cuando .seo-lastmod.json está desfasado,
+      # y es al fallar cuando deja el fichero actualizado en disco. Por eso
+      # se ignora el código de salida: lo que importa es el fichero.
+      - name: Build (se permite que falle por el gate de lastmod)
+        run: npm run build || true
+
+      - name: Commit .seo-lastmod.json si cambió
+        run: |
+          if git diff --quiet -- .seo-lastmod.json; then
+            echo "Sin cambios en .seo-lastmod.json"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .seo-lastmod.json
+          git commit -m "chore: actualiza .seo-lastmod.json del PR"
+          git push origin HEAD:${{ github.head_ref }}
