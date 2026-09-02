@@ -638,7 +638,11 @@
   gap: clamp(50px, 8vw, 130px);
 }
 
-.sig-product-integrations > div > p {
+/* `:not(.sig-product-tag)` here too: this is the body copy's measure and
+   rhythm, and the `!important` margin was overriding the chip's own
+   `0 0 24px`, leaving the integrations eyebrow the only one on the page
+   with a top margin and 32px underneath. */
+.sig-product-integrations > div > p:not(.sig-product-tag) {
   max-width: 560px;
   margin: 32px 0 !important;
 }
