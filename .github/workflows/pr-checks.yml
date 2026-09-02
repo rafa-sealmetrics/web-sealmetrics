@@ -15,6 +15,8 @@ on:
   pull_request:
   workflow_dispatch:
 
+# El permiso de escritura se concede SOLO al job `stamp`, no a este nivel:
+# `build` corre en cualquier PR, incluidos los de forks, y no necesita escribir.
 permissions:
   contents: read
 
@@ -24,13 +26,81 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Sella .seo-lastmod.json ANTES de construir.
+  #
+  # Antes esto vivía en su propio workflow (agent-pr-lastmod.yml) y corría en
+  # PARALELO con el build. El build hacía checkout antes de que el sellado
+  # empujara su commit, así que TODO PR de agente fallaba en la primera vuelta
+  # y solo pasaba si algo disparaba una segunda ronda. El PR #117 se quedó tres
+  # días en rojo por esto, cuando el arreglo ya existía.
+  #
+  # Como job del mismo workflow, `needs:` garantiza el orden y converge en una
+  # sola pasada.
+  stamp:
+    name: Stamp lastmod
+    # Solo ramas de agente, y nunca desde un fork: no tendría permisos, y
+    # dejarlo abierto permitiría escribir en el repo con cualquier PR.
+    if: >
+      (startsWith(github.head_ref, 'quality/') ||
+       startsWith(github.head_ref, 'content/') ||
+       startsWith(github.head_ref, 'changelog/')) &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # El build falla a propósito cuando .seo-lastmod.json está desfasado,
+      # y es al fallar cuando deja el fichero actualizado en disco. Por eso
+      # se ignora el código de salida: lo que importa es el fichero.
+      - name: Build (se permite que falle por el gate de lastmod)
+        run: npm run build || true
+
+      - name: Commit .seo-lastmod.json si cambió
+        run: |
+          if git diff --quiet -- .seo-lastmod.json; then
+            echo "Sin cambios en .seo-lastmod.json"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .seo-lastmod.json
+          # [skip ci] es deliberado: sin él, este push dispara una ronda nueva
+          # de pr-checks que —por el `concurrency` con cancel-in-progress—
+          # cancela la que está corriendo, justo después de haber ordenado el
+          # sellado antes del build. Con el skip, el `build` de ESTA ronda ya
+          # hace checkout de la punta sellada y todo converge en una pasada.
+          git commit -m "chore: actualiza .seo-lastmod.json del PR [skip ci]"
+          git push origin HEAD:${{ github.head_ref }}
+
   build:
     name: build
     runs-on: ubuntu-latest
+    # `always()` para que un PR normal —donde `stamp` se salta por el `if`—
+    # siga construyendo; sin esto, un `needs` sobre un job saltado cancela.
+    needs: [stamp]
+    if: always() && needs.stamp.result != 'failure'
     steps:
       # Action majors kept in lockstep with deploy.yml — this workflow is only
       # a useful pre-merge signal if it builds the way the deploy builds.
+      # En ramas de agente hay que coger la PUNTA DE LA RAMA, no el merge
+      # commit que GitHub calcula para el PR: el sellado acaba de empujar un
+      # commit y el merge ref puede tardar en recalcularse. En el resto de
+      # PRs se mantiene el merge ref, que es lo correcto para verificar
+      # antes de mergear.
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.stamp.result == 'success' && github.head_ref || '' }}
 
       - uses: actions/setup-node@v5
         with:
