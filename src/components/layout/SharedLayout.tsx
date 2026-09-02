@@ -33,7 +33,32 @@ export function SharedLayout({
       className={`${onest.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        {/* Discovery for AI agents. An agent that lands on a page from a
+            search result never reads robots.txt, so the entry points are
+            advertised here — the same pattern docs.sealmetrics.com uses.
+            `rel="llms-txt"` is the older non-standard spelling, kept because
+            some clients look for it; the `rel="alternate"` pair is the one
+            crawlers actually understand.
+
+            Both files are Disallowed for Googlebot/Bingbot/DuckDuckBot/
+            YandexBot in public/robots.txt precisely because these links make
+            them discoverable — a .txt carries no canonical and no meta
+            robots, and on a static export we cannot add X-Robots-Tag later.
+            Do not add a link here to a plain-text mirror that robots.txt
+            does not already cover. */}
         <link rel="llms-txt" href="https://sealmetrics.com/llms.txt" />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="https://sealmetrics.com/llms.txt"
+          title="LLM-friendly site index"
+        />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="https://sealmetrics.com/llms-full.txt"
+          title="Full product reference for LLMs"
+        />
       </head>
       <body className="font-sans antialiased">
         <a href="#main-content" className="skip-to-content">
