@@ -19,7 +19,9 @@ const markdownUrl = (route) => {
 const output = source
   .split("\n")
   .map((line) => {
-    const match = line.match(/^- (\/[^\s—]+)(?: — (.*))?$/);
+    // `*` y no `+`: la home es la ruta "/" a secas, y con `+` la línea no
+    // casaba y se publicaba sin convertir a enlace .md.
+    const match = line.match(/^- (\/[^\s—]*)(?: — (.*))?$/);
     if (!match || line.includes("](") || line.includes("https://")) return line;
     const [, route, description] = match;
     const suffix = description ? `: ${description}` : "";

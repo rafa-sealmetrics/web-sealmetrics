@@ -4,11 +4,13 @@ Disallow: /api/
 Disallow: /demo/thank-you
 
 # ============================================================
-# Markdown twins (/path.md) — documented policy, not an accident
+# Machine-readable mirrors — documented policy, not an accident
 # ============================================================
-# Every indexable HTML page is mirrored as a clean Markdown document at the
-# same path with a .md suffix (see /llms-md-index.txt). They exist so AI
-# agents can read the content without parsing our markup.
+# Two things here are written for AI agents, not for people:
+#
+#   /path.md        Markdown twin of every indexable HTML page
+#                   (see /llms-md-index.txt for the full list)
+#   /llms-full.txt  hand-written reference digest of the whole product
 #
 # The site is a static export on GitHub Pages, so we cannot serve
 # `Vary: Accept` content negotiation or an X-Robots-Tag header on those files.
@@ -16,26 +18,40 @@ Disallow: /demo/thank-you
 # canonical and must stay the only indexable copy), while AI crawlers are
 # explicitly allowed to fetch them. Removing these Disallow lines would let
 # duplicate plain-text copies of every page compete in the search index.
+#
+# llms-full.txt is not reachable from any link today, so nothing is indexing
+# it — but a plain .txt has no canonical and no meta robots, and on GitHub
+# Pages we cannot add a header later. One <link> in the <head> (which is
+# exactly what docs.sealmetrics.com does, and a reasonable thing to add here)
+# would make it crawlable overnight, and robots.txt would be the only lever
+# left. Cheap insurance; docs.sealmetrics.com carries the same rule.
+#
+# /llms.txt stays crawlable on purpose: it is the public entry point of the
+# llmstxt.org convention and is an index of links, not a copy of the site.
 
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
 Disallow: /*.md$
+Disallow: /llms-full.txt
 
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
 Disallow: /*.md$
+Disallow: /llms-full.txt
 
 User-agent: DuckDuckBot
 Allow: /
 Disallow: /api/
 Disallow: /*.md$
+Disallow: /llms-full.txt
 
 User-agent: YandexBot
 Allow: /
 Disallow: /api/
 Disallow: /*.md$
+Disallow: /llms-full.txt
 
 # ============================================================
 # AI / LLM crawlers — allow full public content for citation
