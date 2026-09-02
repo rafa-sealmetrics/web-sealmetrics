@@ -32,7 +32,7 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - **No emojis, ever**
 - Icons: minimal, SVG line style only
 - **Green and amber survive as data semantics only** — positive delta, warning — never as emphasis or CTA. **Red alert** `#B5423B` for negative data. **Blue quote** `#2E5C8A` for pull-quote left border
-- **Case studies are named, not anonymized.** Palladium Hotel Group (Toni Andújar) and Dreamplace Hotels are approved by name with their published figures. Do not re-anonymize them and do not introduce a new client name that is not already approved
+- **Case studies are named, not anonymized.** Palladium Hotel Group (Toni Andújar), Dreamplace Hotels and Incapto (Rosa Tomàs, approved 2 Sep 2026) are approved by name with their published figures. Do not re-anonymize them and do not introduce a new client name that is not already approved
 
 ## Content rules — DO NOT include
 
