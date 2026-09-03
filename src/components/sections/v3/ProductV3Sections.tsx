@@ -22,7 +22,7 @@ export function ProductHeroV3() {
         >
           A full analytics stack built for eCommerce teams: consentless tracking, revenue attribution, LENS AI, SuperAPI and MCP server — all on the same full-resolution data. No sampling. No modelling.
         </p>
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
+        <div data-md="skip" className="flex flex-wrap justify-center gap-3 mt-9">
           <Link
             href="/demo"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
@@ -679,7 +679,7 @@ export function ProductFinalCtaV3() {
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
             Start the 14-day trial in 4 minutes — paste a single line of code and start measuring everything GA4 hides from you. You add a card to start, and pay nothing if you cancel before day 14. No call required.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
+          <div data-md="skip" className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <Link
               href="/demo"
               className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"

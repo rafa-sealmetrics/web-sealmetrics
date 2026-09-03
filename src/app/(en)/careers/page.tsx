@@ -300,7 +300,7 @@ export default function CareersPage() {
           <h2 className="h-section mt-5" style={{ maxWidth: "22ch" }}>
             Before you ask
           </h2>
-          <div className="mt-10 flex flex-col gap-8">
+          <div data-md="skip" className="mt-10 flex flex-col gap-8">
             {FAQ.map((item) => (
               <div
                 key={item.question}

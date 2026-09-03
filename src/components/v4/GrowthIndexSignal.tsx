@@ -35,7 +35,7 @@ export function GrowthIndexSignal() {
           <p className="sig-growth-tag">Growth / practical systems / evidence</p>
           <h1>Growth gets<br />expensive when<br /><em>the evidence is thin.</em></h1>
           <p className="sig-growth-lede">Practical thinking for digital teams that need to grow revenue, defend the number, and know what changed.</p>
-          <div className="sig-growth-actions"><a className="sig-growth-button" href="#tracks">Choose a growth problem <Arrow /></a><Link className="sig-growth-text-link" href="/data-loss-calculator/">Start with your data →</Link></div>
+          <div data-md="skip" className="sig-growth-actions"><a className="sig-growth-button" href="#tracks">Choose a growth problem <Arrow /></a><Link className="sig-growth-text-link" href="/data-loss-calculator/">Start with your data →</Link></div>
         </div>
 
         <aside className="sig-growth-board" aria-label="Growth editorial desk">
@@ -61,7 +61,7 @@ export function GrowthIndexSignal() {
         <ol>{paths.map((path, index) => <li key={path.label}><Link href={path.href}><span>{String(index + 1).padStart(2, "0")}</span><div><p>{path.label}</p><h3>{path.description}</h3></div><Arrow /></Link></li>)}</ol>
       </section>
 
-      <section className="sig-growth-final"><p className="sig-growth-tag">From growth theory to evidence</p><h2>Find the gap<br /><em>before it costs you.</em></h2><p>Use the calculator to estimate how much of your traffic your current analytics cannot see, then decide what deserves attention.</p><div className="sig-growth-actions"><Link className="sig-growth-button" href="/data-loss-calculator/">Calculate your data loss <Arrow /></Link><Link className="sig-growth-text-link" href="/demo/">Book a walkthrough →</Link></div></section>
+      <section className="sig-growth-final"><p className="sig-growth-tag">From growth theory to evidence</p><h2>Find the gap<br /><em>before it costs you.</em></h2><p>Use the calculator to estimate how much of your traffic your current analytics cannot see, then decide what deserves attention.</p><div data-md="skip" className="sig-growth-actions"><Link className="sig-growth-button" href="/data-loss-calculator/">Calculate your data loss <Arrow /></Link><Link className="sig-growth-text-link" href="/demo/">Book a walkthrough →</Link></div></section>
     </div>
   );
 }

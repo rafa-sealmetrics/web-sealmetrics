@@ -182,7 +182,7 @@ export default function AiAnalyticsEsPage() {
               completo, un MCP semántico que el modelo no puede malinterpretar e IA privada alojada en la
               UE. Pregúntale a Claude o ChatGPT por tu revenue y obtén un número que puedes defender.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
+            <div data-md="skip" className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link
                 href="/es/demo"
                 className="inline-flex items-center justify-center bg-ink text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-110"

@@ -254,7 +254,7 @@ export function ProductSignal({ locale }: { locale: Locale }) {
           <p className="sig-product-eyebrow"><span>{t.eyebrow}</span></p>
           <h1>{t.heroLine1}<br />{t.heroLine2}<br /><em>{t.heroOutline}</em></h1>
           <p className="sig-product-hero-body">{t.heroBody}</p>
-          <div className="sig-product-hero-actions">
+          <div data-md="skip" className="sig-product-hero-actions">
             <a className="sig-product-button sig-product-button-acid" href="#architecture">{t.heroLink} <Arrow /></a>
             <Link className="sig-product-text-link" href={`${prefix}/how-it-works/`}>{t.howLink} <span aria-hidden="true">→</span></Link>
           </div>
@@ -299,7 +299,7 @@ export function ProductSignal({ locale }: { locale: Locale }) {
             <Link href={`${prefix}/modern-analytics/`}>{t.definitionEraLink}</Link>
             {t.definitionEraAfter}
           </p>
-          <div className="sig-product-definition-actions">
+          <div data-md="skip" className="sig-product-definition-actions">
             <Link className="sig-product-button sig-product-button-acid" href={`${prefix}/demo/`}>{t.definitionAction} <Arrow /></Link>
             <Link className="sig-product-dark-link" href={`${prefix}/pricing/`}>{t.definitionPricing} <span aria-hidden="true">→</span></Link>
           </div>
@@ -387,7 +387,7 @@ export function ProductSignal({ locale }: { locale: Locale }) {
 
       <section className="sig-product-final">
         <p className="sig-product-tag">{t.finalTag}</p><h2>{t.finalTitle}</h2><p>{t.finalBody}</p>
-        <div><Link className="sig-product-button sig-product-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary} <Arrow /></Link><a className="sig-product-text-link" href="https://my.sealmetrics.com/register">{t.finalSecondary} <span aria-hidden="true">→</span></a></div>
+        <div data-md="skip"><Link className="sig-product-button sig-product-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary} <Arrow /></Link><a className="sig-product-text-link" href="https://my.sealmetrics.com/register">{t.finalSecondary} <span aria-hidden="true">→</span></a></div>
         <small>{t.finalProof}</small>
       </section>
     </div>

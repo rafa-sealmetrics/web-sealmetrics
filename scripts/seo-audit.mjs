@@ -310,6 +310,23 @@ for (const p of pages) {
 }
 
 // 15. Every indexable page has a Markdown twin, and no noindex page does.
+//     The twin must also be usable on its own terms: an agent that follows a
+//     link must stay in Markdown, and the passage it quotes must not carry the
+//     one part of the page that means nothing outside it — the call to action.
+const routesWithTwin = new Set(
+  pages
+    .filter(
+      (p) =>
+        !/noindex/i.test(p.robots) &&
+        existsSync(
+          p.route === "/"
+            ? path.join(OUT, "index.md")
+            : path.join(OUT, p.route.replace(/^\/|\/$/g, "") + ".md")
+        )
+    )
+    .map((p) => p.route)
+);
+
 for (const p of pages) {
   const mdPath =
     p.route === "/"
@@ -336,6 +353,57 @@ for (const p of pages) {
       fail("markdown-twin-has-markup", `${p.route} still contains HTML tags outside code blocks`);
     }
     if (!p.markdownLink) fail("markdown-twin-not-linked", `${p.route} has a twin but no rel=alternate link`);
+
+    // A link out of the Markdown surface and back into HTML defeats the twin
+    // on the first click. Only targets that have no twin keep an HTML URL.
+    for (const [, href] of prose.matchAll(
+      /\]\((https:\/\/sealmetrics\.com\/[^)\s]*)\)/g
+    )) {
+      const path_ = href.replace("https://sealmetrics.com", "");
+      if (path_.includes("#") || path_.includes("?")) continue;
+      const target = path_.endsWith("/") ? path_ : `${path_}/`;
+      if (routesWithTwin.has(target)) {
+        fail("markdown-twin-links-html", `${p.route} → ${href} (twin exists)`);
+      }
+    }
+
+    // Two links with nothing between them is a button pair or an unlisted
+    // rail, not prose — either way it reads as one run-on line.
+    if (/\]\([^)]*\)\[/.test(prose)) {
+      fail("markdown-twin-cta-leak", `${p.route} contains an unseparated link pair`);
+    }
+
+    // The conversion box is the one part of a page that means nothing outside
+    // it, so it must never reach the passage an engine quotes. What is banned
+    // is the *button*: a line whose whole content is a CTA link. An in-sentence
+    // mention ("get the dashboard with the demo account or book a demo") is
+    // ordinary prose and stays — stripping those would damage the writing to
+    // satisfy a lint rule.
+    const CTA_BUTTON =
+      /^(?:[-*]\s+)?\[[^\]]*\b(?:book a demo|book a pricing review|book a measurement review|book an enterprise review|start 14-day trial|reserva una demo|reserva una revisión|reserva una revisión enterprise|empieza la prueba)\b[^\]]*\]\([^)]*\)\s*$/im;
+    if (CTA_BUTTON.test(prose)) {
+      fail(
+        "markdown-twin-cta-leak",
+        `${p.route} still carries a conversion CTA — the component needs data-md="skip"`
+      );
+    }
+
+    // Adjacent bold runs mean sibling chips collapsed into one another.
+    if (/\*\*\*\*/.test(prose)) {
+      fail("markdown-twin-glued-inline", `${p.route} has bold runs with no separator`);
+    }
+
+    // The answer-first block is the passage engines quote. Warned, not failed:
+    // the pages missing one need an editorial block written, which is a content
+    // task and not something a build gate can conjure. Tracked here so it stays
+    // visible instead of being rediscovered next quarter.
+    const critical = /^llm_priority: "critical"$/m.test(md);
+    if (critical && !/^summary: /m.test(md)) {
+      warn(
+        "markdown-twin-without-summary",
+        `${p.route} is llm_priority critical but has no answer-first block`
+      );
+    }
   }
 }
 

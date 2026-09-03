@@ -119,7 +119,7 @@ export function BlogIndexSignal({
         <p className="sig-blog-tag">{t.finalTag}</p>
         <h2>{t.finalTitle}</h2>
         <p>{t.finalBody}</p>
-        <div className="sig-blog-actions">
+        <div data-md="skip" className="sig-blog-actions">
           <Link className="sig-blog-button" href={`${prefix}/demo/`}>{t.demo} <Arrow /></Link>
           <Link className="sig-blog-text-link" href={`${prefix}/how-it-works/`}>{t.product} →</Link>
         </div>

@@ -193,7 +193,7 @@ export function HowItWorksSignal({ locale }: { locale: Locale }) {
           <p className="sig-how-eyebrow"><span>{t.eyebrow}</span></p>
           <h1>{t.heroLine1}<br />{t.heroLine2}<br /><em>{t.heroOutline}</em></h1>
           <p className="sig-how-hero-body">{t.heroBody}</p>
-          <div className="sig-how-actions"><a className="sig-how-button sig-how-button-acid" href="#signal-path">{t.primary} <Arrow /></a><Link className="sig-how-text-link" href={`${prefix}/product/`}>{t.secondary} →</Link></div>
+          <div data-md="skip" className="sig-how-actions"><a className="sig-how-button sig-how-button-acid" href="#signal-path">{t.primary} <Arrow /></a><Link className="sig-how-text-link" href={`${prefix}/product/`}>{t.secondary} →</Link></div>
           <p className="sig-how-micro">{t.micro}</p>
         </div>
         <div className="sig-how-diagram">
@@ -228,14 +228,14 @@ export function HowItWorksSignal({ locale }: { locale: Locale }) {
         <ol className="sig-how-steps">{t.steps.map(([n, time, title, body]) => <li key={n}><span>{n}</span><b>{time}</b><h3>{title}</h3><p>{body}</p></li>)}</ol>
       </section>
 
-      <section className="sig-how-proof"><div><p className="sig-how-tag sig-how-tag-light">{t.proofTag}</p><h2>{t.proofTitle}</h2></div><div><p>{t.proofBody}</p><div className="sig-how-actions"><Link className="sig-how-button sig-how-button-acid" href={`${prefix}/demo/`}>{t.proofPrimary} <Arrow /></Link><Link className="sig-how-dark-link" href={`${prefix}/security/`}>{t.proofSecondary} →</Link></div></div></section>
+      <section className="sig-how-proof"><div><p className="sig-how-tag sig-how-tag-light">{t.proofTag}</p><h2>{t.proofTitle}</h2></div><div><p>{t.proofBody}</p><div data-md="skip" className="sig-how-actions"><Link className="sig-how-button sig-how-button-acid" href={`${prefix}/demo/`}>{t.proofPrimary} <Arrow /></Link><Link className="sig-how-dark-link" href={`${prefix}/security/`}>{t.proofSecondary} →</Link></div></div></section>
 
       <section className="sig-how-faq">
         <div className="sig-how-section-head"><div><p className="sig-how-tag">{t.faqTag}</p><h2>{t.faqTitle}</h2></div><p>{t.faqBody}</p></div>
         <div className="sig-how-faq-list">{faqs[locale].map(([question, answer], index) => <details key={question}><summary><span>0{index + 1}</span>{question}<b aria-hidden="true">+</b></summary><p>{answer}</p></details>)}</div>
       </section>
 
-      <section className="sig-how-final"><p className="sig-how-tag">{t.finalTag}</p><h2>{t.finalTitle}</h2><p>{t.finalBody}</p><div className="sig-how-actions"><Link className="sig-how-button sig-how-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary} <Arrow /></Link><Link className="sig-how-text-link" href={`${prefix}/product/`}>{t.finalSecondary} →</Link></div></section>
+      <section className="sig-how-final"><p className="sig-how-tag">{t.finalTag}</p><h2>{t.finalTitle}</h2><p>{t.finalBody}</p><div data-md="skip" className="sig-how-actions"><Link className="sig-how-button sig-how-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary} <Arrow /></Link><Link className="sig-how-text-link" href={`${prefix}/product/`}>{t.finalSecondary} →</Link></div></section>
     </div>
   );
 }

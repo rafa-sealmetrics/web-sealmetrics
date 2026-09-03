@@ -18,7 +18,7 @@ export function PricingHeroV3Es() {
         <p className="text-ink-soft mt-8 mx-auto max-w-[56ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
           Cada plan incluye analítica completa sobre el 100% de tu tráfico — sin muestreo, sin estimaciones modeladas, sin muros de features. Solo pagas más cuando realmente creces.
         </p>
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
+        <div data-md="skip" className="flex flex-wrap justify-center gap-3 mt-9">
           <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
             Reserva una demo <span>→</span>
           </Link>

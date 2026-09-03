@@ -130,7 +130,7 @@ export function PricingSignal({ locale }: { locale: Locale }) {
           <p className="sig-pricing-eyebrow"><span>{t.eyebrow}</span></p>
           <h1>{t.hero1}<br />{t.hero2}<br /><em>{t.heroOutline}</em></h1>
           <p className="sig-pricing-hero-body">{t.heroBody}</p>
-          <div className="sig-pricing-actions"><a className="sig-pricing-button sig-pricing-button-acid" href="#plans">{t.heroPrimary} <Arrow /></a><Link className="sig-pricing-text-link" href={`${prefix}/demo/`}>{t.heroSecondary} →</Link></div>
+          <div data-md="skip" className="sig-pricing-actions"><a className="sig-pricing-button sig-pricing-button-acid" href="#plans">{t.heroPrimary} <Arrow /></a><Link className="sig-pricing-text-link" href={`${prefix}/demo/`}>{t.heroSecondary} →</Link></div>
           <p className="sig-pricing-micro">{t.heroMicro}</p>
         </div>
         <div className="sig-pricing-board"><div className="sig-pricing-module-top"><span>{t.boardTitle}</span><span>EUR · VAT EXCL.</span></div>{t.boardRows.map(([name,price,events])=><div key={name}><strong>{name}</strong><b>{price}</b><span>{events}</span></div>)}<p>{t.boardFoot}</p></div>
@@ -139,7 +139,7 @@ export function PricingSignal({ locale }: { locale: Locale }) {
       <section className="sig-pricing-plans" id="plans">
         <div className="sig-pricing-section-head"><div><p className="sig-pricing-tag">{t.plansTag}</p><h2>{t.plansTitle}</h2></div><p>{t.plansBody}</p></div>
         <div className="sig-pricing-billing" role="group" aria-label={locale === "es" ? "Periodo de facturación" : "Billing period"}><button type="button" aria-pressed={billing==="annual"} onClick={()=>setBilling("annual")}>{t.annual}<span>{t.saving}</span></button><button type="button" aria-pressed={billing==="monthly"} onClick={()=>setBilling("monthly")}>{t.monthly}</button></div>
-        <div className="sig-pricing-plan-grid">{t.plans.map(plan=>{const shown=planPrice(plan.name,billing,locale);return <article className={plan.featured?"sig-pricing-plan-featured":""} key={plan.name}>{plan.featured&&<span className="sig-pricing-chosen">{t.chosen}</span>}<header><h3>{plan.name}</h3><p>{plan.desc}</p></header><div className="sig-pricing-price"><strong>{shown.price}</strong>{!(["Agentic","Enterprise"].includes(plan.name))&&<span>{t.perMonth}</span>}<small>{shown.sub}</small></div><b className="sig-pricing-events">{plan.events}</b><ul>{plan.features.map(f=><li key={f}>— {f}</li>)}</ul>{plan.href.startsWith("http")?<a className="sig-pricing-plan-cta" href={plan.href}>{plan.cta} <Arrow /></a>:<Link className="sig-pricing-plan-cta" href={plan.href}>{plan.cta} <Arrow /></Link>}</article>})}</div>
+        <div className="sig-pricing-plan-grid">{t.plans.map(plan=>{const shown=planPrice(plan.name,billing,locale);return <article className={plan.featured?"sig-pricing-plan-featured":""} key={plan.name}>{plan.featured&&<span className="sig-pricing-chosen">{t.chosen}</span>}<header><h3>{plan.name}</h3><p>{plan.desc}</p></header><div className="sig-pricing-price"><strong>{shown.price}</strong>{!(["Agentic","Enterprise"].includes(plan.name))&&<span>{t.perMonth}</span>}<small>{shown.sub}</small></div><b className="sig-pricing-events">{plan.events}</b><ul>{plan.features.map(f=><li key={f}>— {f}</li>)}</ul>{plan.href.startsWith("http")?<a data-md="skip" className="sig-pricing-plan-cta" href={plan.href}>{plan.cta} <Arrow /></a>:<Link data-md="skip" className="sig-pricing-plan-cta" href={plan.href}>{plan.cta} <Arrow /></Link>}</article>})}</div>
       </section>
 
       <section className="sig-pricing-included"><div className="sig-pricing-section-head"><div><p className="sig-pricing-tag sig-pricing-tag-light">{t.includedTag}</p><h2>{t.includedTitle}</h2></div><p>{t.includedBody}</p></div><div className="sig-pricing-included-grid">{t.included.map((item,i)=><div key={item}><span>0{i+1}</span><p>{item}</p></div>)}</div></section>
@@ -152,7 +152,7 @@ export function PricingSignal({ locale }: { locale: Locale }) {
 
       <section className="sig-pricing-faq"><div className="sig-pricing-section-head"><div><p className="sig-pricing-tag">{t.faqTag}</p><h2>{t.faqTitle}</h2></div><p>{t.faqBody}</p></div><div className="sig-pricing-faq-list">{pricingSignalFaqs[locale].map(([q,a],i)=><details key={q}><summary><span>0{i+1}</span>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
 
-      <section className="sig-pricing-final"><p className="sig-pricing-tag">{t.finalTag}</p><h2>{t.finalTitle}</h2><p>{t.finalBody}</p><div className="sig-pricing-actions"><Link className="sig-pricing-button sig-pricing-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary} <Arrow /></Link><Link className="sig-pricing-text-link" href={`${prefix}/product/`}>{t.finalSecondary} →</Link></div></section>
+      <section className="sig-pricing-final"><p className="sig-pricing-tag">{t.finalTag}</p><h2>{t.finalTitle}</h2><p>{t.finalBody}</p><div data-md="skip" className="sig-pricing-actions"><Link className="sig-pricing-button sig-pricing-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary} <Arrow /></Link><Link className="sig-pricing-text-link" href={`${prefix}/product/`}>{t.finalSecondary} →</Link></div></section>
     </div>
   );
 }

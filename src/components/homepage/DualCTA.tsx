@@ -38,7 +38,7 @@ export function DualCTA({
       : "border border-warm-200 text-ink hover:bg-warm-50";
 
   return (
-    <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
+    <div data-md="skip" className={`flex flex-col sm:flex-row gap-3 ${className}`}>
       <Link
         href={demoHref}
         className={`inline-flex items-center justify-center gap-2 rounded-md font-semibold no-underline transition-colors ${sizeClasses} ${primary}`}
