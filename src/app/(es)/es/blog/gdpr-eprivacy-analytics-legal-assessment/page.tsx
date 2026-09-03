@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -184,11 +185,13 @@ export default function Page() {
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[52ch]">
               «Conforme con el RGPD» aparece en casi todas las webs de analítica. Dos leyes distintas deciden si es cierto — y la mayoría de herramientas solo superan una. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.
             </p>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">6 julio 2026</time>
-              <span>9 min de lectura</span>
-              <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              datePublished="2026-07-06"
+              readTime="9 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

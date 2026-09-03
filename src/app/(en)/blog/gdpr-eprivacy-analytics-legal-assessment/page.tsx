@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -185,11 +186,12 @@ export default function Page() {
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[52ch]">
               &ldquo;GDPR-compliant&rdquo; is printed on almost every analytics homepage. Two different laws decide whether it&apos;s true — and most tools only clear one of them. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and Sealmetrics each land.
             </p>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">July 6, 2026</time>
-              <span>9 min read</span>
-              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              datePublished="2026-07-06"
+              readTime="9 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

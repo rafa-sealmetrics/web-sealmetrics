@@ -129,6 +129,12 @@ test("structured data", { skip }, async (t) => {
   await t.test("publisher and provider reference the organisation node", () =>
     noneOf("publisher-not-linked", "schemas restating the organisation inline")
   );
+  await t.test("a claimed revision is visible to the reader", () =>
+    noneOf(
+      "date-modified-not-visible",
+      "articles claiming dateModified in schema without rendering it"
+    )
+  );
   await t.test("declared language matches the document", () =>
     noneOf("schema-inlanguage-mismatch", "schemas whose inLanguage contradicts <html lang>")
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -132,19 +133,14 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               Tres preguntas que hacerle hoy a tu IA de analítica
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">24 julio 2026</time>
-              <span>4 min de lectura</span>
-              <span>
-                Por{" "}
-                <Link
-                  href="/es/authors/rafa-jimenez"
-                  className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
-                >
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              datePublished="2026-07-24"
+              dateModified="2026-07-28"
+              readTime="4 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">

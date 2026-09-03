@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -79,11 +80,13 @@ export default function GA4GoogleAdsSeparationPage() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               GA4 y Google Ads: la separacion que nadie vio venir
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">Abril 2026</time>
-              <span>8 min</span>
-              <span>Por Rafa Jimenez</span>
-            </div>
+            <PostByline
+              datePublished="2026-04-16"
+              dateModified="2026-05-04"
+              readTime="8 min"
+              authorName="Rafa Jimenez"
+              locale="es"
+            />
           </header>
 
           {/* Key Takeaways */}

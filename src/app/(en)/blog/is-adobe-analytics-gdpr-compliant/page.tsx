@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -80,16 +81,12 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               Is Adobe Analytics GDPR Compliant?
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">July 28, 2026</time>
-              <span>8 min read</span>
-              <span>
-                By{" "}
-                <Link href="/authors/rafa-jimenez" className={linkCls}>
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              datePublished="2026-07-28"
+              readTime="8 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <QuickAnswer>

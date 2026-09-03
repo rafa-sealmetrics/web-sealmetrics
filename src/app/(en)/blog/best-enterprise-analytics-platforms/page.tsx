@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -175,11 +176,12 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               8 Best Enterprise Analytics Platforms in 2026
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">March 16, 2026</time>
-              <span>12 min read</span>
-              <span>By Sealmetrics Team</span>
-            </div>
+            <PostByline
+              datePublished="2026-03-16"
+              dateModified="2026-08-27"
+              readTime="12 min read"
+              authorName="Sealmetrics Team"
+            />
           </header>
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
