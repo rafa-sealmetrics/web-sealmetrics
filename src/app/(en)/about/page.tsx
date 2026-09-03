@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 import { ogImage } from "@/lib/seo/og";
 
 const faqs = [
@@ -54,7 +54,6 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "About" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "About", url: "/about" }])} />
-      <JsonLd data={organizationSchema()} />
 
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-16">
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8 text-center">

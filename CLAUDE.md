@@ -1,8 +1,8 @@
-# SealMetrics Marketing Website
+# Sealmetrics Marketing Website
 
 ## Project
 
-Marketing website for SealMetrics — cookieless web analytics platform targeting CMOs and ecommerce managers of European companies with 10M€+ revenue. The site educates before it sells.
+Marketing website for Sealmetrics — cookieless web analytics platform targeting CMOs and ecommerce managers of European companies with 10M€+ revenue. The site educates before it sells.
 
 ## Tech Stack
 
@@ -56,6 +56,9 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - **`openGraph` must be complete on every page: `title`, `description`, `url`, `siteName`, `locale`, `type`, `images`.** Next.js REPLACES the layout's `openGraph` object when a page declares its own — it does not deep-merge. A page that sets only `{title, description, type}` silently ships with no `og:url`, no `og:site_name` and no `og:image`
 - **Every page must declare its own `twitter` block.** Same reason in reverse: a page that omits it inherits the layout's verbatim, so hundreds of pages end up sharing one Twitter card
 - Include JSON-LD structured data appropriate to page type
+- **Brand string is `Sealmetrics`, one capital.** It changed from `SealMetrics` on 24 Aug 2026 and the whole codebase follows; do not reintroduce the old casing anywhere, including docs
+- **Never restate the organisation inside a schema.** `publisher`, `provider`, `seller` and `worksFor` reference the node by `@id` (`ORG_ID` in `src/lib/schema.ts`), and `SharedLayout` emits the Organization + WebSite graph in the `<head>` of every page so the reference resolves. `publisher-not-linked` and `org-graph-missing` fail the build otherwise
+- **Schemas declare `inLanguage`, derived from the route** via `langOf()` — never hard-coded, never omitted on the ES tree. A media object (`VideoObject`) is the one exception: it carries the language of the media, not of the page
 - **`FAQPage` JSON-LD requires the questions and answers to be rendered visibly on the page** — use `<FaqSection items={FAQ} />` (`src/components/ui/FaqSection.tsx`). Schema-only FAQ violates Google's structured data policy and cannot be cited by AI engines
 - **Never hand-maintain an exclusion list for the sitemap.** Indexability is derived from each page's own `robots` metadata in `src/lib/seo/routes.ts`. To keep a page out of the sitemap, mark it `noindex` — do not add it to a list
 - `npm run build` fails on any SEO/GEO regression via `scripts/seo-audit.mjs`; `npm test` reports the same rules per-rule. Run both before opening a PR
@@ -82,11 +85,11 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - Internal links inside a twin point at the target's own `.md` when it has one, so an agent that follows a link stays in Markdown. This is done by the generator, never by hand, and `markdown-twin-links-html` fails the build if a twin links back to HTML that has a twin
 - Content negotiation (`Accept: text/markdown` + `Vary: Accept`) is **not possible** on this stack: static export on GitHub Pages, no server or edge we control. Static `.md` twins are the deliberate substitute
 - `.md` twins are `Disallow`ed for Googlebot/Bingbot and `Allow`ed for AI crawlers, so they cannot compete with the HTML in the search index. Do not remove those robots.txt rules
-- State the limits, not just the strengths: what SealMetrics does not do, who it is not for. Models recommend more accurately when the boundaries are explicit — `/use-cases` and `llms.txt` both do this deliberately
+- State the limits, not just the strengths: what Sealmetrics does not do, who it is not for. Models recommend more accurately when the boundaries are explicit — `/use-cases` and `llms.txt` both do this deliberately
 
 ## Competitive Positioning
 
-SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-lightweight tier.
+Sealmetrics competes in the **enterprise analytics** tier, NOT in the privacy-lightweight tier.
 
 **Compare with (same league):**
 - Google Analytics 360 (GA360) — enterprise Google, $150K+/yr
@@ -96,11 +99,11 @@ SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-li
 
 **NEVER compare with (different category):**
 - Plausible, Fathom, Simple Analytics, Umami, Cabin — these are lightweight/privacy tools at €9-50/mo
-- Comparing with them commoditizes SealMetrics and makes the price look expensive
+- Comparing with them commoditizes Sealmetrics and makes the price look expensive
 - If a blog post mentions them, frame them as "privacy-first lightweight alternatives" in a different category
 
 **Positioning frame:**
-- SealMetrics is enterprise-grade analytics at a fraction of GA360/Adobe pricing
+- Sealmetrics is enterprise-grade analytics at a fraction of GA360/Adobe pricing
 - The differentiator is complete data (cookieless, 100%) + EU compliance + AI supervision
 - Frame price as investment vs. cost of bad decisions on incomplete data
 
@@ -114,7 +117,7 @@ SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-li
 - CTA text should be action-specific: "Book a Demo", "Calculate Your Data Loss", "See Full Comparison" — not "Learn More" or "Click Here"
 - Avoid jargon without explanation on educational pages
 - Be honest about competitors — "GA4 works well when..." not "GA4 is terrible"
-- Frame SealMetrics vs enterprise tools (GA360, Adobe), never vs lightweight privacy tools
+- Frame Sealmetrics vs enterprise tools (GA360, Adobe), never vs lightweight privacy tools
 
 ## Page Generation Rules (auto-applied when creating any page)
 

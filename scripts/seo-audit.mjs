@@ -265,6 +265,66 @@ for (const p of pages) {
   }
 }
 
+// 10b. The entity graph has to resolve inside the document that references it.
+//      Schemas name the publisher by `@id` rather than restating the company,
+//      which is only meaningful if the node with that `@id` ships on the same
+//      page — otherwise the reference dangles and an engine sees a publisher
+//      it cannot identify. Both halves are checked, because either one alone
+//      is worse than the inline object we replaced.
+const ORG_NODE_ID = `${SITE}/#organization`;
+for (const p of pages) {
+  const ids = new Set();
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) if (node && node["@id"]) ids.add(node["@id"]);
+  }
+  // Only the indexable surface. The paid landing pages are noindex, have their
+  // own shell and are not part of what an engine reads or cites.
+  if (!/noindex/i.test(p.robots) && !ids.has(ORG_NODE_ID)) {
+    fail("org-graph-missing", `${p.route} has no ${ORG_NODE_ID} node to resolve references against`);
+  }
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      for (const slot of ["publisher", "provider", "seller"]) {
+        const v = node?.[slot];
+        if (!v || typeof v !== "object" || Array.isArray(v)) continue;
+        if (!v["@id"]) {
+          fail(
+            "publisher-not-linked",
+            `${p.route}: ${node["@type"]}.${slot} restates the organisation inline instead of referencing ${ORG_NODE_ID}`
+          );
+        } else if (!ids.has(v["@id"])) {
+          fail("publisher-not-linked", `${p.route}: ${slot} points at ${v["@id"]}, which is not on the page`);
+        }
+      }
+    }
+  }
+}
+
+// 10c. A schema's declared language must agree with the document's. The ES tree
+//      used to assert nothing at all while serving Spanish copy.
+for (const p of pages) {
+  const docLang = (p.lang || "").slice(0, 2);
+  if (!docLang) continue;
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      // A media object carries the language of the media, not of the page: a
+      // Spanish video legitimately sits on an English page.
+      if (node?.["@type"] === "VideoObject" || node?.["@type"] === "AudioObject") continue;
+      const declared = node?.inLanguage;
+      if (typeof declared !== "string") continue; // arrays: site-wide WebSite node
+      if (declared.slice(0, 2) !== docLang) {
+        fail(
+          "schema-inlanguage-mismatch",
+          `${p.route}: ${node["@type"]} declares inLanguage "${declared}" on a "${docLang}" page`
+        );
+      }
+    }
+  }
+}
+
 // 11. FAQPage schema must correspond to questions visible on the page.
 //     Google's structured data policy requires it, and an AI engine cannot
 //     cite a passage that only exists inside a script tag.
@@ -509,7 +569,11 @@ for (const p of indexable) {
   if (!p.types.includes("BreadcrumbList") && p.route !== "/" && p.route !== "/es/") {
     warn("no-breadcrumb-schema", p.route);
   }
-  if (p.jsonld.length === 0) warn("no-structured-data", p.route);
+  // The Organization + WebSite graph now ships in every page's <head>, so
+  // "has some JSON-LD" no longer says anything. What matters is whether the
+  // page describes *itself* — an Article, a WebPage, a DefinedTerm, a Product.
+  const SITE_WIDE = new Set(["Organization", "WebSite"]);
+  if (p.types.every((t) => SITE_WIDE.has(t))) warn("no-structured-data", p.route);
 }
 
 /* ---------------------------------------------------------------- report */
