@@ -35,7 +35,7 @@ export function NotFoundContent() {
         <p className="mt-8 text-ink-soft max-w-[50ch] mx-auto leading-[1.55]" style={{ fontSize: "clamp(15px, 1.3vw, 18px)" }}>
           The page you are looking for does not exist or has been moved. Here are some helpful links instead.
         </p>
-        <div className="mt-9 flex flex-wrap justify-center gap-3">
+        <div data-md="skip" className="mt-9 flex flex-wrap justify-center gap-3">
           <Link
             href="/"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"

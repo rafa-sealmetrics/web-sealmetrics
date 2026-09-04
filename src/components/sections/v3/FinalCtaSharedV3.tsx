@@ -64,7 +64,10 @@ export function FinalCtaSharedV3({
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
             {t.lede}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
+          <div
+            data-md="skip"
+            className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative"
+          >
             {isExternalPrimary ? (
               <a
                 href={resolvedPrimaryHref}

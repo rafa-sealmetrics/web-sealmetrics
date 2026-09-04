@@ -217,7 +217,7 @@ export default function ChangelogPage() {
           ))}
         </div>
 
-        <div className="mt-16 pt-10 border-t border-warm-100 text-center">
+        <div data-md="skip" className="mt-16 pt-10 border-t border-warm-100 text-center">
           <p className="text-[0.9rem] text-text-secondary mb-4">
             Want to see these features in action?
           </p>

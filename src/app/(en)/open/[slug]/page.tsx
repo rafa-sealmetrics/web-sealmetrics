@@ -290,7 +290,7 @@ export default async function OpenChapterPage({ params }: PageProps) {
                 "radial-gradient(80% 60% at 20% 20%, rgba(45,139,109,0.35) 0%, transparent 60%)",
             }}
           />
-          <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 py-20 sm:py-24">
+          <div data-md="skip" className="relative max-w-[1200px] mx-auto px-5 sm:px-8 py-20 sm:py-24">
             <div className="max-w-[640px]">
               <span className="eyebrow" style={{ color: "#E8B84B" }}>
                 Next step

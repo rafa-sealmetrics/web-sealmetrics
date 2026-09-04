@@ -182,7 +182,7 @@ export default function AiAnalyticsPage() {
               MCP the model can&apos;t misread, and private AI hosted in the EU. Ask Claude or ChatGPT your
               revenue questions and get a number you can defend.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
+            <div data-md="skip" className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link
                 href="/demo"
                 className="inline-flex items-center justify-center bg-ink text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-110"

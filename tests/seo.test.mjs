@@ -147,6 +147,25 @@ test("markdown twins for AI agents", { skip }, async (t) => {
   await t.test("twins carry no leaked markup", () =>
     noneOf("markdown-twin-has-markup", "HTML tags survived the Markdown conversion")
   );
+  await t.test("internal links stay in Markdown", () =>
+    noneOf(
+      "markdown-twin-links-html",
+      "a twin links to the HTML page of a route that has its own twin"
+    )
+  );
+  await t.test("no conversion CTA reaches the citable passage", () =>
+    noneOf("markdown-twin-cta-leak", "a twin still renders a CTA button or an unseparated link pair")
+  );
+  await t.test("sibling chips keep a separator", () =>
+    noneOf("markdown-twin-glued-inline", "adjacent bold runs collapsed into one another")
+  );
+  await t.test("front matter carries the author of record", () => {
+    const post = path.join(OUT, "blog", "gdpr-eprivacy-analytics-legal-assessment.md");
+    assert.ok(existsSync(post), "the sample post twin is missing");
+    const md = readFileSync(post, "utf8");
+    assert.match(md, /^author: "/m, "blog twins must name their author in the front matter");
+    assert.match(md, /^author_url: "https:\/\//m, "the author needs a resolvable URL");
+  });
   await t.test("an enumerable index is published", () => {
     const idx = path.join(OUT, "llms-md-index.txt");
     assert.ok(existsSync(idx), "out/llms-md-index.txt is missing");

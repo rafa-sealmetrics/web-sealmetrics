@@ -165,7 +165,7 @@ export default function RegGapAnalysisEsPage() {
               española, PECR del Reino Unido— y muestra exactamente dónde se queda corto. Abajo está el
               marco, requisito a requisito, y cómo una arquitectura cookieless cierra cada brecha.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
+            <div data-md="skip" className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link
                 href="/es/audit"
                 className="inline-flex items-center justify-center bg-ink text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-110"

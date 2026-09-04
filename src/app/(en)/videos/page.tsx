@@ -145,7 +145,7 @@ export default function VideosPage() {
             No cookies. No consent banners. Just clear, accurate analytics
             that respects your visitors.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div data-md="skip" className="flex flex-wrap justify-center gap-4">
             <Link
               href="/demo"
               className="inline-flex items-center px-9 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"

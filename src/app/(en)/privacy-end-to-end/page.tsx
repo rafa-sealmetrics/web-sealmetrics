@@ -137,7 +137,7 @@ export default function PrivacyEndToEndPage() {
           <h2 className="h-section mx-auto">
             See it running on <em>your</em> data.
           </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div data-md="skip" className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/demo"
               className="inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"

@@ -42,7 +42,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         >
           {t.lede}
         </p>
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
+        <div data-md="skip" className="flex flex-wrap justify-center gap-3 mt-9">
           <Link
             href={locale === "es" ? "/es/demo" : "/demo"}
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"

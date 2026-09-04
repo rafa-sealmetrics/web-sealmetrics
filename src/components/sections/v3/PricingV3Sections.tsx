@@ -26,7 +26,7 @@ export function PricingHeroV3() {
         >
           Every plan includes complete analytics on 100% of your traffic — no sampling, no modelled estimates, no feature walls. You only pay more when you actually grow.
         </p>
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
+        <div data-md="skip" className="flex flex-wrap justify-center gap-3 mt-9">
           <Link
             href="/demo"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
@@ -507,7 +507,7 @@ export function PricingFinalCtaV3() {
             A 30-minute walkthrough with the founder. We&apos;ll run your own site through the gap calculator live and recommend the plan that fits. No slides, no sales pitch, no follow-up sequence.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
+          <div data-md="skip" className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <a
               href="https://cal.sealmetrics.com/rafa/30min"
               className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95"
