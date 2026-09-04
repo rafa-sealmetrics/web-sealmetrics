@@ -180,7 +180,7 @@ export default function OmnibusShortPage() {
           <p>
             The combined effect of equal-prominence reject buttons and the
             six-month re-ask prohibition will likely push consent rejection
-            rates higher than the current EU average of approximately 35%.
+            rates higher than the 40–60% of EU visits they already reach.
             For cookie-dependent analytics, this means even more{" "}
             <Link
               href="/blog/consent-banner-impact-on-analytics"
