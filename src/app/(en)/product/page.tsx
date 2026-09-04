@@ -4,6 +4,7 @@ import { softwareApplicationSchema, breadcrumbSchema, speakableWebPageSchema } f
 import { getAlternates } from "@/lib/i18n/navigation";
 import { ProductSignal } from "@/components/v4/ProductSignal";
 import "@/components/v4/product-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import { howItWorksAnswer, pillarAnswerLabel } from "@/lib/content/pillar-answers";
 
 type Locale = "en" | "es";
 
@@ -202,6 +204,8 @@ export function HowItWorksSignal({ locale }: { locale: Locale }) {
           <div className="sig-how-module-foot">Collection boundary visible · attribution model declared</div>
         </div>
       </section>
+
+      <SignalAnswer label={pillarAnswerLabel[locale]}>{howItWorksAnswer[locale]}</SignalAnswer>
 
       <section className="sig-how-loss">
         <div className="sig-how-section-head"><div><p className="sig-how-tag">{t.problemTag}</p><h2>{t.problemTitle}</h2></div><p>{t.problemBody}</p></div>

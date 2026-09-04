@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import { pricingAnswer, pillarAnswerLabel } from "@/lib/content/pillar-answers";
 import { Fragment, useState } from "react";
 import { PRICING, annualTotal, fmtPrice } from "@/lib/content/pricing";
 import { pricingSignalFaqs } from "@/lib/content/pricing-signal";
@@ -135,6 +137,8 @@ export function PricingSignal({ locale }: { locale: Locale }) {
         </div>
         <div className="sig-pricing-board"><div className="sig-pricing-module-top"><span>{t.boardTitle}</span><span>EUR · VAT EXCL.</span></div>{t.boardRows.map(([name,price,events])=><div key={name}><strong>{name}</strong><b>{price}</b><span>{events}</span></div>)}<p>{t.boardFoot}</p></div>
       </section>
+
+      <SignalAnswer label={pillarAnswerLabel[locale]}>{pricingAnswer[locale]}</SignalAnswer>
 
       <section className="sig-pricing-plans" id="plans">
         <div className="sig-pricing-section-head"><div><p className="sig-pricing-tag">{t.plansTag}</p><h2>{t.plansTitle}</h2></div><p>{t.plansBody}</p></div>

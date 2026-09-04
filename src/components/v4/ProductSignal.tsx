@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import { productAnswer, pillarAnswerLabel } from "@/lib/content/pillar-answers";
 
 type Locale = "en" | "es";
 
@@ -273,6 +275,8 @@ export function ProductSignal({ locale }: { locale: Locale }) {
           <div className="sig-product-board-foot">{t.boardFoot}</div>
         </div>
       </section>
+
+      <SignalAnswer label={pillarAnswerLabel[locale]}>{productAnswer[locale]}</SignalAnswer>
 
       <section className="sig-product-problem">
         <div className="sig-product-section-head">

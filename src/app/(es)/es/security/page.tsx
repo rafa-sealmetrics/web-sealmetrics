@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import "@/components/v4/security-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
