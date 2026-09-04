@@ -129,6 +129,9 @@ test("structured data", { skip }, async (t) => {
   await t.test("publisher and provider reference the organisation node", () =>
     noneOf("publisher-not-linked", "schemas restating the organisation inline")
   );
+  await t.test("one person is one node", () =>
+    noneOf("person-entity-split", "a Person named in two places with two identities")
+  );
   await t.test("a claimed revision is visible to the reader", () =>
     noneOf(
       "date-modified-not-visible",

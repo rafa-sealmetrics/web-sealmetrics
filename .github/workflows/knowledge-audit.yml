@@ -34,3 +34,10 @@ jobs:
         env:
           KNOWLEDGE_BASE_URL: ${{ inputs.base_url || 'https://sealmetrics.com' }}
         run: node scripts/smoke-deployed-knowledge.mjs
+
+      # Deliberately not in `npm run build`: this reaches the network, and an
+      # offline laptop must not fail a build for a reason unrelated to the
+      # change. Here it runs --strict, so a profile that has actually gone
+      # missing fails the nightly audit and gets noticed.
+      - name: Verify declared sameAs profiles resolve
+        run: node scripts/audit-sameas.mjs --strict

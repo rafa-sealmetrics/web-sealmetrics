@@ -302,6 +302,42 @@ for (const p of pages) {
   }
 }
 
+// 10b-bis. One person, one node. A Person named in two places with two URLs
+//          and no `@id` is two people as far as an engine is concerned — which
+//          is what the founder was: "Rafa Jimenez" at /about in the founders
+//          slot, "Rafa Jiménez" at /authors/rafa-jimenez on every article.
+//          Names are compared with accents stripped, because that difference
+//          alone was one of the two spellings in use.
+const normalizeName = (n) =>
+  String(n).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+for (const p of pages) {
+  const byName = new Map();
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    const collect = (node) => {
+      if (!node || typeof node !== "object") return;
+      if (Array.isArray(node)) return node.forEach(collect);
+      if (node["@type"] === "Person" && node.name) {
+        const key = normalizeName(node.name);
+        if (!byName.has(key)) byName.set(key, []);
+        byName.get(key).push(node);
+      }
+      Object.values(node).forEach(collect);
+    };
+    nodes.forEach(collect);
+  }
+  for (const [name, nodes] of byName) {
+    if (nodes.length < 2) continue;
+    const urls = new Set(nodes.map((n) => n["@id"] ?? n.url).filter(Boolean));
+    if (urls.size > 1) {
+      fail(
+        "person-entity-split",
+        `${p.route}: "${name}" appears as ${urls.size} identities (${[...urls].join(", ")}) — give the node an @id`
+      );
+    }
+  }
+}
+
 // 10c. A schema's declared language must agree with the document's. The ES tree
 //      used to assert nothing at all while serving Spanish copy.
 for (const p of pages) {
