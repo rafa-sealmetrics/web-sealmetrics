@@ -51,7 +51,7 @@ export default function FreeAuditPage() {
             Are your pixels firing before consent?
           </h1>
           <p className="text-[1.05rem] text-text-secondary leading-relaxed">
-            Most ecommerce sites unknowingly fire GA4, Meta, and Google Ads
+            Most eCommerce sites unknowingly fire GA4, Meta, and Google Ads
             tracking before users accept cookies. That is a GDPR violation —
             and a reason for CNIL, AEPD, and other EU regulators to fine you.
             Audit your site in 2–3 minutes. Free PDF report.

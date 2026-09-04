@@ -146,7 +146,7 @@ const useCases = [
     body: "Stop reallocating budget on modeled conversions. See real ROAS per channel and where the spend leaks before the quarter closes.",
   },
   {
-    role: "Ecommerce Manager",
+    role: "eCommerce Manager",
     headline: "Every SKU, every variant, queryable",
     body: "Drill into size, color, price bucket, cart-to-purchase ratio per category — without sampling thresholds hiding the long tail.",
   },

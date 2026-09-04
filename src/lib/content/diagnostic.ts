@@ -463,7 +463,7 @@ export function getIndustryContext(business: string): string {
     agency:
       "For agencies, data credibility is client retention. When your reports show different numbers than your clients see in their own systems, trust erodes. Complete data lets you demonstrate true campaign impact — not an estimate based on the fraction of visitors who accepted cookies.",
   };
-  return contexts[business] ?? contexts.ecommerce;
+  return contexts[business] ?? contexts.eCommerce;
 }
 
 // ----- CTA personalization -----

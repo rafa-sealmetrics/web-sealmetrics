@@ -465,6 +465,58 @@ for (const p of pages) {
   }
 }
 
+// 10g. Two content rules. These are the only rules here that judge words
+//      rather than structure, so both are deliberately narrow: a content rule
+//      that misfires gets worked around, and then it protects nothing.
+//
+//      Both were added on 4 Sep 2026 after the same false claim shipped in two
+//      generated posts within two days, and a vocabulary drift reached 28
+//      places in the visible copy.
+
+// (a) A capability Sealmetrics does not have and never will.
+//
+//     Measurement is aggregate and anonymous; attribution is last click. There
+//     is no per-person path to reconstruct. The banned phrase is NOT the
+//     concept — "multi-touch" appears 91 times on this site, almost always in
+//     our own argument for why we do not do it, and banning the word would
+//     delete the differentiator. What is banned is "full-funnel" qualifying
+//     attribution or a journey, which is only ever an affirmative claim about
+//     us. Measured against the whole corpus before shipping: 4 matches, all 4
+//     genuine, zero false positives.
+const BANNED_CLAIM = /full[- ]funnel\s+(?:\w+\s+){0,2}(?:attribution|journey|journeys)/i;
+
+// (b) Project vocabulary. Visible copy only, so URL slugs, form values and
+//     object keys — all of which legitimately read "ecommerce" — are out of
+//     scope by construction. Quoted material is exempt: a regulator that
+//     writes "e-commerce" must be quoted as written.
+const NONSTANDARD_SPELLING = /\b(?:[Ee]-commerce|[Ee]commerce|E-Commerce)\b/;
+
+for (const p of pages) {
+  const quoted = [...p.html.matchAll(/<(blockquote|q)\b[\s\S]*?<\/\1>/gi)]
+    .map((m) => decode(m[0].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " "));
+  const inQuote = (probe) => quoted.some((q) => q.includes(probe));
+
+  const claim = p.visibleText.match(BANNED_CLAIM);
+  if (claim) {
+    fail(
+      "banned-capability-claim",
+      `${p.route}: "${claim[0]}" — Sealmetrics does not reconstruct a per-person path. ` +
+        `Attribution is last click on the complete dataset`
+    );
+  }
+
+  const spelling = p.visibleText.match(NONSTANDARD_SPELLING);
+  if (spelling && !inQuote(spelling[0])) {
+    const at = p.visibleText.indexOf(spelling[0]);
+    fail(
+      "nonstandard-spelling",
+      `${p.route}: "${spelling[0]}" should be "eCommerce" — …${p.visibleText
+        .slice(Math.max(0, at - 40), at + 40)
+        .trim()}…`
+    );
+  }
+}
+
 // 11. FAQPage schema must correspond to questions visible on the page.
 //     Google's structured data policy requires it, and an AI engine cannot
 //     cite a passage that only exists inside a script tag.

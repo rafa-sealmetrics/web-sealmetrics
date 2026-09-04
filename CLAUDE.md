@@ -36,6 +36,9 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 
 ## Content rules — DO NOT include
 
+- **Two content rules are enforced by the build**, the only ones that judge words rather than structure. Both were added after the same false claim shipped in two generated posts two days apart:
+  - `banned-capability-claim` — "full-funnel" qualifying *attribution* or a *journey* is banned in visible copy. The **concept words are not**: "multi-touch" appears ~90 times across the site, almost always in our own argument for why we do not do it, and banning the word would delete the differentiator. What is banned is the affirmative claim about us
+  - `nonstandard-spelling` — `eCommerce` in camelCase. Visible copy only, so URL slugs, form values and object keys are out of scope by construction; text inside `<blockquote>` or `<q>` is exempt, because a regulator that writes "e-commerce" must be quoted as written
 - **NEVER claim ISO 27001 or SOC 2 certification** — not certified yet. If compliance is mentioned, use: GDPR by architecture, ePrivacy, Schrems II clean, EU-hosted in Dublin, DPA included, TPSR package
 - **NEVER include `rafa@sealmetrics.com` or any personal email** — use Cal.com link or `/demo` CTA for contact
 - Data centre location: **Dublin, Ireland only** (not Frankfurt, not Germany)

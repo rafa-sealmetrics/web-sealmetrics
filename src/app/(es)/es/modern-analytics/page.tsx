@@ -145,7 +145,7 @@ const useCases = [
     body: "Deja de redistribuir presupuesto sobre conversiones modeladas. Mira el ROAS real por canal y dónde se fuga el spend antes del cierre de trimestre.",
   },
   {
-    role: "Ecommerce Manager",
+    role: "eCommerce Manager",
     headline: "Cada SKU, cada variante, consultable",
     body: "Profundiza en talla, color, bucket de precio y ratio cart-to-purchase por categoría — sin que los umbrales de sampling oculten la cola larga.",
   },

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shopify analytics without cookies — Sealmetrics integration",
     description:
-      "The Sealmetrics Pixel app plus a Theme App Extension, connected from your dashboard. Full e-commerce funnel coverage, purchases confirmed server-side via webhook.",
+      "The Sealmetrics Pixel app plus a Theme App Extension, connected from your dashboard. Full eCommerce funnel coverage, purchases confirmed server-side via webhook.",
     type: "article",
     images: [ogImage("/platforms/shopify/")],
     url: "https://sealmetrics.com/platforms/shopify/",
@@ -98,7 +98,7 @@ export default function ShopifyPlatformPage() {
           headline:
             "Shopify analytics without cookies — install, events, and order reconciliation",
           description:
-            "Install Sealmetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full e-commerce funnel coverage, aggregate reconciliation within 15–20% of Shopify Analytics.",
+            "Install Sealmetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full eCommerce funnel coverage, aggregate reconciliation within 15–20% of Shopify Analytics.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/platforms/shopify",
@@ -128,7 +128,7 @@ export default function ShopifyPlatformPage() {
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
             One app, one theme embed, any Shopify plan. Full
-            e-commerce funnel coverage from pageview to order
+            eCommerce funnel coverage from pageview to order
             confirmation. Aggregate channel revenue reconciled to
             the Shopify backend within 15–20%.
           </p>

@@ -122,7 +122,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?
           </h1>
-          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It captures 100% of site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still attributes revenue to the campaign and channel that earned it, using last-click on the complete dataset rather than a reconstructed per-person path, so marketing and ecommerce teams keep campaign and channel-level reporting without the gaps consent rejection and cookie blocking create. It is used by mid-market ecommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
+          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It captures 100% of site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still attributes revenue to the campaign and channel that earned it, using last-click on the complete dataset rather than a reconstructed per-person path, so marketing and eCommerce teams keep campaign and channel-level reporting without the gaps consent rejection and cookie blocking create. It is used by mid-market eCommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
           <PostByline
             {...dates}
             readTime="8 min read"
@@ -192,11 +192,11 @@ export default function DpoRejectedGoogleAnalyticsPage() {
             2. Lightweight Privacy Tools (The Minimalist Route)
           </h3>
           <p>
-            Platforms like Plausible are great for small blogs or simple websites. They are cookieless and provide a clean view of basic traffic. But for e-commerce, they are often insufficient. They are built for basic metrics&mdash;page views and referrers&mdash;not for the complex attribution needed to scale a brand. They won't help you reconcile a &euro;500 order with a specific Meta ad click.
+            Platforms like Plausible are great for small blogs or simple websites. They are cookieless and provide a clean view of basic traffic. But for eCommerce, they are often insufficient. They are built for basic metrics&mdash;page views and referrers&mdash;not for the complex attribution needed to scale a brand. They won't help you reconcile a &euro;500 order with a specific Meta ad click.
           </p>
 
           <h3 className="font-serif text-[1.25rem] font-medium text-text-primary mt-8 mb-4">
-            3. Purpose-Built E-commerce Analytics (The Performance Route)
+            3. Purpose-Built eCommerce Analytics (The Performance Route)
           </h3>
           <p>
             For brands that need to scale without the consent headache, you need a tool built for the cookieless reality from day one.
@@ -280,7 +280,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </h2>
 
           <p>
-            When a user clicks &ldquo;Reject All&rdquo; on your cookie banner, a black hole opens in your analytics. For most e-commerce brands using GA4, this is the &ldquo;Consent Gap&rdquo;&mdash;the massive delta between your actual server-side revenue and the skewed, incomplete data appearing in your dashboard.
+            When a user clicks &ldquo;Reject All&rdquo; on your cookie banner, a black hole opens in your analytics. For most eCommerce brands using GA4, this is the &ldquo;Consent Gap&rdquo;&mdash;the massive delta between your actual server-side revenue and the skewed, incomplete data appearing in your dashboard.
           </p>
 
           <p>

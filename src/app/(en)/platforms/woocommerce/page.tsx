@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "WooCommerce analytics without cookies — Sealmetrics plugin",
     description:
-      "WordPress plugin install from a GitHub release, full e-commerce funnel coverage, aggregate reconciliation for finance teams.",
+      "WordPress plugin install from a GitHub release, full eCommerce funnel coverage, aggregate reconciliation for finance teams.",
     type: "article",
     images: [ogImage("/platforms/woocommerce/")],
     url: "https://sealmetrics.com/platforms/woocommerce/",
