@@ -79,7 +79,7 @@ export function SignalHome() {
           </p>
           <div data-md="skip" className="sig-hero-actions">
             <a className="sig-button sig-button-acid" href="https://my.sealmetrics.com/register">
-              Start 14-day free trial <Arrow />
+              Start 14-day trial <Arrow />
             </a>
             <a className="sig-text-link" href="/demo/">
               Show me what&apos;s missing <span aria-hidden="true">→</span>
@@ -121,6 +121,8 @@ export function SignalHome() {
           </div>
         </div>
       </section>
+
+      <SignalAnswer>{homeAnswer}</SignalAnswer>
 
       <section className="sig-logo-rail" aria-label="How to verify Sealmetrics">
         <p>THE CLAIM IS ONLY AS GOOD AS THE TEST</p>
@@ -369,7 +371,7 @@ export function SignalHome() {
         <h2>Reality is already there.<br /><em>You should probably see it.</em></h2>
         <p>Eligible aggregate events. Backend comparison. Fewer expensive opinions.</p>
         <div data-md="skip">
-          <a className="sig-button sig-button-dark" href="https://my.sealmetrics.com/register">Start free trial <Arrow /></a>
+          <a className="sig-button sig-button-dark" href="https://my.sealmetrics.com/register">Start 14-day trial <Arrow /></a>
           <a className="sig-text-link sig-dark-link" href="/demo/">Book a demo <span aria-hidden="true">→</span></a>
         </div>
       </section>
@@ -378,3 +380,5 @@ export function SignalHome() {
   );
 }
 import { Picture } from "@/components/ui/Picture";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import { homeAnswer } from "@/lib/content/pillar-answers";

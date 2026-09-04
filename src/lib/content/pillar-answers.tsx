@@ -169,3 +169,31 @@ export const howItWorksAnswer: Record<Locale, ReactNode> = {
     </p>
   ),
 };
+
+/**
+ * The homepage.
+ *
+ * EN only, on purpose: `SignalHome` takes no locale because the Spanish home is
+ * still on v3 (`HomeV3`), and it already carries a `QuickAnswer`. When the ES
+ * home migrates to v4, this is where its copy goes.
+ *
+ * This is the entity definition an engine reaches for on "what is Sealmetrics",
+ * so it stays close to the canonical wording in public/llms.txt rather than
+ * inventing a second description of the same company.
+ */
+export const homeAnswer: ReactNode = (
+  <p>
+    Sealmetrics is a cookieless, consentless web analytics platform for
+    eCommerce companies in the EU and UK. It records pageviews, events and
+    conversions without setting a cookie, storing an identifier or asking for
+    consent, so the number it reports is the whole audience rather than the
+    fraction that accepted tracking — in the EU, GA4 typically sees around 13%
+    of real traffic once sampling, consent rejection and ad blockers are
+    counted. Revenue is attributed on last click across that complete dataset,
+    and collection is first-party and server-side, processed and stored in
+    Dublin only. It is built to be checked rather than believed: run it beside
+    your current analytics and compare both totals against the revenue your
+    backend recorded. What it is not is a per-user tool — no profiles, no
+    cohorts, no session replay, no multi-touch attribution.
+  </p>
+);
