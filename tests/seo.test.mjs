@@ -135,6 +135,19 @@ test("structured data", { skip }, async (t) => {
   await t.test("publisher and provider reference the organisation node", () =>
     noneOf("publisher-not-linked", "schemas restating the organisation inline")
   );
+  await t.test("comparison pages name the competitor as an entity", () => {
+    // Warning-level in the audit, asserted here as a floor: the products that
+    // DO have a Wikidata item must carry it. Adobe Analytics and Piwik PRO have
+    // none and are legitimately absent.
+    const md = readFileSync(path.join(OUT, "vs", "matomo.md"), "utf8");
+    assert.ok(md.length > 0, "the /vs/matomo twin is missing");
+    const html = readFileSync(path.join(OUT, "vs", "matomo", "index.html"), "utf8");
+    assert.match(
+      html,
+      /"sameAs":\["https:\/\/www\.wikidata\.org\/wiki\/Q34162"\]/,
+      "Matomo must be identified by its Wikidata item, not just by name"
+    );
+  });
   await t.test("one person is one node", () =>
     noneOf("person-entity-split", "a Person named in two places with two identities")
   );

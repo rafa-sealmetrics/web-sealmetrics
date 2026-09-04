@@ -338,6 +338,27 @@ for (const p of pages) {
   }
 }
 
+// 10b-ter. An entity a page declares itself to be *about* should say which
+//           entity it means. "Matomo" is also a commune in Mali; `sameAs` to a
+//           Wikidata item is what settles it. Warned, not failed: Adobe
+//           Analytics and Piwik PRO genuinely have no Wikidata item, and
+//           inventing an approximately-related one would be a false statement
+//           about identity — worse than the silence this reports.
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      for (const about of [node?.about].flat()) {
+        if (!about || typeof about !== "object" || about["@id"]) continue;
+        if (about.url?.startsWith(SITE)) continue; // ourselves
+        if (!about.sameAs) {
+          warn("about-without-sameAs", `${p.route}: about "${about.name}" has no sameAs to identify it`);
+        }
+      }
+    }
+  }
+}
+
 // 10c. A schema's declared language must agree with the document's. The ES tree
 //      used to assert nothing at all while serving Spanish copy.
 for (const p of pages) {

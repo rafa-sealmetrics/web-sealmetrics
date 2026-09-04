@@ -356,7 +356,7 @@ export function comparisonPageSchema(props: {
   name: string;
   description: string;
   url: string;
-  competitor?: { name: string; url: string };
+  competitor?: { name: string; url: string; wikidata?: string };
   datePublished?: string;
   dateModified?: string;
   author?: { name: string; url: string };
@@ -380,12 +380,17 @@ export function comparisonPageSchema(props: {
           reviewedBy: personRef(props.author),
         }
       : {}),
+    // What the page is *about*, as entities. `sameAs` to Wikidata is how an
+    // engine confirms that the "Matomo" on this page is the analytics platform
+    // and not the commune in Mali. Absent where the product genuinely has no
+    // Wikidata item — see src/lib/content/competitors.ts.
     about: [
       {
         "@type": "SoftwareApplication",
         name: ORG_NAME,
         applicationCategory: "AnalyticsApplication",
         url: pageHref(),
+        publisher: orgRef(),
       },
       ...(props.competitor
         ? [
@@ -394,6 +399,7 @@ export function comparisonPageSchema(props: {
               name: props.competitor.name,
               applicationCategory: "AnalyticsApplication",
               url: props.competitor.url,
+              ...(props.competitor.wikidata ? { sameAs: [props.competitor.wikidata] } : {}),
             },
           ]
         : []),

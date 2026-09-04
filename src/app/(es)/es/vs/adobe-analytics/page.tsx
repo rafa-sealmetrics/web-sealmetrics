@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
@@ -41,7 +42,7 @@ export default function Page() {
         name: "Sealmetrics vs Adobe Analytics",
         description: "Comparativa lado a lado: Sealmetrics vs Adobe Analytics en completitud de datos, cumplimiento UE, precio y tiempo de implementacion.",
         url: "/es/vs/adobe-analytics",
-        competitor: { name: "Adobe Analytics", url: "https://business.adobe.com/products/analytics/adobe-analytics.html" },
+        competitor: competitor("adobe-analytics"),
         datePublished: "2026-04-15",
         dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },

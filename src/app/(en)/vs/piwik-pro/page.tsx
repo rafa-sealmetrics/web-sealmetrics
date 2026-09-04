@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
@@ -41,7 +42,7 @@ export default function Page() {
         name: "Sealmetrics vs Piwik PRO",
         description: "Side-by-side comparison: Sealmetrics versus Piwik PRO on architecture (cookie-based vs cookieless), EU hosting, consent dependency and AI readiness.",
         url: "/vs/piwik-pro",
-        competitor: { name: "Piwik PRO", url: "https://piwik.pro/" },
+        competitor: competitor("piwik-pro"),
         datePublished: "2026-04-15",
         dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },

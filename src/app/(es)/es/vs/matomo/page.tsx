@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
@@ -48,7 +49,7 @@ export default function Page() {
           description:
             "Comparativa lado a lado: Sealmetrics vs Matomo sobre la configuración de exención y lo que cuesta (parámetros UTM, tracking de eCommerce, dato a nivel de visita), su alcance bajo los criterios CNIL y el §25 de la TDDDG alemana, exposición al art. 5(3) de ePrivacy, coste de self-hosting y compliance UE.",
           url: "/es/vs/matomo",
-          competitor: { name: "Matomo", url: "https://matomo.org/" },
+          competitor: competitor("matomo"),
           datePublished: "2026-05-06",
           dateModified: "2026-08-27",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
