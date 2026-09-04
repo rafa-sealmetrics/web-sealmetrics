@@ -29,6 +29,15 @@ jobs:
 
       - run: npm run build
 
+      # Must run BEFORE the artifact is published: it compares the freshly built
+      # sitemap against the one still live, and after the deploy those are the
+      # same file. Skips cleanly when INDEXNOW_KEY is unset, so a fork or a
+      # first-time contributor's run is unaffected.
+      - name: Notify IndexNow of changed URLs
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node scripts/indexnow.mjs
+
       - uses: actions/upload-pages-artifact@v5
         with:
           path: out
