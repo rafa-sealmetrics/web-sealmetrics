@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
+    "prepare": "git config core.hooksPath .githooks || true",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/optimize-images.mjs",
     "build": "next build",
     "postbuild": "node scripts/build-404.mjs && node scripts/generate-markdown.mjs && node scripts/stamp-sitemap-lastmod.mjs && node scripts/prepare-llms-txt.mjs && node scripts/audit-markdown.mjs && node scripts/audit-knowledge.mjs && node scripts/audit-llms-txt.mjs && node scripts/audit-csp.mjs && node scripts/seo-audit.mjs && node scripts/audit-signal-design.mjs",
