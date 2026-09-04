@@ -158,37 +158,86 @@ const sample = ALL
 
 /* --------------------------------------------------------------------- cdp */
 
-const profile = mkdtempSync(path.join(tmpdir(), "contrast-"));
-const chrome = spawn(chromePath, [
-  "--headless=new",
-  "--disable-gpu",
-  "--no-sandbox",
-  "--hide-scrollbars",
-  "--disable-background-timer-throttling",
-  "--disable-renderer-backgrounding",
-  "--disable-backgrounding-occluded-windows",
-  "--window-size=1280,900",
-  `--user-data-dir=${profile}`,
-  "--remote-debugging-port=0",
-  "about:blank",
-]);
+/*
+ * Chrome launch, with a retry.
+ *
+ * A cold CI runner starting headless Chrome for the first time can take longer
+ * than the 20s this used to allow — it failed twice on 4 September 2026 with
+ * "Chrome did not report a DevTools endpoint", and passed on re-run both times.
+ * That is a slow start, not a broken build, and re-running a whole workflow to
+ * find out is an expensive way to learn it.
+ *
+ * A longer window alone would not be enough: if Chrome is genuinely wedged,
+ * waiting is useless and a fresh process is what helps. So: a window generous
+ * enough for a cold start, and one clean retry after it.
+ */
+const LAUNCH_TIMEOUT_MS = 45_000;
+const LAUNCH_ATTEMPTS = 2;
 
-const wsUrl = await new Promise((resolve, reject) => {
-  let buf = "";
-  const timer = setTimeout(() => reject(new Error("Chrome did not report a DevTools endpoint")), 20000);
-  chrome.stderr.on("data", (d) => {
-    buf += d.toString();
-    const m = buf.match(/ws:\/\/[^\s]+/);
-    if (m) {
-      clearTimeout(timer);
-      resolve(m[0]);
+function spawnChrome(profileDir) {
+  return spawn(chromePath, [
+    "--headless=new",
+    "--disable-gpu",
+    "--no-sandbox",
+    "--hide-scrollbars",
+    "--disable-background-timer-throttling",
+    "--disable-renderer-backgrounding",
+    "--disable-backgrounding-occluded-windows",
+    "--window-size=1280,900",
+    `--user-data-dir=${profileDir}`,
+    "--remote-debugging-port=0",
+    "about:blank",
+  ]);
+}
+
+async function launchChrome() {
+  const profileDir = mkdtempSync(path.join(tmpdir(), "contrast-"));
+  const proc = spawnChrome(profileDir);
+  try {
+    const wsUrl = await new Promise((resolve, reject) => {
+      let buf = "";
+      const timer = setTimeout(
+        () => reject(new Error(`Chrome did not report a DevTools endpoint in ${LAUNCH_TIMEOUT_MS / 1000}s`)),
+        LAUNCH_TIMEOUT_MS
+      );
+      proc.stderr.on("data", (d) => {
+        buf += d.toString();
+        const m = buf.match(/ws:\/\/[^\s]+/);
+        if (m) {
+          clearTimeout(timer);
+          resolve(m[0]);
+        }
+      });
+      proc.on("exit", (code) => {
+        clearTimeout(timer);
+        reject(new Error(`Chrome exited early (${code})`));
+      });
+    });
+    return { proc, profileDir, wsUrl };
+  } catch (err) {
+    // Leave nothing behind for the retry to trip over: a half-started Chrome
+    // still holds its profile lock, and a second attempt on the same directory
+    // fails for a reason that has nothing to do with the first.
+    proc.kill("SIGKILL");
+    rmSync(profileDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    throw err;
+  }
+}
+
+let launched;
+for (let attempt = 1; attempt <= LAUNCH_ATTEMPTS; attempt += 1) {
+  try {
+    launched = await launchChrome();
+    break;
+  } catch (err) {
+    if (attempt === LAUNCH_ATTEMPTS) {
+      console.error(`[contrast] Chrome would not start after ${LAUNCH_ATTEMPTS} attempts.`);
+      throw err;
     }
-  });
-  chrome.on("exit", (code) => {
-    clearTimeout(timer);
-    reject(new Error(`Chrome exited early (${code})`));
-  });
-});
+    console.warn(`[contrast] ${err.message} — retrying once with a fresh profile.`);
+  }
+}
+const { proc: chrome, profileDir: profile, wsUrl } = launched;
 
 const ws = new WebSocket(wsUrl);
 await new Promise((r, j) => {
