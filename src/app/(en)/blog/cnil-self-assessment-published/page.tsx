@@ -75,7 +75,7 @@ export default function CnilAssessmentPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             If you operate a website in France, you know the challenge: the
-            French data protection authority (<a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer">CNIL</a>) allows certain{" "}
+            French data protection authority (<a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer">CNIL</a>) allows certain{" "}
             <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>{" "}
             audience
             measurement tools to operate without cookie banners — but only if

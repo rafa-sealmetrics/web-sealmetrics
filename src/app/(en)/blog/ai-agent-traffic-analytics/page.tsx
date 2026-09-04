@@ -75,7 +75,7 @@ export default function AIAgentTrafficPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             A growing percentage of your website traffic comes from AI agents —
-            <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener noreferrer">GPT browsing</a>, <a href="https://docs.anthropic.com/en/docs/build-with-claude/web-search" target="_blank" rel="noopener noreferrer">Claude web access</a>, Perplexity search, and <a href="https://blog.google/products/search/generative-ai-google-search-may-2024/" target="_blank" rel="noopener noreferrer">Google AI
+            <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener noreferrer">GPT browsing</a>, <a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search-tool" target="_blank" rel="noopener noreferrer">Claude web access</a>, Perplexity search, and <a href="https://blog.google/products/search/generative-ai-google-search-may-2024/" target="_blank" rel="noopener noreferrer">Google AI
             Overviews</a>. These systems crawl your pages, extract information, and
             either cite you in their responses or direct users to your site.
           </p>

@@ -41,3 +41,9 @@ jobs:
       # missing fails the nightly audit and gets noticed.
       - name: Verify declared sameAs profiles resolve
         run: node scripts/audit-sameas.mjs --strict
+
+      # Same arrangement, same reason: network-bound, so it cannot live in the
+      # build. The compliance pages argue from CNIL, AEPD, EDPB and EUR-Lex, and
+      # on 4 Sep 2026 seven of those citations were 404 with nobody watching.
+      - name: Verify cited external sources resolve
+        run: node scripts/audit-external-links.mjs --strict

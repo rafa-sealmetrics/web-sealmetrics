@@ -368,8 +368,8 @@ export default function GdprAnalyticsFrancePage() {
           <ul className="mt-8 space-y-3 text-[15.5px] leading-[1.7] text-ink-soft list-none pl-0">
             <li className="flex gap-3">
               <span className="text-brand" aria-hidden>—</span>
-              <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-1 underline-offset-2">
-                CNIL — Cookies and other tracking devices (English)
+              <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-1 underline-offset-2">
+                CNIL — Cookies and other tracking devices: guidelines (English)
               </a>
             </li>
             <li className="flex gap-3">
@@ -380,7 +380,7 @@ export default function GdprAnalyticsFrancePage() {
             </li>
             <li className="flex gap-3">
               <span className="text-brand" aria-hidden>—</span>
-              <a href="https://edpb.europa.eu/sites/default/files/files/file1/edpb_opinion_201905_dpia_lists_fr.pdf" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-1 underline-offset-2">
+              <a href="https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-52019-interplay-between-eprivacy_en" target="_blank" rel="noopener noreferrer" className="text-brand underline decoration-1 underline-offset-2">
                 EDPB Opinion 5/2019 — referenced by CNIL guidance
               </a>
             </li>
