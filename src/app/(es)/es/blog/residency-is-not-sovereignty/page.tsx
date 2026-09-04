@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -69,14 +71,15 @@ const FAQ = [
 ];
 
 export default function ResidencyIsNotSovereigntyPageEs() {
+  const dates = postDates("residency-is-not-sovereignty", "es");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "Privacidad",
           author: {
@@ -126,19 +129,13 @@ export default function ResidencyIsNotSovereigntyPageEs() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               Residencia no es soberanía: la pregunta que debes hacerle a tu proveedor de analítica con IA
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">24 julio 2026</time>
-              <span>6 min de lectura</span>
-              <span>
-                Por{" "}
-                <Link
-                  href="/es/authors/rafa-jimenez"
-                  className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
-                >
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="6 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">

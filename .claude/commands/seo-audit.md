@@ -31,7 +31,7 @@ Audit the SEO health of the specified page(s). If no page is specified, audit al
 - [ ] Comparison pages have "Other comparisons" section
 
 ### Technical
-- [ ] Page is included in `public/sitemap.xml`
+- [ ] Page is in the generated sitemap (there is no `public/sitemap.xml`; it comes from `src/app/sitemap.ts`, derived from each page's `robots` metadata)
 - [ ] Images have meaningful `alt` text
 - [ ] No render-blocking scripts
 

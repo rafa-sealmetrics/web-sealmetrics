@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function GA4DataSamplingPageEs() {
+  const dates = postDates("ga4-data-sampling-problem", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Muestreo de datos en GA4" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Muestreo de datos en GA4: por qué tus números de tráfico están mal", description: "GA4 aplica muestreo de datos que distorsiona tu analítica.", datePublished: "2026-02-15", dateModified: "2026-05-06", url: "/es/blog/ga4-data-sampling-problem", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Muestreo de datos en GA4: por qué tus números de tráfico están mal", description: "GA4 aplica muestreo de datos que distorsiona tu analítica.", ...dates, url: "/es/blog/ga4-data-sampling-problem", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Muestreo de datos en GA4", url: "/es/blog/ga4-data-sampling-problem" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -49,11 +53,13 @@ export default function GA4DataSamplingPageEs() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Muestreo de datos en GA4: por qué tus números de tráfico están mal
           </h1>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">15 febrero 2026</time>
-            <span>7 min de lectura</span>
-            <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+              {...dates}
+              readTime="7 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

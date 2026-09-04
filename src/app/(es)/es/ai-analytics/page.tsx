@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema, howToSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
+import { HowToSteps } from "@/components/ui/HowToSteps";
+import { mcpSetupStepsEs } from "@/lib/content/mcp-setup";
 
 export const metadata: Metadata = {
   title: "Analítica con IA — IA privada sobre datos completos UE",
@@ -161,6 +163,17 @@ export default function AiAnalyticsEsPage() {
       <Breadcrumbs items={[{ label: "Analítica con IA" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Analítica con IA", url: "/es/ai-analytics" }])} />
       <JsonLd data={faqPageSchema(faqs.map((f) => ({ question: f.q, answer: f.a })), "/es/ai-analytics")} />
+      <JsonLd
+        data={howToSchema({
+          name: "Conecta Claude o ChatGPT a tu analítica con el servidor MCP de Sealmetrics",
+          description:
+            "Conecta un asistente de IA a analítica cookieless alojada en la UE mediante Model Context Protocol: crea una cuenta Agentic gratuita, añade el endpoint remoto, verifica y pregunta por ingresos.",
+          url: "/es/ai-analytics",
+          totalTime: "PT2M",
+          supply: ["Una cuenta gratuita de Sealmetrics", "Un asistente de IA compatible con MCP"],
+          steps: mcpSetupStepsEs.map((step) => ({ name: step.name, text: step.text })),
+        })}
+      />
 
       {/* HERO */}
       <section className="bg-warm-white border-b border-warm-100">
@@ -182,7 +195,7 @@ export default function AiAnalyticsEsPage() {
               completo, un MCP semántico que el modelo no puede malinterpretar e IA privada alojada en la
               UE. Pregúntale a Claude o ChatGPT por tu revenue y obtén un número que puedes defender.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
+            <div data-md="skip" className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link
                 href="/es/demo"
                 className="inline-flex items-center justify-center bg-ink text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-110"
@@ -418,6 +431,45 @@ export default function AiAnalyticsEsPage() {
               analítica conforme con el RGPD
             </Link>
             .
+          </p>
+        </div>
+      </section>
+
+      <section id="connect" className="py-24 border-t border-warm-100 bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+          <div className="max-w-[760px] mb-12">
+            <span className="eyebrow mb-5 block">Conéctalo</span>
+            <h2
+              className="font-semibold leading-[1.1] tracking-[-0.03em] text-ink"
+              style={{ fontSize: "clamp(34px, 4vw, 52px)" }}
+            >
+              Conecta Claude o ChatGPT a tu analítica.
+            </h2>
+            <p className="mt-6 text-[16.5px] leading-[1.65] text-ink-soft">
+              Cuatro pasos, unos dos minutos. Lo que distingue esto de cualquier otro MCP de analítica
+              es lo que hay detrás: el dato de visitante vive solo en la UE, alojado en Dublín; el
+              modelo corre en Scaleway en París o con tu propia clave; y la medición es agregada y
+              anónima, así que no hay identificador personal que entregar a un modelo. La atribución
+              es a último clic sobre el dato completo — mira{" "}
+              <Link href="/es/complete-data" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
+                dato completo
+              </Link>{" "}
+              para entender por qué eso pesa más que el modelo que elijas.
+            </p>
+          </div>
+          <div className="max-w-[860px]">
+            <HowToSteps steps={mcpSetupStepsEs} />
+          </div>
+          <p className="mt-12 text-[15px] leading-[1.6] text-ink-soft max-w-[720px]">
+            ¿Prefieres ejecutar el servidor en tu máquina, o fijar una versión? El servidor local{" "}
+            <code className="font-mono text-[13.5px]">npx</code> usa una API key en su lugar — la{" "}
+            <a
+              href="https://docs.sealmetrics.com/integrations/mcp-server"
+              className="text-brand no-underline border-b border-warm-200 hover:border-brand"
+            >
+              referencia del servidor MCP
+            </a>{" "}
+            cubre ambos, cliente por cliente.
           </p>
         </div>
       </section>

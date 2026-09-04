@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function CookielessAnalyticsExplainedPageEs() {
+  const dates = postDates("cookieless-analytics-explained", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica cookieless explicada" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", datePublished: "2026-02-08", dateModified: "2026-05-06", url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", ...dates, url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica cookieless", url: "/es/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -49,11 +53,13 @@ export default function CookielessAnalyticsExplainedPageEs() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Cómo funciona la analítica web sin cookies, sin consentimiento y sin tracking por usuario
           </h1>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">8 febrero 2026</time>
-            <span>8 min de lectura</span>
-            <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+              {...dates}
+              readTime="8 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

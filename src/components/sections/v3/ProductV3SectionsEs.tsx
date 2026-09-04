@@ -14,7 +14,7 @@ export function ProductHeroV3Es() {
         <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
           Un stack analítico completo para equipos eCommerce: tracking sin consentimiento, atribución de ingresos, LENS AI, SuperAPI y MCP server — todo sobre los mismos datos a resolución completa. Sin muestreo. Sin modelado.
         </p>
-        <div className="flex flex-wrap justify-center gap-3 mt-9">
+        <div data-md="skip" className="flex flex-wrap justify-center gap-3 mt-9">
           <Link href="/es/demo" className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors">
             Reserva una demo <span>→</span>
           </Link>
@@ -384,7 +384,7 @@ export function ProductFinalCtaV3Es() {
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
             Empieza la prueba de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
+          <div data-md="skip" className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <Link href="/es/demo" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
               Reserva una demo →
             </Link>

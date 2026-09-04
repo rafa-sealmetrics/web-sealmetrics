@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -33,10 +35,12 @@ export const metadata: Metadata = {
 };
 
 export default function AnalyticsScriptsPage() {
+  const dates = postDates("analytics-scripts-costing-you-sales");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Scripts Costing You Sales" }]} />
-      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", datePublished: "2026-02-26", dateModified: "2026-05-28", url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales", description: "Heavy analytics scripts slow your site, consent banners hide visitors, and ad blockers erase data.", ...dates, url: "/blog/analytics-scripts-costing-you-sales", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Scripts Costing You Sales", url: "/blog/analytics-scripts-costing-you-sales" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -48,11 +52,12 @@ export default function AnalyticsScriptsPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             The Hidden Conversion Killer: How Analytics Scripts Are Costing You Sales
           </h1>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">February 26, 2026</time>
-            <span>3 min read</span>
-            <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+              {...dates}
+              readTime="3 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

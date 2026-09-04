@@ -200,7 +200,7 @@ function VideoModal({
           <p className="text-[0.9rem] text-text-secondary leading-relaxed mb-6 max-w-[480px]">
             {video.ctaText}
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div data-md="skip" className="flex flex-wrap gap-3">
             <Link
               href="/demo"
               className="inline-flex items-center px-7 py-3 text-[0.9rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"

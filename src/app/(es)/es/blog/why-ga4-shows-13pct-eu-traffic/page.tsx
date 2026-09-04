@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function WhyGA4Shows13PctPageEs() {
+  const dates = postDates("why-ga4-shows-13pct-eu-traffic", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Por qué GA4 muestra el 13% de tu tráfico UE" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Por qué GA4 muestra el 13% de tu tráfico UE", description: "GA4 pierde dato en tres niveles estructurales, dejando ~13% del tráfico real UE.", datePublished: "2026-03-06", dateModified: "2026-05-06", url: "/es/blog/why-ga4-shows-13pct-eu-traffic", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Por qué GA4 muestra el 13% de tu tráfico UE", description: "GA4 pierde dato en tres niveles estructurales, dejando ~13% del tráfico real UE.", ...dates, url: "/es/blog/why-ga4-shows-13pct-eu-traffic", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Por qué GA4 muestra el 13% de tu tráfico UE", url: "/es/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -49,11 +53,13 @@ export default function WhyGA4Shows13PctPageEs() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Por qué GA4 muestra el 13% de tu tráfico UE
           </h1>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">6 marzo 2026</time>
-            <span>8 min de lectura</span>
-            <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+              {...dates}
+              readTime="8 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

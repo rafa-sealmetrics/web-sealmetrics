@@ -5,6 +5,7 @@ import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/Anno
 import { Footer } from "@/components/layout/Footer";
 import { SealmetricsTracker } from "@/components/analytics/SealmetricsTracker";
 import type { Locale } from "@/lib/i18n/types";
+import { organizationSchema } from "@/lib/schema";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -58,6 +59,18 @@ export function SharedLayout({
           type="text/plain"
           href="https://sealmetrics.com/llms-full.txt"
           title="Full product reference for LLMs"
+        />
+        {/* The entity graph, on every page rather than on the two that used to
+            carry it. Schemas across the site reference the organisation by
+            `@id` instead of restating it inline, and a bare `{"@id": …}` only
+            resolves if the node it names is present in the same document — so
+            this has to ship everywhere, not just on the homepage.
+
+            It lives in <head>, outside <main id="main-content">, which is also
+            what keeps it out of the Markdown twins. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
         />
       </head>
       <body className="font-sans antialiased">

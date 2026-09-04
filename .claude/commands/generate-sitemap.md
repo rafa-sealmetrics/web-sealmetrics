@@ -1,67 +1,57 @@
 # Generate Sitemap & Robots
 
-Generate or update `sitemap.xml` and `robots.txt` for the site.
+## Read this before doing anything
 
-## Steps
+**The sitemap is generated, not written.** `src/app/sitemap.ts` derives it at
+build time and there is no `public/sitemap.xml` — this file used to tell you to
+hand-write one, complete with a `changefreq`/`priority` table Google has ignored
+for years. Writing that file would shadow the generated one with a stale copy.
 
-1. **Scan all existing pages** in `src/app/*/page.tsx` (recursively)
-2. **Read `SEO-STRATEGY.md` section 8** for robots.txt spec
+Three things are derived, and each replaced a hand-maintained list that drifted:
 
-## Generate sitemap.xml
+- **Which routes are in it** comes from each page's own `robots` metadata, via
+  `src/lib/seo/routes.ts`. To keep a page out, mark it `noindex` — never add it
+  to an exclusion list. The previous hand-written list silently shipped three
+  `noindex` posts into the sitemap.
+- **`lastmod` for a blog post** comes from `postDates()` reading
+  `src/lib/content/blog.ts` — the revision date when there is one, the
+  publication date otherwise, per locale.
+- **`lastmod` for every other page** comes from a hash of the rendered text
+  (`scripts/stamp-sitemap-lastmod.mjs`), so a design pass or a class rename does
+  not re-date the page. `.seo-lastmod.json` is committed state: when the build
+  changes it, commit it.
 
-### File: `/Users/rafa/code/web-sealmetrics/public/sitemap.xml`
+## So what is there to do?
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.w3.org/2000/svg"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://sealmetrics.com/</loc>
-    <lastmod>YYYY-MM-DD</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <!-- ... all pages ... -->
-</urlset>
-```
+### Adding a page
+Nothing here. Create the page, and add its hand-written line to
+`public/llms.txt` — that is the one index that is editorial. `npm run build`
+fails if the two disagree.
 
-### Priority rules
-| Page type | Priority | Change frequency |
-|-----------|----------|-----------------|
-| Homepage `/` | 1.0 | weekly |
-| Tier 1 (`/demo`, `/pricing`) | 0.9 | monthly |
-| Tier 2 pillars (`/product`, `/how-it-works`, `/vs-ga4`, `/security`) | 0.8 | monthly |
-| Tier 2 comparisons (`/vs/*`) | 0.7 | monthly |
-| Tier 3 (`/customers`, `/for/*`) | 0.7 | monthly |
-| Tier 4 blog posts | 0.6 | yearly |
-| Tier 5 glossary | 0.5 | yearly |
-| Legal pages | 0.3 | yearly |
+### Removing a page from the index
+Set `robots: { index: false }` in its metadata.
 
-### Rules
-- Only include pages that actually exist (have a page.tsx file)
-- Use today's date for `lastmod`
-- Base URL: `https://sealmetrics.com`
-- Do NOT include 404 page or any error pages
-- Do NOT include pages behind authentication
+### Changing robots.txt
+`public/robots.txt` is hand-written and deliberate. Two rules must survive any
+edit, both documented in the file itself:
 
-## Generate robots.txt
+- `.md` twins are `Disallow`ed for Googlebot, Bingbot, DuckDuckBot and
+  YandexBot, and `Allow`ed for the AI crawlers. Removing those lines would let
+  a plain-text copy of every page compete with the HTML in the search index.
+- The AI crawler allowlist (GPTBot, ClaudeBot, PerplexityBot and the rest) is
+  the whole point of the GEO work. Do not narrow it without a reason written
+  down.
 
-### File: `/Users/rafa/code/web-sealmetrics/public/robots.txt`
-
-```
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: https://sealmetrics.com/sitemap.xml
-```
+`tests/seo.test.mjs` asserts both.
 
 ## Verify
-- Count pages in sitemap vs actual pages — they must match
-- Ensure no duplicate URLs
-- Ensure all URLs use https://
+
+```bash
+npm run build && npm test
+```
+
+`audit-llms-txt` reports drift, `seo-audit` checks that no `noindex` page
+reached the sitemap and that every indexable one did.
 
 ## Input
-$ARGUMENTS — Optional: "update" to refresh existing files, or empty to create from scratch.
+$ARGUMENTS — ignored. There is nothing to generate; see above.

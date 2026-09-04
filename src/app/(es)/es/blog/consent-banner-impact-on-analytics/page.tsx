@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function ConsentBannerImpactPageEs() {
+  const dates = postDates("consent-banner-impact-on-analytics", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Impacto de los banners de consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", datePublished: "2026-01-25", dateModified: "2026-05-06", url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", ...dates, url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Impacto de los banners de consentimiento", url: "/es/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -49,11 +53,13 @@ export default function ConsentBannerImpactPageEs() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Cómo los banners de consentimiento destruyen tus datos de analítica
           </h1>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">25 enero 2026</time>
-            <span>6 min de lectura</span>
-            <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+              {...dates}
+              readTime="6 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

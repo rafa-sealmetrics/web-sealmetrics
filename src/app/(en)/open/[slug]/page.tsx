@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, ORG_ID } from "@/lib/schema";
 import { OpenChapterSidebar } from "@/components/open/OpenChapterSidebar";
 import { OpenChapterTOC } from "@/components/open/OpenChapterTOC";
 import {
@@ -80,12 +80,8 @@ export default async function OpenChapterPage({ params }: PageProps) {
       name: "Open — Sealmetrics",
       url: "https://sealmetrics.com/open",
     },
-    author: { "@type": "Organization", name: "Sealmetrics" },
-    publisher: {
-      "@type": "Organization",
-      name: "Sealmetrics",
-      url: "https://sealmetrics.com",
-    },
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   };
 
   return (
@@ -290,7 +286,7 @@ export default async function OpenChapterPage({ params }: PageProps) {
                 "radial-gradient(80% 60% at 20% 20%, rgba(45,139,109,0.35) 0%, transparent 60%)",
             }}
           />
-          <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 py-20 sm:py-24">
+          <div data-md="skip" className="relative max-w-[1200px] mx-auto px-5 sm:px-8 py-20 sm:py-24">
             <div className="max-w-[640px]">
               <span className="eyebrow" style={{ color: "#E8B84B" }}>
                 Next step

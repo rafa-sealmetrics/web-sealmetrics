@@ -117,11 +117,54 @@ test("structured data", { skip }, async (t) => {
       "JSON-LD page URLs disagree with canonicals and the sitemap"
     )
   );
+  await t.test("HowTo steps are visible on the page", () =>
+    noneOf(
+      "howto-schema-not-visible",
+      "HowToStep text exists only in JSON-LD — uncitable, and a procedure nobody can follow"
+    )
+  );
   await t.test("FAQ schema matches visible page content", () =>
     noneOf(
       "faq-schema-not-visible",
       "FAQPage questions exist only in JSON-LD — a Google policy violation and uncitable by AI engines"
     )
+  );
+  await t.test("the organisation graph ships on every indexable page", () =>
+    noneOf("org-graph-missing", "pages whose @id references have nothing to resolve against")
+  );
+  await t.test("publisher and provider reference the organisation node", () =>
+    noneOf("publisher-not-linked", "schemas restating the organisation inline")
+  );
+  await t.test("comparison pages name the competitor as an entity", () => {
+    // Warning-level in the audit, asserted here as a floor: the products that
+    // DO have a Wikidata item must carry it. Adobe Analytics and Piwik PRO have
+    // none and are legitimately absent.
+    const md = readFileSync(path.join(OUT, "vs", "matomo.md"), "utf8");
+    assert.ok(md.length > 0, "the /vs/matomo twin is missing");
+    const html = readFileSync(path.join(OUT, "vs", "matomo", "index.html"), "utf8");
+    assert.match(
+      html,
+      /"sameAs":\["https:\/\/www\.wikidata\.org\/wiki\/Q34162"\]/,
+      "Matomo must be identified by its Wikidata item, not just by name"
+    );
+  });
+  await t.test("one person is one node", () =>
+    noneOf("person-entity-split", "a Person named in two places with two identities")
+  );
+  await t.test("the sitemap and the Article agree on the revision date", () =>
+    noneOf(
+      "lastmod-disagrees-with-date-modified",
+      "a post's sitemap lastmod and its Article dateModified disagree — both must come from postDates()"
+    )
+  );
+  await t.test("a claimed revision is visible to the reader", () =>
+    noneOf(
+      "date-modified-not-visible",
+      "articles claiming dateModified in schema without rendering it"
+    )
+  );
+  await t.test("declared language matches the document", () =>
+    noneOf("schema-inlanguage-mismatch", "schemas whose inLanguage contradicts <html lang>")
   );
   await t.test("breadcrumb schema never points at a 404", () =>
     noneOf("breadcrumb-to-404", "BreadcrumbList references a URL that was not built")
@@ -147,6 +190,25 @@ test("markdown twins for AI agents", { skip }, async (t) => {
   await t.test("twins carry no leaked markup", () =>
     noneOf("markdown-twin-has-markup", "HTML tags survived the Markdown conversion")
   );
+  await t.test("internal links stay in Markdown", () =>
+    noneOf(
+      "markdown-twin-links-html",
+      "a twin links to the HTML page of a route that has its own twin"
+    )
+  );
+  await t.test("no conversion CTA reaches the citable passage", () =>
+    noneOf("markdown-twin-cta-leak", "a twin still renders a CTA button or an unseparated link pair")
+  );
+  await t.test("sibling chips keep a separator", () =>
+    noneOf("markdown-twin-glued-inline", "adjacent bold runs collapsed into one another")
+  );
+  await t.test("front matter carries the author of record", () => {
+    const post = path.join(OUT, "blog", "gdpr-eprivacy-analytics-legal-assessment.md");
+    assert.ok(existsSync(post), "the sample post twin is missing");
+    const md = readFileSync(post, "utf8");
+    assert.match(md, /^author: "/m, "blog twins must name their author in the front matter");
+    assert.match(md, /^author_url: "https:\/\//m, "the author needs a resolvable URL");
+  });
   await t.test("an enumerable index is published", () => {
     const idx = path.join(OUT, "llms-md-index.txt");
     assert.ok(existsSync(idx), "out/llms-md-index.txt is missing");

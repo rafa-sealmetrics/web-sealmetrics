@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -129,6 +131,8 @@ const accentBar: Record<string, string> = {
 };
 
 export default function Page() {
+  const dates = postDates("self-service-analytics-lens-ai", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica self-service con LENS AI" }]} locale="es" />
@@ -137,8 +141,7 @@ export default function Page() {
           headline: "Qué hace falta para que la analítica self-service funcione de verdad",
           description:
             "El dato cookieless completo más un MCP semántico permiten que cualquiera consulte su propia analítica en lenguaje natural, sin un analista en medio.",
-          datePublished: "2026-07-05",
-          dateModified: "2026-07-05",
+          ...dates,
           url: "/es/blog/self-service-analytics-lens-ai",
           category: "IA y Analítica",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -158,11 +161,13 @@ export default function Page() {
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[46ch]">
               Apuntar un LLM a tu dato es la parte fácil. Lo difícil es que sus respuestas sean fiables — y es la parte que Sealmetrics construyó primero, para luego integrarla como LENS AI.
             </p>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">5 julio 2026</time>
-              <span>10 min de lectura</span>
-              <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="10 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

@@ -77,7 +77,7 @@ export function SignalHome() {
           <p className="sig-hero-intro">
             Sealmetrics measures eligible aggregate traffic and recorded outcomes without analytics cookies or visitor profiles. Run it beside your current analytics and compare both against the revenue your backend recorded.
           </p>
-          <div className="sig-hero-actions">
+          <div data-md="skip" className="sig-hero-actions">
             <a className="sig-button sig-button-acid" href="https://my.sealmetrics.com/register">
               Start 14-day free trial <Arrow />
             </a>
@@ -368,7 +368,7 @@ export function SignalHome() {
         <p className="sig-section-tag">ONE LAST THING</p>
         <h2>Reality is already there.<br /><em>You should probably see it.</em></h2>
         <p>Eligible aggregate events. Backend comparison. Fewer expensive opinions.</p>
-        <div>
+        <div data-md="skip">
           <a className="sig-button sig-button-dark" href="https://my.sealmetrics.com/register">Start free trial <Arrow /></a>
           <a className="sig-text-link sig-dark-link" href="/demo/">Book a demo <span aria-hidden="true">→</span></a>
         </div>

@@ -240,7 +240,7 @@ export default function SearchmetricsVsSealmetricsPage() {
             analytics that still reports the traffic your consent banner turns
             away, that is the thing we built.
           </p>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <div data-md="skip" className="flex flex-col sm:flex-row sm:items-center gap-4">
             <Link
               href="/demo"
               className="inline-block px-7 py-3.5 bg-ink text-white text-[0.95rem] font-medium rounded-[4px] hover:opacity-90 transition-opacity"

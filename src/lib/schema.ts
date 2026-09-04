@@ -4,6 +4,55 @@ const SITE_URL = "https://sealmetrics.com";
 const ORG_NAME = "Sealmetrics";
 
 /**
+ * Stable node identities for the site's entity graph.
+ *
+ * Every schema that names a publisher, provider or employer points HERE instead
+ * of restating the organisation inline. A search or answer engine resolving the
+ * graph then sees one Sealmetrics with one set of `sameAs` profiles, rather than
+ * a dozen anonymous Organization objects it has to guess are the same company.
+ * The nodes themselves are emitted once per page from `SharedLayout`, so a bare
+ * `{"@id": …}` reference always resolves inside the document that uses it.
+ */
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const PERSON_RAFA_ID = `${SITE_URL}/authors/rafa-jimenez/#person`;
+
+/** Reference to the organisation node, for publisher/provider/worksFor slots. */
+const orgRef = () => ({ "@id": ORG_ID });
+
+/**
+ * Author bylines are hand-written per post and spell the founder's name with
+ * and without its accent. Normalising here is what lets every byline resolve to
+ * the one Person node instead of minting a new individual per spelling.
+ */
+/** A Person slot: the canonical node for the founder, a plain node otherwise. */
+const personRef = (person: { name: string; url?: string; jobTitle?: string }) => ({
+  "@type": "Person",
+  // The @id is what unifies the mentions; `url` stays because it is a real
+  // property of the node and because the Markdown twins read the author link
+  // from here. On the ES tree it points at the Spanish author page — same
+  // person, same id, the locale's own address.
+  ...(isRafa(person.name) ? { "@id": PERSON_RAFA_ID } : {}),
+  name: person.name,
+  ...(person.url ? { url: pageHref(person.url) } : {}),
+  ...(person.jobTitle ? { jobTitle: person.jobTitle } : {}),
+});
+
+const isRafa = (name: string) =>
+  name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim() ===
+  "rafa jimenez";
+
+/**
+ * Locale of a page, derived from its own route. Spanish pages used to inherit
+ * `inLanguage` from nothing at all, which left the ES tree asserting no language
+ * while serving Spanish copy — an inconsistency an engine triangulating the
+ * entity will notice before a human does.
+ */
+export function langOf(url = ""): "en" | "es" {
+  return /^\/es(\/|$)/.test(url) ? "es" : "en";
+}
+
+/**
  * Build an absolute page URL with a trailing slash so JSON-LD page URLs match
  * the site's rendered canonicals (Next.js `trailingSlash: true` appends "/" to
  * every canonical, e.g. `/security` → `/security/`). Use ONLY for page/document
@@ -33,12 +82,16 @@ export function organizationSchema() {
         description:
           "Complete analytics for eCommerce: captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.",
         foundingDate: "2020",
+        // References the canonical Person node emitted by the author page.
+        // It used to restate him as "Rafa Jimenez" (no accent) pointing at
+        // /about, while every article credited "Rafa Jiménez" pointing at
+        // /authors/rafa-jimenez — three nodes for one human being.
         founders: [
           {
             "@type": "Person",
-            name: "Rafa Jimenez",
-            jobTitle: "Founder",
-            url: pageHref("/about"),
+            "@id": PERSON_RAFA_ID,
+            name: "Rafa Jiménez",
+            url: pageHref("/authors/rafa-jimenez"),
           },
         ],
         vatID: "ESB70933239",
@@ -58,7 +111,10 @@ export function organizationSchema() {
           "https://www.g2.com/products/sealmetrics",
           "https://www.capterra.com/p/sealmetrics",
           "https://www.crunchbase.com/organization/sealmetrics",
-          "https://www.producthunt.com/products/sealmetrics",
+          // Product Hunt removed on 4 Sep 2026: /products/sealmetrics,
+          // /posts/sealmetrics and /products/sealmetrics-2 all 404. A sameAs
+          // pointing at nothing asserts a presence the company does not have.
+          // Put it back the day the profile exists — audit-sameas.mjs checks.
           "https://github.com/sealmetrics",
         ],
         knowsAbout: [
@@ -113,7 +169,7 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    ...(pageUrl ? { url: pageHref(pageUrl) } : {}),
+    ...(pageUrl ? { url: pageHref(pageUrl), inLanguage: langOf(pageUrl) } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -169,11 +225,8 @@ export function verticalSoftwareApplicationSchema(props: {
       audienceType: props.audienceType,
       name: `${props.vertical} teams in the European Union`,
     },
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
+    inLanguage: langOf(props.url),
     featureList: [
       `Cookieless analytics for ${props.vertical}`,
       "100% traffic capture (no consent gap)",
@@ -184,18 +237,32 @@ export function verticalSoftwareApplicationSchema(props: {
   };
 }
 
-export function softwareApplicationSchema() {
+export function softwareApplicationSchema(opts?: { locale?: "en" | "es" }) {
+  const locale = opts?.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: ORG_NAME,
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
-    url: pageHref(),
+    url: locale === "es" ? pageHref("/es") : pageHref(),
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
+    inLanguage: locale,
     description:
-      "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
-    featureList: [
+      locale === "es"
+        ? "Analítica enterprise para eCommerce. Captura el 100% del tráfico, sostiene decisiones de inversión con LENS AI y cumple el RGPD por arquitectura. Alternativa a GA360 y Adobe Analytics."
+        : "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
+    featureList:
+      locale === "es"
+        ? [
+            "Medición cookieless (sin banner de consentimiento)",
+            "Captura del 100% del tráfico",
+            "Cumplimiento RGPD/ePrivacy por diseño",
+            "Atribución de ingresos a último clic",
+            "LENS AI — pregunta a tus datos en lenguaje natural",
+            "Analítica de agentes de IA",
+          ]
+        : [
       "Cookieless tracking (no consent banner required)",
       "100% traffic data capture",
       "GDPR/ePrivacy compliant by design",
@@ -210,13 +277,9 @@ export function softwareApplicationSchema() {
       highPrice: String(PRICING.scale.monthly),
       offerCount: 3,
       availability: "https://schema.org/InStock",
-      url: pageHref("/pricing"),
+      url: locale === "es" ? pageHref("/es/pricing") : pageHref("/pricing"),
     },
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
   };
 }
 
@@ -248,32 +311,12 @@ export function articleSchema(props: {
       "@id": pageHref(props.url),
     },
     image: props.image || autoBlogOg || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
-    author: props.author
-      ? {
-          "@type": "Person",
-          name: props.author.name,
-          ...(props.author.url
-            ? { url: pageHref(props.author.url) }
-            : {}),
-          ...(props.author.jobTitle
-            ? { jobTitle: props.author.jobTitle }
-            : {}),
-          ...(props.author.name.toLowerCase().includes("rafa")
-            ? {
-                sameAs: ["https://www.linkedin.com/in/rafajimenez/"],
-                worksFor: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
-              }
-            : {}),
-        }
-      : { "@type": "Organization", name: ORG_NAME },
-    publisher: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
-      },
-    },
+    // One node per person, addressed by @id. The full description, sameAs and
+    // knowsAbout live on the author page; repeating a subset of them here is
+    // what produced competing versions of the same author.
+    author: props.author ? personRef(props.author) : orgRef(),
+    publisher: orgRef(),
+    inLanguage: langOf(props.url),
     ...(props.category ? { articleSection: props.category } : {}),
   };
 }
@@ -287,9 +330,11 @@ export function definedTermSchema(props: {
   return {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
+    "@id": `${pageHref(props.url)}#term`,
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
       name: "Web Analytics Glossary",
@@ -311,7 +356,7 @@ export function comparisonPageSchema(props: {
   name: string;
   description: string;
   url: string;
-  competitor?: { name: string; url: string };
+  competitor?: { name: string; url: string; wikidata?: string };
   datePublished?: string;
   dateModified?: string;
   author?: { name: string; url: string };
@@ -328,24 +373,24 @@ export function comparisonPageSchema(props: {
     ...(props.dateModified ? { dateModified: props.dateModified } : {}),
     ...(props.author
       ? {
-          author: {
-            "@type": "Person",
-            name: props.author.name,
-            url: pageHref(props.author.url),
-          },
-          reviewedBy: {
-            "@type": "Person",
-            name: props.author.name,
-            url: pageHref(props.author.url),
-          },
+          // Same node in both slots, and the same node every article credits.
+          // The ES tree used to point at /es/authors/rafa-jimenez, minting a
+          // second Spanish-speaking founder out of a URL prefix.
+          author: personRef(props.author),
+          reviewedBy: personRef(props.author),
         }
       : {}),
+    // What the page is *about*, as entities. `sameAs` to Wikidata is how an
+    // engine confirms that the "Matomo" on this page is the analytics platform
+    // and not the commune in Mali. Absent where the product genuinely has no
+    // Wikidata item — see src/lib/content/competitors.ts.
     about: [
       {
         "@type": "SoftwareApplication",
         name: ORG_NAME,
         applicationCategory: "AnalyticsApplication",
         url: pageHref(),
+        publisher: orgRef(),
       },
       ...(props.competitor
         ? [
@@ -354,6 +399,7 @@ export function comparisonPageSchema(props: {
               name: props.competitor.name,
               applicationCategory: "AnalyticsApplication",
               url: props.competitor.url,
+              ...(props.competitor.wikidata ? { sameAs: [props.competitor.wikidata] } : {}),
             },
           ]
         : []),
@@ -373,6 +419,8 @@ export function comparisonPageSchema(props: {
           name: `Comparison overview — ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
           description: `Feature-by-feature comparison of ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
         },
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
   };
 }
 
@@ -387,6 +435,8 @@ export function collectionPageSchema(props: {
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
   };
 }
 
@@ -400,6 +450,7 @@ export function speakableWebPageSchema(props: {
     "@type": "WebPage",
     name: props.name,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: props.selectors ?? [
@@ -429,6 +480,8 @@ export function definedTermSetSchema(props: {
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
     hasDefinedTerm: props.terms.map((t) => ({
       "@type": "DefinedTerm",
       name: t.term,
@@ -451,6 +504,7 @@ export function itemListSchema(props: {
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
     numberOfItems: props.items.length,
     itemListElement: props.items.map((item, i) => ({
       "@type": "ListItem",
@@ -478,12 +532,18 @@ export function pricingSchema(
   const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
     .toISOString()
     .slice(0, 10);
+  const locale = opts?.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Sealmetrics Analytics",
+    // Localised on purpose: an entity described in English inside the Spanish
+    // tree is the kind of inconsistency an engine notices while triangulating.
     description:
-      "Cookieless web analytics with 100% data capture, GDPR-compliant by architecture. Enterprise alternative to GA360 and Adobe Analytics.",
+      locale === "es"
+        ? "Analítica web cookieless que captura el 100% del dato y cumple el RGPD por arquitectura. Alternativa enterprise a GA360 y Adobe Analytics."
+        : "Cookieless web analytics with 100% data capture, GDPR-compliant by architecture. Enterprise alternative to GA360 and Adobe Analytics.",
+    inLanguage: locale,
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     brand: { "@type": "Brand", name: ORG_NAME },
     category: "SaaS / Web Analytics",
@@ -515,11 +575,7 @@ export function pricingSchema(
           unitText: "Per month, billed annually",
           billingIncrement: 1,
         },
-        seller: {
-          "@type": "Organization",
-          name: ORG_NAME,
-          url: pageHref(),
-        },
+        seller: orgRef(),
       })),
     },
   };
@@ -540,11 +596,8 @@ export function servicePageSchema(props: {
     ...(props.audience
       ? { audience: { "@type": "Audience", audienceType: props.audience } }
       : {}),
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
+    inLanguage: langOf(props.url),
   };
 }
 
@@ -563,11 +616,27 @@ export function statisticClaimSchema(props: {
   url: string;
   numericValue?: number;
   unit?: string;
+  /** Stable suffix for the node's @id, unique within the page. */
+  id?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
+    // Addressable so a Dataset or an Article can cite the specific claim rather
+    // than the page it happens to sit on. Derived from the claim text when no
+    // id is given, so it is stable across builds without being hand-maintained.
+    "@id": `${pageHref(props.url)}#claim-${
+      props.id ??
+      props.text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 60)
+    }`,
     name: props.text,
+    inLanguage: langOf(props.url),
     text: props.text,
     url: pageHref(props.url),
     isBasedOn: {
@@ -576,7 +645,7 @@ export function statisticClaimSchema(props: {
       author: { "@type": "Organization", name: props.sourceAuthor },
       datePublished: props.sourceDate,
     },
-    publisher: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
+    publisher: orgRef(),
     ...(props.numericValue !== undefined
       ? {
           mainEntity: {
@@ -677,15 +746,7 @@ export function videoObjectSchema(props: {
     ...(props.contentUrl ? { contentUrl: props.contentUrl } : {}),
     ...(props.inLanguage ? { inLanguage: props.inLanguage } : {}),
     url: pageHref(props.url),
-    publisher: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
-      },
-    },
+    publisher: orgRef(),
   };
 }
 
@@ -735,6 +796,9 @@ export function personSchema(props: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    // The author page is where the person is *defined*; everywhere else
+    // references this id. Without it, each mention is a separate individual.
+    ...(isRafa(props.name) ? { "@id": PERSON_RAFA_ID } : {}),
     name: props.name,
     jobTitle: props.jobTitle,
     description: props.description,
@@ -750,11 +814,7 @@ export function personSchema(props: {
           })),
         }
       : {}),
-    worksFor: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    worksFor: orgRef(),
   };
 }
 
@@ -771,16 +831,51 @@ export function webApplicationSchema(props: {
     url: pageHref(props.url),
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
+    inLanguage: langOf(props.url),
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
     },
+  };
+}
+
+/**
+ * HowTo for a task the page actually walks the reader through.
+ *
+ * The steps passed here MUST be the same objects the page renders — see
+ * `HowToSteps` — because `howto-schema-not-visible` fails the build when a step
+ * exists only inside the script tag. Same rule as FAQPage, same reason: Google's
+ * structured data policy, and an engine cannot cite a passage nobody can read.
+ */
+export function howToSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string;
+  supply?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: props.name,
+    description: props.description,
+    url: pageHref(props.url),
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
+    ...(props.totalTime ? { totalTime: props.totalTime } : {}),
+    ...(props.supply?.length
+      ? { supply: props.supply.map((s) => ({ "@type": "HowToSupply", name: s })) }
+      : {}),
+    step: props.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: `${pageHref(props.url)}#step-${i + 1}`,
+    })),
   };
 }

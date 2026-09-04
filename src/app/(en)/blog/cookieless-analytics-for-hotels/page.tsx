@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -62,6 +64,8 @@ const faqs = [
 ];
 
 export default function Page() {
+  const dates = postDates("cookieless-analytics-for-hotels");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for Hotels" }]} />
@@ -70,8 +74,7 @@ export default function Page() {
           headline: "Cookieless Analytics for Hotels — 2026 Guide",
           description:
             "How hotel groups count direct bookings at channel level without cookies or user-level tracking.",
-          datePublished: "2026-04-24",
-          dateModified: "2026-05-28",
+          ...dates,
           url: "/blog/cookieless-analytics-for-hotels",
           category: "Hotels",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -88,11 +91,12 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">April 24, 2026</time>
-              <span>9 min read</span>
-              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="9 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

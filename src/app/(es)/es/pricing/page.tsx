@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { pricingSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { pricingSchema, breadcrumbSchema, faqPageSchema, softwareApplicationSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { PricingSignal } from "@/components/v4/PricingSignal";
 import { pricingSignalFaqItems } from "@/lib/content/pricing-signal";
@@ -42,6 +42,7 @@ export default function PricingPageEs() {
         { name: "Growth", price: "499", description: "5M eventos humanos/mes · anual" },
         { name: "Scale", price: "899", description: "15M eventos humanos/mes · anual" },
       ], { locale: "es" })} />
+      <JsonLd data={softwareApplicationSchema({ locale: "es" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Precios", url: "/es/pricing" }])} />
       <JsonLd data={faqPageSchema(pricingSignalFaqItems.es, "/es/pricing")} />
       <PricingSignal locale="es" />

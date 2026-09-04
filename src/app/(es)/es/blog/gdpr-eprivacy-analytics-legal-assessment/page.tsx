@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -154,6 +156,8 @@ const accentBar: Record<string, string> = {
 };
 
 export default function Page() {
+  const dates = postDates("gdpr-eprivacy-analytics-legal-assessment", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "¿Tu analítica cumple el RGPD?" }]} locale="es" />
@@ -162,8 +166,7 @@ export default function Page() {
           headline: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
           description:
             "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.",
-          datePublished: "2026-07-06",
-          dateModified: "2026-07-06",
+          ...dates,
           url: "/es/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulación",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -184,11 +187,13 @@ export default function Page() {
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[52ch]">
               «Conforme con el RGPD» aparece en casi todas las webs de analítica. Dos leyes distintas deciden si es cierto — y la mayoría de herramientas solo superan una. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.
             </p>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">6 julio 2026</time>
-              <span>9 min de lectura</span>
-              <span>Por <Link href="/es/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="9 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

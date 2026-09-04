@@ -43,6 +43,7 @@ export function CommercialModule({
 
   return (
     <aside
+      data-md="skip"
       className={`my-10 rounded-xl border border-warm-100 bg-warm-50 p-6 sm:p-7 ${className}`}
     >
       <p className="text-[15.5px] leading-[1.55] font-semibold text-ink tracking-[-0.01em] max-w-[58ch]">

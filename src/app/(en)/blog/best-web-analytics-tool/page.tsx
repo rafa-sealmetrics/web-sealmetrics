@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -183,6 +185,8 @@ const h2Class =
 const strongClass = "font-semibold text-text-primary";
 
 export default function BestWebAnalyticsToolPage() {
+  const dates = postDates("best-web-analytics-tool");
+
   return (
     <>
       <Breadcrumbs
@@ -196,8 +200,7 @@ export default function BestWebAnalyticsToolPage() {
           headline: "The Best Web Analytics Tool: 12 Requirements That Decide It",
           description:
             "The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of the data, API, MCP — each with the failure it prevents and a test you can run.",
-          datePublished: "2026-08-06",
-          dateModified: "2026-08-06",
+          ...dates,
           url: "/blog/best-web-analytics-tool",
           category: "Comparisons",
           author: {
@@ -240,11 +243,11 @@ export default function BestWebAnalyticsToolPage() {
               The best web analytics tool: the 12 requirements that actually
               decide it
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">August 6, 2026</time>
-              <span>12 min read</span>
-              <span>By Rafa Jiménez</span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="12 min read"
+              authorName="Rafa Jiménez"
+            />
           </header>
 
           <div className="mb-10 p-6 bg-warm-white border border-warm-100 rounded-[14px]">

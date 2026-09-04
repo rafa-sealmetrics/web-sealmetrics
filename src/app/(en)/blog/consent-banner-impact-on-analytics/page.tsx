@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -35,10 +37,12 @@ export const metadata: Metadata = {
 };
 
 export default function ConsentBannerImpactPage() {
+  const dates = postDates("consent-banner-impact-on-analytics");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
-      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", datePublished: "2026-01-25", dateModified: "2026-05-28", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", ...dates, url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact", url: "/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -50,11 +54,12 @@ export default function ConsentBannerImpactPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             How Consent Banners Destroy Your Analytics Data
           </h1>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">January 25, 2026</time>
-            <span>6 min read</span>
-            <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+              {...dates}
+              readTime="6 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
         </header>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

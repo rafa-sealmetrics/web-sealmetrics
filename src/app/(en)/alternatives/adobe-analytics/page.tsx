@@ -336,6 +336,7 @@ export default function Page() {
             your answer and you have lost nothing.
           </p>
           <Link
+            data-md="skip"
             href="/demo"
             className="inline-block px-7 py-3.5 bg-ink text-white text-[0.95rem] font-medium rounded-[4px] hover:opacity-90 transition-opacity"
           >

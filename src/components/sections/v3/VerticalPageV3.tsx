@@ -163,8 +163,8 @@ export function VerticalPageV3({
 
           {/* First on-page CTA — placed after the outcomes, where the case
               has been made, per CLAUDE.md rule 16. */}
-          <div className="mt-12 flex flex-col items-center gap-4">
-            <div className="flex flex-wrap justify-center gap-3">
+          <div data-md="skip" className="mt-12 flex flex-col items-center gap-4">
+            <div data-md="skip" className="flex flex-wrap justify-center gap-3">
               <Link
                 href={demoHref}
                 className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"

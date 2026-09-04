@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -130,6 +132,8 @@ const accentBar: Record<string, string> = {
 };
 
 export default function Page() {
+  const dates = postDates("self-service-analytics-lens-ai");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Self-Service Analytics With LENS AI" }]} />
@@ -138,8 +142,7 @@ export default function Page() {
           headline: "What It Takes to Make Self-Service Analytics Actually Work",
           description:
             "Complete cookieless data plus a semantic MCP lets anyone query their own analytics in plain language, without an analyst in the loop.",
-          datePublished: "2026-07-05",
-          dateModified: "2026-07-06",
+          ...dates,
           url: "/blog/self-service-analytics-lens-ai",
           category: "AI & Analytics",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -159,11 +162,12 @@ export default function Page() {
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[46ch]">
               Pointing an LLM at your data is the easy part. The hard part is making its answers trustworthy — and it&apos;s the part Sealmetrics built first, then shipped as LENS AI.
             </p>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">July 5, 2026</time>
-              <span>10 min read</span>
-              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="10 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

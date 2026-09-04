@@ -33,7 +33,7 @@ export function OpenIndexSignal() {
           <p className="sig-open-lede">
             How Sealmetrics measures, complies and operates — documented in public, with the limits left in.
           </p>
-          <div className="sig-open-actions">
+          <div data-md="skip" className="sig-open-actions">
             <Link className="sig-open-button sig-open-button-acid" href={`/open/${publishedChapters[0].slug}/`}>
               Start with chapter 01 <Arrow />
             </Link>
@@ -109,7 +109,7 @@ export function OpenIndexSignal() {
         </div>
         <div className="sig-open-protocol-copy">
           <p>If a statement is inaccurate, incomplete or outdated, we correct it. The useful part of transparency is not the promise. It is the ability to point to the exact sentence.</p>
-          <div className="sig-open-actions">
+          <div data-md="skip" className="sig-open-actions">
             <a className="sig-open-button sig-open-button-acid" href="mailto:open@sealmetrics.com?subject=Open%20%E2%80%94%20feedback">Challenge the record <Arrow /></a>
             <Link className="sig-open-text-link sig-open-text-link-light" href="/changelog/">See the changelog →</Link>
           </div>

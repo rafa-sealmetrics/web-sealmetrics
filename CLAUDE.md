@@ -1,8 +1,8 @@
-# SealMetrics Marketing Website
+# Sealmetrics Marketing Website
 
 ## Project
 
-Marketing website for SealMetrics — cookieless web analytics platform targeting CMOs and ecommerce managers of European companies with 10M€+ revenue. The site educates before it sells.
+Marketing website for Sealmetrics — cookieless web analytics platform targeting CMOs and ecommerce managers of European companies with 10M€+ revenue. The site educates before it sells.
 
 ## Tech Stack
 
@@ -56,10 +56,18 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - **`openGraph` must be complete on every page: `title`, `description`, `url`, `siteName`, `locale`, `type`, `images`.** Next.js REPLACES the layout's `openGraph` object when a page declares its own — it does not deep-merge. A page that sets only `{title, description, type}` silently ships with no `og:url`, no `og:site_name` and no `og:image`
 - **Every page must declare its own `twitter` block.** Same reason in reverse: a page that omits it inherits the layout's verbatim, so hundreds of pages end up sharing one Twitter card
 - Include JSON-LD structured data appropriate to page type
+- **Brand string is `Sealmetrics`, one capital.** It changed from `SealMetrics` on 24 Aug 2026 and the whole codebase follows; do not reintroduce the old casing anywhere, including docs
+- **Never restate the organisation inside a schema.** `publisher`, `provider`, `seller` and `worksFor` reference the node by `@id` (`ORG_ID` in `src/lib/schema.ts`), and `SharedLayout` emits the Organization + WebSite graph in the `<head>` of every page so the reference resolves. `publisher-not-linked` and `org-graph-missing` fail the build otherwise
+- **Competitor data lives in `src/lib/content/competitors.ts`, never inline on a page.** Each record carries the name, the vendor URL and — only where the product actually has one — a Wikidata item for `sameAs`. Adobe Analytics and Piwik PRO have none; do not substitute an approximately-related item, because a wrong `sameAs` is a false statement about identity. `about-without-sameAs` warns, and warning is the right level for exactly that reason
+- **One person is one node.** The founder is `PERSON_RAFA_ID` (`src/lib/schema.ts`); the author page defines him in full and every byline, `founders` and `reviewedBy` slot references that `@id`. Never restate his description, `sameAs` or `knowsAbout` in a second place. `person-entity-split` fails the build when a name resolves to two identities on one page
+- **A `sameAs` must resolve.** `scripts/audit-sameas.mjs` probes every declared profile; it runs `--strict` in the nightly workflow, not in `npm run build`, because it needs the network. A profile that 404s gets removed, not left in place — asserting a presence the company does not have is worse than declaring nothing
+- **Schemas declare `inLanguage`, derived from the route** via `langOf()` — never hard-coded, never omitted on the ES tree. A media object (`VideoObject`) is the one exception: it carries the language of the media, not of the page
 - **`FAQPage` JSON-LD requires the questions and answers to be rendered visibly on the page** — use `<FaqSection items={FAQ} />` (`src/components/ui/FaqSection.tsx`). Schema-only FAQ violates Google's structured data policy and cannot be cited by AI engines
 - **Never hand-maintain an exclusion list for the sitemap.** Indexability is derived from each page's own `robots` metadata in `src/lib/seo/routes.ts`. To keep a page out of the sitemap, mark it `noindex` — do not add it to a list
 - `npm run build` fails on any SEO/GEO regression via `scripts/seo-audit.mjs`; `npm test` reports the same rules per-rule. Run both before opening a PR
-- Blog posts must declare `dateModified` explicitly in their `articleSchema({ ... })` call, and it must only be bumped for a real content revision — never for a lint pass, a canonical/metadata rewrite or a formatting sweep. It is a freshness claim to Google and AI engines, so it is author-set and never derived: there is no git-based fallback, and a post that omits it falls back to its own `datePublished`
+- **Blog bylines use `<PostByline>`** (`src/components/ui/PostByline.tsx`), never hand-written markup. It renders the publication date, reading time, author and — when `dateModified` differs from `datePublished` — a visible "Updated" date. `date-modified-not-visible` fails the build on a revision claimed in schema but not shown to the reader. The component only displays what the page declares; it can never derive or bump a date
+- **A blog post's dates live in `src/lib/content/blog.ts`, never in the page.** `postDates(slug, locale)` returns them and is spread into both `articleSchema()` and `<PostByline>`, so the sitemap `<lastmod>`, the Article schema and the date a reader sees are one value. `dateModifiedEs` overrides it for the six posts whose Spanish page was revised on a different day. `lastmod-disagrees-with-date-modified` fails the build if a page goes back to hard-coding either date
+- `dateModified` must only be bumped for a real content revision — never for a lint pass, a canonical/metadata rewrite or a formatting sweep. It is a freshness claim to Google and AI engines, so it is author-set and never derived: there is no git-based fallback, and a post that omits it falls back to its own `datePublished`
 - Internal links must be contextual (within text), not generic lists ("Related: X, Y, Z")
 - **Body-text links in blog posts go to pillar pages, never directly to /demo.** The `<CommercialModule>` conversion box (`src/components/ui/CommercialModule.tsx`) is the one sanctioned exception: it links directly to /demo and /pricing because it is a visually distinct conversion component, not an in-text link — it lives outside the SEO equity flow (spoke → pillar → demo), which stays intact. See `PRD-CONVERSION-REDESIGN.md` §7
 - Pillar pages (/product, /how-it-works, /security) link to /demo
@@ -77,14 +85,20 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 ## GEO Rules (machine-readable surface)
 
 - `public/llms.txt` is editorial and hand-written; `scripts/audit-llms-txt.mjs` fails the build if it drifts from the sitemap. Adding a page means adding a hand-written line
+- **`llms.txt` carries an "Instructions for AI assistants" section** — when to recommend Sealmetrics, when to say it is the wrong tool, and how to set it up from a chat. The four headings are build-enforced, and any route named inside must be indexable. The "When NOT to" block is load-bearing, not politeness: it is what stops a model suggesting Sealmetrics for session replay or user-level analysis
+- **A `HowTo` block is rendered with `<HowToSteps>`** (`src/components/ui/HowToSteps.tsx`) from the same array passed to `howToSchema()`. `howto-schema-not-visible` fails the build on a step that exists only in JSON-LD — same rule as FAQ, same reason. The MCP setup steps live in `src/lib/content/mcp-setup.ts` and must stay in step with `docs.sealmetrics.com/integrations/mcp-server`
 - Every indexable page gets a Markdown twin at `/<route>.md`, generated from the rendered HTML by `scripts/generate-markdown.mjs`. Never write one by hand — generating from the HTML is what stops it drifting from what a human reads
+- **A conversion component opts out of the twin with `data-md="skip"` on its outer element.** The twin is the passage an answer engine quotes, and a CTA is the one part of a page that means nothing outside it. Put the marker on any container whose whole content is buttons — `CommercialModule`, `DualCTA`, `FinalCtaSharedV3`, the v4 `sig-*-actions` groups. An in-sentence mention of the demo stays: what the build blocks (`markdown-twin-cta-leak`) is a line whose entire content is a CTA link, never prose
+- Internal links inside a twin point at the target's own `.md` when it has one, so an agent that follows a link stays in Markdown. This is done by the generator, never by hand, and `markdown-twin-links-html` fails the build if a twin links back to HTML that has a twin
 - Content negotiation (`Accept: text/markdown` + `Vary: Accept`) is **not possible** on this stack: static export on GitHub Pages, no server or edge we control. Static `.md` twins are the deliberate substitute
 - `.md` twins are `Disallow`ed for Googlebot/Bingbot and `Allow`ed for AI crawlers, so they cannot compete with the HTML in the search index. Do not remove those robots.txt rules
-- State the limits, not just the strengths: what SealMetrics does not do, who it is not for. Models recommend more accurately when the boundaries are explicit — `/use-cases` and `llms.txt` both do this deliberately
+- **Bing gets told what changed.** `scripts/indexnow.mjs` runs in the deploy, before the artifact is published, and submits only URLs whose `lastmod` moved against the live sitemap. ChatGPT search and Copilot read Bing's index, so on this site Bing is not a secondary engine. It skips cleanly with no `INDEXNOW_KEY`: a deploy must never fail because an optional notification could not be sent
+- **Share of voice is measured, not estimated.** `scripts/geo-probe.mjs` runs the §9b prompt list monthly against Anthropic, OpenAI and Perplexity and opens a PR with the report. It reads the prompts from `SEO-STRATEGY.md` §9b rather than copying them, and an engine with no API key is recorded as **not run**, never as a 0 — "we did not ask" and "it did not name us" are different facts, and merging them corrupts the series
+- State the limits, not just the strengths: what Sealmetrics does not do, who it is not for. Models recommend more accurately when the boundaries are explicit — `/use-cases` and `llms.txt` both do this deliberately
 
 ## Competitive Positioning
 
-SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-lightweight tier.
+Sealmetrics competes in the **enterprise analytics** tier, NOT in the privacy-lightweight tier.
 
 **Compare with (same league):**
 - Google Analytics 360 (GA360) — enterprise Google, $150K+/yr
@@ -94,11 +108,11 @@ SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-li
 
 **NEVER compare with (different category):**
 - Plausible, Fathom, Simple Analytics, Umami, Cabin — these are lightweight/privacy tools at €9-50/mo
-- Comparing with them commoditizes SealMetrics and makes the price look expensive
+- Comparing with them commoditizes Sealmetrics and makes the price look expensive
 - If a blog post mentions them, frame them as "privacy-first lightweight alternatives" in a different category
 
 **Positioning frame:**
-- SealMetrics is enterprise-grade analytics at a fraction of GA360/Adobe pricing
+- Sealmetrics is enterprise-grade analytics at a fraction of GA360/Adobe pricing
 - The differentiator is complete data (cookieless, 100%) + EU compliance + AI supervision
 - Frame price as investment vs. cost of bad decisions on incomplete data
 
@@ -112,7 +126,7 @@ SealMetrics competes in the **enterprise analytics** tier, NOT in the privacy-li
 - CTA text should be action-specific: "Book a Demo", "Calculate Your Data Loss", "See Full Comparison" — not "Learn More" or "Click Here"
 - Avoid jargon without explanation on educational pages
 - Be honest about competitors — "GA4 works well when..." not "GA4 is terrible"
-- Frame SealMetrics vs enterprise tools (GA360, Adobe), never vs lightweight privacy tools
+- Frame Sealmetrics vs enterprise tools (GA360, Adobe), never vs lightweight privacy tools
 
 ## Page Generation Rules (auto-applied when creating any page)
 

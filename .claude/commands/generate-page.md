@@ -1,6 +1,6 @@
 # Generate Page
 
-Generate a complete new page for the SealMetrics website from a topic or brief.
+Generate a complete new page for the Sealmetrics website from a topic or brief.
 
 ## Steps
 
@@ -43,21 +43,35 @@ src/app/[route]/page.tsx
 - Section separators: `border-t border-warm-100`
 
 ### Design system compliance
-- Source Serif 4 for headlines (weight 400)
-- Inter for body
-- JetBrains Mono for data/numbers
-- Border radius: 4px max
-- Font weight: 600 max
-- Dashes (—) for lists, never bullets
-- No emojis, no gradients, no decorative icons
-- Green (`green-muted`) for positive, red (`red-alert`) for negative
 
-5. **Verify build:**
+**Read the "Design System Rules (v4 — Signal)" section of `CLAUDE.md` and follow
+it.** Do not work from a copy: this file used to restate the rules and went
+stale, so it was still prescribing the retired v3 system — Source Serif 4,
+Inter, 4px radius, weight 600 — long after v4 landed. Under v4 the radius is
+**0 everywhere**, headlines are Onest at weight 790, emphasis is outlined text
+rather than italic, and acid `#CBFF3D` is the accent. A rounded corner is the
+tell that a page has not been migrated.
+
+`scripts/audit-signal-design.mjs` checks the built output for the Signal
+marker, one H1 and square geometry.
+
+5. **Verify:**
 ```bash
-cd /Users/rafa/code/web-sealmetrics && npx next build 2>&1 | tail -10
+npm run build && npm test
 ```
 
-6. **Update sitemap** if `public/sitemap.xml` exists
+`npm run build` runs the whole postbuild chain — the Markdown twins, the
+llms.txt drift gate, the CSP gate and `scripts/seo-audit.mjs`. **`npx next
+build` alone skips all of it** and will let a regression through, which is what
+this file used to tell you to run.
+
+`npm run audit:contrast` is a CI gate that is NOT part of the build. Run it
+too if you touched markup or colour.
+
+6. **Add a line to `public/llms.txt`** for the new page. It is hand-written and
+   `audit-llms-txt` fails the build if it drifts from the sitemap. The sitemap
+   itself is derived from each page's `robots` metadata — there is no
+   `public/sitemap.xml` to edit, and no exclusion list to maintain.
 
 ## Input
 $ARGUMENTS — Required: topic or page description (e.g., "comparison vs matomo", "blog post about GA4 data loss", "glossary term cookieless analytics", "landing page for CTOs")

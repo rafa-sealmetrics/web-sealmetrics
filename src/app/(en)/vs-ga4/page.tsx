@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
@@ -64,7 +65,7 @@ export default function VsGA4Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/vs-ga4" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "Sealmetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: Sealmetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: { name: "Google Analytics 4", url: "https://marketingplatform.google.com/about/analytics/" }, datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" }, criteria: ["EU traffic captured (with consent banner vs without)", "Consent banner dependency", "Cookie-based vs cookieless architecture", "Data sampling thresholds in standard reports", "Last-click attribution on observed events", "Data residency and Schrems II posture", "Pricing for enterprise eCommerce", "What an AI agent can read (full dataset vs post-consent subset)", "Time to first decision-ready report"] })} />
+      <JsonLd data={comparisonPageSchema({ name: "Sealmetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: Sealmetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: competitor("google-analytics-4"), datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" }, criteria: ["EU traffic captured (with consent banner vs without)", "Consent banner dependency", "Cookie-based vs cookieless architecture", "Data sampling thresholds in standard reports", "Last-click attribution on observed events", "Data residency and Schrems II posture", "Pricing for enterprise eCommerce", "What an AI agent can read (full dataset vs post-consent subset)", "Time to first decision-ready report"] })} />
       <JsonLd data={quotationSchema({
         text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
         spokenBy: "Toni Andújar",

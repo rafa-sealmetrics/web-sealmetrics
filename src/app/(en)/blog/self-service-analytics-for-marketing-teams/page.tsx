@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -145,6 +147,8 @@ const FAQ = [
 ];
 
 export default function Page() {
+  const dates = postDates("self-service-analytics-for-marketing-teams");
+
   return (
     <>
       <Breadcrumbs
@@ -155,8 +159,7 @@ export default function Page() {
           headline: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
           description:
             "Complete cookieless data, 47 named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
-          datePublished: "2026-08-06",
-          dateModified: "2026-08-06",
+          ...dates,
           url: URL,
           category: "AI & Analytics",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -182,19 +185,12 @@ export default function Page() {
             <p className="text-[1.2rem] leading-[1.6] text-text-secondary mb-6 max-w-[46ch]">
               The reporting queue disappears. The definition of &ldquo;revenue&rdquo; does not.
             </p>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">August 6, 2026</time>
-              <span>8 min read</span>
-              <span>
-                By{" "}
-                <Link
-                  href="/authors/rafa-jimenez"
-                  className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
-                >
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="8 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

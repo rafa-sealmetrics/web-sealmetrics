@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -57,6 +59,8 @@ const FAQ = [
 ];
 
 export default function Page() {
+  const dates = postDates("data-breach-france-travail-fined-5-million");
+
   return (
     <>
       <Breadcrumbs
@@ -69,8 +73,7 @@ export default function Page() {
         data={articleSchema({
           headline: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
           description: "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
-          datePublished: "2026-08-27",
-          dateModified: "2026-08-27",
+          ...dates,
           url: URL,
           category: "Security & Privacy",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -93,20 +96,12 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.15] mb-5">
               Data breach: France Travail fined €5 million – Lessons in Security and Privacy
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">August 27, 2026</time>
-              <span>8 min read</span>
-              <span
-                >
-                  By{" "}
-                  <Link
-                    href="/authors/rafa-jimenez"
-                    className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
-                  >
-                    Rafa Jiménez
-                  </Link>
-              </span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="8 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">

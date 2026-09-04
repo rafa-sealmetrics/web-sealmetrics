@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 import {
-  organizationSchema,
   softwareApplicationSchema,
   statisticClaimSchema,
   quotationSchema,
@@ -57,8 +56,7 @@ export const metadata: Metadata = {
 export default function HomeEs() {
   return (
     <>
-      <JsonLd data={organizationSchema()} />
-      <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={softwareApplicationSchema({ locale: "es" })} />
       <JsonLd data={speakableWebPageSchema({ url: "/es", name: "Sealmetrics — datos completos para eCommerce" })} />
       <JsonLd data={statisticClaimSchema({
         text: "El 40% del tráfico entrante no tenía atribución de source/medium en el stack de medición anterior.",

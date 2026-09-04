@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -40,6 +42,8 @@ const linkCls =
   "text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors";
 
 export default function Page() {
+  const dates = postDates("is-matomo-gdpr-compliant", "es");
+
   return (
     <>
       <Breadcrumbs
@@ -53,8 +57,7 @@ export default function Page() {
           headline: "¿Matomo cumple el RGPD?",
           description:
             "Matomo puede operar sin banner de cookies bajo los criterios de exención de la CNIL, con las cookies todavía activadas. Qué exigen las seis condiciones, qué cuesta esa configuración en medición y por qué la exención no viaja a Alemania.",
-          datePublished: "2026-08-26",
-          dateModified: "2026-08-26",
+          ...dates,
           url: "/es/blog/is-matomo-gdpr-compliant",
           category: "Regulación",
           author: {
@@ -83,16 +86,13 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               ¿Matomo cumple el RGPD?
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">26 de agosto de 2026</time>
-              <span>9 min de lectura</span>
-              <span>
-                Por{" "}
-                <Link href="/es/authors/rafa-jimenez" className={linkCls}>
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="9 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <QuickAnswer>

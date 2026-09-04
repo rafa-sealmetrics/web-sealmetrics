@@ -265,6 +265,206 @@ for (const p of pages) {
   }
 }
 
+// 10b. The entity graph has to resolve inside the document that references it.
+//      Schemas name the publisher by `@id` rather than restating the company,
+//      which is only meaningful if the node with that `@id` ships on the same
+//      page — otherwise the reference dangles and an engine sees a publisher
+//      it cannot identify. Both halves are checked, because either one alone
+//      is worse than the inline object we replaced.
+const ORG_NODE_ID = `${SITE}/#organization`;
+for (const p of pages) {
+  const ids = new Set();
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) if (node && node["@id"]) ids.add(node["@id"]);
+  }
+  // Only the indexable surface. The paid landing pages are noindex, have their
+  // own shell and are not part of what an engine reads or cites.
+  if (!/noindex/i.test(p.robots) && !ids.has(ORG_NODE_ID)) {
+    fail("org-graph-missing", `${p.route} has no ${ORG_NODE_ID} node to resolve references against`);
+  }
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      for (const slot of ["publisher", "provider", "seller"]) {
+        const v = node?.[slot];
+        if (!v || typeof v !== "object" || Array.isArray(v)) continue;
+        if (!v["@id"]) {
+          fail(
+            "publisher-not-linked",
+            `${p.route}: ${node["@type"]}.${slot} restates the organisation inline instead of referencing ${ORG_NODE_ID}`
+          );
+        } else if (!ids.has(v["@id"])) {
+          fail("publisher-not-linked", `${p.route}: ${slot} points at ${v["@id"]}, which is not on the page`);
+        }
+      }
+    }
+  }
+}
+
+// 10b-bis. One person, one node. A Person named in two places with two URLs
+//          and no `@id` is two people as far as an engine is concerned — which
+//          is what the founder was: "Rafa Jimenez" at /about in the founders
+//          slot, "Rafa Jiménez" at /authors/rafa-jimenez on every article.
+//          Names are compared with accents stripped, because that difference
+//          alone was one of the two spellings in use.
+const normalizeName = (n) =>
+  String(n).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+for (const p of pages) {
+  const byName = new Map();
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    const collect = (node) => {
+      if (!node || typeof node !== "object") return;
+      if (Array.isArray(node)) return node.forEach(collect);
+      if (node["@type"] === "Person" && node.name) {
+        const key = normalizeName(node.name);
+        if (!byName.has(key)) byName.set(key, []);
+        byName.get(key).push(node);
+      }
+      Object.values(node).forEach(collect);
+    };
+    nodes.forEach(collect);
+  }
+  for (const [name, nodes] of byName) {
+    if (nodes.length < 2) continue;
+    const urls = new Set(nodes.map((n) => n["@id"] ?? n.url).filter(Boolean));
+    if (urls.size > 1) {
+      fail(
+        "person-entity-split",
+        `${p.route}: "${name}" appears as ${urls.size} identities (${[...urls].join(", ")}) — give the node an @id`
+      );
+    }
+  }
+}
+
+// 10b-ter. An entity a page declares itself to be *about* should say which
+//           entity it means. "Matomo" is also a commune in Mali; `sameAs` to a
+//           Wikidata item is what settles it. Warned, not failed: Adobe
+//           Analytics and Piwik PRO genuinely have no Wikidata item, and
+//           inventing an approximately-related one would be a false statement
+//           about identity — worse than the silence this reports.
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      for (const about of [node?.about].flat()) {
+        if (!about || typeof about !== "object" || about["@id"]) continue;
+        if (about.url?.startsWith(SITE)) continue; // ourselves
+        if (!about.sameAs) {
+          warn("about-without-sameAs", `${p.route}: about "${about.name}" has no sameAs to identify it`);
+        }
+      }
+    }
+  }
+}
+
+// 10c. A schema's declared language must agree with the document's. The ES tree
+//      used to assert nothing at all while serving Spanish copy.
+for (const p of pages) {
+  const docLang = (p.lang || "").slice(0, 2);
+  if (!docLang) continue;
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      // A media object carries the language of the media, not of the page: a
+      // Spanish video legitimately sits on an English page.
+      if (node?.["@type"] === "VideoObject" || node?.["@type"] === "AudioObject") continue;
+      const declared = node?.inLanguage;
+      if (typeof declared !== "string") continue; // arrays: site-wide WebSite node
+      if (declared.slice(0, 2) !== docLang) {
+        fail(
+          "schema-inlanguage-mismatch",
+          `${p.route}: ${node["@type"]} declares inLanguage "${declared}" on a "${docLang}" page`
+        );
+      }
+    }
+  }
+}
+
+// 10d. A revision claimed in schema must be visible on the page.
+//      `dateModified` is a freshness claim made to Google and to answer
+//      engines. Asserting it only inside a script tag makes the page look
+//      stale to the reader while looking fresh to the crawler — the weaker
+//      half of the signal, and a discrepancy to anyone who compares the two.
+//      `<PostByline>` renders it; this rule is what stops it being dropped.
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      if (node?.["@type"] !== "Article") continue;
+      const { datePublished, dateModified } = node;
+      if (!dateModified || dateModified === datePublished) continue;
+      const day = String(dateModified).slice(0, 10);
+      if (!p.html.includes(`dateTime="${day}"`) && !p.html.includes(`datetime="${day}"`)) {
+        fail(
+          "date-modified-not-visible",
+          `${p.route} claims dateModified ${day} in schema but never renders it`
+        );
+      }
+    }
+  }
+}
+
+// 10e. For a blog post, the sitemap's <lastmod> and the Article's
+//      dateModified must be the same date.
+//
+//      They are now the same value by construction: both come from
+//      `postDates()` reading src/lib/content/blog.ts. This rule is what keeps
+//      it that way. Before the dates moved into the registry, the revision
+//      lived inside each page's articleSchema() call where the sitemap could
+//      not see it, so the sitemap reported the PUBLICATION date and
+//      under-reported freshness on 19 revised posts. A page that goes back to
+//      hard-coding either date will disagree here.
+const lastmodByRoute = new Map(
+  all(readFileSync(smPath, "utf8"), /<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<lastmod>([^<]+)<\/lastmod>/g)
+    .map((m) => [m[1].replace(SITE, ""), m[2].slice(0, 10)])
+);
+for (const p of pages) {
+  if (!/^(\/es)?\/blog\/[^/]+\/$/.test(p.route)) continue;
+  const lastmod = lastmodByRoute.get(p.route);
+  if (!lastmod) continue; // noindex posts are legitimately absent
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      if (node?.["@type"] !== "Article" || !node.dateModified) continue;
+      const declared = String(node.dateModified).slice(0, 10);
+      if (declared !== lastmod) {
+        fail(
+          "lastmod-disagrees-with-date-modified",
+          `${p.route}: sitemap says ${lastmod}, the Article says ${declared} — both must come from postDates()`
+        );
+      }
+    }
+  }
+}
+
+// 10f. HowTo steps must be on the page, for the same reason FAQ answers must:
+//      a procedure an engine can quote but a reader cannot follow is not a
+//      procedure. `HowToSteps` renders from the same array the schema is built
+//      from, so this rule only fires if someone breaks that link.
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      if (node?.["@type"] !== "HowTo") continue;
+      for (const step of node.step ?? []) {
+        for (const field of ["name", "text"]) {
+          const value = step?.[field];
+          if (!value) continue;
+          const probe = decode(value).replace(/\s+/g, " ").slice(0, 40);
+          if (!p.visibleText.includes(probe)) {
+            fail(
+              "howto-schema-not-visible",
+              `${p.route}: HowToStep ${field} "${probe}…" is in JSON-LD but not in the page text`
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
 // 11. FAQPage schema must correspond to questions visible on the page.
 //     Google's structured data policy requires it, and an AI engine cannot
 //     cite a passage that only exists inside a script tag.
@@ -310,6 +510,23 @@ for (const p of pages) {
 }
 
 // 15. Every indexable page has a Markdown twin, and no noindex page does.
+//     The twin must also be usable on its own terms: an agent that follows a
+//     link must stay in Markdown, and the passage it quotes must not carry the
+//     one part of the page that means nothing outside it — the call to action.
+const routesWithTwin = new Set(
+  pages
+    .filter(
+      (p) =>
+        !/noindex/i.test(p.robots) &&
+        existsSync(
+          p.route === "/"
+            ? path.join(OUT, "index.md")
+            : path.join(OUT, p.route.replace(/^\/|\/$/g, "") + ".md")
+        )
+    )
+    .map((p) => p.route)
+);
+
 for (const p of pages) {
   const mdPath =
     p.route === "/"
@@ -336,6 +553,57 @@ for (const p of pages) {
       fail("markdown-twin-has-markup", `${p.route} still contains HTML tags outside code blocks`);
     }
     if (!p.markdownLink) fail("markdown-twin-not-linked", `${p.route} has a twin but no rel=alternate link`);
+
+    // A link out of the Markdown surface and back into HTML defeats the twin
+    // on the first click. Only targets that have no twin keep an HTML URL.
+    for (const [, href] of prose.matchAll(
+      /\]\((https:\/\/sealmetrics\.com\/[^)\s]*)\)/g
+    )) {
+      const path_ = href.replace("https://sealmetrics.com", "");
+      if (path_.includes("#") || path_.includes("?")) continue;
+      const target = path_.endsWith("/") ? path_ : `${path_}/`;
+      if (routesWithTwin.has(target)) {
+        fail("markdown-twin-links-html", `${p.route} → ${href} (twin exists)`);
+      }
+    }
+
+    // Two links with nothing between them is a button pair or an unlisted
+    // rail, not prose — either way it reads as one run-on line.
+    if (/\]\([^)]*\)\[/.test(prose)) {
+      fail("markdown-twin-cta-leak", `${p.route} contains an unseparated link pair`);
+    }
+
+    // The conversion box is the one part of a page that means nothing outside
+    // it, so it must never reach the passage an engine quotes. What is banned
+    // is the *button*: a line whose whole content is a CTA link. An in-sentence
+    // mention ("get the dashboard with the demo account or book a demo") is
+    // ordinary prose and stays — stripping those would damage the writing to
+    // satisfy a lint rule.
+    const CTA_BUTTON =
+      /^(?:[-*]\s+)?\[[^\]]*\b(?:book a demo|book a pricing review|book a measurement review|book an enterprise review|start 14-day trial|reserva una demo|reserva una revisión|reserva una revisión enterprise|empieza la prueba)\b[^\]]*\]\([^)]*\)\s*$/im;
+    if (CTA_BUTTON.test(prose)) {
+      fail(
+        "markdown-twin-cta-leak",
+        `${p.route} still carries a conversion CTA — the component needs data-md="skip"`
+      );
+    }
+
+    // Adjacent bold runs mean sibling chips collapsed into one another.
+    if (/\*\*\*\*/.test(prose)) {
+      fail("markdown-twin-glued-inline", `${p.route} has bold runs with no separator`);
+    }
+
+    // The answer-first block is the passage engines quote. Warned, not failed:
+    // the pages missing one need an editorial block written, which is a content
+    // task and not something a build gate can conjure. Tracked here so it stays
+    // visible instead of being rediscovered next quarter.
+    const critical = /^llm_priority: "critical"$/m.test(md);
+    if (critical && !/^summary: /m.test(md)) {
+      warn(
+        "markdown-twin-without-summary",
+        `${p.route} is llm_priority critical but has no answer-first block`
+      );
+    }
   }
 }
 
@@ -441,7 +709,11 @@ for (const p of indexable) {
   if (!p.types.includes("BreadcrumbList") && p.route !== "/" && p.route !== "/es/") {
     warn("no-breadcrumb-schema", p.route);
   }
-  if (p.jsonld.length === 0) warn("no-structured-data", p.route);
+  // The Organization + WebSite graph now ships in every page's <head>, so
+  // "has some JSON-LD" no longer says anything. What matters is whether the
+  // page describes *itself* — an Article, a WebPage, a DefinedTerm, a Product.
+  const SITE_WIDE = new Set(["Organization", "WebSite"]);
+  if (p.types.every((t) => SITE_WIDE.has(t))) warn("no-structured-data", p.route);
 }
 
 /* ---------------------------------------------------------------- report */

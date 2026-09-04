@@ -140,7 +140,7 @@ export function SecuritySignal({ locale }: { locale: Locale }) {
           <p className="sig-security-eyebrow"><span>{t.eyebrow}</span></p>
           <h1>{t.hero}</h1>
           <p className="sig-security-hero-body">{t.heroBody}</p>
-          <div className="sig-security-actions"><a className="sig-security-button sig-security-button-acid" href="#controls">{t.heroPrimary}<Arrow /></a><Link className="sig-security-text-link" href={`${prefix}/dpa/`}>{t.heroSecondary} <Arrow /></Link></div>
+          <div data-md="skip" className="sig-security-actions"><a className="sig-security-button sig-security-button-acid" href="#controls">{t.heroPrimary}<Arrow /></a><Link className="sig-security-text-link" href={`${prefix}/dpa/`}>{t.heroSecondary} <Arrow /></Link></div>
           <p className="sig-security-micro">{t.heroMicro}</p>
         </div>
         <aside className="sig-security-boundary" aria-label={t.boundaryTitle}>
@@ -182,7 +182,7 @@ export function SecuritySignal({ locale }: { locale: Locale }) {
 
       <section className="sig-security-final">
         <p className="sig-security-tag">{t.finalTag}</p><h2>{t.finalTitle}</h2><p>{t.finalBody}</p>
-        <div className="sig-security-actions"><Link className="sig-security-button sig-security-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary}<Arrow /></Link><Link className="sig-security-text-link" href={`${prefix}/for/dpo/`}>{t.finalSecondary} <Arrow /></Link></div>
+        <div data-md="skip" className="sig-security-actions"><Link className="sig-security-button sig-security-button-dark" href={`${prefix}/demo/`}>{t.finalPrimary}<Arrow /></Link><Link className="sig-security-text-link" href={`${prefix}/for/dpo/`}>{t.finalSecondary} <Arrow /></Link></div>
       </section>
     </main>
   );

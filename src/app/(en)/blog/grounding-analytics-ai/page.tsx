@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -76,14 +78,15 @@ const FAQ = [
 ];
 
 export default function GroundingAnalyticsAiPage() {
+  const dates = postDates("grounding-analytics-ai");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "AI",
           author: {
@@ -139,19 +142,12 @@ export default function GroundingAnalyticsAiPage() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               Grounding: Why a Good Analytics AI Shouldn&apos;t &apos;Know&apos; Anything
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">July 24, 2026</time>
-              <span>6 min read</span>
-              <span>
-                By{" "}
-                <Link
-                  href="/authors/rafa-jimenez"
-                  className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
-                >
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="6 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">

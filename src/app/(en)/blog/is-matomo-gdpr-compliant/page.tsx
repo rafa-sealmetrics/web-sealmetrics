@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -41,6 +43,8 @@ const linkCls =
   "text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors";
 
 export default function Page() {
+  const dates = postDates("is-matomo-gdpr-compliant");
+
   return (
     <>
       <Breadcrumbs
@@ -54,8 +58,7 @@ export default function Page() {
           headline: "Is Matomo GDPR Compliant?",
           description:
             "Matomo can be run without a cookie banner under the CNIL exemption criteria, with cookies still enabled. What the six conditions require, what the configuration costs in measurement, and why the exemption does not travel to Germany.",
-          datePublished: "2026-08-26",
-          dateModified: "2026-08-26",
+          ...dates,
           url: "/blog/is-matomo-gdpr-compliant",
           category: "Regulation",
           author: {
@@ -84,16 +87,12 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               Is Matomo GDPR Compliant?
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">August 26, 2026</time>
-              <span>9 min read</span>
-              <span>
-                By{" "}
-                <Link href="/authors/rafa-jimenez" className={linkCls}>
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              {...dates}
+              readTime="9 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <QuickAnswer>
