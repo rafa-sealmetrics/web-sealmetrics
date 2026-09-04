@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# Keeps `.seo-lastmod.json` in step with the commit that changes page text.
+#
+# WHY THIS EXISTS
+# The sitemap's <lastmod> is derived from a hash of each page's rendered text
+# (scripts/stamp-sitemap-lastmod.mjs) and the result is COMMITTED state, not
+# build output. Change a page, forget the manifest, and the build fails in CI
+# with a message that says exactly what to do — which did not stop three
+# separate agents from hitting it on 4 September 2026, the author of this hook
+# included. The message was never the problem: the file is committed state and
+# does not look like it.
+#
+# WHAT IT DOES
+#   1. If the manifest is already modified, stage it. It is derived from the
+#      very change being committed, so it belongs in the same commit.
+#   2. If page sources are staged and the manifest is neither staged nor
+#      modified, say so — you probably have not rebuilt yet.
+#
+# WHAT IT DOES NOT DO
+# It never blocks a commit and it never runs a build. A build takes minutes,
+# and plenty of commits (a comment, a type, a script) change no rendered text
+# at all — the hook cannot tell which, and guessing wrong would either waste
+# minutes or block honest work. `npm run build` in CI remains the real gate.
+#
+# Installed by the `prepare` script in package.json, which points
+# core.hooksPath at this directory. Note that this overrides .git/hooks
+# entirely: put any other local hook in here too.
+#
+# To skip: git commit --no-verify
+
+MANIFEST=".seo-lastmod.json"
+
+# Nothing staged (e.g. `git commit --amend --no-edit` with no changes): stay out.
+git diff --cached --quiet --exit-code 2>/dev/null && exit 0
+
+staged_manifest=$(git diff --cached --name-only -- "$MANIFEST")
+dirty_manifest=$(git diff --name-only -- "$MANIFEST")
+
+if [ -n "$dirty_manifest" ] && [ -z "$staged_manifest" ]; then
+  git add "$MANIFEST"
+  echo "[pre-commit] staged $MANIFEST — it is derived from this change, not build noise."
+  exit 0
+fi
+
+[ -n "$staged_manifest" ] && exit 0
+
+# Manifest untouched. Did this commit change anything that renders?
+pages=$(git diff --cached --name-only -- 'src/app/*' 'src/components/*' 'src/lib/content/*' | head -1)
+if [ -n "$pages" ]; then
+  echo "[pre-commit] page sources are staged but $MANIFEST is unchanged."
+  echo "             If this commit changes any rendered text, run \`npm run build\`"
+  echo "             and commit the manifest — the build gate fails on it otherwise."
+  echo "             If it changes no visible text, nothing to do."
+fi
+
+exit 0
