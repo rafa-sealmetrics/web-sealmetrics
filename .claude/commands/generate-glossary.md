@@ -37,7 +37,7 @@ src/app/glossary/[term-slug]/page.tsx
 
 4. "Why it matters for analytics" (H2)
    - Connect the concept to data quality / analytics accuracy
-   - Use specific SealMetrics data points where relevant
+   - Use specific Sealmetrics data points where relevant
    - Link to relevant pillar page (contextual, inline)
 
 5. "Related terms" sidebar or footer
@@ -46,7 +46,7 @@ src/app/glossary/[term-slug]/page.tsx
 
 6. Mini CTA
    - Not aggressive — subtle link to /how-it-works or /product
-   - "See how SealMetrics handles [concept] →"
+   - "See how Sealmetrics handles [concept] →"
 ```
 
 ### Interlinking rules (strict)
@@ -58,26 +58,35 @@ src/app/glossary/[term-slug]/page.tsx
 ### Copy rules
 - Definition must be self-contained (LLM-citable without additional context)
 - No jargon in the definition — explain in plain language
-- Use "SealMetrics" by name when referencing the product
+- Use "Sealmetrics" by name when referencing the product
 - Keep total length short: 400-600 words
 - Authoritative, encyclopedic tone
 
-4. **Add JSON-LD:** `DefinedTerm` schema:
-```json
-{
-  "@type": "DefinedTerm",
-  "name": "[Term]",
-  "description": "[First paragraph definition]",
-  "inDefinedTermSet": {
-    "@type": "DefinedTermSet",
-    "name": "SealMetrics Analytics Glossary",
-    "url": "https://sealmetrics.com/glossary"
-  }
-}
-```
+4. **Register the term, then use the helper.**
 
-5. **Verify build**
-6. **Update glossary index** if `src/app/glossary/page.tsx` exists
+   The term and its short definition live in `src/lib/content/glossary.ts`
+   (`glossary-es.ts` for Spanish). That one entry feeds the index page, the
+   `DefinedTermSet` and the term page — do not restate the definition anywhere.
+
+   ```tsx
+   import { definedTermSchema, breadcrumbSchema } from "@/lib/schema";
+
+   <JsonLd data={definedTermSchema({
+     name: "Data Sampling",
+     description: "...",
+     url: "/glossary/data-sampling",
+     related: [...],
+   })} />
+   ```
+
+   The helper emits a stable `@id` (`<url>#term`) so other schemas can cite the
+   definition, and sets `inLanguage` from the route. A hand-written
+   `DefinedTerm` has neither.
+
+5. **Verify:** `npm run build` (0 violations) and `npm test`.
+6. **Add the term to the index** in `src/lib/content/glossary.ts`; the
+   `/glossary` page renders every definition inline from it, so there is
+   nothing to edit on the page itself.
 
 ## Input
 $ARGUMENTS — Required: glossary term (e.g., "cookieless analytics", "first-party data", "server-side tracking", "safari itp", "data sampling")

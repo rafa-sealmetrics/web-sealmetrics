@@ -6,7 +6,7 @@ Build the site and analyze the output for performance, SEO, and accessibility is
 
 1. **Build the site:**
 ```bash
-cd /Users/rafa/code/web-sealmetrics && npx next build
+npm run build   # not `npx next build` — that skips the postbuild gates
 ```
 
 2. **Check build output for:**
