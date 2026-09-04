@@ -42,7 +42,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
     description:
       "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
     datePublished: "2026-08-30",
-    dateModified: "2026-08-30",
+    dateModified: "2026-09-04",
     url: "/blog/dpo-rejected-google-analytics-eu-alternatives",
     category: "Analytics Compliance",
     author: AUTHORS.rafa,
@@ -120,9 +120,10 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?
           </h1>
-          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It captures 100% of site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still delivers full-funnel attribution, tracking the complete path from first visit to closed revenue, so marketing and ecommerce teams retain campaign and channel-level reporting without gaps caused by consent rejection or cookie blocking. It is used by mid-market ecommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
+          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It captures 100% of site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still attributes revenue to the campaign and channel that earned it, using last-click on the complete dataset rather than a reconstructed per-person path, so marketing and ecommerce teams keep campaign and channel-level reporting without the gaps consent rejection and cookie blocking create. It is used by mid-market ecommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
           <PostByline
             datePublished="2026-08-30"
+            dateModified="2026-09-04"
             readTime="8 min read"
             authorName="Rafa Jiménez"
             authorUrl="/authors/rafa-jimenez"
@@ -200,7 +201,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
             For brands that need to scale without the consent headache, you need a tool built for the cookieless reality from day one.
           </p>
           <p>
-            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of your traffic. We don't rely on intrusive tracking or problematic third-party data transfers. Instead of making you choose between legal safety and data accuracy, we provide the source of truth for your revenue. We close the data delta that GA4 leaves behind, giving you full-funnel attribution and the numbers your CFO actually cares about, all while being GDPR-compliant by architecture.
+            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of your traffic. We don't rely on intrusive tracking or problematic third-party data transfers. Instead of making you choose between legal safety and data accuracy, we provide the source of truth for your revenue. We close the data delta that GA4 leaves behind, attributing revenue to the channel that earned it on 100% of the data, and giving you the numbers your CFO actually cares about, all while being GDPR-compliant by architecture.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -282,7 +283,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            This happens because traditional tools rely on tracking mechanisms that require explicit, informed, and unambiguous consent under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR (Regulation 2016/679)</a>. If the user doesn't opt-in, the tracking never triggers. This isn't just a technical glitch; it&rsquo;s a fundamental flaw in how performance marketing is measured in the EU. Because users who reject cookies often represent a specific demographic, your remaining data is inherently biased. You aren't seeing your true customer journey; you're seeing a distorted version of it.
+            This happens because traditional tools rely on tracking mechanisms that require explicit, informed, and unambiguous consent under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR (Regulation 2016/679)</a>. If the user doesn't opt-in, the tracking never triggers. This isn't just a technical glitch; it&rsquo;s a fundamental flaw in how performance marketing is measured in the EU. Because users who reject cookies often represent a specific demographic, your remaining data is inherently biased. You aren't seeing your real traffic; you're seeing a skewed sample of it.
           </p>
 
           <p>
@@ -294,7 +295,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            Instead of fighting a losing battle with consent banners, we operate within the legal framework for audience measurement. By using privacy-by-design principles&mdash;no cookies, no IP storage, and no cross-site tracking&mdash;we capture the data that GA4 misses. This allows you to reconcile your marketing spend with your actual revenue. You stop flying blind and start measuring the full customer journey, from the first click to the final checkout, without needing to rely on the volatility of user consent.
+            Instead of fighting a losing battle with consent banners, we operate within the legal framework for audience measurement. By using privacy-by-design principles&mdash;no cookies, no IP storage, and no cross-site tracking&mdash;we capture the data that GA4 misses. This allows you to reconcile your marketing spend with your actual revenue. You stop flying blind: every eligible event is counted, including the conversions a consent-dependent tool never records, and each one is attributed to the channel that produced it &mdash; last-click, on the complete dataset, without depending on the volatility of user consent.
           </p>
 
           <p>
