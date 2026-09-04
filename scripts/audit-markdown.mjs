@@ -22,7 +22,16 @@ for (const route of routes) {
   const content = readFileSync(file, "utf8");
   if (!content.startsWith("---\n")) failures.push(`${route}: missing frontmatter`);
   if ((content.match(/^# /gm) || []).length !== 1) failures.push(`${route}: expected exactly one H1`);
-  if (/<script\b|<style\b|<!--|javascript:/i.test(content)) failures.push(`${route}: unsafe HTML/script residue`);
+  // Fenced and inline code first: the platform pages document the tracking
+  // snippet, and `<script src="…">` inside a fence is the content, not leaked
+  // markup. Until the generator learned to keep code blocks verbatim, those
+  // snippets were being stripped and the twins shipped an empty fence — the
+  // check passed by destroying the thing it was meant to protect.
+  // `scripts/seo-audit.mjs` already strips the same way for the same reason.
+  const prose = content
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`\n]*`/g, "");
+  if (/<script\b|<style\b|<!--|javascript:/i.test(prose)) failures.push(`${route}: unsafe HTML/script residue`);
   const expected = `canonical_url: "https://sealmetrics.com${route}"`;
   if (!content.includes(expected)) failures.push(`${route}: canonical_url mismatch`);
 }

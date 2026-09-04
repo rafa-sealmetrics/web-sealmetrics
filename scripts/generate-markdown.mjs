@@ -153,8 +153,19 @@ function inline(html) {
 
 /* --------------------------------------------------- html → markdown (block) */
 
-function toMarkdown(html) {
+/**
+ * @param {string} html
+ * @param {string[]|null} outerBlocks  Stash shared with the caller. Code fences
+ *   and block lists are parked in it and restored only by the ROOT call, so the
+ *   tag-stripping and whitespace-collapsing passes below never see finished
+ *   Markdown. A recursive call must share the caller's stash — with its own, a
+ *   token minted outside would resolve to nothing and the code block would
+ *   silently disappear.
+ */
+function toMarkdown(html, outerBlocks = null) {
   let s = html;
+  const isRoot = outerBlocks === null;
+  const blocks = outerBlocks ?? [];
 
   // Conversion components opt out by markup, before anything else runs.
   s = stripSkipped(s);
@@ -230,10 +241,15 @@ function toMarkdown(html) {
     );
   });
 
+  // Stashed, not tokenised in place: the `inline()` pass near the end collapses
+  // runs of spaces, which silently destroyed the indentation of every code
+  // sample in every twin. A config snippet an agent copies has to survive
+  // verbatim.
   s = s.replace(/<pre\b[^>]*>([\s\S]*?)<\/pre>/gi, (_, code) => {
     const langMatch = code.match(/language-([a-z0-9]+)/i);
     const body = decodeEntities(code.replace(/<[^>]+>/g, "")).replace(/^\n+|\n+$/g, "");
-    return `\n\n@@FENCE@@${langMatch ? langMatch[1] : ""}\n${body}\n@@FENCE@@\n\n`;
+    blocks.push(`\`\`\`${langMatch ? langMatch[1] : ""}\n${body}\n\`\`\``);
+    return `\n\n@@BLOCK${blocks.length - 1}@@\n\n`;
   });
 
   s = s.replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/gi, (_, t) => {
@@ -276,6 +292,35 @@ function toMarkdown(html) {
     return items.length > 1 ? `<ul>${items.join("")}</ul>` : run;
   });
 
+  // A list whose items carry block content — a procedure with a heading, a
+  // paragraph and a code block per step — cannot go through `inline()`: it
+  // would flatten the whole step onto one line and drop the fences into the
+  // middle of the prose. Such lists are converted recursively and the result is
+  // stashed, because the passes below strip tags and collapse whitespace, and
+  // finished Markdown must survive them untouched.
+  s = s.replace(/<(ul|ol)\b[^>]*>([\s\S]*?)<\/\1>/gi, (whole, tag, body) => {
+    if (!/<(pre|h[1-6])\b/i.test(body)) return whole;
+    let i = 0;
+    const items = [...body.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
+      .map((m) => toMarkdown(m[1], blocks).trim())
+      .filter(Boolean)
+      .map((md) => {
+        const marker = tag.toLowerCase() === "ol" ? `${++i}. ` : "- ";
+        const indent = " ".repeat(marker.length);
+        const [head, ...rest] = md.split("\n");
+        // A step's own heading becomes the item's first line, not an <h> that
+        // would compete with the page's real outline.
+        const label = head.replace(/^#{1,6}\s+/, "");
+        return [
+          marker + label,
+          ...rest.map((line) => (line.trim() ? indent + line.replace(/^#{1,6}\s+/, "") : "")),
+        ].join("\n");
+      });
+    if (!items.length) return "";
+    blocks.push(items.join("\n\n"));
+    return `\n\n@@BLOCK${blocks.length - 1}@@\n\n`;
+  });
+
   s = s.replace(/<(ul|ol)\b[^>]*>([\s\S]*?)<\/\1>/gi, (_, tag, body) => {
     let i = 0;
     const items = [...body.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
@@ -314,7 +359,26 @@ function toMarkdown(html) {
     .trim();
 
   out.push(s);
-  return out.join("\n");
+  const joined = out.join("\n");
+  // Only the root call restores the stash: an inner call resolving it would put
+  // finished Markdown back in front of the caller's remaining passes.
+  if (!isRoot) return joined;
+  // Repeat until stable: a stashed list item can itself contain a stashed code
+  // fence, and one pass would leave the inner token in the output. Continuation
+  // lines inherit the indentation of the line the token sat on, so a fence
+  // inside a numbered step stays inside that step.
+  let restored = joined;
+  for (let pass = 0; pass < 8 && /@@BLOCK\d+@@/.test(restored); pass++) {
+    restored = restored.replace(/^([ \t]*)@@BLOCK(\d+)@@[ \t]*$/gm, (_, indent, n) =>
+      (blocks[Number(n)] ?? "")
+        .split("\n")
+        .map((line) => (line.trim() ? indent + line : ""))
+        .join("\n")
+    );
+  }
+  // Anything still unresolved was not alone on its line; substitute plainly.
+  restored = restored.replace(/@@BLOCK(\d+)@@/g, (_, n) => blocks[Number(n)] ?? "");
+  return restored.replace(/[ \t]+$/gm, "").replace(/\n{3,}/g, "\n\n");
 }
 
 /* --------------------------------------------------------------- extraction */

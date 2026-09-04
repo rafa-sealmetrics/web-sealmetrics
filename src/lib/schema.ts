@@ -819,3 +819,41 @@ export function webApplicationSchema(props: {
     },
   };
 }
+
+/**
+ * HowTo for a task the page actually walks the reader through.
+ *
+ * The steps passed here MUST be the same objects the page renders — see
+ * `HowToSteps` — because `howto-schema-not-visible` fails the build when a step
+ * exists only inside the script tag. Same rule as FAQPage, same reason: Google's
+ * structured data policy, and an engine cannot cite a passage nobody can read.
+ */
+export function howToSchema(props: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string;
+  supply?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: props.name,
+    description: props.description,
+    url: pageHref(props.url),
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
+    ...(props.totalTime ? { totalTime: props.totalTime } : {}),
+    ...(props.supply?.length
+      ? { supply: props.supply.map((s) => ({ "@type": "HowToSupply", name: s })) }
+      : {}),
+    step: props.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: `${pageHref(props.url)}#step-${i + 1}`,
+    })),
+  };
+}
