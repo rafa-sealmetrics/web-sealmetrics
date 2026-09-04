@@ -119,7 +119,7 @@ export default function Page() {
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              Why GA4 misses hotel bookings more than other verticals
+              Why standard market tools miss hotel bookings more than other verticals
             </h2>
             <p>
               Hotel booking paths are unusually exposed to cookie-based measurement failure. Three reasons:
