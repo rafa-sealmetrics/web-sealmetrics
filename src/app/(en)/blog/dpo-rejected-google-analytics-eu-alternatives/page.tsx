@@ -11,11 +11,11 @@ import { RelatedReading } from "@/components/ui/RelatedReading";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 
 export const metadata: Metadata = {
-  title: "Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?",
+  title: "DPO rejected Google Analytics? EU-legal alternatives",
   description:
     "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
   openGraph: {
-    title: "Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?",
+    title: "DPO rejected Google Analytics? EU-legal alternatives",
     description:
       "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
     type: "article",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?",
+    title: "DPO rejected Google Analytics? EU-legal alternatives",
     description: "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
     images: ["https://sealmetrics.com/og/blog/dpo-rejected-google-analytics-eu-alternatives.png"],
   },

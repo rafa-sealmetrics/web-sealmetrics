@@ -11,11 +11,11 @@ import { RelatedReading } from "@/components/ui/RelatedReading";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 
 export const metadata: Metadata = {
-  title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
+  title: "Demdex Cookies: Why They Are Blocked and What You Lose",
   description:
     "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
   openGraph: {
-    title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
+    title: "Demdex Cookies: Why They Are Blocked and What You Lose",
     description:
       "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
     type: "article",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
+    title: "Demdex Cookies: Why They Are Blocked and What You Lose",
     description: "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
     images: ["https://sealmetrics.com/og/blog/demdex-analytics-cookies-guide.png"],
   },
