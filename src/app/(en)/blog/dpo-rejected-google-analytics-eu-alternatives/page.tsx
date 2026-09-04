@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -37,12 +38,13 @@ export const metadata: Metadata = {
 };
 
 export default function DpoRejectedGoogleAnalyticsPage() {
+  const dates = postDates("dpo-rejected-google-analytics-eu-alternatives");
+
   const { "@context": _ctx, ...articleNode } = articleSchema({
     headline: "Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?",
     description:
       "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
-    datePublished: "2026-08-30",
-    dateModified: "2026-09-04",
+    ...dates,
     url: "/blog/dpo-rejected-google-analytics-eu-alternatives",
     category: "Analytics Compliance",
     author: AUTHORS.rafa,
@@ -122,8 +124,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </h1>
           <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It captures 100% of site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still attributes revenue to the campaign and channel that earned it, using last-click on the complete dataset rather than a reconstructed per-person path, so marketing and ecommerce teams keep campaign and channel-level reporting without the gaps consent rejection and cookie blocking create. It is used by mid-market ecommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
           <PostByline
-            datePublished="2026-08-30"
-            dateModified="2026-09-04"
+            {...dates}
             readTime="8 min read"
             authorName="Rafa Jiménez"
             authorUrl="/authors/rafa-jimenez"

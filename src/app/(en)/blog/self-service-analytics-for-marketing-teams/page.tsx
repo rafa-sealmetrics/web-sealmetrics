@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -146,6 +147,8 @@ const FAQ = [
 ];
 
 export default function Page() {
+  const dates = postDates("self-service-analytics-for-marketing-teams");
+
   return (
     <>
       <Breadcrumbs
@@ -156,8 +159,7 @@ export default function Page() {
           headline: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
           description:
             "Complete cookieless data, 47 named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
-          datePublished: "2026-08-06",
-          dateModified: "2026-08-06",
+          ...dates,
           url: URL,
           category: "AI & Analytics",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -184,7 +186,7 @@ export default function Page() {
               The reporting queue disappears. The definition of &ldquo;revenue&rdquo; does not.
             </p>
             <PostByline
-              datePublished="2026-08-06"
+              {...dates}
               readTime="8 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

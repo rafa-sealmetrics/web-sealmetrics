@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -76,14 +77,15 @@ const FAQ = [
 ];
 
 export default function EuAiActForMarketersPage() {
+  const dates = postDates("eu-ai-act-for-marketers");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "Regulation",
           author: {
@@ -131,8 +133,7 @@ export default function EuAiActForMarketersPage() {
               The EU AI Act for Marketers, Without the Jargon
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="7 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

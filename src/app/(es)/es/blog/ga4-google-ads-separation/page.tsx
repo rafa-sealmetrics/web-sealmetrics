@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -39,6 +40,8 @@ export const metadata: Metadata = {
 };
 
 export default function GA4GoogleAdsSeparationPage() {
+  const dates = postDates("ga4-google-ads-separation", "es");
+
   return (
     <>
       <Breadcrumbs
@@ -54,8 +57,7 @@ export default function GA4GoogleAdsSeparationPage() {
             "GA4 y Google Ads: la separacion que nadie vio venir",
           description:
             "Google elimina Google Signals como control de datos GA4 a Google Ads en junio 2026. Análisis del impacto real en datos y riesgo legal.",
-          datePublished: "2026-04-16",
-          dateModified: "2026-05-04",
+          ...dates,
           url: "/es/blog/ga4-google-ads-separation",
           category: "Privacidad",
           author: {
@@ -81,8 +83,7 @@ export default function GA4GoogleAdsSeparationPage() {
               GA4 y Google Ads: la separacion que nadie vio venir
             </h1>
             <PostByline
-              datePublished="2026-04-16"
-              dateModified="2026-05-04"
+              {...dates}
               readTime="8 min"
               authorName="Rafa Jimenez"
               locale="es"

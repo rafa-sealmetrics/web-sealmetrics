@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -35,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function ConsentBannerImpactPageEs() {
+  const dates = postDates("consent-banner-impact-on-analytics", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Impacto de los banners de consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", datePublished: "2026-01-25", dateModified: "2026-05-06", url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", ...dates, url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Impacto de los banners de consentimiento", url: "/es/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -51,8 +54,7 @@ export default function ConsentBannerImpactPageEs() {
             Cómo los banners de consentimiento destruyen tus datos de analítica
           </h1>
           <PostByline
-              datePublished="2026-01-25"
-              dateModified="2026-05-06"
+              {...dates}
               readTime="6 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

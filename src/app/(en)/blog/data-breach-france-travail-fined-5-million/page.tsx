@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -58,6 +59,8 @@ const FAQ = [
 ];
 
 export default function Page() {
+  const dates = postDates("data-breach-france-travail-fined-5-million");
+
   return (
     <>
       <Breadcrumbs
@@ -70,8 +73,7 @@ export default function Page() {
         data={articleSchema({
           headline: "Data breach: France Travail fined €5 million – Lessons in Security and Privacy",
           description: "Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.",
-          datePublished: "2026-08-27",
-          dateModified: "2026-08-27",
+          ...dates,
           url: URL,
           category: "Security & Privacy",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -95,7 +97,7 @@ export default function Page() {
               Data breach: France Travail fined €5 million – Lessons in Security and Privacy
             </h1>
             <PostByline
-              datePublished="2026-08-27"
+              {...dates}
               readTime="8 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

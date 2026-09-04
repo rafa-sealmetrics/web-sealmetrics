@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +35,12 @@ export const metadata: Metadata = {
 };
 
 export default function UkPecrPage() {
+  const dates = postDates("uk-pecr-analytics-exemption");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "UK PECR Analytics Exemption" }]} />
-      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption — PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", datePublished: "2026-02-17", dateModified: "2026-05-28", url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "UK Analytics Exemption — PECR Self-Assessment", description: "The DUAA 2025 exempts certain analytics from UK consent requirements.", ...dates, url: "/blog/uk-pecr-analytics-exemption", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "UK PECR Analytics Exemption", url: "/blog/uk-pecr-analytics-exemption" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -50,8 +53,7 @@ export default function UkPecrPage() {
             UK Analytics Exemption — PECR Self-Assessment
           </h1>
           <PostByline
-              datePublished="2026-02-17"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="2 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

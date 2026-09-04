@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -63,6 +64,8 @@ const faqs = [
 ];
 
 export default function Page() {
+  const dates = postDates("cookieless-analytics-for-saas");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for SaaS" }]} />
@@ -71,8 +74,7 @@ export default function Page() {
           headline: "Cookieless Analytics for SaaS — 2026 Guide",
           description:
             "How European SaaS teams count trial signups and paid conversions by channel without cookies.",
-          datePublished: "2026-04-24",
-          dateModified: "2026-05-28",
+          ...dates,
           url: "/blog/cookieless-analytics-for-saas",
           category: "SaaS",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -90,8 +92,7 @@ export default function Page() {
               PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026
             </h1>
             <PostByline
-              datePublished="2026-04-24"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="8 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

@@ -151,6 +151,12 @@ test("structured data", { skip }, async (t) => {
   await t.test("one person is one node", () =>
     noneOf("person-entity-split", "a Person named in two places with two identities")
   );
+  await t.test("the sitemap and the Article agree on the revision date", () =>
+    noneOf(
+      "lastmod-disagrees-with-date-modified",
+      "a post's sitemap lastmod and its Article dateModified disagree — both must come from postDates()"
+    )
+  );
   await t.test("a claimed revision is visible to the reader", () =>
     noneOf(
       "date-modified-not-visible",

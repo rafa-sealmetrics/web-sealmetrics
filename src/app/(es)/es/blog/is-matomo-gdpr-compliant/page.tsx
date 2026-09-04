@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
@@ -41,6 +42,8 @@ const linkCls =
   "text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors";
 
 export default function Page() {
+  const dates = postDates("is-matomo-gdpr-compliant", "es");
+
   return (
     <>
       <Breadcrumbs
@@ -54,8 +57,7 @@ export default function Page() {
           headline: "¿Matomo cumple el RGPD?",
           description:
             "Matomo puede operar sin banner de cookies bajo los criterios de exención de la CNIL, con las cookies todavía activadas. Qué exigen las seis condiciones, qué cuesta esa configuración en medición y por qué la exención no viaja a Alemania.",
-          datePublished: "2026-08-26",
-          dateModified: "2026-08-26",
+          ...dates,
           url: "/es/blog/is-matomo-gdpr-compliant",
           category: "Regulación",
           author: {
@@ -85,7 +87,7 @@ export default function Page() {
               ¿Matomo cumple el RGPD?
             </h1>
             <PostByline
-              datePublished="2026-08-26"
+              {...dates}
               readTime="9 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

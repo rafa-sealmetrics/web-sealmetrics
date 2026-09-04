@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -45,6 +46,8 @@ const linkCls =
   "text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors";
 
 export default function Page() {
+  const dates = postDates("is-adobe-analytics-gdpr-compliant");
+
   return (
     <>
       <Breadcrumbs
@@ -58,8 +61,7 @@ export default function Page() {
           headline: "Is Adobe Analytics GDPR Compliant?",
           description:
             "Adobe Analytics can be deployed in a GDPR-compliant way. What that requires in practice, and what the compliant configuration costs in data coverage.",
-          datePublished: "2026-07-28",
-          dateModified: "2026-07-28",
+          ...dates,
           url: "/blog/is-adobe-analytics-gdpr-compliant",
           category: "Regulation",
           author: {
@@ -89,7 +91,7 @@ export default function Page() {
               Is Adobe Analytics GDPR Compliant?
             </h1>
             <PostByline
-              datePublished="2026-07-28"
+              {...dates}
               readTime="8 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

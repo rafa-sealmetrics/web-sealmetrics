@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -77,14 +78,15 @@ const FAQ = [
 ];
 
 export default function GroundingAnalyticsAiPage() {
+  const dates = postDates("grounding-analytics-ai");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "AI",
           author: {
@@ -141,8 +143,7 @@ export default function GroundingAnalyticsAiPage() {
               Grounding: Why a Good Analytics AI Shouldn&apos;t &apos;Know&apos; Anything
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="6 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

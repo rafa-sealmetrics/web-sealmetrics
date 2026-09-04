@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -76,14 +77,15 @@ const FAQ = [
 ];
 
 export default function WeChangedOurAiModelTwicePage() {
+  const dates = postDates("we-changed-our-ai-model-twice");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "AI",
           author: {
@@ -135,8 +137,7 @@ export default function WeChangedOurAiModelTwicePage() {
               Point
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="6 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

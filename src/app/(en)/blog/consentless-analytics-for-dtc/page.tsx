@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -68,6 +69,8 @@ const faqs = [
 ];
 
 export default function Page() {
+  const dates = postDates("consentless-analytics-for-dtc");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consentless Analytics for DTC" }]} />
@@ -75,8 +78,7 @@ export default function Page() {
         data={articleSchema({
           headline: "Consentless Analytics for DTC — 2026 Guide",
           description: "Consentless analytics counts 100% of DTC traffic anonymously at channel level — no banner, no tracking.",
-          datePublished: "2026-04-24",
-          dateModified: "2026-05-28",
+          ...dates,
           url: "/blog/consentless-analytics-for-dtc",
           category: "eCommerce",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -94,8 +96,7 @@ export default function Page() {
               How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
             </h1>
             <PostByline
-              datePublished="2026-04-24"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="7 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

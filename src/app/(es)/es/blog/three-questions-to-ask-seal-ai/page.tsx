@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -75,14 +76,15 @@ const FAQ = [
 ];
 
 export default function ThreeQuestionsToAskSealAiPageEs() {
+  const dates = postDates("three-questions-to-ask-seal-ai", "es");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "Producto",
           author: {
@@ -134,8 +136,7 @@ export default function ThreeQuestionsToAskSealAiPageEs() {
               Tres preguntas que hacerle hoy a tu IA de analítica
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="4 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -35,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function LighthouseScoresPage() {
+  const dates = postDates("analytics-tools-lighthouse-scores");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools Lighthouse Scores" }]} />
-      <JsonLd data={articleSchema({ headline: "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.", description: "We installed 9 analytics scripts on the same baseline page and ran Google Lighthouse 5 times each. The performance impact ranges from zero to devastating.", datePublished: "2026-03-08", dateModified: "2026-05-04", url: "/blog/analytics-tools-lighthouse-scores", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.", description: "We installed 9 analytics scripts on the same baseline page and ran Google Lighthouse 5 times each. The performance impact ranges from zero to devastating.", ...dates, url: "/blog/analytics-tools-lighthouse-scores", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools Lighthouse Scores", url: "/blog/analytics-tools-lighthouse-scores" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -51,8 +54,7 @@ export default function LighthouseScoresPage() {
             We Added 9 Analytics Tools to the Same Page. Here Are the Lighthouse Scores.
           </h1>
           <PostByline
-              datePublished="2026-03-08"
-              dateModified="2026-05-04"
+              {...dates}
               readTime="5 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

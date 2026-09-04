@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +35,12 @@ export const metadata: Metadata = {
 };
 
 export default function ExternalDomainsPage() {
+  const dates = postDates("analytics-tools-external-domains");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Analytics Tools External Domains" }]} />
-      <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", datePublished: "2026-03-04", dateModified: "2026-05-04", url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.", description: "Every external domain is a DNS lookup, a privacy risk, and a GDPR liability. We mapped every domain contacted by 9 analytics tools.", ...dates, url: "/blog/analytics-tools-external-domains", category: "Privacy", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Analytics Tools External Domains", url: "/blog/analytics-tools-external-domains" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -50,8 +53,7 @@ export default function ExternalDomainsPage() {
             Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters.
           </h1>
           <PostByline
-              datePublished="2026-03-04"
-              dateModified="2026-05-04"
+              {...dates}
               readTime="4 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

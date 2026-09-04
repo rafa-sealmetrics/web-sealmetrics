@@ -8,8 +8,12 @@ export const dynamic = "force-static";
 const SITE = "https://sealmetrics.com";
 const today = new Date().toISOString().split("T")[0];
 
-// blog post slug → ISO date, used to emit accurate <lastmod>
-const blogDates = new Map(blogPosts.map((p) => [p.slug, p.date]));
+// blog post slug → the dates that decide <lastmod>. `lastmod` means last
+// MODIFIED, so a revised post reports its revision, not its publication. Until
+// the revision date moved into the registry it lived inside each page's
+// articleSchema() call, invisible from here, and the sitemap under-reported
+// freshness on all 19 revised posts.
+const blogDates = new Map(blogPosts.map((p) => [p.slug, p]));
 
 function enUrl(p: string): string {
   return p === "/" ? `${SITE}/` : `${SITE}${p}/`;
@@ -18,11 +22,15 @@ function esUrl(p: string): string {
   return p === "/" ? `${SITE}/es/` : `${SITE}/es${p}/`;
 }
 
-function lastModFor(route: string): string {
+function lastModFor(route: string, locale: "en" | "es" = "en"): string {
   const m = route.match(/^\/blog\/(.+)$/);
   if (m) {
-    const date = blogDates.get(m[1]);
-    if (date) return date;
+    const post = blogDates.get(m[1]);
+    if (post) {
+      const modified =
+        locale === "es" ? post.dateModifiedEs ?? post.dateModified : post.dateModified;
+      return modified ?? post.date;
+    }
   }
   return today;
 }
@@ -57,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
     entries.push({
       url: esHref,
-      lastModified: lastModFor(route),
+      lastModified: lastModFor(route, "es"),
       alternates: { languages },
     });
   }
@@ -71,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ES-only
   for (const route of esRoutes) {
     if (enSet.has(route)) continue;
-    entries.push({ url: esUrl(route), lastModified: lastModFor(route) });
+    entries.push({ url: esUrl(route), lastModified: lastModFor(route, "es") });
   }
 
   return entries;

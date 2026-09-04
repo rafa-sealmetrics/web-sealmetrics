@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -71,14 +72,15 @@ const FAQ = [
 ];
 
 export default function ResidencyIsNotSovereigntyPage() {
+  const dates = postDates("residency-is-not-sovereignty");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "Privacy",
           author: {
@@ -128,8 +130,7 @@ export default function ResidencyIsNotSovereigntyPage() {
               Residency Is Not Sovereignty: The Question to Ask Your AI Analytics Vendor
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="6 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

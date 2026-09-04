@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -36,10 +37,12 @@ export const metadata: Metadata = {
 };
 
 export default function GA4DataSamplingPage() {
+  const dates = postDates("ga4-data-sampling-problem");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GA4 Data Sampling Problem" }]} />
-      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", datePublished: "2026-02-15", dateModified: "2026-05-28", url: "/blog/ga4-data-sampling-problem", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "GA4 Data Sampling: Why Your Traffic Numbers Are Wrong", description: "GA4 applies data sampling that distorts your analytics.", ...dates, url: "/blog/ga4-data-sampling-problem", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GA4 Data Sampling", url: "/blog/ga4-data-sampling-problem" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -52,8 +55,7 @@ export default function GA4DataSamplingPage() {
             GA4 Data Sampling: Why Your Traffic Numbers Are Wrong
           </h1>
           <PostByline
-              datePublished="2026-02-15"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="7 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"
