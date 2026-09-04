@@ -21,6 +21,28 @@ export const PERSON_RAFA_ID = `${SITE_URL}/authors/rafa-jimenez/#person`;
 const orgRef = () => ({ "@id": ORG_ID });
 
 /**
+ * Author bylines are hand-written per post and spell the founder's name with
+ * and without its accent. Normalising here is what lets every byline resolve to
+ * the one Person node instead of minting a new individual per spelling.
+ */
+/** A Person slot: the canonical node for the founder, a plain node otherwise. */
+const personRef = (person: { name: string; url?: string; jobTitle?: string }) => ({
+  "@type": "Person",
+  // The @id is what unifies the mentions; `url` stays because it is a real
+  // property of the node and because the Markdown twins read the author link
+  // from here. On the ES tree it points at the Spanish author page — same
+  // person, same id, the locale's own address.
+  ...(isRafa(person.name) ? { "@id": PERSON_RAFA_ID } : {}),
+  name: person.name,
+  ...(person.url ? { url: pageHref(person.url) } : {}),
+  ...(person.jobTitle ? { jobTitle: person.jobTitle } : {}),
+});
+
+const isRafa = (name: string) =>
+  name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim() ===
+  "rafa jimenez";
+
+/**
  * Locale of a page, derived from its own route. Spanish pages used to inherit
  * `inLanguage` from nothing at all, which left the ES tree asserting no language
  * while serving Spanish copy — an inconsistency an engine triangulating the
@@ -60,12 +82,16 @@ export function organizationSchema() {
         description:
           "Complete analytics for eCommerce: captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.",
         foundingDate: "2020",
+        // References the canonical Person node emitted by the author page.
+        // It used to restate him as "Rafa Jimenez" (no accent) pointing at
+        // /about, while every article credited "Rafa Jiménez" pointing at
+        // /authors/rafa-jimenez — three nodes for one human being.
         founders: [
           {
             "@type": "Person",
-            name: "Rafa Jimenez",
-            jobTitle: "Founder",
-            url: pageHref("/about"),
+            "@id": PERSON_RAFA_ID,
+            name: "Rafa Jiménez",
+            url: pageHref("/authors/rafa-jimenez"),
           },
         ],
         vatID: "ESB70933239",
@@ -85,7 +111,10 @@ export function organizationSchema() {
           "https://www.g2.com/products/sealmetrics",
           "https://www.capterra.com/p/sealmetrics",
           "https://www.crunchbase.com/organization/sealmetrics",
-          "https://www.producthunt.com/products/sealmetrics",
+          // Product Hunt removed on 4 Sep 2026: /products/sealmetrics,
+          // /posts/sealmetrics and /products/sealmetrics-2 all 404. A sameAs
+          // pointing at nothing asserts a presence the company does not have.
+          // Put it back the day the profile exists — audit-sameas.mjs checks.
           "https://github.com/sealmetrics",
         ],
         knowsAbout: [
@@ -282,24 +311,10 @@ export function articleSchema(props: {
       "@id": pageHref(props.url),
     },
     image: props.image || autoBlogOg || `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
-    author: props.author
-      ? {
-          "@type": "Person",
-          name: props.author.name,
-          ...(props.author.url
-            ? { url: pageHref(props.author.url) }
-            : {}),
-          ...(props.author.jobTitle
-            ? { jobTitle: props.author.jobTitle }
-            : {}),
-          ...(props.author.name.toLowerCase().includes("rafa")
-            ? {
-                sameAs: ["https://www.linkedin.com/in/rafajimenez/"],
-                worksFor: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
-              }
-            : {}),
-        }
-      : { "@type": "Organization", name: ORG_NAME },
+    // One node per person, addressed by @id. The full description, sameAs and
+    // knowsAbout live on the author page; repeating a subset of them here is
+    // what produced competing versions of the same author.
+    author: props.author ? personRef(props.author) : orgRef(),
     publisher: orgRef(),
     inLanguage: langOf(props.url),
     ...(props.category ? { articleSection: props.category } : {}),
@@ -358,16 +373,11 @@ export function comparisonPageSchema(props: {
     ...(props.dateModified ? { dateModified: props.dateModified } : {}),
     ...(props.author
       ? {
-          author: {
-            "@type": "Person",
-            name: props.author.name,
-            url: pageHref(props.author.url),
-          },
-          reviewedBy: {
-            "@type": "Person",
-            name: props.author.name,
-            url: pageHref(props.author.url),
-          },
+          // Same node in both slots, and the same node every article credits.
+          // The ES tree used to point at /es/authors/rafa-jimenez, minting a
+          // second Spanish-speaking founder out of a URL prefix.
+          author: personRef(props.author),
+          reviewedBy: personRef(props.author),
         }
       : {}),
     about: [
@@ -764,6 +774,9 @@ export function personSchema(props: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    // The author page is where the person is *defined*; everywhere else
+    // references this id. Without it, each mention is a separate individual.
+    ...(isRafa(props.name) ? { "@id": PERSON_RAFA_ID } : {}),
     name: props.name,
     jobTitle: props.jobTitle,
     description: props.description,
@@ -779,11 +792,7 @@ export function personSchema(props: {
           })),
         }
       : {}),
-    worksFor: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    worksFor: orgRef(),
   };
 }
 
