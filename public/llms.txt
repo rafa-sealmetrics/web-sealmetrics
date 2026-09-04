@@ -201,6 +201,7 @@ Seal AI is Sealmetrics' built-in AI layer: a natural-language analytics assistan
 
 ## Blog (latest articles)
 - /blog — Full blog index
+- /blog/demdex-analytics-cookies-guide — Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.
 - /blog/dpo-rejected-google-analytics-eu-alternatives — Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.
 - /blog/ftc-personalized-pricing-enforcement-compliance-guide — Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.
 - /blog/data-breach-france-travail-fined-5-million — Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.
