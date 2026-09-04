@@ -36,7 +36,7 @@
     "date": "2026-04-25"
   },
   "/platforms/": {
-    "hash": "918edac591d44b48",
+    "hash": "1b30dbea764634d1",
     "date": "2026-09-04"
   },
   "/free-audit/": {
@@ -124,8 +124,8 @@
     "date": "2026-08-07"
   },
   "/integrations/": {
-    "hash": "78118eaff503c35c",
-    "date": "2026-08-09"
+    "hash": "dbd2cc3042980056",
+    "date": "2026-09-04"
   },
   "/use-cases/": {
     "hash": "bf60f1e2fc514758",
@@ -248,7 +248,7 @@
     "date": "2026-08-27"
   },
   "/es/platforms/": {
-    "hash": "4283309ded444711",
+    "hash": "a63361515ce4ee7b",
     "date": "2026-09-04"
   },
   "/es/security/": {
@@ -308,8 +308,8 @@
     "date": "2026-08-07"
   },
   "/es/integrations/": {
-    "hash": "4c567f8208db04c7",
-    "date": "2026-08-09"
+    "hash": "628fcc8fb5b3b9d4",
+    "date": "2026-09-04"
   },
   "/es/audit/": {
     "hash": "54259fa0adcec2c9",

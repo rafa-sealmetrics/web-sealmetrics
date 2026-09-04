@@ -18,6 +18,10 @@
 }
 
 .sig-answer-inner {
+  /* Explicit, not inherited: the block is dropped into centred hero containers
+     on /platforms and /integrations, and 140 words of centred body text is
+     unreadable. */
+  text-align: left;
   max-width: 1180px;
   margin: 0 auto;
   background: var(--answer-white);
