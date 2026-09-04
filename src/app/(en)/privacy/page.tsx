@@ -46,8 +46,8 @@ export default function PrivacyPage() {
 
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
-            <strong className="text-text-primary">Last updated:</strong> August
-            24, 2026 ·{" "}
+            <strong className="text-text-primary">Last updated:</strong> September
+            4, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -89,6 +89,32 @@ export default function PrivacyPage() {
             <p className="mt-3">
               We do not use cookies, tracking pixels, or third-party analytics
               tools on sealmetrics.com.
+            </p>
+            <p className="mt-3">
+              Signing in to the platform at{" "}
+              <span className="text-text-primary font-medium">
+                my.sealmetrics.com
+              </span>{" "}
+              does set three strictly necessary cookies &mdash;{" "}
+              <span className="text-text-primary font-medium">
+                sm_access_token
+              </span>{" "}
+              (15 minutes),{" "}
+              <span className="text-text-primary font-medium">
+                sm_refresh_token
+              </span>{" "}
+              (7 days) and{" "}
+              <span className="text-text-primary font-medium">sm_csrf</span> (7
+              days). They exist only to keep your session open and protect it
+              against cross-site request forgery. They carry no analytics,
+              advertising or profiling purpose, are transmitted over encrypted
+              connections only, and are deleted when you sign out. As strictly
+              necessary cookies for a service you expressly requested, they are
+              exempt from the consent requirement of Art. 5(3) of the ePrivacy
+              Directive and Art. 22.2 of the Spanish LSSI, which is why you see
+              no consent banner. You can block them in your browser settings,
+              but you will then be unable to sign in; blocking them does not
+              affect browsing sealmetrics.com, which sets none.
             </p>
           </div>
 
@@ -258,6 +284,14 @@ export default function PrivacyPage() {
                 privacy@sealmetrics.com
               </span>
               .
+            </p>
+            <p className="mt-3">
+              Data controller: Sealmetrics S.L. (VAT ESB70933239), Carrer de
+              Tirso de Molina 36, 08940 Cornell&agrave; de Llobregat,
+              Barcelona, Spain. We are not required to appoint a Data
+              Protection Officer; privacy matters are handled at the contact
+              above. You may also lodge a complaint with the Spanish Data
+              Protection Agency (www.aepd.es).
             </p>
           </div>
 
