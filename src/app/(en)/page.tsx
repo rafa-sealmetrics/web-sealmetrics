@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SignalHome, signalHomeFaqs } from "@/components/v4/SignalHome";
 import "@/components/v4/signal-home.css";
+import "@/components/v4/signal-answer.css";
 import {
   softwareApplicationSchema,
   statisticClaimSchema,
