@@ -1,6 +1,6 @@
 # Generate Blog Post
 
-Generate a complete blog post for the SealMetrics website.
+Generate a complete blog post for the Sealmetrics website.
 
 ## Steps
 
@@ -17,35 +17,49 @@ Generate a complete blog post for the SealMetrics website.
 
 3. **Generate content brief** (show to user):
    - Title (H1) — includes primary keyword
-   - Meta title (<60 chars) — includes "SealMetrics" brand
+   - Meta title (<60 chars) — includes "Sealmetrics" brand
    - Meta description (<160 chars) — includes CTA language
    - Target word count: 1,200-2,000 words
    - Section outline (H2s and H3s)
    - Key data points to include
    - Internal links plan
 
-4. **After approval, create the blog post file:**
+4. **Register the post first, then create the page.**
 
-### If MDX is set up:
-```
-src/content/blog/[slug].mdx
-```
+   The registry is the source of truth for a post's dates, and the sitemap
+   reads it. A page that carries its own dates cannot be seen by the sitemap
+   and will fail the build.
 
-### If MDX is NOT set up yet, create as a page component:
-```
-src/app/blog/[slug]/page.tsx
-```
+   Add the entry to `src/lib/content/blog.ts`:
+   ```ts
+   {
+     slug: "your-slug",
+     title: "...",
+     description: "...",
+     date: "2026-09-04",        // publication
+     // dateModified: only when you later revise the post for real
+     category: "Regulation",
+     readTime: "8 min",
+     author: AUTHORS.rafa,
+     related: [],
+   },
+   ```
+
+   Then create `src/app/(en)/blog/[slug]/page.tsx`. There is no MDX in this
+   repo — every page is a TSX component, and the route group `(en)` is part of
+   the path. Ship the Spanish twin at `src/app/(es)/es/blog/[slug]/page.tsx`
+   with native editorial copy, never a machine translation.
 
 ### Blog post structure
 ```
-- Hero: title, date, author ("SealMetrics Team"), read time, category tag
+- Hero: title, QuickAnswer, <PostByline>, category tag
 - Introduction: hook with specific data point, state the problem
 - Body: 3-5 sections with H2 headings
   - Each section: claim → evidence → implication
   - Use specific numbers (percentages, euros, timeframes)
   - Include 1 data visualization or comparison where relevant
 - Conclusion: summarize key takeaway, bridge to pillar page
-- Inline CTA: link to /data-loss-calculator or relevant pillar (NOT /demo)
+- <CommercialModule> with a hook line specific to this post's topic
 - Related articles footer: 3 related posts
 ```
 
@@ -54,7 +68,8 @@ src/app/blog/[slug]/page.tsx
 - Link to 1-2 glossary terms (first mention of concept)
 - Link to /data-loss-calculator (inline CTA)
 - Link to 2-3 related blog posts (footer)
-- NEVER link directly to /demo (blog → pillar → demo flow)
+- Body text NEVER links directly to /demo (blog → pillar → demo flow).
+  `<CommercialModule>` is the one sanctioned exception and every post has one
 
 ### Copy rules
 - Pain before solution
@@ -62,20 +77,49 @@ src/app/blog/[slug]/page.tsx
 - Honest about competitors — "GA4 works well when..."
 - Authoritative, editorial tone
 - No emojis
+- **Never claim multi-touch attribution, customer journeys, session
+  reconstruction or user-level analysis.** Sealmetrics is aggregate, anonymous
+  event measurement with last-click attribution. A post shipped in September
+  2026 promised readers "the full customer journey, from the first click to the
+  final checkout" and had to be corrected in production
 
-5. **Add JSON-LD** `Article` schema:
-```json
-{
-  "@type": "Article",
-  "headline": "...",
-  "author": { "@type": "Organization", "name": "SealMetrics" },
-  "datePublished": "YYYY-MM-DD",
-  "dateModified": "YYYY-MM-DD",
-  "publisher": { "@type": "Organization", "name": "SealMetrics" }
-}
-```
+5. **Dates and schema come from the helpers. Never write either by hand.**
 
-6. **Verify build passes**
+   ```tsx
+   import { articleSchema, breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+   import { postDates } from "@/lib/content/blog";
+   import { PostByline } from "@/components/ui/PostByline";
+
+   export default function Page() {
+     const dates = postDates("your-slug");          // ("your-slug", "es") on the ES twin
+
+     return (
+       <>
+         <JsonLd data={articleSchema({
+           headline: "...",
+           description: "...",
+           ...dates,
+           url: "/blog/your-slug",
+           category: "Regulation",
+           author: AUTHORS.rafa,
+         })} />
+         ...
+         <PostByline {...dates} readTime="8 min read"
+           authorName="Rafa Jiménez" authorUrl="/authors/rafa-jimenez" />
+   ```
+
+   `articleSchema()` is what references the publisher by `@id`, resolves the
+   author to the single Person node and sets `inLanguage`. Writing the Article
+   object by hand — which this file used to tell you to do — fails
+   `publisher-not-linked`, and hard-coding the dates fails
+   `lastmod-disagrees-with-date-modified`.
+
+   If the post has an FAQ, the questions and answers must be **visible on the
+   page** (`<FaqSection>`); schema-only FAQ fails `faq-schema-not-visible`.
+
+6. **Verify:** `npm run build` (0 violations) and `npm test`. Both must pass
+   before opening a PR. `npm run audit:contrast` is a CI gate that is NOT part
+   of the build — run it too if you touched any markup.
 
 ## Input
 $ARGUMENTS — Required: blog topic (e.g., "why GA4 shows 13% of EU traffic", "cookieless analytics complete guide", "GDPR analytics consent requirements")

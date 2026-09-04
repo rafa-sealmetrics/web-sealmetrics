@@ -20,28 +20,46 @@ Generate and add JSON-LD structured data to a specific page.
 | Customer case `/customers/[slug]` | `Article` + `Organization` |
 | All pages | `BreadcrumbList` |
 
-4. **Generate the JSON-LD** following schema.org specifications
-5. **Add it to the page** as a `<script>` tag in the component JSX:
+4. **Use a helper from `src/lib/schema.ts`. Do not hand-write the object.**
+
+   There is a builder for every page type this site has: `articleSchema`,
+   `comparisonPageSchema`, `faqPageSchema`, `howToSchema`, `definedTermSchema`,
+   `collectionPageSchema`, `servicePageSchema`, `pricingSchema`,
+   `softwareApplicationSchema`, `breadcrumbSchema`, `personSchema`,
+   `videoObjectSchema`, `statisticClaimSchema`, `itemListSchema`.
+
+   If none fits, add a builder there rather than writing JSON in the page. Every
+   helper does three things a hand-written object will not, and all three are
+   build gates:
+
+   - references the organisation by `@id` (`publisher-not-linked`)
+   - resolves a Person to the single node (`person-entity-split`)
+   - sets `inLanguage` from the route (`schema-inlanguage-mismatch`)
+
+5. **Add it with `<JsonLd>`**, never a raw `<script>`:
 
 ```tsx
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [/* schemas */]
-    })
-  }}
-/>
+import { JsonLd } from "@/components/ui/JsonLd";
+import { articleSchema } from "@/lib/schema";
+
+<JsonLd data={articleSchema({ ... })} />
 ```
 
-6. **Validate** the JSON-LD is syntactically correct
+`JsonLd` normalises internal URLs to the trailing-slash convention the
+canonicals and sitemap use; a raw `<script>` skips that and fails
+`schema-url-no-trailing-slash`.
+
+6. **Verify:** `npm run build` (0 violations) and `npm test`.
 
 ## Rules
-- Use `@graph` array when multiple schemas apply to one page
-- BreadcrumbList should reflect actual URL path
-- Always include `"@context": "https://schema.org"`
-- Organization schema: name "SealMetrics", url "https://sealmetrics.com"
+- BreadcrumbList should reflect the actual URL path
+- **Never restate the organisation inline.** `publisher`, `provider`, `seller`
+  and `worksFor` reference `ORG_ID`; `SharedLayout` emits the Organization +
+  WebSite graph in the `<head>` of every page so the reference resolves
+- FAQ and HowTo content must be **visible on the page**, not schema-only —
+  `faq-schema-not-visible` and `howto-schema-not-visible` fail the build
+- A `sameAs` must resolve. `scripts/audit-sameas.mjs` checks the declared
+  profiles nightly; a dead one is removed, not left in place
 - FAQ answers must be self-contained (no "Contact us" or "It depends")
 
 ## Input

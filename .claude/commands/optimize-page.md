@@ -36,7 +36,7 @@ Optimize a specific page for SEO and conversion. This skill reads the page, iden
 ## Output
 - List all changes made
 - Show before/after for metadata
-- Confirm the page still builds: `cd /Users/rafa/code/web-sealmetrics && npx next build 2>&1 | tail -5`
+- Confirm the page still builds: `npm run build && npm test`. Not `npx next build` — that skips the whole postbuild gate chain (Markdown twins, llms.txt drift, CSP, `scripts/seo-audit.mjs`) and will let a regression through
 
 ## Input
 $ARGUMENTS — Required: page route (e.g., "product", "pricing", "vs-ga4")
