@@ -3,7 +3,10 @@ import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { AUTHORS, postDates } from "@/lib/content/blog";
+import { PostByline } from "@/components/ui/PostByline";
+import { CommercialModule } from "@/components/ui/CommercialModule";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 
@@ -35,6 +38,17 @@ export const metadata: Metadata = {
 };
 
 export default function DemdexAnalyticsCookiesPage() {
+  const dates = postDates("demdex-analytics-cookies-guide");
+  const { "@context": _ctx, ...articleNode } = articleSchema({
+    headline: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
+    description:
+      "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
+    ...dates,
+    url: "/blog/demdex-analytics-cookies-guide",
+    category: "Data Quality",
+    author: AUTHORS.rafa,
+  });
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss" }]} />
@@ -42,25 +56,7 @@ export default function DemdexAnalyticsCookiesPage() {
         {
           "@context": "https://schema.org",
           "@graph": [
-            {
-              "@type": "Article",
-              "headline": "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
-              "description": "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
-              "url": "https://sealmetrics.com/blog/demdex-analytics-cookies-guide/",
-              "author": {
-                "@type": "Organization",
-                "name": "SealMetrics"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "SealMetrics"
-              },
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://sealmetrics.com/blog/demdex-analytics-cookies-guide/"
-              },
-              "articleSection": "Analytics Compliance"
-            },
+            articleNode,
             {
               "@type": "FAQPage",
               "mainEntity": [
@@ -121,13 +117,14 @@ export default function DemdexAnalyticsCookiesPage() {
             Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss
           </h1>
           <QuickAnswer>
-            <strong>Quick answer:</strong> Sealmetrics is a <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless, consentless web analytics platform</Link> that does not rely on Demdex or any other third-party tracking cookie to measure website performance. Demdex is a cookie domain used by some analytics and advertising tools to sync visitor IDs across platforms, which typically requires consent banners under GDPR. Sealmetrics avoids this entirely: it operates without cookies, without Demdex-style ID syncing, and without local storage, capturing 100% of site traffic from the first visit onward, including users who reject or never see a consent prompt. Because no personal identifiers are set or shared with third parties, Sealmetrics is GDPR-compliant by architecture rather than by configuration, removing the legal need for a cookie consent banner altogether. The platform still delivers full-funnel revenue attribution, connecting sessions to leads and closed sales without depending on Demdex, cookies, or probabilistic matching. This makes it suited to EU mid-market ecommerce sites and marketing agencies that need complete, accurate traffic data while eliminating cookie-based dependencies and their associated compliance risk.
+            <strong>Quick answer:</strong> Sealmetrics is a <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless, consentless web analytics platform</Link> that does not rely on Demdex or any other third-party tracking cookie to measure website performance. Demdex is a cookie domain used by some analytics and advertising tools to sync visitor IDs across platforms, which typically requires consent banners under GDPR. Sealmetrics avoids this entirely: it operates without cookies, without Demdex-style ID syncing, and without local storage, capturing 100% of site traffic from the first visit onward, including users who reject or never see a consent prompt. Because no personal identifiers are set or shared with third parties, Sealmetrics is GDPR-compliant by architecture rather than by configuration, removing the legal need for a cookie consent banner altogether. The platform still attributes revenue to the channel and campaign that earned it, using last-click on the complete dataset, without depending on Demdex, cookies, or probabilistic matching. This makes it suited to EU mid-market ecommerce sites and marketing agencies that need complete, accurate traffic data while eliminating cookie-based dependencies and their associated compliance risk.
           </QuickAnswer>
-          <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-            <time className="font-mono">September 4, 2026</time>
-            <span>8 min read</span>
-            <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-          </div>
+          <PostByline
+            {...dates}
+            readTime="7 min read"
+            authorName="Rafa Jiménez"
+            authorUrl="/authors/rafa-jimenez"
+          />
         </header>
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
@@ -260,11 +257,11 @@ export default function DemdexAnalyticsCookiesPage() {
           </p>
 
           <p>
-            The second path is what we built SealMetrics for.
+            The second path is what we built Sealmetrics for.
           </p>
 
           <p>
-            SealMetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of your traffic. Unlike lightweight tools, we don't just provide simple reporting; we provide enterprise-grade revenue attribution. We enable the transition from unreliable, cookie-dependent tracking to cookieless first-party collection. This allows you to reconcile your marketing spend with your actual board numbers without the massive data loss caused by consent rejection.
+            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of your traffic. Unlike lightweight tools, we don't just provide simple reporting; we provide enterprise-grade revenue attribution. We enable the transition from unreliable, cookie-dependent tracking to cookieless first-party collection. This allows you to reconcile your marketing spend with your actual board numbers without the massive data loss caused by consent rejection.
           </p>
 
           <p>
@@ -299,6 +296,10 @@ export default function DemdexAnalyticsCookiesPage() {
             </li>
           </ul>
         </div>
+
+        <CommercialModule
+          hook="Demdex is one domain of many. If you want to know how much of your traffic is already lost to third-party cookie blocking, we can measure it against your own site."
+        />
 
         <RelatedReading currentSlug="demdex-analytics-cookies-guide" />
       </div>

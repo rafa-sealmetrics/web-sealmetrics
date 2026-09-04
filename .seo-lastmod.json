@@ -108,8 +108,8 @@
     "date": "2026-08-13"
   },
   "/blog/": {
-    "hash": "1c0ae0d154dd71fd",
-    "date": "2026-09-02"
+    "hash": "24c7b60c25a62188",
+    "date": "2026-09-04"
   },
   "/growth/": {
     "hash": "2a911d7691a739d1",
@@ -296,8 +296,8 @@
     "date": "2026-08-13"
   },
   "/es/blog/": {
-    "hash": "5ef4a43786f8d577",
-    "date": "2026-09-02"
+    "hash": "83ddde4d441795a2",
+    "date": "2026-09-04"
   },
   "/es/case-studies/": {
     "hash": "88ddedafd810a690",
@@ -1101,6 +1101,10 @@
   },
   "/blog/dpo-rejected-google-analytics-eu-alternatives/": {
     "hash": "ebb4e43d2839890e",
+    "date": "2026-09-04"
+  },
+  "/blog/demdex-analytics-cookies-guide/": {
+    "hash": "dac942b9b0dbd919",
     "date": "2026-09-04"
   }
 }
