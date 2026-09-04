@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import "@/components/v4/signal-answer.css";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -58,6 +60,22 @@ export default function Page() {
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal, Joomla — más cualquier framework headless vía un script.
           </p>
+          <SignalAnswer label="Respuesta rápida">
+            Sealmetrics se instala de forma nativa en todas las plataformas
+            grandes de eCommerce y CMS, y en cualquier otra con un solo script.
+            Shopify, Magento 2, WooCommerce, PrestaShop y OpenCart tienen módulo
+            propio; también WordPress, Drupal y Joomla, y Webflow, Wix y
+            Squarespace. Los stacks headless y a medida — Next.js, Nuxt, Astro,
+            Remix, SvelteKit — usan el script estándar más la API de eventos.
+            Cada instalación lleva menos de 30 minutos, y en Shopify Plus es un
+            clic y unos cinco; los datos de pedido fluyen después sin configurar
+            eventos a mano. El tracker es lo bastante pequeño como para no
+            contar: menos de 5 KB comprimido, unas 132 veces más pequeño que GA4
+            según la medición de agosto de 2026. Lo que la instalación no incluye
+            nunca es un banner de consentimiento, una cookie ni un identificador
+            escrito en el dispositivo — no hay nada en la página que un
+            bloqueador pueda encontrar.
+          </SignalAnswer>
         </div>
       </section>
 
