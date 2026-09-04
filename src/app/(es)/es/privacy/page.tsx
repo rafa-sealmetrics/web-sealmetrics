@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              24 de agosto de 2026 ·{" "}
+              4 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -96,6 +96,33 @@ export default function PrivacyPageEs() {
               <p className="mt-3">
                 No utilizamos cookies, píxeles de seguimiento ni herramientas de
                 analítica de terceros en sealmetrics.com.
+              </p>
+              <p className="mt-3">
+                Al iniciar sesión en la plataforma{" "}
+                <span className="text-text-primary font-medium">
+                  my.sealmetrics.com
+                </span>{" "}
+                sí se instalan tres cookies estrictamente necesarias:{" "}
+                <span className="text-text-primary font-medium">
+                  sm_access_token
+                </span>{" "}
+                (15 minutos),{" "}
+                <span className="text-text-primary font-medium">
+                  sm_refresh_token
+                </span>{" "}
+                (7 días) y{" "}
+                <span className="text-text-primary font-medium">sm_csrf</span>{" "}
+                (7 días). Sirven únicamente para mantener tu sesión abierta y
+                protegerla frente a la falsificación de peticiones en sitios
+                cruzados. No tienen finalidad analítica, publicitaria ni de
+                perfilado, se transmiten solo por conexión cifrada y se
+                eliminan al cerrar sesión. Al ser estrictamente necesarias para
+                un servicio que solicitas expresamente, están exentas del deber
+                de consentimiento del art. 5.3 de la Directiva ePrivacy y del
+                art. 22.2 de la LSSI, y por eso no verás un banner. Puedes
+                bloquearlas desde tu navegador, pero entonces no podrás iniciar
+                sesión; bloquearlas no afecta a tu navegación por
+                sealmetrics.com, que no instala ninguna.
               </p>
             </div>
 
@@ -277,6 +304,15 @@ export default function PrivacyPageEs() {
                   privacy@sealmetrics.com
                 </span>
                 .
+              </p>
+              <p className="mt-3">
+                Responsable del tratamiento: Sealmetrics S.L. (CIF
+                ESB70933239), Carrer de Tirso de Molina 36, 08940 Cornellà de
+                Llobregat, Barcelona, España. No estamos obligados a designar
+                Delegado de Protección de Datos; las cuestiones de privacidad
+                se atienden en el contacto anterior. También puedes presentar
+                una reclamación ante la Agencia Española de Protección de Datos
+                (www.aepd.es).
               </p>
             </div>
 
