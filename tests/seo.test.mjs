@@ -123,6 +123,15 @@ test("structured data", { skip }, async (t) => {
       "FAQPage questions exist only in JSON-LD — a Google policy violation and uncitable by AI engines"
     )
   );
+  await t.test("the organisation graph ships on every indexable page", () =>
+    noneOf("org-graph-missing", "pages whose @id references have nothing to resolve against")
+  );
+  await t.test("publisher and provider reference the organisation node", () =>
+    noneOf("publisher-not-linked", "schemas restating the organisation inline")
+  );
+  await t.test("declared language matches the document", () =>
+    noneOf("schema-inlanguage-mismatch", "schemas whose inLanguage contradicts <html lang>")
+  );
   await t.test("breadcrumb schema never points at a 404", () =>
     noneOf("breadcrumb-to-404", "BreadcrumbList references a URL that was not built")
   );

@@ -3,7 +3,6 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { SignalHome, signalHomeFaqs } from "@/components/v4/SignalHome";
 import "@/components/v4/signal-home.css";
 import {
-  organizationSchema,
   softwareApplicationSchema,
   statisticClaimSchema,
   quotationSchema,
@@ -43,7 +42,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <JsonLd data={organizationSchema()} />
       <JsonLd data={softwareApplicationSchema()} />
       <JsonLd data={faqPageSchema(signalHomeFaqs, "/")} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "Sealmetrics — complete data for eCommerce" })} />

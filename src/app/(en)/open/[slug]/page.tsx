@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, ORG_ID } from "@/lib/schema";
 import { OpenChapterSidebar } from "@/components/open/OpenChapterSidebar";
 import { OpenChapterTOC } from "@/components/open/OpenChapterTOC";
 import {
@@ -80,12 +80,8 @@ export default async function OpenChapterPage({ params }: PageProps) {
       name: "Open — Sealmetrics",
       url: "https://sealmetrics.com/open",
     },
-    author: { "@type": "Organization", name: "Sealmetrics" },
-    publisher: {
-      "@type": "Organization",
-      name: "Sealmetrics",
-      url: "https://sealmetrics.com",
-    },
+    author: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
   };
 
   return (

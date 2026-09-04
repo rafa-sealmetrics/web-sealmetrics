@@ -4,6 +4,33 @@ const SITE_URL = "https://sealmetrics.com";
 const ORG_NAME = "Sealmetrics";
 
 /**
+ * Stable node identities for the site's entity graph.
+ *
+ * Every schema that names a publisher, provider or employer points HERE instead
+ * of restating the organisation inline. A search or answer engine resolving the
+ * graph then sees one Sealmetrics with one set of `sameAs` profiles, rather than
+ * a dozen anonymous Organization objects it has to guess are the same company.
+ * The nodes themselves are emitted once per page from `SharedLayout`, so a bare
+ * `{"@id": …}` reference always resolves inside the document that uses it.
+ */
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const PERSON_RAFA_ID = `${SITE_URL}/authors/rafa-jimenez/#person`;
+
+/** Reference to the organisation node, for publisher/provider/worksFor slots. */
+const orgRef = () => ({ "@id": ORG_ID });
+
+/**
+ * Locale of a page, derived from its own route. Spanish pages used to inherit
+ * `inLanguage` from nothing at all, which left the ES tree asserting no language
+ * while serving Spanish copy — an inconsistency an engine triangulating the
+ * entity will notice before a human does.
+ */
+export function langOf(url = ""): "en" | "es" {
+  return /^\/es(\/|$)/.test(url) ? "es" : "en";
+}
+
+/**
  * Build an absolute page URL with a trailing slash so JSON-LD page URLs match
  * the site's rendered canonicals (Next.js `trailingSlash: true` appends "/" to
  * every canonical, e.g. `/security` → `/security/`). Use ONLY for page/document
@@ -113,7 +140,7 @@ export function faqPageSchema(items: { question: string; answer: string }[], pag
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    ...(pageUrl ? { url: pageHref(pageUrl) } : {}),
+    ...(pageUrl ? { url: pageHref(pageUrl), inLanguage: langOf(pageUrl) } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -169,11 +196,8 @@ export function verticalSoftwareApplicationSchema(props: {
       audienceType: props.audienceType,
       name: `${props.vertical} teams in the European Union`,
     },
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
+    inLanguage: langOf(props.url),
     featureList: [
       `Cookieless analytics for ${props.vertical}`,
       "100% traffic capture (no consent gap)",
@@ -184,18 +208,32 @@ export function verticalSoftwareApplicationSchema(props: {
   };
 }
 
-export function softwareApplicationSchema() {
+export function softwareApplicationSchema(opts?: { locale?: "en" | "es" }) {
+  const locale = opts?.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: ORG_NAME,
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
-    url: pageHref(),
+    url: locale === "es" ? pageHref("/es") : pageHref(),
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
+    inLanguage: locale,
     description:
-      "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
-    featureList: [
+      locale === "es"
+        ? "Analítica enterprise para eCommerce. Captura el 100% del tráfico, sostiene decisiones de inversión con LENS AI y cumple el RGPD por arquitectura. Alternativa a GA360 y Adobe Analytics."
+        : "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
+    featureList:
+      locale === "es"
+        ? [
+            "Medición cookieless (sin banner de consentimiento)",
+            "Captura del 100% del tráfico",
+            "Cumplimiento RGPD/ePrivacy por diseño",
+            "Atribución de ingresos a último clic",
+            "LENS AI — pregunta a tus datos en lenguaje natural",
+            "Analítica de agentes de IA",
+          ]
+        : [
       "Cookieless tracking (no consent banner required)",
       "100% traffic data capture",
       "GDPR/ePrivacy compliant by design",
@@ -210,13 +248,9 @@ export function softwareApplicationSchema() {
       highPrice: String(PRICING.scale.monthly),
       offerCount: 3,
       availability: "https://schema.org/InStock",
-      url: pageHref("/pricing"),
+      url: locale === "es" ? pageHref("/es/pricing") : pageHref("/pricing"),
     },
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
   };
 }
 
@@ -266,14 +300,8 @@ export function articleSchema(props: {
             : {}),
         }
       : { "@type": "Organization", name: ORG_NAME },
-    publisher: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
-      },
-    },
+    publisher: orgRef(),
+    inLanguage: langOf(props.url),
     ...(props.category ? { articleSection: props.category } : {}),
   };
 }
@@ -287,9 +315,11 @@ export function definedTermSchema(props: {
   return {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
+    "@id": `${pageHref(props.url)}#term`,
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
     inDefinedTermSet: {
       "@type": "DefinedTermSet",
       name: "Web Analytics Glossary",
@@ -373,6 +403,8 @@ export function comparisonPageSchema(props: {
           name: `Comparison overview — ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
           description: `Feature-by-feature comparison of ${ORG_NAME} vs ${props.competitor?.name ?? "competing analytics platforms"}`,
         },
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
   };
 }
 
@@ -387,6 +419,8 @@ export function collectionPageSchema(props: {
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
   };
 }
 
@@ -400,6 +434,7 @@ export function speakableWebPageSchema(props: {
     "@type": "WebPage",
     name: props.name,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: props.selectors ?? [
@@ -429,6 +464,8 @@ export function definedTermSetSchema(props: {
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
+    publisher: orgRef(),
     hasDefinedTerm: props.terms.map((t) => ({
       "@type": "DefinedTerm",
       name: t.term,
@@ -451,6 +488,7 @@ export function itemListSchema(props: {
     name: props.name,
     description: props.description,
     url: pageHref(props.url),
+    inLanguage: langOf(props.url),
     numberOfItems: props.items.length,
     itemListElement: props.items.map((item, i) => ({
       "@type": "ListItem",
@@ -478,12 +516,18 @@ export function pricingSchema(
   const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
     .toISOString()
     .slice(0, 10);
+  const locale = opts?.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Sealmetrics Analytics",
+    // Localised on purpose: an entity described in English inside the Spanish
+    // tree is the kind of inconsistency an engine notices while triangulating.
     description:
-      "Cookieless web analytics with 100% data capture, GDPR-compliant by architecture. Enterprise alternative to GA360 and Adobe Analytics.",
+      locale === "es"
+        ? "Analítica web cookieless que captura el 100% del dato y cumple el RGPD por arquitectura. Alternativa enterprise a GA360 y Adobe Analytics."
+        : "Cookieless web analytics with 100% data capture, GDPR-compliant by architecture. Enterprise alternative to GA360 and Adobe Analytics.",
+    inLanguage: locale,
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     brand: { "@type": "Brand", name: ORG_NAME },
     category: "SaaS / Web Analytics",
@@ -515,11 +559,7 @@ export function pricingSchema(
           unitText: "Per month, billed annually",
           billingIncrement: 1,
         },
-        seller: {
-          "@type": "Organization",
-          name: ORG_NAME,
-          url: pageHref(),
-        },
+        seller: orgRef(),
       })),
     },
   };
@@ -540,11 +580,8 @@ export function servicePageSchema(props: {
     ...(props.audience
       ? { audience: { "@type": "Audience", audienceType: props.audience } }
       : {}),
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
+    inLanguage: langOf(props.url),
   };
 }
 
@@ -576,7 +613,7 @@ export function statisticClaimSchema(props: {
       author: { "@type": "Organization", name: props.sourceAuthor },
       datePublished: props.sourceDate,
     },
-    publisher: { "@type": "Organization", name: ORG_NAME, url: pageHref() },
+    publisher: orgRef(),
     ...(props.numericValue !== undefined
       ? {
           mainEntity: {
@@ -677,15 +714,7 @@ export function videoObjectSchema(props: {
     ...(props.contentUrl ? { contentUrl: props.contentUrl } : {}),
     ...(props.inLanguage ? { inLanguage: props.inLanguage } : {}),
     url: pageHref(props.url),
-    publisher: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
-      },
-    },
+    publisher: orgRef(),
   };
 }
 
@@ -771,11 +800,8 @@ export function webApplicationSchema(props: {
     url: pageHref(props.url),
     applicationCategory: "AnalyticsApplication",
     operatingSystem: "Web",
-    provider: {
-      "@type": "Organization",
-      name: ORG_NAME,
-      url: pageHref(),
-    },
+    provider: orgRef(),
+    inLanguage: langOf(props.url),
     offers: {
       "@type": "Offer",
       price: "0",

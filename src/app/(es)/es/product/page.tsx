@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function ProductPageEs() {
   return (
     <>
-      <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={softwareApplicationSchema({ locale: "es" })} />
       <JsonLd data={breadcrumbSchema([{ name: "Producto", url: "/es/product" }])} />
       <JsonLd data={speakableWebPageSchema({ url: "/es/product", name: "Producto — Sealmetrics" })} />
       <ProductSignal locale="es" />
