@@ -426,7 +426,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "The European Commission proposed the biggest change to EU data law since GDPR. Cookie consent moves to GDPR, and first-party analytics may not require consent.",
     date: "2026-02-12",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-04",
     category: "Regulation",
     readTime: "2 min",
     author: AUTHORS.rafa,
