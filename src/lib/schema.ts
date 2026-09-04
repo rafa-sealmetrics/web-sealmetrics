@@ -616,11 +616,27 @@ export function statisticClaimSchema(props: {
   url: string;
   numericValue?: number;
   unit?: string;
+  /** Stable suffix for the node's @id, unique within the page. */
+  id?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
+    // Addressable so a Dataset or an Article can cite the specific claim rather
+    // than the page it happens to sit on. Derived from the claim text when no
+    // id is given, so it is stable across builds without being hand-maintained.
+    "@id": `${pageHref(props.url)}#claim-${
+      props.id ??
+      props.text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 60)
+    }`,
     name: props.text,
+    inLanguage: langOf(props.url),
     text: props.text,
     url: pageHref(props.url),
     isBasedOn: {
