@@ -92,7 +92,7 @@ export default function OmnibusGuidePage() {
 
           <p>
             On November 19, 2025, the European Commission released proposal{" "}
-            <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act-package_en" target="_blank" rel="noopener noreferrer">COM(2025) 837</a>. It consolidates five separate data regulations into
+            <a href="https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-regulation-proposal" target="_blank" rel="noopener noreferrer">COM(2025) 837</a>. It consolidates five separate data regulations into
             just two, making it the most comprehensive overhaul of
             Europe&apos;s digital governance framework since{" "}
             <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR</Link>.

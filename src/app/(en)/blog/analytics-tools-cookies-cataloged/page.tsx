@@ -334,7 +334,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </h2>
 
           <p>
-            A typical <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/cookie-settings.html" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Adobe Analytics</a> deployment with the Experience Cloud ID
+            A typical <a href="https://experienceleague.adobe.com/en/docs/analytics/technotes/cookies/cookies" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Adobe Analytics</a> deployment with the Experience Cloud ID
             Service (ECID) sets 6 cookies — the most of any tool we tested.
             Four are first-party. Two are third-party cookies on Adobe&apos;s
             tracking domains:{" "}

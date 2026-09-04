@@ -165,7 +165,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
           </h2>
 
           <p>
-            La autoridad francesa de protección de datos (<a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer">CNIL</a>) ha ido más
+            La autoridad francesa de protección de datos (<a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer">CNIL</a>) ha ido más
             lejos que cualquier otro regulador UE definiendo exactamente qué
             puede hacer una herramienta de analítica sin consentimiento. En su
             guía sobre exenciones para medición de audiencia, la CNIL publicó

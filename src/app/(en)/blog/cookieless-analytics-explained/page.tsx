@@ -230,7 +230,7 @@ export default function CookielessAnalyticsExplainedPage() {
           </p>
 
           <p>
-            This is consistent with the <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices" target="_blank" rel="noopener noreferrer">CNIL</a> (French DPA) exemption criteria for
+            This is consistent with the <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer">CNIL</a> (French DPA) exemption criteria for
             audience measurement tools and with German DSK guidance on
             consent-free analytics. The{" "}
             <Link

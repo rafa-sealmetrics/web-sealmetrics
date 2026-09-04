@@ -75,7 +75,7 @@ export default function OmnibusShortPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             On November 19, 2025, the European Commission released proposal{" "}
-            <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act-package_en" target="_blank" rel="noopener noreferrer">COM(2025) 837</a> — the Digital Omnibus. If adopted, it would be the
+            <a href="https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-regulation-proposal" target="_blank" rel="noopener noreferrer">COM(2025) 837</a> — the Digital Omnibus. If adopted, it would be the
             biggest change to EU data law since GDPR came into force in 2018.
           </p>
 
@@ -172,7 +172,7 @@ export default function OmnibusShortPage() {
             for six months after a user declines. This directly targets the
             practice of showing consent banners on every visit until the
             user gives in — a pattern the{" "}
-            <a href="https://www.cnil.fr/en/cookies-and-other-trackers" target="_blank" rel="noopener noreferrer">French CNIL</a>{" "}
+            <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer">French CNIL</a>{" "}
             and other DPAs have criticized but lacked specific legal basis
             to enforce uniformly.
           </p>
@@ -231,7 +231,7 @@ export default function OmnibusShortPage() {
           <p>
             France and the UK have already implemented similar exemptions.
             The CNIL (France&rsquo;s DPA) published{" "}
-            <a href="https://www.cnil.fr/en/cookies-and-other-trackers/cookie-walls-and-alternatives" target="_blank" rel="noopener noreferrer">specific criteria</a>{" "}
+            <a href="https://www.cnil.fr/en/sheet-ndeg16-use-analytics-your-websites-and-applications" target="_blank" rel="noopener noreferrer">specific criteria</a>{" "}
             for analytics tools that can operate without consent: no
             cross-site tracking, no individual profiles, data used only
             for aggregated audience measurement. Sealmetrics{" "}
