@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import "@/components/v4/signal-answer.css";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -76,6 +78,21 @@ export default function Page() {
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             Native modules for eCommerce, CMS, website builders, frameworks and tag managers. Plus a BigQuery connector, webhooks, a full REST API and an MCP server for AI agents.
           </p>
+          <SignalAnswer>
+            Sealmetrics integrates in two directions: into the site that produces
+            the events, and into the tools that consume them. On the collection
+            side there are native modules for Shopify, WooCommerce, Magento 2,
+            PrestaShop and OpenCart, for WordPress, Drupal and Joomla, for
+            Webflow, Wix and Squarespace, and for Next.js, React and Nuxt — plus
+            Google Tag Manager container and tag templates for teams that deploy
+            everything through GTM. Any framework not on that list works from a
+            single script tag. On the consumption side the same aggregate data
+            leaves through a REST API, webhooks, a BigQuery connector, Data
+            Studio, and an MCP server that lets Claude, ChatGPT, Cursor or Codex
+            query it in plain language. None of it asks for a cookie or a visitor
+            identifier, so adding Sealmetrics adds no consent obligation to a
+            stack that already carries one.
+          </SignalAnswer>
         </div>
       </section>
 
