@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -125,6 +126,8 @@ const platforms = [
 ];
 
 export default function BestEnterpriseAnalyticsPlatformsPage() {
+  const dates = postDates("best-enterprise-analytics-platforms");
+
   return (
     <>
       <Breadcrumbs
@@ -138,8 +141,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
           headline: "8 Best Enterprise Analytics Platforms in 2026",
           description:
             "Ranked comparison of enterprise analytics platforms for data capture, compliance, pricing, and AI features.",
-          datePublished: "2026-03-16",
-          dateModified: "2026-08-27",
+          ...dates,
           url: "/blog/best-enterprise-analytics-platforms",
           category: "Comparisons",
           author: {
@@ -177,8 +179,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               8 Best Enterprise Analytics Platforms in 2026
             </h1>
             <PostByline
-              datePublished="2026-03-16"
-              dateModified="2026-08-27"
+              {...dates}
               readTime="12 min read"
               authorName="Sealmetrics Team"
             />

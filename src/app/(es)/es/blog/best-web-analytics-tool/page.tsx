@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -185,6 +186,8 @@ const h2Class =
 const strongClass = "font-semibold text-text-primary";
 
 export default function MejorHerramientaAnaliticaWebPage() {
+  const dates = postDates("best-web-analytics-tool", "es");
+
   return (
     <>
       <Breadcrumbs
@@ -199,8 +202,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
             "La mejor herramienta de analítica web: los 12 requisitos que de verdad deciden",
           description:
             "Los 12 requisitos técnicos que debe cumplir una plataforma de analítica web — peso del píxel, tiempo real, 100% del dato, API, MCP — cada uno con el fallo que previene y una prueba.",
-          datePublished: "2026-08-06",
-          dateModified: "2026-08-06",
+          ...dates,
           url: "/es/blog/best-web-analytics-tool",
           category: "Comparativas",
           author: {
@@ -244,7 +246,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
               verdad deciden
             </h1>
             <PostByline
-              datePublished="2026-08-06"
+              {...dates}
               readTime="12 min de lectura"
               authorName="Rafa Jiménez"
               locale="es"

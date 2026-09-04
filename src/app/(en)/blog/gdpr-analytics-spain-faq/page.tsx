@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -76,6 +77,8 @@ const faqs = [
 ];
 
 export default function GdprAnalyticsSpainFaqPage() {
+  const dates = postDates("gdpr-analytics-spain-faq");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GDPR Analytics in Spain: FAQ" }]} />
@@ -84,8 +87,7 @@ export default function GdprAnalyticsSpainFaqPage() {
           headline: "GDPR Analytics in Spain: 7 Questions Online Stores Ask",
           description:
             "AEPD cookie guidance, consent banners, GA4 legality, LSSI fines, and measuring without cookies — direct answers for online stores operating in Spain.",
-          datePublished: "2026-07-07",
-          dateModified: "2026-07-07",
+          ...dates,
           url: "/blog/gdpr-analytics-spain-faq",
           category: "Regulation",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -110,7 +112,7 @@ export default function GdprAnalyticsSpainFaqPage() {
               A Spanish online store sits between two costs: AEPD enforcement if the cookies are wrong, and losing a third to half of its data if the banner is right. These are the seven questions operators ask — answered directly, one at a time.
             </p>
             <PostByline
-              datePublished="2026-07-07"
+              {...dates}
               readTime="5 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

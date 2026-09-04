@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +35,12 @@ export const metadata: Metadata = {
 };
 
 export default function DataSamplingComparedPage() {
+  const dates = postDates("analytics-tools-data-sampling");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Data Sampling Thresholds Compared" }]} />
-      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", datePublished: "2026-03-03", dateModified: "2026-08-27", url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "When Your Analytics Starts Guessing: Data Sampling Thresholds Compared", description: "We reviewed sampling thresholds for GA4, Adobe Analytics, Piwik PRO, Mixpanel, PostHog, and more. Here is when each tool starts guessing your data.", ...dates, url: "/blog/analytics-tools-data-sampling", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Data Sampling Thresholds Compared", url: "/blog/analytics-tools-data-sampling" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -50,8 +53,7 @@ export default function DataSamplingComparedPage() {
             When Your Analytics Starts Guessing: Data Sampling Thresholds Compared
           </h1>
           <PostByline
-              datePublished="2026-03-03"
-              dateModified="2026-08-27"
+              {...dates}
               readTime="5 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -75,14 +76,15 @@ const FAQ = [
 ];
 
 export default function HowWeBenchmarkOurOwnAiPageEs() {
+  const dates = postDates("how-we-benchmark-our-own-ai", "es");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "IA",
           author: {
@@ -135,8 +137,7 @@ export default function HowWeBenchmarkOurOwnAiPageEs() {
               publicamos las tandas que descartamos)
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="8 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

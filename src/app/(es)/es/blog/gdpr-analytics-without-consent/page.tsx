@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -35,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function GDPRAnalyticsWithoutConsentPageEs() {
+  const dates = postDates("gdpr-analytics-without-consent", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica RGPD sin consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica conforme con RGPD sin banners de consentimiento: cómo funciona", description: "La analítica sin banners de consentimiento es legalmente posible bajo RGPD y ePrivacy.", datePublished: "2026-03-02", dateModified: "2026-07-28", url: "/es/blog/gdpr-analytics-without-consent", category: "Regulación", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica conforme con RGPD sin banners de consentimiento: cómo funciona", description: "La analítica sin banners de consentimiento es legalmente posible bajo RGPD y ePrivacy.", ...dates, url: "/es/blog/gdpr-analytics-without-consent", category: "Regulación", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica RGPD sin consentimiento", url: "/es/blog/gdpr-analytics-without-consent" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -51,8 +54,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             Analítica conforme con RGPD sin banners de consentimiento: cómo funciona
           </h1>
           <PostByline
-              datePublished="2026-03-02"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="7 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -36,10 +37,12 @@ export const metadata: Metadata = {
 };
 
 export default function CookielessAnalyticsExplainedPage() {
+  const dates = postDates("cookieless-analytics-explained");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics Explained" }]} />
-      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", datePublished: "2026-02-08", dateModified: "2026-05-28", url: "/blog/cookieless-analytics-explained", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cookieless Analytics Explained: How to Measure Without Cookies", description: "How cookieless analytics works and why it matters.", ...dates, url: "/blog/cookieless-analytics-explained", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics", url: "/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -52,8 +55,7 @@ export default function CookielessAnalyticsExplainedPage() {
             How Web Analytics Works Without Cookies, Consent or Per-User Tracking
           </h1>
           <PostByline
-              datePublished="2026-02-08"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="8 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

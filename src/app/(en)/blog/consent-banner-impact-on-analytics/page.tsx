@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -36,10 +37,12 @@ export const metadata: Metadata = {
 };
 
 export default function ConsentBannerImpactPage() {
+  const dates = postDates("consent-banner-impact-on-analytics");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Consent Banner Impact" }]} />
-      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", datePublished: "2026-01-25", dateModified: "2026-05-28", url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "How Consent Banners Destroy Your Analytics Data", description: "Consent banners cause 55%+ EU visitor data loss — and even accepted cookies arrive too late for attribution.", ...dates, url: "/blog/consent-banner-impact-on-analytics", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consent Banner Impact", url: "/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -52,8 +55,7 @@ export default function ConsentBannerImpactPage() {
             How Consent Banners Destroy Your Analytics Data
           </h1>
           <PostByline
-              datePublished="2026-01-25"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="6 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

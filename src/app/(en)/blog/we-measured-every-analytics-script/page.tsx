@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,10 +35,12 @@ export const metadata: Metadata = {
 };
 
 export default function MeasuredScriptsPage() {
+  const dates = postDates("we-measured-every-analytics-script");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "We Measured Every Analytics Script" }]} />
-      <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", datePublished: "2026-02-20", dateModified: "2026-05-04", url: "/blog/we-measured-every-analytics-script", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "We Measured Every Analytics Script. Here Is What We Found.", description: "We downloaded major analytics scripts from production CDNs and measured their real size.", ...dates, url: "/blog/we-measured-every-analytics-script", category: "Performance", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "We Measured Every Analytics Script", url: "/blog/we-measured-every-analytics-script" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -50,8 +53,7 @@ export default function MeasuredScriptsPage() {
             We Measured Every Analytics Script. Here Is What We Found.
           </h1>
           <PostByline
-              datePublished="2026-02-20"
-              dateModified="2026-05-04"
+              {...dates}
               readTime="4 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

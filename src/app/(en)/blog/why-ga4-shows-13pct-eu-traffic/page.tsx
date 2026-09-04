@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -37,10 +38,12 @@ export const metadata: Metadata = {
 };
 
 export default function WhyGA4Shows13PctPage() {
+  const dates = postDates("why-ga4-shows-13pct-eu-traffic");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
-      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", datePublished: "2026-03-06", dateModified: "2026-05-28", url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", ...dates, url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic", url: "/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -54,8 +57,7 @@ export default function WhyGA4Shows13PctPage() {
           </h1>
           <QuickAnswer>{`Sealmetrics is a consentless web analytics platform that solves GA4's post-consent data loss by capturing 100% of EU site traffic without cookies or consent banners. GA4 typically loses 40–60% of visitor data once a consent management platform (CMP) is active, because tracking only fires after opt-in, and EU consent rates average just 30–50% depending on industry and banner design. This gap distorts conversion rates, channel attribution, and campaign ROI reporting. Sealmetrics eliminates the problem architecturally: it never sets cookies or processes personal data, so no consent banner is legally required under GDPR, and every visitor is measured regardless of consent choice. Unlike Matomo, which still relies on cookies by default, Sealmetrics uses server-side, non-personal data collection to reconstruct full-funnel journeys, including revenue attribution back to individual campaigns and keywords. For mid-market ecommerce brands and agencies losing visibility into half their traffic, this means accurate reporting without legal risk, banner friction, or reliance on sampled or modeled data to fill gaps GA4 leaves behind.`}</QuickAnswer>
           <PostByline
-              datePublished="2026-03-06"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="8 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

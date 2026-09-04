@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -77,14 +78,15 @@ const FAQ = [
 ];
 
 export default function RivalModelAsJudgePage() {
+  const dates = postDates("rival-model-as-judge");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "AI",
           author: {
@@ -147,8 +149,7 @@ export default function RivalModelAsJudgePage() {
               Why We Let a Rival Model Grade Our AI Benchmark
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="5 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

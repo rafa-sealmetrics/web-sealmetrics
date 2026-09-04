@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -155,6 +156,8 @@ const accentBar: Record<string, string> = {
 };
 
 export default function Page() {
+  const dates = postDates("gdpr-eprivacy-analytics-legal-assessment", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "¿Tu analítica cumple el RGPD?" }]} locale="es" />
@@ -163,8 +166,7 @@ export default function Page() {
           headline: "¿Tu analítica cumple de verdad el RGPD? Un análisis legal",
           description:
             "RGPD y ePrivacy son dos leyes distintas. La analítica tiene que superar las dos para funcionar sin banner. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.",
-          datePublished: "2026-07-06",
-          dateModified: "2026-07-06",
+          ...dates,
           url: "/es/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulación",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -186,7 +188,7 @@ export default function Page() {
               «Conforme con el RGPD» aparece en casi todas las webs de analítica. Dos leyes distintas deciden si es cierto — y la mayoría de herramientas solo superan una. Aquí está el test legal y dónde caen GA4, Matomo, Plausible, Piwik PRO y Sealmetrics.
             </p>
             <PostByline
-              datePublished="2026-07-06"
+              {...dates}
               readTime="9 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -76,14 +77,15 @@ const FAQ = [
 ];
 
 export default function RivalModelAsJudgePageEs() {
+  const dates = postDates("rival-model-as-judge", "es");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "IA",
           author: {
@@ -147,8 +149,7 @@ export default function RivalModelAsJudgePageEs() {
               Por qué dejamos que un modelo rival puntúe nuestro benchmark
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="5 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

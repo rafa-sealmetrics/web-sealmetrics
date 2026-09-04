@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -156,6 +157,8 @@ const accentBar: Record<string, string> = {
 };
 
 export default function Page() {
+  const dates = postDates("gdpr-eprivacy-analytics-legal-assessment");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Is Your Analytics GDPR-Compliant?" }]} />
@@ -164,8 +167,7 @@ export default function Page() {
           headline: "Is Your Analytics Actually GDPR-Compliant? A Legal Assessment",
           description:
             "GDPR and ePrivacy are two different laws. Analytics has to clear both to run without a consent banner. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and Sealmetrics each land.",
-          datePublished: "2026-07-06",
-          dateModified: "2026-07-06",
+          ...dates,
           url: "/blog/gdpr-eprivacy-analytics-legal-assessment",
           category: "Regulation",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -187,7 +189,7 @@ export default function Page() {
               &ldquo;GDPR-compliant&rdquo; is printed on almost every analytics homepage. Two different laws decide whether it&apos;s true — and most tools only clear one of them. Here is the legal test, and where GA4, Matomo, Plausible, Piwik PRO and Sealmetrics each land.
             </p>
             <PostByline
-              datePublished="2026-07-06"
+              {...dates}
               readTime="9 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

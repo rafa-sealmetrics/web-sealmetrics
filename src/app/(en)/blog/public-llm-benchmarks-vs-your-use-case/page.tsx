@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -76,14 +77,15 @@ const FAQ = [
 ];
 
 export default function PublicLlmBenchmarksVsYourUseCasePage() {
+  const dates = postDates("public-llm-benchmarks-vs-your-use-case");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "AI",
           author: {
@@ -134,8 +136,7 @@ export default function PublicLlmBenchmarksVsYourUseCasePage() {
               Public LLM Benchmarks Won&apos;t Tell You Which Model to Ship
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="7 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

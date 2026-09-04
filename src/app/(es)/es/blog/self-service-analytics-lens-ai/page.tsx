@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -130,6 +131,8 @@ const accentBar: Record<string, string> = {
 };
 
 export default function Page() {
+  const dates = postDates("self-service-analytics-lens-ai", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica self-service con LENS AI" }]} locale="es" />
@@ -138,8 +141,7 @@ export default function Page() {
           headline: "Qué hace falta para que la analítica self-service funcione de verdad",
           description:
             "El dato cookieless completo más un MCP semántico permiten que cualquiera consulte su propia analítica en lenguaje natural, sin un analista en medio.",
-          datePublished: "2026-07-05",
-          dateModified: "2026-07-05",
+          ...dates,
           url: "/es/blog/self-service-analytics-lens-ai",
           category: "IA y Analítica",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -160,7 +162,7 @@ export default function Page() {
               Apuntar un LLM a tu dato es la parte fácil. Lo difícil es que sus respuestas sean fiables — y es la parte que Sealmetrics construyó primero, para luego integrarla como LENS AI.
             </p>
             <PostByline
-              datePublished="2026-07-05"
+              {...dates}
               readTime="10 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -63,6 +64,8 @@ const faqs = [
 ];
 
 export default function Page() {
+  const dates = postDates("cookieless-analytics-for-ecommerce");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for eCommerce" }]} />
@@ -71,8 +74,7 @@ export default function Page() {
           headline: "Cookieless Analytics for eCommerce: The 2026 Guide",
           description:
             "How European eCommerce teams count every conversion without cookies or user-level tracking.",
-          datePublished: "2026-04-24",
-          dateModified: "2026-05-28",
+          ...dates,
           url: "/blog/cookieless-analytics-for-ecommerce",
           category: "eCommerce",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -90,8 +92,7 @@ export default function Page() {
               How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
             </h1>
             <PostByline
-              datePublished="2026-04-24"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="10 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

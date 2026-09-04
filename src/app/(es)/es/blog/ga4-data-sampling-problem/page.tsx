@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -35,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function GA4DataSamplingPageEs() {
+  const dates = postDates("ga4-data-sampling-problem", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Muestreo de datos en GA4" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Muestreo de datos en GA4: por qué tus números de tráfico están mal", description: "GA4 aplica muestreo de datos que distorsiona tu analítica.", datePublished: "2026-02-15", dateModified: "2026-05-06", url: "/es/blog/ga4-data-sampling-problem", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Muestreo de datos en GA4: por qué tus números de tráfico están mal", description: "GA4 aplica muestreo de datos que distorsiona tu analítica.", ...dates, url: "/es/blog/ga4-data-sampling-problem", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Muestreo de datos en GA4", url: "/es/blog/ga4-data-sampling-problem" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -51,8 +54,7 @@ export default function GA4DataSamplingPageEs() {
             Muestreo de datos en GA4: por qué tus números de tráfico están mal
           </h1>
           <PostByline
-              datePublished="2026-02-15"
-              dateModified="2026-05-06"
+              {...dates}
               readTime="7 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

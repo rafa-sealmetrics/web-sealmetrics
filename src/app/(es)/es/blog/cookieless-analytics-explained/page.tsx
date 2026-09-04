@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -35,10 +36,12 @@ export const metadata: Metadata = {
 };
 
 export default function CookielessAnalyticsExplainedPageEs() {
+  const dates = postDates("cookieless-analytics-explained", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica cookieless explicada" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", datePublished: "2026-02-08", dateModified: "2026-05-06", url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Analítica cookieless explicada: cómo medir sin cookies", description: "Cómo funciona la analítica cookieless y por qué importa.", ...dates, url: "/es/blog/cookieless-analytics-explained", category: "Tecnología", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Analítica cookieless", url: "/es/blog/cookieless-analytics-explained" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -51,8 +54,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
             Cómo funciona la analítica web sin cookies, sin consentimiento y sin tracking por usuario
           </h1>
           <PostByline
-              datePublished="2026-02-08"
-              dateModified="2026-05-06"
+              {...dates}
               readTime="8 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

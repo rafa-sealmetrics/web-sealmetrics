@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import { getAlternates } from "@/lib/i18n/navigation";
 import Link from "next/link";
@@ -75,14 +76,15 @@ const FAQ = [
 ];
 
 export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
+  const dates = postDates("analytics-if-data-privacy-framework-falls", "es");
+
   return (
     <>
       <JsonLd
         data={articleSchema({
           headline: TITLE,
           description: DESCRIPTION,
-          datePublished: "2026-07-24",
-          dateModified: "2026-07-28",
+          ...dates,
           url: URL,
           category: "Regulación",
           author: {
@@ -125,8 +127,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
               Qué pasa con tu analítica si cae el Marco de Privacidad de Datos UE-EE. UU.
             </h1>
             <PostByline
-              datePublished="2026-07-24"
-              dateModified="2026-07-28"
+              {...dates}
               readTime="6 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

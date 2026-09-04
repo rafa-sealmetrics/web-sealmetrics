@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternates } from "@/lib/i18n/navigation";
@@ -74,6 +75,8 @@ const faqs = [
 ];
 
 export default function GdprAnalyticsSpainFaqEsPage() {
+  const dates = postDates("gdpr-analytics-spain-faq", "es");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Analítica RGPD en España: FAQ" }]} locale="es" />
@@ -82,8 +85,7 @@ export default function GdprAnalyticsSpainFaqEsPage() {
           headline: "Analítica RGPD en España: las 7 preguntas que hacen las tiendas online",
           description:
             "AEPD, banners de cookies, legalidad de GA4, sanciones LSSI y cómo medir sin cookies — respuestas directas para tiendas online que operan en España.",
-          datePublished: "2026-07-07",
-          dateModified: "2026-07-07",
+          ...dates,
           url: "/es/blog/gdpr-analytics-spain-faq",
           category: "Regulación",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -105,7 +107,7 @@ export default function GdprAnalyticsSpainFaqEsPage() {
               Una tienda online española vive entre dos costes: la sanción de la AEPD si las cookies están mal, y perder de un tercio a la mitad de su dato si el banner está bien. Estas son las siete preguntas que hacen quienes la operan — respondidas en directo, una a una.
             </p>
             <PostByline
-              datePublished="2026-07-07"
+              {...dates}
               readTime="5 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"

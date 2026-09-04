@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -63,6 +64,8 @@ const faqs = [
 ];
 
 export default function Page() {
+  const dates = postDates("cookieless-analytics-for-hotels");
+
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for Hotels" }]} />
@@ -71,8 +74,7 @@ export default function Page() {
           headline: "Cookieless Analytics for Hotels — 2026 Guide",
           description:
             "How hotel groups count direct bookings at channel level without cookies or user-level tracking.",
-          datePublished: "2026-04-24",
-          dateModified: "2026-05-28",
+          ...dates,
           url: "/blog/cookieless-analytics-for-hotels",
           category: "Hotels",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -90,8 +92,7 @@ export default function Page() {
               How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
             </h1>
             <PostByline
-              datePublished="2026-04-24"
-              dateModified="2026-05-28"
+              {...dates}
               readTime="9 min read"
               authorName="Rafa Jiménez"
               authorUrl="/authors/rafa-jimenez"

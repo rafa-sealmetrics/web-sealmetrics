@@ -406,26 +406,33 @@ for (const p of pages) {
   }
 }
 
-// 10e. The sitemap's lastmod may not predate a revision the page claims.
-//      `stamp-sitemap-lastmod.mjs` derives lastmod from the rendered text on
-//      purpose, so a design pass cannot move it. If it lands *before* an
-//      author-set dateModified, the post is claiming a revision its own text
-//      does not reflect — which is the thing worth knowing, not a stamping bug.
+// 10e. For a blog post, the sitemap's <lastmod> and the Article's
+//      dateModified must be the same date.
+//
+//      They are now the same value by construction: both come from
+//      `postDates()` reading src/lib/content/blog.ts. This rule is what keeps
+//      it that way. Before the dates moved into the registry, the revision
+//      lived inside each page's articleSchema() call where the sitemap could
+//      not see it, so the sitemap reported the PUBLICATION date and
+//      under-reported freshness on 19 revised posts. A page that goes back to
+//      hard-coding either date will disagree here.
 const lastmodByRoute = new Map(
-  all(readFileSync(smPath, "utf8"), /<url>\s*<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)
-    .map((m) => [m[1].replace(SITE, ""), m[2] ? m[2].slice(0, 10) : null])
+  all(readFileSync(smPath, "utf8"), /<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<lastmod>([^<]+)<\/lastmod>/g)
+    .map((m) => [m[1].replace(SITE, ""), m[2].slice(0, 10)])
 );
 for (const p of pages) {
+  if (!/^(\/es)?\/blog\/[^/]+\/$/.test(p.route)) continue;
   const lastmod = lastmodByRoute.get(p.route);
-  if (!lastmod) continue;
+  if (!lastmod) continue; // noindex posts are legitimately absent
   for (const schema of p.jsonld) {
     const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
     for (const node of nodes) {
       if (node?.["@type"] !== "Article" || !node.dateModified) continue;
-      if (String(node.dateModified).slice(0, 10) > lastmod) {
-        warn(
-          "lastmod-behind-date-modified",
-          `${p.route}: sitemap lastmod ${lastmod} predates the declared revision ${String(node.dateModified).slice(0, 10)}`
+      const declared = String(node.dateModified).slice(0, 10);
+      if (declared !== lastmod) {
+        fail(
+          "lastmod-disagrees-with-date-modified",
+          `${p.route}: sitemap says ${lastmod}, the Article says ${declared} — both must come from postDates()`
         );
       }
     }

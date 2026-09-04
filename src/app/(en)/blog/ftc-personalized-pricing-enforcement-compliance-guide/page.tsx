@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -59,6 +60,8 @@ const FAQ = [
 ];
 
 export default function Page() {
+  const dates = postDates("ftc-personalized-pricing-enforcement-compliance-guide");
+
   return (
     <>
       <Breadcrumbs
@@ -68,8 +71,7 @@ export default function Page() {
         data={articleSchema({
           headline: "FTC Seeks Comment on Enforcement Policy Statement Regarding Personalized Pricing: A Guide for eCommerce Brands",
           description: "Explore the implications of the FTC's latest stance on personalized pricing and how cookieless, privacy-first analytics can mitigate regulatory risks.",
-          datePublished: "2026-08-27",
-          dateModified: "2026-08-27",
+          ...dates,
           url: `https://sealmetrics.com${URL}/`,
           category: "Compliance & Privacy",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -96,7 +98,7 @@ export default function Page() {
               Sealmetrics is a <Link href="/glossary" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>, <Link href="/glossary" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless</Link> web analytics platform for eCommerce that captures 100% of traffic through privacy-first technology. As the FTC seeks comment on enforcement policies regarding personalized pricing, Sealmetrics lets brands measure channel and revenue performance in aggregate, without the individual-level profiling that trigger regulatory concerns regarding discriminatory pricing and consumer profiling.
             </p>
             <PostByline
-              datePublished="2026-08-27"
+              {...dates}
               readTime="8 min read"
               authorName="Sealmetrics"
             />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { postDates } from "@/lib/content/blog";
 import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -99,6 +100,8 @@ const alternatives = [
 ];
 
 export default function GA4AlternativesEnterpriseEsPage() {
+  const dates = postDates("ga4-alternatives-enterprise", "es");
+
   return (
     <>
       <Breadcrumbs
@@ -113,8 +116,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
           headline: "7 alternativas a GA4 para equipos de eCommerce en 2026",
           description:
             "Compara 7 alternativas a GA4 para eCommerce en precio, captura de dato, cumplimiento UE y features.",
-          datePublished: "2026-03-02",
-          dateModified: "2026-08-27",
+          ...dates,
           url: "/es/blog/ga4-alternatives-enterprise",
           category: "Comparativas",
           author: {
@@ -153,8 +155,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               7 alternativas a GA4 para equipos de eCommerce en 2026
             </h1>
             <PostByline
-              datePublished="2026-03-02"
-              dateModified="2026-08-27"
+              {...dates}
               readTime="10 min de lectura"
               authorName="Rafa Jiménez"
               authorUrl="/es/authors/rafa-jimenez"
