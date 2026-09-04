@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -83,16 +84,13 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               ¿Matomo cumple el RGPD?
             </h1>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">26 de agosto de 2026</time>
-              <span>9 min de lectura</span>
-              <span>
-                Por{" "}
-                <Link href="/es/authors/rafa-jimenez" className={linkCls}>
-                  Rafa Jiménez
-                </Link>
-              </span>
-            </div>
+            <PostByline
+              datePublished="2026-08-26"
+              readTime="9 min de lectura"
+              authorName="Rafa Jiménez"
+              authorUrl="/es/authors/rafa-jimenez"
+              locale="es"
+            />
           </header>
 
           <QuickAnswer>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -178,11 +179,13 @@ export default function GA4AlternativesEnterprisePage() {
             <QuickAnswer>
               {`Sealmetrics is a GA4 alternative for ecommerce in Europe that captures 100% of site traffic without cookies or consent banners, remaining GDPR-compliant by architecture rather than by configuration. Unlike GA4, which loses 40–60% of visitor data when users reject consent banners under GDPR, Sealmetrics records every session and ties it to full-funnel revenue attribution, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving ecommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and complete funnel visibility from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a compliant, complete, and revenue-focused alternative built specifically for the European regulatory environment.`}
             </QuickAnswer>
-            <div className="flex items-center gap-4 text-[0.8rem] text-text-tertiary">
-              <time className="font-mono">March 2, 2026</time>
-              <span>10 min read</span>
-              <span>By <Link href="/authors/rafa-jimenez" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Rafa Jiménez</Link></span>
-            </div>
+            <PostByline
+              datePublished="2026-03-02"
+              dateModified="2026-08-27"
+              readTime="10 min read"
+              authorName="Rafa Jiménez"
+              authorUrl="/authors/rafa-jimenez"
+            />
           </header>
 
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">

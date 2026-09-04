@@ -325,6 +325,56 @@ for (const p of pages) {
   }
 }
 
+// 10d. A revision claimed in schema must be visible on the page.
+//      `dateModified` is a freshness claim made to Google and to answer
+//      engines. Asserting it only inside a script tag makes the page look
+//      stale to the reader while looking fresh to the crawler — the weaker
+//      half of the signal, and a discrepancy to anyone who compares the two.
+//      `<PostByline>` renders it; this rule is what stops it being dropped.
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      if (node?.["@type"] !== "Article") continue;
+      const { datePublished, dateModified } = node;
+      if (!dateModified || dateModified === datePublished) continue;
+      const day = String(dateModified).slice(0, 10);
+      if (!p.html.includes(`dateTime="${day}"`) && !p.html.includes(`datetime="${day}"`)) {
+        fail(
+          "date-modified-not-visible",
+          `${p.route} claims dateModified ${day} in schema but never renders it`
+        );
+      }
+    }
+  }
+}
+
+// 10e. The sitemap's lastmod may not predate a revision the page claims.
+//      `stamp-sitemap-lastmod.mjs` derives lastmod from the rendered text on
+//      purpose, so a design pass cannot move it. If it lands *before* an
+//      author-set dateModified, the post is claiming a revision its own text
+//      does not reflect — which is the thing worth knowing, not a stamping bug.
+const lastmodByRoute = new Map(
+  all(readFileSync(smPath, "utf8"), /<url>\s*<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)
+    .map((m) => [m[1].replace(SITE, ""), m[2] ? m[2].slice(0, 10) : null])
+);
+for (const p of pages) {
+  const lastmod = lastmodByRoute.get(p.route);
+  if (!lastmod) continue;
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      if (node?.["@type"] !== "Article" || !node.dateModified) continue;
+      if (String(node.dateModified).slice(0, 10) > lastmod) {
+        warn(
+          "lastmod-behind-date-modified",
+          `${p.route}: sitemap lastmod ${lastmod} predates the declared revision ${String(node.dateModified).slice(0, 10)}`
+        );
+      }
+    }
+  }
+}
+
 // 11. FAQPage schema must correspond to questions visible on the page.
 //     Google's structured data policy requires it, and an AI engine cannot
 //     cite a passage that only exists inside a script tag.
