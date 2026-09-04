@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema, comparisonPageSchema } from "@/lib/schema";
@@ -39,7 +40,7 @@ export default function Page() {
         name: "Alternativas a Google Analytics — Sealmetrics",
         description: "Alternativa enterprise a Google Analytics para empresas europeas que necesitan datos completos y residencia UE.",
         url: "/es/alternatives/google-analytics",
-        competitor: { name: "Google Analytics", url: "https://marketingplatform.google.com/about/analytics/" },
+        competitor: competitor("google-analytics"),
         datePublished: "2026-04-15",
         dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },

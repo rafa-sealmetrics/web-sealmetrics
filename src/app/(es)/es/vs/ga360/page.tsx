@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
@@ -41,7 +42,7 @@ export default function Page() {
         name: "Sealmetrics vs GA360",
         description: "Comparativa lado a lado: Sealmetrics vs Google Analytics 360 en completitud de datos, cumplimiento UE, precio y disposicion para IA.",
         url: "/es/vs/ga360",
-        competitor: { name: "Google Analytics 360", url: "https://marketingplatform.google.com/about/analytics-360/" },
+        competitor: competitor("ga360"),
         datePublished: "2026-04-15",
         dateModified: "2026-08-27",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
