@@ -30,6 +30,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "demdex-analytics-cookies-guide",
+    title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
+    description: "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
+    date: "2026-09-04",
+    category: "Data Quality",
+    readTime: "7 min",
+    author: AUTHORS.rafa,
+    related: [],
+  },
+  {
     slug: "dpo-rejected-google-analytics-eu-alternatives",
     title: "Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?",
     description: "Is your DPO rejecting Google Analytics? Learn why GA4 is a legal risk in the EU and discover compliant, consentless analytics alternatives for your business.",
