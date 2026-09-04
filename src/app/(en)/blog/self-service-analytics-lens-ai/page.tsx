@@ -41,7 +41,7 @@ const stack = [
   {
     n: "04",
     label: "The question",
-    body: "Plain language, from anyone — a CMO, a growth lead, an ecommerce manager. No SQL, no dashboard spelunking.",
+    body: "Plain language, from anyone — a CMO, a growth lead, an eCommerce manager. No SQL, no dashboard spelunking.",
     accent: "amber",
   },
   {
@@ -101,7 +101,7 @@ const faqs = [
   {
     question: "What is self-service analytics with LENS AI?",
     answer:
-      "It is the ability for a non-technical person — a CMO, a growth lead, an ecommerce manager — to ask a question in plain language and get an answer directly from their own analytics, without writing SQL, hunting through dashboards, or filing a request with a data analyst. LENS AI is the umbrella brand for Sealmetrics AI; the Sealmetrics MCP exposes several dozen read-only tools that a model like Claude, ChatGPT or Cursor calls on the user's behalf to pull real, complete data.",
+      "It is the ability for a non-technical person — a CMO, a growth lead, an eCommerce manager — to ask a question in plain language and get an answer directly from their own analytics, without writing SQL, hunting through dashboards, or filing a request with a data analyst. LENS AI is the umbrella brand for Sealmetrics AI; the Sealmetrics MCP exposes several dozen read-only tools that a model like Claude, ChatGPT or Cursor calls on the user's behalf to pull real, complete data.",
   },
   {
     question: "Why does pointing an LLM at GA4 usually produce wrong answers?",
@@ -267,7 +267,7 @@ export default function Page() {
                 />
                 <div className="relative p-7 sm:p-9">
                   <div className="flex items-center gap-2 mb-6">
-                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Ecommerce · a real question, start to finish</span>
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">eCommerce · a real question, start to finish</span>
                   </div>
 
                   <p className="text-[0.95rem] leading-[1.6] mb-6">

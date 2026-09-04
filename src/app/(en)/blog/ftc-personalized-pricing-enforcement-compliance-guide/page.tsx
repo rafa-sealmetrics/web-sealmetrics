@@ -153,7 +153,7 @@ export default function Page() {
               In Spain, the [Guía sobre el uso de las cookies (AEPD)](https://www.aepd.es/guias/guia-cookies.pdf) reinforces these strict obligations regarding information and transparency.
             </p>
             <p>
-              For e-commerce brands, the goal should be measurement, not profiling. You need to know what sold and through which channel, not how much more you can squeeze out of a specific individual based on their behavioral pattern.
+              For eCommerce brands, the goal should be measurement, not profiling. You need to know what sold and through which channel, not how much more you can squeeze out of a specific individual based on their behavioral pattern.
             </p>
             <p>
               It provides the source of truth for your revenue without the privacy risks of hyper-segmentation. We build with privacy-by-design, not privacy-by-policy.
@@ -163,7 +163,7 @@ export default function Page() {
               Can cookieless analytics mitigate regulatory risks in dynamic pricing models?
             </h2>
             <p>
-              The FTC’s move to seek comment on its enforcement policy regarding personalized pricing is a direct shot at the data-extractive models that have become standard in e-commerce. For years, brands have used hyper-granular profiling to understand exactly how much a specific user is willing to pay. This isn't just a performance marketing tactic; it is a growing regulatory liability.
+              The FTC’s move to seek comment on its enforcement policy regarding personalized pricing is a direct shot at the data-extractive models that have become standard in eCommerce. For years, brands have used hyper-granular profiling to understand exactly how much a specific user is willing to pay. This isn't just a performance marketing tactic; it is a growing regulatory liability.
             </p>
             <p>
               The risk lies in the "who." When you rely on third-party cookies and invasive tracking, you aren't just measuring traffic—you are building dossiers. These dossiers allow for the kind of individual-level manipulation that regulators are now targeting. If your pricing models rely on the data harvested through these invisible profiles, you are walking into a regulatory trap. If you aren't sure how much visibility you're losing to consent gaps, use our <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss calculator</Link>.

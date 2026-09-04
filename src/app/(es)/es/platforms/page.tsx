@@ -36,7 +36,7 @@ const platforms = [
   { name: "OpenCart", time: "15 min", desc: "Extensión para tiendas OpenCart 3.x y 4.x. Eventos de conversión e ingresos desde el primer día." },
   { name: "Squarespace", time: "10 min", desc: "Code injection en los ajustes del sitio. Compatible con Squarespace Commerce." },
   { name: "WordPress", time: "5 min", desc: "Plugin WordPress. Trackea pageviews, formularios, CTAs. Funciona con cualquier page builder." },
-  { name: "Webflow", time: "10 min", desc: "Custom code embed en project settings. Funciona con CMS collections y e-commerce." },
+  { name: "Webflow", time: "10 min", desc: "Custom code embed en project settings. Funciona con CMS collections y eCommerce." },
   { name: "Wix", time: "10 min", desc: "Custom code en site settings. Compatible con Wix Stores y Wix Bookings." },
   { name: "Drupal", time: "15 min", desc: "Módulo Drupal compatible con Drupal 9 & 10. Funciona con Commerce Kickstart." },
   { name: "Joomla", time: "15 min", desc: "Extensión Joomla para Joomla 4 & 5. Tracking básico y eventos de conversión." },

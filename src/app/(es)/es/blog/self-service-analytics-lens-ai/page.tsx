@@ -40,7 +40,7 @@ const stack = [
   {
     n: "04",
     label: "La pregunta",
-    body: "En lenguaje natural, de cualquiera — un CMO, un responsable de growth, un ecommerce manager. Sin SQL, sin rebuscar en dashboards.",
+    body: "En lenguaje natural, de cualquiera — un CMO, un responsable de growth, un eCommerce manager. Sin SQL, sin rebuscar en dashboards.",
     accent: "amber",
   },
   {
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "¿Qué es la analítica self-service con LENS AI?",
     answer:
-      "Es la capacidad de que una persona no técnica —un CMO, un responsable de growth, un ecommerce manager— haga una pregunta en lenguaje natural y obtenga la respuesta directamente de su propia analítica, sin escribir SQL, sin rebuscar en dashboards y sin abrir un ticket a un analista. LENS AI es la marca paraguas de la IA de Sealmetrics; el MCP de Sealmetrics expone varias decenas de herramientas de solo lectura que un modelo como Claude, ChatGPT o Cursor llama en nombre del usuario para traer dato real y completo.",
+      "Es la capacidad de que una persona no técnica —un CMO, un responsable de growth, un eCommerce manager— haga una pregunta en lenguaje natural y obtenga la respuesta directamente de su propia analítica, sin escribir SQL, sin rebuscar en dashboards y sin abrir un ticket a un analista. LENS AI es la marca paraguas de la IA de Sealmetrics; el MCP de Sealmetrics expone varias decenas de herramientas de solo lectura que un modelo como Claude, ChatGPT o Cursor llama en nombre del usuario para traer dato real y completo.",
   },
   {
     question: "¿Por qué apuntar un LLM a GA4 suele dar respuestas equivocadas?",
@@ -268,7 +268,7 @@ export default function Page() {
                 />
                 <div className="relative p-7 sm:p-9">
                   <div className="flex items-center gap-2 mb-6">
-                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">Ecommerce · una pregunta real, de principio a fin</span>
+                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-warm-50/50">eCommerce · una pregunta real, de principio a fin</span>
                   </div>
 
                   <p className="text-[0.95rem] leading-[1.6] mb-6">

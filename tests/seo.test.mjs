@@ -171,6 +171,21 @@ test("structured data", { skip }, async (t) => {
   );
 });
 
+test("content rules", { skip }, async (t) => {
+  // The only two rules in the audit that judge words rather than structure.
+  // Both exist because the same defect shipped twice: a capability Sealmetrics
+  // does not have, in two generated posts two days apart.
+  await t.test("no page claims a capability the product does not have", () =>
+    noneOf(
+      "banned-capability-claim",
+      "a page claims full-funnel attribution or journey reconstruction — measurement is aggregate and anonymous, attribution is last click"
+    )
+  );
+  await t.test("project vocabulary is consistent", () =>
+    noneOf("nonstandard-spelling", "visible copy uses a spelling the project retired")
+  );
+});
+
 test("markdown twins for AI agents", { skip }, async (t) => {
   await t.test("every indexable page has one", () =>
     noneOf("missing-markdown-twin", "indexable pages without a .md twin")

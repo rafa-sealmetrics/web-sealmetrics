@@ -56,7 +56,7 @@ const platforms = [
   { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 3.x and 4.x stores. Conversion and revenue events out of the box." },
   { name: "Squarespace", time: "10 min", desc: "Code injection in site settings. Works with Squarespace Commerce." },
   { name: "WordPress", time: "5 min", desc: "WordPress plugin. Tracks page views, forms, CTAs. Works alongside any page builder." },
-  { name: "Webflow", time: "10 min", desc: "Custom code embed in project settings. Works with CMS collections and e-commerce." },
+  { name: "Webflow", time: "10 min", desc: "Custom code embed in project settings. Works with CMS collections and eCommerce." },
   { name: "Wix", time: "10 min", desc: "Custom code in site settings. Compatible with Wix Stores and Wix Bookings." },
   { name: "Drupal", time: "15 min", desc: "Drupal module compatible with Drupal 9 & 10. Works with Commerce Kickstart." },
   { name: "Joomla", time: "15 min", desc: "Joomla extension for Joomla 4 & 5. Basic tracking and conversion events." },

@@ -211,7 +211,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         quote: { text: "We've used Sealmetrics as 'OK, we believe this data.' It's now our single source of truth.", cite: "Founder & CEO · DTC brand" },
         faqs: [
-          { q: "Does Sealmetrics integrate with Shopify?", a: "Yes, natively — the same install on any Shopify plan, no Plus/Standard split. Connect the Pixel app from your dashboard, enable the theme app embed, and the full e-commerce funnel flows automatically. No manual SKU mapping." },
+          { q: "Does Sealmetrics integrate with Shopify?", a: "Yes, natively — the same install on any Shopify plan, no Plus/Standard split. Connect the Pixel app from your dashboard, enable the theme app embed, and the full eCommerce funnel flows automatically. No manual SKU mapping." },
           { q: "Can I use this alongside Meta pixel and Google Ads pixel?", a: "Yes. Sealmetrics doesn't replace ad pixels — it's a neutral measurement layer. Keep your ad pixels for platform optimization. Use Sealmetrics for attribution truth." },
           { q: "What about my DTC checkout on a custom domain?", a: "Works everywhere. First-party pixel runs on your own domain — custom, subdomain, checkout.yourshop.com, anywhere. No CORS issues, no cookie domain configuration." },
           faqMigration.en,
