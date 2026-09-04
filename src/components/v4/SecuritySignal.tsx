@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { SignalAnswer } from "@/components/v4/SignalAnswer";
+import { securityAnswer, pillarAnswerLabel } from "@/lib/content/pillar-answers";
 
 type Locale = "en" | "es";
 
@@ -149,6 +151,8 @@ export function SecuritySignal({ locale }: { locale: Locale }) {
           <p>{t.boundaryFoot}</p>
         </aside>
       </section>
+
+      <SignalAnswer label={pillarAnswerLabel[locale]}>{securityAnswer[locale]}</SignalAnswer>
 
       <section className="sig-security-principles">
         <div className="sig-security-section-head"><div><p className="sig-security-tag">{t.principlesTag}</p><h2>{t.principlesTitle}</h2></div><p>{t.principlesBody}</p></div>

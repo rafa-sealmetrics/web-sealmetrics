@@ -5,6 +5,7 @@ import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { PricingSignal } from "@/components/v4/PricingSignal";
 import { pricingSignalFaqItems } from "@/lib/content/pricing-signal";
 import "@/components/v4/pricing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
