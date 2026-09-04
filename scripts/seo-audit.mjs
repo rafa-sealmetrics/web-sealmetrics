@@ -647,10 +647,17 @@ for (const p of pages) {
 
     // The answer-first block is the passage engines quote. Warned, not failed:
     // the pages missing one need an editorial block written, which is a content
-    // task and not something a build gate can conjure. Tracked here so it stays
-    // visible instead of being rediscovered next quarter.
+    // task and not something a build gate can conjure.
+    //
+    // Scoped away from trust-and-legal. `llm_priority: critical` marks a page
+    // as important for an agent to READ — the DPA and the privacy policy
+    // qualify — which is a different claim from "this page should open with a
+    // quotable summary". A TL;DR on /terms adds nothing, so warning about it
+    // every build until the end of time only teaches everyone to skim the
+    // warnings.
     const critical = /^llm_priority: "critical"$/m.test(md);
-    if (critical && !/^summary: /m.test(md)) {
+    const legal = /^content_type: "trust-and-legal"$/m.test(md);
+    if (critical && !legal && !/^summary: /m.test(md)) {
       warn(
         "markdown-twin-without-summary",
         `${p.route} is llm_priority critical but has no answer-first block`
