@@ -411,6 +411,32 @@ for (const p of pages) {
   }
 }
 
+// 10f. HowTo steps must be on the page, for the same reason FAQ answers must:
+//      a procedure an engine can quote but a reader cannot follow is not a
+//      procedure. `HowToSteps` renders from the same array the schema is built
+//      from, so this rule only fires if someone breaks that link.
+for (const p of pages) {
+  for (const schema of p.jsonld) {
+    const nodes = Array.isArray(schema["@graph"]) ? schema["@graph"] : [schema];
+    for (const node of nodes) {
+      if (node?.["@type"] !== "HowTo") continue;
+      for (const step of node.step ?? []) {
+        for (const field of ["name", "text"]) {
+          const value = step?.[field];
+          if (!value) continue;
+          const probe = decode(value).replace(/\s+/g, " ").slice(0, 40);
+          if (!p.visibleText.includes(probe)) {
+            fail(
+              "howto-schema-not-visible",
+              `${p.route}: HowToStep ${field} "${probe}…" is in JSON-LD but not in the page text`
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
 // 11. FAQPage schema must correspond to questions visible on the page.
 //     Google's structured data policy requires it, and an AI engine cannot
 //     cite a passage that only exists inside a script tag.

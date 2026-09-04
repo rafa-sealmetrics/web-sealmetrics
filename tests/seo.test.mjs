@@ -117,6 +117,12 @@ test("structured data", { skip }, async (t) => {
       "JSON-LD page URLs disagree with canonicals and the sitemap"
     )
   );
+  await t.test("HowTo steps are visible on the page", () =>
+    noneOf(
+      "howto-schema-not-visible",
+      "HowToStep text exists only in JSON-LD — uncitable, and a procedure nobody can follow"
+    )
+  );
   await t.test("FAQ schema matches visible page content", () =>
     noneOf(
       "faq-schema-not-visible",

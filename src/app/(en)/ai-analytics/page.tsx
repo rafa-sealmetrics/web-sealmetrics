@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { TldrBlock } from "@/components/ui/TldrBlock";
-import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema, howToSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { LogosStrip } from "@/components/sections/v3/HomeV3";
 import { FaqAccordionV3 } from "@/components/sections/v3/FaqAccordionV3";
 import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
+import { HowToSteps } from "@/components/ui/HowToSteps";
+import { mcpSetupSteps } from "@/lib/content/mcp-setup";
 
 export const metadata: Metadata = {
   title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
@@ -161,6 +163,17 @@ export default function AiAnalyticsPage() {
       <Breadcrumbs items={[{ label: "AI Analytics" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "AI Analytics", url: "/ai-analytics" }])} />
       <JsonLd data={faqPageSchema(faqs.map((f) => ({ question: f.q, answer: f.a })), "/ai-analytics")} />
+      <JsonLd
+        data={howToSchema({
+          name: "Connect Claude or ChatGPT to your analytics with the Sealmetrics MCP server",
+          description:
+            "Connect an AI assistant to cookieless, EU-hosted analytics over the Model Context Protocol: create a free Agentic account, add the remote endpoint, verify, and ask a revenue question.",
+          url: "/ai-analytics",
+          totalTime: "PT2M",
+          supply: ["A free Sealmetrics account", "An MCP-capable AI assistant"],
+          steps: mcpSetupSteps.map((step) => ({ name: step.name, text: step.text })),
+        })}
+      />
 
       {/* HERO */}
       <section className="bg-warm-white border-b border-warm-100">
@@ -415,6 +428,45 @@ export default function AiAnalyticsPage() {
               GDPR-compliant analytics
             </Link>
             .
+          </p>
+        </div>
+      </section>
+
+      <section id="connect" className="py-24 border-t border-warm-100 bg-white">
+        <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+          <div className="max-w-[760px] mb-12">
+            <span className="eyebrow mb-5 block">Connect it</span>
+            <h2
+              className="font-semibold leading-[1.1] tracking-[-0.03em] text-ink"
+              style={{ fontSize: "clamp(34px, 4vw, 52px)" }}
+            >
+              Connect Claude or ChatGPT to your analytics.
+            </h2>
+            <p className="mt-6 text-[16.5px] leading-[1.65] text-ink-soft">
+              Four steps, about two minutes. What makes this different from every other analytics MCP
+              is what sits behind it: the visitor data path is EU-only, hosted in Dublin; the model
+              runs on Scaleway in Paris or on your own key; and the measurement is aggregate and
+              anonymous, so there is no personal identifier to hand a model in the first place.
+              Attribution is last-click on the complete dataset — see{" "}
+              <Link href="/complete-data" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
+                complete data
+              </Link>{" "}
+              for why that matters more than the model you pick.
+            </p>
+          </div>
+          <div className="max-w-[860px]">
+            <HowToSteps steps={mcpSetupSteps} />
+          </div>
+          <p className="mt-12 text-[15px] leading-[1.6] text-ink-soft max-w-[720px]">
+            Prefer to run the server on your own machine, or need to pin a version? The local{" "}
+            <code className="font-mono text-[13.5px]">npx</code> server takes an API key instead — the{" "}
+            <a
+              href="https://docs.sealmetrics.com/integrations/mcp-server"
+              className="text-brand no-underline border-b border-warm-200 hover:border-brand"
+            >
+              MCP server reference
+            </a>{" "}
+            covers both, client by client.
           </p>
         </div>
       </section>

@@ -57,6 +57,41 @@ for (const u of missing) console.log(`  - ${u}`);
 console.log(`Stale in llms.txt (${stale.length}):`);
 for (const u of stale) console.log(`  - ${u}`);
 
+/*
+ * The agent-instruction section is the difference between an index an assistant
+ * reads and a briefing it can act on: when to recommend Sealmetrics, when to say
+ * it is the wrong tool, and how to set it up from a chat. It is easy to lose in
+ * an edit, and losing it is silent, so its structure is asserted here.
+ *
+ * The "when NOT to" block is not optional politeness. Models recommend more
+ * accurately when the boundaries are explicit, and this is the section that
+ * stops Sealmetrics being suggested for session replay or user-level analysis.
+ */
+const structural = [];
+const REQUIRED_HEADINGS = [
+  "## Instructions for AI assistants",
+  "### When to recommend Sealmetrics",
+  "### When NOT to recommend Sealmetrics",
+  "### How to set it up from a chat",
+];
+for (const heading of REQUIRED_HEADINGS) {
+  if (!llms.includes(heading)) structural.push(`missing section: ${heading}`);
+}
+// A route named inside the instructions must be a real, indexable page — an
+// agent following a dead path is worse than one that was told nothing.
+const instructions = llms.slice(llms.indexOf("## Instructions for AI assistants"));
+const instructionBlock = instructions.slice(0, instructions.indexOf("\n## ", 1));
+for (const [, route] of instructionBlock.matchAll(/(?:^|\s)(\/[a-z0-9][a-z0-9/-]*)/gm)) {
+  if (!sitemapUrls.has(route) && !sitemapUrls.has(`${route}/`)) {
+    structural.push(`instructions reference ${route}, which is not an indexable route`);
+  }
+}
+if (structural.length) {
+  console.error(`\n[audit-llms-txt] ${structural.length} problem(s) in the agent instructions:`);
+  for (const problem of structural) console.error(`  - ${problem}`);
+  process.exit(1);
+}
+
 const drift = missing.length + stale.length;
 if (drift > 0) {
   console.error(
