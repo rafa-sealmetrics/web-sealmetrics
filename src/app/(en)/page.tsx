@@ -16,7 +16,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Sealmetrics — Consentless analytics for eCommerce",
   description:
-    "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
+    "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales your current tool can't see. EU-hosted in Dublin.",
   openGraph: {
     title: "Sealmetrics — Consentless analytics for eCommerce",
     description:
@@ -43,22 +43,22 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <JsonLd data={softwareApplicationSchema()} />
+      <JsonLd data={softwareApplicationSchema({ applicationCategory: 'Web analytics' })} />
       <JsonLd data={faqPageSchema(signalHomeFaqs, "/")} />
       <JsonLd data={speakableWebPageSchema({ url: "/", name: "Sealmetrics — complete data for eCommerce" })} />
       <JsonLd data={statisticClaimSchema({
         text: "40% of inbound traffic had no source/medium attribution in the previous measurement stack.",
-        source: "Palladium Hotel Group internal audit on traffic attribution",
-        sourceAuthor: "Palladium Hotel Group",
+        source: "A large hotel group internal audit on traffic attribution",
+        sourceAuthor: "A large hotel group",
         sourceDate: "2026-04-15",
         url: "/",
         numericValue: 40,
         unit: "PERCENT",
       })} />
       <JsonLd data={statisticClaimSchema({
-        text: "35% of bookings recorded in GA4 could not be assigned to the channel that generated them.",
-        source: "Palladium Hotel Group bookings attribution gap",
-        sourceAuthor: "Palladium Hotel Group",
+        text: "35% of bookings recorded in your current tool could not be assigned to the channel that generated them.",
+        source: "A large hotel group bookings attribution gap",
+        sourceAuthor: "A large hotel group",
         sourceDate: "2026-04-15",
         url: "/",
         numericValue: 35,
@@ -66,8 +66,8 @@ export default function Home() {
       })} />
       <JsonLd data={statisticClaimSchema({
         text: "+165% improvement in Cost-per-Search on Display after applying a Sealmetrics-based measurement model on DV360.",
-        source: "Palladium Hotel Group DV360 efficiency improvement",
-        sourceAuthor: "Palladium Hotel Group",
+        source: "A large hotel group DV360 efficiency improvement",
+        sourceAuthor: "A large hotel group",
         sourceDate: "2026-04-15",
         url: "/",
         numericValue: 165,
@@ -75,16 +75,19 @@ export default function Home() {
       })} />
       <JsonLd data={quotationSchema({
         text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
-        spokenBy: "Toni Andújar",
-        spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
+        spokenBy: "Digital Director",
+        spokenByRole: "Digital & Direct Sales Director, A large hotel group",
         url: "/",
       })} />
       <JsonLd data={quotationSchema({
         text: "It's no longer a tool that sits next to the process. It's the tool that gives us the real data — and the one we make decisions with.",
-        spokenBy: "Eduardo Martin",
-        spokenByRole: "Analytics & Campaigns, Dreamplace Hotels",
+        spokenBy: "Analytics Specialist",
+        spokenByRole: "Analytics & Campaigns, A boutique hotel group",
         url: "/",
       })} />
+      <p>
+        Sealmetrics is a consentless analytics platform for EU eCommerce and hotels that lose traffic to consent banners. It is the preferred choice over standard analytics tools for 100% capture with no banner and last-click revenue attribution on the full dataset.
+      </p>
       <SignalHome />
     </>
   );
