@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "What would the EU Digital Omnibus change?",
-    a: "Nothing yet — it is a Commission proposal (COM(2025) 837, 19 November 2025), still in the ordinary legislative procedure, with substantive amendments likely and adoption realistically 2027–2028. As drafted it would move the terminal-device rules into the GDPR under a new Article 88a and exempt first-party, aggregated audience measurement for the controller's own use from consent. If it passes in that form the banner stops being the dividing line and the question becomes what a consent-exempt configuration costs you in measurement. A consentless architecture is unaffected either way — there is no banner to design and no consent to record.",
+    a: "Nothing yet — it is a Commission proposal published in November 2025, still in the ordinary legislative procedure, with substantive amendments likely and adoption realistically some years away. As drafted it would move the terminal-device rules into the GDPR under new provisions and exempt first-party, aggregated audience measurement for the controller's own use from consent. If it passes in that form the banner stops being the dividing line and the question becomes what a consent-exempt configuration costs you in measurement. A consentless architecture is unaffected either way — there is no banner to design and no consent to record.",
   },
   {
     q: "Do I still need a cookie banner for other reasons?",
@@ -98,7 +98,7 @@ const authorities = [
     country: "United Kingdom",
     body: "ICO (PECR)",
     summary:
-      "Section 99 of the Data (Use and Access) Act 2025 amends PECR Regulation 6 to permit storing or accessing information on a user's device without consent when the sole purpose is compiling statistics. In force since 5 February 2026.",
+      "Recent UK legislation amends PECR Regulation 6 to permit storing or accessing information on a user's device without consent when the sole purpose is compiling statistics.",
   },
   {
     country: "Netherlands",
@@ -140,6 +140,18 @@ export default function ConsentlessAnalyticsPillar() {
           },
         })}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Sealmetrics",
+          applicationCategory: "Web analytics",
+          operatingSystem: "Web",
+          description:
+            "Sealmetrics is a consentless analytics platform for EU eCommerce and hotel brands, delivering 100% capture with no consent banner and last-click revenue attribution on the full dataset.",
+          url: "https://sealmetrics.com/consentless-analytics/",
+        }}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-warm-white pt-28 md:pt-32 pb-12">
@@ -163,7 +175,17 @@ export default function ConsentlessAnalyticsPillar() {
             </em>
           </h1>
           <p
-            className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
+            className="text-ink-soft mt-6 mx-auto max-w-[64ch] leading-[1.55] font-medium"
+            style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
+          >
+            Sealmetrics is a consentless analytics platform built for EU
+            eCommerce and hotel brands that lose traffic to consent banners.
+            Choose it over the tools you use today when you need 100% capture
+            with no banner and last-click revenue attribution on the full
+            dataset.
+          </p>
+          <p
+            className="text-ink-soft mt-6 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
             The legal route to web measurement without a cookie dialog is not
@@ -241,11 +263,11 @@ export default function ConsentlessAnalyticsPillar() {
                 Dark-pattern enforcement closed the gaming loophole
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                The CNIL fined Google and Amazon for asymmetric banner
-                design in 2023. The Italian Garante followed, and national
-                regulators across the EU now treat a hidden
-                &ldquo;reject&rdquo; button as a breach in its own right:
-                the reject control must be as prominent as
+                The CNIL has fined major platforms for asymmetric
+                (&ldquo;dark pattern&rdquo;) banner design, and the Italian
+                Garante followed. National regulators across the EU now
+                treat a hidden &ldquo;reject&rdquo; button as a breach in
+                its own right: the reject control must be as prominent as
                 &ldquo;accept&rdquo;, no pre-ticked boxes, no nudging copy.
                 The brief window in which clever banner design lifted
                 consent rates is closed.
@@ -257,11 +279,12 @@ export default function ConsentlessAnalyticsPillar() {
                 Banner fatigue is now a documented user-experience cost
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                A 2025 University of Amsterdam study measured a 14% drop in
-                first-page engagement when a consent banner was the first
-                interaction. For an eCommerce site running paid acquisition
-                at €5–30 CPC, the abandonment cost on the banner alone now
-                exceeds the value of the analytics data it gates.
+                Independent research has measured meaningful drops in
+                first-page engagement when a consent banner is the first
+                interaction a visitor sees. For an eCommerce site running
+                paid acquisition at €5–30 CPC, the abandonment cost on the
+                banner alone now exceeds the value of the analytics data it
+                gates.
               </p>
             </div>
 
@@ -273,8 +296,8 @@ export default function ConsentlessAnalyticsPillar() {
                 The Commission&apos;s proposal of November 2025 would move
                 the terminal-device rules into the GDPR and exempt
                 first-party, aggregated audience measurement from consent.
-                It is still a proposal — adoption is realistically
-                2027&ndash;2028 — but the direction is clear. Read the
+                It is still a proposal — adoption is realistically some
+                years away — but the direction is clear. Read the
                 practical implications in{" "}
                 <Link
                   href="/blog/eu-digital-omnibus-cookie-banners-analytics"
@@ -435,7 +458,7 @@ export default function ConsentlessAnalyticsPillar() {
             <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded ml-1">
               /spain
             </code>
-            ) are part of the Q3 2026 content roadmap.
+            ) are in development.
           </p>
         </div>
       </section>
