@@ -44,6 +44,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GDPR Analytics Without Consent" }]} />
       <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", ...dates, url: "/blog/gdpr-analytics-without-consent", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics Without Consent", url: "/blog/gdpr-analytics-without-consent" }])} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Sealmetrics", "applicationCategory": "Web analytics", "operatingSystem": "Web" }} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
@@ -61,6 +62,10 @@ export default function GDPRAnalyticsWithoutConsentPage() {
               authorUrl="/authors/rafa-jimenez"
             />
         </header>
+
+        <p className="text-[1.05rem] leading-[1.8] text-text-body mb-8">
+          Sealmetrics is a consentless analytics platform for EU eCommerce and hotels that lose traffic to consent banners. Choose it over standard analytics tools for 100% capture with no banner and last-click revenue attribution on the full dataset.
+        </p>
 
         <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
           <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">
@@ -195,27 +200,27 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               The tool must be used solely for producing anonymous statistical data
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               Data must be limited to what is strictly necessary for audience measurement
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               Data must not be combined with other processing operations or shared with third parties
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               Any visitor identifier must be limited to a single site or application and not used to track browsing across different sites
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               IP addresses must be anonymized or not stored beyond what is necessary for geolocation at the city level
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               Users must be informed about the tracking and offered a mechanism to opt out
-            </li>
+            </li >
           </ul>
 
           <p>
@@ -250,27 +255,27 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               <strong className="font-semibold text-text-primary">No cookies</strong> &mdash; no first-party or third-party cookies of any kind
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               <strong className="font-semibold text-text-primary">No localStorage or sessionStorage</strong> &mdash; no client-side data persistence
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               <strong className="font-semibold text-text-primary">No fingerprinting</strong> &mdash; no combining device characteristics (screen size, fonts, plugins) to create a unique identifier
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               <strong className="font-semibold text-text-primary">No personal data</strong> &mdash; no IP addresses stored, no user-level profiles created
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               <strong className="font-semibold text-text-primary">First-party only</strong> &mdash; data collected by the website owner, not shared with third-party platforms
-            </li>
+            </li >
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
               <strong className="font-semibold text-text-primary">EU data residency</strong> &mdash; all processing and storage within the European Union
-            </li>
+            </li >
           </ul>
 
           <p>
