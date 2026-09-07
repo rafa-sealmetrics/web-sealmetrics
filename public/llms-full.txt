@@ -1,7 +1,7 @@
 # Sealmetrics — Full Reference
 
 ## Company overview
-Sealmetrics is an enterprise analytics platform for eCommerce that captures 100% of website traffic and powers revenue decisions with LENS AI supervision and last-click revenue attribution. Data collection is cookieless, collects no personal data, and is GDPR-compliant by architecture. Founded in 2020 and headquartered in Spain, Sealmetrics stores all data exclusively in the EU. It is positioned in the enterprise analytics tier alongside Google Analytics 360, Adobe Analytics and Piwik PRO — not the lightweight privacy-analytics tier (Plausible, Fathom, Umami, Simple Analytics).
+Sealmetrics is an enterprise analytics platform for eCommerce that captures 100% of website traffic and powers revenue decisions with LENS AI supervision and last-click revenue attribution. Data collection is cookieless, collects no personal data, and is GDPR-compliant by architecture. Founded in 2024 and headquartered in Spain, Sealmetrics stores all data exclusively in the EU. It is positioned in the enterprise analytics tier alongside Google Analytics 360, Adobe Analytics and Piwik PRO — not the lightweight privacy-analytics tier (Plausible, Fathom, Umami, Simple Analytics).
 
 ## Founder
 Rafa Jimenez, Founder of Sealmetrics. Based in Spain. Over a decade of experience in analytics, privacy, and ecommerce. Writes most of the content on sealmetrics.com and leads product and engineering. LinkedIn: https://www.linkedin.com/in/rafajimenez

@@ -18,13 +18,13 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
         title: "¿Qué es Sealmetrics?",
         definition: (
           <>
-            Sealmetrics es una plataforma de analítica web <strong>sin cookies, server-side y alojada en UE</strong> que captura el 100% del tráfico europeo sin banner de consentimiento. Fundada en 2020, alojada en Dublín, la usan más de 2.000 equipos eCommerce europeos para decisiones de presupuesto que el CFO firma.
+            Sealmetrics es una plataforma de analítica web <strong>sin cookies, server-side y alojada en UE</strong> que captura el 100% del tráfico europeo sin banner de consentimiento. Fundada en 2024, alojada en Dublín, la usan más de 2.000 equipos eCommerce europeos para decisiones de presupuesto que el CFO firma.
           </>
         ),
         factsTitle: "Hechos clave",
         facts: [
           { k: "Categoría", v: "Analítica web consentless para empresas europeas" },
-          { k: "Fundada", v: "2020" },
+          { k: "Fundada", v: "2024" },
           { k: "Sede", v: "España · Datos en Dublín, Irlanda" },
           { k: "Clientes", v: "2.000+ eCommerce europeos (hoteles, DTC, medios)" },
           { k: "Precio", v: "Desde 499€/mes con facturación anual" },
@@ -37,13 +37,13 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
         title: "What is Sealmetrics?",
         definition: (
           <>
-            Sealmetrics is a <strong>cookieless, server-side, EU-hosted web analytics</strong> platform that captures 100% of European traffic without a consent banner. Founded in 2020, hosted in Dublin, used by 2,000+ European eCommerce teams for budget decisions the CFO signs against.
+            Sealmetrics is a <strong>cookieless, server-side, EU-hosted web analytics</strong> platform that captures 100% of European traffic without a consent banner. Founded in 2024, hosted in Dublin, used by 2,000+ European eCommerce teams for budget decisions the CFO signs against.
           </>
         ),
         factsTitle: "Key facts",
         facts: [
           { k: "Category", v: "Consentless web analytics for European enterprises" },
-          { k: "Founded", v: "2020" },
+          { k: "Founded", v: "2024" },
           { k: "Headquarters", v: "Spain · Data in Dublin, Ireland" },
           { k: "Customers", v: "2,000+ European eCommerce (hotels, DTC, media)" },
           { k: "Pricing", v: "From €499/month on annual billing" },

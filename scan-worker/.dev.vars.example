@@ -1,0 +1,5 @@
+# Copy to .dev.vars (gitignored) para `wrangler dev` local.
+# En producción, estos valores se setean con `wrangler secret put`.
+
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+INGEST_TOKEN=local-dev-token

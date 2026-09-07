@@ -178,7 +178,7 @@ export default function CareersPageEs() {
               <Link href="/open" className="text-brand">
                 Open — cómo trabajamos, documentado en público
               </Link>
-              . Fundada en 2020, con sede en Barcelona y hosting en la UE, en
+              . Fundada en 2024, con sede en Barcelona y hosting en la UE, en
               Dublín.
             </p>
           </div>

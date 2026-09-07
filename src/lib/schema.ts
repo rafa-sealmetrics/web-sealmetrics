@@ -81,7 +81,7 @@ export function organizationSchema() {
         },
         description:
           "Complete analytics for eCommerce: captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.",
-        foundingDate: "2020",
+        foundingDate: "2024-03-22",
         // References the canonical Person node emitted by the author page.
         // It used to restate him as "Rafa Jimenez" (no accent) pointing at
         // /about, while every article credited "Rafa Jiménez" pointing at
