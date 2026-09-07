@@ -7,7 +7,7 @@ import { ogImage } from "@/lib/seo/og";
 const faqs = [
   {
     question: "When was Sealmetrics founded?",
-    answer: "Sealmetrics was founded in 2020 by Rafa Jiménez, after two decades working in European eCommerce analytics. The goal: give European teams a single, defensible source of truth for revenue decisions, compliant with GDPR by architecture.",
+    answer: "Sealmetrics was founded in 2024 by Rafa Jiménez, after two decades working in European eCommerce analytics. The goal: give European teams a single, defensible source of truth for revenue decisions, compliant with GDPR by architecture.",
   },
   {
     question: "Where is Sealmetrics based?",

@@ -1,0 +1,1290 @@
+[
+  {
+    "page": "home",
+    "viewport": "desktop",
+    "url": "https://sealmetrics.com/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics — Consentless analytics for eCommerce",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 1440,
+      "innerWidth": 1440,
+      "hasHorizontalScroll": false,
+      "overflowing": [
+        {
+          "el": "div.absolute.pointer-events-none",
+          "right": 1600,
+          "w": 480
+        }
+      ],
+      "h1Count": 1,
+      "h1Text": "Make decisions with data you trust again.",
+      "h1Top": 205,
+      "h1AboveFold": true,
+      "h1FontSize": "96px",
+      "ctasAboveFold": [
+        {
+          "text": "Pricing",
+          "top": 21,
+          "h": 22,
+          "w": 45
+        },
+        {
+          "text": "Start FREE Trial",
+          "top": 10,
+          "h": 44,
+          "w": 141
+        },
+        {
+          "text": "Start free trial\n→",
+          "top": 571,
+          "h": 57,
+          "w": 177
+        },
+        {
+          "text": "Book a demo",
+          "top": 571,
+          "h": 57,
+          "w": 149
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Product",
+          "w": 52,
+          "h": 22
+        },
+        {
+          "t": "Why SealMetrics",
+          "w": 127,
+          "h": 22
+        },
+        {
+          "t": "Solutions",
+          "w": 77,
+          "h": 22
+        },
+        {
+          "t": "Pricing",
+          "w": 45,
+          "h": 22
+        },
+        {
+          "t": "Resources",
+          "w": 85,
+          "h": 22
+        },
+        {
+          "t": "Login",
+          "w": 37,
+          "h": 22
+        },
+        {
+          "t": "Palladium Hotel Group: 40% of traff",
+          "w": 459,
+          "h": 21
+        },
+        {
+          "t": "INPUT",
+          "w": 90,
+          "h": 33
+        },
+        {
+          "t": "Read the full case study\n→",
+          "w": 176,
+          "h": 24
+        },
+        {
+          "t": "SEE FULL LIST OF INTEGRATIONS",
+          "w": 237,
+          "h": 17
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Platform Overview",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "How It Works",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "Integrations",
+          "w": 128,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 40,
+      "bodyFontSize": "16px",
+      "minFontSize": 10,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "pricing",
+    "viewport": "desktop",
+    "url": "https://sealmetrics.com/pricing/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics Pricing — Pay for humans, not bots",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 1440,
+      "innerWidth": 1440,
+      "hasHorizontalScroll": false,
+      "overflowing": [],
+      "h1Count": 1,
+      "h1Text": "Pay for humans. Not bots. Not consent banners. Not guesswork.",
+      "h1Top": 347,
+      "h1AboveFold": true,
+      "h1FontSize": "96px",
+      "ctasAboveFold": [
+        {
+          "text": "Pricing",
+          "top": 21,
+          "h": 22,
+          "w": 45
+        },
+        {
+          "text": "Start FREE Trial",
+          "top": 10,
+          "h": 44,
+          "w": 141
+        },
+        {
+          "text": "Start FREE Trial\n→",
+          "top": 782,
+          "h": 57,
+          "w": 189
+        },
+        {
+          "text": "Book a demo",
+          "top": 782,
+          "h": 57,
+          "w": 149
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Product",
+          "w": 52,
+          "h": 22
+        },
+        {
+          "t": "Why SealMetrics",
+          "w": 127,
+          "h": 22
+        },
+        {
+          "t": "Solutions",
+          "w": 77,
+          "h": 22
+        },
+        {
+          "t": "Pricing",
+          "w": 45,
+          "h": 22
+        },
+        {
+          "t": "Resources",
+          "w": 85,
+          "h": 22
+        },
+        {
+          "t": "Login",
+          "w": 37,
+          "h": 22
+        },
+        {
+          "t": "Home",
+          "w": 32,
+          "h": 16
+        },
+        {
+          "t": "Monthly",
+          "w": 93,
+          "h": 37
+        },
+        {
+          "t": "Annual\n2 MONTHS FREE",
+          "w": 193,
+          "h": 37
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Platform Overview",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "How It Works",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "Integrations",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "Platforms",
+          "w": 128,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 39,
+      "bodyFontSize": "16px",
+      "minFontSize": 9.5,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "vs-ga360",
+    "viewport": "desktop",
+    "url": "https://sealmetrics.com/vs/ga360/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics vs GA360 — Enterprise data for less",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 1440,
+      "innerWidth": 1440,
+      "hasHorizontalScroll": false,
+      "overflowing": [],
+      "h1Count": 1,
+      "h1Text": "Enterprise data without the $150K invoice.",
+      "h1Top": 321,
+      "h1AboveFold": true,
+      "h1FontSize": "96px",
+      "ctasAboveFold": [
+        {
+          "text": "Pricing",
+          "top": 21,
+          "h": 22,
+          "w": 45
+        },
+        {
+          "text": "Start FREE Trial",
+          "top": 10,
+          "h": 44,
+          "w": 141
+        },
+        {
+          "text": "Start FREE Trial →",
+          "top": 718,
+          "h": 57,
+          "w": 185
+        },
+        {
+          "text": "Book a demo",
+          "top": 718,
+          "h": 57,
+          "w": 149
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Product",
+          "w": 52,
+          "h": 22
+        },
+        {
+          "t": "Why SealMetrics",
+          "w": 127,
+          "h": 22
+        },
+        {
+          "t": "Solutions",
+          "w": 77,
+          "h": 22
+        },
+        {
+          "t": "Pricing",
+          "w": 45,
+          "h": 22
+        },
+        {
+          "t": "Resources",
+          "w": 85,
+          "h": 22
+        },
+        {
+          "t": "Login",
+          "w": 37,
+          "h": 22
+        },
+        {
+          "t": "Home",
+          "w": 32,
+          "h": 16
+        },
+        {
+          "t": "RAFA JIMÉNEZ",
+          "w": 92,
+          "h": 16
+        },
+        {
+          "t": "Read the full Palladium case study ",
+          "w": 275,
+          "h": 26
+        },
+        {
+          "t": "Palladium Hotel Group",
+          "w": 151,
+          "h": 22
+        },
+        {
+          "t": "Dreamplace Hotels",
+          "w": 129,
+          "h": 22
+        },
+        {
+          "t": "/pricing",
+          "w": 53,
+          "h": 22
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Platform Overview",
+          "w": 128,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 42,
+      "bodyFontSize": "16px",
+      "minFontSize": 10.5,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "blog-ga4-13pct",
+    "viewport": "desktop",
+    "url": "https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic/",
+    "status": 200,
+    "metrics": {
+      "title": "Why GA4 Shows 13% of Your EU Traffic",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 1440,
+      "innerWidth": 1440,
+      "hasHorizontalScroll": false,
+      "overflowing": [],
+      "h1Count": 1,
+      "h1Text": "Why GA4 Shows 13% of Your EU Traffic",
+      "h1Top": 216,
+      "h1AboveFold": true,
+      "h1FontSize": "40px",
+      "ctasAboveFold": [
+        {
+          "text": "Pricing",
+          "top": 21,
+          "h": 22,
+          "w": 45
+        },
+        {
+          "text": "Start FREE Trial",
+          "top": 10,
+          "h": 44,
+          "w": 141
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Product",
+          "w": 52,
+          "h": 22
+        },
+        {
+          "t": "Why SealMetrics",
+          "w": 127,
+          "h": 22
+        },
+        {
+          "t": "Solutions",
+          "w": 77,
+          "h": 22
+        },
+        {
+          "t": "Pricing",
+          "w": 45,
+          "h": 22
+        },
+        {
+          "t": "Resources",
+          "w": 85,
+          "h": 22
+        },
+        {
+          "t": "Login",
+          "w": 37,
+          "h": 22
+        },
+        {
+          "t": "Home",
+          "w": 32,
+          "h": 16
+        },
+        {
+          "t": "Blog",
+          "w": 24,
+          "h": 18
+        },
+        {
+          "t": "Rafa Jiménez",
+          "w": 78,
+          "h": 19
+        },
+        {
+          "t": "complete data",
+          "w": 110,
+          "h": 24
+        },
+        {
+          "t": "data loss in analytics",
+          "w": 159,
+          "h": 24
+        },
+        {
+          "t": "GDPR and the ePrivacy Directive",
+          "w": 251,
+          "h": 21
+        },
+        {
+          "t": "consent rejection is not random",
+          "w": 243,
+          "h": 24
+        },
+        {
+          "t": "Intelligent Tracking Prevention",
+          "w": 232,
+          "h": 24
+        }
+      ],
+      "smallTapTargetCount": 56,
+      "bodyFontSize": "16px",
+      "minFontSize": 12,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "es-home",
+    "viewport": "desktop",
+    "url": "https://sealmetrics.com/es/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics — Analítica sin consentimiento para eCommerce",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 1440,
+      "innerWidth": 1440,
+      "hasHorizontalScroll": false,
+      "overflowing": [
+        {
+          "el": "div.absolute.pointer-events-none",
+          "right": 1600,
+          "w": 480
+        }
+      ],
+      "h1Count": 1,
+      "h1Text": "Vuelve a tomar decisiones con datos en los que confías.",
+      "h1Top": 205,
+      "h1AboveFold": true,
+      "h1FontSize": "96px",
+      "ctasAboveFold": [],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Producto",
+          "w": 60,
+          "h": 22
+        },
+        {
+          "t": "Por qué SealMetrics",
+          "w": 147,
+          "h": 22
+        },
+        {
+          "t": "Soluciones",
+          "w": 88,
+          "h": 22
+        },
+        {
+          "t": "Precios",
+          "w": 49,
+          "h": 22
+        },
+        {
+          "t": "Recursos",
+          "w": 77,
+          "h": 22
+        },
+        {
+          "t": "Acceder",
+          "w": 55,
+          "h": 22
+        },
+        {
+          "t": "Palladium Hotel Group: 40% del tráf",
+          "w": 442,
+          "h": 21
+        },
+        {
+          "t": "INPUT",
+          "w": 90,
+          "h": 33
+        },
+        {
+          "t": "Leer el caso completo\n→",
+          "w": 163,
+          "h": 24
+        },
+        {
+          "t": "VER LISTA COMPLETA DE INTEGRACIONES",
+          "w": 286,
+          "h": 17
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Vista General",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "Cómo Funciona",
+          "w": 128,
+          "h": 28
+        },
+        {
+          "t": "Integraciones",
+          "w": 128,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 39,
+      "bodyFontSize": "16px",
+      "minFontSize": 10,
+      "lang": "es"
+    }
+  },
+  {
+    "page": "home",
+    "viewport": "mobile",
+    "url": "https://sealmetrics.com/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics — Consentless analytics for eCommerce",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 390,
+      "innerWidth": 390,
+      "hasHorizontalScroll": false,
+      "overflowing": [
+        {
+          "el": "div.flex.items-center",
+          "right": 403,
+          "w": 220
+        },
+        {
+          "el": "img.object-contain.w-auto",
+          "right": 403,
+          "w": 220
+        },
+        {
+          "el": "aside.bg-ink.text-warm-white",
+          "right": 557,
+          "w": 536
+        },
+        {
+          "el": "span.absolute.top-3",
+          "right": 541,
+          "w": 40
+        },
+        {
+          "el": "h3.font-semibold.leading-[1.1]",
+          "right": 525,
+          "w": 472
+        },
+        {
+          "el": "p.font-mono.text-[11px]",
+          "right": 525,
+          "w": 472
+        },
+        {
+          "el": "div.mb-6",
+          "right": 525,
+          "w": 472
+        },
+        {
+          "el": "label.block.font-mono",
+          "right": 525,
+          "w": 472
+        }
+      ],
+      "h1Count": 1,
+      "h1Text": "Make decisions with data you trust again.",
+      "h1Top": 226,
+      "h1AboveFold": true,
+      "h1FontSize": "34px",
+      "ctasAboveFold": [
+        {
+          "text": "Start free trial\n→",
+          "top": 523,
+          "h": 55,
+          "w": 350
+        },
+        {
+          "text": "Book a demo",
+          "top": 590,
+          "h": 57,
+          "w": 350
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "INPUT",
+          "w": 90,
+          "h": 33
+        },
+        {
+          "t": "Read the full case study\n→",
+          "w": 176,
+          "h": 24
+        },
+        {
+          "t": "SEE FULL LIST OF INTEGRATIONS",
+          "w": 220,
+          "h": 35
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Platform Overview",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "How It Works",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Integrations",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Platforms",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Pricing",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Security",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "For CMOs",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "For CTOs",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "eCommerce",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Hotels & Travel",
+          "w": 350,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 35,
+      "bodyFontSize": "16px",
+      "minFontSize": 10,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "pricing",
+    "viewport": "mobile",
+    "url": "https://sealmetrics.com/pricing/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics Pricing — Pay for humans, not bots",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 390,
+      "innerWidth": 390,
+      "hasHorizontalScroll": false,
+      "overflowing": [
+        {
+          "el": "div.flex.items-center",
+          "right": 403,
+          "w": 220
+        },
+        {
+          "el": "img.object-contain.w-auto",
+          "right": 403,
+          "w": 220
+        },
+        {
+          "el": "div.absolute.pointer-events-none",
+          "right": 470,
+          "w": 300
+        }
+      ],
+      "h1Count": 1,
+      "h1Text": "Pay for humans. Not bots. Not consent banners. Not guesswork.",
+      "h1Top": 390,
+      "h1AboveFold": true,
+      "h1FontSize": "34px",
+      "ctasAboveFold": [
+        {
+          "text": "Start FREE Trial\n→",
+          "top": 708,
+          "h": 57,
+          "w": 189
+        },
+        {
+          "text": "Book a demo",
+          "top": 708,
+          "h": 57,
+          "w": 149
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Home",
+          "w": 32,
+          "h": 16
+        },
+        {
+          "t": "Monthly",
+          "w": 93,
+          "h": 37
+        },
+        {
+          "t": "Annual\n2 MONTHS FREE",
+          "w": 193,
+          "h": 37
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Platform Overview",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "How It Works",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Integrations",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Platforms",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Pricing",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Security",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "For CMOs",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "For CTOs",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "eCommerce",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Hotels & Travel",
+          "w": 350,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 35,
+      "bodyFontSize": "16px",
+      "minFontSize": 9.5,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "vs-ga360",
+    "viewport": "mobile",
+    "url": "https://sealmetrics.com/vs/ga360/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics vs GA360 — Enterprise data for less",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 390,
+      "innerWidth": 390,
+      "hasHorizontalScroll": false,
+      "overflowing": [
+        {
+          "el": "div.absolute.pointer-events-none",
+          "right": 470,
+          "w": 300
+        },
+        {
+          "el": "div.flex.items-center",
+          "right": 393,
+          "w": 200
+        },
+        {
+          "el": "img.object-contain.w-auto",
+          "right": 393,
+          "w": 200
+        },
+        {
+          "el": "div.flex.items-center",
+          "right": 393,
+          "w": 200
+        },
+        {
+          "el": "img.object-contain.w-auto",
+          "right": 393,
+          "w": 200
+        },
+        {
+          "el": "div.flex.items-center",
+          "right": 393,
+          "w": 200
+        },
+        {
+          "el": "img.object-contain.w-auto",
+          "right": 393,
+          "w": 200
+        },
+        {
+          "el": "div.flex.items-center",
+          "right": 393,
+          "w": 200
+        }
+      ],
+      "h1Count": 1,
+      "h1Text": "Enterprise data without the $150K invoice.",
+      "h1Top": 305,
+      "h1AboveFold": true,
+      "h1FontSize": "34px",
+      "ctasAboveFold": [
+        {
+          "text": "Start FREE Trial →",
+          "top": 662,
+          "h": 57,
+          "w": 185
+        },
+        {
+          "text": "Book a demo",
+          "top": 662,
+          "h": 57,
+          "w": 149
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Home",
+          "w": 32,
+          "h": 16
+        },
+        {
+          "t": "RAFA JIMÉNEZ",
+          "w": 92,
+          "h": 16
+        },
+        {
+          "t": "Read the full Palladium case study ",
+          "w": 275,
+          "h": 26
+        },
+        {
+          "t": "Palladium Hotel Group",
+          "w": 151,
+          "h": 22
+        },
+        {
+          "t": "Dreamplace Hotels",
+          "w": 129,
+          "h": 22
+        },
+        {
+          "t": "/pricing",
+          "w": 53,
+          "h": 22
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Platform Overview",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "How It Works",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Integrations",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Platforms",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Pricing",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Security",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "For CMOs",
+          "w": 350,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 38,
+      "bodyFontSize": "16px",
+      "minFontSize": 10.5,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "blog-ga4-13pct",
+    "viewport": "mobile",
+    "url": "https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic/",
+    "status": 200,
+    "metrics": {
+      "title": "Why GA4 Shows 13% of Your EU Traffic",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 390,
+      "innerWidth": 390,
+      "hasHorizontalScroll": false,
+      "overflowing": [],
+      "h1Count": 1,
+      "h1Text": "Why GA4 Shows 13% of Your EU Traffic",
+      "h1Top": 216,
+      "h1AboveFold": true,
+      "h1FontSize": "40px",
+      "ctasAboveFold": [],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "Home",
+          "w": 32,
+          "h": 16
+        },
+        {
+          "t": "Blog",
+          "w": 24,
+          "h": 18
+        },
+        {
+          "t": "Rafa Jiménez",
+          "w": 78,
+          "h": 19
+        },
+        {
+          "t": "complete data",
+          "w": 110,
+          "h": 24
+        },
+        {
+          "t": "data loss in analytics",
+          "w": 159,
+          "h": 24
+        },
+        {
+          "t": "GDPR and the ePrivacy Directive",
+          "w": 251,
+          "h": 21
+        },
+        {
+          "t": "Intelligent Tracking Prevention",
+          "w": 232,
+          "h": 24
+        },
+        {
+          "t": "ITP",
+          "w": 24,
+          "h": 21
+        },
+        {
+          "t": "Consent Mode v2",
+          "w": 136,
+          "h": 21
+        },
+        {
+          "t": "cookieless",
+          "w": 80,
+          "h": 24
+        },
+        {
+          "t": "see how the architecture works",
+          "w": 244,
+          "h": 24
+        },
+        {
+          "t": "calculate your own data loss",
+          "w": 219,
+          "h": 24
+        },
+        {
+          "t": "How Consent Banners Destroy Your An",
+          "w": 350,
+          "h": 22
+        },
+        {
+          "t": "How Consent Banners Destroy Your An",
+          "w": 355,
+          "h": 23
+        }
+      ],
+      "smallTapTargetCount": 46,
+      "bodyFontSize": "16px",
+      "minFontSize": 12,
+      "lang": "en"
+    }
+  },
+  {
+    "page": "es-home",
+    "viewport": "mobile",
+    "url": "https://sealmetrics.com/es/",
+    "status": 200,
+    "metrics": {
+      "title": "SealMetrics — Analítica sin consentimiento para eCommerce",
+      "viewportMeta": "width=device-width, initial-scale=1",
+      "docWidth": 390,
+      "innerWidth": 390,
+      "hasHorizontalScroll": false,
+      "overflowing": [
+        {
+          "el": "div.flex.items-center",
+          "right": 403,
+          "w": 220
+        },
+        {
+          "el": "img.object-contain.w-auto",
+          "right": 403,
+          "w": 220
+        },
+        {
+          "el": "aside.bg-ink.text-warm-white",
+          "right": 591,
+          "w": 570
+        },
+        {
+          "el": "span.absolute.top-3",
+          "right": 575,
+          "w": 40
+        },
+        {
+          "el": "h3.font-semibold.leading-[1.1]",
+          "right": 559,
+          "w": 506
+        },
+        {
+          "el": "p.font-mono.text-[11px]",
+          "right": 559,
+          "w": 506
+        },
+        {
+          "el": "div.mb-6",
+          "right": 559,
+          "w": 506
+        },
+        {
+          "el": "label.block.font-mono",
+          "right": 559,
+          "w": 506
+        }
+      ],
+      "h1Count": 1,
+      "h1Text": "Vuelve a tomar decisiones con datos en los que confías.",
+      "h1Top": 226,
+      "h1AboveFold": true,
+      "h1FontSize": "34px",
+      "ctasAboveFold": [],
+      "smallTapTargets": [
+        {
+          "t": "A",
+          "w": 167,
+          "h": 28
+        },
+        {
+          "t": "INPUT",
+          "w": 90,
+          "h": 33
+        },
+        {
+          "t": "Leer el caso completo\n→",
+          "w": 163,
+          "h": 24
+        },
+        {
+          "t": "VER LISTA COMPLETA DE INTEGRACIONES",
+          "w": 257,
+          "h": 35
+        },
+        {
+          "t": "A",
+          "w": 140,
+          "h": 28
+        },
+        {
+          "t": "Vista General",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Cómo Funciona",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Integraciones",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Plataformas",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Precios",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Seguridad",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Para CMOs",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Para CTOs",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "eCommerce",
+          "w": 350,
+          "h": 28
+        },
+        {
+          "t": "Hoteles y Turismo",
+          "w": 350,
+          "h": 28
+        }
+      ],
+      "smallTapTargetCount": 35,
+      "bodyFontSize": "16px",
+      "minFontSize": 10,
+      "lang": "es"
+    }
+  }
+]

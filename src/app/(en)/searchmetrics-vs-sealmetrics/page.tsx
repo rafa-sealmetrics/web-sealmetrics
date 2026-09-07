@@ -70,7 +70,7 @@ export default function SearchmetricsVsSealmetricsPage() {
             folded it into its own platform; searchmetrics.com now returns a
             permanent redirect to conductor.com, and the product is no longer sold
             under its original name. Sealmetrics is a cookieless web analytics
-            platform for eCommerce, founded in 2020 and hosted in Dublin, Ireland.
+            platform for eCommerce, founded in 2024 and hosted in Dublin, Ireland.
             It measures what visitors do on a site and attributes revenue using
             last-click on 100% of traffic. It does not measure keyword rankings,
             search visibility, or competitor SEO. If you are looking for
@@ -162,7 +162,7 @@ export default function SearchmetricsVsSealmetricsPage() {
                   <tr>
                     <td className="py-3 pr-4 text-text-tertiary">Status</td>
                     <td className="py-3 pr-4">Acquired 2023, merged into Conductor</td>
-                    <td className="py-3">Independent, founded 2020</td>
+                    <td className="py-3">Independent, founded 2024</td>
                   </tr>
                 </tbody>
               </table>

@@ -89,7 +89,7 @@ export default function Page() {
           <>Rafa Jiménez is the founder and CEO of <strong>Sealmetrics</strong>, a European cookieless web analytics platform hosted in Dublin. He spent 20+ years in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups — before building Sealmetrics to solve the problem he kept seeing: teams making revenue decisions on data that GA4, the pixel and the CRM all reported differently.</>
         }
         bullets={[
-          <>Founded Sealmetrics in 2020 to give European eCommerce teams a single, defensible source of truth.</>,
+          <>Founded Sealmetrics in 2024 to give European eCommerce teams a single, defensible source of truth.</>,
           <>Writes at the intersection of GDPR law, revenue attribution and analytics infrastructure.</>,
           <>Publishes educational content on the <Link href="/blog" className="text-brand hover:underline">Sealmetrics blog</Link> and <Link href="/glossary" className="text-brand hover:underline">glossary</Link>.</>,
         ]}

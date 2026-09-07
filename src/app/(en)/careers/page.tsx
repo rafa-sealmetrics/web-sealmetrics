@@ -173,7 +173,7 @@ export default function CareersPage() {
               <Link href="/open" className="text-brand">
                 Open — how we work, documented in public
               </Link>
-              . Founded in 2020, headquartered in Barcelona, EU-hosted in
+              . Founded in 2024, headquartered in Barcelona, EU-hosted in
               Dublin.
             </p>
           </div>
