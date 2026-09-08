@@ -160,7 +160,7 @@ export default function Page() {
               <li>In-product feature adoption</li>
               <li>Retention cohort analysis</li>
               <li>Per-user behavior inside the app</li>
-              <li>Session replay</li>
+              <li>Individual visit reconstruction</li>
             </ul>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
