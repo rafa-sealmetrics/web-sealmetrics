@@ -5,6 +5,7 @@ const FORM_TYPES = new Set([
   "careers",
   "calculator",
   "growth",
+  "brand_report",
 ]);
 
 const PERSONAL_EMAIL_DOMAINS = new Set([
@@ -75,6 +76,13 @@ function validUrl(value) {
   }
 }
 
+// Optional free-text field: absent or empty is fine, anything present must be a
+// string within the given length.
+function optionalText(value, maxLength) {
+  if (value === undefined || value === null || value === "") return true;
+  return typeof value === "string" && value.trim().length <= maxLength;
+}
+
 function validatePayload(type, payload) {
   if (type === "careers") {
     const links = Array.isArray(payload.other_links) ? payload.other_links : [];
@@ -94,6 +102,28 @@ function validatePayload(type, payload) {
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   if (!EMAIL_RE.test(email) || email.length > 254) return false;
   if (type === "calculator" || type === "growth") return true;
+
+  // The brand report form is deliberately short — a brand and a work email — so
+  // it returns before the name/website/gdpr checks the other lead types share.
+  if (type === "brand_report") {
+    if (PERSONAL_EMAIL_DOMAINS.has(email.toLowerCase().split("@")[1])) {
+      return false;
+    }
+    const brand = typeof payload.brand === "string" ? payload.brand.trim() : "";
+    if (!brand || brand.length > 120) return false;
+    // Optional, but when it is sent it selects the report language, so only the
+    // two locales the site publishes are accepted.
+    const language = payload.language;
+    const languageOmitted =
+      language === undefined || language === null || language === "";
+    if (!languageOmitted && language !== "en" && language !== "es") return false;
+    return (
+      optionalText(payload.sector, 120) &&
+      optionalText(payload.category, 120) &&
+      optionalText(payload.country, 120) &&
+      optionalText(payload.competitors, 200)
+    );
+  }
 
   const websiteValue = payload.websiteRaw || payload.website;
 
@@ -130,6 +160,7 @@ function validatePayload(type, payload) {
 function endpointFor(type, env) {
   if (type === "demo_access") return env.N8N_DEMO_ACCESS_URL;
   if (type === "careers") return env.N8N_CAREERS_URL;
+  if (type === "brand_report") return env.N8N_BRAND_REPORT_URL;
   return env.N8N_WEBFORM_LEAD_URL;
 }
 

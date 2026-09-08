@@ -12,7 +12,11 @@ be committed:
 - `N8N_WEBFORM_LEAD_URL`
 - `N8N_DEMO_ACCESS_URL`
 - `N8N_CAREERS_URL`
+- `N8N_BRAND_REPORT_URL`
 - `TURNSTILE_SECRET`
+
+`N8N_BRAND_REPORT_URL` points at the `sm-brand-report` webhook in n8n, the flow
+behind the "what AI says about your brand" report form.
 
 `ALLOWED_ORIGINS`, `TURNSTILE_HOSTNAMES`, `TURNSTILE_ACTION`, and
 `REQUIRE_TURNSTILE` are non-secret settings in `wrangler.jsonc`. Turnstile is
@@ -33,12 +37,12 @@ account.
 
 1. Run `npm ci` and `npm test` in this directory.
 2. Confirm the target Cloudflare account with `npx wrangler whoami`.
-3. Configure the four secrets above.
+3. Configure the five secrets above.
 4. Deploy to the generated `workers.dev` hostname and run synthetic tests.
 5. Point the static forms at the deployed endpoint above.
 6. Confirm the Turnstile widget allows only `sealmetrics.com` and
    `www.sealmetrics.com`, then keep `REQUIRE_TURNSTILE` set to `true`.
-7. Confirm all six flows reach the expected mailbox before merging to `main`.
+7. Confirm all seven flows reach the expected mailbox before merging to `main`.
 8. Rotate the n8n webhook paths that were previously present in frontend code.
 
 If the DNS zone is moved to this Cloudflare account later, add
