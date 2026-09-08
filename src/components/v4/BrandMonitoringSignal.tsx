@@ -260,26 +260,24 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
   return (
     <main className="sig-brand-page">
       <section className="sig-brand-hero">
-        <div>
-          <nav className="sig-brand-breadcrumbs" aria-label="Breadcrumb">
-            <Link href={`${prefix}/`}>{t.home}</Link>
-            <span>/</span>
-            <span>{t.breadcrumb}</span>
-          </nav>
-          <p className="sig-brand-eyebrow">
-            <span>{t.eyebrow}</span>
-          </p>
-          <h1>{t.h1}</h1>
-          <p className="sig-brand-hero-body">{t.heroBody}</p>
+        <nav className="sig-brand-breadcrumbs" aria-label="Breadcrumb">
+          <Link href={`${prefix}/`}>{t.home}</Link>
+          <span>/</span>
+          <span>{t.breadcrumb}</span>
+        </nav>
+        <p className="sig-brand-eyebrow">
+          <span>{t.eyebrow}</span>
+        </p>
+        <h1>{t.h1}</h1>
+        <p className="sig-brand-hero-body">{t.heroBody}</p>
+      </section>
+
+      <section className="sig-brand-request" aria-label={t.formTitle}>
+        <div className="sig-brand-module-top">
+          <span>{t.formTitle}</span>
+          <span>{t.formFoot}</span>
         </div>
-        <aside className="sig-brand-form-card" aria-label={t.formTitle}>
-          <div className="sig-brand-module-top">
-            <span>{t.formTitle}</span>
-            <span>FREE</span>
-          </div>
-          <BrandReportForm locale={locale} />
-          <p className="sig-brand-form-foot">{t.formFoot}</p>
-        </aside>
+        <BrandReportForm locale={locale} />
       </section>
 
       <section className="sig-brand-own">

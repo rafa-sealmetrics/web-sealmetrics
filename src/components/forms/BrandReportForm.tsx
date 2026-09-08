@@ -47,7 +47,8 @@ const copy = {
     sectorHint: "Optional. Helps the models place you in a category.",
     competitors: "Competitors",
     competitorsPlaceholder: "Two or three names, separated by commas",
-    competitorsHint: "Optional. Without them, the report finds who the models name instead of you.",
+    competitorsHint:
+      "Optional. Without them, the report finds who the models name instead of you.",
     submit: "Send me the report",
     submitting: "Requesting the report",
     successTitle: "On its way.",
@@ -57,7 +58,8 @@ const copy = {
     errorEmail: "That address does not look valid.",
     errorPersonal: "Use your company address, not a personal one.",
     errorGeneric: "We could not request it right now. Try again in a moment.",
-    privacy: "We use your address to send this report and, occasionally, others like it. Unsubscribe in one click.",
+    privacy:
+      "We use your address to send this report and, occasionally, others like it. Unsubscribe in one click.",
     privacyLink: "Privacy",
   },
   es: {
@@ -70,7 +72,8 @@ const copy = {
     sectorHint: "Opcional. Ayuda a los modelos a situarte en una categoría.",
     competitors: "Competidores",
     competitorsPlaceholder: "Dos o tres nombres, separados por comas",
-    competitorsHint: "Opcional. Sin ellos, el informe descubre a quién nombran los modelos en tu lugar.",
+    competitorsHint:
+      "Opcional. Sin ellos, el informe descubre a quién nombran los modelos en tu lugar.",
     submit: "Enviadme el informe",
     submitting: "Pidiendo el informe",
     successTitle: "En camino.",
@@ -80,7 +83,8 @@ const copy = {
     errorEmail: "Ese correo no parece válido.",
     errorPersonal: "Usa el correo de tu empresa, no uno personal.",
     errorGeneric: "Ahora mismo no hemos podido pedirlo. Prueba en un momento.",
-    privacy: "Usamos tu correo para enviarte este informe y, de vez en cuando, otros como él. Te das de baja en un clic.",
+    privacy:
+      "Usamos tu correo para enviarte este informe y, de vez en cuando, otros como él. Te das de baja en un clic.",
     privacyLink: "Privacidad",
   },
 } as const;
@@ -92,13 +96,17 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
   const [email, setEmail] = useState("");
   const [sector, setSector] = useState("");
   const [competitors, setCompetitors] = useState("");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [message, setMessage] = useState("");
   const [companyFax, setCompanyFax] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
-  const canSubmit = Boolean(brand.trim() && email.trim() && turnstileToken) && status !== "submitting";
+  const canSubmit =
+    Boolean(brand.trim() && email.trim() && turnstileToken) &&
+    status !== "submitting";
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -130,7 +138,7 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
           competitors: competitors.trim(),
           language: locale,
         },
-        { companyFax, turnstileToken: turnstileToken ?? "" }
+        { companyFax, turnstileToken: turnstileToken ?? "" },
       );
       setStatus("success");
       pushEvent({ event: "lead_brand_report", email: cleanEmail });
@@ -158,85 +166,97 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
 
   return (
     <form className="sig-brand-form" onSubmit={handleSubmit} noValidate>
-      <label className="sig-brand-field">
-        <span>{t.brand}</span>
+      <div className="sig-brand-row">
+        <label className="sig-brand-field">
+          <span>{t.brand}</span>
+          <input
+            type="text"
+            name="brand"
+            value={brand}
+            onChange={(event) => setBrand(event.target.value)}
+            placeholder={t.brandPlaceholder}
+            maxLength={120}
+            required
+          />
+        </label>
+
+        <label className="sig-brand-field">
+          <span>{t.email}</span>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder={t.emailPlaceholder}
+            maxLength={254}
+            required
+          />
+        </label>
+
+        <label className="sig-brand-field">
+          <span>{t.sector}</span>
+          <input
+            type="text"
+            name="sector"
+            value={sector}
+            onChange={(event) => setSector(event.target.value)}
+            placeholder={t.sectorPlaceholder}
+            maxLength={120}
+          />
+          <small>{t.sectorHint}</small>
+        </label>
+
+        <label className="sig-brand-field">
+          <span>{t.competitors}</span>
+          <input
+            type="text"
+            name="competitors"
+            value={competitors}
+            onChange={(event) => setCompetitors(event.target.value)}
+            placeholder={t.competitorsPlaceholder}
+            maxLength={200}
+          />
+          <small>{t.competitorsHint}</small>
+        </label>
+
+        {/* Honeypot: hidden from people, filled by the bots that read the markup. */}
         <input
           type="text"
-          name="brand"
-          value={brand}
-          onChange={(event) => setBrand(event.target.value)}
-          placeholder={t.brandPlaceholder}
-          maxLength={120}
-          required
+          name="company_fax"
+          value={companyFax}
+          onChange={(event) => setCompanyFax(event.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="sig-brand-honeypot"
         />
-      </label>
+      </div>
 
-      <label className="sig-brand-field">
-        <span>{t.email}</span>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder={t.emailPlaceholder}
-          maxLength={254}
-          required
-        />
-      </label>
-
-      <label className="sig-brand-field">
-        <span>{t.sector}</span>
-        <input
-          type="text"
-          name="sector"
-          value={sector}
-          onChange={(event) => setSector(event.target.value)}
-          placeholder={t.sectorPlaceholder}
-          maxLength={120}
-        />
-        <small>{t.sectorHint}</small>
-      </label>
-
-      <label className="sig-brand-field">
-        <span>{t.competitors}</span>
-        <input
-          type="text"
-          name="competitors"
-          value={competitors}
-          onChange={(event) => setCompetitors(event.target.value)}
-          placeholder={t.competitorsPlaceholder}
-          maxLength={200}
-        />
-        <small>{t.competitorsHint}</small>
-      </label>
-
-      {/* Honeypot: hidden from people, filled by the bots that read the markup. */}
-      <input
-        type="text"
-        name="company_fax"
-        value={companyFax}
-        onChange={(event) => setCompanyFax(event.target.value)}
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-        className="sig-brand-honeypot"
-      />
-
-      <LeadTurnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} locale={locale} />
+      <div className="sig-brand-foot">
+        <div className="sig-brand-foot-left">
+          <LeadTurnstile
+            onToken={setTurnstileToken}
+            resetKey={turnstileResetKey}
+            locale={locale}
+          />
+          <p className="sig-brand-privacy">
+            {t.privacy} <a href={`${prefix}/privacy/`}>{t.privacyLink}</a>
+          </p>
+        </div>
+        <button
+          type="submit"
+          className="sig-brand-submit"
+          disabled={!canSubmit}
+        >
+          {status === "submitting" ? t.submitting : t.submit}
+        </button>
+      </div>
 
       {status === "error" && message ? (
         <p role="alert" className="sig-brand-error">
           {message}
         </p>
       ) : null}
-
-      <button type="submit" className="sig-brand-submit" disabled={!canSubmit}>
-        {status === "submitting" ? t.submitting : t.submit}
-      </button>
-
-      <p className="sig-brand-privacy">
-        {t.privacy} <a href={`${prefix}/privacy/`}>{t.privacyLink}</a>
-      </p>
     </form>
   );
 }

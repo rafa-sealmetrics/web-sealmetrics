@@ -49,11 +49,7 @@
 
 /* ── Hero ─────────────────────────────────────────────────────────────── */
 .sig-brand-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(400px, 0.95fr);
-  gap: clamp(48px, 6vw, 96px);
-  align-items: start;
-  padding-block: clamp(56px, 7vw, 104px);
+  padding-block: clamp(56px, 7vw, 88px) clamp(28px, 3vw, 40px);
 }
 .sig-brand-breadcrumbs {
   display: flex;
@@ -83,7 +79,8 @@
 }
 .sig-brand-hero h1 {
   margin-top: 20px;
-  font-size: clamp(46px, 5.4vw, 84px);
+  max-width: 18ch;
+  font-size: clamp(46px, 6.2vw, 96px);
   font-weight: 790;
   line-height: 0.86;
   letter-spacing: -0.07em;
@@ -96,20 +93,29 @@
   color: var(--muted);
 }
 
-/* ── Form card ────────────────────────────────────────────────────────── */
-.sig-brand-form-card {
-  background: var(--white);
-  border: 1px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
-  padding: 0 0 22px;
+/* ── Request band ─────────────────────────────────────────────────────── */
+/*
+ * The form is the page, so it runs the full width under the headline rather than
+ * sitting in a column beside it. The fields are a single row on desktop and stack on
+ * narrow screens, where a four-across row would be four squashed inputs.
+ */
+.sig-brand-request {
+  padding-bottom: clamp(48px, 5vw, 76px);
+}
+.sig-brand-request > .sig-brand-module-top,
+.sig-brand-request > .sig-brand-form,
+.sig-brand-request > .sig-brand-form-done {
+  border-inline: 1px solid var(--ink);
 }
 .sig-brand-module-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
   background: var(--ink);
   color: var(--white);
-  padding: 11px 18px;
+  padding: 12px 20px;
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 10px;
   font-weight: 650;
@@ -120,13 +126,21 @@
   color: var(--acid);
 }
 .sig-brand-form {
+  background: var(--white);
+  border-bottom: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 26px 20px 24px;
+}
+.sig-brand-row {
   display: grid;
-  gap: 16px;
-  padding: 22px 22px 0;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 18px;
+  align-items: start;
 }
 .sig-brand-field {
   display: grid;
   gap: 6px;
+  min-width: 0;
 }
 .sig-brand-field > span {
   font-family: var(--font-jetbrains-mono), monospace;
@@ -141,7 +155,7 @@
   border: 1px solid var(--rule);
   background: var(--paper);
   color: var(--ink);
-  padding: 11px 13px;
+  padding: 12px 13px;
   font: inherit;
   font-size: 15px;
   border-radius: 0;
@@ -167,6 +181,23 @@
   white-space: nowrap;
   border: 0;
 }
+.sig-brand-foot {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sig-brand-foot-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
 .sig-brand-submit {
   display: inline-flex;
   justify-content: center;
@@ -176,12 +207,13 @@
   color: var(--ink);
   border: 1px solid var(--ink);
   box-shadow: 3px 3px 0 var(--ink);
-  padding: 13px 20px;
+  padding: 15px 30px;
   font: inherit;
   font-weight: 650;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 0;
   cursor: pointer;
+  white-space: nowrap;
   transition: transform 0.12s ease;
 }
 .sig-brand-submit:hover:not(:disabled) {
@@ -194,11 +226,13 @@
   box-shadow: none;
 }
 .sig-brand-error {
+  margin-top: 16px;
   color: #b5423b;
   font-size: 14px;
   line-height: 1.45;
 }
 .sig-brand-privacy {
+  max-width: 46ch;
   font-size: 12px;
   line-height: 1.5;
   color: var(--muted);
@@ -208,26 +242,21 @@
   text-underline-offset: 2px;
 }
 .sig-brand-form-done {
-  padding: 34px 22px 12px;
+  background: var(--white);
+  border-bottom: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 34px 20px 32px;
 }
 .sig-brand-done-title {
-  font-size: 22px;
+  font-size: clamp(24px, 2.4vw, 32px);
   font-weight: 790;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 .sig-brand-done-body {
   margin-top: 10px;
-  font-size: 15px;
+  max-width: 60ch;
+  font-size: 16px;
   line-height: 1.55;
-  color: var(--muted);
-}
-.sig-brand-form-foot {
-  padding: 16px 22px 0;
-  font-family: var(--font-jetbrains-mono), monospace;
-  font-size: 10px;
-  font-weight: 650;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--muted);
 }
 
@@ -424,13 +453,12 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .sig-brand-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @media (max-width: 1000px) {
-  .sig-brand-hero {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .sig-brand-form-card {
-    max-width: 520px;
-  }
   .sig-brand-section-head {
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
@@ -438,5 +466,16 @@
   .sig-brand-measure-grid,
   .sig-brand-stat-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .sig-brand-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sig-brand-foot {
+    align-items: stretch;
+  }
+  .sig-brand-submit {
+    width: 100%;
   }
 }
