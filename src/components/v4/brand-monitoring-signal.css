@@ -103,8 +103,7 @@
   padding-bottom: clamp(48px, 5vw, 76px);
 }
 .sig-brand-request > .sig-brand-module-top,
-.sig-brand-request > .sig-brand-form,
-.sig-brand-request > .sig-brand-form-done {
+.sig-brand-request > .sig-brand-form {
   border-inline: 1px solid var(--ink);
 }
 .sig-brand-module-top {
@@ -241,25 +240,6 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.sig-brand-form-done {
-  background: var(--white);
-  border-bottom: 1px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
-  padding: 34px 20px 32px;
-}
-.sig-brand-done-title {
-  font-size: clamp(24px, 2.4vw, 32px);
-  font-weight: 790;
-  letter-spacing: -0.03em;
-}
-.sig-brand-done-body {
-  margin-top: 10px;
-  max-width: 60ch;
-  font-size: 16px;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
 /* ── Section heads ────────────────────────────────────────────────────── */
 .sig-brand-section-head {
   display: grid;
@@ -322,6 +302,10 @@
   font-size: 14px;
   line-height: 1.5;
   color: var(--muted);
+}
+
+.sig-brand-case-link {
+  margin-top: 26px;
 }
 
 /* ── Six questions ────────────────────────────────────────────────────── */

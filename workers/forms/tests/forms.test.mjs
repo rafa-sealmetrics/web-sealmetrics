@@ -281,6 +281,17 @@ test("rejects brand reports that fail their own field rules", async () => {
   };
   const cases = [
     ["a personal email domain", { email: "someone@gmail.com", brand: "Example" }],
+    // The list used to stop at the .com of each provider, so the addresses a
+    // Spanish or European visitor actually types went straight through.
+    ["a Microsoft country domain", { email: "someone@hotmail.es", brand: "Example" }],
+    ["a Microsoft UK domain", { email: "someone@live.co.uk", brand: "Example" }],
+    ["a Yahoo country domain", { email: "someone@yahoo.fr", brand: "Example" }],
+    ["a Spanish telco address", { email: "someone@telefonica.net", brand: "Example" }],
+    ["a German free provider", { email: "someone@web.de", brand: "Example" }],
+    ["an Italian free provider", { email: "someone@libero.it", brand: "Example" }],
+    ["a throwaway inbox", { email: "someone@yopmail.com", brand: "Example" }],
+    ["a ten-minute inbox", { email: "someone@10minutemail.com", brand: "Example" }],
+    ["a domain in a different case", { email: "Someone@Hotmail.CO.UK", brand: "Example" }],
     ["a missing email", { brand: "Example" }],
     ["an empty brand", { email: "cmo@example.com", brand: "   " }],
     ["a missing brand", { email: "cmo@example.com" }],

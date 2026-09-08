@@ -135,6 +135,30 @@ test("micro and conv events fan out to both accounts", async () => {
   }
 });
 
+test("the brand report request is a mapped microconversion, and carries no email", async () => {
+  // It used to call pushEvent with a name that was not in EVENT_MAP, so the
+  // `!mapping` guard dropped every request in silence. The page had a form,
+  // the pixel had nothing.
+  const { analytics, received, loadAll } = await loadAnalytics();
+
+  analytics.pageview("ai-brand-monitoring");
+  loadAll();
+  analytics.pushEvent({ event: "lead_brand_report", email: "cmo@example.com" });
+
+  for (const id of accounts) {
+    const hits = received.get(id).filter((h) => h.kind !== "pageview");
+    assert.deepEqual(
+      hits.map((h) => `${h.kind}:${h.event}`),
+      ["micro:brand_report_request"],
+      `${id} must receive the request as a microconversion, exactly once`
+    );
+    assert.ok(
+      hits.every((h) => !h.props || !("email" in h.props)),
+      `${id}: the requester's email must never reach the pixel`
+    );
+  }
+});
+
 test("hits fired before a tag finishes loading are queued per account, not dropped", async () => {
   const { analytics, scripts, received, loadTag } = await loadAnalytics();
 
