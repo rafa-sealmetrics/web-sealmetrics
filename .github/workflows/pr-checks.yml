@@ -40,9 +40,16 @@ jobs:
     name: Stamp lastmod
     # Solo ramas de agente, y nunca desde un fork: no tendría permisos, y
     # dejarlo abierto permitiría escribir en el repo con cualquier PR.
+    #
+    # `seo/` faltaba en esta lista (añadido 2026-09-08). El ejecutor del
+    # seo-agent nombra sus ramas `seo/<audit>-<fecha>-<hora>`, así que el
+    # sellado se saltaba, el gate de lastmod tumbaba el build y TODOS sus PRs
+    # nacían en rojo. Cuatro se quedaron muertos así, incluidos los del bloque
+    # nominador. Si aparece un prefijo de agente nuevo, va aquí.
     if: >
       (startsWith(github.head_ref, 'quality/') ||
        startsWith(github.head_ref, 'content/') ||
+       startsWith(github.head_ref, 'seo/') ||
        startsWith(github.head_ref, 'changelog/')) &&
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
