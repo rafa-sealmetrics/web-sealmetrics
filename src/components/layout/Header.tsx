@@ -28,6 +28,27 @@ interface NavDropdown {
   groups: DropdownGroup[];
 }
 
+// Product was a bare link until the brand-monitoring report shipped: one page, one slot.
+// It earns a dropdown now for the same reason /why-sealmetrics has one — the trigger still
+// goes to /product, and the free report needs a way in that is not the URL bar.
+function getProductDropdown(t: ReturnType<typeof getDictionary>["header"], locale: Locale): NavDropdown {
+  return {
+    label: t.product,
+    groups: [
+      {
+        items: [
+          { href: localizedHref("/product", locale), label: t.productOverview, desc: t.productOverviewDesc },
+          {
+            href: localizedHref("/ai-brand-monitoring", locale),
+            label: t.aiBrandMonitoring,
+            desc: t.aiBrandMonitoringDesc,
+          },
+        ],
+      },
+    ],
+  };
+}
+
 // The trigger itself links to /why-sealmetrics (the site's strongest sales
 // page — it earns a top-level slot, not a slot inside its own dropdown); the
 // dropdown keeps the pillar links the nav must carry per SEO-STRATEGY §4.
@@ -238,6 +259,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const t = getDictionary(locale).header;
+  const productDropdown = getProductDropdown(t, locale);
   const whyDropdown = getWhyDropdown(t, locale);
   const solutionsDropdown = getSolutionsDropdown(t, locale);
   const resourcesDropdown = getResourcesDropdown(t, locale);
@@ -274,12 +296,13 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
             language switcher need ~1000px. Below that the hamburger carries
             the same links and both CTAs. */}
         <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-6 xl:gap-7">
-          <Link
-            href={localizedHref("/product", locale)}
-            className="whitespace-nowrap text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
-          >
-            {t.product}
-          </Link>
+          <Dropdown
+            dropdown={productDropdown}
+            isOpen={openDropdown === "Product"}
+            onToggle={() => handleToggle("Product")}
+            onClose={handleClose}
+            labelHref={localizedHref("/product", locale)}
+          />
 
           <Dropdown
             dropdown={whyDropdown}
@@ -359,13 +382,30 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
       {mobileOpen && (
         <div className="lg:hidden bg-paper border-t border-hairline px-4 sm:px-6 py-6 max-h-[calc(100vh-76px)] overflow-y-auto">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
-            <Link
-              href={localizedHref("/product", locale)}
-              className="py-2.5 text-text-secondary no-underline hover:text-text-primary"
-              onClick={() => setMobileOpen(false)}
-            >
-              {t.product}
-            </Link>
+            {/* Product group — label links to the page itself, items are its pages */}
+            <div className="py-2.5">
+              <Link
+                href={localizedHref("/product", locale)}
+                className="text-[0.7rem] font-medium uppercase tracking-[0.06em] text-text-tertiary no-underline hover:text-text-primary"
+                onClick={() => setMobileOpen(false)}
+              >
+                {t.product} →
+              </Link>
+              <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
+                {productDropdown.groups.map((group) =>
+                  group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))
+                )}
+              </div>
+            </div>
 
             {/* Why group — label links to the page itself, items are the pillars */}
             <div className="py-2.5">
