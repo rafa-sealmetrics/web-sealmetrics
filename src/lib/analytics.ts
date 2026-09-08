@@ -190,6 +190,11 @@ const EVENT_MAP: Record<string, Mapping> = {
   calculator_used: { kind: "micro", name: "calculator_used" },
   growth_calculator_used: { kind: "micro", name: "calculator_used" },
   calculator_report_email: { kind: "micro", name: "report_request" },
+  // The free AI brand report. A microconversion, not a lead: it costs us real
+  // inference and buys intent, but nobody in it has asked to be sold to. The
+  // name was absent from this table until now, so every request since the page
+  // shipped was silently dropped by the `!mapping` guard below.
+  lead_brand_report: { kind: "micro", name: "brand_report_request" },
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };

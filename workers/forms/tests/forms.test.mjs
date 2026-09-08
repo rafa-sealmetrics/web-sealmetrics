@@ -191,6 +191,7 @@ test("routes every public form type through the private relay", async () => {
     N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
     N8N_DEMO_ACCESS_URL: "https://automation.invalid/demo-access",
     N8N_CAREERS_URL: "https://automation.invalid/careers",
+    N8N_BRAND_REPORT_URL: "https://automation.invalid/brand-report",
   };
   const cases = [
     ["demo", { name: "Test Lead", email: "test@example.com", website: "https://example.com", gdpr: true }, env.N8N_WEBFORM_LEAD_URL],
@@ -199,6 +200,7 @@ test("routes every public form type through the private relay", async () => {
     ["careers", { team: "Engineering", linkedin: "https://www.linkedin.com/in/test" }, env.N8N_CAREERS_URL],
     ["calculator", { email: "test@example.com" }, env.N8N_WEBFORM_LEAD_URL],
     ["growth", { email: "test@example.com" }, env.N8N_WEBFORM_LEAD_URL],
+    ["brand_report", { email: "test@example.com", brand: "Test Brand" }, env.N8N_BRAND_REPORT_URL],
   ];
 
   try {
@@ -208,6 +210,107 @@ test("routes every public form type through the private relay", async () => {
       assert.equal(forwarded.at(-1), endpoint, `${type} should use its configured relay`);
     }
     assert.equal(forwarded.length, cases.length);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("accepts a minimal brand report: a brand and a work email", async () => {
+  const originalFetch = globalThis.fetch;
+  let forwarded;
+  globalThis.fetch = async (url, options) => {
+    forwarded = { url: String(url), options };
+    return new Response(null, { status: 204 });
+  };
+
+  const payload = { email: "cmo@example.com", brand: "Example" };
+  try {
+    const response = await worker.fetch(
+      request({ type: "brand_report", payload }),
+      { ...baseEnv, N8N_BRAND_REPORT_URL: "https://automation.invalid/brand-report" },
+    );
+    assert.equal(response.status, 200);
+    assert.equal(forwarded.url, "https://automation.invalid/brand-report");
+    assert.deepEqual(JSON.parse(forwarded.options.body), payload);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("a brand report needs neither name nor website", async () => {
+  const originalFetch = globalThis.fetch;
+  let forwarded = 0;
+  globalThis.fetch = async () => {
+    forwarded += 1;
+    return new Response(null, { status: 204 });
+  };
+  try {
+    const response = await worker.fetch(
+      request({
+        type: "brand_report",
+        payload: {
+          email: "cmo@example.com",
+          brand: "Example",
+          sector: "Retail",
+          category: "Running shoes",
+          country: "Spain",
+          competitors: "Alpha, Beta, Gamma",
+          language: "es",
+        },
+      }),
+      { ...baseEnv, N8N_BRAND_REPORT_URL: "https://automation.invalid/brand-report" },
+    );
+    assert.equal(response.status, 200);
+    assert.equal(forwarded, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("rejects brand reports that fail their own field rules", async () => {
+  const originalFetch = globalThis.fetch;
+  let forwarded = 0;
+  globalThis.fetch = async () => {
+    forwarded += 1;
+    return new Response(null, { status: 204 });
+  };
+
+  const env = {
+    ...baseEnv,
+    N8N_BRAND_REPORT_URL: "https://automation.invalid/brand-report",
+  };
+  const cases = [
+    ["a personal email domain", { email: "someone@gmail.com", brand: "Example" }],
+    // The list used to stop at the .com of each provider, so the addresses a
+    // Spanish or European visitor actually types went straight through.
+    ["a Microsoft country domain", { email: "someone@hotmail.es", brand: "Example" }],
+    ["a Microsoft UK domain", { email: "someone@live.co.uk", brand: "Example" }],
+    ["a Yahoo country domain", { email: "someone@yahoo.fr", brand: "Example" }],
+    ["a Spanish telco address", { email: "someone@telefonica.net", brand: "Example" }],
+    ["a German free provider", { email: "someone@web.de", brand: "Example" }],
+    ["an Italian free provider", { email: "someone@libero.it", brand: "Example" }],
+    ["a throwaway inbox", { email: "someone@yopmail.com", brand: "Example" }],
+    ["a ten-minute inbox", { email: "someone@10minutemail.com", brand: "Example" }],
+    ["a domain in a different case", { email: "Someone@Hotmail.CO.UK", brand: "Example" }],
+    ["a missing email", { brand: "Example" }],
+    ["an empty brand", { email: "cmo@example.com", brand: "   " }],
+    ["a missing brand", { email: "cmo@example.com" }],
+    ["a brand over 120 characters", { email: "cmo@example.com", brand: "B".repeat(121) }],
+    ["a language outside en/es", { email: "cmo@example.com", brand: "Example", language: "fr" }],
+    ["a sector over 120 characters", { email: "cmo@example.com", brand: "Example", sector: "S".repeat(121) }],
+    ["a competitors list over 200 characters", { email: "cmo@example.com", brand: "Example", competitors: "C".repeat(201) }],
+  ];
+
+  try {
+    for (const [label, payload] of cases) {
+      const response = await worker.fetch(
+        request({ type: "brand_report", payload }),
+        env,
+      );
+      assert.equal(response.status, 400, `${label} should be rejected`);
+      assert.deepEqual(await response.json(), { ok: false, error: "invalid_fields" });
+    }
+    assert.equal(forwarded, 0, "no rejected brand report should reach n8n");
   } finally {
     globalThis.fetch = originalFetch;
   }

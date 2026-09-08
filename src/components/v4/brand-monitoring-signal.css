@@ -1,0 +1,465 @@
+.sig-brand-page {
+  --ink: #111412;
+  --acid: #cbff3d;
+  --acid-ink: #4f6900;
+  --paper: #f4f1e8;
+  --white: #fffdf7;
+  --muted: #5d625a;
+  --rule: rgba(17, 20, 18, 0.24);
+  overflow-x: clip;
+  padding-top: 76px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-onest), Onest, sans-serif;
+}
+.sig-brand-page *,
+.sig-brand-page *:before,
+.sig-brand-page *:after {
+  box-sizing: border-box;
+}
+.sig-brand-page h1,
+.sig-brand-page h2,
+.sig-brand-page h3,
+.sig-brand-page p {
+  margin: 0;
+}
+.sig-brand-page a {
+  color: inherit;
+  text-decoration: none;
+}
+/*
+ * Outlined emphasis. The fill is cleared rather than the colour, so the stroke's
+ * `currentColor` still resolves to the heading's own ink — which is what makes the same
+ * rule work on the paper sections and on the dark one without a second declaration.
+ */
+.sig-brand-page em {
+  font-style: normal;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+}
+.sig-brand-hero,
+.sig-brand-own,
+.sig-brand-measures,
+.sig-brand-limits,
+.sig-brand-after,
+.sig-brand-faq,
+.sig-brand-final {
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.sig-brand-hero {
+  padding-block: clamp(56px, 7vw, 88px) clamp(28px, 3vw, 40px);
+}
+.sig-brand-breadcrumbs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.sig-brand-breadcrumbs a:hover {
+  color: var(--ink);
+}
+.sig-brand-eyebrow span {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--acid);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+.sig-brand-hero h1 {
+  margin-top: 20px;
+  max-width: 18ch;
+  font-size: clamp(46px, 6.2vw, 96px);
+  font-weight: 790;
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+}
+.sig-brand-hero-body {
+  margin-top: 26px;
+  max-width: 54ch;
+  font-size: clamp(16px, 1.15vw, 19px);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ── Request band ─────────────────────────────────────────────────────── */
+/*
+ * The form is the page, so it runs the full width under the headline rather than
+ * sitting in a column beside it. The fields are a single row on desktop and stack on
+ * narrow screens, where a four-across row would be four squashed inputs.
+ */
+.sig-brand-request {
+  padding-bottom: clamp(48px, 5vw, 76px);
+}
+.sig-brand-request > .sig-brand-module-top,
+.sig-brand-request > .sig-brand-form {
+  border-inline: 1px solid var(--ink);
+}
+.sig-brand-module-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--ink);
+  color: var(--white);
+  padding: 12px 20px;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sig-brand-module-top span:last-child {
+  color: var(--acid);
+}
+.sig-brand-form {
+  background: var(--white);
+  border-bottom: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 26px 20px 24px;
+}
+.sig-brand-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 18px;
+  align-items: start;
+}
+.sig-brand-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.sig-brand-field > span {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sig-brand-field input {
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 12px 13px;
+  font: inherit;
+  font-size: 15px;
+  border-radius: 0;
+}
+.sig-brand-field input:focus-visible {
+  outline: 2px solid var(--acid-ink);
+  outline-offset: 1px;
+  border-color: var(--ink);
+}
+.sig-brand-field small {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.sig-brand-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.sig-brand-foot {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sig-brand-foot-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.sig-brand-submit {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: var(--acid);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 15px 30px;
+  font: inherit;
+  font-weight: 650;
+  font-size: 16px;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.12s ease;
+}
+.sig-brand-submit:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.sig-brand-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.sig-brand-error {
+  margin-top: 16px;
+  color: #b5423b;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.sig-brand-privacy {
+  max-width: 46ch;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.sig-brand-privacy a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+/* ── Section heads ────────────────────────────────────────────────────── */
+.sig-brand-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 72px);
+  align-items: end;
+  padding-bottom: 30px;
+}
+.sig-brand-section-head h2 {
+  margin-top: 14px;
+  font-size: clamp(30px, 3.4vw, 52px);
+  font-weight: 790;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+.sig-brand-section-head > p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.sig-brand-tag {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acid-ink);
+}
+.sig-brand-tag-light {
+  color: var(--muted);
+}
+
+/* ── Our own numbers ──────────────────────────────────────────────────── */
+.sig-brand-own {
+  border-top: 1px solid var(--rule);
+  padding-block: clamp(52px, 6vw, 92px);
+  background: var(--white);
+}
+.sig-brand-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--ink);
+}
+.sig-brand-stat-grid article {
+  background: var(--white);
+  padding: 26px 22px;
+}
+.sig-brand-stat-grid strong {
+  display: block;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.sig-brand-stat-grid p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.sig-brand-case-link {
+  margin-top: 26px;
+}
+
+/* ── Six questions ────────────────────────────────────────────────────── */
+.sig-brand-measures {
+  padding-block: clamp(52px, 6vw, 92px);
+}
+.sig-brand-measure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.sig-brand-measure-grid article {
+  background: var(--paper);
+  padding: 24px 22px 28px;
+}
+.sig-brand-measure-grid span {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  color: var(--acid-ink);
+}
+.sig-brand-measure-grid h3 {
+  margin-top: 12px;
+  font-size: 19px;
+  font-weight: 790;
+  letter-spacing: -0.02em;
+}
+.sig-brand-measure-grid p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ── Limits ───────────────────────────────────────────────────────────── */
+.sig-brand-limits {
+  background: var(--ink);
+  color: var(--white);
+  padding-block: clamp(52px, 6vw, 92px);
+}
+.sig-brand-limits .sig-brand-tag {
+  color: var(--acid);
+}
+.sig-brand-limit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: rgba(255, 253, 247, 0.24);
+  border: 1px solid rgba(255, 253, 247, 0.32);
+}
+.sig-brand-limit-list li {
+  background: var(--ink);
+  padding: 18px 22px 18px 40px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.sig-brand-limit-list li::before {
+  content: "—";
+  position: absolute;
+  left: 20px;
+  color: var(--acid);
+}
+
+/* ── After ────────────────────────────────────────────────────────────── */
+.sig-brand-after {
+  background: var(--white);
+  padding-block: clamp(52px, 6vw, 84px);
+}
+.sig-brand-page a.sig-brand-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 650;
+  color: var(--acid-ink);
+  border-bottom: 1px solid currentColor;
+}
+
+/* ── FAQ + final ──────────────────────────────────────────────────────── */
+.sig-brand-faq {
+  padding-block: clamp(40px, 5vw, 72px) clamp(20px, 3vw, 40px);
+}
+.sig-brand-final {
+  border-top: 1px solid var(--rule);
+  padding-block: clamp(52px, 6vw, 92px);
+  text-align: center;
+}
+.sig-brand-final h2 {
+  font-size: clamp(30px, 3.6vw, 56px);
+  font-weight: 790;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+.sig-brand-final > p {
+  margin: 18px auto 0;
+  max-width: 58ch;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.sig-brand-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sig-brand-page a.sig-brand-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--white);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--acid);
+  padding: 13px 22px;
+  font-weight: 650;
+  transition: transform 0.12s ease;
+}
+.sig-brand-page a.sig-brand-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--acid);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .sig-brand-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1000px) {
+  .sig-brand-section-head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .sig-brand-measure-grid,
+  .sig-brand-stat-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .sig-brand-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sig-brand-foot {
+    align-items: stretch;
+  }
+  .sig-brand-submit {
+    width: 100%;
+  }
+}

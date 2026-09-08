@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import { BrandMonitoringSignal, brandMonitoringFaq } from "@/components/v4/BrandMonitoringSignal";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema, faqPageSchema, servicePageSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
+import { ogImage } from "@/lib/seo/og";
+import "@/components/v4/brand-monitoring-signal.css";
+
+const description =
+  "Free report: fifteen AI models answer six questions about your company from memory, without web search. Read what each one said, quote by quote.";
+const url = "https://sealmetrics.com/ai-brand-monitoring/";
+
+// The title is written out here rather than referenced from a constant because
+// `scripts/generate-og-images.mjs` reads it out of this file with a regex to name the
+// social card. A `title,` shorthand builds fine and silently ships the generic card.
+export const metadata: Metadata = {
+  title: "AI Brand Monitoring — What AI Models Say About You",
+  description,
+  openGraph: {
+    title: "AI Brand Monitoring — What AI Models Say About You",
+    description,
+    type: "website",
+    images: [ogImage("/ai-brand-monitoring/")],
+    url,
+    siteName: "Sealmetrics",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@sealmetrics",
+    title: "AI Brand Monitoring — What AI Models Say About You",
+    description,
+    images: [ogImage("/ai-brand-monitoring/")],
+  },
+  alternates: { canonical: url, languages: getAlternates("/ai-brand-monitoring") },
+};
+
+export default function AiBrandMonitoringPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([{ name: "AI brand monitoring", url: "/ai-brand-monitoring" }])} />
+      <JsonLd
+        data={servicePageSchema({
+          name: "AI brand monitoring report",
+          description:
+            "A free report that asks fifteen AI models six fixed questions about a company, without web search, and returns every answer verbatim with the factual errors marked.",
+          url: "/ai-brand-monitoring",
+          audience: "Marketing and communications teams",
+        })}
+      />
+      <JsonLd data={faqPageSchema(brandMonitoringFaq.en.map((item) => ({ ...item })), "/ai-brand-monitoring")} />
+      <BrandMonitoringSignal locale="en" />
+    </>
+  );
+}

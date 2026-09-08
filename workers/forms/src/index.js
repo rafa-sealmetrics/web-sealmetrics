@@ -5,18 +5,249 @@ const FORM_TYPES = new Set([
   "careers",
   "calculator",
   "growth",
+  "brand_report",
 ]);
 
+// Free-mail, ISP and throwaway domains. Used by `brand_report` (which refuses
+// them outright — the report costs real inference per request) and by
+// `demo_access`, which also requires the email domain to match the website.
+//
+// DUPLICATED, DELIBERATELY, in `src/components/forms/BrandReportForm.tsx` as
+// `PERSONAL_DOMAINS`. This Worker is a separate JavaScript package with its own
+// lockfile, deployed to Cloudflare; the site is TypeScript bundled by Next.
+// Neither can import from the other without inventing a shared package to sit
+// between them, so the list is written twice and
+// `tests/free-mail-domains.test.mjs` (at the repository root) asserts the two
+// copies stay identical. Change one, change the other, or that test fails.
+//
+// This copy is the one that decides. The browser copy only exists so the form
+// can explain the refusal.
 const PERSONAL_EMAIL_DOMAINS = new Set([
+  // Google.
   "gmail.com",
   "googlemail.com",
+
+  // Microsoft — one consumer mailbox, sold under four names and thirty country domains.
   "outlook.com",
+  "outlook.es",
+  "outlook.fr",
+  "outlook.de",
+  "outlook.it",
+  "outlook.pt",
+  "outlook.be",
+  "outlook.dk",
+  "outlook.ie",
+  "outlook.co.uk",
+  "outlook.com.br",
   "hotmail.com",
+  "hotmail.es",
+  "hotmail.co.uk",
+  "hotmail.fr",
+  "hotmail.de",
+  "hotmail.it",
+  "hotmail.be",
+  "hotmail.nl",
+  "hotmail.se",
+  "hotmail.com.br",
   "live.com",
+  "live.es",
+  "live.co.uk",
+  "live.fr",
+  "live.de",
+  "live.it",
+  "live.nl",
+  "live.be",
+  "live.se",
+  "live.dk",
+  "live.ie",
+  "live.com.pt",
+  "msn.com",
+  "windowslive.com",
+
+  // Yahoo, plus the two brands it absorbed.
   "yahoo.com",
+  "yahoo.es",
+  "yahoo.co.uk",
+  "yahoo.fr",
+  "yahoo.de",
+  "yahoo.it",
+  "yahoo.nl",
+  "yahoo.be",
+  "yahoo.ie",
+  "yahoo.pt",
+  "yahoo.se",
+  "yahoo.dk",
+  "yahoo.gr",
+  "yahoo.ca",
+  "yahoo.in",
+  "yahoo.co.jp",
+  "yahoo.com.br",
+  "yahoo.com.mx",
+  "yahoo.com.ar",
+  "ymail.com",
+  "rocketmail.com",
+
+  // Apple.
   "icloud.com",
+  "me.com",
+  "mac.com",
+
+  // Privacy-branded consumer mailboxes. Free, personal, and not a company domain.
   "proton.me",
   "protonmail.com",
+  "protonmail.ch",
+  "pm.me",
+  "tutanota.com",
+  "tutanota.de",
+  "tuta.io",
+  "hushmail.com",
+  "fastmail.com",
+  "hey.com",
+  "mailfence.com",
+  "posteo.de",
+  "disroot.org",
+
+  // The rest of the global free providers.
+  "aol.com",
+  "gmx.com",
+  "gmx.de",
+  "gmx.net",
+  "gmx.es",
+  "gmx.at",
+  "gmx.ch",
+  "yandex.com",
+  "yandex.ru",
+  "ya.ru",
+  "mail.com",
+  "email.com",
+  "usa.com",
+  "mail.ru",
+  "inbox.ru",
+  "list.ru",
+  "bk.ru",
+  "zoho.com",
+  "zohomail.com",
+  "rediffmail.com",
+  "lycos.com",
+  "excite.com",
+
+  // Spain — telco and portal addresses, still the personal inbox of a lot of people.
+  "orange.es",
+  "telefonica.net",
+  "terra.es",
+  "wanadoo.es",
+  "ya.com",
+  "movistar.es",
+  "mixmail.com",
+  "euskaltel.net",
+  "jazzfree.com",
+  "telecable.es",
+
+  // France.
+  "free.fr",
+  "orange.fr",
+  "wanadoo.fr",
+  "laposte.net",
+  "sfr.fr",
+  "neuf.fr",
+  "bbox.fr",
+  "aliceadsl.fr",
+  "club-internet.fr",
+  "voila.fr",
+
+  // Germany and Austria.
+  "web.de",
+  "t-online.de",
+  "freenet.de",
+  "arcor.de",
+  "aol.de",
+  "aon.at",
+  "chello.at",
+  "a1.net",
+
+  // Italy.
+  "libero.it",
+  "virgilio.it",
+  "alice.it",
+  "tiscali.it",
+  "tin.it",
+  "email.it",
+  "inwind.it",
+  "fastwebnet.it",
+
+  // Portugal, Greece, Poland, Czechia and the Nordics.
+  "sapo.pt",
+  "clix.pt",
+  "in.gr",
+  "otenet.gr",
+  "wp.pl",
+  "o2.pl",
+  "onet.pl",
+  "interia.pl",
+  "seznam.cz",
+  "centrum.cz",
+  "email.cz",
+  "volny.cz",
+  "telia.com",
+  "bredband.net",
+  "spray.se",
+  "online.no",
+  "sol.dk",
+  "luukku.com",
+
+  // United Kingdom, Ireland, Benelux and Switzerland.
+  "btinternet.com",
+  "sky.com",
+  "virginmedia.com",
+  "talktalk.net",
+  "blueyonder.co.uk",
+  "ntlworld.com",
+  "eircom.net",
+  "ziggo.nl",
+  "kpnmail.nl",
+  "home.nl",
+  "planet.nl",
+  "telenet.be",
+  "skynet.be",
+  "bluewin.ch",
+  "sunrise.ch",
+
+  // Disposable and throwaway. These exist to receive one message and vanish.
+  "mailinator.com",
+  "yopmail.com",
+  "yopmail.fr",
+  "yopmail.net",
+  "guerrillamail.com",
+  "guerrillamail.net",
+  "guerrillamail.org",
+  "sharklasers.com",
+  "grr.la",
+  "10minutemail.com",
+  "10minutemail.net",
+  "temp-mail.org",
+  "tempmail.com",
+  "tempmailo.com",
+  "getnada.com",
+  "nada.email",
+  "trashmail.com",
+  "trashmail.de",
+  "trashmail.net",
+  "throwawaymail.com",
+  "maildrop.cc",
+  "dispostable.com",
+  "mailnesia.com",
+  "fakeinbox.com",
+  "spam4.me",
+  "mytemp.email",
+  "moakt.com",
+  "discard.email",
+  "emailondeck.com",
+  "tempr.email",
+  "mohmal.com",
+  "getairmail.com",
+  "spamgourmet.com",
+  "mailcatch.com",
+  "inboxkitten.com",
 ]);
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,6 +306,13 @@ function validUrl(value) {
   }
 }
 
+// Optional free-text field: absent or empty is fine, anything present must be a
+// string within the given length.
+function optionalText(value, maxLength) {
+  if (value === undefined || value === null || value === "") return true;
+  return typeof value === "string" && value.trim().length <= maxLength;
+}
+
 function validatePayload(type, payload) {
   if (type === "careers") {
     const links = Array.isArray(payload.other_links) ? payload.other_links : [];
@@ -94,6 +332,28 @@ function validatePayload(type, payload) {
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   if (!EMAIL_RE.test(email) || email.length > 254) return false;
   if (type === "calculator" || type === "growth") return true;
+
+  // The brand report form is deliberately short — a brand and a work email — so
+  // it returns before the name/website/gdpr checks the other lead types share.
+  if (type === "brand_report") {
+    if (PERSONAL_EMAIL_DOMAINS.has(email.toLowerCase().split("@")[1])) {
+      return false;
+    }
+    const brand = typeof payload.brand === "string" ? payload.brand.trim() : "";
+    if (!brand || brand.length > 120) return false;
+    // Optional, but when it is sent it selects the report language, so only the
+    // two locales the site publishes are accepted.
+    const language = payload.language;
+    const languageOmitted =
+      language === undefined || language === null || language === "";
+    if (!languageOmitted && language !== "en" && language !== "es") return false;
+    return (
+      optionalText(payload.sector, 120) &&
+      optionalText(payload.category, 120) &&
+      optionalText(payload.country, 120) &&
+      optionalText(payload.competitors, 200)
+    );
+  }
 
   const websiteValue = payload.websiteRaw || payload.website;
 
@@ -130,6 +390,7 @@ function validatePayload(type, payload) {
 function endpointFor(type, env) {
   if (type === "demo_access") return env.N8N_DEMO_ACCESS_URL;
   if (type === "careers") return env.N8N_CAREERS_URL;
+  if (type === "brand_report") return env.N8N_BRAND_REPORT_URL;
   return env.N8N_WEBFORM_LEAD_URL;
 }
 
