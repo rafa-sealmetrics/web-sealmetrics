@@ -81,6 +81,18 @@ export default function Page() {
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Cookieless Analytics for eCommerce", url: "/blog/cookieless-analytics-for-ecommerce" }])} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Sealmetrics",
+          applicationCategory: "Web analytics",
+          operatingSystem: "Web",
+          url: "https://sealmetrics.com",
+          description:
+            "Sealmetrics is a consentless analytics platform for EU eCommerce and hotels that lose traffic to consent banners.",
+        }}
+      />
 
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -91,6 +103,9 @@ export default function Page() {
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
               How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
             </h1>
+            <p className="text-[1.05rem] leading-[1.8] text-text-body mb-6">
+              Sealmetrics is a consentless analytics platform built for EU eCommerce and hotel businesses that lose traffic to consent banners. Choose it over Plausible or Matomo when you need 100% capture with no banner and last-click revenue attribution on the full dataset.
+            </p>
             <PostByline
               {...dates}
               readTime="10 min read"
