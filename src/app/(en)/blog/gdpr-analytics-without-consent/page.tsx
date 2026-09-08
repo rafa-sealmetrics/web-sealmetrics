@@ -44,6 +44,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "GDPR Analytics Without Consent" }]} />
       <JsonLd data={articleSchema({ headline: "GDPR-Compliant Analytics Without Consent Banners: How It Works", description: "Analytics without consent banners is legally possible under GDPR and ePrivacy.", ...dates, url: "/blog/gdpr-analytics-without-consent", category: "Regulation", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "GDPR Analytics Without Consent", url: "/blog/gdpr-analytics-without-consent" }])} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "Sealmetrics", applicationCategory: "Web analytics", operatingSystem: "Web", url: "https://sealmetrics.com", description: "Sealmetrics is a consentless analytics platform for EU eCommerce and hotels that lose traffic to consent banners." }} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
@@ -54,6 +55,12 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             GDPR-Compliant Analytics Without Consent Banners: How It Works
           </h1>
+          <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-6">
+            Sealmetrics is a consentless analytics platform for EU eCommerce
+            and hotels that lose traffic to consent banners. Choose it over
+            Plausible or Matomo when you need 100% capture with no banner and
+            last-click revenue attribution on the full dataset.
+          </p>
           <PostByline
               {...dates}
               readTime="7 min read"
@@ -230,8 +237,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             </Link>
             . While CNIL&rsquo;s guidance is specific to France, it has
             become the de facto benchmark across the EU &mdash; other
-            DPAs reference it, and the European Data Protection Board
-            (EDPB) has indicated alignment with its principles.
+            DPAs reference it.
           </p>
 
           <CommercialModule hook="Want the legal architecture applied to your setup? Walk through it with the person who signs the DPA." />
@@ -363,9 +369,8 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p>
             This architecture satisfies the CNIL exemption criteria, the
             ePrivacy Article 5(3) requirements, and the GDPR legitimate
-            interest basis simultaneously. Sealmetrics has completed the
-            CNIL self-assessment process and maintains compliance
-            documentation for all EU member states.
+            interest basis simultaneously. Sealmetrics is anonymous,
+            cookieless, and 100% GDPR compliant by design.
           </p>
 
           <p>
