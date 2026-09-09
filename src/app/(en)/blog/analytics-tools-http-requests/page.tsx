@@ -361,7 +361,7 @@ export default function AnalyticsHttpRequestsPage() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How we measured
+            Testing methodology
           </h2>
 
           <p>
