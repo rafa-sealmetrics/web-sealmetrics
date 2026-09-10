@@ -60,8 +60,8 @@
     "date": "2026-09-04"
   },
   "/ai-analytics/": {
-    "hash": "48ad4580f6eb3305",
-    "date": "2026-09-04"
+    "hash": "245c66b195ac67a6",
+    "date": "2026-09-10"
   },
   "/data-loss-calculator/": {
     "hash": "c19bd0b49e623073",
@@ -124,8 +124,8 @@
     "date": "2026-09-07"
   },
   "/integrations/": {
-    "hash": "dbd2cc3042980056",
-    "date": "2026-09-04"
+    "hash": "e716b80baad50215",
+    "date": "2026-09-10"
   },
   "/use-cases/": {
     "hash": "bf60f1e2fc514758",
@@ -1122,5 +1122,9 @@
   "/es/ai-brand-monitoring/thank-you/": {
     "hash": "d89dc6c3badd6938",
     "date": "2026-09-08"
+  },
+  "/docs/mcp/": {
+    "hash": "65c30e8ea07c4e1f",
+    "date": "2026-09-10"
   }
 }

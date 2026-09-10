@@ -103,382 +103,412 @@
     },
     "public/og-image.avif": {
       "source": "public/og-image.png",
-      "sourceHash": "91983586fc7664cdaa27cff37c963b0571c5a37b0df662d900453ff58e5c77b6",
+      "sourceHash": "8f785a9ee062eb96a40bcf162d3bbd865cd4c3c9097811c88f54acc4dd4e7aec",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og-image.webp": {
       "source": "public/og-image.png",
-      "sourceHash": "91983586fc7664cdaa27cff37c963b0571c5a37b0df662d900453ff58e5c77b6",
+      "sourceHash": "8f785a9ee062eb96a40bcf162d3bbd865cd4c3c9097811c88f54acc4dd4e7aec",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/about.avif": {
       "source": "public/og/about.png",
-      "sourceHash": "263decc6d30bc03fff71bf6fb965ccc312cb3261a67a7bc875e256eff7584c9a",
+      "sourceHash": "5135e4dc446fb69dc2cb9f5fe6ad44ef4e8f2865f8dc213323e67a0dc9157bac",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/about.webp": {
       "source": "public/og/about.png",
-      "sourceHash": "263decc6d30bc03fff71bf6fb965ccc312cb3261a67a7bc875e256eff7584c9a",
+      "sourceHash": "5135e4dc446fb69dc2cb9f5fe6ad44ef4e8f2865f8dc213323e67a0dc9157bac",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/ai-analytics.avif": {
       "source": "public/og/ai-analytics.png",
-      "sourceHash": "0acd7c5d7d665c7ebdec64874aaf2184cc36e340501834600b8ea9b57280a63a",
+      "sourceHash": "2d8ef0e79fe89f79cad5f1ba1ee48b11c65dc912c26482514c9a113c8a223b1d",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/ai-analytics.webp": {
       "source": "public/og/ai-analytics.png",
-      "sourceHash": "0acd7c5d7d665c7ebdec64874aaf2184cc36e340501834600b8ea9b57280a63a",
+      "sourceHash": "2d8ef0e79fe89f79cad5f1ba1ee48b11c65dc912c26482514c9a113c8a223b1d",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/ai-brand-monitoring.avif": {
+      "source": "public/og/ai-brand-monitoring.png",
+      "sourceHash": "8da3d107176db47ab4a98d0c9c4e12d62f2e6cab77018176ed9ab8f20b6c3801",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/ai-brand-monitoring.webp": {
+      "source": "public/og/ai-brand-monitoring.png",
+      "sourceHash": "8da3d107176db47ab4a98d0c9c4e12d62f2e6cab77018176ed9ab8f20b6c3801",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/alternatives/adobe-analytics.avif": {
       "source": "public/og/alternatives/adobe-analytics.png",
-      "sourceHash": "50c8b6d15d2f410d81514ef75452c1d87d8793c95935f43c8ca100897d09713b",
+      "sourceHash": "2011080554badb4e723e6cf4864ee0e36a8b54abd5bf9a035e73203699b220c3",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/alternatives/adobe-analytics.webp": {
       "source": "public/og/alternatives/adobe-analytics.png",
-      "sourceHash": "50c8b6d15d2f410d81514ef75452c1d87d8793c95935f43c8ca100897d09713b",
+      "sourceHash": "2011080554badb4e723e6cf4864ee0e36a8b54abd5bf9a035e73203699b220c3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/alternatives/google-analytics.avif": {
       "source": "public/og/alternatives/google-analytics.png",
-      "sourceHash": "388fb85bbc3fb21f550621a16f4aa5047940e919920a632aa7a741e2b20d671e",
+      "sourceHash": "69765a7e82af10ec956c88cc773d80bab8177c72a15b572b634e30b026ac9b8f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/alternatives/google-analytics.webp": {
       "source": "public/og/alternatives/google-analytics.png",
-      "sourceHash": "388fb85bbc3fb21f550621a16f4aa5047940e919920a632aa7a741e2b20d671e",
+      "sourceHash": "69765a7e82af10ec956c88cc773d80bab8177c72a15b572b634e30b026ac9b8f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/audit.avif": {
       "source": "public/og/audit.png",
-      "sourceHash": "015056beded2acf87bf7a6d543dde7b196bcc15adcf29c4687bccb46cd45f0ad",
+      "sourceHash": "ffe6ec27bcc7d6f12760d73bac9b178b6f9c72fe60b32c4dd96fb7e15b00f1df",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/audit.webp": {
       "source": "public/og/audit.png",
-      "sourceHash": "015056beded2acf87bf7a6d543dde7b196bcc15adcf29c4687bccb46cd45f0ad",
+      "sourceHash": "ffe6ec27bcc7d6f12760d73bac9b178b6f9c72fe60b32c4dd96fb7e15b00f1df",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/authors/rafa-jimenez.avif": {
       "source": "public/og/authors/rafa-jimenez.png",
-      "sourceHash": "e499f3fb27899bc211a34c88bd23157cfe0312aefe74ce715190f9da309e6566",
+      "sourceHash": "b28d4e1c367d7d61c7d4ce254941f3207932ec541ba7896e5f284ebbb85c1d81",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/authors/rafa-jimenez.webp": {
       "source": "public/og/authors/rafa-jimenez.png",
-      "sourceHash": "e499f3fb27899bc211a34c88bd23157cfe0312aefe74ce715190f9da309e6566",
+      "sourceHash": "b28d4e1c367d7d61c7d4ce254941f3207932ec541ba7896e5f284ebbb85c1d81",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog.avif": {
       "source": "public/og/blog.png",
-      "sourceHash": "5da7748060490735334c23a06f57a10993170a629fd0e69076503a5ecee24574",
+      "sourceHash": "5ff2f348f3c6f2cb91b4719e116107061c01ae970a5d44c19836b8b311e37f75",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog.webp": {
       "source": "public/og/blog.png",
-      "sourceHash": "5da7748060490735334c23a06f57a10993170a629fd0e69076503a5ecee24574",
+      "sourceHash": "5ff2f348f3c6f2cb91b4719e116107061c01ae970a5d44c19836b8b311e37f75",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/ai-agent-traffic-analytics.avif": {
       "source": "public/og/blog/ai-agent-traffic-analytics.png",
-      "sourceHash": "538528c791d1dbc7f71cb8aeca5c3ae0daa612a7e3e27e1fdee2c2f80869703f",
+      "sourceHash": "1f144c21b88ceafcc6cfa8fbb0dc7d06253fc883c50574ed87cb14b32c06f24f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/ai-agent-traffic-analytics.webp": {
       "source": "public/og/blog/ai-agent-traffic-analytics.png",
-      "sourceHash": "538528c791d1dbc7f71cb8aeca5c3ae0daa612a7e3e27e1fdee2c2f80869703f",
+      "sourceHash": "1f144c21b88ceafcc6cfa8fbb0dc7d06253fc883c50574ed87cb14b32c06f24f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/analytics-if-data-privacy-framework-falls.avif": {
       "source": "public/og/blog/analytics-if-data-privacy-framework-falls.png",
-      "sourceHash": "ffac23596b63e53d541b0bfc50d64b1c27e1a0e74ae81b26768010013886af71",
+      "sourceHash": "5ba3303ea953515a286bc7b1b809f43e11f8225c7f6dfab68e56c7e3428fd686",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/analytics-if-data-privacy-framework-falls.webp": {
       "source": "public/og/blog/analytics-if-data-privacy-framework-falls.png",
-      "sourceHash": "ffac23596b63e53d541b0bfc50d64b1c27e1a0e74ae81b26768010013886af71",
+      "sourceHash": "5ba3303ea953515a286bc7b1b809f43e11f8225c7f6dfab68e56c7e3428fd686",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/analytics-scripts-costing-you-sales.avif": {
       "source": "public/og/blog/analytics-scripts-costing-you-sales.png",
-      "sourceHash": "d995a1b7987a7c6d6486b7b10f9ba8c22ad3c97a88b32b1f6baac747cd41ce19",
+      "sourceHash": "25e0130b2896b02331bed8310c94dee504447df44df065094bc003f2045252ba",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/analytics-scripts-costing-you-sales.webp": {
       "source": "public/og/blog/analytics-scripts-costing-you-sales.png",
-      "sourceHash": "d995a1b7987a7c6d6486b7b10f9ba8c22ad3c97a88b32b1f6baac747cd41ce19",
+      "sourceHash": "25e0130b2896b02331bed8310c94dee504447df44df065094bc003f2045252ba",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/analytics-tools-cookies-cataloged.avif": {
       "source": "public/og/blog/analytics-tools-cookies-cataloged.png",
-      "sourceHash": "710d32ca6e15d33dcf5248e9fa25956b38ae12a334ea22cea5a66342e8ae01f3",
+      "sourceHash": "db3456aa0c341007f957cd08daca5937abed4eaef1ea23f7896251fcc4441196",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/analytics-tools-cookies-cataloged.webp": {
       "source": "public/og/blog/analytics-tools-cookies-cataloged.png",
-      "sourceHash": "710d32ca6e15d33dcf5248e9fa25956b38ae12a334ea22cea5a66342e8ae01f3",
+      "sourceHash": "db3456aa0c341007f957cd08daca5937abed4eaef1ea23f7896251fcc4441196",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/analytics-tools-data-sampling.avif": {
       "source": "public/og/blog/analytics-tools-data-sampling.png",
-      "sourceHash": "7afd22c55f5876646990d98cedfa4856a841593f9074614814ce57354621625a",
+      "sourceHash": "f05c7ad461e9bd5d60a22b8437cb1a12dab1b8e8a3d7c3fd4985883d16c40d33",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/analytics-tools-data-sampling.webp": {
       "source": "public/og/blog/analytics-tools-data-sampling.png",
-      "sourceHash": "7afd22c55f5876646990d98cedfa4856a841593f9074614814ce57354621625a",
+      "sourceHash": "f05c7ad461e9bd5d60a22b8437cb1a12dab1b8e8a3d7c3fd4985883d16c40d33",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/analytics-tools-external-domains.avif": {
       "source": "public/og/blog/analytics-tools-external-domains.png",
-      "sourceHash": "4df206c9d020b5e1660e7fe7f644fa72ece1e44d94b2313915ad323a7a9bf8d8",
+      "sourceHash": "47a5df52898cad9dba74e54ff6a27ba9c5d0329b753c3369f8e9fe589565e8fe",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/analytics-tools-external-domains.webp": {
       "source": "public/og/blog/analytics-tools-external-domains.png",
-      "sourceHash": "4df206c9d020b5e1660e7fe7f644fa72ece1e44d94b2313915ad323a7a9bf8d8",
+      "sourceHash": "47a5df52898cad9dba74e54ff6a27ba9c5d0329b753c3369f8e9fe589565e8fe",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/audit-your-analytics-ai-privacy.avif": {
       "source": "public/og/blog/audit-your-analytics-ai-privacy.png",
-      "sourceHash": "f5b1280bcef0b6a9bc1e342880b7541ee6cf553d11fdd402e8ba002b6211fba0",
+      "sourceHash": "824dd4dbe1e058cc3c4180032718f80bcfbf9ab15ff813fa188d2b4dd5b22f9f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/audit-your-analytics-ai-privacy.webp": {
       "source": "public/og/blog/audit-your-analytics-ai-privacy.png",
-      "sourceHash": "f5b1280bcef0b6a9bc1e342880b7541ee6cf553d11fdd402e8ba002b6211fba0",
+      "sourceHash": "824dd4dbe1e058cc3c4180032718f80bcfbf9ab15ff813fa188d2b4dd5b22f9f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/best-enterprise-analytics-platforms.avif": {
       "source": "public/og/blog/best-enterprise-analytics-platforms.png",
-      "sourceHash": "594ed8377d296000db0d3442a581f206eb3f81a9676f8251f9acc6841d1cbb3e",
+      "sourceHash": "f08c3d36cd6117a8cd0bb92e512511da0ccf8efe76d72835c8d69b0939e81e1a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/best-enterprise-analytics-platforms.webp": {
       "source": "public/og/blog/best-enterprise-analytics-platforms.png",
-      "sourceHash": "594ed8377d296000db0d3442a581f206eb3f81a9676f8251f9acc6841d1cbb3e",
+      "sourceHash": "f08c3d36cd6117a8cd0bb92e512511da0ccf8efe76d72835c8d69b0939e81e1a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/best-llm-for-data-analytics.avif": {
       "source": "public/og/blog/best-llm-for-data-analytics.png",
-      "sourceHash": "8ab30a01ad5b7f0db73aec4e682bf04fab3bcd1179e28a08c5356fe5193d30c9",
+      "sourceHash": "6434a967273f82585b6ea678d613560130de168fe27b60a31a55d1910f025211",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/best-llm-for-data-analytics.webp": {
       "source": "public/og/blog/best-llm-for-data-analytics.png",
-      "sourceHash": "8ab30a01ad5b7f0db73aec4e682bf04fab3bcd1179e28a08c5356fe5193d30c9",
+      "sourceHash": "6434a967273f82585b6ea678d613560130de168fe27b60a31a55d1910f025211",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/best-web-analytics-tool.avif": {
       "source": "public/og/blog/best-web-analytics-tool.png",
-      "sourceHash": "09dea9a097e9ba94851028d9f38b621980744cb886e66492ef534bee4ae15318",
+      "sourceHash": "5a330f1376602d8ba39ecc22b93b265e6b779395994a1092a21534250b74bf73",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/best-web-analytics-tool.webp": {
       "source": "public/og/blog/best-web-analytics-tool.png",
-      "sourceHash": "09dea9a097e9ba94851028d9f38b621980744cb886e66492ef534bee4ae15318",
+      "sourceHash": "5a330f1376602d8ba39ecc22b93b265e6b779395994a1092a21534250b74bf73",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/cnil-self-assessment-published.avif": {
       "source": "public/og/blog/cnil-self-assessment-published.png",
-      "sourceHash": "cc7d044045a59c2c6c06de5c3b6fd55e344e87359f292c337e3377cf953e997b",
+      "sourceHash": "a241f5295e81118c549c98714ddc3483eefa53b196dfab3f3816a8de15535e60",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/cnil-self-assessment-published.webp": {
       "source": "public/og/blog/cnil-self-assessment-published.png",
-      "sourceHash": "cc7d044045a59c2c6c06de5c3b6fd55e344e87359f292c337e3377cf953e997b",
+      "sourceHash": "a241f5295e81118c549c98714ddc3483eefa53b196dfab3f3816a8de15535e60",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/consent-banner-impact-on-analytics.avif": {
       "source": "public/og/blog/consent-banner-impact-on-analytics.png",
-      "sourceHash": "6502120d7cacdf2c53943e7e9a482d3fb723ddcad082df5f92aa31e0050127e7",
+      "sourceHash": "c28189de9baddc524ebbe897baed5e14876fed4aee84ea3d872b287411b7f939",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/consent-banner-impact-on-analytics.webp": {
       "source": "public/og/blog/consent-banner-impact-on-analytics.png",
-      "sourceHash": "6502120d7cacdf2c53943e7e9a482d3fb723ddcad082df5f92aa31e0050127e7",
+      "sourceHash": "c28189de9baddc524ebbe897baed5e14876fed4aee84ea3d872b287411b7f939",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/consentless-analytics-for-dtc.avif": {
       "source": "public/og/blog/consentless-analytics-for-dtc.png",
-      "sourceHash": "34867ecd8a89451a15c145436e13f85ad2ac2a3c9a54eb0a467271c9f871762f",
+      "sourceHash": "c887f90a4991e1f30b586b77d84b8f680690813fad4aa2e03369530e3d2b8a19",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/consentless-analytics-for-dtc.webp": {
       "source": "public/og/blog/consentless-analytics-for-dtc.png",
-      "sourceHash": "34867ecd8a89451a15c145436e13f85ad2ac2a3c9a54eb0a467271c9f871762f",
+      "sourceHash": "c887f90a4991e1f30b586b77d84b8f680690813fad4aa2e03369530e3d2b8a19",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/cookieless-analytics-explained.avif": {
       "source": "public/og/blog/cookieless-analytics-explained.png",
-      "sourceHash": "1de4c57192502ab0b964969c83687bffc76a3fe0cc63a605de7bd441cfb5b8ac",
+      "sourceHash": "a8efabc8d0390667bc74acc19b78bd75a859b18f5f15040752aa2ddaa8d6c112",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/cookieless-analytics-explained.webp": {
       "source": "public/og/blog/cookieless-analytics-explained.png",
-      "sourceHash": "1de4c57192502ab0b964969c83687bffc76a3fe0cc63a605de7bd441cfb5b8ac",
+      "sourceHash": "a8efabc8d0390667bc74acc19b78bd75a859b18f5f15040752aa2ddaa8d6c112",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/cookieless-analytics-for-ecommerce.avif": {
       "source": "public/og/blog/cookieless-analytics-for-ecommerce.png",
-      "sourceHash": "cc89e66f70319cfe51e1f5f018ef276f342398feeead9bb4630d03332c4c1bd0",
+      "sourceHash": "265e58ed56bed10000361509cbdba41ddebe64844d9b585a2c0aea07d39a4152",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/cookieless-analytics-for-ecommerce.webp": {
       "source": "public/og/blog/cookieless-analytics-for-ecommerce.png",
-      "sourceHash": "cc89e66f70319cfe51e1f5f018ef276f342398feeead9bb4630d03332c4c1bd0",
+      "sourceHash": "265e58ed56bed10000361509cbdba41ddebe64844d9b585a2c0aea07d39a4152",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/cookieless-analytics-for-hotels.avif": {
       "source": "public/og/blog/cookieless-analytics-for-hotels.png",
-      "sourceHash": "bd7466da7aecb6dc85338acd5dae2a5cd5a1596c5f56c79d227c9ae75191fa25",
+      "sourceHash": "24a4864056b86467ce4b2ab84f0ee24c391817b835b3d1d9b6be7ebb8e5b06ea",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/cookieless-analytics-for-hotels.webp": {
       "source": "public/og/blog/cookieless-analytics-for-hotels.png",
-      "sourceHash": "bd7466da7aecb6dc85338acd5dae2a5cd5a1596c5f56c79d227c9ae75191fa25",
+      "sourceHash": "24a4864056b86467ce4b2ab84f0ee24c391817b835b3d1d9b6be7ebb8e5b06ea",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/cookieless-analytics-for-saas.avif": {
       "source": "public/og/blog/cookieless-analytics-for-saas.png",
-      "sourceHash": "aea51848528899ad73f87576d275b4fdaf6f382ae58d126693293736c308283b",
+      "sourceHash": "b2f226f32b5f1f2044348644f9846eff85de5e8a77d22ae439bbe7c550bbb668",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/cookieless-analytics-for-saas.webp": {
       "source": "public/og/blog/cookieless-analytics-for-saas.png",
-      "sourceHash": "aea51848528899ad73f87576d275b4fdaf6f382ae58d126693293736c308283b",
+      "sourceHash": "b2f226f32b5f1f2044348644f9846eff85de5e8a77d22ae439bbe7c550bbb668",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/data-breach-france-travail-fined-5-million.avif": {
       "source": "public/og/blog/data-breach-france-travail-fined-5-million.png",
-      "sourceHash": "afd5329cbdd9c8799726ec949677cfadb43491f3dea905006a05162aaf570372",
+      "sourceHash": "4b09426d3efd8d4f182c14f122d4212b7d3df8f02e352d02871a0d312382e70c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/data-breach-france-travail-fined-5-million.webp": {
       "source": "public/og/blog/data-breach-france-travail-fined-5-million.png",
-      "sourceHash": "afd5329cbdd9c8799726ec949677cfadb43491f3dea905006a05162aaf570372",
+      "sourceHash": "4b09426d3efd8d4f182c14f122d4212b7d3df8f02e352d02871a0d312382e70c",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/demdex-analytics-cookies-guide.avif": {
+      "source": "public/og/blog/demdex-analytics-cookies-guide.png",
+      "sourceHash": "363b882f2041e835244255f689457ebee612d4ed5f8ca711a6ffc6675561e604",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/demdex-analytics-cookies-guide.webp": {
+      "source": "public/og/blog/demdex-analytics-cookies-guide.png",
+      "sourceHash": "363b882f2041e835244255f689457ebee612d4ed5f8ca711a6ffc6675561e604",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/dpo-rejected-google-analytics-eu-alternatives.avif": {
+      "source": "public/og/blog/dpo-rejected-google-analytics-eu-alternatives.png",
+      "sourceHash": "32db1fd0d140fa996bad87857a3d564aaa27256a255c94208fd03022b0335d8a",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/dpo-rejected-google-analytics-eu-alternatives.webp": {
+      "source": "public/og/blog/dpo-rejected-google-analytics-eu-alternatives.png",
+      "sourceHash": "32db1fd0d140fa996bad87857a3d564aaa27256a255c94208fd03022b0335d8a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/eu-ai-act-for-marketers.avif": {
       "source": "public/og/blog/eu-ai-act-for-marketers.png",
-      "sourceHash": "53b3e15af47a8fc151898c51b4da662820e8b70eb48d74d510cc43c4fd8e021d",
+      "sourceHash": "7b8ac278c257e2dee829231905b4f93897f0fdf63596b97f4693acde27390da3",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/eu-ai-act-for-marketers.webp": {
       "source": "public/og/blog/eu-ai-act-for-marketers.png",
-      "sourceHash": "53b3e15af47a8fc151898c51b4da662820e8b70eb48d74d510cc43c4fd8e021d",
+      "sourceHash": "7b8ac278c257e2dee829231905b4f93897f0fdf63596b97f4693acde27390da3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/eu-digital-omnibus-cookie-banners-analytics.avif": {
       "source": "public/og/blog/eu-digital-omnibus-cookie-banners-analytics.png",
-      "sourceHash": "15644c3117a6f5215025353e3eed349279b286a85b8e54bb4aedfa4ca0d7b20c",
+      "sourceHash": "61ebced5972589d72d8439799f1237880d280f5965d1cf6ec0580dbe4f7fc3c4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/eu-digital-omnibus-cookie-banners-analytics.webp": {
       "source": "public/og/blog/eu-digital-omnibus-cookie-banners-analytics.png",
-      "sourceHash": "15644c3117a6f5215025353e3eed349279b286a85b8e54bb4aedfa4ca0d7b20c",
+      "sourceHash": "61ebced5972589d72d8439799f1237880d280f5965d1cf6ec0580dbe4f7fc3c4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/eu-digital-omnibus-marketer-guide-2026.avif": {
       "source": "public/og/blog/eu-digital-omnibus-marketer-guide-2026.png",
-      "sourceHash": "fb5210eeb2f984352ca2a883f721d23ea9bd57ba40813ac666c425bce785d582",
+      "sourceHash": "6c0e54fddf7eb9ee28dc6073fd17431d833b10e30a83e1839e23e9bcb5c6a0e4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/eu-digital-omnibus-marketer-guide-2026.webp": {
       "source": "public/og/blog/eu-digital-omnibus-marketer-guide-2026.png",
-      "sourceHash": "fb5210eeb2f984352ca2a883f721d23ea9bd57ba40813ac666c425bce785d582",
+      "sourceHash": "6c0e54fddf7eb9ee28dc6073fd17431d833b10e30a83e1839e23e9bcb5c6a0e4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.avif": {
       "source": "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.png",
-      "sourceHash": "f7b56fcb6aca209c532ddeea958524c7b7146e34445929376961dee53398d6a4",
+      "sourceHash": "c91d453e72ff918615401739b05f61d6396ab3f674141cf82d7d8fb4157a614e",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.webp": {
       "source": "public/og/blog/ftc-personalized-pricing-enforcement-compliance-guide.png",
-      "sourceHash": "f7b56fcb6aca209c532ddeea958524c7b7146e34445929376961dee53398d6a4",
+      "sourceHash": "c91d453e72ff918615401739b05f61d6396ab3f674141cf82d7d8fb4157a614e",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/ga4-alternatives-enterprise.avif": {
       "source": "public/og/blog/ga4-alternatives-enterprise.png",
-      "sourceHash": "04d3add81821f2b433d29170b3ed5f4554d6459ed82255a22dd4f34eef4f7c6d",
+      "sourceHash": "1bdbc90f9c940494c84ddf69a18d67f1f9c3422349c33b0ef5e0d35e4e44f2be",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/ga4-alternatives-enterprise.webp": {
       "source": "public/og/blog/ga4-alternatives-enterprise.png",
-      "sourceHash": "04d3add81821f2b433d29170b3ed5f4554d6459ed82255a22dd4f34eef4f7c6d",
+      "sourceHash": "1bdbc90f9c940494c84ddf69a18d67f1f9c3422349c33b0ef5e0d35e4e44f2be",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/ga4-data-sampling-problem.avif": {
       "source": "public/og/blog/ga4-data-sampling-problem.png",
-      "sourceHash": "a9442fdcbb5a1627632a5485169c7b8049468b71b8546ae812a95990334b7b83",
+      "sourceHash": "b9442d1dee8a0898f460ce9d9d20f1a797ae18f987e62378a1e216b1172401b7",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/ga4-data-sampling-problem.webp": {
       "source": "public/og/blog/ga4-data-sampling-problem.png",
-      "sourceHash": "a9442fdcbb5a1627632a5485169c7b8049468b71b8546ae812a95990334b7b83",
+      "sourceHash": "b9442d1dee8a0898f460ce9d9d20f1a797ae18f987e62378a1e216b1172401b7",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/gdpr-analytics-spain-faq.avif": {
       "source": "public/og/blog/gdpr-analytics-spain-faq.png",
-      "sourceHash": "cb1a8f7cd4c4a375c053deaf101f6da390a5a774119384d28b8ee1abcf58a23d",
+      "sourceHash": "0a2c0f314da04c5c1a266817c0376527f616d4ad08c5fdda3765b9323b843b34",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/gdpr-analytics-spain-faq.webp": {
       "source": "public/og/blog/gdpr-analytics-spain-faq.png",
-      "sourceHash": "cb1a8f7cd4c4a375c053deaf101f6da390a5a774119384d28b8ee1abcf58a23d",
+      "sourceHash": "0a2c0f314da04c5c1a266817c0376527f616d4ad08c5fdda3765b9323b843b34",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/gdpr-analytics-without-consent.avif": {
       "source": "public/og/blog/gdpr-analytics-without-consent.png",
-      "sourceHash": "b9075ae4f9f89c348d08dda9166f882a9fa9f53bfd0f57e2a0816aefb8dad0d6",
+      "sourceHash": "40196c2e6bdf5ecc409b268ad12a8fce69866995a4ca54ec616df6190429a801",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/gdpr-analytics-without-consent.webp": {
       "source": "public/og/blog/gdpr-analytics-without-consent.png",
-      "sourceHash": "b9075ae4f9f89c348d08dda9166f882a9fa9f53bfd0f57e2a0816aefb8dad0d6",
+      "sourceHash": "40196c2e6bdf5ecc409b268ad12a8fce69866995a4ca54ec616df6190429a801",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/gdpr-eprivacy-analytics-legal-assessment.avif": {
       "source": "public/og/blog/gdpr-eprivacy-analytics-legal-assessment.png",
-      "sourceHash": "2fde2e833be4058a90fc934149e04caf5c6d50fa752a66c909ebc1df3c7497fb",
+      "sourceHash": "856645bed789a0b59f402b5334c7bfedcf581a92704dd3287345dcee0eb66d0e",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/gdpr-eprivacy-analytics-legal-assessment.webp": {
       "source": "public/og/blog/gdpr-eprivacy-analytics-legal-assessment.png",
-      "sourceHash": "2fde2e833be4058a90fc934149e04caf5c6d50fa752a66c909ebc1df3c7497fb",
+      "sourceHash": "856645bed789a0b59f402b5334c7bfedcf581a92704dd3287345dcee0eb66d0e",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/grounding-analytics-ai.avif": {
       "source": "public/og/blog/grounding-analytics-ai.png",
-      "sourceHash": "9ae78e051c38e267f5da4be9f29f3cb781cf76596ad37df5eb7f47effe1c5de2",
+      "sourceHash": "8b48df8b055ffb64cf1bc8a8675296f65b7497628f01654e5eaf5e831133c875",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/grounding-analytics-ai.webp": {
       "source": "public/og/blog/grounding-analytics-ai.png",
-      "sourceHash": "9ae78e051c38e267f5da4be9f29f3cb781cf76596ad37df5eb7f47effe1c5de2",
+      "sourceHash": "8b48df8b055ffb64cf1bc8a8675296f65b7497628f01654e5eaf5e831133c875",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/how-we-benchmark-our-own-ai.avif": {
       "source": "public/og/blog/how-we-benchmark-our-own-ai.png",
-      "sourceHash": "19a4fbe8126a6ba2ce0bf0bceca722a8a470db6c460876da4d9448942afb2da0",
+      "sourceHash": "801f73b8a5549a549acdec49e71c0cd8ca4c9ce00956c1f9eb226e8ec2444f8f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/how-we-benchmark-our-own-ai.webp": {
       "source": "public/og/blog/how-we-benchmark-our-own-ai.png",
-      "sourceHash": "19a4fbe8126a6ba2ce0bf0bceca722a8a470db6c460876da4d9448942afb2da0",
+      "sourceHash": "801f73b8a5549a549acdec49e71c0cd8ca4c9ce00956c1f9eb226e8ec2444f8f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/is-adobe-analytics-gdpr-compliant.avif": {
       "source": "public/og/blog/is-adobe-analytics-gdpr-compliant.png",
-      "sourceHash": "2a94a5610bc32e36e801cdf23bfb2cd8333ade471051aabab0ce5092e947081e",
+      "sourceHash": "399473251672fbef46dacf80b25c0e04d6b1d7e1a6a2eaec82714eb9567883a7",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/is-adobe-analytics-gdpr-compliant.webp": {
       "source": "public/og/blog/is-adobe-analytics-gdpr-compliant.png",
-      "sourceHash": "2a94a5610bc32e36e801cdf23bfb2cd8333ade471051aabab0ce5092e947081e",
+      "sourceHash": "399473251672fbef46dacf80b25c0e04d6b1d7e1a6a2eaec82714eb9567883a7",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/is-matomo-gdpr-compliant.avif": {
@@ -493,222 +523,222 @@
     },
     "public/og/blog/meet-seal-ai.avif": {
       "source": "public/og/blog/meet-seal-ai.png",
-      "sourceHash": "93c52eb9df4611ce95c649c2e39ebf1fd70e6b2a2dfb754f37e1a2402f54c723",
+      "sourceHash": "4085a0dda016606f4a8992534f4b327c67231fb4627e411afb84cbdee811413d",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/meet-seal-ai.webp": {
       "source": "public/og/blog/meet-seal-ai.png",
-      "sourceHash": "93c52eb9df4611ce95c649c2e39ebf1fd70e6b2a2dfb754f37e1a2402f54c723",
+      "sourceHash": "4085a0dda016606f4a8992534f4b327c67231fb4627e411afb84cbdee811413d",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/multi-touch-attribution-complete-data.avif": {
       "source": "public/og/blog/multi-touch-attribution-complete-data.png",
-      "sourceHash": "7d7bae02f7fbcf509644a472c35cf2a833213063b8c15b079e67219d0a65c762",
+      "sourceHash": "be75327a7b424b11c880a5b5589d9716d8f8838a93c9e6b86593c6cbd2b942a5",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/multi-touch-attribution-complete-data.webp": {
       "source": "public/og/blog/multi-touch-attribution-complete-data.png",
-      "sourceHash": "7d7bae02f7fbcf509644a472c35cf2a833213063b8c15b079e67219d0a65c762",
+      "sourceHash": "be75327a7b424b11c880a5b5589d9716d8f8838a93c9e6b86593c6cbd2b942a5",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/open-weights-exit-strategy.avif": {
       "source": "public/og/blog/open-weights-exit-strategy.png",
-      "sourceHash": "37b5680c44ca95664ee9bb24d927030333821384135e5cd7873e8b9cbf7498da",
+      "sourceHash": "3170f7498af383659278ef5c798508c9d0db0a6649dec575f107b898702b85d0",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/open-weights-exit-strategy.webp": {
       "source": "public/og/blog/open-weights-exit-strategy.png",
-      "sourceHash": "37b5680c44ca95664ee9bb24d927030333821384135e5cd7873e8b9cbf7498da",
+      "sourceHash": "3170f7498af383659278ef5c798508c9d0db0a6649dec575f107b898702b85d0",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/our-ai-got-it-wrong-in-production.avif": {
       "source": "public/og/blog/our-ai-got-it-wrong-in-production.png",
-      "sourceHash": "6df27d7aba2fb36350a13d778ac7f5542b48dd17f15a6a5c9a516e907b471226",
+      "sourceHash": "ae9f95edacc981b4214c202073334bae8841e9eaa73252248a577ddaf43e692d",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/our-ai-got-it-wrong-in-production.webp": {
       "source": "public/og/blog/our-ai-got-it-wrong-in-production.png",
-      "sourceHash": "6df27d7aba2fb36350a13d778ac7f5542b48dd17f15a6a5c9a516e907b471226",
+      "sourceHash": "ae9f95edacc981b4214c202073334bae8841e9eaa73252248a577ddaf43e692d",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/prompt-injection-is-language-dependent.avif": {
       "source": "public/og/blog/prompt-injection-is-language-dependent.png",
-      "sourceHash": "33ca8471c0adbd25ae41d580078282ebbb4a2ae97ccf48cc00f927fa1fd951b2",
+      "sourceHash": "99806f50c231b0cd68e0367cbb0802d88842ac3ac7c81359bdc050ba51628a61",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/prompt-injection-is-language-dependent.webp": {
       "source": "public/og/blog/prompt-injection-is-language-dependent.png",
-      "sourceHash": "33ca8471c0adbd25ae41d580078282ebbb4a2ae97ccf48cc00f927fa1fd951b2",
+      "sourceHash": "99806f50c231b0cd68e0367cbb0802d88842ac3ac7c81359bdc050ba51628a61",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/public-llm-benchmarks-vs-your-use-case.avif": {
       "source": "public/og/blog/public-llm-benchmarks-vs-your-use-case.png",
-      "sourceHash": "1bf08f0770cdb5f3f5aaff057c2db28077d0a3ea4fc89dbee2358c1d727ac04c",
+      "sourceHash": "79be3a385b8e66d081d6ba83d243c14993f43765a5bd997e2c109f5719329a19",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/public-llm-benchmarks-vs-your-use-case.webp": {
       "source": "public/og/blog/public-llm-benchmarks-vs-your-use-case.png",
-      "sourceHash": "1bf08f0770cdb5f3f5aaff057c2db28077d0a3ea4fc89dbee2358c1d727ac04c",
+      "sourceHash": "79be3a385b8e66d081d6ba83d243c14993f43765a5bd997e2c109f5719329a19",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/residency-is-not-sovereignty.avif": {
       "source": "public/og/blog/residency-is-not-sovereignty.png",
-      "sourceHash": "7c980b54efc476b732696bdbeeb5e7e1fc84e4d062114315f8032cf90691c9f6",
+      "sourceHash": "194f84209ec1a5cd5212bc8b95f3b7959b4ec498f238e8cf021c394fc1665a8f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/residency-is-not-sovereignty.webp": {
       "source": "public/og/blog/residency-is-not-sovereignty.png",
-      "sourceHash": "7c980b54efc476b732696bdbeeb5e7e1fc84e4d062114315f8032cf90691c9f6",
+      "sourceHash": "194f84209ec1a5cd5212bc8b95f3b7959b4ec498f238e8cf021c394fc1665a8f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/rival-model-as-judge.avif": {
       "source": "public/og/blog/rival-model-as-judge.png",
-      "sourceHash": "2961f074b5bcc77f151c3e6c773da612a8555cd71666d9c5342de1bbec06bb78",
+      "sourceHash": "56646a62e425b4288e24e8dd68c70f5bcf9072d819f0984384fa153b5a4db381",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/rival-model-as-judge.webp": {
       "source": "public/og/blog/rival-model-as-judge.png",
-      "sourceHash": "2961f074b5bcc77f151c3e6c773da612a8555cd71666d9c5342de1bbec06bb78",
+      "sourceHash": "56646a62e425b4288e24e8dd68c70f5bcf9072d819f0984384fa153b5a4db381",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/seal-ai-vs-bring-your-own-key.avif": {
       "source": "public/og/blog/seal-ai-vs-bring-your-own-key.png",
-      "sourceHash": "643cfd9852c18ca278fc42ad3a184bb237205ce5ff58328d6e5f9558f14daa26",
+      "sourceHash": "4fb085551895d21998651bfd443fe8bc3fee2155d31c9d39120a4177bc9e04c2",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/seal-ai-vs-bring-your-own-key.webp": {
       "source": "public/og/blog/seal-ai-vs-bring-your-own-key.png",
-      "sourceHash": "643cfd9852c18ca278fc42ad3a184bb237205ce5ff58328d6e5f9558f14daa26",
+      "sourceHash": "4fb085551895d21998651bfd443fe8bc3fee2155d31c9d39120a4177bc9e04c2",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/self-service-analytics-for-marketing-teams.avif": {
       "source": "public/og/blog/self-service-analytics-for-marketing-teams.png",
-      "sourceHash": "b28bea00bb55bb5e5488ce63a1e89e4e72a1106bd00bb8f084982c56e61f12b3",
+      "sourceHash": "6b1660e966fbcf399950878098ae69f9a241a472f15ef184bfdf0109ba0498d0",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/self-service-analytics-for-marketing-teams.webp": {
       "source": "public/og/blog/self-service-analytics-for-marketing-teams.png",
-      "sourceHash": "b28bea00bb55bb5e5488ce63a1e89e4e72a1106bd00bb8f084982c56e61f12b3",
+      "sourceHash": "6b1660e966fbcf399950878098ae69f9a241a472f15ef184bfdf0109ba0498d0",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/self-service-analytics-lens-ai.avif": {
       "source": "public/og/blog/self-service-analytics-lens-ai.png",
-      "sourceHash": "55ae844e3f23b2b635fb617cc8be71ab9dd486722cf1d59b44dd971d8c9b480c",
+      "sourceHash": "9fecf1e54261ba1c2be745b0d3aa9ef5fa0484b9f46e4021df2199e5c1619f75",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/self-service-analytics-lens-ai.webp": {
       "source": "public/og/blog/self-service-analytics-lens-ai.png",
-      "sourceHash": "55ae844e3f23b2b635fb617cc8be71ab9dd486722cf1d59b44dd971d8c9b480c",
+      "sourceHash": "9fecf1e54261ba1c2be745b0d3aa9ef5fa0484b9f46e4021df2199e5c1619f75",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/the-prompt-is-born-clean.avif": {
       "source": "public/og/blog/the-prompt-is-born-clean.png",
-      "sourceHash": "73c102a6b90f7d406adda2fbb67d667219ac26b5b62b3b482170f4576392e68f",
+      "sourceHash": "7c6f17e1a17c3d2c5b269157987e1a746f19053f92a45c51c495ba1f36e10ba9",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/the-prompt-is-born-clean.webp": {
       "source": "public/og/blog/the-prompt-is-born-clean.png",
-      "sourceHash": "73c102a6b90f7d406adda2fbb67d667219ac26b5b62b3b482170f4576392e68f",
+      "sourceHash": "7c6f17e1a17c3d2c5b269157987e1a746f19053f92a45c51c495ba1f36e10ba9",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/three-questions-to-ask-seal-ai.avif": {
       "source": "public/og/blog/three-questions-to-ask-seal-ai.png",
-      "sourceHash": "797a6b8485ad82cebebef28bbf04e6e711e82604334a14608660ce0f4bdaf5ca",
+      "sourceHash": "46e60b4464498854343451c79c34dd7b125a8baa5f823e8ab5e9ced80308420b",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/three-questions-to-ask-seal-ai.webp": {
       "source": "public/og/blog/three-questions-to-ask-seal-ai.png",
-      "sourceHash": "797a6b8485ad82cebebef28bbf04e6e711e82604334a14608660ce0f4bdaf5ca",
+      "sourceHash": "46e60b4464498854343451c79c34dd7b125a8baa5f823e8ab5e9ced80308420b",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/uk-pecr-analytics-exemption.avif": {
       "source": "public/og/blog/uk-pecr-analytics-exemption.png",
-      "sourceHash": "392e8a41651c7f4a30d0cdaade6662d129fdfd1b24747efaf5c520b12df1d1d4",
+      "sourceHash": "f07155b32bfea4541e06e8a2051b3880ca864cd9143c430e44ce3df0b1129935",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/uk-pecr-analytics-exemption.webp": {
       "source": "public/og/blog/uk-pecr-analytics-exemption.png",
-      "sourceHash": "392e8a41651c7f4a30d0cdaade6662d129fdfd1b24747efaf5c520b12df1d1d4",
+      "sourceHash": "f07155b32bfea4541e06e8a2051b3880ca864cd9143c430e44ce3df0b1129935",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/we-changed-our-ai-model-twice.avif": {
       "source": "public/og/blog/we-changed-our-ai-model-twice.png",
-      "sourceHash": "4b894ea321c33bb8a0b09b97683a8f1c834ecdff1e9985be1640386885e6daa0",
+      "sourceHash": "4a5ac945b31532659d997d7b2fdf4bce5b944f3c184bd2df2776006846ed24bd",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/we-changed-our-ai-model-twice.webp": {
       "source": "public/og/blog/we-changed-our-ai-model-twice.png",
-      "sourceHash": "4b894ea321c33bb8a0b09b97683a8f1c834ecdff1e9985be1640386885e6daa0",
+      "sourceHash": "4a5ac945b31532659d997d7b2fdf4bce5b944f3c184bd2df2776006846ed24bd",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/we-measured-every-analytics-script.avif": {
       "source": "public/og/blog/we-measured-every-analytics-script.png",
-      "sourceHash": "18325da81fcc638ab83ab84a958388d40e83e7e66e23e03d8b45f3338bb05732",
+      "sourceHash": "24a17c32bcb2d11383d1a19651eed5f7348e41477835719cbe5837f2ee3803c4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/we-measured-every-analytics-script.webp": {
       "source": "public/og/blog/we-measured-every-analytics-script.png",
-      "sourceHash": "18325da81fcc638ab83ab84a958388d40e83e7e66e23e03d8b45f3338bb05732",
+      "sourceHash": "24a17c32bcb2d11383d1a19651eed5f7348e41477835719cbe5837f2ee3803c4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/what-is-cookieless-tracking.avif": {
       "source": "public/og/blog/what-is-cookieless-tracking.png",
-      "sourceHash": "7a440e2f1ad7b440a8269cff92e19f2d45fd505ed755e40e03edbf116fb324fb",
+      "sourceHash": "4e30ebd1e7ccce5c649fa56d472bab61fcedcbebfa206e70615d946d7d2e92ea",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/what-is-cookieless-tracking.webp": {
       "source": "public/og/blog/what-is-cookieless-tracking.png",
-      "sourceHash": "7a440e2f1ad7b440a8269cff92e19f2d45fd505ed755e40e03edbf116fb324fb",
+      "sourceHash": "4e30ebd1e7ccce5c649fa56d472bab61fcedcbebfa206e70615d946d7d2e92ea",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/what-is-data-loss-in-analytics.avif": {
       "source": "public/og/blog/what-is-data-loss-in-analytics.png",
-      "sourceHash": "78c1af5fd9498ee87b976be1b5b949fc883a25171399f6d621114e5a332379f7",
+      "sourceHash": "f30189a81ba9a36768e2428224a281e8be8dce89ec30eadda477997c4a4a83e2",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/what-is-data-loss-in-analytics.webp": {
       "source": "public/og/blog/what-is-data-loss-in-analytics.png",
-      "sourceHash": "78c1af5fd9498ee87b976be1b5b949fc883a25171399f6d621114e5a332379f7",
+      "sourceHash": "f30189a81ba9a36768e2428224a281e8be8dce89ec30eadda477997c4a4a83e2",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.avif": {
       "source": "public/og/blog/why-ga4-shows-13pct-eu-traffic.png",
-      "sourceHash": "f04d765be074050fbef32492aaa0356c265fee61f817476e33a2f4d1a8af8cf6",
+      "sourceHash": "aa1627d9ec4770bf28be3fa0189adfb363e43055edbea9e1ba0cb8cd410d8fc7",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.webp": {
       "source": "public/og/blog/why-ga4-shows-13pct-eu-traffic.png",
-      "sourceHash": "f04d765be074050fbef32492aaa0356c265fee61f817476e33a2f4d1a8af8cf6",
+      "sourceHash": "aa1627d9ec4770bf28be3fa0189adfb363e43055edbea9e1ba0cb8cd410d8fc7",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/careers.avif": {
       "source": "public/og/careers.png",
-      "sourceHash": "8238581248149065bdeabeb31019bf20aebf42f3a11ad500019583ee1c7d4359",
+      "sourceHash": "3c43e5148dd5bc012a708aa2d0864b21f8a2442589a80f8ed6b8fee5bdcb2f8c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/careers.webp": {
       "source": "public/og/careers.png",
-      "sourceHash": "8238581248149065bdeabeb31019bf20aebf42f3a11ad500019583ee1c7d4359",
+      "sourceHash": "3c43e5148dd5bc012a708aa2d0864b21f8a2442589a80f8ed6b8fee5bdcb2f8c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/case-studies.avif": {
       "source": "public/og/case-studies.png",
-      "sourceHash": "91c8ebcd7b63b2cb2fe96db11637476e86a82a840cc1654ac8625edee4ab03ba",
+      "sourceHash": "9c4e590b73b4bbead09a147621933dee62d007d7316cceb92b7ea1e7bc3dcda9",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/case-studies.webp": {
       "source": "public/og/case-studies.png",
-      "sourceHash": "91c8ebcd7b63b2cb2fe96db11637476e86a82a840cc1654ac8625edee4ab03ba",
+      "sourceHash": "9c4e590b73b4bbead09a147621933dee62d007d7316cceb92b7ea1e7bc3dcda9",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/case-studies/dreamplace-hotels.avif": {
       "source": "public/og/case-studies/dreamplace-hotels.png",
-      "sourceHash": "2b1d057335dc4212f5cf94dbf37fce0bea816c04d90baaead217d999e4d9267f",
+      "sourceHash": "220340b8d5832a943ae827813766cbb298a0bcab72d24e546bb0f739ee17315f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/case-studies/dreamplace-hotels.webp": {
       "source": "public/og/case-studies/dreamplace-hotels.png",
-      "sourceHash": "2b1d057335dc4212f5cf94dbf37fce0bea816c04d90baaead217d999e4d9267f",
+      "sourceHash": "220340b8d5832a943ae827813766cbb298a0bcab72d24e546bb0f739ee17315f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/case-studies/incapto.avif": {
@@ -723,762 +753,772 @@
     },
     "public/og/case-studies/palladium-hotel-group.avif": {
       "source": "public/og/case-studies/palladium-hotel-group.png",
-      "sourceHash": "177d8cb1b195823175acc5f41177c6dfd033e6c6de3d55868382fc1d09def8ee",
+      "sourceHash": "1f023228081c1222ae4d4b9935f71f50c9b14b6dae70c267bd9437a1ba181f82",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/case-studies/palladium-hotel-group.webp": {
       "source": "public/og/case-studies/palladium-hotel-group.png",
-      "sourceHash": "177d8cb1b195823175acc5f41177c6dfd033e6c6de3d55868382fc1d09def8ee",
+      "sourceHash": "1f023228081c1222ae4d4b9935f71f50c9b14b6dae70c267bd9437a1ba181f82",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/changelog.avif": {
       "source": "public/og/changelog.png",
-      "sourceHash": "c6b5bd4b9c3a7126fc7a4923a551f56072c960fdcac835c73e93aa8ec0e30208",
+      "sourceHash": "e7f0441f05c88d6e13478783f1f109bead0ed8a17eae73e40ebb260c58a20b86",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/changelog.webp": {
       "source": "public/og/changelog.png",
-      "sourceHash": "c6b5bd4b9c3a7126fc7a4923a551f56072c960fdcac835c73e93aa8ec0e30208",
+      "sourceHash": "e7f0441f05c88d6e13478783f1f109bead0ed8a17eae73e40ebb260c58a20b86",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/complete-data.avif": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "fb18ffbd44133f1355844233471839212284f8cd245179993bbfbd6ba314ed2f",
+      "sourceHash": "32ac168f62c62bd006864658f10a5fa8038cc93bac797f2ea9b61f5c93491e27",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/complete-data.webp": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "fb18ffbd44133f1355844233471839212284f8cd245179993bbfbd6ba314ed2f",
+      "sourceHash": "32ac168f62c62bd006864658f10a5fa8038cc93bac797f2ea9b61f5c93491e27",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/consentless-analytics.avif": {
       "source": "public/og/consentless-analytics.png",
-      "sourceHash": "0f87cb62f484a92f9a9aca67095fd35fff40e9bd60285e9c3671c9062942d443",
+      "sourceHash": "c3b99f389ffd0049f13b2099d05958a46bab209e40545c7ea655d82f5eb13456",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/consentless-analytics.webp": {
       "source": "public/og/consentless-analytics.png",
-      "sourceHash": "0f87cb62f484a92f9a9aca67095fd35fff40e9bd60285e9c3671c9062942d443",
+      "sourceHash": "c3b99f389ffd0049f13b2099d05958a46bab209e40545c7ea655d82f5eb13456",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/cookieless-analytics.avif": {
       "source": "public/og/cookieless-analytics.png",
-      "sourceHash": "e85e81e4972d42fb52f982a617e181df10821c8cf32a2188b2adb4190c92c6aa",
+      "sourceHash": "b3d5eafbffaf25d0ce93ab453a6181fd9351b60ff447c66fc8adb4f78911ff68",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/cookieless-analytics.webp": {
       "source": "public/og/cookieless-analytics.png",
-      "sourceHash": "e85e81e4972d42fb52f982a617e181df10821c8cf32a2188b2adb4190c92c6aa",
+      "sourceHash": "b3d5eafbffaf25d0ce93ab453a6181fd9351b60ff447c66fc8adb4f78911ff68",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/data-loss-calculator.avif": {
       "source": "public/og/data-loss-calculator.png",
-      "sourceHash": "dc96619374e41ac57180092b5496e021b74a9602eba891661dab9856b2d9d991",
+      "sourceHash": "d9cd96ce1d75e1de0126061d98fd527fd3c7dae54863c074a354e1e8fcc07959",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/data-loss-calculator.webp": {
       "source": "public/og/data-loss-calculator.png",
-      "sourceHash": "dc96619374e41ac57180092b5496e021b74a9602eba891661dab9856b2d9d991",
+      "sourceHash": "d9cd96ce1d75e1de0126061d98fd527fd3c7dae54863c074a354e1e8fcc07959",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/demo.avif": {
       "source": "public/og/demo.png",
-      "sourceHash": "301a12016bc932cade0e91e8312b41f291957c268453ba59dc9d708998a3e512",
+      "sourceHash": "79a46ac4fb7cbbf53477426ce9a4bfe29460f8bcbf96deb7b7324485e1415851",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/demo.webp": {
       "source": "public/og/demo.png",
-      "sourceHash": "301a12016bc932cade0e91e8312b41f291957c268453ba59dc9d708998a3e512",
+      "sourceHash": "79a46ac4fb7cbbf53477426ce9a4bfe29460f8bcbf96deb7b7324485e1415851",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/docs/mcp.avif": {
+      "source": "public/og/docs/mcp.png",
+      "sourceHash": "bb119c6f5a22cfb60bf3b4bd010da54d877d87cf80942e903c5214e8ae3f94ab",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/docs/mcp.webp": {
+      "source": "public/og/docs/mcp.png",
+      "sourceHash": "bb119c6f5a22cfb60bf3b4bd010da54d877d87cf80942e903c5214e8ae3f94ab",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/dpa.avif": {
       "source": "public/og/dpa.png",
-      "sourceHash": "45c9129948274e90c711e37d1dac099de295234eaa9b942145d506b44fe9b9e2",
+      "sourceHash": "bf370abe8a0a735b817bb55cb19142c1da5dd6ce4bfecd155d4fd824ee7a66ea",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/dpa.webp": {
       "source": "public/og/dpa.png",
-      "sourceHash": "45c9129948274e90c711e37d1dac099de295234eaa9b942145d506b44fe9b9e2",
+      "sourceHash": "bf370abe8a0a735b817bb55cb19142c1da5dd6ce4bfecd155d4fd824ee7a66ea",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for.avif": {
       "source": "public/og/for.png",
-      "sourceHash": "e141cf4b7d4e634ce029488aed962f6f62291a76f081d202b4ea964edae12c14",
+      "sourceHash": "17c95dfd5c649f2782ba007b12a4fcdfb9cb5f50a867ef6d02cc4ea7887e9d0b",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for.webp": {
       "source": "public/og/for.png",
-      "sourceHash": "e141cf4b7d4e634ce029488aed962f6f62291a76f081d202b4ea964edae12c14",
+      "sourceHash": "17c95dfd5c649f2782ba007b12a4fcdfb9cb5f50a867ef6d02cc4ea7887e9d0b",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/agencies.avif": {
       "source": "public/og/for/agencies.png",
-      "sourceHash": "4f8e14de4f5986d9f73a51ec7786d37a336c83fdefd09129be6cc57b42ef7d84",
+      "sourceHash": "81315d8ad0efb9280ee5f4e2c427afecc2600dd0a65b61f3304c2d50aab79729",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/agencies.webp": {
       "source": "public/og/for/agencies.png",
-      "sourceHash": "4f8e14de4f5986d9f73a51ec7786d37a336c83fdefd09129be6cc57b42ef7d84",
+      "sourceHash": "81315d8ad0efb9280ee5f4e2c427afecc2600dd0a65b61f3304c2d50aab79729",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/cmo.avif": {
       "source": "public/og/for/cmo.png",
-      "sourceHash": "f378f0b691977680ad243df59dbaf1884d8a4dca0e89c01b2330e6a61b0b516c",
+      "sourceHash": "4d77691ce7f145438d556c1862ab386b8d34697971826a49aa95b6baefd9e984",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/cmo.webp": {
       "source": "public/og/for/cmo.png",
-      "sourceHash": "f378f0b691977680ad243df59dbaf1884d8a4dca0e89c01b2330e6a61b0b516c",
+      "sourceHash": "4d77691ce7f145438d556c1862ab386b8d34697971826a49aa95b6baefd9e984",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/cto.avif": {
       "source": "public/og/for/cto.png",
-      "sourceHash": "83863ab185576cc824710bd43e0d936dd16373603731ff84a4ccc883ada2f000",
+      "sourceHash": "e4c99d5f9151475322146ad181d23836ab64e69306392b6f6f8d23e477f955a9",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/cto.webp": {
       "source": "public/og/for/cto.png",
-      "sourceHash": "83863ab185576cc824710bd43e0d936dd16373603731ff84a4ccc883ada2f000",
+      "sourceHash": "e4c99d5f9151475322146ad181d23836ab64e69306392b6f6f8d23e477f955a9",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/dpo.avif": {
       "source": "public/og/for/dpo.png",
-      "sourceHash": "0a317deb1233e92b96d4ee4eb7b29cd1c188169c746699cf82c08b4d23384875",
+      "sourceHash": "4812f2ad5143227dca89813d644034c9784e8321ae9f6c94cf4dfcde3bc44d98",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/dpo.webp": {
       "source": "public/og/for/dpo.png",
-      "sourceHash": "0a317deb1233e92b96d4ee4eb7b29cd1c188169c746699cf82c08b4d23384875",
+      "sourceHash": "4812f2ad5143227dca89813d644034c9784e8321ae9f6c94cf4dfcde3bc44d98",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/ecommerce.avif": {
       "source": "public/og/for/ecommerce.png",
-      "sourceHash": "f8e12910cdfcf25999dd11370f94c7131b81d39d467c9ad8b8df85060a27b0e0",
+      "sourceHash": "a37d0d10812413ae47edbed3d4865ba42858a10c0bf3d300d676ddfefdef49f9",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/ecommerce.webp": {
       "source": "public/og/for/ecommerce.png",
-      "sourceHash": "f8e12910cdfcf25999dd11370f94c7131b81d39d467c9ad8b8df85060a27b0e0",
+      "sourceHash": "a37d0d10812413ae47edbed3d4865ba42858a10c0bf3d300d676ddfefdef49f9",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/education.avif": {
       "source": "public/og/for/education.png",
-      "sourceHash": "737ec11597c7b238bf46c8dda8073b0fd290b833deb7d58d433b3a2456a29f0c",
+      "sourceHash": "a486bc21f0477cd224cf3407b1d89e6f3174e1c742ed974752a01511eb17d496",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/education.webp": {
       "source": "public/og/for/education.png",
-      "sourceHash": "737ec11597c7b238bf46c8dda8073b0fd290b833deb7d58d433b3a2456a29f0c",
+      "sourceHash": "a486bc21f0477cd224cf3407b1d89e6f3174e1c742ed974752a01511eb17d496",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/finance.avif": {
       "source": "public/og/for/finance.png",
-      "sourceHash": "39680be8fa3ddb9947ba7051dc9336df62d431a422b936729d94ec28520656f0",
+      "sourceHash": "dcf94d19516963ab50f70a5e0ebe8656efe835a11e4bc4ab00b6a4902c2cc27e",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/finance.webp": {
       "source": "public/og/for/finance.png",
-      "sourceHash": "39680be8fa3ddb9947ba7051dc9336df62d431a422b936729d94ec28520656f0",
+      "sourceHash": "dcf94d19516963ab50f70a5e0ebe8656efe835a11e4bc4ab00b6a4902c2cc27e",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/healthcare.avif": {
       "source": "public/og/for/healthcare.png",
-      "sourceHash": "d9cf98c6fbc25a157703a22ac49b99a77a32cee9f40f5fa0ff6f8fa2fb0d1251",
+      "sourceHash": "443060ac9ff8bb897f0e9403443fe07ed6d40e7508354e3f3dde2f28e280db24",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/healthcare.webp": {
       "source": "public/og/for/healthcare.png",
-      "sourceHash": "d9cf98c6fbc25a157703a22ac49b99a77a32cee9f40f5fa0ff6f8fa2fb0d1251",
+      "sourceHash": "443060ac9ff8bb897f0e9403443fe07ed6d40e7508354e3f3dde2f28e280db24",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/hotels.avif": {
       "source": "public/og/for/hotels.png",
-      "sourceHash": "aaabc75c1e888a6981359b9b5e8bcb36c2a1c6d0c4f3f30a00fddd0ca0d81373",
+      "sourceHash": "31a6d79e2603e7684a8c396bc004525a547005bb5dfb10e613be4f9b1582e6a1",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/hotels.webp": {
       "source": "public/og/for/hotels.png",
-      "sourceHash": "aaabc75c1e888a6981359b9b5e8bcb36c2a1c6d0c4f3f30a00fddd0ca0d81373",
+      "sourceHash": "31a6d79e2603e7684a8c396bc004525a547005bb5dfb10e613be4f9b1582e6a1",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/media.avif": {
       "source": "public/og/for/media.png",
-      "sourceHash": "30e19dace3186a8a334992b7a6ac1ef87be72b682cf03b4423e3043ac57b5e00",
+      "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/media.webp": {
       "source": "public/og/for/media.png",
-      "sourceHash": "30e19dace3186a8a334992b7a6ac1ef87be72b682cf03b4423e3043ac57b5e00",
+      "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/saas.avif": {
       "source": "public/og/for/saas.png",
-      "sourceHash": "60f92bb92cf66ea3df796eb3486a0eff838e9a4953211fbe2c16d213e8ab0cb8",
+      "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/saas.webp": {
       "source": "public/og/for/saas.png",
-      "sourceHash": "60f92bb92cf66ea3df796eb3486a0eff838e9a4953211fbe2c16d213e8ab0cb8",
+      "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/free-audit.avif": {
       "source": "public/og/free-audit.png",
-      "sourceHash": "226b180e86c0218cf6549a5e1bf7eb40a8927090ab61fff44a63be0c65ed9553",
+      "sourceHash": "23cf8666d911036719f39a6a8a81e24da83741e4e1ca488b484e48ed33ca6cc3",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/free-audit.webp": {
       "source": "public/og/free-audit.png",
-      "sourceHash": "226b180e86c0218cf6549a5e1bf7eb40a8927090ab61fff44a63be0c65ed9553",
+      "sourceHash": "23cf8666d911036719f39a6a8a81e24da83741e4e1ca488b484e48ed33ca6cc3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/gdpr-analytics.avif": {
       "source": "public/og/gdpr-analytics.png",
-      "sourceHash": "c3660ed15a78dff2ebe2c6313f0b7bcd0adfe90ad887efa00f5549ea8d6de0d5",
+      "sourceHash": "ef61955078056cfbb1d92c7a3fcd24fb0858cb72e3d278a24ea3b6942fea91a5",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/gdpr-analytics.webp": {
       "source": "public/og/gdpr-analytics.png",
-      "sourceHash": "c3660ed15a78dff2ebe2c6313f0b7bcd0adfe90ad887efa00f5549ea8d6de0d5",
+      "sourceHash": "ef61955078056cfbb1d92c7a3fcd24fb0858cb72e3d278a24ea3b6942fea91a5",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/gdpr-analytics/france.avif": {
       "source": "public/og/gdpr-analytics/france.png",
-      "sourceHash": "6bd9e26f80cd9d159cfbb3a66d3484a76194579758edfbb9119084b3f6de9111",
+      "sourceHash": "531bce509b914bb18ab6cfead9ed2008e0b50ed36ec5b29965af1171e75607e1",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/gdpr-analytics/france.webp": {
       "source": "public/og/gdpr-analytics/france.png",
-      "sourceHash": "6bd9e26f80cd9d159cfbb3a66d3484a76194579758edfbb9119084b3f6de9111",
+      "sourceHash": "531bce509b914bb18ab6cfead9ed2008e0b50ed36ec5b29965af1171e75607e1",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/gdpr-analytics/germany.avif": {
       "source": "public/og/gdpr-analytics/germany.png",
-      "sourceHash": "2f078c9eca3807013db392f1219696a74b3831c0ea2c01111ca3cadcc75b7df0",
+      "sourceHash": "085e91b26fa3e2e3c40031c4a3ba60269eed8da856725214f199790d9107d408",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/gdpr-analytics/germany.webp": {
       "source": "public/og/gdpr-analytics/germany.png",
-      "sourceHash": "2f078c9eca3807013db392f1219696a74b3831c0ea2c01111ca3cadcc75b7df0",
+      "sourceHash": "085e91b26fa3e2e3c40031c4a3ba60269eed8da856725214f199790d9107d408",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/gdpr-analytics/spain.avif": {
       "source": "public/og/gdpr-analytics/spain.png",
-      "sourceHash": "edf891c6fe4680263a3c0cf985b2d7a9574e68d0f12292fb4230c51e1d515141",
+      "sourceHash": "3e618d7b832c6beca7e420810eecf896ae7954e7033e755d85b1261f71c4f638",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/gdpr-analytics/spain.webp": {
       "source": "public/og/gdpr-analytics/spain.png",
-      "sourceHash": "edf891c6fe4680263a3c0cf985b2d7a9574e68d0f12292fb4230c51e1d515141",
+      "sourceHash": "3e618d7b832c6beca7e420810eecf896ae7954e7033e755d85b1261f71c4f638",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary.avif": {
       "source": "public/og/glossary.png",
-      "sourceHash": "7344117bd1f5272680f71a5573965687f8785e8a4556ec4fd454bcf7e00cc8d4",
+      "sourceHash": "8d1974ea839495c7e7544544fe67b4c1b47dcb39561117409031cc9776b38f06",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary.webp": {
       "source": "public/og/glossary.png",
-      "sourceHash": "7344117bd1f5272680f71a5573965687f8785e8a4556ec4fd454bcf7e00cc8d4",
+      "sourceHash": "8d1974ea839495c7e7544544fe67b4c1b47dcb39561117409031cc9776b38f06",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/ad-blocker-analytics-impact.avif": {
       "source": "public/og/glossary/ad-blocker-analytics-impact.png",
-      "sourceHash": "ad193e64f8752096fe520c9d4ae9612a161f8b7a7a0a8a69bde3bc403ed6dc8b",
+      "sourceHash": "fe610fc5fc27a0ed6e3fe2f3e26df4bb4a7854a2f05a6ba62a270d78d937040f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/ad-blocker-analytics-impact.webp": {
       "source": "public/og/glossary/ad-blocker-analytics-impact.png",
-      "sourceHash": "ad193e64f8752096fe520c9d4ae9612a161f8b7a7a0a8a69bde3bc403ed6dc8b",
+      "sourceHash": "fe610fc5fc27a0ed6e3fe2f3e26df4bb4a7854a2f05a6ba62a270d78d937040f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/analytics-data-residency.avif": {
       "source": "public/og/glossary/analytics-data-residency.png",
-      "sourceHash": "a89dad69445705c70a0995be34164909e1041b34e35e5f46cf041f74dee647d5",
+      "sourceHash": "c56a582745ee6b8c19ab1f6d6ce9528a00550eaf65c79bfeae4827b944f5856a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/analytics-data-residency.webp": {
       "source": "public/og/glossary/analytics-data-residency.png",
-      "sourceHash": "a89dad69445705c70a0995be34164909e1041b34e35e5f46cf041f74dee647d5",
+      "sourceHash": "c56a582745ee6b8c19ab1f6d6ce9528a00550eaf65c79bfeae4827b944f5856a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/attribution-model.avif": {
       "source": "public/og/glossary/attribution-model.png",
-      "sourceHash": "4b987e8ec55c49032435f64b83ff4d1c23f4b64018a62c9c093e7eff54ccb20d",
+      "sourceHash": "1606116f9b846946b5799d8d16e1c00dd12bd7fdb677c0ac9b1129fabbfe73cf",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/attribution-model.webp": {
       "source": "public/og/glossary/attribution-model.png",
-      "sourceHash": "4b987e8ec55c49032435f64b83ff4d1c23f4b64018a62c9c093e7eff54ccb20d",
+      "sourceHash": "1606116f9b846946b5799d8d16e1c00dd12bd7fdb677c0ac9b1129fabbfe73cf",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/attribution-window.avif": {
       "source": "public/og/glossary/attribution-window.png",
-      "sourceHash": "006c4404d9d2d7d7555d4ffc1faa1d12ceb1cbb5e55e6d661a5be9bf41db16d2",
+      "sourceHash": "4a7c4a6537dcc9ad5753398672e7df8ae629839ed1ce69664d1200f496dcc4ce",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/attribution-window.webp": {
       "source": "public/og/glossary/attribution-window.png",
-      "sourceHash": "006c4404d9d2d7d7555d4ffc1faa1d12ceb1cbb5e55e6d661a5be9bf41db16d2",
+      "sourceHash": "4a7c4a6537dcc9ad5753398672e7df8ae629839ed1ce69664d1200f496dcc4ce",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/bounce-rate.avif": {
       "source": "public/og/glossary/bounce-rate.png",
-      "sourceHash": "f87a5e60ec66a0acf367981199cf7a3c1750551289c0dd1181816f89f5c8e22f",
+      "sourceHash": "8ba8e5c2c97f0b42d982ed76ce832a5909151b5635233be09be9c3eadf14b367",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/bounce-rate.webp": {
       "source": "public/og/glossary/bounce-rate.png",
-      "sourceHash": "f87a5e60ec66a0acf367981199cf7a3c1750551289c0dd1181816f89f5c8e22f",
+      "sourceHash": "8ba8e5c2c97f0b42d982ed76ce832a5909151b5635233be09be9c3eadf14b367",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/cohort.avif": {
       "source": "public/og/glossary/cohort.png",
-      "sourceHash": "5eb1204c5145133f1a7a6a80651768a2b36115a472763615beb49304095ec074",
+      "sourceHash": "993795bd6d536b49d984888917574561d50de69230680294dbd448f4c1f25565",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/cohort.webp": {
       "source": "public/og/glossary/cohort.png",
-      "sourceHash": "5eb1204c5145133f1a7a6a80651768a2b36115a472763615beb49304095ec074",
+      "sourceHash": "993795bd6d536b49d984888917574561d50de69230680294dbd448f4c1f25565",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/consent-management-platform.avif": {
       "source": "public/og/glossary/consent-management-platform.png",
-      "sourceHash": "5d89804992da160ef404e505e1fdcba3bf88011921e45960cbcf80e84bade556",
+      "sourceHash": "bd14b013a36354b29af2eb860b66dab7342d8f78ab15ba1e171ad742a8e73c67",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/consent-management-platform.webp": {
       "source": "public/og/glossary/consent-management-platform.png",
-      "sourceHash": "5d89804992da160ef404e505e1fdcba3bf88011921e45960cbcf80e84bade556",
+      "sourceHash": "bd14b013a36354b29af2eb860b66dab7342d8f78ab15ba1e171ad742a8e73c67",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/consent-mode-v2.avif": {
       "source": "public/og/glossary/consent-mode-v2.png",
-      "sourceHash": "bb5d1652d4c40f000aafaba675cf74b4105dcfcf776a6ccba1f32f91e0296120",
+      "sourceHash": "f9a0efbd90bfa7eee72ed76e1838d7ba35d8386d1eaa97a4eb5c53660cecb305",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/consent-mode-v2.webp": {
       "source": "public/og/glossary/consent-mode-v2.png",
-      "sourceHash": "bb5d1652d4c40f000aafaba675cf74b4105dcfcf776a6ccba1f32f91e0296120",
+      "sourceHash": "f9a0efbd90bfa7eee72ed76e1838d7ba35d8386d1eaa97a4eb5c53660cecb305",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/cookieless-analytics.avif": {
       "source": "public/og/glossary/cookieless-analytics.png",
-      "sourceHash": "b183561a86598bef7d1518ff114f34ddddb6b4f5ec67cec885740d444b62e2f5",
+      "sourceHash": "95c97944a8bbee78daec6fce301a7c3c9e9df2e10c3c9f2a09f600785ffa6445",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/cookieless-analytics.webp": {
       "source": "public/og/glossary/cookieless-analytics.png",
-      "sourceHash": "b183561a86598bef7d1518ff114f34ddddb6b4f5ec67cec885740d444b62e2f5",
+      "sourceHash": "95c97944a8bbee78daec6fce301a7c3c9e9df2e10c3c9f2a09f600785ffa6445",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/customer-lifetime-value.avif": {
       "source": "public/og/glossary/customer-lifetime-value.png",
-      "sourceHash": "a2c17d7d9c354af904e34d6b3ccbff5e12e7b44e21a68b26a8d8c51b2b6a4d51",
+      "sourceHash": "53a7a42062924b8bab726f79d642f556c576bba9f00cc7ab0706e3dbad32482c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/customer-lifetime-value.webp": {
       "source": "public/og/glossary/customer-lifetime-value.png",
-      "sourceHash": "a2c17d7d9c354af904e34d6b3ccbff5e12e7b44e21a68b26a8d8c51b2b6a4d51",
+      "sourceHash": "53a7a42062924b8bab726f79d642f556c576bba9f00cc7ab0706e3dbad32482c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/data-loss-in-analytics.avif": {
       "source": "public/og/glossary/data-loss-in-analytics.png",
-      "sourceHash": "7a579bcc28144ee361b3a187dcc336e216edb698a9bff1024ca331ad4a06c051",
+      "sourceHash": "d2ea9cfceffc86ff808e227b5e8e0acc456e0891f6f02847813a6210401f25cf",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/data-loss-in-analytics.webp": {
       "source": "public/og/glossary/data-loss-in-analytics.png",
-      "sourceHash": "7a579bcc28144ee361b3a187dcc336e216edb698a9bff1024ca331ad4a06c051",
+      "sourceHash": "d2ea9cfceffc86ff808e227b5e8e0acc456e0891f6f02847813a6210401f25cf",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/data-sampling.avif": {
       "source": "public/og/glossary/data-sampling.png",
-      "sourceHash": "d3e1e55dfd005477e1120ab8cf153efc98de0c8d156b5e8b2483bb8085710edb",
+      "sourceHash": "34e527270ef97b5f9d5e27cc72f2ec1c4bf4afe51e8f6ae8f4e90c33a78559fb",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/data-sampling.webp": {
       "source": "public/og/glossary/data-sampling.png",
-      "sourceHash": "d3e1e55dfd005477e1120ab8cf153efc98de0c8d156b5e8b2483bb8085710edb",
+      "sourceHash": "34e527270ef97b5f9d5e27cc72f2ec1c4bf4afe51e8f6ae8f4e90c33a78559fb",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/eprivacy-directive.avif": {
       "source": "public/og/glossary/eprivacy-directive.png",
-      "sourceHash": "b668703328db6013cba1fa516c9c4127a5d79fb35e81a7f99ac191b255e98711",
+      "sourceHash": "17d436bd7a21f5f961445a725e97d1007d48cfc3234eb46f6bcaedafea0c72ec",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/eprivacy-directive.webp": {
       "source": "public/og/glossary/eprivacy-directive.png",
-      "sourceHash": "b668703328db6013cba1fa516c9c4127a5d79fb35e81a7f99ac191b255e98711",
+      "sourceHash": "17d436bd7a21f5f961445a725e97d1007d48cfc3234eb46f6bcaedafea0c72ec",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/event-tracking.avif": {
       "source": "public/og/glossary/event-tracking.png",
-      "sourceHash": "802f21120b62c8d2cadf29c0fa528ffe6d66b72f09d6b6c3f1bf37a435f84618",
+      "sourceHash": "5e566037b85a8fbf69a1beba9e62e194a99ab9fa7643c01afb0e3b325b14ea25",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/event-tracking.webp": {
       "source": "public/og/glossary/event-tracking.png",
-      "sourceHash": "802f21120b62c8d2cadf29c0fa528ffe6d66b72f09d6b6c3f1bf37a435f84618",
+      "sourceHash": "5e566037b85a8fbf69a1beba9e62e194a99ab9fa7643c01afb0e3b325b14ea25",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/first-party-data-collection.avif": {
       "source": "public/og/glossary/first-party-data-collection.png",
-      "sourceHash": "a9f0d5c81975669a5437f8991877f940df29e9e670cb282a169a59ea389459f4",
+      "sourceHash": "63fb6b0353663c9b3ab24ead0cec1e45833a462d47c7c89a88233dbf9038cbaf",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/first-party-data-collection.webp": {
       "source": "public/og/glossary/first-party-data-collection.png",
-      "sourceHash": "a9f0d5c81975669a5437f8991877f940df29e9e670cb282a169a59ea389459f4",
+      "sourceHash": "63fb6b0353663c9b3ab24ead0cec1e45833a462d47c7c89a88233dbf9038cbaf",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/funnel.avif": {
       "source": "public/og/glossary/funnel.png",
-      "sourceHash": "2635f8814693e0594bdfe87ccce6d0250e2fc288e2e54ea108952b756d0a9a55",
+      "sourceHash": "bf4e0f0d34cb18a89eb758fc9633b1f81413331a517e8059c1d25a4b1f811298",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/funnel.webp": {
       "source": "public/og/glossary/funnel.png",
-      "sourceHash": "2635f8814693e0594bdfe87ccce6d0250e2fc288e2e54ea108952b756d0a9a55",
+      "sourceHash": "bf4e0f0d34cb18a89eb758fc9633b1f81413331a517e8059c1d25a4b1f811298",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/gdpr-analytics-compliance.avif": {
       "source": "public/og/glossary/gdpr-analytics-compliance.png",
-      "sourceHash": "f9b69b094c6984d2edfb94f9868584b2c242909a642d0c73db74e93cf0e88dca",
+      "sourceHash": "8cf510c9c780f335e07cc8d7e6ea21fd5204bd847c97a0a4b6db835065ee1b90",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/gdpr-analytics-compliance.webp": {
       "source": "public/og/glossary/gdpr-analytics-compliance.png",
-      "sourceHash": "f9b69b094c6984d2edfb94f9868584b2c242909a642d0c73db74e93cf0e88dca",
+      "sourceHash": "8cf510c9c780f335e07cc8d7e6ea21fd5204bd847c97a0a4b6db835065ee1b90",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/intelligent-tracking-prevention.avif": {
       "source": "public/og/glossary/intelligent-tracking-prevention.png",
-      "sourceHash": "fd7813beb1d69c5648494ce2530612e31a4daa1a7a9e540e6dd70aa0cc2d4896",
+      "sourceHash": "30fd04dbc62b97c7e39f8c9eeac3c9ecf7251ef39cfd09a20a77e4a0ad5600c4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/intelligent-tracking-prevention.webp": {
       "source": "public/og/glossary/intelligent-tracking-prevention.png",
-      "sourceHash": "fd7813beb1d69c5648494ce2530612e31a4daa1a7a9e540e6dd70aa0cc2d4896",
+      "sourceHash": "30fd04dbc62b97c7e39f8c9eeac3c9ecf7251ef39cfd09a20a77e4a0ad5600c4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/last-click-attribution.avif": {
       "source": "public/og/glossary/last-click-attribution.png",
-      "sourceHash": "d6deb72b384aeff183d408c92fc57654e6a61516ac314299954f950382cd9111",
+      "sourceHash": "6f3ed38cd98cb3b396dd0f8892c2a14e550454815bf071e213138d2cd9529e5d",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/last-click-attribution.webp": {
       "source": "public/og/glossary/last-click-attribution.png",
-      "sourceHash": "d6deb72b384aeff183d408c92fc57654e6a61516ac314299954f950382cd9111",
+      "sourceHash": "6f3ed38cd98cb3b396dd0f8892c2a14e550454815bf071e213138d2cd9529e5d",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/legitimate-interest-analytics.avif": {
       "source": "public/og/glossary/legitimate-interest-analytics.png",
-      "sourceHash": "ef664f11b6fb36eb92d405f7571b4a87b33a2e99d3ad8fb3df61dab67109a3b1",
+      "sourceHash": "6403a6b5d7be02d621d28085d807c0b0cffc15cd1f6452be8ce210328c80ca3a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/legitimate-interest-analytics.webp": {
       "source": "public/og/glossary/legitimate-interest-analytics.png",
-      "sourceHash": "ef664f11b6fb36eb92d405f7571b4a87b33a2e99d3ad8fb3df61dab67109a3b1",
+      "sourceHash": "6403a6b5d7be02d621d28085d807c0b0cffc15cd1f6452be8ce210328c80ca3a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/multi-touch-attribution.avif": {
       "source": "public/og/glossary/multi-touch-attribution.png",
-      "sourceHash": "6b9f2c05e423c2e09f528b786841701b6fd06ccb4399d2f352e2d416ba0eb306",
+      "sourceHash": "31f3d70c61fa3bcaadbf8dd3da24898b4543ed2cb7a113f0b7af66fdc3fc7e18",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/multi-touch-attribution.webp": {
       "source": "public/og/glossary/multi-touch-attribution.png",
-      "sourceHash": "6b9f2c05e423c2e09f528b786841701b6fd06ccb4399d2f352e2d416ba0eb306",
+      "sourceHash": "31f3d70c61fa3bcaadbf8dd3da24898b4543ed2cb7a113f0b7af66fdc3fc7e18",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/personal-data-in-analytics.avif": {
       "source": "public/og/glossary/personal-data-in-analytics.png",
-      "sourceHash": "018111605fa69ddcd49112fb1b1c2b561b0f2236f65b01d4968777da0678b174",
+      "sourceHash": "884a6cefcfdf18f4abac30721b7fe6938725bc9244c9cd73fdcf1bf1641029dd",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/personal-data-in-analytics.webp": {
       "source": "public/og/glossary/personal-data-in-analytics.png",
-      "sourceHash": "018111605fa69ddcd49112fb1b1c2b561b0f2236f65b01d4968777da0678b174",
+      "sourceHash": "884a6cefcfdf18f4abac30721b7fe6938725bc9244c9cd73fdcf1bf1641029dd",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/return-on-ad-spend.avif": {
       "source": "public/og/glossary/return-on-ad-spend.png",
-      "sourceHash": "0aba96eedda3178a81dc0cf5ea20908adfdf3473d6cdf506e7999133ef25036d",
+      "sourceHash": "672da354201b941c8d0a3e2e68fa1f2e429ff57a99bc05c4af92d93cd8712126",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/return-on-ad-spend.webp": {
       "source": "public/og/glossary/return-on-ad-spend.png",
-      "sourceHash": "0aba96eedda3178a81dc0cf5ea20908adfdf3473d6cdf506e7999133ef25036d",
+      "sourceHash": "672da354201b941c8d0a3e2e68fa1f2e429ff57a99bc05c4af92d93cd8712126",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/revenue-attribution.avif": {
       "source": "public/og/glossary/revenue-attribution.png",
-      "sourceHash": "c30ec7b4d9dc8763bc9e4cc0b78fba70d949641c9fe38880319bb29370a6c548",
+      "sourceHash": "0baa6457c366576da3825a8774a13fd081a05c57a5532460272f1e64fab223e5",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/revenue-attribution.webp": {
       "source": "public/og/glossary/revenue-attribution.png",
-      "sourceHash": "c30ec7b4d9dc8763bc9e4cc0b78fba70d949641c9fe38880319bb29370a6c548",
+      "sourceHash": "0baa6457c366576da3825a8774a13fd081a05c57a5532460272f1e64fab223e5",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/server-side-tracking.avif": {
       "source": "public/og/glossary/server-side-tracking.png",
-      "sourceHash": "4e01ff0c371794064145ce1dd4e7c3859a672916a6821259c128fc5f26fdb7eb",
+      "sourceHash": "332283cb3dde295cd4ac2efa1e7866152b2f75535d549d9c1358aecf11fe1cdd",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/server-side-tracking.webp": {
       "source": "public/og/glossary/server-side-tracking.png",
-      "sourceHash": "4e01ff0c371794064145ce1dd4e7c3859a672916a6821259c128fc5f26fdb7eb",
+      "sourceHash": "332283cb3dde295cd4ac2efa1e7866152b2f75535d549d9c1358aecf11fe1cdd",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/glossary/utm-parameters.avif": {
       "source": "public/og/glossary/utm-parameters.png",
-      "sourceHash": "242e5c422c6e29ab430376bc7724a527a0a405a86df52f47a7d77ca6f30f54f0",
+      "sourceHash": "c7406e679125d3d9a7d981b544c11642c0c75d735011a5671e81aaa06b35f851",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/glossary/utm-parameters.webp": {
       "source": "public/og/glossary/utm-parameters.png",
-      "sourceHash": "242e5c422c6e29ab430376bc7724a527a0a405a86df52f47a7d77ca6f30f54f0",
+      "sourceHash": "c7406e679125d3d9a7d981b544c11642c0c75d735011a5671e81aaa06b35f851",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/growth-calculator.avif": {
       "source": "public/og/growth-calculator.png",
-      "sourceHash": "b12a6a306588609b2ae66f7e09195429c977840ec6b6711a9dff08b607b7e818",
+      "sourceHash": "c2fa7736f1461ac821ad0797950ae7075c9757f1e92830c639668cb09ffd361c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/growth-calculator.webp": {
       "source": "public/og/growth-calculator.png",
-      "sourceHash": "b12a6a306588609b2ae66f7e09195429c977840ec6b6711a9dff08b607b7e818",
+      "sourceHash": "c2fa7736f1461ac821ad0797950ae7075c9757f1e92830c639668cb09ffd361c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/growth.avif": {
       "source": "public/og/growth.png",
-      "sourceHash": "8301a5b70810f7e84c9dc68408bff429210f0fa363df8c1216700d8728c6f07f",
+      "sourceHash": "942ae47d27c30d524a372fffb37fcf37c5dda9639f7bec61024563736daf0236",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/growth.webp": {
       "source": "public/og/growth.png",
-      "sourceHash": "8301a5b70810f7e84c9dc68408bff429210f0fa363df8c1216700d8728c6f07f",
+      "sourceHash": "942ae47d27c30d524a372fffb37fcf37c5dda9639f7bec61024563736daf0236",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/how-it-works.avif": {
       "source": "public/og/how-it-works.png",
-      "sourceHash": "f91d128667a794c734db69efc60c9e81b649294c7d8cc9abae68dab316ba873a",
+      "sourceHash": "9f86292c85dd1400dd89da60ccbfb3cae2e70239de856292139e0971621ec174",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/how-it-works.webp": {
       "source": "public/og/how-it-works.png",
-      "sourceHash": "f91d128667a794c734db69efc60c9e81b649294c7d8cc9abae68dab316ba873a",
+      "sourceHash": "9f86292c85dd1400dd89da60ccbfb3cae2e70239de856292139e0971621ec174",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/integrations.avif": {
       "source": "public/og/integrations.png",
-      "sourceHash": "7a12ecee76c9f6426f37654c0670f6da694ca7efe94e6300574ae82a66c5f1e8",
+      "sourceHash": "21de7c753fdf6a64c84e4e4f4610d86a2d9b828456699b23ae08eb1e3df60baa",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/integrations.webp": {
       "source": "public/og/integrations.png",
-      "sourceHash": "7a12ecee76c9f6426f37654c0670f6da694ca7efe94e6300574ae82a66c5f1e8",
+      "sourceHash": "21de7c753fdf6a64c84e4e4f4610d86a2d9b828456699b23ae08eb1e3df60baa",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/modern-analytics.avif": {
       "source": "public/og/modern-analytics.png",
-      "sourceHash": "3aca3dc88f63c855b4c82eff78f900c28106e66602d46cf69c6ad760de8b86e4",
+      "sourceHash": "6645a235c71e8172f774f4fd1e7d4221ac51bb411c8d7e07b7b1bf17ba373e8c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/modern-analytics.webp": {
       "source": "public/og/modern-analytics.png",
-      "sourceHash": "3aca3dc88f63c855b4c82eff78f900c28106e66602d46cf69c6ad760de8b86e4",
+      "sourceHash": "6645a235c71e8172f774f4fd1e7d4221ac51bb411c8d7e07b7b1bf17ba373e8c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open.avif": {
       "source": "public/og/open.png",
-      "sourceHash": "9fdac226b883067c7f93fb703fcf03762fbd8345d665663a3d7541f8f840dfdd",
+      "sourceHash": "2e07d2ade394ac6c5f7335b87b639a1ac6f9ae2aa242c99066ad92fcdd09819f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open.webp": {
       "source": "public/og/open.png",
-      "sourceHash": "9fdac226b883067c7f93fb703fcf03762fbd8345d665663a3d7541f8f840dfdd",
+      "sourceHash": "2e07d2ade394ac6c5f7335b87b639a1ac6f9ae2aa242c99066ad92fcdd09819f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/architecture-and-performance.avif": {
       "source": "public/og/open/architecture-and-performance.png",
-      "sourceHash": "e55d27c73afa03bb7fc253a8f99ab0c18f4fbf98445a67de9829badb62d41adb",
+      "sourceHash": "4a0da0be726de79e027eb27ded854484ab6f91e4825fddfdb269b29b7614c0fa",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/architecture-and-performance.webp": {
       "source": "public/og/open/architecture-and-performance.png",
-      "sourceHash": "e55d27c73afa03bb7fc253a8f99ab0c18f4fbf98445a67de9829badb62d41adb",
+      "sourceHash": "4a0da0be726de79e027eb27ded854484ab6f91e4825fddfdb269b29b7614c0fa",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/gdpr-by-architecture.avif": {
       "source": "public/og/open/gdpr-by-architecture.png",
-      "sourceHash": "25de10de3e8857c1b57eabc2fe545011c7b579271aa4d0a39d07c19b5e7b5139",
+      "sourceHash": "e20362816366a2e8f474e757f30a1a5f0fe0604e358540b342c17f40ee13d704",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/gdpr-by-architecture.webp": {
       "source": "public/og/open/gdpr-by-architecture.png",
-      "sourceHash": "25de10de3e8857c1b57eabc2fe545011c7b579271aa4d0a39d07c19b5e7b5139",
+      "sourceHash": "e20362816366a2e8f474e757f30a1a5f0fe0604e358540b342c17f40ee13d704",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/glossary.avif": {
       "source": "public/og/open/glossary.png",
-      "sourceHash": "48aaeb4c3b2f91599cce5857bfb5f2fd42a11faa8eb8998783c9e70964318062",
+      "sourceHash": "500ce4ebcf9940d6e5a632aee47a8eaccdafcc5b881f98880cba5d55bb1e82f3",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/glossary.webp": {
       "source": "public/og/open/glossary.png",
-      "sourceHash": "48aaeb4c3b2f91599cce5857bfb5f2fd42a11faa8eb8998783c9e70964318062",
+      "sourceHash": "500ce4ebcf9940d6e5a632aee47a8eaccdafcc5b881f98880cba5d55bb1e82f3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/how-we-price.avif": {
       "source": "public/og/open/how-we-price.png",
-      "sourceHash": "44a53905c9464cc77c0f304b2ec9339c26ee1df42bd43c74f06c3f18959a50dd",
+      "sourceHash": "571683228bcd48128258f320f2ff371e16a6e7afcd9aea8facc95835f209898e",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/how-we-price.webp": {
       "source": "public/og/open/how-we-price.png",
-      "sourceHash": "44a53905c9464cc77c0f304b2ec9339c26ee1df42bd43c74f06c3f18959a50dd",
+      "sourceHash": "571683228bcd48128258f320f2ff371e16a6e7afcd9aea8facc95835f209898e",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/what-complete-data-means.avif": {
       "source": "public/og/open/what-complete-data-means.png",
-      "sourceHash": "f6e9313a763a29fed8ec57a639289a32110000f24d5258532dfb46dcd1d2ee48",
+      "sourceHash": "2283a0dc9b653a8461a4f294f976670724eb00adfe029c868f3d93bbe73c614f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/what-complete-data-means.webp": {
       "source": "public/og/open/what-complete-data-means.png",
-      "sourceHash": "f6e9313a763a29fed8ec57a639289a32110000f24d5258532dfb46dcd1d2ee48",
+      "sourceHash": "2283a0dc9b653a8461a4f294f976670724eb00adfe029c868f3d93bbe73c614f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/what-we-wont-do.avif": {
       "source": "public/og/open/what-we-wont-do.png",
-      "sourceHash": "f080e0836c1369576648e664e1ba72a746f9b89635b5090fb617c8f621a5bba2",
+      "sourceHash": "6ecc0a16f8a8bb240b82b942906a0c23fd7fc4210b854387c6dc1f3b812bbd4a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/what-we-wont-do.webp": {
       "source": "public/og/open/what-we-wont-do.png",
-      "sourceHash": "f080e0836c1369576648e664e1ba72a746f9b89635b5090fb617c8f621a5bba2",
+      "sourceHash": "6ecc0a16f8a8bb240b82b942906a0c23fd7fc4210b854387c6dc1f3b812bbd4a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/who-we-build-for.avif": {
       "source": "public/og/open/who-we-build-for.png",
-      "sourceHash": "4cba8d9373456401cd7f859c4ccc36b915368f9d031e084925728372392a5f8c",
+      "sourceHash": "058a66059e20734ef196a10cb348a2c1cd6bdb42f40d19961cba483c663ffa8a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/who-we-build-for.webp": {
       "source": "public/og/open/who-we-build-for.png",
-      "sourceHash": "4cba8d9373456401cd7f859c4ccc36b915368f9d031e084925728372392a5f8c",
+      "sourceHash": "058a66059e20734ef196a10cb348a2c1cd6bdb42f40d19961cba483c663ffa8a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/why-we-exist.avif": {
       "source": "public/og/open/why-we-exist.png",
-      "sourceHash": "f964654f66df596c88acbf6310d09b471dcc7222cd40deeaf66a4db6f0f91480",
+      "sourceHash": "16bb048cf3040a3356ed360b61180aa7c5c6665bbf3e3694836f7e713ea25754",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/why-we-exist.webp": {
       "source": "public/og/open/why-we-exist.png",
-      "sourceHash": "f964654f66df596c88acbf6310d09b471dcc7222cd40deeaf66a4db6f0f91480",
+      "sourceHash": "16bb048cf3040a3356ed360b61180aa7c5c6665bbf3e3694836f7e713ea25754",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/platforms.avif": {
       "source": "public/og/platforms.png",
-      "sourceHash": "639a087ac79ee1c8fcfb18b37871a4c8f2b82ad4bf95c75a519590e828084849",
+      "sourceHash": "d41f1cb967b347e734cae1aa2fd8dc1ec25601d816404a25f0c2ff3656a35c2a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms.webp": {
       "source": "public/og/platforms.png",
-      "sourceHash": "639a087ac79ee1c8fcfb18b37871a4c8f2b82ad4bf95c75a519590e828084849",
+      "sourceHash": "d41f1cb967b347e734cae1aa2fd8dc1ec25601d816404a25f0c2ff3656a35c2a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/platforms/shopify.avif": {
       "source": "public/og/platforms/shopify.png",
-      "sourceHash": "40b3db347c19e4d60ad7a392101fdf9217f21937f9555583d32b02114a76d521",
+      "sourceHash": "96158457521df2d910858729d42be2fa34fe4d00d7c0b775dc7b7e1af86afaf5",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms/shopify.webp": {
       "source": "public/og/platforms/shopify.png",
-      "sourceHash": "40b3db347c19e4d60ad7a392101fdf9217f21937f9555583d32b02114a76d521",
+      "sourceHash": "96158457521df2d910858729d42be2fa34fe4d00d7c0b775dc7b7e1af86afaf5",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/platforms/woocommerce.avif": {
       "source": "public/og/platforms/woocommerce.png",
-      "sourceHash": "cac42d7ed30f88e12583758cdecec61bd4d684fb85f916c216f6bfb3b982b81e",
+      "sourceHash": "334aecb8cc5b8cf99c0ac1a6374b724a677f1999069a2f803471b072b2a32d0f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms/woocommerce.webp": {
       "source": "public/og/platforms/woocommerce.png",
-      "sourceHash": "cac42d7ed30f88e12583758cdecec61bd4d684fb85f916c216f6bfb3b982b81e",
+      "sourceHash": "334aecb8cc5b8cf99c0ac1a6374b724a677f1999069a2f803471b072b2a32d0f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/pricing.avif": {
       "source": "public/og/pricing.png",
-      "sourceHash": "21167d43a66677a34fbb519126a56aad4dc87c98fa9b56ceb70b571aafb45a51",
+      "sourceHash": "c8ed1b7919f4a76a0cea954b4bfd9b7779cf2208f7a81f7ae559ff5644150b29",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/pricing.webp": {
       "source": "public/og/pricing.png",
-      "sourceHash": "21167d43a66677a34fbb519126a56aad4dc87c98fa9b56ceb70b571aafb45a51",
+      "sourceHash": "c8ed1b7919f4a76a0cea954b4bfd9b7779cf2208f7a81f7ae559ff5644150b29",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/privacy-end-to-end.avif": {
       "source": "public/og/privacy-end-to-end.png",
-      "sourceHash": "661d8b2dd5f0b8374c4832b6690b9e134dd1ce8ff09a31390d2e2d5848ce0ef7",
+      "sourceHash": "ba2c67f6204f910a1d987c547085fe30d40ef01547b9761bc8b5c206b4e0a8ff",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/privacy-end-to-end.webp": {
       "source": "public/og/privacy-end-to-end.png",
-      "sourceHash": "661d8b2dd5f0b8374c4832b6690b9e134dd1ce8ff09a31390d2e2d5848ce0ef7",
+      "sourceHash": "ba2c67f6204f910a1d987c547085fe30d40ef01547b9761bc8b5c206b4e0a8ff",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/privacy.avif": {
       "source": "public/og/privacy.png",
-      "sourceHash": "d1acd0a6648b9b820d0f6893206612593327322d78ce8235abf7321eb0b419a3",
+      "sourceHash": "cbcbb7ba5ada36606dce39e293ad4e2001086952b5a63c470eca9fc3e75cdc51",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/privacy.webp": {
       "source": "public/og/privacy.png",
-      "sourceHash": "d1acd0a6648b9b820d0f6893206612593327322d78ce8235abf7321eb0b419a3",
+      "sourceHash": "cbcbb7ba5ada36606dce39e293ad4e2001086952b5a63c470eca9fc3e75cdc51",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/product.avif": {
       "source": "public/og/product.png",
-      "sourceHash": "ea5d01b087220852da917169e1507f343094a23efa84cc2ab113efb83b36c1b9",
+      "sourceHash": "75bc7085f3b9cde96c7581e550dc9f384fff4921e7fb9d650aa8561d335c0ad3",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/product.webp": {
       "source": "public/og/product.png",
-      "sourceHash": "ea5d01b087220852da917169e1507f343094a23efa84cc2ab113efb83b36c1b9",
+      "sourceHash": "75bc7085f3b9cde96c7581e550dc9f384fff4921e7fb9d650aa8561d335c0ad3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/reg-gap-analysis.avif": {
       "source": "public/og/reg-gap-analysis.png",
-      "sourceHash": "5324c612a030af23f3456fdcc2f1aecb132b34e6525ff274e342da969a029f90",
+      "sourceHash": "ab3944b6335690cf08a71fbee4cd7d188eec85d2926cab046589328bf2106f25",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/reg-gap-analysis.webp": {
       "source": "public/og/reg-gap-analysis.png",
-      "sourceHash": "5324c612a030af23f3456fdcc2f1aecb132b34e6525ff274e342da969a029f90",
+      "sourceHash": "ab3944b6335690cf08a71fbee4cd7d188eec85d2926cab046589328bf2106f25",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/searchmetrics-vs-sealmetrics.avif": {
       "source": "public/og/searchmetrics-vs-sealmetrics.png",
-      "sourceHash": "35cc8693a528cedd3e8c0b48f072f050896214c8dff216536d3bbf03c866d19f",
+      "sourceHash": "f728130fca1270f902da99415b9b7bee5815d35b793a479ee417132ad9d825a2",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/searchmetrics-vs-sealmetrics.webp": {
       "source": "public/og/searchmetrics-vs-sealmetrics.png",
-      "sourceHash": "35cc8693a528cedd3e8c0b48f072f050896214c8dff216536d3bbf03c866d19f",
+      "sourceHash": "f728130fca1270f902da99415b9b7bee5815d35b793a479ee417132ad9d825a2",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/security.avif": {
       "source": "public/og/security.png",
-      "sourceHash": "3b436d99b7bfa8a2afc47eeb8508f8b2492a0c4c5ca28c2d66d0cb78ea23533d",
+      "sourceHash": "60368f843ce0442fdcc569e65e1ddc0c4cf7f2c7d0866c41b248962c75d078ad",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/security.webp": {
       "source": "public/og/security.png",
-      "sourceHash": "3b436d99b7bfa8a2afc47eeb8508f8b2492a0c4c5ca28c2d66d0cb78ea23533d",
+      "sourceHash": "60368f843ce0442fdcc569e65e1ddc0c4cf7f2c7d0866c41b248962c75d078ad",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/sla.avif": {
@@ -1493,142 +1533,142 @@
     },
     "public/og/terms.avif": {
       "source": "public/og/terms.png",
-      "sourceHash": "3cf7eca36c07688b62be5f1bcc0f6e7488d90322a2abd1c1238678ca1616a7c2",
+      "sourceHash": "4794c3fd0e1579245c5fe575e27b70b29020264aa742bece36f4339b301e0f63",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/terms.webp": {
       "source": "public/og/terms.png",
-      "sourceHash": "3cf7eca36c07688b62be5f1bcc0f6e7488d90322a2abd1c1238678ca1616a7c2",
+      "sourceHash": "4794c3fd0e1579245c5fe575e27b70b29020264aa742bece36f4339b301e0f63",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/trust.avif": {
       "source": "public/og/trust.png",
-      "sourceHash": "687091b6c81ff30844e92d20848d89436a89fc0dcca4d752549076d0cda56b47",
+      "sourceHash": "32d058ab8eb7e68c2689fd9f0442a691936c42a95b11ce510dc77a683687c480",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/trust.webp": {
       "source": "public/og/trust.png",
-      "sourceHash": "687091b6c81ff30844e92d20848d89436a89fc0dcca4d752549076d0cda56b47",
+      "sourceHash": "32d058ab8eb7e68c2689fd9f0442a691936c42a95b11ce510dc77a683687c480",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases.avif": {
       "source": "public/og/use-cases.png",
-      "sourceHash": "a615f154a8cb43ac8450efc5b0193502b1ab00458ded4977b8fb31b8904aed01",
+      "sourceHash": "c8f56a3a09af6ea3222cf236dbc3fef7cd6fb0abc3534ee308ed82d5edd1d855",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases.webp": {
       "source": "public/og/use-cases.png",
-      "sourceHash": "a615f154a8cb43ac8450efc5b0193502b1ab00458ded4977b8fb31b8904aed01",
+      "sourceHash": "c8f56a3a09af6ea3222cf236dbc3fef7cd6fb0abc3534ee308ed82d5edd1d855",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases/conversion-tracking.avif": {
       "source": "public/og/use-cases/conversion-tracking.png",
-      "sourceHash": "63989971f3a43e9de892a3db0563b81381f13943e703333c5adf4b7e61b595bc",
+      "sourceHash": "5eb76c97782c163eb01173db5106c1218219a536b088da5f6eb44178a5362ce4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases/conversion-tracking.webp": {
       "source": "public/og/use-cases/conversion-tracking.png",
-      "sourceHash": "63989971f3a43e9de892a3db0563b81381f13943e703333c5adf4b7e61b595bc",
+      "sourceHash": "5eb76c97782c163eb01173db5106c1218219a536b088da5f6eb44178a5362ce4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases/ga4-migration.avif": {
       "source": "public/og/use-cases/ga4-migration.png",
-      "sourceHash": "bef1d772af4bd82e0fb54a3301f688bc082af2a3fbf6d3563132a999e8fdf988",
+      "sourceHash": "bc5ad27c84265c3b629cfe7456c02253c6202d0ed7fb04144f72637d271710bb",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases/ga4-migration.webp": {
       "source": "public/og/use-cases/ga4-migration.png",
-      "sourceHash": "bef1d772af4bd82e0fb54a3301f688bc082af2a3fbf6d3563132a999e8fdf988",
+      "sourceHash": "bc5ad27c84265c3b629cfe7456c02253c6202d0ed7fb04144f72637d271710bb",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases/revenue-attribution.avif": {
       "source": "public/og/use-cases/revenue-attribution.png",
-      "sourceHash": "59f0e256a7997698d63000cdb460e15a57d9d21d27eb9643a0b12881faa1d77e",
+      "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases/revenue-attribution.webp": {
       "source": "public/og/use-cases/revenue-attribution.png",
-      "sourceHash": "59f0e256a7997698d63000cdb460e15a57d9d21d27eb9643a0b12881faa1d77e",
+      "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/videos.avif": {
       "source": "public/og/videos.png",
-      "sourceHash": "3a734f0d47b70731e49fe45e629a59f826f26af6f4ee7b2a62941dd2b7ae03bd",
+      "sourceHash": "9f87130d4cc4c2423b92a0b9a6c7207f6a27fb1b2a18f8ff9d8e0fea4a08bd97",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/videos.webp": {
       "source": "public/og/videos.png",
-      "sourceHash": "3a734f0d47b70731e49fe45e629a59f826f26af6f4ee7b2a62941dd2b7ae03bd",
+      "sourceHash": "9f87130d4cc4c2423b92a0b9a6c7207f6a27fb1b2a18f8ff9d8e0fea4a08bd97",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/vs-ga4.avif": {
       "source": "public/og/vs-ga4.png",
-      "sourceHash": "bfadb2a7dd5b3ded2d3b5d7b38194437a1a1d06dd8a560a2f1107a7c90f4dd3c",
+      "sourceHash": "c51bf94954ae30ba439095bdbd919bc6b752f0d5af3fa1cdbe739696d2fe8eee",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs-ga4.webp": {
       "source": "public/og/vs-ga4.png",
-      "sourceHash": "bfadb2a7dd5b3ded2d3b5d7b38194437a1a1d06dd8a560a2f1107a7c90f4dd3c",
+      "sourceHash": "c51bf94954ae30ba439095bdbd919bc6b752f0d5af3fa1cdbe739696d2fe8eee",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/vs.avif": {
       "source": "public/og/vs.png",
-      "sourceHash": "89032ddd6d4cb5599ddaddede43f600fcc458816b3a157245eb02775b6ff0493",
+      "sourceHash": "a24a8312c7938158e9b311be7ad400bc07bf624887e12aa46d07770ae2b56a7f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs.webp": {
       "source": "public/og/vs.png",
-      "sourceHash": "89032ddd6d4cb5599ddaddede43f600fcc458816b3a157245eb02775b6ff0493",
+      "sourceHash": "a24a8312c7938158e9b311be7ad400bc07bf624887e12aa46d07770ae2b56a7f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/vs/adobe-analytics.avif": {
       "source": "public/og/vs/adobe-analytics.png",
-      "sourceHash": "64958ccf036cd8cf1f2c0d1e7aa112383f3c9ad69e0b92c2d84e5ee926c21e8b",
+      "sourceHash": "dcbd2220fe48ba92165cccf1e161ce9dd2effb1866b73f484b1e773db92ca766",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs/adobe-analytics.webp": {
       "source": "public/og/vs/adobe-analytics.png",
-      "sourceHash": "64958ccf036cd8cf1f2c0d1e7aa112383f3c9ad69e0b92c2d84e5ee926c21e8b",
+      "sourceHash": "dcbd2220fe48ba92165cccf1e161ce9dd2effb1866b73f484b1e773db92ca766",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/vs/ga360.avif": {
       "source": "public/og/vs/ga360.png",
-      "sourceHash": "3e8af20cf368817b718ae4ed5ec90181bdefc95ee34b89ca88fdd297819e2b05",
+      "sourceHash": "16b663617f276ee74f4b28ab094664460ea5d8059c35266ff74a959a741246a1",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs/ga360.webp": {
       "source": "public/og/vs/ga360.png",
-      "sourceHash": "3e8af20cf368817b718ae4ed5ec90181bdefc95ee34b89ca88fdd297819e2b05",
+      "sourceHash": "16b663617f276ee74f4b28ab094664460ea5d8059c35266ff74a959a741246a1",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/vs/matomo.avif": {
       "source": "public/og/vs/matomo.png",
-      "sourceHash": "d52eb4bc1f37bfafbe5706d15d92c19614ddec5626f7f0823710e94ea98018a7",
+      "sourceHash": "319de94686861fb1a22cc05e4f3314b257b9c06627b155b203714e209dcaa16d",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs/matomo.webp": {
       "source": "public/og/vs/matomo.png",
-      "sourceHash": "d52eb4bc1f37bfafbe5706d15d92c19614ddec5626f7f0823710e94ea98018a7",
+      "sourceHash": "319de94686861fb1a22cc05e4f3314b257b9c06627b155b203714e209dcaa16d",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/vs/piwik-pro.avif": {
       "source": "public/og/vs/piwik-pro.png",
-      "sourceHash": "96cc9cd01986664c9d872240ad40de20ab461c5d1d964444a2e15315e95e82e2",
+      "sourceHash": "af43835c916857384ca73df57144f940c7cede613370aa9f560b5407234a067c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs/piwik-pro.webp": {
       "source": "public/og/vs/piwik-pro.png",
-      "sourceHash": "96cc9cd01986664c9d872240ad40de20ab461c5d1d964444a2e15315e95e82e2",
+      "sourceHash": "af43835c916857384ca73df57144f940c7cede613370aa9f560b5407234a067c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/why-sealmetrics.avif": {
       "source": "public/og/why-sealmetrics.png",
-      "sourceHash": "e1ac8fb77b8537b3a261afa4583d387fad3141ef6afcc8e0e006a422e68042ff",
+      "sourceHash": "b2242201bf1bd00edfafd87f4bce8285271c91708c371cf02bebb0793375da3c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/why-sealmetrics.webp": {
       "source": "public/og/why-sealmetrics.png",
-      "sourceHash": "e1ac8fb77b8537b3a261afa4583d387fad3141ef6afcc8e0e006a422e68042ff",
+      "sourceHash": "b2242201bf1bd00edfafd87f4bce8285271c91708c371cf02bebb0793375da3c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/videos/getting-started.avif": {

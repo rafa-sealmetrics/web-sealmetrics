@@ -127,7 +127,7 @@ export default function Page() {
                 Full API, <em>native MCP,</em> no sampling.
               </h3>
               <p className="text-[17px] leading-[1.6] text-ink-soft mt-5">
-REST coverage of every metric, every property, at full resolution. Webhooks for ops signals from the Scale plan up. MCP server so Claude, ChatGPT or your own copilot can query directly.
+REST coverage of every metric, every property, at full resolution. Webhooks for ops signals from the Scale plan up. An <Link href="/docs/mcp" className="text-brand no-underline border-b border-warm-200 hover:border-brand">MCP server</Link> so Claude, ChatGPT or your own copilot can query directly.
               </p>
               <div className="mt-6 flex gap-3 flex-wrap">
                 <Link href="/product" className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white rounded-md text-[14px] font-semibold no-underline hover:bg-brand transition-colors">
