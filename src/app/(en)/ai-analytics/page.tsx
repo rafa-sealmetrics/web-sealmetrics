@@ -466,7 +466,12 @@ export default function AiAnalyticsPage() {
             >
               MCP server reference
             </a>{" "}
-            covers both, client by client.
+            covers both, client by client. For the endpoint itself — how authorisation works, which
+            scopes it asks for and what the connector refuses to do — see the{" "}
+            <Link href="/docs/mcp" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
+              connector reference
+            </Link>
+            .
           </p>
         </div>
       </section>
