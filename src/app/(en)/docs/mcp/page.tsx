@@ -25,7 +25,7 @@ import { MCP_ENDPOINT } from "@/lib/content/mcp-setup";
  */
 
 const description =
-  "Reference for the Sealmetrics MCP endpoint: the URL, how authorisation works, which scopes it asks for, and what the connector will not do.";
+  "Reference for the Sealmetrics MCP endpoint: the URL, how authorisation works, which scopes it asks for, and what the read-only connector will not do.";
 const url = "https://sealmetrics.com/docs/mcp/";
 
 export const metadata: Metadata = {
@@ -74,14 +74,14 @@ const canDo = [
   "Conversions and revenue, broken down by channel, campaign, source, term, landing page or country.",
   "Micro-conversions and funnels, including the drop between two declared steps.",
   "Custom properties the account already sends, such as a product or plan identifier.",
-  "Bot and suspicious-session statistics, so an anomaly can be told apart from growth.",
-  "Setup checks: whether the tag is live, which events are instrumented and which are missing.",
+  "Landing pages, referrers, countries, devices, browsers and operating systems.",
+  "Search and fetch, so a client that indexes connectors can find a metric by name.",
 ];
 
 const willNotDo = [
   "Read a person. There is no visitor identifier to read, because Sealmetrics never sets one.",
   "Return raw personal data, session recordings or a user-level journey. None of it exists in the store.",
-  "Publish a configuration change. The write tools draft channel rules and nothing else, and a draft only becomes live when a human activates it in the dashboard.",
+  "Write anything at all. The endpoint lists no tool that creates, updates or deletes: configuration, alerts, webhooks and channel rules are absent from it, not merely refused.",
   "Delete data, move billing or touch account settings.",
   "Reach an account the authorising user cannot already open in the dashboard.",
 ];
@@ -109,7 +109,7 @@ const faqs = [
   {
     question: "Can an AI assistant change my configuration through it?",
     answer:
-      "Only as a draft. The write tools create channel-grouping rules in draft state and nothing else; activating a rule is a human action in the dashboard. No tool deletes data, changes billing or touches account settings.",
+      "No. The hosted endpoint lists read-only tools only: there is no tool on it that creates, updates or deletes anything, so a change is not refused at call time, it is simply not offered. Editing configuration means the dashboard, or the local server with an API key.",
   },
   {
     question: "How do I revoke access?",
@@ -157,7 +157,7 @@ export default function McpDocsPage() {
               <div className="text-[11px] uppercase tracking-[0.12em] text-paper-white/50">Endpoint</div>
               <div className="mt-2 text-[15px]">{MCP_ENDPOINT}</div>
               <div className="mt-4 text-paper-white/45">
-                // Streamable HTTP · OAuth 2.1 · read-first, draft-only writes
+                // Streamable HTTP · OAuth 2.1 · read-only tool surface
               </div>
             </div>
           </div>
@@ -223,8 +223,9 @@ export default function McpDocsPage() {
               What it can do
             </h2>
             <p className="mt-5 text-[16px] leading-[1.65] text-ink-soft">
-              The server registers 47 tools. Each one maps a business question to a canonical metric, so
-              the model calls a documented contract instead of guessing at raw columns. Attribution is{" "}
+              The endpoint lists read-only analytics tools and nothing else. Each one maps a business
+              question to a canonical metric, so the model calls a documented contract instead of
+              guessing at raw columns. Attribution is{" "}
               <Link href="/glossary/last-click-attribution">last non-direct click</Link>, measured on
               100% of traffic rather than the consented fraction.
             </p>
