@@ -107,7 +107,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 - /free-audit — Free audit intake form
 - /modern-analytics — What modern analytics looks like in 2026: complete data, AI supervision, EU-hosted
 - /ai-analytics — AI analytics done right: complete cookieless data + semantic MCP + private AI hosted in the EU (LENS AI). Connect Claude/ChatGPT to your analytics
-- /docs/mcp — MCP server reference: the endpoint, OAuth 2.1 authorisation with dynamic client registration, the scopes it asks for, the 47 tools it registers, and the boundaries it will not cross (no visitor identifier, draft-only writes)
+- /docs/mcp — MCP server reference: the endpoint, OAuth 2.1 authorisation with dynamic client registration, the scopes it asks for, the read-only tools it lists, and the boundaries it will not cross (no visitor identifier, no write tool on the hosted endpoint)
 - /ai-brand-monitoring — Free AI brand monitoring report: fifteen models answer six fixed questions about a company from training memory, without web search, and every answer is returned verbatim with factual errors marked
 - /reg-gap-analysis — Regulatory gap analysis for web analytics: GDPR, ePrivacy, AEPD, UK PECR — requirement-by-requirement audit with self-assessment
 - /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of Sealmetrics
