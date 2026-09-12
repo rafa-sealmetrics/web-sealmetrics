@@ -38,9 +38,15 @@ jobs:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: node scripts/indexnow.mjs
 
+      # `include-hidden-files` defaults to false, which silently drops every
+      # dotfile from the published site. That cost an afternoon: the OpenAI
+      # domain-verification token lived at out/.well-known/openai-apps-challenge,
+      # the build was green, the deploy was green, and the URL 404ed. Anything
+      # under a dot directory — well-known challenges, .nojekyll — needs this.
       - uses: actions/upload-pages-artifact@v5
         with:
           path: out
+          include-hidden-files: true
 
   deploy:
     needs: build
